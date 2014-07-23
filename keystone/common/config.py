@@ -80,6 +80,19 @@ FILE_OPTIONS = {
         cfg.IntOpt('admin_workers', default=1,
                    help='The number of worker processes to serve the admin '
                         'WSGI application'),
+        #Remote Debugging Options
+        cfg.StrOpt('remote_debug', default='',
+                   help='Which application to enable remote debug.'
+                        'Valid values are \'main\' or \'admin\''),
+        cfg.StrOpt('remote_debug_host', default='',
+                   help='host for remote debugging'),
+        cfg.IntOpt('remote_debug_port', default=0,
+                   help='port for remote debugging'),
+
+        cfg.StrOpt('remote_debug_url', default='',
+                   help='Which application to enable remote debug.'
+                        'Valid values are \'main\' or \'admin\''),
+
         # default max request size is 112k
         cfg.IntOpt('max_request_body_size', default=114688,
                    help='Enforced by optional sizelimit middleware '

@@ -247,6 +247,27 @@ you'll normally only want to run the test that hits your breakpoint::
 For reference, the ``debug`` tox environment implements the instructions
 here: https://wiki.openstack.org/wiki/Testr#Debugging_.28pdb.29_Tests
 
+
+Remote Debugging
+~~~~~~~~~~~~~~~~
+
+Keystone can enable pydevd debugging for both the eventlet and HTTPD modes of
+deployment.
+
+To enable remote debugging via eventlet,  run with the command
+line options  ``--pydevd-debug-host`` and ``--pydevd-debug-port`` options
+set.
+
+To enable remote debugging via HTTPD,  run with the config file options
+line options  ``remote_debug_host`` and ``remote_debug_port`` options
+set.  In addition, the ``remote_debug`` value must be set to either ``main``
+ or ``admin`` to avoid having contention for the debug port.
+
+In both cases, it is essential that the remote debugger be set up and listening
+on the assigned port prior to starting keystone.
+
+
+
 Disabling Stream Capture
 ~~~~~~~~~~~~~~~~~~~~~~~~
 

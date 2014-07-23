@@ -30,6 +30,7 @@ from keystone import backends
 from keystone.common import dependency
 from keystone.common import environment
 from keystone.common import sql
+from keystone.common import utils
 from keystone import config
 from keystone.openstack.common import log
 
@@ -42,12 +43,29 @@ config.set_default_for_default_log_levels()
 
 CONF(project='keystone')
 config.setup_logging()
+LOG = log.getLogger(__name__)
 
 environment.use_stdlib()
 name = os.path.basename(__file__)
 
+
+
 if CONF.debug:
     CONF.log_opt_values(log.getLogger(CONF.prog), logging.DEBUG)
+
+if CONF.remote_debug == os.path.basename(__file__):
+    LOG.debug('remote_debugging should be enabled:')
+    LOG.debug('this file is :%s:' % os.path.basename(__file__))
+    LOG.debug('debugger set for:%s:' % CONF.remote_debug)
+    LOG.debug('remote_debugging_host:%s' % CONF.remote_debug_host)
+    LOG.debug('remote_debugging_port:%s' % CONF.remote_debug_port)
+    try:
+        utils.setup_remote_pydev_debug()
+        LOG.debug('debugging beginning')
+    except Exception as e:
+        LOG.exception(e)
+
+
 
 
 drivers = backends.load_backends()

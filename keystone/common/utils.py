@@ -259,25 +259,32 @@ def auth_str_equal(provided, known):
 
 
 def setup_remote_pydev_debug():
-    if CONF.pydev_debug_host and CONF.pydev_debug_port:
+    if (CONF.pydev_debug_host and CONF.pydev_debug_port) or \
+            (CONF.remote_debug_host and CONF.remote_debug_port):
         try:
             try:
                 from pydev import pydevd
             except ImportError:
                 import pydevd
 
-            pydevd.settrace(CONF.pydev_debug_host,
-                            port=CONF.pydev_debug_port,
+            host = CONF.pydev_debug_host or CONF.remote_debug_host
+            port = CONF.pydev_debug_port or CONF.remote_debug_port
+
+            LOG.debug('Debugging host %s port %s' % (host, port))
+
+            pydevd.settrace(host,
+                            port=port,
                             stdoutToServer=True,
                             stderrToServer=True)
             return True
         except Exception:
             LOG.exception(_(
                 'Error setting up the debug environment. Verify that the '
-                'option --debug-url has the format <host>:<port> and that a '
-                'debugger processes is listening on that port.'))
+                'either the CLI option --debug-host  and --debug-port or '
+                'the file config remote_debug_host and remote_debug port '
+                'values are set, and that these values match a remote machine '
+                'with a debugger processes is listening on that port.'))
             raise
-
 
 class LimitingReader(object):
     """Reader to limit the size of an incoming request."""
