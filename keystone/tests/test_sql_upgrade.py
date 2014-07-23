@@ -1195,9 +1195,10 @@ class SqlUpgradeTests(SqlMigrateBase):
         add_region(region_unique_table)
         self.assertEqual(1, session.query(region_unique_table).count())
         # verify the unique constraint is enforced
-        self.assertRaises(sqlalchemy.exc.IntegrityError,
-                          add_region,
-                          table=region_unique_table)
+        self.assertRaises(
+            (sqlalchemy.exc.IntegrityError, db_exception.DBDuplicateEntry),
+            add_region,
+            table=region_unique_table)
 
         # migrate to 43, unique constraint should be dropped
         self.upgrade(43)
