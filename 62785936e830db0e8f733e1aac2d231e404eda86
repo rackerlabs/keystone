@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_815b4e85",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-23T14:39:33Z",
+      "side": 1,
+      "message": "Is is_valid_url() used somewhere else? \nI am wondering why not just have something like:\nrequest_to_validate \u003d {\u0027url\u0027: url}\t\ntry:\n    self.url_schema_validator.validate(request_to_validate)\t\nexcept exception.SchemaValidationError:\n    raise exception.ValidationError(message\u003d\u0027bad url or something\u0027)\n\n?",
+      "revId": "62785936e830db0e8f733e1aac2d231e404eda86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
