@@ -2,6 +2,91 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_f45bf852",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-23T08:27:07Z",
+      "side": 1,
+      "message": "remove \u0027a\u0027",
+      "revId": "24ad2555dcedd9b75dd066d0493102d4c1c74571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b50dfaea",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-23T08:27:07Z",
+      "side": 1,
+      "message": "Is this change to keystone.conf.sample part of the commit?",
+      "revId": "24ad2555dcedd9b75dd066d0493102d4c1c74571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f5f692d7",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-23T08:27:07Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "24ad2555dcedd9b75dd066d0493102d4c1c74571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3501eaaf",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-23T08:27:07Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "24ad2555dcedd9b75dd066d0493102d4c1c74571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_55fc9eb5",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 1329,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-23T08:27:07Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "24ad2555dcedd9b75dd066d0493102d4c1c74571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_ac394d41",
         "filename": "keystone/common/config.py",
         "patchSetId": 2
@@ -13,6 +98,41 @@
       "writtenOn": "2014-07-22T23:57:54Z",
       "side": 1,
       "message": "Suggest changing the regex to \u0027[a-zA-Z0-9-]+$\u0027 , to keep it consistent with requiring a min length of 1.  The current regex would match an empty string.",
+      "revId": "24ad2555dcedd9b75dd066d0493102d4c1c74571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_55b73e21",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 767,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-23T08:27:07Z",
+      "side": 1,
+      "message": "The validator already has existing checks for min and max length that catch this. I believe the regex here is focused purely on the content of the id string.",
+      "parentUuid": "baada198_ac394d41",
+      "revId": "24ad2555dcedd9b75dd066d0493102d4c1c74571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d5834e01",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-23T08:27:07Z",
+      "side": 1,
+      "message": "Why the name change from uuid to id?",
       "revId": "24ad2555dcedd9b75dd066d0493102d4c1c74571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
