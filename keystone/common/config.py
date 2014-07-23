@@ -742,6 +742,13 @@ FILE_OPTIONS = {
         cfg.StrOpt('driver',
                    default='keystone.catalog.backends.sql.Catalog',
                    help='Catalog backend driver.'),
+        cfg.BoolOpt('caching', default=True,
+                    help='Toggle for token system cacheing. This has no '
+                         'effect unless global caching is enabled.'),
+        cfg.IntOpt('cache_time',
+                   help='Time to cache tokens (in seconds). This has no '
+                        'effect unless global and token caching are '
+                        'enabled.'),
         cfg.IntOpt('list_limit',
                    help='Maximum number of entities that will be returned '
                         'in a catalog collection.'),
