@@ -110,7 +110,6 @@ class CredentialTestCase(CredentialBaseTestCase):
         ref = self.new_credential_ref(
             user_id=self.user['id'],
             project_id=self.project_id)
-        del ref['id']
         r = self.patch(
             '/credentials/%(credential_id)s' % {
                 'credential_id': self.credential_id},
