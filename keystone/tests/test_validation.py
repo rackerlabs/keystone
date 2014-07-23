@@ -34,10 +34,10 @@ _CREATE = {
 }
 
 
-class ValidationTestCase(tests.TestCase):
+class BaseValidationTestCase(tests.TestCase):
 
     def setUp(self):
-        super(ValidationTestCase, self).setUp()
+        super(BaseValidationTestCase, self).setUp()
         self.resource_name = 'some resource name'
         self.description = 'Some valid description'
         self.valid_enabled = True
