@@ -34,16 +34,30 @@ _CREATE = {
 }
 
 
-class ValidationTestCase(tests.TestCase):
+_UPDATE = {}
+
+_VALID_ENABLED_FORMATS = [True, False]
+
+_INVALID_ENABLED_FORMATS = ['some string', 1, 0, 'True', 'False']
+
+
+class BaseValidationTestCase(tests.TestCase):
 
     def setUp(self):
-        super(ValidationTestCase, self).setUp()
+        super(BaseValidationTestCase, self).setUp()
         self.resource_name = 'some resource name'
         self.description = 'Some valid description'
         self.valid_enabled = True
         self.valid_url = 'http://example.com'
         self.valid_email = 'joe@example.com'
+
+
+class ValidationTestCase(BaseValidationTestCase):
+
+    def setUp(self):
+        super(ValidationTestCase, self).setUp()
         self.create_schema_validator = validators.SchemaValidator(_CREATE)
+        self.update_schema_validator = validators.SchemaValidator(_UPDATE)
 
     def test_create_schema_with_all_valid_parameters(self):
         """Validate proper values against test schema."""
@@ -105,9 +119,7 @@ class ValidationTestCase(tests.TestCase):
         Test that we have successful validation on boolean values for
         `enabled`.
         """
-        valid_enabled_formats = [True, False]
-
-        for valid_enabled in valid_enabled_formats:
+        for valid_enabled in _VALID_ENABLED_FORMATS:
             request_to_validate = {'name': self.resource_name,
                                    'enabled': valid_enabled}
             # Make sure validation doesn't raise a validation exception
