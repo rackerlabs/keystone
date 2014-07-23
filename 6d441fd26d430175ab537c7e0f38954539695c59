@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_6f3e47dc",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-23T14:49:31Z",
+      "side": 1,
+      "message": "I was confused by the call at 182... I guess sometimes it adds the object resource and sometimes it doesn\u0027t.",
+      "parentUuid": "baada198_ca14a8a1",
+      "revId": "6d441fd26d430175ab537c7e0f38954539695c59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_aa2854ef",
         "filename": "keystone/identity/routers.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-22T21:13:21Z",
       "side": 1,
       "message": "/groups/",
+      "revId": "6d441fd26d430175ab537c7e0f38954539695c59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6c5631d0",
+        "filename": "keystone/identity/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-23T14:49:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_aa2854ef",
       "revId": "6d441fd26d430175ab537c7e0f38954539695c59",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
