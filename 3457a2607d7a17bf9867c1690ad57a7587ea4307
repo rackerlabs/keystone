@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_2110c2aa",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-23T14:41:09Z",
+      "side": 1,
+      "message": "Wow, didn\u0027t know there\u0027s a special error class for getaddrinfo",
+      "range": {
+        "startLine": 85,
+        "startChar": 22,
+        "endLine": 85,
+        "endChar": 30
+      },
+      "revId": "3457a2607d7a17bf9867c1690ad57a7587ea4307",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
