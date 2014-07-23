@@ -15,12 +15,12 @@ from __future__ import absolute_import
 import uuid
 
 import ldap
-import ldap.filter
 import six
 
 from keystone import clean
 from keystone.common import driver_hints
 from keystone.common import ldap as common_ldap
+from keystone.common.ldap import expr
 from keystone.common import models
 from keystone import config
 from keystone import exception
@@ -350,21 +350,19 @@ class GroupApi(common_ldap.BaseLdap):
     def list_user_groups(self, user_dn):
         """Return a list of groups for which the user is a member."""
 
-        user_dn_esc = ldap.filter.escape_filter_chars(user_dn)
-        query = '(&(objectClass=%s)(%s=%s)%s)' % (self.object_class,
-                                                  self.member_attribute,
-                                                  user_dn_esc,
-                                                  self.ldap_filter or '')
+        query = (self.object_class_expr &
+                 (expr.Attr(self.member_attribute) == user_dn))
+        if self.ldap_filter:
+            query &= self.ldap_filter
         return self.get_all(query)
 
     def list_user_groups_filtered(self, user_dn):
         """Return a filtered list of groups for which the user is a member."""
 
-        user_dn_esc = ldap.filter.escape_filter_chars(user_dn)
-        query = '(&(objectClass=%s)(%s=%s)%s)' % (self.object_class,
-                                                  self.member_attribute,
-                                                  user_dn_esc,
-                                                  self.ldap_filter or '')
+        query = (self.object_class_expr &
+                 (expr.Attr(self.member_attribute) == user_dn))
+        if self.ldap_filter:
+            query &= self.ldap_filter
         return self.get_all_filtered(query)
 
     def list_group_users(self, group_id):

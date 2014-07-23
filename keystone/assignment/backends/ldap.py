@@ -13,12 +13,13 @@
 # under the License.
 from __future__ import absolute_import
 
-import ldap as ldap
-import ldap.filter
+import ldap
+import six
 
 from keystone import assignment
 from keystone.assignment.role_backends import ldap as ldap_role
 from keystone.common import ldap as common_ldap
+from keystone.common.ldap import expr
 from keystone.common import models
 from keystone import config
 from keystone import exception
@@ -142,9 +143,8 @@ class Assignment(assignment.Driver):
         if tenant_id is None:
             return self.role._id_to_dn(role_id)
         else:
-            return '%s=%s,%s' % (self.role.id_attr,
-                                 ldap.dn.escape_dn_chars(role_id),
-                                 self.project._id_to_dn(tenant_id))
+            return six.text_type((self.role.id_attr, role_id) +
+                                 expr.DN(self.project._id_to_dn(tenant_id)))
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
         user_dn = self.user._id_to_dn(user_id)
@@ -413,8 +413,7 @@ class RoleApi(ldap_role.RoleLdapStructureMixin, common_ldap.BaseLdap):
         return res
 
     def list_global_roles_for_user(self, user_dn):
-        user_dn_esc = ldap.filter.escape_filter_chars(user_dn)
-        roles = self.get_all('(%s=%s)' % (self.member_attribute, user_dn_esc))
+        roles = self.get_all(expr.Attr(self.member_attribute) == user_dn)
         return [UserRoleAssociation(
                 role_dn=role.dn,
                 user_dn=user_dn) for role in roles]
@@ -444,10 +443,8 @@ class RoleApi(ldap_role.RoleLdapStructureMixin, common_ldap.BaseLdap):
         return res
 
     def list_project_roles_for_group(self, group_dn, project_subtree):
-        group_dn_esc = ldap.filter.escape_filter_chars(group_dn)
-        query = '(&(objectClass=%s)(%s=%s))' % (self.object_class,
-                                                self.member_attribute,
-                                                group_dn_esc)
+        query = (self.object_class_expr &
+                 (expr.Attr(self.member_attribute) == group_dn))
         with self.get_connection() as conn:
             try:
                 roles = conn.search_s(project_subtree,

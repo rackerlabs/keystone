@@ -20,10 +20,11 @@ import re
 import sys
 import weakref
 
-import ldap.filter
+import ldap
 import ldappool
 import six
 
+from keystone.common.ldap import expr
 from keystone import exception
 from keystone.i18n import _
 from keystone.i18n import _LW
@@ -924,13 +925,14 @@ class KeystoneLDAPHandler(LDAPHandler):
         return self.conn.add_s(dn_utf8, ldap_attrs_utf8)
 
     def search_s(self, base, scope,
-                 filterstr='(objectClass=*)', attrlist=None, attrsonly=0):
+                 filterstr=expr.FilterExpr.ALL, attrlist=None, attrsonly=0):
         # NOTE(morganfainberg): Remove "None" singletons from this list, which
         # allows us to set mapped attributes to "None" as defaults in config.
         # Without this filtering, the ldap query would raise a TypeError since
         # attrlist is expected to be an iterable of strings.
         if attrlist is not None:
             attrlist = [attr for attr in attrlist if attr is not None]
+        filterstr = six.text_type(filterstr)
         LOG.debug('LDAP search: base=%s scope=%s filterstr=%s '
                   'attrs=%s attrsonly=%s',
                   base, scope, filterstr, attrlist, attrsonly)
@@ -953,11 +955,12 @@ class KeystoneLDAPHandler(LDAPHandler):
         return py_result
 
     def search_ext(self, base, scope,
-                   filterstr='(objectClass=*)', attrlist=None, attrsonly=0,
+                   filterstr=expr.FilterExpr.ALL, attrlist=None, attrsonly=0,
                    serverctrls=None, clientctrls=None,
                    timeout=-1, sizelimit=0):
         if attrlist is not None:
             attrlist = [attr for attr in attrlist if attr is not None]
+        filterstr = six.text_type(filterstr)
         LOG.debug('LDAP search_ext: base=%s scope=%s filterstr=%s '
                   'attrs=%s attrsonly=%s'
                   'serverctrls=%s clientctrls=%s timeout=%s sizelimit=%s',
@@ -1173,6 +1176,8 @@ class BaseLdap(object):
             objclass = '%s_objectclass' % self.options_name
             self.object_class = (getattr(conf.ldap, objclass)
                                  or self.DEFAULT_OBJECTCLASS)
+            self.object_class_expr = (
+                expr.Attr('objectClass') == self.object_class)
 
             for k, v in six.iteritems(self.attribute_options_names):
                 v = '%s_%s_attribute' % (self.options_name, v)
@@ -1291,10 +1296,8 @@ class BaseLdap(object):
         return conn
 
     def _id_to_dn_string(self, object_id):
-        return u'%s=%s,%s' % (self.id_attr,
-                              ldap.dn.escape_dn_chars(
-                                  six.text_type(object_id)),
-                              self.tree_dn)
+        return six.text_type((self.id_attr, object_id) +
+                             expr.DN(self.tree_dn))
 
     def _id_to_dn(self, object_id):
         if self.LDAP_SCOPE == ldap.SCOPE_ONELEVEL:
@@ -1302,11 +1305,8 @@ class BaseLdap(object):
         with self.get_connection() as conn:
             search_result = conn.search_s(
                 self.tree_dn, self.LDAP_SCOPE,
-                u'(&(%(id_attr)s=%(id)s)(objectclass=%(objclass)s))' %
-                {'id_attr': self.id_attr,
-                 'id': ldap.filter.escape_filter_chars(
-                     six.text_type(object_id)),
-                 'objclass': self.object_class},
+                ((expr.Attr(self.id_attr) == object_id) &
+                 self.object_class_expr),
                 attrlist=DN_ONLY)
         if search_result:
             dn, attrs = search_result[0]
@@ -1434,14 +1434,11 @@ class BaseLdap(object):
         return values
 
     def _ldap_get(self, object_id, ldap_filter=None):
-        query = (u'(&(%(id_attr)s=%(id)s)'
-                 u'%(filter)s'
-                 u'(objectClass=%(object_class)s))'
-                 % {'id_attr': self.id_attr,
-                    'id': ldap.filter.escape_filter_chars(
-                        six.text_type(object_id)),
-                    'filter': (ldap_filter or self.ldap_filter or ''),
-                    'object_class': self.object_class})
+        if ldap_filter is None:
+            ldap_filter = self.ldap_filter
+        query = (expr.Attr(self.id_attr) == object_id) & self.object_class_expr
+        if ldap_filter:
+            query &= ldap_filter
         with self.get_connection() as conn:
             try:
                 attrs = list(set(([self.id_attr] +
@@ -1459,9 +1456,11 @@ class BaseLdap(object):
             return None
 
     def _ldap_get_all(self, ldap_filter=None):
-        query = u'(&%s(objectClass=%s))' % (ldap_filter or
-                                            self.ldap_filter or
-                                            '', self.object_class)
+        if ldap_filter is None:
+            ldap_filter = self.ldap_filter
+        query = self.object_class_expr
+        if ldap_filter:
+            query &= ldap_filter
         with self.get_connection() as conn:
             try:
                 attrs = list(set(([self.id_attr] +
@@ -1476,16 +1475,9 @@ class BaseLdap(object):
 
     def _ldap_get_list(self, search_base, scope, query_params=None,
                        attrlist=None):
-        query = u'(objectClass=%s)' % self.object_class
+        query = self.object_class_expr
         if query_params:
-
-            def calc_filter(attrname, value):
-                val_esc = ldap.filter.escape_filter_chars(value)
-                return '(%s=%s)' % (attrname, val_esc)
-
-            query = (u'(&%s%s)' %
-                     (query, ''.join([calc_filter(k, v) for k, v in
-                                      six.iteritems(query_params)])))
+            query &= query_params
         with self.get_connection() as conn:
             return conn.search_s(search_base, scope, query, attrlist)
 
@@ -1497,9 +1489,8 @@ class BaseLdap(object):
             return self._ldap_res_to_model(res)
 
     def get_by_name(self, name, ldap_filter=None):
-        query = (u'(%s=%s)' % (self.attribute_mapping['name'],
-                               ldap.filter.escape_filter_chars(
-                                   six.text_type(name))))
+        name_attr = expr.Attr(self.attribute_mapping['name'])
+        query = name_attr == six.text_type(name)
         res = self.get_all(query)
         try:
             return res[0]
@@ -1648,13 +1639,10 @@ class BaseLdap(object):
                 raise self._not_found(member_list_dn)
 
     def _delete_tree_nodes(self, search_base, scope, query_params=None):
-        query = u'(objectClass=%s)' % self.object_class
+        query = self.object_class_expr
         if query_params:
-            query = (u'(&%s%s)' %
-                     (query, ''.join(['(%s=%s)'
-                                      % (k, ldap.filter.escape_filter_chars(v))
-                                      for k, v in
-                                      six.iteritems(query_params)])))
+            query &= query_params
+
         not_deleted_nodes = []
         with self.get_connection() as conn:
             try:
@@ -1717,7 +1705,7 @@ class EnabledEmuMixIn(BaseLdap):
 
     def _get_enabled(self, object_id):
         dn = self._id_to_dn(object_id)
-        query = '(member=%s)' % dn
+        query = expr.Attr('member') == dn
         with self.get_connection() as conn:
             try:
                 enabled_value = conn.search_s(self.enabled_emulation_dn,
