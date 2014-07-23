@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_ded51848",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 2540,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-07-23T18:54:37Z",
+      "side": 1,
+      "message": "How does this work for non-LDAP backends given that _prop_can_be_none is only defined in the BaseLDAPIdentity class?\n\nIt seems like the method definition should be here in the IdentityTests class and overridden as necessary in the BaseLDAPIdentity class.",
+      "revId": "c9e35780ed2052390fc614bedbd007220f655f40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
