@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_52c57f08",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-23T17:31:23Z",
+      "side": 1,
+      "message": "Tidy up commit message body. I don\u0027t think we need a reference to the code review #87551 especially because we have a dedicated bug for this fix.\n\nAlso, expand on why you think the internal notification is enough. If the endpoint delete event is only going to be consumed by Keystone then I agree we should make it an internal notification.",
+      "revId": "077eef94a6d3caf81817dba19087b457d8ab8eb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
