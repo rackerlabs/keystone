@@ -51,6 +51,24 @@
       "revId": "642d5263de2f672cdacff751f19e47ed4437a933",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e06ecfff",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1770,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-07-23T10:14:50Z",
+      "side": 1,
+      "message": "I checked it and I think that yes, these methods should be in the LdapIdentitySqlAssignment class (as now), because this class runs tests for LDAP and SQL backend.\n\nAre you agree?",
+      "parentUuid": "baada198_5dc1244d",
+      "revId": "642d5263de2f672cdacff751f19e47ed4437a933",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
