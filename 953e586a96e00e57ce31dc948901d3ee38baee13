@@ -16,6 +16,24 @@
       "revId": "953e586a96e00e57ce31dc948901d3ee38baee13",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_32e00b26",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2014-07-23T17:04:28Z",
+      "side": 1,
+      "message": "henry-nash, this is great comment and will submit another patch for that. thx.",
+      "parentUuid": "baada198_d5450e70",
+      "revId": "953e586a96e00e57ce31dc948901d3ee38baee13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
