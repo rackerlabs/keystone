@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_fb69198d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-23T13:39:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_f45bf852",
+      "revId": "24ad2555dcedd9b75dd066d0493102d4c1c74571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_b50dfaea",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-23T08:27:07Z",
       "side": 1,
       "message": "Is this change to keystone.conf.sample part of the commit?",
+      "revId": "24ad2555dcedd9b75dd066d0493102d4c1c74571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_12f5d250",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-23T13:39:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_b50dfaea",
       "revId": "24ad2555dcedd9b75dd066d0493102d4c1c74571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_d2819aa1",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-23T13:39:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_f5f692d7",
+      "revId": "24ad2555dcedd9b75dd066d0493102d4c1c74571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_3501eaaf",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 2
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_52966af0",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-23T13:39:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_3501eaaf",
+      "revId": "24ad2555dcedd9b75dd066d0493102d4c1c74571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_55fc9eb5",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 2
@@ -81,6 +153,24 @@
       "writtenOn": "2014-07-23T08:27:07Z",
       "side": 1,
       "message": "same as above",
+      "revId": "24ad2555dcedd9b75dd066d0493102d4c1c74571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f2905eef",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 1329,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-23T13:39:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_55fc9eb5",
       "revId": "24ad2555dcedd9b75dd066d0493102d4c1c74571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -122,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_950aac1e",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 767,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-23T13:39:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_55b73e21",
+      "revId": "24ad2555dcedd9b75dd066d0493102d4c1c74571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_d5834e01",
         "filename": "keystone/common/validation/parameter_types.py",
         "patchSetId": 2
@@ -133,6 +241,24 @@
       "writtenOn": "2014-07-23T08:27:07Z",
       "side": 1,
       "message": "Why the name change from uuid to id?",
+      "revId": "24ad2555dcedd9b75dd066d0493102d4c1c74571",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_12707207",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-23T13:39:11Z",
+      "side": 1,
+      "message": "A case can be made in the event a user passes a user-defined string to represent a region. In this case, Keystone will not generate a UUID for the unique identifier. \n\nhttps://github.com/openstack/identity-api/blob/master/v3/src/markdown/identity-api-v3.md#create-region-with-specific-id-put-regionsuser_defined_region_id\n\nBecause of this case, we broadened the scope of the hex_uuid to an id_string. If in a particular deployment, the administrator is using strict hex uuid IDs for resource IDs, they can control that through the regex and tighten up the regex as much as they want. We also have to maintain backward compatibility to previous OpenStack deployments (essex/diablo I believe), that use \u0027-\u0027 in the uuid, instead of generating them with uuid.uuid4().hex.",
+      "parentUuid": "baada198_d5834e01",
       "revId": "24ad2555dcedd9b75dd066d0493102d4c1c74571",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
