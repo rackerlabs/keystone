@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_8cb70585",
+        "filename": "keystone/tests/test_backend_templated.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-23T15:11:07Z",
+      "side": 0,
+      "message": "Revert whitespace change.",
+      "revId": "686597b52a7b64161ca82e468a401efe22553a22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

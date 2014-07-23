@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_0744ae45",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-23T15:11:07Z",
+      "side": 1,
+      "message": "This loop, because it handles invalidation, needs to occur after line 132, otherwise you could have something re-cache before the service is invalidated.  Line 127 should stay where it is at.",
+      "revId": "b33f328e25821975cd262e5cd989a1215d0e3de7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_07166e49",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-23T15:11:07Z",
+      "side": 1,
+      "message": "If a single endpoint matches the service id, i don\u0027t think you want to break the loop, you want all endpoints to be invalidated.  This also shows the need for an expanded test to show that endpoints are all invalidated when the service is deleted.",
+      "revId": "b33f328e25821975cd262e5cd989a1215d0e3de7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4cefad86",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 749,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-23T15:11:07Z",
+      "side": 1,
+      "message": "The help string needs to be updated for the catalog-specific case, this looks like a simple copy-paste issue (tokens are not part of catalog).\n\nSame on line 746",
+      "revId": "b33f328e25821975cd262e5cd989a1215d0e3de7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
