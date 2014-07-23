@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_48c5d208",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-23T18:32:43Z",
+      "side": 1,
+      "message": "lowercase should be used for variable names, capitalized names are for classes.",
+      "range": {
+        "startLine": 655,
+        "startChar": 4,
+        "endLine": 655,
+        "endChar": 20
+      },
+      "revId": "4073726887687f9c27682091f45ca3f2bf4717b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_c822c2b9",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 662,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-23T18:32:43Z",
+      "side": 1,
+      "message": "I don\u0027t think self.url is used anywhere anymore",
+      "revId": "4073726887687f9c27682091f45ca3f2bf4717b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_c85ba253",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 706,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-23T18:32:43Z",
+      "side": 1,
+      "message": "This is fine, but I\u0027d prefer following the \"Don\u0027t ask for permission, ask for forgiveness\" way:\n\n  try:\n    self.conn_pool \u003d self.connection_pools[pool_url]\n  except KeyError:\n    self.conn_pool \u003d \u003c...\u003e\n    self.connection_pools[pool_url] \u003d self.conn_pool",
+      "revId": "4073726887687f9c27682091f45ca3f2bf4717b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_a3420f0d",
+        "filename": "keystone/tests/test_backend_ldap_pool.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-23T18:32:43Z",
+      "side": 1,
+      "message": "Just to calm backslash-haters I\u0027d store this dict in self in setUp and reference it everywhere.",
+      "range": {
+        "startLine": 88,
+        "startChar": 22,
+        "endLine": 89,
+        "endChar": 28
+      },
+      "revId": "4073726887687f9c27682091f45ca3f2bf4717b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_630637cf",
+        "filename": "keystone/tests/test_ldap_pool_livetest.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-07-23T18:32:43Z",
+      "side": 1,
+      "message": "See comment in test_backend_ldap_pool.",
+      "range": {
+        "startLine": 70,
+        "startChar": 22,
+        "endLine": 71,
+        "endChar": 28
+      },
+      "revId": "4073726887687f9c27682091f45ca3f2bf4717b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
