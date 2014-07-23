@@ -16,6 +16,24 @@
       "revId": "d331e552e2f3536c11e3b5ec122e5522b990eea5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9c0c893b",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2014-07-23T19:14:42Z",
+      "side": 1,
+      "message": "that sounds more smooth, thx!",
+      "parentUuid": "baada198_7e97ac3a",
+      "revId": "d331e552e2f3536c11e3b5ec122e5522b990eea5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
