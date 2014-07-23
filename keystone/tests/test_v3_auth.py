@@ -1224,6 +1224,43 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
         # Make sure that we get a NotFound(404) when heading that role.
         self.head(role_path, expected_status=404)
 
+    def test_revoke_token_from_token(self):
+        # Test that a scoped token can be requested from an unscoped token,
+        # the scoped token can be revoked, and the unscoped token remains
+        # valid.
+
+        # FIXME(blk-u): This isn't working right. The unscoped token should
+        # remain valid. See bug 1347318.
+
+        r = self.post(
+            '/auth/tokens',
+            body=self.build_authentication_request(
+                user_id=self.user1['id'],
+                password=self.user1['password']))
+        unscoped_token = r.headers.get('X-Subject-Token')
+
+        r = self.post(
+            '/auth/tokens',
+            body=self.build_authentication_request(
+                token=unscoped_token,
+                project_id=self.projectA['id']))
+        scoped_token = r.headers.get('X-Subject-Token')
+
+        # revoke the scoped token.
+        self.delete('/auth/tokens',
+                    headers={'X-Subject-Token': scoped_token},
+                    expected_status=204)
+
+        # The unscoped token should still be valid.
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': unscoped_token},
+                  expected_status=404)  # FIXME(blk-u): This should be 200!
+
+        # The scoped token is invalidated.
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': scoped_token},
+                  expected_status=404)
+
 
 @dependency.requires('revoke_api')
 class TestTokenRevokeApi(TestTokenRevokeById):
