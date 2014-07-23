@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_1dc7ac66",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1767,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-23T09:37:05Z",
+      "side": 1,
+      "message": "Should this be LDAP backend?",
+      "revId": "642d5263de2f672cdacff751f19e47ed4437a933",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_5dc1244d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1770,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-23T09:37:05Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "642d5263de2f672cdacff751f19e47ed4437a933",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
