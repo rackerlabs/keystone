@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_d5450e70",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-23T08:37:57Z",
+      "side": 1,
+      "message": "I don\u0027t think this needs to be a NOTE, just an inline comment.  And, to Dolphm\u0027s point, let\u0027s say why, not what, e.g.:\n\n# Any tokens issued to users that are owned by this domain should also be deleted, irrespective of what project/domain scope they have\n\nGiven that there is confusion on exactly what this method has to do, it might be good to have a doctoring intro at the start of the method, along the lines of my description in  a previous review comment.  Then a reader will clear see there are three \"tasks\" to be carried out...",
+      "revId": "953e586a96e00e57ce31dc948901d3ee38baee13",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
