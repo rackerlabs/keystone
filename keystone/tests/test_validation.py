@@ -17,6 +17,7 @@ from keystone.common.validation import parameter_types
 from keystone.common.validation import validators
 from keystone import exception
 from keystone import tests
+from keystone.trust import schema as trust_schema
 
 
 # Test schema to validate create requests against
@@ -158,3 +159,140 @@ class ValidationTestCase(tests.TestCase):
         self.assertRaises(exception.SchemaValidationError,
                           self.create_schema_validator.validate,
                           request_to_validate)
+
+
+class TrustValidationTestCase(BaseValidationTestCase):
+    """Test for V3 Trust API validation."""
+
+    def setUp(self):
+        super(TrustValidationTestCase, self).setUp()
+
+        create = trust_schema.trust_create
+        self.create_trust_validator = validators.SchemaValidator(create)
+
+    def test_validate_trust_succeeds(self):
+        """Test that we can validate a trust request."""
+        request_to_validate = {'trustor_user_id': uuid.uuid4().hex,
+                               'trustee_user_id': uuid.uuid4().hex,
+                               'impersonation': False}
+        self.create_trust_validator.validate(request_to_validate)
+
+    def test_validate_trust_with_all_parameters_succeeds(self):
+        """Test that we can validate a trust request with all parameters."""
+        request_to_validate = {'trustor_user_id': uuid.uuid4().hex,
+                               'trustee_user_id': uuid.uuid4().hex,
+                               'impersonation': False,
+                               'project_id': uuid.uuid4().hex,
+                               'roles': [uuid.uuid4().hex, uuid.uuid4().hex],
+                               'expires_at': 'some timestamp',
+                               'remaining_uses': 2}
+        self.create_trust_validator.validate(request_to_validate)
+
+    def test_validate_trust_without_trustor_id_fails(self):
+        """Test that an exception is raised when validating a trust request
+           that doesn't have `trustor_user_id` in the request.
+        """
+        request_to_validate = {'trustee_user_id': uuid.uuid4().hex,
+                               'impersonation': False}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_trust_validator.validate,
+                          request_to_validate)
+
+    def test_validate_trust_without_trustee_id_fails(self):
+        """Test that an exception is raised when validating a trust request
+           that doesn't have `trustee_user_id` in the request.
+        """
+        request_to_validate = {'trusor_user_id': uuid.uuid4().hex,
+                               'impersonation': False}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_trust_validator.validate,
+                          request_to_validate)
+
+    def test_validate_trust_without_impersonation_fails(self):
+        """Test that an exception is raised when validating a trust request
+           that doesn't have `impersonation` in the request.
+        """
+        request_to_validate = {'trustee_user_id': uuid.uuid4().hex,
+                               'trustor_user_id': uuid.uuid4().hex}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_trust_validator.validate,
+                          request_to_validate)
+
+    def test_validate_trust_with_extra_parameters_succeeds(self):
+        """Test that we can validate a trust request with extra parameters."""
+        request_to_validate = {'trustor_user_id': uuid.uuid4().hex,
+                               'trustee_user_id': uuid.uuid4().hex,
+                               'impersonation': False,
+                               'project_id': uuid.uuid4().hex,
+                               'roles': [uuid.uuid4().hex, uuid.uuid4().hex],
+                               'expires_at': 'some timestamp',
+                               'remaining_uses': 2,
+                               'extra': 'something extra!'}
+        self.create_trust_validator.validate(request_to_validate)
+
+    def test_validate_trust_with_invalid_impersonation_fails(self):
+        """Test that an exception is raised when validating a trust with an
+           invalid `impersonation` value.
+        """
+        request_to_validate = {'trustor_user_id': uuid.uuid4().hex,
+                               'trustee_user_id': uuid.uuid4().hex,
+                               'impersonation': 2}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_trust_validator.validate,
+                          request_to_validate)
+
+    def test_validate_trust_with_null_remaining_uses_succeeds(self):
+        """Test that we can validate a trust request that has None as a value
+           for `remaining_uses`.
+        """
+        request_to_validate = {'trustor_user_id': uuid.uuid4().hex,
+                               'trustee_user_id': uuid.uuid4().hex,
+                               'impersonation': False,
+                               'remaining_uses': None}
+        self.create_trust_validator.validate(request_to_validate)
+
+    def test_validate_trust_with_remaining_uses_succeeds(self):
+        """Test that we can validate a trust request that has integer as a
+           value for `remaining_uses`.
+        """
+        request_to_validate = {'trustor_user_id': uuid.uuid4().hex,
+                               'trustee_user_id': uuid.uuid4().hex,
+                               'impersonation': False,
+                               'remaining_uses': 2}
+        self.create_trust_validator.validate(request_to_validate)
+
+    def test_validate_trust_with_invalid_expires_at_fails(self):
+        """Test that an exception is raised when an invalid type is passed as
+           `expires_at`.
+        """
+        request_to_validate = {'trustor_user_id': uuid.uuid4().hex,
+                               'trustee_user_id': uuid.uuid4().hex,
+                               'impersonation': False,
+                               'expires_at': 3}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_trust_validator.validate,
+                          request_to_validate)
+
+    def test_validate_trust_with_role_types_succeeds(self):
+        """Test that we can validate a trust request with different role types
+           in the request.
+        """
+        for role in ['member', uuid.uuid4().hex]:
+            request_to_validate = {'trustor_user_id': uuid.uuid4().hex,
+                                   'trustee_user_id': uuid.uuid4().hex,
+                                   'impersonation': False,
+                                   'roles': {'name': role}}
+            self.create_trust_validator.validate(request_to_validate)
+
+    def test_validate_trust_with_invalid_role_type_fails(self):
+        """Test that an exception is raised when validating a trust request
+           with an invalid role type.
+        """
+        for role in [False, True, 123, None]:
+            request_to_validate = {'trustor_user_id': uuid.uuid4().hex,
+                                   'trustee_user_id': uuid.uuid4().hex,
+                                   'impersonation': False,
+                                   'roles': role}
+            self.assertRaises(exception.SchemaValidationError,
+                              self.create_trust_validator.validate,
+                              request_to_validate)
