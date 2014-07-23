@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_4f031cbe",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-23T16:50:28Z",
+      "side": 1,
+      "message": "s/keystone/Keystone",
+      "revId": "5d48c2db668de7a2aed188025258af86cb2422b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6f2d4045",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 749,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-23T16:50:28Z",
+      "side": 1,
+      "message": "space after data",
+      "revId": "5d48c2db668de7a2aed188025258af86cb2422b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_cfe48c10",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3588,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-23T16:50:28Z",
+      "side": 1,
+      "message": "The code here is self explanatory and therefore the comments are redundant. As highlighted by Dolph and Henry in a recent code review:\n\nhttps://review.openstack.org/#/c/107194/11/keystone/token/core.py\nhttps://review.openstack.org/#/c/107194/12/keystone/token/core.py\n\nInline comments should be used to answer the \"why the code is doing something\", not \"what the code is doing\" (unless it\u0027s a highly complex piece of code and further comments aid a reader\u0027s comprehension of it).",
+      "revId": "5d48c2db668de7a2aed188025258af86cb2422b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2fa6e8ab",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3679,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-23T16:50:28Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "5d48c2db668de7a2aed188025258af86cb2422b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2f47c8a4",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3744,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-23T16:50:28Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "5d48c2db668de7a2aed188025258af86cb2422b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
