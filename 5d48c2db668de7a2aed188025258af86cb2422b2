@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_121ea7bb",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3588,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-23T17:19:40Z",
+      "side": 1,
+      "message": "In the case of caching, it\u0027s a bit less straightforward looking at the test cases. It doesn\u0027t hurt to have a \u0027what\u0027 is being done here. I wouldn\u0027t block based upon these comments (especially ones like on 3598, it isn\u0027t clear why you\u0027d call the .get without storing the value).",
+      "parentUuid": "baada198_cfe48c10",
+      "revId": "5d48c2db668de7a2aed188025258af86cb2422b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_2fa6e8ab",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 4
