@@ -424,7 +424,8 @@ class RevokeTreeTests(tests.TestCase):
                                            ['consumer_id=*']
                                            ['access_token_id=*']
                                            ['expires_at=*']
-                                           ['domain_id=*']))
+                                           ['domain_id=*']
+                                           ['domain_scope_id=*']))
         # 10 users added
         self.assertEqual(turn, len(self.tree.revoke_map
                                    ['trust_id=*']
@@ -432,6 +433,7 @@ class RevokeTreeTests(tests.TestCase):
                                    ['access_token_id=*']
                                    ['expires_at=*']
                                    ['domain_id=*']
+                                   ['domain_scope_id=*']
                                    ['project_id=*']))
 
     def test_cleanup(self):
