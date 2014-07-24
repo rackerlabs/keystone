@@ -132,13 +132,17 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_list_domains(self):
         """Call ``GET /domains``."""
-        r = self.get('/domains')
-        self.assertValidDomainListResponse(r, ref=self.domain)
+        resource_url = '/domains'
+        r = self.get(resource_url)
+        self.assertValidDomainListResponse(r, ref=self.domain,
+                                           resource_url=resource_url)
 
     def test_list_domains_xml(self):
         """Call ``GET /domains (xml data)``."""
-        r = self.get('/domains', content_type='xml')
-        self.assertValidDomainListResponse(r, ref=self.domain)
+        resource_url = '/domains'
+        r = self.get(resource_url, content_type='xml')
+        self.assertValidDomainListResponse(r, ref=self.domain,
+                                           resource_url=resource_url)
 
     def test_get_domain(self):
         """Call ``GET /domains/{domain_id}``."""
@@ -385,13 +389,17 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_list_projects(self):
         """Call ``GET /projects``."""
-        r = self.get('/projects')
-        self.assertValidProjectListResponse(r, ref=self.project)
+        resource_url = '/projects'
+        r = self.get(resource_url)
+        self.assertValidProjectListResponse(r, ref=self.project,
+                                            resource_url=resource_url)
 
     def test_list_projects_xml(self):
         """Call ``GET /projects`` (xml data)."""
-        r = self.get('/projects', content_type='xml')
-        self.assertValidProjectListResponse(r, ref=self.project)
+        resource_url = '/projects'
+        r = self.get(resource_url, content_type='xml')
+        self.assertValidProjectListResponse(r, ref=self.project,
+                                            resource_url=resource_url)
 
     def test_create_project(self):
         """Call ``POST /projects``."""
@@ -536,8 +544,10 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_list_users(self):
         """Call ``GET /users``."""
-        r = self.get('/users')
-        self.assertValidUserListResponse(r, ref=self.user)
+        resource_url = '/users'
+        r = self.get(resource_url)
+        self.assertValidUserListResponse(r, ref=self.user,
+                                         resource_url=resource_url)
 
     def test_list_users_with_multiple_backends(self):
         """Call ``GET /users`` when multiple backends is enabled.
@@ -591,8 +601,10 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_list_users_xml(self):
         """Call ``GET /users`` (xml data)."""
-        r = self.get('/users', content_type='xml')
-        self.assertValidUserListResponse(r, ref=self.user)
+        resource_url = '/users'
+        r = self.get(resource_url, content_type='xml')
+        self.assertValidUserListResponse(r, ref=self.user,
+                                         resource_url=resource_url)
 
     def test_get_user(self):
         """Call ``GET /users/{user_id}``."""
@@ -769,13 +781,17 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_list_groups(self):
         """Call ``GET /groups``."""
-        r = self.get('/groups')
-        self.assertValidGroupListResponse(r, ref=self.group)
+        resource_url = '/groups'
+        r = self.get(resource_url)
+        self.assertValidGroupListResponse(r, ref=self.group,
+                                          resource_url=resource_url)
 
     def test_list_groups_xml(self):
         """Call ``GET /groups`` (xml data)."""
-        r = self.get('/groups', content_type='xml')
-        self.assertValidGroupListResponse(r, ref=self.group)
+        resource_url = '/groups'
+        r = self.get(resource_url, content_type='xml')
+        self.assertValidGroupListResponse(r, ref=self.group,
+                                          resource_url=resource_url)
 
     def test_get_group(self):
         """Call ``GET /groups/{group_id}``."""
@@ -829,13 +845,17 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_list_roles(self):
         """Call ``GET /roles``."""
-        r = self.get('/roles')
-        self.assertValidRoleListResponse(r, ref=self.role)
+        resource_url = '/roles'
+        r = self.get(resource_url)
+        self.assertValidRoleListResponse(r, ref=self.role,
+                                         resource_url=resource_url)
 
     def test_list_roles_xml(self):
         """Call ``GET /roles`` (xml data)."""
-        r = self.get('/roles', content_type='xml')
-        self.assertValidRoleListResponse(r, ref=self.role)
+        resource_url = '/roles'
+        r = self.get(resource_url, content_type='xml')
+        self.assertValidRoleListResponse(r, ref=self.role,
+                                         resource_url=resource_url)
 
     def test_get_role(self):
         """Call ``GET /roles/{role_id}``."""
@@ -869,7 +889,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.put(member_url)
         self.head(member_url)
         r = self.get(collection_url)
-        self.assertValidRoleListResponse(r, ref=self.role)
+        self.assertValidRoleListResponse(r, ref=self.role,
+                                         resource_url=collection_url)
         self.assertIn(collection_url, r.result['links']['self'])
 
         # FIXME(gyee): this test is no longer valid as user
@@ -910,7 +931,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.put(member_url)
         self.head(member_url)
         r = self.get(collection_url)
-        self.assertValidRoleListResponse(r, ref=self.role)
+        self.assertValidRoleListResponse(r, ref=self.role,
+                                         resource_url=collection_url)
         self.assertIn(collection_url, r.result['links']['self'])
 
         self.delete(member_url)
@@ -949,7 +971,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.put(member_url)
         self.head(member_url)
         r = self.get(collection_url)
-        self.assertValidRoleListResponse(r, ref=self.role)
+        self.assertValidRoleListResponse(r, ref=self.role,
+                                         resource_url=collection_url)
         self.assertIn(collection_url, r.result['links']['self'])
 
         self.delete(member_url)
@@ -989,7 +1012,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.put(member_url)
         self.head(member_url)
         r = self.get(collection_url)
-        self.assertValidRoleListResponse(r, ref=self.role)
+        self.assertValidRoleListResponse(r, ref=self.role,
+                                         resource_url=collection_url)
         self.assertIn(collection_url, r.result['links']['self'])
 
         self.delete(member_url)
@@ -1053,7 +1077,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
         collection_url = '/role_assignments'
         r = self.get(collection_url)
-        self.assertValidRoleAssignmentListResponse(r)
+        self.assertValidRoleAssignmentListResponse(r,
+                                                   resource_url=collection_url)
         self.assertIn(collection_url, r.result['links']['self'])
         existing_assignments = len(r.result.get('role_assignments'))
 
@@ -1064,7 +1089,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             role_id=self.role_id)
         self.put(gd_url)
         r = self.get(collection_url)
-        self.assertValidRoleAssignmentListResponse(r)
+        self.assertValidRoleAssignmentListResponse(r,
+                                                   resource_url=collection_url)
         self.assertEqual(existing_assignments + 1,
                          len(r.result.get('role_assignments')))
         self.assertRoleAssignmentInListResponse(r, gd_entity, link_url=gd_url)
@@ -1074,7 +1100,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             role_id=self.role_id)
         self.put(ud_url)
         r = self.get(collection_url)
-        self.assertValidRoleAssignmentListResponse(r)
+        self.assertValidRoleAssignmentListResponse(r,
+                                                   resource_url=collection_url)
         self.assertEqual(existing_assignments + 2,
                          len(r.result.get('role_assignments')))
         self.assertRoleAssignmentInListResponse(r, ud_entity, link_url=ud_url)
@@ -1084,7 +1111,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             role_id=self.role_id)
         self.put(gp_url)
         r = self.get(collection_url)
-        self.assertValidRoleAssignmentListResponse(r)
+        self.assertValidRoleAssignmentListResponse(r,
+                                                   resource_url=collection_url)
         self.assertEqual(existing_assignments + 3,
                          len(r.result.get('role_assignments')))
         self.assertRoleAssignmentInListResponse(r, gp_entity, link_url=gp_url)
@@ -1094,7 +1122,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             role_id=self.role_id)
         self.put(up_url)
         r = self.get(collection_url)
-        self.assertValidRoleAssignmentListResponse(r)
+        self.assertValidRoleAssignmentListResponse(r,
+                                                   resource_url=collection_url)
         self.assertEqual(existing_assignments + 4,
                          len(r.result.get('role_assignments')))
         self.assertRoleAssignmentInListResponse(r, up_entity, link_url=up_url)
@@ -1107,7 +1136,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.delete(gp_url)
         self.delete(up_url)
         r = self.get(collection_url)
-        self.assertValidRoleAssignmentListResponse(r)
+        self.assertValidRoleAssignmentListResponse(r,
+                                                   resource_url=collection_url)
         self.assertEqual(existing_assignments,
                          len(r.result.get('role_assignments')))
         self.assertRoleAssignmentNotInListResponse(r, gd_entity)
@@ -1144,7 +1174,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
         collection_url = '/role_assignments'
         r = self.get(collection_url)
-        self.assertValidRoleAssignmentListResponse(r)
+        self.assertValidRoleAssignmentListResponse(r,
+                                                   resource_url=collection_url)
         self.assertIn(collection_url, r.result['links']['self'])
         existing_assignments = len(r.result.get('role_assignments'))
 
@@ -1153,7 +1184,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             role_id=self.role_id)
         self.put(gd_url)
         r = self.get(collection_url)
-        self.assertValidRoleAssignmentListResponse(r)
+        self.assertValidRoleAssignmentListResponse(r,
+                                                   resource_url=collection_url)
         self.assertEqual(existing_assignments + 1,
                          len(r.result.get('role_assignments')))
         self.assertRoleAssignmentInListResponse(r, gd_entity, link_url=gd_url)
@@ -1219,7 +1251,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
         collection_url = '/role_assignments'
         r = self.get(collection_url)
-        self.assertValidRoleAssignmentListResponse(r)
+        self.assertValidRoleAssignmentListResponse(r,
+                                                   resource_url=collection_url)
         existing_assignments = len(r.result.get('role_assignments'))
 
         gd_url, gd_entity = _build_role_assignment_url_and_entity(
