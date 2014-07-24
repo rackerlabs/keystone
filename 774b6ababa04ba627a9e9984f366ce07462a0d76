@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_d4bea9d3",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-24T19:48:11Z",
+      "side": 1,
+      "message": "Since this is a backport, I am trying to avoid channging the functionality here. we didn\u0027t pass init_version here, we aren\u0027t going to start for stable.\n\nI think the init_version stuff was related to something that landed in Juno (squashed migrations)",
+      "parentUuid": "baada198_cbaff99b",
+      "revId": "774b6ababa04ba627a9e9984f366ce07462a0d76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_aba565b6",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-24T14:28:38Z",
       "side": 1,
       "message": "same comment as above.",
+      "revId": "774b6ababa04ba627a9e9984f366ce07462a0d76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f4af2d9b",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-24T19:48:11Z",
+      "side": 1,
+      "message": "same as above",
+      "parentUuid": "baada198_aba565b6",
       "revId": "774b6ababa04ba627a9e9984f366ce07462a0d76",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
