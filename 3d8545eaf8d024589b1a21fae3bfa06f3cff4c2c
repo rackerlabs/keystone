@@ -16,6 +16,24 @@
       "revId": "3d8545eaf8d024589b1a21fae3bfa06f3cff4c2c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e9675323",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-24T23:10:34Z",
+      "side": 1,
+      "message": "I don\u0027t think we need the check (we didn\u0027t have it before) -- by the time we get here, I believe wsgi.py would have bounced out the request for policy reasons.\n\nIf we\u0027re erroring here because there is a keyerror, i\u0027d like to file that as a separate bug (for tracking reasons). It isn\u0027t unreasonable to test/file a bug if this is the case though.",
+      "parentUuid": "baada198_72b97515",
+      "revId": "3d8545eaf8d024589b1a21fae3bfa06f3cff4c2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
