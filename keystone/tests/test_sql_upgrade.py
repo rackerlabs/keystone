@@ -120,7 +120,7 @@ INITIAL_EXTENSION_TABLE_STRUCTURE = {
     'revocation_event': [
         'id', 'domain_id', 'project_id', 'user_id', 'role_id',
         'trust_id', 'consumer_id', 'access_token_id',
-        'issued_before', 'expires_at', 'revoked_at',
+        'issued_before', 'expires_at', 'revoked_at', 'domain_scope_id',
     ],
 }
 
