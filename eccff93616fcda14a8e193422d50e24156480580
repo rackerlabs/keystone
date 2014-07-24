@@ -52,6 +52,24 @@
       "revId": "eccff93616fcda14a8e193422d50e24156480580",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_09c6479c",
+        "filename": "keystone/tests/unit/token/test_token_persistence_proxy.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-24T22:46:27Z",
+      "side": 1,
+      "message": "++ I will do that, there is a rebase that is needed anyway. Will post new patch in a few minutes. Thanks henry!",
+      "parentUuid": "baada198_a92c7b94",
+      "revId": "eccff93616fcda14a8e193422d50e24156480580",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
