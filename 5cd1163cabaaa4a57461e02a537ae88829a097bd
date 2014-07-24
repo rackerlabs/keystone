@@ -16,6 +16,24 @@
       "revId": "5cd1163cabaaa4a57461e02a537ae88829a097bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8b78a1f9",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 582,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-07-24T14:39:57Z",
+      "side": 1,
+      "message": "Thanks Steve, you are right, if I uncomment that line, tests like keystone.tests.test_v3_auth.TestPKITokenAPIs.test_v3_v2_intermix_domain_scoped_token_failed work perfectly. I need to ask Marek why this line is commented.",
+      "parentUuid": "baada198_1a0a1c27",
+      "revId": "5cd1163cabaaa4a57461e02a537ae88829a097bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
