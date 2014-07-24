@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_b10952df",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-24T15:10:13Z",
+      "side": 1,
+      "message": "Probably need a better title than this...maybe something like: \"Check url is in the \u0027self\u0027 link in list responses\"",
+      "revId": "817488d45981a9b019df9115ef36e8732993cdcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_311c6213",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-24T15:10:13Z",
+      "side": 1,
+      "message": "Probably too much info for a commit comment, save this for the code!  Just describing that you are adding a parameter to pass in the url that generated the list is enough.",
+      "revId": "817488d45981a9b019df9115ef36e8732993cdcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_91d28e32",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-24T15:10:13Z",
+      "side": 1,
+      "message": "Not sure this is necessary, I\u0027d fix them all.",
+      "revId": "817488d45981a9b019df9115ef36e8732993cdcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
