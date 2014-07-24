@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_0e1c8d65",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-24T22:03:13Z",
+      "side": 1,
+      "message": "an inline comment would be appreciated, because it took me a minute to understand this. AFAICT, you\u0027re setting stdout to pipe, and stderr to stdout, and then capturing stdout here as output (and ignoring stderr since it was combined anyway). is that correct?",
+      "revId": "2049695ac137fb852741ee9cc17140783d78900e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
