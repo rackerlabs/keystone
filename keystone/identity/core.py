@@ -23,6 +23,7 @@ from oslo.config import cfg
 import six
 
 from keystone import clean
+from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
@@ -39,6 +40,11 @@ CONF = config.CONF
 
 LOG = log.getLogger(__name__)
 
+SHOULD_CACHE = cache.should_cache_fn('identity')
+
+
+def get_expiration_time():
+    return CONF.identity.cache_time or CONF.cache_time
 
 DOMAIN_CONF_FHEAD = 'keystone.'
 DOMAIN_CONF_FTAIL = '.conf'
@@ -554,6 +560,8 @@ class Manager(manager.Manager):
 
     @domains_configured
     @exception_translated('user')
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=get_expiration_time)
     def get_user(self, user_id):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(user_id))
@@ -574,6 +582,8 @@ class Manager(manager.Manager):
 
     @domains_configured
     @exception_translated('user')
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=get_expiration_time)
     def get_user_by_name(self, user_name, domain_id):
         driver = self._select_identity_driver(domain_id)
         ref = driver.get_user_by_name(user_name, domain_id)
@@ -620,7 +630,12 @@ class Manager(manager.Manager):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(user_id))
         user = self._clear_domain_id_if_domain_unaware(driver, user)
+        # Get user details to invalidate the cache.
+        user_old = self.get_user(user_id)
         ref = driver.update_user(entity_id, user)
+        self.get_user.invalidate(self, user_old['id'])
+        self.get_user_by_name.invalidate(self, user_old['name'],
+                                         user_old['domain_id'])
         if user.get('enabled') is False or user.get('password') is not None:
             if self.revoke_api:
                 self.revoke_api.revoke_by_user(user_id)
@@ -634,7 +649,12 @@ class Manager(manager.Manager):
     def delete_user(self, user_id):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(user_id))
+        # Get user details to invalidate the cache.
+        user_old = self.get_user(user_id)
         driver.delete_user(entity_id)
+        self.get_user.invalidate(self, user_id)
+        self.get_user_by_name.invalidate(self, user_old['name'],
+                                         user_old['domain_id'])
         self.credential_api.delete_credentials_for_user(user_id)
         self.token_api.delete_tokens_for_user(user_id)
         self.id_mapping_api.delete_id_mapping(user_id)
@@ -662,6 +682,8 @@ class Manager(manager.Manager):
 
     @domains_configured
     @exception_translated('group')
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=get_expiration_time)
     def get_group(self, group_id):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(group_id))
@@ -679,6 +701,7 @@ class Manager(manager.Manager):
             self._get_domain_driver_and_entity_id(group_id))
         group = self._clear_domain_id_if_domain_unaware(driver, group)
         ref = driver.update_group(entity_id, group)
+        self.get_group.invalidate(self, group_id)
         return self._set_domain_id_and_mapping(
             ref, domain_id, driver, mapping.EntityType.GROUP)
 
@@ -705,6 +728,7 @@ class Manager(manager.Manager):
         # any tokens for the users who are members of the group.
         self.revoke_tokens_for_group(group_id)
         driver.delete_group(entity_id)
+        self.get_group.invalidate(self, group_id)
         self.id_mapping_api.delete_id_mapping(group_id)
 
     @domains_configured

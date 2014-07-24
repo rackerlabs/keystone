@@ -754,6 +754,14 @@
 # Identity backend driver. (string value)
 #driver=keystone.identity.backends.sql.Identity
 
+# Toggle for identity caching. This has no effect unless
+# global caching is enabled. (boolean value)
+#caching=true
+
+# TTL (in seconds) to cache identity data. This has no
+# effect unless global caching is enabled. (integer value)
+#cache_time=600
+
 # Maximum supported length for user passwords; decrease to
 # improve performance. (integer value)
 #max_password_length=4096
