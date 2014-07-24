@@ -226,6 +226,34 @@ class LdapIdentitySqlAssignment(LdapPoolCommonTestMixin,
         # as its not that obvious though its not needed here
         self.identity_api.get_user(self.user_foo['id'])
 
+    def config_overrides(self):
+        super(LdapIdentitySqlAssignment, self).config_overrides()
+        self.config_fixture.config(
+            group='identity',
+            caching=False)
+
+    def test_cache_layer_get_user(self):
+        super(LdapIdentitySqlAssignment, self).config_overrides()
+        self.config_fixture.config(
+            group='identity',
+            caching=True)
+        super(LdapIdentitySqlAssignment, self).test_cache_layer_get_user()
+
+    def test_cache_layer_get_user_by_name(self):
+        super(LdapIdentitySqlAssignment, self).config_overrides()
+        self.config_fixture.config(
+            group='identity',
+            caching=True)
+        super(LdapIdentitySqlAssignment, self).\
+            test_cache_layer_get_user_by_name()
+
+    def test_cache_layer_group_crud(self):
+        super(LdapIdentitySqlAssignment, self).config_overrides()
+        self.config_fixture.config(
+            group='identity',
+            caching=True)
+        super(LdapIdentitySqlAssignment, self).test_cache_layer_group_crud()
+
     def config_files(self):
         config_files = super(LdapIdentitySqlAssignment, self).config_files()
         config_files.append(tests.dirs.tests_conf('backend_ldap_pool.conf'))
