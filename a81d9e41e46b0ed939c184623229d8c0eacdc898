@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_faa00844",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-24T13:52:59Z",
+      "side": 1,
+      "message": "I\u0027ll add an @ to requires, but this is not a typo",
+      "parentUuid": "baada198_18a14c46",
+      "revId": "a81d9e41e46b0ed939c184623229d8c0eacdc898",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_382370bf",
         "filename": "keystone/contrib/ec2/controllers.py",
         "patchSetId": 2
@@ -48,6 +66,24 @@
       "writtenOn": "2014-07-24T11:47:54Z",
       "side": 1,
       "message": "Do need token_provider_api in here however?",
+      "revId": "a81d9e41e46b0ed939c184623229d8c0eacdc898",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_5afad443",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-24T13:52:59Z",
+      "side": 1,
+      "message": "Token provider API should be in this list. in next patch",
+      "parentUuid": "baada198_382370bf",
       "revId": "a81d9e41e46b0ed939c184623229d8c0eacdc898",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
