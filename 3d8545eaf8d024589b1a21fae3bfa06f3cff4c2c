@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_72b97515",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-24T17:14:06Z",
+      "side": 1,
+      "message": "Got an unrelated question.  I\u0027ve noticed that the similar code snippet in wsgi checks to see if \u0027token_id\u0027 exists in context or if if it is admin token.  do we need a similar check here?",
+      "revId": "3d8545eaf8d024589b1a21fae3bfa06f3cff4c2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
