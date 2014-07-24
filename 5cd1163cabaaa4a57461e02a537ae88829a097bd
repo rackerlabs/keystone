@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_1a0a1c27",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 582,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-24T13:56:51Z",
+      "side": 1,
+      "message": "pretty sure this change is whats failing the tests",
+      "revId": "5cd1163cabaaa4a57461e02a537ae88829a097bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
