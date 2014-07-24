@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_8815fc3e",
+        "filename": "keystone/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-24T17:53:56Z",
+      "side": 1,
+      "message": "Should add to the help text of this argument explaining that this will erase previous configuration files and regenerate them.",
+      "revId": "824229eed85dadd13d735a03e3f3ebf55b4140d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_e5f94183",
         "filename": "keystone/common/openssl.py",
         "patchSetId": 4
