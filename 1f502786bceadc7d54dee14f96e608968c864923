@@ -16,6 +16,24 @@
       "revId": "1f502786bceadc7d54dee14f96e608968c864923",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_743b1638",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-24T23:45:21Z",
+      "side": 1,
+      "message": "Long term I want this to be even better (and maybe not dict-based), but it will work for now. It is a slightly different approach than what is use in keystoneclient, I can\u0027t take full credit for the idea",
+      "parentUuid": "baada198_9418aa77",
+      "revId": "1f502786bceadc7d54dee14f96e608968c864923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
