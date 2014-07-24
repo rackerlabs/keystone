@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_2e84150a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-24T06:31:43Z",
+      "side": 1,
+      "message": "s/persitence/persistence",
+      "revId": "1a6192935fe774612c680f8eb586e49c33434d6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8ee361a3",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3171,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-24T06:31:43Z",
+      "side": 1,
+      "message": "IMHO it would make it easier on the eyes if the expression:\n\n  [x[\u0027id\u0027] for x in self.token_provider_api.list_revoked_tokens()]\n\nis stored in a variable (e.g. revoked_tokens_from_token_provider_api). And then the assert could be something like:\n\n\nself.assertEqual(revoked_tokens_from_token_api,\n                        revoked_tokens_from_token_provider_api)",
+      "revId": "1a6192935fe774612c680f8eb586e49c33434d6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ce9399fe",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3195,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-24T06:31:43Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "1a6192935fe774612c680f8eb586e49c33434d6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6e4d2dc5",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3262,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-24T06:31:43Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "1a6192935fe774612c680f8eb586e49c33434d6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ae4745a2",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3270,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-24T06:31:43Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "1a6192935fe774612c680f8eb586e49c33434d6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_cec5590b",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3286,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-24T06:31:43Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "1a6192935fe774612c680f8eb586e49c33434d6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
