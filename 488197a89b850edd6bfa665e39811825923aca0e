@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_5d0b9d2a",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1530,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-24T21:01:42Z",
+      "side": 1,
+      "message": "i\u0027d like henrynash to review this - i don\u0027t think the new sql assignment driver could satisfy this call.\n\non a related note, this test should be moved to the parent class of this test class (IdentityTests, IIRC) so that it applies equally to SQL, LDAP, and KVS... and then a skip method may be added to the KVS test suite. that would ensure the test works against both SQL and LDAP (which I think it should).",
+      "revId": "488197a89b850edd6bfa665e39811825923aca0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
