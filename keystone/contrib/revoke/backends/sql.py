@@ -38,6 +38,7 @@ class RevocationEvent(sql.ModelBase, sql.ModelDictMixin):
     issued_before = sql.Column(sql.DateTime(), nullable=False)
     expires_at = sql.Column(sql.DateTime())
     revoked_at = sql.Column(sql.DateTime(), nullable=False)
+    domain_scope_id = sql.Column(sql.String(64))
 
 
 class Revoke(revoke.Driver):
