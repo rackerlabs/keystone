@@ -132,13 +132,17 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_list_domains(self):
         """Call ``GET /domains``."""
-        r = self.get('/domains')
-        self.assertValidDomainListResponse(r, ref=self.domain)
+        cmd_url = '/domains'
+        r = self.get(cmd_url)
+        self.assertValidDomainListResponse(r, ref=self.domain,
+                                           command=cmd_url)
 
     def test_list_domains_xml(self):
         """Call ``GET /domains (xml data)``."""
-        r = self.get('/domains', content_type='xml')
-        self.assertValidDomainListResponse(r, ref=self.domain)
+        cmd_url = '/domains'
+        r = self.get(cmd_url, content_type='xml')
+        self.assertValidDomainListResponse(r, ref=self.domain,
+                                           command=cmd_url)
 
     def test_get_domain(self):
         """Call ``GET /domains/{domain_id}``."""
@@ -385,13 +389,17 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_list_projects(self):
         """Call ``GET /projects``."""
-        r = self.get('/projects')
-        self.assertValidProjectListResponse(r, ref=self.project)
+        cmd_url = '/projects'
+        r = self.get(cmd_url)
+        self.assertValidProjectListResponse(r, ref=self.project,
+                                            command=cmd_url)
 
     def test_list_projects_xml(self):
         """Call ``GET /projects`` (xml data)."""
-        r = self.get('/projects', content_type='xml')
-        self.assertValidProjectListResponse(r, ref=self.project)
+        cmd_url = '/projects'
+        r = self.get(cmd_url, content_type='xml')
+        self.assertValidProjectListResponse(r, ref=self.project,
+                                            command=cmd_url)
 
     def test_create_project(self):
         """Call ``POST /projects``."""
@@ -536,8 +544,10 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_list_users(self):
         """Call ``GET /users``."""
-        r = self.get('/users')
-        self.assertValidUserListResponse(r, ref=self.user)
+        cmd_url = '/users'
+        r = self.get(cmd_url)
+        self.assertValidUserListResponse(r, ref=self.user,
+                                         command=cmd_url)
 
     def test_list_users_with_multiple_backends(self):
         """Call ``GET /users`` when multiple backends is enabled.
@@ -591,8 +601,10 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_list_users_xml(self):
         """Call ``GET /users`` (xml data)."""
-        r = self.get('/users', content_type='xml')
-        self.assertValidUserListResponse(r, ref=self.user)
+        cmd_url = '/users'
+        r = self.get(cmd_url, content_type='xml')
+        self.assertValidUserListResponse(r, ref=self.user,
+                                         command=cmd_url)
 
     def test_get_user(self):
         """Call ``GET /users/{user_id}``."""
@@ -769,13 +781,17 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_list_groups(self):
         """Call ``GET /groups``."""
-        r = self.get('/groups')
-        self.assertValidGroupListResponse(r, ref=self.group)
+        cmd_url = '/groups'
+        r = self.get(cmd_url)
+        self.assertValidGroupListResponse(r, ref=self.group,
+                                          command=cmd_url)
 
     def test_list_groups_xml(self):
         """Call ``GET /groups`` (xml data)."""
-        r = self.get('/groups', content_type='xml')
-        self.assertValidGroupListResponse(r, ref=self.group)
+        cmd_url = '/groups'
+        r = self.get(cmd_url, content_type='xml')
+        self.assertValidGroupListResponse(r, ref=self.group,
+                                          command=cmd_url)
 
     def test_get_group(self):
         """Call ``GET /groups/{group_id}``."""
@@ -829,13 +845,17 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
     def test_list_roles(self):
         """Call ``GET /roles``."""
-        r = self.get('/roles')
-        self.assertValidRoleListResponse(r, ref=self.role)
+        cmd_url = '/roles'
+        r = self.get(cmd_url)
+        self.assertValidRoleListResponse(r, ref=self.role,
+                                         command=cmd_url)
 
     def test_list_roles_xml(self):
         """Call ``GET /roles`` (xml data)."""
-        r = self.get('/roles', content_type='xml')
-        self.assertValidRoleListResponse(r, ref=self.role)
+        cmd_url = '/roles'
+        r = self.get(cmd_url, content_type='xml')
+        self.assertValidRoleListResponse(r, ref=self.role,
+                                         command=cmd_url)
 
     def test_get_role(self):
         """Call ``GET /roles/{role_id}``."""

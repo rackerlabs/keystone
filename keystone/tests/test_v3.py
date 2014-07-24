@@ -503,10 +503,13 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         self.assertIsNotNone(resp['error'].get('message'))
         self.assertEqual(int(resp['error']['code']), r.status_code)
 
-    def assertValidListLinks(self, links):
+    def assertValidListLinks(self, links, command=None):
         self.assertIsNotNone(links)
         self.assertIsNotNone(links.get('self'))
         self.assertThat(links['self'], matchers.StartsWith('http://localhost'))
+
+        if command:
+            self.assertThat(links['self'], matchers.EndsWith(command))
 
         self.assertIn('next', links)
         if links['next'] is not None:
@@ -519,7 +522,8 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
                             matchers.StartsWith('http://localhost'))
 
     def assertValidListResponse(self, resp, key, entity_validator, ref=None,
-                                expected_length=None, keys_to_check=None):
+                                expected_length=None, keys_to_check=None,
+                                command=None):
         """Make assertions common to all API list responses.
 
         If a reference is provided, it's ID will be searched for in the
@@ -536,7 +540,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             self.assertNotEmpty(entities)
 
         # collections should have relational links
-        self.assertValidListLinks(resp.result.get('links'))
+        self.assertValidListLinks(resp.result.get('links'), command=command)
 
         for entity in entities:
             self.assertIsNotNone(entity)
