@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_f9966cee",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-24T01:50:09Z",
+      "side": 1,
+      "message": "This needs to be knocked back to DEBUG.",
+      "revId": "63c37baaed40f930a367e33a231b537098cfaa11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
