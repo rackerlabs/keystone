@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_179e8007",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2985,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-07-24T08:50:38Z",
+      "side": 1,
+      "message": "Here is the same with \"grant_url\", we can use \"grant_url\" instead.",
+      "revId": "9a40c92a3f561470dea13ce844133604a630df87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_7705fc13",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3063,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-07-24T08:50:38Z",
+      "side": 1,
+      "message": "We can use token \u003d self.get_requested_token(auth_data) instead.",
+      "revId": "9a40c92a3f561470dea13ce844133604a630df87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_220b4425",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3083,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-07-24T08:50:38Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "revId": "9a40c92a3f561470dea13ce844133604a630df87",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
