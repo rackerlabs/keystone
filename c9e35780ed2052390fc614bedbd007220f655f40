@@ -50,6 +50,23 @@
       "revId": "c9e35780ed2052390fc614bedbd007220f655f40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_aed4a5e9",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-07-24T06:24:30Z",
+      "side": 1,
+      "message": "What about an additional test which validates that space is not empty.\n\ndef test_space_is_not_empty(self):\n    self.assertFalse(utils.is_empty(\" \"))",
+      "revId": "c9e35780ed2052390fc614bedbd007220f655f40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
