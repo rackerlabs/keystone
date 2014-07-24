@@ -16,6 +16,24 @@
       "revId": "eccff93616fcda14a8e193422d50e24156480580",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4e24c5c5",
+        "filename": "keystone/tests/unit/token/test_token_persistence_proxy.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-24T22:34:48Z",
+      "side": 1,
+      "message": "Just as the comment says, we can\u0027t re-initialize the backend, it was already initialized as part of setup, so to re-instantiate we need to clear it. I can update the comment if that would help.\n\nMemcache is a *very* light wrapper to the KVS backend (as in, it says \"use dogpile\u0027s memcache backend\" and thats about it).",
+      "parentUuid": "baada198_2e36b151",
+      "revId": "eccff93616fcda14a8e193422d50e24156480580",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
