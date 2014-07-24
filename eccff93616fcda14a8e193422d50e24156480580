@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_2e36b151",
+        "filename": "keystone/tests/unit/token/test_token_persistence_proxy.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-24T22:20:23Z",
+      "side": 1,
+      "message": "This may be a dumb question, but it isn\u0027t immediately obvious why we are re-instantiating the kvs backend here, for the memcache driver.  At first blush, it looks like a copy \u0026 paste error form the previous method...but I\u0027m sure you\u0027ll enlighten me as to why it\u0027s not...:-)",
+      "revId": "eccff93616fcda14a8e193422d50e24156480580",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
