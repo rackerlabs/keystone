@@ -51,6 +51,24 @@
       "revId": "3bccad449ce8a649ac92d7141f7355f4d13a4155",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e9c033e2",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-24T23:07:59Z",
+      "side": 1,
+      "message": "This is unit tested: \n\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/test_keystoneclient.py#L1051-L1081\n\nThis extension is only around to change passwords (v2.0), we do test it and make sure the new token in-fact works.",
+      "parentUuid": "baada198_3e88a6c5",
+      "revId": "3bccad449ce8a649ac92d7141f7355f4d13a4155",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
