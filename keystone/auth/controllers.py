@@ -344,7 +344,7 @@ class AuthInfo(object):
         self._scope_data = (domain_id, project_id, trust)
 
 
-@dependency.requires('assignment_api', 'identity_api', 'token_api',
+@dependency.requires('assignment_api', 'identity_api', 'token_provider_api',
                      'token_provider_api', 'trust_api')
 class Auth(controller.V3Controller):
 
@@ -525,7 +525,7 @@ class Auth(controller.V3Controller):
     def revocation_list(self, context, auth=None):
         if not CONF.token.revoke_by_id:
             raise exception.Gone()
-        tokens = self.token_api.list_revoked_tokens()
+        tokens = self.token_provider_api.list_revoked_tokens()
 
         for t in tokens:
             expires = t['expires']
