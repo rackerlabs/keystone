@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_e5f94183",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-24T17:51:52Z",
+      "side": 1,
+      "message": "the user*",
+      "revId": "824229eed85dadd13d735a03e3f3ebf55b4140d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_a55f4974",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-24T17:51:52Z",
+      "side": 1,
+      "message": "nit: add a comma after \u0027this\u0027.\n\n    # If we hit this,",
+      "revId": "824229eed85dadd13d735a03e3f3ebf55b4140d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_05ac759e",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-24T17:51:52Z",
+      "side": 1,
+      "message": "use LOG instead.",
+      "revId": "824229eed85dadd13d735a03e3f3ebf55b4140d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
