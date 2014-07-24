@@ -16,6 +16,24 @@
       "revId": "488197a89b850edd6bfa665e39811825923aca0e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_eebaf9be",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1530,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-24T22:16:39Z",
+      "side": 1,
+      "message": "So the new sql assignment driver does already provide this call, so I think we are good there.\n\nAgree that this test should go into test_backend.py....and with a skip in the kvs backend tests, since kvs will now be the only one that does not supper it.",
+      "parentUuid": "baada198_5d0b9d2a",
+      "revId": "488197a89b850edd6bfa665e39811825923aca0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
