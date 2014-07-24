@@ -34,6 +34,24 @@
       "revId": "eccff93616fcda14a8e193422d50e24156480580",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_a92c7b94",
+        "filename": "keystone/tests/unit/token/test_token_persistence_proxy.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-24T22:37:58Z",
+      "side": 1,
+      "message": "I think the info that memcache is a light wrapper to the KVS backend is the missing info in the comment - with that, I\u0027m good to go.",
+      "parentUuid": "baada198_4e24c5c5",
+      "revId": "eccff93616fcda14a8e193422d50e24156480580",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
