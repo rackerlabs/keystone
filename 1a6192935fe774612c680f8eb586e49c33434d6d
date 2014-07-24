@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_da3984f3",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3171,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-24T13:56:30Z",
+      "side": 1,
+      "message": "Originally that was the plan, but it really looks much worse. I\u0027ll consolidate it to an assert method so we don\u0027t have as much change, but it really isn\u0027t any better to read because it ends up looking like:\n\n    revoked_tokens_from_token_provider_api \u003d [\n        x[\u0027id\u0027] for x in self.token_provider_api.list_revoked_tokens()]\n    self.assertEqual(revoked_ids,\n                     revoked_tokens_from_token_provider)",
+      "parentUuid": "baada198_8ee361a3",
+      "revId": "1a6192935fe774612c680f8eb586e49c33434d6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_ce9399fe",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 3
