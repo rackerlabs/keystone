@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_e6488b8c",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-07-24T01:13:15Z",
+      "side": 1,
+      "message": "typo, disable should be disabled",
+      "revId": "4b7a2d796fa5894413489d426449416a719f3290",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
