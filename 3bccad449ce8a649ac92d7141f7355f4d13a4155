@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_59abb4d5",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-24T19:15:15Z",
+      "side": 1,
+      "message": "Good to see now there is a consistent token model to retrieve data regardless of version",
+      "revId": "3bccad449ce8a649ac92d7141f7355f4d13a4155",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_886edc62",
         "filename": "keystone/contrib/user_crud/core.py",
         "patchSetId": 3
@@ -13,6 +30,24 @@
       "writtenOn": "2014-07-24T18:06:20Z",
       "side": 1,
       "message": "Can this be unit tested?",
+      "revId": "3bccad449ce8a649ac92d7141f7355f4d13a4155",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3e88a6c5",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1091
+      },
+      "writtenOn": "2014-07-24T19:15:15Z",
+      "side": 1,
+      "message": "++\nNot sure where the extension tests are maintained.",
+      "parentUuid": "baada198_886edc62",
       "revId": "3bccad449ce8a649ac92d7141f7355f4d13a4155",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
