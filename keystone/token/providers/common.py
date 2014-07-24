@@ -517,10 +517,16 @@ class BaseProvider(provider.Provider):
             if version == provider.V3:
                 user_id = token['user']['id']
                 expires_at = token['expires']
+                project_id = (token.get('tenant') or {}).get('id')
+                domain_id = None  # FIXME(blk-u): ??
             elif version == provider.V2:
                 user_id = token['user_id']
                 expires_at = token['expires']
-            self.revoke_api.revoke_by_expiration(user_id, expires_at)
+                project_id = None  # FIXME(blk-u): ??
+                domain_id = None  # A V2 token can't be scoped to a domain.
+            self.revoke_api.revoke_by_expiration(user_id, expires_at,
+                                                 project_id=project_id,
+                                                 domain_id=domain_id)
 
         if CONF.token.revoke_by_id:
             self.token_api.delete_token(token_id=token_id)
