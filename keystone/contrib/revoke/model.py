@@ -19,6 +19,7 @@ _NAMES = ['trust_id',
           'access_token_id',
           'expires_at',
           'domain_id',
+          'domain_scope_id',
           'project_id',
           'user_id',
           'role_id']
@@ -65,7 +66,9 @@ class RevokeEvent(object):
         keys = ['user_id',
                 'role_id',
                 'domain_id',
-                'project_id']
+                'project_id',
+                'domain_scope_id',
+                ]
         event = dict((key, self.__dict__[key]) for key in keys
                      if self.__dict__[key] is not None)
         if self.trust_id is not None:
@@ -174,8 +177,9 @@ class RevokeTree(object):
         # Alternative names to be checked in token for every field in
         # revoke tree.
         alternatives = {
-            'user_id': ['user_id', 'trustor_id', 'trustee_id'],
-            'domain_id': ['identity_domain_id', 'assignment_domain_id'],
+            'user_id': ['user_id', 'trustor_id', 'trustee_id', ],
+            'domain_id': ['identity_domain_id', 'assignment_domain_id', ],
+            'domain_scope_id': ['assignment_domain_id', ]
         }
         # Contains current forest (collection of trees) to be checked.
         partial_matches = [self.revoke_map]
@@ -285,7 +289,12 @@ def build_token_values(token_data):
         token_values['assignment_domain_id'] = project['domain']['id']
     else:
         token_values['project_id'] = None
-        token_values['assignment_domain_id'] = None
+
+        domain = token_data.get('domain')
+        if domain is not None:
+            token_values['assignment_domain_id'] = domain['id']
+        else:
+            token_values['assignment_domain_id'] = None
 
     role_list = []
     roles = token_data.get('roles')
