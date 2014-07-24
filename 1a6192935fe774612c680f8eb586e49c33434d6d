@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_71fb3abe",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3171,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-24T15:15:12Z",
+      "side": 1,
+      "message": "I would rename the variables `revoked_ids` and  `revoked_tokens_from_token_provider` to `revoked_tokens_from_token_api` and `revoked_token_ids_from_token_provider_api`, respectively. That way you have:\n\nself.assertEquals(revoked_token_ids_from_token_api,\n                          revoked_tokens_ids_from_token_provider_api)",
+      "parentUuid": "baada198_da3984f3",
+      "revId": "1a6192935fe774612c680f8eb586e49c33434d6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_ce9399fe",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 3
