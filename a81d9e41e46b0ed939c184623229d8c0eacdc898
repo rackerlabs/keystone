@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_6e38cd3b",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2014-07-24T06:26:17Z",
+      "side": 1,
+      "message": "Just a typo here, \u0027required list\u0027",
+      "revId": "a81d9e41e46b0ed939c184623229d8c0eacdc898",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
