@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_886edc62",
+        "filename": "keystone/contrib/user_crud/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-24T18:06:20Z",
+      "side": 1,
+      "message": "Can this be unit tested?",
+      "revId": "3bccad449ce8a649ac92d7141f7355f4d13a4155",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
