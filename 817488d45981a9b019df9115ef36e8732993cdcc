@@ -50,6 +50,23 @@
       "revId": "817488d45981a9b019df9115ef36e8732993cdcc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_c26276ac",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 526,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-24T16:08:51Z",
+      "side": 1,
+      "message": "not quite sure about the word \u0027command\u0027...maybe \u0027request_url\u0027?",
+      "revId": "817488d45981a9b019df9115ef36e8732993cdcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
