@@ -37,9 +37,10 @@ class Provider(common.BaseProvider):
             # produces unicode.  This can be removed if the client returns
             # str()
             # TODO(ayoung): Make to a byte_str for Python3
-            token_id = str(cms.cms_sign_token(jsonutils.dumps(token_data),
-                                              CONF.signing.certfile,
-                                              CONF.signing.keyfile))
+            token_id = str(cms.cms_sign_token(
+                jsonutils.dumps(token_data, separators=(',', ':')),
+                CONF.signing.certfile,
+                CONF.signing.keyfile))
             return token_id
         except environment.subprocess.CalledProcessError:
             LOG.exception(_('Unable to sign token'))
