@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_7a3e9c2a",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-25T04:38:16Z",
+      "side": 1,
+      "message": "In next patch, resolved.",
+      "parentUuid": "baada198_973b4937",
+      "revId": "1f502786bceadc7d54dee14f96e608968c864923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_b744cdb8",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 9
@@ -65,6 +83,24 @@
       "writtenOn": "2014-07-25T03:54:25Z",
       "side": 1,
       "message": "same as above?\n\nalso, if you have a domain object, then [\u0027id\u0027] or 500",
+      "revId": "1f502786bceadc7d54dee14f96e608968c864923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ba44b4b8",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-25T04:38:16Z",
+      "side": 1,
+      "message": "In next patch.",
+      "parentUuid": "baada198_b744cdb8",
       "revId": "1f502786bceadc7d54dee14f96e608968c864923",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -106,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_da4168a7",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-25T04:38:16Z",
+      "side": 1,
+      "message": "Done in next patch, always check scoped property first.",
+      "parentUuid": "baada198_5a6f18c4",
+      "revId": "1f502786bceadc7d54dee14f96e608968c864923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_f711e5af",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 9
@@ -135,6 +189,24 @@
       "side": 1,
       "message": "What if this is a project scoped token?",
       "parentUuid": "baada198_f711e5af",
+      "revId": "1f502786bceadc7d54dee14f96e608968c864923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3a08a47f",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-25T04:38:16Z",
+      "side": 1,
+      "message": "same as above",
+      "parentUuid": "baada198_3a6a64b5",
       "revId": "1f502786bceadc7d54dee14f96e608968c864923",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -176,6 +248,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_7a25bc08",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-25T04:38:16Z",
+      "side": 1,
+      "message": "same as above",
+      "parentUuid": "baada198_7a405c35",
+      "revId": "1f502786bceadc7d54dee14f96e608968c864923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_171739a4",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 9
@@ -205,6 +295,24 @@
       "side": 1,
       "message": "Same as 106",
       "parentUuid": "baada198_171739a4",
+      "revId": "1f502786bceadc7d54dee14f96e608968c864923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9a2290ff",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-25T04:38:16Z",
+      "side": 1,
+      "message": "same as above",
+      "parentUuid": "baada198_ba46744e",
       "revId": "1f502786bceadc7d54dee14f96e608968c864923",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
