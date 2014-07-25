@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_7cb5a3ce",
+        "filename": "keystone/common/sql/migrate_repo/versions/052_add_auth_url_to_region.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-25T16:31:31Z",
+      "side": 1,
+      "message": "Why do we delete regions with an auth url during downgrade? I know that the older version of the region table did not have the URL column but I\u0027m always worried when we silently delete data.",
+      "revId": "25c5b5e20497cd574ab9c4501799530974b66517",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
