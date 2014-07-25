@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_82ee851f",
+        "filename": "keystone/tests/unit/token/test_token_model.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-25T22:20:13Z",
+      "side": 1,
+      "message": "we already asserted this in line 79",
+      "revId": "2e029f545e15325bac0cd2693b43ee07502502ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_a2f38907",
+        "filename": "keystone/tests/unit/token/test_token_model.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-25T22:20:13Z",
+      "side": 1,
+      "message": "we already asserted this on line 149",
+      "revId": "2e029f545e15325bac0cd2693b43ee07502502ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
