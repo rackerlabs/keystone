@@ -34,6 +34,24 @@
       "revId": "b87bbc2c48c2c7cd3cd8b2ffb55379cc25b1d418",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_995a9380",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-07-25T12:01:17Z",
+      "side": 1,
+      "message": "You are right Henry but, the self.assertThat() line works in different way between LDAP and SQL, because this assert works fine in LDAP and it does not work in SQL, so, the behavior of get_roles_for_group function is different when you use only group_ids and domain_id parameters.\n\nYou can see in the log file [1] that the problem (I think) is on SQL backend.\n\n[1] - http://logs.openstack.org/44/102244/4/check/gate-keystone-python26/930e0a6/console.html",
+      "parentUuid": "baada198_537d3ae6",
+      "revId": "b87bbc2c48c2c7cd3cd8b2ffb55379cc25b1d418",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
