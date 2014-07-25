@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_cb5a6381",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-25T19:27:29Z",
+      "side": 1,
+      "message": "Nice comment. \n\nUse \"NOTE(username):\" similar to line 379",
+      "revId": "aa0f2ac62e9415b63661c22163794fc103dff0ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_5d5d36eb",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 950,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-25T19:27:29Z",
+      "side": 1,
+      "message": "We are checking that underneath the covers trust_api.consume_use is not called when get_token fails, correct? In which case, perhaps rename the method:\n\ntest_do_not_consume_use_when_get_token_fails",
+      "revId": "aa0f2ac62e9415b63661c22163794fc103dff0ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_fd3a8a32",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 968,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-25T19:27:29Z",
+      "side": 1,
+      "message": "I would vote on using a literal integer for the expected value and remove the existing trust variable defined on line 966.",
+      "revId": "aa0f2ac62e9415b63661c22163794fc103dff0ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_bd0f32df",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3150,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-25T19:27:29Z",
+      "side": 1,
+      "message": "Similar to previous comment. Rename to:\n\ntest_do_not_consume_use_when_get_token_fails",
+      "revId": "aa0f2ac62e9415b63661c22163794fc103dff0ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_bdfe5268",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3175,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-25T19:27:29Z",
+      "side": 1,
+      "message": "I would vote on using a literal integer for the expected value",
+      "revId": "aa0f2ac62e9415b63661c22163794fc103dff0ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3d2c0293",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-25T19:27:29Z",
+      "side": 1,
+      "message": "Add NOTE(username):",
+      "revId": "aa0f2ac62e9415b63661c22163794fc103dff0ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
