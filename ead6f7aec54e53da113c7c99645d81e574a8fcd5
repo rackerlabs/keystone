@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_4a03c30c",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1257,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-25T09:15:57Z",
+      "side": 1,
+      "message": "is there a reason we don\u0027t include the test here?",
+      "revId": "ead6f7aec54e53da113c7c99645d81e574a8fcd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6a1b276f",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1772,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-25T09:15:57Z",
+      "side": 1,
+      "message": "and here (and the other calls in this method)?",
+      "revId": "ead6f7aec54e53da113c7c99645d81e574a8fcd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0a154b3c",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1882,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-25T09:15:57Z",
+      "side": 1,
+      "message": "and here?",
+      "revId": "ead6f7aec54e53da113c7c99645d81e574a8fcd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
