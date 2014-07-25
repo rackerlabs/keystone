@@ -80,7 +80,7 @@ class Driver(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def get_trust(self, trust_id):
+    def get_trust(self, trust_id, deleted=False):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
