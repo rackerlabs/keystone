@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_733cfe92",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1772,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-25T10:59:06Z",
+      "side": 1,
+      "message": "ahh, right - got it.  It might be sensible to add a TODO here, which references the bug, so that people can see you plan to come back and add this.  Same for the one further down.",
+      "parentUuid": "baada198_2d8ea927",
+      "revId": "ead6f7aec54e53da113c7c99645d81e574a8fcd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_0a154b3c",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 3
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "Wouldn\u0027t work because of the bug 1195037 (\"Self\" link in v3 collections omits any url filters), this test will be updated as part of that fix.",
       "parentUuid": "baada198_0a154b3c",
+      "revId": "ead6f7aec54e53da113c7c99645d81e574a8fcd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b3493634",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1882,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-25T10:59:06Z",
+      "side": 1,
+      "message": "as above",
+      "parentUuid": "baada198_4dbafdc0",
       "revId": "ead6f7aec54e53da113c7c99645d81e574a8fcd5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
