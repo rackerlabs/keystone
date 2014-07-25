@@ -16,6 +16,24 @@
       "revId": "b87bbc2c48c2c7cd3cd8b2ffb55379cc25b1d418",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_537d3ae6",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-25T11:09:06Z",
+      "side": 1,
+      "message": "Isn\u0027t an empty list the right answer?  You have not assigned any role for this group to the domain....",
+      "parentUuid": "baada198_384c2576",
+      "revId": "b87bbc2c48c2c7cd3cd8b2ffb55379cc25b1d418",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
