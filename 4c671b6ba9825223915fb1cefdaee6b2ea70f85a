@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_7a713c76",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-25T04:33:43Z",
+      "side": 1,
+      "message": "We\u0027re not creating/rebuilding configuration files right? These are SSL certificates and keys.",
+      "revId": "4c671b6ba9825223915fb1cefdaee6b2ea70f85a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_7af85cc4",
+        "filename": "keystone/cli.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-25T04:33:43Z",
+      "side": 1,
+      "message": "Same issue with using \u0027configuration files\u0027. What is Certificate_setup?",
+      "revId": "4c671b6ba9825223915fb1cefdaee6b2ea70f85a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_dafb28bc",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-25T04:33:43Z",
+      "side": 1,
+      "message": "What happens when this fails? Seems like it would result in a traceback.",
+      "revId": "4c671b6ba9825223915fb1cefdaee6b2ea70f85a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9ae37004",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-25T04:33:43Z",
+      "side": 1,
+      "message": "This else block can be deleted since the code will naturally go to the top of the loop anyway.",
+      "revId": "4c671b6ba9825223915fb1cefdaee6b2ea70f85a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_7ae69c17",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-25T04:33:43Z",
+      "side": 1,
+      "message": "Why are we keeping a count? This could simply be a boolean and then instead or the +1 on line 95 you can return.\n\nThe other option is to keep a list of files that already exist so you can print them out, but I suspect that if they have one the have them all.",
+      "revId": "4c671b6ba9825223915fb1cefdaee6b2ea70f85a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1abf60d1",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-25T04:33:43Z",
+      "side": 1,
+      "message": "I agree with Lance that this should be a LOG statement. Maybe a LOG.error?\n\nThis is just a thought....looking for core dev input...\nMaybe one of the things that needs to happen is that this actually raises an exception and the print happens in bin/keystone-manage. I\u0027m a little uncomfortable having a print in \"library\" code.",
+      "revId": "4c671b6ba9825223915fb1cefdaee6b2ea70f85a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
