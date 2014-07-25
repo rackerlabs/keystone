@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_42b9cdea",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1232,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-25T22:28:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_6427e563",
+      "revId": "76b238add247a8beaac6ab182871e8ea631468c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_24d88d52",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-25T02:20:39Z",
       "side": 1,
       "message": "there\u0027s a shortcut for this if you want it - i think:\n\n  unscoped_token \u003d self.get_requested_token(self.build_authentication_request(...))",
+      "revId": "76b238add247a8beaac6ab182871e8ea631468c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_62bed1d5",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1241,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-25T22:28:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_24d88d52",
       "revId": "76b238add247a8beaac6ab182871e8ea631468c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_42a0eda4",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1294,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-25T22:28:54Z",
+      "side": 1,
+      "message": "It is actually used in other places and it was before this change. :(",
+      "parentUuid": "baada198_df45c844",
+      "revId": "76b238add247a8beaac6ab182871e8ea631468c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_e4c0554c",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2014-07-25T02:20:39Z",
       "side": 1,
       "message": "open and close on one line if you\u0027re going to do that",
+      "revId": "76b238add247a8beaac6ab182871e8ea631468c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e2c9017a",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1297,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-25T22:28:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_e4c0554c",
       "revId": "76b238add247a8beaac6ab182871e8ea631468c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
