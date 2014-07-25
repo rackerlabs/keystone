@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "baada198_df45c844",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1294,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-25T13:58:43Z",
+      "side": 1,
+      "message": "Is this something that could be put into a common place? Might be useful for other cases too. \n\nOr we can move it there once we start using it in other places.",
+      "revId": "76b238add247a8beaac6ab182871e8ea631468c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_e4c0554c",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 4
@@ -64,6 +81,24 @@
       "writtenOn": "2014-07-25T02:20:39Z",
       "side": 1,
       "message": "wtf",
+      "revId": "76b238add247a8beaac6ab182871e8ea631468c0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3fd40446",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1338,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-25T13:58:43Z",
+      "side": 1,
+      "message": "so... revoke doesn\u0027t work for v2... at all?",
+      "parentUuid": "baada198_a491fd53",
       "revId": "76b238add247a8beaac6ab182871e8ea631468c0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
