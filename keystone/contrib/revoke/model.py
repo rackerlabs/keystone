@@ -56,6 +56,11 @@ class RevokeEvent(object):
         for k in REVOKE_KEYS:
             v = kwargs.get(k, None)
             setattr(self, k, v)
+        if self.domain_id and self.expires_at:
+            self.domain_scope_id = self.domain_id
+            self.domain_id = None
+        else:
+            self.domain_scope_id = None
         if self.revoked_at is None:
             self.revoked_at = timeutils.utcnow()
         if self.issued_before is None:
@@ -65,7 +70,9 @@ class RevokeEvent(object):
         keys = ['user_id',
                 'role_id',
                 'domain_id',
-                'project_id']
+                'domain_scope_id',
+                'project_id',
+                ]
         event = dict((key, self.__dict__[key]) for key in keys
                      if self.__dict__[key] is not None)
         if self.trust_id is not None:
@@ -87,7 +94,7 @@ class RevokeEvent(object):
 
 
 def attr_keys(event):
-    return map(event.key_for_name, _NAMES)
+    return map(event.key_for_name, _NAMES + ['domain_scope_id'])
 
 
 class RevokeTree(object):
@@ -176,11 +183,17 @@ class RevokeTree(object):
         alternatives = {
             'user_id': ['user_id', 'trustor_id', 'trustee_id'],
             'domain_id': ['identity_domain_id', 'assignment_domain_id'],
+            'domain_scope_id': ['assignment_domain_id', ],
         }
+
+        if self.revoke_map:
+            import pdb
+            pdb.set_trace()
+
         # Contains current forest (collection of trees) to be checked.
         partial_matches = [self.revoke_map]
         # We iterate over every layer of our revoke tree (except the last one).
-        for name in _NAMES:
+        for name in (_NAMES + ['domain_scope_id']):
             # bundle is the set of partial matches for the next level down
             # the tree
             bundle = []
@@ -285,7 +298,12 @@ def build_token_values(token_data):
         token_values['assignment_domain_id'] = project['domain']['id']
     else:
         token_values['project_id'] = None
-        token_values['assignment_domain_id'] = None
+
+        domain = token_data.get('domain')
+        if domain is not None:
+            token_values['assignment_domain_id'] = domain['id']
+        else:
+            token_values['assignment_domain_id'] = None
 
     role_list = []
     roles = token_data.get('roles')
