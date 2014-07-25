@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_edebd1da",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1257,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-07-25T09:59:36Z",
+      "side": 1,
+      "message": "Missed this place, thanks",
+      "parentUuid": "baada198_4a03c30c",
+      "revId": "ead6f7aec54e53da113c7c99645d81e574a8fcd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_6a1b276f",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_2d8ea927",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1772,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-07-25T09:59:36Z",
+      "side": 1,
+      "message": "Wouldn\u0027t work because of the bug 1195037 (\"Self\" link in v3 collections omits any url filters), this test will be updated as part of that fix.",
+      "parentUuid": "baada198_6a1b276f",
+      "revId": "ead6f7aec54e53da113c7c99645d81e574a8fcd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_0a154b3c",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2014-07-25T09:15:57Z",
       "side": 1,
       "message": "and here?",
+      "revId": "ead6f7aec54e53da113c7c99645d81e574a8fcd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4dbafdc0",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1882,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-07-25T09:59:36Z",
+      "side": 1,
+      "message": "Wouldn\u0027t work because of the bug 1195037 (\"Self\" link in v3 collections omits any url filters), this test will be updated as part of that fix.",
+      "parentUuid": "baada198_0a154b3c",
       "revId": "ead6f7aec54e53da113c7c99645d81e574a8fcd5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
