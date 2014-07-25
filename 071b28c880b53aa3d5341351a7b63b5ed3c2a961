@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "baada198_bc69fbc1",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1198,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-25T16:12:27Z",
+      "side": 1,
+      "message": "an inline comment explaining why both exceptions are possible/allowed here would be appreciated; otherwise, it just looks like it\u0027s asserting more ambiguous behavior",
+      "revId": "071b28c880b53aa3d5341351a7b63b5ed3c2a961",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_f97545cc",
         "filename": "keystone/tests/test_sql_upgrade.py",
         "patchSetId": 1
