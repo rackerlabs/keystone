@@ -85,6 +85,11 @@ def _matches(event, token_values):
         else:
             return False
 
+    # domain_scope_id matches assignment_domain_id in the token.
+    if event.domain_scope_id is not None:
+        if event.domain_scope_id != token_values['assignment_domain_id']:
+            return False
+
     # If any one check does not match, the while token does
     # not match the event. The numerous return False indicate
     # that the token is still valid and short-circuits the
