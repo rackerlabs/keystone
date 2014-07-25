@@ -128,10 +128,13 @@ class Manager(manager.Manager):
     def revoke_by_user(self, user_id):
         return self.revoke(model.RevokeEvent(user_id=user_id))
 
-    def revoke_by_expiration(self, user_id, expires_at):
+    def revoke_by_expiration(self, user_id, expires_at,
+                             domain_id=None, project_id=None):
         self.revoke(
             model.RevokeEvent(user_id=user_id,
-                              expires_at=expires_at))
+                              expires_at=expires_at,
+                              domain_id=domain_id,
+                              project_id=project_id))
 
     def revoke_by_grant(self, role_id, user_id=None,
                         domain_id=None, project_id=None):
