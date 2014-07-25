@@ -67,6 +67,24 @@
       "revId": "824229eed85dadd13d735a03e3f3ebf55b4140d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d715c13d",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-07-25T02:59:09Z",
+      "side": 1,
+      "message": "Here, we want to show clearly prompt information to the users. If use LOG, the uses do not know what happened until they check the logs.",
+      "parentUuid": "baada198_05ac759e",
+      "revId": "824229eed85dadd13d735a03e3f3ebf55b4140d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
