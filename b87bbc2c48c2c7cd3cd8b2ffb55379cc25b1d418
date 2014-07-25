@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_384c2576",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-07-25T10:14:48Z",
+      "side": 1,
+      "message": "I\u0027ve tried to achieve the comments from Dolph and Henry but here, the SQL implementation [1], returns empty list.\n\nThe error occurs when you send to assignment_api.get_roles_for_groups() function only the group list and the domain_id. In this case, the SQL implementation returns empty list. But, if you send the group list and tenant_id, the SQL implementation works fine.\n\nI\u0027m still investigating this issue... maybe Henry has some clue for me.\n\n[1] - https://github.com/openstack/keystone/blob/master/keystone/assignment/backends/sql.py#L292",
+      "revId": "b87bbc2c48c2c7cd3cd8b2ffb55379cc25b1d418",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
