@@ -34,6 +34,24 @@
       "revId": "488197a89b850edd6bfa665e39811825923aca0e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_447d7ae6",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1530,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-07-25T08:22:53Z",
+      "side": 1,
+      "message": "Thank you for your review Dolph and Henry, I\u0027ll do it.",
+      "parentUuid": "baada198_eebaf9be",
+      "revId": "488197a89b850edd6bfa665e39811825923aca0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
