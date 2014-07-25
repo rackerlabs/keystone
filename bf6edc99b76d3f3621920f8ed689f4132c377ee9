@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_e7ebf0da",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-25T08:50:06Z",
+      "side": 1,
+      "message": "slight confusing method title to me, maybe:\n\ntest_endpoint_project_assoc_removed_when_project_deleted ?",
+      "revId": "bf6edc99b76d3f3621920f8ed689f4132c377ee9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_07e9c4e2",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-25T08:50:06Z",
+      "side": 1,
+      "message": "as above..",
+      "revId": "bf6edc99b76d3f3621920f8ed689f4132c377ee9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
