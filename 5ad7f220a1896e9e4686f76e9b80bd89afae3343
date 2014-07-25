@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_8bca446c",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-07-25T07:13:23Z",
+      "side": 1,
+      "message": "I like your patch but, with this change, Is it necessary to call self._validate_endpoint(endpoint)?. Also, Is it necessary do it in Region and Service?.\n\nI think that using @validation.validated feature is not necessary to call _validate.whatever() function, is not it?",
+      "revId": "5ad7f220a1896e9e4686f76e9b80bd89afae3343",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
