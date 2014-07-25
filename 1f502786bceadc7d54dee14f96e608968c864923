@@ -34,6 +34,142 @@
       "revId": "1f502786bceadc7d54dee14f96e608968c864923",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_973b4937",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-25T03:54:25Z",
+      "side": 1,
+      "message": "if v2, default domain?",
+      "revId": "1f502786bceadc7d54dee14f96e608968c864923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b744cdb8",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-25T03:54:25Z",
+      "side": 1,
+      "message": "same as above?\n\nalso, if you have a domain object, then [\u0027id\u0027] or 500",
+      "revId": "1f502786bceadc7d54dee14f96e608968c864923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d74141a7",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-25T03:54:25Z",
+      "side": 1,
+      "message": "[\u0027id\u0027] or let it raise 500",
+      "revId": "1f502786bceadc7d54dee14f96e608968c864923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f711e5af",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-25T03:54:25Z",
+      "side": 1,
+      "message": "[\u0027name\u0027]",
+      "revId": "1f502786bceadc7d54dee14f96e608968c864923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_570d318e",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-25T03:54:25Z",
+      "side": 1,
+      "message": "[\u0027id\u0027]",
+      "revId": "1f502786bceadc7d54dee14f96e608968c864923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_171739a4",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-25T03:54:25Z",
+      "side": 1,
+      "message": "[\u0027id\u0027] - there\u0027s more places where you shouldn\u0027t need to be defensive, i\u0027m going to stop pointing them out",
+      "revId": "1f502786bceadc7d54dee14f96e608968c864923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b7edadba",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-25T03:54:25Z",
+      "side": 1,
+      "message": "same as below - this is an issue in a few places",
+      "revId": "1f502786bceadc7d54dee14f96e608968c864923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_97f42988",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-25T03:54:25Z",
+      "side": 1,
+      "message": "if this is a domain-scoped token, i\u0027ll get back an empty dict instead of None or a string",
+      "revId": "1f502786bceadc7d54dee14f96e608968c864923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
