@@ -1224,6 +1224,35 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
         # Make sure that we get a NotFound(404) when heading that role.
         self.head(role_path, expected_status=404)
 
+    def get_v2_token(self):
+        body = {
+            'auth': {
+                'passwordCredentials': {
+                    'username': self.default_domain_user['name'],
+                    'password': self.default_domain_user['password'],
+                }
+            },
+        }
+
+        r = self.admin_request(method='POST', path='/v2.0/tokens', body=body)
+        return r.json_body['access']['token']['id']
+
+    def test_revoke_v2_token_no_check(self):
+        # Test that a V2 token can be revoked without validating it first.
+
+        # NOTE(blk-u): This doesn't work right. The token should be invalid
+        # after being revoked but it's not. See bug 1348820.
+
+        token = self.get_v2_token()
+
+        self.delete('/auth/tokens',
+                    headers={'X-Subject-Token': token},
+                    expected_status=204)
+
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': token},
+                  expected_status=200)  # FIXME(blk-u): This should be 404
+
 
 @dependency.requires('revoke_api')
 class TestTokenRevokeApi(TestTokenRevokeById):
@@ -1285,18 +1314,6 @@ class TestTokenRevokeApi(TestTokenRevokeById):
         events_response = self.get('/OS-REVOKE/events',
                                    expected_status=200).json_body
         self.assertValidRevokedTokenResponse(events_response, self.user['id'])
-
-    def get_v2_token(self):
-        body = {
-            'auth': {
-                'passwordCredentials': {
-                    'username': self.default_domain_user['name'],
-                    'password': self.default_domain_user['password'],
-                },
-            },
-        }
-        r = self.admin_request(method='POST', path='/v2.0/tokens', body=body)
-        return r.json_body['access']['token']['id']
 
     def test_revoke_v2_token(self):
         token = self.get_v2_token()
