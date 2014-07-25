@@ -85,6 +85,11 @@ def _matches(event, token_values):
         else:
             return False
 
+    # domain_scope_id matches assignment_domain_id in the token.
+    if event.domain_scope_id is not None:
+        if event.domain_scope_id != token_values['assignment_domain_id']:
+            return False
+
     # If any one check does not match, the while token does
     # not match the event. The numerous return False indicate
     # that the token is still valid and short-circuits the
@@ -255,10 +260,13 @@ class RevokeTreeTests(tests.TestCase):
         return self.tree.add_event(
             model.RevokeEvent(user_id=user_id))
 
-    def _revoke_by_expiration(self, user_id, expires_at):
+    def _revoke_by_expiration(self, user_id, expires_at, project_id=None,
+                              domain_id=None):
         event = self.tree.add_event(
             model.RevokeEvent(user_id=user_id,
-                              expires_at=expires_at))
+                              expires_at=expires_at,
+                              project_id=project_id,
+                              domain_id=domain_id))
         self.events.append(event)
         return event
 
@@ -340,6 +348,40 @@ class RevokeTreeTests(tests.TestCase):
 
         self.removeEvent(event)
         self._assertTokenNotRevoked(token_data_1)
+
+    def test_by_user_project(self):
+        # When a user has a project-scoped token and the project-scoped token
+        # is revoked then the token is revoked.
+
+        user_id = _new_id()
+        project_id = _new_id()
+
+        future_time = _future_time()
+
+        token_data = _sample_blank_token()
+        token_data['user_id'] = user_id
+        token_data['project_id'] = project_id
+        token_data['expires_at'] = future_time
+
+        self._revoke_by_expiration(user_id, future_time, project_id=project_id)
+        self._assertTokenRevoked(token_data)
+
+    def test_by_user_domain(self):
+        # When a user has a domain-scoped token and the domain-scoped token
+        # is revoked then the token is revoked.
+
+        user_id = _new_id()
+        domain_id = _new_id()
+
+        future_time = _future_time()
+
+        token_data = _sample_blank_token()
+        token_data['user_id'] = user_id
+        token_data['assignment_domain_id'] = domain_id
+        token_data['expires_at'] = future_time
+
+        self._revoke_by_expiration(user_id, future_time, domain_id=domain_id)
+        self._assertTokenRevoked(token_data)
 
     def removeEvent(self, event):
         self.events.remove(event)
