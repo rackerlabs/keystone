@@ -122,6 +122,12 @@ class Manager(manager.Manager):
     def __init__(self):
         super(Manager, self).__init__(self.get_token_provider())
 
+        # This is used by the @dependency.provider decorator to register the
+        # provider (token_provider_api) manager to listen for trust deletions.
+        self.event_callbacks = {
+            'deleted': {'OS-TRUST:trust': [self._trust_deleted_event_callback]}
+        }
+
     @property
     def persistence(self):
         # NOTE(morganfainberg): This should not be handled via __init__ to
@@ -401,6 +407,13 @@ class Manager(manager.Manager):
 
         if CONF.token.revoke_by_id:
             self.persistence.delete_token(token_id=token_id)
+
+    def _trust_deleted_event_callback(self, service, resource_type, operation,
+                                      payload):
+        trust_id = payload['resource_info']
+        trust = self.trust_api.get_trust(trust_id, deleted=True)
+        self.persistence.delete_tokens(user_id=trust['trustor_user_id'],
+                                       trust_id=trust_id)
 
 
 @six.add_metaclass(abc.ABCMeta)
