@@ -1298,6 +1298,18 @@ class TestTokenRevokeApi(TestTokenRevokeById):
         r = self.admin_request(method='POST', path='/v2.0/tokens', body=body)
         return r.json_body['access']['token']['id']
 
+    def test_issued_at_time_stays_consistent_on_get(self):
+        # Grab a v2.0 token
+        token = self.get_v2_token
+        issued_at_time = token['issued_at']
+        headers = {'X-Subject-Token': token}
+        # Validate with /v3/auth/tokens/
+        token_on_get = self.get('/auth/tokens', headers=headers,
+                expected_status=200)
+        issued_at_time_on_get = token_on_get['issued_at']
+        # Make sure the 'issued_at' time for the token doesn't change on GET
+        self.assertEqual(issued_at_time, issued_at_time_on_get)
+
     def test_revoke_v2_token(self):
         token = self.get_v2_token()
         headers = {'X-Subject-Token': token}
