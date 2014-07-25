@@ -16,6 +16,24 @@
       "revId": "62785936e830db0e8f733e1aac2d231e404eda86",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_90734fe6",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-07-25T06:52:26Z",
+      "side": 1,
+      "message": "I think is_valid_url() function could be used in other functions, for example, in update_endpoint.\n\nBut..., (maybe) could be a good idea move this snippet into _validate_endpoint() function?",
+      "parentUuid": "baada198_815b4e85",
+      "revId": "62785936e830db0e8f733e1aac2d231e404eda86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
