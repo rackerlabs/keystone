@@ -34,6 +34,24 @@
       "revId": "25c5b5e20497cd574ab9c4501799530974b66517",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_90e176d2",
+        "filename": "keystone/common/sql/migrate_repo/versions/052_add_auth_url_to_region.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-25T18:24:33Z",
+      "side": 1,
+      "message": "I would vote on dropping the column. The issue for me deleting the row is you could end up with dangling references in endpoint.region or am I missing something?",
+      "parentUuid": "baada198_3ca5eb47",
+      "revId": "25c5b5e20497cd574ab9c4501799530974b66517",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
