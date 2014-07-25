@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_24032677",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 894,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-25T08:30:53Z",
+      "side": 1,
+      "message": "we can drop this line now...this is what you are doing inside the assertValidXYZListResponse....",
+      "revId": "4263f1b8e5cae7eb9da08f91c8e77175b5821413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_64f99e81",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 936,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-25T08:30:53Z",
+      "side": 1,
+      "message": "as above",
+      "revId": "4263f1b8e5cae7eb9da08f91c8e77175b5821413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_84feb268",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 976,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-25T08:30:53Z",
+      "side": 1,
+      "message": "as above",
+      "revId": "4263f1b8e5cae7eb9da08f91c8e77175b5821413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e4eccebe",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1017,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-25T08:30:53Z",
+      "side": 1,
+      "message": "as above",
+      "revId": "4263f1b8e5cae7eb9da08f91c8e77175b5821413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_c43a6a33",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1082,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-25T08:30:53Z",
+      "side": 1,
+      "message": "as above",
+      "revId": "4263f1b8e5cae7eb9da08f91c8e77175b5821413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_a424960e",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1179,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-25T08:30:53Z",
+      "side": 1,
+      "message": "as above",
+      "revId": "4263f1b8e5cae7eb9da08f91c8e77175b5821413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
