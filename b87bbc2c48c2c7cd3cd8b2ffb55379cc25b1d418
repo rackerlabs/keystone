@@ -52,6 +52,24 @@
       "revId": "b87bbc2c48c2c7cd3cd8b2ffb55379cc25b1d418",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ce528035",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-07-25T12:56:57Z",
+      "side": 1,
+      "message": "Henry, what do you think if I copy this test to test_backend_sql and make the appropriate changes to make it works in test_backend and test_backend_sql?",
+      "parentUuid": "baada198_537d3ae6",
+      "revId": "b87bbc2c48c2c7cd3cd8b2ffb55379cc25b1d418",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
