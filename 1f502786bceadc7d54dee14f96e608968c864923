@@ -88,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_5a6f18c4",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-25T04:01:27Z",
+      "side": 1,
+      "message": "Same as line 100",
+      "parentUuid": "baada198_d74141a7",
+      "revId": "1f502786bceadc7d54dee14f96e608968c864923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_f711e5af",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 9
@@ -99,6 +117,24 @@
       "writtenOn": "2014-07-25T03:54:25Z",
       "side": 1,
       "message": "[\u0027name\u0027]",
+      "revId": "1f502786bceadc7d54dee14f96e608968c864923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3a6a64b5",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-25T04:01:27Z",
+      "side": 1,
+      "message": "What if this is a project scoped token?",
+      "parentUuid": "baada198_f711e5af",
       "revId": "1f502786bceadc7d54dee14f96e608968c864923",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -122,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_7a405c35",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-25T04:01:27Z",
+      "side": 1,
+      "message": "What if this is a domain scoped token, or a unscoped token?",
+      "parentUuid": "baada198_570d318e",
+      "revId": "1f502786bceadc7d54dee14f96e608968c864923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_171739a4",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 9
@@ -133,6 +187,24 @@
       "writtenOn": "2014-07-25T03:54:25Z",
       "side": 1,
       "message": "[\u0027id\u0027] - there\u0027s more places where you shouldn\u0027t need to be defensive, i\u0027m going to stop pointing them out",
+      "revId": "1f502786bceadc7d54dee14f96e608968c864923",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ba46744e",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-25T04:01:27Z",
+      "side": 1,
+      "message": "Same as 106",
+      "parentUuid": "baada198_171739a4",
       "revId": "1f502786bceadc7d54dee14f96e608968c864923",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
