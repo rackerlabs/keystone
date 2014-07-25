@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_c4f6df5d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-25T14:01:46Z",
+      "side": 1,
+      "message": "s/original/unscoped/",
+      "revId": "e948973d107da5b453656f0293db0d1283d2398e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
