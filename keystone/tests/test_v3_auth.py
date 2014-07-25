@@ -1240,9 +1240,6 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
     def test_revoke_v2_token_no_check(self):
         # Test that a V2 token can be revoked without validating it first.
 
-        # NOTE(blk-u): This doesn't work right. The token should be invalid
-        # after being revoked but it's not. See bug 1348820.
-
         token = self.get_v2_token()
 
         self.delete('/auth/tokens',
@@ -1251,7 +1248,7 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
 
         self.head('/auth/tokens',
                   headers={'X-Subject-Token': token},
-                  expected_status=200)  # FIXME(blk-u): This should be 404
+                  expected_status=404)
 
 
 @dependency.requires('revoke_api')
