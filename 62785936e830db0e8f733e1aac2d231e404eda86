@@ -34,6 +34,24 @@
       "revId": "62785936e830db0e8f733e1aac2d231e404eda86",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4a3bc39b",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-07-25T09:20:18Z",
+      "side": 1,
+      "message": "Hm, I think this function should be created once it\u0027s really used in multiple places. For now I would move the code. \nI also meant that is bette to raise, catch and maybe rereaise an exception rather than return true/false and raise an exception.",
+      "parentUuid": "baada198_90734fe6",
+      "revId": "62785936e830db0e8f733e1aac2d231e404eda86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
