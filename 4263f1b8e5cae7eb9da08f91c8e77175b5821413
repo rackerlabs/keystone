@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_876eb4c6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-25T08:35:15Z",
+      "side": 1,
+      "message": "So while this is true, the fix in this patch is standalone and worth it anyway.  So maybe just say something like:\n\nThe ability for the assertValidList methods to check the url will also form the basis for testing of bug 1195037....etc. etc.",
+      "revId": "4263f1b8e5cae7eb9da08f91c8e77175b5821413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_24032677",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 2
