@@ -104,6 +104,24 @@
       "revId": "25c5b5e20497cd574ab9c4501799530974b66517",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_edff2aff",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-26T23:07:51Z",
+      "side": 1,
+      "message": "for sure, nice catch.",
+      "parentUuid": "baada198_9aab421d",
+      "revId": "25c5b5e20497cd574ab9c4501799530974b66517",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
