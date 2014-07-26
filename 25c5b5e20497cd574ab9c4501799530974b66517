@@ -52,6 +52,24 @@
       "revId": "25c5b5e20497cd574ab9c4501799530974b66517",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e4266ab9",
+        "filename": "keystone/common/sql/migrate_repo/versions/052_add_auth_url_to_region.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-07-26T02:04:51Z",
+      "side": 1,
+      "message": "I prefer to dropping the column too.",
+      "parentUuid": "baada198_90e176d2",
+      "revId": "25c5b5e20497cd574ab9c4501799530974b66517",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
