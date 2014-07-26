@@ -70,6 +70,40 @@
       "revId": "25c5b5e20497cd574ab9c4501799530974b66517",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3ab3169b",
+        "filename": "keystone/common/sql/migrate_repo/versions/052_add_auth_url_to_region.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-26T22:54:31Z",
+      "side": 1,
+      "message": "me too....I know that once could argue that they might not be useable, but....the data is still gone....",
+      "revId": "25c5b5e20497cd574ab9c4501799530974b66517",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9aab421d",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-26T22:54:31Z",
+      "side": 1,
+      "message": "copy \u0026 paste on the docstring?",
+      "revId": "25c5b5e20497cd574ab9c4501799530974b66517",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
