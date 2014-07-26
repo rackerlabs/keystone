@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_76abf01d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-26T00:49:47Z",
+      "side": 1,
+      "message": "The commit should now mention the additional tests you added for domain-scoped and v2 scoped tokens?",
+      "revId": "2867804445518d0a0d63a2c5a228a7a40a876357",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
