@@ -16,6 +16,23 @@
       "revId": "b0b558a4f0bfe7e6e74f49003de7acb8a3445e94",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4d09f629",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-26T23:14:18Z",
+      "side": 1,
+      "message": "I don\u0027t think we are committing to raising an error in this case for v3",
+      "revId": "b0b558a4f0bfe7e6e74f49003de7acb8a3445e94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
