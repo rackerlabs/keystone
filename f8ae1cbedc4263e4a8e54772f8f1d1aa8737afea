@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_7a54ae53",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-26T22:14:20Z",
+      "side": 1,
+      "message": "nit: maybe make this read a little nicer, e.g.:\n\nWhen getting a single access token, the self link didn\u0027t contain the user section.\tThis commit fixes the url by overriding the method that generates the self referential links and adds a corresponding test.",
+      "revId": "f8ae1cbedc4263e4a8e54772f8f1d1aa8737afea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
