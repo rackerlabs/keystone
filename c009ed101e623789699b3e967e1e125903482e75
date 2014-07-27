@@ -34,6 +34,74 @@
       "revId": "c009ed101e623789699b3e967e1e125903482e75",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0bbb66e5",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-27T10:23:00Z",
+      "side": 1,
+      "message": "is there a reasons we can\u0027t just do:\n\nreturn ServiceProvider.wrap_member(context, response) ?",
+      "revId": "c009ed101e623789699b3e967e1e125903482e75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0b2d2646",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/004_add_service_provider_table.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-27T10:23:00Z",
+      "side": 1,
+      "message": "do we need to add:\n        mysql_engine\u003d\u0027InnoDB\u0027,\n        mysql_charset\u003d\u0027utf8\u0027)\n?",
+      "revId": "c009ed101e623789699b3e967e1e125903482e75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0ba286ad",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1575,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-27T10:23:00Z",
+      "side": 1,
+      "message": "nice word \"examplous\".....but is it a real word?",
+      "revId": "c009ed101e623789699b3e967e1e125903482e75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6bab0288",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1620,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-27T10:23:00Z",
+      "side": 1,
+      "message": "TODO meaning before this can be merged or as a follow on?  I assume the former, in which case FIXME is better....",
+      "revId": "c009ed101e623789699b3e967e1e125903482e75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
