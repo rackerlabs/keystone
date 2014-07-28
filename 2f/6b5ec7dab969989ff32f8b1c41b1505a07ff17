@@ -1,0 +1,16 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Workflow+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Arun Kant <arun.kant@hp.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: Marek Denis <marek.denis@cern.ch>
+Code-Review+1: Bob Thyne <bob.thyne@hp.com>
+Code-Review+1: David J Hu <david.hu@hp.com>
+Code-Review+1: Ajaya Agrawal <ajku.agr@gmail.com>
+Code-Review+1: Ryan Oshima <ryan.oshima@hp.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 28 Jul 2014 15:21:12 +0000
+Reviewed-on: https://review.openstack.org/108811
+Project: openstack/keystone
+Branch: refs/heads/master
