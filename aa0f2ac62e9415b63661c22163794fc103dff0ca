@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_e4058ac2",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 950,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-07-28T01:54:04Z",
+      "side": 1,
+      "message": "No, I want to test we do not consume the remaining uses of trust when getting token fails.",
+      "parentUuid": "baada198_5d5d36eb",
+      "revId": "aa0f2ac62e9415b63661c22163794fc103dff0ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_fd3a8a32",
         "filename": "keystone/tests/test_auth.py",
         "patchSetId": 4
@@ -47,6 +65,24 @@
       "writtenOn": "2014-07-25T19:27:29Z",
       "side": 1,
       "message": "I would vote on using a literal integer for the expected value and remove the existing trust variable defined on line 966.",
+      "revId": "aa0f2ac62e9415b63661c22163794fc103dff0ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4441d608",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 968,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-07-28T01:54:04Z",
+      "side": 1,
+      "message": "I agree. It is more clearly.",
+      "parentUuid": "baada198_fd3a8a32",
       "revId": "aa0f2ac62e9415b63661c22163794fc103dff0ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
