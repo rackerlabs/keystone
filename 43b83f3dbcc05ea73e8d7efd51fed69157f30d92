@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_dd01103a",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1266,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-28T17:28:09Z",
+      "side": 1,
+      "message": "yes, this is using v3 tokens. build_authentication_request creates a v3 request body",
+      "parentUuid": "baada198_028407af",
+      "revId": "43b83f3dbcc05ea73e8d7efd51fed69157f30d92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_82665727",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-28T17:00:01Z",
       "side": 1,
       "message": "We don\u0027t need a check here to make sure the project_scoped_token is valid?",
+      "revId": "43b83f3dbcc05ea73e8d7efd51fed69157f30d92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3da12c3a",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1339,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-28T17:28:09Z",
+      "side": 1,
+      "message": "If the token wasn\u0027t valid here then that would be a different bug. I assume we\u0027ve got a test somewhere that verifies that when you get a scoped token from an unscoped one then the token is valid. If there isn\u0027t a test that shows this then a test should be added for it. This test doesn\u0027t need to validate that getting a scoped token from an unscoped one works... it\u0027s supposed to be validating that revocation works.",
+      "parentUuid": "baada198_82665727",
       "revId": "43b83f3dbcc05ea73e8d7efd51fed69157f30d92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
