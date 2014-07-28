@@ -16,14 +16,26 @@
 
 from __future__ import absolute_import
 
+import string
 import uuid
 
 from keystone.token.providers import common
 
 
 class Provider(common.BaseProvider):
+    """Generates short URL-friendly tokens using UUID4 to provide entropy."""
+    ALPHABET = string.numbers + string.letters
+
     def __init__(self, *args, **kwargs):
         super(Provider, self).__init__(*args, **kwargs)
 
+    def _encode(cls, number):
+        """Converts an integer to a string."""
+        s = ''
+        while number != 0:
+            number, i = divmod(number, len(cls.ALPHABET))
+            s = cls.ALPHABET[i] + s
+        return s
+
     def _get_token_id(self, token_data):
-        return uuid.uuid4().hex
+        return Provider._encode(uuid.uuid4().int)
