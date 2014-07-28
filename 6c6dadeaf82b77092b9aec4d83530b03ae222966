@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_7d072481",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-28T17:23:36Z",
+      "side": 1,
+      "message": "nice addition, you could add a link by adding an _\n(I think it\u0027s helpful)",
+      "revId": "6c6dadeaf82b77092b9aec4d83530b03ae222966",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_bd0b7c7a",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-28T17:23:36Z",
+      "side": 1,
+      "message": "you could add a link here:\n\n.. _virtualenv: https://pypi.python.org/pypi/virtualenv",
+      "revId": "6c6dadeaf82b77092b9aec4d83530b03ae222966",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
