@@ -88,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_d66aeab3",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-28T03:58:47Z",
+      "side": 1,
+      "message": "If I\u0027m reading this correctly it will fall into this block and then just continue to the top of the \u0027for\u0027 loop again. If that\u0027s the case what use is it to have the else here?",
+      "parentUuid": "baada198_48d63dc4",
+      "revId": "4c671b6ba9825223915fb1cefdaee6b2ea70f85a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_7ae69c17",
         "filename": "keystone/common/openssl.py",
         "patchSetId": 5
