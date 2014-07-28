@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_0bab5f88",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 928,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-28T03:19:04Z",
+      "side": 1,
+      "message": "Yes, don\u0027t edit it yourself, run \"tox -e sample_config\"",
+      "parentUuid": "baada198_b439aba5",
+      "revId": "94aeea43622379dfcfbf3dc7590e8c9f94a9af64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_34c73066",
         "filename": "keystone/common/config.py",
         "patchSetId": 2
@@ -136,6 +154,24 @@
       "side": 1,
       "message": "Reusing user_enabled_mask would require changing it to a string type since we would need to aloow it to be set to some value such as \"invert\".  It seems messy to overload this config setting.\n\nThe user_enabled_default setting does work with the new user_enabled_invert setting that I proposed.",
       "parentUuid": "baada198_34c73066",
+      "revId": "94aeea43622379dfcfbf3dc7590e8c9f94a9af64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6b9bfb72",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-28T03:19:04Z",
+      "side": 1,
+      "message": "According to the code this option is ignored if user_enabled_mask isn\u0027t 0. This should be mentioned in the help text.",
+      "parentUuid": "baada198_f12255a2",
       "revId": "94aeea43622379dfcfbf3dc7590e8c9f94a9af64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +242,24 @@
       "side": 1,
       "message": "I\u0027m not sure I understand what you are pointing out.  This test is ensuring that the create call has the expected result for both the resource and model representations of the user.  It then checks that retrieving the user has the expected result in the model as well since that\u0027s a different code path for model creation.",
       "parentUuid": "baada198_d484340d",
+      "revId": "94aeea43622379dfcfbf3dc7590e8c9f94a9af64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ab88b322",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1116,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-28T03:19:04Z",
+      "side": 1,
+      "message": "This line should be \n\n self.assertIs(True, user_ref[\u0027enabled\u0027])\n\nsince True is the exected value.",
+      "parentUuid": "baada198_d4545f00",
       "revId": "94aeea43622379dfcfbf3dc7590e8c9f94a9af64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
