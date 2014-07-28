@@ -16,6 +16,24 @@
       "revId": "382a00bfd984a27fa8f8d6bf5e77d0b51f22c847",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_5bb09efc",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-28T22:47:48Z",
+      "side": 1,
+      "message": "Here\u0027s what token looks like: http://paste.openstack.org/show/88787/\n\nSo I could extract the project_id using:\n\n token[\u0027token_data\u0027][\u0027token\u0027][\u0027project\u0027][\u0027id\u0027]\n\nto get the project_id:\n\n token_data \u003d token[\u0027token_data\u0027][\u0027token\u0027]\n project_id \u003d token_data.get(\u0027project\u0027, {}).get(\u0027id\u0027)",
+      "parentUuid": "baada198_e8536a37",
+      "revId": "382a00bfd984a27fa8f8d6bf5e77d0b51f22c847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
