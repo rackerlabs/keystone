@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_3bf12a6a",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-28T23:16:19Z",
+      "side": 1,
+      "message": "i assume this is xor - but that should be enforced here",
+      "revId": "ba96cfe510541ac4528921f303ff76134aa3a2b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_be3b68c6",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-28T23:16:19Z",
+      "side": 1,
+      "message": "not sure this adds anything",
+      "revId": "ba96cfe510541ac4528921f303ff76134aa3a2b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1ee9b419",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-28T23:16:19Z",
+      "side": 1,
+      "message": "but a V2 token is implicitly scoped to the default domain; given this is being exposed on the v3 API, i\u0027m wondering if it makes sense to convey that here?",
+      "revId": "ba96cfe510541ac4528921f303ff76134aa3a2b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
