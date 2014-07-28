@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_48d63dc4",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-07-28T02:39:31Z",
+      "side": 1,
+      "message": "If the file does not exist, the code will go to this block.",
+      "parentUuid": "baada198_9ae37004",
+      "revId": "4c671b6ba9825223915fb1cefdaee6b2ea70f85a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_7ae69c17",
         "filename": "keystone/common/openssl.py",
         "patchSetId": 5
