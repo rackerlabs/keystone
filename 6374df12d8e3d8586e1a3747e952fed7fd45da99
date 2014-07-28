@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_4c3f2a25",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1199,
+      "author": {
+        "id": 6849
+      },
+      "writtenOn": "2014-07-28T09:02:05Z",
+      "side": 1,
+      "message": "not sure it\u0027s worthwhile to have both NOTE and FIXME comments, but the change itself is correct :P",
+      "revId": "6374df12d8e3d8586e1a3747e952fed7fd45da99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
