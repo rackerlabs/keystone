@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_028407af",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1266,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-28T17:00:01Z",
+      "side": 1,
+      "message": "this is using v3 tokens, correct?",
+      "revId": "43b83f3dbcc05ea73e8d7efd51fed69157f30d92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_82665727",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1339,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-28T17:00:01Z",
+      "side": 1,
+      "message": "We don\u0027t need a check here to make sure the project_scoped_token is valid?",
+      "revId": "43b83f3dbcc05ea73e8d7efd51fed69157f30d92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
