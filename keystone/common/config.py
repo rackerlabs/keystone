@@ -235,7 +235,7 @@ FILE_OPTIONS = {
         cfg.StrOpt('provider',
                    help='Controls the token construction, validation, and '
                         'revocation operations. Core providers are '
-                        '"keystone.token.providers.[pkiz|pki|uuid].'
+                        '"keystone.token.providers.[pkiz|pki|uid|uuid].'
                         'Provider". The default provider is pkiz.'),
         cfg.StrOpt('driver',
                    default='keystone.token.persistence.backends.sql.Token',
