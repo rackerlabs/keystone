@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_8b63efa9",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 963,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-28T03:53:22Z",
+      "side": 1,
+      "message": "Keep the original \"get_token_fails\" substring ... \"getting_token_fails\" doesn\u0027t read well.",
+      "revId": "3aa06b9edc80e4d2743ae92ff3ba4471c7abae8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2bc4a390",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 981,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-28T03:53:22Z",
+      "side": 1,
+      "message": "self.assertEqual(actual, expected)",
+      "revId": "3aa06b9edc80e4d2743ae92ff3ba4471c7abae8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8bfa0fb8",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3095,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-28T03:53:22Z",
+      "side": 1,
+      "message": "Keep the original \"get_token_fails\" substring ... \"getting_token_fails\" doesn\u0027t read well.",
+      "revId": "3aa06b9edc80e4d2743ae92ff3ba4471c7abae8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ab2c334b",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3119,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-28T03:53:22Z",
+      "side": 1,
+      "message": "self.assertEquals(actual, expected)",
+      "revId": "3aa06b9edc80e4d2743ae92ff3ba4471c7abae8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
