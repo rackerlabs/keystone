@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_0257b95a",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 981,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-07-28T09:19:37Z",
+      "side": 1,
+      "message": "I think I am right:), please refer to https://bugs.launchpad.net/keystone/+bug/1277104",
+      "parentUuid": "baada198_2bc4a390",
+      "revId": "3aa06b9edc80e4d2743ae92ff3ba4471c7abae8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_8bfa0fb8",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 5
