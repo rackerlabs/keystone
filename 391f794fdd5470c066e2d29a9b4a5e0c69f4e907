@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_a8a199aa",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3015,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-07-28T02:10:53Z",
+      "side": 1,
+      "message": "I think you should need to rebase and use v3_authenticate_token method here. Please refer to https://bugs.launchpad.net/keystone/+bug/1317261.",
+      "revId": "391f794fdd5470c066e2d29a9b4a5e0c69f4e907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_abc51a3e",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 4
@@ -13,6 +30,23 @@
       "writtenOn": "2014-07-27T10:32:44Z",
       "side": 1,
       "message": "Thanks for making this a doctoring, although the recommended format is a summary line, followed by other info in a paragraph...the overall recommendations for docstrings are:\n\n- [H401] Docstrings should not start with a space.\n- [H403] Multi line docstrings should end on a new line.\n- [H404] Multi line docstrings should start without a leading new line.\n- [H405] Multi line docstrings should start with a one line summary followed\n  by an empty line.",
+      "revId": "391f794fdd5470c066e2d29a9b4a5e0c69f4e907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_689b0173",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3084,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-07-28T02:10:53Z",
+      "side": 1,
+      "message": "The same comment above.",
       "revId": "391f794fdd5470c066e2d29a9b4a5e0c69f4e907",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
