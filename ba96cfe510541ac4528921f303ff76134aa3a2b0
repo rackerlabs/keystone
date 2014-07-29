@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_e3a280ac",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-29T20:41:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_3bf12a6a",
+      "revId": "ba96cfe510541ac4528921f303ff76134aa3a2b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_be3b68c6",
         "filename": "keystone/tests/test_revoke.py",
         "patchSetId": 14
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_e389a026",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-29T20:41:56Z",
+      "side": 1,
+      "message": "Removed it. I was copying the style of other checks (for example at line 80).",
+      "parentUuid": "baada198_be3b68c6",
+      "revId": "ba96cfe510541ac4528921f303ff76134aa3a2b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_1ee9b419",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 14
@@ -47,6 +83,24 @@
       "writtenOn": "2014-07-28T23:16:19Z",
       "side": 1,
       "message": "but a V2 token is implicitly scoped to the default domain; given this is being exposed on the v3 API, i\u0027m wondering if it makes sense to convey that here?",
+      "revId": "ba96cfe510541ac4528921f303ff76134aa3a2b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_236f18fe",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 531,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-29T20:41:56Z",
+      "side": 1,
+      "message": "This code is handling the case where a token is revoked and we generate revocation event data for it. We store in the revocation event the user ID, when the token expires, and the scope (either project or domain). V2 tokens aren\u0027t going to be domain-scoped.\n\nLater on, the server will get a request to validate a token. From the token it gets the user, the user\u0027s domain, and the token\u0027s scope (project ID and project domain ID or just domain ID). This is done in http://git.openstack.org/cgit/openstack/keystone/tree/keystone/contrib/revoke/model.py#n226 .\n\nLet\u0027s say there\u0027s a revocation event for the default domain, and then a V2 token comes in for validation. The token data would have the user domain ID as the default so it would be revoked.\n\nSo I don\u0027t think anything needs to be changed here. The code is here figuring out what to store for a revoked token.",
+      "parentUuid": "baada198_1ee9b419",
       "revId": "ba96cfe510541ac4528921f303ff76134aa3a2b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
