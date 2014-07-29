@@ -29,12 +29,19 @@ def upgrade(migrate_engine):
     meta.bind = migrate_engine
 
     if migrate_engine.name == 'mysql':
+        statements = []
         # In Folsom we explicitly converted migrate_version to UTF8.
-        sql_stmt = 'ALTER TABLE migrate_version CONVERT TO CHARACTER SET utf8;'
+        statements.append(
+            'ALTER TABLE migrate_version CONVERT TO CHARACTER SET utf8;')
         # Set default DB charset to UTF8.
-        sql_stmt += ('ALTER DATABASE %s DEFAULT CHARACTER SET utf8;' %
-                     migrate_engine.url.database)
-        migrate_engine.execute(sql_stmt)
+        statements.append(
+            ('ALTER DATABASE %s DEFAULT CHARACTER SET utf8;' %
+             migrate_engine.url.database))
+        # NOTE(ihrachys): in case of MySQL Connector, we get
+        # InterfaceError when trying to execute multiple statements in
+        # one call, so let's do it one by one
+        for stmt in statements:
+            migrate_engine.execute(stmt)
 
     credential = sql.Table(
         'credential', meta,
