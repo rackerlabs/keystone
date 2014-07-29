@@ -16,6 +16,23 @@
       "revId": "37d67af36b073649cb39a9ebed10f606951b3e5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_94f843c5",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-07-29T00:48:37Z",
+      "side": 1,
+      "message": "can we have a doc string on \u0027deleted\u0027?",
+      "revId": "37d67af36b073649cb39a9ebed10f606951b3e5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
