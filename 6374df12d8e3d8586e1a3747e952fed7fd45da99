@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_227acfba",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1199,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-07-29T09:32:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_06a3429e",
+      "revId": "6374df12d8e3d8586e1a3747e952fed7fd45da99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_e60bae79",
         "filename": "keystone/tests/test_sql_upgrade.py",
         "patchSetId": 2
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_82e47ba9",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1201,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-07-29T09:32:21Z",
+      "side": 1,
+      "message": "I thought I explained it. Now we have wrapped exceptions, which are different type than it were previously. I\u0027ll try to rephrase, but if you have a concrete tips, you welcome to advice.\n\nThanks.",
+      "parentUuid": "baada198_e60bae79",
+      "revId": "6374df12d8e3d8586e1a3747e952fed7fd45da99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_acc97b7c",
         "filename": "keystone/tests/test_sql_upgrade.py",
         "patchSetId": 2
@@ -65,6 +101,24 @@
       "writtenOn": "2014-07-29T06:02:30Z",
       "side": 1,
       "message": "s/\"will be\"/is",
+      "revId": "6374df12d8e3d8586e1a3747e952fed7fd45da99",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_82b2bb94",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1202,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-07-29T09:32:21Z",
+      "side": 1,
+      "message": "I\u0027m sorry, I\u0027m not native speaker... But it is not updated yet.\n\nAnyway done.",
+      "parentUuid": "baada198_acc97b7c",
       "revId": "6374df12d8e3d8586e1a3747e952fed7fd45da99",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
