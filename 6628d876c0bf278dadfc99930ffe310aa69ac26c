@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_450c093a",
+        "filename": "keystone/tests/test_cert_setup.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-29T23:37:41Z",
+      "side": 1,
+      "message": "revert the whitespace change on the previous line.",
+      "revId": "6628d876c0bf278dadfc99930ffe310aa69ac26c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
