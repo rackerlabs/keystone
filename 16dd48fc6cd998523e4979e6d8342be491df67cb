@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_5b8f90cd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-29T21:36:17Z",
+      "side": 1,
+      "message": "lowercase Middleware",
+      "revId": "16dd48fc6cd998523e4979e6d8342be491df67cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_fb6ea4ff",
+        "filename": "keystone/middleware/ec2_token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-29T21:36:17Z",
+      "side": 1,
+      "message": "seems like \"keystonemiddleware.ec2_token\" should be \"keystonemiddleware.ec2_token.EC2Token\"",
+      "revId": "16dd48fc6cd998523e4979e6d8342be491df67cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_db400062",
+        "filename": "keystone/middleware/ec2_token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-07-29T21:36:17Z",
+      "side": 1,
+      "message": "why are filter_factory and app_factory added?",
+      "revId": "16dd48fc6cd998523e4979e6d8342be491df67cb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
