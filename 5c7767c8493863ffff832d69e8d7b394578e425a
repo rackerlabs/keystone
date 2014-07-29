@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_a7b7bfd6",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 752,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-29T15:51:55Z",
+      "side": 1,
+      "message": "why does this need to be configurable? \u0027identity\u0027 should be the only recognized service type of \u0027identity\u0027 endpoints - that\u0027s the point of having service types.",
+      "revId": "5c7767c8493863ffff832d69e8d7b394578e425a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
