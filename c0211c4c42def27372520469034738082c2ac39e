@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_d450fbd6",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-07-29T00:47:19Z",
+      "side": 0,
+      "message": "so we don\u0027t revoke token when the trust is deleted?",
+      "revId": "c0211c4c42def27372520469034738082c2ac39e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
