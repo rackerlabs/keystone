@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_7327301f",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-29T13:27:13Z",
+      "side": 1,
+      "message": "is this the right link?",
+      "revId": "ce7bb2a358dd33268a5e4a6111d37e0e46da670a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3345b8b4",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-29T13:27:13Z",
+      "side": 1,
+      "message": "same comment as above.",
+      "revId": "ce7bb2a358dd33268a5e4a6111d37e0e46da670a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b3a708bc",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-29T13:27:13Z",
+      "side": 1,
+      "message": "why would this be used instead of get_action and head_action?",
+      "revId": "ce7bb2a358dd33268a5e4a6111d37e0e46da670a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
