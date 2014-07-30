@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Haneef Ali <haneef.ali@hp.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Workflow+1: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: Harry Rybacki <hrybacki@redhat.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 30 Jul 2014 00:37:44 +0000
+Reviewed-on: https://review.openstack.org/106478
+Project: openstack/keystone
+Branch: refs/heads/master
