@@ -390,3 +390,12 @@ class MigrationNotProvided(Exception):
 class UnsupportedTokenVersionException(Exception):
     """Token version is unrecognizable or unsupported."""
     pass
+
+
+class SAMLSigningError(UnexpectedError):
+    debug_message_format = _('Unable to sign SAML assertion. It is likely '
+                             'that this server does not have xmlsec1 '
+                             'installed, or this is the result of '
+                             'misconfiguration. Reason %(reason)s')
+    code = 500
+    title = 'Error signing SAML assertion'
