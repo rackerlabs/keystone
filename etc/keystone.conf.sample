@@ -710,6 +710,15 @@
 # the environment. (string value)
 #assertion_prefix=
 
+# Path to xmlsec1 binary (string value)
+#xmlsec1_binary=/usr/bin/xmlsec1
+
+# Directory where temporary unsigned SAML Assertions will be
+# stored. Those files will be deleted after the assertion is
+# signed. It is very important to make this directory
+# readable/writeable for a Keystone process. (string value)
+#assertions_dir=/tmp
+
 
 [identity]
 
@@ -886,7 +895,7 @@
 #user_name_attribute=sn
 
 # LDAP attribute mapped to user email. (string value)
-#user_mail_attribute=email
+#user_mail_attribute=mail
 
 # LDAP attribute mapped to password. (string value)
 #user_pass_attribute=userPassword
@@ -1266,6 +1275,17 @@
 # Toggle for revocation event cacheing. This has no effect
 # unless global caching is enabled. (boolean value)
 #caching=true
+
+
+[saml]
+
+#
+# Options defined in keystone
+#
+
+# Default TTL, in seconds, for any generated SAML assertion
+# created by Keystone. (integer value)
+#assertion_expiration_time=3600
 
 
 [signing]

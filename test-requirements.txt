@@ -15,6 +15,10 @@ pymongo>=2.5
 python-ldap==2.3.13
 ldappool>=1.0 # MPL
 
+# Optional for Keystone2Keystone
+# pysaml2
+-e git+https://github.com/rohe/pysaml2.git#egg=pysaml2
+
 # Testing
 # computes code coverage percentages
 coverage>=3.6
