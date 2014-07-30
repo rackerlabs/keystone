@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_3979d6c5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 9656
+      },
+      "writtenOn": "2014-07-30T22:20:19Z",
+      "side": 1,
+      "message": "The change is significantly modified in comparison to the original patch. So you could usefully describe the changes applied here.\n\nAlso, it seems that cherry-pick was not clean, but you\u0027ve removed Conflicts: section. Please retain that section.",
+      "revId": "0a809e8c55a025d986337be61c8a1368815c9573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_398b96c1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 9656
+      },
+      "writtenOn": "2014-07-30T22:20:19Z",
+      "side": 1,
+      "message": "please cherry-pick with -x option, it adds valuable information.",
+      "revId": "0a809e8c55a025d986337be61c8a1368815c9573",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
