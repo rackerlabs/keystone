@@ -79,17 +79,18 @@
 # token values. (integer value)
 #max_token_size=8192
 
-# During a SQL upgrade member_role_id will be used to create a
-# new role that will replace records in the assignment table
-# with explicit role grants. After migration, the
-# member_role_id will be used in the API add_user_to_project.
-# (string value)
+# Similar to the member_role_name option, this represents the
+# default role ID used to associate users with their default
+# projects in the v2 API. During a database migration, this
+# will be used to create a new role that will replace records
+# in the assignment table with explicit role assignments.
+# After that migration, this will be used as the explicit role
+# where one is not specified by the v2 API. (string value)
 #member_role_id=9fe2ff9ee4384b1894a90878d3e92bab
 
-# During a SQL upgrade member_role_name will be used to create
-# a new role that will replace records in the assignment table
-# with explicit role grants. After migration, member_role_name
-# will be ignored. (string value)
+# This is the role name used in combination with the
+# member_role_id option; see that option for more detail.
+# (string value)
 #member_role_name=_member_
 
 # The value passed as the keyword "rounds" to passlib's
@@ -143,10 +144,6 @@
 # Size of RPC connection pool. (integer value)
 #rpc_conn_pool_size=30
 
-# Modules of exceptions that are permitted to be recreated
-# upon receiving exception data from an rpc call. (list value)
-#allowed_rpc_exception_modules=oslo.messaging.exceptions,nova.exception,cinder.exception,exceptions
-
 # Qpid broker hostname. (string value)
 #qpid_hostname=localhost
 
@@ -175,6 +172,10 @@
 
 # Whether to disable the Nagle algorithm. (boolean value)
 #qpid_tcp_nodelay=true
+
+# The number of prefetched messages held by receiver. (integer
+# value)
+#qpid_receiver_capacity=1
 
 # The qpid topology version to use.  Version 1 is what was
 # originally used by impl_qpid.  Version 2 includes some
@@ -285,15 +286,6 @@
 # Heartbeat time-to-live. (integer value)
 #matchmaker_heartbeat_ttl=600
 
-# Host to locate redis. (string value)
-#host=127.0.0.1
-
-# Use this port to connect to redis host. (integer value)
-#port=6379
-
-# Password for Redis server (optional). (string value)
-#password=<None>
-
 # Size of RPC greenthread pool. (integer value)
 #rpc_thread_pool_size=64
 
@@ -330,30 +322,6 @@
 # Default publisher_id for outgoing notifications (string
 # value)
 #default_publisher_id=<None>
-
-
-#
-# Options defined in keystone.middleware.ec2_token
-#
-
-# URL to get token from ec2 request. (string value)
-#keystone_ec2_url=http://localhost:5000/v2.0/ec2tokens
-
-# Required if EC2 server requires client certificate. (string
-# value)
-#keystone_ec2_keyfile=<None>
-
-# Client certificate key filename. Required if EC2 server
-# requires client certificate. (string value)
-#keystone_ec2_certfile=<None>
-
-# A PEM encoded certificate authority to use when verifying
-# HTTPS connections. Defaults to the system CAs. (string
-# value)
-#keystone_ec2_cafile=<None>
-
-# Disable SSL certificate verification. (boolean value)
-#keystone_ec2_insecure=false
 
 
 #
@@ -1189,6 +1157,22 @@
 # End user auth connection lifetime in seconds. (integer
 # value)
 #auth_pool_connection_lifetime=60
+
+
+[matchmaker_redis]
+
+#
+# Options defined in oslo.messaging
+#
+
+# Host to locate redis. (string value)
+#host=127.0.0.1
+
+# Use this port to connect to redis host. (integer value)
+#port=6379
+
+# Password for Redis server (optional). (string value)
+#password=<None>
 
 
 [matchmaker_ring]
