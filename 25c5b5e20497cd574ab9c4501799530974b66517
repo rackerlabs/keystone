@@ -90,6 +90,23 @@
     },
     {
       "key": {
+        "uuid": "baada198_7b798981",
+        "filename": "keystone/common/sql/migrate_repo/versions/052_add_auth_url_to_region.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-30T19:48:20Z",
+      "side": 1,
+      "message": "I don\u0027t think this would have worked anyway. I don\u0027t think \u0027is\u0027 or \u0027is not\u0027 will trigger the magic methods SQLAlchemy uses to build queries. It should be \u0027!\u003d\u0027",
+      "revId": "25c5b5e20497cd574ab9c4501799530974b66517",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_9aab421d",
         "filename": "keystone/tests/test_v3_catalog.py",
         "patchSetId": 3
