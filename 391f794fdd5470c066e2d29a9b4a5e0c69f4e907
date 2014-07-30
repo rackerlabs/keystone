@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_5b3dc1dc",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3015,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-07-30T07:38:12Z",
+      "side": 1,
+      "message": "(the link had a trailing \u0027.\u0027 - see https://review.openstack.org/#/c/101861 )\n\nI agree, although self.post as written works, it is better to use the new v3_authenticate_token method()",
+      "parentUuid": "baada198_8490fc43",
+      "revId": "391f794fdd5470c066e2d29a9b4a5e0c69f4e907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_abc51a3e",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 4
