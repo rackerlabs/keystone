@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_06cdb8ba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-07-30T00:59:59Z",
+      "side": 1,
+      "message": "link to blueprint/spec?",
+      "revId": "74bdb8e3a330c49b684114c3f25b6d14ce7daab4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_97ed82f2",
         "filename": "keystone/auth/plugins/federation.py",
         "patchSetId": 1
