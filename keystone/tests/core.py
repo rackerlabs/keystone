@@ -365,6 +365,10 @@ class TestCase(BaseTestCase):
             group='trust',
             driver='keystone.trust.backends.kvs.Trust')
         self.config_fixture.config(
+            group='saml',
+            certfile='examples/pki/certs/signing_cert.pem',
+            keyfile='examples/pki/private/signing_key.pem')
+        self.config_fixture.config(
             default_log_levels=[
                 'amqp=WARN',
                 'amqplib=WARN',

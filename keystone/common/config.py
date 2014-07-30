@@ -801,6 +801,26 @@ FILE_OPTIONS = {
         cfg.IntOpt('default_lock_timeout', default=5,
                    help='Default lock timeout for distributed locking.'),
     ],
+    'saml': [
+        cfg.IntOpt('assertion_expiration_time', default=3600,
+                   help='Default TTL, in seconds, for any generated SAML '
+                        'assertion created by Keystone.'),
+        cfg.StrOpt('xmlsec1_binary',
+                   default='xmlsec1',
+                   help='Binary to be called for XML signing. Install the '
+                        'appropriate package, specify absolute path or adjust '
+                        'your PATH environment variable if the binary cannot '
+                        'be found.'),
+        cfg.StrOpt('certfile',
+                   default='/etc/keystone/ssl/certs/signing_cert.pem',
+                   help='Path of the certfile for SAML signing. For '
+                        'non-production environments, you may be interested '
+                        'in using `keystone-manage pki_setup` to generate '
+                        'self-signed certificates.'),
+        cfg.StrOpt('keyfile',
+                   default='/etc/keystone/ssl/private/signing_key.pem',
+                   help='Path of the keyfile for SAML signing.'),
+    ],
 }
 
 
