@@ -335,17 +335,6 @@
 
 
 #
-# Options defined in keystone.openstack.common.lockutils
-#
-
-# Enables or disables inter-process locks. (boolean value)
-#disable_process_locking=false
-
-# Directory to use for lock files. (string value)
-#lock_path=<None>
-
-
-#
 # Options defined in keystone.openstack.common.log
 #
 
@@ -720,6 +709,25 @@
 # Value to be used when filtering assertion parameters from
 # the environment. (string value)
 #assertion_prefix=
+
+# xmlsec1 binary path (string value)
+#xmlsec1_binary=/usr/bin/xmlsec1
+
+# Path to a private file used for signing SAML assertions
+# issued by a Keystone acting as an Identity Provider (string
+# value)
+#idp_private_key=
+
+# Path to a public file used for signing SAML assertions
+# issued by a Keystone acting as an Identity Provider (string
+# value)
+#idp_public_key=
+
+# Directory where temporary unsigned SAML Assertions will be
+# stored. Those files will be deleted after the assertion is
+# signed. It is very important to make this directory
+# readable/writeable for a Keystone process. (string value)
+#assertions_dir=/tmp
 
 
 [identity]
