@@ -13,11 +13,14 @@
 import random
 import uuid
 
+from lxml import etree
+
 from keystone.auth import controllers as auth_controllers
 from keystone.common import dependency
 from keystone.common import serializer
 from keystone import config
 from keystone.contrib.federation import controllers as federation_controllers
+from keystone.contrib.federation import samlgen
 from keystone.contrib.federation import utils as mapping_utils
 from keystone import exception
 from keystone.openstack.common import jsonutils
@@ -1567,3 +1570,83 @@ class FederatedTokenTests(FederationTests):
         assertion = getattr(mapping_fixtures, variant)
         context['environment'].update(assertion)
         context['query_string'] = []
+
+
+class SAMLGenerationTests(FederationTests):
+
+    ISSUER = 'https://acme.com/FIM/sps/openstack/saml20'
+    RECIPIENT = 'http://beta.com/Shibboleth.sso/SAML2/POST'
+    SUBJECT = 'stevemar'
+    ROLES = ['demo', 'service']
+    PROJECTS = ['development', 'test']
+
+    def _load_federation_config_options(self):
+        CONF.federation.idp_private_key = CONF.signing.keyfile
+        CONF.federation.idp_public_key = CONF.signing.certfile
+
+    def test_samlize_token_values(self):
+        """Test the SAML generator produces a SAML object.
+
+        Test the SAML generator directly by passing known arguments, the result
+        should be a SAML object that consistently includes attributes based on
+        the known arguments that were passed in.
+
+        """
+        self._load_federation_config_options()
+        generator = samlgen.SAMLGenerator()
+        response = generator.samlize_token(self.ISSUER, self.RECIPIENT,
+                                           self.SUBJECT, self.ROLES,
+                                           self.PROJECTS)
+
+        assertion = response.assertion
+        issuer = response.issuer
+        self.assertEqual(response.destination, self.RECIPIENT)
+        self.assertEqual(issuer.text, self.ISSUER)
+
+        # TODO(stevemar): Match generated key text to key that was used.
+
+        user_attribute = assertion.attribute_statement[0].attribute[0]
+        self.assertEqual(user_attribute.attribute_value[0].text, self.SUBJECT)
+
+        role_attribute = assertion.attribute_statement[0].attribute[1]
+        for attribute_value in role_attribute.attribute_value:
+            self.assertIn(attribute_value.text, self.ROLES)
+
+        project_attribute = assertion.attribute_statement[0].attribute[2]
+        for attribute_value in project_attribute.attribute_value:
+            self.assertIn(attribute_value.text, self.PROJECTS)
+
+    def test_valid_saml_xml(self):
+        """Test the generated SAML object can become valid XML.
+
+        Test the  generator directly by passing known arguments, the result
+        should be a SAML object that consistently includes attributes based on
+        the known arguments that were passed in.
+
+        """
+        self._load_federation_config_options()
+        generator = samlgen.SAMLGenerator()
+        response = generator.samlize_token(self.ISSUER, self.RECIPIENT,
+                                           self.SUBJECT, self.ROLES,
+                                           self.PROJECTS)
+
+        saml_str = response.to_string()
+        response = etree.fromstring(saml_str)
+        issuer = response[0]
+        assertion = response[2]
+
+        self.assertEqual(response.get('Destination'), self.RECIPIENT)
+        self.assertEqual(issuer.text, self.ISSUER)
+
+        # TODO(stevemar): Match generated key text to key that was used.
+
+        user_attribute = assertion[4][0]
+        self.assertEqual(user_attribute[0].text, self.SUBJECT)
+
+        role_attribute = assertion[4][1]
+        for attribute_value in role_attribute:
+            self.assertIn(attribute_value.text, self.ROLES)
+
+        project_attribute = assertion[4][2]
+        for attribute_value in project_attribute:
+            self.assertIn(attribute_value.text, self.PROJECTS)
