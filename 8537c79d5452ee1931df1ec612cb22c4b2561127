@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_008663ba",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 608,
+      "author": {
+        "id": 11717
+      },
+      "writtenOn": "2014-07-30T16:40:25Z",
+      "side": 1,
+      "message": "\"get\"-\u003e\"Get\"",
+      "revId": "8537c79d5452ee1931df1ec612cb22c4b2561127",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_40905bed",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 628,
+      "author": {
+        "id": 11717
+      },
+      "writtenOn": "2014-07-30T16:40:25Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "8537c79d5452ee1931df1ec612cb22c4b2561127",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
