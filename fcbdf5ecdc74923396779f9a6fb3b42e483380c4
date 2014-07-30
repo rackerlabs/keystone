@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_753614ea",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-30T05:57:41Z",
+      "side": 1,
+      "message": "probably should change this to user_name",
+      "revId": "fcbdf5ecdc74923396779f9a6fb3b42e483380c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_15287884",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-30T05:57:41Z",
+      "side": 1,
+      "message": "should come the other region\u0027s URL field.",
+      "revId": "fcbdf5ecdc74923396779f9a6fb3b42e483380c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_950c883b",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-30T05:57:41Z",
+      "side": 1,
+      "message": "this should be some date in the future",
+      "revId": "fcbdf5ecdc74923396779f9a6fb3b42e483380c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_154f986b",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-30T05:57:41Z",
+      "side": 1,
+      "message": "I\u0027m not sure if we need the friendly_name defined",
+      "revId": "fcbdf5ecdc74923396779f9a6fb3b42e483380c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_753d34bc",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-30T05:57:41Z",
+      "side": 1,
+      "message": "this should be some date in the future",
+      "revId": "fcbdf5ecdc74923396779f9a6fb3b42e483380c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_759294a1",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-30T05:57:41Z",
+      "side": 1,
+      "message": "should be CONF.public_endpoint % CONF.public_port",
+      "revId": "fcbdf5ecdc74923396779f9a6fb3b42e483380c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_15eb1813",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-30T05:57:41Z",
+      "side": 1,
+      "message": "no idea about this value",
+      "revId": "fcbdf5ecdc74923396779f9a6fb3b42e483380c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_55f590eb",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-30T05:57:41Z",
+      "side": 1,
+      "message": "no idea about this value",
+      "revId": "fcbdf5ecdc74923396779f9a6fb3b42e483380c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b5ba6c09",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-30T05:57:41Z",
+      "side": 1,
+      "message": "not sure what values to use for this field",
+      "revId": "fcbdf5ecdc74923396779f9a6fb3b42e483380c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_35c73c9a",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-30T05:57:41Z",
+      "side": 1,
+      "message": "should come from region URL",
+      "revId": "fcbdf5ecdc74923396779f9a6fb3b42e483380c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
