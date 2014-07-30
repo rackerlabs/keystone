@@ -16,6 +16,24 @@
       "revId": "5ad7f220a1896e9e4686f76e9b80bd89afae3343",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_548bc4bf",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-30T13:50:36Z",
+      "side": 1,
+      "message": "Good point, you\u0027re right. If we are going to be using the validation module for validating input we shouldn\u0027t need to use _validate_endpoint/service(), etc... Which looks like it is for checking the type of `enabled` if it is passed in the request. I think this was related to a bug that was fixed in Icehouse but regardless, it can be removed now.",
+      "parentUuid": "baada198_8bca446c",
+      "revId": "5ad7f220a1896e9e4686f76e9b80bd89afae3343",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
