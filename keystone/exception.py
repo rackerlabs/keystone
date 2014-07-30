@@ -138,6 +138,14 @@ class PKITokenExpected(Error):
     title = 'Cannot retrieve certificates'
 
 
+class SAMLSigningError(Error):
+    message_format = _('Unable to sign SAML assertion. It is likely that this '
+                       'server does not have xmlsec1 installed, or this is '
+                       'the result of misconfiguration. Reason %(reason)s')
+    code = 403
+    title = 'Error signing SAML assertion'
+
+
 class SecurityError(Error):
     """Avoids exposing details of security failures, unless in debug mode."""
     amendment = _('(Disable debug mode to suppress these details.)')
