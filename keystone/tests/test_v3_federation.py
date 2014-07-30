@@ -1182,6 +1182,17 @@ class FederatedTokenTests(FederationTests):
         self.assertRaises(exception.Unauthorized,
                           self._issue_unscoped_token)
 
+    def test_samlize_normal_token(self):
+        from keystone.contrib.federation import samlgen
+
+        user_name = 'stevemar'
+        roles = ['demo', 'service']
+        envelope = samlgen.samlize_token(user_name, roles)
+        pdb.set_trace()
+        self.assertEqual(roles[0], envelope[2][4][1][0].text)
+        self.assertEqual(roles[1], envelope[2][4][1][1].text)
+        self.assertEqual(user_name, envelope[2][2][1].text)
+
     def load_federation_sample_data(self):
         """Inject additional data."""
 
