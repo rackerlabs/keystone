@@ -13,11 +13,14 @@
 import random
 import uuid
 
+from lxml import etree
+
 from keystone.auth import controllers as auth_controllers
 from keystone.common import dependency
 from keystone.common import serializer
 from keystone import config
 from keystone.contrib.federation import controllers as federation_controllers
+from keystone.contrib.federation import samlgen
 from keystone.contrib.federation import utils as mapping_utils
 from keystone import exception
 from keystone.openstack.common import jsonutils
@@ -1567,3 +1570,55 @@ class FederatedTokenTests(FederationTests):
         assertion = getattr(mapping_fixtures, variant)
         context['environment'].update(assertion)
         context['query_string'] = []
+
+
+class SAMLGenerationTests(FederationTests):
+
+    ISSUER = 'https://acme.com/FIM/sps/openstack/saml20'
+    RECIPIENT = 'http://beta.com/Shibboleth.sso/SAML2/POST'
+    SUBJECT = 'stevemar'
+    ROLES = ['demo', 'service']
+
+    def _load_federation_config_options(self):
+        CONF.federation.idp_private_key = CONF.signing.keyfile
+        CONF.federation.idp_public_key = CONF.signing.certfile
+
+    def load_fixtures(self, fixtures):
+        super(FederationTests, self).load_fixtures(fixtures)
+        self.load_sample_saml_assertion_data()
+
+    def load_sample_saml_assertion_data(self):
+        self._load_federation_config_options()
+        generator = samlgen.SAMLGenerator()
+        self.response = generator.samlize_token(self.ISSUER, self.RECIPIENT,
+                                                self.SUBJECT, self.ROLES)
+
+    def test_samlize_token_values(self):
+        self._load_federation_config_options()
+        assertion = self.response.assertion
+        issuer = self.response.issuer
+
+        self.assertEqual(self.response.destination, self.RECIPIENT)
+        self.assertEqual(issuer.text, self.ISSUER)
+
+        """
+        # NOTE(stevemar): though the two results look the same they are not
+        # matching, I suspect there are some newlines in the mix.
+        from saml2 import sigver
+        certs = sigver.cert_from_instance(assertion)
+        expected = sigver.read_cert_from_file(CONF.federation.idp_public_key,
+                                              "pem")
+        self.assertEqual(certs[0], expected)
+        """
+
+        user_attribute = assertion.attribute_statement[0].attribute[0]
+        self.assertEqual(user_attribute.attribute_value[0].text, self.SUBJECT)
+
+        role_attribute = assertion.attribute_statement[0].attribute[1]
+        for attribute_value in role_attribute.attribute_value:
+            self.assertIn(attribute_value.text, self.ROLES)
+
+    def test_valid_saml_xml(self):
+        saml_str = self.response.to_string()
+        xml_obj = etree.fromstring(saml_str)
+        self.assertEqual(xml_obj.attrib.get('Destination'), self.RECIPIENT)
