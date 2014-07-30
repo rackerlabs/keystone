@@ -431,6 +431,19 @@ FILE_OPTIONS = {
         cfg.StrOpt('assertion_prefix', default='',
                    help='Value to be used when filtering assertion parameters '
                         'from the environment.'),
+        cfg.StrOpt('xmlsec1_binary',
+                   default='/usr/bin/xmlsec1',
+                   help='Path to xmlsec1 binary'),
+        cfg.StrOpt('assertions_dir',
+                   default='/tmp',
+                   help='Directory where temporary unsigned SAML Assertions '
+                        'will be stored. Those files will be deleted after '
+                        'the assertion is signed. It is very important to '
+                        'make this directory readable/writeable for a '
+                        'Keystone process.'),
+        cfg.IntOpt('assertion_expiration_time', default=3600,
+                   help='Default TTL, in seconds, for any generated SAML '
+                        'assertion created by Keystone.')
     ],
     'policy': [
         cfg.StrOpt('driver',
