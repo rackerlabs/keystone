@@ -431,6 +431,26 @@ FILE_OPTIONS = {
         cfg.StrOpt('assertion_prefix', default='',
                    help='Value to be used when filtering assertion parameters '
                         'from the environment.'),
+        cfg.StrOpt('xmlsec_binary',
+                   default='/usr/bin/xmlsec1',
+                   help='xmlsec1 binary path'),
+        cfg.StrOpt('idp_private_key',
+                   default='',
+                   help='Path to a private file used for signing SAML '
+                        'assertions issued by a Keystone acting as an '
+                        'Identity Provider'),
+        cfg.StrOpt('idp_public_key',
+                   default='',
+                   help='Path to a public file used for signing SAML '
+                        'assertions issued by a Keystone acting as an '
+                        'Identity Provider'),
+        cfg.StrOpt('assertions_dir',
+                   default='/tmp',
+                   help='Directory where temporary unsigned SAML Assertions '
+                        'will be stored. Those files will be deleted after '
+                        'the assertion is signed. It is very important to '
+                        'make this directory readable/writeable for a '
+                        'Keystone process.')
     ],
     'policy': [
         cfg.StrOpt('driver',
