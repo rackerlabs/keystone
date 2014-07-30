@@ -13,11 +13,14 @@
 import random
 import uuid
 
+from lxml import etree
+
 from keystone.auth import controllers as auth_controllers
 from keystone.common import dependency
 from keystone.common import serializer
 from keystone import config
 from keystone.contrib.federation import controllers as federation_controllers
+from keystone.contrib.federation import samlgen
 from keystone.contrib.federation import utils as mapping_utils
 from keystone import exception
 from keystone.openstack.common import jsonutils
@@ -1567,3 +1570,45 @@ class FederatedTokenTests(FederationTests):
         assertion = getattr(mapping_fixtures, variant)
         context['environment'].update(assertion)
         context['query_string'] = []
+
+
+class SAMLGenerationTests(FederationTests):
+
+    ISSUER = 'https://acme.com/FIM/sps/openstack/saml20'
+    RECIPIENT = 'http://beta.com/Shibboleth.sso/SAML2/POST'
+    SUBJECT = 'stevemar'
+    ROLES = ['demo', 'service']
+    EXPIRES_IN = 3600
+    PUBLIC_KEY = CONF.signing.certfile
+    PRIVATE_KEY = CONF.signing.certfile
+
+    def load_fixtures(self, fixtures):
+        super(FederationTests, self).load_fixtures(fixtures)
+        self.load_sample_saml_assertion_data()
+
+    def load_sample_saml_assertion_data(self):
+        generator = samlgen.SAMLGenerator()
+        self.response = generator.samlize_token(self.ISSUER, self.RECIPIENT,
+                                                self.SUBJECT, self.ROLES,
+                                                self.EXPIRES_IN)
+
+    def test_samlize_token_values(self):
+        assertion = self.response.assertion
+        issuer = self.response.issuer
+
+        self.assertEqual(self.response.destination, self.RECIPIENT)
+        self.assertEqual(issuer.text, self.ISSUER)
+        self.assertEqual(assertion.signature.signature_value.text,
+                         open(self.PUBLIC_KEY).read())
+
+        user_attribute = assertion.attribute_statement.attribute[0]
+        self.assertEqual(user_attribute.attribute_value.text, self.SUBJECT)
+
+        role_attribute = assertion.attribute_statement.attribute[1]
+        for attribute_value in role_attribute.attribute_value:
+            self.assertIn(attribute_value.text, self.ROLES)
+
+    def test_valid_saml_xml(self):
+        saml_str = self.response.to_string()
+        xml_obj = etree.fromstring(saml_str)
+        self.assertEqual(xml_obj.attrib.get('Destination'), self.RECIPIENT)
