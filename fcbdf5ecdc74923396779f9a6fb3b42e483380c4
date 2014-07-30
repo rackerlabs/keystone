@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_afe5ada5",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-30T14:17:38Z",
+      "side": 1,
+      "message": "why?",
+      "parentUuid": "baada198_753614ea",
+      "revId": "fcbdf5ecdc74923396779f9a6fb3b42e483380c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_15287884",
         "filename": "keystone/contrib/federation/samlgen.py",
         "patchSetId": 2
@@ -104,6 +122,40 @@
     },
     {
       "key": {
+        "uuid": "baada198_6f2e35ad",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-30T14:17:38Z",
+      "side": 1,
+      "message": "Do these have to be configurable?",
+      "revId": "fcbdf5ecdc74923396779f9a6fb3b42e483380c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_af384def",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-30T14:17:38Z",
+      "side": 1,
+      "message": "same comment here.",
+      "revId": "fcbdf5ecdc74923396779f9a6fb3b42e483380c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_15eb1813",
         "filename": "keystone/contrib/federation/samlgen.py",
         "patchSetId": 2
@@ -166,6 +218,23 @@
       "writtenOn": "2014-07-30T05:57:41Z",
       "side": 1,
       "message": "should come from region URL",
+      "revId": "fcbdf5ecdc74923396779f9a6fb3b42e483380c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4fddf1dc",
+        "filename": "test-requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-30T14:17:38Z",
+      "side": 1,
+      "message": "This will have to be brought over to global requirements",
       "revId": "fcbdf5ecdc74923396779f9a6fb3b42e483380c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
