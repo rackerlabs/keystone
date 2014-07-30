@@ -18,6 +18,7 @@ from keystone.common import dependency
 from keystone.common import serializer
 from keystone import config
 from keystone.contrib.federation import controllers as federation_controllers
+from keystone.contrib.federation import samlgen
 from keystone.contrib.federation import utils as mapping_utils
 from keystone import exception
 from keystone.openstack.common import jsonutils
@@ -1567,3 +1568,31 @@ class FederatedTokenTests(FederationTests):
         assertion = getattr(mapping_fixtures, variant)
         context['environment'].update(assertion)
         context['query_string'] = []
+
+
+class SAMLGenerationTests(FederationTests):
+
+    def test_samlize_values(self):
+        issuer = "https://acme.com/FIM/sps/openstack/saml20"
+        subject = 'stevemar'
+        roles = ['demo', 'service']
+        public_key = CONF.signing.certfile
+        private_key = CONF.signing.certfile
+        expires_in = 1
+
+        generator = samlgen.SAMLGenerator()
+        response = generator.samlize_token(issuer, subject, roles,
+                                           public_key, private_key,
+                                           expires_in)
+        self.assertEqual(response.issuer.text, issuer)
+
+        assertion = response.assertion
+        self.assertEqual(assertion.signature.signature_value.text,
+                         open(public_key).read())
+
+        user_attribute = assertion.attribute_statement.attribute[0]
+        self.assertEqual(user_attribute.attribute_value.text, subject)
+
+        role_attribute = assertion.attribute_statement.attribute[1]
+        for attribute_value in role_attribute.attribute_value:
+            self.assertIn(attribute_value.text, roles)
