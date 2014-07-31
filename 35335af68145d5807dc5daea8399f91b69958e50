@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_111e7e0d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-31T21:47:14Z",
+      "side": 1,
+      "message": "@David, \n\nYep! That is correct. I replied to your email as well, if we\u0027re missing some key use-case lets hammer that out, but I think we\u0027re on the same page now.",
+      "parentUuid": "baada198_4e005703",
+      "revId": "35335af68145d5807dc5daea8399f91b69958e50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_ee812bfb",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
