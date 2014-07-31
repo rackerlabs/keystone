@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_4e005703",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6534
+      },
+      "writtenOn": "2014-07-31T21:34:11Z",
+      "side": 1,
+      "message": "So if I have understood correctly this fix is nothing to do with authz, and  will not effect the domains and projects a user can be a member of as a result of his roles and groups (and attribute mappings).This fix is purely cosmetic since some existing code expects all users to be managed by some domain administrator or other and expects the user domain field to be present. So you are reserving the keyword Federated to signify the domain of federated users.\n\nI therefore suggest you change \"dummy value of\" into \"reserved value of\"",
+      "parentUuid": "baada198_8e4b4f5e",
+      "revId": "35335af68145d5807dc5daea8399f91b69958e50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_ee812bfb",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
