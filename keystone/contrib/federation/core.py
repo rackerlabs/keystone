@@ -44,6 +44,8 @@ extension.register_public_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 FEDERATION = 'OS-FEDERATION'
 IDENTITY_PROVIDER = 'OS-FEDERATION:identity_provider'
 PROTOCOL = 'OS-FEDERATION:protocol'
+FEDERATED_DOMAIN_NAME = 'Federated'
+FEDERATED_DOMAIN_ID = 'Federated'
 
 
 @dependency.provider('federation_api')
