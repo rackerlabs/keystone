@@ -20,11 +20,16 @@ by convention, with a few hardcoded exceptions.
 
 """
 
-from lxml import etree
+try:
+    from lxml import etree
+except ImportError:
+    etree = None
+
 import re
 
 import six
 
+from keystone import exception
 from keystone.i18n import _
 
 
@@ -39,16 +44,6 @@ XMLNS_LIST = [
         'value': 'http://docs.openstack.org/identity/api/ext/OS-KSADM/v1.0',
     },
 ]
-
-PARSER = etree.XMLParser(
-    resolve_entities=False,
-    remove_comments=True,
-    remove_pis=True)
-
-# NOTE(dolph): lxml.etree.Entity() is just a callable that currently returns an
-# lxml.etree._Entity instance, which doesn't appear to be part of the
-# public API, so we discover the type dynamically to be safe
-ENTITY_TYPE = type(etree.Entity('x'))
 
 
 def from_xml(xml):
@@ -70,9 +65,24 @@ def to_xml(d, xmlns=None):
 
 
 class XmlDeserializer(object):
+
+    def __init__(self):
+        if etree is None:
+            raise exception.UnexpectedError()
+
+        self.parser = etree.XMLParser(resolve_entities=False,
+                                      remove_comments=True,
+                                      remove_pis=True)
+
+        # NOTE(dolph): lxml.etree.Entity() is just a callable that currently
+        # returns an lxml.etree._Entity instance, which doesn't appear to be
+        # part of the public API, so we discover the type dynamically to be
+        # safe
+        self.entity_type = type(etree.Entity('x'))
+
     def __call__(self, xml_str):
         """Returns a dictionary populated by decoding the given xml string."""
-        dom = etree.fromstring(xml_str.strip(), PARSER)
+        dom = etree.fromstring(xml_str.strip(), self.parser)
         return self.walk_element(dom, True)
 
     def _deserialize_links(self, links):
@@ -145,7 +155,7 @@ class XmlDeserializer(object):
         links = None
         truncated = False
         for child in [self.walk_element(x) for x in element
-                      if not isinstance(x, ENTITY_TYPE)]:
+                      if not isinstance(x, self.entity_type)]:
             if list_item_tag:
                 # FIXME(gyee): special-case lists for now until we
                 # figure out how to properly handle them.
@@ -178,6 +188,11 @@ class XmlDeserializer(object):
 
 
 class XmlSerializer(object):
+
+    def __init__(self):
+        if etree is None:
+            raise exception.UnexpectedError()
+
     def __call__(self, d, xmlns=None):
         """Returns an xml etree populated by the given dictionary.
 
