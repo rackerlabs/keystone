@@ -16,6 +16,24 @@
       "revId": "9de15c61aa7a6debb3ae845951d2cf77a957ace8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_38237007",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-31T16:48:25Z",
+      "side": 1,
+      "message": "David,\n\nThis is more of a consistency issue than a \"how this should work\". A lot of things will break with a federated token user data does not have a domain section. This includes a number of auth_token middleware versions.\n\nInstead of trying to do something to keep idpids in sync with domain ids and avoiding conflicts (among other side issues you outlined in your comment), I want to propose a simple code-construct domain that is used that is just called \"Federated\" both id and name.\n\nThis code-construct cannot be used for groups, projects, etc. It is simply the \"domain\" data for a federated user (ensuring the user has the same data format and we don\u0027t break various versions of software expecting the data format).",
+      "parentUuid": "baada198_45b21407",
+      "revId": "9de15c61aa7a6debb3ae845951d2cf77a957ace8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
