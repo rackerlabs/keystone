@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_bc29298b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-31T22:07:32Z",
+      "side": 1,
+      "message": "if domain.get(\u0027name\u0027, \u0027\u0027).lower() \u003d\u003d \u0027federated\u0027:",
+      "revId": "4e40d1d5fdab53df0d689b8380a72b1d76d220e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
