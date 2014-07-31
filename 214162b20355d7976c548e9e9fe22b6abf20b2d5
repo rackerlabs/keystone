@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_cbd0e054",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-31T17:05:45Z",
+      "side": 1,
+      "message": "Is there any reason why this part isn\u0027t in a separate commit?",
+      "revId": "214162b20355d7976c548e9e9fe22b6abf20b2d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0b42d80e",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-31T17:05:45Z",
+      "side": 1,
+      "message": "Is there any reason you wanted to start listening here? I\u0027m not a big fan of doing stuff like this in the __init__ method.",
+      "revId": "214162b20355d7976c548e9e9fe22b6abf20b2d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_cb4d4073",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-31T17:05:45Z",
+      "side": 1,
+      "message": "Since nothing in start uses backlog why keep it?",
+      "revId": "214162b20355d7976c548e9e9fe22b6abf20b2d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0b59f8fc",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-31T17:05:45Z",
+      "side": 1,
+      "message": "This feels odd to me. Is it support to stop and then start the server?",
+      "revId": "214162b20355d7976c548e9e9fe22b6abf20b2d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
