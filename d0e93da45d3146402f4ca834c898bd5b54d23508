@@ -16,6 +16,24 @@
       "revId": "d0e93da45d3146402f4ca834c898bd5b54d23508",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_5abbb40e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-07-31T19:34:50Z",
+      "side": 1,
+      "message": "yeah, realized that when the update tests failed :)",
+      "parentUuid": "baada198_ba82104f",
+      "revId": "d0e93da45d3146402f4ca834c898bd5b54d23508",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
