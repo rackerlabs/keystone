@@ -17,14 +17,15 @@ import webob.dec
 
 from keystone.common import authorization
 from keystone.common import config
-from keystone.common import serializer
 from keystone.common import utils
 from keystone.common import wsgi
 from keystone import exception
 from keystone.i18n import _
+from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
 from keystone.openstack.common import versionutils
+
 
 CONF = config.CONF
 LOG = log.getLogger(__name__)
@@ -158,6 +159,11 @@ class XmlBodyMiddleware(wsgi.Middleware):
     def __init__(self, *args, **kwargs):
         super(XmlBodyMiddleware, self).__init__(*args, **kwargs)
         self.xmlns = None
+        if importutils.try_import('lxml') is None:
+            raise ImportError('Could not import lxml')
+        self.serializer = importutils.try_import('keystone.common.serializer')
+        if self.serializer is None:
+            raise ImportError('Could not import serializer')
 
     def process_request(self, request):
         """Transform the request from XML to JSON."""
@@ -166,7 +172,7 @@ class XmlBodyMiddleware(wsgi.Middleware):
             request.content_type = 'application/json'
             try:
                 request.body = jsonutils.dumps(
-                    serializer.from_xml(request.body))
+                    self.serializer.from_xml(request.body))
             except Exception:
                 LOG.exception('Serializer failed')
                 e = exception.ValidationError(attribute='valid XML',
@@ -180,7 +186,8 @@ class XmlBodyMiddleware(wsgi.Middleware):
             response.content_type = 'application/xml'
             try:
                 body_obj = jsonutils.loads(response.body)
-                response.body = serializer.to_xml(body_obj, xmlns=self.xmlns)
+                response.body = self.serializer.to_xml(body_obj,
+                                                       xmlns=self.xmlns)
             except Exception:
                 LOG.exception('Serializer failed')
                 raise exception.Error(message=response.body)

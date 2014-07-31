@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import mock
 import webob
 
 from keystone import config
@@ -166,3 +167,33 @@ class XmlBodyMiddlewareTest(tests.TestCase):
         middleware.XmlBodyMiddleware(None).process_request(req)
         self.assertEqual(body, req.body)
         self.assertEqual(content_type, req.content_type)
+
+    @mock.patch('keystone.openstack.common.importutils.try_import',
+                first=None, second=object())
+    def test_exception_raised_when_lxml_import_fails(self, mock_import):
+        """Exception is raised when lxml isn't installed on the system."""
+        self.assertRaises(ImportError, middleware.XmlBodyMiddleware, None)
+        # Make sure that try_import was only called once since we shouldn't be
+        # importing 'keystone.common.serializer' if we can't import 'lxml'.
+        self.assertEqual(mock_import.call_count, 1)
+
+    @mock.patch('keystone.openstack.common.importutils.try_import',
+                first=object(), second=object())
+    def test_import_lxml_and_serializer_succeeds(self, mock_import):
+        """Ensure we properly import the serializer module if we can.
+
+        Use Mock here to simulate the first call to `try_import` and return
+        a value that is meant to be the lxml module. The second call is meant
+        to represent the serializer module, testing the condition that the
+        serializer module is only import if the `try_import('lxml')` call
+        succeeds.
+        """
+        middleware.XmlBodyMiddleware(None)
+        self.assertEqual(mock_import.call_count, 2)
+
+    @mock.patch('keystone.openstack.common.importutils.try_import',
+                first=object(), second=None)
+    def test_exception_raised_when_serializer_import_fails(self, mock_import):
+        """Exception is raised when serializer import fails."""
+        self.assertRaises(ImportError, middleware.XmlBodyMiddleware, None)
+        self.assertEqual(mock_import.call_count, 2)
