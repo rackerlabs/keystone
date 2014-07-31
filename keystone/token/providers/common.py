@@ -482,7 +482,11 @@ class BaseProvider(provider.Provider):
         token_data = {
             'user': {
                 'id': user_id,
-                'name': parse.unquote(user_id)
+                'name': parse.unquote(user_id),
+                'domain': {
+                    'id': 'Federated',
+                    'name': 'Federated'
+                }
             }
         }
 
