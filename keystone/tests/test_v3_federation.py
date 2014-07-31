@@ -1298,6 +1298,19 @@ class FederatedTokenTests(FederationTests):
         self.assertRaises(exception.Unauthorized,
                           self._issue_unscoped_token)
 
+    def _check_domains_are_valid(self, token):
+        self.assertEqual('Federated', token['user']['domain']['id'])
+        self.assertEqual('Federated', token['user']['domain']['name'])
+
+    def test_unscoped_token_has_user_domain(self):
+        r = self._issue_unscoped_token()
+        self._check_domains_are_valid(r.json_body['token'])
+
+    def test_scoped_token_has_user_domain(self):
+        r = self.v3_authenticate_token(
+            self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_EMPLOYEE)
+        self._check_domains_are_valid(r.result['token'])
+
     def load_federation_sample_data(self):
         """Inject additional data."""
 
