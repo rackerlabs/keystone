@@ -14,6 +14,8 @@
 
 import uuid
 
+import mock
+
 from keystone import auth
 from keystone import exception
 from keystone import tests
@@ -152,3 +154,56 @@ class TestInvalidAuthMethodRegistration(tests.TestCase):
             methods=['keystone.tests.test_auth_plugin.NoMethodAuthPlugin'])
         self.clear_auth_plugin_registry()
         self.assertRaises(ValueError, auth.controllers.load_auth_methods)
+
+
+class TestMapped(tests.TestCase):
+    def setUp(self):
+        super(TestMapped, self).setUp()
+        self.load_backends()
+
+        self.api = auth.controllers.Auth()
+
+    def config_files(self):
+        config_files = super(TestMapped, self).config_files()
+        config_files.append(tests.dirs.tests_conf('test_auth_plugin.conf'))
+        return config_files
+
+    def config_overrides(self):
+        super(TestMapped, self).config_overrides()
+        self.config_fixture.config(
+            group='auth',
+            methods=[
+                'x509',
+                'saml2',
+                'openid'])
+        self.config_fixture.config(
+            group='auth',
+            x509='keystone.auth.plugins.mapped.Mapped')
+        self.config_fixture.config(
+            group='auth',
+            saml2='keystone.auth.plugins.mapped.Mapped')
+        self.config_fixture.config(
+            group='auth',
+            openid='keystone.auth.plugins.mapped.Mapped')
+
+    def _test_mapped_invocation_with_method_name(self, method_name):
+        with mock.patch.object(auth.plugins.mapped.Mapped,
+                               'authenticate',
+                               return_value=None) as authenticate:
+            auth_data = {'methods': [method_name]}
+            # put the method name in the payload so its easier to correlate
+            # method name with payload
+            auth_data[method_name] = {'protocol': method_name}
+            auth_data = {'identity': auth_data}
+            auth_info = auth.controllers.AuthInfo.create(None, auth_data)
+            auth_context = {'extras': {},
+                            'method_names': [],
+                            'user_id': uuid.uuid4().hex}
+            self.api.authenticate({'environment': {}}, auth_info, auth_context)
+            # make sure Mapped plugin got invoked with the correct payload
+            ((context, auth_payload, auth_context), ) = authenticate.call_args
+            self.assertEqual(auth_payload['protocol'], method_name)
+
+    def test_supporting_multiple_methods(self):
+        for method_name in ['saml2', 'openid', 'x509']:
+            self._test_mapped_invocation_with_method_name(method_name)
