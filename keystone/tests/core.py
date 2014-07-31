@@ -337,7 +337,7 @@ class TestCase(BaseTestCase):
                      'keystone.auth.plugins.password.Password',
                      'keystone.auth.plugins.token.Token',
                      'keystone.auth.plugins.oauth1.OAuth',
-                     'keystone.auth.plugins.saml2.Saml2'])
+                     'keystone.auth.plugins.mapped.Mapped'])
         self.config_fixture.config(
             # TODO(morganfainberg): Make Cache Testing a separate test case
             # in tempest, and move it out of the base unit tests.
