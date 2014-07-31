@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_2be23501",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-31T20:34:51Z",
+      "side": 1,
+      "message": "Ignore. I thought you were publishing the value of the domain name.",
+      "parentUuid": "baada198_c8b0df8f",
+      "revId": "35335af68145d5807dc5daea8399f91b69958e50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_eb575dc7",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-31T20:33:06Z",
       "side": 1,
       "message": "Same as above",
+      "revId": "35335af68145d5807dc5daea8399f91b69958e50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8bb8a1e9",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-31T20:34:51Z",
+      "side": 1,
+      "message": "Ignore.",
+      "parentUuid": "baada198_eb575dc7",
       "revId": "35335af68145d5807dc5daea8399f91b69958e50",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
