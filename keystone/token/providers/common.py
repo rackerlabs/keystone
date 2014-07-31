@@ -482,7 +482,11 @@ class BaseProvider(provider.Provider):
         token_data = {
             'user': {
                 'id': user_id,
-                'name': parse.unquote(user_id)
+                'name': parse.unquote(user_id),
+                'domain': {
+                    'id': auth_context[federation.IDENTITY_PROVIDER],
+                    'name': auth_context[federation.IDENTITY_PROVIDER]
+                }
             }
         }
 
@@ -498,7 +502,7 @@ class BaseProvider(provider.Provider):
                     'identity_provider': {'id': idp},
                     'protocol': {'id': protocol},
                     'groups': [{'id': x} for x in group_ids]
-                },
+                }
             })
         return token_data
 
