@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_8e4b4f5e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-31T20:56:48Z",
+      "side": 1,
+      "message": "The domain of the *user* should not be touched by the mapping rules. Why does a federated user need to be \"a member of a domain\"? The mapping rules will map the user to a group (and a scope) and that group conveys the RBAC support to act on projects, domains, etc.\n\nIs there a reason a user *needs* to be considered owned by a domain? Being attached to a domain does not convey roles, authorization, etc. I don\u0027t see the value in having the user data structure reference the domain unless that user is actually managed by the domain directly (not the case with federation).",
+      "parentUuid": "baada198_2bc5d53c",
+      "revId": "35335af68145d5807dc5daea8399f91b69958e50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_c8b0df8f",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
