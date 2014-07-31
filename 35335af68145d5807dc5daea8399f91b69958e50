@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_2bc5d53c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6534
+      },
+      "writtenOn": "2014-07-31T20:40:24Z",
+      "side": 1,
+      "message": "This should not be a dummy value but rather a default value, that can be over written as you still need to be able to put any federated user into any domain via the mapping rules. Otherwise how does a federated user become a member of any domain, including the default domain?",
+      "revId": "35335af68145d5807dc5daea8399f91b69958e50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_c8b0df8f",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
