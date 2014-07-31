@@ -13,10 +13,12 @@
 # under the License.
 
 import copy
+import mock
 
 from testtools import matchers
 
 from keystone.common import serializer
+from keystone import exception
 from keystone import tests
 from keystone.tests import matchers as ksmatchers
 
@@ -314,3 +316,12 @@ identity-service/2.0/identity-dev-guide-2.0.pdf" type="application/pdf"/>
                     OS-KSADM:password="mypass"/>
         """ % dict(xmlns=xmlns)
         self.assertThat(serializer.from_xml(xml), matchers.Equals(expected))
+
+    def test_etree_import_succeeds(self):
+        from lxml import etree
+        serializer.etree = etree
+        self.assertIsNotNone(serializer.use_etree())
+
+    def test_etree_import_fails(self):
+        serializer.etree = None
+        self.assertRaises(exception.UnexpectedError, serializer.use_etree)

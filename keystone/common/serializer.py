@@ -20,13 +20,17 @@ by convention, with a few hardcoded exceptions.
 
 """
 
-from lxml import etree
+try:
+    from lxml import etree
+except ImportError:
+    etree = None
+
 import re
 
 import six
 
+from keystone import exception
 from keystone.i18n import _
-
 
 DOCTYPE = '<?xml version="1.0" encoding="UTF-8"?>'
 XMLNS = 'http://docs.openstack.org/identity/api/v2.0'
@@ -40,7 +44,12 @@ XMLNS_LIST = [
     },
 ]
 
-PARSER = etree.XMLParser(
+def use_etree():
+    if etree is None:
+        raise exception.UnexpectedError()
+    return etree
+
+PARSER = use_etree().XMLParser(
     resolve_entities=False,
     remove_comments=True,
     remove_pis=True)
@@ -48,7 +57,7 @@ PARSER = etree.XMLParser(
 # NOTE(dolph): lxml.etree.Entity() is just a callable that currently returns an
 # lxml.etree._Entity instance, which doesn't appear to be part of the
 # public API, so we discover the type dynamically to be safe
-ENTITY_TYPE = type(etree.Entity('x'))
+ENTITY_TYPE = type(use_etree().Entity('x'))
 
 
 def from_xml(xml):
@@ -72,7 +81,7 @@ def to_xml(d, xmlns=None):
 class XmlDeserializer(object):
     def __call__(self, xml_str):
         """Returns a dictionary populated by decoding the given xml string."""
-        dom = etree.fromstring(xml_str.strip(), PARSER)
+        dom = use_etree().fromstring(xml_str.strip(), PARSER)
         return self.walk_element(dom, True)
 
     def _deserialize_links(self, links):
@@ -215,7 +224,7 @@ class XmlSerializer(object):
                 xmlns = ns['value']
                 break
         # only the root dom element gets an xlmns
-        root = etree.Element(root_name, xmlns=(xmlns or XMLNS))
+        root = use_etree().Element(root_name, xmlns=(xmlns or XMLNS))
 
         self.populate_element(root, d[name])
 
@@ -226,20 +235,20 @@ class XmlSerializer(object):
             self._populate_truncated(root, truncated)
 
         # TODO(dolph): you can get a doctype from lxml, using ElementTrees
-        return '%s\n%s' % (DOCTYPE, etree.tostring(root, pretty_print=True))
+        return '%s\n%s' % (DOCTYPE, use_etree().tostring(root, pretty_print=True))
 
     def _populate_links(self, element, links_json):
-        links = etree.Element('links')
+        links = use_etree().Element('links')
         for k, v in six.iteritems(links_json):
             if v:
-                link = etree.Element('link')
+                link = use_etree().Element('link')
                 link.set('rel', six.text_type(k))
                 link.set('href', six.text_type(v))
                 links.append(link)
         element.append(links)
 
     def _populate_truncated(self, element, truncated_value):
-        truncated = etree.Element('truncated')
+        truncated = use_etree().Element('truncated')
         self._populate_bool(truncated, 'truncated', truncated_value)
         element.append(truncated)
 
@@ -253,12 +262,12 @@ class XmlSerializer(object):
             # find an existing <media-types> element or make one
             container = element.find('media-types')
             if container is None:
-                container = etree.Element(k)
+                container = use_etree().Element(k)
                 element.append(container)
             name = k[:-1]
         elif k == 'serviceCatalog' or k == 'catalog':
             # xsd compliance: <serviceCatalog> contains <service>s
-            container = etree.Element(k)
+            container = use_etree().Element(k)
             element.append(container)
             name = 'service'
         elif k == 'roles' and element.tag == 'user':
@@ -271,7 +280,7 @@ class XmlSerializer(object):
             # unnecessary in XML
             name = element.tag[:-1]
         elif k[-1] == 's':
-            container = etree.Element(k)
+            container = use_etree().Element(k)
             element.append(container)
             if k == 'policies':
                 # need to special-case policies since policie is not a word
@@ -282,7 +291,7 @@ class XmlSerializer(object):
             name = k
 
         for item in v:
-            child = etree.Element(name)
+            child = use_etree().Element(name)
             self.populate_element(child, item)
             container.append(child)
 
@@ -292,7 +301,7 @@ class XmlSerializer(object):
             # links is a special dict
             self._populate_links(element, v)
         else:
-            child = etree.Element(k)
+            child = use_etree().Element(k)
             self.populate_element(child, v)
             element.append(child)
 
@@ -305,7 +314,7 @@ class XmlSerializer(object):
         """Populates an element with a key & string value."""
         if k in ['description']:
             # always becomes an element
-            child = etree.Element(k)
+            child = use_etree().Element(k)
             child.text = six.text_type(v)
             element.append(child)
         else:
@@ -328,7 +337,7 @@ class XmlSerializer(object):
             # v2.0 version element also add the links to the base element.
             if value.get('id') == 'v2.0':
                 for item in value['links']:
-                    child = etree.Element('link')
+                    child = use_etree().Element('link')
                     self.populate_element(child, item)
                     element.append(child)
 
@@ -345,7 +354,7 @@ class XmlSerializer(object):
                 name = 'policy'
 
         for item in l:
-            child = etree.Element(name)
+            child = use_etree().Element(name)
             self.populate_element(child, item)
             element.append(child)
 
