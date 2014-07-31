@@ -3663,6 +3663,22 @@ class CatalogTests(object):
         services = self.catalog_api.list_services()
         self.assertIn(service_id, [x['id'] for x in services])
 
+        # filter by type
+        hint_for_type = driver_hints.Hints()
+        hint_for_type.add_filter(name='type',
+                                 value=new_service['type'])
+        services = self.catalog_api.list_services(hint_for_type)
+        for service in services:
+            self.assertEqual(new_service['type'], service['type'])
+
+        # filter by name
+        hint_for_name = driver_hints.Hints()
+        hint_for_name.add_filter(name='name',
+                                 value=new_service['name'])
+        services = self.catalog_api.list_services(hint_for_name)
+        for service in services:
+            self.assertEqual(new_service['name'], service['name'])
+
         # delete
         self.catalog_api.delete_service(service_id)
         self.assertRaises(exception.ServiceNotFound,
