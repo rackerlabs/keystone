@@ -16,6 +16,24 @@
       "revId": "645c38f2d3837c7f87235d136a93c0977907e119",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_97299ef4",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-31T23:03:14Z",
+      "side": 1,
+      "message": "I am not opposed to this being made configurable, however, I\u0027m not sure if there is a real benefit to it being configureable. If the general consensus is this should be configurable, I\u0027ll make it configurable (it\u0027s a few lines of code).I just don\u0027t want to add config options that really will never be changed,",
+      "parentUuid": "baada198_34458915",
+      "revId": "645c38f2d3837c7f87235d136a93c0977907e119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
