@@ -474,6 +474,10 @@ class BaseProvider(provider.Provider):
                 federation.FEDERATION: {
                     'identity_provider': {'id': idp},
                     'protocol': {'id': protocol}
+                },
+                'domain': {
+                    'id': 'Federated',
+                    'name': 'Federated'
                 }
             }
         }
