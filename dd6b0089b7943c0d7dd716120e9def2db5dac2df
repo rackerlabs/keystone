@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_df6433b5",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-31T04:57:33Z",
+      "side": 1,
+      "message": "Instead of using \"this\" it would be clearer to explicitly reference member_role_id.",
+      "revId": "dd6b0089b7943c0d7dd716120e9def2db5dac2df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ff02d7b8",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-31T04:57:33Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "dd6b0089b7943c0d7dd716120e9def2db5dac2df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1f06abcd",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-31T04:57:33Z",
+      "side": 1,
+      "message": "After the migration ...\n\n\"this\" \u003d\u003e member_role_id",
+      "revId": "dd6b0089b7943c0d7dd716120e9def2db5dac2df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
