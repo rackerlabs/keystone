@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_c8b0df8f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-31T20:33:06Z",
+      "side": 1,
+      "message": "We don\u0027t need to also spit out the domain name/id inside the AssertionError message.",
+      "revId": "35335af68145d5807dc5daea8399f91b69958e50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_eb575dc7",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-07-31T20:33:06Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "35335af68145d5807dc5daea8399f91b69958e50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
