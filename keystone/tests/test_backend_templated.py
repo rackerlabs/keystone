@@ -111,3 +111,6 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
              'name': "'Identity Service'",
              'id': '1'}]
         self.assertEqual(exp_catalog, catalog_ref)
+
+    def test_service_filtering(self):
+        self.skipTest("kvs backend doesn't support filtering")

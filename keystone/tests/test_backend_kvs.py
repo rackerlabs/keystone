@@ -229,6 +229,9 @@ class KvsCatalog(tests.TestCase, test_backend.CatalogTests):
         f = super(KvsCatalog, self).test_get_v3_catalog_endpoint_disabled
         self.assertRaises(exception.NotFound, f)
 
+    def test_service_filtering(self):
+        self.skipTest("kvs backend doesn't support filtering")
+
 
 class KvsTokenCacheInvalidation(tests.TestCase,
                                 test_backend.TokenCacheInvalidation):
