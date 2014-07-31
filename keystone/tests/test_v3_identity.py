@@ -429,6 +429,24 @@ class IdentityTestCase(test_v3.RestfulTestCase):
                   headers={'x-subject-token': subject_token},
                   expected_status=404)
 
+    def test_create_federated_domain_name(self):
+        """Ensure user cannot create domain named Federated."""
+        domain = self.new_domain_ref()
+        domain['name'] = 'Federated'
+        self.assertRaises(AssertionError, self.assignment_api.create_domain, domain['id'], domain)
+
+    def test_create_federated_domain_id(self):
+        """Ensure user cannot create domain with ID Federated."""
+        domain = self.new_domain_ref()
+        domain['id'] = 'federated'
+        self.assertRaises(AssertionError, self.assignment_api.create_domain, domain['id'], domain)
+
+    def test_update_federated_domain_id(self):
+        """Ensure user cannot create domain with ID Federated."""
+        domain = self.new_domain_ref()
+        domain['id'] = 'FEDERATED'
+        self.assertRaises(AssertionError, self.assignment_api.update_domain, domain['id'], domain)
+
     # project crud tests
 
     def test_list_projects(self):
