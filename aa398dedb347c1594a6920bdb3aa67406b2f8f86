@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_0893b75c",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-31T20:14:28Z",
+      "side": 1,
+      "message": "Doing this would mean that you couldn\u0027t use this middleware with any other middleware that uses HTTP authorization. For example, digest auth or oauth. I think if the scheme is basic we process it and it not we let someone else deal with it.",
+      "revId": "aa398dedb347c1594a6920bdb3aa67406b2f8f86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_88d18731",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-07-31T20:14:28Z",
+      "side": 1,
+      "message": "Why uses headers here and the environment variable below?",
+      "revId": "aa398dedb347c1594a6920bdb3aa67406b2f8f86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
