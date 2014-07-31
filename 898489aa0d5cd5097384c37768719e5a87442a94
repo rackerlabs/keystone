@@ -16,6 +16,24 @@
       "revId": "898489aa0d5cd5097384c37768719e5a87442a94",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_69551c1d",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-07-31T18:28:23Z",
+      "side": 1,
+      "message": "it is used in other patches that test schemas: \n\nassignment api: https://review.openstack.org/#/c/86484/37/keystone/tests/test_validation.py\n\ncatalog api: https://review.openstack.org/#/c/96266/22/keystone/tests/test_validation.py\n\nRight now it is included in the patch for assignment api, so other patches (like the catalog api validation patch) are dependent on the assignment api patch. This was an attempt to land the common stuff so that all api validation patches (assignment, catalog, policy, etc..) use the same thing.",
+      "parentUuid": "baada198_0bdbcd21",
+      "revId": "898489aa0d5cd5097384c37768719e5a87442a94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
