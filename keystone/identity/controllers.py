@@ -212,7 +212,7 @@ class UserV3(controller.V3Controller):
         ref = self.identity_api.create_user(ref)
         return UserV3.wrap_member(context, ref)
 
-    @controller.filterprotected('domain_id', 'enabled', 'name')
+    @controller.filterprotected('domain_id', 'enabled', 'name', 'email')
     def list_users(self, context, filters):
         hints = UserV3.build_driver_hints(context, filters)
         refs = self.identity_api.list_users(
@@ -220,7 +220,7 @@ class UserV3(controller.V3Controller):
             hints=hints)
         return UserV3.wrap_collection(context, refs, hints=hints)
 
-    @controller.filterprotected('domain_id', 'enabled', 'name')
+    @controller.filterprotected('domain_id', 'enabled', 'name', 'email')
     def list_users_in_group(self, context, filters, group_id):
         hints = UserV3.build_driver_hints(context, filters)
         refs = self.identity_api.list_users_in_group(group_id, hints=hints)
