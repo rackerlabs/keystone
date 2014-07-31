@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "baada198_ee812bfb",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-07-31T21:15:16Z",
+      "side": 1,
+      "message": "Hard coded  constant checking is always bad.",
+      "revId": "35335af68145d5807dc5daea8399f91b69958e50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_c8b0df8f",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
