@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_45b21407",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6534
+      },
+      "writtenOn": "2014-07-31T06:41:18Z",
+      "side": 1,
+      "message": "I dont believe this is the correct solution. The flow should work as follows:\n\n1. When the user is authenticated by the IDP he is assigned a set of identity attributes. The IdP can assign whatever attributes it wishes. This may or may not include a domain attribute.\n\n2. The Keystone administrator decides which of the IDP assigned attributes are trusted and which are not. He may decide to trust the domain attribute assigned by the IDP or not. This is his choice.\n\n3. The attribute mapping function is the key component in which the domain of the user is ultimately determined. There are multiple alternatives available to the Keystone administrator.\n\na. If the Keystone admin trusts the domain attribute assigned by the IDP then it will be mapped into the domain of the user by a mapping rule\n\nb. If the Keystone admin does not trust the domain attribute assigned by the IDP or the IDP has not assigned a domain attribute, then the Keystone admin should provide a mapping rule to map from one or more IDP assigned identity attributes into a domain. \n\nc. In order to decrease the burden on the Keystone administrator, we could have an implicit mapping rule that will apply first, this being to assign the user to the default domain. If the Keystone admin does not have a mapping rule that specifies the domain of the user, then the default one will apply, otherwise it will be overwritten by the domain specified in the mapping rule of the Keystone administrator.",
+      "revId": "9de15c61aa7a6debb3ae845951d2cf77a957ace8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
