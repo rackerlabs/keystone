@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_0bdbcd21",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-07-31T08:00:45Z",
+      "side": 1,
+      "message": "So, this is not actually used?",
+      "revId": "898489aa0d5cd5097384c37768719e5a87442a94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
