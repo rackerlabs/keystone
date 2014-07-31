@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_31aaa2d2",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-31T22:02:18Z",
+      "side": 1,
+      "message": "the last two sentences are a little overkill lol",
+      "revId": "da00da732d6be0626810fe4ec87d40dab16117de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_110afe26",
+        "filename": "keystone/tests/test_revoke.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-07-31T22:02:18Z",
+      "side": 1,
+      "message": "++",
+      "revId": "da00da732d6be0626810fe4ec87d40dab16117de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
