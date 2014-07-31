@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_fa0f28de",
+        "filename": "bin/keystone-all",
+        "patchSetId": 10
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-31T19:37:13Z",
+      "side": 1,
+      "message": "I would prefer if this was configurable, some clouds *may* not want the profiler running.",
+      "parentUuid": "baada198_22cee4b4",
+      "revId": "d759f1e9b4de35b112818404f3cb223e5359afb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_d7e9681b",
         "filename": "etc/keystone-paste.ini",
         "patchSetId": 10
