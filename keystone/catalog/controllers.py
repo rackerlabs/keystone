@@ -63,9 +63,9 @@ class Service(controller.V2Controller):
 class Endpoint(controller.V2Controller):
 
     @controller.v2_deprecated
+    @controller.protected()
     def get_endpoints(self, context):
         """Merge matching v3 endpoint refs into legacy refs."""
-        self.assert_admin(context)
         legacy_endpoints = {}
         for endpoint in self.catalog_api.list_endpoints():
             if not endpoint.get('legacy_endpoint_id'):
