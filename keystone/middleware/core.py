@@ -17,7 +17,6 @@ import webob.dec
 
 from keystone.common import authorization
 from keystone.common import config
-from keystone.common import serializer
 from keystone.common import utils
 from keystone.common import wsgi
 from keystone import exception
@@ -158,6 +157,8 @@ class XmlBodyMiddleware(wsgi.Middleware):
     def __init__(self, *args, **kwargs):
         super(XmlBodyMiddleware, self).__init__(*args, **kwargs)
         self.xmlns = None
+        from keystone.common import serializer
+        self.serializer = serializer
 
     def process_request(self, request):
         """Transform the request from XML to JSON."""
@@ -165,8 +166,8 @@ class XmlBodyMiddleware(wsgi.Middleware):
         if incoming_xml and request.body:
             request.content_type = 'application/json'
             try:
-                request.body = jsonutils.dumps(
-                    serializer.from_xml(request.body))
+                request.body = jsonutils.dumps(self.serializer.from_xml(
+                    request.body))
             except Exception:
                 LOG.exception('Serializer failed')
                 e = exception.ValidationError(attribute='valid XML',
@@ -180,7 +181,8 @@ class XmlBodyMiddleware(wsgi.Middleware):
             response.content_type = 'application/xml'
             try:
                 body_obj = jsonutils.loads(response.body)
-                response.body = serializer.to_xml(body_obj, xmlns=self.xmlns)
+                response.body = self.serializer.to_xml(body_obj,
+                                                       xmlns=self.xmlns)
             except Exception:
                 LOG.exception('Serializer failed')
                 raise exception.Error(message=response.body)

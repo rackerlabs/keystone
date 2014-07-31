@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import mock
 import webob
 
 from keystone import config
@@ -166,3 +167,8 @@ class XmlBodyMiddlewareTest(tests.TestCase):
         middleware.XmlBodyMiddleware(None).process_request(req)
         self.assertEqual(body, req.body)
         self.assertEqual(content_type, req.content_type)
+
+    def test_exception_raised_when_serializer_import_fails(self):
+        """Exception is raised when lxml isn't installed on the system."""
+        with mock.patch('__builtin__.__import__', side_effect=ImportError):
+            self.assertRaises(ImportError, middleware.XmlBodyMiddleware, None)
