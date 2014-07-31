@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "baada198_9a854c0c",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-31T19:42:48Z",
+      "side": 1,
+      "message": "These invalidates need to come right after the .update call on line 610 otherwise there is potentially a gap where revocation occurs and a token is still issued under the old data (or similar).",
+      "revId": "8537c79d5452ee1931df1ec612cb22c4b2561127",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_40905bed",
         "filename": "keystone/identity/core.py",
         "patchSetId": 1
@@ -30,6 +47,57 @@
       "writtenOn": "2014-07-30T16:40:25Z",
       "side": 1,
       "message": "Same as above",
+      "revId": "8537c79d5452ee1931df1ec612cb22c4b2561127",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_7a6eb865",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 636,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-31T19:42:48Z",
+      "side": 1,
+      "message": "Same as above, invalidates before deleting the credentials, tokens, etc",
+      "revId": "8537c79d5452ee1931df1ec612cb22c4b2561127",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_bab690d9",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-31T19:42:48Z",
+      "side": 1,
+      "message": "Same as above. move to below the update.",
+      "revId": "8537c79d5452ee1931df1ec612cb22c4b2561127",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9adaac1b",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 709,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-07-31T19:42:48Z",
+      "side": 1,
+      "message": "Same as above (this is mostly for consistency not because it has a real code-requirement).",
       "revId": "8537c79d5452ee1931df1ec612cb22c4b2561127",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
