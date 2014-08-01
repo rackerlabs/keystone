@@ -148,7 +148,7 @@
 #allowed_rpc_exception_modules=oslo.messaging.exceptions,nova.exception,cinder.exception,exceptions
 
 # Qpid broker hostname. (string value)
-#qpid_hostname=localhost
+#qpid_hostname=keystone
 
 # Qpid broker port. (integer value)
 #qpid_port=5672
@@ -205,7 +205,7 @@
 
 # The RabbitMQ broker address where a single node is used.
 # (string value)
-#rabbit_host=localhost
+#rabbit_host=keystone
 
 # The RabbitMQ broker port where a single node is used.
 # (integer value)
@@ -330,30 +330,6 @@
 # Default publisher_id for outgoing notifications (string
 # value)
 #default_publisher_id=<None>
-
-
-#
-# Options defined in keystone.middleware.ec2_token
-#
-
-# URL to get token from ec2 request. (string value)
-#keystone_ec2_url=http://localhost:5000/v2.0/ec2tokens
-
-# Required if EC2 server requires client certificate. (string
-# value)
-#keystone_ec2_keyfile=<None>
-
-# Client certificate key filename. Required if EC2 server
-# requires client certificate. (string value)
-#keystone_ec2_certfile=<None>
-
-# A PEM encoded certificate authority to use when verifying
-# HTTPS connections. Defaults to the system CAs. (string
-# value)
-#keystone_ec2_cafile=<None>
-
-# Disable SSL certificate verification. (boolean value)
-#keystone_ec2_insecure=false
 
 
 #
@@ -867,7 +843,7 @@
 #
 
 # URL for connecting to the LDAP server. (string value)
-#url=ldap://localhost
+#url=ldap://keystone
 
 # User BindDN to query the LDAP server. (string value)
 #user=<None>
@@ -1367,7 +1343,7 @@
 
 # SSL certificate subject (auto generated certificate).
 # (string value)
-#cert_subject=/C=US/ST=Unset/L=Unset/O=Unset/CN=localhost
+#cert_subject=/C=US/ST=Unset/L=Unset/O=Unset/CN=keystone
 
 
 [stats]
