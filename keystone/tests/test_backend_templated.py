@@ -111,3 +111,6 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
              'name': "'Identity Service'",
              'id': '1'}]
         self.assertEqual(exp_catalog, catalog_ref)
+
+    def test_list_regions_with_hints(self):
+        self.skipTest('Templated backend does not support hints')

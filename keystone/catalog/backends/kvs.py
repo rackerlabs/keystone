@@ -14,11 +14,13 @@
 
 
 from keystone import catalog
+from keystone.common import driver_hints
 from keystone.common import kvs
 
 
 class Catalog(kvs.Base, catalog.Driver):
     # Public interface
+
     def get_catalog(self, user_id, tenant_id, metadata=None):
         return self.db.get('catalog-%s-%s' % (tenant_id, user_id))
 
@@ -30,7 +32,7 @@ class Catalog(kvs.Base, catalog.Driver):
         Recursively delete any region that has the supplied region
         as its parent.
         """
-        children = [r for r in self.list_regions()
+        children = [r for r in self.list_regions(driver_hints.Hints())
                     if r['parent_region_id'] == region_id]
         for child in children:
             self._delete_child_regions(child['id'])
@@ -58,7 +60,7 @@ class Catalog(kvs.Base, catalog.Driver):
         self.db.set('region_list', list(region_list))
         return region
 
-    def list_regions(self):
+    def list_regions(self, hints):
         return [self.get_region(x) for x in self.db.get('region_list', [])]
 
     def get_region(self, region_id):
