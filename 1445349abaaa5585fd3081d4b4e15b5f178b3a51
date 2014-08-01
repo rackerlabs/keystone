@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_9ff51086",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-01T20:58:43Z",
+      "side": 1,
+      "message": "Alexey, thanks. The only docstrings I can see that don\u0027t satisfy this particular rule are the ones\u0027 defined on line #45 and #267. And I will rename the test classes to better describe what they are doing and eliminate the docstrings on #45 and #267. The other places you highlight I don\u0027t see the blank line.",
+      "parentUuid": "baada198_4b0f4ce0",
+      "revId": "1445349abaaa5585fd3081d4b4e15b5f178b3a51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_cbfa7cb9",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 4
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_ba0d8237",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-01T20:58:43Z",
+      "side": 1,
+      "message": "Henry, thanks. Done.",
+      "parentUuid": "baada198_4099f46b",
+      "revId": "1445349abaaa5585fd3081d4b4e15b5f178b3a51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_40b014dc",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 4
@@ -64,6 +100,24 @@
       "writtenOn": "2014-08-01T08:42:06Z",
       "side": 1,
       "message": "as above",
+      "revId": "1445349abaaa5585fd3081d4b4e15b5f178b3a51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_da16b649",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-01T20:58:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_40b014dc",
       "revId": "1445349abaaa5585fd3081d4b4e15b5f178b3a51",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_4e0cb044",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-01T20:58:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_20e240d4",
+      "revId": "1445349abaaa5585fd3081d4b4e15b5f178b3a51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_a0d570e7",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 4
@@ -121,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_6e11745b",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-01T20:58:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_a0d570e7",
+      "revId": "1445349abaaa5585fd3081d4b4e15b5f178b3a51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_c0d264fc",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 4
@@ -132,6 +222,24 @@
       "writtenOn": "2014-08-01T08:42:06Z",
       "side": 1,
       "message": "as above",
+      "revId": "1445349abaaa5585fd3081d4b4e15b5f178b3a51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8e096834",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-01T20:58:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_c0d264fc",
       "revId": "1445349abaaa5585fd3081d4b4e15b5f178b3a51",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
