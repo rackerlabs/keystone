@@ -34,6 +34,24 @@
       "revId": "d84a0e10c5d47da1f1d2006b1f5461173bd64281",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_89a4174d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3672,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-01T10:02:17Z",
+      "side": 1,
+      "message": "Right, so what\u0027s about your assert? list_services will return all services, assert should fail. I have the same situation, thinking of excluding this test from KVS tests, but in your case it works.",
+      "parentUuid": "baada198_c9e7ef44",
+      "revId": "d84a0e10c5d47da1f1d2006b1f5461173bd64281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
