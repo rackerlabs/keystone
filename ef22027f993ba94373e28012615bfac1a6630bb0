@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_7e068575",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-01T17:45:00Z",
+      "side": 1,
+      "message": "Won\u0027t we always get an error for keystone.common.serializer, if we fail to import lxml?",
+      "revId": "ef22027f993ba94373e28012615bfac1a6630bb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
