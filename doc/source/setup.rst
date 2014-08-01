@@ -89,7 +89,7 @@ Ubuntu 12.04::
 
 Fedora 19+::
 
-    $ sudo yum install python-sqlite2 python-lxml python-greenlet-devel python-ldap sqlite-devel openldap-devel python-devel libxslt-devel openssl-devel
+    $ sudo yum install python-sqlite2 python-lxml python-greenlet-devel python-ldap sqlite-devel openldap-devel python-devel python-setuptools libxslt-devel openssl-devel
 
 Mac OS X 10.9 (requires Homebrew_)::
 
