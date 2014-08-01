@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_6ec5093c",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3672,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-01T09:19:30Z",
+      "side": 1,
+      "message": "Juan Antonio, for my education - how it works in case of KVS implementation, which ignores hints in list_services?",
+      "revId": "d84a0e10c5d47da1f1d2006b1f5461173bd64281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
