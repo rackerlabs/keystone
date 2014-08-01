@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_f88c6dda",
+        "filename": "keystone/exception.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-01T16:36:00Z",
+      "side": 1,
+      "message": "This is less of a DB configuration issue and more of a DB contention issue. You should never see this unless you are issuing a bunch of tokens from the same trust across multiple keystone processes in a tight loop",
+      "parentUuid": "baada198_0241ce09",
+      "revId": "ba2dd3b3637160541f57de441a90df09abaacd10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_574386af",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 15
