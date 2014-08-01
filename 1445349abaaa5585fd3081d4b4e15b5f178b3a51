@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_4099f46b",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-01T08:42:06Z",
+      "side": 1,
+      "message": "if you pass the url into this as the recource_url named param, it will make sure that the self list link is correct",
+      "revId": "1445349abaaa5585fd3081d4b4e15b5f178b3a51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_40b014dc",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-01T08:42:06Z",
+      "side": 1,
+      "message": "as above",
+      "revId": "1445349abaaa5585fd3081d4b4e15b5f178b3a51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_20e240d4",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-01T08:42:06Z",
+      "side": 1,
+      "message": "Guidelines for doctoring is to have one sentence, followed by blank line, followed by paragraph...",
+      "revId": "1445349abaaa5585fd3081d4b4e15b5f178b3a51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_a0d570e7",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-01T08:42:06Z",
+      "side": 1,
+      "message": "as above...and on subsequent examples....",
+      "revId": "1445349abaaa5585fd3081d4b4e15b5f178b3a51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_c0d264fc",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-01T08:42:06Z",
+      "side": 1,
+      "message": "as above",
+      "revId": "1445349abaaa5585fd3081d4b4e15b5f178b3a51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
