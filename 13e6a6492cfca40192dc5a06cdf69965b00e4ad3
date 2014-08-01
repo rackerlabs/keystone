@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_2e7cf170",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-08-01T09:15:33Z",
+      "side": 1,
+      "message": "could you give a more descriptive name to `r`?",
+      "revId": "13e6a6492cfca40192dc5a06cdf69965b00e4ad3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_eeecb92b",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-08-01T09:15:33Z",
+      "side": 1,
+      "message": "could you use generator syntax (parentheses) instead of creating a list?",
+      "revId": "13e6a6492cfca40192dc5a06cdf69965b00e4ad3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
