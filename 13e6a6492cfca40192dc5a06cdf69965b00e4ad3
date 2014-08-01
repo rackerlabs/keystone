@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_a9e8fbdf",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-08-01T09:49:57Z",
+      "side": 1,
+      "message": "yeah, actually in this case a for loop would be more explicit. this doesn\u0027t look too alien, and map would even look elegant. But maybe the overhead of creating a list where it\u0027s not needed is not worth it. If you\u0027re sure that this will be more efficient that having an explicit for loop, then ignore my comment.",
+      "parentUuid": "baada198_090ac7d0",
+      "revId": "13e6a6492cfca40192dc5a06cdf69965b00e4ad3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_eeecb92b",
         "filename": "keystone/tests/test_v3_catalog.py",
         "patchSetId": 1
