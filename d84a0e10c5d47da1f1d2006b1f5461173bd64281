@@ -88,6 +88,24 @@
       "revId": "d84a0e10c5d47da1f1d2006b1f5461173bd64281",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_649fe502",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3672,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-08-01T12:01:18Z",
+      "side": 1,
+      "message": "good catch! henry-nash, can you elaborate on how to add skip tests to kvs?",
+      "parentUuid": "baada198_045d49ec",
+      "revId": "d84a0e10c5d47da1f1d2006b1f5461173bd64281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
