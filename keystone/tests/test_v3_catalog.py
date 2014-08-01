@@ -215,6 +215,26 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         r = self.get('/regions')
         self.assertValidRegionListResponse(r, ref=self.region)
 
+    def _create_region_with_parent_id(self, parent_id=None):
+        ref = self.new_region_ref()
+        ref['parent_region_id'] = parent_id
+        return self.post(
+            '/regions',
+            body={'region': ref})
+
+    def test_list_regions_filtered_by_parent_region_id(self):
+        """Call ``GET /regions?parent_region_id={parent_region_id}``."""
+        r = self._create_region_with_parent_id()
+        parent_id = r.result['region']['id']
+
+        r = self._create_region_with_parent_id(parent_id)
+        r = self._create_region_with_parent_id(parent_id)
+
+        r = self.get('/regions?parent_region_id=%s' % parent_id)
+
+        [self.assertEqual(parent_id, e['parent_region_id'])
+         for e in r.result['regions']]
+
     def test_list_regions_xml(self):
         """Call ``GET /regions (xml data)``."""
         r = self.get('/regions', content_type='xml')
