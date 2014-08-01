@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_1572bfaf",
+        "filename": "keystone/common/environment/__init__.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-08-01T21:36:48Z",
+      "side": 1,
+      "message": "Regarding: # noqa,  Just curious to what the warning was before getting suppressed.",
+      "revId": "b6aa2fa2bd00578b1d6fc84a7bcaf221b544b078",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_5aaaa66d",
         "filename": "tox.ini",
         "patchSetId": 7
