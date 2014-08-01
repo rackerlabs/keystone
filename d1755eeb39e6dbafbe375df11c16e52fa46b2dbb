@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_986d31ce",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-01T16:22:07Z",
+      "side": 1,
+      "message": "Out of scope....maybe easier to read, but should be a separate change",
+      "revId": "d1755eeb39e6dbafbe375df11c16e52fa46b2dbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b8acb5ef",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-01T16:22:07Z",
+      "side": 1,
+      "message": "Should add details of what the hints parameter is...see list_services as na example",
+      "revId": "d1755eeb39e6dbafbe375df11c16e52fa46b2dbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_5808f9d8",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3596,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-01T16:22:07Z",
+      "side": 1,
+      "message": "maybe a better title would be list_regions_with_parent_filter or something like that?",
+      "revId": "d1755eeb39e6dbafbe375df11c16e52fa46b2dbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
