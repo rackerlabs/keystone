@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_8b515a65",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-01T18:55:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_986d31ce",
+      "revId": "d1755eeb39e6dbafbe375df11c16e52fa46b2dbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_b8acb5ef",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_ebdbb6e7",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-01T18:55:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_b8acb5ef",
+      "revId": "d1755eeb39e6dbafbe375df11c16e52fa46b2dbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_5808f9d8",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2014-08-01T16:22:07Z",
       "side": 1,
       "message": "maybe a better title would be list_regions_with_parent_filter or something like that?",
+      "revId": "d1755eeb39e6dbafbe375df11c16e52fa46b2dbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4bb0228d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3596,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-01T18:55:12Z",
+      "side": 1,
+      "message": "Agree, uisng the same test name as test_v3_catalog - test_list_regions_filtered_by_parent_region_id",
+      "parentUuid": "baada198_5808f9d8",
       "revId": "d1755eeb39e6dbafbe375df11c16e52fa46b2dbb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
