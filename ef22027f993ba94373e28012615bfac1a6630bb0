@@ -16,6 +16,24 @@
       "revId": "ef22027f993ba94373e28012615bfac1a6630bb0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_998293c5",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-01T18:00:52Z",
+      "side": 1,
+      "message": "Yes, so here we check it we can import \u0027lxml\u0027, if we can\u0027t then raise. If we can import \u0027lxml\u0027 then we go ahead and try importing \u0027keystone.common.serializer\u0027, if self.serializer is None, then the import failed on something else that isn\u0027t \u0027lxml\u0027. By testing if we can import \u0027lxml\u0027 first we can say \"Hey, we can\u0027t import \u0027lxml\u0027 so we can\u0027t import \u0027keystone.common.serializer\u0027 anyway, bombing out!\" versus bombing out when importing serializer due to a dependency issue within serializer. We can be more descriptive.\n\n    if importutils.try_import(\u0027keystone.common.serializer\u0027):\n        # we will fail here if \u0027lxml\u0027 can\u0027t be installed on the system. By\n        # checking if \u0027lxml\u0027 is actually the real issue and reporting that to\n        # the user because \"lxml import fails, hence serializer *will* fail\"\n        # is more descriptive to the user than \"serializer import failed, not sure why\"",
+      "parentUuid": "baada198_7e068575",
+      "revId": "ef22027f993ba94373e28012615bfac1a6630bb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
