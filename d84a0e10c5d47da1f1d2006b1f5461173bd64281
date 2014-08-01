@@ -70,6 +70,24 @@
       "revId": "d84a0e10c5d47da1f1d2006b1f5461173bd64281",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_045d49ec",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3672,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-01T11:42:16Z",
+      "side": 1,
+      "message": "Excellent catch!  Yearh we need to improve the test, and then add skip tests in kvs etc.",
+      "parentUuid": "baada198_81494b34",
+      "revId": "d84a0e10c5d47da1f1d2006b1f5461173bd64281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
