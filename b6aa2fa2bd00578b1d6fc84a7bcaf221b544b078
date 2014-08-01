@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_5aaaa66d",
+        "filename": "tox.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-01T21:09:52Z",
+      "side": 1,
+      "message": "This hacking check is silly, and I\u0027d rather leave it disabled even after token/backends is removed.",
+      "revId": "b6aa2fa2bd00578b1d6fc84a7bcaf221b544b078",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
