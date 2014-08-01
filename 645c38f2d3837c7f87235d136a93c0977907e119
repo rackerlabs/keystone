@@ -34,6 +34,24 @@
       "revId": "645c38f2d3837c7f87235d136a93c0977907e119",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_bf4e54c0",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-08-01T20:43:00Z",
+      "side": 1,
+      "message": "10 for now.  I don\u0027t think we need to make it configurable unless there is a customer need.  Was just curious on how you came up with 10.",
+      "parentUuid": "baada198_97299ef4",
+      "revId": "645c38f2d3837c7f87235d136a93c0977907e119",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
