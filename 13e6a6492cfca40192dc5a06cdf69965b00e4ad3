@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_a6b81d13",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-01T14:28:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_a1848fb1",
+      "revId": "13e6a6492cfca40192dc5a06cdf69965b00e4ad3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_41f9f380",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-01T11:29:35Z",
       "side": 1,
       "message": "The current way we define backends is that if we are going to support hints in a method, then it must be provided (i.e. you don\u0027t need the \u003dNone part).\n\nYou should add a list_regions method to the manager class in catalog/core.py that will create a hints object if one was not provided, and then passes that to the backend. You should also change the signature in the abstract method to match.",
+      "revId": "13e6a6492cfca40192dc5a06cdf69965b00e4ad3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_263c0d92",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-01T14:28:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_41f9f380",
       "revId": "13e6a6492cfca40192dc5a06cdf69965b00e4ad3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_8646b91f",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-01T14:28:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_2e7cf170",
+      "revId": "13e6a6492cfca40192dc5a06cdf69965b00e4ad3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_090ac7d0",
         "filename": "keystone/tests/test_v3_catalog.py",
         "patchSetId": 1
@@ -100,6 +154,24 @@
       "side": 1,
       "message": "yeah, actually in this case a for loop would be more explicit. this doesn\u0027t look too alien, and map would even look elegant. But maybe the overhead of creating a list where it\u0027s not needed is not worth it. If you\u0027re sure that this will be more efficient that having an explicit for loop, then ignore my comment.",
       "parentUuid": "baada198_090ac7d0",
+      "revId": "13e6a6492cfca40192dc5a06cdf69965b00e4ad3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_a64f3d34",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-01T14:28:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_a9e8fbdf",
       "revId": "13e6a6492cfca40192dc5a06cdf69965b00e4ad3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
