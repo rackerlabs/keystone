@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_737cfe22",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-01T16:50:03Z",
+      "side": 1,
+      "message": "oslo.messaging*",
+      "revId": "6e8d1b2ad086025371426a54fd7e9945d00f9771",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
