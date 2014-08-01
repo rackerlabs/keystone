@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_233c0a92",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2014-08-01T08:56:50Z",
+      "side": 1,
+      "message": "Hi David,\n\nThe same code was there in other Openstack projects like nova and cinder, where generic Exception was caught.\n\nWe have got comment for the same to catch specific exception, which will be raised from getaddrinfo method,\nso we are making changes in same patch.\n\nPl refer: https://review.openstack.org/#/c/107482/2/keystone/common/environment/eventlet_server.py",
+      "parentUuid": "baada198_cbd0e054",
+      "revId": "214162b20355d7976c548e9e9fe22b6abf20b2d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_0b42d80e",
         "filename": "keystone/common/environment/eventlet_server.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-07-31T17:05:45Z",
       "side": 1,
       "message": "Is there any reason you wanted to start listening here? I\u0027m not a big fan of doing stuff like this in the __init__ method.",
+      "revId": "214162b20355d7976c548e9e9fe22b6abf20b2d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_43581ef9",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2014-08-01T08:56:50Z",
+      "side": 1,
+      "message": "Hi David,\n\nThe server object will be created only once, but the start method will be called for each child process. So we don\u0027t want to listen for all child processes on same port again.",
+      "parentUuid": "baada198_0b42d80e",
       "revId": "214162b20355d7976c548e9e9fe22b6abf20b2d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_43265e68",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2014-08-01T08:56:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_cb4d4073",
+      "revId": "214162b20355d7976c548e9e9fe22b6abf20b2d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_0b59f8fc",
         "filename": "keystone/common/environment/eventlet_server.py",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2014-07-31T17:05:45Z",
       "side": 1,
       "message": "This feels odd to me. Is it support to stop and then start the server?",
+      "revId": "214162b20355d7976c548e9e9fe22b6abf20b2d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_430f3ee0",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2014-08-01T08:56:50Z",
+      "side": 1,
+      "message": "Hi David,\n\nYes, you are right. It is added to restart the service gracefully on sending SIGHUP signal.\n\nWithout this code block, it will throws AttributeError: \u0027Server\u0027 object has no attribute \u0027reset\u0027\n\nPl refer: https://bugs.launchpad.net/keystone/+bug/1337850",
+      "parentUuid": "baada198_0b59f8fc",
       "revId": "214162b20355d7976c548e9e9fe22b6abf20b2d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
