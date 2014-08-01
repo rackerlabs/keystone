@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "baada198_a9b0fb40",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-01T09:45:00Z",
+      "side": 1,
+      "message": "Ok, will do",
+      "parentUuid": "baada198_2e7cf170",
+      "revId": "13e6a6492cfca40192dc5a06cdf69965b00e4ad3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_090ac7d0",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-01T09:45:00Z",
+      "side": 1,
+      "message": "My goal is to call assertEqual for each region, so I don\u0027t need lazy evaluation here. In case of generator I need to consume it afterwards. I admit that list comprehension may looks alien in this case as well as \u0027map\u0027, I could change it  to for loop.",
+      "revId": "13e6a6492cfca40192dc5a06cdf69965b00e4ad3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_eeecb92b",
         "filename": "keystone/tests/test_v3_catalog.py",
         "patchSetId": 1
