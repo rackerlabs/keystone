@@ -52,6 +52,24 @@
       "revId": "d84a0e10c5d47da1f1d2006b1f5461173bd64281",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_81494b34",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 3672,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-01T11:19:15Z",
+      "side": 1,
+      "message": "I found why it works. Your code tests list_services when the only one service exists, so it always returns one object in any case. If you create one more service of different type before filtering test it will fail with smth like this:\n\nFile \"keystone/tests/test_backend.py\", line 3690, in test_service_crud\n    self.assertEqual(new_service[\u0027type\u0027], service[\u0027type\u0027])\n..\nMismatchError: \u00279934d7b9e85b49cdbe662dc8abaf8841\u0027 !\u003d \u00274ec631ba1a4447b79fb6aa2f56742b03\u0027",
+      "parentUuid": "baada198_c9e7ef44",
+      "revId": "d84a0e10c5d47da1f1d2006b1f5461173bd64281",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
