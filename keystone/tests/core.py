@@ -26,7 +26,7 @@ import warnings
 
 import fixtures
 import logging
-from oslo.config import fixture as config_fixture
+from oslo.config import fixture as config_fixture  # noqa
 import oslotest.base as oslotest
 from oslotest import mockpatch
 from paste import deploy
