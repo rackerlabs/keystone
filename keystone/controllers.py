@@ -64,8 +64,9 @@ def register_version(version):
 
 class Version(wsgi.Application):
 
-    def __init__(self, version_type):
+    def __init__(self, version_type, v3_resources_sources=None):
         self.endpoint_url_type = version_type
+        self._v3_resources_sources = v3_resources_sources
 
         super(Version, self).__init__()
 
