@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_cb56e304",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3593,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-02T07:17:09Z",
+      "side": 1,
+      "message": "do you need to do the .copy() ?  Would the following not work:\n\nreturn self.catalog_api.create_region(new_region) ?",
+      "revId": "9fa1b1d248adb5642fb18a296d6389c5b65aeaeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
