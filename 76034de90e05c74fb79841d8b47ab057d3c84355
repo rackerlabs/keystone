@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_39b32b0a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-03T15:40:03Z",
+      "side": 1,
+      "message": "Probably should have a DocImpact since the config options have changed.",
+      "revId": "76034de90e05c74fb79841d8b47ab057d3c84355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d98eaf26",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-03T15:40:03Z",
+      "side": 1,
+      "message": "change \"user\" to \"use\"",
+      "revId": "76034de90e05c74fb79841d8b47ab057d3c84355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_59a29f9a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-03T15:40:03Z",
+      "side": 1,
+      "message": "change \"True\" to \"true\" to match the capitalization in the sample config.",
+      "revId": "76034de90e05c74fb79841d8b47ab057d3c84355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f9061384",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1148,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-03T15:40:03Z",
+      "side": 1,
+      "message": "rather than copy-pasting this function move it to a common place.",
+      "revId": "76034de90e05c74fb79841d8b47ab057d3c84355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_59f7ff8b",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1765,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-03T15:40:03Z",
+      "side": 1,
+      "message": "rather than copy-pasting this function move it to a common place.",
+      "revId": "76034de90e05c74fb79841d8b47ab057d3c84355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
