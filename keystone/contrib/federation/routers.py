@@ -82,11 +82,19 @@ class FederationExtension(_BaseFederationExtension):
             get_action='get_identity_provider',
             put_action='create_identity_provider',
             patch_action='update_identity_provider',
-            delete_action='delete_identity_provider')
+            delete_action='delete_identity_provider',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/'
+            '1.0/identity_provider',
+            path_vars={
+                'idp_id': 'http://docs.openstack.org/identity/rel/v3/ext/'
+                'OS-FEDERATION/1.0/param/idp_id'
+            })
         self._add_resource(
             mapper, idp_controller,
             path=self._construct_url('identity_providers'),
-            get_action='list_identity_providers')
+            get_action='list_identity_providers',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/'
+            '1.0/identity_providers')
 
         # Protocol CRUD operations
 
@@ -97,11 +105,25 @@ class FederationExtension(_BaseFederationExtension):
             get_action='get_protocol',
             put_action='create_protocol',
             patch_action='update_protocol',
-            delete_action='delete_protocol')
+            delete_action='delete_protocol',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/'
+            '1.0/identity_provider_protocol',
+            path_vars={
+                'idp_id': 'http://docs.openstack.org/identity/rel/v3/ext/'
+                'OS-FEDERATION/1.0/param/idp_id',
+                'protocol_id': 'http://docs.openstack.org/identity/rel/'
+                'v3/ext/OS-FEDERATION/1.0/param/protocol_id',
+            })
         self._add_resource(
             mapper, protocol_controller,
             path=self._construct_url('identity_providers/{idp_id}/protocols'),
-            get_action='list_protocols')
+            get_action='list_protocols',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/'
+            '1.0/identity_provider_protocols',
+            path_vars={
+                'idp_id': 'http://docs.openstack.org/identity/rel/v3/ext/'
+                'OS-FEDERATION/1.0/param/idp_id',
+            })
 
         # Mapping CRUD operations
 
@@ -111,21 +133,41 @@ class FederationExtension(_BaseFederationExtension):
             get_action='get_mapping',
             put_action='create_mapping',
             patch_action='update_mapping',
-            delete_action='delete_mapping')
+            delete_action='delete_mapping',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/'
+            '1.0/mapping',
+            path_vars={
+                'mapping_id': 'http://docs.openstack.org/identity/rel/v3/ext/'
+                'OS-FEDERATION/1.0/param/mapping_id',
+            })
         self._add_resource(
             mapper, mapping_controller,
             path=self._construct_url('mappings'),
-            get_action='list_mappings')
+            get_action='list_mappings',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/'
+            '1.0/mappings')
         self._add_resource(
             mapper, domain_controller,
             path=self._construct_url('domains'),
-            get_action='list_domains_for_groups')
+            get_action='list_domains_for_groups',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/'
+            '1.0/domains')
         self._add_resource(
             mapper, project_controller,
             path=self._construct_url('projects'),
-            get_action='list_projects_for_groups')
+            get_action='list_projects_for_groups',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/'
+            '1.0/projects')
         self._add_resource(
             mapper, auth_controller,
             path=self._construct_url('identity_providers/{identity_provider}/'
                                      'protocols/{protocol}/auth'),
-            get_post_action='federated_authentication')
+            get_post_action='federated_authentication',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-FEDERATION/'
+            '1.0/identity_provider_protocol_auth',
+            path_vars={
+                'identity_provider': 'http://docs.openstack.org/identity/'
+                'rel/v3/ext/OS-FEDERATION/1.0/param/idp_id',
+                'protocol': 'http://docs.openstack.org/identity/rel/'
+                'v3/ext/OS-FEDERATION/1.0/param/protocol_id',
+            })

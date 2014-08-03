@@ -63,45 +63,99 @@ class OAuth1Extension(wsgi.V3ExtensionRouter):
             mapper, consumer_controller,
             path='/OS-OAUTH1/consumers',
             get_action='list_consumers',
-            post_action='create_consumer')
+            post_action='create_consumer',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+            'consumers')
         self._add_resource(
             mapper, consumer_controller,
             path='/OS-OAUTH1/consumers/{consumer_id}',
             get_action='get_consumer',
             patch_action='update_consumer',
-            delete_action='delete_consumer')
+            delete_action='delete_consumer',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+            'consumer',
+            path_vars={
+                'consumer_id': 'http://docs.openstack.org/identity/rel/'
+                'v3/ext/OS-OAUTH1/1.0/param/consumer_id'
+            })
 
         # user accesss token crud
         self._add_resource(
             mapper, access_token_controller,
             path='/users/{user_id}/OS-OAUTH1/access_tokens',
-            get_action='list_access_tokens')
+            get_action='list_access_tokens',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+            'user_access_tokens',
+            path_vars={
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            })
         self._add_resource(
             mapper, access_token_controller,
             path='/users/{user_id}/OS-OAUTH1/access_tokens/{access_token_id}',
             get_action='get_access_token',
-            delete_action='delete_access_token')
+            delete_action='delete_access_token',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+            'user_access_token',
+            path_vars={
+                'access_token_id':
+                'http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/'
+                '1.0/param/access_token_id',
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            })
         self._add_resource(
             mapper, access_token_roles_controller,
             path='/users/{user_id}/OS-OAUTH1/access_tokens/{access_token_id}/'
             'roles',
-            get_action='list_access_token_roles')
+            get_action='list_access_token_roles',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+            'user_access_token_roles',
+            path_vars={
+                'access_token_id':
+                'http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/'
+                '1.0/param/access_token_id',
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            })
         self._add_resource(
             mapper, access_token_roles_controller,
             path='/users/{user_id}/OS-OAUTH1/access_tokens/{access_token_id}/'
             'roles/{role_id}',
-            get_action='get_access_token_role')
+            get_action='get_access_token_role',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+            'user_access_token_role',
+            path_vars={
+                'access_token_id':
+                'http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+                'param/access_token_id',
+                'role_id':
+                'http://docs.openstack.org/identity/v3/param/role_id',
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            })
 
         # oauth flow calls
         self._add_resource(
             mapper, oauth_controller,
             path='/OS-OAUTH1/request_token',
-            post_action='create_request_token')
+            post_action='create_request_token',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+            'request_tokens')
         self._add_resource(
             mapper, oauth_controller,
             path='/OS-OAUTH1/access_token',
-            post_action='create_access_token')
+            post_action='create_access_token',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+            'access_tokens')
         self._add_resource(
             mapper, oauth_controller,
             path='/OS-OAUTH1/authorize/{request_token_id}',
-            put_action='authorize_request_token')
+            path_vars={
+                'request_token_id':
+                'http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+                'param/request_token_id',
+            },
+            put_action='authorize_request_token',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-OAUTH1/1.0/'
+            'authorize_request_token')

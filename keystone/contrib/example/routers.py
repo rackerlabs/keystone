@@ -26,4 +26,6 @@ class ExampleRouter(wsgi.V3ExtensionRouter):
         self._add_resource(
             mapper, example_controller,
             path=self.PATH_PREFIX + '/example',
-            get_action='do_something')
+            get_action='do_something',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-EXAMPLE/1.0/'
+            'example')

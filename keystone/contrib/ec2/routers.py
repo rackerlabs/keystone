@@ -57,16 +57,33 @@ class Ec2ExtensionV3(wsgi.V3ExtensionRouter):
         self._add_resource(
             mapper, ec2_controller,
             path='/ec2tokens',
-            post_action='authenticate')
+            post_action='authenticate',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-EC2/1.0/'
+            'ec2tokens')
 
         # crud
         self._add_resource(
             mapper, ec2_controller,
             path='/users/{user_id}/credentials/OS-EC2',
             get_action='ec2_list_credentials',
-            post_action='ec2_create_credential')
+            post_action='ec2_create_credential',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-EC2/1.0/'
+            'user-credentials',
+            path_vars={
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            })
         self._add_resource(
             mapper, ec2_controller,
             path='/users/{user_id}/credentials/OS-EC2/{credential_id}',
             get_action='ec2_get_credential',
-            delete_action='ec2_delete_credential')
+            delete_action='ec2_delete_credential',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-EC2/1.0/'
+            'user-credential',
+            path_vars={
+                'credential_id':
+                'http://docs.openstack.org/identity/rel/v3/ext/OS-EC2/'
+                '1.0/param/user-credential',
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            })

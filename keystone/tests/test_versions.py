@@ -155,8 +155,31 @@ V3_JSON_HOME_RESOURCES_INHERIT_DISABLED = {
             'http://docs.openstack.org/identity/v3/param/endpoint_id'}},
     'http://docs.openstack.org/identity/rel/v3/endpoints': {
         'href': '/endpoints'},
+    'http://docs.openstack.org/identity/rel/v3/ext/OS-EC2/1.0/ec2tokens': {
+        'href': '/ec2tokens'},
+    'http://docs.openstack.org/identity/rel/v3/ext/OS-EC2/1.0/'
+    'user-credential': {
+        'href-template': '/users/{user_id}/credentials/OS-EC2/{credential_id}',
+        'href-vars': {
+            'credential_id':
+            'http://docs.openstack.org/identity/rel/v3/ext/OS-EC2/1.0/param/'
+            'user-credential',
+            'user_id': 'http://docs.openstack.org/identity/v3/param/user_id'}},
+    'http://docs.openstack.org/identity/rel/v3/ext/OS-EC2/1.0/'
+    'user-credentials': {
+        'href-template': '/users/{user_id}/credentials/OS-EC2',
+        'href-vars': {
+            'user_id': 'http://docs.openstack.org/identity/v3/param/user_id'}},
     'http://docs.openstack.org/identity/rel/v3/ext/OS-PKI/1.0/revocations': {
         'href': '/auth/tokens/OS-PKI/revoked'},
+    'http://docs.openstack.org/identity/rel/v3/ext/OS-REVOKE/1.0/events': {
+        'href': '/OS-REVOKE/events'},
+    'http://docs.openstack.org/identity/rel/v3/ext/OS-SIMPLE-CERT/1.0/'
+    'ca_certificate': {
+        'href': '/OS-SIMPLE-CERT/ca'},
+    'http://docs.openstack.org/identity/rel/v3/ext/OS-SIMPLE-CERT/1.0/'
+    'certificates': {
+        'href': '/OS-SIMPLE-CERT/certificates'},
     'http://docs.openstack.org/identity/rel/v3/ext/OS-TRUST/1.0/trust': {
         'href-template': '/OS-TRUST/trusts/{trust_id}',
         'href-vars': {
@@ -176,6 +199,8 @@ V3_JSON_HOME_RESOURCES_INHERIT_DISABLED = {
             'param/1.0/trust_id'}},
     'http://docs.openstack.org/identity/rel/v3/ext/OS-TRUST/1.0/trusts': {
         'href': '/OS-TRUST/trusts'},
+    'http://docs.openstack.org/identity/rel/v3/ext/s3tokens/1.0/s3tokens': {
+        'href': '/s3tokens'},
     'http://docs.openstack.org/identity/rel/v3/group': {
         'href-template': '/groups/{group_id}',
         'href-vars': {

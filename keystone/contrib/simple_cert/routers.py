@@ -24,8 +24,12 @@ class SimpleCertExtension(wsgi.V3ExtensionRouter):
         self._add_resource(
             mapper, controller,
             path='/%s/ca' % self.PREFIX,
-            get_action='get_ca_certificate')
+            get_action='get_ca_certificate',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-SIMPLE-CERT/'
+            '1.0/ca_certificate')
         self._add_resource(
             mapper, controller,
             path='/%s/certificates' % self.PREFIX,
-            get_action='list_certificates')
+            get_action='list_certificates',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-SIMPLE-CERT/'
+            '1.0/certificates')

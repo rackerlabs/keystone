@@ -59,7 +59,9 @@ class S3Extension(wsgi.V3ExtensionRouter):
         self._add_resource(
             mapper, controller,
             path='/s3tokens',
-            post_action='authenticate')
+            post_action='authenticate',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/s3tokens/1.0/'
+            's3tokens')
 
 
 class S3Controller(controllers.Ec2Controller):

@@ -27,14 +27,34 @@ class EndpointFilterExtension(wsgi.V3ExtensionRouter):
         self._add_resource(
             mapper, endpoint_filter_controller,
             path=self.PATH_PREFIX + '/endpoints/{endpoint_id}/projects',
-            get_action='list_projects_for_endpoint')
+            get_action='list_projects_for_endpoint',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-EP-FILTER/'
+            '1.0/endpoint_projects',
+            path_vars={
+                'endpoint_id':
+                'http://docs.openstack.org/identity/v3/param/endpoint_id',
+            })
         self._add_resource(
             mapper, endpoint_filter_controller,
             path=self.PATH_PREFIX + self.PATH_PROJECT_ENDPOINT,
             get_head_action='check_endpoint_in_project',
             put_action='add_endpoint_to_project',
-            delete_action='remove_endpoint_from_project')
+            delete_action='remove_endpoint_from_project',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-EP-FILTER/'
+            '1.0/project_endpoint',
+            path_vars={
+                'endpoint_id':
+                'http://docs.openstack.org/identity/v3/param/endpoint_id',
+                'project_id':
+                'http://docs.openstack.org/identity/v3/param/project_id',
+            })
         self._add_resource(
             mapper, endpoint_filter_controller,
             path=self.PATH_PREFIX + '/projects/{project_id}/endpoints',
-            get_action='list_endpoints_for_project')
+            get_action='list_endpoints_for_project',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-EP-FILTER/'
+            '1.0/project_endpoints',
+            path_vars={
+                'project_id':
+                'http://docs.openstack.org/identity/v3/param/project_id',
+            })

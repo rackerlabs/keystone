@@ -23,4 +23,6 @@ class RevokeExtension(wsgi.V3ExtensionRouter):
         self._add_resource(
             mapper, revoke_controller,
             path=self.PATH_PREFIX + '/events',
-            get_action='list_revoke_events')
+            get_action='list_revoke_events',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-REVOKE/1.0/'
+            'events')
