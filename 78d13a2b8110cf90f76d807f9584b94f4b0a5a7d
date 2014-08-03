@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_0229959b",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 798,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-08-03T06:50:09Z",
+      "side": 1,
+      "message": "Identity (typo)",
+      "revId": "78d13a2b8110cf90f76d807f9584b94f4b0a5a7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
