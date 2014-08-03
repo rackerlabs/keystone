@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_590b7f2a",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-03T16:29:01Z",
+      "side": 1,
+      "message": "it would be nice if this wasn\u0027t copy-pasted from below (line 140 does the same thing)",
+      "revId": "8c8f43c90f84277665b43c8b7cf7accee1eb541c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
