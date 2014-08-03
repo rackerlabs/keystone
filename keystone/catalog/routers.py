@@ -13,6 +13,7 @@
 # under the License.
 
 from keystone.catalog import controllers
+from keystone.common import json_home
 from keystone.common import router
 from keystone.common import wsgi
 
@@ -39,4 +40,5 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, controllers.CatalogV3(),
             path='/catalog',
-            get_action='get_catalog')
+            get_action='get_catalog',
+            rel=json_home.build_v3_resource_relation('catalog'))
