@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_0a1b6780",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-03T22:57:15Z",
+      "side": 1,
+      "message": "Aren\u0027t the callers passing the correct token data? A comment why this needs to be done would help.",
+      "revId": "c0211c4c42def27372520469034738082c2ac39e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_d625750a",
         "filename": "keystone/token/provider.py",
         "patchSetId": 6
@@ -31,6 +48,75 @@
       "side": 1,
       "message": "This code likely should *go away*",
       "parentUuid": "baada198_d625750a",
+      "revId": "c0211c4c42def27372520469034738082c2ac39e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_aa535b38",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-03T22:57:15Z",
+      "side": 1,
+      "message": "Are you going to remove it then? Is this a WIP?",
+      "parentUuid": "baada198_715ba522",
+      "revId": "c0211c4c42def27372520469034738082c2ac39e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_199bc717",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-03T22:57:15Z",
+      "side": 1,
+      "message": "in validate_v2_token() above, self.persistence.get_token(unique_id) is called but it\u0027s not wrapped in try/catch... why does it need to be wrapped in try/catch here but not in validate_v2_token?",
+      "revId": "c0211c4c42def27372520469034738082c2ac39e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_85a928df",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-03T22:57:15Z",
+      "side": 1,
+      "message": "This is incorrect and it\u0027s a bug, see https://review.openstack.org/#/c/109389/15/keystone/token/providers/common.py",
+      "revId": "c0211c4c42def27372520469034738082c2ac39e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_c5afa0de",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-03T22:57:15Z",
+      "side": 1,
+      "message": "why is this changing?",
       "revId": "c0211c4c42def27372520469034738082c2ac39e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
