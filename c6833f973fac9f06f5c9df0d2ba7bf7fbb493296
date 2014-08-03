@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_f07628a2",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-08-03T07:03:29Z",
+      "side": 1,
+      "message": "Did you verify this v3.cloudpolicy.json? You will most probably break if u call via v2 token",
+      "revId": "c6833f973fac9f06f5c9df0d2ba7bf7fbb493296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
