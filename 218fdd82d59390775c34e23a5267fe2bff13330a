@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_301fc05b",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-03T06:57:51Z",
+      "side": 1,
+      "message": "nice use of %r !",
+      "revId": "218fdd82d59390775c34e23a5267fe2bff13330a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
