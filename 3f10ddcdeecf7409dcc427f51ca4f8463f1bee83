@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_028d15d4",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-03T06:35:01Z",
+      "side": 1,
+      "message": "So there is one subtle difference in core.format_url between current master and stable/icehouse, in that the stable/icehouse version does not raise MalformedEndpoint (or log) if there was an Attribute error while formatting the url (it just returns None in this case).  Since I think this can only occur in the case when the passed url is not a string, I *think* we\u0027re safe here...",
+      "revId": "3f10ddcdeecf7409dcc427f51ca4f8463f1bee83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
