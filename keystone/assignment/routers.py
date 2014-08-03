@@ -60,12 +60,14 @@ class Routers(wsgi.RoutersBase):
     def append_v3_routers(self, mapper, routers):
         routers.append(
             router.Router(controllers.DomainV3(),
-                          'domains', 'domain'))
+                          'domains', 'domain',
+                          resource_descriptions=self._v3_resources))
 
         project_controller = controllers.ProjectV3()
         routers.append(
             router.Router(project_controller,
-                          'projects', 'project'))
+                          'projects', 'project',
+                          resource_descriptions=self._v3_resources))
 
         self._add_resource(
             mapper, project_controller,
@@ -79,7 +81,8 @@ class Routers(wsgi.RoutersBase):
 
         role_controller = controllers.RoleV3()
         routers.append(
-            router.Router(role_controller, 'roles', 'role'))
+            router.Router(role_controller, 'roles', 'role',
+                          resource_descriptions=self._v3_resources))
 
         self._add_resource(
             mapper, role_controller,
@@ -189,7 +192,8 @@ class Routers(wsgi.RoutersBase):
 
         routers.append(
             router.Router(controllers.RoleAssignmentV3(),
-                          'role_assignments', 'role_assignment'))
+                          'role_assignments', 'role_assignment',
+                          resource_descriptions=self._v3_resources))
 
         if config.CONF.os_inherit.enabled:
             self._add_resource(
