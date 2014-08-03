@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_991517e8",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-03T15:21:33Z",
+      "side": 1,
+      "message": "should be consistent and use \u0027 for strings.",
+      "revId": "465debfa760901f3309fd83b30d796ee6282430b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
