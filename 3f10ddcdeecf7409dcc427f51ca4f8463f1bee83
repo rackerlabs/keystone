@@ -16,6 +16,24 @@
       "revId": "3f10ddcdeecf7409dcc427f51ca4f8463f1bee83",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_227859c0",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-03T06:42:26Z",
+      "side": 1,
+      "message": "ahh, so now that  I followed the chain of deponent bug fixes, I see you fix this further down the chain!",
+      "parentUuid": "baada198_028d15d4",
+      "revId": "3f10ddcdeecf7409dcc427f51ca4f8463f1bee83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
