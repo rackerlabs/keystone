@@ -202,21 +202,57 @@ class Routers(wsgi.RoutersBase):
                 '{role_id}/inherited_to_projects',
                 get_head_action='check_grant',
                 put_action='create_grant',
-                delete_action='revoke_grant')
+                delete_action='revoke_grant',
+                rel='http://docs.openstack.org/identity/rel/v3/ext/OS-INHERIT/'
+                '1.0/domain_user_role_inherited_to_projects',
+                path_vars={
+                    'domain_id':
+                    'http://docs.openstack.org/identity/v3/param/domain_id',
+                    'role_id':
+                    'http://docs.openstack.org/identity/v3/param/role_id',
+                    'user_id':
+                    'http://docs.openstack.org/identity/v3/param/user_id',
+                })
             self._add_resource(
                 mapper, role_controller,
                 path='/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/'
                 '{role_id}/inherited_to_projects',
                 get_head_action='check_grant',
                 put_action='create_grant',
-                delete_action='revoke_grant')
+                delete_action='revoke_grant',
+                rel='http://docs.openstack.org/identity/rel/v3/ext/OS-INHERIT/'
+                '1.0/domain_group_role_inherited_to_projects',
+                path_vars={
+                    'domain_id':
+                    'http://docs.openstack.org/identity/v3/param/domain_id',
+                    'group_id':
+                    'http://docs.openstack.org/identity/v3/param/group_id',
+                    'role_id':
+                    'http://docs.openstack.org/identity/v3/param/role_id',
+                })
             self._add_resource(
                 mapper, role_controller,
                 path='/OS-INHERIT/domains/{domain_id}/groups/{group_id}/roles/'
                 'inherited_to_projects',
-                get_action='list_grants')
+                get_action='list_grants',
+                rel='http://docs.openstack.org/identity/rel/v3/ext/OS-INHERIT/'
+                '1.0/domain_group_roles_inherited_to_projects',
+                path_vars={
+                    'domain_id':
+                    'http://docs.openstack.org/identity/v3/param/domain_id',
+                    'group_id':
+                    'http://docs.openstack.org/identity/v3/param/group_id',
+                })
             self._add_resource(
                 mapper, role_controller,
                 path='/OS-INHERIT/domains/{domain_id}/users/{user_id}/roles/'
                 'inherited_to_projects',
-                get_action='list_grants')
+                get_action='list_grants',
+                rel='http://docs.openstack.org/identity/rel/v3/ext/OS-INHERIT/'
+                '1.0/domain_user_roles_inherited_to_projects',
+                path_vars={
+                    'domain_id':
+                    'http://docs.openstack.org/identity/v3/param/domain_id',
+                    'user_id':
+                    'http://docs.openstack.org/identity/v3/param/user_id',
+                })
