@@ -26,17 +26,42 @@ class Routers(wsgi.RoutersBase):
             mapper, trust_controller,
             path='/OS-TRUST/trusts',
             get_action='list_trusts',
-            post_action='create_trust')
+            post_action='create_trust',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-TRUST/1.0/'
+            'trusts')
         self._add_resource(
             mapper, trust_controller,
             path='/OS-TRUST/trusts/{trust_id}',
             get_action='get_trust',
-            delete_action='delete_trust')
+            delete_action='delete_trust',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-TRUST/1.0/'
+            'trust',
+            path_vars={
+                'trust_id':
+                'http://docs.openstack.org/identity/v3/ext/OS-TRUST/param/1.0/'
+                'trust_id',
+            })
         self._add_resource(
             mapper, trust_controller,
             path='/OS-TRUST/trusts/{trust_id}/roles',
-            get_action='list_roles_for_trust')
+            get_action='list_roles_for_trust',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-TRUST/1.0/'
+            'trust_roles',
+            path_vars={
+                'trust_id':
+                'http://docs.openstack.org/identity/v3/ext/OS-TRUST/param/1.0/'
+                'trust_id',
+            })
         self._add_resource(
             mapper, trust_controller,
             path='/OS-TRUST/trusts/{trust_id}/roles/{role_id}',
-            get_head_action='get_role_for_trust')
+            get_head_action='get_role_for_trust',
+            rel='http://docs.openstack.org/identity/rel/v3/ext/OS-TRUST/1.0/'
+            'trust_role',
+            path_vars={
+                'trust_id':
+                'http://docs.openstack.org/identity/v3/ext/OS-TRUST/param/1.0/'
+                'trust_id',
+                'role_id':
+                'http://docs.openstack.org/identity/v3/param/role_id',
+            })

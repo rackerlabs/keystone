@@ -38,19 +38,37 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, user_controller,
             path='/users/{user_id}/password',
-            post_action='change_password')
+            post_action='change_password',
+            rel='http://docs.openstack.org/identity/rel/v3/'
+            'user_change_password',
+            path_vars={
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            })
 
         self._add_resource(
             mapper, user_controller,
             path='/groups/{group_id}/users',
-            get_action='list_users_in_group')
+            get_action='list_users_in_group',
+            rel='http://docs.openstack.org/identity/rel/v3/group_users',
+            path_vars={
+                'group_id':
+                'http://docs.openstack.org/identity/v3/param/group_id',
+            })
 
         self._add_resource(
             mapper, user_controller,
             path='/groups/{group_id}/users/{user_id}',
             put_action='add_user_to_group',
             get_head_action='check_user_in_group',
-            delete_action='remove_user_from_group')
+            delete_action='remove_user_from_group',
+            rel='http://docs.openstack.org/identity/rel/v3/group_user',
+            path_vars={
+                'group_id':
+                'http://docs.openstack.org/identity/v3/param/group_id',
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            })
 
         group_controller = controllers.GroupV3()
         routers.append(
@@ -60,4 +78,9 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, group_controller,
             path='/users/{user_id}/groups',
-            get_action='list_groups_for_user')
+            get_action='list_groups_for_user',
+            rel='http://docs.openstack.org/identity/rel/v3/user_groups',
+            path_vars={
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            })

@@ -39,4 +39,5 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, controllers.CatalogV3(),
             path='/catalog',
-            get_action='get_catalog')
+            get_action='get_catalog',
+            rel='http://docs.openstack.org/identity/rel/v3/catalog')

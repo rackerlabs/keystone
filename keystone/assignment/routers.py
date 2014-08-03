@@ -70,7 +70,12 @@ class Routers(wsgi.RoutersBase):
         self._add_resource(
             mapper, project_controller,
             path='/users/{user_id}/projects',
-            get_action='list_user_projects')
+            get_action='list_user_projects',
+            rel='http://docs.openstack.org/identity/rel/v3/user_projects',
+            path_vars={
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            })
 
         role_controller = controllers.RoleV3()
         routers.append(
@@ -81,41 +86,106 @@ class Routers(wsgi.RoutersBase):
             path='/projects/{project_id}/users/{user_id}/roles/{role_id}',
             get_head_action='check_grant',
             put_action='create_grant',
-            delete_action='revoke_grant')
+            delete_action='revoke_grant',
+            rel='http://docs.openstack.org/identity/rel/v3/project_user_role',
+            path_vars={
+                'project_id':
+                'http://docs.openstack.org/identity/v3/param/project_id',
+                'role_id':
+                'http://docs.openstack.org/identity/v3/param/role_id',
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            })
         self._add_resource(
             mapper, role_controller,
             path='/projects/{project_id}/groups/{group_id}/roles/{role_id}',
             get_head_action='check_grant',
             put_action='create_grant',
-            delete_action='revoke_grant')
+            delete_action='revoke_grant',
+            rel='http://docs.openstack.org/identity/rel/v3/project_group_role',
+            path_vars={
+                'group_id':
+                'http://docs.openstack.org/identity/v3/param/group_id',
+                'project_id':
+                'http://docs.openstack.org/identity/v3/param/project_id',
+                'role_id':
+                'http://docs.openstack.org/identity/v3/param/role_id',
+            })
         self._add_resource(
             mapper, role_controller,
             path='/projects/{project_id}/users/{user_id}/roles',
-            get_action='list_grants')
+            get_action='list_grants',
+            rel='http://docs.openstack.org/identity/rel/v3/project_user_roles',
+            path_vars={
+                'project_id':
+                'http://docs.openstack.org/identity/v3/param/project_id',
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            })
         self._add_resource(
             mapper, role_controller,
             path='/projects/{project_id}/groups/{group_id}/roles',
-            get_action='list_grants')
+            get_action='list_grants',
+            rel='http://docs.openstack.org/identity/rel/v3/'
+            'project_group_roles',
+            path_vars={
+                'group_id':
+                'http://docs.openstack.org/identity/v3/param/group_id',
+                'project_id':
+                'http://docs.openstack.org/identity/v3/param/project_id',
+            })
         self._add_resource(
             mapper, role_controller,
             path='/domains/{domain_id}/users/{user_id}/roles/{role_id}',
             get_head_action='check_grant',
             put_action='create_grant',
-            delete_action='revoke_grant')
+            delete_action='revoke_grant',
+            rel='http://docs.openstack.org/identity/rel/v3/domain_user_role',
+            path_vars={
+                'domain_id':
+                'http://docs.openstack.org/identity/v3/param/domain_id',
+                'role_id':
+                'http://docs.openstack.org/identity/v3/param/role_id',
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            })
         self._add_resource(
             mapper, role_controller,
             path='/domains/{domain_id}/groups/{group_id}/roles/{role_id}',
             get_head_action='check_grant',
             put_action='create_grant',
-            delete_action='revoke_grant')
+            delete_action='revoke_grant',
+            rel='http://docs.openstack.org/identity/rel/v3/domain_group_role',
+            path_vars={
+                'domain_id':
+                'http://docs.openstack.org/identity/v3/param/domain_id',
+                'group_id':
+                'http://docs.openstack.org/identity/v3/param/group_id',
+                'role_id':
+                'http://docs.openstack.org/identity/v3/param/role_id',
+            })
         self._add_resource(
             mapper, role_controller,
             path='/domains/{domain_id}/users/{user_id}/roles',
-            get_action='list_grants')
+            get_action='list_grants',
+            rel='http://docs.openstack.org/identity/rel/v3/domain_user_roles',
+            path_vars={
+                'domain_id':
+                'http://docs.openstack.org/identity/v3/param/domain_id',
+                'user_id':
+                'http://docs.openstack.org/identity/v3/param/user_id',
+            })
         self._add_resource(
             mapper, role_controller,
             path='/domains/{domain_id}/groups/{group_id}/roles',
-            get_action='list_grants')
+            get_action='list_grants',
+            rel='http://docs.openstack.org/identity/rel/v3/domain_group_roles',
+            path_vars={
+                'domain_id':
+                'http://docs.openstack.org/identity/v3/param/domain_id',
+                'group_id':
+                'http://docs.openstack.org/identity/v3/param/group_id',
+            })
 
         routers.append(
             router.Router(controllers.RoleAssignmentV3(),
