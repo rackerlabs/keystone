@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_fd3a54c2",
+        "filename": "doc/source/extensions/federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-04T21:12:05Z",
+      "side": 1,
+      "message": "``REMOTE_USER``",
+      "revId": "ac40380cc50b10b50bc50f35a3919a043b367e3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
