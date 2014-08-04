@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_4c039875",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-08-04T20:01:51Z",
+      "side": 1,
+      "message": "Why is delete_credentials_for_user necessary here?",
+      "revId": "b4aeea38f19293af25165f84afa1baa50b9f860b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8ce210d2",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-08-04T20:01:51Z",
+      "side": 1,
+      "message": "Why is delete_tokens_for_user necessary here?",
+      "revId": "b4aeea38f19293af25165f84afa1baa50b9f860b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_acfc3472",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-08-04T20:01:51Z",
+      "side": 1,
+      "message": "nice test!",
+      "revId": "b4aeea38f19293af25165f84afa1baa50b9f860b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ac33545f",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-08-04T20:01:51Z",
+      "side": 1,
+      "message": "Why not just self.identity_api.delete_user()? That should invalid the cache right?",
+      "revId": "b4aeea38f19293af25165f84afa1baa50b9f860b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
