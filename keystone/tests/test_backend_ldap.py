@@ -1370,7 +1370,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         #              provides a different update test
         project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                    'domain_id': CONF.identity.default_domain_id,
-                   'description': uuid.uuid4().hex, 'enabled': True
+                   'description': uuid.uuid4().hex, 'enabled': True,
+                   'parent_project_id': None
                    }
         self.assignment_api.create_project(project['id'], project)
         project_ref = self.assignment_api.get_project(project['id'])
@@ -1615,7 +1616,8 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
             'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex,
             'domain_id': CONF.identity.default_domain_id,
-            'description': uuid.uuid4().hex}
+            'description': uuid.uuid4().hex,
+            'parent_project_id': None}
 
         self.assignment_api.create_project(project['id'], project)
         project_ref = self.assignment_api.get_project(project['id'])
