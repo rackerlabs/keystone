@@ -59,6 +59,10 @@
 # server. (string value)
 #admin_endpoint=<None>
 
+# The hierarchy depth on Keystone is restricted due to
+# performance issues. (integer value)
+#max_project_tree_depth=5
+
 # The number of worker processes to serve the public WSGI
 # application (integer value)
 #public_workers=1
