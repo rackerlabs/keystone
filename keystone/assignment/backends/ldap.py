@@ -62,6 +62,15 @@ class Assignment(assignment.Driver):
         # any domain specified
         return self.list_projects(driver_hints.Hints())
 
+    def list_project_parents(self, project_id, domain_id):
+        return []
+
+    def list_project_children(self, project_id):
+        return []
+
+    def is_leaf_project(self, project_id):
+        return True
+
     def get_project_by_name(self, tenant_name, domain_id):
         self._validate_default_domain_id(domain_id)
         return self._set_default_domain(self.project.get_by_name(tenant_name))

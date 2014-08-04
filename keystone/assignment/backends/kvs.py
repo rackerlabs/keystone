@@ -73,11 +73,40 @@ class Assignment(kvs.Base, assignment.Driver):
         self.get_domain(domain_id)
         return [ref for ref in project_refs if domain_id == ref['domain_id']]
 
+    def _get_immediate_children(self, project_id):
+        project_refs = self._build_project_refs()
+        return [ref for ref in project_refs
+                if project_id == ref['parent_project_id']]
+
+    def list_project_children(self, project_id):
+        project_ref = self.get_project(project_id)
+        children = []
+        queue = [project_ref]
+        while queue:
+            project = queue.pop()
+            project_children = self._get_immediate_children(project['id'])
+            queue += project_children
+            children += project_children
+
+        return children
+
+    def list_project_parents(self, project_id):
+        project_ref = self.get_project(project_id)
+        hierarchy = []
+        while project_ref['parent_project_id'] is not None:
+            parent_project = self.get_project(project_ref['parent_project_id'])
+            hierarchy.append(parent_project)
+            project_ref = parent_project
+        return hierarchy
+
     def get_project_by_name(self, tenant_name, domain_id):
         try:
             return self.db.get('tenant_name-%s' % tenant_name)
         except exception.NotFound:
             raise exception.ProjectNotFound(project_id=tenant_name)
+
+    def is_leaf_project(self, project_id):
+        return not self._get_immediate_children(project_id)
 
     def list_user_ids_for_project(self, tenant_id):
         self.get_project(tenant_id)
