@@ -51,11 +51,17 @@ class Assignment(assignment.Driver):
         self.project = ProjectApi(CONF)
         self.role = RoleApi(CONF)
 
+    def _set_default_domain_and_parent_project(self, ref):
+        ref = self._set_default_domain(ref)
+        return self._set_default_parent_project(ref)
+
     def get_project(self, tenant_id):
-        return self._set_default_domain(self.project.get(tenant_id))
+        return self._set_default_domain_and_parent_project(
+            self.project.get(tenant_id))
 
     def list_projects(self, hints):
-        return self._set_default_domain(self.project.get_all())
+        return self._set_default_domain_and_parent_project(
+            self.project.get_all())
 
     def list_projects_in_domain(self, domain_id):
         # We don't support multiple domains within this driver, so ignore
@@ -64,7 +70,8 @@ class Assignment(assignment.Driver):
 
     def get_project_by_name(self, tenant_name, domain_id):
         self._validate_default_domain_id(domain_id)
-        return self._set_default_domain(self.project.get_by_name(tenant_name))
+        return self._set_default_domain_and_parent_project(
+            self.project.get_by_name(tenant_name))
 
     def create_project(self, tenant_id, tenant):
         self.project.check_allow_create()
@@ -75,14 +82,16 @@ class Assignment(assignment.Driver):
             data['id'] = str(uuid.uuid4().hex)
         if 'description' in data and data['description'] in ['', None]:
             data.pop('description')
-        return self._set_default_domain(self.project.create(data))
+        return self._set_default_domain_and_parent_project(
+            self.project.create(data))
 
     def update_project(self, tenant_id, tenant):
         self.project.check_allow_update()
         tenant = self._validate_default_domain(tenant)
         if 'name' in tenant:
             tenant['name'] = clean.project_name(tenant['name'])
-        return self._set_default_domain(self.project.update(tenant_id, tenant))
+        return self._set_default_domain_and_parent_project(
+            self.project.update(tenant_id, tenant))
 
     def get_group_project_roles(self, groups, project_id, project_domain_id):
         self.get_project(project_id)
@@ -153,7 +162,7 @@ class Assignment(assignment.Driver):
         # Since the LDAP backend doesn't store the domain_id in the LDAP
         # records (and only supports the default domain), we fill in the
         # domain_id before we return the list.
-        return [self._set_default_domain(x) for x in
+        return [self._set_default_domain_and_parent_project(x) for x in
                 self.project.get_user_projects(user_dn, associations)]
 
     def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
