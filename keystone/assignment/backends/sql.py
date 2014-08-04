@@ -344,7 +344,6 @@ class Assignment(keystone_assignment.Driver):
         with sql.transaction() as session:
             project_refs = self._get_children(session, [project_id])
             return not project_refs
->>>>>>> 8dd6c01... Base methods to handle hierarchical projects
 
     def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
 
