@@ -1336,6 +1336,9 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                           self.assignment_api.get_domain,
                           domain['id'])
 
+    def test_domain_delete_hierarchy(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
     def test_create_domain_case_sensitivity(self):
         # domains are read-only, so case sensitivity isn't an issue
         ref = {
@@ -1395,6 +1398,30 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         self.skipTest('LDAP does not support hierarchical projects')
 
     def test_list_project_parents(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_hierarchical_projects_crud(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_create_project_with_invalid_parent(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_create_leaf_project_with_invalid_domain(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_update_project_parent(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_delete_hierarchical_leaf_project(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_delete_hierarchical_not_leaf_project(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_create_project_allowed_depth(self):
+        self.skipTest('LDAP does not support hierarchical projects')
+
+    def test_create_project_not_allowed_depth(self):
         self.skipTest('LDAP does not support hierarchical projects')
 
     @tests.skip_if_cache_disabled('assignment')
@@ -1711,6 +1738,9 @@ class LdapIdentitySqlAssignment(BaseLDAPIdentity, tests.SQLDriverOverrides,
 
     def test_domain_crud(self):
         pass
+
+    def test_domain_delete_hierarchy(self):
+        self.skipTest('LDAP does not support hierarchical projects')
 
     def test_list_domains(self):
         domains = self.assignment_api.list_domains()
