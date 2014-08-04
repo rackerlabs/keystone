@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_bb946f36",
+        "filename": "keystone/exception.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-04T16:59:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_857128e0",
+      "revId": "ba2dd3b3637160541f57de441a90df09abaacd10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_574386af",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 15
@@ -124,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_db976337",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-04T16:59:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_e549048f",
+      "revId": "ba2dd3b3637160541f57de441a90df09abaacd10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_85584858",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 15
@@ -141,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_1b9d5b57",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-04T16:59:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_85584858",
+      "revId": "ba2dd3b3637160541f57de441a90df09abaacd10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_8506881f",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 15
@@ -152,6 +206,24 @@
       "writtenOn": "2014-08-04T00:31:37Z",
       "side": 1,
       "message": "there should be some delay here (expontial backoff). On a really fast system it could potentially take 0 seconds to do the operation and then there\u0027s no point in trying 10 times since you\u0027ll just get the same result every time.",
+      "revId": "ba2dd3b3637160541f57de441a90df09abaacd10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1be1dbfb",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-04T16:59:49Z",
+      "side": 1,
+      "message": "This isn\u0027t blocking on a lock or waiting for a specific change, this is a \"query the db and get a row\" and then try and update with a specific \"where\" clause. If the db hasn\u0027t changed between the query and update you break out.  I don\u0027t see the win for having a backoff in the optimistic lock scenario. \n\nThis is really meant exclusively as a yield point for eventlet since eventlet + mysqldb doesn\u0027t play as well as we\u0027d like, if we didn\u0027t support eventlet I wouldn\u0027t expect to need a time.sleep() ever.\n\nIf there is a real/tangible benefit to a backoff here, I will add it, but honestly, I don\u0027t see it.",
+      "parentUuid": "baada198_8506881f",
       "revId": "ba2dd3b3637160541f57de441a90df09abaacd10",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
