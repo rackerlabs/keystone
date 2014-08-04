@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "baada198_857128e0",
+        "filename": "keystone/exception.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-04T00:31:37Z",
+      "side": 1,
+      "message": "change \"accquire\" to \"acquire\"",
+      "revId": "ba2dd3b3637160541f57de441a90df09abaacd10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_574386af",
         "filename": "keystone/trust/backends/sql.py",
         "patchSetId": 15
@@ -84,6 +101,57 @@
       "side": 1,
       "message": "10 for now.  I don\u0027t think we need to make it configurable unless there is a customer need.  Was just curious on how you came up with 10.",
       "parentUuid": "baada198_22709272",
+      "revId": "ba2dd3b3637160541f57de441a90df09abaacd10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e549048f",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-04T00:31:37Z",
+      "side": 1,
+      "message": "suggest just use range.",
+      "revId": "ba2dd3b3637160541f57de441a90df09abaacd10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_85584858",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-04T00:31:37Z",
+      "side": 1,
+      "message": "this comment seems pretty obvious. Suggest remove it.",
+      "revId": "ba2dd3b3637160541f57de441a90df09abaacd10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8506881f",
+        "filename": "keystone/trust/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-04T00:31:37Z",
+      "side": 1,
+      "message": "there should be some delay here (expontial backoff). On a really fast system it could potentially take 0 seconds to do the operation and then there\u0027s no point in trying 10 times since you\u0027ll just get the same result every time.",
       "revId": "ba2dd3b3637160541f57de441a90df09abaacd10",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
