@@ -70,12 +70,33 @@ class Manager(manager.Manager):
 
         super(Manager, self).__init__(assignment_driver)
 
+    def _get_hierarchy_depth(self, project_id):
+        return (len(self.driver.list_project_parents(project_id)) + 1)
+
+    def _check_hierarchy_depth(self, project_id):
+        if (self._get_hierarchy_depth(project_id) >=
+                CONF.max_project_tree_depth):
+            raise exception.ForbiddenAction(
+                action=_('max hierarchy depth exceeded for '
+                         '%s branch.') % project_id)
+
     @notifications.created(_PROJECT)
     def create_project(self, tenant_id, tenant):
         tenant = tenant.copy()
         tenant.setdefault('enabled', True)
         tenant['enabled'] = clean.project_enabled(tenant['enabled'])
         tenant.setdefault('description', '')
+        tenant.setdefault('parent_project_id', None)
+
+        if ('parent_project_id' in tenant and
+                tenant['parent_project_id'] is not None):
+            parent = self.driver.get_project(tenant['parent_project_id'])
+            if parent['domain_id'] != tenant['domain_id']:
+                raise exception.ForbiddenAction(
+                    action=_('cannot create a project with a different '
+                             'domain than its parent.'))
+            self._check_hierarchy_depth(tenant['parent_project_id'])
+
         ret = self.driver.create_project(tenant_id, tenant)
         if SHOULD_CACHE(ret):
             self.get_project.set(ret, self, tenant_id)
@@ -114,6 +135,13 @@ class Manager(manager.Manager):
     def update_project(self, tenant_id, tenant):
         original_tenant = self.driver.get_project(tenant_id)
         tenant = tenant.copy()
+
+        parent_project_id = original_tenant['parent_project_id']
+        if ('parent_project_id' in tenant and
+                tenant['parent_project_id'] != parent_project_id):
+            raise exception.ForbiddenAction(
+                action=_('cannot update parent_project_id.'))
+
         if 'enabled' in tenant:
             tenant['enabled'] = clean.project_enabled(tenant['enabled'])
         if (original_tenant.get('enabled', True) and
@@ -127,6 +155,11 @@ class Manager(manager.Manager):
 
     @notifications.deleted(_PROJECT)
     def delete_project(self, tenant_id):
+        if not self.driver.is_leaf_project(tenant_id):
+            raise exception.ForbiddenAction(
+                action=_('cannot delete a project that is not a leaf '
+                         'in the hierarchy.'))
+
         project = self.driver.get_project(tenant_id)
         user_ids = self.list_user_ids_for_project(tenant_id)
         self.token_api.delete_tokens_for_users(user_ids, project_id=tenant_id)
