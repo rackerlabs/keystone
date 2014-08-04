@@ -257,6 +257,12 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_delete_group_with_user_project_domain_links(self):
         self.skipTest('N/A: LDAP does not support multiple domains')
 
+    def test_inherited_grant_for_user_on_project_crud(self):
+        self.skipTest('N/A: LDAP does not support inherited role grants')
+
+    def test_inherited_grant_for_group_on_project_crud(self):
+        self.skipTest('N/A: LDAP does not support inherited role grants')
+
     def test_list_projects_for_user(self):
         domain = self._get_domain_fixture()
         user1 = {'name': uuid.uuid4().hex, 'password': uuid.uuid4().hex,
@@ -408,6 +414,9 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
     def test_get_roles_for_user_and_domain(self):
         self.skipTest('N/A: LDAP does not support multiple domains')
+
+    def test_domain_delete_hierarchy(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
 
     def test_list_role_assignments_unfiltered(self):
         new_domain = self._get_domain_fixture()
@@ -1471,10 +1480,12 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # NOTE(topol): LDAP implementation does not currently support the
         #              updating of a project name so this method override
         #              provides a different update test
-        project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
                    'domain_id': CONF.identity.default_domain_id,
-                   'description': uuid.uuid4().hex, 'enabled': True
-                   }
+                   'description': uuid.uuid4().hex,
+                   'enabled': True,
+                   'parent_id': None}
         self.assignment_api.create_project(project['id'], project)
         project_ref = self.assignment_api.get_project(project['id'])
 
@@ -1489,6 +1500,39 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         self.assertRaises(exception.ProjectNotFound,
                           self.assignment_api.get_project,
                           project['id'])
+
+    def test_check_leaf_projects(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_get_project_subtree(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_list_project_parents(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_hierarchical_projects_crud(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_create_project_with_invalid_parent(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_create_leaf_project_with_invalid_domain(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_update_project_parent(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_delete_hierarchical_leaf_project(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_delete_hierarchical_not_leaf_project(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_create_project_allowed_depth(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_create_project_not_allowed_depth(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
 
     @tests.skip_if_cache_disabled('assignment')
     def test_cache_layer_project_crud(self):
@@ -1812,7 +1856,8 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
             'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex,
             'domain_id': CONF.identity.default_domain_id,
-            'description': uuid.uuid4().hex}
+            'description': uuid.uuid4().hex,
+            'parent_id': None}
 
         self.assignment_api.create_project(project['id'], project)
         project_ref = self.assignment_api.get_project(project['id'])
@@ -2426,10 +2471,12 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
     def test_delete_domain_with_user_added(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True}
-        project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
                    'domain_id': domain['id'],
-                   'description': uuid.uuid4().hex, 'enabled': True
-                   }
+                   'description': uuid.uuid4().hex,
+                   'parent_id': None,
+                   'enabled': True}
         self.assignment_api.create_domain(domain['id'], domain)
         self.assignment_api.create_project(project['id'], project)
         project_ref = self.assignment_api.get_project(project['id'])
