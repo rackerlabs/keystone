@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_321b24cc",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-04T15:46:08Z",
+      "side": 1,
+      "message": "This is being lifted up from the provider manager. I was making an effort to keep the code as close to the original (most cases no functional changes) to ensure I was not introducing changed behavior:\n\nhttps://review.openstack.org/#/c/109041/6/keystone/token/providers/common.py line 358 (old)",
+      "parentUuid": "baada198_0a1b6780",
+      "revId": "c0211c4c42def27372520469034738082c2ac39e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_d625750a",
         "filename": "keystone/token/provider.py",
         "patchSetId": 6
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_d28108c3",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-04T15:46:08Z",
+      "side": 1,
+      "message": "Same as above comment",
+      "parentUuid": "baada198_aa535b38",
+      "revId": "c0211c4c42def27372520469034738082c2ac39e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_199bc717",
         "filename": "keystone/token/provider.py",
         "patchSetId": 6
@@ -83,6 +119,24 @@
       "writtenOn": "2014-08-03T22:57:15Z",
       "side": 1,
       "message": "in validate_v2_token() above, self.persistence.get_token(unique_id) is called but it\u0027s not wrapped in try/catch... why does it need to be wrapped in try/catch here but not in validate_v2_token?",
+      "revId": "c0211c4c42def27372520469034738082c2ac39e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_12d540b6",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-04T15:46:08Z",
+      "side": 1,
+      "message": "Same as above comment:\n\nhttps://review.openstack.org/#/c/109041/6/keystone/token/providers/common.py Line 613",
+      "parentUuid": "baada198_199bc717",
       "revId": "c0211c4c42def27372520469034738082c2ac39e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -106,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_52f25869",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-04T15:46:08Z",
+      "side": 1,
+      "message": "Same as above comment. However, this one will be corrected in the next patchset.",
+      "parentUuid": "baada198_85a928df",
+      "revId": "c0211c4c42def27372520469034738082c2ac39e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_c5afa0de",
         "filename": "keystone/token/provider.py",
         "patchSetId": 6
@@ -117,6 +189,24 @@
       "writtenOn": "2014-08-03T22:57:15Z",
       "side": 1,
       "message": "why is this changing?",
+      "revId": "c0211c4c42def27372520469034738082c2ac39e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_52ba58ba",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-04T15:46:08Z",
+      "side": 1,
+      "message": "This was a bug. It was actually missing here but the underlying implementations supported it / used it.",
+      "parentUuid": "baada198_c5afa0de",
       "revId": "c0211c4c42def27372520469034738082c2ac39e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
