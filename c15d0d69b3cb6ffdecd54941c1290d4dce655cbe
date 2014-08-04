@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_bc1b9ec9",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-04T07:25:24Z",
+      "side": 1,
+      "message": "Although perhaps out of scope of this change, it isn\u0027t obvious from this documentation as to whether the CADF notification are in addition to the general notifications described in the preceding paragraphs, whether this represents just a new format for these already described events, or whether the CADF notifications are for a different class of even entirely....",
+      "revId": "c15d0d69b3cb6ffdecd54941c1290d4dce655cbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
