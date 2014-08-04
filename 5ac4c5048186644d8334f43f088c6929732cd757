@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_a2f99b83",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-04T21:02:17Z",
+      "side": 1,
+      "message": "I\u0027m curious about this because I\u0027m not a Fedora user. I just a created a Fedora 20 node and by default it had python-setuptools installed, but no pip. I had to install python-pip.",
+      "revId": "5ac4c5048186644d8334f43f088c6929732cd757",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
