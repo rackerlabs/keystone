@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_3056d55e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-04T04:40:51Z",
+      "side": 1,
+      "message": "For some reason, I find the first sentence hard to parse, maybe replace this paragraph with something like:\n\n\"Since we already provide a generic mechanism for logging notifications (setting the notification_driver value to \u0027log\u0027), having an additional debug log just for this case seems unnecessary.\" ?",
+      "revId": "90a134388c45aab2ba680192a3fa15fa1083cc00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
