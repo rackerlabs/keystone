@@ -1064,6 +1064,18 @@ class Driver(object):
         else:
             raise ValueError(_('Expected dict or list: %s') % type(ref))
 
+    def _set_default_parent_project(self, ref):
+        """If the parent project ID  has not been set, set it to None."""
+        if isinstance(ref, dict):
+            if 'parent_project_id' not in ref:
+                ref = ref.copy()
+                ref['parent_project_id'] = None
+            return ref
+        elif isinstance(ref, list):
+            return [self._set_default_parent_project(x) for x in ref]
+        else:
+            raise ValueError(_('Expected dict or list: %s') % type(ref))
+
     def _validate_default_domain(self, ref):
         """Validate that either the default domain or nothing is specified.
 
