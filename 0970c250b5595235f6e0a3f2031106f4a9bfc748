@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_46fe1ab0",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-08-04T17:32:31Z",
+      "side": 1,
+      "message": "I think we need a comment in here regarding infra\u0027s run-pep8 and run-coverage assumptions.",
+      "revId": "0970c250b5595235f6e0a3f2031106f4a9bfc748",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4671ba43",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-08-04T17:32:31Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "0970c250b5595235f6e0a3f2031106f4a9bfc748",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_a910b8f4",
         "filename": "tox.ini",
         "patchSetId": 1
