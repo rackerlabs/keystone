@@ -453,6 +453,15 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             body={'project': ref})
         self.assertValidProjectResponse(r, ref)
 
+    def test_create_hierarchical_project(self):
+        """Call ``POST /projects``."""
+        ref = self.new_project_ref(domain_id=self.domain_id,
+                                   parent_project_id=self.project_id)
+        r = self.post(
+            '/projects',
+            body={'project': ref})
+        self.assertValidProjectResponse(r, ref)
+
     def test_create_project_400(self):
         """Call ``POST /projects``."""
         self.post('/projects', body={'project': {}}, expected_status=400)
@@ -473,6 +482,18 @@ class IdentityTestCase(test_v3.RestfulTestCase):
                 'project_id': self.project_id},
             body={'project': ref})
         self.assertValidProjectResponse(r, ref)
+
+    def test_update_project_parent_project_id(self):
+        """Call ``PATCH /projects/{project_id}``."""
+        project = self.new_project_ref(domain_id=self.domain_id,
+                                       parent_project_id=self.project_id)
+        self.assignment_api.create_project(project['id'], project)
+        project['parent_project_id'] = None
+        self.patch(
+            '/projects/%(project_id)s' % {
+                'project_id': project['id']},
+            body={'project': project},
+            expected_status=403)
 
     def test_update_project_domain_id(self):
         """Call ``PATCH /projects/{project_id}`` with domain_id."""
@@ -525,6 +546,16 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         # But the credential for project2 is unaffected
         r = self.credential_api.get_credential(self.credential2['id'])
         self.assertDictEqual(r, self.credential2)
+
+    def test_delete_not_leaf_project(self):
+        """Call ``DELETE /projects/{project_id}``."""
+        leaf_project = self.new_project_ref(domain_id=self.domain_id,
+                                            parent_project_id=self.project_id)
+        self.assignment_api.create_project(leaf_project['id'], leaf_project)
+        self.delete(
+            '/projects/%(project_id)s' % {
+                'project_id': self.project_id},
+            expected_status=403)
 
     # user crud tests
 
