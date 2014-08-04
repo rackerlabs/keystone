@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_a6b8d6c7",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-08-04T17:35:40Z",
+      "side": 1,
+      "message": "could you rename \"o\" to something more explicit?",
+      "revId": "448be869d02ba377f2d5b49288513506e0ef34c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_26c4c63f",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-08-04T17:35:40Z",
+      "side": 1,
+      "message": "same for k, v and d",
+      "revId": "448be869d02ba377f2d5b49288513506e0ef34c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_861112b1",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-08-04T17:35:40Z",
+      "side": 1,
+      "message": "Maybe it would make sense to insert one valid URL, and test that only that one appears.",
+      "revId": "448be869d02ba377f2d5b49288513506e0ef34c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
