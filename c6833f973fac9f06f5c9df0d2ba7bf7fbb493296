@@ -16,6 +16,24 @@
       "revId": "c6833f973fac9f06f5c9df0d2ba7bf7fbb493296",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_dd62023c",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 12715
+      },
+      "writtenOn": "2014-08-04T13:32:37Z",
+      "side": 1,
+      "message": "I had to add a \"identity:get_endpoints\" rule. This rule is not in v3.cloudpolicy.json or the default policy.json.\n\nI tested changing this rule to \"rule:admin_required\", and this created the same behavior that was previously hard-coded. I then tested my use case of allowing all project members to list the endpoints, and this also worked.",
+      "parentUuid": "baada198_f07628a2",
+      "revId": "c6833f973fac9f06f5c9df0d2ba7bf7fbb493296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
