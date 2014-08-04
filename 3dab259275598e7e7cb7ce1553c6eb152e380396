@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_0256d95d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-04T13:13:52Z",
+      "side": 1,
+      "message": "do all your imports at the top of the module",
+      "revId": "3dab259275598e7e7cb7ce1553c6eb152e380396",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
