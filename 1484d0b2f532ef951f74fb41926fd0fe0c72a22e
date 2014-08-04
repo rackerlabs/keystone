@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_a45604cb",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 597,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-04T23:36:36Z",
+      "side": 1,
+      "message": "Should this be a foreign key?",
+      "revId": "1484d0b2f532ef951f74fb41926fd0fe0c72a22e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_64078cc9",
+        "filename": "keystone/common/sql/migrate_repo/versions/052_add_parent_project.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-04T23:36:36Z",
+      "side": 1,
+      "message": "Unless you work for the foundation this line should be left out. (...and the # below)",
+      "revId": "1484d0b2f532ef951f74fb41926fd0fe0c72a22e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
