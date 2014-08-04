@@ -16,6 +16,24 @@
       "revId": "23b2c8476051eacf3c4f08fbe32667886c7aa234",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1edb7fea",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2944,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-08-04T22:40:56Z",
+      "side": 1,
+      "message": "These new tests are testing trusts, not revocation.  As such, they are a part of the TestTrustAuth class.  Given this, I don\u0027t think your comment is applicable.",
+      "parentUuid": "baada198_25693cf8",
+      "revId": "23b2c8476051eacf3c4f08fbe32667886c7aa234",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
