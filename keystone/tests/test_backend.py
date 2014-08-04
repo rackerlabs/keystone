@@ -2446,7 +2446,7 @@ class IdentityTests(object):
                   'enabled': True}
         self.assignment_api.create_domain(domain['id'], domain)
         project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                   'domain_id': domain['id']}
+                   'domain_id': domain['id'], 'parent_project_id': None}
         self.assignment_api.create_project(project['id'], project)
         project_ref = self.assignment_api.get_project(project['id'])
         self.assertDictContainsSubset(project, project_ref)
@@ -2466,7 +2466,8 @@ class IdentityTests(object):
         project = {'id': uuid.uuid4().hex,
                    'name': uuid.uuid4().hex,
                    'domain_id': DEFAULT_DOMAIN_ID,
-                   'enabled': True}
+                   'enabled': True,
+                   'parent_project_id': None}
         self.assignment_api.create_project(project['id'], project)
 
         # Add a description attribute.
@@ -2481,7 +2482,8 @@ class IdentityTests(object):
         project = {'id': uuid.uuid4().hex,
                    'name': uuid.uuid4().hex,
                    'domain_id': DEFAULT_DOMAIN_ID,
-                   'enabled': True}
+                   'enabled': True,
+                   'parent_project_id': None}
         self.assignment_api.create_project(project['id'], project)
 
         # Add a description attribute.
