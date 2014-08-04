@@ -51,6 +51,7 @@ def calc_default_domain():
 @dependency.optional('revoke_api')
 @dependency.requires('credential_api', 'identity_api', 'token_api')
 class Manager(manager.Manager):
+
     """Default pivot point for the Assignment backend.
 
     See :mod:`keystone.common.manager.Manager` for more details on how this
@@ -76,12 +77,33 @@ class Manager(manager.Manager):
         return [x['id'] for
                 x in self.identity_api.list_groups_for_user(user_id)]
 
+    def _get_hierarchy_depth(self, project_id):
+        return (len(self.driver.list_project_parents(project_id)) + 1)
+
+    def _check_hierarchy_depth(self, project_id):
+        if (self._get_hierarchy_depth(project_id) >=
+                CONF.max_project_tree_depth):
+            raise exception.ForbiddenAction(
+                action=_('max hierarchy depth exceeded for '
+                         '%s branch.') % project_id)
+
     @notifications.created(_PROJECT)
     def create_project(self, tenant_id, tenant):
         tenant = tenant.copy()
         tenant.setdefault('enabled', True)
         tenant['enabled'] = clean.project_enabled(tenant['enabled'])
         tenant.setdefault('description', '')
+        tenant.setdefault('parent_project_id', None)
+
+        if ('parent_project_id' in tenant and
+                tenant['parent_project_id'] is not None):
+            parent = self.driver.get_project(tenant['parent_project_id'])
+            if parent['domain_id'] != tenant['domain_id']:
+                raise exception.ForbiddenAction(
+                    action=_('cannot create a project with a different '
+                             'domain than its parent.'))
+            self._check_hierarchy_depth(tenant['parent_project_id'])
+
         ret = self.driver.create_project(tenant_id, tenant)
         if SHOULD_CACHE(ret):
             self.get_project.set(ret, self, tenant_id)
@@ -120,6 +142,13 @@ class Manager(manager.Manager):
     def update_project(self, tenant_id, tenant):
         original_tenant = self.driver.get_project(tenant_id)
         tenant = tenant.copy()
+
+        parent_project_id = original_tenant['parent_project_id']
+        if ('parent_project_id' in tenant and
+                tenant['parent_project_id'] != parent_project_id):
+            raise exception.ForbiddenAction(
+                action=_('Update of `parent_project_id` is not allowed.'))
+
         if 'enabled' in tenant:
             tenant['enabled'] = clean.project_enabled(tenant['enabled'])
         if (original_tenant.get('enabled', True) and
@@ -133,6 +162,11 @@ class Manager(manager.Manager):
 
     @notifications.deleted(_PROJECT)
     def delete_project(self, tenant_id):
+        if not self.driver.is_leaf_project(tenant_id):
+            raise exception.ForbiddenAction(
+                action=_('cannot delete a project that is not a leaf '
+                         'in the hierarchy.'))
+
         project = self.driver.get_project(tenant_id)
         user_ids = self.list_user_ids_for_project(tenant_id)
         self.token_api.delete_tokens_for_users(user_ids, project_id=tenant_id)
@@ -367,6 +401,7 @@ class Manager(manager.Manager):
         # has been previously disabled.  This also prevents a user deleting
         # their own domain since, once it is disabled, they won't be able
         # to get a valid token to issue this delete.
+
         if domain['enabled']:
             raise exception.ForbiddenAction(
                 action=_('cannot delete a domain that is enabled, '
@@ -396,21 +431,36 @@ class Manager(manager.Manager):
         Users: Reference domains for grants
 
         """
+
+        def _is_leaf(project, projects):
+            for p in projects:
+                if p['parent_project_id'] == project['id']:
+                    return False
+            return True
+
+        def _delete_leaf_projects(project, projects):
+            if not _is_leaf(project, projects):
+                children = [x for x in projects
+                            if x['parent_project_id'] == project['id']]
+                for p in children:
+                    _delete_leaf_projects(p, projects)
+            try:
+                self.delete_project(project['id'])
+            except exception.ProjectNotFound:
+                LOG.debug(('Project %(projectid)s not found when '
+                           'deleting domain contents for %(domainid)s, '
+                           'continuing with cleanup.'),
+                          {'projectid': project['id'],
+                           'domainid': domain_id})
+
         user_refs = self.identity_api.list_users(domain_scope=domain_id)
-        proj_refs = self.list_projects()
+        proj_refs = self.list_projects_in_domain(domain_id)
         group_refs = self.identity_api.list_groups(domain_scope=domain_id)
 
-        # First delete the projects themselves
-        for project in proj_refs:
-            if project['domain_id'] == domain_id:
-                try:
-                    self.delete_project(project['id'])
-                except exception.ProjectNotFound:
-                    LOG.debug(('Project %(projectid)s not found when '
-                               'deleting domain contents for %(domainid)s, '
-                               'continuing with cleanup.'),
-                              {'projectid': project['id'],
-                               'domainid': domain_id})
+        # Deleting projects recursively from the leaves
+        roots = [x for x in proj_refs if x['parent_project_id'] is None]
+        for project in roots:
+            _delete_leaf_projects(project, proj_refs)
 
         for group in group_refs:
             # Cleanup any existing groups.
@@ -642,7 +692,7 @@ class Driver(object):
         role_list = []
         for d in dict_list:
             if ((not d.get('inherited_to') and not inherited) or
-               (d.get('inherited_to') == 'projects' and inherited)):
+                    (d.get('inherited_to') == 'projects' and inherited)):
                 role_list.append(d['id'])
         return role_list
 
