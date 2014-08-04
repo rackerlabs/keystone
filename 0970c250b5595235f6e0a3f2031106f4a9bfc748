@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_a910b8f4",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-04T11:46:35Z",
+      "side": 1,
+      "message": "why leave these two behind?",
+      "revId": "0970c250b5595235f6e0a3f2031106f4a9bfc748",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_c9d24c33",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-04T11:46:35Z",
+      "side": 1,
+      "message": "?",
+      "revId": "0970c250b5595235f6e0a3f2031106f4a9bfc748",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
