@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_78ebb211",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-04T21:48:26Z",
+      "side": 1,
+      "message": "is there a bug for this?",
+      "revId": "8c419aac2074678e1c953eea75cfa2056e5cb77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_80019e06",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 1
@@ -49,6 +66,57 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "baada198_a9dccd47",
+      "revId": "8c419aac2074678e1c953eea75cfa2056e5cb77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_782e5243",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1445,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-04T21:48:26Z",
+      "side": 1,
+      "message": "you can use the new_role_ref from test_v3.py here as well and pop out the `description` and `enabled` attributes.",
+      "revId": "8c419aac2074678e1c953eea75cfa2056e5cb77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_38be9ace",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1452,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-04T21:48:26Z",
+      "side": 1,
+      "message": "suggest renaming this to user1_ref: \n\n    user1_ref \u003d self.new_user_ref(domain_id\u003ddomain[\u0027id\u0027])\n    expected_password \u003d user1_ref[\u0027password\u0027]\n    user1 \u003d self.identity_api.create_user(user1_ref)",
+      "revId": "8c419aac2074678e1c953eea75cfa2056e5cb77b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_588eee27",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1463,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-04T21:48:26Z",
+      "side": 1,
+      "message": "same comments apply here. I suggest renaming \u0027project1\u0027 to \u0027project1_ref\u0027 and then storing the return value of self.assignment_api.create_project in project1 or something like that. Then when you do your assertions, you doing it with the actual value returned from what you\u0027re testing.",
       "revId": "8c419aac2074678e1c953eea75cfa2056e5cb77b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
