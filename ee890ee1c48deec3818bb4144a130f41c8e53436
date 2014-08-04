@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_7e3c7b92",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 11717
+      },
+      "writtenOn": "2014-08-04T22:20:38Z",
+      "side": 1,
+      "message": "\"keystone\"-\u003e\"Keystone\"",
+      "revId": "ee890ee1c48deec3818bb4144a130f41c8e53436",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_be70d373",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 11717
+      },
+      "writtenOn": "2014-08-04T22:20:38Z",
+      "side": 1,
+      "message": "\"keystone\"-\u003e\"Keystone\"",
+      "revId": "ee890ee1c48deec3818bb4144a130f41c8e53436",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
