@@ -74,7 +74,6 @@ Make sure you add two *<Location>* directives to the *wsgi-keystone.conf*::
         ShibRequestSetting requireSession 1
         AuthType shibboleth
         ShibRequireSession On
-        ShibRequireAll On
         ShibExportAssertion Off
         Require valid-user
     </LocationMatch>
