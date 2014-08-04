@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_d8875eb4",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-04T22:00:00Z",
+      "side": 1,
+      "message": "this was removed in morgan\u0027s follow up patch in master",
+      "revId": "8e875045bd426c119d4de486194e81a7782be656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_188e36d1",
+        "filename": "tox.ini",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-04T22:00:00Z",
+      "side": 1,
+      "message": "same",
+      "revId": "8e875045bd426c119d4de486194e81a7782be656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
