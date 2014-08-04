@@ -289,6 +289,42 @@ class Assignment(keystone_assignment.Driver):
 
             return _project_ids_to_dicts(session, project_ids)
 
+    def _get_immediate_children(self, session, project_id):
+        query = session.query(Project)
+        query = query.filter_by(parent_project_id=project_id)
+        project_refs = query.all()
+        return [project_ref.to_dict() for project_ref in project_refs]
+
+    def list_project_children(self, project_id):
+        with sql.transaction() as session:
+            project = self._get_project(session, project_id).to_dict()
+            children = []
+            queue = [project]
+            while queue:
+                project = queue.pop()
+                project_children = self._get_immediate_children(session,
+                                                                project['id'])
+                queue += project_children
+                children += project_children
+
+            return children
+
+    def list_project_parents(self, project_id):
+        with sql.transaction() as session:
+            project = self._get_project(session, project_id).to_dict()
+            hierarchy = []
+            while project['parent_project_id'] is not None:
+                parent_project = self._get_project(
+                    session, project['parent_project_id']).to_dict()
+                hierarchy.append(parent_project)
+                project = parent_project
+            return hierarchy
+
+    def is_leaf_project(self, project_id):
+        with sql.transaction() as session:
+            project_refs = self._get_immediate_children(session, project_id)
+            return not project_refs
+
     def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
 
         if project_id is not None:
