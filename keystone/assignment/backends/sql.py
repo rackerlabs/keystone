@@ -21,9 +21,11 @@ from keystone.common import sql
 from keystone import config
 from keystone import exception
 from keystone.i18n import _
+from keystone.openstack.common import log
 
 
 CONF = config.CONF
+LOG = log.getLogger(__name__)
 
 
 class AssignmentType:
@@ -310,6 +312,59 @@ class Assignment(keystone_assignment.Driver):
 
             query = query.filter(sqlalchemy.or_(*filters))
             return [ref.to_dict() for ref in query.all()]
+
+    def _get_children(self, session, project_ids):
+        query = session.query(Project)
+        query = query.filter(Project.parent_id.in_(project_ids))
+        project_refs = query.all()
+        return [project_ref.to_dict() for project_ref in project_refs]
+
+    def get_project_subtree(self, project_id):
+        with sql.transaction() as session:
+            project = self._get_project(session, project_id).to_dict()
+            children = self._get_children(session, [project['id']])
+            subtree = []
+            examined = set(project['id'])
+            while children:
+                children_ids = set()
+                for ref in children:
+                    if ref['id'] in examined:
+                        msg = _('Circular reference or a repeated '
+                                'entry found in projects hierarchy - '
+                                '%(project_id)s.')
+                        LOG.error(msg, {'project_id': ref['id']})
+                        return
+                    children_ids.add(ref['id'])
+
+                examined.union(children_ids)
+                subtree += children
+                children = self._get_children(session, children_ids)
+            return subtree
+
+    def list_project_parents(self, project_id):
+        with sql.transaction() as session:
+            project = self._get_project(session, project_id).to_dict()
+            parents = []
+            examined = set()
+            while project['parent_id'] is not None:
+                if project['id'] in examined:
+                    msg = _('Circular reference or a repeated '
+                            'entry found in projects hierarchy - '
+                            '%(project_id)s.')
+                    LOG.error(msg, {'project_id': project['id']})
+                    return
+
+                examined.add(project['id'])
+                parent_project = self._get_project(
+                    session, project['parent_id']).to_dict()
+                parents.append(parent_project)
+                project = parent_project
+            return parents
+
+    def is_leaf_project(self, project_id):
+        with sql.transaction() as session:
+            project_refs = self._get_children(session, [project_id])
+            return not project_refs
 
     def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
 

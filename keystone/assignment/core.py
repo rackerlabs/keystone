@@ -916,6 +916,44 @@ class Driver(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
+    def list_project_parents(self, project_id):
+        """List all parents from a project by its ID.
+
+        :param project_id: the driver will list the parents of this
+                           project.
+
+        :returns: a list of project_refs or an empty list.
+        :raises: keystone.exception.ProjectNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def get_project_subtree(self, project_id):
+        """Get the subtree hierarchy under a project by its ID.
+
+        :param project_id: the driver will get the subtree under
+                           this project.
+
+        :returns: a list of project_refs or an empty list
+        :raises: keystone.exception.ProjectNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def is_leaf_project(self, project_id):
+        """Checks if a project is a leaf in the hierarchy.
+
+        :param project_id: the driver will check if this project
+                           if a leaf in the hierarchy.
+
+        :raises: keystone.exception.ProjectNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
     def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
         """List all the roles assigned to groups on either domain or
         project.
