@@ -431,6 +431,15 @@ class Manager(manager.Manager):
     def list_projects_in_domain(self, domain_id):
         return self.driver.list_projects_in_domain(domain_id)
 
+    # NOTE(tellesnobrega): list_project_parents is actually an internal
+    # method and not exposed via the API. Therefore there is no need to
+    # support driver hints for it.
+    def list_project_parents(self, project_id):
+        return self.driver.list_project_parents(project_id)
+
+    def get_project_subtree(self, project_id):
+        return self.driver.get_project_subtree(project_id)
+
     def list_user_projects(self, user_id, hints=None):
         return self.driver.list_user_projects(
             user_id, hints or driver_hints.Hints())
@@ -856,6 +865,35 @@ class Driver(object):
 
         """
         raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def list_project_parents(self, project_id):
+        """List all parents from a project by its ID.
+
+        :returns: a list of project_refs or an empty list
+        :raises: keystone.exception.ProjectNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def get_project_subtree(self, project_id):
+        """Get the subtree hierarchy under a project by its ID.
+
+        :returns: a list of project_refs or an empty list
+        :raises: keystone.exception.ProjectNotFound
+
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def is_leaf_project(self, project_id):
+        """Checks if a project is a leaf in the hierarchy.
+
+        :raises: keystone.exception.ProjectNotFound
+
+        """
+        raise exception.NotImplemented()
 
     @abc.abstractmethod
     def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
