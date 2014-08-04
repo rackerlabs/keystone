@@ -266,7 +266,8 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex,
             'description': uuid.uuid4().hex,
-            'enabled': True}
+            'enabled': True,
+            'parent_project_id': None}
 
     def new_region_ref(self):
         ref = self.new_ref()

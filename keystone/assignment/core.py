@@ -1031,6 +1031,18 @@ class Driver(object):
         else:
             raise ValueError(_('Expected dict or list: %s') % type(ref))
 
+    def _set_default_parent_project(self, ref):
+        """If the parent project ID  has not been set, set it to None."""
+        if isinstance(ref, dict):
+            if 'parent_project_id' not in ref:
+                ref = ref.copy()
+                ref['parent_project_id'] = None
+            return ref
+        elif isinstance(ref, list):
+            return [self._set_default_parent_project(x) for x in ref]
+        else:
+            raise ValueError(_('Expected dict or list: %s') % type(ref))
+
     def _validate_default_domain(self, ref):
         """Validate that either the default domain or nothing is specified.
 
@@ -1049,3 +1061,22 @@ class Driver(object):
         """
         if domain_id != CONF.identity.default_domain_id:
             raise exception.DomainNotFound(domain_id=domain_id)
+
+    def _validate_root_parent_project(self, ref):
+        """Validate that the root parent project is correctly specified.
+
+        """
+        ref = ref.copy()
+        parent_project_id = ref.pop('parent_project_id', None)
+        self._validate_root_parent_project_id(parent_project_id)
+        return ref
+
+    def _validate_root_parent_project_id(self, parent_project_id):
+        """Validate that the parent project ID specified belongs to the root
+        parent project.
+
+        """
+        # root parent_project_id is None
+        if parent_project_id:
+            raise exception.InvalidRootParentProject(
+                parent_project_id=parent_project_id)
