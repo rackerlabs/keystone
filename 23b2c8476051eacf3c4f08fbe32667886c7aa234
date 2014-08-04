@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_25693cf8",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2944,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-04T00:21:40Z",
+      "side": 1,
+      "message": "these tests should be up in TestTokenRevokeById. Then they\u0027ll be tested using both revocation events and revocation by ID.",
+      "revId": "23b2c8476051eacf3c4f08fbe32667886c7aa234",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
