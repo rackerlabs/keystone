@@ -18,7 +18,6 @@
 import copy
 import uuid
 
-import six
 from six.moves import urllib
 
 from keystone.common import controller
@@ -420,7 +419,35 @@ class ProjectV3(controller.V3Controller):
 
     @controller.protected()
     def get_project(self, context, project_id):
+        show_hierarchy = self._query_param_is_true('hierarchy', context)
+        show_parents = self._query_param_is_true('parents', context)
+        show_subtree = self._query_param_is_true('subtree', context)
+
+        # The query parameters must be mutually exclusive
+        if (show_hierarchy + show_parents + show_subtree) > 1:
+            msg = ('Specify hierarchy, parents or subtree '
+                   'query parameter, not a combination of them')
+            raise exception.ValidationError(msg)
+
         ref = self.assignment_api.get_project(project_id)
+
+        if show_hierarchy:
+            hierarchy = self.assignment_api.list_project_parents(project_id)
+            hierarchy += self.assignment_api.get_project_subtree(project_id)
+
+            ref['hierarchy'] = [ProjectV3.wrap_member(context, p)
+                                for p in hierarchy]
+        if show_parents:
+            parents = self.assignment_api.list_project_parents(project_id)
+
+            ref['parents'] = [ProjectV3.wrap_member(context, p)
+                              for p in parents]
+        if show_subtree:
+            subtree = self.assignment_api.get_project_subtree(project_id)
+
+            ref['subtree'] = [ProjectV3.wrap_member(context, p)
+                              for p in subtree]
+
         return ProjectV3.wrap_member(context, ref)
 
     @controller.protected()
@@ -830,30 +857,10 @@ class RoleAssignmentV3(controller.V3Controller):
 
         return new_refs
 
-    def _query_filter_is_true(self, filter_value):
-        """Determine if bool query param is 'True'.
-
-        We treat this the same way as we do for policy
-        enforcement:
-
-        {bool_param}=0 is treated as False
-
-        Any other value is considered to be equivalent to
-        True, including the absence of a value
-
-        """
-
-        if (isinstance(filter_value, six.string_types) and
-                filter_value == '0'):
-            val = False
-        else:
-            val = True
-        return val
-
     def _filter_inherited(self, entry):
         if ('inherited_to_projects' in entry and
                 not CONF.os_inherit.enabled):
-                    return False
+            return False
         else:
             return True
 
@@ -874,10 +881,7 @@ class RoleAssignmentV3(controller.V3Controller):
             [self._format_entity(context, x) for x in refs
              if self._filter_inherited(x)])
 
-        if ('effective' in context['query_string'] and
-                self._query_filter_is_true(
-                    context['query_string']['effective'])):
-
+        if self._query_param_is_true('effective', context):
             formatted_refs = self._expand_indirect_assignments(context,
                                                                formatted_refs)
 

@@ -79,6 +79,7 @@ def _build_role_assignment_url_and_entity(
 
 
 class IdentityTestCase(test_v3.RestfulTestCase):
+
     """Test domains, projects, users, groups, & role CRUD."""
 
     def setUp(self):
@@ -429,6 +430,41 @@ class IdentityTestCase(test_v3.RestfulTestCase):
                   headers={'x-subject-token': subject_token},
                   expected_status=404)
 
+    def test_delete_domain_hierarchy(self):
+        """Call ``DELETE /domains/{domain_id}``."""
+        domain = self.new_domain_ref()
+        self.assignment_api.create_domain(domain['id'], domain)
+
+        root_project = self.new_project_ref(
+            domain_id=domain['id'])
+        self.assignment_api.create_project(root_project['id'], root_project)
+
+        leaf_project = self.new_project_ref(
+            domain_id=domain['id'],
+            parent_project_id=root_project['id'])
+        self.assignment_api.create_project(leaf_project['id'], leaf_project)
+
+        # Need to disable it first.
+        self.patch('/domains/%(domain_id)s' % {
+            'domain_id': domain['id']},
+            body={'domain': {'enabled': False}})
+
+        self.delete(
+            '/domains/%(domain_id)s' % {
+                'domain_id': domain['id']})
+
+        self.assertRaises(exception.DomainNotFound,
+                          self.assignment_api.get_domain,
+                          domain['id'])
+
+        self.assertRaises(exception.ProjectNotFound,
+                          self.assignment_api.get_project,
+                          root_project['id'])
+
+        self.assertRaises(exception.ProjectNotFound,
+                          self.assignment_api.get_project,
+                          leaf_project['id'])
+
     # project crud tests
 
     def test_list_projects(self):
@@ -453,6 +489,15 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             body={'project': ref})
         self.assertValidProjectResponse(r, ref)
 
+    def test_create_hierarchical_project(self):
+        """Call ``POST /projects``."""
+        ref = self.new_project_ref(domain_id=self.domain_id,
+                                   parent_project_id=self.project_id)
+        r = self.post(
+            '/projects',
+            body={'project': ref})
+        self.assertValidProjectResponse(r, ref)
+
     def test_create_project_400(self):
         """Call ``POST /projects``."""
         self.post('/projects', body={'project': {}}, expected_status=400)
@@ -464,6 +509,83 @@ class IdentityTestCase(test_v3.RestfulTestCase):
                 'project_id': self.project_id})
         self.assertValidProjectResponse(r, self.project)
 
+    def _get_projects_in_hierarchy(self):
+        """Creates a project hierarchy where self.project is the top of it,
+           having a sub-project and a sub-sub-project in its hierarchy.
+
+        """
+        resp = self.get(
+            '/projects/%(project_id)s' % {
+                'project_id': self.project_id})
+
+        projects = [resp.result]
+
+        for i in range(2):
+            new_ref = self.new_project_ref(
+                domain_id=self.domain_id,
+                parent_project_id=projects[i]['project']['id'])
+            resp = self.post('/projects',
+                             body={'project': new_ref})
+
+            projects.append(resp.result)
+
+        return projects
+
+    def test_get_project_with_parents(self):
+        """Call ``GET /projects/{project_id}?parents``."""
+        projects = self._get_projects_in_hierarchy()
+
+        r = self.get(
+            '/projects/%(project_id)s?parents' % {
+                'project_id': projects[1]['project']['id']})
+
+        self.assertValidProjectResponse(r, projects[1]['project'])
+        self.assertIn(projects[0], r.result['project']['parents'])
+        self.assertNotIn(projects[2], r.result['project']['parents'])
+
+    def test_get_project_with_subtree(self):
+        """Call ``GET /projects/{project_id}?subtree``."""
+        projects = self._get_projects_in_hierarchy()
+
+        r = self.get(
+            '/projects/%(project_id)s?subtree' % {
+                'project_id': projects[1]['project']['id']})
+
+        self.assertValidProjectResponse(r, projects[1]['project'])
+        self.assertNotIn(projects[0], r.result['project']['subtree'])
+        self.assertIn(projects[2], r.result['project']['subtree'])
+
+    def test_get_project_with_hierarchy(self):
+        """Call ``GET /projects/{project_id}?hierarchy``."""
+        projects = self._get_projects_in_hierarchy()
+
+        r = self.get(
+            '/projects/%(project_id)s?hierarchy' % {
+                'project_id': projects[1]['project']['id']})
+
+        self.assertValidProjectResponse(r, projects[1]['project'])
+        self.assertIn(projects[0], r.result['project']['hierarchy'])
+        self.assertIn(projects[2], r.result['project']['hierarchy'])
+
+    def test_get_project_with_invalid_query_params(self):
+        """Call ``GET /projects/{project_id}?subtree``."""
+        projects = self._get_projects_in_hierarchy()
+
+        self.get(
+            '/projects/%(project_id)s?parents&subtree' % {
+                'project_id': projects[1]['project']['id']},
+            expected_status=400)
+
+        self.get(
+            '/projects/%(project_id)s?parents&hierarchy' % {
+                'project_id': projects[1]['project']['id']},
+            expected_status=400)
+
+        self.get(
+            '/projects/%(project_id)s?parents&subtree&hierarchy' % {
+                'project_id': projects[1]['project']['id']},
+            expected_status=400)
+
     def test_update_project(self):
         """Call ``PATCH /projects/{project_id}``."""
         ref = self.new_project_ref(domain_id=self.domain_id)
@@ -473,6 +595,18 @@ class IdentityTestCase(test_v3.RestfulTestCase):
                 'project_id': self.project_id},
             body={'project': ref})
         self.assertValidProjectResponse(r, ref)
+
+    def test_update_project_parent_project_id(self):
+        """Call ``PATCH /projects/{project_id}``."""
+        project = self.new_project_ref(domain_id=self.domain_id,
+                                       parent_project_id=self.project_id)
+        self.assignment_api.create_project(project['id'], project)
+        project['parent_project_id'] = None
+        self.patch(
+            '/projects/%(project_id)s' % {
+                'project_id': project['id']},
+            body={'project': project},
+            expected_status=403)
 
     def test_update_project_domain_id(self):
         """Call ``PATCH /projects/{project_id}`` with domain_id."""
@@ -525,6 +659,16 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         # But the credential for project2 is unaffected
         r = self.credential_api.get_credential(self.credential2['id'])
         self.assertDictEqual(r, self.credential2)
+
+    def test_delete_not_leaf_project(self):
+        """Call ``DELETE /projects/{project_id}``."""
+        leaf_project = self.new_project_ref(domain_id=self.domain_id,
+                                            parent_project_id=self.project_id)
+        self.assignment_api.create_project(leaf_project['id'], leaf_project)
+        self.delete(
+            '/projects/%(project_id)s' % {
+                'project_id': self.project_id},
+            expected_status=403)
 
     # user crud tests
 
@@ -1537,6 +1681,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
 
 class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
+
     """Test inheritance crud and its effects."""
 
     def config_overrides(self):
@@ -1976,6 +2121,7 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
 
 
 class IdentityInheritanceDisabledTestCase(test_v3.RestfulTestCase):
+
     """Test inheritance crud and its effects."""
 
     def config_overrides(self):
@@ -2002,6 +2148,7 @@ class IdentityInheritanceDisabledTestCase(test_v3.RestfulTestCase):
 
 
 class TestV3toV2Methods(tests.TestCase):
+
     """Test V3 to V2 conversion methods."""
 
     def setUp(self):
