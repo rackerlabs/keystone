@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_9e53ebdd",
+        "filename": "bin/keystone-all",
+        "patchSetId": 6
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-05T17:52:47Z",
+      "side": 1,
+      "message": "You could call server.listen() in here so that it is only called once.",
+      "revId": "bd20f72c457b36bd20b558699dbfdcd32d6b971d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_7e0537c0",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-05T17:52:47Z",
+      "side": 1,
+      "message": "Can you explain why this is needed if it doesn\u0027t do anything? I\u0027m a little concern that the framework calls this and expects it to be doing something.",
+      "revId": "bd20f72c457b36bd20b558699dbfdcd32d6b971d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
