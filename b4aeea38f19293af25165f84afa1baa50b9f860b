@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "baada198_484ff669",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2014-08-05T04:57:39Z",
+      "side": 1,
+      "message": "I think we could do away with both delete_credentials_for_user and delete_tokens_for_user. But for consistency purpose (the way it is done in identity/core.py), I added these two lines.",
+      "revId": "b4aeea38f19293af25165f84afa1baa50b9f860b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_acfc3472",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 3
@@ -64,6 +81,24 @@
       "writtenOn": "2014-08-04T20:01:51Z",
       "side": 1,
       "message": "Why not just self.identity_api.delete_user()? That should invalid the cache right?",
+      "revId": "b4aeea38f19293af25165f84afa1baa50b9f860b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_08589e23",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2014-08-05T04:57:39Z",
+      "side": 1,
+      "message": "It makes the fact cache is being invalidated, explicit to someone who is reading code. IMO it\u0027s better than deleting the user and invalidating the cache.",
+      "parentUuid": "baada198_ac33545f",
       "revId": "b4aeea38f19293af25165f84afa1baa50b9f860b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
