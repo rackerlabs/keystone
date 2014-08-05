@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_760d5392",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-05T23:22:44Z",
+      "side": 1,
+      "message": "This should use _LI rather than _",
+      "revId": "52bc369d0d8af2ba3b87fe05328890ee3474668c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_765b9389",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-05T23:22:44Z",
+      "side": 1,
+      "message": "use subprocess.check_output.",
+      "revId": "52bc369d0d8af2ba3b87fe05328890ee3474668c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_16fa5744",
+        "filename": "keystone/tests/test_cert_setup.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-05T23:22:44Z",
+      "side": 1,
+      "message": "use mock.patch.object.",
+      "revId": "52bc369d0d8af2ba3b87fe05328890ee3474668c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_36f75b5c",
+        "filename": "keystone/tests/test_cert_setup.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-05T23:22:44Z",
+      "side": 1,
+      "message": "use mock.patch.object, also should be able to use the decorator like on the other method.",
+      "revId": "52bc369d0d8af2ba3b87fe05328890ee3474668c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
