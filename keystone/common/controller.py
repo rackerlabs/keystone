@@ -358,6 +358,7 @@ class V3Controller(wsgi.Application):
         for ref in refs:
             cls.wrap_member(context, ref)
 
+        print("*******TEST=>", cls.collection_name)
         container = {cls.collection_name: refs}
         container['links'] = {
             'next': None,

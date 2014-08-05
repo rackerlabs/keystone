@@ -277,6 +277,14 @@ class VersionNotFound(NotFound):
     message_format = _("Could not find version: %(version)s")
 
 
+class EndpointGroupNotFound(NotFound):
+    message_format = _("Could not find Endpoint Group: %(endpoint_group_id)s")
+
+
+class EndpointGroupFilterNotFound(NotFound):
+    message_format = _("No such filter exists: %(filter_key)s")
+
+
 class IdentityProviderNotFound(NotFound):
     message_format = _("Could not find Identity Provider: %(idp_id)s")
 
