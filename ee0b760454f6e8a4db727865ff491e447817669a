@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_accb3b4a",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-05T11:01:13Z",
+      "side": 1,
+      "message": "I\u0027d suggest to remove the second parameter, its default value is None anyway.",
+      "revId": "ee0b760454f6e8a4db727865ff491e447817669a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
