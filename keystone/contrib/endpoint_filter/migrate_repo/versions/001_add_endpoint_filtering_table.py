@@ -34,14 +34,32 @@ def upgrade(migrate_engine):
             sql.String(64),
             primary_key=True,
             nullable=False))
-
     endpoint_filtering_table.create(migrate_engine, checkfirst=True)
+
+    endpoint_group_table = sql.Table(
+        'endpoint_group',
+        meta,
+        sql.Column('id', sql.String(64), primary_key=True),
+        sql.Column('name', sql.String(255)),
+        sql.Column('description', sql.String(255)),
+        sql.Column('filters', sql.Text()))
+    endpoint_group_table.create(migrate_engine, checkfirst=True)
+
+    project_endpoint_group_table = sql.Table(
+        'project_endpoint_group',
+        meta,
+        sql.Column('endpoint_group_id', sql.String(64),
+                   primary_key=True, nullable=False),
+        sql.Column('project_id', sql.String(64),
+                   primary_key=True, nullable=False))
+    project_endpoint_group_table.create(migrate_engine, checkfirst=True)
 
 
 def downgrade(migrate_engine):
     meta = sql.MetaData()
     meta.bind = migrate_engine
     # Operations to reverse the above upgrade go here.
-    for table_name in ['project_endpoint']:
+    for table_name in ['project_endpoint', 'endpoint_group',
+                       'project_endpoint_group']:
         table = sql.Table(table_name, meta, autoload=True)
         table.drop()

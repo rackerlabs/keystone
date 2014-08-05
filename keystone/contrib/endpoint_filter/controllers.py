@@ -23,6 +23,9 @@ from keystone import notifications
 @dependency.requires('assignment_api', 'catalog_api', 'endpoint_filter_api')
 class EndpointFilterV3Controller(controller.V3Controller):
 
+    endpoint_group_collection_name = 'endpoint_groups'
+    endpoint_group_member_name = 'endpoint_group'
+
     def __init__(self):
         super(EndpointFilterV3Controller, self).__init__()
         notifications.register_event_callback(
@@ -31,6 +34,14 @@ class EndpointFilterV3Controller(controller.V3Controller):
         notifications.register_event_callback(
             'deleted', 'endpoint',
             self._on_project_or_endpoint_delete)
+
+    @classmethod
+    def wrap_member(self, context, member_name, ref):
+        return {member_name: ref}
+
+    @classmethod
+    def wrap_collection(self, context, collection_name, ref):
+        return {collection_name: ref}
 
     def _on_project_or_endpoint_delete(self, service, resource_type, operation,
                                        payload):
@@ -89,3 +100,105 @@ class EndpointFilterV3Controller(controller.V3Controller):
             ref.project_id) for ref in refs]
         return assignment.controllers.ProjectV3.wrap_collection(context,
                                                                 projects)
+
+    @controller.protected()
+    def create_endpoint_group(self, context, endpoint_group):
+        """Creates an Endpoint Group with the associated filters."""
+        ref = self._assign_unique_id(self._normalize_dict(endpoint_group))
+        self._require_attribute(ref, 'filters')
+
+        ref = self.endpoint_filter_api.create_endpoint_group(ref['id'], ref)
+        return EndpointFilterV3Controller.wrap_member(
+            context, self.endpoint_group_member_name, ref)
+
+    @controller.protected()
+    def get_endpoint_group(self, context, endpoint_group_id):
+        """Retrieve the endpoint group associated with the id if exists."""
+        ref = self.endpoint_filter_api.get_endpoint_group(endpoint_group_id)
+        return EndpointFilterV3Controller.wrap_member(
+            context, self.endpoint_group_member_name, ref)
+
+    @controller.protected()
+    def check_endpoint_group(self, context, endpoint_group_id):
+        """Verifies endpoint group exists."""
+        self.endpoint_filter_api.check_endpoint_group(endpoint_group_id)
+        return {}
+
+    @controller.protected()
+    def update_endpoint_group(self, context, endpoint_group_id,
+                              endpoint_group):
+        """Update fixed values and/or extend the filters."""
+        ref = self.endpoint_filter_api.update_endpoint_group(endpoint_group_id,
+                                                             endpoint_group)
+        return EndpointFilterV3Controller.wrap_member(
+            context, self.endpoint_group_member_name, ref)
+
+    @controller.protected()
+    def remove_endpoint_group(self, context, endpoint_group_id):
+        """Remove endpoint_group."""
+        self.endpoint_filter_api.remove_endpoint_group(endpoint_group_id)
+
+    @controller.protected()
+    def add_endpoint_group_to_project(self, context, endpoint_group_id,
+                                      project_id):
+        """Creates an association between an endpoint group and project."""
+        self.assignment_api.get_project(project_id)
+        self.endpoint_filter_api.add_endpoint_group_to_project(
+            endpoint_group_id, project_id)
+
+    @controller.protected()
+    def check_endpoint_group_in_project(self, context, endpoint_group_id,
+                                        project_id):
+        """Verifies endpoint group is associated with given project."""
+        self.assignment_api.get_project(project_id)
+        self.endpoint_filter_api.check_endpoint_group_in_project(
+            endpoint_group_id, project_id)
+        return {}
+
+    @controller.protected()
+    def list_endpoint_groups_for_project(self, context, project_id):
+        """Lists all endpoint groups associated with a given project."""
+        self.assignment_api.get_project(project_id)
+        refs = self.endpoint_filter_api.list_endpoint_groups_for_project(
+            project_id)
+        return EndpointFilterV3Controller.wrap_collection(
+            context, self.endpoint_group_collection_name, refs)
+
+    @controller.protected()
+    def remove_endpoint_group_from_project(self, context, endpoint_group_id,
+                                           project_id):
+        """Remove the endpoint group from associated project."""
+        self.assignment_api.get_project(project_id)
+        self.endpoint_filter_api.remove_endpoint_group_from_project(
+            endpoint_group_id, project_id)
+
+    @controller.protected()
+    def list_projects_associated_with_endpoint_group(self,
+                                                     context,
+                                                     endpoint_group_id):
+        """Lists all projects associated with endpoint group."""
+        refs = self.endpoint_filter_api. \
+            list_projects_associated_with_endpoint_group(endpoint_group_id)
+        return assignment.controllers.ProjectV3.wrap_collection(context,
+                                                                refs)
+
+    @controller.protected()
+    def list_endpoints_associated_with_endpoint_group(self,
+                                                      context,
+                                                      endpoint_group_id):
+        """List all the endpoints filtered by a specific endpoint group."""
+        endpoints = self.catalog_api.list_endpoints()
+        filters = self.endpoint_filter_api.get_filter_for_endpoint_group(
+            endpoint_group_id)
+        filtered_endpoints = []
+
+        for endpoint in endpoints:
+            is_candidate = True
+            for key, value in filters.iteritems():
+                if endpoint[key] != value:
+                    is_candidate = False
+                    break
+            if is_candidate:
+                filtered_endpoints.append(endpoint)
+        return catalog_controllers.EndpointV3.wrap_collection(
+            context, filtered_endpoints)
