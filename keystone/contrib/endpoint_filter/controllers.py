@@ -23,6 +23,9 @@ from keystone import notifications
 @dependency.requires('assignment_api', 'catalog_api', 'endpoint_filter_api')
 class EndpointFilterV3Controller(controller.V3Controller):
 
+    collection_name = 'endpoint_groups'
+    member_name = 'endpoint_group'
+
     def __init__(self):
         super(EndpointFilterV3Controller, self).__init__()
         notifications.register_event_callback(
@@ -31,6 +34,10 @@ class EndpointFilterV3Controller(controller.V3Controller):
         notifications.register_event_callback(
             'deleted', 'endpoint',
             self._on_project_or_endpoint_delete)
+
+    @classmethod
+    def wrap_member(self, context, ref):
+        return {self.member_name: ref}
 
     def _on_project_or_endpoint_delete(self, service, resource_type, operation,
                                        payload):
@@ -89,3 +96,63 @@ class EndpointFilterV3Controller(controller.V3Controller):
             ref.project_id) for ref in refs]
         return assignment.controllers.ProjectV3.wrap_collection(context,
                                                                 projects)
+
+    @controller.protected()
+    def create_endpoint_group(self, context, endpoint_group):
+        """Creates an Endpoint Group with the associated filters."""
+        ref = self._assign_unique_id(self._normalize_dict(endpoint_group))
+        self._require_attribute(ref, 'filters')
+
+        ref = self.endpoint_filter_api.create_endpoint_group(ref['id'], ref)
+        return EndpointFilterV3Controller.wrap_member(context, ref)
+
+    @controller.protected()
+    def get_endpoint_group(self, context, endpoint_group_id):
+        """Retrieve the endpoint group associated with the id if exists."""
+        ref = self.endpoint_filter_api.get_endpoint_group(endpoint_group_id)
+        return EndpointFilterV3Controller.wrap_member(context, ref)
+
+    @controller.protected()
+    def check_endpoint_group(self, context, endpoint_group_id):
+        """Verifies endpoint group exists."""
+        self.endpoint_filter_api.check_endpoint_group(endpoint_group_id)
+
+    @controller.protected()
+    def update_endpoint_group(self, context, endpoint_group_id, endpoint_group):
+        """Update fixed values and/or extend the filters."""
+        ref = self.endpoint_filter_api.update_endpoint_group(endpoint_group_id, endpoint_group)
+        return EndpointFilterV3Controller.wrap_member(context, ref)
+
+    @controller.protected()
+    def remove_endpoint_group(self, context, endpoint_group_id):
+        """Remove endpoint_group."""
+        self.endpoint_filter_api.remove_endpoint_group(endpoint_group_id)
+
+    @controller.protected()
+    def add_endpoint_group_to_project(self, context, endpoint_group_id, project_id):
+        """Establishes an association between an endpoint group and a project."""
+        self.assignment_api.get_project(project_id)
+        self.endpoint_filter_api.add_endpoint_group_to_project(endpoint_group_id, project_id)
+        
+
+    @controller.protected()
+    def check_endpoint_group_in_project(self, context, endpoint_group_id, project_id):
+        """Verifies endpoint group is currently associated with given project."""
+        self.assignment_api.get_project(project_id)
+        self.endpoint_filter_api.check_endpoint_group_in_project(endpoint_group_id, project_id)
+        
+
+    @controller.protected()
+    def list_endpoint_groups_for_project(self, context, project_id):
+        """Lists all endpoint groups currently associated with a given project."""
+        self.assignment_api.get_project(project_id)
+        refs = self.endpoint_filter_api.list_endpoint_groups_for_project(project_id)
+        #return EndpointGroupingV3Controller.wrap_collection(context, refs)
+        return refs
+        
+
+    @controller.protected()
+    def remove_endpoint_group_from_project(self, context, endpoint_group_id, project_id):
+        """Remove the endpoint group from the association with given project."""
+        self.assignment_api.get_project(project_id)
+        self.endpoint_filter_api.remove_endpoint_group_from_project(endpoint_group_id, project_id)

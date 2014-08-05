@@ -20,9 +20,12 @@ class EndpointFilterExtension(wsgi.ExtensionRouter):
 
     PATH_PREFIX = '/OS-EP-FILTER'
     PATH_PROJECT_ENDPOINT = '/projects/{project_id}/endpoints/{endpoint_id}'
+    PATH_ENDPOINT_GROUPS = '/endpoint_groups/{endpoint_group_id}'
+    PATH_ENDPOINT_GROUP_PROJECTS = PATH_ENDPOINT_GROUPS + '/projects/{project_id}'
 
     def add_routes(self, mapper):
         endpoint_filter_controller = controllers.EndpointFilterV3Controller()
+        # Endpoint Filter CRUD Operations
         mapper.connect(self.PATH_PREFIX + '/endpoints/{endpoint_id}/projects',
                        controller=endpoint_filter_controller,
                        action='list_projects_for_endpoint',
@@ -34,7 +37,7 @@ class EndpointFilterExtension(wsgi.ExtensionRouter):
         mapper.connect(self.PATH_PREFIX + self.PATH_PROJECT_ENDPOINT,
                        controller=endpoint_filter_controller,
                        action='check_endpoint_in_project',
-                       conditions=dict(method=['GET', 'HEAD']))
+                       conditions=dict(method=['HEAD']))
         mapper.connect(self.PATH_PREFIX + '/projects/{project_id}/endpoints',
                        controller=endpoint_filter_controller,
                        action='list_endpoints_for_project',
@@ -42,4 +45,42 @@ class EndpointFilterExtension(wsgi.ExtensionRouter):
         mapper.connect(self.PATH_PREFIX + self.PATH_PROJECT_ENDPOINT,
                        controller=endpoint_filter_controller,
                        action='remove_endpoint_from_project',
+                       conditions=dict(method=['DELETE']))
+        # Endpoint Grouping CRUD Operations
+        mapper.connect(self.PATH_PREFIX + '/endpoint_groups',
+                       controller=endpoint_filter_controller,
+                       action='create_endpoint_group',
+                       conditions=dict(method=['POST']))
+        mapper.connect(self.PATH_PREFIX + self.PATH_ENDPOINT_GROUPS,
+                       controller=endpoint_filter_controller,
+                       action='get_endpoint_group',
+                       conditions=dict(method=['GET']))
+        mapper.connect(self.PATH_PREFIX + self.PATH_ENDPOINT_GROUPS,
+                       controller=endpoint_filter_controller,
+                       action='check_endpoint_group',
+                       conditions=dict(method=['HEAD']))
+        mapper.connect(self.PATH_PREFIX + self.PATH_ENDPOINT_GROUPS,
+                       controller=endpoint_filter_controller,
+                       action='update_endpoint_group',
+                       conditions=dict(method=['PATCH']))
+        mapper.connect(self.PATH_PREFIX + self.PATH_ENDPOINT_GROUPS,
+                       controller=endpoint_filter_controller,
+                       action='remove_endpoint_group',
+                       conditions=dict(method=['DELETE']))
+        #Create relationships between Project and Endpoint Groups CRUD Operations
+        mapper.connect(self.PATH_PREFIX + self.PATH_ENDPOINT_GROUP_PROJECTS,
+                       controller=endpoint_filter_controller,
+                       action='add_endpoint_group_to_project',
+                       conditions=dict(method=['PUT']))
+        mapper.connect(self.PATH_PREFIX + self.PATH_ENDPOINT_GROUP_PROJECTS,
+                       controller=endpoint_filter_controller,
+                       action='check_endpoint_group_in_project',
+                       conditions=dict(method=['HEAD']))
+        mapper.connect(self.PATH_PREFIX + self.PATH_ENDPOINT_GROUP_PROJECTS,
+                       controller=endpoint_filter_controller,
+                       action='list_endpoint_groups_for_project',
+                       conditions=dict(method=['GET']))
+        mapper.connect(self.PATH_PREFIX + self.PATH_ENDPOINT_GROUP_PROJECTS,
+                       controller=endpoint_filter_controller,
+                       action='remove_endpoint_group_from_project',
                        conditions=dict(method=['DELETE']))
