@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_3bbe8a64",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-08-05T06:09:43Z",
+      "side": 1,
+      "message": "That may log the token as well. I don\u0027t think the security folks like that.",
+      "revId": "b46d11f29ea893543b23d36bad920a6386eb9498",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
