@@ -34,7 +34,6 @@ def upgrade(migrate_engine):
             sql.String(64),
             primary_key=True,
             nullable=False))
-
     endpoint_filtering_table.create(migrate_engine, checkfirst=True)
 
 

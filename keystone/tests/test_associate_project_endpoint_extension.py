@@ -551,3 +551,356 @@ class JsonHomeTests(TestExtensionCase, test_v3.JsonHomeTestMixin):
             },
         },
     }
+
+
+class EndpointGroupCRUDTestCase(TestExtensionCase):
+
+    DEFAULT_ENDPOINT_GROUP_BODY = {'endpoint_group': {
+                        'description': 'endpoint group description',
+                        'filters': {
+                            'interface': 'admin'
+                        },
+                        'name': 'endpoint_group_name'
+                    }
+                }
+
+    DEFAULT_ENDPOINT_GROUP_URL = '/OS-EP-FILTER/endpoint_groups'
+
+    def test_create_endpoint_group(self):
+        """POST /OS-EP-FILTER/endpoint_groups
+
+        Valid endpoint group test case.
+
+        """
+        self.post(self.DEFAULT_ENDPOINT_GROUP_URL,
+                 body=self.DEFAULT_ENDPOINT_GROUP_BODY,
+                 expected_status=201)
+
+    def test_create_invalid_endpoint_group(self):
+        """POST /OS-EP-FILTER/endpoint_groups
+
+        Invalid endpoint group creation test case.
+
+        """
+        invalid_body = {'endpoint_group': {
+                        'description': 'endpoint group description',
+                        'filters': {
+                            'foobar': 'admin'
+                        },
+                        'name': 'endpoint_group_name'
+                    }
+                }
+        self.post(self.DEFAULT_ENDPOINT_GROUP_URL,
+                 body=invalid_body,
+                 expected_status=403)
+
+    def test_get_endpoint_group(self):
+        """GET /OS-EP-FILTER/endpoint_groups/{endpoint_group}
+
+        Valid endpoint group test case.
+
+        """
+        # create an endpoint group to work with
+        response = self.post(self.DEFAULT_ENDPOINT_GROUP_URL,
+                        body=self.DEFAULT_ENDPOINT_GROUP_BODY)
+        endpoint_group_id = response.result['endpoint_group']['id']
+        url = '/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s' % {
+                       'endpoint_group_id': endpoint_group_id}
+        r = self.get(url, body='', expected_status=200)
+        self.assertEqual(endpoint_group_id,
+                         response.result['endpoint_group']['id'])
+
+    def test_get_invalid_endpoint_group(self):
+        """GET /OS-EP-FILTER/endpoint_groups/{endpoint_group}
+
+        Invalid endpoint group test case.
+
+        """
+        endpoint_group_id = 'foobar'
+        url = '/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s' % {
+                 'endpoint_group_id': endpoint_group_id}
+        self.get(url, body='', expected_status=404)
+
+    def test_check_endpoint_group(self):
+        """HEAD /OS-EP-FILTER/endpoint_groups/{endpoint_group_id}
+
+        Valid endpoint_group_id test case.
+
+        """
+        # create an endpoint group to work with
+        r = self.post(self.DEFAULT_ENDPOINT_GROUP_URL,
+                      body=self.DEFAULT_ENDPOINT_GROUP_BODY)
+        endpoint_group_id = r.result['endpoint_group']['id']
+        url = '/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s' % {
+                 'endpoint_group_id': endpoint_group_id}
+        self.head(url, body='', expected_status=204)
+
+    def test_check_invalid_endpoint_group(self):
+        """HEAD /OS-EP-FILTER/endpoint_groups/{endpoint_group_id}
+
+        Invalid endpoint_group_id test case.
+
+        """
+        endpoint_group_id = 'foobar'
+        url = '/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s' % {
+                 'endpoint_group_id': endpoint_group_id}
+        self.head(url, body='', expected_status=404)
+
+    def test_patch_endpoint_group(self):
+        """PATCH /OS-EP-FILTER/endpoint_groups/{endpoint_group}
+
+        Valid endpoint group patch test case.
+
+        """
+        body = {'endpoint_group': {
+                        'filters': {
+                            'region': 'UK'
+                        },
+                        'name': 'patch_test'
+                    }
+                }
+        # create an endpoint group to work with
+        r = self.post(self.DEFAULT_ENDPOINT_GROUP_URL,
+                      body=self.DEFAULT_ENDPOINT_GROUP_BODY)
+        endpoint_group_id = r.result['endpoint_group']['id']
+        url = '/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s' % {
+                 'endpoint_group_id': endpoint_group_id}
+        r = self.patch(url, body=body, expected_status=200)
+        self.assertEqual(endpoint_group_id,
+                         r.result['endpoint_group']['id'])
+        self.assertEqual(body['endpoint_group']['filters'],
+                         r.result['endpoint_group']['filters'])
+
+    def test_patch_nonexistent_endpoint_group(self):
+        """PATCH /OS-EP-FILTER/endpoint_groups/{endpoint_group}
+
+        Invalid endpoint group patch test case.
+
+        """
+        body = {'endpoint_group': {
+                        'name': 'patch_test'
+                    }
+                }
+        url = '/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s' % {
+                 'endpoint_group_id': 'ABC'}
+        r = self.patch(url, body=body, expected_status=404)
+
+    def test_patch_invalid_endpoint_group(self):
+        """PATCH /OS-EP-FILTER/endpoint_groups/{endpoint_group}
+
+        Valid endpoint group patch test case.
+
+        """
+        body = {'endpoint_group': {
+                        'description': 'endpoint group description',
+                        'extra': {
+                            'region': 'UK'
+                        },
+                        'name': 'patch_test'
+                    }
+                }
+        # create an endpoint group to work with
+        r = self.post(self.DEFAULT_ENDPOINT_GROUP_URL,
+                      body=self.DEFAULT_ENDPOINT_GROUP_BODY)
+        endpoint_group_id = r.result['endpoint_group']['id']
+        url = '/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s' % {
+                 'endpoint_group_id': endpoint_group_id}
+        r = self.patch(url, body=body, expected_status=400)
+
+    def test_remove_endpoint_group(self):
+        """GET /OS-EP-FILTER/endpoint_groups/{endpoint_group}
+
+        Valid endpoint group test case.
+
+        """
+        # create an endpoint group to work with
+        r = self.post(self.DEFAULT_ENDPOINT_GROUP_URL,
+                        body=self.DEFAULT_ENDPOINT_GROUP_BODY)
+        endpoint_group_id = r.result['endpoint_group']['id']
+        url = '/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s' % {
+                 'endpoint_group_id': endpoint_group_id}
+        self.delete(url, body='', expected_status=204)
+
+    def test_remove_invalid_endpoint_group(self):
+        """GET /OS-EP-FILTER/endpoint_groups/{endpoint_group}
+
+        Invalid endpoint group test case.
+
+        """
+        endpoint_group_id = 'foobar'
+        url = '/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s' % {
+                 'endpoint_group_id': endpoint_group_id}
+        self.delete(url, body='', expected_status=404)
+
+    def test_add_endpoint_group_to_project(self):
+        """Create a valid endpoint group and project association."""
+        # create an endpoint group to work with
+        r = self.post(self.DEFAULT_ENDPOINT_GROUP_URL,
+                        body=self.DEFAULT_ENDPOINT_GROUP_BODY)
+        endpoint_group_id = r.result['endpoint_group']['id']
+
+        # create a project to work with
+        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        r = self.post('/projects', body={'project': project_ref})
+        project = self.assertValidProjectResponse(r, project_ref)
+
+        # associate endpoint group with project
+        url = '/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s' \
+              '/projects/%(project_id)s' % {
+                 'endpoint_group_id': endpoint_group_id,
+                 'project_id': project['id']}
+        self.put(url, body='', expected_status=204)
+
+    def test_add_endpoint_group_to_project_with_invalid_project_id(self):
+        """Create an invalid endpoint group and project association."""
+        # create an endpoint group to work with
+        r = self.post(self.DEFAULT_ENDPOINT_GROUP_URL,
+                        body=self.DEFAULT_ENDPOINT_GROUP_BODY)
+        endpoint_group_id = r.result['endpoint_group']['id']
+
+        # associated endpoint group with project
+        url = '/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s' \
+              '/projects/%(project_id)s' % {
+                 'endpoint_group_id': endpoint_group_id,
+                 'project_id': 'abc'}
+        self.put(url, body='', expected_status=404)
+
+    def test_check_endpoint_group_to_project(self):
+        """Test HEAD with a valid endpoint group and project association."""
+        # create an endpoint group to work with
+        r = self.post(self.DEFAULT_ENDPOINT_GROUP_URL,
+                        body=self.DEFAULT_ENDPOINT_GROUP_BODY)
+        endpoint_group_id = r.result['endpoint_group']['id']
+
+        # create a project to work with
+        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        r = self.post('/projects', body={'project': project_ref})
+        project = self.assertValidProjectResponse(r, project_ref)
+
+        # create an endpoint group to project association
+        url = '/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s' \
+              '/projects/%(project_id)s' % {
+                 'endpoint_group_id': endpoint_group_id,
+                 'project_id': project['id']}
+        self.put(url, body='', expected_status=204)
+        self.head(url, body='', expected_status=204)
+
+    def test_check_endpoint_group_to_project_with_invalid_project_id(self):
+        """Test HEAD with an invalid endpoint group and project association."""
+        # create an endpoint group to work with
+        r = self.post(self.DEFAULT_ENDPOINT_GROUP_URL,
+                        body=self.DEFAULT_ENDPOINT_GROUP_BODY)
+        endpoint_group_id = r.result['endpoint_group']['id']
+
+        # create a project to work with
+        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        r = self.post('/projects', body={'project': project_ref})
+        project = self.assertValidProjectResponse(r, project_ref)
+
+        # create an endpoint group to project association
+        url = '/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s' \
+              '/projects/%(project_id)s' % {
+                 'endpoint_group_id': endpoint_group_id,
+                 'project_id': project['id']}
+        self.put(url, body='', expected_status=204)
+
+        # send a head request with an invalid project id
+        url = '/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s' \
+              '/projects/%(project_id)s' % {
+                 'endpoint_group_id': endpoint_group_id,
+                 'project_id': 'abc'}
+        self.head(url, body='', expected_status=404)
+
+    def test_list_all_endpoint_groups(self):
+        """GET /OS-EP-FILTER/endpoint_groups."""
+        # create an endpoint group to work with
+        r = self.post(self.DEFAULT_ENDPOINT_GROUP_URL,
+                        body=self.DEFAULT_ENDPOINT_GROUP_BODY)
+        endpoint_group_id = r.result['endpoint_group']['id']
+
+        # recover all endpoint groups
+        url = '/OS-EP-FILTER/endpoint_groups'
+        r = self.get(url, body='', expected_status=200)
+
+    def test_list_projects_associated_with_endpoint_group(self):
+        """GET /OS-EP-FILTER/endpoint_groups/{endpoint_group}/projects
+
+        Valid endpoint group test case.
+
+        """
+        # create an endpoint group to work with
+        r = self.post(self.DEFAULT_ENDPOINT_GROUP_URL,
+                        body=self.DEFAULT_ENDPOINT_GROUP_BODY)
+        endpoint_group_id = r.result['endpoint_group']['id']
+
+        # create a project to work with
+        project_ref = self.new_project_ref(domain_id=self.domain_id)
+        r = self.post('/projects', body={'project': project_ref})
+        project = self.assertValidProjectResponse(r, project_ref)
+
+        # associate endpoint group with project
+        url = '/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s' \
+              '/projects/%(project_id)s' % {
+                 'endpoint_group_id': endpoint_group_id,
+                 'project_id': project['id']}
+        self.put(url, body='', expected_status=204)
+
+        # recover list of projects associated with endpoint group
+        url = '/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s' \
+              '/projects' % {
+                 'endpoint_group_id': endpoint_group_id}
+        r = self.get(url, body='', expected_status=200)
+
+    def test_list_endpoints_associated_with_endpoint_group(self):
+        """GET /OS-EP-FILTER/endpoint_groups/{endpoint_group}/endpoints
+
+        Valid endpoint group test case.
+
+        """
+        # create a service
+        service_ref = self.new_service_ref()
+        response = self.post(
+            '/services',
+            body={'service': service_ref})
+
+        service_id = response.result['service']['id']
+
+        # create an endpoint
+        endpoint_ref = self.new_endpoint_ref(service_id=service_id)
+        response = self.post(
+            '/endpoints',
+            body={'endpoint': endpoint_ref})
+        endpoint_id = response.result['endpoint']['id']
+
+        # create an endpoint group
+        body = {'endpoint_group': {
+                    'description': 'endpoint group description',
+                    'filters': {
+                        'service_id': service_id
+                    },
+                    'name': 'endpoint_group_name'
+                }
+            }
+        response = self.post(self.DEFAULT_ENDPOINT_GROUP_URL,
+                      body=body)
+        endpoint_group_id = response.result['endpoint_group']['id']
+
+        # associate endpoint with default project
+        self.put('/OS-EP-FILTER/projects/%(project_id)s'
+                 '/endpoints/%(endpoint_id)s' % {
+                     'project_id': self.default_domain_project_id,
+                     'endpoint_id': endpoint_id})
+
+        # associate endpoint group with default project
+        self.put('/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s'
+                 '/projects/%(project_id)s' % {
+                     'endpoint_group_id': endpoint_group_id,
+                     'project_id': self.default_domain_project_id})
+
+        # recover list of endpoints associated with endpoint group
+        url = '/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s' \
+              '/endpoints' % {
+                 'endpoint_group_id': endpoint_group_id}
+        r = self.get(url, body='', expected_status=200)
+        self.assertNotEmpty(r.result['endpoints'])
+        self.assertEqual(endpoint_id, r.result['endpoints'][0].get('id'))
