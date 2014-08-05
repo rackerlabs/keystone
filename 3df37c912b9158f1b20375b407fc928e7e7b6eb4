@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "baada198_18d1cff7",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-05T02:25:37Z",
+      "side": 1,
+      "message": "this and the new lines at line 67-69 will likely fail pep8",
+      "revId": "3df37c912b9158f1b20375b407fc928e7e7b6eb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_2d173755",
         "filename": "httpd/keystone.py",
         "patchSetId": 1
@@ -47,6 +64,23 @@
       "writtenOn": "2014-08-05T02:12:57Z",
       "side": 1,
       "message": "Can the %s be change to commas?",
+      "revId": "3df37c912b9158f1b20375b407fc928e7e7b6eb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_3803f376",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-05T02:25:37Z",
+      "side": 1,
+      "message": "space after #",
       "revId": "3df37c912b9158f1b20375b407fc928e7e7b6eb4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +138,23 @@
     },
     {
       "key": {
+        "uuid": "baada198_78f9eb80",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-05T02:25:37Z",
+      "side": 1,
+      "message": "rm empty line",
+      "revId": "3df37c912b9158f1b20375b407fc928e7e7b6eb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_38e85315",
         "filename": "keystone/common/config.py",
         "patchSetId": 1
@@ -132,6 +183,23 @@
       "writtenOn": "2014-08-05T02:12:57Z",
       "side": 1,
       "message": "Add a space after the period.",
+      "revId": "3df37c912b9158f1b20375b407fc928e7e7b6eb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_5806e785",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-05T02:25:37Z",
+      "side": 1,
+      "message": "rm new line",
       "revId": "3df37c912b9158f1b20375b407fc928e7e7b6eb4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
