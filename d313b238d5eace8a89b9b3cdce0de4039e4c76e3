@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_f4307c57",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-05T23:58:48Z",
+      "side": 1,
+      "message": "this isn\u0027t used as far as I can tell.",
+      "revId": "d313b238d5eace8a89b9b3cdce0de4039e4c76e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_7449ccb7",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-05T23:58:48Z",
+      "side": 1,
+      "message": "how would the user_id or expires_at be None? if this was the case the token would be invalid and we should be raising an exception.",
+      "revId": "d313b238d5eace8a89b9b3cdce0de4039e4c76e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
