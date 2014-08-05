@@ -116,6 +116,15 @@ class AuthBadRequests(AuthTest):
             self.controller._authenticate_external,
             {}, {})
 
+    def test_empty_remote_user(self):
+        """Verify that _authenticate_external() raises exception if
+        REMOTE_USER is set as the empty string.
+        """
+        self.assertRaises(
+            token.controllers.ExternalAuthNotApplicable,
+            self.controller._authenticate_external,
+            {}, {})
+
     def test_no_token_in_auth(self):
         """Verify that _authenticate_token() raises exception if no token."""
         self.assertRaises(
