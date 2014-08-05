@@ -149,3 +149,118 @@ class Driver(object):
 
         """
         raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def create_endpoint_group(self):
+        """Creates an endpoint group.
+
+        :raises: keystone.exception.Conflict,
+        :returns: an endpoint group representation.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def get_endpoint_group(self, endpoint_group_id):
+        """Get an endpoint group.
+
+        :param endpoint_group_id: identity of endpoint group to retrieve
+        :type endpoint_group_id: string
+        :raises: exception.NotFound
+        :returns: an endpoint group representation.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def check_endpoint_group(self, endpoint_group_id):
+        """Check endpoint group exists.
+
+        :param endpoint_group_id: identity of endpoint group to check
+        :type endpoint_group_id: string
+        :raises: exception.NotFound
+        :returns: None.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def update_endpoint_group(self, endpoint_group_id, endpoint_group):
+        """Update an endpoint group.
+
+        :param endpoint_group_id: identity of endpoint group to retrieve
+        :type endpoint_group_id: string
+        :param endpoint_group: A full or partial endpoint_group
+        :type endpoint_group: json
+        :raises: exception.NotFound
+        :returns: an endpoint group representation.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def remove_endpoint_group(self, endpoint_group_id):
+        """Delete an endpoint group.
+
+        :param endpoint_group_id: identity of endpoint group to delete
+        :type endpoint_group_id: string
+        :raises: exception.NotFound
+        :returns: None.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def add_endpoint_group_to_project(self, endpoint_group_id, project_id):
+        """Adds an endpoint group to project association.
+
+        :param endpoint_group_id: identity of endpoint to associate
+        :type endpoint_group_id: string
+        :param project_id: identity of project to associate
+        :type project_id: string
+        :raises: keystone.exception.Conflict,
+        :returns: None.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def check_endpoint_group_in_project(self, endpoint_group_id, project_id):
+        """Checks if an endpoint to project association exists.
+
+        :param endpoint_group_id: identity of endpoint to associate
+        :type endpoint_group_id: string
+        :param project_id: identity of project to associate
+        :type project_id: string
+        :raises: exception.NotFound
+        :returns: None.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def list_endpoint_groups_for_project(self, project_id):
+        """Lists all the endpoint to project associations for a given project id.
+
+        :param project_id: identity of project to associate
+        :type project_id: string
+        :raises: exception.NotFound
+        :returns: None.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def remove_endpoint_group_from_project(self, endpoint_group_id,
+                                           project_id):
+        """Removes an endpoint to project association.
+
+        :param endpoint_group_id: identity of endpoint to associate
+        :type endpoint_group_id: string
+        :param project_id: identity of project to associate
+        :type project_id: string
+        :raises: exception.NotFound
+        :returns: None.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
