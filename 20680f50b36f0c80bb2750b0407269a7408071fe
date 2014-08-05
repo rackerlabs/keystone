@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_78f9d681",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-08-05T14:28:00Z",
+      "side": 1,
+      "message": "++\n\nrenamed to \"get_project_subtree\"",
+      "parentUuid": "baada198_f370bc42",
+      "revId": "20680f50b36f0c80bb2750b0407269a7408071fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_337874f7",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_d8ef42b1",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-08-05T14:28:00Z",
+      "side": 1,
+      "message": "thanks for your comments. Modified the method to use the IN statement.",
+      "parentUuid": "baada198_337874f7",
+      "revId": "20680f50b36f0c80bb2750b0407269a7408071fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_049a506e",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2014-08-05T03:40:29Z",
       "side": 1,
       "message": "Is there a more efficient way to do this? Just to know if there are any records you are querying the database and downloading them all.",
+      "revId": "20680f50b36f0c80bb2750b0407269a7408071fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f84326ae",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-08-05T14:28:00Z",
+      "side": 1,
+      "message": "that was the most effective implementation we could think of \u003d(",
+      "parentUuid": "baada198_049a506e",
       "revId": "20680f50b36f0c80bb2750b0407269a7408071fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
