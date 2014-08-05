@@ -12,9 +12,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo.utils import timeutils
+
 from keystone.common import sql
 from keystone import exception
-from keystone.openstack.common import timeutils
 from keystone import trust
 
 

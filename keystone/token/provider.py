@@ -18,6 +18,7 @@ import abc
 import datetime
 
 from keystoneclient.common import cms
+from oslo.utils import timeutils
 import six
 
 from keystone.common import cache
@@ -28,7 +29,6 @@ from keystone import exception
 from keystone.i18n import _
 from keystone.models import token_model
 from keystone.openstack.common import log
-from keystone.openstack.common import timeutils
 from keystone.openstack.common import versionutils
 
 
