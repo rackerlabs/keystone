@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_2d49f78d",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-05T02:12:57Z",
+      "side": 1,
+      "message": "There are lots of double spaces in the paragraphs below.",
+      "revId": "3df37c912b9158f1b20375b407fc928e7e7b6eb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d8c75763",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-05T02:12:57Z",
+      "side": 1,
+      "message": "Is there any reason that we have two different set of options for running under eventlet vs. Apache?",
+      "revId": "3df37c912b9158f1b20375b407fc928e7e7b6eb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2d173755",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-05T02:12:57Z",
+      "side": 1,
+      "message": "Can the %s be change to commas?",
+      "revId": "3df37c912b9158f1b20375b407fc928e7e7b6eb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f85c1b1c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-05T02:12:57Z",
+      "side": 1,
+      "message": "Add a space after the period.",
+      "revId": "3df37c912b9158f1b20375b407fc928e7e7b6eb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_18af0fe1",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-05T02:12:57Z",
+      "side": 1,
+      "message": "Should this be capitalized?",
+      "revId": "3df37c912b9158f1b20375b407fc928e7e7b6eb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f8b33b4b",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-05T02:12:57Z",
+      "side": 1,
+      "message": "Or this?",
+      "revId": "3df37c912b9158f1b20375b407fc928e7e7b6eb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_38e85315",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-05T02:12:57Z",
+      "side": 1,
+      "message": "What exactly is this and how is it different from remote_debug?",
+      "revId": "3df37c912b9158f1b20375b407fc928e7e7b6eb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_5884275c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-05T02:12:57Z",
+      "side": 1,
+      "message": "Add a space after the period.",
+      "revId": "3df37c912b9158f1b20375b407fc928e7e7b6eb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f8141beb",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-05T02:12:57Z",
+      "side": 1,
+      "message": "Replace \" % (host, post)\" with \", host, port\"",
+      "revId": "3df37c912b9158f1b20375b407fc928e7e7b6eb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d8191724",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-05T02:12:57Z",
+      "side": 1,
+      "message": "\u0027Verify that the either the\u0027 doesn\u0027t make sense.",
+      "revId": "3df37c912b9158f1b20375b407fc928e7e7b6eb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
