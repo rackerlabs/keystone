@@ -16,6 +16,24 @@
       "revId": "0724fc4d27c90461de3310b3b2cb7387e6c92bba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_05b4071b",
+        "filename": "keystone/exception.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-05T04:08:53Z",
+      "side": 1,
+      "message": "If we need a new patch, will include this.",
+      "parentUuid": "baada198_84210051",
+      "revId": "0724fc4d27c90461de3310b3b2cb7387e6c92bba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
