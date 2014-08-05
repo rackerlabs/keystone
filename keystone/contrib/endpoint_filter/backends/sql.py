@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.common import dependency
 from keystone.common import sql
 from keystone import exception
 from keystone.i18n import _
@@ -29,6 +30,42 @@ class ProjectEndpoint(sql.ModelBase, sql.DictBase):
                             nullable=False)
 
 
+class EndpointGroup(sql.ModelBase, sql.DictBase):
+    """Endpoint Groups table."""
+    __tablename__ = 'endpoint_group'
+    attributes = ['id', 'name', 'description', 'filters']
+    mutable_attributes = frozenset(['name', 'description', 'filters'])
+    id = sql.Column(sql.String(64), primary_key=True)
+    name = sql.Column(sql.String(255), nullable=False)
+    description = name = sql.Column(sql.String(255))
+    filters = sql.Column(sql.JsonBlob(), nullable=False)
+
+    @classmethod
+    def from_dict(cls, dictionary):
+        new_dictionary = dictionary.copy()
+        return cls(**new_dictionary)
+
+    def to_dict(self):
+        """Return a dictionary with model's attributes."""
+        d = dict()
+        for attr in self.__class__.attributes:
+            d[attr] = getattr(self, attr)
+        return d
+
+
+class ProjectEndpointGroupMembership(sql.ModelBase, sql.DictBase):
+    """project endpoint group relationship table."""
+    __tablename__ = 'project_endpoint_group'
+    attributes = ['endpoint_group_id', 'project_id']
+    endpoint_group_id = sql.Column(sql.String(64),
+                                   primary_key=True,
+                                   nullable=False)
+    project_id = sql.Column(sql.String(64),
+                            primary_key=True,
+                            nullable=False)
+
+
+@dependency.requires('assignment_api')
 class EndpointFilter(object):
 
     @sql.handle_conflicts(conflict_type='project_endpoint')
@@ -87,3 +124,102 @@ class EndpointFilter(object):
             query = session.query(ProjectEndpoint)
             query = query.filter_by(project_id=project_id)
             query.delete(synchronize_session=False)
+
+    def create_endpoint_group(self, endpoint_group_id, endpoint_group):
+        session = sql.get_session()
+        with session.begin():
+            endpoint_group_ref = EndpointGroup.from_dict(endpoint_group)
+            session.add(endpoint_group_ref)
+        return endpoint_group_ref.to_dict()
+
+    def _get_endpoint_group(self, session, endpoint_group_id):
+        endpoint_group_ref = session.query(EndpointGroup).get(
+            endpoint_group_id)
+        if endpoint_group_ref is None:
+            msg = _('Endpoint Group %(endpoint_group_id)s not found') % {
+                'endpoint_group_id': endpoint_group_id}
+            raise exception.NotFound(msg)
+        return endpoint_group_ref
+
+    def get_endpoint_group(self, endpoint_group_id):
+        session = sql.get_session()
+        return self._get_endpoint_group(session, endpoint_group_id)
+
+    def check_endpoint_group(self, endpoint_group_id):
+        session = sql.get_session()
+        self._get_endpoint_group(session, endpoint_group_id)
+
+    def update_endpoint_group(self, endpoint_group_id, endpoint_group):
+        session = sql.get_session()
+        with session.begin():
+            endpoint_group_ref = self._get_endpoint_group(session,
+                                                          endpoint_group_id)
+            old_endpoint_group = endpoint_group_ref.to_dict()
+            old_endpoint_group.update(endpoint_group)
+            new_endpoint_group = EndpointGroup.from_dict(old_endpoint_group)
+            for attr in EndpointGroup.mutable_attributes:
+                setattr(endpoint_group_ref, attr,
+                        getattr(new_endpoint_group, attr))
+        return endpoint_group_ref.to_dict()
+
+    def remove_endpoint_group(self, endpoint_group_id):
+        session = sql.get_session()
+        endpoint_group_ref = self._get_endpoint_group(session,
+                                                      endpoint_group_id)
+        with session.begin():
+            session.delete(endpoint_group_ref)
+
+    @sql.handle_conflicts(conflict_type='project_endpoint_group')
+    def add_endpoint_group_to_project(self, endpoint_group_id, project_id):
+        session = sql.get_session()
+        with session.begin():
+            endpoint_group_project_ref = ProjectEndpointGroupMembership(
+                endpoint_group_id=endpoint_group_id, project_id=project_id)
+            session.add(endpoint_group_project_ref)
+
+    def check_endpoint_group_in_project(self, endpoint_group_id, project_id):
+        session = sql.get_session()
+        endpoint_group_project_ref = session.query(
+            ProjectEndpointGroupMembership).get((endpoint_group_id,
+                                                 project_id))
+        if endpoint_group_project_ref is None:
+            msg = _('Endpoint Group Project Association not found')
+            raise exception.NotFound(msg)
+
+    def list_endpoint_groups_for_project(self, project_id):
+        session = sql.get_session()
+        query = session.query(ProjectEndpointGroupMembership)
+        query = query.filter_by(project_id=project_id)
+        endpoint_group_refs = query.all()
+        return endpoint_group_refs
+
+    def remove_endpoint_group_from_project(self, endpoint_group_id,
+                                           project_id):
+        session = sql.get_session()
+        endpoint_group_project_ref = session.query(
+            ProjectEndpointGroupMembership).get((endpoint_group_id,
+                                                 project_id))
+        if endpoint_group_project_ref is None:
+            msg = _('Endpoint Group Project Association not found')
+            raise exception.NotFound(msg)
+        with session.begin():
+            session.delete(endpoint_group_project_ref)
+
+    def list_projects_associated_with_endpoint_group(self, endpoint_group_id):
+        session = sql.get_session()
+        query = session.query(ProjectEndpointGroupMembership)
+        query = query.filter_by(endpoint_group_id=endpoint_group_id)
+        endpoint_group_refs = query.all()
+        projects = []
+        for endpoint_group_ref in endpoint_group_refs:
+            project = self.assignment_api.get_project(
+                endpoint_group_ref.project_id)
+            if project:
+                projects.append(project)
+        return projects
+
+    def get_filter_for_endpoint_group(self, endpoint_group_id):
+        session = sql.get_session()
+        endpoint_group_ref = self._get_endpoint_group(session,
+                                                      endpoint_group_id)
+        return endpoint_group_ref.filters
