@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_f370bc42",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-05T03:40:29Z",
+      "side": 1,
+      "message": "This name was a little misleading for me. I was not expecting it to get all children recursively.",
+      "revId": "20680f50b36f0c80bb2750b0407269a7408071fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_337874f7",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-05T03:40:29Z",
+      "side": 1,
+      "message": "This algorithm will be very wasteful when there are lots of projects in a tree because it will do a query per project. It would be better to change this to be 1 query per level in the hierarchy. For example, given the project_id passed in to the method get its children. Then take that list of children and get all of their children in one query like: (query.filter(Project.id.in_(children_ids)). Do this until you have gotten to the leaf nodes in the tree.\n\nThere is one complication in that you may get too many children at a level to do the in_ method and may have to break it up. With a small hierarchy this would cut the queries in half. With a larger hierarchy it would be even better.",
+      "revId": "20680f50b36f0c80bb2750b0407269a7408071fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_049a506e",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-05T03:40:29Z",
+      "side": 1,
+      "message": "Is there a more efficient way to do this? Just to know if there are any records you are querying the database and downloading them all.",
+      "revId": "20680f50b36f0c80bb2750b0407269a7408071fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_98979f38",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-05T03:40:29Z",
+      "side": 1,
+      "message": "Is there any reason that you are not using \u0027reversed\u0027? I think it\u0027s easier to read for devs new to Python.",
+      "revId": "20680f50b36f0c80bb2750b0407269a7408071fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
