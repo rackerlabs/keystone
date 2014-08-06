@@ -281,9 +281,8 @@ class AuthWithToken(AuthTest):
         self.identity_api.add_user_to_group(self.user_foo['id'],
                                             new_group['id'])
         self.assignment_api.create_grant(
-            group_id=new_group['id'],
-            project_id=self.tenant_bar['id'],
-            role_id=self.role_admin['id'])
+            context={}, role_id=self.role_admin['id'],
+            group_id=new_group['id'], project_id=self.tenant_bar['id'])
 
         # Get a scoped token for the tenant
         body_dict = _build_user_auth(
@@ -322,21 +321,17 @@ class AuthWithToken(AuthTest):
         self.identity_api.add_user_to_group(self.user_foo['id'],
                                             new_group['id'])
         self.assignment_api.create_grant(
-            user_id=self.user_foo['id'],
-            project_id=project1['id'],
-            role_id=self.role_member['id'])
+            context={}, role_id=self.role_member['id'],
+            user_id=self.user_foo['id'], project_id=project1['id'])
         self.assignment_api.create_grant(
-            group_id=new_group['id'],
-            project_id=project1['id'],
-            role_id=self.role_admin['id'])
+            context={}, role_id=self.role_admin['id'],
+            group_id=new_group['id'], project_id=project1['id'])
         self.assignment_api.create_grant(
-            user_id=self.user_foo['id'],
-            domain_id=domain1['id'],
-            role_id=role_foo_domain1['id'])
+            context={}, role_id=role_foo_domain1['id'],
+            user_id=self.user_foo['id'], domain_id=domain1['id'])
         self.assignment_api.create_grant(
-            group_id=new_group['id'],
-            domain_id=domain1['id'],
-            role_id=role_group_domain1['id'])
+            context={}, role_id=role_group_domain1['id'],
+            group_id=new_group['id'], domain_id=domain1['id'])
 
         # Get a scoped token for the tenant
         body_dict = _build_user_auth(

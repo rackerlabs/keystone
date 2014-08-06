@@ -30,6 +30,7 @@ EXP_RESOURCE_TYPE = uuid.uuid4().hex
 CREATED_OPERATION = 'created'
 UPDATED_OPERATION = 'updated'
 DELETED_OPERATION = 'deleted'
+ROLE_ASSIGNMENT = 'role_assignment'
 
 
 class ArbitraryException(Exception):
@@ -493,6 +494,44 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
         self.assertEqual(initiator.host.address, self.LOCAL_HOST)
         self.assertTrue(note['send_notification_called'])
 
+    def _assert_attachments(self, role_id, target, actor, inherit=False):
+        """ Assert that the CADF attachments are valid.
+
+        In the case of role assignments, the initiator will have extra data,
+        known as attachments, specifically the role_id, target, actor, and
+        if the role is inherited.
+
+        An example initiator, as a dictionary is seen below:
+            {'attachments': [{'content': u'ff072be9712f45e1ae0985b847d3dfbf',
+                              'name': 'actor',
+                              'typeURI': 'typeURI'},
+                             {'content': u'b33d75947e664c6ea4d13337db148105',
+                              'name': 'target',
+                              'typeURI': 'typeURI'},
+                             {'content': False,
+                              'name': 'inherited',
+                              'typeURI': 'typeURI'},
+                             {'content': u'4b62ec80707a40379cd02c5918117678',
+                              'name': 'role',
+                              'typeURI': 'typeURI'}],
+             'host': {'address': 'localhost'},
+             'id': 'openstack:f6eac6ad-ef02-4469-a40f-c1c9151d3813',
+             'name': u'7bdae1f0c3754e9f8af3794016b88093',
+             'typeURI': 'service/security/account/user'}
+        """
+
+        note = self._notifications[-1]
+        initiator = note['initiator']
+        for attachment in initiator.attachments:
+            if attachment.name == 'actor':
+                self.assertEqual(actor, attachment.content)
+            if attachment.name == 'role':
+                self.assertEqual(role_id, attachment.content)
+            if attachment.name == 'target':
+                self.assertEqual(target, attachment.content)
+            if attachment.name == 'inherited':
+                self.assertEqual(inherit, attachment.content)
+
     def test_v3_authenticate_user_name_and_domain_id(self):
         user_id = self.user_id
         user_name = self.user['name']
@@ -522,6 +561,32 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
                                                  password=password)
         self.post('/auth/tokens', body=data)
         self._assertLastNotify(self.ACTION, user_id)
+
+    def test_user_project_grant(self):
+        role_ref = self.new_role_ref()
+        self.assignment_api.create_role(role_ref['id'], role_ref)
+        url = '/projects/%s/users/%s/roles/%s'
+
+        self.put(url % (self.project_id, self.user_id, role_ref['id']))
+        self._assertLastNotify(CREATED_OPERATION, self.user_id)
+
+        self.delete(url % (self.project_id, self.user_id, role_ref['id']))
+        self._assertLastNotify(DELETED_OPERATION, self.user_id)
+        self._assert_attachments(role_ref['id'], self.project_id, self.user_id)
+
+    def test_group_domain_grant(self):
+        role_ref = self.new_role_ref()
+        self.assignment_api.create_role(role_ref['id'], role_ref)
+        group_ref = self.new_group_ref(domain_id=self.domain_id)
+        group = self.identity_api.create_group(group_ref)
+        url = '/domains/%s/groups/%s/roles/%s'
+
+        self.put(url % (self.domain_id, group['id'], role_ref['id']))
+        self._assertLastNotify(CREATED_OPERATION, self.user_id)
+
+        self.delete(url % (self.domain_id, group['id'], role_ref['id']))
+        self._assertLastNotify(DELETED_OPERATION, self.user_id)
+        self._assert_attachments(role_ref['id'], self.domain_id, group['id'])
 
 
 class TestCallbackRegistration(testtools.TestCase):

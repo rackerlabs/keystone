@@ -553,8 +553,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         user = self.identity_api.create_user(user)
         user['password'] = password
         self.assignment_api.create_grant(
-            role_id=self.role_id, user_id=user['id'],
-            domain_id=domain['id'])
+            context={}, role_id=self.role_id,
+            user_id=user['id'], domain_id=domain['id'])
 
         ref = self.new_user_ref(domain_id=domain['id'])
         ref_nd = ref.copy()
@@ -612,8 +612,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         user = self.identity_api.create_user(user)
         user['password'] = password
         self.assignment_api.create_grant(
-            role_id=self.role_id, user_id=user['id'],
-            domain_id=domain['id'])
+            context={}, role_id=self.role_id,
+            user_id=user['id'], domain_id=domain['id'])
 
         ref = self.new_user_ref(domain_id=domain['id'])
         ref_nd = ref.copy()
@@ -1552,8 +1552,8 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
 
         # Create a non-inherited role as a spoiler
         self.assignment_api.create_grant(
-            role_list[1]['id'], user_id=self.user['id'],
-            domain_id=self.domain_id)
+            context={}, role_id=role_list[1]['id'],
+            user_id=self.user['id'], domain_id=self.domain_id)
 
         base_collection_url = (
             '/OS-INHERIT/domains/%(domain_id)s/users/%(user_id)s/roles' % {
@@ -1923,7 +1923,8 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
             user1['id'], project2['id'], role_list[1]['id'])
         # Create a non-inherited role as a spoiler
         self.assignment_api.create_grant(
-            role_list[2]['id'], user_id=user1['id'], domain_id=domain['id'])
+            context={}, role_id=role_list[2]['id'],
+            user_id=user1['id'], domain_id=domain['id'])
 
         # Now create two inherited roles on the domain, one for a user
         # and one for a domain
