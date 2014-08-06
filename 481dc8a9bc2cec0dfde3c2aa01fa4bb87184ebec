@@ -16,6 +16,24 @@
       "revId": "481dc8a9bc2cec0dfde3c2aa01fa4bb87184ebec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6dcc8c63",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-06T14:07:02Z",
+      "side": 1,
+      "message": "yeah, sadly it\u0027s because the tests call \n  assignment_api,create_grant(role_id\u003d\u0027xyz\u0027, user_id\u003d...)\nor\n  assignment_api,create_grant(user_id\u003d\u0027abc\u0027, role_id\u003d\u0027xyz\u0027, user_id\u003d...)\nor\n  assignment_api,create_grant(\u0027xyz\u0027, user_id\u003d...)\n\nbut `resource_id_arg_index` only works properly if it\u0027s a positional argument. \n\nSo in the case of the tests that were calling role_id\u003d\u0027something\u0027, resource_id_arg_index was defaulting to 1, and args[] just had the context, and kwargs had the keyword args.\n\nthe alternative would be to update all the tests, which was a lot of tests.",
+      "parentUuid": "baada198_ed325cbf",
+      "revId": "481dc8a9bc2cec0dfde3c2aa01fa4bb87184ebec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
