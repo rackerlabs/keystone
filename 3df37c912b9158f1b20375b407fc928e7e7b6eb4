@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_b046f74e",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-08-06T14:22:01Z",
+      "side": 1,
+      "message": "Yes.  It has to do with how Osl does config options.  The Eventlet ones are done as command line parameters, but The HTTPD ones needed to be done as config file parameters, and it does not seem to be possible to merge the two.",
+      "parentUuid": "baada198_d8c75763",
+      "revId": "3df37c912b9158f1b20375b407fc928e7e7b6eb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_18d1cff7",
         "filename": "httpd/keystone.py",
         "patchSetId": 1
