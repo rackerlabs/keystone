@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_dd59b48e",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-06T22:32:49Z",
+      "side": 1,
+      "message": "The server returns a 400 Bad Request for this exception, but there\u0027s no way that this could actually be caused by the client sending a bad token ID, so this will be confusing for the user. This should be an UnexpectedError.",
+      "revId": "4a60fbdce16d78b4360e1a3353dcad35faa18204",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
