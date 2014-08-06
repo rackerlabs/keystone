@@ -151,6 +151,57 @@ class Auth(controller.V2Controller):
 
         return token_data
 
+    def _deal_with_trust_scope(self, trust_id, user_id, tenant_id, expiry):
+        if not CONF.trust.enabled:
+            raise exception.Forbidden('Trusts are disabled.')
+        else:
+            trust_ref = self.trust_api.get_trust(trust_id)
+            if trust_ref is None:
+                raise exception.Forbidden()
+            if user_id != trust_ref['trustee_user_id']:
+                raise exception.Forbidden()
+            if (trust_ref['project_id'] and
+                    tenant_id != trust_ref['project_id']):
+                raise exception.Forbidden()
+            if ('expires' in trust_ref) and (trust_ref['expires']):
+                trust_expiry = trust_ref['expires']
+                if trust_expiry < timeutils.parse_isotime(timeutils.isotime()):
+                    raise exception.Forbidden()
+            user_id = trust_ref['trustor_user_id']
+            trustor_user_ref = self.identity_api.get_user(
+                trust_ref['trustor_user_id'])
+            if not trustor_user_ref['enabled']:
+                raise exception.Forbidden()
+            trustee_user_ref = self.identity_api.get_user(
+                trust_ref['trustee_user_id'])
+            if not trustee_user_ref['enabled']:
+                raise exception.Forbidden()
+
+            if trust_ref['impersonation'] is True:
+                user_ref = trustor_user_ref
+            else:
+                user_ref = trustee_user_ref
+
+            metadata_ref = {}
+            tenant_ref, metadata_ref['roles'] = (
+                self._get_project_roles_and_ref(user_id, tenant_id))
+
+            trust_roles = []
+            for role in trust_ref['roles']:
+                if role['id'] in metadata_ref['roles']:
+                    trust_roles.append(role['id'])
+                else:
+                    raise exception.Forbidden()
+            if 'expiry' in trust_ref and trust_ref['expiry']:
+                trust_expiry = timeutils.parse_isotime(trust_ref['expiry'])
+                if trust_expiry < expiry:
+                    expiry = trust_expiry
+            metadata_ref['roles'] = trust_roles
+            metadata_ref['trustee_user_id'] = trust_ref['trustee_user_id']
+            metadata_ref['trust_id'] = trust_id
+
+            return expiry, user_ref, tenant_ref, metadata_ref
+
     def _authenticate_token(self, context, auth):
         """Try to authenticate using an already existing token.
 
@@ -185,61 +236,17 @@ class Auth(controller.V2Controller):
         user_id = token_model_ref.user_id
         tenant_id = self._get_project_id_from_auth(auth)
 
-        if not CONF.trust.enabled and 'trust_id' in auth:
-            raise exception.Forbidden('Trusts are disabled.')
-        elif CONF.trust.enabled and 'trust_id' in auth:
-            trust_ref = self.trust_api.get_trust(auth['trust_id'])
-            if trust_ref is None:
-                raise exception.Forbidden()
-            if user_id != trust_ref['trustee_user_id']:
-                raise exception.Forbidden()
-            if (trust_ref['project_id'] and
-                    tenant_id != trust_ref['project_id']):
-                raise exception.Forbidden()
-            if ('expires' in trust_ref) and (trust_ref['expires']):
-                expiry = trust_ref['expires']
-                if expiry < timeutils.parse_isotime(timeutils.isotime()):
-                    raise exception.Forbidden()
-            user_id = trust_ref['trustor_user_id']
-            trustor_user_ref = self.identity_api.get_user(
-                trust_ref['trustor_user_id'])
-            if not trustor_user_ref['enabled']:
-                raise exception.Forbidden()
-            trustee_user_ref = self.identity_api.get_user(
-                trust_ref['trustee_user_id'])
-            if not trustee_user_ref['enabled']:
-                raise exception.Forbidden()
-
-            if trust_ref['impersonation'] is True:
-                current_user_ref = trustor_user_ref
-            else:
-                current_user_ref = trustee_user_ref
-
-        else:
-            current_user_ref = self.identity_api.get_user(user_id)
-
-        metadata_ref = {}
-        tenant_ref, metadata_ref['roles'] = self._get_project_roles_and_ref(
-            user_id, tenant_id)
-
         expiry = token_model_ref.expires
-        if CONF.trust.enabled and 'trust_id' in auth:
-            trust_id = auth['trust_id']
-            trust_roles = []
-            for role in trust_ref['roles']:
-                if 'roles' not in metadata_ref:
-                    raise exception.Forbidden()()
-                if role['id'] in metadata_ref['roles']:
-                    trust_roles.append(role['id'])
-                else:
-                    raise exception.Forbidden()
-            if 'expiry' in trust_ref and trust_ref['expiry']:
-                trust_expiry = timeutils.parse_isotime(trust_ref['expiry'])
-                if trust_expiry < expiry:
-                    expiry = trust_expiry
-            metadata_ref['roles'] = trust_roles
-            metadata_ref['trustee_user_id'] = trust_ref['trustee_user_id']
-            metadata_ref['trust_id'] = trust_id
+
+        if 'trust_id' not in auth:
+            current_user_ref = self.identity_api.get_user(user_id)
+            metadata_ref = {}
+            tenant_ref, metadata_ref['roles'] = (
+                self._get_project_roles_and_ref(user_id, tenant_id))
+        else:
+            expiry, current_user_ref, tenant_ref, metadata_ref = (
+                self._deal_with_trust_scope(auth['trust_id'], user_id,
+                                            tenant_id, expiry))
 
         bind = token_model_ref.bind
         audit_id = token_model_ref.audit_chain_id
@@ -297,12 +304,18 @@ class Auth(controller.V2Controller):
         except AssertionError as e:
             raise exception.Unauthorized(e.args[0])
 
-        metadata_ref = {}
         tenant_id = self._get_project_id_from_auth(auth)
-        tenant_ref, metadata_ref['roles'] = self._get_project_roles_and_ref(
-            user_id, tenant_id)
-
         expiry = provider.default_expire_time()
+
+        if 'trust_id' in auth:
+            expiry, user_ref, tenant_ref, metadata_ref = (
+                self._deal_with_trust_scope(auth['trust_id'], user_id,
+                                            tenant_id, expiry))
+        else:
+            metadata_ref = {}
+            tenant_ref, metadata_ref['roles'] = (
+                self._get_project_roles_and_ref(user_id, tenant_id))
+
         bind = None
         audit_id = None
         return (user_ref, tenant_ref, metadata_ref, expiry, bind, audit_id)
