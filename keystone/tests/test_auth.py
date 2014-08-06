@@ -1154,6 +1154,22 @@ class AuthWithTrust(AuthTest):
             self.controller.authenticate, {}, request_body)
 
 
+class AuthWithTrustByPasswordCredentials(AuthWithTrust):
+
+    def build_v2_token_request(self, username, password, trust,
+                               tenant_id=None):
+        if not tenant_id:
+            tenant_id = self.tenant_bar['id']
+        request_body = _build_user_auth(username=username,
+                                        password=password,
+                                        trust_id=trust['id'],
+                                        tenant_id=tenant_id)
+        return request_body
+
+    def test_token_from_trust_cant_get_another_token(self):
+        pass
+
+
 class TokenExpirationTest(AuthTest):
 
     @mock.patch.object(timeutils, 'utcnow')
