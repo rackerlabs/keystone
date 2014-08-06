@@ -52,6 +52,24 @@
       "revId": "481dc8a9bc2cec0dfde3c2aa01fa4bb87184ebec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8330c807",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-06T18:03:52Z",
+      "side": 1,
+      "message": "role_id is not passed in as kwargs to you won\u0027t find it there. Based on the method signatures you\u0027ll find the role_id at args[1].",
+      "parentUuid": "baada198_cd4678a7",
+      "revId": "481dc8a9bc2cec0dfde3c2aa01fa4bb87184ebec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
