@@ -16,6 +16,40 @@
       "revId": "c15d0d69b3cb6ffdecd54941c1290d4dce655cbe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_eed0a754",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-06T05:05:38Z",
+      "side": 1,
+      "message": "The value of \"eventTime\" is not legal ISO-8601 format.",
+      "revId": "c15d0d69b3cb6ffdecd54941c1290d4dce655cbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4e46f323",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-06T05:05:38Z",
+      "side": 1,
+      "message": "Should timestamp use ISO-8601 format?",
+      "revId": "c15d0d69b3cb6ffdecd54941c1290d4dce655cbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
