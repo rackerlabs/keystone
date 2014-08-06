@@ -30,6 +30,7 @@ EXP_RESOURCE_TYPE = uuid.uuid4().hex
 CREATED_OPERATION = 'created'
 UPDATED_OPERATION = 'updated'
 DELETED_OPERATION = 'deleted'
+ROLE_ASSIGNMENT = 'role_assignment'
 
 
 class ArbitraryException(Exception):
@@ -137,7 +138,7 @@ class NotificationsTestCase(testtools.TestCase):
         """Test the private method _send_notification to ensure event_type,
            payload, and context are built and passed properly.
         """
-        resource = uuid.uuid4().hex
+        payload = {'resource_info': uuid.uuid4().hex}
         resource_type = EXP_RESOURCE_TYPE
         operation = CREATED_OPERATION
 
@@ -151,14 +152,14 @@ class NotificationsTestCase(testtools.TestCase):
         expected_args = [
             {},  # empty context
             'identity.%s.created' % resource_type,  # event_type
-            {'resource_info': resource},  # payload
+            payload,  # payload
             'INFO',  # priority is always INFO...
         ]
 
         with mock.patch.object(notifications._get_notifier(),
                                '_notify') as mocked:
             notifications._send_notification(operation, resource_type,
-                                             resource)
+                                             payload)
             mocked.assert_called_once_with(*expected_args)
 
 
@@ -167,10 +168,10 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         super(NotificationsForEntities, self).setUp()
         self._notifications = []
 
-        def fake_notify(operation, resource_type, resource_id,
+        def fake_notify(operation, resource_type, payload,
                         public=True):
             note = {
-                'resource_id': resource_id,
+                'payload': payload,
                 'operation': operation,
                 'resource_type': resource_type,
                 'send_notification_called': True,
@@ -184,14 +185,14 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self.assertTrue(len(self._notifications) > 0)
         note = self._notifications[-1]
         self.assertEqual(note['operation'], operation)
-        self.assertEqual(note['resource_id'], resource_id)
+        self.assertEqual(note['payload'], {'resource_info': resource_id})
         self.assertEqual(note['resource_type'], resource_type)
         self.assertTrue(note['send_notification_called'])
 
     def _assertNotifyNotSent(self, resource_id, operation, resource_type,
                              public=True):
         unexpected = {
-            'resource_id': resource_id,
+            'payload': {'resource_info': resource_id},
             'operation': operation,
             'resource_type': resource_type,
             'send_notification_called': True,
@@ -201,7 +202,7 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
 
     def _assertNotifySent(self, resource_id, operation, resource_type, public):
         expected = {
-            'resource_id': resource_id,
+            'payload': {'resource_info': resource_id},
             'operation': operation,
             'resource_type': resource_type,
             'send_notification_called': True,
@@ -211,6 +212,73 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
                 break
         else:
             self.fail("Notification not sent.")
+
+    def _assertLastNotifyPayload(self, payload, operation, resource_type):
+        self.assertTrue(len(self._notifications) > 0)
+        note = self._notifications[-1]
+        self.assertEqual(note['operation'], operation)
+        self.assertEqual(note['payload'], payload)
+        self.assertEqual(note['resource_type'], resource_type)
+        self.assertTrue(note['send_notification_called'])
+
+    def test_user_project_grant(self):
+        role_ref = self.new_role_ref()
+        self.assignment_api.create_role(role_ref['id'], role_ref)
+        self.assignment_api.create_grant(role_ref['id'],
+                                         user_id=self.user_id,
+                                         project_id=self.project_id)
+        payload = {'target': self.project_id,
+                   'resource_info': role_ref['id'],
+                   'actor': self.user_id}
+        self._assertLastNotifyPayload(payload, CREATED_OPERATION,
+                                      ROLE_ASSIGNMENT)
+        self.assignment_api.delete_grant(role_ref['id'],
+                                         user_id=self.user_id,
+                                         project_id=self.project_id)
+        self._assertLastNotifyPayload(payload, DELETED_OPERATION,
+                                      ROLE_ASSIGNMENT)
+
+    def test_create_grant_positional_args(self):
+        role_ref = self.new_role_ref()
+        self.assignment_api.create_role(role_ref['id'], role_ref)
+        self.assignment_api.create_grant(role_ref['id'], self.user_id, None,
+                                         None, self.project_id, False)
+        payload = {'target': self.project_id,
+                   'resource_info': role_ref['id'],
+                   'actor': self.user_id}
+        self._assertLastNotifyPayload(payload, CREATED_OPERATION,
+                                      ROLE_ASSIGNMENT)
+
+    def test_create_grant_callable_args(self):
+        role_ref = self.new_role_ref()
+        self.assignment_api.create_role(role_ref['id'], role_ref)
+        self.assignment_api.create_grant(role_id=role_ref['id'],
+                                         user_id=self.user_id,
+                                         project_id=self.project_id)
+        payload = {'target': self.project_id,
+                   'resource_info': role_ref['id'],
+                   'actor': self.user_id}
+        self._assertLastNotifyPayload(payload, CREATED_OPERATION,
+                                      ROLE_ASSIGNMENT)
+
+    def test_group_domain_grant(self):
+        role_ref = self.new_role_ref()
+        self.assignment_api.create_role(role_ref['id'], role_ref)
+        group_ref = self.new_group_ref(domain_id=self.domain_id)
+        self.identity_api.create_group(group_ref)
+        self.assignment_api.create_grant(role_ref['id'],
+                                         group_id=group_ref['id'],
+                                         domain_id=self.domain_id)
+        payload = {'target': self.domain_id,
+                   'resource_info': role_ref['id'],
+                   'actor': group_ref['id']}
+        self._assertLastNotifyPayload(payload, CREATED_OPERATION,
+                                      ROLE_ASSIGNMENT)
+        self.assignment_api.delete_grant(role_ref['id'],
+                                         group_id=group_ref['id'],
+                                         domain_id=self.domain_id)
+        self._assertLastNotifyPayload(payload, DELETED_OPERATION,
+                                      ROLE_ASSIGNMENT)
 
     def test_create_group(self):
         group_ref = self.new_group_ref(domain_id=self.domain_id)
