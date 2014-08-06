@@ -76,14 +76,29 @@ class ManagerNotificationWrapper(object):
             except Exception:
                 raise
             else:
-                if self.result_id_arg_attr is not None:
+                if self.resource_type == 'role_assignment':
+                    resource_id = kwargs['role_id']
+                elif self.result_id_arg_attr is not None:
                     resource_id = result[self.result_id_arg_attr]
                 else:
                     resource_id = args[self.resource_id_arg_index]
+                payload = {'resource_info': resource_id}
+
+                if self.resource_type == 'role_assignment':
+                    if kwargs:
+                        if 'project_id' in kwargs:
+                            target = kwargs['project_id']
+                        else:
+                            target = kwargs['domain_id']
+                        if 'user_id' in kwargs:
+                            actor = kwargs['user_id']
+                        else:
+                            actor = kwargs['group_id']
+                        payload.update({'target': target, 'actor': actor})
                 _send_notification(
                     self.operation,
                     self.resource_type,
-                    resource_id,
+                    payload,
                     public=self.public)
             return result
 
@@ -193,22 +208,20 @@ def reset_notifier():
     _notifier = None
 
 
-def _send_notification(operation, resource_type, resource_id, public=True):
+def _send_notification(operation, resource_type, payload, public=True):
     """Send notification to inform observers about the affected resource.
 
     This method doesn't raise an exception when sending the notification fails.
 
     :param operation: operation being performed (created, updated, or deleted)
     :param resource_type: type of resource being operated on
-    :param resource_id: ID of resource being operated on
+    :param payload: payload of the notification
     :param public:  if True (default), the event will be sent
                     to the notifier API.
                     if False, the event will only be sent via
                     notify_event_callbacks to in process listeners.
     """
-    payload = {'resource_info': resource_id}
     service = 'identity'
-
     notify_event_callbacks(service, resource_type, operation, payload)
 
     if public:
@@ -223,8 +236,8 @@ def _send_notification(operation, resource_type, resource_id, public=True):
                 notifier.info(context, event_type, payload)
             except Exception:
                 LOG.exception(_(
-                    'Failed to send %(res_id)s %(event_type)s notification'),
-                    {'res_id': resource_id, 'event_type': event_type})
+                    'Failed to send %(payload)s %(event_type)s notification'),
+                    {'payload': payload, 'event_type': event_type})
 
 
 class CadfNotificationWrapper(object):

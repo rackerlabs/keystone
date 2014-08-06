@@ -60,6 +60,7 @@ class Manager(manager.Manager):
     api object by both managers.
     """
     _PROJECT = 'project'
+    _ROLE_ASSIGNMENT = 'role_assignment'
 
     def __init__(self):
         assignment_driver = CONF.assignment.driver
@@ -504,6 +505,14 @@ class Manager(manager.Manager):
             self.revoke_api.revoke_by_grant(role_id, user_id=user_id,
                                             project_id=tenant_id)
 
+    @notifications.created(_ROLE_ASSIGNMENT)
+    def create_grant(self, role_id, user_id=None, group_id=None,
+                     domain_id=None, project_id=None,
+                     inherited_to_projects=False):
+        self.driver.create_grant(role_id, user_id, group_id, domain_id,
+                                 project_id, inherited_to_projects)
+
+    @notifications.deleted(_ROLE_ASSIGNMENT)
     def delete_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,
                      inherited_to_projects=False):
