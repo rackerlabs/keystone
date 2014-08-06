@@ -16,6 +16,24 @@
       "revId": "a617408a7ba441b46fc618a86501adbcaa403dd9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9e459674",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2014-08-06T07:25:15Z",
+      "side": 0,
+      "message": "Hi David,\n\nFor uniformity with other openstack projects like nova and cinder we have moved this logic in the init() method.",
+      "parentUuid": "baada198_de6c83a1",
+      "revId": "a617408a7ba441b46fc618a86501adbcaa403dd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
