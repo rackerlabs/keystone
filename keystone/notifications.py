@@ -14,6 +14,7 @@
 
 """Notifications module for OpenStack Identity Service resources"""
 
+import inspect
 import logging
 import socket
 
@@ -45,6 +46,28 @@ _notifier = None
 
 CONF = cfg.CONF
 CONF.register_opts(notifier_opts)
+
+try:  # Python 2.7+
+    getcallargs = inspect.getcallargs
+except AttributeError:  # Python 2.6 support
+    def getcallargs(f, *positional, **named):
+        """A very simplified version of inspect.getcallargs.
+
+        It will work in our specific case where we are using decorators
+        around methods.
+
+        """
+        argspec = inspect.getargspec(f)
+
+        # setup the defaults
+        callargs = dict(zip(argspec.args[-len(argspec.defaults):],
+                            argspec.defaults))
+
+        callargs.update(named)
+        for n, arg in enumerate(positional):
+            callargs[argspec.args[n]] = arg
+
+        return callargs
 
 
 class ManagerNotificationWrapper(object):
@@ -80,14 +103,84 @@ class ManagerNotificationWrapper(object):
                     resource_id = result[self.result_id_arg_attr]
                 else:
                     resource_id = args[self.resource_id_arg_index]
+                payload = {'resource_info': resource_id}
                 _send_notification(
                     self.operation,
                     self.resource_type,
-                    resource_id,
+                    payload,
                     public=self.public)
             return result
 
         return wrapper
+
+
+class RoleAssignmentNotificationWrapper(object):
+    """Send event notifications for ``role_assignment`` methods.
+
+    Sends a notification if the wrapped method does not raise an
+    ``Exception`` (such as ``keystone.exception.NotFound``).
+
+    :param operation:  one of the values from ACTIONS
+    """
+
+    def __init__(self, operation):
+        self.operation = operation
+
+    def __call__(self, f):
+        def wrapper(wrapped_self, role_id, *args, **kwargs):
+            """Send a notification if the wrapped callable is successful."""
+
+            result = f(wrapped_self, role_id, *args, **kwargs)
+
+            """ NOTE(stevemar): The reason we go through checking kwargs
+            and args for possible target and actor values is because the
+            create_grant() (and delete_grant()) method are called
+            differently in various tests.
+            Using named arguments, i.e.:
+                create_grant(user_id=user['id'], domain_id=domain['id'],
+                             role_id=role['id'])
+
+            Or, using positional arguments, i.e.:
+                create_grant(role_id['id'], user['id'], None,
+                             domain_id=domain['id'], None)
+
+            Or, both, i.e.:
+                create_grant(role_id['id'], user_id=user['id'],
+                             domain_id=domain['id'])
+
+            Checking the values for kwargs is easy enough, since it comes
+            in as a dictionary
+
+            The actual method signature is
+                create_grant(role_id, user_id=None, group_id=None,
+                             domain_id=None, project_id=None,
+                             inherited_to_projects=False)
+
+            So, if the values of actor or target are still None after
+            checking kwargs, we can check the positional arguments,
+            based on the method signature.
+            """
+            call_args = getcallargs(f, wrapped_self, role_id, *args, **kwargs)
+            target = call_args['project_id'] or call_args['domain_id']
+            actor = call_args['user_id'] or call_args['group_id']
+            inherited = call_args['inherited_to_projects']
+
+            payload = {
+                'resource_info': {
+                    'actor': actor,
+                    'inherited_to_projects': inherited,
+                    'resource_id': role_id,
+                    'target': target
+                }
+            }
+
+            _send_notification(self.operation, 'role_assignment', payload)
+            return result
+
+        return wrapper
+
+
+role_assignment = RoleAssignmentNotificationWrapper
 
 
 def created(*args, **kwargs):
@@ -193,22 +286,20 @@ def reset_notifier():
     _notifier = None
 
 
-def _send_notification(operation, resource_type, resource_id, public=True):
+def _send_notification(operation, resource_type, payload, public=True):
     """Send notification to inform observers about the affected resource.
 
     This method doesn't raise an exception when sending the notification fails.
 
     :param operation: operation being performed (created, updated, or deleted)
     :param resource_type: type of resource being operated on
-    :param resource_id: ID of resource being operated on
+    :param payload: payload of the notification
     :param public:  if True (default), the event will be sent
                     to the notifier API.
                     if False, the event will only be sent via
                     notify_event_callbacks to in process listeners.
     """
-    payload = {'resource_info': resource_id}
     service = 'identity'
-
     notify_event_callbacks(service, resource_type, operation, payload)
 
     if public:
@@ -223,8 +314,8 @@ def _send_notification(operation, resource_type, resource_id, public=True):
                 notifier.info(context, event_type, payload)
             except Exception:
                 LOG.exception(_(
-                    'Failed to send %(res_id)s %(event_type)s notification'),
-                    {'res_id': resource_id, 'event_type': event_type})
+                    'Failed to send %(payload)s %(event_type)s notification'),
+                    {'payload': payload, 'event_type': event_type})
 
 
 class CadfNotificationWrapper(object):
