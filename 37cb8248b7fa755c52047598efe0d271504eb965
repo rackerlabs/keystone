@@ -16,6 +16,24 @@
       "revId": "37cb8248b7fa755c52047598efe0d271504eb965",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f5e4e443",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-06T12:47:08Z",
+      "side": 1,
+      "message": "I think that would be good....we\u0027ve been trying to kill the G word for about 3 releases...:-)",
+      "parentUuid": "baada198_9b6f68c7",
+      "revId": "37cb8248b7fa755c52047598efe0d271504eb965",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
