@@ -30,6 +30,7 @@ EXP_RESOURCE_TYPE = uuid.uuid4().hex
 CREATED_OPERATION = 'created'
 UPDATED_OPERATION = 'updated'
 DELETED_OPERATION = 'deleted'
+ROLE_ASSIGNMENT = 'role_assignment'
 
 
 class ArbitraryException(Exception):
@@ -522,6 +523,42 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
                                                  password=password)
         self.post('/auth/tokens', body=data)
         self._assertLastNotify(self.ACTION, user_id)
+
+    def test_user_project_grant(self):
+        role_ref = self.new_role_ref()
+        self.assignment_api.create_role(role_ref['id'], role_ref)
+        url = '/projects/%s/users/%s/roles/%s'
+
+        self.put(url % (self.project_id, self.user_id, role_ref['id']))
+        action = ROLE_ASSIGNMENT + '.' + CREATED_OPERATION
+        self._assertLastNotify(action, self.user_id)
+
+        self.delete(url % (self.project_id, self.user_id, role_ref['id']))
+        action = ROLE_ASSIGNMENT + '.' + DELETED_OPERATION
+        self._assertLastNotify(action, self.user_id)
+
+        """
+        payload = {'resource_info': {'actor': self.user_id,
+                             'inherited_to_projects': inherit,
+                             'resource_id': role_ref['id'],
+                             'target': self.project_id}
+           }
+        """
+
+    def test_group_domain_grant(self):
+        role_ref = self.new_role_ref()
+        self.assignment_api.create_role(role_ref['id'], role_ref)
+        group_ref = self.new_group_ref(domain_id=self.domain_id)
+        group = self.identity_api.create_group(group_ref)
+        url = '/domains/%s/groups/%s/roles/%s'
+
+        self.put(url % (self.domain_id, group['id'], role_ref['id']))
+        action = ROLE_ASSIGNMENT + '.' + CREATED_OPERATION
+        self._assertLastNotify(action, self.user_id)
+
+        self.delete(url % (self.domain_id, group['id'], role_ref['id']))
+        action = ROLE_ASSIGNMENT + '.' + DELETED_OPERATION
+        self._assertLastNotify(action, self.user_id)
 
 
 class TestCallbackRegistration(testtools.TestCase):
