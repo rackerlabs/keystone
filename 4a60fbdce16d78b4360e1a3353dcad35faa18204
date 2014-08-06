@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_7db8a878",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-06T22:36:34Z",
+      "side": 1,
+      "message": "The original code doesn\u0027t have UnsupportedTokenVersionException here.",
+      "revId": "4a60fbdce16d78b4360e1a3353dcad35faa18204",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_dd59b48e",
         "filename": "keystone/token/provider.py",
         "patchSetId": 9
@@ -13,6 +30,24 @@
       "writtenOn": "2014-08-06T22:32:49Z",
       "side": 1,
       "message": "The server returns a 400 Bad Request for this exception, but there\u0027s no way that this could actually be caused by the client sending a bad token ID, so this will be confusing for the user. This should be an UnexpectedError.",
+      "revId": "4a60fbdce16d78b4360e1a3353dcad35faa18204",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9d949ce8",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-06T22:36:34Z",
+      "side": 1,
+      "message": "Also, if this code wasn\u0027t changed from how revoke_token was written originally in keystone/token/providers/common.py, I\u0027d have no complaints, since that\u0027s what I thought this commit was supposed to be doing (just moving code around, not rewriting it).",
+      "parentUuid": "baada198_dd59b48e",
       "revId": "4a60fbdce16d78b4360e1a3353dcad35faa18204",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
