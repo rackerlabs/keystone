@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_099a1960",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-08-06T18:45:02Z",
+      "side": 1,
+      "message": "perhaps changing k, v, for something related to what the service_ref dict has would make this more readable.",
+      "revId": "1f4b39d1603d6f0210fb8e28e5b33da17fdcf247",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
