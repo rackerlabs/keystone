@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_ed325cbf",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-06T13:59:30Z",
+      "side": 1,
+      "message": "is there a particular reason we don\u0027t just use the default resource_id_arg_index to pick up the role_id ?",
+      "revId": "481dc8a9bc2cec0dfde3c2aa01fa4bb87184ebec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
