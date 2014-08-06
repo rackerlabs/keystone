@@ -16,6 +16,24 @@
       "revId": "6cbf835542d62e6e5db4b4aef7141b1731cad9dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2521d5fd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 308
+      },
+      "writtenOn": "2014-08-06T09:27:51Z",
+      "side": 1,
+      "message": "Means that when the patch was backported to stable (this is a stable review !) it generated conflicts on that specific file. That directs the attention of stable code reviewers on to that specific file since a human was involved in solving that conflict manually and could have introduced a bug there.",
+      "parentUuid": "baada198_8f8ba2bf",
+      "revId": "6cbf835542d62e6e5db4b4aef7141b1731cad9dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
