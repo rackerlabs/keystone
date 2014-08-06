@@ -501,18 +501,18 @@ class IdentityTests(object):
                 role_id='admin'))
 
         # Now create the grants (roles are defined in default_fixtures)
-        self.assignment_api.create_grant(user_id=new_user['id'],
-                                         domain_id=new_domain['id'],
-                                         role_id='member')
-        self.assignment_api.create_grant(user_id=new_user['id'],
-                                         project_id=new_project['id'],
-                                         role_id='other')
-        self.assignment_api.create_grant(group_id=new_group['id'],
-                                         domain_id=new_domain['id'],
-                                         role_id='admin')
-        self.assignment_api.create_grant(group_id=new_group['id'],
-                                         project_id=new_project['id'],
-                                         role_id='admin')
+        self.assignment_api.create_grant(context={}, role_id='member',
+                                         user_id=new_user['id'],
+                                         domain_id=new_domain['id'])
+        self.assignment_api.create_grant(context={}, role_id='other',
+                                         user_id=new_user['id'],
+                                         project_id=new_project['id'])
+        self.assignment_api.create_grant(context={}, role_id='admin',
+                                         group_id=new_group['id'],
+                                         domain_id=new_domain['id'])
+        self.assignment_api.create_grant(context={}, role_id='admin',
+                                         group_id=new_group['id'],
+                                         project_id=new_project['id'])
 
         # Read back the full list of assignments - check it is gone up by 4
         assignment_list = self.assignment_api.list_role_assignments()
@@ -659,15 +659,15 @@ class IdentityTests(object):
             domain_id=new_domain['id'])
         self.assertEqual(0, len(roles_ref))
         # Now create the grants (roles are defined in default_fixtures)
-        self.assignment_api.create_grant(user_id=new_user1['id'],
-                                         domain_id=new_domain['id'],
-                                         role_id='member')
-        self.assignment_api.create_grant(user_id=new_user1['id'],
-                                         domain_id=new_domain['id'],
-                                         role_id='other')
-        self.assignment_api.create_grant(user_id=new_user2['id'],
-                                         domain_id=new_domain['id'],
-                                         role_id='admin')
+        self.assignment_api.create_grant(context={}, role_id='member',
+                                         user_id=new_user1['id'],
+                                         domain_id=new_domain['id'])
+        self.assignment_api.create_grant(context={}, role_id='other',
+                                         user_id=new_user1['id'],
+                                         domain_id=new_domain['id'])
+        self.assignment_api.create_grant(context={}, role_id='admin',
+                                         user_id=new_user2['id'],
+                                         domain_id=new_domain['id'])
         # Read back the roles for user1 on domain
         roles_ids = self.assignment_api.get_roles_for_user_and_domain(
             new_user1['id'], new_domain['id'])
@@ -676,10 +676,12 @@ class IdentityTests(object):
         self.assertIn(self.role_other['id'], roles_ids)
 
         # Now delete both grants for user1
-        self.assignment_api.delete_grant(user_id=new_user1['id'],
+        self.assignment_api.delete_grant(context={},
+                                         user_id=new_user1['id'],
                                          domain_id=new_domain['id'],
                                          role_id='member')
-        self.assignment_api.delete_grant(user_id=new_user1['id'],
+        self.assignment_api.delete_grant(context={},
+                                         user_id=new_user1['id'],
                                          domain_id=new_domain['id'],
                                          role_id='other')
         roles_ref = self.assignment_api.list_grants(
@@ -762,18 +764,20 @@ class IdentityTests(object):
             user_id=self.user_foo['id'],
             project_id=self.tenant_bar['id'])
         self.assertEqual(1, len(roles_ref))
-        self.assignment_api.create_grant(user_id=self.user_foo['id'],
-                                         project_id=self.tenant_bar['id'],
-                                         role_id=self.role_admin['id'])
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_admin['id'],
+                                         user_id=self.user_foo['id'],
+                                         project_id=self.tenant_bar['id'])
         roles_ref = self.assignment_api.list_grants(
             user_id=self.user_foo['id'],
             project_id=self.tenant_bar['id'])
         self.assertIn(self.role_admin['id'],
                       [role_ref['id'] for role_ref in roles_ref])
 
-        self.assignment_api.create_grant(user_id=self.user_foo['id'],
-                                         project_id=self.tenant_bar['id'],
-                                         role_id='member')
+        self.assignment_api.create_grant(context={},
+                                         role_id='member',
+                                         user_id=self.user_foo['id'],
+                                         project_id=self.tenant_bar['id'])
         roles_ref = self.assignment_api.list_grants(
             user_id=self.user_foo['id'],
             project_id=self.tenant_bar['id'])
@@ -785,26 +789,27 @@ class IdentityTests(object):
         self.assertIn('member', roles_ref_ids)
 
     def test_remove_role_grant_from_user_and_project(self):
-        self.assignment_api.create_grant(user_id=self.user_foo['id'],
-                                         project_id=self.tenant_baz['id'],
-                                         role_id='member')
+        self.assignment_api.create_grant(context={},
+                                         role_id='member',
+                                         user_id=self.user_foo['id'],
+                                         project_id=self.tenant_baz['id'])
         roles_ref = self.assignment_api.list_grants(
             user_id=self.user_foo['id'],
             project_id=self.tenant_baz['id'])
         self.assertDictEqual(roles_ref[0], self.role_member)
 
-        self.assignment_api.delete_grant(user_id=self.user_foo['id'],
-                                         project_id=self.tenant_baz['id'],
-                                         role_id='member')
+        self.assignment_api.delete_grant(context={}, role_id='member',
+                                         user_id=self.user_foo['id'],
+                                         project_id=self.tenant_baz['id'])
         roles_ref = self.assignment_api.list_grants(
             user_id=self.user_foo['id'],
             project_id=self.tenant_baz['id'])
         self.assertEqual(0, len(roles_ref))
         self.assertRaises(exception.NotFound,
                           self.assignment_api.delete_grant,
+                          context={}, role_id='member',
                           user_id=self.user_foo['id'],
-                          project_id=self.tenant_baz['id'],
-                          role_id='member')
+                          project_id=self.tenant_baz['id'])
 
     def test_get_and_remove_role_grant_by_group_and_project(self):
         new_domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
@@ -820,26 +825,26 @@ class IdentityTests(object):
             group_id=new_group['id'],
             project_id=self.tenant_bar['id'])
         self.assertEqual(0, len(roles_ref))
-        self.assignment_api.create_grant(group_id=new_group['id'],
-                                         project_id=self.tenant_bar['id'],
-                                         role_id='member')
+        self.assignment_api.create_grant(context={}, role_id='member',
+                                         group_id=new_group['id'],
+                                         project_id=self.tenant_bar['id'])
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
             project_id=self.tenant_bar['id'])
         self.assertDictEqual(roles_ref[0], self.role_member)
 
-        self.assignment_api.delete_grant(group_id=new_group['id'],
-                                         project_id=self.tenant_bar['id'],
-                                         role_id='member')
+        self.assignment_api.delete_grant(context={}, role_id='member',
+                                         group_id=new_group['id'],
+                                         project_id=self.tenant_bar['id'])
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
             project_id=self.tenant_bar['id'])
         self.assertEqual(0, len(roles_ref))
         self.assertRaises(exception.NotFound,
                           self.assignment_api.delete_grant,
+                          context={}, role_id='member',
                           group_id=new_group['id'],
-                          project_id=self.tenant_bar['id'],
-                          role_id='member')
+                          project_id=self.tenant_bar['id'])
 
     def test_get_and_remove_role_grant_by_group_and_domain(self):
         new_domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
@@ -857,24 +862,25 @@ class IdentityTests(object):
             domain_id=new_domain['id'])
         self.assertEqual(0, len(roles_ref))
 
-        self.assignment_api.create_grant(group_id=new_group['id'],
-                                         domain_id=new_domain['id'],
-                                         role_id='member')
+        self.assignment_api.create_grant(context={}, role_id='member',
+                                         group_id=new_group['id'],
+                                         domain_id=new_domain['id'])
 
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
             domain_id=new_domain['id'])
         self.assertDictEqual(roles_ref[0], self.role_member)
 
-        self.assignment_api.delete_grant(group_id=new_group['id'],
-                                         domain_id=new_domain['id'],
-                                         role_id='member')
+        self.assignment_api.delete_grant(context={}, role_id='member',
+                                         group_id=new_group['id'],
+                                         domain_id=new_domain['id'])
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
             domain_id=new_domain['id'])
         self.assertEqual(0, len(roles_ref))
         self.assertRaises(exception.NotFound,
                           self.assignment_api.delete_grant,
+                          context={},
                           group_id=new_group['id'],
                           domain_id=new_domain['id'],
                           role_id='member')
@@ -904,26 +910,30 @@ class IdentityTests(object):
         self.assertEqual(0, len(roles_ref))
         # Now add the grant we are going to test for, and some others as
         # well just to make sure we get back the right one
-        self.assignment_api.create_grant(group_id=new_group['id'],
-                                         domain_id=new_domain['id'],
-                                         role_id='member')
+        self.assignment_api.create_grant(context={}, role_id='member',
+                                         group_id=new_group['id'],
+                                         domain_id=new_domain['id'])
 
-        self.assignment_api.create_grant(group_id=new_group2['id'],
-                                         domain_id=new_domain['id'],
-                                         role_id=self.role_admin['id'])
-        self.assignment_api.create_grant(user_id=new_user2['id'],
-                                         domain_id=new_domain['id'],
-                                         role_id=self.role_admin['id'])
-        self.assignment_api.create_grant(group_id=new_group['id'],
-                                         project_id=new_project['id'],
-                                         role_id=self.role_admin['id'])
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_admin['id'],
+                                         group_id=new_group2['id'],
+                                         domain_id=new_domain['id'],)
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_admin['id'],
+                                         user_id=new_user2['id'],
+                                         domain_id=new_domain['id'])
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_admin['id'],
+                                         group_id=new_group['id'],
+                                         project_id=new_project['id'])
 
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
             domain_id=new_domain['id'])
         self.assertDictEqual(roles_ref[0], self.role_member)
 
-        self.assignment_api.delete_grant(group_id=new_group['id'],
+        self.assignment_api.delete_grant(context={},
+                                         group_id=new_group['id'],
                                          domain_id=new_domain['id'],
                                          role_id='member')
         roles_ref = self.assignment_api.list_grants(
@@ -932,6 +942,7 @@ class IdentityTests(object):
         self.assertEqual(0, len(roles_ref))
         self.assertRaises(exception.NotFound,
                           self.assignment_api.delete_grant,
+                          context={},
                           group_id=new_group['id'],
                           domain_id=new_domain['id'],
                           role_id='member')
@@ -946,26 +957,26 @@ class IdentityTests(object):
             user_id=new_user['id'],
             domain_id=new_domain['id'])
         self.assertEqual(0, len(roles_ref))
-        self.assignment_api.create_grant(user_id=new_user['id'],
-                                         domain_id=new_domain['id'],
-                                         role_id='member')
+        self.assignment_api.create_grant(context={}, role_id='member',
+                                         user_id=new_user['id'],
+                                         domain_id=new_domain['id'])
         roles_ref = self.assignment_api.list_grants(
             user_id=new_user['id'],
             domain_id=new_domain['id'])
         self.assertDictEqual(roles_ref[0], self.role_member)
 
-        self.assignment_api.delete_grant(user_id=new_user['id'],
-                                         domain_id=new_domain['id'],
-                                         role_id='member')
+        self.assignment_api.delete_grant(context={}, role_id='member',
+                                         user_id=new_user['id'],
+                                         domain_id=new_domain['id'])
         roles_ref = self.assignment_api.list_grants(
             user_id=new_user['id'],
             domain_id=new_domain['id'])
         self.assertEqual(0, len(roles_ref))
         self.assertRaises(exception.NotFound,
                           self.assignment_api.delete_grant,
+                          context={}, role_id='member',
                           user_id=new_user['id'],
-                          domain_id=new_domain['id'],
-                          role_id='member')
+                          domain_id=new_domain['id'])
 
     def test_get_and_remove_role_grant_by_group_and_cross_domain(self):
         group1_domain1_role = {'id': uuid.uuid4().hex,
@@ -990,12 +1001,14 @@ class IdentityTests(object):
             group_id=group1['id'],
             domain_id=domain2['id'])
         self.assertEqual(0, len(roles_ref))
-        self.assignment_api.create_grant(group_id=group1['id'],
-                                         domain_id=domain1['id'],
-                                         role_id=group1_domain1_role['id'])
-        self.assignment_api.create_grant(group_id=group1['id'],
-                                         domain_id=domain2['id'],
-                                         role_id=group1_domain2_role['id'])
+        self.assignment_api.create_grant(context={},
+                                         role_id=group1_domain1_role['id'],
+                                         group_id=group1['id'],
+                                         domain_id=domain1['id'])
+        self.assignment_api.create_grant(context={},
+                                         role_id=group1_domain2_role['id'],
+                                         group_id=group1['id'],
+                                         domain_id=domain2['id'])
         roles_ref = self.assignment_api.list_grants(
             group_id=group1['id'],
             domain_id=domain1['id'])
@@ -1005,18 +1018,18 @@ class IdentityTests(object):
             domain_id=domain2['id'])
         self.assertDictEqual(roles_ref[0], group1_domain2_role)
 
-        self.assignment_api.delete_grant(group_id=group1['id'],
-                                         domain_id=domain2['id'],
-                                         role_id=group1_domain2_role['id'])
+        self.assignment_api.delete_grant(context={},
+                                         role_id=group1_domain2_role['id'],
+                                         group_id=group1['id'],
+                                         domain_id=domain2['id'])
         roles_ref = self.assignment_api.list_grants(
             group_id=group1['id'],
             domain_id=domain2['id'])
         self.assertEqual(0, len(roles_ref))
         self.assertRaises(exception.NotFound,
                           self.assignment_api.delete_grant,
-                          group_id=group1['id'],
-                          domain_id=domain2['id'],
-                          role_id=group1_domain2_role['id'])
+                          context={}, role_id=group1_domain2_role['id'],
+                          group_id=group1['id'], domain_id=domain2['id'])
 
     def test_get_and_remove_role_grant_by_user_and_cross_domain(self):
         user1_domain1_role = {'id': uuid.uuid4().hex,
@@ -1042,12 +1055,14 @@ class IdentityTests(object):
             user_id=user1['id'],
             domain_id=domain2['id'])
         self.assertEqual(0, len(roles_ref))
-        self.assignment_api.create_grant(user_id=user1['id'],
-                                         domain_id=domain1['id'],
-                                         role_id=user1_domain1_role['id'])
-        self.assignment_api.create_grant(user_id=user1['id'],
-                                         domain_id=domain2['id'],
-                                         role_id=user1_domain2_role['id'])
+        self.assignment_api.create_grant(context={},
+                                         role_id=user1_domain1_role['id'],
+                                         user_id=user1['id'],
+                                         domain_id=domain1['id'])
+        self.assignment_api.create_grant(context={},
+                                         role_id=user1_domain2_role['id'],
+                                         user_id=user1['id'],
+                                         domain_id=domain2['id'])
         roles_ref = self.assignment_api.list_grants(
             user_id=user1['id'],
             domain_id=domain1['id'])
@@ -1057,7 +1072,8 @@ class IdentityTests(object):
             domain_id=domain2['id'])
         self.assertDictEqual(roles_ref[0], user1_domain2_role)
 
-        self.assignment_api.delete_grant(user_id=user1['id'],
+        self.assignment_api.delete_grant(context={},
+                                         user_id=user1['id'],
                                          domain_id=domain2['id'],
                                          role_id=user1_domain2_role['id'])
         roles_ref = self.assignment_api.list_grants(
@@ -1066,6 +1082,7 @@ class IdentityTests(object):
         self.assertEqual(0, len(roles_ref))
         self.assertRaises(exception.NotFound,
                           self.assignment_api.delete_grant,
+                          context={},
                           user_id=user1['id'],
                           domain_id=domain2['id'],
                           role_id=user1_domain2_role['id'])
@@ -1089,12 +1106,12 @@ class IdentityTests(object):
             group_id=group1['id'],
             project_id=project1['id'])
         self.assertEqual(0, len(roles_ref))
-        self.assignment_api.create_grant(group_id=group1['id'],
-                                         project_id=project1['id'],
-                                         role_id=role1['id'])
-        self.assignment_api.create_grant(group_id=group1['id'],
-                                         project_id=project1['id'],
-                                         role_id=role2['id'])
+        self.assignment_api.create_grant(context={}, role_id=role1['id'],
+                                         group_id=group1['id'],
+                                         project_id=project1['id'])
+        self.assignment_api.create_grant(context={}, role_id=role2['id'],
+                                         group_id=group1['id'],
+                                         project_id=project1['id'])
         roles_ref = self.assignment_api.list_grants(
             group_id=group1['id'],
             project_id=project1['id'])
@@ -1105,7 +1122,8 @@ class IdentityTests(object):
         self.assertIn(role1['id'], roles_ref_ids)
         self.assertIn(role2['id'], roles_ref_ids)
 
-        self.assignment_api.delete_grant(group_id=group1['id'],
+        self.assignment_api.delete_grant(context={},
+                                         group_id=group1['id'],
                                          project_id=project1['id'],
                                          role_id=role1['id'])
         roles_ref = self.assignment_api.list_grants(
@@ -1133,12 +1151,12 @@ class IdentityTests(object):
             user_id=user1['id'],
             project_id=project1['id'])
         self.assertEqual(0, len(roles_ref))
-        self.assignment_api.create_grant(user_id=user1['id'],
-                                         project_id=project1['id'],
-                                         role_id=role1['id'])
-        self.assignment_api.create_grant(user_id=user1['id'],
-                                         project_id=project1['id'],
-                                         role_id=role2['id'])
+        self.assignment_api.create_grant(context={}, role_id=role1['id'],
+                                         user_id=user1['id'],
+                                         project_id=project1['id'])
+        self.assignment_api.create_grant(context={}, role_id=role2['id'],
+                                         user_id=user1['id'],
+                                         project_id=project1['id'])
         roles_ref = self.assignment_api.list_grants(
             user_id=user1['id'],
             project_id=project1['id'])
@@ -1149,9 +1167,9 @@ class IdentityTests(object):
         self.assertIn(role1['id'], roles_ref_ids)
         self.assertIn(role2['id'], roles_ref_ids)
 
-        self.assignment_api.delete_grant(user_id=user1['id'],
-                                         project_id=project1['id'],
-                                         role_id=role1['id'])
+        self.assignment_api.delete_grant(context={}, role_id=role1['id'],
+                                         user_id=user1['id'],
+                                         project_id=project1['id'])
         roles_ref = self.assignment_api.list_grants(
             user_id=user1['id'],
             project_id=project1['id'])
@@ -1166,10 +1184,12 @@ class IdentityTests(object):
 
         user_id = uuid.uuid4().hex
 
-        self.assignment_api.create_grant(role_id, user_id=user_id,
+        self.assignment_api.create_grant(context={}, role_id=role_id,
+                                         user_id=user_id,
                                          project_id=self.tenant_bar['id'])
 
-        self.assignment_api.delete_grant(role_id, user_id=user_id,
+        self.assignment_api.delete_grant(context={}, role_id=role_id,
+                                         user_id=user_id,
                                          project_id=self.tenant_bar['id'])
 
     def test_delete_group_grant_no_group(self):
@@ -1180,10 +1200,12 @@ class IdentityTests(object):
 
         group_id = uuid.uuid4().hex
 
-        self.assignment_api.create_grant(role_id, group_id=group_id,
+        self.assignment_api.create_grant(context={}, role_id=role_id,
+                                         group_id=group_id,
                                          project_id=self.tenant_bar['id'])
 
-        self.assignment_api.delete_grant(role_id, group_id=group_id,
+        self.assignment_api.delete_grant(context={}, role_id=role_id,
+                                         group_id=group_id,
                                          project_id=self.tenant_bar['id'])
 
     def test_multi_role_grant_by_user_group_on_project_domain(self):
@@ -1216,28 +1238,28 @@ class IdentityTests(object):
             user_id=user1['id'],
             project_id=project1['id'])
         self.assertEqual(0, len(roles_ref))
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          domain_id=domain1['id'],
                                          role_id=role_list[0]['id'])
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          domain_id=domain1['id'],
                                          role_id=role_list[1]['id'])
-        self.assignment_api.create_grant(group_id=group1['id'],
+        self.assignment_api.create_grant(context={}, group_id=group1['id'],
                                          domain_id=domain1['id'],
                                          role_id=role_list[2]['id'])
-        self.assignment_api.create_grant(group_id=group1['id'],
+        self.assignment_api.create_grant(context={}, group_id=group1['id'],
                                          domain_id=domain1['id'],
                                          role_id=role_list[3]['id'])
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          project_id=project1['id'],
                                          role_id=role_list[4]['id'])
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          project_id=project1['id'],
                                          role_id=role_list[5]['id'])
-        self.assignment_api.create_grant(group_id=group1['id'],
+        self.assignment_api.create_grant(context={}, group_id=group1['id'],
                                          project_id=project1['id'],
                                          role_id=role_list[6]['id'])
-        self.assignment_api.create_grant(group_id=group1['id'],
+        self.assignment_api.create_grant(context={}, group_id=group1['id'],
                                          project_id=project1['id'],
                                          role_id=role_list[7]['id'])
         roles_ref = self.assignment_api.list_grants(user_id=user1['id'],
@@ -1325,22 +1347,22 @@ class IdentityTests(object):
             user_id=user1['id'],
             project_id=project1['id'])
         self.assertEqual(0, len(roles_ref))
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          domain_id=domain1['id'],
                                          role_id=role_list[0]['id'])
-        self.assignment_api.create_grant(group_id=group1['id'],
+        self.assignment_api.create_grant(context={}, group_id=group1['id'],
                                          domain_id=domain1['id'],
                                          role_id=role_list[1]['id'])
-        self.assignment_api.create_grant(group_id=group2['id'],
+        self.assignment_api.create_grant(context={}, group_id=group2['id'],
                                          domain_id=domain1['id'],
                                          role_id=role_list[2]['id'])
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          project_id=project1['id'],
                                          role_id=role_list[3]['id'])
-        self.assignment_api.create_grant(group_id=group1['id'],
+        self.assignment_api.create_grant(context={}, group_id=group1['id'],
                                          project_id=project1['id'],
                                          role_id=role_list[4]['id'])
-        self.assignment_api.create_grant(group_id=group2['id'],
+        self.assignment_api.create_grant(context={}, group_id=group2['id'],
                                          project_id=project1['id'],
                                          role_id=role_list[5]['id'])
 
@@ -1374,16 +1396,16 @@ class IdentityTests(object):
         group1 = {'name': uuid.uuid4().hex, 'domain_id': domain1['id'],
                   'enabled': True}
         group1 = self.identity_api.create_group(group1)
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          project_id=project1['id'],
                                          role_id=role1['id'])
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          domain_id=domain1['id'],
                                          role_id=role1['id'])
-        self.assignment_api.create_grant(group_id=group1['id'],
+        self.assignment_api.create_grant(context={}, group_id=group1['id'],
                                          project_id=project1['id'],
                                          role_id=role1['id'])
-        self.assignment_api.create_grant(group_id=group1['id'],
+        self.assignment_api.create_grant(context={}, group_id=group1['id'],
                                          domain_id=domain1['id'],
                                          role_id=role1['id'])
         roles_ref = self.assignment_api.list_grants(
@@ -1434,10 +1456,10 @@ class IdentityTests(object):
         group1 = {'name': uuid.uuid4().hex, 'domain_id': domain1['id'],
                   'enabled': True}
         group1 = self.identity_api.create_group(group1)
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          project_id=project1['id'],
                                          role_id=role1['id'])
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          domain_id=domain1['id'],
                                          role_id=role1['id'])
         self.identity_api.add_user_to_group(user_id=user1['id'],
@@ -1474,10 +1496,10 @@ class IdentityTests(object):
                   'enabled': True}
         group1 = self.identity_api.create_group(group1)
 
-        self.assignment_api.create_grant(group_id=group1['id'],
+        self.assignment_api.create_grant(context={}, group_id=group1['id'],
                                          project_id=project1['id'],
                                          role_id=role1['id'])
-        self.assignment_api.create_grant(group_id=group1['id'],
+        self.assignment_api.create_grant(context={}, group_id=group1['id'],
                                          domain_id=domain1['id'],
                                          role_id=role1['id'])
         self.identity_api.add_user_to_group(user_id=user1['id'],
@@ -2610,10 +2632,10 @@ class IdentityTests(object):
         user1 = self.identity_api.create_user(user1)
         user_projects = self.assignment_api.list_projects_for_user(user1['id'])
         self.assertEqual(0, len(user_projects))
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          project_id=self.tenant_bar['id'],
                                          role_id=self.role_member['id'])
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          project_id=self.tenant_baz['id'],
                                          role_id=self.role_member['id'])
         user_projects = self.assignment_api.list_projects_for_user(user1['id'])
@@ -2642,13 +2664,13 @@ class IdentityTests(object):
         self.identity_api.add_user_to_group(user1['id'], group2['id'])
 
         # Create 3 grants, one user grant, the other two as group grants
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          project_id=self.tenant_bar['id'],
                                          role_id=self.role_member['id'])
-        self.assignment_api.create_grant(group_id=group1['id'],
+        self.assignment_api.create_grant(context={}, group_id=group1['id'],
                                          project_id=project1['id'],
                                          role_id=self.role_admin['id'])
-        self.assignment_api.create_grant(group_id=group2['id'],
+        self.assignment_api.create_grant(context={}, group_id=group2['id'],
                                          project_id=project2['id'],
                                          role_id=self.role_admin['id'])
         user_projects = self.assignment_api.list_projects_for_user(user1['id'])
@@ -2886,14 +2908,14 @@ class IdentityTests(object):
     def test_create_grant_no_user(self):
         # If call create_grant with a user that doesn't exist, doesn't fail.
         self.assignment_api.create_grant(
-            self.role_other['id'],
+            context={}, role_id=self.role_other['id'],
             user_id=uuid.uuid4().hex,
             project_id=self.tenant_bar['id'])
 
     def test_create_grant_no_group(self):
         # If call create_grant with a group that doesn't exist, doesn't fail.
         self.assignment_api.create_grant(
-            self.role_other['id'],
+            context={}, role_id=self.role_other['id'],
             group_id=uuid.uuid4().hex,
             project_id=self.tenant_bar['id'])
 
@@ -4088,10 +4110,10 @@ class InheritanceTests(object):
         self.assertEqual(0, len(roles_ref))
 
         # Create the first two roles - the domain one is not inherited
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          project_id=project1['id'],
                                          role_id=role_list[0]['id'])
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          domain_id=domain1['id'],
                                          role_id=role_list[1]['id'])
 
@@ -4103,7 +4125,7 @@ class InheritanceTests(object):
         self.assertIn(role_list[0]['id'], combined_list)
 
         # Now add an inherited role on the domain
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          domain_id=domain1['id'],
                                          role_id=role_list[2]['id'],
                                          inherited_to_projects=True)
@@ -4173,10 +4195,10 @@ class InheritanceTests(object):
         self.assertEqual(0, len(roles_ref))
 
         # Create two roles - the domain one is not inherited
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          project_id=project1['id'],
                                          role_id=role_list[0]['id'])
-        self.assignment_api.create_grant(group_id=group1['id'],
+        self.assignment_api.create_grant(context={}, group_id=group1['id'],
                                          domain_id=domain1['id'],
                                          role_id=role_list[1]['id'])
 
@@ -4188,11 +4210,11 @@ class InheritanceTests(object):
         self.assertIn(role_list[0]['id'], combined_list)
 
         # Now add to more group roles, both inherited, to the domain
-        self.assignment_api.create_grant(group_id=group2['id'],
+        self.assignment_api.create_grant(context={}, group_id=group2['id'],
                                          domain_id=domain1['id'],
                                          role_id=role_list[2]['id'],
                                          inherited_to_projects=True)
-        self.assignment_api.create_grant(group_id=group2['id'],
+        self.assignment_api.create_grant(context={}, group_id=group2['id'],
                                          domain_id=domain1['id'],
                                          role_id=role_list[3]['id'],
                                          inherited_to_projects=True)
@@ -4233,10 +4255,10 @@ class InheritanceTests(object):
 
         # Create 2 grants, one on a project and one inherited grant
         # on the domain
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          project_id=self.tenant_bar['id'],
                                          role_id=self.role_member['id'])
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          domain_id=domain['id'],
                                          role_id=self.role_admin['id'],
                                          inherited_to_projects=True)
@@ -4290,17 +4312,17 @@ class InheritanceTests(object):
         # - one user grant on a project in the default domain
         # - one inherited user grant on domain
         # - one inherited group grant on domain2
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          project_id=project3['id'],
                                          role_id=self.role_member['id'])
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          project_id=self.tenant_bar['id'],
                                          role_id=self.role_member['id'])
-        self.assignment_api.create_grant(user_id=user1['id'],
+        self.assignment_api.create_grant(context={}, user_id=user1['id'],
                                          domain_id=domain['id'],
                                          role_id=self.role_admin['id'],
                                          inherited_to_projects=True)
-        self.assignment_api.create_grant(group_id=group1['id'],
+        self.assignment_api.create_grant(context={}, group_id=group1['id'],
                                          domain_id=domain2['id'],
                                          role_id=self.role_admin['id'],
                                          inherited_to_projects=True)
