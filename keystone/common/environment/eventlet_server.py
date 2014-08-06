@@ -77,9 +77,11 @@ class Server(object):
         if self.socket is None:
             self.listen(key=key, backlog=backlog)
 
+        sock = self.socket.dup()
+
         self.greenthread = self.pool.spawn(self._run,
                                            self.application,
-                                           self.socket)
+                                           sock)
 
     def listen(self, key=None, backlog=128):
         """Create and start listening on socket.
@@ -156,6 +158,16 @@ class Server(object):
             pass
         except greenlet.GreenletExit:
             pass
+
+    def reset(self):
+        """Required by the service interface.
+
+        The service interface is used by the launcher when receiving a
+        SIGHUP. The service interface is defined in
+        keystone.openstack.common.service.Service.
+
+        Keystone does not need to do anything here.
+        """
 
     def _run(self, application, socket):
         """Start a WSGI server in a new green thread."""
