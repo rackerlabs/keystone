@@ -80,14 +80,73 @@ class ManagerNotificationWrapper(object):
                     resource_id = result[self.result_id_arg_attr]
                 else:
                     resource_id = args[self.resource_id_arg_index]
+                payload = {'resource_info': resource_id}
                 _send_notification(
                     self.operation,
                     self.resource_type,
-                    resource_id,
+                    payload,
                     public=self.public)
             return result
 
         return wrapper
+
+
+class RoleAssignmentNotificationWrapper(object):
+    """Send event notifications for ``role_assignment`` methods.
+
+    Sends a notification if the wrapped method does not raise an
+    ``Exception`` (such as ``keystone.exception.NotFound``).
+
+    :param operation:  one of the values from ACTIONS
+    """
+
+    def __init__(self, operation):
+        self.operation = operation
+
+    def __call__(self, f):
+        def wrapper(wrapped_self, role_id, *args, **kwargs):
+            """Send a notification if the wrapped callable is successful."""
+            try:
+                result = f(wrapped_self, role_id, *args, **kwargs)
+            except Exception:
+                raise
+            else:
+                target = None
+                actor = None
+
+                # try to get target and actor from kwargs
+                if 'project_id' in kwargs:
+                    target = kwargs.get('project_id')
+                elif 'domain_id' in kwargs:
+                    target = kwargs.get('domain_id')
+                if 'user_id' in kwargs:
+                    actor = kwargs.get('user_id')
+                elif 'group_id' in kwargs:
+                    actor = kwargs.get('group_id')
+
+                # try to get actor from args 0 or 1
+                if actor is None:
+                    actor = args[0]
+                    if actor is None:
+                        actor = args[1]
+
+                # try to get target from args 2 or 3
+                if target is None:
+                    target = args[2]
+                    if target is None:
+                        target = args[3]
+
+                payload = {'resource_info': {'actor': actor,
+                                             'resource_id': role_id,
+                                             'target': target}
+                           }
+                _send_notification(self.operation, 'role_assignment', payload)
+            return result
+
+        return wrapper
+
+
+role_assignment = RoleAssignmentNotificationWrapper
 
 
 def created(*args, **kwargs):
@@ -193,22 +252,20 @@ def reset_notifier():
     _notifier = None
 
 
-def _send_notification(operation, resource_type, resource_id, public=True):
+def _send_notification(operation, resource_type, payload, public=True):
     """Send notification to inform observers about the affected resource.
 
     This method doesn't raise an exception when sending the notification fails.
 
     :param operation: operation being performed (created, updated, or deleted)
     :param resource_type: type of resource being operated on
-    :param resource_id: ID of resource being operated on
+    :param payload: payload of the notification
     :param public:  if True (default), the event will be sent
                     to the notifier API.
                     if False, the event will only be sent via
                     notify_event_callbacks to in process listeners.
     """
-    payload = {'resource_info': resource_id}
     service = 'identity'
-
     notify_event_callbacks(service, resource_type, operation, payload)
 
     if public:
@@ -223,8 +280,8 @@ def _send_notification(operation, resource_type, resource_id, public=True):
                 notifier.info(context, event_type, payload)
             except Exception:
                 LOG.exception(_(
-                    'Failed to send %(res_id)s %(event_type)s notification'),
-                    {'res_id': resource_id, 'event_type': event_type})
+                    'Failed to send %(payload)s %(event_type)s notification'),
+                    {'payload': payload, 'event_type': event_type})
 
 
 class CadfNotificationWrapper(object):
