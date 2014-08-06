@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_2fd616c5",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 610,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-06T08:42:50Z",
+      "side": 1,
+      "message": "Is it safe to assume that This class should always be subclassed? If so I would add @abc.abstractmethod decorator.",
+      "revId": "dd70a5548ef4a110841474d264a82bba4a5cb76a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
