@@ -150,15 +150,16 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                           self.user_foo['id'])
 
     def test_remove_role_grant_from_user_and_project(self):
-        self.assignment_api.create_grant(user_id=self.user_foo['id'],
-                                         project_id=self.tenant_baz['id'],
-                                         role_id='member')
+        self.assignment_api.create_grant(context={}, role_id='member',
+                                         user_id=self.user_foo['id'],
+                                         project_id=self.tenant_baz['id'])
         roles_ref = self.assignment_api.list_grants(
             user_id=self.user_foo['id'],
             project_id=self.tenant_baz['id'])
         self.assertDictEqual(roles_ref[0], self.role_member)
 
-        self.assignment_api.delete_grant(user_id=self.user_foo['id'],
+        self.assignment_api.delete_grant(context={},
+                                         user_id=self.user_foo['id'],
                                          project_id=self.tenant_baz['id'],
                                          role_id='member')
         roles_ref = self.assignment_api.list_grants(
@@ -167,6 +168,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.assertEqual(0, len(roles_ref))
         self.assertRaises(exception.NotFound,
                           self.assignment_api.delete_grant,
+                          context={},
                           user_id=self.user_foo['id'],
                           project_id=self.tenant_baz['id'],
                           role_id='member')
@@ -188,16 +190,17 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.assertEqual([], roles_ref)
         self.assertEqual(0, len(roles_ref))
 
-        self.assignment_api.create_grant(group_id=new_group['id'],
-                                         project_id=self.tenant_bar['id'],
-                                         role_id='member')
+        self.assignment_api.create_grant(context={}, role_id='member',
+                                         group_id=new_group['id'],
+                                         project_id=self.tenant_bar['id'])
         roles_ref = self.assignment_api.list_grants(
             group_id=new_group['id'],
             project_id=self.tenant_bar['id'])
         self.assertNotEmpty(roles_ref)
         self.assertDictEqual(roles_ref[0], self.role_member)
 
-        self.assignment_api.delete_grant(group_id=new_group['id'],
+        self.assignment_api.delete_grant(context={},
+                                         group_id=new_group['id'],
                                          project_id=self.tenant_bar['id'],
                                          role_id='member')
         roles_ref = self.assignment_api.list_grants(
@@ -206,6 +209,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.assertEqual(0, len(roles_ref))
         self.assertRaises(exception.NotFound,
                           self.assignment_api.delete_grant,
+                          context={},
                           group_id=new_group['id'],
                           project_id=self.tenant_bar['id'],
                           role_id='member')
@@ -258,13 +262,15 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.assertThat(user_projects, matchers.HasLength(0))
 
         # new grant(user1, role_member, tenant_bar)
-        self.assignment_api.create_grant(user_id=user1['id'],
-                                         project_id=self.tenant_bar['id'],
-                                         role_id=self.role_member['id'])
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_member['id'],
+                                         user_id=user1['id'],
+                                         project_id=self.tenant_bar['id'])
         # new grant(user1, role_member, tenant_baz)
-        self.assignment_api.create_grant(user_id=user1['id'],
-                                         project_id=self.tenant_baz['id'],
-                                         role_id=self.role_member['id'])
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_member['id'],
+                                         user_id=user1['id'],
+                                         project_id=self.tenant_baz['id'])
         user_projects = self.assignment_api.list_projects_for_user(user1['id'])
         self.assertThat(user_projects, matchers.HasLength(2))
 
@@ -279,20 +285,23 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.identity_api.add_user_to_group(user2['id'], group1['id'])
 
         # new grant(group1(user2), role_member, tenant_bar)
-        self.assignment_api.create_grant(group_id=group1['id'],
-                                         project_id=self.tenant_bar['id'],
-                                         role_id=self.role_member['id'])
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_member['id'],
+                                         group_id=group1['id'],
+                                         project_id=self.tenant_bar['id'])
         # new grant(group1(user2), role_member, tenant_baz)
-        self.assignment_api.create_grant(group_id=group1['id'],
-                                         project_id=self.tenant_baz['id'],
-                                         role_id=self.role_member['id'])
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_member['id'],
+                                         group_id=group1['id'],
+                                         project_id=self.tenant_baz['id'])
         user_projects = self.assignment_api.list_projects_for_user(user2['id'])
         self.assertThat(user_projects, matchers.HasLength(2))
 
         # new grant(group1(user2), role_other, tenant_bar)
-        self.assignment_api.create_grant(group_id=group1['id'],
-                                         project_id=self.tenant_bar['id'],
-                                         role_id=self.role_other['id'])
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_other['id'],
+                                         group_id=group1['id'],
+                                         project_id=self.tenant_bar['id'])
         user_projects = self.assignment_api.list_projects_for_user(user2['id'])
         self.assertThat(user_projects, matchers.HasLength(2))
 
@@ -311,19 +320,22 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.identity_api.add_user_to_group(user1['id'], group1['id'])
 
         # Now, add grant to user1 and group1 in tenant_bar
-        self.assignment_api.create_grant(user_id=user1['id'],
-                                         project_id=self.tenant_bar['id'],
-                                         role_id=self.role_member['id'])
-        self.assignment_api.create_grant(group_id=group1['id'],
-                                         project_id=self.tenant_bar['id'],
-                                         role_id=self.role_member['id'])
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_member['id'],
+                                         user_id=user1['id'],
+                                         project_id=self.tenant_bar['id'])
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_member['id'],
+                                         group_id=group1['id'],
+                                         project_id=self.tenant_bar['id'])
 
         # The result is user1 has only one project granted
         user_projects = self.assignment_api.list_projects_for_user(user1['id'])
         self.assertThat(user_projects, matchers.HasLength(1))
 
         # Now, delete user1 grant into tenant_bar and check
-        self.assignment_api.delete_grant(user_id=user1['id'],
+        self.assignment_api.delete_grant(context={},
+                                         user_id=user1['id'],
                                          project_id=self.tenant_bar['id'],
                                          role_id=self.role_member['id'])
 
@@ -355,15 +367,18 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.identity_api.add_user_to_group(new_user['id'],
                                             group2['id'])
 
-        self.assignment_api.create_grant(user_id=new_user['id'],
-                                         project_id=self.tenant_bar['id'],
-                                         role_id=self.role_member['id'])
-        self.assignment_api.create_grant(user_id=new_user['id'],
-                                         project_id=project1['id'],
-                                         role_id=self.role_admin['id'])
-        self.assignment_api.create_grant(group_id=group2['id'],
-                                         project_id=project2['id'],
-                                         role_id=self.role_admin['id'])
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_member['id'],
+                                         user_id=new_user['id'],
+                                         project_id=self.tenant_bar['id'])
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_admin['id'],
+                                         user_id=new_user['id'],
+                                         project_id=project1['id'])
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_admin['id'],
+                                         group_id=group2['id'],
+                                         project_id=project2['id'])
 
         user_projects = self.assignment_api.list_projects_for_user(
             new_user['id'])
@@ -416,12 +431,12 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         # First check how many role grant already exist
         existing_assignments = len(self.assignment_api.list_role_assignments())
 
-        self.assignment_api.create_grant(user_id=new_user['id'],
-                                         project_id=new_project['id'],
-                                         role_id='other')
-        self.assignment_api.create_grant(group_id=new_group['id'],
-                                         project_id=new_project['id'],
-                                         role_id='admin')
+        self.assignment_api.create_grant(context={}, role_id='other',
+                                         user_id=new_user['id'],
+                                         project_id=new_project['id'])
+        self.assignment_api.create_grant(context={}, role_id='admin',
+                                         group_id=new_group['id'],
+                                         project_id=new_project['id'])
 
         # Read back the list of assignments - check it is gone up by 2
         after_assignments = len(self.assignment_api.list_role_assignments())
@@ -441,9 +456,9 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                        'name': uuid.uuid4().hex,
                        'domain_id': new_domain['id']}
         self.assignment_api.create_project(new_project['id'], new_project)
-        self.assignment_api.create_grant(user_id=new_user['id'],
-                                         project_id=new_project['id'],
-                                         role_id='other')
+        self.assignment_api.create_grant(context={}, role_id='other',
+                                         user_id=new_user['id'],
+                                         project_id=new_project['id'])
 
         # Read back the list of assignments and ensure
         # that the LDAP dumb member isn't listed.
@@ -762,7 +777,8 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         role_id = 'member'
         project_id = self.tenant_baz['id']
 
-        self.assignment_api.create_grant(role_id, user_id=public_user_id,
+        self.assignment_api.create_grant(context={}, role_id=role_id,
+                                         user_id=public_user_id,
                                          project_id=project_id)
 
         role_ref = self.assignment_api.get_grant(role_id,
@@ -1905,16 +1921,16 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
         self.users['user0'] = self._create_user(
             self.domains['domain_default']['id'])
         self.assignment_api.create_grant(
+            context={}, role_id=self.role_member['id'],
             user_id=self.users['user0']['id'],
-            domain_id=self.domains['domain_default']['id'],
-            role_id=self.role_member['id'])
+            domain_id=self.domains['domain_default']['id'])
         for x in range(1, self.domain_count):
             self.users['user%s' % x] = self._create_user(
                 self.domains['domain%s' % x]['id'])
             self.assignment_api.create_grant(
+                context={}, role_id=self.role_member['id'],
                 user_id=self.users['user%s' % x]['id'],
-                domain_id=self.domains['domain%s' % x]['id'],
-                role_id=self.role_member['id'])
+                domain_id=self.domains['domain%s' % x]['id'])
 
         # So how many new id mappings should have been created? One for each
         # user created in a domain that is using the non default driver - i.e.

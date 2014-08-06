@@ -504,7 +504,15 @@ class Manager(manager.Manager):
             self.revoke_api.revoke_by_grant(role_id, user_id=user_id,
                                             project_id=tenant_id)
 
-    def delete_grant(self, role_id, user_id=None, group_id=None,
+    @notifications.role_assignment('created')
+    def create_grant(self, context, role_id, user_id=None, group_id=None,
+                     domain_id=None, project_id=None,
+                     inherited_to_projects=False):
+        self.driver.create_grant(role_id, user_id, group_id, domain_id,
+                                 project_id, inherited_to_projects)
+
+    @notifications.role_assignment('deleted')
+    def delete_grant(self, context, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,
                      inherited_to_projects=False):
         user_ids = []
