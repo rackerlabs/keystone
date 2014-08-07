@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_54c6364b",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-07T22:40:15Z",
+      "side": 1,
+      "message": "This name is actually just as confusing, Keystone code already uses context elsewhere as the variable for the request context. The argument to format_url is data, so data would be a better name in my opinion... or replacement_values or something.",
+      "revId": "1f4b39d1603d6f0210fb8e28e5b33da17fdcf247",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_099a1960",
         "filename": "keystone/catalog/backends/templated.py",
         "patchSetId": 1
