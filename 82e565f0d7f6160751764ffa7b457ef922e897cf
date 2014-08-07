@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_41d21634",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-08-07T08:22:40Z",
+      "side": 1,
+      "message": "Thanks. Ok, this topic is not necessarily must be here.",
+      "parentUuid": "baada198_aa2598ae",
+      "revId": "82e565f0d7f6160751764ffa7b457ef922e897cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_ea1f9058",
         "filename": "/COMMIT_MSG",
         "patchSetId": 16
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-06T21:33:18Z",
       "side": 1,
       "message": "This seems like a blocker for switching to alembic.",
+      "revId": "82e565f0d7f6160751764ffa7b457ef922e897cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ac0e8931",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-08-07T08:22:40Z",
+      "side": 1,
+      "message": "I have tried to run \"Models comparison\" without this patch in dependencies, it runs well, so it seems to be not a blocker. Maybe it was, but now it is ok to be separated.",
+      "parentUuid": "baada198_ea1f9058",
       "revId": "82e565f0d7f6160751764ffa7b457ef922e897cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
