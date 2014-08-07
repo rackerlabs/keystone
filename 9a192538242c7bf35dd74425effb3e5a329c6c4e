@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_bc686d89",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-07T13:34:34Z",
+      "side": 1,
+      "message": "I almost forgot. We should add a log statement here saying that this is failing because lxml isn\u0027t install. That way operators know what to fix.",
+      "revId": "9a192538242c7bf35dd74425effb3e5a329c6c4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1c05d9c0",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-07T13:34:34Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "9a192538242c7bf35dd74425effb3e5a329c6c4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
