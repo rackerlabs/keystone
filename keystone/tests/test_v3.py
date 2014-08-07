@@ -580,10 +580,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         If a reference is provided, the entity will also be compared against
         the reference.
         """
-        if keys_to_check is not None:
-            keys = keys_to_check
-        else:
-            keys = ['name', 'description', 'enabled']
+        keys = keys_to_check or []
 
         for k in ['id'] + keys:
             msg = '%s unexpectedly None in %s' % (k, entity)
@@ -772,19 +769,11 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
     # region validation
 
     def assertValidRegionListResponse(self, resp, *args, **kwargs):
-        # NOTE(jaypipes): I have to pass in a blank keys_to_check parameter
-        #                 below otherwise the base assertValidEntity method
-        #                 tries to find a "name" and an "enabled" key in the
-        #                 returned ref dicts. The issue is, I don't understand
-        #                 how the service and endpoint entity assertions below
-        #                 actually work (they don't raise assertions), since
-        #                 AFAICT, the service and endpoint tables don't have
-        #                 a "name" column either... :(
         return self.assertValidListResponse(
             resp,
             'regions',
             self.assertValidRegion,
-            keys_to_check=[],
+            keys_to_check=['description'],
             *args,
             **kwargs)
 
@@ -793,14 +782,11 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             resp,
             'region',
             self.assertValidRegion,
-            keys_to_check=[],
+            keys_to_check=['description'],
             *args,
             **kwargs)
 
     def assertValidRegion(self, entity, ref=None):
-        self.assertIsNotNone(entity.get('description'))
-        if ref:
-            self.assertEqual(ref['description'], entity['description'])
         return entity
 
     # service validation
@@ -810,6 +796,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             resp,
             'services',
             self.assertValidService,
+            keys_to_check=['type'],
             *args,
             **kwargs)
 
@@ -818,14 +805,12 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             resp,
             'service',
             self.assertValidService,
+            keys_to_check=['type'],
             *args,
             **kwargs)
 
     def assertValidService(self, entity, ref=None):
-        self.assertIsNotNone(entity.get('type'))
         self.assertIsInstance(entity.get('enabled'), bool)
-        if ref:
-            self.assertEqual(ref['type'], entity['type'])
         return entity
 
     # endpoint validation
@@ -835,6 +820,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             resp,
             'endpoints',
             self.assertValidEndpoint,
+            keys_to_check=['interface', 'service_id'],
             *args,
             **kwargs)
 
@@ -843,20 +829,17 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             resp,
             'endpoint',
             self.assertValidEndpoint,
+            keys_to_check=['interface', 'service_id'],
             *args,
             **kwargs)
 
     def assertValidEndpoint(self, entity, ref=None):
-        self.assertIsNotNone(entity.get('interface'))
-        self.assertIsNotNone(entity.get('service_id'))
         self.assertIsInstance(entity['enabled'], bool)
 
         # this is intended to be an unexposed implementation detail
         self.assertNotIn('legacy_endpoint_id', entity)
 
         if ref:
-            self.assertEqual(ref['interface'], entity['interface'])
-            self.assertEqual(ref['service_id'], entity['service_id'])
             if ref.get('region') is not None:
                 self.assertEqual(ref['region_id'], entity.get('region_id'))
 
@@ -869,6 +852,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             resp,
             'domains',
             self.assertValidDomain,
+            keys_to_check=['name', 'enabled'],
             *args,
             **kwargs)
 
@@ -877,12 +861,11 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             resp,
             'domain',
             self.assertValidDomain,
+            keys_to_check=['name', 'enabled'],
             *args,
             **kwargs)
 
     def assertValidDomain(self, entity, ref=None):
-        if ref:
-            pass
         return entity
 
     # project validation
@@ -892,6 +875,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             resp,
             'projects',
             self.assertValidProject,
+            keys_to_check=['name', 'enabled', 'domain_id'],
             *args,
             **kwargs)
 
@@ -900,13 +884,11 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             resp,
             'project',
             self.assertValidProject,
+            keys_to_check=['name', 'enabled', 'domain_id'],
             *args,
             **kwargs)
 
     def assertValidProject(self, entity, ref=None):
-        self.assertIsNotNone(entity.get('domain_id'))
-        if ref:
-            self.assertEqual(ref['domain_id'], entity['domain_id'])
         return entity
 
     # user validation
@@ -916,6 +898,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             resp,
             'users',
             self.assertValidUser,
+            keys_to_check=['name', 'enabled', 'domain_id', 'email'],
             *args,
             **kwargs)
 
@@ -924,17 +907,14 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             resp,
             'user',
             self.assertValidUser,
+            keys_to_check=['name', 'enabled', 'domain_id', 'email'],
             *args,
             **kwargs)
 
     def assertValidUser(self, entity, ref=None):
-        self.assertIsNotNone(entity.get('domain_id'))
-        self.assertIsNotNone(entity.get('email'))
         self.assertIsNone(entity.get('password'))
         self.assertNotIn('tenantId', entity)
         if ref:
-            self.assertEqual(ref['domain_id'], entity['domain_id'])
-            self.assertEqual(ref['email'], entity['email'])
             if 'default_project_id' in ref:
                 self.assertIsNotNone(ref['default_project_id'])
                 self.assertEqual(ref['default_project_id'],
@@ -948,6 +928,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             resp,
             'groups',
             self.assertValidGroup,
+            keys_to_check=['domain_id', 'name'],
             *args,
             **kwargs)
 
@@ -956,13 +937,11 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             resp,
             'group',
             self.assertValidGroup,
+            keys_to_check=['domain_id', 'name'],
             *args,
             **kwargs)
 
     def assertValidGroup(self, entity, ref=None):
-        self.assertIsNotNone(entity.get('name'))
-        if ref:
-            self.assertEqual(ref['name'], entity['name'])
         return entity
 
     # credential validation
@@ -986,13 +965,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             **kwargs)
 
     def assertValidCredential(self, entity, ref=None):
-        self.assertIsNotNone(entity.get('user_id'))
-        self.assertIsNotNone(entity.get('blob'))
-        self.assertIsNotNone(entity.get('type'))
         if ref:
-            self.assertEqual(ref['user_id'], entity['user_id'])
-            self.assertEqual(ref['blob'], entity['blob'])
-            self.assertEqual(ref['type'], entity['type'])
             self.assertEqual(ref.get('project_id'), entity.get('project_id'))
         return entity
 
@@ -1017,9 +990,6 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             **kwargs)
 
     def assertValidRole(self, entity, ref=None):
-        self.assertIsNotNone(entity.get('name'))
-        if ref:
-            self.assertEqual(ref['name'], entity['name'])
         return entity
 
     def assertValidRoleAssignmentListResponse(self, resp, ref=None,
@@ -1112,6 +1082,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             resp,
             'policies',
             self.assertValidPolicy,
+            keys_to_check=['blob', 'type'],
             *args,
             **kwargs)
 
@@ -1120,15 +1091,11 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             resp,
             'policy',
             self.assertValidPolicy,
+            keys_to_check=['blob', 'type'],
             *args,
             **kwargs)
 
     def assertValidPolicy(self, entity, ref=None):
-        self.assertIsNotNone(entity.get('blob'))
-        self.assertIsNotNone(entity.get('type'))
-        if ref:
-            self.assertEqual(ref['blob'], entity['blob'])
-            self.assertEqual(ref['type'], entity['type'])
         return entity
 
     # trust validation
@@ -1137,7 +1104,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         return self.assertValidListResponse(
             resp,
             'trusts',
-            self.assertValidTrustSummary,
+            self.assertValidTrust,
             keys_to_check=['trustor_user_id',
                            'trustee_user_id',
                            'impersonation'],
@@ -1159,10 +1126,6 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         return self.assertValidTrust(entity, ref, summary=True)
 
     def assertValidTrust(self, entity, ref=None, summary=False):
-        self.assertIsNotNone(entity.get('trustor_user_id'))
-        self.assertIsNotNone(entity.get('trustee_user_id'))
-        self.assertIsNotNone(entity.get('impersonation'))
-
         self.assertIn('expires_at', entity)
         if entity['expires_at'] is not None:
             self.assertValidISO8601ExtendedFormatDatetime(entity['expires_at'])
@@ -1186,8 +1149,6 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             self.assertFalse(has_roles ^ has_project)
 
         if ref:
-            self.assertEqual(ref['trustor_user_id'], entity['trustor_user_id'])
-            self.assertEqual(ref['trustee_user_id'], entity['trustee_user_id'])
             self.assertEqual(ref['project_id'], entity['project_id'])
             if entity.get('expires_at') or ref.get('expires_at'):
                 entity_exp = self.assertValidISO8601ExtendedFormatDatetime(
