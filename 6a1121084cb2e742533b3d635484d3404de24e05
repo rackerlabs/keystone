@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_741c1a7c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-07T22:55:05Z",
+      "side": 1,
+      "message": "This needs a bug since it\u0027s changing behavior.\n\nAlso, it should probably be backported to icehouse.",
+      "revId": "6a1121084cb2e742533b3d635484d3404de24e05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_9747f04b",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-07T22:55:05Z",
+      "side": 1,
+      "message": "How does this test verify what it says here? It doesn\u0027t use REMOTE_USER.",
+      "revId": "6a1121084cb2e742533b3d635484d3404de24e05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d7fb2813",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-07T22:55:05Z",
+      "side": 1,
+      "message": "give a name to these unnamed {}s -- context\u003d{}, auth\u003d{}.",
+      "revId": "6a1121084cb2e742533b3d635484d3404de24e05",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
