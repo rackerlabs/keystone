@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_836a6bb3",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-08-07T13:23:04Z",
+      "side": 1,
+      "message": "What about changing the above to this?\n\nif project_id is not None:\n    project_subtree_dn \u003d self.project._id_to_dn(project_id)\nelse:\n    project_subtree_dn \u003d self.project.tree_dn",
+      "revId": "39048655c6a206f000e50d24ddd39f6116367dd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_23143f40",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-08-07T13:23:04Z",
+      "side": 1,
+      "message": "Could you please avoid using a single letter notation for variables? \u0027g\u0027 is not very descriptive.",
+      "revId": "39048655c6a206f000e50d24ddd39f6116367dd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e33087ec",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-08-07T13:23:04Z",
+      "side": 1,
+      "message": "same here, \u0027r\u0027 is not very descriptive.",
+      "revId": "39048655c6a206f000e50d24ddd39f6116367dd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
