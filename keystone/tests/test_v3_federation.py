@@ -423,7 +423,6 @@ class MappingCRUDTests(FederationTests):
             resp,
             'mappings',
             self.assertValidMapping,
-            keys_to_check=[],
             *args,
             **kwargs)
 
@@ -432,7 +431,6 @@ class MappingCRUDTests(FederationTests):
             resp,
             'mapping',
             self.assertValidMapping,
-            keys_to_check=[],
             *args,
             **kwargs)
 
