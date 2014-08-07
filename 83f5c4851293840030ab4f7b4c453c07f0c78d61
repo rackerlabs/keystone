@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_f21bfec8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-08-07T03:12:14Z",
+      "side": 1,
+      "message": "Remove the extra space after the period.  Sorry for being picky :)",
+      "revId": "83f5c4851293840030ab4f7b4c453c07f0c78d61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
