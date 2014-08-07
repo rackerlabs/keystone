@@ -50,6 +50,24 @@
       "revId": "39048655c6a206f000e50d24ddd39f6116367dd1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_a50a101c",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-07T14:46:07Z",
+      "side": 1,
+      "message": "You are right Juan, I\u0027ll change it. Thanks for you review.",
+      "parentUuid": "baada198_e33087ec",
+      "revId": "39048655c6a206f000e50d24ddd39f6116367dd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
