@@ -570,10 +570,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         If a reference is provided, the entity will also be compared against
         the reference.
         """
-        if keys_to_check is not None:
-            keys = keys_to_check
-        else:
-            keys = ['name', 'description', 'enabled']
+        keys = keys_to_check or []
 
         for k in ['id'] + keys:
             msg = '%s unexpectedly None in %s' % (k, entity)
@@ -762,19 +759,10 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
     # region validation
 
     def assertValidRegionListResponse(self, resp, *args, **kwargs):
-        # NOTE(jaypipes): I have to pass in a blank keys_to_check parameter
-        #                 below otherwise the base assertValidEntity method
-        #                 tries to find a "name" and an "enabled" key in the
-        #                 returned ref dicts. The issue is, I don't understand
-        #                 how the service and endpoint entity assertions below
-        #                 actually work (they don't raise assertions), since
-        #                 AFAICT, the service and endpoint tables don't have
-        #                 a "name" column either... :(
         return self.assertValidListResponse(
             resp,
             'regions',
             self.assertValidRegion,
-            keys_to_check=[],
             *args,
             **kwargs)
 
@@ -783,7 +771,6 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             resp,
             'region',
             self.assertValidRegion,
-            keys_to_check=[],
             *args,
             **kwargs)
 
