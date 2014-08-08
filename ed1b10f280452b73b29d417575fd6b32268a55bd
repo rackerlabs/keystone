@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_43090531",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-08T14:38:34Z",
+      "side": 1,
+      "message": "you can log this as a warning if you\u0027d like, but this is missing i18n and the message should be passed to the exception object so that it can be exposed to the API in debug mode\n\n  raise exception.UnexpectedError(_(\u0027lxml is not installed\u0027_)",
+      "revId": "ed1b10f280452b73b29d417575fd6b32268a55bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1e568205",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-08T14:38:34Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "ed1b10f280452b73b29d417575fd6b32268a55bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
