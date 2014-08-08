@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_b99210fa",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-08T15:13:20Z",
+      "side": 1,
+      "message": "it would be easier to know what this was for if the \u0027keystone\u0027 magic string was given a name -- messaging.set_transport_defaults(control_exchange\u003d\u0027keystone\u0027)",
+      "revId": "a55ecbde771cd0ba49c1408f681a777ff29630c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
