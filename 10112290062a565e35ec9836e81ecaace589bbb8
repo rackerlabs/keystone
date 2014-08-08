@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_b49855cd",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-08T15:33:21Z",
+      "side": 1,
+      "message": "alright, good enough reason",
+      "parentUuid": "baada198_0be738e4",
+      "revId": "10112290062a565e35ec9836e81ecaace589bbb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_f50bc1d2",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 3
@@ -119,6 +137,24 @@
       "side": 1,
       "message": "i don\u0027t think so, _assertLastNotify still expects only a single ID.",
       "parentUuid": "baada198_f50bc1d2",
+      "revId": "10112290062a565e35ec9836e81ecaace589bbb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f40bad2a",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-08T15:33:21Z",
+      "side": 1,
+      "message": "I made payload an optional arg to assertLastNotify",
+      "parentUuid": "baada198_952605ca",
       "revId": "10112290062a565e35ec9836e81ecaace589bbb8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
