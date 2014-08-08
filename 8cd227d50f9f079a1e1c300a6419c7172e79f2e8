@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_74e156fb",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-08T18:20:22Z",
+      "side": 1,
+      "message": "I think that we probably need some comments here as to why we need this convoluted way of getting the actor/target",
+      "revId": "8cd227d50f9f079a1e1c300a6419c7172e79f2e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
