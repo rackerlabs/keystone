@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_d984245f",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-08T15:05:42Z",
+      "side": 1,
+      "message": "Add a comment why check_output isn\u0027t used.",
+      "revId": "a9ac93e10b6b086b782b69b7f2b454697262787e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_190e9ce4",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-08T15:05:42Z",
+      "side": 1,
+      "message": "this should say what the command was. it was logged at 78 but that was at info level and this is at error level.",
+      "revId": "a9ac93e10b6b086b782b69b7f2b454697262787e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
