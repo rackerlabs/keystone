@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_9559a52b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-08-08T03:34:49Z",
+      "side": 1,
+      "message": "Unused variable.",
+      "revId": "10112290062a565e35ec9836e81ecaace589bbb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_5542ad0d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-08-08T03:34:49Z",
+      "side": 1,
+      "message": "How about moving \u0027target\u0027 and \u0027actor\u0027 into resource_info? Like this:\n\n{\u0027resource_info\u0027: {\u0027resource_id\u0027: role_id, \u0027target\u0027: target, \u0027actor\u0027: actor}}",
+      "revId": "10112290062a565e35ec9836e81ecaace589bbb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f50bc1d2",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-08-08T03:34:49Z",
+      "side": 1,
+      "message": "If move \u0027target\u0027 and \u0027actor\u0027 into resource_info, this method can be removed. Use _assertLastNotify instead.",
+      "revId": "10112290062a565e35ec9836e81ecaace589bbb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
