@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_0be738e4",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-08-08T06:02:05Z",
+      "side": 1,
+      "message": "I think that target and actor are all resource_info too:)",
+      "parentUuid": "baada198_3521b9b5",
+      "revId": "10112290062a565e35ec9836e81ecaace589bbb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_f50bc1d2",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 3
