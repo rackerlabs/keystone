@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_75541122",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-08T04:21:32Z",
+      "side": 1,
+      "message": "++ thanks",
+      "parentUuid": "baada198_9559a52b",
+      "revId": "10112290062a565e35ec9836e81ecaace589bbb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_5542ad0d",
         "filename": "keystone/notifications.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_3521b9b5",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-08T04:21:32Z",
+      "side": 1,
+      "message": "i don\u0027t really see the advantage, but if others think it\u0027s a good idea, i\u0027ll change it up",
+      "parentUuid": "baada198_5542ad0d",
+      "revId": "10112290062a565e35ec9836e81ecaace589bbb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_f50bc1d2",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2014-08-08T03:34:49Z",
       "side": 1,
       "message": "If move \u0027target\u0027 and \u0027actor\u0027 into resource_info, this method can be removed. Use _assertLastNotify instead.",
+      "revId": "10112290062a565e35ec9836e81ecaace589bbb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_952605ca",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-08T04:21:32Z",
+      "side": 1,
+      "message": "i don\u0027t think so, _assertLastNotify still expects only a single ID.",
+      "parentUuid": "baada198_f50bc1d2",
       "revId": "10112290062a565e35ec9836e81ecaace589bbb8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
