@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2014-08-04 06:05+0000\n"
+"POT-Creation-Date: 2014-08-08 06:04+0000\n"
 "PO-Revision-Date: 2014-04-19 01:30+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: English (Australia) "
@@ -291,37 +291,42 @@ msgid ""
 msgstr ""
 
 #: keystone/exception.py:336
+#, python-format
+msgid "Unable to consume trust %(trust_id)s, unable to acquire lock."
+msgstr ""
+
+#: keystone/exception.py:341
 msgid ""
 "Expected signing certificates are not available on the server. Please "
 "check Keystone configuration."
 msgstr ""
 
-#: keystone/exception.py:342
+#: keystone/exception.py:347
 #, python-format
 msgid "Malformed endpoint URL (%(endpoint)s), see ERROR log for details."
 msgstr "Malformed endpoint URL (%(endpoint)s), see ERROR log for details."
 
-#: keystone/exception.py:347
+#: keystone/exception.py:352
 #, python-format
 msgid ""
 "Group %(group_id)s returned by mapping %(mapping_id)s was not found in "
 "the backend."
 msgstr ""
 
-#: keystone/exception.py:352
+#: keystone/exception.py:357
 msgid "The action you have requested has not been implemented."
 msgstr "The action you have requested has not been implemented."
 
-#: keystone/exception.py:359
+#: keystone/exception.py:364
 msgid "The service you have requested is no longer available on this server."
 msgstr ""
 
-#: keystone/exception.py:366
+#: keystone/exception.py:371
 #, python-format
 msgid "The Keystone configuration file %(config_file)s could not be found."
 msgstr "The Keystone configuration file %(config_file)s could not be found."
 
-#: keystone/exception.py:372
+#: keystone/exception.py:377
 #, python-format
 msgid ""
 "%(mod_name)s doesn't provide database migrations. The migration "
@@ -348,7 +353,7 @@ msgstr ""
 msgid "Failed to send %(res_id)s %(event_type)s notification"
 msgstr "Failed to send %(res_id)s %(event_type)s notification"
 
-#: keystone/notifications.py:309
+#: keystone/notifications.py:308
 #, python-format
 msgid "Failed to send %(action)s %(event_type)s notification"
 msgstr ""
@@ -1193,9 +1198,16 @@ msgstr "Access token not found"
 msgid "invalid date format %s"
 msgstr ""
 
-#: keystone/contrib/revoke/core.py:173 keystone/token/provider.py:146
+#: keystone/contrib/revoke/core.py:135
+msgid ""
+"The call to keystone.contrib.revoke.Manager revoke_by_expiration() must "
+"not have both domain_id and project_id. This is a bug in the keystone "
+"server. The current request is aborted."
+msgstr ""
+
+#: keystone/contrib/revoke/core.py:184 keystone/token/provider.py:146
 #: keystone/token/provider.py:167 keystone/token/provider.py:255
-#: keystone/token/provider.py:262 keystone/token/providers/common.py:612
+#: keystone/token/provider.py:262 keystone/token/providers/common.py:620
 msgid "Failed to validate token"
 msgstr "Failed to validate token"
 
@@ -1454,11 +1466,11 @@ msgstr "User is not a trustee."
 msgid "Oauth is disabled."
 msgstr "Oauth is disabled."
 
-#: keystone/token/providers/common.py:537
+#: keystone/token/providers/common.py:545
 msgid "Non-default domain is not supported"
 msgstr "Non-default domain is not supported"
 
-#: keystone/token/providers/common.py:545
+#: keystone/token/providers/common.py:553
 msgid "Domain scoped token is not supported"
 msgstr "Domain scoped token is not supported"
 
