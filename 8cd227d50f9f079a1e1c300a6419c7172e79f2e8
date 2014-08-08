@@ -16,6 +16,24 @@
       "revId": "8cd227d50f9f079a1e1c300a6419c7172e79f2e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f4df260a",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-08T18:24:08Z",
+      "side": 1,
+      "message": "Sure, I\u0027ll comment / doc this, basically it\u0027s because create_grant can be called in a bunch of different ways, using positional or named arguments.\n\nSo target and actor might be in kwargs, or in args.",
+      "parentUuid": "baada198_74e156fb",
+      "revId": "8cd227d50f9f079a1e1c300a6419c7172e79f2e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
