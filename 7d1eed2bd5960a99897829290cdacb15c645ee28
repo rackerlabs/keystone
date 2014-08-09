@@ -16,6 +16,24 @@
       "revId": "7d1eed2bd5960a99897829290cdacb15c645ee28",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_cabd1305",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-09T05:42:37Z",
+      "side": 1,
+      "message": "looks fine to me, stdlib, then 3rd part (followed by a try/catch), then local imports",
+      "parentUuid": "baada198_1934dc47",
+      "revId": "7d1eed2bd5960a99897829290cdacb15c645ee28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
