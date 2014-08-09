@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2014-08-04 06:05+0000\n"
+"POT-Creation-Date: 2014-08-09 06:04+0000\n"
 "PO-Revision-Date: 2014-04-19 01:30+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: English (Australia) "
@@ -291,37 +291,42 @@ msgid ""
 msgstr ""
 
 #: keystone/exception.py:336
+#, python-format
+msgid "Unable to consume trust %(trust_id)s, unable to acquire lock."
+msgstr ""
+
+#: keystone/exception.py:341
 msgid ""
 "Expected signing certificates are not available on the server. Please "
 "check Keystone configuration."
 msgstr ""
 
-#: keystone/exception.py:342
+#: keystone/exception.py:347
 #, python-format
 msgid "Malformed endpoint URL (%(endpoint)s), see ERROR log for details."
 msgstr "Malformed endpoint URL (%(endpoint)s), see ERROR log for details."
 
-#: keystone/exception.py:347
+#: keystone/exception.py:352
 #, python-format
 msgid ""
 "Group %(group_id)s returned by mapping %(mapping_id)s was not found in "
 "the backend."
 msgstr ""
 
-#: keystone/exception.py:352
+#: keystone/exception.py:357
 msgid "The action you have requested has not been implemented."
 msgstr "The action you have requested has not been implemented."
 
-#: keystone/exception.py:359
+#: keystone/exception.py:364
 msgid "The service you have requested is no longer available on this server."
 msgstr ""
 
-#: keystone/exception.py:366
+#: keystone/exception.py:371
 #, python-format
 msgid "The Keystone configuration file %(config_file)s could not be found."
 msgstr "The Keystone configuration file %(config_file)s could not be found."
 
-#: keystone/exception.py:372
+#: keystone/exception.py:377
 #, python-format
 msgid ""
 "%(mod_name)s doesn't provide database migrations. The migration "
@@ -348,7 +353,7 @@ msgstr ""
 msgid "Failed to send %(res_id)s %(event_type)s notification"
 msgstr "Failed to send %(res_id)s %(event_type)s notification"
 
-#: keystone/notifications.py:309
+#: keystone/notifications.py:308
 #, python-format
 msgid "Failed to send %(action)s %(event_type)s notification"
 msgstr ""
@@ -444,7 +449,7 @@ msgid "Domain metadata not supported by LDAP"
 msgstr ""
 
 #: keystone/assignment/backends/ldap.py:212
-#: keystone/assignment/backends/ldap.py:256 keystone/catalog/core.py:86
+#: keystone/assignment/backends/ldap.py:256 keystone/catalog/core.py:92
 #: keystone/common/ldap/core.py:1339 keystone/identity/backends/kvs.py:114
 #: keystone/identity/backends/kvs.py:219
 #, python-format
@@ -570,7 +575,7 @@ msgstr ""
 "User %(user_id)s's default project %(project_id)s not found. The token "
 "will be unscoped rather than scoped to the project."
 
-#: keystone/auth/controllers.py:498
+#: keystone/auth/controllers.py:500
 msgid "User not found"
 msgstr "User not found"
 
@@ -618,24 +623,24 @@ msgstr ""
 msgid "Enabled field must be a boolean"
 msgstr "Enabled field must be a boolean"
 
-#: keystone/catalog/core.py:45
+#: keystone/catalog/core.py:51
 #, python-format
 msgid "Malformed endpoint - %(url)r is not a string"
 msgstr ""
 
-#: keystone/catalog/core.py:49
+#: keystone/catalog/core.py:55
 #, python-format
 msgid "Malformed endpoint %(url)s - unknown key %(keyerror)s"
 msgstr "Malformed endpoint %(url)s - unknown key %(keyerror)s"
 
-#: keystone/catalog/core.py:54
+#: keystone/catalog/core.py:60
 #, python-format
 msgid ""
 "Malformed endpoint '%(url)s'. The following type error occurred during "
 "string substitution: %(typeerror)s"
 msgstr ""
 
-#: keystone/catalog/core.py:60
+#: keystone/catalog/core.py:66
 #, python-format
 msgid ""
 "Malformed endpoint %s - incomplete format (are you missing a type "
@@ -761,7 +766,7 @@ msgstr ""
 "failed to base64 decode %(pem_type)s PEM at position%(position)d: "
 "%(err_msg)s"
 
-#: keystone/common/serializer.py:203
+#: keystone/common/serializer.py:223
 msgid "Multiple truncation attributes found"
 msgstr ""
 
@@ -1193,9 +1198,16 @@ msgstr "Access token not found"
 msgid "invalid date format %s"
 msgstr ""
 
-#: keystone/contrib/revoke/core.py:173 keystone/token/provider.py:146
-#: keystone/token/provider.py:167 keystone/token/provider.py:255
-#: keystone/token/provider.py:262 keystone/token/providers/common.py:612
+#: keystone/contrib/revoke/core.py:135
+msgid ""
+"The call to keystone.contrib.revoke.Manager revoke_by_expiration() must "
+"not have both domain_id and project_id. This is a bug in the keystone "
+"server. The current request is aborted."
+msgstr ""
+
+#: keystone/contrib/revoke/core.py:184 keystone/token/provider.py:179
+#: keystone/token/provider.py:201 keystone/token/provider.py:299
+#: keystone/token/provider.py:306 keystone/token/providers/common.py:532
 msgid "Failed to validate token"
 msgstr "Failed to validate token"
 
@@ -1374,13 +1386,13 @@ msgstr "Token does not belong to specified tenant."
 msgid "Tenant is disabled: %s"
 msgstr "Tenant is disabled: %s"
 
-#: keystone/token/provider.py:101
+#: keystone/token/provider.py:109
 msgid ""
 "[signing] token_format is deprecated. Please change to setting the "
 "[token] provider configuration value instead"
 msgstr ""
 
-#: keystone/token/provider.py:109
+#: keystone/token/provider.py:117
 msgid ""
 "Unrecognized keystone.conf [signing] token_format: expected either 'UUID'"
 " or 'PKI'"
@@ -1388,7 +1400,7 @@ msgstr ""
 "Unrecognized keystone.conf [signing] token_format: expected either 'UUID'"
 " or 'PKI'"
 
-#: keystone/token/provider.py:253
+#: keystone/token/provider.py:297
 #, python-format
 msgid "Unexpected error or malformed token determining token expiry: %s"
 msgstr "Unexpected error or malformed token determining token expiry: %s"
@@ -1426,39 +1438,39 @@ msgid ""
 "revocation list."
 msgstr ""
 
-#: keystone/token/providers/common.py:182
-#: keystone/token/providers/common.py:285
+#: keystone/token/providers/common.py:180
+#: keystone/token/providers/common.py:283
 #, python-format
 msgid "User %(user_id)s has no access to project %(project_id)s"
 msgstr "User %(user_id)s has no access to project %(project_id)s"
 
-#: keystone/token/providers/common.py:187
-#: keystone/token/providers/common.py:290
+#: keystone/token/providers/common.py:185
+#: keystone/token/providers/common.py:288
 #, python-format
 msgid "User %(user_id)s has no access to domain %(domain_id)s"
 msgstr "User %(user_id)s has no access to domain %(domain_id)s"
 
-#: keystone/token/providers/common.py:212
+#: keystone/token/providers/common.py:210
 msgid "Trustor is disabled."
 msgstr "Trustor is disabled."
 
-#: keystone/token/providers/common.py:276
+#: keystone/token/providers/common.py:274
 msgid "Trustee has no delegated roles."
 msgstr "Trustee has no delegated roles."
 
-#: keystone/token/providers/common.py:338
+#: keystone/token/providers/common.py:336
 msgid "User is not a trustee."
 msgstr "User is not a trustee."
 
-#: keystone/token/providers/common.py:435
+#: keystone/token/providers/common.py:405
 msgid "Oauth is disabled."
 msgstr "Oauth is disabled."
 
-#: keystone/token/providers/common.py:537
+#: keystone/token/providers/common.py:461
 msgid "Non-default domain is not supported"
 msgstr "Non-default domain is not supported"
 
-#: keystone/token/providers/common.py:545
+#: keystone/token/providers/common.py:469
 msgid "Domain scoped token is not supported"
 msgstr "Domain scoped token is not supported"
 
