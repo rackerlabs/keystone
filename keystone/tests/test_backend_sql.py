@@ -555,3 +555,45 @@ class SqlModuleInitialization(tests.TestCase):
         sql.initialize()
         set_defaults.assert_called_with(CONF,
                                         connection='sqlite:///keystone.db')
+
+
+class SqlCredential(SqlTests):
+
+    def _create_credential_with_user_id(self, user_id=uuid.uuid4().hex):
+        credential_id = uuid.uuid4().hex
+        new_credential = {
+            'id': credential_id,
+            'user_id': user_id,
+            'project_id': uuid.uuid4().hex,
+            'blob': uuid.uuid4().hex,
+            'type': uuid.uuid4().hex,
+            'extra': uuid.uuid4().hex
+        }
+        self.credential_api.create_credential(credential_id, new_credential)
+        return new_credential
+
+    def setUp(self):
+        super(SqlCredential, self).setUp()
+        self.credentials = []
+        for _ in range(3):
+            self.credentials.append(
+                self._create_credential_with_user_id())
+
+    def test_list_credentials(self):
+        credentials = self.credential_api.list_credentials()
+        expected_ids = [c['id'] for c in self.credentials]
+        self.assertEqual(len(self.credentials), len(credentials))
+        for cred in self.credentials:
+            self.assertIn(cred['id'], expected_ids)
+
+    def test_list_credentials_for_user(self):
+        user_credentials = []
+        for _ in range(3):
+            user_credentials.append(
+                self._create_credential_with_user_id(self.user_foo['id']))
+        credentials = self.credential_api.list_credentials_for_user(
+            self.user_foo['id'])
+        expected_ids = [c['id'] for c in user_credentials]
+        self.assertEqual(len(user_credentials), len(credentials))
+        for cred in user_credentials:
+            self.assertIn(cred['id'], expected_ids)
