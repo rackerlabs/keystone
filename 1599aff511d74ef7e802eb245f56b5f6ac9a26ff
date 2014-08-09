@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_4a4ca39d",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-09T06:14:49Z",
+      "side": 1,
+      "message": "I\u0027ll add a subsequent patch to add some comments around the operations here, and space things out a bit more.",
+      "revId": "1599aff511d74ef7e802eb245f56b5f6ac9a26ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
