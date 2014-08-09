@@ -1,0 +1,13 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Workflow+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Marek Denis <marek.denis@cern.ch>
+Code-Review+1: Juan Antonio Osorio Robles <juan.osorio.robles@ericsson.com>
+Code-Review+1: David J Hu <david.hu@hp.com>
+Code-Review+1: Sam Leong <chio-fai-sam.leong@hp.com>
+Submitted-by: Jenkins
+Submitted-at: Sat, 09 Aug 2014 01:43:46 +0000
+Reviewed-on: https://review.openstack.org/112387
+Project: openstack/keystone
+Branch: refs/heads/master
