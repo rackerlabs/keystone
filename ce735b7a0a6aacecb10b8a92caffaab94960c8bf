@@ -33,6 +33,24 @@
       "revId": "ce735b7a0a6aacecb10b8a92caffaab94960c8bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_b0d4c1bb",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-10T19:42:17Z",
+      "side": 1,
+      "message": "ugh... yes, it should definitely be part of the payload. next patch will have it",
+      "parentUuid": "baada198_a4664b53",
+      "revId": "ce735b7a0a6aacecb10b8a92caffaab94960c8bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
