@@ -34,6 +34,23 @@
       "revId": "8fe0465d7fe0e868bd8b422db50825709289004b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_90ca5d6d",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-10T18:38:14Z",
+      "side": 1,
+      "message": "Good to be testing this...although I\u0027d prefer this test under the test_list_credentials() method (since that\u0027s what its testing)",
+      "revId": "8fe0465d7fe0e868bd8b422db50825709289004b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
