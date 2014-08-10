@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_3ad5f21a",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-10T14:05:21Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "baada198_a41f2bb7",
+      "revId": "2e86c8940665c93d7079322a6cae294eb78571ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_84222700",
         "filename": "keystone/credential/core.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-10T10:21:19Z",
       "side": 1,
       "message": "so we don\u0027t actually test the hints in this patch, is that happening in a follow on patch, or should that be tested in, say, test_v3_filters/test_v3_credentials?",
+      "revId": "2e86c8940665c93d7079322a6cae294eb78571ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_bf4d74c7",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-10T14:05:21Z",
+      "side": 1,
+      "message": "Credential API doesn\u0027t support any filters at the moment, because of controller. This support will be introduced as part of \u0027filter-credentials-by-user\u0027 blueprint.  This patch creates an infrastructure for this functionality by enabling backend to work with hints.  So high-level tests in test_v3_filters/test_v3_credentials aren\u0027t possible, but I\u0027m adding backend tests in test_backend_sql.",
+      "parentUuid": "baada198_84222700",
       "revId": "2e86c8940665c93d7079322a6cae294eb78571ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_9ffef037",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-10T14:05:21Z",
+      "side": 1,
+      "message": "Yes, it\u0027s a mistake. But not not in the loop, in the second line which should gather retrieved credentials ids, not expected ones. Fixed.",
+      "parentUuid": "baada198_e43e8325",
+      "revId": "2e86c8940665c93d7079322a6cae294eb78571ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_c4417fa8",
         "filename": "keystone/tests/test_backend_sql.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2014-08-10T10:21:19Z",
       "side": 1,
       "message": "do you mean credentials here, rather than user_credentials?",
+      "revId": "2e86c8940665c93d7079322a6cae294eb78571ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_bffbb446",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-10T14:05:21Z",
+      "side": 1,
+      "message": "Same as above, fixed.",
+      "parentUuid": "baada198_c4417fa8",
       "revId": "2e86c8940665c93d7079322a6cae294eb78571ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
