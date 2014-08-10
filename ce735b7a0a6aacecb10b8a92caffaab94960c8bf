@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_648193c1",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-10T10:25:02Z",
+      "side": 1,
+      "message": "Thanks for adding this.  Yuk, but good!",
+      "revId": "ce735b7a0a6aacecb10b8a92caffaab94960c8bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_a4664b53",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-10T10:25:02Z",
+      "side": 1,
+      "message": "is there a reason we don\u0027t add the inherited_to_projects value to the payload?  Without it, there is no way of knowing of this (domain) assignment affects child projects?",
+      "revId": "ce735b7a0a6aacecb10b8a92caffaab94960c8bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
