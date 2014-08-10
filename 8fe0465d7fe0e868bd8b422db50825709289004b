@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_daf4f657",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-10T14:49:02Z",
+      "side": 1,
+      "message": "So following on from your comment on the previous version of patch, I would have thought that if you aren\u0027t going to test hints in this patch, then you shouldn\u0027t introduce it here.  Maybe it would be better for this patch to just crate (and test) the new list_credentials_for_user(), including getting ec2 credentials to call it, leaving list_credentials() with no params.  Then in the fix for the bp, you can bring in the hints() ?",
+      "revId": "8fe0465d7fe0e868bd8b422db50825709289004b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
