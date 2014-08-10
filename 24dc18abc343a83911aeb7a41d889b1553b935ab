@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_44e1ef95",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-10T10:36:44Z",
+      "side": 1,
+      "message": "So while you are allowing the test to run - what you are really doing is changing the default config LDAP mail attribute from email-\u003email.  This is the real change here.  test_user_mixed..() is just how you confirm this.  I think we need to make the title more explicit, since this is not a test change, it\u0027s a production default config change.",
+      "revId": "24dc18abc343a83911aeb7a41d889b1553b935ab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
