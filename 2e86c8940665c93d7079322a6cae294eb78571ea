@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_a41f2bb7",
+        "filename": "keystone/credential/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-10T10:21:19Z",
+      "side": 1,
+      "message": "not sure what the list() is needed for?",
+      "revId": "2e86c8940665c93d7079322a6cae294eb78571ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_84222700",
+        "filename": "keystone/credential/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-10T10:21:19Z",
+      "side": 1,
+      "message": "so we don\u0027t actually test the hints in this patch, is that happening in a follow on patch, or should that be tested in, say, test_v3_filters/test_v3_credentials?",
+      "revId": "2e86c8940665c93d7079322a6cae294eb78571ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e43e8325",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-10T10:21:19Z",
+      "side": 1,
+      "message": "do you mean credentials here, rather than self.credentials?",
+      "revId": "2e86c8940665c93d7079322a6cae294eb78571ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_c4417fa8",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-10T10:21:19Z",
+      "side": 1,
+      "message": "do you mean credentials here, rather than user_credentials?",
+      "revId": "2e86c8940665c93d7079322a6cae294eb78571ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
