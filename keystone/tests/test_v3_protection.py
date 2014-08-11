@@ -445,6 +445,15 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
                                          user_id=self.just_a_user['id'],
                                          project_id=self.project['id'])
 
+        # Create credentials
+        self.credential_user = self.new_credential_ref(self.just_a_user['id'])
+        self.credential_api.create_credential(self.credential_user['id'],
+                                              self.credential_user)
+        self.credential_admin = self.new_credential_ref(
+            self.cloud_admin_user['id'])
+        self.credential_api.create_credential(self.credential_admin['id'],
+                                              self.credential_admin)
+
     def _stati(self, expected_status):
         # Return the expected return codes for APIs with and without data
         # with any specified status overriding the normal values
@@ -661,3 +670,13 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
             domain_id=self.admin_domain['id'])
 
         self._test_domain_management()
+
+    def test_list_user_credentials(self):
+        self.auth = self.build_authentication_request(
+            user_id=self.just_a_user['id'],
+            password=self.just_a_user['password'])
+        url = '/credentials?user_id=%s' % self.just_a_user['id']
+        self.get(url, auth=self.auth)
+        url = '/credentials'
+        self.get(url, auth=self.auth,
+                 expected_status=exception.ForbiddenAction.code)
