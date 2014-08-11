@@ -67,6 +67,23 @@
       "revId": "5ecd595643d8a1f45e79d0ead47d0a9e80527419",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_f061bd11",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2014-08-11T15:47:58Z",
+      "side": 1,
+      "message": "Remove the extra vertical space to keep the spacing consistent with the class above and below.",
+      "revId": "5ecd595643d8a1f45e79d0ead47d0a9e80527419",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
