@@ -1150,12 +1150,22 @@ class AuthCatalog(tests.SQLDriverOverrides, AuthTest):
         return config_files
 
     def _create_endpoints(self):
+        def create_region(**kwargs):
+            ref = {
+                'id': uuid.uuid4().hex,
+                'description': '',
+                'extra': {}
+            }
+            ref.update(kwargs)
+            self.catalog_api.create_region(ref)
+            return ref
+
         def create_endpoint(service_id, region, **kwargs):
             id_ = uuid.uuid4().hex
             ref = {
                 'id': id_,
                 'interface': 'public',
-                'region': region,
+                'region_id': region,
                 'service_id': service_id,
                 'url': 'http://localhost/%s' % uuid.uuid4().hex,
             }
@@ -1178,16 +1188,16 @@ class AuthCatalog(tests.SQLDriverOverrides, AuthTest):
         enabled_service_ref = create_service(enabled=True)
         disabled_service_ref = create_service(enabled=False)
 
-        region = uuid.uuid4().hex
+        region = create_region()
 
         # Create endpoints
         enabled_endpoint_ref = create_endpoint(
-            enabled_service_ref['id'], region)
+            enabled_service_ref['id'], region['id'])
         create_endpoint(
-            enabled_service_ref['id'], region, enabled=False,
+            enabled_service_ref['id'], region['id'], enabled=False,
             interface='internal')
         create_endpoint(
-            disabled_service_ref['id'], region)
+            disabled_service_ref['id'], region['id'])
 
         return enabled_endpoint_ref
 
@@ -1212,7 +1222,7 @@ class AuthCatalog(tests.SQLDriverOverrides, AuthTest):
         exp_endpoint = {
             'id': endpoint_ref['id'],
             'publicURL': endpoint_ref['url'],
-            'region': endpoint_ref['region'],
+            'region': endpoint_ref['region_id'],
         }
 
         self.assertEqual(exp_endpoint, endpoint)
@@ -1244,7 +1254,7 @@ class AuthCatalog(tests.SQLDriverOverrides, AuthTest):
         exp_endpoint = {
             'id': endpoint_ref['id'],
             'publicURL': endpoint_ref['url'],
-            'region': endpoint_ref['region'],
+            'region': endpoint_ref['region_id'],
         }
 
         self.assertEqual(exp_endpoint, endpoint)

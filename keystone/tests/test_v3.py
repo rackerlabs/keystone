@@ -254,6 +254,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         self.endpoint_id = uuid.uuid4().hex
         self.endpoint = self.new_endpoint_ref(service_id=self.service_id)
         self.endpoint['id'] = self.endpoint_id
+        self.endpoint['region_id'] = self.region['id']
         self.catalog_api.create_endpoint(
             self.endpoint_id,
             self.endpoint.copy())
@@ -287,7 +288,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         ref['interface'] = uuid.uuid4().hex[:8]
         ref['service_id'] = service_id
         ref['url'] = uuid.uuid4().hex
-        ref['region'] = uuid.uuid4().hex
+        ref['region_id'] = self.region_id
         ref.update(kwargs)
         return ref
 
