@@ -3538,6 +3538,7 @@ class CatalogTests(object):
         region_id = uuid.uuid4().hex
         new_region = {
             'id': region_id,
+            'name': None,
             'description': uuid.uuid4().hex,
         }
         res = self.catalog_api.create_region(

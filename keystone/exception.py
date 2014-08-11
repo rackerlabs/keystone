@@ -123,6 +123,13 @@ class PasswordVerificationError(Error):
     title = 'Forbidden'
 
 
+class RegionDeletionError(Error):
+    message_format = _("Region %(region)s is not allowed to delete as it is "
+                       "having associated endpoints")
+    code = 403
+    title = 'Forbidden'
+
+
 class PKITokenExpected(Error):
     message_format = _('The certificates you requested are not available. '
                        'It is likely that this server does not use PKI tokens '
