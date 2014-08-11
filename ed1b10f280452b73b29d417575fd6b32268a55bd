@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_1f9ac712",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-11T13:27:26Z",
+      "side": 1,
+      "message": "addressed in https://review.openstack.org/#/c/113255/1",
+      "parentUuid": "baada198_43090531",
+      "revId": "ed1b10f280452b73b29d417575fd6b32268a55bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_1e568205",
         "filename": "keystone/common/serializer.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-08T14:38:34Z",
       "side": 1,
       "message": "same as above",
+      "revId": "ed1b10f280452b73b29d417575fd6b32268a55bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_5f87dfb5",
+        "filename": "keystone/common/serializer.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-11T13:27:26Z",
+      "side": 1,
+      "message": "addressed in https://review.openstack.org/#/c/113255/1",
+      "parentUuid": "baada198_1e568205",
       "revId": "ed1b10f280452b73b29d417575fd6b32268a55bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
