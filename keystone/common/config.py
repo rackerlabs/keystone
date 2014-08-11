@@ -213,7 +213,14 @@ FILE_OPTIONS = {
                          'optionally disabled.'),
         cfg.StrOpt('driver',
                    default='keystone.trust.backends.sql.Trust',
-                   help='Trust backend driver.')],
+                   help='Trust backend driver.'),
+        cfg.BoolOpt('caching', default=True,
+                    help='Toggle for trust caching. This has no '
+                         'effect unless global caching is enabled.'),
+        cfg.IntOpt('cache_time', default=600,
+                   help='Time to cache trust data (in seconds). This has no '
+                        'effect unless global and trust caching are '
+                        'enabled.')],
     'os_inherit': [
         cfg.BoolOpt('enabled', default=False,
                     help='role-assignment inheritance to projects from '

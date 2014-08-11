@@ -3474,6 +3474,33 @@ class TrustTests(object):
                           {'id': 'other'},
                           {'id': 'browser'}], trust_data['roles'])
 
+    @tests.skip_if_cache_disabled('trust')
+    def test_cache_layer_trust_crud(self):
+        trust_id = uuid.uuid4().hex
+        trust_data = self.create_sample_trust(trust_id)
+        # cache the trust data.
+        self.trust_api.get_trust(trust_id)
+        # delete bypassing the trust api.
+        self.trust_api.driver.delete_trust(trust_id)
+        # still get the trust.
+        trust_data = self.trust_api.get_trust(trust_id)
+        self.assertEqual(trust_id, trust_data['id'])
+        self.trust_api.get_trust.invalidate(self.trust_api, trust_id)
+        self.assertIsNone(self.trust_api.get_trust(trust_id))
+
+    @tests.skip_if_cache_disabled('trust')
+    def test_cache_layer_trust_consume_use(self):
+        trust_data = self.create_sample_trust(uuid.uuid4().hex,
+                                              remaining_uses=2)
+        # cache the result.
+        self.trust_api.get_trust(trust_data['id'])
+        # consume bypassing the trust api.
+        self.trust_api.driver.consume_use(trust_data['id'])
+        self.assertEqual(2, self.trust_api.get_trust(trust_data['id'])
+                         ['remaining_uses'])
+        self.trust_api.consume_use(trust_data['id'])
+        self.assertIsNone(self.trust_api.get_trust(trust_data['id']))
+
     def test_list_trust_by_trustee(self):
         for i in range(3):
             self.create_sample_trust(uuid.uuid4().hex)

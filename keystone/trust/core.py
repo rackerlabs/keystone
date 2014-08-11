@@ -18,6 +18,7 @@ import abc
 
 import six
 
+from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import manager
 from keystone import config
@@ -28,8 +29,12 @@ from keystone.openstack.common import log
 
 
 CONF = config.CONF
-
 LOG = log.getLogger(__name__)
+SHOULD_CACHE = cache.should_cache_fn('trust')
+
+
+def get_expiration_time():
+    return CONF.trust.cache_time or CONF.cache_time
 
 
 @dependency.provider('trust_api')
@@ -66,6 +71,16 @@ class Manager(manager.Manager):
         :raises: keystone.exception.TrustNotFound
         """
         self.driver.delete_trust(trust_id)
+        self.get_trust.invalidate(self, trust_id)
+
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=get_expiration_time)
+    def get_trust(self, trust_id):
+        return self.driver.get_trust(trust_id)
+
+    def consume_use(self, trust_id):
+        self.driver.consume_use(trust_id)
+        self.get_trust.invalidate(self, trust_id)
 
 
 @six.add_metaclass(abc.ABCMeta)
