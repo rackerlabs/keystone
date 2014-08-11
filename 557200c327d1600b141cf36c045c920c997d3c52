@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_708e9833",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-11T11:02:01Z",
+      "side": 1,
+      "message": "nit: It isn\u0027t really obvious this as to why you have added the hints if you have not plugged them into the regular controller.  Perhaps it is worth mentioning that this prepares the way for implementation of the bp to support filtering credentials by user in a follow on patch.",
+      "revId": "557200c327d1600b141cf36c045c920c997d3c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
