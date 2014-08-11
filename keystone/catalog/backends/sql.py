@@ -50,6 +50,7 @@ class Region(sql.ModelBase, sql.DictBase):
     #                 bad. Remove all of this extra JSON blob stuff.
     #                 See: https://bugs.launchpad.net/keystone/+bug/1265071
     extra = sql.Column(sql.JsonBlob())
+    endpoints = sqlalchemy.orm.relationship("Endpoint", backref="region")
 
 
 class Service(sql.ModelBase, sql.DictBase):
@@ -65,12 +66,16 @@ class Service(sql.ModelBase, sql.DictBase):
 
 class Endpoint(sql.ModelBase, sql.DictBase):
     __tablename__ = 'endpoint'
-    attributes = ['id', 'interface', 'region', 'service_id', 'url',
+    attributes = ['id', 'interface', 'region_id', 'service_id', 'url',
                   'legacy_endpoint_id', 'enabled']
     id = sql.Column(sql.String(64), primary_key=True)
     legacy_endpoint_id = sql.Column(sql.String(64))
     interface = sql.Column(sql.String(8), nullable=False)
-    region = sql.Column(sql.String(255))
+    region_id = sql.Column(sql.String(64),
+                           sql.ForeignKey('region.id',
+                                          ondelete='RESTRICT'),
+                           nullable=True,
+                           default=None)
     service_id = sql.Column(sql.String(64),
                             sql.ForeignKey('service.id'),
                             nullable=False)
@@ -79,9 +84,29 @@ class Endpoint(sql.ModelBase, sql.DictBase):
                          server_default=sqlalchemy.sql.expression.true())
     extra = sql.Column(sql.JsonBlob())
 
+    @property
+    def region(self):
+        return self.region_id
+
+    @region.setter
+    def set_region_id(self, region):
+        self.region_id = region
+
+    def to_dict(self, include_extra_dict=False):
+        d = super(Endpoint, self).to_dict(
+            include_extra_dict=include_extra_dict)
+        d['region'] = self.region_id
+        return d
+
+    @classmethod
+    def from_dict(cls, d):
+        if 'region' in d:
+            d['region_id'] = d['region']
+            del d['region']
+        return super(Endpoint, cls).from_dict(d)
+
 
 class Catalog(catalog.Driver):
-
     # Regions
     def list_regions(self, hints):
         session = sql.get_session()
@@ -118,6 +143,17 @@ class Catalog(catalog.Driver):
             # which is the behavior we want.
             self._get_region(session, parent_region_id)
 
+    def _is_having_endpoints(self, session, region):
+        if region.endpoints is not None and len(region.endpoints) > 0:
+            return True
+        else:
+            children = (session.query(Region).
+                        filter_by(parent_region_id=region.id))
+            for child in children:
+                return self._is_having_endpoints(session, child)
+            else:
+                return False
+
     def get_region(self, region_id):
         session = sql.get_session()
         return self._get_region(session, region_id).to_dict()
@@ -126,6 +162,8 @@ class Catalog(catalog.Driver):
         session = sql.get_session()
         with session.begin():
             ref = self._get_region(session, region_id)
+            if self._is_having_endpoints(session, ref):
+                raise exception.RegionDeletionError(region=ref.id)
             self._delete_child_regions(session, region_id)
             session.delete(ref)
 
@@ -200,6 +238,16 @@ class Catalog(catalog.Driver):
     def create_endpoint(self, endpoint_id, endpoint_ref):
         session = sql.get_session()
         self.get_service(endpoint_ref['service_id'])
+
+        if ('region_id' in endpoint_ref and
+                endpoint_ref['region_id'] is not None):
+            try:
+                self.get_region(endpoint_ref['region_id'])
+            except exception.RegionNotFound:
+                region = dict(id=endpoint_ref['region_id'],
+                              description='',
+                              extra='{}')
+                self.create_region(region)
         new_endpoint = Endpoint.from_dict(endpoint_ref)
         with session.begin():
             session.add(new_endpoint)
@@ -261,7 +309,7 @@ class Catalog(catalog.Driver):
             except exception.MalformedEndpoint:
                 continue  # this failure is already logged in format_url()
 
-            region = endpoint['region']
+            region = endpoint['region_id']
             service_type = endpoint.service['type']
             default_service = {
                 'id': endpoint['id'],
@@ -291,6 +339,7 @@ class Catalog(catalog.Driver):
                 del endpoint['service_id']
                 del endpoint['legacy_endpoint_id']
                 del endpoint['enabled']
+                del endpoint['region']
                 try:
                     endpoint['url'] = core.format_url(endpoint['url'], d)
                 except exception.MalformedEndpoint:
