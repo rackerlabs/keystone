@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_9366d6ba",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 3176,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-11T11:34:01Z",
+      "side": 1,
+      "message": "These 2 lines (once 3 lines) appear together a few times in the code, perhaps it makes sense to move revoked_ids retrieval to _assert_revoked_token_list_matches_token_persistence?",
+      "revId": "70cd28fde463a8f36746bd9ed088a77e326d6468",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
