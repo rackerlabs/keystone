@@ -1268,6 +1268,84 @@ class SqlUpgradeTests(SqlMigrateBase):
         region = session.query(region_table)[0]
         self.assertRaises(AttributeError, getattr, region, 'url')
 
+    def test_endpoint_region_upgrade_columns(self):
+        self.upgrade(53)
+        self.assertTableColumns('endpoint',
+                                ['id', 'legacy_endpoint_id', 'interface',
+                                 'service_id', 'url', 'extra', 'enabled',
+                                 'region_id'])
+
+    def test_endpoint_region_downgrade_columns(self):
+        self.upgrade(53)
+        self.downgrade(52)
+        self.assertTableColumns('endpoint',
+                                ['id', 'legacy_endpoint_id', 'interface',
+                                 'service_id', 'url', 'extra', 'enabled',
+                                 'region'])
+
+    def test_endpoint_region_migration(self):
+        self.upgrade(52)
+        session = self.Session()
+        _region_name = uuid.uuid4().hex
+
+        def add_service():
+            service_id = uuid.uuid4().hex
+
+            service = {
+                'id': service_id,
+                'type': uuid.uuid4().hex
+            }
+
+            self.insert_dict(session, 'service', service)
+
+            return service_id
+
+        def add_endpoint(service_id):
+            endpoint_id = uuid.uuid4().hex
+
+            endpoint = {
+                'id': endpoint_id,
+                'interface': uuid.uuid4().hex[:8],
+                'service_id': service_id,
+                'url': uuid.uuid4().hex,
+                'region': _region_name
+            }
+            self.insert_dict(session, 'endpoint', endpoint)
+
+            return endpoint_id
+
+        _service_id_ = add_service()
+        add_endpoint(_service_id_)
+        add_endpoint(_service_id_)
+
+        # upgrade to 53
+        self.upgrade(53)
+        self.metadata.clear()
+
+        region_table = sqlalchemy.Table('region', self.metadata, autoload=True)
+        _region_query = session.query(region_table).filter_by(id=_region_name)
+        self.assertEqual(1, _region_query.count())
+        _region = _region_query.one()
+
+        endpoint_table = sqlalchemy.Table('endpoint',
+                                          self.metadata,
+                                          autoload=True)
+        self.assertEqual(2, session.query(endpoint_table).
+                         filter_by(region_id=_region.id).count())
+
+        # downgrade to 52
+        self.downgrade(52)
+        self.metadata.clear()
+
+        region_table = sqlalchemy.Table('region', self.metadata, autoload=True)
+        self.assertEqual(0, session.query(region_table).count())
+
+        endpoint_table = sqlalchemy.Table('endpoint',
+                                          self.metadata,
+                                          autoload=True)
+        self.assertEqual(2, session.query(endpoint_table).
+                         filter_by(region=_region_name).count())
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user

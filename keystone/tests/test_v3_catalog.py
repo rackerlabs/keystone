@@ -434,7 +434,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
     def test_create_endpoint_400(self):
         """Call ``POST /endpoints``."""
         ref = self.new_endpoint_ref(service_id=self.service_id)
-        ref["region"] = "0" * 256
+        ref["region_id"] = "0" * 65
         self.post('/endpoints', body={'endpoint': ref}, expected_status=400)
 
     def test_create_endpoint_with_empty_url(self):
@@ -521,6 +521,8 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         del ref['interface']
         ref['publicurl'] = ref.pop('url')
         ref['internalurl'] = None
+        ref['region'] = ref['region_id']
+        del ref['region_id']
         # don't set adminurl to ensure it's absence is handled like internalurl
 
         # create the endpoint on v2 (using a v3 token)
@@ -538,7 +540,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         endpoint_v3 = endpoints.pop()
 
         # these attributes are identical between both APIs
-        self.assertEqual(ref['region'], endpoint_v3['region'])
+        self.assertEqual(ref['region'], endpoint_v3['region_id'])
         self.assertEqual(ref['service_id'], endpoint_v3['service_id'])
         self.assertEqual(ref['description'], endpoint_v3['description'])
 
@@ -557,6 +559,8 @@ class CatalogTestCase(test_v3.RestfulTestCase):
 
         # test for bug 1152635 -- this attribute was being returned by v3
         self.assertNotIn('legacy_endpoint_id', endpoint_v3)
+
+        self.assertEqual(endpoint_v2['region'], endpoint_v3['region_id'])
 
 
 class TestCatalogAPISQL(tests.TestCase):

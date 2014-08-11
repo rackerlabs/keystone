@@ -287,7 +287,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         ref['interface'] = uuid.uuid4().hex[:8]
         ref['service_id'] = service_id
         ref['url'] = uuid.uuid4().hex
-        ref['region'] = uuid.uuid4().hex
+        ref['region_id'] = uuid.uuid4().hex
         ref.update(kwargs)
         return ref
 

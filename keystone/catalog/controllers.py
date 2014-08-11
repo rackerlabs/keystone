@@ -254,6 +254,8 @@ class EndpointV3(controller.V3Controller):
     def filter_endpoint(cls, ref):
         if 'legacy_endpoint_id' in ref:
             ref.pop('legacy_endpoint_id')
+        if 'region' in ref:
+            ref.pop('region')
         return ref
 
     @classmethod
@@ -283,6 +285,9 @@ class EndpointV3(controller.V3Controller):
     def list_endpoints(self, context, filters):
         hints = EndpointV3.build_driver_hints(context, filters)
         refs = self.catalog_api.list_endpoints(hints=hints)
+        for ref in refs:
+            EndpointV3.filter_endpoint(ref)
+
         return EndpointV3.wrap_collection(context, refs, hints=hints)
 
     @controller.protected()

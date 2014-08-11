@@ -1155,7 +1155,7 @@ class AuthCatalog(tests.SQLDriverOverrides, AuthTest):
         exp_endpoint = {
             'id': endpoint_ref['id'],
             'publicURL': endpoint_ref['url'],
-            'region': endpoint_ref['region'],
+            'region': endpoint_ref['region_id'],
         }
 
         self.assertEqual(exp_endpoint, endpoint)
@@ -1187,7 +1187,7 @@ class AuthCatalog(tests.SQLDriverOverrides, AuthTest):
         exp_endpoint = {
             'id': endpoint_ref['id'],
             'publicURL': endpoint_ref['url'],
-            'region': endpoint_ref['region'],
+            'region': endpoint_ref['region_id'],
         }
 
         self.assertEqual(exp_endpoint, endpoint)
