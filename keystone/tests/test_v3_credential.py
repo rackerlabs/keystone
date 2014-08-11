@@ -90,6 +90,17 @@ class CredentialTestCase(CredentialBaseTestCase):
         r = self.get('/credentials', content_type='xml')
         self.assertValidCredentialListResponse(r, ref=self.credential)
 
+    def test_list_credentials_filtered_by_user_id(self):
+        """Call ``GET  /credentials?user_id={user_id}``."""
+        # a credential for self.user already exists
+        credential = self.new_credential_ref(
+            user_id=uuid.uuid4().hex)
+        self.credential_api.create_credential(
+            credential['id'], credential)
+        r = self.get('/credentials?user_id=%s' % self.user['id'])
+        for c in r.result['credentials']:
+            self.assertEqual(self.user['id'], c['user_id'])
+
     def test_create_credential(self):
         """Call ``POST /credentials``."""
         ref = self.new_credential_ref(user_id=self.user['id'])
