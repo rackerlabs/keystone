@@ -1432,4 +1432,12 @@
 # Trust backend driver. (string value)
 #driver=keystone.trust.backends.sql.Trust
 
+# Toggle for trust caching. This has no effect unless global
+# caching is enabled. (boolean value)
+#caching=true
+
+# Time to cache trust data (in seconds). This has no effect
+# unless global and trust caching are enabled. (integer
+# value)
+#cache_time=<None>
 
