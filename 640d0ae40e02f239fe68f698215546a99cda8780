@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_914b1c5e",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-11T20:00:56Z",
+      "side": 1,
+      "message": "Although out of scope of this change, I\u0027m not sure admin_required is correct  for any of these APIs (or below in ec2 credentials).  since that means that that if I had an admin role on any project or domain, I would get full access (including delete) for all credentials system-wide.  I would think that cloud_admin would be more appropriate.  If you agree, perhaps raise a separate bug for this.",
+      "revId": "640d0ae40e02f239fe68f698215546a99cda8780",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_7624bec2",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-11T20:00:56Z",
+      "side": 1,
+      "message": "although I realise this has been copied from the ec2_credentials below, in their rule:owner is too liberal.  We should not include the target in the rule for list_credentials.  In fact, given our code I think it is benign, but to be strict it should just be user_id:%(user_id)s - which should match the filter.",
+      "revId": "640d0ae40e02f239fe68f698215546a99cda8780",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_166b821f",
+        "filename": "keystone/tests/test_v3_credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-11T20:00:56Z",
+      "side": 1,
+      "message": "nit: so while this is a true statement...on its own it\u0027s a bit confusing - I think what you mean is that a credential for self.user already exists so first create a spoiler to test that we only get back credentials that match self.user",
+      "revId": "640d0ae40e02f239fe68f698215546a99cda8780",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
