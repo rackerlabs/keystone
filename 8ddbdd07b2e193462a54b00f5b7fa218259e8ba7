@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_02fc35b5",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-08-11T10:50:34Z",
+      "side": 1,
+      "message": "I left my comments regarding this on patch set 5. But tldr; I would still prefer to see this changed.",
+      "revId": "8ddbdd07b2e193462a54b00f5b7fa218259e8ba7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e238213d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-08-11T10:50:34Z",
+      "side": 1,
+      "message": "haha, would still prefer something else than \u0027r\u0027",
+      "revId": "8ddbdd07b2e193462a54b00f5b7fa218259e8ba7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_62333113",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 802,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-08-11T10:50:34Z",
+      "side": 1,
+      "message": "The comment for this section of code is misleading. It says that there should be only one project granted... yet, the assertion is that there are no roles.",
+      "revId": "8ddbdd07b2e193462a54b00f5b7fa218259e8ba7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e2d4a1bc",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 813,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-08-11T10:50:34Z",
+      "side": 1,
+      "message": "I don\u0027t particularly dig the usage of the name \"group1\", since I would expect there to be a group2 and maybe even a group3. Would prefer just group or new_group. But anyway, it\u0027s no big deal for me if you don\u0027t change it.",
+      "revId": "8ddbdd07b2e193462a54b00f5b7fa218259e8ba7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
