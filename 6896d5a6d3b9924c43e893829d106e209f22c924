@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_40770dd1",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-11T08:19:08Z",
+      "side": 1,
+      "message": "i would rather put seconds here:\n\n - I suspect in the first iteration of making this going to the master branch keystoneclient will not use any caching, dates comparision and so on and it will ask everytime for a new assertion. So there is no reason to issue assertion valid longer that single minutes (i would say no more than 5 minutes).\n\n- you can easily express days using seconds whereas it\u0027s slightly harder to express seconds with days.",
+      "revId": "6896d5a6d3b9924c43e893829d106e209f22c924",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
