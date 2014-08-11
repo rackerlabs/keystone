@@ -3982,6 +3982,31 @@ class PolicyTests(object):
         res = self.policy_api.list_policies()
         self.assertFalse(len([x for x in res if x['id'] == ref['id']]))
 
+    @tests.skip_if_cache_disabled('policy')
+    def test_cache_layer_policy_crud(self):
+        new_policy = self._new_policy_ref()
+        policy_id = new_policy['id']
+        self.policy_api.create_policy(policy_id, new_policy)
+        updated_policy = copy.deepcopy(new_policy)
+        updated_policy['type'] = uuid.uuid4().hex
+        # cache the result
+        self.policy_api.get_policy(policy_id)
+        # update the policy bypassing policy_api
+        self.policy_api.driver.update_policy(policy_id, updated_policy)
+        self.assertDictContainsSubset(new_policy,
+                                      self.policy_api.get_policy(policy_id))
+        self.policy_api.get_policy.invalidate(self.policy_api, policy_id)
+        self.assertDictContainsSubset(updated_policy,
+                                      self.policy_api.get_policy(policy_id))
+        # delete the policy
+        self.policy_api.driver.delete_policy(policy_id)
+        # still get the old policy
+        self.assertDictContainsSubset(updated_policy,
+                                      self.policy_api.get_policy(policy_id))
+        self.policy_api.get_policy.invalidate(self.policy_api, policy_id)
+        self.assertRaises(exception.PolicyNotFound,
+                          self.policy_api.get_policy, policy_id)
+
     def test_get_policy_404(self):
         self.assertRaises(exception.PolicyNotFound,
                           self.policy_api.get_policy,
