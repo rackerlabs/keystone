@@ -3808,7 +3808,7 @@ class CatalogTests(object):
         # create an endpoint attached to the service
         endpoint = {
             'id': uuid.uuid4().hex,
-            'region': uuid.uuid4().hex,
+            'region_id': None,
             'interface': uuid.uuid4().hex[:8],
             'url': uuid.uuid4().hex,
             'service_id': service['id'],
@@ -3836,7 +3836,7 @@ class CatalogTests(object):
         # multiple endpoints associated with a service
         second_endpoint = {
             'id': uuid.uuid4().hex,
-            'region': uuid.uuid4().hex,
+            'region_id': None,
             'interface': uuid.uuid4().hex[:8],
             'url': uuid.uuid4().hex,
             'service_id': service['id'],
@@ -3900,7 +3900,7 @@ class CatalogTests(object):
 
         endpoint = {
             'id': uuid.uuid4().hex,
-            'region': "0" * 255,
+            'region_id': None,
             'service_id': service['id'],
             'interface': 'public',
             'url': uuid.uuid4().hex,
@@ -3917,7 +3917,7 @@ class CatalogTests(object):
             ref = {
                 'id': id_,
                 'interface': 'public',
-                'region': region,
+                'region_id': region,
                 'service_id': service_id,
                 'url': 'http://localhost/%s' % uuid.uuid4().hex,
             }
@@ -3934,12 +3934,18 @@ class CatalogTests(object):
         }
         self.catalog_api.create_service(service_id, service_ref)
 
-        region = uuid.uuid4().hex
+        region = {
+            'id': uuid.uuid4().hex,
+            'description': '',
+            'extra': {}
+        }
+
+        self.catalog_api.create_region(region)
 
         # Create endpoints
-        enabled_endpoint_ref = create_endpoint(service_id, region)
+        enabled_endpoint_ref = create_endpoint(service_id, region['id'])
         disabled_endpoint_ref = create_endpoint(
-            service_id, region, enabled=False, interface='internal')
+            service_id, region['id'], enabled=False, interface='internal')
 
         return service_ref, enabled_endpoint_ref, disabled_endpoint_ref
 
@@ -3959,7 +3965,7 @@ class CatalogTests(object):
             'publicURL': enabled_endpoint_ref['url'],
         }
 
-        region = enabled_endpoint_ref['region']
+        region = enabled_endpoint_ref['region_id']
         self.assertEqual(exp_entry, catalog[region][service_ref['type']])
 
     def test_get_v3_catalog_endpoint_disabled(self):
