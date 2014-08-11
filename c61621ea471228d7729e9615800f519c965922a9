@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_6ab315ec",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 26
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-11T04:10:38Z",
+      "side": 1,
+      "message": "add a space between Stanek and \u003c\n\n  Co-Authored-By: David Stanek \u003cdstanek@dstanek.com\u003e\n\nOtherwise it won\u0027t recognize him",
+      "revId": "c61621ea471228d7729e9615800f519c965922a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
