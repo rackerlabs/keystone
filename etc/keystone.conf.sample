@@ -1245,6 +1245,15 @@
 # Policy backend driver. (string value)
 #driver=keystone.policy.backends.sql.Policy
 
+# Toggle for policy caching. This has no effect unless global
+# caching is enabled. (boolean value)
+#caching=true
+
+# Time to cache policy data (in seconds). This has no effect
+# unless global and policy caching are enabled. (integer
+# value)
+#cache_time=600
+
 # Maximum number of entities that will be returned in a policy
 # collection. (integer value)
 #list_limit=<None>

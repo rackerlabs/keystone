@@ -18,6 +18,7 @@ import abc
 
 import six
 
+from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import manager
 from keystone import config
@@ -25,6 +26,12 @@ from keystone import exception
 
 
 CONF = config.CONF
+
+SHOULD_CACHE = cache.should_cache_fn('policy')
+
+
+def get_expiration_time():
+    return CONF.policy.cache_time or CONF.cache_time
 
 
 @dependency.provider('policy_api')
@@ -39,6 +46,8 @@ class Manager(manager.Manager):
     def __init__(self):
         super(Manager, self).__init__(CONF.policy.driver)
 
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=get_expiration_time)
     def get_policy(self, policy_id):
         try:
             return self.driver.get_policy(policy_id)
@@ -49,7 +58,9 @@ class Manager(manager.Manager):
         if 'id' in policy and policy_id != policy['id']:
             raise exception.ValidationError('Cannot change policy ID')
         try:
-            return self.driver.update_policy(policy_id, policy)
+            ret = self.driver.update_policy(policy_id, policy)
+            self.get_policy.invalidate(self, policy_id)
+            return ret
         except exception.NotFound:
             raise exception.PolicyNotFound(policy_id=policy_id)
 
@@ -62,7 +73,9 @@ class Manager(manager.Manager):
 
     def delete_policy(self, policy_id):
         try:
-            return self.driver.delete_policy(policy_id)
+            ret = self.driver.delete_policy(policy_id)
+            self.get_policy.invalidate(self, policy_id)
+            return ret
         except exception.NotFound:
             raise exception.PolicyNotFound(policy_id=policy_id)
 

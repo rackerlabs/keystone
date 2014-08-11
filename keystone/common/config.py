@@ -435,6 +435,13 @@ FILE_OPTIONS = {
         cfg.StrOpt('driver',
                    default='keystone.policy.backends.sql.Policy',
                    help='Policy backend driver.'),
+        cfg.BoolOpt('caching', default=True,
+                    help='Toggle for policy caching. This has no '
+                         'effect unless global caching is enabled.'),
+        cfg.IntOpt('cache_time', default=600,
+                   help='Time to cache policy data (in seconds). This has no '
+                        'effect unless global and policy caching are '
+                        'enabled.'),
         cfg.IntOpt('list_limit',
                    help='Maximum number of entities that will be returned '
                         'in a policy collection.'),
