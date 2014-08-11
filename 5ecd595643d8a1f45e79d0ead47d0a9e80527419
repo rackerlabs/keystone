@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_457ab076",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2014-08-11T14:09:33Z",
+      "side": 1,
+      "message": "This setting is in the wrong sector.",
+      "revId": "5ecd595643d8a1f45e79d0ead47d0a9e80527419",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e59904d1",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 1228,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2014-08-11T14:09:33Z",
+      "side": 1,
+      "message": "This is the correct place for this setting.",
+      "revId": "5ecd595643d8a1f45e79d0ead47d0a9e80527419",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_052ef841",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2014-08-11T14:09:33Z",
+      "side": 1,
+      "message": "This code is in the wrong sector.",
+      "revId": "5ecd595643d8a1f45e79d0ead47d0a9e80527419",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_450d50e6",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2014-08-11T14:09:33Z",
+      "side": 1,
+      "message": "This is the correct place for this code.",
+      "revId": "5ecd595643d8a1f45e79d0ead47d0a9e80527419",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
