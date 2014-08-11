@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_0a4fe76a",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-11T13:34:43Z",
+      "side": 1,
+      "message": "do we have a use case for this? i don\u0027t see one in the next couple patches",
+      "revId": "1b7b496a4fd3c3213b86d384873a020c8ffebbb3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
