@@ -13,6 +13,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import uuid
+
 import six
 import sqlalchemy
 
@@ -28,8 +30,9 @@ CONF = config.CONF
 
 class Region(sql.ModelBase, sql.DictBase):
     __tablename__ = 'region'
-    attributes = ['id', 'description', 'parent_region_id', 'url']
+    attributes = ['id', 'description', 'name', 'parent_region_id', 'url']
     id = sql.Column(sql.String(64), primary_key=True)
+    name = sql.Column(sql.String(255), nullable=True, unique=True)
     description = sql.Column(sql.String(255), nullable=False)
     url = sql.Column(sql.String(255), nullable=True)
     # NOTE(jaypipes): Right now, using an adjacency list model for
@@ -50,6 +53,7 @@ class Region(sql.ModelBase, sql.DictBase):
     #                 bad. Remove all of this extra JSON blob stuff.
     #                 See: https://bugs.launchpad.net/keystone/+bug/1265071
     extra = sql.Column(sql.JsonBlob())
+    endpoints = sqlalchemy.orm.relationship("Endpoint", backref="region")
 
 
 class Service(sql.ModelBase, sql.DictBase):
@@ -65,12 +69,16 @@ class Service(sql.ModelBase, sql.DictBase):
 
 class Endpoint(sql.ModelBase, sql.DictBase):
     __tablename__ = 'endpoint'
-    attributes = ['id', 'interface', 'region', 'service_id', 'url',
+    attributes = ['id', 'interface', 'region_id', 'service_id', 'url',
                   'legacy_endpoint_id', 'enabled']
     id = sql.Column(sql.String(64), primary_key=True)
     legacy_endpoint_id = sql.Column(sql.String(64))
     interface = sql.Column(sql.String(8), nullable=False)
-    region = sql.Column(sql.String(255))
+    region_id = sql.Column(sql.String(64),
+                           sql.ForeignKey('region.id',
+                                          ondelete='RESTRICT'),
+                           nullable=True,
+                           default=None)
     service_id = sql.Column(sql.String(64),
                             sql.ForeignKey('service.id'),
                             nullable=False)
@@ -81,13 +89,19 @@ class Endpoint(sql.ModelBase, sql.DictBase):
 
 
 class Catalog(catalog.Driver):
-
     # Regions
     def list_regions(self, hints):
         session = sql.get_session()
         regions = session.query(Region)
         regions = sql.filter_limit_query(Region, regions, hints)
         return [s.to_dict() for s in list(regions)]
+
+    def get_region_by_name(self, region_name):
+        session = sql.get_session()
+        ref = session.query(Region).filter_by(name=region_name).first()
+        if ref is None:
+            raise exception.RegionNotFound(region_id=region_name)
+        return ref.to_dict()
 
     def _get_region(self, session, region_id):
         ref = session.query(Region).get(region_id)
@@ -118,6 +132,18 @@ class Catalog(catalog.Driver):
             # which is the behavior we want.
             self._get_region(session, parent_region_id)
 
+    def _is_having_endpoints(self, session, region):
+        if (region.endpoints is not None and
+                len(region.endpoints) > 0):
+            return True
+        else:
+            children = (session.query(Region).
+                        filter_by(parent_region_id=region.id))
+            for child in children:
+                return self._is_having_endpoints(session, child)
+            else:
+                return False
+
     def get_region(self, region_id):
         session = sql.get_session()
         return self._get_region(session, region_id).to_dict()
@@ -126,6 +152,8 @@ class Catalog(catalog.Driver):
         session = sql.get_session()
         with session.begin():
             ref = self._get_region(session, region_id)
+            if self._is_having_endpoints(session, ref):
+                raise exception.RegionDeletionError(region=ref.name)
             self._delete_child_regions(session, region_id)
             session.delete(ref)
 
@@ -197,13 +225,45 @@ class Catalog(catalog.Driver):
         return ref.to_dict()
 
     # Endpoints
+    def _wrap_with_region(self, endpoint_ref):
+        _endpoint_ref = endpoint_ref.copy()
+        if 'region_id' in _endpoint_ref:
+            if _endpoint_ref['region_id'] is not None:
+                region = self.get_region(_endpoint_ref['region_id'])
+                _endpoint_ref['region'] = region['name']
+            else:
+                _endpoint_ref['region'] = None
+            del _endpoint_ref['region_id']
+        return _endpoint_ref
+
+    def _wrap_with_region_id(self, endpoint_ref):
+        _endpoint_ref = endpoint_ref.copy()
+        if 'region' in _endpoint_ref:
+            if _endpoint_ref['region'] is not None:
+                try:
+                    region = self.get_region_by_name(_endpoint_ref['region'])
+                except exception.RegionNotFound:
+                    region = dict(id=uuid.uuid4().hex,
+                                  name=_endpoint_ref['region'],
+                                  description='Created by keystone',
+                                  extra='{}')
+                    self.create_region(region)
+
+                _endpoint_ref['region_id'] = region['id']
+            else:
+                _endpoint_ref['region_id'] = None
+
+            del _endpoint_ref['region']
+        return _endpoint_ref
+
     def create_endpoint(self, endpoint_id, endpoint_ref):
         session = sql.get_session()
         self.get_service(endpoint_ref['service_id'])
+        endpoint_ref = self._wrap_with_region_id(endpoint_ref)
         new_endpoint = Endpoint.from_dict(endpoint_ref)
         with session.begin():
             session.add(new_endpoint)
-        return new_endpoint.to_dict()
+        return self._wrap_with_region(new_endpoint.to_dict())
 
     def delete_endpoint(self, endpoint_id):
         session = sql.get_session()
@@ -219,16 +279,18 @@ class Catalog(catalog.Driver):
 
     def get_endpoint(self, endpoint_id):
         session = sql.get_session()
-        return self._get_endpoint(session, endpoint_id).to_dict()
+        endpoint_ref = self._get_endpoint(session, endpoint_id).to_dict()
+        return self._wrap_with_region(endpoint_ref)
 
     @sql.truncated
     def list_endpoints(self, hints):
         session = sql.get_session()
         endpoints = session.query(Endpoint)
         endpoints = sql.filter_limit_query(Endpoint, endpoints, hints)
-        return [e.to_dict() for e in list(endpoints)]
+        return [self._wrap_with_region(e.to_dict()) for e in list(endpoints)]
 
     def update_endpoint(self, endpoint_id, endpoint_ref):
+        endpoint_ref = self._wrap_with_region_id(endpoint_ref)
         session = sql.get_session()
         with session.begin():
             ref = self._get_endpoint(session, endpoint_id)
@@ -239,7 +301,7 @@ class Catalog(catalog.Driver):
                 if attr != 'id':
                     setattr(ref, attr, getattr(new_endpoint, attr))
             ref.extra = new_endpoint.extra
-        return ref.to_dict()
+        return self._wrap_with_region(ref.to_dict())
 
     def get_catalog(self, user_id, tenant_id, metadata=None):
         substitutions = dict(six.iteritems(CONF))
@@ -261,7 +323,7 @@ class Catalog(catalog.Driver):
             except exception.MalformedEndpoint:
                 continue  # this failure is already logged in format_url()
 
-            region = endpoint['region']
+            region = self.get_region(endpoint.region_id)['name']
             service_type = endpoint.service['type']
             default_service = {
                 'id': endpoint['id'],
@@ -288,6 +350,7 @@ class Catalog(catalog.Driver):
 
         def make_v3_endpoints(endpoints):
             for endpoint in (ep.to_dict() for ep in endpoints if ep.enabled):
+                endpoint = self._wrap_with_region(endpoint)
                 del endpoint['service_id']
                 del endpoint['legacy_endpoint_id']
                 del endpoint['enabled']
