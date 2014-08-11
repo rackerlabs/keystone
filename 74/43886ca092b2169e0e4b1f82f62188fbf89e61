@@ -1,0 +1,17 @@
+Verified+2: Jenkins
+Workflow+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: guang-yee <guang.yee@hp.com>
+Code-Review+2: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+1: Marek Denis <marek.denis@cern.ch>
+Code-Review+1: Juan Antonio Osorio Robles <juan.osorio.robles@ericsson.com>
+Code-Review+1: Bob Thyne <bob.thyne@hp.com>
+Code-Review+1: David J Hu <david.hu@hp.com>
+Code-Review+1: Sam Leong <chio-fai-sam.leong@hp.com>
+Code-Review+1: Ajaya Agrawal <ajku.agr@gmail.com>
+Code-Review+1: Ryan Oshima <ryan.oshima@hp.com>
+Code-Review+1: Alexey Miroshkin <alexey.miroshkin@ru.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 11 Aug 2014 21:28:10 +0000
+Reviewed-on: https://review.openstack.org/109173
+Project: openstack/keystone
+Branch: refs/heads/master
