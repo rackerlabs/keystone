@@ -71,8 +71,7 @@ class XmlDeserializer(object):
 
     def __init__(self):
         if etree is None:
-            LOG.warning('lxml not installed')
-            raise exception.UnexpectedError()
+            raise exception.UnexpectedError(_('lxml not installed'))
 
         self.parser = etree.XMLParser(resolve_entities=False,
                                       remove_comments=True,
@@ -195,8 +194,7 @@ class XmlSerializer(object):
 
     def __init__(self):
         if etree is None:
-            LOG.warning('lxml not installed')
-            raise exception.UnexpectedError()
+            raise exception.UnexpectedError(_('lxml not installed'))
 
     def __call__(self, d, xmlns=None):
         """Returns an xml etree populated by the given dictionary.
