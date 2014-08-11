@@ -542,6 +542,58 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
                           endpoint['id'],
                           endpoint.copy())
 
+    def test_delete_region_with_endpoint(self):
+        # create a region
+        region = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+        }
+        self.catalog_api.create_region(region)
+
+        # create a child region
+        child_region = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'parent_id': region['id']
+        }
+        self.catalog_api.create_region(child_region)
+        # create a service
+        service = {
+            'id': uuid.uuid4().hex,
+            'type': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+        }
+        self.catalog_api.create_service(service['id'], service)
+
+        # create an endpoint attached to the service and child region
+        child_endpoint = {
+            'id': uuid.uuid4().hex,
+            'region': child_region['name'],
+            'interface': uuid.uuid4().hex[:8],
+            'url': uuid.uuid4().hex,
+            'service_id': service['id'],
+        }
+        self.catalog_api.create_endpoint(child_endpoint['id'], child_endpoint)
+        self.assertRaises(exception.RegionDeletionError,
+                          self.catalog_api.delete_region,
+                          child_region['id'])
+
+        # create an endpoint attached to the service and parent region
+        endpoint = {
+            'id': uuid.uuid4().hex,
+            'region': region['name'],
+            'interface': uuid.uuid4().hex[:8],
+            'url': uuid.uuid4().hex,
+            'service_id': service['id'],
+        }
+        self.catalog_api.create_endpoint(endpoint['id'], endpoint)
+        self.assertRaises(exception.RegionDeletionError,
+                          self.catalog_api.delete_region,
+                          region['id'])
+
 
 class SqlPolicy(SqlTests, test_backend.PolicyTests):
     pass
