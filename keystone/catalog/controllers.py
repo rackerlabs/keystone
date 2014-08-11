@@ -77,6 +77,7 @@ class Endpoint(controller.V2Controller):
                 legacy_ep['id'] = legacy_ep.pop('legacy_endpoint_id')
                 legacy_ep.pop('interface')
                 legacy_ep.pop('url')
+                legacy_ep['region'] = legacy_ep.pop('region_id')
 
                 legacy_endpoints[endpoint['legacy_endpoint_id']] = legacy_ep
             else:
@@ -95,6 +96,15 @@ class Endpoint(controller.V2Controller):
         self._require_attribute(endpoint, 'publicurl')
         # service_id is necessary
         self._require_attribute(endpoint, 'service_id')
+
+        if 'region' in endpoint and endpoint['region'] is not None:
+            try:
+                self.catalog_api.get_region(endpoint['region'])
+            except exception.RegionNotFound:
+                region = dict(id=endpoint['region'],
+                              description='',
+                              extra='{}')
+                self.catalog_api.create_region(region)
 
         legacy_endpoint_ref = endpoint.copy()
 
@@ -117,6 +127,7 @@ class Endpoint(controller.V2Controller):
             endpoint_ref['legacy_endpoint_id'] = legacy_endpoint_id
             endpoint_ref['interface'] = interface
             endpoint_ref['url'] = url
+            endpoint_ref['region_id'] = endpoint_ref.pop('region')
 
             self.catalog_api.create_endpoint(endpoint_ref['id'], endpoint_ref)
 
@@ -283,6 +294,9 @@ class EndpointV3(controller.V3Controller):
     def list_endpoints(self, context, filters):
         hints = EndpointV3.build_driver_hints(context, filters)
         refs = self.catalog_api.list_endpoints(hints=hints)
+        for ref in refs:
+            EndpointV3.filter_endpoint(ref)
+
         return EndpointV3.wrap_collection(context, refs, hints=hints)
 
     @controller.protected()
