@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_93e17d99",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-11T09:08:21Z",
+      "side": 1,
+      "message": "I think, if we put an \"IF-ELSE\" statement, it will increase the complexity of the code (http://en.wikipedia.org/wiki/Cyclomatic_complexity#Definition). Otherwise, in my opinion, the code is enough plain.\n\nWhat do you think Juan Antonio?, please, let me know if you are agree with my answer.",
+      "parentUuid": "baada198_836a6bb3",
+      "revId": "39048655c6a206f000e50d24ddd39f6116367dd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_23143f40",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 5
@@ -117,6 +135,24 @@
       "writtenOn": "2014-08-08T16:10:23Z",
       "side": 1,
       "message": "Instead of just checking for the lengths of the returned lists it would be nice to see if the value was what you expected. This goes for all of the tests below.",
+      "revId": "39048655c6a206f000e50d24ddd39f6116367dd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_16fc7bb5",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1576,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-11T09:08:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_fd60f1a5",
       "revId": "39048655c6a206f000e50d24ddd39f6116367dd1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
