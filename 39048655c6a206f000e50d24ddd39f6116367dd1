@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_626091a4",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-08-11T17:40:51Z",
+      "side": 1,
+      "message": "Even though it increases the \"different paths\" through the source code. What we want to achieve is to have readable and hopefully efficient code. Though my emphasis is usually on readability, since you want your code to be maintainable. Anyway, to someone that just takes a glimpse at your source code (which I tested with the colleagues seating beside me), assigning a variable, and then replacing it on the line below seemed somewhat... out of place maybe? or slightly confusing. I really think that your intent becomes more apparent if you put the code in the way that I proposed initially.\n\nI do like the fact that you\u0027re trying to reduce code complexity, and it\u0027s a very good thing to do! But I think that would apply to a bit bigger pieces, other than this simple IF ... ELSE ... statement.\n\nOn the other hand, if you want to be really explicit about your intent, you could even separate the whole chunk to a separate function, there you can explain in the doc string why you are overwriting project_subtree_dn instead of using what comes from self.project.tree_dn .",
+      "parentUuid": "baada198_93e17d99",
+      "revId": "39048655c6a206f000e50d24ddd39f6116367dd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_23143f40",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 5
