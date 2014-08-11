@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_e293b04b",
+        "filename": "keystone/tests/test_backend_ldap_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-08-11T17:46:22Z",
+      "side": 1,
+      "message": "Interesting. We have the @tests.skip_if_cache_disabled decorator there. So does that mean this test will be skipping as caching for identity was disabled to begin with?",
+      "revId": "32cc816a0dbc9200b510b304dc0003ad9153f762",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
