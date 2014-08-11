@@ -49,6 +49,10 @@ class RulesPolicy(tests.TestCase, test_backend.PolicyTests):
         self.assertRaises(exception.NotImplemented,
                           super(RulesPolicy, self).test_delete)
 
+    def test_cache_layer_policy_crud(self):
+        self.assertRaises(exception.NotImplemented,
+                          super(RulesPolicy, self).test_cache_layer_policy_crud)
+
     def test_get_policy_404(self):
         self.assertRaises(exception.NotImplemented,
                           super(RulesPolicy, self).test_get_policy_404)
