@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_294ad623",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-12T09:17:47Z",
+      "side": 1,
+      "message": "Ok, will check it and raise a separate bug if needed.",
+      "parentUuid": "baada198_914b1c5e",
+      "revId": "640d0ae40e02f239fe68f698215546a99cda8780",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_7624bec2",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_c96f9a91",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-12T09:17:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_7624bec2",
+      "revId": "640d0ae40e02f239fe68f698215546a99cda8780",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_166b821f",
         "filename": "keystone/tests/test_v3_credential.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2014-08-11T20:00:56Z",
       "side": 1,
       "message": "nit: so while this is a true statement...on its own it\u0027s a bit confusing - I think what you mean is that a credential for self.user already exists so first create a spoiler to test that we only get back credentials that match self.user",
+      "revId": "640d0ae40e02f239fe68f698215546a99cda8780",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_bb52afd7",
+        "filename": "keystone/tests/test_v3_credential.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-12T09:17:47Z",
+      "side": 1,
+      "message": "Right, it was a comment for myself, should remove it.",
+      "parentUuid": "baada198_166b821f",
       "revId": "640d0ae40e02f239fe68f698215546a99cda8780",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
