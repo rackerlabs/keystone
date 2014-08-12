@@ -249,7 +249,7 @@ FILE_OPTIONS = {
                         'events if revoke extension is enabled (in seconds). '
                         'This has no effect unless global and token '
                         'caching are enabled.'),
-        cfg.IntOpt('cache_time',
+        cfg.IntOpt('cache_time', default=600,
                    help='Time to cache tokens (in seconds). This has no '
                         'effect unless global and token caching are '
                         'enabled.'),
@@ -401,7 +401,7 @@ FILE_OPTIONS = {
         cfg.BoolOpt('caching', default=True,
                     help='Toggle for assignment caching. This has no effect '
                          'unless global caching is enabled.'),
-        cfg.IntOpt('cache_time',
+        cfg.IntOpt('cache_time', default=600,
                    help='TTL (in seconds) to cache assignment data. This has '
                         'no effect unless global caching is enabled.'),
         cfg.IntOpt('list_limit',
@@ -768,7 +768,7 @@ FILE_OPTIONS = {
         cfg.BoolOpt('caching', default=True,
                     help='Toggle for catalog caching. This has no '
                          'effect unless global caching is enabled.'),
-        cfg.IntOpt('cache_time',
+        cfg.IntOpt('cache_time', default=600,
                    help='Time to cache catalog data (in seconds). This has no '
                         'effect unless global and catalog caching are '
                         'enabled.'),
