@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_5b541e55",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-12T15:41:18Z",
+      "side": 1,
+      "message": "I think this actually needs to have a very short default. As written this would cache essentially forever. This is dangerous because switching from None to another value is nearly impossible unless you flush the entire cache.",
+      "revId": "9052f19bd1d1161644852437ca96da6cfd5d07d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
