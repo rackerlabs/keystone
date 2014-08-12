@@ -12,15 +12,18 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
 import json
 import uuid
 
 from keystoneclient.common import cms
+import mock
 import six
 from testtools import matchers
 
 from keystone.common import extension as keystone_extension
 from keystone import config
+from keystone.openstack.common import timeutils
 from keystone.tests import rest
 
 
@@ -1214,9 +1217,18 @@ class JsonTestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
 
     def _fetch_parse_revocation_list(self):
 
+        now = timeutils.utcnow()
+
         token1 = self.get_scoped_token()
 
-        token2 = self.get_scoped_token()
+        # NOTE(morganfainberg): due to limited resolution on token expiry,
+        # ensure that tokens are not both revoked due to the expiration time
+        # being an exact duplicate, we add 5 seconds to utcnow for the second
+        # token.
+        with mock.patch.object(timeutils, 'utcnow') as mocked:
+            mocked.return_value = now + datetime.timedelta(seconds=5)
+            token2 = self.get_scoped_token()
+
         self.admin_request(method='DELETE',
                            path='/v2.0/tokens/%s' % token2,
                            token=token1)
