@@ -455,7 +455,7 @@
 
 # TTL (in seconds) to cache assignment data. This has no
 # effect unless global caching is enabled. (integer value)
-#cache_time=<None>
+#cache_time=600
 
 # Maximum number of entities that will be returned in an
 # assignment collection. (integer value)
@@ -549,7 +549,7 @@
 # Time to cache catalog data (in seconds). This has no effect
 # unless global and catalog caching are enabled. (integer
 # value)
-#cache_time=<None>
+#cache_time=600
 
 # Maximum number of entities that will be returned in a
 # catalog collection. (integer value)
@@ -1389,7 +1389,7 @@
 
 # Time to cache tokens (in seconds). This has no effect unless
 # global and token caching are enabled. (integer value)
-#cache_time=<None>
+#cache_time=600
 
 # Revoke token by token identifier. Setting revoke_by_id to
 # true enables various forms of enumerating tokens, e.g. `list
