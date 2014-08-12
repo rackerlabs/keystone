@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_923a0ce5",
+        "filename": "keystone/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-12T20:41:12Z",
+      "side": 1,
+      "message": "this whole method is now really weird. using \"sources\" in the variable name just makes this all more confusing, and i don\u0027t see why it shouldn\u0027t just be \"_routers,\" except for the fact that there\u0027s already a v3routers variable in this method, and it would be even less clear how they\u0027re distinct. \u003c/confusing\u003e",
+      "revId": "eacc44fa549999464a03e0e7643f28d58a0cf231",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
