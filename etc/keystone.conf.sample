@@ -128,6 +128,11 @@
 # truncated to the maximum length. (boolean value)
 #strict_password_check=false
 
+# Time to cache entities (in seconds). This is only used when
+# caching is enabled and no section specific value is set.
+# (integer value)
+#cache_time=600
+
 
 #
 # Options defined in oslo.messaging

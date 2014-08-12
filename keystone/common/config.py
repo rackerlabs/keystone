@@ -138,7 +138,11 @@ FILE_OPTIONS = {
                          'exceeds the maximum length, the operation will fail '
                          'with an HTTP 403 Forbidden error. If set to false, '
                          'passwords are automatically truncated to the '
-                         'maximum length.')],
+                         'maximum length.'),
+        cfg.IntOpt('cache_time', default=600,
+                   help='Time to cache entities (in seconds). This is only '
+                        'used when caching is enabled and no section specific '
+                        'value is set.')],
     'identity': [
         cfg.StrOpt('default_domain_id', default='default',
                    help='This references the domain to use for all '
