@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_8d0e71e3",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-12T20:46:01Z",
+      "side": 1,
+      "message": "i\u0027d just return here for simplicity - naming the dict doesn\u0027t add anything meaningful",
+      "revId": "1dd5bfeeff380bc73ebccff16ef890eeaddf7c56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0dfa61ba",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-12T20:46:01Z",
+      "side": 1,
+      "message": "extra whitespace can be cut",
+      "revId": "1dd5bfeeff380bc73ebccff16ef890eeaddf7c56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_ed136d00",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-12T20:46:01Z",
+      "side": 1,
+      "message": "is the trailing slash required?",
+      "revId": "1dd5bfeeff380bc73ebccff16ef890eeaddf7c56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
