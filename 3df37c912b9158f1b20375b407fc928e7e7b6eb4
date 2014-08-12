@@ -224,6 +224,23 @@
     },
     {
       "key": {
+        "uuid": "baada198_c71dc162",
+        "filename": "keystone/common/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-12T10:06:47Z",
+      "side": 1,
+      "message": "According PEP8 \"The preferred way of wrapping long lines is by using Python\u0027s implied line continuation inside parentheses, brackets and braces. Long lines can be broken over multiple lines by wrapping expressions in parentheses. These should be used in preference to using a backslash for line continuation.\"",
+      "revId": "3df37c912b9158f1b20375b407fc928e7e7b6eb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_f8141beb",
         "filename": "keystone/common/utils.py",
         "patchSetId": 1
