@@ -26,6 +26,7 @@ from keystone.common import manager
 from keystone import config
 from keystone import exception
 from keystone.i18n import _
+from keystone.i18n import _LE
 from keystone import notifications
 from keystone.openstack.common import log
 
@@ -52,19 +53,19 @@ def format_url(url, substitutions):
                   {"url": url})
         raise exception.MalformedEndpoint(endpoint=url)
     except KeyError as e:
-        LOG.error(_("Malformed endpoint %(url)s - unknown key %(keyerror)s"),
+        LOG.error(_LE("Malformed endpoint %(url)s - unknown key %(keyerror)s"),
                   {"url": url,
                    "keyerror": e})
         raise exception.MalformedEndpoint(endpoint=url)
     except TypeError as e:
-        LOG.error(_("Malformed endpoint '%(url)s'. The following type error "
-                    "occurred during string substitution: %(typeerror)s"),
+        LOG.error(_LE("Malformed endpoint '%(url)s'. The following type error "
+                      "occurred during string substitution: %(typeerror)s"),
                   {"url": url,
                    "typeerror": e})
         raise exception.MalformedEndpoint(endpoint=url)
     except ValueError as e:
-        LOG.error(_("Malformed endpoint %s - incomplete format "
-                    "(are you missing a type notifier ?)"), url)
+        LOG.error(_LE("Malformed endpoint %s - incomplete format "
+                      "(are you missing a type notifier ?)"), url)
         raise exception.MalformedEndpoint(endpoint=url)
     return result
 
@@ -168,6 +169,9 @@ class Manager(manager.Manager):
     def create_endpoint(self, endpoint_id, endpoint_ref):
         try:
             return self.driver.create_endpoint(endpoint_id, endpoint_ref)
+        except exception.RegionNotFound:
+            raise exception.ValidationError(attribute='endpoint region_id',
+                                            target='region table')
         except exception.NotFound:
             service_id = endpoint_ref.get('service_id')
             raise exception.ServiceNotFound(service_id=service_id)

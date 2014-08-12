@@ -14,6 +14,7 @@
 
 """Notifications module for OpenStack Identity Service resources"""
 
+import collections
 import inspect
 import logging
 import socket
@@ -23,6 +24,7 @@ from oslo import messaging
 import pycadf
 from pycadf import cadftaxonomy as taxonomy
 from pycadf import cadftype
+from pycadf import credential
 from pycadf import eventfactory
 from pycadf import resource
 
@@ -38,7 +40,13 @@ notifier_opts = [
 LOG = log.getLogger(__name__)
 # NOTE(gyee): actions that can be notified. One must update this list whenever
 # a new action is supported.
-ACTIONS = frozenset(['created', 'deleted', 'disabled', 'updated'])
+_ACTIONS = collections.namedtuple(
+    'NotificationActions',
+    'created, deleted, disabled, updated, internal')
+ACTIONS = _ACTIONS(created='created', deleted='deleted', disabled='disabled',
+                   updated='updated', internal='internal')
+
+SAML_AUDIT_TYPE = 'http://docs.oasis-open.org/security/saml/v2.0'
 # resource types that can be notified
 _SUBSCRIBERS = {}
 _notifier = None
@@ -68,6 +76,12 @@ except AttributeError:  # Python 2.6 support
             callargs[argspec.args[n]] = arg
 
         return callargs
+
+# NOTE(morganfainberg): Special case notifications that are only used
+# internally for handling token persistence token deletions
+INVALIDATE_USER_TOKEN_PERSISTENCE = 'invalidate_user_tokens'
+INVALIDATE_USER_PROJECT_TOKEN_PERSISTENCE = 'invalidate_user_project_tokens'
+INVALIDATE_USER_OAUTH_CONSUMER_TOKENS = 'invalidate_user_consumer_tokens'
 
 
 class ManagerNotificationWrapper(object):
@@ -115,22 +129,28 @@ class ManagerNotificationWrapper(object):
 
 def created(*args, **kwargs):
     """Decorator to send notifications for ``Manager.create_*`` methods."""
-    return ManagerNotificationWrapper('created', *args, **kwargs)
+    return ManagerNotificationWrapper(ACTIONS.created, *args, **kwargs)
 
 
 def updated(*args, **kwargs):
     """Decorator to send notifications for ``Manager.update_*`` methods."""
-    return ManagerNotificationWrapper('updated', *args, **kwargs)
+    return ManagerNotificationWrapper(ACTIONS.updated, *args, **kwargs)
 
 
 def disabled(*args, **kwargs):
     """Decorator to send notifications when an object is disabled."""
-    return ManagerNotificationWrapper('disabled', *args, **kwargs)
+    return ManagerNotificationWrapper(ACTIONS.disabled, *args, **kwargs)
 
 
 def deleted(*args, **kwargs):
     """Decorator to send notifications for ``Manager.delete_*`` methods."""
-    return ManagerNotificationWrapper('deleted', *args, **kwargs)
+    return ManagerNotificationWrapper(ACTIONS.deleted, *args, **kwargs)
+
+
+def internal(*args, **kwargs):
+    """Decorator to send notifications for internal notifications only."""
+    kwargs['public'] = False
+    return ManagerNotificationWrapper(ACTIONS.internal, *args, **kwargs)
 
 
 def _get_callback_info(callback):
@@ -146,7 +166,8 @@ def register_event_callback(event, resource_type, callbacks):
     if event not in ACTIONS:
         raise ValueError(_('%(event)s is not a valid notification event, must '
                            'be one of: %(actions)s') %
-                         {'event': event, 'actions': ', '.join(ACTIONS)})
+                         {'event': event,
+                          'actions': ', '.join(str(a) for a in ACTIONS)})
 
     if not hasattr(callbacks, '__iter__'):
         callbacks = [callbacks]
@@ -381,6 +402,21 @@ class CadfRoleAssignmentNotificationWrapper(object):
                 return result
 
         return wrapper
+
+
+def send_saml_audit_notification(action, context, user_id, group_ids,
+                                 identity_provider, protocol, token_id,
+                                 outcome):
+    initiator = _get_request_audit_info(context)
+    audit_type = SAML_AUDIT_TYPE
+    user_id = user_id or taxonomy.UNKNOWN
+    token_id = token_id or taxonomy.UNKNOWN
+    group_ids = group_ids or []
+    cred = credential.FederatedCredential(token=token_id, type=audit_type,
+                                          identity_provider=identity_provider,
+                                          user=user_id, groups=group_ids)
+    initiator.credential = cred
+    _send_audit_notification(action, initiator, outcome)
 
 
 def _send_audit_notification(action, initiator, outcome, **kwargs):

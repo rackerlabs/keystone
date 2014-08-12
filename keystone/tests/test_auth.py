@@ -996,7 +996,7 @@ class AuthWithTrust(AuthTest):
                          " only get the two roles specified in the trust.")
 
     def assert_token_count_for_trust(self, trust, expected_value):
-        tokens = self.trust_controller.token_api._list_tokens(
+        tokens = self.token_provider_api._persistence._list_tokens(
             self.trustee['id'], trust_id=trust['id'])
         token_count = len(tokens)
         self.assertEqual(expected_value, token_count)
@@ -1006,7 +1006,8 @@ class AuthWithTrust(AuthTest):
         self.assert_token_count_for_trust(new_trust, 0)
         self.fetch_v2_token_from_trust(new_trust)
         self.assert_token_count_for_trust(new_trust, 1)
-        self.token_api.delete_tokens_for_user(self.trustee['id'])
+        self.token_provider_api._persistence.delete_tokens_for_user(
+            self.trustee['id'])
         self.assert_token_count_for_trust(new_trust, 0)
 
     def test_token_from_trust_cant_get_another_token(self):
@@ -1026,12 +1027,14 @@ class AuthWithTrust(AuthTest):
             unscoped_token['access']['token']['id'])
         self.fetch_v2_token_from_trust(new_trust)
         trust_id = new_trust['id']
-        tokens = self.token_api._list_tokens(self.trustor['id'],
-                                             trust_id=trust_id)
+        tokens = self.token_provider_api._persistence._list_tokens(
+            self.trustor['id'],
+            trust_id=trust_id)
         self.assertEqual(1, len(tokens))
         self.trust_controller.delete_trust(context, trust_id=trust_id)
-        tokens = self.token_api._list_tokens(self.trustor['id'],
-                                             trust_id=trust_id)
+        tokens = self.token_provider_api._persistence._list_tokens(
+            self.trustor['id'],
+            trust_id=trust_id)
         self.assertEqual(0, len(tokens))
 
     def test_token_from_trust_with_no_role_fails(self):
@@ -1152,12 +1155,18 @@ class AuthCatalog(tests.SQLDriverOverrides, AuthTest):
         return config_files
 
     def _create_endpoints(self):
+        def create_region(**kwargs):
+            ref = {'id': uuid.uuid4().hex}
+            ref.update(kwargs)
+            self.catalog_api.create_region(ref)
+            return ref
+
         def create_endpoint(service_id, region, **kwargs):
             id_ = uuid.uuid4().hex
             ref = {
                 'id': id_,
                 'interface': 'public',
-                'region': region,
+                'region_id': region,
                 'service_id': service_id,
                 'url': 'http://localhost/%s' % uuid.uuid4().hex,
             }
@@ -1180,16 +1189,16 @@ class AuthCatalog(tests.SQLDriverOverrides, AuthTest):
         enabled_service_ref = create_service(enabled=True)
         disabled_service_ref = create_service(enabled=False)
 
-        region = uuid.uuid4().hex
+        region = create_region()
 
         # Create endpoints
         enabled_endpoint_ref = create_endpoint(
-            enabled_service_ref['id'], region)
+            enabled_service_ref['id'], region['id'])
         create_endpoint(
-            enabled_service_ref['id'], region, enabled=False,
+            enabled_service_ref['id'], region['id'], enabled=False,
             interface='internal')
         create_endpoint(
-            disabled_service_ref['id'], region)
+            disabled_service_ref['id'], region['id'])
 
         return enabled_endpoint_ref
 
@@ -1214,7 +1223,7 @@ class AuthCatalog(tests.SQLDriverOverrides, AuthTest):
         exp_endpoint = {
             'id': endpoint_ref['id'],
             'publicURL': endpoint_ref['url'],
-            'region': endpoint_ref['region'],
+            'region': endpoint_ref['region_id'],
         }
 
         self.assertEqual(exp_endpoint, endpoint)
@@ -1246,7 +1255,7 @@ class AuthCatalog(tests.SQLDriverOverrides, AuthTest):
         exp_endpoint = {
             'id': endpoint_ref['id'],
             'publicURL': endpoint_ref['url'],
-            'region': endpoint_ref['region'],
+            'region': endpoint_ref['region_id'],
         }
 
         self.assertEqual(exp_endpoint, endpoint)

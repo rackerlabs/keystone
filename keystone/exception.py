@@ -123,6 +123,13 @@ class PasswordVerificationError(Error):
     title = 'Forbidden'
 
 
+class RegionDeletionError(Error):
+    message_format = _("Unable to delete region %(region_id)s because it or "
+                       "its child regions have associated endpoints.")
+    code = 403
+    title = 'Forbidden'
+
+
 class PKITokenExpected(Error):
     message_format = _('The certificates you requested are not available. '
                        'It is likely that this server does not use PKI tokens '
@@ -203,6 +210,12 @@ class CrossBackendNotAllowed(Forbidden):
                        "user is %(user_id)s")
 
 
+class InvalidPolicyAssociation(Forbidden):
+    message_format = _("Invalid mix of entities for policy association - "
+                       "Endpoint: %(endpoint_id)s, Service: %(service_id)s, "
+                       "Region: %(region_id)s")
+
+
 class NotFound(Error):
     message_format = _("Could not find: %(target)s")
     code = 404
@@ -223,6 +236,10 @@ class MetadataNotFound(NotFound):
 
 class PolicyNotFound(NotFound):
     message_format = _("Could not find policy: %(policy_id)s")
+
+
+class PolicyAssociationNotFound(NotFound):
+    message_format = _("Could not find policy association")
 
 
 class RoleNotFound(NotFound):
@@ -383,3 +400,11 @@ class MigrationNotProvided(Exception):
 class UnsupportedTokenVersionException(Exception):
     """Token version is unrecognizable or unsupported."""
     pass
+
+
+class SAMLSigningError(UnexpectedError):
+    debug_message_format = _('Unable to sign SAML assertion. It is likely '
+                             'that this server does not have xmlsec1 '
+                             'installed, or this is the result of '
+                             'misconfiguration. Reason %(reason)s')
+    title = 'Error signing SAML assertion'

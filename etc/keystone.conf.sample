@@ -366,7 +366,7 @@
 #logging_exception_prefix=%(asctime)s.%(msecs)03d %(process)d TRACE %(name)s %(instance)s
 
 # List of logger=LEVEL pairs. (list value)
-#default_log_levels=amqp=WARN,amqplib=WARN,boto=WARN,qpid=WARN,sqlalchemy=WARN,suds=INFO,oslo.messaging=INFO,iso8601=WARN,requests.packages.urllib3.connectionpool=WARN,urllib3.connectionpool=WARN
+#default_log_levels=amqp=WARN,amqplib=WARN,boto=WARN,qpid=WARN,sqlalchemy=WARN,suds=INFO,oslo.messaging=INFO,iso8601=WARN,requests.packages.urllib3.connectionpool=WARN,urllib3.connectionpool=WARN,websocket=WARN,keystonemiddleware=WARN,routes.middleware=WARN,stevedore=WARN
 
 # Enables or disables publication of error events. (boolean
 # value)
@@ -697,6 +697,16 @@
 #return_all_endpoints_if_no_filter=true
 
 
+[endpoint_policy]
+
+#
+# Options defined in keystone
+#
+
+# Endpoint policy backend driver (string value)
+#driver=keystone.contrib.endpoint_policy.backends.sql.EndpointPolicy
+
+
 [federation]
 
 #
@@ -886,7 +896,7 @@
 #user_name_attribute=sn
 
 # LDAP attribute mapped to user email. (string value)
-#user_mail_attribute=email
+#user_mail_attribute=mail
 
 # LDAP attribute mapped to password. (string value)
 #user_pass_attribute=userPassword
@@ -1266,6 +1276,33 @@
 # Toggle for revocation event cacheing. This has no effect
 # unless global caching is enabled. (boolean value)
 #caching=true
+
+
+[saml]
+
+#
+# Options defined in keystone
+#
+
+# Default TTL, in seconds, for any generated SAML assertion
+# created by Keystone. (integer value)
+#assertion_expiration_time=3600
+
+# Binary to be called for XML signing. Install the appropriate
+# package, specify absolute path or adjust your PATH
+# environment variable if the binary cannot be found. (string
+# value)
+#xmlsec1_binary=xmlsec1
+
+# Path of the certfile for SAML signing. For non-production
+# environments, you may be interested in using `keystone-
+# manage pki_setup` to generate self-signed certificates.
+# Note, the path cannot contain a comma. (string value)
+#certfile=/etc/keystone/ssl/certs/signing_cert.pem
+
+# Path of the keyfile for SAML signing. Note, the path cannot
+# contain a comma. (string value)
+#keyfile=/etc/keystone/ssl/private/signing_key.pem
 
 
 [signing]

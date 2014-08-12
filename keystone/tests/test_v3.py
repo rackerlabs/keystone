@@ -255,6 +255,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         self.endpoint_id = uuid.uuid4().hex
         self.endpoint = self.new_endpoint_ref(service_id=self.service_id)
         self.endpoint['id'] = self.endpoint_id
+        self.endpoint['region_id'] = self.region['id']
         self.catalog_api.create_endpoint(
             self.endpoint_id,
             self.endpoint.copy())
@@ -282,13 +283,13 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         ref['type'] = uuid.uuid4().hex
         return ref
 
-    def new_endpoint_ref(self, service_id, **kwargs):
+    def new_endpoint_ref(self, service_id, interface='public', **kwargs):
         ref = self.new_ref()
         del ref['enabled']  # enabled is optional
-        ref['interface'] = uuid.uuid4().hex[:8]
+        ref['interface'] = interface
         ref['service_id'] = service_id
-        ref['url'] = uuid.uuid4().hex
-        ref['region'] = uuid.uuid4().hex
+        ref['url'] = 'https://' + uuid.uuid4().hex + '.com'
+        ref['region_id'] = self.region_id
         ref.update(kwargs)
         return ref
 
@@ -315,11 +316,16 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         ref['domain_id'] = domain_id
         return ref
 
-    def new_credential_ref(self, user_id, project_id=None):
-        ref = self.new_ref()
+    def new_credential_ref(self, user_id, project_id=None, cred_type=None):
+        ref = dict()
+        ref['id'] = uuid.uuid4().hex
         ref['user_id'] = user_id
-        ref['blob'] = uuid.uuid4().hex
-        ref['type'] = uuid.uuid4().hex
+        if cred_type == 'ec2':
+            ref['type'] = 'ec2'
+            ref['blob'] = {'blah': 'test'}
+        else:
+            ref['type'] = 'cert'
+            ref['blob'] = uuid.uuid4().hex
         if project_id:
             ref['project_id'] = project_id
         return ref
@@ -851,6 +857,9 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         if ref:
             self.assertEqual(ref['interface'], entity['interface'])
             self.assertEqual(ref['service_id'], entity['service_id'])
+            if ref.get('region') is not None:
+                self.assertEqual(ref['region_id'], entity.get('region_id'))
+
         return entity
 
     # domain validation
@@ -963,6 +972,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             resp,
             'credentials',
             self.assertValidCredential,
+            keys_to_check=['blob', 'user_id', 'type'],
             *args,
             **kwargs)
 
@@ -971,6 +981,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             resp,
             'credential',
             self.assertValidCredential,
+            keys_to_check=['blob', 'user_id', 'type'],
             *args,
             **kwargs)
 

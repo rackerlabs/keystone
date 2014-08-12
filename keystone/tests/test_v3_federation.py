@@ -10,16 +10,28 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import os
 import random
+import subprocess
 import uuid
+
+from lxml import etree
+import mock
+from oslotest import mockpatch
+import saml2
+from saml2 import saml
+from saml2 import sigver
+import xmldsig
 
 from keystone.auth import controllers as auth_controllers
 from keystone.common import dependency
 from keystone.common import serializer
 from keystone import config
 from keystone.contrib.federation import controllers as federation_controllers
+from keystone.contrib.federation import idp as keystone_idp
 from keystone.contrib.federation import utils as mapping_utils
 from keystone import exception
+from keystone import notifications
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
 from keystone.tests import mapping_fixtures
@@ -28,6 +40,8 @@ from keystone.tests import test_v3
 
 CONF = config.CONF
 LOG = log.getLogger(__name__)
+ROOTDIR = os.path.dirname(os.path.abspath(__file__))
+XMLDIR = os.path.join(ROOTDIR, 'saml2/')
 
 
 def dummy_validator(*args, **kwargs):
@@ -754,6 +768,26 @@ class MappingRuleEngineTests(FederationTests):
 
 class FederatedTokenTests(FederationTests):
 
+    def setUp(self):
+        super(FederatedTokenTests, self).setUp()
+        self._notifications = []
+
+        def fake_saml_notify(action, context, user_id, group_ids,
+                             identity_provider, protocol, token_id, outcome):
+            note = {
+                'action': action,
+                'user_id': user_id,
+                'identity_provider': identity_provider,
+                'protocol': protocol,
+                'send_notification_called': True}
+            self._notifications.append(note)
+
+        self.useFixture(mockpatch.PatchObject(
+            notifications,
+            'send_saml_audit_notification',
+            fake_saml_notify))
+
+    ACTION = 'authenticate'
     IDP = 'ORG_IDP'
     PROTOCOL = 'saml2'
     AUTH_METHOD = 'saml2'
@@ -769,6 +803,17 @@ class FederatedTokenTests(FederationTests):
             }
         }
     }
+
+    def _assert_last_notify(self, action, identity_provider, protocol,
+                            user_id=None):
+        self.assertTrue(self._notifications)
+        note = self._notifications[-1]
+        if user_id:
+            self.assertEqual(note['user_id'], user_id)
+        self.assertEqual(note['action'], action)
+        self.assertEqual(note['identity_provider'], identity_provider)
+        self.assertEqual(note['protocol'], protocol)
+        self.assertTrue(note['send_notification_called'])
 
     def load_fixtures(self, fixtures):
         super(FederationTests, self).load_fixtures(fixtures)
@@ -873,6 +918,10 @@ class FederatedTokenTests(FederationTests):
         r = api.federated_authentication(context, self.IDP, self.PROTOCOL)
         return r
 
+    def test_issue_unscoped_token_notify(self):
+        self._issue_unscoped_token()
+        self._assert_last_notify(self.ACTION, self.IDP, self.PROTOCOL)
+
     def test_issue_unscoped_token(self):
         r = self._issue_unscoped_token()
         self.assertIsNotNone(r.headers.get('X-Subject-Token'))
@@ -925,6 +974,12 @@ class FederatedTokenTests(FederationTests):
         self._inject_assertion(context, 'EMPLOYEE_ASSERTION')
         r = api.authenticate_for_token(context, self.UNSCOPED_V3_SAML2_REQ)
         self.assertIsNotNone(r.headers.get('X-Subject-Token'))
+
+    def test_scope_to_project_once_notify(self):
+        r = self.v3_authenticate_token(
+            self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_EMPLOYEE)
+        user_id = r.json['token']['user']['id']
+        self._assert_last_notify(self.ACTION, self.IDP, self.PROTOCOL, user_id)
 
     def test_scope_to_project_once(self):
         r = self.v3_authenticate_token(
@@ -1584,3 +1639,125 @@ class JsonHomeTests(FederationTests, test_v3.JsonHomeTestMixin):
             },
         },
     }
+
+
+def _is_xmlsec1_installed():
+    p = subprocess.Popen(
+        ['which', 'xmlsec1'],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE)
+
+    # invert the return code
+    return not bool(p.wait())
+
+
+class SAMLGenerationTests(FederationTests):
+
+    ISSUER = 'https://acme.com/FIM/sps/openstack/saml20'
+    RECIPIENT = 'http://beta.com/Shibboleth.sso/SAML2/POST'
+    SUBJECT = 'test_user'
+    ROLES = ['admin', 'member']
+    PROJECT = 'development'
+
+    def setUp(self):
+        super(SAMLGenerationTests, self).setUp()
+        self.signed_assertion = saml2.create_class_from_xml_string(
+            saml.Assertion, self._load_xml('signed_saml2_assertion.xml'))
+
+    def _load_xml(self, filename):
+        with open(os.path.join(XMLDIR, filename), 'r') as xml:
+            return xml.read()
+
+    def test_samlize_token_values(self):
+        """Test the SAML generator produces a SAML object.
+
+        Test the SAML generator directly by passing known arguments, the result
+        should be a SAML object that consistently includes attributes based on
+        the known arguments that were passed in.
+
+        """
+        with mock.patch.object(keystone_idp, '_sign_assertion',
+                               return_value=self.signed_assertion):
+            generator = keystone_idp.SAMLGenerator()
+            response = generator.samlize_token(self.ISSUER, self.RECIPIENT,
+                                               self.SUBJECT, self.ROLES,
+                                               self.PROJECT)
+
+        assertion = response.assertion
+        self.assertIsNotNone(assertion)
+        self.assertIsInstance(assertion, saml.Assertion)
+        issuer = response.issuer
+        self.assertEqual(self.RECIPIENT, response.destination)
+        self.assertEqual(self.ISSUER, issuer.text)
+
+        user_attribute = assertion.attribute_statement[0].attribute[0]
+        self.assertEqual(self.SUBJECT, user_attribute.attribute_value[0].text)
+
+        role_attribute = assertion.attribute_statement[0].attribute[1]
+        for attribute_value in role_attribute.attribute_value:
+            self.assertIn(attribute_value.text, self.ROLES)
+
+        project_attribute = assertion.attribute_statement[0].attribute[2]
+        self.assertEqual(self.PROJECT,
+                         project_attribute.attribute_value[0].text)
+
+    def test_valid_saml_xml(self):
+        """Test the generated SAML object can become valid XML.
+
+        Test the  generator directly by passing known arguments, the result
+        should be a SAML object that consistently includes attributes based on
+        the known arguments that were passed in.
+
+        """
+        with mock.patch.object(keystone_idp, '_sign_assertion',
+                               return_value=self.signed_assertion):
+            generator = keystone_idp.SAMLGenerator()
+            response = generator.samlize_token(self.ISSUER, self.RECIPIENT,
+                                               self.SUBJECT, self.ROLES,
+                                               self.PROJECT)
+
+        saml_str = response.to_string()
+        response = etree.fromstring(saml_str)
+        issuer = response[0]
+        assertion = response[2]
+
+        self.assertEqual(self.RECIPIENT, response.get('Destination'))
+        self.assertEqual(self.ISSUER, issuer.text)
+
+        user_attribute = assertion[4][0]
+        self.assertEqual(self.SUBJECT, user_attribute[0].text)
+
+        role_attribute = assertion[4][1]
+        for attribute_value in role_attribute:
+            self.assertIn(attribute_value.text, self.ROLES)
+
+        project_attribute = assertion[4][2]
+        self.assertEqual(self.PROJECT, project_attribute[0].text)
+
+    def test_saml_signing(self):
+        """Test that the SAML generator produces a SAML object.
+
+        Test the SAML generator directly by passing known arguments, the result
+        should be a SAML object that consistently includes attributes based on
+        the known arguments that were passed in.
+
+        """
+        if not _is_xmlsec1_installed():
+            self.skip('xmlsec1 is not installed')
+
+        generator = keystone_idp.SAMLGenerator()
+        response = generator.samlize_token(self.ISSUER, self.RECIPIENT,
+                                           self.SUBJECT, self.ROLES,
+                                           self.PROJECT)
+
+        signature = response.assertion.signature
+        self.assertIsNotNone(signature)
+        self.assertIsInstance(signature, xmldsig.Signature)
+
+        idp_public_key = sigver.read_cert_from_file(CONF.saml.certfile, 'pem')
+        cert_text = signature.key_info.x509_data[0].x509_certificate.text
+        # NOTE(stevemar): Rather than one line of text, the certificate is
+        # printed with newlines for readability, we remove these so we can
+        # match it with the key that we used.
+        cert_text = cert_text.replace(os.linesep, '')
+        self.assertEqual(idp_public_key, cert_text)
