@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_8705897a",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-12T10:19:06Z",
+      "side": 1,
+      "message": "Should we update this note?",
+      "revId": "b361be021bb65b2e20bbaf35231e08400eeb3636",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
