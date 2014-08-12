@@ -29,7 +29,6 @@ LOG = log.getLogger(__name__)
 SHOULD_CACHE = cache.should_cache_fn('token')
 
 # NOTE(blk-u): The config options are not available at import time.
-EXPIRATION_TIME = lambda: CONF.token.cache_time
 REVOCATION_CACHE_EXPIRATION_TIME = lambda: CONF.token.revocation_cache_time
 
 
