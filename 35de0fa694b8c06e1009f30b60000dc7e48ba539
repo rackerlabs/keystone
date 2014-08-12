@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_93e5c0a4",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-12T14:51:58Z",
+      "side": 1,
+      "message": "Is there any reason this has to be added here instead of in the new test? Since no other tests need this data setup it would be preferable to me to not create this data in each of the other tests.",
+      "revId": "35de0fa694b8c06e1009f30b60000dc7e48ba539",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
