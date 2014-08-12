@@ -12,6 +12,11 @@
 
 from oslo.utils import timeutils
 
+# FIXME(morganfainberg): DO NOT MERGE THIS PATCH UNTIL LOG CALLS ARE REMOVED
+# AND/OR CLEANED UP. THIS IS FOR DEBUGGING ONLY.
+from keystone.openstack.common import log
+
+LOG = log.getLogger(__name__)
 
 # The set of attributes common between the RevokeEvent
 # and the dictionaries created from the token Data.
@@ -237,6 +242,8 @@ class RevokeTree(object):
         for leaf in partial_matches:
             try:
                 if leaf['issued_before'] > token_data['issued_at']:
+                    LOG.critical('TOKEN Matched Revocation Event: %r', leaf)
+                    LOG.critical('TOKEN DATA: %r', token_data)
                     return True
             except KeyError:
                 pass
@@ -308,7 +315,9 @@ def build_token_values(token_data):
     user = token_data.get('user')
     if user is not None:
         token_values['user_id'] = user['id']
-        token_values['identity_domain_id'] = user['domain']['id']
+        # Federated users do not have a domain, be defensive and get the user
+        # domain set to None in the federated user case.
+        token_values['identity_domain_id'] = user.get('domain', {}).get('id')
     else:
         token_values['user_id'] = None
         token_values['identity_domain_id'] = None
