@@ -311,3 +311,7 @@ def _send_audit_notification(action, initiator, outcome):
 
 
 emit_event = CadfNotificationWrapper
+
+
+def list_opts():
+    return [(None, notifier_opts), ]
