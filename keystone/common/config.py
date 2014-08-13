@@ -21,8 +21,11 @@ _CERTFILE = '/etc/keystone/ssl/certs/signing_cert.pem'
 _KEYFILE = '/etc/keystone/ssl/private/signing_key.pem'
 
 
+DEFAULT_SECTION = None
+
+
 FILE_OPTIONS = {
-    None: [
+    DEFAULT_SECTION: [
         cfg.StrOpt('admin_token', secret=True, default='ADMIN',
                    help='A "shared secret" that can be used to bootstrap '
                         'Keystone. This "token" does not represent a user, '
@@ -987,3 +990,25 @@ def list_opts():
     :returns: a list of (group_name, opts) tuples
     """
     return FILE_OPTIONS.items()
+
+
+# TODO(blk-u): The following list_*_opts functions are workarounds until
+# bug 1356438 is resolved. Remove these functions and change setup.cfg to
+# reference list_opts in the keystone.common.openstack module instead.
+
+def list_eventlet_backdoor_opts():
+    from keystone.openstack.common import eventlet_backdoor
+    return [(DEFAULT_SECTION, eventlet_backdoor.eventlet_backdoor_opts)]
+
+
+def list_log_opts():
+    from keystone.openstack.common import log
+    opts = list(log.common_cli_opts)
+    opts.extend(log.generic_log_opts)
+    opts.extend(log.log_opts)
+    return [(DEFAULT_SECTION, opts)]
+
+
+def list_policy_opts():
+    from keystone.openstack.common import policy
+    return [(DEFAULT_SECTION, policy.policy_opts)]
