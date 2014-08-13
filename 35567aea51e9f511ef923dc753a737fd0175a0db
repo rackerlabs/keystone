@@ -16,6 +16,92 @@
       "revId": "35567aea51e9f511ef923dc753a737fd0175a0db",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ab29df4_7a2b9530",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-13T19:06:07Z",
+      "side": 1,
+      "message": "there\u0027s an override in oslo-config-generator to set a sample default",
+      "parentUuid": "baada198_43579701",
+      "revId": "35567aea51e9f511ef923dc753a737fd0175a0db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ab29df4_7aaab5d5",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 719,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-13T19:06:07Z",
+      "side": 1,
+      "message": "-1",
+      "revId": "35567aea51e9f511ef923dc753a737fd0175a0db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ab29df4_baab6dd5",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-13T19:06:07Z",
+      "side": 1,
+      "message": "note that these are a workarounds until bug 1356438 is resolved?",
+      "revId": "35567aea51e9f511ef923dc753a737fd0175a0db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ab29df4_faba4509",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 863,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-13T19:06:07Z",
+      "side": 1,
+      "message": "inline comment that None represents the [DEFAULT] section?",
+      "revId": "35567aea51e9f511ef923dc753a737fd0175a0db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ab29df4_9a71497a",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-13T19:06:07Z",
+      "side": 1,
+      "message": "i\u0027d prefer this appears closer to the actual options",
+      "revId": "35567aea51e9f511ef923dc753a737fd0175a0db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
