@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_69c1f12f",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-13T11:18:42Z",
+      "side": 1,
+      "message": "this is nice....but I fear this is python 2.7 onwards and not supported in 2.6",
+      "revId": "4e5bb2370584e459a0d868ffe8483ad0b3895bee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
