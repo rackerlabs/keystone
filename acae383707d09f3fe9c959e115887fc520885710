@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_6d456c15",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3587,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-13T17:06:13Z",
+      "side": 1,
+      "message": "Reverse the order here. Although not strictly necessary since `assertDictEqual` names its params d1 and d2, eventually assertEqual is called with d1 and d2. Someone will eventually file this as a bug.",
+      "revId": "acae383707d09f3fe9c959e115887fc520885710",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
