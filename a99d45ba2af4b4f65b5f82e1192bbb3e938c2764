@@ -16,6 +16,24 @@
       "revId": "a99d45ba2af4b4f65b5f82e1192bbb3e938c2764",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_dbf3916b",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3588,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-13T16:46:44Z",
+      "side": 1,
+      "message": "yeah, pointless copy of new_region, i was too overzealous.",
+      "parentUuid": "baada198_dba471a5",
+      "revId": "a99d45ba2af4b4f65b5f82e1192bbb3e938c2764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
