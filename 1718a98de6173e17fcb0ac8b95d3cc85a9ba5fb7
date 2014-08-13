@@ -16,6 +16,24 @@
       "revId": "1718a98de6173e17fcb0ac8b95d3cc85a9ba5fb7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_658aed66",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3563,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-13T13:49:42Z",
+      "side": 1,
+      "message": "apparently new_region is never checked at all",
+      "parentUuid": "baada198_ca49088f",
+      "revId": "1718a98de6173e17fcb0ac8b95d3cc85a9ba5fb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
