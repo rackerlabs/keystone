@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baada198_0c9079f2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-13T15:13:50Z",
+      "side": 1,
+      "message": "I still think my comment from patchset 5 applies here.",
+      "revId": "8ddbdd07b2e193462a54b00f5b7fa218259e8ba7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_02fc35b5",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 6
@@ -13,6 +30,24 @@
       "writtenOn": "2014-08-11T10:50:34Z",
       "side": 1,
       "message": "I left my comments regarding this on patch set 5. But tldr; I would still prefer to see this changed.",
+      "revId": "8ddbdd07b2e193462a54b00f5b7fa218259e8ba7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4c0d1140",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-13T15:13:50Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "baada198_02fc35b5",
       "revId": "8ddbdd07b2e193462a54b00f5b7fa218259e8ba7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -54,6 +89,41 @@
     },
     {
       "key": {
+        "uuid": "baada198_af0a1f1c",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-13T15:13:50Z",
+      "side": 1,
+      "message": "I\u0027m OK with single variable names in cases like this, but it got me thinking about the name associations. Is this just a list of role_ids?",
+      "parentUuid": "baada198_b6290885",
+      "revId": "8ddbdd07b2e193462a54b00f5b7fa218259e8ba7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8f3b9bc8",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 799,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-13T15:13:50Z",
+      "side": 1,
+      "message": "I don\u0027t think this is correct.",
+      "revId": "8ddbdd07b2e193462a54b00f5b7fa218259e8ba7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_62333113",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 6
@@ -65,6 +135,23 @@
       "writtenOn": "2014-08-11T10:50:34Z",
       "side": 1,
       "message": "The comment for this section of code is misleading. It says that there should be only one project granted... yet, the assertion is that there are no roles.",
+      "revId": "8ddbdd07b2e193462a54b00f5b7fa218259e8ba7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_af5f7f0f",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 804,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-13T15:13:50Z",
+      "side": 1,
+      "message": "I don\u0027t think this is correct. Is this the same result?",
       "revId": "8ddbdd07b2e193462a54b00f5b7fa218259e8ba7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
