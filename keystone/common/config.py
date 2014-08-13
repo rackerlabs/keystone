@@ -716,7 +716,7 @@ FILE_OPTIONS = {
         cfg.FloatOpt('pool_retry_delay', default=0.1,
                      help='Time span in seconds to wait between two '
                           'reconnect trials.'),
-        cfg.IntOpt('pool_connection_timeout', default=-1,
+        cfg.IntOpt('pool_connection_timeout', default= -1,
                    help='Connector timeout in seconds. Value -1 indicates '
                         'indefinite wait for response.'),
         cfg.IntOpt('pool_connection_lifetime', default=600,
@@ -856,3 +856,21 @@ def list_opts():
     :returns: a list of (group_name, opts) tuples
     """
     return FILE_OPTIONS.items()
+
+
+def list_eventlet_backdoor_opts():
+    from keystone.openstack.common import eventlet_backdoor
+    return [(None, eventlet_backdoor.eventlet_backdoor_opts)]
+
+
+def list_log_opts():
+    from keystone.openstack.common import log
+    opts = list(log.common_cli_opts)
+    opts.extend(log.generic_log_opts)
+    opts.extend(log.log_opts)
+    return [(None, opts)]
+
+
+def list_policy_opts():
+    from keystone.openstack.common import policy
+    return [(None, policy.policy_opts)]
