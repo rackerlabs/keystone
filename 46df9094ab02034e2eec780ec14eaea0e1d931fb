@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_aa0cd497",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-13T14:35:39Z",
+      "side": 1,
+      "message": "just a note that this value only seem helpful if there are multiple sessions for a user: http://blog.sweetxml.org/2008/01/saml-v20-sessionindex-what-and-why.html",
+      "revId": "46df9094ab02034e2eec780ec14eaea0e1d931fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_0a0ce092",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-13T14:35:39Z",
+      "side": 1,
+      "message": "rm this comment",
+      "revId": "46df9094ab02034e2eec780ec14eaea0e1d931fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
