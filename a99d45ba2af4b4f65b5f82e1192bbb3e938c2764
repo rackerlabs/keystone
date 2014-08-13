@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_dba471a5",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 3588,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-13T16:40:02Z",
+      "side": 1,
+      "message": "I realise that your are just copying the \"style\" from earlier in this method, but is there a reason you can\u0027t just compare res and new_region?",
+      "revId": "a99d45ba2af4b4f65b5f82e1192bbb3e938c2764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
