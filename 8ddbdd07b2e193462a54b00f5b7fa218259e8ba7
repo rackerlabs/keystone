@@ -206,6 +206,23 @@
       "revId": "8ddbdd07b2e193462a54b00f5b7fa218259e8ba7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ab29df4_eb3359f4",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1638,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-13T20:12:39Z",
+      "side": 1,
+      "message": "i must admit, I still don\u0027t understand why the result should be different...",
+      "revId": "8ddbdd07b2e193462a54b00f5b7fa218259e8ba7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
