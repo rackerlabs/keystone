@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7ac7a964_b63d48be",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-13T21:16:28Z",
+      "side": 1,
+      "message": "that would have to happen wherever rpc_zmq_host is defined in oslo.messaging.",
+      "parentUuid": "9ab29df4_7a2b9530",
+      "revId": "35567aea51e9f511ef923dc753a737fd0175a0db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ab29df4_7aaab5d5",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
@@ -48,6 +66,24 @@
       "writtenOn": "2014-08-13T19:06:07Z",
       "side": 1,
       "message": "-1",
+      "revId": "35567aea51e9f511ef923dc753a737fd0175a0db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ab29df4_91f84ce7",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 719,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-13T21:16:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ab29df4_7aaab5d5",
       "revId": "35567aea51e9f511ef923dc753a737fd0175a0db",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "9ab29df4_b1dc7076",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-13T21:16:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ab29df4_baab6dd5",
+      "revId": "35567aea51e9f511ef923dc753a737fd0175a0db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ab29df4_faba4509",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
@@ -88,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "9ab29df4_7141f80a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 863,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-13T21:16:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ab29df4_faba4509",
+      "revId": "35567aea51e9f511ef923dc753a737fd0175a0db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9ab29df4_9a71497a",
         "filename": "keystone/notifications.py",
         "patchSetId": 4
@@ -99,6 +171,24 @@
       "writtenOn": "2014-08-13T19:06:07Z",
       "side": 1,
       "message": "i\u0027d prefer this appears closer to the actual options",
+      "revId": "35567aea51e9f511ef923dc753a737fd0175a0db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ab29df4_f18fc873",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-13T21:16:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9ab29df4_9a71497a",
       "revId": "35567aea51e9f511ef923dc753a737fd0175a0db",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
