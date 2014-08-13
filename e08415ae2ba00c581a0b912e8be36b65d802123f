@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_654cbf40",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-13T06:52:47Z",
+      "side": 1,
+      "message": "xml.\u003c\u003e.\u003c\u003e.ParseError exception was being raised when xmlsec1 had some problems and didn\u0027t output proper XML. I think this is because pysaml2 design and used classes/exceptions.",
+      "parentUuid": "baada198_2a4381b1",
+      "revId": "e08415ae2ba00c581a0b912e8be36b65d802123f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_4a40b5a2",
         "filename": "keystone/contrib/federation/samlgen.py",
         "patchSetId": 7
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_c552ebd9",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-13T06:52:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_4a40b5a2",
+      "revId": "e08415ae2ba00c581a0b912e8be36b65d802123f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_8a2acde4",
         "filename": "keystone/contrib/federation/samlgen.py",
         "patchSetId": 7
@@ -47,6 +83,24 @@
       "writtenOn": "2014-08-13T05:15:06Z",
       "side": 1,
       "message": "this one bracket is funnily positioned",
+      "revId": "e08415ae2ba00c581a0b912e8be36b65d802123f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_85ff13b1",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-13T06:52:47Z",
+      "side": 1,
+      "message": "right...",
+      "parentUuid": "baada198_8a2acde4",
       "revId": "e08415ae2ba00c581a0b912e8be36b65d802123f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_e50e0fe4",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-13T06:52:47Z",
+      "side": 1,
+      "message": "yeah :-)",
+      "parentUuid": "baada198_74b0f340",
+      "revId": "e08415ae2ba00c581a0b912e8be36b65d802123f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_1445f715",
         "filename": "keystone/contrib/federation/samlgen.py",
         "patchSetId": 7
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_05f303e9",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-13T06:52:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_1445f715",
+      "revId": "e08415ae2ba00c581a0b912e8be36b65d802123f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_d4545f58",
         "filename": "keystone/contrib/federation/samlgen.py",
         "patchSetId": 7
@@ -115,6 +205,24 @@
       "writtenOn": "2014-08-13T05:15:06Z",
       "side": 1,
       "message": "str(assertion) worked? i would have thought you needed to do assertion.to_string() or something",
+      "revId": "e08415ae2ba00c581a0b912e8be36b65d802123f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_e581affb",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-13T06:52:47Z",
+      "side": 1,
+      "message": "yes, it did. normally when dealing with lxml.XML objects i need to use etree.tostring(obj), however this is a object defined by pysaml and I am guessing __str__() was reimplemented there.",
+      "parentUuid": "baada198_d4545f58",
       "revId": "e08415ae2ba00c581a0b912e8be36b65d802123f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
