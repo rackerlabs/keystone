@@ -16,6 +16,24 @@
       "revId": "4e5bb2370584e459a0d868ffe8483ad0b3895bee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_6f172e47",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-13T13:09:39Z",
+      "side": 1,
+      "message": "There is actually an impl in oslo. Started working on a new patch last night,  but decided to sleep instead :-)",
+      "parentUuid": "baada198_69c1f12f",
+      "revId": "4e5bb2370584e459a0d868ffe8483ad0b3895bee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
