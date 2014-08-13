@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "baada198_ecdc25e4",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-13T15:07:15Z",
+      "side": 1,
+      "message": "Adding the else will not increase complexity because there are still two code paths. project_id may be None or it may not. The \u0027else\u0027 doesn\u0027t make that any different, just explicit.",
+      "parentUuid": "baada198_93e17d99",
+      "revId": "39048655c6a206f000e50d24ddd39f6116367dd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_23143f40",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 5
