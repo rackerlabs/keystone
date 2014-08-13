@@ -42,6 +42,22 @@ class V2TokenDataHelper(object):
         if roles_ref is None:
             roles_ref = []
         expires = token_ref.get('expires', provider.default_expire_time())
+
+        token_data = token_ref.get('token_data')
+        if token_data:
+            # Try V2 expires location
+            try:
+                token_data['access']['token']['expires']
+            except KeyError:
+                # Try V3 expires location
+                try:
+                    token_data['token']['expires_at']
+                except KeyError:
+                    # No expires data, either use token_ref['expires'] if
+                    # exists or fall through to the default_expire_time. No
+                    # exception should be raised here.
+                    pass
+
         if expires is not None:
             if not isinstance(expires, six.text_type):
                 expires = timeutils.isotime(expires)
@@ -551,12 +567,24 @@ class BaseProvider(provider.Provider):
 
             issued_at = token_ref['token_data']['access']['token']['issued_at']
 
+            # NOTE(morganfainberg): The value of 'expires' in the token body
+            # is more likely to have proper microsecond resolution whereas
+            # token_ref['expires'] will vary depending on the db engine,
+            # version of db engine when the initial table was created, etc.
+            # If for some reason the token does not have expires where expected
+            # fall back to the token_ref['expires'] to ensure we maintain
+            # consistent behavior.
+            try:
+                expires = token_ref['token_data']['access']['token']['expires']
+            except KeyError:
+                expires = token_ref['expires']
+
             token_data = self.v3_token_data_helper.get_token_data(
                 token_ref['user']['id'],
                 ['password', 'token'],
                 {},
                 project_id=project_id,
                 bind=token_ref.get('bind'),
-                expires=token_ref['expires'],
+                expires=expires,
                 issued_at=issued_at)
         return token_data
