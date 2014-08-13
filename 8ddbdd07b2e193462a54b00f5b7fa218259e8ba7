@@ -172,6 +172,40 @@
       "revId": "8ddbdd07b2e193462a54b00f5b7fa218259e8ba7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ab29df4_401d0473",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1564,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-13T20:11:42Z",
+      "side": 1,
+      "message": "So this should really be tested at the test_backend level and over-ridden here (due to LDAPs mono-domain implementation).  However,I would agree that implmenting this in test_backend is out of scope of this patch - but perhaps you could raise a defect to cover that this should be done in the future.",
+      "revId": "8ddbdd07b2e193462a54b00f5b7fa218259e8ba7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9ab29df4_60120864",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1603,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-13T20:11:42Z",
+      "side": 1,
+      "message": "as above",
+      "revId": "8ddbdd07b2e193462a54b00f5b7fa218259e8ba7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
