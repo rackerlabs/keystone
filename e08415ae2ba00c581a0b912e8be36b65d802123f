@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_2a4381b1",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-13T05:15:06Z",
+      "side": 1,
+      "message": "curious, why xml instead of lxml?",
+      "revId": "e08415ae2ba00c581a0b912e8be36b65d802123f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_4a40b5a2",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-13T05:15:06Z",
+      "side": 1,
+      "message": "should state what is actually being returned.",
+      "revId": "e08415ae2ba00c581a0b912e8be36b65d802123f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_8a2acde4",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-13T05:15:06Z",
+      "side": 1,
+      "message": "this one bracket is funnily positioned",
+      "revId": "e08415ae2ba00c581a0b912e8be36b65d802123f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_bfc989ad",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-13T05:15:06Z",
+      "side": 1,
+      "message": "++ thanks for finding this",
+      "revId": "e08415ae2ba00c581a0b912e8be36b65d802123f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_74b0f340",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-13T05:15:06Z",
+      "side": 1,
+      "message": "nit: s/separeated processes/separate process",
+      "revId": "e08415ae2ba00c581a0b912e8be36b65d802123f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_1445f715",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-13T05:15:06Z",
+      "side": 1,
+      "message": "i don\u0027t think you need \n\n  or \u0027/tmp\u0027\n\nhere if it\u0027s already the default in the common.config",
+      "revId": "e08415ae2ba00c581a0b912e8be36b65d802123f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_d4545f58",
+        "filename": "keystone/contrib/federation/samlgen.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-13T05:15:06Z",
+      "side": 1,
+      "message": "str(assertion) worked? i would have thought you needed to do assertion.to_string() or something",
+      "revId": "e08415ae2ba00c581a0b912e8be36b65d802123f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_2ac2a154",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1583,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-13T05:15:06Z",
+      "side": 1,
+      "message": "can probably delete this, not being used",
+      "revId": "e08415ae2ba00c581a0b912e8be36b65d802123f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
