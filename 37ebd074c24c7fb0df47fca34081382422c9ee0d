@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_c7c7683c",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-13T02:21:03Z",
+      "side": 1,
+      "message": "Why catch here just to raise?",
+      "revId": "37ebd074c24c7fb0df47fca34081382422c9ee0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_87e730ab",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-13T02:21:03Z",
+      "side": 1,
+      "message": "You could access these directly because you already make sure the value exists.",
+      "revId": "37ebd074c24c7fb0df47fca34081382422c9ee0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baada198_39e919ac",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-13T02:21:03Z",
+      "side": 1,
+      "message": "The order here doesn\u0027t match the order above. This looks to domain_id and then project_id for the target. The block on line 145 looks at project_id and then domain_id.",
+      "revId": "37ebd074c24c7fb0df47fca34081382422c9ee0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
