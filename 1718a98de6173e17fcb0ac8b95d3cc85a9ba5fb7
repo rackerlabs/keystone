@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_ca49088f",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3563,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-13T13:45:17Z",
+      "side": 1,
+      "message": "do we ever check that this is returned?  I can\u0027t see where we do - in which case a backend driver that simply set url \u003d None would pass these tests",
+      "revId": "1718a98de6173e17fcb0ac8b95d3cc85a9ba5fb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
