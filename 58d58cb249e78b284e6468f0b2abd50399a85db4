@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baada198_9bc8394f",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-13T18:48:59Z",
+      "side": 1,
+      "message": "i think i might have to use the cadf notification, not the normal one",
+      "revId": "58d58cb249e78b284e6468f0b2abd50399a85db4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
