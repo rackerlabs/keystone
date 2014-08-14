@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+tXk\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-14T12:06:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+wr8\u003d",
+      "revId": "1cea5deb4e525710b8560849eacec74225397cfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+wrY\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2013-11-20T15:33:11Z",
       "side": 1,
       "message": "\u0027related to bug 1221805 and bug 1101287\u0027 this should link the bugs appropriately and allow for easier review.",
+      "revId": "1cea5deb4e525710b8560849eacec74225397cfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+tXg\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-14T12:06:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+wrY\u003d",
       "revId": "1cea5deb4e525710b8560849eacec74225397cfd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+tXc\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-14T12:06:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+wqA\u003d",
+      "revId": "1cea5deb4e525710b8560849eacec74225397cfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+wpU\u003d",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 4
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn/+tXY\u003d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-14T12:06:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+wpU\u003d",
+      "revId": "1cea5deb4e525710b8560849eacec74225397cfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn/+wl4\u003d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 4
@@ -81,6 +153,24 @@
       "writtenOn": "2013-11-20T15:33:11Z",
       "side": 1,
       "message": "(NIT): why not make this consistent with line 379 and call len() when assigning?\n\n    assignment_list \u003d len(self.assignment_api.list_role_assignments())\n\nCould also name these according to when they were assigned so it\u0027s easier to tell when it happened. Maybe something like \u0027before_assignment\u0027 and \u0027after_assignment\u0027?",
+      "revId": "1cea5deb4e525710b8560849eacec74225397cfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn/+tXU\u003d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 389,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-14T12:06:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn/+wl4\u003d",
       "revId": "1cea5deb4e525710b8560849eacec74225397cfd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
