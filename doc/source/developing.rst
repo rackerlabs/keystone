@@ -696,3 +696,17 @@ The documentation is generated with Sphinx using the tox command.  To create HTM
     $ tox -e docs
 
 The results are in the docs/build/html and docs/build/man directories respectively.
+
+
+Syncing from Oslo
+-----------------
+
+These instructions assume that you have a typical `devstack`_ setup.
+
+1. Update your ``oslo-incubator`` working copy to the version you would like
+   to sync.
+2. Run ``tools/sync_oslo.sh``
+3. Verify the commit looks good
+4. Push to Gerrit
+
+.. _devstack: http://devstack.org/
