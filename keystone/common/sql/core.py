@@ -37,6 +37,7 @@ from keystone import exception
 from keystone.i18n import _
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
+from keystone.openstack.common import timeutils
 
 
 CONF = cfg.CONF
@@ -116,6 +117,17 @@ class JsonBlob(sql_types.TypeDecorator):
 
     def process_result_value(self, value, dialect):
         return jsonutils.loads(value)
+
+
+class ISOStringDatetime(sql_types.TypeDecorator):
+
+    impl = sql.String
+
+    def process_bind_param(self, value, dialect):
+        return timeutils.isotime(value, subsecond=True)
+
+    def process_result_value(self, value, dialect):
+        return timeutils.normalize_time(timeutils.parse_isotime(value))
 
 
 class DictBase(models.ModelBase):
