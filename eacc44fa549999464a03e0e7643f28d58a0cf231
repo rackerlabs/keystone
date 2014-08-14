@@ -16,6 +16,24 @@
       "revId": "eacc44fa549999464a03e0e7643f28d58a0cf231",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_4b4fe592",
+        "filename": "keystone/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-14T01:53:49Z",
+      "side": 1,
+      "message": "I changed the names... hopefully it\u0027s less confusing. I don\u0027t really understand it to begin with. I\u0027m willing to make whatever changes are necessary... would it make more sense to pass in a function to VersionV3 instead? Only one method out of the resources is required.",
+      "parentUuid": "baada198_923a0ce5",
+      "revId": "eacc44fa549999464a03e0e7643f28d58a0cf231",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
