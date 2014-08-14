@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ac7a964_51de8c40",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-14T20:48:45Z",
+      "side": 1,
+      "message": "add a new line between this line and the next",
+      "revId": "7dbd3b795434cc90674f0b062234abe61e568f0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_51592cfd",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-14T20:48:45Z",
+      "side": 1,
+      "message": "run pep8 to clean up any errors",
+      "revId": "7dbd3b795434cc90674f0b062234abe61e568f0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_d190dc97",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-14T20:48:45Z",
+      "side": 1,
+      "message": "remove this line",
+      "revId": "7dbd3b795434cc90674f0b062234abe61e568f0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_916824bc",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-14T20:48:45Z",
+      "side": 1,
+      "message": "except Exception as e:\n\nalso make a comment above the catch saying why you are re-raising the exception\n\n  # NOTE(topol): Diaper defense to catch any exception, so we can send off failed\n  # authentication notification, raise the exception after sending the notification",
+      "revId": "7dbd3b795434cc90674f0b062234abe61e568f0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_d1629cd7",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-14T20:48:45Z",
+      "side": 1,
+      "message": "raise e",
+      "revId": "7dbd3b795434cc90674f0b062234abe61e568f0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_310bd0d7",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-14T20:48:45Z",
+      "side": 1,
+      "message": "unnecessary tabbing",
+      "revId": "7dbd3b795434cc90674f0b062234abe61e568f0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

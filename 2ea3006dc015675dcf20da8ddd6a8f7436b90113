@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ac7a964_11d4141f",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1072,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-14T20:48:45Z",
+      "side": 0,
+      "message": "unnecessary change",
+      "revId": "2ea3006dc015675dcf20da8ddd6a8f7436b90113",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
