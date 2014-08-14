@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "7ac7a964_1a37e4e4",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 804,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-14T12:00:47Z",
+      "side": 1,
+      "message": "Yes, it is old comment. I\u0027ll change it.",
+      "parentUuid": "7ac7a964_84ee398a",
+      "revId": "ff90e0942c5a84cd85adf824d7c4c899746248cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac7a964_047789d5",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 7
@@ -64,6 +82,24 @@
       "writtenOn": "2014-08-14T11:41:13Z",
       "side": 1,
       "message": "maybe it would be better if you follow the same pattern as above, as to specifying the name of the parameter that is being passed. Something like:\n\nroles \u003d self.assignment_api.get_roles_for_groups(\n    [new_group[\u0027id\u0027]], project_id\u003dself.tenant_bar[\u0027id\u0027])",
+      "revId": "ff90e0942c5a84cd85adf824d7c4c899746248cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_1a3e04b9",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 806,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-14T12:00:47Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "7ac7a964_047789d5",
       "revId": "ff90e0942c5a84cd85adf824d7c4c899746248cc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
