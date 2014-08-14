@@ -16,6 +16,23 @@
       "revId": "3a6516becbafb6c7c3ec96c73bc2eced77d8d4e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_365e8dea",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 983,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-14T03:27:04Z",
+      "side": 1,
+      "message": "Could this test case be generalized so that it checks that a v2 trust token includes all the same properties a v3 trust token should, instead of only trustor_user_id and impersonation? \n\nLike the response here? https://github.com/openstack/identity-api/blob/master/v3/src/markdown/identity-api-v3-os-trust-ext.md#create-trust-post-os-trusttrusts",
+      "revId": "3a6516becbafb6c7c3ec96c73bc2eced77d8d4e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
