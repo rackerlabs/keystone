@@ -1069,7 +1069,6 @@ class FederatedTokenTests(FederationTests):
         * Scope token to a one of available projects
 
         """
-
         r = self._issue_unscoped_token()
         employee_unscoped_token_id = r.headers.get('X-Subject-Token')
         r = self.get('/OS-FEDERATION/projects',

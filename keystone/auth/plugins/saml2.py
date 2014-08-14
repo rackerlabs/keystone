@@ -10,9 +10,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from pycadf import cadftaxonomy as taxonomy
 from six.moves.urllib import parse
 
 from keystone import auth
+from keystone import notifications
 from keystone.common import dependency
 from keystone.contrib import federation
 from keystone.contrib.federation import utils
@@ -39,15 +41,14 @@ class Saml2(auth.AuthMethodHandler):
         are set as well.
 
         """
-
         if 'id' in auth_payload:
-            fields = self._handle_scoped_token(auth_payload)
+            fields = self._handle_scoped_token(context, auth_payload)
         else:
             fields = self._handle_unscoped_token(context, auth_payload)
 
         auth_context.update(fields)
 
-    def _handle_scoped_token(self, auth_payload):
+    def _handle_scoped_token(self, context, auth_payload):        
         token_ref = self.token_api.get_token(auth_payload['id'])
         utils.validate_expiration(token_ref)
         _federation = token_ref['user'][federation.FEDERATION]
@@ -69,14 +70,40 @@ class Saml2(auth.AuthMethodHandler):
 
         identity_provider = auth_payload['identity_provider']
         protocol = auth_payload['protocol']
+        import pdb; pdb.set_trace()
+        notifications.send_saml_audit_notification(context,
+                                                   None,
+                                                   None,
+                                                   identity_provider, 
+                                                   protocol, 
+                                                   taxonomy.OUTCOME_PENDING)
+        
+        try:
+            mapping = self.federation_api.get_mapping_from_idp_and_protocol(
+                identity_provider, protocol)
+            rules = jsonutils.loads(mapping['rules'])
+            rule_processor = utils.RuleProcessor(rules)
+            mapped_properties = rule_processor.process(assertion)
+            utils.validate_groups(mapped_properties['group_ids'],
+                                  mapping['id'], self.identity_api)
 
-        mapping = self.federation_api.get_mapping_from_idp_and_protocol(
-            identity_provider, protocol)
-        rules = jsonutils.loads(mapping['rules'])
-        rule_processor = utils.RuleProcessor(rules)
-        mapped_properties = rule_processor.process(assertion)
-        utils.validate_groups(mapped_properties['group_ids'],
-                              mapping['id'], self.identity_api)
+            user_id = parse.quote(mapped_properties['name'])
+            group_ids = mapped_properties['group_ids']
+                              
+            notifications.send_saml_audit_notification(context,
+                                                      user_id,
+                                                      group_ids,
+                                                      identity_provider, 
+                                                      protocol, 
+                                                      taxonomy.OUTCOME_SUCCESS)
+        except Exception:
+            notifications.send_saml_audit_notification(context,
+                                                       user_id,
+                                                       group_ids,
+                                                       identity_provider, 
+                                                       protocol, 
+                                                       taxonomy.OUTCOME_FAILURE)
+            raise
 
         return {
             'user_id': parse.quote(mapped_properties['name']),
