@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "7ac7a964_b758b057",
+        "filename": "keystone/tests/config_files/test_auth_plugin.conf",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-14T21:46:44Z",
+      "side": 1,
+      "message": "also,  remember to run\n\n# tox -e sample_config\n\nif you are planning to change default values in the config files.",
+      "parentUuid": "7ac7a964_fc604f37",
+      "revId": "698926e6bc7de008e999973ba64957afb422904a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac7a964_17532418",
         "filename": "keystone/tests/test_auth_plugin.py",
         "patchSetId": 10
