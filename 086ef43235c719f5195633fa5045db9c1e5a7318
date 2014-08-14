@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ac7a964_5af6b9d8",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-14T13:10:52Z",
+      "side": 1,
+      "message": "maybe we talk about mapped users, not federated users now?",
+      "revId": "086ef43235c719f5195633fa5045db9c1e5a7318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_fa26a567",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-14T13:10:52Z",
+      "side": 1,
+      "message": "do we mean \"this\" plugin rather than sam2?",
+      "revId": "086ef43235c719f5195633fa5045db9c1e5a7318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_9a74d1fe",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-14T13:10:52Z",
+      "side": 1,
+      "message": "wasn\u0027t there a change in flight to add the federation protocols here too?",
+      "revId": "086ef43235c719f5195633fa5045db9c1e5a7318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
