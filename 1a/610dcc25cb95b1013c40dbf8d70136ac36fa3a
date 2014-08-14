@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+2: guang-yee <guang.yee@hp.com>
+Workflow+1: guang-yee <guang.yee@hp.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 14 Aug 2014 06:56:21 +0000
+Reviewed-on: https://review.openstack.org/107873
+Project: openstack/keystone
+Branch: refs/heads/master
