@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ac7a964_b3f8e4e6",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-08-14T09:15:49Z",
+      "side": 1,
+      "message": "nit: Wasn\u0027t it agreeded that there wouldn\u0027t be comments in such a format?\nI mean having:\n\n# comment\ncode\n\ninstead of:\n\ncode # comment\n\n??",
+      "revId": "35f0902207954e1a1891883925ecebebe1b2e057",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_53ba30e2",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-08-14T09:15:49Z",
+      "side": 1,
+      "message": "nit: is there any reason why you have this newline after the doc-string?\nand not the doc-string in one line? like in the CatalogTestCase class in line 24?\nShould there be a subsequent patch making this as the class above to have consistency? or should there be a separate CR fixing the other docstrings?",
+      "revId": "35f0902207954e1a1891883925ecebebe1b2e057",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
