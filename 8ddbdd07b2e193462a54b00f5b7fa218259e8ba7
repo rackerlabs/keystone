@@ -161,6 +161,24 @@
     },
     {
       "key": {
+        "uuid": "7ac7a964_5326b0bb",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 10873
+      },
+      "writtenOn": "2014-08-14T09:05:14Z",
+      "side": 1,
+      "message": "well, instead of trying to remember and translate what stuff should be, it would be better not to have one char variable names and just write self-explanatory code ;)",
+      "parentUuid": "7ac7a964_c43afc35",
+      "revId": "8ddbdd07b2e193462a54b00f5b7fa218259e8ba7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_8f3b9bc8",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 6
