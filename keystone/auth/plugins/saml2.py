@@ -10,12 +10,14 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from pycadf import cadftaxonomy as taxonomy
 from six.moves.urllib import parse
 
 from keystone import auth
 from keystone.common import dependency
 from keystone.contrib import federation
 from keystone.contrib.federation import utils
+from keystone import notifications
 from keystone.openstack.common import jsonutils
 
 
@@ -39,24 +41,53 @@ class Saml2(auth.AuthMethodHandler):
         are set as well.
 
         """
-
         if 'id' in auth_payload:
-            fields = self._handle_scoped_token(auth_payload)
+            fields = self._handle_scoped_token(context, auth_payload)
         else:
             fields = self._handle_unscoped_token(context, auth_payload)
 
         auth_context.update(fields)
 
-    def _handle_scoped_token(self, auth_payload):
+    def _handle_scoped_token(self, context, auth_payload):
         token_ref = self.token_api.get_token(auth_payload['id'])
         utils.validate_expiration(token_ref)
         _federation = token_ref['user'][federation.FEDERATION]
         identity_provider = _federation['identity_provider']['id']
         protocol = _federation['protocol']['id']
+        notifications.send_saml_audit_notification('authenticate',
+                                                   context,
+                                                   None,
+                                                   None,
+                                                   identity_provider,
+                                                   protocol,
+                                                   taxonomy.OUTCOME_PENDING)
+
         group_ids = [group['id'] for group in _federation['groups']]
         mapping = self.federation_api.get_mapping_from_idp_and_protocol(
             identity_provider, protocol)
-        utils.validate_groups(group_ids, mapping['id'], self.identity_api)
+        try:
+            utils.validate_groups(group_ids, mapping['id'], self.identity_api)
+            outcome = taxonomy.OUTCOME_SUCCESS
+            notifications.send_saml_audit_notification('authenticate',
+                                                       context,
+                                                       None,
+                                                       group_ids,
+                                                       identity_provider,
+                                                       protocol,
+                                                       outcome)
+        except Exception as e:
+            # NOTE(topol): Diaper defense to catch any exception, so we can
+            # send off failed authentication notification, raise the exception
+            # after sending the notification
+            outcome = taxonomy.OUTCOME_FAILURE
+            notifications.send_saml_audit_notification('authenticate',
+                                                       context,
+                                                       None,
+                                                       group_ids,
+                                                       identity_provider,
+                                                       protocol,
+                                                       outcome)
+            raise e
         return {
             'user_id': token_ref['user_id'],
             'group_ids': group_ids,
@@ -66,17 +97,50 @@ class Saml2(auth.AuthMethodHandler):
 
     def _handle_unscoped_token(self, context, auth_payload):
         assertion = dict(utils.get_assertion_params_from_env(context))
-
         identity_provider = auth_payload['identity_provider']
         protocol = auth_payload['protocol']
+        notifications.send_saml_audit_notification('authenticate',
+                                                   context,
+                                                   None,
+                                                   None,
+                                                   identity_provider,
+                                                   protocol,
+                                                   taxonomy.OUTCOME_PENDING)
 
-        mapping = self.federation_api.get_mapping_from_idp_and_protocol(
-            identity_provider, protocol)
-        rules = jsonutils.loads(mapping['rules'])
-        rule_processor = utils.RuleProcessor(rules)
-        mapped_properties = rule_processor.process(assertion)
-        utils.validate_groups(mapped_properties['group_ids'],
-                              mapping['id'], self.identity_api)
+        try:
+            user_id = None
+            group_ids = None
+            mapping = self.federation_api.get_mapping_from_idp_and_protocol(
+                identity_provider, protocol)
+            rules = jsonutils.loads(mapping['rules'])
+            rule_processor = utils.RuleProcessor(rules)
+            mapped_properties = rule_processor.process(assertion)
+            utils.validate_groups(mapped_properties['group_ids'],
+                                  mapping['id'], self.identity_api)
+            user_id = parse.quote(mapped_properties['name'])
+            group_ids = mapped_properties['group_ids']
+
+            outcome = taxonomy.OUTCOME_SUCCESS
+            notifications.send_saml_audit_notification('authenticate',
+                                                       context,
+                                                       user_id,
+                                                       group_ids,
+                                                       identity_provider,
+                                                       protocol,
+                                                       outcome)
+        except Exception as e:
+            # NOTE(topol): Diaper defense to catch any exception, so we can
+            # send off failed authentication notification, raise the exception
+            # after sending the notification
+            outcome = taxonomy.OUTCOME_FAILURE
+            notifications.send_saml_audit_notification('authenticate',
+                                                       context,
+                                                       user_id,
+                                                       group_ids,
+                                                       identity_provider,
+                                                       protocol,
+                                                       outcome)
+            raise e
 
         return {
             'user_id': parse.quote(mapped_properties['name']),
