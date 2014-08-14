@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ac7a964_039a1863",
+        "filename": "keystone/cli.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-14T14:14:10Z",
+      "side": 1,
+      "message": "When I think of \u0027configuration files\u0027, I think of files that are necessary to run the application. Not sure that these certificates fit that category. I believe @dstanek had a comment on this in patch set 5 as well.\n\nAs a new user, I would read this and think this option would regenerate my keystone.conf or paste.ini.",
+      "revId": "b632af467ceb312a80ec76242247d520bb008164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
