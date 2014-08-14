@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "7ac7a964_dce2b39e",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-14T21:34:51Z",
+      "side": 1,
+      "message": "SAML2? There is also a space at the beginning of this comment.",
+      "revId": "698926e6bc7de008e999973ba64957afb422904a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac7a964_fc604f37",
         "filename": "keystone/tests/config_files/test_auth_plugin.conf",
         "patchSetId": 10
@@ -30,6 +47,74 @@
       "writtenOn": "2014-08-14T21:24:18Z",
       "side": 1,
       "message": "why is it all set to \u0027keystone.auth.plugins.mapped.Mapped\u0027 not \u0027keystone.auth.plugins.saml2.Saml2\u0027 (OpenID, X509 respectively)?",
+      "revId": "698926e6bc7de008e999973ba64957afb422904a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_17532418",
+        "filename": "keystone/tests/test_auth_plugin.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-14T21:34:51Z",
+      "side": 1,
+      "message": "I find this block here a little confusing. Is there any reason why it\u0027s not just a single \u0027auth_data \u003d {}\u0027 ?",
+      "revId": "698926e6bc7de008e999973ba64957afb422904a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_7c251fc1",
+        "filename": "keystone/tests/test_auth_plugin.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-14T21:34:51Z",
+      "side": 1,
+      "message": "Can you give None a name?",
+      "revId": "698926e6bc7de008e999973ba64957afb422904a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_976f3492",
+        "filename": "keystone/tests/test_auth_plugin.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-14T21:34:51Z",
+      "side": 1,
+      "message": "This looks weird to me.",
+      "revId": "698926e6bc7de008e999973ba64957afb422904a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_f75ea8e8",
+        "filename": "keystone/tests/test_auth_plugin.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-14T21:34:51Z",
+      "side": 1,
+      "message": "Switch the order of these arguments. It should be (expected, observed).",
       "revId": "698926e6bc7de008e999973ba64957afb422904a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
