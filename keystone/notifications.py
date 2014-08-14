@@ -271,6 +271,30 @@ class CadfNotificationWrapper(object):
         return wrapper
 
 
+def send_saml_audit_notification(action, context, user_id, group_ids,
+                                 identity_provider, protocol, outcome):
+    remote_addr = None
+    http_user_agent = None
+    environment = context.get('environment')
+
+    if environment:
+        remote_addr = environment.get('REMOTE_ADDR')
+        http_user_agent = environment.get('HTTP_USER_AGENT')
+
+    host = pycadf.host.Host(address=remote_addr, agent=http_user_agent)
+    # TODO(topol)  Ideally here we should also create a pycadf credential
+    # object and store group_ids, identity_provider, and protocol as
+    # extra well known key value pairs as part of the credential
+    # object and pass it into resource.Resource. This requires the pycadf
+    # credential object to be updated to be extensible. For now we will just
+    # audit the user_id from the IDP which in itself will be helpful to know
+    initiator = resource.Resource(typeURI=taxonomy.ACCOUNT_USER,
+                                  name=user_id, host=host)
+
+    _send_audit_notification(action, initiator,
+                             taxonomy.OUTCOME_PENDING)
+
+
 def _send_audit_notification(action, initiator, outcome):
     """Send CADF notification to inform observers about the affected resource.
 
