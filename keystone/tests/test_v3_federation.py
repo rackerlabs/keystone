@@ -1579,6 +1579,7 @@ class SAMLGenerationTests(FederationTests):
     SUBJECT = 'stevemar'
     ROLES = ['demo', 'service']
     EXPIRES_IN = 3600
+    SAML_GENERATION_ROUTE = '/auth/OS-FEDERATION/saml2'
 
     def _load_federation_config_options(self):
         CONF.federation.idp_private_key = CONF.signing.keyfile
@@ -1624,3 +1625,47 @@ class SAMLGenerationTests(FederationTests):
         saml_str = self.response.to_string()
         xml_obj = etree.fromstring(saml_str)
         self.assertEqual(xml_obj.attrib.get('Destination'), self.RECIPIENT)
+
+    def _create_generate_saml_request(self, token_id, region_id):
+        return {
+            "auth": {
+                "identity": {
+                    "methods": [
+                        "token"
+                    ],
+                    "token": {
+                        "id": token_id
+                    }
+                },
+                "scope": {
+                    "region": {
+                        "id": region_id
+                    }
+                }
+            }
+        }
+
+    def _create_region_with_url(self):
+        ref = self.new_region_ref()
+        ref['url'] = self.RECIPIENT
+        r = self.post('/regions', body={'region': ref})
+        return r.json['region']['id']
+
+    def _fetch_valid_token(self):
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            project_id=self.project_id)
+        resp = self.v3_authenticate_token(auth_data)
+        token_id = resp.headers.get('X-Subject-Token')
+        return token_id
+
+    def test_generate_saml_route(self):
+        self._load_federation_config_options()
+        region_id = self._create_region_with_url()
+        token_id = self._fetch_valid_token()
+        body = self._create_generate_saml_request(token_id, region_id)
+        self.post(self.SAML_GENERATION_ROUTE, body=body,
+                  response_content_type='text/xml',
+                  expected_status=200)
+        # assert some stuff about the response
