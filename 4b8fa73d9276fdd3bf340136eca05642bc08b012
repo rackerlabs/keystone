@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ac7a964_37b580ee",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1660,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-14T21:42:51Z",
+      "side": 1,
+      "message": "How about adding a test that send invalid data? I think this would rather test schema validity, but I would love to make sure server side properly complains about bad request structure.\n\nAlso some variations for using a region with a valid url attribute could be useful.",
+      "revId": "4b8fa73d9276fdd3bf340136eca05642bc08b012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_b76c309e",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1669,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-14T21:42:51Z",
+      "side": 1,
+      "message": "++",
+      "revId": "4b8fa73d9276fdd3bf340136eca05642bc08b012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
