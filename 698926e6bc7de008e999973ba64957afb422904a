@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7ac7a964_9d93d5a2",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-14T22:51:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ac7a964_dce2b39e",
+      "revId": "698926e6bc7de008e999973ba64957afb422904a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac7a964_fc604f37",
         "filename": "keystone/tests/config_files/test_auth_plugin.conf",
         "patchSetId": 10
@@ -88,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "7ac7a964_5d269db8",
+        "filename": "keystone/tests/test_auth_plugin.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-14T22:51:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ac7a964_17532418",
+      "revId": "698926e6bc7de008e999973ba64957afb422904a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac7a964_7c251fc1",
         "filename": "keystone/tests/test_auth_plugin.py",
         "patchSetId": 10
@@ -99,6 +135,24 @@
       "writtenOn": "2014-08-14T21:34:51Z",
       "side": 1,
       "message": "Can you give None a name?",
+      "revId": "698926e6bc7de008e999973ba64957afb422904a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_7d3a79ce",
+        "filename": "keystone/tests/test_auth_plugin.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-14T22:51:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ac7a964_7c251fc1",
       "revId": "698926e6bc7de008e999973ba64957afb422904a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -133,6 +187,24 @@
       "writtenOn": "2014-08-14T21:34:51Z",
       "side": 1,
       "message": "Switch the order of these arguments. It should be (expected, observed).",
+      "revId": "698926e6bc7de008e999973ba64957afb422904a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_3d6f21c7",
+        "filename": "keystone/tests/test_auth_plugin.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-14T22:51:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ac7a964_f75ea8e8",
       "revId": "698926e6bc7de008e999973ba64957afb422904a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
