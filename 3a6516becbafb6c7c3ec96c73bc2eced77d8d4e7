@@ -33,6 +33,24 @@
       "revId": "3a6516becbafb6c7c3ec96c73bc2eced77d8d4e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_ffcdba87",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 983,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-08-14T11:50:13Z",
+      "side": 1,
+      "message": "Hi Lance Bragstad, could you explain more please? Do you mean this test should add a assert for trust_id or this test should check both v2 and v3 trust token should contain trustor_user_id, trustee_user_id, empersonation and trust_id?",
+      "parentUuid": "7ac7a964_365e8dea",
+      "revId": "3a6516becbafb6c7c3ec96c73bc2eced77d8d4e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
