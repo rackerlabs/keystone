@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ac7a964_fc5e8fe8",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-14T21:24:18Z",
+      "side": 1,
+      "message": "I don\u0027t think we can safely use REMOTE_USER with the current Keystone code. First of all, https://github.com/openstack/keystone/blob/master/keystone/auth/controllers.py#L464 the only check is:\n\nif context[\u0027environment\u0027].get(\u0027REMOTE_USER\u0027):\n   ... continue authn with \u0027external\u0027 method.\n\n How can we then handle configuration where external and any of federation methods are used (saml2, oidc, x509) ? I think Keystone will always try to use \u0027external\u0027.\n\nA check in contrib.federation.utils.RuleProcessor: https://github.com/openstack/keystone/blob/master/keystone/contrib/federation/utils.py#L224 will always enforce building a Rule Mapping where a \u0027name\u0027 value created. What is a goal for overwriting user_id value with REMOTE_USER?\n\nAlso, I cannot see any unit test that properly uses federated method and sets REMOTE_USER in the environment.",
+      "revId": "698926e6bc7de008e999973ba64957afb422904a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_fc604f37",
+        "filename": "keystone/tests/config_files/test_auth_plugin.conf",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-14T21:24:18Z",
+      "side": 1,
+      "message": "why is it all set to \u0027keystone.auth.plugins.mapped.Mapped\u0027 not \u0027keystone.auth.plugins.saml2.Saml2\u0027 (OpenID, X509 respectively)?",
+      "revId": "698926e6bc7de008e999973ba64957afb422904a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
