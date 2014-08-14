@@ -17,7 +17,12 @@ from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import wsgi
+from keystone import config
+from keystone.contrib.federation import samlgen
 from keystone.contrib.federation import utils
+
+
+CONF = config.CONF
 
 
 class _ControllerBase(controller.V3Controller):
@@ -224,6 +229,7 @@ class MappingController(_ControllerBase):
         return MappingController.wrap_member(context, mapping_ref)
 
 
+@dependency.requires('catalog_api', 'token_provider_api')
 class Auth(auth_controllers.Auth):
 
     def federated_authentication(self, context, identity_provider, protocol):
@@ -244,6 +250,42 @@ class Auth(auth_controllers.Auth):
         }
 
         return self.authenticate_for_token(context, auth=auth)
+
+    def create_saml_assertion(self, context, auth):
+        """Exchange a scoped token for a SAML assertion.
+
+        Get the necessary arguments out of the X-Subject-Token, and pass those
+        to the SAML generation function.
+
+        """
+
+        # Need to improve error handling here
+        region_id = auth['scope']['region']['id']
+        region = self.catalog_api.get_region(region_id)
+        recipient = region['url']
+
+        token_id = auth['identity']['token']['id']
+        response = self.token_provider_api.validate_token(token_id)
+        token_ref = response.get('token')
+        subject = token_ref['user']['name']
+        roles_data = token_ref['roles']
+
+        roles = []
+        for role_ref in roles_data:
+            roles.append(role_ref['name'])
+
+        # NOTE(stevemar): Obviously these need to be replaced with values
+        # from the keystone.conf file
+        issuer = 'http://acme.com:5000'
+        expires_in = 3600
+
+        generator = samlgen.SAMLGenerator()
+        response = generator.samlize_token(issuer, recipient, subject, roles,
+                                           expires_in)
+
+        # NOTE(stevemar): Need to add headers specific to XML/SAML here
+        return wsgi.render_response(body=str(response), status=('200', 'OK'),
+                                    headers=[('Content-Type', 'text/xml')])
 
 
 @dependency.requires('assignment_api')
