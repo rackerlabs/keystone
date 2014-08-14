@@ -1578,6 +1578,7 @@ class SAMLGenerationTests(FederationTests):
     RECIPIENT = 'http://beta.com/Shibboleth.sso/SAML2/POST'
     SUBJECT = 'stevemar'
     ROLES = ['demo', 'service']
+    SAML_GENERATION_ROUTE = '/auth/OS-FEDERATION/saml2'
 
     def _load_federation_config_options(self):
         CONF.federation.idp_private_key = CONF.signing.keyfile
@@ -1639,3 +1640,60 @@ class SAMLGenerationTests(FederationTests):
         role_attribute = assertion[4][1]
         for attribute_value in role_attribute:
             self.assertIn(attribute_value.text, self.ROLES)
+
+    def _create_generate_saml_request(self, token_id, region_id):
+        return {
+            "auth": {
+                "identity": {
+                    "methods": [
+                        "token"
+                    ],
+                    "token": {
+                        "id": token_id
+                    }
+                },
+                "scope": {
+                    "region": {
+                        "id": region_id
+                    }
+                }
+            }
+        }
+
+    def _create_region_with_url(self):
+        ref = self.new_region_ref()
+        ref['url'] = self.RECIPIENT
+        r = self.post('/regions', body={'region': ref})
+        return r.json['region']['id']
+
+    def _fetch_valid_token(self):
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            project_id=self.project_id)
+        resp = self.v3_authenticate_token(auth_data)
+        token_id = resp.headers.get('X-Subject-Token')
+        return token_id
+
+    def test_generate_saml_route(self):
+        self._load_federation_config_options()
+        region_id = self._create_region_with_url()
+        token_id = self._fetch_valid_token()
+        body = self._create_generate_saml_request(token_id, region_id)
+        http_response = self.post(self.SAML_GENERATION_ROUTE, body=body,
+                                  response_content_type='text/xml',
+                                  expected_status=200)
+        response = etree.fromstring(http_response.result)
+        issuer = response[0]
+        assertion = response[2]
+
+        self.assertEqual(response.get('Destination'), self.RECIPIENT)
+        self.assertEqual(issuer.text, 'http://localhost')
+
+        # TODO(stevemar): Match generated key text to key that was used.
+
+        user_attribute = assertion[4][0]
+        self.assertEqual(user_attribute[0].text, self.user['name'])
+
+        role_attribute = assertion[4][1]
+        self.assertEqual(role_attribute[0].text, self.role['name'])
