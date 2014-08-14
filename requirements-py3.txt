@@ -13,7 +13,7 @@ SQLAlchemy>=0.8.4,<=0.8.99,>=0.9.7,<=0.9.99
 sqlalchemy-migrate>=0.9.1
 passlib
 iso8601>=0.1.9
-python-keystoneclient>=0.9.0
+python-keystoneclient>=0.10.0
 keystonemiddleware>=1.0.0
 oslo.config>=1.4.0.0a3
 # oslo.messaging tries to pull in eventlet
