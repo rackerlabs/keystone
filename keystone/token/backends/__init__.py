@@ -10,6 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+# flake8: noqa
+
 # NOTE(morganfainberg): This package is for transition from the old token
 # backend package location to the new one. This package is slated for removal
 # in the Kilo development cycle.
