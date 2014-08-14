@@ -51,6 +51,8 @@ class FederationExtension(wsgi.V3ExtensionRouter):
         POST /OS-FEDERATION/identity_providers/$identity_provider/
             protocols/$protocol/auth
 
+        POST /auth/OS-FEDERATION/saml2
+
     """
     def _construct_url(self, suffix):
         return "/OS-FEDERATION/%s" % suffix
@@ -121,3 +123,9 @@ class FederationExtension(wsgi.V3ExtensionRouter):
             path=self._construct_url('identity_providers/{identity_provider}/'
                                      'protocols/{protocol}/auth'),
             get_post_action='federated_authentication')
+
+        # Auth operations
+        self._add_resource(
+            mapper, auth_controller,
+            path='/auth' + self._construct_url('saml2'),
+            post_action='create_saml_assertion')
