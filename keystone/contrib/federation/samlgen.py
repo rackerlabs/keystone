@@ -33,7 +33,8 @@ class SAMLGenerator(object):
     def __init__(self):
         self.assertion_id = uuid.uuid4().hex
 
-    def samlize_token(self, issuer, recipient, subject, roles, expires_in=None):
+    def samlize_token(self, issuer, recipient, subject, roles,
+                      expires_in=None):
         """Convert Keystone attributes to a SAML assertion.
 
         :param issuer: URL of the issuing party
