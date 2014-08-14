@@ -23,7 +23,9 @@ from oslo import messaging
 import pycadf
 from pycadf import cadftaxonomy as taxonomy
 from pycadf import cadftype
+from pycadf import credential
 from pycadf import eventfactory
+from pycadf import identifier
 from pycadf import resource
 
 from keystone.i18n import _
@@ -39,6 +41,7 @@ LOG = log.getLogger(__name__)
 # NOTE(gyee): actions that can be notified. One must update this list whenever
 # a new action is supported.
 ACTIONS = frozenset(['created', 'deleted', 'disabled', 'updated'])
+SAML_AUDIT_TYPE = 'http://docs.oasis-open.org/security/saml/v2.0'
 # resource types that can be notified
 _SUBSCRIBERS = {}
 _notifier = None
@@ -262,6 +265,12 @@ def _get_request_audit_info(context, user_id=None):
             user_id = environment.get('KEYSTONE_AUTH_CONTEXT',
                                       {}).get('user_id')
 
+    # TODO(topol)  Ideally here we should also create a pycadf credential
+    # object and store group_ids, identity_provider, and protocol as
+    # extra well known key value pairs as part of the credential
+    # object and pass it into resource.Resource. This requires the pycadf
+    # credential object to be updated to be extensible. For now we will just
+    # audit the user_id from the IDP which in itself will be helpful to know
     host = pycadf.host.Host(address=remote_addr, agent=http_user_agent)
     initiator = resource.Resource(typeURI=taxonomy.ACCOUNT_USER,
                                   name=user_id, host=host)
@@ -381,6 +390,23 @@ class CadfRoleAssignmentNotificationWrapper(object):
                 return result
 
         return wrapper
+
+
+def send_saml_audit_notification(action, context, user_id, group_ids,
+                                 identity_provider, protocol, outcome):
+    initiator = _get_request_audit_info(context, user_id=None)
+    token = identifier.generate_uuid()
+    audit_type = SAML_AUDIT_TYPE
+    if user_id is None:
+        user_id = taxonomy.UNKNOWN
+    if group_ids is None:
+        group_ids = []
+    cred = credential.FederatedCredential(token=token, type=audit_type,
+                                          identity_provider=identity_provider,
+                                          user=user_id, groups=group_ids)
+    initiator.credential = cred
+    _send_audit_notification(action, initiator,
+                             taxonomy.OUTCOME_PENDING)
 
 
 def _send_audit_notification(action, initiator, outcome, **kwargs):
