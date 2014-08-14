@@ -10,12 +10,16 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import functools
+
+from pycadf import cadftaxonomy as taxonomy
 from six.moves.urllib import parse
 
 from keystone import auth
 from keystone.common import dependency
 from keystone.contrib import federation
 from keystone.contrib.federation import utils
+from keystone import notifications
 from keystone.openstack.common import jsonutils
 
 
@@ -37,22 +41,36 @@ class Mapped(auth.AuthMethodHandler):
         """
 
         if 'id' in auth_payload:
-            fields = self._handle_scoped_token(auth_payload)
+            fields = self._handle_scoped_token(context, auth_payload)
         else:
             fields = self._handle_unscoped_token(context, auth_payload)
 
         auth_context.update(fields)
 
-    def _handle_scoped_token(self, auth_payload):
+    def _handle_scoped_token(self, context, auth_payload):
         token_ref = self.token_api.get_token(auth_payload['id'])
         utils.validate_expiration(token_ref)
         _federation = token_ref['user'][federation.FEDERATION]
         identity_provider = _federation['identity_provider']['id']
         protocol = _federation['protocol']['id']
+        user_id = token_ref['user']['id']
         group_ids = [group['id'] for group in _federation['groups']]
-        mapping = self.federation_api.get_mapping_from_idp_and_protocol(
-            identity_provider, protocol)
-        utils.validate_groups(group_ids, mapping['id'], self.identity_api)
+        send_notification = functools.partial(
+            notifications.send_saml_audit_notification, 'authenticate',
+            context, user_id, group_ids, identity_provider, protocol,
+            auth_payload['id'])
+
+        try:
+            mapping = self.federation_api.get_mapping_from_idp_and_protocol(
+                identity_provider, protocol)
+            utils.validate_groups(group_ids, mapping['id'], self.identity_api)
+            send_notification(taxonomy.OUTCOME_SUCCESS)
+        except Exception:
+            # NOTE(topol): Diaper defense to catch any exception, so we can
+            # send off failed authentication notification, raise the exception
+            # after sending the notification
+            send_notification(taxonomy.OUTCOME_FAILURE)
+            raise
         return {
             'user_id': token_ref['user_id'],
             'group_ids': group_ids,
@@ -66,17 +84,34 @@ class Mapped(auth.AuthMethodHandler):
             assertion['user_id'] = user_id
         identity_provider = auth_payload['identity_provider']
         protocol = auth_payload['protocol']
+        group_ids = None
+        token_id = None
 
-        mapped_properties = self._apply_mapping_filter(identity_provider,
-                                                       protocol,
-                                                       assertion)
+        send_notification = functools.partial(
+            notifications.send_saml_audit_notification, 'authenticate',
+            context, user_id, group_ids, identity_provider, protocol, token_id)
 
-        if not user_id:
+        try:
+            mapped_properties = self._apply_mapping_filter(identity_provider,
+                                                           protocol,
+                                                           assertion)
+
+            group_ids = mapped_properties['group_ids']
+            if not user_id:
+                user_id = parse.quote(mapped_properties['name'])
             user_id = parse.quote(mapped_properties['name'])
+
+            send_notification(taxonomy.OUTCOME_SUCCESS)
+        except Exception:
+            # NOTE(topol): Diaper defense to catch any exception, so we can
+            # send off failed authentication notification, raise the exception
+            # after sending the notification
+            send_notification(taxonomy.OUTCOME_FAILURE)
+            raise
 
         return {
             'user_id': user_id,
-            'group_ids': mapped_properties['group_ids'],
+            'group_ids': group_ids,
             federation.IDENTITY_PROVIDER: identity_provider,
             federation.PROTOCOL: protocol
         }
