@@ -804,6 +804,9 @@ class FederatedTokenTests(FederationTests):
         """
         xml_body = serializer.to_xml(json_body)
         json_deserialized = serializer.from_xml(xml_body)
+        LOG.critical('XML: %r', xml_body)
+        LOG.critical('JSON: %r', json_body)
+        LOG.critical('JsON de: %r', json_deserialized)
         self.assertDictEqual(json_deserialized, json_body)
 
     def _scope_request(self, unscoped_token_id, scope, scope_id):
