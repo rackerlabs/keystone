@@ -262,6 +262,12 @@ def _get_request_audit_info(context, user_id=None):
             user_id = environment.get('KEYSTONE_AUTH_CONTEXT',
                                       {}).get('user_id')
 
+    # TODO(topol)  Ideally here we should also create a pycadf credential
+    # object and store group_ids, identity_provider, and protocol as
+    # extra well known key value pairs as part of the credential
+    # object and pass it into resource.Resource. This requires the pycadf
+    # credential object to be updated to be extensible. For now we will just
+    # audit the user_id from the IDP which in itself will be helpful to know
     host = pycadf.host.Host(address=remote_addr, agent=http_user_agent)
     initiator = resource.Resource(typeURI=taxonomy.ACCOUNT_USER,
                                   name=user_id, host=host)
@@ -381,6 +387,14 @@ class CadfRoleAssignmentNotificationWrapper(object):
                 return result
 
         return wrapper
+
+
+def send_saml_audit_notification(action, context, user_id, group_ids,
+                                 identity_provider, protocol, outcome):
+    initiator = _get_request_audit_info(context, user_id=None)
+
+    _send_audit_notification(action, initiator,
+                             taxonomy.OUTCOME_PENDING)
 
 
 def _send_audit_notification(action, initiator, outcome, **kwargs):
