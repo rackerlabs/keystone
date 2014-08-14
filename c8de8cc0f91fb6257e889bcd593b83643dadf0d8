@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ac7a964_c8dbd119",
+        "filename": "keystone/tests/test_keystoneclient_sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-14T19:54:08Z",
+      "side": 1,
+      "message": "These imports can\u0027t be changed. This is the reason you are getting test failures. At the end of each test we clear the keystoneclient module from sys.modules. We do this so that we can test multiple versions of the client in the same Python process.",
+      "revId": "c8de8cc0f91fb6257e889bcd593b83643dadf0d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_8820f94a",
+        "filename": "keystone/token/backends/__init__.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-14T19:54:08Z",
+      "side": 1,
+      "message": "This change is unrelated.",
+      "revId": "c8de8cc0f91fb6257e889bcd593b83643dadf0d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_8bd8f61e",
+        "filename": "test-requirements.txt",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-14T19:54:08Z",
+      "side": 1,
+      "message": "test-requirements-py27.txt should be updated as well.",
+      "revId": "c8de8cc0f91fb6257e889bcd593b83643dadf0d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
