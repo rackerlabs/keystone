@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "AAAATn//Lew\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-14T12:07:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//P1w\u003d",
+      "revId": "df68f1af2979c56fc57f89006cde872caa6b9e53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAATn//dQc\u003d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2013-11-05T17:27:08Z",
       "side": 1,
       "message": "Can you add a blank line above line 8?  Also you may want to rewrite \u0027bug 1247830\u0027 as \u0027Closes-Bug: #1247830\u0027.  See https://wiki.openstack.org/wiki/GitCommitMessages#Including_external_references",
+      "revId": "df68f1af2979c56fc57f89006cde872caa6b9e53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAATn//Leo\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-14T12:07:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "AAAATn//dQc\u003d",
       "revId": "df68f1af2979c56fc57f89006cde872caa6b9e53",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
