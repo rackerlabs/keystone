@@ -23,6 +23,7 @@ from oslo import messaging
 import pycadf
 from pycadf import cadftaxonomy as taxonomy
 from pycadf import cadftype
+from pycadf import credential
 from pycadf import eventfactory
 from pycadf import resource
 
@@ -45,6 +46,7 @@ UPDATED = 'updated'
 INTERNAL = 'internal'
 
 ACTIONS = frozenset([CREATED, DELETED, DISABLED, UPDATED, INTERNAL])
+SAML_AUDIT_TYPE = 'http://docs.oasis-open.org/security/saml/v2.0'
 # resource types that can be notified
 _SUBSCRIBERS = {}
 _notifier = None
@@ -277,7 +279,6 @@ def _get_request_audit_info(context, user_id=None):
         if not user_id:
             user_id = environment.get('KEYSTONE_AUTH_CONTEXT',
                                       {}).get('user_id')
-
     host = pycadf.host.Host(address=remote_addr, agent=http_user_agent)
     initiator = resource.Resource(typeURI=taxonomy.ACCOUNT_USER,
                                   name=user_id, host=host)
@@ -397,6 +398,25 @@ class CadfRoleAssignmentNotificationWrapper(object):
                 return result
 
         return wrapper
+
+
+def send_saml_audit_notification(action, context, user_id, group_ids,
+                                 identity_provider, protocol, token_id,
+                                 outcome):
+    initiator = _get_request_audit_info(context, user_id=None)
+    audit_type = SAML_AUDIT_TYPE
+    if user_id is None:
+        user_id = taxonomy.UNKNOWN
+    if group_ids is None:
+        group_ids = []
+    if token_id is None:
+        token_id = taxonomy.UNKNOWN
+    cred = credential.FederatedCredential(token=token_id, type=audit_type,
+                                          identity_provider=identity_provider,
+                                          user=user_id, groups=group_ids)
+    initiator.credential = cred
+    _send_audit_notification(action, initiator,
+                             taxonomy.OUTCOME_PENDING)
 
 
 def _send_audit_notification(action, initiator, outcome, **kwargs):
