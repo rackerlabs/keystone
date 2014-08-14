@@ -70,11 +70,6 @@ class RevokeEvent(object):
             # This is revoking all tokens for a domain.
             self.domain_scope_id = None
 
-        if self.expires_at is not None:
-            # Trim off the expiration time because MySQL timestamps are only
-            # accurate to the second.
-            self.expires_at = self.expires_at.replace(microsecond=0)
-
         if self.revoked_at is None:
             self.revoked_at = timeutils.utcnow()
         if self.issued_before is None:
@@ -250,10 +245,6 @@ def build_token_values_v2(access, default_domain_id):
 
     token_expires_at = timeutils.parse_isotime(token_data['expires'])
 
-    # Trim off the microseconds because the revocation event only has
-    # expirations accurate to the second.
-    token_expires_at = token_expires_at.replace(microsecond=0)
-
     token_values = {
         'expires_at': timeutils.normalize_time(token_expires_at),
         'issued_at': timeutils.normalize_time(
@@ -295,10 +286,6 @@ def build_token_values_v2(access, default_domain_id):
 def build_token_values(token_data):
 
     token_expires_at = timeutils.parse_isotime(token_data['expires_at'])
-
-    # Trim off the microseconds because the revocation event only has
-    # expirations accurate to the second.
-    token_expires_at = token_expires_at.replace(microsecond=0)
 
     token_values = {
         'expires_at': timeutils.normalize_time(token_expires_at),
