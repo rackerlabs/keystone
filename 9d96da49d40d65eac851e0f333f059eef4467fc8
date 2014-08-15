@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ac7a964_a27205ab",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-15T19:21:58Z",
+      "side": 1,
+      "message": "nit: this method is doing a lot of validation as well and could be renamed to include that. Applying the scope of the trust doesn\u0027t happen until after line 180.",
+      "revId": "9d96da49d40d65eac851e0f333f059eef4467fc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_87b7db85",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-15T19:21:58Z",
+      "side": 1,
+      "message": "the check for \u0027roles\u0027 not in metadata_ref doesn\u0027t need to be in the loop I don\u0027t think.",
+      "revId": "9d96da49d40d65eac851e0f333f059eef4467fc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
