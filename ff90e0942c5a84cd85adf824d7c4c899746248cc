@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7ac7a964_24ab7e1e",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 787,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-15T06:58:11Z",
+      "side": 1,
+      "message": "I think this test is not very complicated, so I think it is not necessary to split it in more tests. There are several tests here in which they make more than one thing... I\u0027ve based on this \"style\" of tests to write test_get_roles_for_groups() function.\n\nAbout test with more groups. In this test, I\u0027m sending a group list (with only one group) so, the loop inside assignment_api.get_roles_for_groups works fine... I think it is not necessary",
+      "parentUuid": "7ac7a964_7fffea01",
+      "revId": "ff90e0942c5a84cd85adf824d7c4c899746248cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac7a964_84ee398a",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 7
