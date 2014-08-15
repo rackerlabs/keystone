@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ac7a964_23e9bb80",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-15T01:33:13Z",
+      "side": 1,
+      "message": "seems like all of this copy-pasted code should be put into a function.",
+      "revId": "357cd0045e16f4160a4a567ef74795982bab2cac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
