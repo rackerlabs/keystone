@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "7ac7a964_8fba9f6c",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-15T14:37:58Z",
+      "side": 1,
+      "message": "is this path tested? Can we mock out the os.remove method and return an exception so we can test this case?",
+      "revId": "b632af467ceb312a80ec76242247d520bb008164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac7a964_cf4f37bd",
         "filename": "keystone/common/openssl.py",
         "patchSetId": 8
