@@ -30,6 +30,7 @@ from keystone.i18n import _
 from keystone.i18n import _LI
 from keystone.i18n import _LW
 from keystone.openstack.common import importutils
+from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
 
 
@@ -215,6 +216,7 @@ class KeyValueStore(object):
         prefix = CONF.kvs.config_prefix
         conf_dict = {}
         conf_dict['%s.backend' % prefix] = backend
+        conf_dict['arguments'] = jsonutils.loads(CONF.kvs.arguments)
 
         if 'distributed_lock' not in config_args:
             config_args['distributed_lock'] = True

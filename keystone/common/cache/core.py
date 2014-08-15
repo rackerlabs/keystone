@@ -22,6 +22,7 @@ from keystone import config
 from keystone import exception
 from keystone.i18n import _
 from keystone.openstack.common import importutils
+from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
 
 
@@ -101,7 +102,9 @@ def build_cache_config():
         arg_key = '.'.join([prefix, 'arguments', argname])
         conf_dict[arg_key] = argvalue
 
-        LOG.debug('Keystone Cache Config: %s', conf_dict)
+    arguments = jsonutils.loads(CONF.cache.backend_arguments)
+    conf_dict.update(arguments)
+    LOG.debug('Keystone Cache Config: %s', conf_dict)
 
     return conf_dict
 

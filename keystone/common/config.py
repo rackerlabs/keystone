@@ -310,6 +310,8 @@ FILE_OPTIONS = {
                         'deployments.  Small workloads (single process) '
                         'like devstack can use the dogpile.cache.memory '
                         'backend.'),
+        cfg.StrOpt('backend_arguments', default='{}',
+                   help='dogpile.cache arguments. JSON string'),
         cfg.MultiStrOpt('backend_argument', default=[],
                         help='Arguments supplied to the backend module. '
                              'Specify this option once per argument to be '
@@ -796,6 +798,8 @@ FILE_OPTIONS = {
         cfg.ListOpt('backends', default=[],
                     help='Extra dogpile.cache backend modules to register '
                          'with the dogpile.cache library.'),
+        cfg.StrOpt('arguments', default='{}',
+                   help='dogpile.cache arguments. JSON string'),
         cfg.StrOpt('config_prefix', default='keystone.kvs',
                    help='Prefix for building the configuration dictionary '
                         'for the KVS region. This should not need to be '
