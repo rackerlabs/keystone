@@ -51,6 +51,24 @@
       "revId": "3a6516becbafb6c7c3ec96c73bc2eced77d8d4e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_c90c8c45",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 983,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-15T18:20:59Z",
+      "side": 1,
+      "message": "Correct, instead of testing that only trustor_user_id and impersonation are included in the response ensure that everything that *should* is in fact there. We could generalize this test case to include that as well.",
+      "parentUuid": "7ac7a964_ffcdba87",
+      "revId": "3a6516becbafb6c7c3ec96c73bc2eced77d8d4e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
