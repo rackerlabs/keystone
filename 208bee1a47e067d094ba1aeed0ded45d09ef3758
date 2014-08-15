@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ac7a964_55d73823",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-15T16:23:39Z",
+      "side": 1,
+      "message": "replace the link to the review with: \n\n    bp: endpoint-table-is-missing-reference-to-region-table",
+      "revId": "208bee1a47e067d094ba1aeed0ded45d09ef3758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_5ba04943",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-15T16:23:39Z",
+      "side": 1,
+      "message": "suggest wrapping this if statement in parenthesis to avoid line continuation with \\.",
+      "revId": "208bee1a47e067d094ba1aeed0ded45d09ef3758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_7ba3454f",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-15T16:23:39Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "208bee1a47e067d094ba1aeed0ded45d09ef3758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_c63c7cc2",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-15T16:23:39Z",
+      "side": 1,
+      "message": "In this case we are not going to allow the user to delete a region because it, or it\u0027s children, may have associated endpoints, correct? Could we relay that information in the exception, saying that the error isn\u0027t only because this region has endpoints, but it\u0027s children might have them too?",
+      "revId": "208bee1a47e067d094ba1aeed0ded45d09ef3758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_26d4501f",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-15T16:23:39Z",
+      "side": 1,
+      "message": "Not sure we need this else statement since if we hit it we are setting something this is already None to None. Unless I\u0027m missing something?",
+      "revId": "208bee1a47e067d094ba1aeed0ded45d09ef3758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
