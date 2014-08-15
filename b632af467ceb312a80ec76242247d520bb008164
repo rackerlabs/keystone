@@ -16,6 +16,23 @@
       "revId": "b632af467ceb312a80ec76242247d520bb008164",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_cf4f37bd",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-15T14:37:06Z",
+      "side": 1,
+      "message": "Something else that might be helpful here would be to log which certs already exist to the user with logic similar to; \n\nhttp://pasteraw.com/pt8sgwep003onp43xn9v03k7fk95m5p\n\nand give the following as output. \n\nhttp://pasteraw.com/p15bf0pspy5cmu3yf8v2lpi5ckzgwuh",
+      "revId": "b632af467ceb312a80ec76242247d520bb008164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
