@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//oyw\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-08-15T15:41:51Z",
+      "side": 1,
+      "message": "In some directory servers, entries with objectclass: ldapsubentry are hidden from LDAP search operations.  In order to request these entries, you have to explicitly request them by having the (objectclass\u003dldapsubentry) as part of the search filter.\nIf they are present, and you do not request them, the delete will fail with NOT_ALLOWED_ON_NONLEAF.",
+      "parentUuid": "AAAAU3//uKI\u003d",
+      "revId": "18217417079e19dcd390ee1e55d2d772b121afdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAU3//uCU\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 3
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "AAAAU3//oyI\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-08-15T15:41:51Z",
+      "side": 1,
+      "message": "\u003e also, if I am looking at the right doc, (objectclass\u003d*) is already the default so no need to specify it.\n\nSee above.\n\n\u003e attrslist\u003d[\u0027dn\u0027]\n\n\u0027dn\u0027 isn\u0027t really an attribute.  The proper LDAP way to request that no attributes in the entry are returned is to specify the attribute \u00271.1\u0027 by OID.  This OID is guaranteed not to exist in any LDAP server.  It is a common idiom in the LDAP world.\n\n\u003e attrsonly\u003d1\n\nSince no attributes will be returned with \u00271.1\u0027, the attrsonly\u003d1 flag is a no-op and can be omitted.",
+      "parentUuid": "AAAAU3//uCU\u003d",
+      "revId": "18217417079e19dcd390ee1e55d2d772b121afdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAVn//+6U\u003d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 3
@@ -100,6 +136,24 @@
       "writtenOn": "2014-03-06T04:02:34Z",
       "side": 1,
       "message": "Sorted the DNs by length, in decanding order should work fine. i.e. delete the ones with the longest DN first.",
+      "parentUuid": "AAAAVn//+6U\u003d",
+      "revId": "18217417079e19dcd390ee1e55d2d772b121afdd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAVn//53g\u003d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 488,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-08-15T15:41:51Z",
+      "side": 1,
+      "message": "ok",
       "parentUuid": "AAAAVn//+6U\u003d",
       "revId": "18217417079e19dcd390ee1e55d2d772b121afdd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
