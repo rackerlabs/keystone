@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ac7a964_e8ba42e0",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-15T00:46:38Z",
+      "side": 1,
+      "message": "revert the whitespace change on the previous line since it\u0027s unrelated.",
+      "revId": "b0b105c4d3418e0e1f61a1dd77dbcc317e4deac3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_c8ee66ec",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-15T00:46:38Z",
+      "side": 1,
+      "message": "the only actual change here is to add \"or CONF.cache_time\". I don\u0027t see why the name had to be changed.",
+      "revId": "b0b105c4d3418e0e1f61a1dd77dbcc317e4deac3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_8892ae55",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-15T00:46:38Z",
+      "side": 1,
+      "message": "the change on the previous line should be done in a separate commit since it\u0027s not related.",
+      "revId": "b0b105c4d3418e0e1f61a1dd77dbcc317e4deac3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
