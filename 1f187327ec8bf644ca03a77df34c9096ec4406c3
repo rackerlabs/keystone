@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ac7a964_e84a4282",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-15T01:11:57Z",
+      "side": 1,
+      "message": "(nit) change \"comparaison\" to \"comparison\"",
+      "revId": "1f187327ec8bf644ca03a77df34c9096ec4406c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_a334ebde",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-15T01:11:57Z",
+      "side": 1,
+      "message": "I don\u0027t see this used anywhere. What\u0027s it supposed to do? Add a docstring.",
+      "revId": "1f187327ec8bf644ca03a77df34c9096ec4406c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_23a61b11",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-15T01:11:57Z",
+      "side": 1,
+      "message": "should just `return True if type_ !\u003d \u0027table\u0027` at the beginning of the function then don\u0027t have to create the models list unnecessarily.",
+      "revId": "1f187327ec8bf644ca03a77df34c9096ec4406c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_63af33e4",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-15T01:11:57Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem useful. Why don\u0027t I just use self.engine?",
+      "revId": "1f187327ec8bf644ca03a77df34c9096ec4406c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_83ac4fef",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-15T01:11:57Z",
+      "side": 1,
+      "message": "This doesn\u0027t seem useful. Why don\u0027t I just use sql.ModelBase.metadata?",
+      "revId": "1f187327ec8bf644ca03a77df34c9096ec4406c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
