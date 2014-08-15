@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ac7a964_b4d41548",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-15T12:26:29Z",
+      "side": 1,
+      "message": "According to the Lance Bragstad NOTE, the type should be: [\u0027string\u0027, \u0027null\u0027]\n\nIsn\u0027t it?. Right now, this line breaks keystone.tests.test_v3_catalog.CatalogTestCase.test_create_region_with_empty_id() test.\n\nAnd the same rule for region_update as well.",
+      "revId": "533095cb93c7f130ed5fbf8229d6dbb7e89fe315",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
