@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7ac7a964_c51d6fbf",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1660,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-15T00:15:34Z",
+      "side": 1,
+      "message": "Agree with your first point, I\u0027ll add tests. \n\nI don\u0027t understand your second point, am I not using a valid region url?",
+      "parentUuid": "7ac7a964_37b580ee",
+      "revId": "4b8fa73d9276fdd3bf340136eca05642bc08b012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac7a964_b76c309e",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-14T21:42:51Z",
       "side": 1,
       "message": "++",
+      "revId": "4b8fa73d9276fdd3bf340136eca05642bc08b012",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_e5798bfd",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1669,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-15T00:15:34Z",
+      "side": 1,
+      "message": "ha, yeah... this was a PITA since it\u0027s all XML.",
+      "parentUuid": "7ac7a964_b76c309e",
       "revId": "4b8fa73d9276fdd3bf340136eca05642bc08b012",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
