@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ac7a964_5fc5808c",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-16T07:18:48Z",
+      "side": 1,
+      "message": "I think I can remove this now, as I\u0027ve updated the tests to always use callable args",
+      "revId": "749043e8aff79b4530edc3f916c3b6ac21edfb0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_7fc07c7c",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-16T07:18:48Z",
+      "side": 1,
+      "message": "I think I can remove this now, as I\u0027ve updated the tests to always use callable args, we can probably just use kwargs now",
+      "revId": "749043e8aff79b4530edc3f916c3b6ac21edfb0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_9fbf18fb",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-16T07:18:48Z",
+      "side": 1,
+      "message": "remove this line",
+      "revId": "749043e8aff79b4530edc3f916c3b6ac21edfb0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
