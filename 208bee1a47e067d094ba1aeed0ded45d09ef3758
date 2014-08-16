@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "5ac4a560_9594c445",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-16T17:17:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ac7a964_5ba04943",
+      "revId": "208bee1a47e067d094ba1aeed0ded45d09ef3758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac7a964_7ba3454f",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 1
@@ -47,6 +65,24 @@
       "writtenOn": "2014-08-15T16:23:39Z",
       "side": 1,
       "message": "same comment here",
+      "revId": "208bee1a47e067d094ba1aeed0ded45d09ef3758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac4a560_75b008f5",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-16T17:17:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ac7a964_7ba3454f",
       "revId": "208bee1a47e067d094ba1aeed0ded45d09ef3758",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "5ac4a560_55ab0c89",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-16T17:17:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ac7a964_c63c7cc2",
+      "revId": "208bee1a47e067d094ba1aeed0ded45d09ef3758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac7a964_26d4501f",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 1
@@ -81,6 +135,24 @@
       "writtenOn": "2014-08-15T16:23:39Z",
       "side": 1,
       "message": "Not sure we need this else statement since if we hit it we are setting something this is already None to None. Unless I\u0027m missing something?",
+      "revId": "208bee1a47e067d094ba1aeed0ded45d09ef3758",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ac4a560_35a690c2",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-16T17:17:22Z",
+      "side": 1,
+      "message": "region_id is being added while this method is invoked and we convert the region to region_id if region is provided, otherwise it will set to None here.",
+      "parentUuid": "7ac7a964_26d4501f",
       "revId": "208bee1a47e067d094ba1aeed0ded45d09ef3758",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
