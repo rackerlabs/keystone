@@ -814,7 +814,36 @@ FILE_OPTIONS = {
     'saml': [
         cfg.IntOpt('assertion_expiration_time', default=3600,
                    help='Default TTL, in seconds, for any generated SAML '
-                        'assertion created by Keystone.')
+                        'assertion created by Keystone.'),
+        cfg.StrOpt('idp_entity_id', default='',
+                   help='Entity ID value for unique Identity Provider '
+                        'identification. Usually FQDN is set with a suffix.'
+                        'Example: https://keystone.idp.com/v3/OS-FEDERATION/'
+                        'saml2/idp'),
+        cfg.StrOpt('idp_sso_endpoint', default='',
+                   help='IdenityProvider SingleSignOnService value  '
+                        'required in the Identity Provider\'s Metadata '
+                        'Example: https://keystone.idp.com/v3/OS-FEDERATION/'
+                        'saml2/sso'),
+        cfg.StrOpt('idporganization_name', default='',
+                   help=''),
+        cfg.StrOpt('idp_organization_display_name', default='',
+                   help=''),
+        cfg.StrOpt('idp_organization_url', default='',
+                   help=''),
+        cfg.StrOpt('idp_contact_company', default='',
+                   help=''),
+        cfg.StrOpt('idp_given_name', default='',
+                   help=''),
+        cfg.StrOpt('idp_contact_surname', default='',
+                   help=''),
+        cfg.StrOpt('idp_contact_name', default='',
+                   help=''),
+        cfg.StrOpt('idp_contact_email', default='',
+                   help=''),
+        cfg.StrOpt('idp_contact_telephone', default='',
+                   help=''),
+
 
     ]
 }
