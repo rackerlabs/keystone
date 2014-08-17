@@ -107,13 +107,13 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         self.assignment_api.create_role(self.role['id'], self.role)
         self.role1 = self.new_role_ref()
         self.assignment_api.create_role(self.role1['id'], self.role1)
-        self.assignment_api.create_grant(context={}, role_id=self.role['id'],
+        self.assignment_api.create_grant(self.role['id'],
                                          user_id=self.user1['id'],
                                          domain_id=self.domainA['id'])
-        self.assignment_api.create_grant(context={}, role_id=self.role['id'],
+        self.assignment_api.create_grant(self.role['id'],
                                          user_id=self.user2['id'],
                                          domain_id=self.domainA['id'])
-        self.assignment_api.create_grant(context={}, role_id=self.role1['id'],
+        self.assignment_api.create_grant(self.role1['id'],
                                          user_id=self.user1['id'],
                                          domain_id=self.domainA['id'])
 
@@ -423,30 +423,25 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
         self.assignment_api.create_role(self.role['id'], self.role)
 
         # The cloud admin just gets the admin role
-        self.assignment_api.create_grant(context={},
-                                         role_id=self.admin_role['id'],
+        self.assignment_api.create_grant(self.admin_role['id'],
                                          user_id=self.cloud_admin_user['id'],
                                          domain_id=self.admin_domain['id'])
 
         # Assign roles to the domain
-        self.assignment_api.create_grant(context={},
-                                         role_id=self.admin_role['id'],
+        self.assignment_api.create_grant(self.admin_role['id'],
                                          user_id=self.domain_admin_user['id'],
                                          domain_id=self.domainA['id'])
-        self.assignment_api.create_grant(context={},
-                                         role_id=self.role['id'],
+        self.assignment_api.create_grant(self.role['id'],
                                          user_id=self.just_a_user['id'],
                                          domain_id=self.domainA['id'])
 
         # Create a assign roles to the project
         self.project = self.new_project_ref(domain_id=self.domainA['id'])
         self.assignment_api.create_project(self.project['id'], self.project)
-        self.assignment_api.create_grant(context={},
-                                         role_id=self.admin_role['id'],
+        self.assignment_api.create_grant(self.admin_role['id'],
                                          user_id=self.project_admin_user['id'],
                                          project_id=self.project['id'])
-        self.assignment_api.create_grant(context={},
-                                         role_id=self.role['id'],
+        self.assignment_api.create_grant(self.role['id'],
                                          user_id=self.just_a_user['id'],
                                          project_id=self.project['id'])
 
