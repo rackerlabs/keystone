@@ -16,6 +16,24 @@
       "revId": "edddb07860c00963c63d85d013ed27dd6c4029e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3c659545",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-17T13:02:43Z",
+      "side": 1,
+      "message": "I can certainly change this to emit_role_assignment_event.\n\nThe reason it\u0027s completely separate, is because even though emit_event sounds general purpose, the fact is, these are wrappers, and the signature expects a very specific format:\n\n  def wrapper(wrapped_self, context, user_id, *args, **kwargs):\n\nIf anything, the general purpose one should be renamed to something like emit_authentication_event, and drop the authentication action.",
+      "parentUuid": "1abeadc6_bc6e0595",
+      "revId": "edddb07860c00963c63d85d013ed27dd6c4029e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
