@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_3c0af5d2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-17T11:09:53Z",
+      "side": 1,
+      "message": "Probably with stating that we are NOT changing the driver signatures, this it\u0027s only the manager layer that has to know about this.",
+      "revId": "92ff98f985c788d0a230253040856d076571f455",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
