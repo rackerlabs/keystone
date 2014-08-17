@@ -30,6 +30,7 @@ EXP_RESOURCE_TYPE = uuid.uuid4().hex
 CREATED_OPERATION = 'created'
 UPDATED_OPERATION = 'updated'
 DELETED_OPERATION = 'deleted'
+ROLE_ASSIGNMENT = 'role_assignment'
 
 
 class ArbitraryException(Exception):
@@ -494,6 +495,40 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
         self.assertEqual(initiator.host.address, self.LOCAL_HOST)
         self.assertTrue(note['send_notification_called'])
 
+    def _assert_attachments(self, role_id, project=None, domain=None,
+                            user=None, group=None, inherit=False):
+        """Assert that the CADF attachments are valid.
+
+        In the case of role assignments, the initiator will have extra data,
+        known as attachments, specifically the role_id, target, actor, and
+        if the role is inherited.
+
+        An example initiator, as a dictionary is seen below:
+            {
+                'actor': u'677483b304694e62abbe66a018b3c8cc',
+                'host': {'address': 'localhost'},
+                'id': 'openstack:f6eac6ad-ef02-4469-a40f-c1c9151d3813',
+                'inherited_to_projects': False
+                'name': u'7bdae1f0c3754e9f8af3794016b88093',
+                'role': u'41bc9cdce68e415c8c1035cabbeb4565',
+                'target': u'34b35b87295a47148305e0909b676e9d',
+                'typeURI': 'service/security/account/user'
+            }
+        """
+
+        note = self._notifications[-1]
+        initiator = note['initiator']
+        if project:
+            self.assertEqual(project, initiator.project)
+        if domain:
+            self.assertEqual(domain, initiator.domain)
+        if user:
+            self.assertEqual(user, initiator.user)
+        if group:
+            self.assertEqual(group, initiator.group)
+        self.assertEqual(role_id, initiator.role)
+        self.assertEqual(inherit, initiator.inherited_to_projects)
+
     def test_v3_authenticate_user_name_and_domain_id(self):
         user_id = self.user_id
         user_name = self.user['name']
@@ -523,6 +558,31 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
                                                  password=password)
         self.post('/auth/tokens', body=data)
         self._assert_last_note(self.ACTION, user_id)
+
+    def _test_role_assignment(self, url, role, project=None, domain=None,
+                              user=None, group=None):
+        self.put(url)
+        self._assert_last_note(CREATED_OPERATION, self.user_id)
+        self._assert_attachments(role, project, domain, user, group)
+        self.delete(url)
+        self._assert_last_note(DELETED_OPERATION, self.user_id)
+        self._assert_attachments(role, project, domain, user, group)
+
+    def test_user_project_grant(self):
+        url = ('/projects/%s/users/%s/roles/%s' %
+               (self.project_id, self.user_id, self.role_id))
+        self._test_role_assignment(url, self.role_id,
+                                   project=self.project_id,
+                                   user=self.user_id)
+
+    def test_group_domain_grant(self):
+        group_ref = self.new_group_ref(domain_id=self.domain_id)
+        group = self.identity_api.create_group(group_ref)
+        url = ('/domains/%s/groups/%s/roles/%s' %
+               (self.domain_id, group['id'], self.role_id))
+        self._test_role_assignment(url, self.role_id,
+                                   domain=self.domain_id,
+                                   group=group['id'])
 
 
 class TestCallbackRegistration(testtools.TestCase):
