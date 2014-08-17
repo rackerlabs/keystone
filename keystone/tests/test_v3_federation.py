@@ -25,10 +25,12 @@ from keystone.common import serializer
 from keystone import config
 from keystone.contrib.federation import controllers as federation_controllers
 from keystone.contrib.federation import idp as keystone_idp
+from keystone.contrib.federation import metadata_generator
 from keystone.contrib.federation import utils as mapping_utils
 from keystone import exception
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
+from keystone.tests import federation_fixtures
 from keystone.tests import mapping_fixtures
 from keystone.tests import test_v3
 
@@ -1666,3 +1668,25 @@ class SAMLGenerationTests(FederationTests):
 
         project_attribute = assertion[4][2]
         self.assertEqual(self.PROJECT, project_attribute[0].text)
+
+
+class IdPMetadataGenerationTests(FederationTests):
+    """A class for testing Identity Provider Metadata generation."""
+
+    def setUp(self):
+        super(IdPMetadataGenerationTests, self).setUp()
+        CONF.federation.entity_id = federation_fixtures.IDP_ENTITY_ID
+        CONF.federation.idp_sso_endpoint = federation_fixtures.IDP_SSO_ENDPOINT
+        self.generator = metadata_generator.MetadataGenerator()
+
+    def test_check_entity_id(self):
+        metadata = self.generator.generate_metadata()
+        self.assertEqual(federation_fixtures.IDP_ENTITY_ID,
+                         metadata.entity_id)
+
+    def test_check_idpsso(self):
+        metadata = self.generator.generate_metadata()
+        idpsso_descriptor = metadata.idpsso_descriptor
+        self.assertIsNotNone(metadata.idpsso_descriptor)
+        self.assertEqual(federation_fixtures.IDP_SSO_ENDPOINT,
+                         idpsso_descriptor.single_sign_on_service.text)
