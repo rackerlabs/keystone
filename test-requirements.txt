@@ -36,6 +36,7 @@ requests>=1.1
 keyring>=1.6.1,<2.0
 # for keystoneclient Plugin loading from config objects
 stevedore>=0.10
+oslo.utils>=0.1.1
 
 # For documentation
 oslo.sphinx
