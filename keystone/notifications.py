@@ -14,12 +14,14 @@
 
 """Notifications module for OpenStack Identity Service resources"""
 
+import inspect
 import logging
 import socket
 
 from oslo.config import cfg
 from oslo import messaging
 import pycadf
+from pycadf import attachment
 from pycadf import cadftaxonomy as taxonomy
 from pycadf import cadftype
 from pycadf import eventfactory
@@ -45,6 +47,28 @@ _notifier = None
 
 CONF = cfg.CONF
 CONF.register_opts(notifier_opts)
+
+try:  # Python 2.7+
+    getcallargs = inspect.getcallargs
+except AttributeError:  # Python 2.6 support
+    def getcallargs(f, *positional, **named):
+        """A very simplified version of inspect.getcallargs.
+
+        It will work in our specific case where we are using decorators
+        around methods.
+
+        """
+        argspec = inspect.getargspec(f)
+
+        # setup the defaults
+        callargs = dict(zip(argspec.args[-len(argspec.defaults):],
+                            argspec.defaults))
+
+        callargs.update(named)
+        for n, arg in enumerate(positional):
+            callargs[argspec.args[n]] = arg
+
+        return callargs
 
 
 class ManagerNotificationWrapper(object):
@@ -271,6 +295,101 @@ class CadfNotificationWrapper(object):
         return wrapper
 
 
+class CadfRoleAssignmentNotificationWrapper(object):
+    """Send CADF notifications for ``role_assignment`` methods.
+
+    Sends a CADF notification if the wrapped method does not raise an
+    ``Exception`` (such as ``keystone.exception.NotFound``).
+
+    :param operation:  one of the values from ACTIONS (create or delete)
+    """
+
+    def __init__(self, operation):
+        self.operation = operation
+
+    def __call__(self, f):
+        def wrapper(wrapped_self, role_id, *args, **kwargs):
+            """Send a notification if the wrapped callable is successful."""
+
+            result = f(wrapped_self, role_id, *args, **kwargs)
+
+            """ NOTE(stevemar): The reason we go through checking kwargs
+            and args for possible target and actor values is because the
+            create_grant() (and delete_grant()) method are called
+            differently in various tests.
+            Using named arguments, i.e.:
+                create_grant(user_id=user['id'], domain_id=domain['id'],
+                             role_id=role['id'])
+
+            Or, using positional arguments, i.e.:
+                create_grant(role_id['id'], user['id'], None,
+                             domain_id=domain['id'], None)
+
+            Or, both, i.e.:
+                create_grant(role_id['id'], user_id=user['id'],
+                             domain_id=domain['id'])
+
+            Checking the values for kwargs is easy enough, since it comes
+            in as a dictionary
+
+            The actual method signature is
+                create_grant(role_id, user_id=None, group_id=None,
+                             domain_id=None, project_id=None,
+                             inherited_to_projects=False)
+
+            So, if the values of actor or target are still None after
+            checking kwargs, we can check the positional arguments,
+            based on the method signature.
+            """
+            call_args = getcallargs(f, wrapped_self, role_id, *args, **kwargs)
+            target = call_args['project_id'] or call_args['domain_id']
+            actor = call_args['user_id'] or call_args['group_id']
+            inherited = call_args['inherited_to_projects']
+            context = call_args['context']
+
+            remote_addr = None
+            http_user_agent = None
+            user_id = None
+
+            if context and context.get('environment'):
+                environment = context['environment']
+                remote_addr = environment.get('REMOTE_ADDR')
+                http_user_agent = environment.get('HTTP_USER_AGENT')
+                auth_context = environment.get('KEYSTONE_AUTH_CONTEXT')
+                user_id = auth_context.get('user_id')
+
+            host = pycadf.host.Host(address=remote_addr, agent=http_user_agent)
+            initiator = resource.Resource(typeURI=taxonomy.ACCOUNT_USER,
+                                          name=user_id, host=host)
+
+            attach_uri = 'attachURI'
+            actor_attach = attachment.Attachment(typeURI=attach_uri,
+                                                 content=actor,
+                                                 name='actor')
+            target_attach = attachment.Attachment(typeURI=attach_uri,
+                                                  content=target,
+                                                  name='target')
+            inherited_attach = attachment.Attachment(typeURI=attach_uri,
+                                                     content=inherited,
+                                                     name='inherited')
+            role_attach = attachment.Attachment(typeURI=attach_uri,
+                                                content=role_id,
+                                                name='role')
+            initiator.add_attachment(actor_attach)
+            initiator.add_attachment(target_attach)
+            initiator.add_attachment(inherited_attach)
+            initiator.add_attachment(role_attach)
+
+            # NOTE(stevemar): Always set the outcome to success since these
+            # operations return `204 No Content`.
+            _send_audit_notification(self.operation, initiator,
+                                     taxonomy.OUTCOME_SUCCESS)
+
+            return result
+
+        return wrapper
+
+
 def _send_audit_notification(action, initiator, outcome):
     """Send CADF notification to inform observers about the affected resource.
 
@@ -311,3 +430,6 @@ def _send_audit_notification(action, initiator, outcome):
 
 
 emit_event = CadfNotificationWrapper
+
+
+role_assignment = CadfRoleAssignmentNotificationWrapper
