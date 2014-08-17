@@ -830,7 +830,37 @@ FILE_OPTIONS = {
                    default=_KEYFILE,
                    help='Path of the keyfile for SAML signing. Note, the path '
                         'cannot contain a comma.'),
-    ],
+        cfg.StrOpt('idp_entity_id', default='',
+                   help='Entity ID value for unique Identity Provider '
+                        'identification. Usually FQDN is set with a suffix. '
+                        'For example: https://keystone.example.com/v3/'
+                        'OS-FEDERATION/saml2/idp'),
+        cfg.StrOpt('idp_sso_endpoint', default='',
+                   help='Identity Provider Single-Sign-On service value, '
+                        'required in the Identity Provider\'s metadata. '
+                        'For example: https://keystone.example.com/v3/'
+                        'OS-FEDERATION/saml2/sso'),
+        cfg.StrOpt('idp_organization_name', default='',
+                   help='Organization name the installation belongs to.'),
+        cfg.StrOpt('idp_organization_display_name', default='',
+                   help='Organization name to be displayed.'),
+        cfg.StrOpt('idp_organization_url', default='',
+                   help='URL of the organization.'),
+        cfg.StrOpt('idp_contact_company', default='',
+                   help='Company of contact person.'),
+        cfg.StrOpt('idp_contact_name', default='',
+                   help='Given name of contact person'),
+        cfg.StrOpt('idp_contact_surname', default='',
+                   help='Surname of contact person.'),
+        cfg.StrOpt('idp_contact_email', default='',
+                   help='Email address of contact person.'),
+        cfg.StrOpt('idp_contact_telephone', default='',
+                   help='Telephone number of contact person.'),
+        cfg.StrOpt('idp_contact_type', default='other',
+                   help='Contact type. Allowed values are: '
+                        'technical, support, administrative '
+                        'billing, and other'),
+    ]
 }
 
 

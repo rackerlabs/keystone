@@ -34,6 +34,7 @@ from keystone import exception
 from keystone import notifications
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
+from keystone.tests import federation_fixtures
 from keystone.tests import mapping_fixtures
 from keystone.tests import test_v3
 
@@ -1761,3 +1762,72 @@ class SAMLGenerationTests(FederationTests):
         # match it with the key that we used.
         cert_text = cert_text.replace(os.linesep, '')
         self.assertEqual(idp_public_key, cert_text)
+
+
+# NOTE(marek-denis): Add negative tests.
+class IdPMetadataGenerationTests(FederationTests):
+    """A class for testing Identity Provider Metadata generation."""
+
+    def setUp(self):
+        super(IdPMetadataGenerationTests, self).setUp()
+        self._configure_settings()
+        self.generator = keystone_idp.MetadataGenerator()
+
+    def _configure_settings(self):
+        self.config_fixture.config(
+            group='saml',
+            idp_entity_id=federation_fixtures.IDP_ENTITY_ID,
+            idp_sso_endpoint=federation_fixtures.IDP_SSO_ENDPOINT,
+            idp_organization_name=federation_fixtures.IDP_ORGANIZATION_NAME,
+            idp_organization_display_name=(
+                federation_fixtures.IDP_ORGANIZATION_DISPLAY_NAME),
+            idp_organization_url=federation_fixtures.IDP_ORGANIZATION_URL,
+            idp_contact_name=federation_fixtures.IDP_CONTACT_GIVEN_NAME,
+            idp_contact_surname=federation_fixtures.IDP_CONTACT_SURNAME,
+            idp_contact_email=federation_fixtures.IDP_CONTACT_EMAIL,
+            idp_contact_telephone=(
+                federation_fixtures.IDP_CONTACT_TELEPHONE_NUMBER),
+            idp_contact_type=federation_fixtures.IDP_CONTACT_TYPE)
+
+    def test_check_entity_id(self):
+        metadata = self.generator.generate_metadata()
+        self.assertEqual(federation_fixtures.IDP_ENTITY_ID, metadata.entity_id)
+
+    def test_metadata_validity(self):
+        """Call md.EntityDescriptor method that does internal verification."""
+        self.generator.generate_metadata().verify()
+
+    # NOTE(marek-denis): Add values checking
+    def test_serialize_metadata_object(self):
+        """Check whether serialization doesn't raise any exceptions."""
+        self.generator.generate_metadata().to_string()
+
+    def test_check_idpsso(self):
+        metadata = self.generator.generate_metadata()
+        idpsso_descriptor = metadata.idpsso_descriptor
+        self.assertIsNotNone(metadata.idpsso_descriptor)
+        self.assertEqual(federation_fixtures.IDP_SSO_ENDPOINT,
+                         idpsso_descriptor.single_sign_on_service.location)
+
+        self.assertIsNotNone(idpsso_descriptor.organization)
+        organization = idpsso_descriptor.organization
+        self.assertEqual(federation_fixtures.IDP_ORGANIZATION_DISPLAY_NAME,
+                         organization.organization_display_name.text)
+        self.assertEqual(federation_fixtures.IDP_ORGANIZATION_NAME,
+                         organization.organization_name.text)
+        self.assertEqual(federation_fixtures.IDP_ORGANIZATION_URL,
+                         organization.organization_url.text)
+
+        self.assertIsNotNone(idpsso_descriptor.contact_person)
+        contact_person = idpsso_descriptor.contact_person
+
+        self.assertEqual(federation_fixtures.IDP_CONTACT_GIVEN_NAME,
+                         contact_person.given_name.text)
+        self.assertEqual(federation_fixtures.IDP_CONTACT_SURNAME,
+                         contact_person.sur_name.text)
+        self.assertEqual(federation_fixtures.IDP_CONTACT_EMAIL,
+                         contact_person.email_address.text)
+        self.assertEqual(federation_fixtures.IDP_CONTACT_TELEPHONE_NUMBER,
+                         contact_person.telephone_number.text)
+        self.assertEqual(federation_fixtures.IDP_CONTACT_TYPE,
+                         contact_person.contact_type)
