@@ -443,7 +443,17 @@ FILE_OPTIONS = {
                         'Keystone process.'),
         cfg.IntOpt('assertion_expiration_time', default=3600,
                    help='Default TTL, in seconds, for any generated SAML '
-                        'assertion created by Keystone.')
+                        'assertion created by Keystone.'),
+        cfg.StrOpt('entity_id', default='',
+                   help='Entity ID value for unique Identity Provider '
+                        'identification. Usually FQDN is set with a suffix.'
+                        'Example: https://keystone.idp.com/v3/OS-FEDERATION/'
+                        'saml2/idp'),
+        cfg.StrOpt('idp_sso_endpoint', default='',
+                   help='IdenityProvider SingleSignOnService value  '
+                        'required in the Identity Provider\'s Metadata '
+                        'Example: https://keystone.idp.com/v3/OS-FEDERATION/'
+                        'saml2/sso')
     ],
     'policy': [
         cfg.StrOpt('driver',
