@@ -1287,6 +1287,45 @@
 # created by Keystone. (integer value)
 #assertion_expiration_time=3600
 
+# Entity ID value for unique Identity Provider identification.
+# Usually FQDN is set with a suffix.Example:
+# https://keystone.idp.com/v3/OS-FEDERATION/saml2/idp (string
+# value)
+#idp_entity_id=
+
+# IdenityProvider SingleSignOnService value  required in the
+# Identity Provider's Metadata Example:
+# https://keystone.idp.com/v3/OS-FEDERATION/saml2/sso (string
+# value)
+#idp_sso_endpoint=
+
+#  (string value)
+#idporganization_name=
+
+#  (string value)
+#idp_organization_display_name=
+
+#  (string value)
+#idp_organization_url=
+
+#  (string value)
+#idp_contact_company=
+
+#  (string value)
+#idp_given_name=
+
+#  (string value)
+#idp_contact_surname=
+
+#  (string value)
+#idp_contact_name=
+
+#  (string value)
+#idp_contact_email=
+
+#  (string value)
+#idp_contact_telephone=
+
 
 [signing]
 
