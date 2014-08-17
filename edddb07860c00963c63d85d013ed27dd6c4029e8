@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_bc6e0595",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-17T11:07:58Z",
+      "side": 1,
+      "message": "so I know that we don\u0027t like to have too much checking on what the action is inside these notification managers....but it seems odd that we have a general purpose \"emit_event\" which takes an action parameter (i.e. \u0027authenticate\u0027), but then we declare separate one for this action.  If we do keep it separate, then maybe it should be \"emit_role_assignment_event\"",
+      "revId": "edddb07860c00963c63d85d013ed27dd6c4029e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
