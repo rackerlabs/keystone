@@ -519,7 +519,7 @@ class RoleV3(controller.V3Controller):
         self._require_user_xor_group(user_id, group_id)
 
         self.assignment_api.create_grant(
-            role_id, user_id, group_id, domain_id, project_id,
+            context, role_id, user_id, group_id, domain_id, project_id,
             self._check_if_inherited(context))
 
     @controller.protected(callback=_check_grant_protection)
@@ -553,7 +553,7 @@ class RoleV3(controller.V3Controller):
         self._require_user_xor_group(user_id, group_id)
 
         self.assignment_api.delete_grant(
-            role_id, user_id, group_id, domain_id, project_id,
+            context, role_id, user_id, group_id, domain_id, project_id,
             self._check_if_inherited(context))
 
 
