@@ -17,6 +17,7 @@ import uuid
 import xml
 
 import saml2  # noqa
+from saml2 import md  # noqa
 from saml2 import saml  # noqa
 from saml2 import samlp  # noqa
 import xmldsig  # noqa
@@ -417,3 +418,87 @@ class SAMLGenerator(object):
             raise
         else:
             return signed_assertion
+
+
+class MetadataGenerator(object):
+    """A class for generating SAML IdP Metadata."""
+
+    def generate_metadata(self):
+        """Generate Identity Provider Metadata.
+
+        Generate and format into XML a metadata to be exposed and
+        consumed by federated Service Providers.
+
+        :return: <EntityDescriptor> object.
+
+        """
+        entity_descriptor = self._create_entity_descriptor()
+        entity_descriptor.idpsso_descriptor = self._create_idpssodescriptor()
+        return entity_descriptor
+
+    def _create_entity_descriptor(self):
+        ed = md.EntityDescriptor()
+        ed.entity_id = CONF.saml.idp_entity_id
+        return ed
+
+    def _create_idpssodescriptor(self):
+        def get_cert():
+            """Open and read certificate file.
+
+            The function returns a certificate with the first and last lines
+            stripped.
+
+            :return: certificate
+            :raises IOError: in case of opening reading certificate file.
+
+            """
+            try:
+                with open(CONF.signing.certfile, 'r') as certificate:
+                    return "".join(certificate.readlines()[1:-1])
+            except IOError as e:
+                msg = _("Canot open certificate %(cert_file)s. "
+                        "Reason: %(reason)s")
+                msg = msg % {'cert_file': CONF.signing.certfile, 'reason': e}
+                LOG.error(msg)
+                raise IOError(msg)
+
+        def key_descriptor():
+            cert = get_cert()
+            return md.KeyDescriptor(
+                key_info=xmldsig.KeyInfo(
+                    x509_data=xmldsig.X509Data(
+                        x509_certificate=xmldsig.X509Certificate(text=cert)
+                    )
+                ), use='signing'
+            )
+
+        def single_sign_on_service():
+            idp_sso_endpoint = CONF.saml.idp_sso_endpoint
+            return md.SingleSignOnService(text=idp_sso_endpoint)
+
+        def organization():
+            name = CONF.saml.idp_organization_name
+            display_name = CONF.saml.idp_organization_display_name
+            url = CONF.saml.idp_organization_url
+            return md.Organization(
+                organization_display_name=display_name,
+                organization_url=url, organization_name=name)
+
+        def contact_person():
+            company = CONF.saml.idp_contact_company
+            given_name = CONF.saml.idp_contact_name
+            surname = CONF.saml.idp_contact_surname
+            email = CONF.saml.idp_contact_email
+            telephone = CONF.saml.idp_contact_telephone
+
+            return md.ContactPerson(
+                company=company, given_name=given_name, sur_name=surname,
+                email_address=email, telephone_number=telephone)
+
+        idpsso = md.IDPSSODescriptor()
+        idpsso.protocol_support_enumeration = samlp.NAMESPACE
+        idpsso.key_descriptor = key_descriptor()
+        idpsso.single_sign_on_service = single_sign_on_service()
+        idpsso.organization = organization()
+        idpsso.contact_person = contact_person()
+        return idpsso
