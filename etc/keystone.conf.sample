@@ -366,7 +366,7 @@
 #logging_exception_prefix=%(asctime)s.%(msecs)03d %(process)d TRACE %(name)s %(instance)s
 
 # List of logger=LEVEL pairs. (list value)
-#default_log_levels=amqp=WARN,amqplib=WARN,boto=WARN,qpid=WARN,sqlalchemy=WARN,suds=INFO,oslo.messaging=INFO,iso8601=WARN,requests.packages.urllib3.connectionpool=WARN,urllib3.connectionpool=WARN
+#default_log_levels=amqp=WARN,amqplib=WARN,boto=WARN,qpid=WARN,sqlalchemy=WARN,suds=INFO,oslo.messaging=INFO,iso8601=WARN,requests.packages.urllib3.connectionpool=WARN,urllib3.connectionpool=WARN,websocket=WARN,keystonemiddleware=WARN,routes.middleware=WARN,stevedore=WARN
 
 # Enables or disables publication of error events. (boolean
 # value)
@@ -1286,6 +1286,47 @@
 # Default TTL, in seconds, for any generated SAML assertion
 # created by Keystone. (integer value)
 #assertion_expiration_time=3600
+
+# Entity ID value for unique Identity Provider identification.
+# Usually FQDN is set with a suffix.Example:
+# https://keystone.idp.com/v3/OS-FEDERATION/saml2/idp (string
+# value)
+#idp_entity_id=
+
+# IdenityProvider SingleSignOnService value  required in the
+# Identity Provider's Metadata Example:
+# https://keystone.idp.com/v3/OS-FEDERATION/saml2/sso (string
+# value)
+#idp_sso_endpoint=
+
+# Organization name the installation belongs to. (string
+# value)
+#idp_organization_name=
+
+# Organization name to be displayed. (string value)
+#idp_organization_display_name=
+
+# URL of the organization. (string value)
+#idp_organization_url=
+
+# Contact person's company. (string value)
+#idp_contact_company=
+
+# Contact Person's name. (string value)
+#idp_contact_name=
+
+# Contact Person's surname. (string value)
+#idp_contact_surname=
+
+# Contact persons' email address. (string value)
+#idp_contact_email=
+
+# Contact persons' telephone number. (string value)
+#idp_contact_telephone=
+
+# Contact type. Allowed values are: technical, support,
+# administrative billing, other] (string value)
+#idp_contact_type=other
 
 
 [signing]
