@@ -1109,7 +1109,7 @@ class FederatedTokenTests(FederationTests):
                                         role)
 
         # assign role to group and project_admins
-        self.assignment_api.create_grant(role['id'],
+        self.assignment_api.create_grant(context={}, role_id=role['id'],
                                          group_id=group['id'],
                                          project_id=self.project_all['id'])
 
@@ -1250,15 +1250,18 @@ class FederatedTokenTests(FederationTests):
         # Employees can access
         # * proj_employees
         # * project_all
-        self.assignment_api.create_grant(self.role_employee['id'],
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_employee['id'],
                                          group_id=self.group_employees['id'],
                                          project_id=self.proj_employees['id'])
-        self.assignment_api.create_grant(self.role_employee['id'],
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_employee['id'],
                                          group_id=self.group_employees['id'],
                                          project_id=self.project_all['id'])
         # Customers can access
         # * proj_customers
-        self.assignment_api.create_grant(self.role_customer['id'],
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_customer['id'],
                                          group_id=self.group_customers['id'],
                                          project_id=self.proj_customers['id'])
 
@@ -1266,23 +1269,28 @@ class FederatedTokenTests(FederationTests):
         # * proj_customers
         # * proj_employees
         # * project_all
-        self.assignment_api.create_grant(self.role_admin['id'],
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_admin['id'],
                                          group_id=self.group_admins['id'],
                                          project_id=self.proj_customers['id'])
-        self.assignment_api.create_grant(self.role_admin['id'],
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_admin['id'],
                                          group_id=self.group_admins['id'],
                                          project_id=self.proj_employees['id'])
-        self.assignment_api.create_grant(self.role_admin['id'],
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_admin['id'],
                                          group_id=self.group_admins['id'],
                                          project_id=self.project_all['id'])
 
-        self.assignment_api.create_grant(self.role_customer['id'],
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_customer['id'],
                                          group_id=self.group_customers['id'],
                                          domain_id=self.domainA['id'])
 
         # Customers can access:
         # * domain A
-        self.assignment_api.create_grant(self.role_customer['id'],
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_customer['id'],
                                          group_id=self.group_customers['id'],
                                          domain_id=self.domainA['id'])
 
@@ -1290,10 +1298,12 @@ class FederatedTokenTests(FederationTests):
         # * domain A
         # * domain B
 
-        self.assignment_api.create_grant(self.role_employee['id'],
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_employee['id'],
                                          group_id=self.group_employees['id'],
                                          domain_id=self.domainA['id'])
-        self.assignment_api.create_grant(self.role_employee['id'],
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_employee['id'],
                                          group_id=self.group_employees['id'],
                                          domain_id=self.domainB['id'])
 
@@ -1301,14 +1311,17 @@ class FederatedTokenTests(FederationTests):
         # * domain A
         # * domain B
         # * domain C
-        self.assignment_api.create_grant(self.role_admin['id'],
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_admin['id'],
                                          group_id=self.group_admins['id'],
                                          domain_id=self.domainA['id'])
-        self.assignment_api.create_grant(self.role_admin['id'],
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_admin['id'],
                                          group_id=self.group_admins['id'],
                                          domain_id=self.domainB['id'])
 
-        self.assignment_api.create_grant(self.role_admin['id'],
+        self.assignment_api.create_grant(context={},
+                                         role_id=self.role_admin['id'],
                                          group_id=self.group_admins['id'],
                                          domain_id=self.domainC['id'])
         self.rules = {
