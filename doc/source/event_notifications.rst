@@ -107,12 +107,12 @@ machines should **not** be deleted).
 Auditing with CADF
 ==================
 
-Keystone has begun to add audit notification support for operations like
-authentication using the `DMTF Cloud Auditing Data Federation (CADF) Open
+Keystone has begun to add audit notification support for authentication and
+for role assignments using the `DMTF Cloud Auditing Data Federation (CADF) Open
 Standard. <http://docs.openstack.org/developer/pycadf/>`_
 
-Note that the CADF format is only used for authentication events, and in place
-of the traditional notification format mentioned above.
+Note that the CADF format is used in place of the traditional notification
+format mentioned above.
 
 This standard provides auditing capabilities for compliance with security,
 operational, and business processes and supports normalized and categorized
@@ -154,4 +154,64 @@ user has failed to authenticate:
         "priority": "INFO",
         "publisher_id": "identity.host1234",
         "timestamp": "2013-08-29 19:03:45.960280"
+    }
+
+The following CADF example illustrates a Keystone event record whereby the
+user has assigned a role to a group on a specific project
+
+.. code-block:: javascript
+
+    {
+        "event_type": "identity.create",
+        "message_id": "a5901371-d5fd-b3bb-448f-a14dead6f4cb",
+        "payload": {
+            "typeURI": "http: //schemas.dmtf.org/cloud/audit/1.0/event",
+            "initiator": {
+                "attachments": [
+                    {
+                        "content": "ff072be9712f45e1ae0985b847d3dfbf",
+                        "name": "actor",
+                        "typeURI": "attachURI"
+                    },
+                    {
+                        "content": "b33d75947e664c6ea4d13337db148105",
+                        "name": "target",
+                        "typeURI": "attachURI"
+                    },
+                    {
+                        "content": "False",
+                        "name": "inherited",
+                        "typeURI": "attachURI"
+                    },
+                    {
+                        "content": "4b62ec80707a40379cd02c5918117678",
+                        "name": "role",
+                        "typeURI": "attachURI"
+                    }
+                ],
+                "typeURI": "service/security/account/user",
+                "host": {
+                    "agent": "curl/7.22.0(x86_64-pc-linux-gnu)",
+                    "address": "127.0.0.1"
+                },
+                "id": "openstack: f6eac6ad-ef02-4469-a40f-c1c9151d3813",
+                "name": "7bdae1f0c3754e9f8af3794016b88093"
+            },
+            "target": {
+                "typeURI": "service/security/account/user",
+                "id": "openstack: 1c2fc591-facb-4479-a327-520dade1ea15"
+            },
+            "observer": {
+                "typeURI": "service/security",
+                "id": "openstack: 3d4a50a9-2b59-438b-bf19-c231f9c7625a"
+            },
+            "eventType": "activity",
+            "eventTime": "2014-08-20T01:20:47.932842+0000",
+            "action": "create",
+            "outcome": "success",
+            "id": "openstack: f5352d7b-bee6-4c22-8213-450e7b646e9f"
+        },
+        "priority": "INFO",
+        "publisher_id": "identity.host1234",
+        "timestamp": "2014-08-2919:03:45.960280"
     }
