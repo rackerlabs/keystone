@@ -814,8 +814,37 @@ FILE_OPTIONS = {
     'saml': [
         cfg.IntOpt('assertion_expiration_time', default=3600,
                    help='Default TTL, in seconds, for any generated SAML '
-                        'assertion created by Keystone.')
-
+                        'assertion created by Keystone.'),
+        cfg.StrOpt('idp_entity_id', default='',
+                   help='Entity ID value for unique Identity Provider '
+                        'identification. Usually FQDN is set with a suffix.'
+                        'Example: https://keystone.idp.com/v3/OS-FEDERATION/'
+                        'saml2/idp'),
+        cfg.StrOpt('idp_sso_endpoint', default='',
+                   help='IdenityProvider SingleSignOnService value  '
+                        'required in the Identity Provider\'s Metadata '
+                        'Example: https://keystone.idp.com/v3/OS-FEDERATION/'
+                        'saml2/sso'),
+        cfg.StrOpt('idp_organization_name', default='',
+                   help='Organization name the installation belongs to.'),
+        cfg.StrOpt('idp_organization_display_name', default='',
+                   help='Organization name to be displayed.'),
+        cfg.StrOpt('idp_organization_url', default='',
+                   help='URL of the organization.'),
+        cfg.StrOpt('idp_contact_company', default='',
+                   help='Contact person\'s company.'),
+        cfg.StrOpt('idp_contact_name', default='',
+                   help='Contact Person\'s name.'),
+        cfg.StrOpt('idp_contact_surname', default='',
+                   help='Contact Person\'s surname.'),
+        cfg.StrOpt('idp_contact_email', default='',
+                   help='Contact persons\' email address.'),
+        cfg.StrOpt('idp_contact_telephone', default='',
+                   help='Contact persons\' telephone number.'),
+        cfg.StrOpt('idp_contact_type', default='other',
+                   help='Contact type. Allowed values are: '
+                        'technical, support, administrative '
+                        'billing, other]')
     ]
 }
 
