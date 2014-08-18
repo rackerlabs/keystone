@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_fdd04955",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-08-18T21:52:05Z",
+      "side": 1,
+      "message": "If some one prints this, won\u0027t we have security impact? I thought we want to avoid printing token_id even in debug mode",
+      "revId": "f29aa612ae8de73995f14d1c0f22ec7b81f83ec6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
