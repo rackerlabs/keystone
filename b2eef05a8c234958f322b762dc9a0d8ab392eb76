@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_52a04c43",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 5164
+      },
+      "writtenOn": "2014-08-18T21:36:56Z",
+      "side": 1,
+      "message": "not user.get(\u0027enabled\u0027) should work here.",
+      "revId": "b2eef05a8c234958f322b762dc9a0d8ab392eb76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
