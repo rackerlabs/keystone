@@ -16,6 +16,24 @@
       "revId": "c5220779248a89c87250db9ba7eb8662fb4be42b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_437de06d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-18T23:10:43Z",
+      "side": 1,
+      "message": "Hm, I must have used the wrong commit hash. weird.",
+      "parentUuid": "1abeadc6_c362d0d7",
+      "revId": "c5220779248a89c87250db9ba7eb8662fb4be42b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
