@@ -1419,6 +1419,9 @@ class BaseLdap(object):
                      (query, ''.join([calc_filter(k, v) for k, v in
                                       six.iteritems(query_params)])))
         try:
+            if attrlist is None:
+                attrlist = list(set((self.attribute_mapping.values() +
+                                    self.extra_attr_mapping.keys())))
             return conn.search_s(search_base, scope, query, attrlist)
         finally:
             conn.unbind_s()
