@@ -103,8 +103,9 @@ class TestKeystoneTokenModel(core.TestCase):
         self.assertTrue(token_data.domain_scoped)
 
         token_data['audit_ids'] = [uuid.uuid4().hex]
-        self.assertIsNone(token_data.audit_chain_id)
         self.assertEqual(token_data.audit_id,
+                         token_data['audit_ids'][0])
+        self.assertEqual(token_data.audit_chain_id,
                          token_data['audit_ids'][0])
         token_data['audit_ids'].append(uuid.uuid4().hex)
         self.assertEqual(token_data.audit_chain_id,
@@ -180,9 +181,13 @@ class TestKeystoneTokenModel(core.TestCase):
         self.assertFalse(token_data.domain_scoped)
 
         token_data['token']['audit_ids'] = [uuid.uuid4().hex]
-        self.assertIsNone(token_data.audit_chain_id)
         self.assertEqual(token_data.audit_id,
                          token_data['token']['audit_ids'][0])
+        self.assertEqual(token_data.audit_chain_id,
+                         token_data['token']['audit_ids'][0])
+        token_data['token']['audit_ids'].append(uuid.uuid4().hex)
+        self.assertEqual(token_data.audit_chain_id,
+                         token_data['token']['audit_ids'][1])
         del token_data['token']['audit_ids']
         self.assertIsNone(token_data.audit_id)
         self.assertIsNone(token_data.audit_chain_id)

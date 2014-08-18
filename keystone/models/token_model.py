@@ -83,8 +83,8 @@ class KeystoneToken(dict):
     def audit_chain_id(self):
         try:
             if self.version is V3:
-                return self.get('audit_ids', [])[1]
-            return self['token'].get('audit_ids', [])[1]
+                return self.get('audit_ids', [])[-1]
+            return self['token'].get('audit_ids', [])[-1]
         except IndexError:
             return None
 
