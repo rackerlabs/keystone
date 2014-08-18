@@ -16,6 +16,8 @@
 
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common import validation
+from keystone.identity import schema
 from keystone import config
 from keystone import exception
 from keystone.i18n import _, _LW
@@ -203,8 +205,8 @@ class UserV3(controller.V3Controller):
         self.check_protection(context, prep_info, ref)
 
     @controller.protected()
+    @validation.validated(schema.user_create, 'user')
     def create_user(self, context, user):
-        self._require_attribute(user, 'name')
 
         # The manager layer will generate the unique ID for users
         ref = self._normalize_dict(user)
@@ -239,6 +241,7 @@ class UserV3(controller.V3Controller):
         return UserV3.wrap_member(context, ref)
 
     @controller.protected()
+    @validation.validated(schema.user_update, 'user')
     def update_user(self, context, user_id, user):
         return self._update_user(context, user_id, user)
 
