@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_f5332bf4",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-18T03:33:06Z",
+      "side": 0,
+      "message": "add this new line back?",
+      "revId": "2ea3006dc015675dcf20da8ddd6a8f7436b90113",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_75571b03",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-18T03:33:06Z",
+      "side": 0,
+      "message": "add this new line back?",
+      "revId": "2ea3006dc015675dcf20da8ddd6a8f7436b90113",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac7a964_11d4141f",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 2

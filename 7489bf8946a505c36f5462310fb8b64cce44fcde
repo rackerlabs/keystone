@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_352683bb",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-18T03:33:06Z",
+      "side": 1,
+      "message": "you could put outcome on this line",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7520fb9b",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-18T03:33:06Z",
+      "side": 1,
+      "message": "you could put outcome on this line",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3574c39b",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-18T03:33:06Z",
+      "side": 1,
+      "message": "I would put these earlier than line 95,\nso instead of sending None, None to send_saml_auth... you can send user_id and group_ids. \n\nPassing in None parameters is not obvious, and non-pythonic.",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_55793f92",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-18T03:33:06Z",
+      "side": 1,
+      "message": "condense these!",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f5616bd4",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-18T03:33:06Z",
+      "side": 1,
+      "message": "sigh, -1 until this is resolved... i think, unless we want to put it in and wait for pycadf?",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_359be3ca",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 787,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-18T03:33:06Z",
+      "side": 1,
+      "message": "not sure why you need this, as it\u0027s declared on line 762.\ndelete one of them",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_75a55b03",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 804,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-18T03:33:06Z",
+      "side": 1,
+      "message": "what about asserting use_id and group_ids?",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
