@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_be9327f9",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-18T23:57:11Z",
+      "side": 1,
+      "message": "Just realized that I can also add attachments at the event level, instead of the initiator level.... wondering if the reviewers think that is a better option?",
+      "revId": "5fb17fda3225c9c71f9b71649e4ca8381cde6537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
