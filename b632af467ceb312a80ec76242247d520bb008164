@@ -50,6 +50,24 @@
       "revId": "b632af467ceb312a80ec76242247d520bb008164",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_327939fd",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-08-18T02:59:14Z",
+      "side": 1,
+      "message": "Nice! Thank you.",
+      "parentUuid": "7ac7a964_cf4f37bd",
+      "revId": "b632af467ceb312a80ec76242247d520bb008164",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
