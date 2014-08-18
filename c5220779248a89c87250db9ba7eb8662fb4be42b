@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_c362d0d7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T23:09:46Z",
+      "side": 1,
+      "message": "where are you getting all these commits from?\n\n $ git log --oneline --no-merges \\\n5fa2dae4..a9e1122f44deedeeb5dc824b6c085bb9beb08452 \\\n -- openstack/common/fileutils.py \\\n openstack/common/jsonutils.py openstack/common/log.py \\\n openstack/common/policy.py openstack/common/versionutils.py\n037dee0 Set stevedore log level to WARN by default\nad248f6 Specify namedtuple_as_object\u003dFalse when using simplejson\n1c3ecfc Enhance versionutils.deprecated to work with classes\n37c0091 Add unicode coercion of logged messages to ContextFormatter\n6614413 Correct coercion of logged message to unicode\n1188d88 Except socket.error if syslog isn\u0027t running\nac995be Fix E126 pep8 errors\n631f880 Set keystonemiddleware and routes.middleware to log on WARN level\n726d00a Adjust oslo logging to provide adapter is enabled for\n9a46271 Add Kilo release name to versionutils\n433fa0b Make logging_context_format_string optional in log.set_defaults\na2ad3a2 Allow deprecated decorator to specify no plan for removal\n2b966f9 Fix deletion of cached file for policy enforcer\nac92c06 Add default log level for websocket",
+      "revId": "c5220779248a89c87250db9ba7eb8662fb4be42b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
