@@ -81,9 +81,12 @@ class KeystoneToken(dict):
 
     @property
     def audit_chain_id(self):
-        if self.version is V3:
-            return self.get('audit_ids', [None])[-1]
-        return self['token'].get('audit_ids', [None])[-1]
+        try:
+            if self.version is V3:
+                return self.get('audit_ids', [])[-1]
+            return self['token'].get('audit_ids', [])[-1]
+        except IndexError:
+            return None
 
     @property
     def auth_token(self):
