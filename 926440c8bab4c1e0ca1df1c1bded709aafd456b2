@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_f4822dff",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 5164
+      },
+      "writtenOn": "2014-08-18T18:44:58Z",
+      "side": 1,
+      "message": "Is there ever a chance that _region or _region.__dict__ could not exist? Maybe you want to guard against that case. If there is no chance, then of course disregard this comment.",
+      "revId": "926440c8bab4c1e0ca1df1c1bded709aafd456b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d4cc5138",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 5164
+      },
+      "writtenOn": "2014-08-18T18:44:58Z",
+      "side": 1,
+      "message": "It might be a good idea to properly initialize the arguments for this method. Also, a lot of trust is placed in the availability of the \u0027id\u0027 being present in a user object. Could the user object be constructed without the \u0027id\u0027 or could the group be empty?",
+      "revId": "926440c8bab4c1e0ca1df1c1bded709aafd456b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5474c1ce",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 5164
+      },
+      "writtenOn": "2014-08-18T18:44:58Z",
+      "side": 1,
+      "message": "You should initialize user_id and user_ref to None and then guard your call to get_user against bad values.",
+      "revId": "926440c8bab4c1e0ca1df1c1bded709aafd456b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_342585c2",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 5164
+      },
+      "writtenOn": "2014-08-18T18:44:58Z",
+      "side": 1,
+      "message": "You can use  \" (not user.get(\u0027enabled\u0027) and \"",
+      "revId": "926440c8bab4c1e0ca1df1c1bded709aafd456b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_14188980",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 637,
+      "author": {
+        "id": 5164
+      },
+      "writtenOn": "2014-08-18T18:44:58Z",
+      "side": 1,
+      "message": "Initialize user_id with None",
+      "revId": "926440c8bab4c1e0ca1df1c1bded709aafd456b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_cf04bc17",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 5164
+      },
+      "writtenOn": "2014-08-18T18:44:58Z",
+      "side": 1,
+      "message": "Initialize user_id with None",
+      "revId": "926440c8bab4c1e0ca1df1c1bded709aafd456b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4f3eecb9",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 753,
+      "author": {
+        "id": 5164
+      },
+      "writtenOn": "2014-08-18T18:44:58Z",
+      "side": 1,
+      "message": "Initialize user_id with None",
+      "revId": "926440c8bab4c1e0ca1df1c1bded709aafd456b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_af9b00c8",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 5164
+      },
+      "writtenOn": "2014-08-18T18:44:58Z",
+      "side": 1,
+      "message": "Initialize service , resource_type, operation and payload to None.\nuser_id and the call to persistence.delete_tokens_for_user should condition on user_id not being None",
+      "revId": "926440c8bab4c1e0ca1df1c1bded709aafd456b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
