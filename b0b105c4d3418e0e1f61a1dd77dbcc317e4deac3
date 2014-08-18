@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_e147ed1b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2014-08-18T07:04:35Z",
+      "side": 1,
+      "message": "pep8.",
+      "parentUuid": "7ac7a964_e8ba42e0",
+      "revId": "b0b105c4d3418e0e1f61a1dd77dbcc317e4deac3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac7a964_c8ee66ec",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_210005aa",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2014-08-18T07:04:35Z",
+      "side": 1,
+      "message": "http://legacy.python.org/dev/peps/pep-0008/#function-names",
+      "parentUuid": "7ac7a964_c8ee66ec",
+      "revId": "b0b105c4d3418e0e1f61a1dd77dbcc317e4deac3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac7a964_8892ae55",
         "filename": "keystone/token/core.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2014-08-15T00:46:38Z",
       "side": 1,
       "message": "the change on the previous line should be done in a separate commit since it\u0027s not related.",
+      "revId": "b0b105c4d3418e0e1f61a1dd77dbcc317e4deac3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a1b975eb",
+        "filename": "keystone/token/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2014-08-18T07:04:35Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "7ac7a964_8892ae55",
       "revId": "b0b105c4d3418e0e1f61a1dd77dbcc317e4deac3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
