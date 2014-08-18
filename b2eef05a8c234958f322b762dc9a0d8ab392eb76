@@ -16,6 +16,24 @@
       "revId": "b2eef05a8c234958f322b762dc9a0d8ab392eb76",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_c35570c7",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-18T23:13:31Z",
+      "side": 1,
+      "message": "Except that if enabled is None we (in other cases) treat the object as enabled. The only time the object should be disabled is if it\u0027s explicitly set to false.",
+      "parentUuid": "1abeadc6_52a04c43",
+      "revId": "b2eef05a8c234958f322b762dc9a0d8ab392eb76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
