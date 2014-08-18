@@ -16,6 +16,24 @@
       "revId": "f29aa612ae8de73995f14d1c0f22ec7b81f83ec6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_78b0c78b",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-18T22:56:11Z",
+      "side": 1,
+      "message": "Yes, ideally we should not be printing the token_id. I\u0027ll look at converting to the new audit_ids (this was the intention, but the audit_id code was not in place when this patch was originally written). I\u0027m not sure the best approach for handling the REPR call as repr probably *should* be something that can be used to recreate the object.",
+      "parentUuid": "1abeadc6_fdd04955",
+      "revId": "f29aa612ae8de73995f14d1c0f22ec7b81f83ec6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
