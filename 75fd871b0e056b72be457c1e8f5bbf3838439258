@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_85aaa56e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 24
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T20:04:10Z",
+      "side": 1,
+      "message": "change \"events\" to \"event\"",
+      "revId": "75fd871b0e056b72be457c1e8f5bbf3838439258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4958a732",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T20:04:10Z",
+      "side": 1,
+      "message": "is this wrong? in the code below the user_id is from the environment.",
+      "revId": "75fd871b0e056b72be457c1e8f5bbf3838439258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a5dde116",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T20:04:10Z",
+      "side": 1,
+      "message": "there\u0027s an extra space here between : and one",
+      "revId": "75fd871b0e056b72be457c1e8f5bbf3838439258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e948935d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T20:04:10Z",
+      "side": 1,
+      "message": "the code to get the remote_addr, http_user_agent, and user_id from the request environment should be able to be shared with CadfNotificationWrapper. Put it in a function and share it.",
+      "revId": "75fd871b0e056b72be457c1e8f5bbf3838439258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_29a1abf8",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 579,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T20:04:10Z",
+      "side": 1,
+      "message": "there\u0027s a lot of duplicated code with these 2 new tests which should be put into a function to be shared.",
+      "revId": "75fd871b0e056b72be457c1e8f5bbf3838439258",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
