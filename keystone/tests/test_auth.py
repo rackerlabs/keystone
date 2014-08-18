@@ -30,6 +30,7 @@ from keystone import tests
 from keystone.tests import default_fixtures
 from keystone.tests.ksfixtures import database
 from keystone import token
+from keystone.token import provider
 from keystone import trust
 
 
@@ -488,6 +489,115 @@ class AuthWithToken(AuthTest):
         audit_ids = get_audit_ids(unscoped_token_3)
         self.assertThat(audit_ids, matchers.HasLength(2))
         self.assertThat(audit_ids[-1], matchers.Equals(starting_audit_id))
+
+    def test_revoke_by_audit_chain_id_original_token(self):
+        self.config_fixture.config(group='token', revoke_by_id=False)
+        context = {}
+
+        # get a token
+        body_dict = _build_user_auth(username='FOO', password='foo2')
+        unscoped_token = self.controller.authenticate(context, body_dict)
+        token_id = unscoped_token['access']['token']['id']
+        # get a second token
+        body_dict = _build_user_auth(token=unscoped_token["access"]["token"])
+        unscoped_token_2 = self.controller.authenticate(context, body_dict)
+        token_2_id = unscoped_token_2['access']['token']['id']
+
+        self.token_provider_api.revoke_token(token_id, revoke_chain=True)
+
+        self.assertRaises(exception.TokenNotFound,
+                          self.token_provider_api.validate_v2_token,
+                          token_id=token_id)
+        self.assertRaises(exception.TokenNotFound,
+                          self.token_provider_api.validate_v2_token,
+                          token_id=token_2_id)
+
+    def test_revoke_by_audit_chain_id_chained_token(self):
+        self.config_fixture.config(group='token', revoke_by_id=False)
+        context = {}
+
+        # get a token
+        body_dict = _build_user_auth(username='FOO', password='foo2')
+        unscoped_token = self.controller.authenticate(context, body_dict)
+        token_id = unscoped_token['access']['token']['id']
+        # get a second token
+        body_dict = _build_user_auth(token=unscoped_token["access"]["token"])
+        unscoped_token_2 = self.controller.authenticate(context, body_dict)
+        token_2_id = unscoped_token_2['access']['token']['id']
+
+        self.token_provider_api.revoke_token(token_2_id, revoke_chain=True)
+
+        self.assertRaises(exception.TokenNotFound,
+                          self.token_provider_api.validate_v2_token,
+                          token_id=token_id)
+        self.assertRaises(exception.TokenNotFound,
+                          self.token_provider_api.validate_v2_token,
+                          token_id=token_2_id)
+
+    def test_revoke_by_expires(self):
+        self.config_fixture.config(group='token', revoke_by_id=False)
+        context = {}
+
+        def audit_info(parent_audit_id):
+            # NOTE(morgainfainberg): The token model and other cases that are
+            # extracting the audit id expect 'None' if the audit id doesn't
+            # exist. This ensures that the audit_id is None and the
+            # audit_chain_id will also return None.
+            return [None, None]
+
+        with mock.patch.object(provider, 'audit_info', audit_info):
+            # get a token
+            body_dict = _build_user_auth(username='FOO', password='foo2')
+            unscoped_token = self.controller.authenticate(context, body_dict)
+            token_id = unscoped_token['access']['token']['id']
+            # get a second token
+            body_dict = _build_user_auth(
+                token=unscoped_token["access"]["token"])
+            unscoped_token_2 = self.controller.authenticate(context, body_dict)
+            token_2_id = unscoped_token_2['access']['token']['id']
+
+            self.token_provider_api.revoke_token(token_2_id, revoke_chain=True)
+
+            self.assertRaises(exception.TokenNotFound,
+                              self.token_provider_api.validate_v2_token,
+                              token_id=token_id)
+            self.assertRaises(exception.TokenNotFound,
+                              self.token_provider_api.validate_v2_token,
+                              token_id=token_2_id)
+            revoke_event = self.revoke_api.get_events()[0].to_dict()
+            self.assertIn('expires_at', revoke_event)
+            self.assertEqual(unscoped_token_2['access']['token']['expires'],
+                             revoke_event['expires_at'])
+
+        # Test to make sure a non-audit-id parent token revoked will revoke
+        # Child tokens with audit ids
+        with mock.patch.object(provider, 'audit_info', audit_info):
+            # get a token
+            body_dict = _build_user_auth(username='FOO', password='foo2')
+            unscoped_token = self.controller.authenticate(context, body_dict)
+            token_id = unscoped_token['access']['token']['id']
+        # get a second token, now with an audit id
+        body_dict = _build_user_auth(
+            token=unscoped_token["access"]["token"])
+        unscoped_token_2 = self.controller.authenticate(context, body_dict)
+        token_2_id = unscoped_token_2['access']['token']['id']
+        self.assertThat(unscoped_token_2['access']['token']['audit_ids'],
+                        matchers.HasLength(1))
+        self.assertIsNotNone(
+            unscoped_token_2['access']['token']['audit_ids'][0])
+
+        self.token_provider_api.revoke_token(token_id, revoke_chain=True)
+
+        self.assertRaises(exception.TokenNotFound,
+                          self.token_provider_api.validate_v2_token,
+                          token_id=token_id)
+        self.assertRaises(exception.TokenNotFound,
+                          self.token_provider_api.validate_v2_token,
+                          token_id=token_2_id)
+        revoke_event = self.revoke_api.get_events()[0].to_dict()
+        self.assertIn('expires_at', revoke_event)
+        self.assertEqual(unscoped_token_2['access']['token']['expires'],
+                         revoke_event['expires_at'])
 
 
 class AuthWithPasswordCredentials(AuthTest):
