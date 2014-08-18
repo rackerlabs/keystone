@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_097a2ff1",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T20:38:04Z",
+      "side": 1,
+      "message": "since this function is called multiple times with the same args except for the outcome, could use functools.partial.\n\n send_audit \u003d functools.partial(notifications.send_saml_audit_notification, \u0027authenticate\u0027, context, ...)\n  send_audit(taxonomy.OUTCOME_PENDING)\n\n  send_audit(taxonomy.OUTCOME_SUCCESS)\n\n send_audit(taxonomy.OUTCOME_FAILURE)",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_c94917d2",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T20:38:04Z",
+      "side": 1,
+      "message": "this method call could fail, then the result notification wouldn\u0027t be set. The try/exception should also include this.\n\nA context would probably work best here.",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_352683bb",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 6
@@ -36,6 +70,40 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_298e0b2f",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T20:38:04Z",
+      "side": 1,
+      "message": "remove \"e\".",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e9f9734e",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T20:38:04Z",
+      "side": 1,
+      "message": "give a name to the \"None\" parameters so that we know what it\u0027s for... user_id\u003dNone, group_ids\u003dNone",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_3574c39b",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 6
@@ -47,6 +115,23 @@
       "writtenOn": "2014-08-18T03:33:06Z",
       "side": 1,
       "message": "I would put these earlier than line 95,\nso instead of sending None, None to send_saml_auth... you can send user_id and group_ids. \n\nPassing in None parameters is not obvious, and non-pythonic.",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e99093ee",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T20:38:04Z",
+      "side": 1,
+      "message": "this code is pretty much the same as the other function. The code should be shared.",
       "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +155,40 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_e94b33ae",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T20:38:04Z",
+      "side": 1,
+      "message": "remove \"e\"",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2950cb31",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T20:38:04Z",
+      "side": 1,
+      "message": "this is a copy of the code at line 245. Rather than copy-pasting, create a function and share it.",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_f5616bd4",
         "filename": "keystone/notifications.py",
         "patchSetId": 6
@@ -81,6 +200,58 @@
       "writtenOn": "2014-08-18T03:33:06Z",
       "side": 1,
       "message": "sigh, -1 until this is resolved... i think, unless we want to put it in and wait for pycadf?",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a9ce9b58",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T20:38:04Z",
+      "side": 1,
+      "message": "I\u0027m fine with adding this in once pycadf is updated.",
+      "parentUuid": "1abeadc6_f5616bd4",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_8c264d15",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 770,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T20:38:04Z",
+      "side": 1,
+      "message": "this should be a TODO if there\u0027s more to do. Also, is this a work in progress? not sure why it wouldn\u0027t be done now.",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_0c131db9",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 772,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T20:38:04Z",
+      "side": 1,
+      "message": "remove commented-out code.",
       "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +275,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_0c895d26",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 787,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T20:38:04Z",
+      "side": 1,
+      "message": "remove this line.",
+      "parentUuid": "1abeadc6_359be3ca",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_75a55b03",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 6
@@ -115,6 +304,23 @@
       "writtenOn": "2014-08-18T03:33:06Z",
       "side": 1,
       "message": "what about asserting use_id and group_ids?",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4c36f553",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T20:38:04Z",
+      "side": 1,
+      "message": "shouldn\u0027t the code be able to assert that both the pending and success notifications were sent?",
       "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
