@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_9f5cd627",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T01:04:59Z",
+      "side": 1,
+      "message": "I think it\u0027s assumed that there will be test changes when the code changes, so no need to mention it.",
+      "revId": "066cd7958c12c83242329750ddf86daf234acc91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1f31a6ec",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T01:04:59Z",
+      "side": 1,
+      "message": "is this the \"royal\" we?",
+      "revId": "066cd7958c12c83242329750ddf86daf234acc91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5f879e61",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T01:04:59Z",
+      "side": 1,
+      "message": "if context was given a default then the callers wouldn\u0027t have to change.",
+      "revId": "066cd7958c12c83242329750ddf86daf234acc91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7f7c5a73",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T01:04:59Z",
+      "side": 1,
+      "message": "if context was given a default then the callers wouldn\u0027t have to change.",
+      "revId": "066cd7958c12c83242329750ddf86daf234acc91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7f6e1acb",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T01:04:59Z",
+      "side": 1,
+      "message": "why was the order of the arguments changed? it makes reviewing the change more difficult.",
+      "revId": "066cd7958c12c83242329750ddf86daf234acc91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3f9bc2ca",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T01:04:59Z",
+      "side": 1,
+      "message": "thank you for not changing the order of the arguments... so much easier to review!",
+      "revId": "066cd7958c12c83242329750ddf86daf234acc91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3f82e252",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 883,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-18T01:04:59Z",
+      "side": 1,
+      "message": "nice!",
+      "revId": "066cd7958c12c83242329750ddf86daf234acc91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
