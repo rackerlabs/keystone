@@ -410,10 +410,10 @@ class Manager(manager.Manager):
         self._validate_v2_token.invalidate(self, token_id)
         self._validate_v3_token.invalidate(self, token_id)
 
-    def revoke_token(self, token_id):
+    def revoke_token(self, token_id, revoke_chain=False):
         if self.revoke_api:
-            user_id = None
-            expires_at = None
+            audit_id = None
+            audit_chain_id = None
             domain_id = None
             project_id = None
 
@@ -421,20 +421,29 @@ class Manager(manager.Manager):
             version = self.driver.get_token_version(token_ref)
 
             if version == self.V3:
-                user_id = token_ref['user']['id']
-                expires_at = token_ref['expires']
-
                 token_data = token_ref['token_data']['token']
+                audit_id = token_data.get('audit_ids', [None])[0]
+                audit_chain_id = token_data.get('audit_ids', [None])[-1]
                 project_id = token_data.get('project', {}).get('id')
                 domain_id = token_data.get('domain', {}).get('id')
             elif version == self.V2:
-                user_id = token_ref['user_id']
-                expires_at = token_ref['expires']
                 project_id = (token_ref.get('tenant') or {}).get('id')
+                token_data = token_ref['token_data']['access']['token']
+                audit_id = token_data.get('audit_ids', [None])[0]
+                audit_chain_id = token_data.get('audit_ids', [None])[-1]
 
-            self.revoke_api.revoke_by_expiration(user_id, expires_at,
-                                                 project_id=project_id,
-                                                 domain_id=domain_id)
+            if audit_id is None:
+                LOG.debug('Audit ID is None for token %s', token_id)
+
+            if audit_chain_id is None:
+                LOG.debug('Audit Chain ID is None for token %s', token_id)
+
+            if revoke_chain:
+                self.revoke_api.revoke_by_audit_chain_id(audit_chain_id,
+                                                         project_id=project_id,
+                                                         domain_id=domain_id)
+            else:
+                self.revoke_api.revoke_by_audit_id(audit_id)
 
         if CONF.token.revoke_by_id:
             self.persistence.delete_token(token_id=token_id)
