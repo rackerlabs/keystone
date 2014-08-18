@@ -226,7 +226,7 @@ class KeystoneClientTests(object):
         user = {
             'name': uuid.uuid4().hex,
             'password': uuid.uuid4().hex,
-            'email': uuid.uuid4().hex,
+            'email': 'user@test.com',
             'tenant_id': tenant['id'],
         }
         user_ref = admin_client.users.create(
@@ -436,7 +436,7 @@ class KeystoneClientTests(object):
         username = uuid.uuid4().hex
         passwd = uuid.uuid4().hex
         user = client.users.create(name=username, password=passwd,
-                                   email=uuid.uuid4().hex)
+                                   email='user@test.com')
 
         token_id = client.tokens.authenticate(username=username,
                                               password=passwd).id
@@ -517,7 +517,7 @@ class KeystoneClientTests(object):
         username = uuid.uuid4().hex
         password = uuid.uuid4().hex
         user_id = admin_client.users.create(
-            name=username, password=password, email=uuid.uuid4().hex).id
+            name=username, password=password, email='user@test.com').id
 
         token_id = client.tokens.authenticate(
             username=username, password=password).id
@@ -603,7 +603,7 @@ class KeystoneClientTests(object):
         user = client.users.create(
             name=uuid.uuid4().hex,
             password=uuid.uuid4().hex,
-            email=uuid.uuid4().hex,
+            email='user@test.com',
             tenant_id=self.tenant_bar['id'])
 
         # attempting to update the tenant with the existing value should work
@@ -617,7 +617,7 @@ class KeystoneClientTests(object):
                           client.users.create,
                           name='test_user',
                           password=12345,
-                          email=uuid.uuid4().hex)
+                          email='user@test.com')
 
     def test_user_create_no_name(self):
         from keystoneclient import exceptions as client_exceptions
@@ -626,7 +626,7 @@ class KeystoneClientTests(object):
                           client.users.create,
                           name="",
                           password=uuid.uuid4().hex,
-                          email=uuid.uuid4().hex)
+                          email='user@test.com')
 
     def test_user_create_404(self):
         from keystoneclient import exceptions as client_exceptions
@@ -635,7 +635,7 @@ class KeystoneClientTests(object):
                           client.users.create,
                           name=uuid.uuid4().hex,
                           password=uuid.uuid4().hex,
-                          email=uuid.uuid4().hex,
+                          email='user@test.com',
                           tenant_id=uuid.uuid4().hex)
 
     def test_user_get_404(self):

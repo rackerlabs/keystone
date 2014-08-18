@@ -39,6 +39,18 @@ description = {
     'type': ['string', 'null']
 }
 
+password = {
+    'type': ['string', 'null']
+}
+
+tenant_id = {
+    'type': ['string', 'null']
+}
+
+domain_id = {
+    'type': ['string', 'null']
+}
+
 url = {
     'type': 'string',
     'minLength': 0,

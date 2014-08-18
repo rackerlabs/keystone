@@ -16,6 +16,8 @@
 
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common.validation import parameter_types
+from keystone.common.validation import validators
 from keystone import config
 from keystone import exception
 from keystone.i18n import _
@@ -28,6 +30,20 @@ LOG = log.getLogger(__name__)
 
 @dependency.requires('assignment_api', 'identity_api')
 class User(controller.V2Controller):
+    _CREATE = {
+        'type': 'object',
+        'properties': {
+            'name': parameter_types.name,
+            'enabled': parameter_types.boolean,
+            'email': parameter_types.email,
+            'password': parameter_types.password,
+            'description': parameter_types.description,
+            'tenantId': parameter_types.tenant_id
+        },
+        'required': ['name'],
+        'additionalProperties': True,
+    }
+    schema_validator = validators.SchemaValidator(_CREATE)
 
     @controller.v2_deprecated
     def get_user(self, context, user_id):
@@ -62,14 +78,7 @@ class User(controller.V2Controller):
         user = self.normalize_username_in_request(user)
         user = self._normalize_dict(user)
         self.assert_admin(context)
-
-        if 'name' not in user or not user['name']:
-            msg = _('Name field is required and cannot be empty')
-            raise exception.ValidationError(message=msg)
-        if 'enabled' in user and not isinstance(user['enabled'], bool):
-            msg = _('Enabled field must be a boolean')
-            raise exception.ValidationError(message=msg)
-
+        User.schema_validator.validate(user)
         default_project_id = user.pop('tenantId', None)
         if default_project_id is not None:
             # Check to see if the project is valid before moving on.
@@ -190,6 +199,21 @@ class User(controller.V2Controller):
 class UserV3(controller.V3Controller):
     collection_name = 'users'
     member_name = 'user'
+    _CREATE = {
+        'type': 'object',
+        'properties': {
+            'name': parameter_types.name,
+            'enabled': parameter_types.boolean,
+            'email': parameter_types.email,
+            'password': parameter_types.password,
+            'description': parameter_types.description,
+            'default_project_id': parameter_types.tenant_id,
+            'domain_id': parameter_types.domain_id
+        },
+        'required': ['name'],
+        'additionalProperties': True,
+    }
+    schema_validator = validators.SchemaValidator(_CREATE)
 
     def __init__(self):
         super(UserV3, self).__init__()
@@ -204,11 +228,10 @@ class UserV3(controller.V3Controller):
 
     @controller.protected()
     def create_user(self, context, user):
-        self._require_attribute(user, 'name')
-
         # The manager layer will generate the unique ID for users
         ref = self._normalize_dict(user)
         ref = self._normalize_domain_id(context, ref)
+        UserV3.schema_validator.validate(ref)
         ref = self.identity_api.create_user(ref)
         return UserV3.wrap_member(context, ref)
 
