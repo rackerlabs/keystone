@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_3ecfe4b1",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-19T23:14:06Z",
+      "side": 1,
+      "message": "We can\u0027t eliminate this code unless we want to immediately (on upgrade) reject all previously issued tokens. This is sadly, I think, a requirement.",
+      "parentUuid": "1abeadc6_8869a227",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_e8905645",
         "filename": "keystone/auth/plugins/token.py",
         "patchSetId": 7
@@ -64,6 +82,24 @@
       "writtenOn": "2014-08-19T22:34:28Z",
       "side": 1,
       "message": "shouldn\u0027t this just be \"audit_id\"? all of these are from the token.",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_de38b0a2",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-19T23:14:06Z",
+      "side": 1,
+      "message": "Sure, changed next patch.",
+      "parentUuid": "1abeadc6_e8905645",
       "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_3e5d24ea",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-19T23:14:06Z",
+      "side": 1,
+      "message": "I\u0027ll convert this over to what I did further down the chain. \nThe chain_id *technically* should be the same as the audit_id for revocation event purposes, but there isn\u0027t a need to stick duplicated data in the token field.",
+      "parentUuid": "1abeadc6_e8721b48",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_889fe24f",
         "filename": "keystone/tests/test_auth.py",
         "patchSetId": 7
@@ -98,6 +152,24 @@
       "writtenOn": "2014-08-19T22:34:28Z",
       "side": 1,
       "message": "there\u0027s an extra blank line here.",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5e73c07f",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-19T23:14:06Z",
+      "side": 1,
+      "message": "fixed in next",
+      "parentUuid": "1abeadc6_889fe24f",
       "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +210,42 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_9e6d589b",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-19T23:14:06Z",
+      "side": 1,
+      "message": "Done in next",
+      "parentUuid": "1abeadc6_a8fd7e3c",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7ee31c05",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-19T23:14:06Z",
+      "side": 1,
+      "message": "This is a lacking in our current tests, but I really would rather not restructure huge swaths of tests in this case when we\u0027re really checking if the bulk of the token data is the same (we do similar mucking in the token above because values differ).\n\nMaybe this should be assertTokenCloseEnoughForGovermentWork",
+      "parentUuid": "1abeadc6_0bbf4cd1",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_a8f4a387",
         "filename": "keystone/tests/unit/token/test_token_data_helper.py",
         "patchSetId": 7
@@ -149,6 +257,24 @@
       "writtenOn": "2014-08-19T22:57:51Z",
       "side": 1,
       "message": "I don\u0027t think this will work in Python3. I\u0027m pretty sure the bytes type doesn\u0027t have an encode method.",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_de899027",
+        "filename": "keystone/tests/unit/token/test_token_data_helper.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-19T23:14:06Z",
+      "side": 1,
+      "message": "I\u0027ll conver this to:\n\n   codecs.encode(uuid.uuid4().bytes, \u0027base64\u0027)[:-3]",
+      "parentUuid": "1abeadc6_a8f4a387",
       "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -172,6 +298,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_1e84e80a",
+        "filename": "keystone/tests/unit/token/test_token_data_helper.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-19T23:14:06Z",
+      "side": 1,
+      "message": "done in next",
+      "parentUuid": "1abeadc6_c8a9da7c",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_0b790c93",
         "filename": "keystone/tests/unit/token/test_token_data_helper.py",
         "patchSetId": 7
@@ -183,6 +327,24 @@
       "writtenOn": "2014-08-19T22:57:51Z",
       "side": 1,
       "message": "Maybe just verify that the list doesn\u0027t contain a None to show that an ID is generated.",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3e87e410",
+        "filename": "keystone/tests/unit/token/test_token_data_helper.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-19T23:14:06Z",
+      "side": 1,
+      "message": "done in next",
+      "parentUuid": "1abeadc6_0b790c93",
       "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +368,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_5e7d801b",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-19T23:14:06Z",
+      "side": 1,
+      "message": "done in next",
+      "parentUuid": "1abeadc6_8b0fdc2d",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_283deede",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 7
@@ -217,6 +397,24 @@
       "writtenOn": "2014-08-19T22:34:28Z",
       "side": 1,
       "message": "Here\u0027s another spot where I think it would be safer to reject these requests, or maybe it\u0027s better to not put the audit ID in the token if the original token didn\u0027t have one since revocation events will have to handle that case anyways.",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7e787c2b",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-19T23:14:06Z",
+      "side": 1,
+      "message": "Same answer as before.",
+      "parentUuid": "1abeadc6_283deede",
       "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -240,6 +438,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_de90b045",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-19T23:14:06Z",
+      "side": 1,
+      "message": "done in next",
+      "parentUuid": "1abeadc6_eb4e906e",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_4b5ce425",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 7
@@ -251,6 +467,24 @@
       "writtenOn": "2014-08-19T22:34:28Z",
       "side": 1,
       "message": "Give a name to the None field so we know what it is.",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_fe93ac4c",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-19T23:14:06Z",
+      "side": 1,
+      "message": "done in next",
+      "parentUuid": "1abeadc6_4b5ce425",
       "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -274,6 +508,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_1e9b0868",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-19T23:14:06Z",
+      "side": 1,
+      "message": "same as previous comment",
+      "parentUuid": "1abeadc6_0862f73d",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_2b432815",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 7
@@ -285,6 +537,24 @@
       "writtenOn": "2014-08-19T22:34:28Z",
       "side": 1,
       "message": "since generating audit_info is slightly expensive, might want to only generate it if wasn\u0027t able to get it from token_data... move this down after line 53.",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_9eae3884",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-19T23:14:06Z",
+      "side": 1,
+      "message": "done in next",
+      "parentUuid": "1abeadc6_2b432815",
       "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
