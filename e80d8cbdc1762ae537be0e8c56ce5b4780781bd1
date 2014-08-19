@@ -70,6 +70,23 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_e8721b48",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T22:57:51Z",
+      "side": 1,
+      "message": "Is there a reason to do this instead of letting .get() return None?",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_889fe24f",
         "filename": "keystone/tests/test_auth.py",
         "patchSetId": 7
@@ -104,6 +121,40 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_0bbf4cd1",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T22:57:51Z",
+      "side": 1,
+      "message": "I think this is a little strange here because it\u0027s not actually checking for equality, it\u0027s checking for a parent-child-like relationship. I see why you had to do it to not break existing tests, but it was confusing when I first saw it.",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a8f4a387",
+        "filename": "keystone/tests/unit/token/test_token_data_helper.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T22:57:51Z",
+      "side": 1,
+      "message": "I don\u0027t think this will work in Python3. I\u0027m pretty sure the bytes type doesn\u0027t have an encode method.",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_c8a9da7c",
         "filename": "keystone/tests/unit/token/test_token_data_helper.py",
         "patchSetId": 7
@@ -115,6 +166,23 @@
       "writtenOn": "2014-08-19T22:34:28Z",
       "side": 1,
       "message": "give a name to the None parameter so we know what it is.",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_0b790c93",
+        "filename": "keystone/tests/unit/token/test_token_data_helper.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T22:57:51Z",
+      "side": 1,
+      "message": "Maybe just verify that the list doesn\u0027t contain a None to show that an ID is generated.",
       "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -183,6 +251,23 @@
       "writtenOn": "2014-08-19T22:34:28Z",
       "side": 1,
       "message": "Give a name to the None field so we know what it is.",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_0862f73d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T22:57:51Z",
+      "side": 1,
+      "message": "Same Python3 issue",
       "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
