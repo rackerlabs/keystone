@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_f92bcb91",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-19T21:26:13Z",
+      "side": 1,
+      "message": "that implies depending on xmlsec python package, or another similar one",
+      "parentUuid": "1abeadc6_99de643e",
+      "revId": "fb4ccbdce5dafebf046cc323ab4b3bc55d8eef5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_225fdee6",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 23
