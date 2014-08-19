@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_e2ba3c09",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 16
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-19T19:00:02Z",
+      "side": 1,
+      "message": "do not put this in the default pipelines, instead, document how to enable it",
+      "revId": "1d7c78bbb0e370e83c141dcde0a5da704318c149",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4243f013",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 16
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-19T19:00:02Z",
+      "side": 1,
+      "message": "this part is fine",
+      "revId": "1d7c78bbb0e370e83c141dcde0a5da704318c149",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_824c2844",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 16
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-19T19:00:02Z",
+      "side": 1,
+      "message": "keys? plural?\n\nthese config options are also going to be reproduced in sample config and appear in keystone.conf -- might as well do that now since it confuses everyone that you can put configuration into paste config :(",
+      "revId": "1d7c78bbb0e370e83c141dcde0a5da704318c149",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e2515cd9",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 16
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-19T19:00:02Z",
+      "side": 1,
+      "message": "why does it need an enabled variable? including it in the pipeline should be all that\u0027s required? also, booleans should be true / false rather than yes / no",
+      "revId": "1d7c78bbb0e370e83c141dcde0a5da704318c149",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_220a74d2",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-19T19:00:02Z",
+      "side": 1,
+      "message": "default to False if this boolean is actually necessary",
+      "revId": "1d7c78bbb0e370e83c141dcde0a5da704318c149",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_82e8a8e3",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-19T19:00:02Z",
+      "side": 1,
+      "message": "^",
+      "revId": "1d7c78bbb0e370e83c141dcde0a5da704318c149",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_42b690fb",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-19T19:00:02Z",
+      "side": 1,
+      "message": "ah - i see why its necessary now",
+      "revId": "1d7c78bbb0e370e83c141dcde0a5da704318c149",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
