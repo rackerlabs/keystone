@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_ab9498e2",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-19T22:49:41Z",
+      "side": 1,
+      "message": "I still think it\u0027s worth noting that we can add attributes to the event, instead of the initiator. We could have **kwargs here,\nand add any kwargs to event (line 400).",
+      "revId": "aabd46182898cebbbc2e92d9ba4086c56334a424",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
