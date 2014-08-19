@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_47514c0d",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-08-19T15:09:12Z",
+      "side": 1,
+      "message": "++ so I\u0027ll separate the groups and order them internally with the order they appear here.",
+      "parentUuid": "1abeadc6_c120ecb2",
+      "revId": "6d343a89e868a376178c40d54664801cd29a1ec6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_f3621ed7",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 22
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "Feel free to push a patch with such changes :-)",
       "parentUuid": "1abeadc6_f3621ed7",
+      "revId": "6d343a89e868a376178c40d54664801cd29a1ec6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3c7d43e8",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-08-19T15:09:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_e106c81f",
       "revId": "6d343a89e868a376178c40d54664801cd29a1ec6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
