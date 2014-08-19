@@ -211,6 +211,12 @@ class CrossBackendNotAllowed(Forbidden):
                        "user is %(user_id)s")
 
 
+class InvalidPolicyAssociation(Forbidden):
+    message_format = _("Invalid policy Association - "
+                       "Endpoint: %(endpoint_id)s, Service: %(service_id)s, "
+                       "Region: %(region_id)s")
+
+
 class NotFound(Error):
     message_format = _("Could not find: %(target)s")
     code = 404
