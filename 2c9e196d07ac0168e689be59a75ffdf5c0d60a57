@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_e873fb12",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1079,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2014-08-19T19:57:02Z",
+      "side": 1,
+      "message": "cool cool. just that it\u0027s not actually saving you anything since it\u0027s only used in one place. that said, not a dealbreaker.",
+      "parentUuid": "1abeadc6_a892e39c",
+      "revId": "2c9e196d07ac0168e689be59a75ffdf5c0d60a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_9f69df27",
         "filename": "keystone/common/sql/migrate_repo/versions/053_add_parent_project.py",
         "patchSetId": 5
@@ -66,6 +84,41 @@
       "side": 1,
       "message": "can you exemplify? \u003d)",
       "parentUuid": "1abeadc6_9f69df27",
+      "revId": "2c9e196d07ac0168e689be59a75ffdf5c0d60a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a83bc336",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_add_parent_project.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2014-08-19T19:57:02Z",
+      "side": 1,
+      "message": "rather than list_constraints(migrate_engine) you can use list_contraints(meta)... that way you already have the MetaData object you created in upgrade/downgrade methods.",
+      "parentUuid": "1abeadc6_88c52790",
+      "revId": "2c9e196d07ac0168e689be59a75ffdf5c0d60a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e88f7bca",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_add_parent_project.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2014-08-19T19:57:02Z",
+      "side": 1,
+      "message": "just noticed this is wrong. if i understand correctly, it\u0027s trying to create a foreign_key on itself.",
       "revId": "2c9e196d07ac0168e689be59a75ffdf5c0d60a57",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
