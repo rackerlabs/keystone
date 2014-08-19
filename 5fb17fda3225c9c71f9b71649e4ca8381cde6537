@@ -16,6 +16,41 @@
       "revId": "5fb17fda3225c9c71f9b71649e4ca8381cde6537",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d2c5375c",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T00:23:24Z",
+      "side": 1,
+      "message": "I think it\u0027s best left where it is for now. This is mostly because this function is already used by other things. If we have to add more attachments or add them to one of the other code paths that call this function my opinion would likely change.",
+      "parentUuid": "1abeadc6_be9327f9",
+      "revId": "5fb17fda3225c9c71f9b71649e4ca8381cde6537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_726d4332",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T00:23:24Z",
+      "side": 1,
+      "message": "Nice",
+      "revId": "5fb17fda3225c9c71f9b71649e4ca8381cde6537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
