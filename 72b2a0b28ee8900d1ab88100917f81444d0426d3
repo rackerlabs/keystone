@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_b9ab13d5",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-19T21:09:09Z",
+      "side": 1,
+      "message": "Docs  https://docs.python.org/2/library/tempfile.html say:\n\n\"Unlike TemporaryFile(), the user of mkstemp() is responsible for deleting the temporary file when done with it.\" and here we are not deleting it.\n\nProposed solutions:\n\n- wrap with try/catch/finally and manually delete the file\n-revert to (Named)TemporaryFile that handles that for us automatically.",
+      "revId": "72b2a0b28ee8900d1ab88100917f81444d0426d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
