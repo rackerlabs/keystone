@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_2b5a48f3",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-19T22:46:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_a0d5a1ba",
+      "revId": "5fb17fda3225c9c71f9b71649e4ca8381cde6537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_808425d5",
         "filename": "keystone/notifications.py",
         "patchSetId": 25
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-19T18:17:15Z",
       "side": 1,
       "message": "you can use __ for _auth_context if you never intend on using it.",
+      "revId": "5fb17fda3225c9c71f9b71649e4ca8381cde6537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_0b63ccb1",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-19T22:46:26Z",
+      "side": 1,
+      "message": "we usually settle on just prefixing it with an underscore, but i\u0027ll do it your way, just this one time :)",
+      "parentUuid": "1abeadc6_808425d5",
       "revId": "5fb17fda3225c9c71f9b71649e4ca8381cde6537",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_cb4554b4",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-19T22:46:26Z",
+      "side": 1,
+      "message": "++ I just made the properties, didn\u0027t know we could do that, that\u0027s awesome, thanks gordon!",
+      "parentUuid": "1abeadc6_1ba9647b",
+      "revId": "5fb17fda3225c9c71f9b71649e4ca8381cde6537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_fbc4a841",
         "filename": "keystone/notifications.py",
         "patchSetId": 25
@@ -64,6 +118,24 @@
       "writtenOn": "2014-08-19T18:17:15Z",
       "side": 1,
       "message": "do you forsee any errors being triggered? if so, i\u0027d wrap everything in a generic try/catch... i don\u0027t think we want errors in auditing to affect the normal api request.",
+      "revId": "5fb17fda3225c9c71f9b71649e4ca8381cde6537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2bb6c8fa",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-19T22:46:26Z",
+      "side": 1,
+      "message": "there shouldn\u0027t be any errors, but i\u0027ll wrap it just in case.",
+      "parentUuid": "1abeadc6_fbc4a841",
       "revId": "5fb17fda3225c9c71f9b71649e4ca8381cde6537",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -116,6 +188,23 @@
       "writtenOn": "2014-08-19T00:23:24Z",
       "side": 1,
       "message": "Nice",
+      "revId": "5fb17fda3225c9c71f9b71649e4ca8381cde6537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_cbb55432",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-19T22:46:26Z",
+      "side": 1,
+      "message": "rewrite this use the new method name: assert_last_note",
       "revId": "5fb17fda3225c9c71f9b71649e4ca8381cde6537",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
