@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_b0417c3b",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T13:55:17Z",
+      "side": 1,
+      "message": "the \u0027identity\u0027 constant should be given a name so we know what it\u0027s for -- section\u003d\u0027identity\u0027",
+      "revId": "c427181296d0b471d11c9266f772cbe39bce3e3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_90a9e0e1",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T13:55:17Z",
+      "side": 1,
+      "message": "this should only happen if caching is enabled, otherwise it\u0027s a waste",
+      "revId": "c427181296d0b471d11c9266f772cbe39bce3e3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_90800048",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T13:55:17Z",
+      "side": 1,
+      "message": "lines 655-656 are copied from 636-637. Create a function and share it instead... self._invalidate_user(user_id, user_old)",
+      "revId": "c427181296d0b471d11c9266f772cbe39bce3e3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_905c80ef",
+        "filename": "keystone/tests/config_files/backend_ldap_pool.conf",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T13:55:17Z",
+      "side": 1,
+      "message": "add a comment why this is here.",
+      "revId": "c427181296d0b471d11c9266f772cbe39bce3e3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_302d6c47",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T13:55:17Z",
+      "side": 1,
+      "message": "are user names limited to lowercase?",
+      "revId": "c427181296d0b471d11c9266f772cbe39bce3e3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b0d17cfd",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T13:55:17Z",
+      "side": 1,
+      "message": "in the test_cache_layer_get_user version of this test there\u0027s some more comments to make the test understandable... those comments should be in this version, too.",
+      "revId": "c427181296d0b471d11c9266f772cbe39bce3e3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3061ec39",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T13:55:17Z",
+      "side": 1,
+      "message": "add a comment why this is necessary.",
+      "revId": "c427181296d0b471d11c9266f772cbe39bce3e3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_908720d7",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 621,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T13:55:17Z",
+      "side": 1,
+      "message": "Add a comment why this is being overridden.",
+      "revId": "c427181296d0b471d11c9266f772cbe39bce3e3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
