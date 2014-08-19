@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_e8de9610",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T22:34:28Z",
+      "side": 1,
+      "message": "this sentence doesn\u0027t make sense... a list of index 0? how about \"a list where index 0 is the token\u0027s audit ID and index 1 is the ...\"",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_88cd2260",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T22:34:28Z",
+      "side": 1,
+      "message": "it\u0027s always low since it\u0027s only milliseconds at best.",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_8869a227",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T22:34:28Z",
+      "side": 1,
+      "message": "I\u0027m not sure I totally understand the implications of this... could we make it easier on us and reject these requests? Or maybe leave off the audit_ids if the parent token didn\u0027t have an audit ID (This is a case that revocation events has to handle anyways).",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e8905645",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T22:34:28Z",
+      "side": 1,
+      "message": "shouldn\u0027t this just be \"audit_id\"? all of these are from the token.",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_889fe24f",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T22:34:28Z",
+      "side": 1,
+      "message": "there\u0027s an extra blank line here.",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a8fd7e3c",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T22:34:28Z",
+      "side": 1,
+      "message": "it\u0027s easier to reason about positive checks rather than negative ones... change the argument to \"enforce_audit_ids\u003dTrue\".",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_c8a9da7c",
+        "filename": "keystone/tests/unit/token/test_token_data_helper.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T22:34:28Z",
+      "side": 1,
+      "message": "give a name to the None parameter so we know what it is.",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_8b0fdc2d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T22:34:28Z",
+      "side": 1,
+      "message": "should .get(\u0027audit_ids\u0027, []), otherwise this could fail with an AttributeError,\n\nor if audit_ids is always in token then token_data[\u0027token\u0027][\u0027audit_ids\u0027]",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_283deede",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T22:34:28Z",
+      "side": 1,
+      "message": "Here\u0027s another spot where I think it would be safer to reject these requests, or maybe it\u0027s better to not put the audit ID in the token if the original token didn\u0027t have one since revocation events will have to handle that case anyways.",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_eb4e906e",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T22:34:28Z",
+      "side": 1,
+      "message": "Give a name to the None field so we know what it is.",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4b5ce425",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T22:34:28Z",
+      "side": 1,
+      "message": "Give a name to the None field so we know what it is.",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2b432815",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T22:34:28Z",
+      "side": 1,
+      "message": "since generating audit_info is slightly expensive, might want to only generate it if wasn\u0027t able to get it from token_data... move this down after line 53.",
+      "revId": "e80d8cbdc1762ae537be0e8c56ce5b4780781bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
