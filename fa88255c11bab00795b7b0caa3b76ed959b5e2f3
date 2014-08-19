@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_d6c9907a",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-19T14:26:42Z",
+      "side": 1,
+      "message": "I did it, then I learnt from Henry that \"rule:owner is too liberal. We should not include the target in the rule for list_credentials\".",
+      "parentUuid": "1abeadc6_70b524ed",
+      "revId": "fa88255c11bab00795b7b0caa3b76ed959b5e2f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_b3f986ca",
         "filename": "keystone/tests/test_v3_credential.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-19T14:15:26Z",
       "side": 1,
       "message": "(nit) Rename c to something a little more expressive. I\u0027m assuming it\u0027s a credential.",
+      "revId": "fa88255c11bab00795b7b0caa3b76ed959b5e2f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_9613980c",
+        "filename": "keystone/tests/test_v3_credential.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-19T14:26:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_b3f986ca",
       "revId": "fa88255c11bab00795b7b0caa3b76ed959b5e2f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
