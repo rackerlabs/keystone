@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_a0d5a1ba",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2014-08-19T18:17:15Z",
+      "side": 1,
+      "message": "you can probably move this check into method since it\u0027s reused?",
+      "revId": "5fb17fda3225c9c71f9b71649e4ca8381cde6537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_808425d5",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2014-08-19T18:17:15Z",
+      "side": 1,
+      "message": "you can use __ for _auth_context if you never intend on using it.",
+      "revId": "5fb17fda3225c9c71f9b71649e4ca8381cde6537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1ba9647b",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2014-08-19T18:17:15Z",
+      "side": 1,
+      "message": "hmm.. interesting... this should fail since contentType is a required field. guess the validation isn\u0027t being triggered.\n\nthat said, i\u0027m not sure we need attachements. attachments iiuc are more for say something like a jpeg, doc, etc... if you\u0027re just adding an attribute you could just add it to event like you would typical attribute... ie.  initiator.role \u003d value\n\nalternatively, you can extend either Event or Resource and add those attributes in if you want to formalise/validate it: https://github.com/openstack/pycadf/blob/master/pycadf/audit/api.py#L93-L97",
+      "revId": "5fb17fda3225c9c71f9b71649e4ca8381cde6537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_fbc4a841",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2014-08-19T18:17:15Z",
+      "side": 1,
+      "message": "do you forsee any errors being triggered? if so, i\u0027d wrap everything in a generic try/catch... i don\u0027t think we want errors in auditing to affect the normal api request.",
+      "revId": "5fb17fda3225c9c71f9b71649e4ca8381cde6537",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_be9327f9",
         "filename": "keystone/notifications.py",
         "patchSetId": 25
