@@ -16,6 +16,23 @@
       "revId": "38d1f56f02ece3b923840600b7bde9f4f224f8e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_063211a7",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 707,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-08-19T03:17:36Z",
+      "side": 1,
+      "message": "What will happen to roles assigned via group assignments?",
+      "revId": "38d1f56f02ece3b923840600b7bde9f4f224f8e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
