@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_c120ecb2",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-19T14:51:08Z",
+      "side": 1,
+      "message": "I would group them by being really \u0027helping methods\u0027 (_determine_expiration_time) and methods that create Response XML objects.",
+      "parentUuid": "1abeadc6_b341863b",
+      "revId": "6d343a89e868a376178c40d54664801cd29a1ec6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_f3621ed7",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 22
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-19T14:05:44Z",
       "side": 1,
       "message": "I\u0027d use real world examples here, like \"admin\" and \"member\". What you think?",
+      "revId": "6d343a89e868a376178c40d54664801cd29a1ec6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e106c81f",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-19T14:51:08Z",
+      "side": 1,
+      "message": "Feel free to push a patch with such changes :-)",
+      "parentUuid": "1abeadc6_f3621ed7",
       "revId": "6d343a89e868a376178c40d54664801cd29a1ec6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
