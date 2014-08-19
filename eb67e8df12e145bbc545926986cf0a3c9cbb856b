@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_153239a7",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T01:21:15Z",
+      "side": 1,
+      "message": "this comment should be moved up into _get_group_ids_for_user_id",
+      "revId": "eb67e8df12e145bbc545926986cf0a3c9cbb856b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d517e1eb",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T01:21:15Z",
+      "side": 1,
+      "message": "why is this TODO for henry and not jamie?",
+      "revId": "eb67e8df12e145bbc545926986cf0a3c9cbb856b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_35de5540",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T01:21:15Z",
+      "side": 1,
+      "message": "is this supposed to be user domains and not projects?",
+      "revId": "eb67e8df12e145bbc545926986cf0a3c9cbb856b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_15a799be",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 907,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T01:21:15Z",
+      "side": 1,
+      "message": "I don\u0027t see what the point of the hints argument here is since nothing uses it.",
+      "revId": "eb67e8df12e145bbc545926986cf0a3c9cbb856b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_15c239e9",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T01:21:15Z",
+      "side": 1,
+      "message": "there\u0027s only 1 user so this should just be called user not user1.",
+      "revId": "eb67e8df12e145bbc545926986cf0a3c9cbb856b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d5f9a14e",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T01:21:15Z",
+      "side": 1,
+      "message": "testtools provides a HasLength matcher that should provide a better message if this fails.",
+      "revId": "eb67e8df12e145bbc545926986cf0a3c9cbb856b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f595bde4",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T01:21:15Z",
+      "side": 1,
+      "message": "testtools provides a HasLength matcher that should provide a better message if this fails.",
+      "revId": "eb67e8df12e145bbc545926986cf0a3c9cbb856b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_75b0cd8b",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T01:21:15Z",
+      "side": 1,
+      "message": "there\u0027s only 1 user so this should just be called user not user1.",
+      "revId": "eb67e8df12e145bbc545926986cf0a3c9cbb856b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_353c95e2",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1043,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T01:21:15Z",
+      "side": 1,
+      "message": "the error for this should include the url so that we know which one was the problem.",
+      "revId": "eb67e8df12e145bbc545926986cf0a3c9cbb856b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_55411159",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1064,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-19T01:21:15Z",
+      "side": 1,
+      "message": "the error for this should include the url so that we know which one was the problem.",
+      "revId": "eb67e8df12e145bbc545926986cf0a3c9cbb856b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
