@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_e6e9951b",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 5164
+      },
+      "writtenOn": "2014-08-19T03:04:08Z",
+      "side": 0,
+      "message": "This section contains raw strings that are used enough to call for them being pulled out and organized into a common module.",
+      "revId": "bb948f04f68d6474d36f6d86117b9d637a333b5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

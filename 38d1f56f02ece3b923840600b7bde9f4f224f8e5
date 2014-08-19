@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_26a62d11",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 5164
+      },
+      "writtenOn": "2014-08-19T03:04:08Z",
+      "side": 1,
+      "message": "This constant is not being used consistently. There are a few places where the raw string is being used in its place. This might be a good time to pull all of the raw strings out into a common place.",
+      "revId": "38d1f56f02ece3b923840600b7bde9f4f224f8e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
