@@ -30,6 +30,10 @@ ERROR_MESSAGE = _('Unable to sign token.')
 
 
 class Provider(common.BaseProvider):
+    def __init__(self):
+        super(Provider, self).__init__()
+        self.non_persistent_capable = True
+
     def _get_token_id(self, token_data):
         try:
             # force conversion to a string as the keystone client cms code

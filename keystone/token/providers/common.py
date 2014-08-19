@@ -381,6 +381,7 @@ class BaseProvider(provider.Provider):
         super(BaseProvider, self).__init__(*args, **kwargs)
         self.v3_token_data_helper = V3TokenDataHelper()
         self.v2_token_data_helper = V2TokenDataHelper()
+        self.non_persistent_capable = False
 
     def get_token_version(self, token_data):
         if token_data and isinstance(token_data, dict):
