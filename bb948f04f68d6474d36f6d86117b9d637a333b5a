@@ -16,6 +16,24 @@
       "revId": "bb948f04f68d6474d36f6d86117b9d637a333b5a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_9c202ef9",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-19T05:59:17Z",
+      "side": 0,
+      "message": "Fair point. I may defer that to a cleanup patch to ease reviewing of the code if that works.",
+      "parentUuid": "1abeadc6_e6e9951b",
+      "revId": "bb948f04f68d6474d36f6d86117b9d637a333b5a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

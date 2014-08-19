@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_bc740afe",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-19T05:59:17Z",
+      "side": 1,
+      "message": "Same as before, I\u0027d like to defer that change to a cleanup patch if that is ok (i\u0027ll make it a follow up to this one), it will ease reviewing so only the review is not mixing \"new functionality\" and \"cleanup\" at once.",
+      "parentUuid": "1abeadc6_26a62d11",
+      "revId": "38d1f56f02ece3b923840600b7bde9f4f224f8e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_063211a7",
         "filename": "keystone/identity/core.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-19T03:17:36Z",
       "side": 1,
       "message": "What will happen to roles assigned via group assignments?",
+      "revId": "38d1f56f02ece3b923840600b7bde9f4f224f8e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_fcf3e270",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 707,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-19T05:59:17Z",
+      "side": 1,
+      "message": "This is specifically invalidating users\u0027s tokens. The list_users_in_group should return the users we need to invalidate, if we need to expand the return of list_users_in_group, that would need to be a separate patch (as it would be introducing new functionality that was not previously here).\n\nIf we need to expand the revoking of tokens in this manner, we\u0027ll need a separate bug for it. (something to research)",
+      "parentUuid": "1abeadc6_063211a7",
       "revId": "38d1f56f02ece3b923840600b7bde9f4f224f8e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
