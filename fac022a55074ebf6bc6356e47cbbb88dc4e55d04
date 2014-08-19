@@ -16,6 +16,24 @@
       "revId": "fac022a55074ebf6bc6356e47cbbb88dc4e55d04",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_d42b78e9",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T14:20:42Z",
+      "side": 0,
+      "message": "Importing \u0027ldap.filter\u0027 will also import the \u0027ldap\u0027 name as a side effect. So the explicit import is not needed.",
+      "parentUuid": "baada198_d3a73807",
+      "revId": "fac022a55074ebf6bc6356e47cbbb88dc4e55d04",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
