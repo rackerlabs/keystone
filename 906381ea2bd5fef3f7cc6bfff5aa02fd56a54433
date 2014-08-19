@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_59d3dfd5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T21:37:39Z",
+      "side": 1,
+      "message": "Should metadata be capitalized here? remove the \u0027a\u0027 here.",
+      "revId": "906381ea2bd5fef3f7cc6bfff5aa02fd56a54433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_19f08766",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T21:37:39Z",
+      "side": 1,
+      "message": "Should these be capitalized?",
+      "revId": "906381ea2bd5fef3f7cc6bfff5aa02fd56a54433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b9feb336",
+        "filename": "keystone/contrib/federation/metadata_generator.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T21:37:39Z",
+      "side": 1,
+      "message": "Add an extra newline here.",
+      "revId": "906381ea2bd5fef3f7cc6bfff5aa02fd56a54433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f98f4bca",
+        "filename": "keystone/contrib/federation/metadata_generator.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T21:37:39Z",
+      "side": 1,
+      "message": "Is this something that should be logged?",
+      "revId": "906381ea2bd5fef3f7cc6bfff5aa02fd56a54433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_54ad669b",
+        "filename": "keystone/contrib/federation/metadata_generator.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T21:37:39Z",
+      "side": 1,
+      "message": "single_signon_service?",
+      "revId": "906381ea2bd5fef3f7cc6bfff5aa02fd56a54433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b4d95a85",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1672,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T21:37:39Z",
+      "side": 1,
+      "message": "Does this actually need to subclass FederationTests? Does it require any of the setup from it?",
+      "revId": "906381ea2bd5fef3f7cc6bfff5aa02fd56a54433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_391d4374",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1677,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T21:37:39Z",
+      "side": 1,
+      "message": "We should be using the config fixture here.",
+      "revId": "906381ea2bd5fef3f7cc6bfff5aa02fd56a54433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
