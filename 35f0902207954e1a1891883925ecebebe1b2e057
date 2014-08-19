@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_37b1f5f8",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2014-08-19T06:29:51Z",
+      "side": 1,
+      "message": "This is a backport, please suggest this on master first.",
+      "parentUuid": "7ac7a964_b3f8e4e6",
+      "revId": "35f0902207954e1a1891883925ecebebe1b2e057",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac7a964_53ba30e2",
         "filename": "keystone/tests/test_v3_catalog.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-14T09:15:49Z",
       "side": 1,
       "message": "nit: is there any reason why you have this newline after the doc-string?\nand not the doc-string in one line? like in the CatalogTestCase class in line 24?\nShould there be a subsequent patch making this as the class above to have consistency? or should there be a separate CR fixing the other docstrings?",
+      "revId": "35f0902207954e1a1891883925ecebebe1b2e057",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_979f295f",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 1955
+      },
+      "writtenOn": "2014-08-19T06:29:51Z",
+      "side": 1,
+      "message": "This is a backport, please suggest this on master first.",
+      "parentUuid": "7ac7a964_53ba30e2",
       "revId": "35f0902207954e1a1891883925ecebebe1b2e057",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
