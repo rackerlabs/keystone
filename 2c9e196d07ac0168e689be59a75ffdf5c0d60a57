@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_c5baaa22",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1079,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2014-08-19T19:36:24Z",
+      "side": 1,
+      "message": "is this to be validated later or is the validation just to check it\u0027s not None? also, this isn\u0027t used anywhere else in class so maybe the method isn\u0027t needed.",
+      "revId": "2c9e196d07ac0168e689be59a75ffdf5c0d60a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_9f69df27",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_add_parent_project.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2014-08-19T19:36:24Z",
+      "side": 1,
+      "message": "you can probably just pass the meta object rather than creating a new one.",
+      "revId": "2c9e196d07ac0168e689be59a75ffdf5c0d60a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_9fc0ff7d",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_add_parent_project.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2014-08-19T19:36:24Z",
+      "side": 1,
+      "message": "bind is actually a parameter in Metadata()... although i guess this is more consistent with other keystone scripts.",
+      "revId": "2c9e196d07ac0168e689be59a75ffdf5c0d60a57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
