@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_6210f601",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T15:31:14Z",
+      "side": 1,
+      "message": "(nit) add newline",
+      "revId": "fb4ccbdce5dafebf046cc323ab4b3bc55d8eef5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_825c32ef",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T15:31:14Z",
+      "side": 1,
+      "message": "Is there a way to do this without the temporary files?",
+      "revId": "fb4ccbdce5dafebf046cc323ab4b3bc55d8eef5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_225fdee6",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T15:31:14Z",
+      "side": 1,
+      "message": "Should this error be logged?",
+      "revId": "fb4ccbdce5dafebf046cc323ab4b3bc55d8eef5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a24bee29",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T15:31:14Z",
+      "side": 1,
+      "message": "Do you want to just \u0027raise\u0027 to get the original stack trace or is \u0027raise e\u0027 on purpose?",
+      "revId": "fb4ccbdce5dafebf046cc323ab4b3bc55d8eef5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_42d77a23",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 1596,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T15:31:14Z",
+      "side": 1,
+      "message": "This should use the config fixture.",
+      "revId": "fb4ccbdce5dafebf046cc323ab4b3bc55d8eef5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_22899e26",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 1625,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T15:31:14Z",
+      "side": 1,
+      "message": "I think the order for all of the assertEqual methods should be switched. The order should be (expected, observed).",
+      "revId": "fb4ccbdce5dafebf046cc323ab4b3bc55d8eef5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
