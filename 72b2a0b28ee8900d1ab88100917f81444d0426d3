@@ -16,6 +16,23 @@
       "revId": "72b2a0b28ee8900d1ab88100917f81444d0426d3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3931c3a2",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-19T21:13:10Z",
+      "side": 1,
+      "message": "I don\u0027t think this can work. mkstemp doesn\u0027t return a file object. Any reason you moved away from NamedTemporaryFile. Under the hood it uses mkstemp anyway...",
+      "revId": "72b2a0b28ee8900d1ab88100917f81444d0426d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
