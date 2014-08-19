@@ -25,7 +25,7 @@ from keystone.common import dependency
 from keystone.common import manager
 from keystone import config
 from keystone import exception
-from keystone.i18n import _LW
+from keystone.i18n import _, _LW
 from keystone.openstack.common import log
 from keystone.openstack.common import versionutils
 
@@ -51,6 +51,15 @@ class PersistenceManager(manager.Manager):
 
     def __init__(self):
         super(PersistenceManager, self).__init__(CONF.token.driver)
+        non_persistent_driver = ('keystone.token.persistence.'
+                                 'nonpersistent.Token')
+        if (not self.token_provider_api.non_persistent_capable and
+                CONF.token.driver == non_persistent_driver):
+            raise exception.UnexpectedError(
+                _('The configuration file has specified an incompatible '
+                  'combination of token ``provider`` and token ``driver`` in '
+                  'the [token] section. Non-persistent driver cannot be used '
+                  'with %s') % CONF.token.provider)
 
     @versionutils.deprecated(as_of=versionutils.deprecated.JUNO,
                              in_favor_of='token_provider_api.unique_id',
