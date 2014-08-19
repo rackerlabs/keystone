@@ -138,6 +138,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_c6a7394e",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-19T03:50:19Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1abeadc6_e99093ee",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_55793f92",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 6
@@ -258,6 +276,23 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_668905ca",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 772,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-19T03:50:19Z",
+      "side": 1,
+      "message": "if you actually add this line, you should be able to verify the pending status, too.",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_359be3ca",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 6
@@ -321,6 +356,41 @@
       "writtenOn": "2014-08-18T20:38:04Z",
       "side": 1,
       "message": "shouldn\u0027t the code be able to assert that both the pending and success notifications were sent?",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_26a0ed42",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-19T03:50:19Z",
+      "side": 1,
+      "message": "You could probably create a specific method for testing this, something that grabs the last 2 notifications\n\n  note \u003d self._notifications[-2]\n  self.assertEqual(note[\u0027outcome\u0027], expectedvalue)",
+      "parentUuid": "1abeadc6_4c36f553",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_26b70d88",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 939,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-19T03:50:19Z",
+      "side": 1,
+      "message": "A test where the failed to authN notification is sent would be good too, you can mimic this test case.",
       "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
