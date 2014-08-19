@@ -88,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_59bdac67",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-19T16:07:29Z",
+      "side": 1,
+      "message": "To be honest I didn\u0027t have any idea what exactly should be raised there so decided to leave full stack trace.",
+      "parentUuid": "1abeadc6_a24bee29",
+      "revId": "fb4ccbdce5dafebf046cc323ab4b3bc55d8eef5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_42d77a23",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 23
