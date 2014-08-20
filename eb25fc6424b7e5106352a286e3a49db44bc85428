@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_5ee9d7e4",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-20T21:11:50Z",
+      "side": 1,
+      "message": "why is this TODO for henry and not jamie?",
+      "revId": "eb25fc6424b7e5106352a286e3a49db44bc85428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1edcbf45",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-20T21:11:50Z",
+      "side": 1,
+      "message": "I don\u0027t see what the point of the hints argument here is since nothing uses it.",
+      "revId": "eb25fc6424b7e5106352a286e3a49db44bc85428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_beecabf4",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-20T21:11:50Z",
+      "side": 1,
+      "message": "testtools provides a HasLength matcher that should provide a better message if this fails.",
+      "revId": "eb25fc6424b7e5106352a286e3a49db44bc85428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
