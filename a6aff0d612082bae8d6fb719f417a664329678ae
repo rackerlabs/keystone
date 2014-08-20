@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_5f21e8f9",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2014-08-20T12:45:34Z",
+      "side": 1,
+      "message": "whoops sorry. i meant wrapping the auditing part. ie. building host, getting request details, everything above. just so if the auditing part fails, the request will still continue on as normal ie. f(wrapped_self, role_id, *args, **kwargs) still gets called and returned",
+      "revId": "a6aff0d612082bae8d6fb719f417a664329678ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
