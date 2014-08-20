@@ -310,6 +310,27 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self._assert_notify_sent(endpoint_ref['id'], DELETED_OPERATION,
                                  'endpoint', public=False)
 
+    def test_delete_service(self):
+        service_ref = self.new_service_ref()
+        self.catalog_api.create_service(service_ref['id'], service_ref)
+        self.catalog_api.delete_service(service_ref['id'])
+        self._assert_notify_sent(service_ref['id'], DELETED_OPERATION,
+                                 'service', public=False)
+
+    def test_delete_region(self):
+        region_ref = self.new_region_ref()
+        self.catalog_api.create_region(region_ref)
+        self.catalog_api.delete_region(region_ref['id'])
+        self._assert_notify_sent(region_ref['id'], DELETED_OPERATION,
+                                 'region', public=False)
+
+    def test_delete_policy(self):
+        policy_ref = self.new_policy_ref()
+        self.policy_api.create_policy(policy_ref['id'], policy_ref)
+        self.policy_api.delete_policy(policy_ref['id'])
+        self._assert_notify_sent(policy_ref['id'], DELETED_OPERATION,
+                                 'policy', public=False)
+
     def test_disable_domain(self):
         domain_ref = self.new_domain_ref()
         self.assignment_api.create_domain(domain_ref['id'], domain_ref)
