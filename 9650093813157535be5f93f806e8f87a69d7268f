@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_40612d38",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1537,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-20T16:05:39Z",
+      "side": 1,
+      "message": "We can change this list comprehension into a generator expression and avoid creating the temporary list.",
+      "revId": "9650093813157535be5f93f806e8f87a69d7268f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6099c91e",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1541,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-20T16:05:39Z",
+      "side": 1,
+      "message": "Should use single quotes here.",
+      "revId": "9650093813157535be5f93f806e8f87a69d7268f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_40192d87",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-20T16:05:39Z",
+      "side": 1,
+      "message": "http://docs.openstack.org/developer/hacking/#docstrings\n\nAlso my convention \"\"\" is typically used instead of \u0027\u0027\u0027.",
+      "revId": "9650093813157535be5f93f806e8f87a69d7268f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_fbf108ce",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-20T16:05:39Z",
+      "side": 1,
+      "message": "Is there any reason it can\u0027t run more than once or that we can\u0027t put it in it\u0027s own test class so it only runs once?",
+      "revId": "9650093813157535be5f93f806e8f87a69d7268f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7b589832",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 802,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-20T16:05:39Z",
+      "side": 1,
+      "message": "Same things about this docstring.\n\nhttp://docs.openstack.org/developer/hacking/#docstrings",
+      "revId": "9650093813157535be5f93f806e8f87a69d7268f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
