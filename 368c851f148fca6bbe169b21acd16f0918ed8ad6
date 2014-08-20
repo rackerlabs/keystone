@@ -16,6 +16,24 @@
       "revId": "368c851f148fca6bbe169b21acd16f0918ed8ad6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_293959d7",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-20T13:42:34Z",
+      "side": 1,
+      "message": "http://webob.readthedocs.org/en/latest/reference.html#accept-headers",
+      "parentUuid": "1abeadc6_d7908e45",
+      "revId": "368c851f148fca6bbe169b21acd16f0918ed8ad6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
