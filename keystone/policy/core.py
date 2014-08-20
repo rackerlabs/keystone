@@ -22,6 +22,7 @@ from keystone.common import dependency
 from keystone.common import manager
 from keystone import config
 from keystone import exception
+from keystone import notifications
 
 
 CONF = config.CONF
@@ -35,6 +36,7 @@ class Manager(manager.Manager):
     dynamically calls the backend.
 
     """
+    _POLICY = 'policy'
 
     def __init__(self):
         super(Manager, self).__init__(CONF.policy.driver)
@@ -60,6 +62,7 @@ class Manager(manager.Manager):
         # caller.
         return self.driver.list_policies()
 
+    @notifications.deleted(_POLICY, public=False)
     def delete_policy(self, policy_id):
         try:
             return self.driver.delete_policy(policy_id)

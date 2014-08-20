@@ -78,6 +78,8 @@ class Manager(manager.Manager):
 
     """
     _ENDPOINT = 'endpoint'
+    _SERVICE = 'service'
+    _REGION = 'region'
 
     def __init__(self):
         super(Manager, self).__init__(CONF.catalog.driver)
@@ -110,6 +112,7 @@ class Manager(manager.Manager):
         except exception.NotFound:
             raise exception.RegionNotFound(region_id=region_id)
 
+    @notifications.deleted(_REGION, public=False)
     def delete_region(self, region_id):
         try:
             ret = self.driver.delete_region(region_id)
@@ -134,6 +137,7 @@ class Manager(manager.Manager):
         except exception.NotFound:
             raise exception.ServiceNotFound(service_id=service_id)
 
+    @notifications.deleted(_SERVICE, public=False)
     def delete_service(self, service_id):
         try:
             endpoints = self.list_endpoints()
