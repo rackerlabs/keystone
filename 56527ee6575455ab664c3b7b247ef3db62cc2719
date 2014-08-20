@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_ccbd4eb9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-20T16:18:25Z",
+      "side": 1,
+      "message": "(nit) space",
+      "revId": "56527ee6575455ab664c3b7b247ef3db62cc2719",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ec33ea5f",
+        "filename": "keystone/tests/unit/token/test_token_data_helper.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-20T16:18:25Z",
+      "side": 1,
+      "message": "These will have the same Python3 issue",
+      "revId": "56527ee6575455ab664c3b7b247ef3db62cc2719",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
