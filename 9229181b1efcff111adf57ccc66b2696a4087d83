@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_66caaa6f",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-20T08:39:44Z",
+      "side": 1,
+      "message": "(NIT): I\u0027d use here response.to_string() to indicate that is a non-standard object that needs to be serialized.",
+      "revId": "9229181b1efcff111adf57ccc66b2696a4087d83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
