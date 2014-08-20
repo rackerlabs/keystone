@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_9f646023",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-08-20T12:51:04Z",
+      "side": 1,
+      "message": "this block is unnecessary",
+      "revId": "515f41de3050685aa5ce19bd82154c5dc34fe5db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
