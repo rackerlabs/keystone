@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_eccdafb8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5164
+      },
+      "writtenOn": "2014-08-20T14:15:10Z",
+      "side": 1,
+      "message": "\u0027internal\u0027 is misspelled",
+      "revId": "6d121c65d258db8f606ad154bf65ab40a2cbdc30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2c67a7ea",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 5164
+      },
+      "writtenOn": "2014-08-20T14:15:10Z",
+      "side": 1,
+      "message": "maybe add a one-line message reminded future maintainers of what cb[0] and cb[1] are. possibly even unpacking them into named variables in the for statement?",
+      "revId": "6d121c65d258db8f606ad154bf65ab40a2cbdc30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
