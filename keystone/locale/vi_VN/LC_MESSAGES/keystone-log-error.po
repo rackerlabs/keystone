@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2014-08-04 06:06+0000\n"
-"PO-Revision-Date: 2014-07-16 14:42+0000\n"
+"POT-Creation-Date: 2014-08-20 06:06+0000\n"
+"PO-Revision-Date: 2014-08-10 02:31+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Vietnamese (Viet Nam) (http://www.transifex.com/projects/p/"
 "keystone/language/vi_VN/)\n"
@@ -28,11 +28,6 @@ msgstr "Ngoại lệ ban đầu được giảm xuống: %s"
 #, python-format
 msgid "Unexpected exception occurred %d time(s)... retrying."
 msgstr "Ngoại lệ bất ngờ xảy ra %d thời gian(s) ... thử lại"
-
-#: keystone/openstack/common/lockutils.py:119
-#, python-format
-msgid "Could not release the acquired lock `%s`"
-msgstr "Không thể nhả ra khóa đã bị chiếm dụng `%s`"
 
 #: keystone/openstack/common/loopingcall.py:95
 msgid "in fixed duration looping call"
