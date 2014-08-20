@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_8f8ee8ce",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-08-20T16:47:35Z",
+      "side": 1,
+      "message": "It can be run more than once, however, it\u0027s a waste of time to do so.  Ideally, we could just add a simple unit test for the BaseLdap.deleteTree function, but I don\u0027t know how to do that.",
+      "parentUuid": "1abeadc6_fbf108ce",
+      "revId": "9650093813157535be5f93f806e8f87a69d7268f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_7b589832",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 9
