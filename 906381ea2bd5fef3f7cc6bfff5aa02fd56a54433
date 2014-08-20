@@ -36,6 +36,108 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_f74bcf84",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-20T01:27:37Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be *much* higher?",
+      "revId": "906381ea2bd5fef3f7cc6bfff5aa02fd56a54433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5281f148",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-20T01:27:37Z",
+      "side": 1,
+      "message": "can we use  wsgi.Application.base_url(context, \u0027public\u0027) or would that not work? if not, I might just end up using this in the saml generator too",
+      "revId": "906381ea2bd5fef3f7cc6bfff5aa02fd56a54433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b2ba4521",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-20T01:27:37Z",
+      "side": 1,
+      "message": "might be helpful to add an example,",
+      "revId": "906381ea2bd5fef3f7cc6bfff5aa02fd56a54433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_775fbf41",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-20T01:27:37Z",
+      "side": 1,
+      "message": "would this be the same as the \u0027region\u0027 url?",
+      "revId": "906381ea2bd5fef3f7cc6bfff5aa02fd56a54433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_72b0ad43",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-20T01:27:37Z",
+      "side": 1,
+      "message": "might be helpful to add an example",
+      "revId": "906381ea2bd5fef3f7cc6bfff5aa02fd56a54433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f732ef0e",
+        "filename": "keystone/contrib/federation/metadata_generator.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-20T01:27:37Z",
+      "side": 1,
+      "message": "you can call this file metadata, the main class is MetadataGenerator anyway",
+      "revId": "906381ea2bd5fef3f7cc6bfff5aa02fd56a54433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_b9feb336",
         "filename": "keystone/contrib/federation/metadata_generator.py",
         "patchSetId": 4
@@ -53,6 +155,23 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_72426d3f",
+        "filename": "keystone/contrib/federation/metadata_generator.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-20T01:27:37Z",
+      "side": 1,
+      "message": "that not all it does, `This function returns a certificate with the first and last lines stripped`",
+      "revId": "906381ea2bd5fef3f7cc6bfff5aa02fd56a54433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_f98f4bca",
         "filename": "keystone/contrib/federation/metadata_generator.py",
         "patchSetId": 4
@@ -64,6 +183,58 @@
       "writtenOn": "2014-08-19T21:37:39Z",
       "side": 1,
       "message": "Is this something that should be logged?",
+      "revId": "906381ea2bd5fef3f7cc6bfff5aa02fd56a54433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_122bf982",
+        "filename": "keystone/contrib/federation/metadata_generator.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-20T01:27:37Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1abeadc6_f98f4bca",
+      "revId": "906381ea2bd5fef3f7cc6bfff5aa02fd56a54433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_723b4dd1",
+        "filename": "keystone/contrib/federation/metadata_generator.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-20T01:27:37Z",
+      "side": 1,
+      "message": "prefix msg with _() to mark for translation",
+      "revId": "906381ea2bd5fef3f7cc6bfff5aa02fd56a54433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d230a1ea",
+        "filename": "keystone/contrib/federation/metadata_generator.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-20T01:27:37Z",
+      "side": 1,
+      "message": "key_descriptor?",
       "revId": "906381ea2bd5fef3f7cc6bfff5aa02fd56a54433",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -98,6 +269,24 @@
       "writtenOn": "2014-08-19T21:37:39Z",
       "side": 1,
       "message": "Does this actually need to subclass FederationTests? Does it require any of the setup from it?",
+      "revId": "906381ea2bd5fef3f7cc6bfff5aa02fd56a54433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_12a059f3",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1672,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-20T01:27:37Z",
+      "side": 1,
+      "message": "FederationTests does the extension setup (paste, db migration), so it\u0027s handy, not super necessary ATM, but i assume marek will be adding a controller/router. So, I\u0027m ok with leaving it here.",
+      "parentUuid": "1abeadc6_b4d95a85",
       "revId": "906381ea2bd5fef3f7cc6bfff5aa02fd56a54433",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
