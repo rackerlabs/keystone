@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_fe80e3c1",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-20T21:20:20Z",
+      "side": 1,
+      "message": "this should be moved up before it\u0027s used.",
+      "revId": "a6aff0d612082bae8d6fb719f417a664329678ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_def08769",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-20T21:20:20Z",
+      "side": 1,
+      "message": "This could build the host and initiator since that\u0027s the same. Pass in the user_id and use that if it\u0027s given:\n\ndef _get_request_audit_info(context, user_id\u003dNone):\n   ....\n       if not user_id:\n          user_id \u003d environment.get(...\n\n   host \u003d pycadf.host.Host(address\u003dremote_addr, agent\u003dhttp_user_agent)\n   initiator \u003d resource.Resource(typeURI\u003dtaxonomy.ACCOUNT_USER, ... )\n\n   return host, initiator",
+      "revId": "a6aff0d612082bae8d6fb719f417a664329678ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_5f21e8f9",
         "filename": "keystone/notifications.py",
         "patchSetId": 28
