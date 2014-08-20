@@ -17,7 +17,12 @@ from keystone.common import authorization
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import wsgi
+from keystone import config
 from keystone.contrib.federation import utils
+from keystone import exception
+
+
+CONF = config.CONF
 
 
 class _ControllerBase(controller.V3Controller):
@@ -290,3 +295,18 @@ class ProjectV3(controller.V3Controller):
         projects = self.assignment_api.list_projects_for_groups(
             auth_context['group_ids'])
         return ProjectV3.wrap_collection(context, projects)
+
+
+class SAMLMetadataV3(_ControllerBase):
+    member_name = 'metadata'
+
+    def get_metadata(self, context):
+        metadata_path = CONF.federation.idp_metadata_path
+        try:
+            with open(metadata_path, 'r') as metadata_handler:
+                metadata = metadata_handler.read()
+        except IOError as e:
+            # Raise HTTP 500 in case Metadata file cannot be read.
+            raise exception.MetadataFileError(reason=e)
+        return wsgi.render_response(body=metadata, status=('200', 'OK'),
+                                    headers=[('Content-Type', 'text/xml')])
