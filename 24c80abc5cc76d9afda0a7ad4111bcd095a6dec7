@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_82b95f17",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-20T16:59:18Z",
+      "side": 1,
+      "message": "Done in next.",
+      "parentUuid": "1abeadc6_6fe50c37",
+      "revId": "24c80abc5cc76d9afda0a7ad4111bcd095a6dec7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_8f5d0818",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-20T16:31:58Z",
       "side": 1,
       "message": "I think you may be missing a closing paren here.",
+      "revId": "24c80abc5cc76d9afda0a7ad4111bcd095a6dec7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_424ae726",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-20T16:59:18Z",
+      "side": 1,
+      "message": "Ah yeah, part of the text. Thanks for the catch.",
+      "parentUuid": "1abeadc6_8f5d0818",
       "revId": "24c80abc5cc76d9afda0a7ad4111bcd095a6dec7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
