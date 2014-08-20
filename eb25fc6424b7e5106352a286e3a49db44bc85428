@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_efd74f49",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-20T22:55:17Z",
+      "side": 1,
+      "message": "this is for a user, and... groups?",
+      "revId": "eb25fc6424b7e5106352a286e3a49db44bc85428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_8f8edb77",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-20T22:55:17Z",
+      "side": 1,
+      "message": "so the method signature indicates that both user_id and group_ids are expected, but if i provide both, this will apply conflicting clauses and never return anything",
+      "revId": "eb25fc6424b7e5106352a286e3a49db44bc85428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_0f59eb8d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-20T22:55:17Z",
+      "side": 1,
+      "message": "this is yucky precedent :(",
+      "revId": "eb25fc6424b7e5106352a286e3a49db44bc85428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_5ee9d7e4",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
@@ -19,6 +70,41 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_2f5ce7ec",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-20T22:55:17Z",
+      "side": 1,
+      "message": "henry wrote it, jamie just duplicated it",
+      "parentUuid": "1abeadc6_5ee9d7e4",
+      "revId": "eb25fc6424b7e5106352a286e3a49db44bc85428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4fccc36a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-20T22:55:17Z",
+      "side": 1,
+      "message": "this method signature makes sense++",
+      "revId": "eb25fc6424b7e5106352a286e3a49db44bc85428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_1edcbf45",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
@@ -30,6 +116,75 @@
       "writtenOn": "2014-08-20T21:11:50Z",
       "side": 1,
       "message": "I don\u0027t see what the point of the hints argument here is since nothing uses it.",
+      "revId": "eb25fc6424b7e5106352a286e3a49db44bc85428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_cf8a931a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 912,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-20T22:55:17Z",
+      "side": 1,
+      "message": "++ other assignment methods don\u0027t have hints either -- they\u0027re not really exposed to api query strings\n\ngroup_ids should be removed from this method in favor of using list_domains_for_groups below",
+      "parentUuid": "1abeadc6_1edcbf45",
+      "revId": "eb25fc6424b7e5106352a286e3a49db44bc85428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6f25ff07",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 928,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-20T22:55:17Z",
+      "side": 1,
+      "message": "^^",
+      "revId": "eb25fc6424b7e5106352a286e3a49db44bc85428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_cf97f3ea",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 596,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-20T22:55:17Z",
+      "side": 1,
+      "message": "same",
+      "revId": "eb25fc6424b7e5106352a286e3a49db44bc85428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_8fab3b74",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-20T22:55:17Z",
+      "side": 1,
+      "message": "i\u0027m super confused because this isn\u0027t the method signature that you implemented",
       "revId": "eb25fc6424b7e5106352a286e3a49db44bc85428",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
