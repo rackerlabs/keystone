@@ -16,6 +16,24 @@
       "revId": "df11624fb7cad32343e720b1d9ed436f4cf9c3f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_746ed897",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-20T04:14:59Z",
+      "side": 1,
+      "message": "Hi Henry, Thanks for pointing out this one. I have missed it to put this constrain.",
+      "parentUuid": "1abeadc6_c2846ab3",
+      "revId": "df11624fb7cad32343e720b1d9ed436f4cf9c3f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
