@@ -896,7 +896,7 @@
 #user_name_attribute=sn
 
 # LDAP attribute mapped to user email. (string value)
-#user_mail_attribute=email
+#user_mail_attribute=mail
 
 # LDAP attribute mapped to password. (string value)
 #user_pass_attribute=userPassword
