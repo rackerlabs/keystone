@@ -33,6 +33,23 @@
       "revId": "6d121c65d258db8f606ad154bf65ab40a2cbdc30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_57ef0ce9",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-20T14:42:10Z",
+      "side": 1,
+      "message": "Agree with jsimms, cb[0] \u0026 cb[1] should be named more friendly.",
+      "revId": "6d121c65d258db8f606ad154bf65ab40a2cbdc30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
