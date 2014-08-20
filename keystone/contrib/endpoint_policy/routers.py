@@ -1,0 +1,54 @@
+# Copyright 2014 IBM Corp.
+#
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+
+from keystone.common import wsgi
+from keystone.contrib.endpoint_policy import controllers
+
+
+class EndpointPolicyExtension(wsgi.V3ExtensionRouter):
+
+    PATH_PREFIX = '/OS-ENDPOINT-POLICY'
+
+    def add_routes(self, mapper):
+        endpoint_policy_controller = controllers.EndpointPolicyV3Controller()
+
+        self._add_resource(
+            mapper, endpoint_policy_controller,
+            path='/endpoints/{endpoint_id}' + self.PATH_PREFIX + '/policy',
+            get_action='get_policy_for_endpoint')
+        self._add_resource(
+            mapper, endpoint_policy_controller,
+            path='/policies/{policy_id}' + self.PATH_PREFIX + '/endpoints',
+            get_action='list_endpoints_for_policy')
+        self._add_resource(
+            mapper, endpoint_policy_controller,
+            path=('/policies/{policy_id}' + self.PATH_PREFIX +
+                  '/endpoints/{endpoint_id}'),
+            get_head_action='check_policy_association_for_endpoint',
+            put_action='create_policy_association_for_endpoint',
+            delete_action='delete_policy_association_for_endpoint')
+        self._add_resource(
+            mapper, endpoint_policy_controller,
+            path=('/policies/{policy_id}' + self.PATH_PREFIX +
+                  '/services/{service_id}'),
+            get_head_action='check_policy_association_for_service',
+            put_action='create_policy_association_for_service',
+            delete_action='delete_policy_association_for_service')
+        self._add_resource(
+            mapper, endpoint_policy_controller,
+            path=('/policies/{policy_id}' + self.PATH_PREFIX +
+                  '/services/{service_id}/regions/{region_id}'),
+            get_head_action='check_policy_association_for_region_and_service',
+            put_action='create_policy_association_for_region_and_service',
+            delete_action='delete_policy_association_for_region_and_service')
