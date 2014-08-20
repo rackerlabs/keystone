@@ -33,6 +33,40 @@
       "revId": "95e38c96ece48fd61d619172a95fb77729577750",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b14f836a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1086,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2014-08-20T19:07:11Z",
+      "side": 1,
+      "message": "this method is not actually saving you anything since it\u0027s only used in one place. that said, not a dealbreaker.\n\nalso not patch specific but i find it strange we\u0027re marking these as private but we fully use them in the subclasses that inherit this... maybe it\u0027s just java in me.",
+      "revId": "95e38c96ece48fd61d619172a95fb77729577750",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_11459716",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_add_parent_project.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2014-08-20T19:07:11Z",
+      "side": 1,
+      "message": "the suggestion was to pass meta in as an argument rather than create a new metadata obj",
+      "revId": "95e38c96ece48fd61d619172a95fb77729577750",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
