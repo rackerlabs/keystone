@@ -843,6 +843,12 @@ FILE_OPTIONS = {
                    help=''),
         cfg.StrOpt('idp_contact_telephone', default='',
                    help=''),
+        cfg.StrOpt('idp_metadata_path',
+                   default='/etc/keystone/saml2_idp_metadata.xml',
+                   help='Path to the Identity Provider Metadata file. '
+                        'Such file should be generated with keystone-manage '
+                        'command.')
+
 
 
     ]
