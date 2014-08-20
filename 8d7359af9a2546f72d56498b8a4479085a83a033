@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_628e037b",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-20T16:56:07Z",
+      "side": 1,
+      "message": "Look at lines 435 and 439, this is for compatibility in the case we have lingering tokens (pre upgrade) that do not have audit ids.\n\nIf the general consensus is we can ditch this compatibility it lightens up some other code we can pull out (that handles the compatiblity)",
+      "parentUuid": "1abeadc6_f4082893",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_ef24bc61",
         "filename": "keystone/token/provider.py",
         "patchSetId": 8
