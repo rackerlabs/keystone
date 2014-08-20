@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_f4082893",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-08-20T16:38:28Z",
+      "side": 1,
+      "message": "This is confusing.  It looks like it is here as a config option, but it really should be removed.",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ef24bc61",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-08-20T16:38:28Z",
+      "side": 1,
+      "message": "remove this",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
