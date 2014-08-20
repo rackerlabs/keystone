@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_8a496962",
+        "filename": "keystone/contrib/revoke/migrate_repo/versions/002_add_audit_id_and_chain_to_revoke_table.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-20T23:00:26Z",
+      "side": 1,
+      "message": "done in next patch if required.",
+      "parentUuid": "1abeadc6_0cd586b8",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_f4082893",
         "filename": "keystone/token/provider.py",
         "patchSetId": 8
