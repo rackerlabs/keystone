@@ -353,6 +353,10 @@ class MappedGroupNotFound(UnexpectedError):
                              "%(mapping_id)s was not found in the backend.")
 
 
+class MetadataFileError(UnexpectedError):
+    message_format = _("Error while rading Metadata file, %(reason)s")
+
+
 class NotImplemented(Error):
     message_format = _("The action you have requested has not"
                        " been implemented.")
