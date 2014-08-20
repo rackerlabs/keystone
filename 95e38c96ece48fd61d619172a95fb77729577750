@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_c5a8c18f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1073,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-20T18:30:45Z",
+      "side": 1,
+      "message": "I\u0027m not a fan of this modifying the ref, but I see that we already have a similar pattern in this module. You should at least call it out like line 1055.",
+      "revId": "95e38c96ece48fd61d619172a95fb77729577750",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_05eb99b0",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1081,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-20T18:30:45Z",
+      "side": 1,
+      "message": "The first line of a docstring should be a summary followed by a blank line. See http://docs.openstack.org/developer/hacking/#docstrings\n\nAlso you may want to put a note of why we would never expect this to have a value.",
+      "revId": "95e38c96ece48fd61d619172a95fb77729577750",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
