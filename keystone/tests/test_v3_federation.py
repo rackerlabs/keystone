@@ -1583,7 +1583,13 @@ class FederatedTokenTests(FederationTests):
         context['query_string'] = []
 
 
-class SAMLGenerationTests(FederationTests):
+class _XMLLoadable(object):
+    def _load_xml(self, filename):
+        with open(XMLDIR + filename, 'r') as handler:
+            return handler.read()
+
+
+class SAMLGenerationTests(FederationTests, _XMLLoadable):
 
     ISSUER = 'https://acme.com/FIM/sps/openstack/saml20'
     RECIPIENT = 'http://beta.com/Shibboleth.sso/SAML2/POST'
@@ -1595,10 +1601,6 @@ class SAMLGenerationTests(FederationTests):
         super(SAMLGenerationTests, self).setUp()
         self.signed_assertion = saml2.create_class_from_xml_string(
             saml.Assertion, self._load_xml('signed_saml2_assertion.xml'))
-
-    def _load_xml(self, filename):
-        with open(XMLDIR + filename, 'r') as certificate:
-            return certificate.read()
 
     def test_samlize_token_values(self):
         """Test the SAML generator produces a SAML object.
@@ -1673,8 +1675,10 @@ class SAMLGenerationTests(FederationTests):
         self.assertEqual(self.PROJECT, project_attribute[0].text)
 
 
-class IdPMetadataGenerationTests(FederationTests):
+class IdPMetadataGenerationTests(FederationTests, _XMLLoadable):
     """A class for testing Identity Provider Metadata generation."""
+
+    METADATA_URL = '/OS-FEDERATION/saml2/metadata'
 
     def setUp(self):
         super(IdPMetadataGenerationTests, self).setUp()
@@ -1693,3 +1697,16 @@ class IdPMetadataGenerationTests(FederationTests):
         self.assertIsNotNone(metadata.idpsso_descriptor)
         self.assertEqual(federation_fixtures.IDP_SSO_ENDPOINT,
                          idpsso_descriptor.single_sign_on_service.text)
+
+    def test_get_metadata_fail(self):
+        self.get(self.METADATA_URL, expected_status=500)
+
+    def test_get_metadata(self):
+        CONF.federation.idp_metadata_path = XMLDIR + '/idp_saml2_metadata.xml'
+        r = self.get(self.METADATA_URL, response_content_type='text/xml',
+                     expected_status=200)
+        self.assertEqual('text/xml', r.headers.get('Content-Type'))
+
+        reference_file = self._load_xml('idp_saml2_metadata.xml')
+
+        self.assertEqual(reference_file, r.result)

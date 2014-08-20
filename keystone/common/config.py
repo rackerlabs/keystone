@@ -453,7 +453,12 @@ FILE_OPTIONS = {
                    help='IdenityProvider SingleSignOnService value  '
                         'required in the Identity Provider\'s Metadata '
                         'Example: https://keystone.idp.com/v3/OS-FEDERATION/'
-                        'saml2/sso')
+                        'saml2/sso'),
+        cfg.StrOpt('idp_metadata_path',
+                   default='/etc/keystone/idp_metadata.xml',
+                   help='Path to the Identity Provider Metadata file. '
+                        'Such file should be generated with keystone-manage '
+                        'command.')
     ],
     'policy': [
         cfg.StrOpt('driver',
