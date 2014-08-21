@@ -52,6 +52,41 @@
       "revId": "b96a7bd0c50890c76d5fed512dacf7175889cf70",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a6700f73",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-21T12:08:37Z",
+      "side": 1,
+      "message": "That\u0027s something :-)\n\nDo you expect to have a sonfiguratoin without mapping involved (RuleProcessor class) ? Otherwise you will always need to specify something in the user_id in the rules.",
+      "parentUuid": "1abeadc6_866953c0",
+      "revId": "b96a7bd0c50890c76d5fed512dacf7175889cf70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_26c15f54",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-21T12:08:37Z",
+      "side": 1,
+      "message": "what\u0027s the purpose of this. Backward compatilibity only? \nI see in the tests you are setting all the plugins to Mapped.",
+      "revId": "b96a7bd0c50890c76d5fed512dacf7175889cf70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
