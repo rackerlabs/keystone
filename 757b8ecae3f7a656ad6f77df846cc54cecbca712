@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_14c49bf3",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-21T01:48:06Z",
+      "side": 1,
+      "message": "the properties are copy-pasted from project_create... make a variable and share it.",
+      "revId": "757b8ecae3f7a656ad6f77df846cc54cecbca712",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d48ea3cf",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-21T01:48:06Z",
+      "side": 1,
+      "message": "there should be a parameter_types.domain_id.",
+      "revId": "757b8ecae3f7a656ad6f77df846cc54cecbca712",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d47ce3b7",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-21T01:48:06Z",
+      "side": 1,
+      "message": "I think the body was always just discarded before so this isn\u0027t backwards compatible.",
+      "revId": "757b8ecae3f7a656ad6f77df846cc54cecbca712",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f4339f11",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-21T01:48:06Z",
+      "side": 1,
+      "message": "this is a copy-paste of domain_create. make a variable and share it.",
+      "revId": "757b8ecae3f7a656ad6f77df846cc54cecbca712",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_94242bc6",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-21T01:48:06Z",
+      "side": 1,
+      "message": "this is a copy-paste of role_create. make a variable and share it.",
+      "revId": "757b8ecae3f7a656ad6f77df846cc54cecbca712",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b71be971",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-21T01:48:06Z",
+      "side": 1,
+      "message": "_CREATE looks like it\u0027s specific to users, so seems like it shouldn\u0027t be the default for all validation test cases.",
+      "revId": "757b8ecae3f7a656ad6f77df846cc54cecbca712",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b76049d0",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-21T01:48:06Z",
+      "side": 1,
+      "message": "This is going to have a bunch of extra tests like test_create_schema_with_invalid_email... I don\u0027t think that was intended.",
+      "revId": "757b8ecae3f7a656ad6f77df846cc54cecbca712",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
