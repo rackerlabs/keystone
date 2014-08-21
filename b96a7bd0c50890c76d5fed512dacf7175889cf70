@@ -16,6 +16,24 @@
       "revId": "b96a7bd0c50890c76d5fed512dacf7175889cf70",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b3a12f96",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-21T11:39:42Z",
+      "side": 1,
+      "message": "Well, that\u0027s a very hackkyy workaround.\n\nWhy are you insisting on REMOTE_USER anyway?",
+      "parentUuid": "1abeadc6_10bc99db",
+      "revId": "b96a7bd0c50890c76d5fed512dacf7175889cf70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
