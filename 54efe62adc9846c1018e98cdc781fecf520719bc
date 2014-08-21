@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_ce86f5da",
+        "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-21T17:46:50Z",
+      "side": 1,
+      "message": "s/prime/primary?",
+      "revId": "54efe62adc9846c1018e98cdc781fecf520719bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ce5d157b",
+        "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-21T17:46:50Z",
+      "side": 1,
+      "message": "you can do @dependency.requires(\u0027catalog_api\u0027, \u0027policy_api\u0027)",
+      "revId": "54efe62adc9846c1018e98cdc781fecf520719bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_8ec31dec",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-21T17:46:50Z",
+      "side": 1,
+      "message": "missing pragma: no cover here",
+      "revId": "54efe62adc9846c1018e98cdc781fecf520719bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_eeb1f18f",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-21T17:46:50Z",
+      "side": 1,
+      "message": "missing pragma: no cover here",
+      "revId": "54efe62adc9846c1018e98cdc781fecf520719bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_0eaf0d2b",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-21T17:46:50Z",
+      "side": 1,
+      "message": "missing pragma: no cover here",
+      "revId": "54efe62adc9846c1018e98cdc781fecf520719bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4ea58545",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-21T17:46:50Z",
+      "side": 1,
+      "message": "missing pragma: no cover here",
+      "revId": "54efe62adc9846c1018e98cdc781fecf520719bc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
