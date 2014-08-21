@@ -1,0 +1,99 @@
+# Translations template for keystone.
+# Copyright (C) 2014 OpenStack Foundation
+# This file is distributed under the same license as the keystone project.
+#
+# Translators:
+# narench809 <narench809@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Keystone\n"
+"Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
+"POT-Creation-Date: 2014-08-21 06:05+0000\n"
+"PO-Revision-Date: 2014-08-14 06:56+0000\n"
+"Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
+"Language-Team: Telugu (India) (http://www.transifex.com/projects/p/keystone/"
+"language/te_IN/)\n"
+"Language: te_IN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 1.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: keystone/auth/controllers.py:64
+msgid "Loading auth-plugins by class-name is deprecated."
+msgstr ""
+
+#: keystone/auth/controllers.py:106
+#, python-format
+msgid ""
+"\"expires_at\" has conflicting values %(existing)s and %(new)s.  Will use "
+"the earliest value."
+msgstr ""
+
+#: keystone/openstack/common/eventlet_backdoor.py:140
+#, python-format
+msgid "Eventlet backdoor listening on %(port)s for process %(pid)d"
+msgstr ""
+
+#: keystone/openstack/common/service.py:176
+#, python-format
+msgid "Caught %s, exiting"
+msgstr "%s క్యాచ్ నిష్క్రమించే"
+
+#: keystone/openstack/common/service.py:240
+msgid "Parent process has died unexpectedly, exiting"
+msgstr "parrent  ప్రక్రియ నిష్క్రమించే, అనుకోకుండా మరణించాడు,"
+
+#: keystone/openstack/common/service.py:271
+#, python-format
+msgid "Child caught %s, exiting"
+msgstr "చైల్డ్ నిష్క్రమించే,%s క్యాచ్"
+
+#: keystone/openstack/common/service.py:310
+msgid "Forking too fast, sleeping"
+msgstr "Forking చాలా వేగంగా, పడుకుంది "
+
+#: keystone/openstack/common/service.py:329
+#, python-format
+msgid "Started child %d"
+msgstr "మొదలైంది పిల్లల%d"
+
+#: keystone/openstack/common/service.py:339
+#, python-format
+msgid "Starting %d workers"
+msgstr "%d కార్మికులు ప్రారంభిస్తోంది"
+
+#: keystone/openstack/common/service.py:356
+#, python-format
+msgid "Child %(pid)d killed by signal %(sig)d"
+msgstr "చైల్డ్ %(pid)d సిగ్నల్ ద్వారా హత్య %(sig)d"
+
+#: keystone/openstack/common/service.py:360
+#, python-format
+msgid "Child %(pid)s exited with status %(code)d"
+msgstr "చైల్డ్ %(pid)s స్థితి తో నిష్క్రమించారు %(code)d  "
+
+#: keystone/openstack/common/service.py:399
+#, python-format
+msgid "Caught %s, stopping children"
+msgstr " పిల్లలు ఆపటం %s దోరికిను "
+
+#: keystone/openstack/common/service.py:408
+msgid "Wait called after thread killed.  Cleaning up."
+msgstr "థ్రెడ్ మృతి తర్వాత అని వేచి. క్లీనింగ్ అప్."
+
+#: keystone/openstack/common/service.py:424
+#, python-format
+msgid "Waiting on %d children to exit"
+msgstr "%d పిల్లల వెయిటింగ్ నిష్క్రమణ"
+
+#: keystone/token/persistence/backends/sql.py:61
+#, python-format
+msgid "Token expiration batch size: %d"
+msgstr ""
+
+#: keystone/token/persistence/backends/sql.py:277
+#, python-format
+msgid "Total expired tokens removed: %d"
+msgstr "expire అయ్యిన అన్ని టౌకోన్స్ తీసివేయ్యబడ్డై:%d"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2014-08-04 06:06+0000\n"
-"PO-Revision-Date: 2014-07-16 14:42+0000\n"
+"POT-Creation-Date: 2014-08-21 06:05+0000\n"
+"PO-Revision-Date: 2014-08-10 02:31+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/keystone/language/"
 "de/)\n"
@@ -28,11 +28,6 @@ msgstr "Ursprüngliche Ausnahme wird gelöscht: %s"
 #, python-format
 msgid "Unexpected exception occurred %d time(s)... retrying."
 msgstr "Unerwartete Ausnahme %d mal(e) aufgetreten... Neuversuch."
-
-#: keystone/openstack/common/lockutils.py:119
-#, python-format
-msgid "Could not release the acquired lock `%s`"
-msgstr "Angeforderte Sperre `%s` konnte nicht freigegeben werden"
 
 #: keystone/openstack/common/loopingcall.py:95
 msgid "in fixed duration looping call"
