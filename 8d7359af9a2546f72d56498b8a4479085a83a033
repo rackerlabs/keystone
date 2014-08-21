@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_41b5777c",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-21T01:15:50Z",
+      "side": 1,
+      "message": "this is only called with audit_id, so remove the extra parameters.",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d45063d6",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-21T01:15:50Z",
+      "side": 1,
+      "message": "this isn\u0027t tested.",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_0cd586b8",
         "filename": "keystone/contrib/revoke/migrate_repo/versions/002_add_audit_id_and_chain_to_revoke_table.py",
         "patchSetId": 8
@@ -31,6 +65,91 @@
       "side": 1,
       "message": "done in next patch if required.",
       "parentUuid": "1abeadc6_0cd586b8",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_744dcf3d",
+        "filename": "keystone/contrib/revoke/migrate_repo/versions/002_add_audit_id_and_chain_to_revoke_table.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-21T01:15:50Z",
+      "side": 1,
+      "message": "this isn\u0027t tested.",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_81794fca",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-21T01:15:50Z",
+      "side": 1,
+      "message": "leave the , on the last element so it\u0027s easier to change.",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_014d3f9a",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-21T01:15:50Z",
+      "side": 1,
+      "message": "revert these changes.",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3408b727",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-21T01:15:50Z",
+      "side": 1,
+      "message": "revert the whitespace change on the previous line.",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f4763fa3",
+        "filename": "keystone/tests/unit/token/test_token_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-21T01:15:50Z",
+      "side": 1,
+      "message": "why is this change here?",
       "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -72,6 +191,40 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_b46047d0",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-21T01:15:50Z",
+      "side": 1,
+      "message": "we can\u0027t log tokens.",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f49d5fbd",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-21T01:15:50Z",
+      "side": 1,
+      "message": "we can\u0027t log tokens.",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_ef24bc61",
         "filename": "keystone/token/provider.py",
         "patchSetId": 8
@@ -83,6 +236,40 @@
       "writtenOn": "2014-08-20T16:38:28Z",
       "side": 1,
       "message": "remove this",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_74fb0fc1",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-21T01:15:50Z",
+      "side": 1,
+      "message": "this isn\u0027t tested.",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f4071fc8",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-21T01:15:50Z",
+      "side": 1,
+      "message": "this isn\u0027t tested.",
       "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
