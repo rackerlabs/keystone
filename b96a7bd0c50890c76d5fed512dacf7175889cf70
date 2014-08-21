@@ -141,6 +141,24 @@
       "revId": "b96a7bd0c50890c76d5fed512dacf7175889cf70",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ba0adc23",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5956
+      },
+      "writtenOn": "2014-08-21T14:02:24Z",
+      "side": 1,
+      "message": "The test_v3_federation tests use this class (set as keystone.auth.plugins.saml2.Saml2) so this should cover testing that existing deployments using this class will still function. Unless I\u0027m missing something?",
+      "parentUuid": "1abeadc6_dff94a4f",
+      "revId": "b96a7bd0c50890c76d5fed512dacf7175889cf70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
