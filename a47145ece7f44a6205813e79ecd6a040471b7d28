@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_08db9c50",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-21T04:58:28Z",
+      "side": 1,
+      "message": "Wheb Keystone is acting as a SAML2 Identity Provider, it needs to be able to generate and expose metadata that is consumed by federated Service Providers.",
+      "revId": "a47145ece7f44a6205813e79ecd6a040471b7d28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e8a3c0af",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-21T04:58:28Z",
+      "side": 1,
+      "message": "keyatone.sp.com?",
+      "revId": "a47145ece7f44a6205813e79ecd6a040471b7d28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_687ed01a",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-21T04:58:28Z",
+      "side": 1,
+      "message": "Might want to have a function that tests to see that the config valyesb you are using actually have values. If the don\u0027t, log it.",
+      "revId": "a47145ece7f44a6205813e79ecd6a040471b7d28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
