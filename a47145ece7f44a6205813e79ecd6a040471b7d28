@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_4ac3c7ec",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-21T07:38:12Z",
+      "side": 1,
+      "message": "thanks for that tip.",
+      "parentUuid": "1abeadc6_08db9c50",
+      "revId": "a47145ece7f44a6205813e79ecd6a040471b7d28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_e8a3c0af",
         "filename": "keystone/common/config.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-21T04:58:28Z",
       "side": 1,
       "message": "keyatone.sp.com?",
+      "revId": "a47145ece7f44a6205813e79ecd6a040471b7d28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4a510735",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-21T07:38:12Z",
+      "side": 1,
+      "message": "No. This is a SingleSignOnService object to which a Service Provider will redirect with a \u003csaml:AuthnRequest\u003e. If you look at your FIM metadata you will see urls pointing to the IdP, not SP.",
+      "parentUuid": "1abeadc6_e8a3c0af",
       "revId": "a47145ece7f44a6205813e79ecd6a040471b7d28",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
