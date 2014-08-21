@@ -194,6 +194,24 @@
       "revId": "b96a7bd0c50890c76d5fed512dacf7175889cf70",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b9e589dd",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-21T14:36:05Z",
+      "side": 1,
+      "message": "ah, sorry, my mistake - I was thinking the changes to test_auth_plugin.conf were changing that....",
+      "parentUuid": "1abeadc6_ba0adc23",
+      "revId": "b96a7bd0c50890c76d5fed512dacf7175889cf70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
