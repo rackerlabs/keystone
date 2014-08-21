@@ -34,6 +34,24 @@
       "revId": "b96a7bd0c50890c76d5fed512dacf7175889cf70",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_866953c0",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 5956
+      },
+      "writtenOn": "2014-08-21T11:51:46Z",
+      "side": 1,
+      "message": "I\u0027d like to be able to map on user_id without worrying about which protocol was used",
+      "parentUuid": "1abeadc6_b3a12f96",
+      "revId": "b96a7bd0c50890c76d5fed512dacf7175889cf70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
