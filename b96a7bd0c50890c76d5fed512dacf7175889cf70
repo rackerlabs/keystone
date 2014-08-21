@@ -126,6 +126,23 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_8cb40083",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-21T21:25:53Z",
+      "side": 1,
+      "message": "this seems like a change in behaviour, and probably needs a DocImpact tag in the commit msg",
+      "revId": "b96a7bd0c50890c76d5fed512dacf7175889cf70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_26c15f54",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 13
