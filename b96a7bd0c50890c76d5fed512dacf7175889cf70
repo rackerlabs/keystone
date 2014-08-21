@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_1912fd56",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-21T14:22:23Z",
+      "side": 1,
+      "message": "how about logging this exception?",
+      "revId": "b96a7bd0c50890c76d5fed512dacf7175889cf70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_10bc99db",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 13
@@ -85,6 +102,24 @@
       "side": 1,
       "message": "At this time, it\u0027s sufficient for me to able to map on the asserted user_id, but it would be nice later to remove the need for the compulsory mapping. Each protocol has a unique way of carrying the unique user identity so it should be the responsibility of the assertion extraction rather than the mapping engine to determine this.",
       "parentUuid": "1abeadc6_a6700f73",
+      "revId": "b96a7bd0c50890c76d5fed512dacf7175889cf70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7515b747",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-21T14:22:23Z",
+      "side": 1,
+      "message": "One more thing here: how about logging that exception?\nLOG.DEBUG(\u0027REMOTE_USER is set, but the external authentication is failing\u0027) or something like that.",
+      "parentUuid": "1abeadc6_299cd00e",
       "revId": "b96a7bd0c50890c76d5fed512dacf7175889cf70",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
