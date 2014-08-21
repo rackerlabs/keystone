@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_d7f78557",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-21T02:24:15Z",
+      "side": 1,
+      "message": "done in next",
+      "parentUuid": "1abeadc6_41b5777c",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_d45063d6",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 8
@@ -105,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_37e7d9ad",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-21T02:24:15Z",
+      "side": 1,
+      "message": "done in next",
+      "parentUuid": "1abeadc6_81794fca",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_014d3f9a",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 8
@@ -116,6 +152,24 @@
       "writtenOn": "2014-08-21T01:15:50Z",
       "side": 1,
       "message": "revert these changes.",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d7e06598",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-21T02:24:15Z",
+      "side": 1,
+      "message": "Good catch, rebase error it looks like. thanks!",
+      "parentUuid": "1abeadc6_014d3f9a",
       "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -139,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_57d535b7",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-21T02:24:15Z",
+      "side": 1,
+      "message": "done in next",
+      "parentUuid": "1abeadc6_3408b727",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_f4763fa3",
         "filename": "keystone/tests/unit/token/test_token_model.py",
         "patchSetId": 8
@@ -150,6 +222,24 @@
       "writtenOn": "2014-08-21T01:15:50Z",
       "side": 1,
       "message": "why is this change here?",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_37d0b9c8",
+        "filename": "keystone/tests/unit/token/test_token_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-21T02:24:15Z",
+      "side": 1,
+      "message": "hm. must have snuck in, will revert.",
+      "parentUuid": "1abeadc6_f4763fa3",
       "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -208,6 +298,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_d74945b8",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-21T02:24:15Z",
+      "side": 1,
+      "message": "Thanks! I\u0027ll figure something else out.",
+      "parentUuid": "1abeadc6_b46047d0",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_f49d5fbd",
         "filename": "keystone/token/provider.py",
         "patchSetId": 8
@@ -219,6 +327,24 @@
       "writtenOn": "2014-08-21T01:15:50Z",
       "side": 1,
       "message": "we can\u0027t log tokens.",
+      "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_17cf3d2b",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-21T02:24:15Z",
+      "side": 1,
+      "message": "same as above",
+      "parentUuid": "1abeadc6_f49d5fbd",
       "revId": "8d7359af9a2546f72d56498b8a4479085a83a033",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
