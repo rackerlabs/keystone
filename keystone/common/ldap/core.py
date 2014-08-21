@@ -81,7 +81,7 @@ def utf8_decode(value):
     :raises: UnicodeDecodeError for invalid UTF-8 encoding
     """
     if isinstance(value, six.binary_type):
-        return _utf8_decoder(value)[0]
+        return _utf8_decoder(value, 'replace')[0]
     return six.text_type(value)
 
 
