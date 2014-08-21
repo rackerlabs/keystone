@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_65d9c482",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2014-08-21T10:58:52Z",
+      "side": 1,
+      "message": "I think we don\u0027t need to give a name here. It is pretty obvious.",
+      "parentUuid": "1abeadc6_b0417c3b",
+      "revId": "c427181296d0b471d11c9266f772cbe39bce3e3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_90a9e0e1",
         "filename": "keystone/identity/core.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-19T13:55:17Z",
       "side": 1,
       "message": "this should only happen if caching is enabled, otherwise it\u0027s a waste",
+      "revId": "c427181296d0b471d11c9266f772cbe39bce3e3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1c4915b7",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 634,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2014-08-21T10:58:52Z",
+      "side": 1,
+      "message": "A way to prevent this is to use SHOULD_CACHE(\u0027identity\u0027) and execute it and the next two invalidation calls only if caching is enabled.",
+      "parentUuid": "1abeadc6_90a9e0e1",
       "revId": "c427181296d0b471d11c9266f772cbe39bce3e3b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_656e2498",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2014-08-21T10:58:52Z",
+      "side": 1,
+      "message": "It is required only in two places. It would add an overhead of one function call for two lines. So I didn\u0027t create a separate function.",
+      "parentUuid": "1abeadc6_90800048",
+      "revId": "c427181296d0b471d11c9266f772cbe39bce3e3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_905c80ef",
         "filename": "keystone/tests/config_files/backend_ldap_pool.conf",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2014-08-19T13:55:17Z",
       "side": 1,
       "message": "add a comment why this is here.",
+      "revId": "c427181296d0b471d11c9266f772cbe39bce3e3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_70cdcdb6",
+        "filename": "keystone/tests/config_files/backend_ldap_pool.conf",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2014-08-21T10:58:52Z",
+      "side": 1,
+      "message": "There is a test called test_utf8_encoded_is_used_in_pool()  in test_backend_ldap_pool.py which was failing if cache was enabled. The person who wrote me told to disable cache to get it pass. I didn\u0027t understand the test. \nThis is not a good enough reason but I have no idea why the test was failing.",
+      "parentUuid": "1abeadc6_905c80ef",
       "revId": "c427181296d0b471d11c9266f772cbe39bce3e3b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_1c2af58f",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2014-08-21T10:58:52Z",
+      "side": 1,
+      "message": "I will remove lower(). It could confuse someone reading the test.",
+      "parentUuid": "1abeadc6_302d6c47",
+      "revId": "c427181296d0b471d11c9266f772cbe39bce3e3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_b0d17cfd",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 7
@@ -98,6 +188,24 @@
       "writtenOn": "2014-08-19T13:55:17Z",
       "side": 1,
       "message": "in the test_cache_layer_get_user version of this test there\u0027s some more comments to make the test understandable... those comments should be in this version, too.",
+      "revId": "c427181296d0b471d11c9266f772cbe39bce3e3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_bc7821c5",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2014-08-21T10:58:52Z",
+      "side": 1,
+      "message": "I will add those comments here. :)",
+      "parentUuid": "1abeadc6_b0d17cfd",
       "revId": "c427181296d0b471d11c9266f772cbe39bce3e3b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
