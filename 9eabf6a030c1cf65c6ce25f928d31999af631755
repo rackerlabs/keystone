@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_55fc3b72",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-21T14:16:03Z",
+      "side": 1,
+      "message": "http://docs.openstack.org/developer/hacking/#docstrings\nAlso by convention \"\"\" is typically used instead of \u0027\u0027\u0027.",
+      "revId": "9eabf6a030c1cf65c6ce25f928d31999af631755",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
