@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_10bc99db",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 5956
+      },
+      "writtenOn": "2014-08-21T11:04:20Z",
+      "side": 1,
+      "message": "This should solve the problem when REMOTE_USER is set and the external plugin is enabled until external has been refactored.",
+      "revId": "b96a7bd0c50890c76d5fed512dacf7175889cf70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
