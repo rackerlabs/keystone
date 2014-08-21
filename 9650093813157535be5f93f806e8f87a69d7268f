@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_55a99b8e",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1537,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-21T14:14:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_40612d38",
+      "revId": "9650093813157535be5f93f806e8f87a69d7268f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_6099c91e",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-20T16:05:39Z",
       "side": 1,
       "message": "Should use single quotes here.",
+      "revId": "9650093813157535be5f93f806e8f87a69d7268f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b593cf59",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1541,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-21T14:14:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_6099c91e",
       "revId": "9650093813157535be5f93f806e8f87a69d7268f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_75293736",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-21T14:14:24Z",
+      "side": 1,
+      "message": "Since deleteTree wasn\u0027t about testing the LDAP backend and was really about testing specific LDAP functionality I moved the test to the unit tests.",
+      "parentUuid": "1abeadc6_8f8ee8ce",
+      "revId": "9650093813157535be5f93f806e8f87a69d7268f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_7b589832",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 9
@@ -99,6 +153,58 @@
       "writtenOn": "2014-08-20T16:05:39Z",
       "side": 1,
       "message": "Same things about this docstring.\n\nhttp://docs.openstack.org/developer/hacking/#docstrings",
+      "revId": "9650093813157535be5f93f806e8f87a69d7268f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d5176bec",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 802,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-21T14:14:24Z",
+      "side": 1,
+      "message": "I fixed this in my version.",
+      "parentUuid": "1abeadc6_7b589832",
+      "revId": "9650093813157535be5f93f806e8f87a69d7268f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_95a413a7",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 825,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-21T14:14:24Z",
+      "side": 1,
+      "message": "I broke up the rest of this test into sections to identify what each part is doing.",
+      "revId": "9650093813157535be5f93f806e8f87a69d7268f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d5c12b30",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 840,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-21T14:14:24Z",
+      "side": 1,
+      "message": "I had to reverse the order of the assertEqual args because the order should be (expected, observed).",
       "revId": "9650093813157535be5f93f806e8f87a69d7268f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
