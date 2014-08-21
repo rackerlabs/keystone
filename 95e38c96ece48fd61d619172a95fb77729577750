@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_3565ffb4",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1073,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-08-21T14:22:41Z",
+      "side": 1,
+      "message": "those methods are no longer required. Thanks for the review.",
+      "parentUuid": "1abeadc6_c5a8c18f",
+      "revId": "95e38c96ece48fd61d619172a95fb77729577750",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_05eb99b0",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-20T18:30:45Z",
       "side": 1,
       "message": "The first line of a docstring should be a summary followed by a blank line. See http://docs.openstack.org/developer/hacking/#docstrings\n\nAlso you may want to put a note of why we would never expect this to have a value.",
+      "revId": "95e38c96ece48fd61d619172a95fb77729577750",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5556fbce",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1081,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-08-21T14:22:41Z",
+      "side": 1,
+      "message": "those methods are no longer required. Thanks for the review.",
+      "parentUuid": "1abeadc6_05eb99b0",
       "revId": "95e38c96ece48fd61d619172a95fb77729577750",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_9573337f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1086,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-08-21T14:22:41Z",
+      "side": 1,
+      "message": "those methods are no longer required. Thanks for the review.",
+      "parentUuid": "1abeadc6_b14f836a",
+      "revId": "95e38c96ece48fd61d619172a95fb77729577750",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_11459716",
         "filename": "keystone/common/sql/migrate_repo/versions/053_add_parent_project.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2014-08-20T19:07:11Z",
       "side": 1,
       "message": "the suggestion was to pass meta in as an argument rather than create a new metadata obj",
+      "revId": "95e38c96ece48fd61d619172a95fb77729577750",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7aa844db",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_add_parent_project.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-08-21T14:22:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_11459716",
       "revId": "95e38c96ece48fd61d619172a95fb77729577750",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
