@@ -123,6 +123,24 @@
       "revId": "b96a7bd0c50890c76d5fed512dacf7175889cf70",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_dff94a4f",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-21T13:30:48Z",
+      "side": 1,
+      "message": "It might be sensible to have a test that shows that this backward compatibility works.",
+      "parentUuid": "1abeadc6_29c3f0ed",
+      "revId": "b96a7bd0c50890c76d5fed512dacf7175889cf70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
