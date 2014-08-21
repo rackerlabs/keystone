@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_e70aef24",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-21T21:55:17Z",
+      "side": 1,
+      "message": "I like the way these read.",
+      "revId": "cc4f9e072d95b8ccc284d5e377fece299a3a0eb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_0b09b52b",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-21T21:55:17Z",
+      "side": 1,
+      "message": "This is a third-party module.",
+      "revId": "cc4f9e072d95b8ccc284d5e377fece299a3a0eb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
