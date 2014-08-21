@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_51b27c4c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1070,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2014-08-21T23:09:51Z",
+      "side": 1,
+      "message": "set_default_domain and set_default_parent_project could probably share code but not a big deal",
+      "revId": "0485795a7c0bd3973725f20875a5f88b14242a82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_117c8471",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1075,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2014-08-21T23:09:51Z",
+      "side": 1,
+      "message": "would be good to have a test that verifies this is actually removed but i assume the above method doesn\u0027t either",
+      "revId": "0485795a7c0bd3973725f20875a5f88b14242a82",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
