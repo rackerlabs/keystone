@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_93c18656",
+        "filename": "etc/policy.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-21T17:40:45Z",
+      "side": 1,
+      "message": "white space",
+      "revId": "c10118a4092d5de116dd2a84a9761a873714b3e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d3b77ef3",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 4
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-21T17:40:45Z",
+      "side": 1,
+      "message": "white space",
+      "revId": "c10118a4092d5de116dd2a84a9761a873714b3e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d3ae9e97",
+        "filename": "keystone/contrib/endpoint_policy/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-21T17:40:45Z",
+      "side": 1,
+      "message": "you could probably put all of this on one line",
+      "revId": "c10118a4092d5de116dd2a84a9761a873714b3e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_eed2d1fe",
+        "filename": "keystone/tests/test_v3_endpoint_policy.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-21T17:40:45Z",
+      "side": 1,
+      "message": "do you have to have body\u003d\u0027\u0027 for any of these, especially for delete?",
+      "revId": "c10118a4092d5de116dd2a84a9761a873714b3e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_8e0b1d8d",
+        "filename": "keystone/tests/test_v3_endpoint_policy.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-21T17:40:45Z",
+      "side": 1,
+      "message": "assert size is 1?",
+      "revId": "c10118a4092d5de116dd2a84a9761a873714b3e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
