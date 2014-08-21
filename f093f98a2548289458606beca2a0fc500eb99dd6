@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_9f40b2a6",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-21T13:26:01Z",
+      "side": 1,
+      "message": "did you mean to make this and the other unrelated changes in this patch?  I\u0027d suggest we just include the specific changes for the new functionality and not make other cosmetic changes.",
+      "revId": "f093f98a2548289458606beca2a0fc500eb99dd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
