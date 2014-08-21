@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_9acfe07e",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-08-21T13:53:39Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1abeadc6_a4dc87e5",
+      "revId": "515f41de3050685aa5ce19bd82154c5dc34fe5db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_1f282285",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 11
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_7aae8499",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-08-21T13:53:39Z",
+      "side": 1,
+      "message": "I agree, but I think that sending parents and subtree separately would be somehow confusing. One option could be to have only two parameters, in this way we could combine them, like:\n\nGET projects/\u003cproject_id\u003e?subtree\u0026parents",
+      "parentUuid": "1abeadc6_1f282285",
+      "revId": "515f41de3050685aa5ce19bd82154c5dc34fe5db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_ff00c603",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 11
@@ -47,6 +83,24 @@
       "writtenOn": "2014-08-21T13:47:01Z",
       "side": 1,
       "message": "Why? Message should specify the motive.\n\nSuggestion: \"Update of \u0027parent_project_id\u0027 is not allowed.\"",
+      "revId": "515f41de3050685aa5ce19bd82154c5dc34fe5db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_da9cf86c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-08-21T13:53:39Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1abeadc6_ff00c603",
       "revId": "515f41de3050685aa5ce19bd82154c5dc34fe5db",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
