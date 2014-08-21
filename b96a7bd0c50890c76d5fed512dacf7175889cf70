@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_299cd00e",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 5956
+      },
+      "writtenOn": "2014-08-21T12:36:48Z",
+      "side": 1,
+      "message": "At this time, it\u0027s sufficient for me to able to map on the asserted user_id, but it would be nice later to remove the need for the compulsory mapping. Each protocol has a unique way of carrying the unique user identity so it should be the responsibility of the assertion extraction rather than the mapping engine to determine this.",
+      "parentUuid": "1abeadc6_a6700f73",
+      "revId": "b96a7bd0c50890c76d5fed512dacf7175889cf70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_26c15f54",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 13
@@ -84,6 +102,24 @@
       "writtenOn": "2014-08-21T12:08:37Z",
       "side": 1,
       "message": "what\u0027s the purpose of this. Backward compatilibity only? \nI see in the tests you are setting all the plugins to Mapped.",
+      "revId": "b96a7bd0c50890c76d5fed512dacf7175889cf70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_29c3f0ed",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5956
+      },
+      "writtenOn": "2014-08-21T12:36:48Z",
+      "side": 1,
+      "message": "Yes, this is for backwards compatibility. In the test_v3_federation we use this plugin class, but the new tests use the Mapped plugin.",
+      "parentUuid": "1abeadc6_26c15f54",
       "revId": "b96a7bd0c50890c76d5fed512dacf7175889cf70",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
