@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_54fb4a78",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-22T00:13:13Z",
+      "side": 1,
+      "message": "isn\u0027t there supposed to be an OUTCOME_PENDING notification?",
+      "revId": "1b2a51e49e6e8fc69cfe20289284c055914b0891",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_94da4215",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-22T00:13:13Z",
+      "side": 1,
+      "message": "seems like kwargs would make sense here.",
+      "revId": "1b2a51e49e6e8fc69cfe20289284c055914b0891",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
