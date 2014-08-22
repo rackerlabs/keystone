@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_0ada864b",
+        "filename": "keystone/identity/routers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-22T06:03:45Z",
+      "side": 1,
+      "message": "Where do the passed in values come from?\nI know they are going to docs.o.org, but if I type this into the URL from jsonhome, i\u0027m 404\u0027ing.\n\nI was expecting a link to: http://docs.openstack.org/api/openstack-identity-service/3/content/list-users-who-are-members-of-a-group-get-groupsgroup_idusers.html or something similar.\n\nDo you have a full list of these values?",
+      "revId": "867f3ec7edb6b68ba7f2fbac2942879edfe8928d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
