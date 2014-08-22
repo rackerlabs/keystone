@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_b7fbbb45",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-22T05:43:58Z",
+      "side": 1,
+      "message": "i don\u0027t see why this option is needed?\n\nwhy not just check if global caching is on?\n\nyou don\u0027t actually use this option in your code.",
+      "revId": "c3198ca2831c7f9e70a4f3002f18eb1beecdd056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_54618a03",
         "filename": "keystone/trust/core.py",
         "patchSetId": 2
