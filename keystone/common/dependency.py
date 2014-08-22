@@ -127,6 +127,7 @@ def _process_dependencies(obj):
             if dependency not in REGISTRY:
                 # We don't know about this dependency, so save it for later.
                 unresolved_in_out.setdefault(dependency, []).append(obj)
+                setattr(obj, dependency, None)
                 continue
 
             setattr(obj, dependency, REGISTRY[dependency])
