@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_f87989c8",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-22T19:17:42Z",
+      "side": 1,
+      "message": "(suggestion) some duplication could be removed by using functools.partial:\n\n send_notification \u003d functools.partial(self.operation, initiator, **audit_kwargs)\n\n send_notification(taxonomy.OUTCOME_SUCCESS)\n\nand then at line 373, would just be\n\n send_notification(taxonomy.OUTCOME_FAILURE)",
+      "revId": "a5a17d984375cf9afb9a5f01493db8da23d5e531",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d814cd4e",
+        "filename": "keystone/tests/test_notifications.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 675,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-22T19:17:42Z",
+      "side": 1,
+      "message": "Looks like there\u0027s no test for a failed assignment.",
+      "revId": "a5a17d984375cf9afb9a5f01493db8da23d5e531",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
