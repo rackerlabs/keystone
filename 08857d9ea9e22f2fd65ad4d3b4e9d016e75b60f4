@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_23676d4e",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-22T09:47:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_0cf0f08f",
+      "revId": "08857d9ea9e22f2fd65ad4d3b4e9d016e75b60f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_4cbe6866",
         "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-21T21:24:10Z",
       "side": 1,
       "message": "the region ID should be based on the existing endpoint region values, not generated randomly here",
+      "revId": "08857d9ea9e22f2fd65ad4d3b4e9d016e75b60f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_037d11e8",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-22T09:47:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_4cbe6866",
       "revId": "08857d9ea9e22f2fd65ad4d3b4e9d016e75b60f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_438389cb",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-22T09:47:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_2cf76c5a",
+      "revId": "08857d9ea9e22f2fd65ad4d3b4e9d016e75b60f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_2c1becca",
         "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
         "patchSetId": 9
@@ -64,6 +118,24 @@
       "writtenOn": "2014-08-21T21:24:10Z",
       "side": 1,
       "message": "descriptions are optional - you don\u0027t need to set a boilerplate one on every record",
+      "revId": "08857d9ea9e22f2fd65ad4d3b4e9d016e75b60f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_c376b905",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-22T09:47:23Z",
+      "side": 1,
+      "message": "description is not nullable, so i have set as blank description",
+      "parentUuid": "1abeadc6_2c1becca",
       "revId": "08857d9ea9e22f2fd65ad4d3b4e9d016e75b60f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
