@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_b01baf7f",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-22T18:15:24Z",
+      "side": 1,
+      "message": "maybe do all the above in the controller?",
+      "revId": "105deb7553f7c254aeefaf8af5bf5c3d5a10545e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_90d5d3e6",
         "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
         "patchSetId": 10
