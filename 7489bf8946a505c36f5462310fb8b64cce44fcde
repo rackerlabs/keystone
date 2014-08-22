@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_15e53008",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-22T18:36:01Z",
+      "side": 1,
+      "message": "heads up, as https://review.openstack.org/#/c/105597/ has been approved, the changes here will have to be moved to: keystone/auth/plugins/mapped.py",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_097a2ff1",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 6
@@ -207,6 +224,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_3575cc31",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-22T18:36:01Z",
+      "side": 1,
+      "message": "@Brad you could copy what i\u0027ve done here: https://review.openstack.org/#/c/112204/33/keystone/notifications.py",
+      "parentUuid": "1abeadc6_2950cb31",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_f5616bd4",
         "filename": "keystone/notifications.py",
         "patchSetId": 6
@@ -322,6 +357,23 @@
       "side": 1,
       "message": "remove this line.",
       "parentUuid": "1abeadc6_359be3ca",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_75d66429",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 799,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-22T18:36:01Z",
+      "side": 1,
+      "message": "use python convention for method names:\n_assert_last_note() instead of assertLastNotify",
       "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
