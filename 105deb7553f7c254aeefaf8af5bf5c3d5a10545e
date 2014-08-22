@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_90d5d3e6",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-22T16:27:58Z",
+      "side": 1,
+      "message": "isn\u0027t this is the same as just copying the value endpoint[region_id] into endpoint[region] ?",
+      "revId": "105deb7553f7c254aeefaf8af5bf5c3d5a10545e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
