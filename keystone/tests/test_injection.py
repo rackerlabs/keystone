@@ -223,6 +223,19 @@ class TestDependencyInjection(tests.BaseTestCase):
 
         self.assertIsNone(getattr(c1_inst, requirement_name))
 
+    def test_optional_dependency_not_provided_provider_name(self):
+        requirement_name = uuid.uuid4().hex
+
+        @dependency.optional(requirement_name)
+        class C1(object):
+            pass
+
+        c1_inst = C1()
+
+        dependency.resolve_future_dependencies('provider_name')
+
+        self.assertIsNone(getattr(c1_inst, requirement_name))
+
     def test_optional_dependency_provided(self):
         requirement_name = uuid.uuid4().hex
 
