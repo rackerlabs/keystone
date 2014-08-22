@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_54618a03",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-22T00:30:00Z",
+      "side": 1,
+      "message": "revert the whitespace change on the previous line.",
+      "revId": "c3198ca2831c7f9e70a4f3002f18eb1beecdd056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f437f6fc",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-22T00:30:00Z",
+      "side": 1,
+      "message": "give a name to the \u0027trust\u0027 magic string so that readers know what it\u0027s for without having to go looking for the docs.",
+      "revId": "c3198ca2831c7f9e70a4f3002f18eb1beecdd056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ff050f11",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-22T00:30:00Z",
+      "side": 1,
+      "message": "suggestion - this could be handled with a decorator.",
+      "revId": "c3198ca2831c7f9e70a4f3002f18eb1beecdd056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
