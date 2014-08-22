@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_bd31d55b",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-22T09:41:10Z",
+      "side": 1,
+      "message": "Do you think that it is a good improvement? \n\nAnd, if we make this change, How it should be called from controllers function? Some this this?: @validation.validated(schema.Region.create, \u0027region\u0027)",
+      "parentUuid": "1abeadc6_4c6ef502",
+      "revId": "d2ba360ca410ca407739545fc4c68a11f50cd183",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_4fcb47a5",
         "filename": "keystone/catalog/schema.py",
         "patchSetId": 26
