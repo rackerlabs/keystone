@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_c0df94d4",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-22T03:44:11Z",
+      "side": 1,
+      "message": "it seems more important for authN events than role_assignment events.\n\nAlso there will always be a success/failure msg, so i don\u0027t really see *that* much value in it. That being said, if it\u0027s preventing a +2, i\u0027ll include it.",
+      "parentUuid": "1abeadc6_54fb4a78",
+      "revId": "1b2a51e49e6e8fc69cfe20289284c055914b0891",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_94da4215",
         "filename": "keystone/notifications.py",
         "patchSetId": 32
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-22T00:13:13Z",
       "side": 1,
       "message": "seems like kwargs would make sense here.",
+      "revId": "1b2a51e49e6e8fc69cfe20289284c055914b0891",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_40d464bc",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-22T03:44:11Z",
+      "side": 1,
+      "message": "yeah, i\u0027ll change it over",
+      "parentUuid": "1abeadc6_94da4215",
       "revId": "1b2a51e49e6e8fc69cfe20289284c055914b0891",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
