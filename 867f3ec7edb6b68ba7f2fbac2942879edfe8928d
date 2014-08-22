@@ -16,6 +16,24 @@
       "revId": "867f3ec7edb6b68ba7f2fbac2942879edfe8928d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_9f2ec48a",
+        "filename": "keystone/identity/routers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-22T14:40:46Z",
+      "side": 1,
+      "message": "Steve - The relationship strings are specified in the identity-api v3 spec: https://review.openstack.org/#/c/109881/",
+      "parentUuid": "1abeadc6_0ada864b",
+      "revId": "867f3ec7edb6b68ba7f2fbac2942879edfe8928d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
