@@ -155,6 +155,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_2de75ce5",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-22T06:50:50Z",
+      "side": 1,
+      "message": "Sorry Brant, I don\u0027t understand, What do you suggest to change in these lines?",
+      "parentUuid": "1abeadc6_4fdee740",
+      "revId": "d2ba360ca410ca407739545fc4c68a11f50cd183",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_afcbfb70",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 26
