@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_6a3dbac3",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-22T05:52:36Z",
+      "side": 1,
+      "message": "so if rel isn\u0027t specified, it\u0027s not going to get built into the response.",
+      "revId": "de61102e0a60605b0abf46bf539e56114b958fd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
