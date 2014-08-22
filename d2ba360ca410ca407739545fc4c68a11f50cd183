@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_0d67004e",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-22T09:10:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_4fcb47a5",
+      "revId": "d2ba360ca410ca407739545fc4c68a11f50cd183",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_4c45156f",
         "filename": "keystone/catalog/schema.py",
         "patchSetId": 26
@@ -47,6 +65,24 @@
       "writtenOn": "2014-08-18T20:56:40Z",
       "side": 1,
       "message": "this is a copy-paste of the properties in _create. create a variable and share it rather than copy paste.",
+      "revId": "d2ba360ca410ca407739545fc4c68a11f50cd183",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2d5afc82",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-22T09:10:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_4c45156f",
       "revId": "d2ba360ca410ca407739545fc4c68a11f50cd183",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_ad928cf3",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-22T09:10:57Z",
+      "side": 1,
+      "message": "If I\u0027m not wrong, regions could be created without ID and, in that case, the system assign automatically and ID to the new region. In services this behavior is not the same. Please, correct me if I\u0027m wrong.",
+      "parentUuid": "1abeadc6_0f4eaf6f",
+      "revId": "d2ba360ca410ca407739545fc4c68a11f50cd183",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_0c323d10",
         "filename": "keystone/catalog/schema.py",
         "patchSetId": 26
@@ -81,6 +135,24 @@
       "writtenOn": "2014-08-18T20:56:40Z",
       "side": 1,
       "message": "this is copied from line 54. create a variable and share it.",
+      "revId": "d2ba360ca410ca407739545fc4c68a11f50cd183",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2d44bc72",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-22T09:10:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_0c323d10",
       "revId": "d2ba360ca410ca407739545fc4c68a11f50cd183",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_6d28749a",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-22T09:10:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_8c256dc4",
+      "revId": "d2ba360ca410ca407739545fc4c68a11f50cd183",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_af65bbe2",
         "filename": "keystone/catalog/schema.py",
         "patchSetId": 26
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_2d3bdceb",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-22T09:10:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_af65bbe2",
+      "revId": "d2ba360ca410ca407739545fc4c68a11f50cd183",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_4f426711",
         "filename": "keystone/catalog/schema.py",
         "patchSetId": 26
@@ -132,6 +240,24 @@
       "writtenOn": "2014-08-18T20:56:40Z",
       "side": 1,
       "message": "this is copy-pasted. share it.",
+      "revId": "d2ba360ca410ca407739545fc4c68a11f50cd183",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5eeb5c77",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-22T09:10:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_4f426711",
       "revId": "d2ba360ca410ca407739545fc4c68a11f50cd183",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -190,6 +316,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_7e61f803",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-22T09:10:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_afcbfb70",
+      "revId": "d2ba360ca410ca407739545fc4c68a11f50cd183",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_2fa7ebbe",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 26
@@ -201,6 +345,24 @@
       "writtenOn": "2014-08-18T20:56:40Z",
       "side": 1,
       "message": "do any of these have to be member variables? seems like they could all be class variables.",
+      "revId": "d2ba360ca410ca407739545fc4c68a11f50cd183",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f929a28a",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-22T09:10:57Z",
+      "side": 1,
+      "message": "What do you think about to put it on this way?:\n\nself.create_region_validator \u003d validators.SchemaValidator(catalog_schema.region_create)\nself.update_region_validator \u003d validators.SchemaValidator(catalog_schema.region_update)",
+      "parentUuid": "1abeadc6_2fa7ebbe",
       "revId": "d2ba360ca410ca407739545fc4c68a11f50cd183",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
