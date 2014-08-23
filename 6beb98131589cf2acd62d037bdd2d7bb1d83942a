@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_1d61cad2",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-23T05:58:45Z",
+      "side": 1,
+      "message": "is this enough information that you will know where it came from? revoke_by_expiration or revoke_by_audit_chain_id?",
+      "revId": "6beb98131589cf2acd62d037bdd2d7bb1d83942a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
