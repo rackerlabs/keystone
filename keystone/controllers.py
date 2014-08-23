@@ -150,3 +150,13 @@ class Version(wsgi.Application):
             })
         else:
             raise exception.VersionNotFound(version='v3')
+
+
+class IdentityVersion(wsgi.Application):
+
+    def get_versions(self, context):
+        return wsgi.render_response(status=(300, 'Multiple Choices'), body={
+            'versions': {
+                'values': {}
+            }
+        })

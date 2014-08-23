@@ -325,3 +325,10 @@ class GroupV3(controller.V3Controller):
     @controller.protected()
     def delete_group(self, context, group_id):
         self.identity_api.delete_group(group_id)
+
+
+@dependency.requires('identity_api')
+class UserIdentity(controller.V3Controller):
+
+    def list_users(self, context):
+        return self.identity_api.list_users()

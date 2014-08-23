@@ -61,3 +61,12 @@ class Routers(wsgi.RoutersBase):
             mapper, group_controller,
             path='/users/{user_id}/groups',
             get_action='list_groups_for_user')
+
+
+class IdentityRouters(wsgi.RoutersBase):
+
+    def append_routers(self, mapper, routers):
+        user_controller = controllers.UserIdentity()
+
+        self._add_resource(mapper, user_controller, path='/users',
+                           get_action='list_users')

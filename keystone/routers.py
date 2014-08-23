@@ -76,3 +76,11 @@ class Versions(wsgi.ComposableRouter):
         mapper.connect('/',
                        controller=version_controller,
                        action='get_versions')
+
+
+class IdentityVersions(wsgi.ComposableRouter):
+    def add_routes(self, mapper):
+        version_controller = controllers.IdentityVersion()
+        mapper.connect('/',
+                       controller=version_controller,
+                       action='get_versions')

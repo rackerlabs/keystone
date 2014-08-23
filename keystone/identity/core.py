@@ -134,7 +134,7 @@ class DomainConfigs(dict):
                         self._load_config(assignment_api,
                                           [os.path.join(r, fname)],
                                           fname[len(DOMAIN_CONF_FHEAD):
-                                                -len(DOMAIN_CONF_FTAIL)])
+                                                - len(DOMAIN_CONF_FTAIL)])
                     else:
                         LOG.debug(('Ignoring file (%s) while scanning domain '
                                    'config directory'),
@@ -830,6 +830,22 @@ class Manager(manager.Manager):
 
         update_dict = {'password': new_password}
         self.update_user(user_id, update_dict)
+
+
+@dependency.provider('identity_api')
+class IdentityManager(manager.Manager):
+    """Default pivot point for the Identity backend.
+
+    See :mod:`keystone.common.manager.Manager` for more details on how this
+    dynamically calls the backend.
+
+    """
+
+    def __init__(self):
+        super(IdentityManager, self).__init__(CONF.identity.driver)
+
+    def list_users(self):
+        return {'users': self.driver.list_users(driver_hints.Hints())}
 
 
 @six.add_metaclass(abc.ABCMeta)

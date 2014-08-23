@@ -103,3 +103,18 @@ def v3_app_factory(global_conf, **local_conf):
     v3routers.append(routers.VersionV3('public'))
     # TODO(ayoung): put token routes here
     return wsgi.ComposingRouter(mapper, v3routers)
+
+
+@fail_gracefully
+def identity_version_app_factory(global_conf, **local_conf):
+    return wsgi.ComposingRouter(routes.Mapper(),
+                                [routers.IdentityVersions()])
+
+
+@fail_gracefully
+def identity_app_factory(global_conf, **local_conf):
+    mapper = routes.Mapper()
+    routers = []
+    identity_router = identity.routers.IdentityRouters()
+    identity_router.append_routers(mapper, routers)
+    return wsgi.ComposingRouter(mapper, routers)

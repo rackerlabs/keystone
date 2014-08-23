@@ -41,6 +41,10 @@ FILE_OPTIONS = {
                                                       group='DEFAULT')],
                    help='The IP address of the network interface for the '
                         'admin service to listen on.'),
+        cfg.StrOpt('identity_bind_host',
+                   default='0.0.0.0',
+                   help='The IP address of the network interface for the '
+                        'identity service to listen on.'),
         cfg.IntOpt('compute_port', default=8774,
                    help='(Deprecated) The port which the OpenStack Compute '
                         'service listens on. This option was only used for '
@@ -54,6 +58,9 @@ FILE_OPTIONS = {
                         'on.'),
         cfg.IntOpt('public_port', default=5000,
                    help='The port number which the public service listens '
+                        'on.'),
+        cfg.IntOpt('identity_port', default=35358,
+                   help='The port number which the identity service listens '
                         'on.'),
         cfg.StrOpt('public_endpoint',
                    help='The base public endpoint URL for Keystone that is '
@@ -80,6 +87,9 @@ FILE_OPTIONS = {
                         'WSGI application'),
         cfg.IntOpt('admin_workers', default=1,
                    help='The number of worker processes to serve the admin '
+                        'WSGI application'),
+        cfg.IntOpt('identity_workers',
+                   help='The number of worker processes to serve the identity '
                         'WSGI application'),
         # default max request size is 112k
         cfg.IntOpt('max_request_body_size', default=114688,
@@ -724,7 +734,7 @@ FILE_OPTIONS = {
         cfg.FloatOpt('pool_retry_delay', default=0.1,
                      help='Time span in seconds to wait between two '
                           'reconnect trials.'),
-        cfg.IntOpt('pool_connection_timeout', default=-1,
+        cfg.IntOpt('pool_connection_timeout', default= -1,
                    help='Connector timeout in seconds. Value -1 indicates '
                         'indefinite wait for response.'),
         cfg.IntOpt('pool_connection_lifetime', default=600,
