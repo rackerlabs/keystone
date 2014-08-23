@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_a2d0b7c9",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-23T05:00:28Z",
+      "side": 1,
+      "message": "i didn\u0027t know this, neat.",
+      "revId": "48b7e637bab38db337f4381f91dfa82ad6f5c147",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
