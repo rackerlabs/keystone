@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_67079182",
+        "filename": "test-requirements-py3.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-23T02:33:11Z",
+      "side": 1,
+      "message": "this one was just updated to \u003e\u003d2.2.0.0a2",
+      "revId": "af14f1337f42a33f2960e2451b5407cf439b1879",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
