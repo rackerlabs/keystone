@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_bd5a96ef",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-23T06:13:36Z",
+      "side": 1,
+      "message": "nit, if you\u0027re cleaning it up, you can change this (and the others) to use the constants you created up top.",
+      "revId": "9029a7c58aaa320b7cac885635d6e30c36001e24",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
