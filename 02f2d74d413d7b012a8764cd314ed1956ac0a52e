@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_02aecb2d",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-23T05:33:48Z",
+      "side": 1,
+      "message": "i really like how much this gets condensed, so much easier to read now.",
+      "revId": "02f2d74d413d7b012a8764cd314ed1956ac0a52e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_c26f73fa",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-23T05:33:48Z",
+      "side": 1,
+      "message": "+100",
+      "revId": "02f2d74d413d7b012a8764cd314ed1956ac0a52e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_025c0b4a",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-23T05:33:48Z",
+      "side": 1,
+      "message": "why move this into the try? would it be pointless outside the try?",
+      "revId": "02f2d74d413d7b012a8764cd314ed1956ac0a52e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_c23db3de",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-23T05:33:48Z",
+      "side": 1,
+      "message": "nice, i like that",
+      "revId": "02f2d74d413d7b012a8764cd314ed1956ac0a52e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a211975e",
+        "filename": "keystone/tests/unit/token/test_token_model.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-23T05:33:48Z",
+      "side": 1,
+      "message": "155-158 is the same as 125-128 and the same as 146-150, maybe condense them?",
+      "revId": "02f2d74d413d7b012a8764cd314ed1956ac0a52e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
