@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_0aa7b8a7",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 16
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-08-23T20:18:09Z",
+      "side": 1,
+      "message": "I will add separated patch, and let\u0027s discuss this separately",
+      "parentUuid": "1abeadc6_e2ba3c09",
+      "revId": "1d7c78bbb0e370e83c141dcde0a5da704318c149",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_4243f013",
         "filename": "etc/keystone-paste.ini",
         "patchSetId": 16
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_ea7fdca8",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 16
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-08-23T20:18:09Z",
+      "side": 1,
+      "message": "So this is very very long story....\n\n\nFirst of all what is this: \n\n  HMAC keys are used to limit access to profiler. E.g. only person who knows HMAC can trigger profiling (even if it is enabled). \n\n\nWhy this was added: \n\n  Druing Atlanta cross-project session http://junodesignsummit.sched.org/event/54d25c4c4017ca09ee130821ac93f804#.U_jxCry1bq0 A lot of Operators said they want to have this ON on real production clouds and have some kind of \"profiling on demand\" without restarting whole cloud. As well the second criteria was to make it secure, e.g. only admin can trigger this stuff.\n\n\nWhy we have HMAC_KEYS and not only one\n\n  This was requirement from TripleO team. They said that security guys would like to change this HMAC_KEY periodically, from other side, if you change it directly (you\u0027ll get some some kind of downtime in ability to profile). Cause other project will use different HMAC_KEY from this. So to organize smooth change (without downtime) of HMAC you can specify any amount of them (and any will pass). \n\n  So algorithm to update HMAC key will be next: \n\n  INIT: \n  * Service1: HMAC_KEYS \u003d A \n  * Service2: HMAC_KEYS \u003d A\n\n   FIRST STEP: \n  * Service1: HMAC_KEYS \u003d A, B # restart all service 1\n  * Service2: HMAC_KEYS \u003d A\n\n  SECOND STEP:\n  * Service1: HMAC_KEYS \u003d A, B\n  * Service2: HMAC_KEYS \u003d A, B # restart all service2\n\n  THRID STEP:\n  * Service1: HMAC_KEYS \u003d B # restart all service 1\n  * Service2: HMAC_KEYS \u003d A, B \n\n  FINISH: \n  * Service1: HMAC_KEYS \u003d B \n  * Service2: HMAC_KEYS \u003d B # restart all service 2\n\n \n\nAbout keystone.conf  \u0026 HMAC_KEYS specification \n\n  This HMAC_KEY is used only in Middleware, so it won\u0027t be specified in keystone.conf. Also middleware doesn\u0027t know about oslo.config. So this is the simplest and cleanest way to pass it to middleware.",
+      "parentUuid": "1abeadc6_824c2844",
+      "revId": "1d7c78bbb0e370e83c141dcde0a5da704318c149",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_e2515cd9",
         "filename": "etc/keystone-paste.ini",
         "patchSetId": 16
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_ea6a7c7f",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 16
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-08-23T20:18:09Z",
+      "side": 1,
+      "message": "Agree that this can be removed, but it will take a some time, cause we need to make at least 2 new versions of OSProfiler. (cause OSprofiler is already used in glance and cinder) \n\nSo I would prefer to keep it ON.",
+      "parentUuid": "1abeadc6_e2515cd9",
+      "revId": "1d7c78bbb0e370e83c141dcde0a5da704318c149",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_220a74d2",
         "filename": "keystone/common/config.py",
         "patchSetId": 16
@@ -81,6 +135,24 @@
       "writtenOn": "2014-08-19T19:00:02Z",
       "side": 1,
       "message": "default to False if this boolean is actually necessary",
+      "revId": "1d7c78bbb0e370e83c141dcde0a5da704318c149",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_8af588ee",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-08-23T20:18:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_220a74d2",
       "revId": "1d7c78bbb0e370e83c141dcde0a5da704318c149",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_0a8a5863",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-08-23T20:18:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_22a6f4c1",
+      "revId": "1d7c78bbb0e370e83c141dcde0a5da704318c149",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_82e8a8e3",
         "filename": "keystone/common/profiler.py",
         "patchSetId": 16
@@ -132,6 +222,24 @@
       "writtenOn": "2014-08-19T19:00:02Z",
       "side": 1,
       "message": "^",
+      "revId": "1d7c78bbb0e370e83c141dcde0a5da704318c149",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2aec7429",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-08-23T20:18:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_82e8a8e3",
       "revId": "1d7c78bbb0e370e83c141dcde0a5da704318c149",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +263,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_4a37f0fe",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-08-23T20:18:09Z",
+      "side": 1,
+      "message": "So actually in production, (if it is used) it\u0027s better to avoid tracing of sql  queries (cause they are producing real huge amount of trace information) \n\nBut in case of debug \u0026 development they are really essential",
+      "parentUuid": "1abeadc6_42b690fb",
+      "revId": "1d7c78bbb0e370e83c141dcde0a5da704318c149",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_a2fe8436",
         "filename": "requirements.txt",
         "patchSetId": 16
@@ -166,6 +292,24 @@
       "writtenOn": "2014-08-19T19:13:22Z",
       "side": 1,
       "message": "test-requirements?",
+      "revId": "1d7c78bbb0e370e83c141dcde0a5da704318c149",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4d7aaa88",
+        "filename": "requirements.txt",
+        "patchSetId": 16
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-08-23T20:18:09Z",
+      "side": 1,
+      "message": "Let me try to explain why this shouldn\u0027t be optional. \n\n\nThe idea of OSprofiler is that it should allow project team to add any amount of trace points (that is required) with any amount of information. Because it\u0027s only on demand it won\u0027t make any sense on performance of whole cloud. \n\n\nTo add new points in code you have 4 ways: \n\n   from osprofiler import profiler\n\n   def some_func():\n        profiler.start(\"point_name\", {\"any_key\": \"with_any_value\"})\n        # your code\n        profiler.stop({\"any_info_about_point\": \"in_this_dict\"})\n\n\n    @profiler.trace(\"point_name\",\n                    info\u003d{\"any_info_about_point\": \"in_this_dict\"},\n                    hide_args\u003dFalse)\n    def some_func2(*args, **kwargs):\n        # If you need to hide args in profile info, put hide_args\u003dTrue\n        pass\n\n    def some_func3():\n        with profiler.Trace(\"point_name\",\n                            info\u003d{\"any_key\": \"with_any_value\"}):\n            # some code here\n\n    @profiler.trace_cls(\"point_name\", info\u003d{}, hide_args\u003dFalse,\n                        trace_private\u003dFalse)\n    class TracedClass(object):\n\n        def traced_method(self):\n            pass\n\n        def _traced_only_if_trace_private_true(self):\n             pass\n\n\nIf OSprofiler will be optional, you will be able to use only first option: \nstart()/stop(). Which will produce huge mess in code. Take a look at next sample\n\n\n  def some_func(*args, **kwargs):\n\n     #code\n \n\n  def some_func(*args, **kwargs):\n   try:\n      if profiler:\n         profiler.start(\"point_name\", {\"function\": {\"name\": \"some_func\", args ....}}) \n      #code\n   finally:\n      if profiler:\n         profiler.stop()\n\ninstead of\n\n   @profile.trace(\"point_name\") \n   def some_func():\n      #code\n\n\n\nSo I really do think that OSprofiler is not consumable if it is optional requirements...\n \n\nThe second thing is that it\u0027s already in cinder and glance, and it\u0027s going to be in heat and neutron. So usually it will be deployed on controller (so usually keystone will have OSprofiler always)",
+      "parentUuid": "1abeadc6_a2fe8436",
       "revId": "1d7c78bbb0e370e83c141dcde0a5da704318c149",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
