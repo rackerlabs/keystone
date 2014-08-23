@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_bd7e1668",
+        "filename": "keystone/token/persistence/backends/nonpersistent.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-23T06:03:28Z",
+      "side": 1,
+      "message": "for the record the location of this seems funny...\n\npersistent/.../nonpersistent.\n\nbut i don\u0027t have a better alternative",
+      "revId": "e56c645bbe1c98d924ff89a2e4e5c9c8fb5994d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7da1def6",
+        "filename": "keystone/token/persistence/backends/nonpersistent.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-23T06:03:28Z",
+      "side": 1,
+      "message": "rm these lines?",
+      "revId": "e56c645bbe1c98d924ff89a2e4e5c9c8fb5994d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ddb11248",
+        "filename": "keystone/token/persistence/backends/nonpersistent.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-23T06:03:28Z",
+      "side": 1,
+      "message": "add # pragma: no cover to all of these?",
+      "revId": "e56c645bbe1c98d924ff89a2e4e5c9c8fb5994d7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
