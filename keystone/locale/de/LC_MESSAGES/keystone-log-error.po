@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2014-08-04 06:06+0000\n"
-"PO-Revision-Date: 2014-07-16 14:42+0000\n"
+"POT-Creation-Date: 2014-08-23 06:06+0000\n"
+"PO-Revision-Date: 2014-08-10 02:31+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: German (http://www.transifex.com/projects/p/keystone/language/"
 "de/)\n"
@@ -29,11 +29,6 @@ msgstr "Ursprüngliche Ausnahme wird gelöscht: %s"
 msgid "Unexpected exception occurred %d time(s)... retrying."
 msgstr "Unerwartete Ausnahme %d mal(e) aufgetreten... Neuversuch."
 
-#: keystone/openstack/common/lockutils.py:119
-#, python-format
-msgid "Could not release the acquired lock `%s`"
-msgstr "Angeforderte Sperre `%s` konnte nicht freigegeben werden"
-
 #: keystone/openstack/common/loopingcall.py:95
 msgid "in fixed duration looping call"
 msgstr "in Schleifenaufruf mit festgelegter Dauer"
@@ -42,17 +37,17 @@ msgstr "in Schleifenaufruf mit festgelegter Dauer"
 msgid "in dynamic looping call"
 msgstr "in dynamischen Schleifenaufruf"
 
-#: keystone/openstack/common/policy.py:507
+#: keystone/openstack/common/policy.py:508
 #, python-format
 msgid "Failed to understand rule %s"
 msgstr "Regel %s konnte nicht verstanden werden"
 
-#: keystone/openstack/common/policy.py:517
+#: keystone/openstack/common/policy.py:518
 #, python-format
 msgid "No handler for matches of kind %s"
 msgstr "Kein Handler für Übereinstimmungen des Typs %s"
 
-#: keystone/openstack/common/policy.py:787
+#: keystone/openstack/common/policy.py:788
 #, python-format
 msgid "Failed to understand rule %r"
 msgstr "Regel %r konnte nicht verstanden werden"
