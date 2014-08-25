@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_3fa65554",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-25T14:38:24Z",
+      "side": 1,
+      "message": "sure, that sounds better.",
+      "parentUuid": "1abeadc6_4ed7e9ed",
+      "revId": "782292948f20e79d920b3d54ae9e36dbbbaf34e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_6e1105af",
         "filename": "doc/source/event_notifications.rst",
         "patchSetId": 7
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_3f8f35ce",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-25T14:38:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_6e1105af",
+      "revId": "782292948f20e79d920b3d54ae9e36dbbbaf34e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_ee243510",
         "filename": "doc/source/event_notifications.rst",
         "patchSetId": 7
@@ -47,6 +83,24 @@
       "writtenOn": "2014-08-25T12:53:47Z",
       "side": 1,
       "message": "this example needs to be updated to match the approved implementation",
+      "revId": "782292948f20e79d920b3d54ae9e36dbbbaf34e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ff84ddb2",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-25T14:38:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_ee243510",
       "revId": "782292948f20e79d920b3d54ae9e36dbbbaf34e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
