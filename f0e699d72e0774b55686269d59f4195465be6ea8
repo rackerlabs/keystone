@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_9f8209c7",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T14:17:47Z",
+      "side": 1,
+      "message": "you either introduced a real transient error here and this needs to use asstCloseEnoughForGovernmentWork or there\u0027s a nasty bug somewhere.",
+      "revId": "f0e699d72e0774b55686269d59f4195465be6ea8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
