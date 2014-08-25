@@ -1100,6 +1100,20 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
         self.put(member_url, expected_status=404)
 
+    def test_get_role_assignments_invalid_filters(self):
+        self.get(
+            '/role_assignments?user.id=X&group.id=Y',
+            expected_status=400)
+
+        self.get(
+            '/role_assignments?scope.domain.id=X&scope.project.id=Y',
+            expected_status=400)
+
+        self.get(
+            '/role_assignments'
+            '?scope.OS-INHERIT:inherited_to=projects&effective',
+            expected_status=400)
+
     def test_get_role_assignments(self):
         """Call ``GET /role_assignments``.
 

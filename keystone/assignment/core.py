@@ -483,31 +483,9 @@ class Manager(manager.Manager):
 
     @notifications.deleted('role')
     def delete_role(self, role_id):
-        try:
-            self._delete_tokens_for_role(role_id)
-        except exception.NotImplemented:
-            # FIXME(morganfainberg): Not all backends (ldap) implement
-            # `list_role_assignments_for_role` which would have previously
-            # caused a NotImplmented error to be raised when called through
-            # the controller. Now error or proper action will always come from
-            # the `delete_role` method logic. Work needs to be done to make
-            # the behavior between drivers consistent (capable of revoking
-            # tokens for the same circumstances).  This is related to the bug
-            # https://bugs.launchpad.net/keystone/+bug/1221805
-            pass
+        self._delete_tokens_for_role(role_id)
         self.driver.delete_role(role_id)
         self.get_role.invalidate(self, role_id)
-
-    def list_role_assignments_for_role(self, role_id=None):
-        # NOTE(henry-nash): Currently the efficiency of the key driver
-        # implementation (SQL) of list_role_assignments is severely hampered by
-        # the existence of the multiple grant tables - hence there is little
-        # advantage in pushing the logic of this method down into the driver.
-        # Once the single assignment table is implemented, then this situation
-        # will be different, and this method should have its own driver
-        # implementation.
-        return [r for r in self.driver.list_role_assignments()
-                if r['role_id'] == role_id]
 
     def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
         self.driver.remove_role_from_user_and_project(user_id, tenant_id,
@@ -559,7 +537,7 @@ class Manager(manager.Manager):
         self.token_api.delete_tokens_for_users(user_ids)
 
     def _delete_tokens_for_role(self, role_id):
-        assignments = self.list_role_assignments_for_role(role_id=role_id)
+        assignments = self.list_role_assignments(role_id=role_id)
 
         # Iterate over the assignments for this role and build the list of
         # user or user+project IDs for the tokens we need to delete
@@ -632,8 +610,9 @@ class Driver(object):
     def _roles_from_role_dicts(self, dict_list, inherited):
         role_list = []
         for d in dict_list:
-            if ((not d.get('inherited_to') and not inherited) or
-               (d.get('inherited_to') == 'projects' and inherited)):
+            if (inherited is None or
+                (not d.get('inherited_to') and not inherited) or
+                    (d.get('inherited_to') == 'projects' and inherited)):
                 role_list.append(d['id'])
         return role_list
 
@@ -764,7 +743,8 @@ class Driver(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def list_role_assignments(self):
+    def list_role_assignments(self, role_id=None, actors_ids=None,
+                              targets_ids=None, inherited=None):
 
         raise exception.NotImplemented()  # pragma: no cover
 

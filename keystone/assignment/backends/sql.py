@@ -406,7 +406,8 @@ class Assignment(keystone_assignment.Driver):
                     'Cannot remove role that has not been granted, %s') %
                     role_id)
 
-    def list_role_assignments(self):
+    def list_role_assignments(self, role_id=None, actors_ids=None,
+                              targets_ids=None, inherited=None):
 
         def denormalize_role(ref):
             assignment = {}
@@ -433,8 +434,16 @@ class Assignment(keystone_assignment.Driver):
             return assignment
 
         with sql.transaction() as session:
-            refs = session.query(RoleAssignment).all()
-            return [denormalize_role(ref) for ref in refs]
+            q = session.query(RoleAssignment)
+            q = q.filter(
+                RoleAssignment.actor_id.in_(actors_ids)) if actors_ids else q
+            q = (q.filter(RoleAssignment.target_id.in_(targets_ids))
+                 if targets_ids else q)
+            q = q.filter_by(role_id=role_id) if role_id else q
+            q = (q.filter_by(inherited=inherited)
+                 if inherited is not None else q)
+
+            return [denormalize_role(ref) for ref in q.all()]
 
     # CRUD
     @sql.handle_conflicts(conflict_type='project')
