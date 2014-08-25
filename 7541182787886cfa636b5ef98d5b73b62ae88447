@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_eed995f5",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-25T14:00:19Z",
+      "side": 1,
+      "message": "It seems the value from the first branch will be always returned, I assume it should be \u0027if self._has_endpoints(session, child): return True\u0027 and \u0027return Fasle\u0027 in the end - or \u0027and\u0027 reduce  over a list of children. Am I missing smth?",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b97285ab",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-25T14:00:19Z",
+      "side": 1,
+      "message": "One minor improvement - if endpoint_ref.get(\u0027region_id\u0027): ..",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_0e08912c",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-25T14:00:19Z",
+      "side": 1,
+      "message": "endpoint.get(\u0027region\u0027)?",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5449388d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-25T14:00:19Z",
+      "side": 1,
+      "message": "do we need to catch and immediately raise the same exception?",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1f3359f7",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-25T14:00:19Z",
+      "side": 1,
+      "message": "should we update the test name?",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
