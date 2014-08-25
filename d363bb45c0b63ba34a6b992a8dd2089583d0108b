@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_663d9cbb",
+        "filename": "keystone/token/persistence/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T20:11:40Z",
+      "side": 0,
+      "message": "i was wondering how this was going to work :) the warning makes more sense",
+      "revId": "d363bb45c0b63ba34a6b992a8dd2089583d0108b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
