@@ -405,12 +405,25 @@ class Assignment(assignment.Driver):
             raise exception.DomainNotFound(domain_id=domain_name)
         return default_domain
 
-    def list_role_assignments(self):
+    def list_role_assignments(self, role_id=None,
+                              user_id=None, group_ids=None,
+                              project_id=None, domain_id=None,
+                              inherited_to_projects=False):
         role_assignments = []
         for a in self.role.list_role_assignments(self.project.tree_dn):
             assignment = {'role_id': self.role._dn_to_id(a.role_dn),
                           'user_id': self.user._dn_to_id(a.user_dn),
                           'project_id': self.project._dn_to_id(a.project_dn)}
+
+            if role_id and assignment['role_id'] != role_id:
+                continue
+            if user_id and assignment['user_id'] != user_id:
+                continue
+            if group_ids and assignment['user_id'] not in group_ids:
+                continue
+            if project_id and assignment['project_id'] != project_id:
+                continue
+
             role_assignments.append(assignment)
         return role_assignments
 
