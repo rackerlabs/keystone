@@ -16,6 +16,24 @@
       "revId": "0fd093eb5f358a5b14097e52cf96c183b5ba60de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_76c4655f",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-08-25T23:15:37Z",
+      "side": 1,
+      "message": "ah finally I understood, what you mean by translation hints. OK I will address this soon.",
+      "parentUuid": "1abeadc6_16f891c3",
+      "revId": "0fd093eb5f358a5b14097e52cf96c183b5ba60de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
