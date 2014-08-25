@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_f48404b3",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T13:52:17Z",
+      "side": 1,
+      "message": "244-248 isn\u0027t in the spec",
+      "revId": "ede819f35bd0fe4d5cec33e2b2c32c6d9bca3a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
