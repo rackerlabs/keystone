@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_36d90d84",
+        "filename": "keystone/tests/config_files/backend_ldap_pool.conf",
+        "patchSetId": 7
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-25T23:06:37Z",
+      "side": 1,
+      "message": "Does this mean caching can\u0027t be used with LDAP POOL?",
+      "parentUuid": "1abeadc6_70cdcdb6",
+      "revId": "c427181296d0b471d11c9266f772cbe39bce3e3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_302d6c47",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 7
