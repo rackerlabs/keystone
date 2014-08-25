@@ -406,7 +406,31 @@ class Assignment(keystone_assignment.Driver):
                     'Cannot remove role that has not been granted, %s') %
                     role_id)
 
-    def list_role_assignments(self):
+    def _get_assignment_types(self, user_id, group_ids, project_id, domain_id):
+        assignment_types = []
+        if user_id:
+            if project_id:
+                assignment_types.append(AssignmentType.USER_PROJECT)
+            elif domain_id:
+                assignment_types.append(AssignmentType.USER_DOMAIN)
+            else:
+                assignment_types.append(AssignmentType.USER_PROJECT)
+                assignment_types.append(AssignmentType.USER_DOMAIN)
+        elif group_ids:
+            if project_id:
+                assignment_types.append(AssignmentType.GROUP_PROJECT)
+            elif domain_id:
+                assignment_types.append(AssignmentType.GROUP_DOMAIN)
+            else:
+                assignment_types.append(AssignmentType.GROUP_PROJECT)
+                assignment_types.append(AssignmentType.GROUP_DOMAIN)
+
+        return assignment_types
+
+    def list_role_assignments(self, role_id=None,
+                              user_id=None, group_ids=None,
+                              project_id=None, domain_id=None,
+                              inherited_to_projects=None):
 
         def denormalize_role(ref):
             assignment = {}
@@ -433,8 +457,31 @@ class Assignment(keystone_assignment.Driver):
             return assignment
 
         with sql.transaction() as session:
-            refs = session.query(RoleAssignment).all()
-            return [denormalize_role(ref) for ref in refs]
+            assignment_types = self._get_assignment_types(
+                user_id, group_ids, project_id, domain_id)
+
+            target = project_id or domain_id
+
+            actors = None
+            if group_ids:
+                actors = group_ids
+            elif user_id:
+                actors = [user_id]
+
+            query = session.query(RoleAssignment)
+
+            if role_id:
+                query = query.filter_by(role_id=role_id)
+            if actors:
+                query = query.filter(RoleAssignment.actor_id.in_(actors))
+            if target:
+                query = query.filter_by(target_id=target)
+            if assignment_types:
+                query = query.filter(RoleAssignment.type.in_(assignment_types))
+            if inherited_to_projects is not None:
+                query = query.filter_by(inherited=inherited_to_projects)
+
+            return [denormalize_role(ref) for ref in query.all()]
 
     # CRUD
     @sql.handle_conflicts(conflict_type='project')
