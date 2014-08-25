@@ -496,8 +496,7 @@ class IdentityTests(object):
         # First check how many role grants already exist
         existing_assignments = len(self.assignment_api.list_role_assignments())
         existing_assignments_for_role = len(
-            self.assignment_api.list_role_assignments_for_role(
-                role_id='admin'))
+            self.assignment_api.list_role_assignments(role_id='admin'))
 
         # Now create the grants (roles are defined in default_fixtures)
         self.assignment_api.create_grant(user_id=new_user['id'],
@@ -537,7 +536,7 @@ class IdentityTests(object):
 
         # Read back the list of assignments for just the admin role, checking
         # this only goes up by two.
-        assignment_list = self.assignment_api.list_role_assignments_for_role(
+        assignment_list = self.assignment_api.list_role_assignments(
             role_id='admin')
         self.assertEqual(existing_assignments_for_role + 2,
                          len(assignment_list))
@@ -593,9 +592,265 @@ class IdentityTests(object):
                         matchers.Equals(expected_member_assignments))
 
     def test_list_role_assignments_bad_role(self):
-        assignment_list = self.assignment_api.list_role_assignments_for_role(
+        assignment_list = self.assignment_api.list_role_assignments(
             role_id=uuid.uuid4().hex)
         self.assertEqual([], assignment_list)
+
+    def test_list_role_assignments_filtered_by_role(self):
+        role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_role(role['id'], role)
+
+        self.assignment_api.create_grant(user_id=self.user_foo['id'],
+                                         project_id=self.tenant_baz['id'],
+                                         role_id=role['id'])
+        self.assignment_api.create_grant(user_id=self.user_two['id'],
+                                         project_id=self.tenant_bar['id'],
+                                         role_id=role['id'])
+
+        assignment_list = self.assignment_api.list_role_assignments(
+            role_id=role['id'])
+
+        self.assertEqual(2, len(assignment_list))
+
+        self.assertIn({'user_id': self.user_foo['id'],
+                       'project_id': self.tenant_baz['id'],
+                       'role_id': role['id']},
+                      assignment_list)
+
+        self.assertIn({'user_id': self.user_two['id'],
+                       'project_id': self.tenant_bar['id'],
+                       'role_id': role['id']},
+                      assignment_list)
+
+    def test_list_role_assignments_filtered_by_user(self):
+        user = {'name': uuid.uuid4().hex, 'password': uuid.uuid4().hex,
+                'enabled': True, 'domain_id': DEFAULT_DOMAIN_ID}
+        user_id = self.identity_api.create_user(user)['id']
+
+        self.assignment_api.create_grant(user_id=user_id,
+                                         project_id=self.tenant_baz['id'],
+                                         role_id=self.role_member['id'])
+        self.assignment_api.create_grant(user_id=user_id,
+                                         project_id=self.tenant_bar['id'],
+                                         role_id=self.role_admin['id'])
+
+        assignment_list = self.assignment_api.list_role_assignments(
+            user_id=user_id)
+
+        self.assertEqual(2, len(assignment_list))
+
+        self.assertIn({'user_id': user_id,
+                       'project_id': self.tenant_baz['id'],
+                       'role_id': self.role_member['id']}, assignment_list)
+
+        self.assertIn({'user_id': user_id,
+                       'project_id': self.tenant_bar['id'],
+                       'role_id': self.role_admin['id']}, assignment_list)
+
+    def test_list_role_assignments_filtered_by_group(self):
+        group = {'name': uuid.uuid4().hex,
+                 'domain_id': DEFAULT_DOMAIN_ID}
+        group_id = self.identity_api.create_group(group)['id']
+
+        self.assignment_api.create_grant(group_id=group_id,
+                                         project_id=self.tenant_baz['id'],
+                                         role_id=self.role_member['id'])
+        self.assignment_api.create_grant(group_id=group_id,
+                                         project_id=self.tenant_bar['id'],
+                                         role_id=self.role_admin['id'])
+
+        assignment_list = self.assignment_api.list_role_assignments(
+            group_ids=[group_id])
+
+        self.assertEqual(2, len(assignment_list))
+
+        self.assertIn({'group_id': group_id,
+                       'project_id': self.tenant_baz['id'],
+                       'role_id': self.role_member['id']}, assignment_list)
+
+        self.assertIn({'group_id': group_id,
+                       'project_id': self.tenant_bar['id'],
+                       'role_id': self.role_admin['id']}, assignment_list)
+
+    def test_list_role_assignments_filtered_by_project(self):
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'domain_id': DEFAULT_DOMAIN_ID}
+        self.assignment_api.create_project(project['id'], project)
+
+        self.assignment_api.create_grant(user_id=self.user_foo['id'],
+                                         project_id=project['id'],
+                                         role_id=self.role_member['id'])
+        self.assignment_api.create_grant(user_id=self.user_two['id'],
+                                         project_id=project['id'],
+                                         role_id=self.role_admin['id'])
+
+        assignment_list = self.assignment_api.list_role_assignments(
+            project_id=project['id'])
+
+        self.assertEqual(2, len(assignment_list))
+
+        self.assertIn({'user_id': self.user_foo['id'],
+                       'project_id': project['id'],
+                       'role_id': self.role_member['id']},
+                      assignment_list)
+
+        self.assertIn({'user_id': self.user_two['id'],
+                       'project_id': project['id'],
+                       'role_id': self.role_admin['id']},
+                      assignment_list)
+
+    def test_list_role_assignments_filtered_by_domain(self):
+        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_domain(domain['id'], domain)
+
+        self.assignment_api.create_grant(user_id=self.user_foo['id'],
+                                         domain_id=domain['id'],
+                                         role_id=self.role_member['id'])
+        self.assignment_api.create_grant(user_id=self.user_two['id'],
+                                         domain_id=domain['id'],
+                                         role_id=self.role_admin['id'])
+
+        assignment_list = self.assignment_api.list_role_assignments(
+            domain_id=domain['id'])
+
+        self.assertEqual(2, len(assignment_list))
+        self.assertIn({'user_id': self.user_two['id'],
+                       'domain_id': domain['id'],
+                       'role_id': self.role_admin['id']},
+                      assignment_list)
+        self.assertIn({'user_id': self.user_foo['id'],
+                       'domain_id': domain['id'],
+                       'role_id': self.role_member['id']},
+                      assignment_list)
+
+    def test_list_role_assignments_filtered_by_inherited(self):
+        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_domain(domain['id'], domain)
+
+        self.assignment_api.create_grant(user_id=self.user_foo['id'],
+                                         domain_id=domain['id'],
+                                         role_id=self.role_member['id'],
+                                         inherited_to_projects=True)
+        self.assignment_api.create_grant(user_id=self.user_two['id'],
+                                         domain_id=domain['id'],
+                                         role_id=self.role_admin['id'],
+                                         inherited_to_projects=False)
+
+        non_inherited_grant = {'user_id': self.user_two['id'],
+                               'domain_id': domain['id'],
+                               'role_id': self.role_admin['id']}
+        inherited_grant = {'inherited_to_projects': 'projects',
+                           'user_id': self.user_foo['id'],
+                           'domain_id': domain['id'],
+                           'role_id': self.role_member['id']}
+
+        assignment_list = self.assignment_api.list_role_assignments(
+            domain_id=domain['id'])
+
+        self.assertEqual(2, len(assignment_list))
+        self.assertIn(non_inherited_grant, assignment_list)
+        self.assertIn(inherited_grant, assignment_list)
+
+        assignment_list = self.assignment_api.list_role_assignments(
+            domain_id=domain['id'], inherited_to_projects=True)
+        self.assertEqual([inherited_grant], assignment_list)
+
+    def test_list_role_assignments_combined_filters(self):
+        # Create a new domain
+        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_domain(domain['id'], domain)
+
+        # Create 'non-inherited' and 'inherited' roles
+        non_inherited_role = {'id': 'non-inherited', 'name': uuid.uuid4().hex}
+        self.assignment_api.create_role(non_inherited_role['id'],
+                                        non_inherited_role)
+        inherited_role = {'id': 'inherited', 'name': uuid.uuid4().hex}
+        self.assignment_api.create_role(inherited_role['id'], inherited_role)
+
+        # Create a new user in the new domain
+        user = {'name': uuid.uuid4().hex, 'password': uuid.uuid4().hex,
+                'enabled': True, 'domain_id': domain['id']}
+        user = self.identity_api.create_user(user)
+
+        # Create a new group in the new domain
+        group = {'name': uuid.uuid4().hex,
+                 'domain_id': domain['id']}
+        group = self.identity_api.create_group(group)
+
+        # Create a new user in the new domain
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'domain_id': domain['id']}
+        self.assignment_api.create_project(project['id'], project)
+
+        # Create assignments on project
+        self.assignment_api.create_grant(user_id=user['id'],
+                                         project_id=project['id'],
+                                         role_id=non_inherited_role['id'])
+        self.assignment_api.create_grant(group_id=group['id'],
+                                         project_id=project['id'],
+                                         role_id=non_inherited_role['id'])
+
+        # Create non-inherited assignments on domain
+        self.assignment_api.create_grant(user_id=user['id'],
+                                         domain_id=domain['id'],
+                                         role_id=non_inherited_role['id'])
+        self.assignment_api.create_grant(group_id=group['id'],
+                                         domain_id=domain['id'],
+                                         role_id=non_inherited_role['id'])
+
+        # Create inherited assignments on domain
+        self.assignment_api.create_grant(user_id=user['id'],
+                                         domain_id=domain['id'],
+                                         role_id=inherited_role['id'],
+                                         inherited_to_projects=True)
+        self.assignment_api.create_grant(group_id=group['id'],
+                                         domain_id=domain['id'],
+                                         role_id=inherited_role['id'],
+                                         inherited_to_projects=True)
+
+        # Check role assignments for user on project
+        assignment_list = self.assignment_api.list_role_assignments(
+            user_id=user['id'], project_id=project['id'])
+        self.assertEqual([{'user_id': user['id'],
+                           'project_id': project['id'],
+                           'role_id': non_inherited_role['id']}],
+                         assignment_list)
+
+        # Check role assignments for group on project
+        assignment_list = self.assignment_api.list_role_assignments(
+            group_ids=[group['id']], project_id=project['id'])
+        self.assertEqual([{'group_id': group['id'],
+                           'project_id': project['id'],
+                           'role_id': non_inherited_role['id']}],
+                         assignment_list)
+
+        # Check role assignments for user on domain
+        assignment_list = self.assignment_api.list_role_assignments(
+            user_id=user['id'], domain_id=domain['id'])
+        self.assertEqual(2, len(assignment_list))
+        self.assertIn({'user_id': user['id'],
+                       'domain_id': domain['id'],
+                       'role_id': non_inherited_role['id']},
+                      assignment_list)
+        self.assertIn({'inherited_to_projects': 'projects',
+                       'user_id': user['id'],
+                       'domain_id': domain['id'],
+                       'role_id': inherited_role['id']},
+                      assignment_list)
+
+        # Check role assignments for group on domain
+        assignment_list = self.assignment_api.list_role_assignments(
+            group_ids=[group['id']], domain_id=domain['id'])
+        self.assertEqual(2, len(assignment_list))
+        self.assertIn({'group_id': group['id'],
+                       'domain_id': domain['id'],
+                       'role_id': non_inherited_role['id']}, assignment_list)
+        self.assertIn({'inherited_to_projects': 'projects',
+                       'group_id': group['id'],
+                       'domain_id': domain['id'],
+                       'role_id': inherited_role['id']}, assignment_list)
 
     def test_add_duplicate_role_grant(self):
         roles_ref = self.assignment_api.get_roles_for_user_and_project(
