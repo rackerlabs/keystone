@@ -34,6 +34,41 @@
       "revId": "867f3ec7edb6b68ba7f2fbac2942879edfe8928d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_945750ca",
+        "filename": "keystone/identity/routers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T13:39:19Z",
+      "side": 1,
+      "message": "approved!",
+      "parentUuid": "1abeadc6_9f2ec48a",
+      "revId": "867f3ec7edb6b68ba7f2fbac2942879edfe8928d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_940e70e4",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T13:39:19Z",
+      "side": 1,
+      "message": "that was fast",
+      "revId": "867f3ec7edb6b68ba7f2fbac2942879edfe8928d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
