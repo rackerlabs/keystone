@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_33f049c9",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 688,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T17:21:44Z",
+      "side": 1,
+      "message": "I suppose this online comment still belongs above the target definition above",
+      "revId": "e15b105ed7d04e0cf7fe2720c2ed6634f0e29730",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
