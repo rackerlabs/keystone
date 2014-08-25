@@ -427,6 +427,43 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         after_assignments = len(self.assignment_api.list_role_assignments())
         self.assertEqual(existing_assignments + 2, after_assignments)
 
+    def test_list_role_assignments_filtered_by_group(self):
+        self.skipTest('N/A: LDAP does not support role assignments for groups')
+
+    def test_list_role_assignments_filtered_by_domain(self):
+        self.skipTest('N/A: LDAP does not support role assignments on domains')
+
+    def test_list_role_assignments_filtered_by_inherited(self):
+        self.skipTest('N/A: LDAP does not support role assignments on domains')
+
+    def test_list_role_assignments_combined_filters(self):
+        # Create a new role
+        role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_role(role['id'], role)
+
+        # Create a new user
+        user = {'name': uuid.uuid4().hex, 'password': uuid.uuid4().hex,
+                'enabled': True, 'domain_id': self.domain_default['id']}
+        user = self.identity_api.create_user(user)
+
+        # Create a new user in the new domain
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'domain_id': self.domain_default['id']}
+        self.assignment_api.create_project(project['id'], project)
+
+        # Create assignments on project
+        self.assignment_api.create_grant(user_id=user['id'],
+                                         project_id=project['id'],
+                                         role_id=role['id'])
+
+        # Check role assignments for user on project
+        assignment_list = self.assignment_api.list_role_assignments(
+            actors_ids=[user['id']], targets_ids=[project['id']])
+        self.assertEqual([{'user_id': user['id'],
+                           'project_id': project['id'],
+                           'role_id': role['id']}], assignment_list)
+
     def test_list_role_assignments_dumb_member(self):
         self.config_fixture.config(group='ldap', use_dumb_member=True)
         self.clear_database()
