@@ -255,7 +255,8 @@ class Assignment(kvs.Base, assignment.Driver):
         else:
             self.db.delete('metadata_user-%s-%s' % (tenant_id, user_id))
 
-    def list_role_assignments(self):
+    def list_role_assignments(self, role_id=None, actors=None,
+                              targets=None, inherited_to_projects=False):
         """List the role assignments.
 
         We enumerate the metadata entries and extract the targets, actors, and
@@ -263,43 +264,37 @@ class Assignment(kvs.Base, assignment.Driver):
 
         """
         assignment_list = []
-        metadata_keys = (k for k in self.db.keys()
-                         if k.startswith('metadata_user-'))
-        for key in metadata_keys:
-            template = {}
-            i, meta_project_or_domain_id, template['user_id'] = key.split('-')
-            try:
-                self.get_project(meta_project_or_domain_id)
-                template['project_id'] = meta_project_or_domain_id
-            except exception.NotFound:
-                template['domain_id'] = meta_project_or_domain_id
 
-            entry = self.db.get(key)
-            inherited = False
-            for r in self._roles_from_role_dicts(entry.get('roles', {}),
-                                                 inherited):
-                role_assignment = template.copy()
-                role_assignment['role_id'] = r
-                assignment_list.append(role_assignment)
+        for actor_type in ('user', 'group'):
+            metadata_keys = (k for k in self.db.keys()
+                             if k.startswith('metadata_%s-' % actor_type))
+            for key in metadata_keys:
+                template = {}
+                (i, meta_project_or_domain_id,
+                    template['%s_id' % actor_type]) = key.split('-')
 
-        metadata_keys = (k for k in self.db.keys()
-                         if k.startswith('metadata_group-'))
-        for key in metadata_keys:
-            template = {}
-            i, meta_project_or_domain_id, template['group_id'] = key.split('-')
-            try:
-                self.get_project(meta_project_or_domain_id)
-                template['project_id'] = meta_project_or_domain_id
-            except exception.NotFound:
-                template['domain_id'] = meta_project_or_domain_id
+                if (actors and
+                        template['%s_id' % actor_type] not in actors):
+                    continue
+                if (targets and
+                        meta_project_or_domain_id not in targets):
+                    continue
 
-            entry = self.db.get(key)
-            inherited = False
-            for r in self._roles_from_role_dicts(entry.get('roles', {}),
-                                                 inherited):
-                role_assignment = template.copy()
-                role_assignment['role_id'] = r
-                assignment_list.append(role_assignment)
+                try:
+                    self.get_project(meta_project_or_domain_id)
+                    template['project_id'] = meta_project_or_domain_id
+                except exception.NotFound:
+                    template['domain_id'] = meta_project_or_domain_id
+
+                entry = self.db.get(key)
+                role_dicts = entry.get('roles', {})
+                if role_id:
+                    role_dicts = [x for x in role_dicts if x['id'] == role_id]
+                for r in self._roles_from_role_dicts(role_dicts,
+                                                     inherited_to_projects):
+                    role_assignment = template.copy()
+                    role_assignment['role_id'] = r
+                    assignment_list.append(role_assignment)
 
         return assignment_list
 
