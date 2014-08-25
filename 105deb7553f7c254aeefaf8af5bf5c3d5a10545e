@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_c2fd9c3d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-25T11:42:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_c35beb51",
+      "revId": "105deb7553f7c254aeefaf8af5bf5c3d5a10545e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_a360af01",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-24T06:13:14Z",
       "side": 1,
       "message": "is this used?",
+      "revId": "105deb7553f7c254aeefaf8af5bf5c3d5a10545e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e2fa9842",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-25T11:42:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_a360af01",
       "revId": "105deb7553f7c254aeefaf8af5bf5c3d5a10545e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_e83fcdb3",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-25T11:42:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_b01baf7f",
+      "revId": "105deb7553f7c254aeefaf8af5bf5c3d5a10545e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_636cd708",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 10
@@ -64,6 +118,24 @@
       "writtenOn": "2014-08-24T06:13:14Z",
       "side": 1,
       "message": "switch from _is_having_endpoints to _has_endpoints ?",
+      "revId": "105deb7553f7c254aeefaf8af5bf5c3d5a10545e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_284aa555",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-25T11:42:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_636cd708",
       "revId": "105deb7553f7c254aeefaf8af5bf5c3d5a10545e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_a8a4f508",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-25T11:42:58Z",
+      "side": 1,
+      "message": "I have moved to controller level and for v2 endpoint creation, which is listed in the blueprint that when endpoint is created and region is not present then create the region before creating the endpoint.",
+      "parentUuid": "1abeadc6_e37f07a9",
+      "revId": "105deb7553f7c254aeefaf8af5bf5c3d5a10545e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_e3562729",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 10
@@ -98,6 +188,24 @@
       "writtenOn": "2014-08-24T06:13:14Z",
       "side": 1,
       "message": "is this to remove old references of \u0027region\u0027 instead of \u0027region_id\u0027? If so, please add a comment for *why* you\u0027re doing this.\n\nalso shouldn\u0027t a migration take care of this?",
+      "revId": "105deb7553f7c254aeefaf8af5bf5c3d5a10545e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_48e36133",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-25T11:42:58Z",
+      "side": 1,
+      "message": "yes, i have added it for remoing the \u0027region\u0027 and in the latest patch, i have remove the region property from the Endpoint model object. and kept the same code to remove the un related properties from the endpoint like legacy_endpoint_id.",
+      "parentUuid": "1abeadc6_e3562729",
       "revId": "105deb7553f7c254aeefaf8af5bf5c3d5a10545e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_68cf3db4",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-25T11:42:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_633a17e8",
+      "revId": "105deb7553f7c254aeefaf8af5bf5c3d5a10545e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_4337dbfe",
         "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
         "patchSetId": 10
@@ -132,6 +258,24 @@
       "writtenOn": "2014-08-24T06:13:14Z",
       "side": 1,
       "message": "Add a* region",
+      "revId": "105deb7553f7c254aeefaf8af5bf5c3d5a10545e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_88d49948",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-25T11:42:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_4337dbfe",
       "revId": "105deb7553f7c254aeefaf8af5bf5c3d5a10545e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_a8c955ae",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-25T11:42:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_90d5d3e6",
+      "revId": "105deb7553f7c254aeefaf8af5bf5c3d5a10545e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_a327cfc8",
         "filename": "keystone/exception.py",
         "patchSetId": 10
@@ -166,6 +328,24 @@
       "writtenOn": "2014-08-24T06:13:14Z",
       "side": 1,
       "message": "replace \u0027are having\u0027 with \u0027have\u0027",
+      "revId": "105deb7553f7c254aeefaf8af5bf5c3d5a10545e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e8c26d85",
+        "filename": "keystone/exception.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-25T11:42:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_a327cfc8",
       "revId": "105deb7553f7c254aeefaf8af5bf5c3d5a10545e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
