@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_626cc809",
+        "filename": "keystone/contrib/endpoint_policy/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-25T04:14:08Z",
+      "side": 1,
+      "message": "Should this be on_policy_delete?",
+      "revId": "0ace2fa0c64a13168052bfa348add69bf2b66ddd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4267cc25",
+        "filename": "keystone/contrib/endpoint_policy/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-25T04:14:08Z",
+      "side": 1,
+      "message": "polcy? Makes me think a test is lacking...",
+      "revId": "0ace2fa0c64a13168052bfa348add69bf2b66ddd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_42350cf6",
+        "filename": "keystone/tests/test_v3_endpoint_policy.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-25T04:14:08Z",
+      "side": 1,
+      "message": "Needs tests for the callbacks",
+      "revId": "0ace2fa0c64a13168052bfa348add69bf2b66ddd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_82480489",
+        "filename": "keystone/tests/test_v3_endpoint_policy.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-25T04:14:08Z",
+      "side": 1,
+      "message": "Redundant",
+      "revId": "0ace2fa0c64a13168052bfa348add69bf2b66ddd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_0254f41f",
+        "filename": "keystone/tests/test_v3_endpoint_policy.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-25T04:14:08Z",
+      "side": 1,
+      "message": "Redundant",
+      "revId": "0ace2fa0c64a13168052bfa348add69bf2b66ddd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a2c8a057",
+        "filename": "keystone/tests/test_v3_endpoint_policy.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-25T04:14:08Z",
+      "side": 1,
+      "message": "nit: self.assertEqual(len(...), 1)",
+      "revId": "0ace2fa0c64a13168052bfa348add69bf2b66ddd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
