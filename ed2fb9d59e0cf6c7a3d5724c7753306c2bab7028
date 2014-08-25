@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_59cfb1b3",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T13:09:52Z",
+      "side": 1,
+      "message": "not that this takes too long, but if it gets hammered a lot then it should really be precomputed / cached",
+      "revId": "ed2fb9d59e0cf6c7a3d5724c7753306c2bab7028",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
