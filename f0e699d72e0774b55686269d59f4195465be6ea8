@@ -16,6 +16,24 @@
       "revId": "f0e699d72e0774b55686269d59f4195465be6ea8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_33a92925",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-25T17:34:29Z",
+      "side": 1,
+      "message": "What I find interesting is that we errored out on this assertEqual, in theory we should have had an issue with the previous assertRaises if this didn\u0027t match.\n\nThis is a weird one.",
+      "parentUuid": "1abeadc6_9f8209c7",
+      "revId": "f0e699d72e0774b55686269d59f4195465be6ea8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
