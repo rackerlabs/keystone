@@ -107,6 +107,57 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_5a36bfb5",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T16:41:45Z",
+      "side": 1,
+      "message": "let the  manager set a default",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7a9ffbb4",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T16:41:45Z",
+      "side": 1,
+      "message": "extra should not be handled by controllers, its a terrible sql-ism that should stay in that backend",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5a04ffc5",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T16:41:45Z",
+      "side": 1,
+      "message": "you need to leave the \u0027region\u0027 attribute alone for backwards compatibility - return the same value twice",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_429255f7",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 13
@@ -118,6 +169,23 @@
       "writtenOn": "2014-08-25T16:27:03Z",
       "side": 1,
       "message": "Is this part of this change?  Seems like it needs to be done, but is a separate bug?",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5ad23f35",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T16:41:45Z",
+      "side": 1,
+      "message": "this looks like an irrelevant change that is fixing a valid bug and should be backported to icehouse",
       "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -153,6 +221,194 @@
       "side": 1,
       "message": "RegionNotFound also an NotFound exception, so there is no other option than this.",
       "parentUuid": "1abeadc6_5449388d",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5a879f12",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T16:41:45Z",
+      "side": 1,
+      "message": "definitely not - this just obfuscates the original backtrace",
+      "parentUuid": "1abeadc6_5449388d",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5f623117",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T16:41:45Z",
+      "side": 1,
+      "message": "don\u0027t you work for HP?",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7f4e0d98",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T16:41:45Z",
+      "side": 1,
+      "message": "this needs an update now",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_9d3bec9b",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T16:41:45Z",
+      "side": 1,
+      "message": "(c) wasn\u0027t done below?",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5a94ffe7",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T16:41:45Z",
+      "side": 1,
+      "message": "this could be optimized to load a list of valid region IDs in advance so that it doesn\u0027t have to do a SELECT on each iteration (and add newly crested regions as it goes)",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_dd800449",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T16:41:45Z",
+      "side": 1,
+      "message": "++",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_fddb007b",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T16:41:45Z",
+      "side": 1,
+      "message": "same as below, put the where clause inline with the query to improve readability",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7dcff0b3",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T16:41:45Z",
+      "side": 1,
+      "message": "you also need to drop endpoint.region values",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a2c089e1",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T16:41:45Z",
+      "side": 1,
+      "message": "put this inline with the query - \u0027f\u0027 is sort of meaningless on its own. break the query composition up into multiple lines if you need to\n\n  q \u003d q.endpoint_table.update()\n  q \u003d q.where(clause)\n\netc",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_bd0ee8e3",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T16:41:45Z",
+      "side": 1,
+      "message": "left my confusion above for reference. the private helper function doesn\u0027t add much and is implemented inconsistency. in the downgrade, this is done in the helper function",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1df51ccb",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T16:41:45Z",
+      "side": 1,
+      "message": "no!!",
       "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
