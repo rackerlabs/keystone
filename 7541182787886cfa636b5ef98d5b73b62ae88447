@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_e787f3d5",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-25T16:16:54Z",
+      "side": 1,
+      "message": "Thanks. I take care this in next patch",
+      "parentUuid": "1abeadc6_eed995f5",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_b97285ab",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-25T14:00:19Z",
       "side": 1,
       "message": "One minor improvement - if endpoint_ref.get(\u0027region_id\u0027): ..",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_c7d037cc",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-25T16:16:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_b97285ab",
       "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_27d72bc1",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-25T16:16:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_0e08912c",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_5449388d",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 13
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_c743d76a",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-25T16:16:54Z",
+      "side": 1,
+      "message": "RegionNotFound also an NotFound exception, so there is no other option than this.",
+      "parentUuid": "1abeadc6_5449388d",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_1f3359f7",
         "filename": "keystone/tests/test_v3_catalog.py",
         "patchSetId": 13
@@ -81,6 +153,24 @@
       "writtenOn": "2014-08-25T14:00:19Z",
       "side": 1,
       "message": "should we update the test name?",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_02405d34",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-25T16:16:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_1f3359f7",
       "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
