@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_16f891c3",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-25T23:12:52Z",
+      "side": 1,
+      "message": "If this patch goes in, this needs the translation hints.\n\nMulti-line loglines are difficult in general, please remove the explicit \\n s from this messages.\n\nGenerally speaking this information needs to also go in the configuring.rst.",
+      "revId": "0fd093eb5f358a5b14097e52cf96c183b5ba60de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
