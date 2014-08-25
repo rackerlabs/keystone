@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_19e61945",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-25T14:35:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_14c49bf3",
+      "revId": "757b8ecae3f7a656ad6f77df846cc54cecbca712",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_d48ea3cf",
         "filename": "keystone/assignment/schema.py",
         "patchSetId": 37
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-21T01:48:06Z",
       "side": 1,
       "message": "there should be a parameter_types.domain_id.",
+      "revId": "757b8ecae3f7a656ad6f77df846cc54cecbca712",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_39baf50a",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-25T14:35:02Z",
+      "side": 1,
+      "message": "This one I\u0027m not sure about because it would be nice to not have subsystem specific types in there unless they are shared across multiple subsystems.",
+      "parentUuid": "1abeadc6_d48ea3cf",
       "revId": "757b8ecae3f7a656ad6f77df846cc54cecbca712",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_7f09addc",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-25T14:35:02Z",
+      "side": 1,
+      "message": "I\u0027ve deleted this since it wasn\u0027t used anyway.",
+      "parentUuid": "1abeadc6_d47ce3b7",
+      "revId": "757b8ecae3f7a656ad6f77df846cc54cecbca712",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_ffaa1dd1",
         "filename": "keystone/assignment/schema.py",
         "patchSetId": 37
@@ -105,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_34ff5cac",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-25T14:35:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_f4339f11",
+      "revId": "757b8ecae3f7a656ad6f77df846cc54cecbca712",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_94242bc6",
         "filename": "keystone/assignment/schema.py",
         "patchSetId": 37
@@ -133,6 +205,24 @@
       "writtenOn": "2014-08-25T14:04:24Z",
       "side": 1,
       "message": "not quite... but maybe copy role create and then modify it here? add min properties, drop required, etc",
+      "parentUuid": "1abeadc6_94242bc6",
+      "revId": "757b8ecae3f7a656ad6f77df846cc54cecbca712",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_140260b4",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-25T14:35:02Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "1abeadc6_94242bc6",
       "revId": "757b8ecae3f7a656ad6f77df846cc54cecbca712",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
