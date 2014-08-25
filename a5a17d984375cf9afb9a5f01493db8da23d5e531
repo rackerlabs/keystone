@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_052154b4",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T11:37:53Z",
+      "side": 1,
+      "message": "need to use six iteritems here for py3 support",
+      "revId": "a5a17d984375cf9afb9a5f01493db8da23d5e531",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_d814cd4e",
         "filename": "keystone/tests/test_notifications.py",
         "patchSetId": 34
