@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_06d148cd",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T20:55:06Z",
+      "side": 1,
+      "message": "remove in juno?",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
