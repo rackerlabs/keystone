@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_8c1c976c",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-25T21:06:10Z",
+      "side": 1,
+      "message": "move these up with the region_schema definition",
+      "revId": "a1c28d510104ab8ba9c3ae7ebb7e5d2c469c1843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ec2a6b7d",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-25T21:06:10Z",
+      "side": 1,
+      "message": "same comment here with service_schema",
+      "revId": "a1c28d510104ab8ba9c3ae7ebb7e5d2c469c1843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
