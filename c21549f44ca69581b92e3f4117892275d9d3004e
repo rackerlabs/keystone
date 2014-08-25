@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_2cb0e3f3",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T21:22:37Z",
+      "side": 1,
+      "message": "probably out of scope, but it seems anti-social to register callbacks this way",
+      "revId": "c21549f44ca69581b92e3f4117892275d9d3004e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
