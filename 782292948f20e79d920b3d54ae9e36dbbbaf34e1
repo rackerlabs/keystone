@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_4ed7e9ed",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T12:53:47Z",
+      "side": 1,
+      "message": "and authorization events (?)",
+      "revId": "782292948f20e79d920b3d54ae9e36dbbbaf34e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6e1105af",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T12:53:47Z",
+      "side": 1,
+      "message": "single colon at the end, since the code block tag below won\u0027t create one",
+      "revId": "782292948f20e79d920b3d54ae9e36dbbbaf34e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ee243510",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T12:53:47Z",
+      "side": 1,
+      "message": "this example needs to be updated to match the approved implementation",
+      "revId": "782292948f20e79d920b3d54ae9e36dbbbaf34e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
