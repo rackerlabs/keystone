@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_5d72344a",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T16:41:08Z",
+      "side": 1,
+      "message": "++",
+      "revId": "24705408496135202026a0f9f0eab038ae94f7fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1dc6fc49",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T16:41:08Z",
+      "side": 1,
+      "message": "++",
+      "revId": "24705408496135202026a0f9f0eab038ae94f7fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7d2a90e8",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T16:41:08Z",
+      "side": 1,
+      "message": "you also need to copy the legacy \u0027region\u0027 attribute into every response here to provide backwards compatibility -- and redirect \u0027region\u0027 in inputs to the region_id attribute",
+      "revId": "24705408496135202026a0f9f0eab038ae94f7fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_e23fe1d4",
         "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
         "patchSetId": 14
