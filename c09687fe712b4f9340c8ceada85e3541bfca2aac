@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_dded5f27",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T18:37:45Z",
+      "side": 1,
+      "message": "nit: this isn\u0027t just for uuids... it can be used for user defined IDs too",
+      "revId": "c09687fe712b4f9340c8ceada85e3541bfca2aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
