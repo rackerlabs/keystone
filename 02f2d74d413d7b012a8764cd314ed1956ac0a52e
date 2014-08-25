@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_bac6e914",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-25T18:26:39Z",
+      "side": 1,
+      "message": "There is no need to move it, I can move it back if it\u0027s an issue. I think this was a bit of \"make the code as easy to read as possible\" and this got shuffled in the process.",
+      "parentUuid": "1abeadc6_025c0b4a",
+      "revId": "02f2d74d413d7b012a8764cd314ed1956ac0a52e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_c23db3de",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 15
@@ -81,6 +99,24 @@
       "writtenOn": "2014-08-23T05:33:48Z",
       "side": 1,
       "message": "155-158 is the same as 125-128 and the same as 146-150, maybe condense them?",
+      "revId": "02f2d74d413d7b012a8764cd314ed1956ac0a52e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3a01f939",
+        "filename": "keystone/tests/unit/token/test_token_model.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-25T18:26:39Z",
+      "side": 1,
+      "message": "If needed I will, I tend to err on the side of being as explicit as possible in a single test so it\u0027s easy to follow.",
+      "parentUuid": "1abeadc6_a211975e",
       "revId": "02f2d74d413d7b012a8764cd314ed1956ac0a52e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
