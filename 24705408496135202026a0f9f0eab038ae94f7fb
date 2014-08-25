@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_e23fe1d4",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-25T16:29:05Z",
+      "side": 1,
+      "message": "What if the endpoint doesn\u0027t have a region defined at all (which is perfectly valid, I think)?",
+      "revId": "24705408496135202026a0f9f0eab038ae94f7fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7d2530ad",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1319,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-25T16:29:05Z",
+      "side": 1,
+      "message": "should have an endpoint that has no region to make sure it comes through unmodified...",
+      "revId": "24705408496135202026a0f9f0eab038ae94f7fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
