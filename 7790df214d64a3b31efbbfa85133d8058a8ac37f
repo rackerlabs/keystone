@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_516cd836",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T21:05:11Z",
+      "side": 1,
+      "message": "we don\u0027t use it",
+      "revId": "7790df214d64a3b31efbbfa85133d8058a8ac37f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b1e1ac9c",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T21:05:11Z",
+      "side": 1,
+      "message": "hmm - what else are you expecting here?",
+      "revId": "7790df214d64a3b31efbbfa85133d8058a8ac37f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_91a91027",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T21:05:11Z",
+      "side": 1,
+      "message": "does this really need to be a first class thing?",
+      "revId": "7790df214d64a3b31efbbfa85133d8058a8ac37f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d130e809",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1229,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T21:05:11Z",
+      "side": 1,
+      "message": "ah; we should just go back to one second resolution as a common ground",
+      "revId": "7790df214d64a3b31efbbfa85133d8058a8ac37f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
