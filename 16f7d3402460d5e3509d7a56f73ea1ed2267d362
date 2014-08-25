@@ -16,6 +16,24 @@
       "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ec16eba6",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-25T21:28:06Z",
+      "side": 1,
+      "message": "remove_in\u003d0 means not slated for removal, it\u0027s a new functionality added to @versionutils (which is why i had an oslo sync in the chain)",
+      "parentUuid": "1abeadc6_06d148cd",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
