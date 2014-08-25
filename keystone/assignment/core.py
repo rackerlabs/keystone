@@ -26,6 +26,7 @@ from keystone.common import manager
 from keystone import config
 from keystone import exception
 from keystone.i18n import _
+from keystone.i18n import _LI
 from keystone import notifications
 from keystone.openstack.common import log
 
@@ -259,8 +260,8 @@ class Manager(manager.Manager):
                 tenant_id,
                 config.CONF.member_role_id)
         except exception.RoleNotFound:
-            LOG.info(_("Creating the default role %s "
-                       "because it does not exist."),
+            LOG.info(_LI("Creating the default role %s "
+                         "because it does not exist."),
                      config.CONF.member_role_id)
             role = {'id': CONF.member_role_id,
                     'name': CONF.member_role_name}
@@ -319,6 +320,9 @@ class Manager(manager.Manager):
 
     @notifications.created('domain')
     def create_domain(self, domain_id, domain):
+        if (not self.identity_api.multiple_domains_supported and
+                domain_id != CONF.identity.default_domain_id):
+            raise exception.Forbidden(_('Multiple domains are not supported'))
         domain.setdefault('enabled', True)
         domain['enabled'] = clean.domain_enabled(domain['enabled'])
         ret = self.driver.create_domain(domain_id, domain)
@@ -503,31 +507,9 @@ class Manager(manager.Manager):
 
     @notifications.deleted('role')
     def delete_role(self, role_id):
-        try:
-            self._delete_tokens_for_role(role_id)
-        except exception.NotImplemented:
-            # FIXME(morganfainberg): Not all backends (ldap) implement
-            # `list_role_assignments_for_role` which would have previously
-            # caused a NotImplmented error to be raised when called through
-            # the controller. Now error or proper action will always come from
-            # the `delete_role` method logic. Work needs to be done to make
-            # the behavior between drivers consistent (capable of revoking
-            # tokens for the same circumstances).  This is related to the bug
-            # https://bugs.launchpad.net/keystone/+bug/1221805
-            pass
+        self._delete_tokens_for_role(role_id)
         self.driver.delete_role(role_id)
         self.get_role.invalidate(self, role_id)
-
-    def list_role_assignments_for_role(self, role_id=None):
-        # NOTE(henry-nash): Currently the efficiency of the key driver
-        # implementation (SQL) of list_role_assignments is severely hampered by
-        # the existence of the multiple grant tables - hence there is little
-        # advantage in pushing the logic of this method down into the driver.
-        # Once the single assignment table is implemented, then this situation
-        # will be different, and this method should have its own driver
-        # implementation.
-        return [r for r in self.driver.list_role_assignments()
-                if r['role_id'] == role_id]
 
     def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
         self.driver.remove_role_from_user_and_project(user_id, tenant_id,
@@ -582,7 +564,7 @@ class Manager(manager.Manager):
             self._emit_invalidate_user_token_persistence(user_id)
 
     def _delete_tokens_for_role(self, role_id):
-        assignments = self.list_role_assignments_for_role(role_id=role_id)
+        assignments = self.list_role_assignments(role_id=role_id)
 
         # Iterate over the assignments for this role and build the list of
         # user or user+project IDs for the tokens we need to delete
@@ -667,7 +649,7 @@ class Driver(object):
         role_list = []
         for d in dict_list:
             if ((not d.get('inherited_to') and not inherited) or
-               (d.get('inherited_to') == 'projects' and inherited)):
+                    (d.get('inherited_to') == 'projects' and inherited)):
                 role_list.append(d['id'])
         return role_list
 
@@ -798,8 +780,31 @@ class Driver(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def list_role_assignments(self):
+    def list_role_assignments(self, role_id=None,
+                              user_id=None, group_ids=None,
+                              project_id=None, domain_id=None,
+                              inherited_to_projects=False):
+        """Lists role assignments.
 
+        Supports the ``OS-INHERIT`` role inheritance from the project's domain
+        if supported by the assignment driver.
+
+        :param role_id: id from the role to be filtered
+        :type role_id: str
+        :param user_id: id from the user to be filtered
+        :type user_id: str
+        :param group_ids: id from the groups to be filtered
+        :type group_ids: list
+        :param project_id: id from the project to be filtered
+        :type project_id: str
+        :param domain_id: id from the domain to be filtered
+        :type domain_id: str
+        :param inherited_to_projects: if the target to be filtered is set
+                                      to be inhereted to projects
+        :type inherited_to_projects: bool
+        :returns: list of assingments
+        :rtype: list
+        """
         raise exception.NotImplemented()  # pragma: no cover
 
     # domain crud

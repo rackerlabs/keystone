@@ -441,6 +441,43 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         after_assignments = len(self.assignment_api.list_role_assignments())
         self.assertEqual(existing_assignments + 2, after_assignments)
 
+    def test_list_role_assignments_filtered_by_group(self):
+        self.skipTest('N/A: LDAP does not support role assignments for groups')
+
+    def test_list_role_assignments_filtered_by_domain(self):
+        self.skipTest('N/A: LDAP does not support role assignments on domains')
+
+    def test_list_role_assignments_filtered_by_inherited(self):
+        self.skipTest('N/A: LDAP does not support role assignments on domains')
+
+    def test_list_role_assignments_combined_filters(self):
+        # Create a new role
+        role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_role(role['id'], role)
+
+        # Create a new user
+        user = {'name': uuid.uuid4().hex, 'password': uuid.uuid4().hex,
+                'enabled': True, 'domain_id': self.domain_default['id']}
+        user = self.identity_api.create_user(user)
+
+        # Create a new user in the new domain
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'domain_id': self.domain_default['id']}
+        self.assignment_api.create_project(project['id'], project)
+
+        # Create assignments on project
+        self.assignment_api.create_grant(user_id=user['id'],
+                                         project_id=project['id'],
+                                         role_id=role['id'])
+
+        # Check role assignments for user on project
+        assignment_list = self.assignment_api.list_role_assignments(
+            user_id=user['id'], project_id=project['id'])
+        self.assertEqual([{'user_id': user['id'],
+                           'project_id': project['id'],
+                           'role_id': role['id']}], assignment_list)
+
     def test_list_role_assignments_dumb_member(self):
         self.config_fixture.config(group='ldap', use_dumb_member=True)
         self.clear_database()
@@ -807,6 +844,50 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
         result_unicode = common_ldap_core.utf8_decode(100)
         self.assertEqual(u'100', result_unicode)
+
+    def test_list_group_role_assignment(self):
+        # When a group role assignment is created and the role assignments are
+        # listed then the group role assignment is included in the list.
+        # FIXME(blk-u): This test isn't working correctly. It's returning  a
+        # user assignment rather than a group assignment. See bug 1365787.
+        # This method should be removed and the super implementation used.
+
+        DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
+        MEMBER_ROLE_ID = 'member'
+
+        def get_member_assignments():
+            assignments = self.assignment_api.list_role_assignments()
+            return filter(lambda x: x['role_id'] == MEMBER_ROLE_ID,
+                          assignments)
+
+        orig_member_assignments = get_member_assignments()
+
+        # Create a group.
+        new_group = {
+            'domain_id': DEFAULT_DOMAIN_ID,
+            'name': self.getUniqueString(prefix='tlgra')}
+        new_group = self.identity_api.create_group(new_group)
+
+        # Create a project.
+        new_project = {
+            'id': uuid.uuid4().hex,
+            'name': self.getUniqueString(prefix='tlgra'),
+            'domain_id': DEFAULT_DOMAIN_ID}
+        self.assignment_api.create_project(new_project['id'], new_project)
+
+        # Assign a role to the group.
+        self.assignment_api.create_grant(
+            group_id=new_group['id'], project_id=new_project['id'],
+            role_id=MEMBER_ROLE_ID)
+
+        # List role assignments
+        new_member_assignments = get_member_assignments()
+
+        expected_member_assignments = orig_member_assignments + [{
+            'user_id': new_group['id'], 'project_id': new_project['id'],
+            'role_id': MEMBER_ROLE_ID}]
+        self.assertThat(new_member_assignments,
+                        matchers.Equals(expected_member_assignments))
 
 
 class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
@@ -1366,6 +1447,21 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         self.assertEqual(mock_ldap_get.return_value[1]['MaIl'][0],
                          user['email'])
 
+    def test_binary_attribute_values(self):
+        result = [(
+            'cn=junk,dc=example,dc=com',
+            {
+                'cn': ['junk'],
+                'sn': [uuid.uuid4().hex],
+                'mail': [uuid.uuid4().hex],
+                'binary_attr': ['\x00\xFF\x00\xFF']
+            }
+        ), ]
+        py_result = common_ldap_core.convert_ldap_result(result)
+        # The attribute containing the binary value should
+        # not be present in the converted result.
+        self.assertNotIn('binary_attr', py_result[0][1])
+
     def test_parse_extra_attribute_mapping(self):
         option_list = ['description:name', 'gecos:password',
                        'fake:invalid', 'invalid1', 'invalid2:',
@@ -1415,6 +1511,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                           self.assignment_api.get_domain,
                           domain['id'])
 
+    @tests.skip_if_no_multiple_domains_support
     def test_create_domain_case_sensitivity(self):
         # domains are read-only, so case sensitivity isn't an issue
         ref = {
@@ -1874,6 +1971,59 @@ class LdapIdentitySqlAssignment(BaseLDAPIdentity, tests.SQLDriverOverrides,
     def test_list_projects_for_user_with_grants(self):
         self.skipTest('Blocked by bug 1221805')
 
+    def test_list_group_role_assignment(self):
+        # When a group role assignment is created and the role assignments are
+        # listed then the group role assignment is included in the list.
+        # FIXME(blk-u): Override this test back to its original in
+        # IdentityTests because the code works for SQL assignment backend.
+        # Once 1365787 is fixed this can be removed because the super
+        # implementation will work.
+
+        DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
+        MEMBER_ROLE_ID = 'member'
+
+        def get_member_assignments():
+            assignments = self.assignment_api.list_role_assignments()
+            return filter(lambda x: x['role_id'] == MEMBER_ROLE_ID,
+                          assignments)
+
+        orig_member_assignments = get_member_assignments()
+
+        # Create a group.
+        new_group = {
+            'domain_id': DEFAULT_DOMAIN_ID,
+            'name': self.getUniqueString(prefix='tlgra')}
+        new_group = self.identity_api.create_group(new_group)
+
+        # Create a project.
+        new_project = {
+            'id': uuid.uuid4().hex,
+            'name': self.getUniqueString(prefix='tlgra'),
+            'domain_id': DEFAULT_DOMAIN_ID}
+        self.assignment_api.create_project(new_project['id'], new_project)
+
+        # Assign a role to the group.
+        self.assignment_api.create_grant(
+            group_id=new_group['id'], project_id=new_project['id'],
+            role_id=MEMBER_ROLE_ID)
+
+        # List role assignments
+        new_member_assignments = get_member_assignments()
+
+        expected_member_assignments = orig_member_assignments + [{
+            'group_id': new_group['id'], 'project_id': new_project['id'],
+            'role_id': MEMBER_ROLE_ID}]
+        self.assertThat(new_member_assignments,
+                        matchers.Equals(expected_member_assignments))
+
+    def test_create_domain(self):
+        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                  'enabled': True}
+        self.assertRaises(exception.Forbidden,
+                          self.assignment_api.create_domain,
+                          domain['id'],
+                          domain)
+
 
 class LdapIdentitySqlAssignmentWithMapping(LdapIdentitySqlAssignment):
     """Class to test mapping of default LDAP backend.
@@ -2286,3 +2436,73 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
     def test_user_id_comma_grants(self):
         self.skipTest('Only valid if it is guaranteed to be taling to '
                       'the fakeldap backend')
+
+    def test_list_group_role_assignment(self):
+        # When a group role assignment is created and the role assignments are
+        # listed then the group role assignment is included in the list.
+        # FIXME(blk-u): Override this test back to its original in
+        # IdentityTests because the code works for SQL assignment backend.
+        # Once 1365787 is fixed this can be removed because the super
+        # implementation will work.
+
+        DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
+        MEMBER_ROLE_ID = 'member'
+
+        def get_member_assignments():
+            assignments = self.assignment_api.list_role_assignments()
+            return filter(lambda x: x['role_id'] == MEMBER_ROLE_ID,
+                          assignments)
+
+        orig_member_assignments = get_member_assignments()
+
+        # Create a group.
+        new_group = {
+            'domain_id': DEFAULT_DOMAIN_ID,
+            'name': self.getUniqueString(prefix='tlgra')}
+        new_group = self.identity_api.create_group(new_group)
+
+        # Create a project.
+        new_project = {
+            'id': uuid.uuid4().hex,
+            'name': self.getUniqueString(prefix='tlgra'),
+            'domain_id': DEFAULT_DOMAIN_ID}
+        self.assignment_api.create_project(new_project['id'], new_project)
+
+        # Assign a role to the group.
+        self.assignment_api.create_grant(
+            group_id=new_group['id'], project_id=new_project['id'],
+            role_id=MEMBER_ROLE_ID)
+
+        # List role assignments
+        new_member_assignments = get_member_assignments()
+
+        expected_member_assignments = orig_member_assignments + [{
+            'group_id': new_group['id'], 'project_id': new_project['id'],
+            'role_id': MEMBER_ROLE_ID}]
+        self.assertThat(new_member_assignments,
+                        matchers.Equals(expected_member_assignments))
+
+    def test_delete_domain_with_user_added(self):
+        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                  'enabled': True}
+        project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                   'domain_id': domain['id'],
+                   'description': uuid.uuid4().hex, 'enabled': True
+                   }
+        self.assignment_api.create_domain(domain['id'], domain)
+        self.assignment_api.create_project(project['id'], project)
+        project_ref = self.assignment_api.get_project(project['id'])
+        self.assertDictEqual(project_ref, project)
+
+        self.assignment_api.create_grant(user_id=self.user_foo['id'],
+                                         project_id=project['id'],
+                                         role_id=self.role_member['id'])
+        self.assignment_api.delete_grant(user_id=self.user_foo['id'],
+                                         project_id=project['id'],
+                                         role_id=self.role_member['id'])
+        domain['enabled'] = False
+        self.assignment_api.update_domain(domain['id'], domain)
+        self.assignment_api.delete_domain(domain['id'])
+        self.assertRaises(exception.DomainNotFound,
+                          self.assignment_api.get_domain,
+                          domain['id'])
