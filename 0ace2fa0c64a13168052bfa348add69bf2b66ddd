@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_f0e25900",
+        "filename": "keystone/contrib/endpoint_policy/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-25T08:52:32Z",
+      "side": 1,
+      "message": "yep, good catch",
+      "parentUuid": "1abeadc6_626cc809",
+      "revId": "0ace2fa0c64a13168052bfa348add69bf2b66ddd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_4267cc25",
         "filename": "keystone/contrib/endpoint_policy/controllers.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-25T04:14:08Z",
       "side": 1,
       "message": "polcy? Makes me think a test is lacking...",
+      "revId": "0ace2fa0c64a13168052bfa348add69bf2b66ddd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d0e55d0b",
+        "filename": "keystone/contrib/endpoint_policy/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-25T08:52:32Z",
+      "side": 1,
+      "message": "there is, yes...need to see if I can patch in the fix to add these deletes to master while still remaining dependant on the backend endpoint policy patch.  For now, I\u0027ll add it as a limitation in the commit message",
+      "parentUuid": "1abeadc6_4267cc25",
       "revId": "0ace2fa0c64a13168052bfa348add69bf2b66ddd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_d0c8fd58",
+        "filename": "keystone/tests/test_v3_endpoint_policy.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-25T08:52:32Z",
+      "side": 1,
+      "message": "agreed - added to limitations for now",
+      "parentUuid": "1abeadc6_42350cf6",
+      "revId": "0ace2fa0c64a13168052bfa348add69bf2b66ddd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_82480489",
         "filename": "keystone/tests/test_v3_endpoint_policy.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2014-08-25T04:14:08Z",
       "side": 1,
       "message": "Redundant",
+      "revId": "0ace2fa0c64a13168052bfa348add69bf2b66ddd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7062c9ae",
+        "filename": "keystone/tests/test_v3_endpoint_policy.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-25T08:52:32Z",
+      "side": 1,
+      "message": "Damn...how did I miss these others :-)",
+      "parentUuid": "1abeadc6_82480489",
       "revId": "0ace2fa0c64a13168052bfa348add69bf2b66ddd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_905765ca",
+        "filename": "keystone/tests/test_v3_endpoint_policy.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-25T08:52:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_0254f41f",
+      "revId": "0ace2fa0c64a13168052bfa348add69bf2b66ddd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_a2c8a057",
         "filename": "keystone/tests/test_v3_endpoint_policy.py",
         "patchSetId": 6
@@ -98,6 +188,24 @@
       "writtenOn": "2014-08-25T04:14:08Z",
       "side": 1,
       "message": "nit: self.assertEqual(len(...), 1)",
+      "revId": "0ace2fa0c64a13168052bfa348add69bf2b66ddd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_50b5cdce",
+        "filename": "keystone/tests/test_v3_endpoint_policy.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-25T08:52:32Z",
+      "side": 1,
+      "message": "Doesn\u0027t the assertThat do this?  Or am I missing the point you are making?",
+      "parentUuid": "1abeadc6_a2c8a057",
       "revId": "0ace2fa0c64a13168052bfa348add69bf2b66ddd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
