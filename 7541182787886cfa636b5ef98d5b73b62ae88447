@@ -107,6 +107,23 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_429255f7",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-25T16:27:03Z",
+      "side": 1,
+      "message": "Is this part of this change?  Seems like it needs to be done, but is a separate bug?",
+      "revId": "7541182787886cfa636b5ef98d5b73b62ae88447",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_5449388d",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 13
