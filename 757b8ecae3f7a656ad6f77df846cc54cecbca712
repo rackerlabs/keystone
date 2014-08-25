@@ -53,6 +53,41 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_3f5e5513",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T14:04:24Z",
+      "side": 1,
+      "message": "++ there\u0027s no request bodies on any delete requests",
+      "parentUuid": "1abeadc6_d47ce3b7",
+      "revId": "757b8ecae3f7a656ad6f77df846cc54cecbca712",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ffaa1dd1",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T14:04:24Z",
+      "side": 1,
+      "message": "oops, spec is wrong then!",
+      "revId": "757b8ecae3f7a656ad6f77df846cc54cecbca712",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_f4339f11",
         "filename": "keystone/assignment/schema.py",
         "patchSetId": 37
@@ -81,6 +116,24 @@
       "writtenOn": "2014-08-21T01:48:06Z",
       "side": 1,
       "message": "this is a copy-paste of role_create. make a variable and share it.",
+      "revId": "757b8ecae3f7a656ad6f77df846cc54cecbca712",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3fe3b534",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-25T14:04:24Z",
+      "side": 1,
+      "message": "not quite... but maybe copy role create and then modify it here? add min properties, drop required, etc",
+      "parentUuid": "1abeadc6_94242bc6",
       "revId": "757b8ecae3f7a656ad6f77df846cc54cecbca712",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
