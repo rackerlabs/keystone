@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_396710b9",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 8
+      },
+      "lineNbr": 899,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-26T22:35:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_eaaa4684",
+      "revId": "9d9ceca1fbd81fa1d44f8f9f3b668fc0ad4dbf98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_80ed3bf2",
         "filename": "keystone/tests/test_v3_endpoint_policy.py",
         "patchSetId": 8
@@ -47,6 +65,24 @@
       "writtenOn": "2014-08-25T21:52:04Z",
       "side": 1,
       "message": "s/endpoint/endpoints/  to match /OS-ENDPOINT-POLICY/policies/\u003cpolicy-id\u003e/endpoints",
+      "revId": "9d9ceca1fbd81fa1d44f8f9f3b668fc0ad4dbf98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1955f4c5",
+        "filename": "keystone/tests/test_v3_endpoint_policy.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-26T22:35:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_80ed3bf2",
       "revId": "9d9ceca1fbd81fa1d44f8f9f3b668fc0ad4dbf98",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
