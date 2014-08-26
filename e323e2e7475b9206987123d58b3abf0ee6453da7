@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_8177e69e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-08-26T13:14:07Z",
+      "side": 1,
+      "message": "Sorry. I have rephrased the message.",
+      "parentUuid": "1abeadc6_b41e87b9",
+      "revId": "e323e2e7475b9206987123d58b3abf0ee6453da7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_d41b03c8",
         "filename": "/COMMIT_MSG",
         "patchSetId": 17
