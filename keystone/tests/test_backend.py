@@ -4724,6 +4724,97 @@ class InheritanceTests(object):
         user_projects = self.assignment_api.list_projects_for_user(user1['id'])
         self.assertEqual(5, len(user_projects))
 
+    def test_inherited_grant_for_user_on_project_crud(self):
+        user = {'name': uuid.uuid4().hex,
+                'domain_id': self.domain_default['id'],
+                'password': uuid.uuid4().hex, 'enabled': True}
+        user = self.identity_api.create_user(user)
+
+        # Create
+        self.assignment_api.create_grant(user_id=user['id'],
+                                         project_id=self.tenant_bar['id'],
+                                         role_id=self.role_member['id'],
+                                         inherited_to_projects=True)
+
+        # Read from default API
+        grant_ref = self.assignment_api.get_grant(
+            user_id=user['id'],
+            project_id=self.tenant_bar['id'],
+            role_id=self.role_member['id'],
+            inherited_to_projects=True)
+
+        self.assertEqual(self.role_member, grant_ref)
+
+        assignment_list = self.assignment_api.get_roles_for_user_and_project(
+            user['id'], self.tenant_bar['id'])
+        self.assertEqual(1, len(assignment_list))
+        self.assertIn(self.role_member['id'], assignment_list)
+
+        # Delete
+        self.assignment_api.delete_grant(user_id=user['id'],
+                                         project_id=self.tenant_bar['id'],
+                                         role_id=self.role_member['id'],
+                                         inherited_to_projects=True)
+
+        self.assertRaises(exception.RoleNotFound,
+                          self.assignment_api.get_grant,
+                          user_id=user['id'],
+                          project_id=self.tenant_bar['id'],
+                          role_id=self.role_member['id'],
+                          inherited_to_projects=True)
+
+        assignment_list = self.assignment_api.get_roles_for_user_and_project(
+            user['id'], self.tenant_bar['id'])
+        self.assertEqual([], assignment_list)
+
+    def test_inherited_grant_for_group_on_project_crud(self):
+        group = {'name': uuid.uuid4().hex,
+                 'domain_id': self.domain_default['id'],
+                 'enabled': True}
+        group = self.identity_api.create_group(group)
+        user = {'name': uuid.uuid4().hex,
+                'domain_id': self.domain_default['id'],
+                'password': uuid.uuid4().hex, 'enabled': True}
+        user = self.identity_api.create_user(user)
+        self.identity_api.add_user_to_group(user['id'], group['id'])
+
+        # Create
+        self.assignment_api.create_grant(group_id=group['id'],
+                                         project_id=self.tenant_bar['id'],
+                                         role_id=self.role_member['id'],
+                                         inherited_to_projects=True)
+
+        # Read from default API
+        grant_ref = self.assignment_api.get_grant(
+            group_id=group['id'],
+            project_id=self.tenant_bar['id'],
+            role_id=self.role_member['id'],
+            inherited_to_projects=True)
+
+        self.assertEqual(self.role_member, grant_ref)
+
+        assignment_list = self.assignment_api.get_roles_for_user_and_project(
+            user['id'], self.tenant_bar['id'])
+        self.assertEqual(1, len(assignment_list))
+        self.assertIn(self.role_member['id'], assignment_list)
+
+        # Delete
+        self.assignment_api.delete_grant(group_id=group['id'],
+                                         project_id=self.tenant_bar['id'],
+                                         role_id=self.role_member['id'],
+                                         inherited_to_projects=True)
+
+        self.assertRaises(exception.RoleNotFound,
+                          self.assignment_api.get_grant,
+                          group_id=group['id'],
+                          project_id=self.tenant_bar['id'],
+                          role_id=self.role_member['id'],
+                          inherited_to_projects=True)
+
+        assignment_list = self.assignment_api.get_roles_for_user_and_project(
+            user['id'], self.tenant_bar['id'])
+        self.assertEqual([], assignment_list)
+
 
 class FilterTests(filtering.FilterTests):
     def test_list_users_filtered(self):
