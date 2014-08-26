@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_f823e0a4",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-26T16:27:17Z",
+      "side": 1,
+      "message": "can this just default to xmlsec1 if it\u0027s already in the $PATH, or do you actually need an absolute path for some reason? for me, the value would be /usr/local/bin/xmlsec1 :(",
+      "revId": "e8afed76ff8d2394b309f9f14747033b7add8103",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
