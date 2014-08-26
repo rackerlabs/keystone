@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_a13e9027",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-26T20:19:21Z",
+      "side": 1,
+      "message": "should this not be token_ref[\u0027user\u0027][\u0027id\u0027] ?",
+      "revId": "ac29b644f025d6a6b288c72ea01489421b280246",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_61355845",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-26T20:19:21Z",
+      "side": 1,
+      "message": "as noted by stevemar in previous patchset, you\u0027re stomping on the value of user_id above here\n\nunscoped tokens *do* have user IDs, even if they might be meaningless",
+      "revId": "ac29b644f025d6a6b288c72ea01489421b280246",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2160c034",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-26T20:19:21Z",
+      "side": 1,
+      "message": "pycadf 0.6.0 support what you need, right?",
+      "revId": "ac29b644f025d6a6b288c72ea01489421b280246",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e14de8c5",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-26T20:19:21Z",
+      "side": 1,
+      "message": "you never use most of these??",
+      "revId": "ac29b644f025d6a6b288c72ea01489421b280246",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
