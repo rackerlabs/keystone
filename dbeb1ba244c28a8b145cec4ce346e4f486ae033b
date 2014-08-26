@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_746b7d85",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T01:48:59Z",
+      "side": 1,
+      "message": "probably still worth using functools.partial https://docs.python.org/2/library/functools.html",
+      "revId": "dbeb1ba244c28a8b145cec4ce346e4f486ae033b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_341f450b",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T01:48:59Z",
+      "side": 1,
+      "message": "you\u0027re re-setting it to None, it should already have a default value (or None) from line 87.",
+      "revId": "dbeb1ba244c28a8b145cec4ce346e4f486ae033b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_8f02c409",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T01:48:59Z",
+      "side": 1,
+      "message": "add a : after (topol)",
+      "revId": "dbeb1ba244c28a8b145cec4ce346e4f486ae033b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6a3396f6",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T01:48:59Z",
+      "side": 1,
+      "message": "so we create a credential object here, and attach it to where? My guess is to the initiator? If so, I\u0027d recommend doing all this in the send_saml_audit_notification method",
+      "revId": "dbeb1ba244c28a8b145cec4ce346e4f486ae033b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_0a5ce224",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 787,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T01:48:59Z",
+      "side": 1,
+      "message": "remove this line, it\u0027s already in the setup",
+      "revId": "dbeb1ba244c28a8b145cec4ce346e4f486ae033b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2a40be34",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 799,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T01:48:59Z",
+      "side": 1,
+      "message": "use python convention, _assert_last_note",
+      "revId": "dbeb1ba244c28a8b145cec4ce346e4f486ae033b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
