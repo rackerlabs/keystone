@@ -124,6 +124,18 @@ class KvsIdentity(tests.TestCase, test_backend.IdentityTests):
         self.assertThat(member_assignments,
                         matchers.Equals(new_role_assignments))
 
+    def test_list_role_assignments_filtered_by_inherited(self):
+        self.skipTest('Blocked by bug 1360406')
+
+    def test_list_role_assignments_combined_filters(self):
+        self.skipTest('Blocked by bug 1360406')
+
+    def test_inherited_grant_for_user_on_project_crud(self):
+        self.skipTest('Blocked by bug 1360406')
+
+    def test_inherited_grant_for_group_on_project_crud(self):
+        self.skipTest('Blocked by bug 1360406')
+
 
 class KvsToken(tests.TestCase, test_backend.TokenTests):
     def setUp(self):
