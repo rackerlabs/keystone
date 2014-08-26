@@ -1519,6 +1519,104 @@ class IdentityTests(object):
                           self.assignment_api.get_role,
                           role['id'])
 
+    def test_inherited_grant_for_user_on_project_crud(self):
+        user = {'name': uuid.uuid4().hex,
+                'domain_id': self.domain_default['id'],
+                'password': uuid.uuid4().hex, 'enabled': True}
+        user = self.identity_api.create_user(user)
+
+        # Create
+        self.assignment_api.create_grant(user_id=user['id'],
+                                         project_id=self.tenant_bar['id'],
+                                         role_id=self.role_member['id'],
+                                         inherited_to_projects=True)
+
+        # Read from default API
+        grant_ref = self.assignment_api.get_grant(
+            user_id=user['id'],
+            project_id=self.tenant_bar['id'],
+            role_id=self.role_member['id'],
+            inherited_to_projects=True)
+
+        self.assertEqual(self.role_member, grant_ref)
+
+        # Read from role assignments API
+        assignment_list = lambda: self.assignment_api.list_role_assignments(
+            actors=[user['id']],
+            targets=[self.tenant_bar['id']],
+            role_id=self.role_member['id'],
+            inherited_to_projects=True)
+
+        self.assertEqual({'inherited_to_projects': 'projects',
+                          'project_id': self.tenant_bar['id'],
+                          'user_id': user['id'],
+                          'role_id': self.role_member['id']},
+                         assignment_list()[0])
+
+        # Delete
+        self.assignment_api.delete_grant(user_id=user['id'],
+                                         project_id=self.tenant_bar['id'],
+                                         role_id=self.role_member['id'],
+                                         inherited_to_projects=True)
+
+        self.assertRaises(exception.RoleNotFound,
+                         self.assignment_api.get_grant,
+                         user_id=user['id'],
+                         project_id=self.tenant_bar['id'],
+                         role_id=self.role_member['id'],
+                         inherited_to_projects=True)
+
+        self.assertEqual([], assignment_list())
+
+    def test_inherited_grant_for_group_on_project_crud(self):
+        group = {'name': uuid.uuid4().hex,
+                 'domain_id': self.domain_default['id'],
+                 'enabled': True}
+        group = self.identity_api.create_group(group)
+
+        # Create
+        self.assignment_api.create_grant(group_id=group['id'],
+                                         project_id=self.tenant_bar['id'],
+                                         role_id=self.role_member['id'],
+                                         inherited_to_projects=True)
+
+        # Read from default API
+        grant_ref = self.assignment_api.get_grant(
+            group_id=group['id'],
+            project_id=self.tenant_bar['id'],
+            role_id=self.role_member['id'],
+            inherited_to_projects=True)
+
+        self.assertEqual(self.role_member, grant_ref)
+
+        # Read from role assignments API
+        assignment_list = lambda: self.assignment_api.list_role_assignments(
+            actors=[group['id']],
+            targets=[self.tenant_bar['id']],
+            role_id=self.role_member['id'],
+            inherited_to_projects=True)
+
+        self.assertEqual({'inherited_to_projects': 'projects',
+                          'project_id': self.tenant_bar['id'],
+                          'group_id': group['id'],
+                          'role_id': self.role_member['id']},
+                         assignment_list()[0])
+
+        # Delete
+        self.assignment_api.delete_grant(group_id=group['id'],
+                                         project_id=self.tenant_bar['id'],
+                                         role_id=self.role_member['id'],
+                                         inherited_to_projects=True)
+
+        self.assertRaises(exception.RoleNotFound,
+                         self.assignment_api.get_grant,
+                         group_id=group['id'],
+                         project_id=self.tenant_bar['id'],
+                         role_id=self.role_member['id'],
+                         inherited_to_projects=True)
+
+        self.assertEqual([], assignment_list())
+
     def test_update_role_404(self):
         role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.assertRaises(exception.RoleNotFound,

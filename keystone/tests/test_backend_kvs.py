@@ -76,6 +76,18 @@ class KvsIdentity(tests.TestCase, test_backend.IdentityTests):
     def test_move_project_between_domains_with_clashing_names_fails(self):
         self.skipTest('Blocked by bug 1119770')
 
+    def test_list_role_assignments_filtered_by_inherited(self):
+        self.skipTest('Blocked by bug 1360406')
+
+    def test_list_role_assignments_combined_filters(self):
+        self.skipTest('Blocked by bug 1360406')
+
+    def test_inherited_grant_for_user_on_project_crud(self):
+        self.skipTest('Blocked by bug 1360406')
+
+    def test_inherited_grant_for_group_on_project_crud(self):
+        self.skipTest('Blocked by bug 1360406')
+
 
 class KvsToken(tests.TestCase, test_backend.TokenTests):
     def setUp(self):
