@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_1d632ede",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-26T16:07:09Z",
+      "side": 1,
+      "message": "weird indentation",
+      "revId": "9077fdfe11f12a5df7bf21135df2b5c97513a444",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
