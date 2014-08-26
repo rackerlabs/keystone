@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_727388b1",
+        "filename": "keystone/common/router.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T05:20:31Z",
+      "side": 1,
+      "message": "so we only want to go down this patch for entities that have a _id ? which is why you set it to false for role_assignments?",
+      "revId": "e01af968a6d48fca5d1792637793aef0175104d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
