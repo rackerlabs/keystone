@@ -126,13 +126,13 @@ If you want to run keystone outside of a virtualenv, you can install the
 dependencies directly into your system from the requires files::
 
     # Install the dependencies for running keystone
-    $ pip install -r requirements.txt
+    $ sudo pip install -r requirements.txt
 
     # Install the dependencies for developing, testing, and running keystone
-    $ pip install -r test-requirements.txt
+    $ sudo pip install -r test-requirements.txt
 
-    # Use 'python setup.py' to link Keystone into Python's site-packages
-    $ python setup.py develop
+    # Use 'python setup.py' to link Keystone into Python's dist-packages
+    $ sudo python setup.py develop
 
 
 Verifying Keystone is set up
