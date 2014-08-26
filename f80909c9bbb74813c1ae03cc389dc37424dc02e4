@@ -16,6 +16,109 @@
       "revId": "f80909c9bbb74813c1ae03cc389dc37424dc02e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_eeea3aab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 29
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T18:55:08Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1abeadc6_ca473376",
+      "revId": "f80909c9bbb74813c1ae03cc389dc37424dc02e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_30d00c53",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T18:55:08Z",
+      "side": 1,
+      "message": "This is missing URL.",
+      "revId": "f80909c9bbb74813c1ae03cc389dc37424dc02e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_70ca84a2",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T18:55:08Z",
+      "side": 1,
+      "message": "Should this be the string_id type?",
+      "revId": "f80909c9bbb74813c1ae03cc389dc37424dc02e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_0902103e",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T18:55:08Z",
+      "side": 1,
+      "message": "Are these correct?  It doesn\u0027t match what I see here: https://github.com/openstack/keystone/blob/master/keystone/catalog/backends/sql.py#L55",
+      "revId": "f80909c9bbb74813c1ae03cc389dc37424dc02e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7058c4fa",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T18:55:08Z",
+      "side": 1,
+      "message": "Should these IDs be string_id type?",
+      "revId": "f80909c9bbb74813c1ae03cc389dc37424dc02e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d09d1859",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T18:55:08Z",
+      "side": 1,
+      "message": "We can replace this entire block with \"ref[\u0027interface\u0027] \u003d interface\" if we used \u0027public\u0027 as the default instead of None.",
+      "revId": "f80909c9bbb74813c1ae03cc389dc37424dc02e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
