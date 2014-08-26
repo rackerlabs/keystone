@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_e7cd05b9",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-26T15:23:26Z",
+      "side": 1,
+      "message": "i just noticed that this looks like it\u0027s going to cause a transient, but other tests do the same and i\u0027ve never seen it fail... leaving it as out of scope",
+      "revId": "02aa3851c9ec107fd1d9dd1f032f231b64c00013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
