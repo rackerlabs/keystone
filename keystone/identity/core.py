@@ -843,6 +843,10 @@ class Driver(object):
         """Indicates if Driver supports domains."""
         return True
 
+    def multiple_domains_support(self):
+        return (self.is_domain_aware() or
+                CONF.identity.domain_specific_drivers_enabled)
+
     def generates_uuids(self):
         """Indicates if Driver generates UUIDs as the local entity ID."""
         return True
