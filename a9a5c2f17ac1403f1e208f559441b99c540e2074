@@ -69,6 +69,23 @@
       "revId": "a9a5c2f17ac1403f1e208f559441b99c540e2074",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_92f49f88",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-26T08:36:53Z",
+      "side": 1,
+      "message": ".... and endpoint.get(\u0027region\u0027) is not None:",
+      "revId": "a9a5c2f17ac1403f1e208f559441b99c540e2074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
