@@ -34,6 +34,245 @@
       "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b430b508",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-26T01:24:53Z",
+      "side": 1,
+      "message": "this is a terrible UX.",
+      "parentUuid": "1abeadc6_ec16eba6",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_af81404f",
+        "filename": "keystone/contrib/revoke/migrate_repo/versions/002_add_audit_id_and_chain_to_revoke_table.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-26T01:24:53Z",
+      "side": 1,
+      "message": "this isn\u0027t tested.",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_cf511c10",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-26T01:24:53Z",
+      "side": 1,
+      "message": "revert this change it\u0027s unrelated.",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_742e1da7",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-26T01:24:53Z",
+      "side": 1,
+      "message": "leave the , on the last element so it\u0027s easier to change.",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6f4ac856",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-26T01:24:53Z",
+      "side": 1,
+      "message": "revert the changes in this file.",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2f4a9027",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 576,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-26T01:24:53Z",
+      "side": 1,
+      "message": "why is this a different context and no the same one?",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_8f51e4da",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-26T01:24:53Z",
+      "side": 1,
+      "message": "use \u0027 consistently.",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6f02c8b5",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-26T01:24:53Z",
+      "side": 1,
+      "message": "leave the trailing ,",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2fe61017",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-26T01:24:53Z",
+      "side": 1,
+      "message": "most of these changes could be split to a separate commit.",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6f19e821",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1426,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-26T01:24:53Z",
+      "side": 1,
+      "message": "put the name of the extension in the failure message so we know which failed.",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_8f1644f0",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1436,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-26T01:24:53Z",
+      "side": 1,
+      "message": "put the name of the extension in the failure message so we know which failed.",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_afd22032",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1445,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-26T01:24:53Z",
+      "side": 1,
+      "message": "put the name of the extension in the failure message so we know which failed.",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_0ff874e4",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-26T01:24:53Z",
+      "side": 1,
+      "message": "this case isn\u0027t tested.",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_efb33808",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-26T01:24:53Z",
+      "side": 1,
+      "message": "doesn\u0027t this have to handle revoke_chain, too?",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
