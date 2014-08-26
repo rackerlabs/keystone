@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_ec68a189",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T04:34:33Z",
+      "side": 1,
+      "message": "note that in the API spec, this is project_user_role (no \u0027s\u0027), I suspect the API spec is wrong, as this would conflict with getting a single role.\n\nTossed up: https://review.openstack.org/#/c/116784/",
+      "revId": "867f3ec7edb6b68ba7f2fbac2942879edfe8928d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6c9e5158",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T04:34:33Z",
+      "side": 1,
+      "message": "Is this missing from the spec?\n\napparently its been undocumented for months:\nhttps://bugs.launchpad.net/openstack-api-site/+bug/1304606",
+      "revId": "867f3ec7edb6b68ba7f2fbac2942879edfe8928d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6cb011f5",
+        "filename": "keystone/auth/routers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T04:34:33Z",
+      "side": 1,
+      "message": "I assume it\u0027s up to Jamie to add these to https://review.openstack.org/#/c/115423 ? or anyone can in a followup patch.\n\nseems reasonable",
+      "revId": "867f3ec7edb6b68ba7f2fbac2942879edfe8928d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_0ada864b",
         "filename": "keystone/identity/routers.py",
         "patchSetId": 6
