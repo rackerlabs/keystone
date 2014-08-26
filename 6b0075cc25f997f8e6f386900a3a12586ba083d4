@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_36c39f58",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-26T21:56:04Z",
+      "side": 1,
+      "message": "It isn\u0027t obvious from this that ref might be updated (to add in the endpoint[\u0027region_id\u0027]).  It might be better if _validate_endpoint_region() actually returned the ref, so then this line would be more obvious, i.e.:\n\nref \u003d self._validate_endpoint_region(ref)",
+      "revId": "6b0075cc25f997f8e6f386900a3a12586ba083d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_e22ec6a4",
         "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
         "patchSetId": 21
