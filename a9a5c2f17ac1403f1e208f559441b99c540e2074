@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_520f6ce1",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T05:33:07Z",
+      "side": 1,
+      "message": "this makes more sense now",
+      "revId": "a9a5c2f17ac1403f1e208f559441b99c540e2074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_921f4409",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T05:33:07Z",
+      "side": 1,
+      "message": "nit: i think you want to end this conditional with `is not None`",
+      "revId": "a9a5c2f17ac1403f1e208f559441b99c540e2074",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
