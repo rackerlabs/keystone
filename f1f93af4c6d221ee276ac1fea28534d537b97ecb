@@ -410,6 +410,91 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_19e7b441",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:23:38Z",
+      "side": 1,
+      "message": "missing \n\n  list_projects_associated_with_endpoint_group",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_36539f3a",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:23:38Z",
+      "side": 1,
+      "message": "this takes an id and ref as arguments",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5631fb09",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:23:38Z",
+      "side": 1,
+      "message": "update here too",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b63ecfd8",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:23:38Z",
+      "side": 1,
+      "message": "s/json/dictionary",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f61f676e",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:23:38Z",
+      "side": 1,
+      "message": "delete_endpoint_group",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_f962f8d7",
         "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
         "patchSetId": 9
