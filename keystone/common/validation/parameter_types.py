@@ -9,6 +9,7 @@
 # WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 # License for the specific language governing permissions and limitations
 # under the License.
+
 """Common parameter types for validating a request reference."""
 
 boolean = {
@@ -36,7 +37,7 @@ hex_uuid = {
 }
 
 description = {
-    'type': ['string', 'null']
+    'type': 'string'
 }
 
 url = {
