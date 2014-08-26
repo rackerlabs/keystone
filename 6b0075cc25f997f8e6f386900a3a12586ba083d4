@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_1655c3c5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T21:51:39Z",
+      "side": 1,
+      "message": "Does this need a DocImpact?",
+      "revId": "6b0075cc25f997f8e6f386900a3a12586ba083d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_56d01b53",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T21:51:39Z",
+      "side": 1,
+      "message": "Are we assuming that if you are using region_id that if already exists? I think that\u0027s fine, but wanted clarification.",
+      "revId": "6b0075cc25f997f8e6f386900a3a12586ba083d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e22ec6a4",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T21:51:39Z",
+      "side": 1,
+      "message": "You\u0027re not taking into account the size difference between the columns",
+      "revId": "6b0075cc25f997f8e6f386900a3a12586ba083d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_820fd287",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T21:51:39Z",
+      "side": 1,
+      "message": "I think there should be a test for deleting a region with endpoints. Possibly one for a region with a child region that has endpoints.",
+      "revId": "6b0075cc25f997f8e6f386900a3a12586ba083d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_02ed82b7",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T21:51:39Z",
+      "side": 1,
+      "message": "This is strange. The original test was checking for an invalid region, which is why it got back a 400. Why would this give a 404?",
+      "revId": "6b0075cc25f997f8e6f386900a3a12586ba083d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4215ba99",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T21:51:39Z",
+      "side": 1,
+      "message": "Should we also validate here the the new region was created?",
+      "revId": "6b0075cc25f997f8e6f386900a3a12586ba083d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
