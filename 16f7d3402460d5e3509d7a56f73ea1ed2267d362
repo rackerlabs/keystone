@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_8940ff36",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-26T04:03:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_cf511c10",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_742e1da7",
         "filename": "keystone/contrib/revoke/model.py",
         "patchSetId": 12
@@ -100,6 +118,24 @@
       "writtenOn": "2014-08-26T01:24:53Z",
       "side": 1,
       "message": "leave the , on the last element so it\u0027s easier to change.",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a93dbbbd",
+        "filename": "keystone/contrib/revoke/model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-26T04:03:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_742e1da7",
       "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -123,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_c94af754",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-26T04:03:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_6f4ac856",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_2f4a9027",
         "filename": "keystone/tests/test_auth.py",
         "patchSetId": 12
@@ -134,6 +188,24 @@
       "writtenOn": "2014-08-26T01:24:53Z",
       "side": 1,
       "message": "why is this a different context and no the same one?",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2a0b5e2c",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 576,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-26T04:03:07Z",
+      "side": 1,
+      "message": "Changed the test to resolve this.",
+      "parentUuid": "1abeadc6_2f4a9027",
       "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -174,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_a964dbe5",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-26T04:03:07Z",
+      "side": 1,
+      "message": "Done, but i generally disagree with the trailing comma nit in lists.",
+      "parentUuid": "1abeadc6_6f02c8b5",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_2fe61017",
         "filename": "keystone/tests/test_sql_upgrade.py",
         "patchSetId": 12
@@ -208,6 +298,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_29a0cbf3",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1426,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-26T04:03:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_6f19e821",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_8f1644f0",
         "filename": "keystone/tests/test_sql_upgrade.py",
         "patchSetId": 12
@@ -225,6 +333,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_49a50703",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1436,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-26T04:03:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_8f1644f0",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_afd22032",
         "filename": "keystone/tests/test_sql_upgrade.py",
         "patchSetId": 12
@@ -236,6 +362,24 @@
       "writtenOn": "2014-08-26T01:24:53Z",
       "side": 1,
       "message": "put the name of the extension in the failure message so we know which failed.",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_69aac3d5",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1445,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-26T04:03:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_afd22032",
       "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -270,6 +414,24 @@
       "writtenOn": "2014-08-26T01:24:53Z",
       "side": 1,
       "message": "doesn\u0027t this have to handle revoke_chain, too?",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a54c0178",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-26T04:03:07Z",
+      "side": 1,
+      "message": "No, deletion of tokens is done explicitly by id. the _list_tokens method is used to find associated tokens via user_id, trust_id, etc. We never utilized expires for the standard Token Revocation List.",
+      "parentUuid": "1abeadc6_efb33808",
       "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
