@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_070cc141",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 672,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T15:41:32Z",
+      "side": 1,
+      "message": "at line 616 you used [] instead, consistency",
+      "revId": "eb03a553b710a6563214c814c4b0f9493332bbd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_a7d6ad25",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 8
@@ -13,6 +30,23 @@
       "writtenOn": "2014-08-26T15:25:59Z",
       "side": 1,
       "message": "cool!",
+      "revId": "eb03a553b710a6563214c814c4b0f9493332bbd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1aaa54d2",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 700,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T15:41:32Z",
+      "side": 1,
+      "message": "yep, it\u0027s cool.",
       "revId": "eb03a553b710a6563214c814c4b0f9493332bbd1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
