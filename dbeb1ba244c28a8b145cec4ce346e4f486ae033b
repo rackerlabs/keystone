@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_56074081",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-26T20:19:29Z",
+      "side": 1,
+      "message": "why does a token_ref have a \u0027user\u0027 and a \u0027user_id\u0027 attribute? this isn\u0027t supposed to be [\u0027user\u0027][\u0027id\u0027] ?",
+      "revId": "dbeb1ba244c28a8b145cec4ce346e4f486ae033b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_746b7d85",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 7
@@ -30,6 +47,24 @@
       "writtenOn": "2014-08-26T01:48:59Z",
       "side": 1,
       "message": "you\u0027re re-setting it to None, it should already have a default value (or None) from line 87.",
+      "revId": "dbeb1ba244c28a8b145cec4ce346e4f486ae033b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f6accc8e",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-26T20:19:29Z",
+      "side": 1,
+      "message": "eek ++",
+      "parentUuid": "1abeadc6_341f450b",
       "revId": "dbeb1ba244c28a8b145cec4ce346e4f486ae033b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
