@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_0fb6afdc",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T05:01:10Z",
+      "side": 1,
+      "message": "for another time, this code is repeated three times now, you could make a function to just return 2 tokens.",
+      "revId": "ea185a25a235d339d0d9282fbc08905fa1949b92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
