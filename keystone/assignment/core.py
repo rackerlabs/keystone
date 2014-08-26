@@ -177,6 +177,65 @@ class Manager(manager.Manager):
         self.credential_api.delete_credentials_for_project(tenant_id)
         return ret
 
+    def _get_inherited_roles_for_group_and_project(self, user_id, project_id):
+
+        def _get_group_project_inherited_roles(user_id, project_ref):
+            role_list = []
+            group_refs = self.identity_api.list_groups_for_user(user_id)
+            for x in group_refs:
+                try:
+                    metadata_ref = self._get_metadata(
+                        group_id=x['id'], tenant_id=project_ref['id'])
+                    role_list += self._roles_from_role_dicts(
+                        metadata_ref.get('roles', {}), True)
+                except exception.MetadataNotFound:
+                    # no group grant, skip
+                    pass
+
+            return role_list
+
+        if not user_id or not project_id:
+            return []
+
+        project_ref = self.get_project(project_id)
+        group_role_list = _get_group_project_inherited_roles(user_id,
+                                                             project_ref)
+
+        if project_ref.get('parent_project_id') is None:
+            return group_role_list
+
+        return list(set(
+            group_role_list + self._get_inherited_roles_for_group_and_project(
+                user_id, project_ref.get('parent_project_id'))))
+
+    def _get_inherited_roles_for_user_and_project(self, user_id, project_id):
+
+        def _get_user_project_inherited_roles(user_id, project_ref):
+            role_list = []
+            try:
+                metadata_ref = self._get_metadata(user_id=user_id,
+                                                  tenant_id=project_ref['id'])
+                role_list += self._roles_from_role_dicts(
+                    metadata_ref.get('roles', {}), True)
+            except exception.MetadataNotFound:
+                pass
+
+            return role_list
+
+        if not user_id or not project_id:
+            return []
+
+        project_ref = self.get_project(project_id)
+        user_role_list = _get_user_project_inherited_roles(user_id,
+                                                           project_ref)
+
+        if project_ref.get('parent_project_id') is None:
+            return user_role_list
+
+        return list(set(
+            user_role_list + self._get_inherited_roles_for_user_and_project(
+                user_id, project_ref.get("parent_project_id"))))
+
     def get_roles_for_user_and_project(self, user_id, tenant_id):
         """Get the roles associated with a user within given project.
 
@@ -191,11 +250,33 @@ class Manager(manager.Manager):
 
         """
         def _get_group_project_roles(user_id, project_ref):
-            group_ids = self._get_group_ids_for_user_id(user_id)
-            return self.driver.get_group_project_roles(
-                group_ids,
-                project_ref['id'],
-                project_ref['domain_id'])
+            role_list = []
+            group_refs = self.identity_api.list_groups_for_user(user_id)
+            for x in group_refs:
+                try:
+                    metadata_ref = self._get_metadata(
+                        group_id=x['id'], tenant_id=project_ref['id'])
+                    role_list += self._roles_from_role_dicts(
+                        metadata_ref.get('roles', {}), False)
+                    role_list += self._roles_from_role_dicts(
+                        metadata_ref.get('roles', {}), True)
+                except exception.MetadataNotFound:
+                    # no group grant, skip
+                    pass
+
+                if CONF.os_inherit.enabled:
+                    # Now get any inherited group roles for the owning domain
+                    try:
+                        metadata_ref = self._get_metadata(
+                            group_id=x['id'],
+                            domain_id=project_ref['domain_id'])
+                        role_list += self._roles_from_role_dicts(
+                            metadata_ref.get('roles', {}), True)
+                    except (exception.MetadataNotFound,
+                            exception.NotImplemented):
+                        pass
+
+            return role_list
 
         def _get_user_project_roles(user_id, project_ref):
             role_list = []
@@ -204,6 +285,8 @@ class Manager(manager.Manager):
                                                   tenant_id=project_ref['id'])
                 role_list = self._roles_from_role_dicts(
                     metadata_ref.get('roles', {}), False)
+                role_list += self._roles_from_role_dicts(
+                    metadata_ref.get('roles', {}), True)
             except exception.MetadataNotFound:
                 pass
 
@@ -222,6 +305,13 @@ class Manager(manager.Manager):
         project_ref = self.get_project(tenant_id)
         user_role_list = _get_user_project_roles(user_id, project_ref)
         group_role_list = _get_group_project_roles(user_id, project_ref)
+
+        if project_ref.get('parent_project_id'):
+            user_role_list += self._get_inherited_roles_for_user_and_project(
+                user_id, project_ref.get('parent_project_id'))
+            group_role_list += self._get_inherited_roles_for_group_and_project(
+                user_id, project_ref.get('parent_project_id'))
+
         # Use set() to process the list to remove any duplicates
         return list(set(user_role_list + group_role_list))
 

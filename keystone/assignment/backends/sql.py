@@ -141,10 +141,6 @@ class Assignment(keystone_assignment.Driver):
             if project_id:
                 self._get_project(session, project_id)
 
-            if project_id and inherited_to_projects:
-                msg = _('Inherited roles can only be assigned to domains')
-                raise exception.Conflict(type='role grant', details=msg)
-
         type = calculate_type(user_id, group_id, project_id, domain_id)
         try:
             with sql.transaction() as session:
@@ -270,6 +266,16 @@ class Assignment(keystone_assignment.Driver):
             # Inherited roles are enabled, so check to see if this user has any
             # such roles (direct or group) on any domain, in which case we must
             # add in all the projects in that domain.
+
+            children_ids = set()
+            for assignment in assignments:
+                if ((assignment.type == AssignmentType.USER_PROJECT or
+                        assignment.type == AssignmentType.GROUP_PROJECT) and
+                        assignment.inherited):
+                    children_ids = children_ids.union(
+                        [x['id'] for x in self.get_project_subtree(
+                            assignment.target_id)])
+            project_ids = project_ids.union(children_ids)
 
             domain_ids = set()
             for assignment in assignments:
