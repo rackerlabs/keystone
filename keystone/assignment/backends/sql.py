@@ -105,9 +105,7 @@ class Assignment(keystone_assignment.Driver):
         for assignment in refs:
             role_ref = {}
             role_ref['id'] = assignment.role_id
-            if assignment.inherited and (
-                    assignment.type == AssignmentType.USER_DOMAIN or
-                    assignment.type == AssignmentType.GROUP_DOMAIN):
+            if assignment.inherited:
                 role_ref['inherited_to'] = 'projects'
             metadata_ref['roles'].append(role_ref)
 
@@ -140,10 +138,6 @@ class Assignment(keystone_assignment.Driver):
                 self._get_domain(session, domain_id)
             if project_id:
                 self._get_project(session, project_id)
-
-            if project_id and inherited_to_projects:
-                msg = _('Inherited roles can only be assigned to domains')
-                raise exception.Conflict(type='role grant', details=msg)
 
         type = calculate_type(user_id, group_id, project_id, domain_id)
         try:
@@ -270,6 +264,16 @@ class Assignment(keystone_assignment.Driver):
             # Inherited roles are enabled, so check to see if this user has any
             # such roles (direct or group) on any domain, in which case we must
             # add in all the projects in that domain.
+
+            children_ids = set()
+            for assignment in assignments:
+                if ((assignment.type == AssignmentType.USER_PROJECT or
+                        assignment.type == AssignmentType.GROUP_PROJECT) and
+                        assignment.inherited):
+                    children_ids.update(
+                        (x['id'] for x in
+                            self.get_project_subtree(assignment.target_id)))
+                project_ids.update(children_ids)
 
             domain_ids = set()
             for assignment in assignments:
