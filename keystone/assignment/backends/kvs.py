@@ -25,6 +25,7 @@ CONF = config.CONF
 
 
 class Assignment(kvs.Base, assignment.Driver):
+
     """KVS Assignment backend.
 
     This backend uses the following mappings to store data:
@@ -206,6 +207,20 @@ class Assignment(kvs.Base, assignment.Driver):
 
             try:
                 self.get_project(meta_project_or_domain_id)
+
+                project_id = meta_project_or_domain_id
+                project_ids.add(project_id)
+
+                if CONF.os_inherit.enabled:
+                    data = self.db.get(key)
+                    for role in data.get('roles', []):
+                        if role.get('inherited_to', '') == 'projects':
+                            # If there is any inherited role, add the current
+                            # project subtree as projects for this user
+                            project_ids.update(
+                                x['id']
+                                for x in self.get_project_subtree(project_id))
+                            break
             except exception.NotFound:
                 # target is not a project, could it be a domain
                 if not CONF.os_inherit.enabled:
@@ -228,10 +243,6 @@ class Assignment(kvs.Base, assignment.Driver):
                                     meta_project_or_domain_id):
                                 project_ids.add(project['id'])
                         break
-                continue
-
-            project_id = meta_project_or_domain_id
-            project_ids.add(project_id)
 
         project_refs = []
 
