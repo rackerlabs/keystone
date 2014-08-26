@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_907000de",
+        "filename": "keystone/tests/test_backend_endpoint_policy.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-26T19:03:57Z",
+      "side": 1,
+      "message": "It\u0027s done the way the backend/backend_sql tests are done...the actually testing is run from test_backend_endpoint_policy_sql.py",
+      "parentUuid": "1abeadc6_8a51d2da",
+      "revId": "9e07277a9baa6764d76cb5649ff53a9f5ae8da85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_aad20e32",
         "filename": "keystone/tests/test_backend_endpoint_policy.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-26T01:59:12Z",
       "side": 1,
       "message": "i\u0027m confused as to how this worked, considering this class doesn\u0027t inherit from anything.",
+      "revId": "9e07277a9baa6764d76cb5649ff53a9f5ae8da85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d058b859",
+        "filename": "keystone/tests/test_backend_endpoint_policy.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-26T19:03:57Z",
+      "side": 1,
+      "message": "the tests are run from test_backend_endpoint_policy_sql.py",
+      "parentUuid": "1abeadc6_aad20e32",
       "revId": "9e07277a9baa6764d76cb5649ff53a9f5ae8da85",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
