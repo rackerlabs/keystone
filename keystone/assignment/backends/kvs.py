@@ -225,6 +225,16 @@ class Assignment(kvs.Base, assignment.Driver):
             project_id = meta_project_or_domain_id
             project_ids.add(project_id)
 
+            if CONF.os_inherit.enabled:
+                children_ids = set()
+                data = self.db.get(key)
+                for role in data.get('roles', []):
+                    if role.get('inherited_to', '') == 'projects':
+                        children_ids.update(
+                            (x['id'] for x in self.get_project_subtree(
+                                project_id)))
+                project_ids.update(children_ids)
+
         project_refs = []
 
         for project_id in project_ids:
