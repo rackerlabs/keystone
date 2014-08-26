@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_eada2fe8",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-26T14:14:14Z",
+      "side": 1,
+      "message": "yeah, that\u0027s just wrong. remove never \u003d None",
+      "parentUuid": "1abeadc6_b430b508",
+      "revId": "16f7d3402460d5e3509d7a56f73ea1ed2267d362",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_af81404f",
         "filename": "keystone/contrib/revoke/migrate_repo/versions/002_add_audit_id_and_chain_to_revoke_table.py",
         "patchSetId": 12
