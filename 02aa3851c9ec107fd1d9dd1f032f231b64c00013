@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_a7f14d6c",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T15:35:55Z",
+      "side": 1,
+      "message": "i feel the rename was unnecessary, especially since you call it once to create a copy, then udpate with with inherit_enable.",
+      "revId": "02aa3851c9ec107fd1d9dd1f032f231b64c00013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_e7cd05b9",
         "filename": "keystone/tests/test_versions.py",
         "patchSetId": 8
