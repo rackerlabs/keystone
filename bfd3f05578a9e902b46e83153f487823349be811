@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_3631e40b",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-26T19:54:38Z",
+      "side": 1,
+      "message": "assignment_schema isn\u0027t used in this patch set, this will probably fail pep8.",
+      "revId": "bfd3f05578a9e902b46e83153f487823349be811",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
