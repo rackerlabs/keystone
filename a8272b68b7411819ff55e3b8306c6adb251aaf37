@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_3c61c3a8",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T20:41:36Z",
+      "side": 1,
+      "message": "This should be inheriting from testtools.TestCase like https://review.openstack.org/#/c/116954/.",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3cd62328",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T20:41:36Z",
+      "side": 1,
+      "message": "Many of the docstrings here don\u0027t match the style guide. http://docs.openstack.org/developer/hacking/#docstrings",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_9ce65715",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T20:41:36Z",
+      "side": 1,
+      "message": "This one too.",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_bce153fe",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T20:41:36Z",
+      "side": 1,
+      "message": "This one too.",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_dcf0cfcb",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T20:41:36Z",
+      "side": 1,
+      "message": "This one too.",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1cba47e1",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T20:41:36Z",
+      "side": 1,
+      "message": "This one too.",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5cb4bff1",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T20:41:36Z",
+      "side": 1,
+      "message": "This one too.",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_dcc7ef62",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T20:41:36Z",
+      "side": 1,
+      "message": "This one too.",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_9c7bb728",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T20:41:36Z",
+      "side": 1,
+      "message": "Make this list a constant like in the other reviews. Probably better at the class level for this one.",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1ca167a9",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T20:41:36Z",
+      "side": 1,
+      "message": "This one too.",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_9c949745",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T20:41:36Z",
+      "side": 1,
+      "message": "Make that list a constant like in the other reviews. Probably better at the class level for this one.",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_fcbe6bad",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T20:41:36Z",
+      "side": 1,
+      "message": "We\u0027re not using hex_uuid anymore right?",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3c070383",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-26T20:41:36Z",
+      "side": 1,
+      "message": "Is this right?",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
