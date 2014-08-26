@@ -16,6 +16,40 @@
       "revId": "e15b105ed7d04e0cf7fe2720c2ed6634f0e29730",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6f572827",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-26T01:47:05Z",
+      "side": 1,
+      "message": "using scope \u003d ref.get(\u0027scope\u0027) would remove a lot of duplication throughout here.",
+      "revId": "e15b105ed7d04e0cf7fe2720c2ed6634f0e29730",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2f7610d9",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 698,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-26T01:47:05Z",
+      "side": 1,
+      "message": "lines 696-698 could be\n\n role_id \u003d ref.get(\u0027role\u0027, {\u0027id\u0027: \u0027Unknown\u0027).get(\u0027id\u0027, \u0027Unknown\u0027)",
+      "revId": "e15b105ed7d04e0cf7fe2720c2ed6634f0e29730",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
