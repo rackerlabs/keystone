@@ -1,0 +1,22 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Haneef Ali <haneef.ali@hp.com>
+Code-Review+1: Arun Kant <arun.kant@hp.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+1: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+1: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+1: Brad Topol <btopol@us.ibm.com>
+Code-Review+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: David Stanek <dstanek@dstanek.com>
+Code-Review+1: Michael Solberg <msolberg@redhat.com>
+Code-Review+1: Marek Denis <marek.denis@cern.ch>
+Code-Review+1: David J Hu <david.hu@hp.com>
+Code-Review+1: Sam Leong <chio-fai-sam.leong@hp.com>
+Code-Review+1: Ryan Oshima <ryan.oshima@hp.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 26 Aug 2014 00:53:21 +0000
+Reviewed-on: https://review.openstack.org/94517
+Project: openstack/keystone
+Branch: refs/heads/stable/havana
