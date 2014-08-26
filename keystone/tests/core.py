@@ -213,6 +213,19 @@ def skip_if_cache_disabled(*sections):
     return wrapper
 
 
+def skip_if_not_domain_aware(api):
+    def wrapper(f):
+        @functools.wraps(f)
+        def inner(*args, **kwargs):
+            test_obj = args[0]
+            identity_api = getattr(test_obj, api, None)
+            if identity_api and not identity_api.is_domain_aware():
+                    raise testcase.TestSkipped('Backend is not domain aware')
+            return f(*args, **kwargs)
+        return inner
+    return wrapper
+
+
 class UnexpectedExit(Exception):
     pass
 

@@ -1415,6 +1415,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                           self.assignment_api.get_domain,
                           domain['id'])
 
+    @tests.skip_if_not_domain_aware('identity_api')
     def test_create_domain_case_sensitivity(self):
         # domains are read-only, so case sensitivity isn't an issue
         ref = {
@@ -1874,6 +1875,14 @@ class LdapIdentitySqlAssignment(BaseLDAPIdentity, tests.SQLDriverOverrides,
     def test_list_projects_for_user_with_grants(self):
         self.skipTest('Blocked by bug 1221805')
 
+    def test_create_domain(self):
+        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                  'enabled': True}
+        self.assertRaises(exception.Forbidden,
+                          self.assignment_api.create_domain,
+                          domain['id'],
+                          domain)
+
 
 class LdapIdentitySqlAssignmentWithMapping(LdapIdentitySqlAssignment):
     """Class to test mapping of default LDAP backend.
@@ -2286,3 +2295,28 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
     def test_user_id_comma_grants(self):
         self.skipTest('Only valid if it is guaranteed to be taling to '
                       'the fakeldap backend')
+
+    def test_delete_domain_with_user_added(self):
+        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                  'enabled': True}
+        project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                   'domain_id': domain['id'],
+                   'description': uuid.uuid4().hex, 'enabled': True
+                   }
+        self.assignment_api.create_domain(domain['id'], domain)
+        self.assignment_api.create_project(project['id'], project)
+        project_ref = self.assignment_api.get_project(project['id'])
+        self.assertDictEqual(project_ref, project)
+
+        self.assignment_api.create_grant(user_id=self.user_foo['id'],
+                                         project_id=project['id'],
+                                         role_id=self.role_member['id'])
+        self.assignment_api.delete_grant(user_id=self.user_foo['id'],
+                                         project_id=project['id'],
+                                         role_id=self.role_member['id'])
+        domain['enabled'] = False
+        self.assignment_api.update_domain(domain['id'], domain)
+        self.assignment_api.delete_domain(domain['id'])
+        self.assertRaises(exception.DomainNotFound,
+                          self.assignment_api.get_domain,
+                          domain['id'])
