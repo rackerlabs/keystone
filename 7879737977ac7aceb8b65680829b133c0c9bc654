@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_0d721b11",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2014-08-26T18:36:12Z",
+      "side": 1,
+      "message": "Changes were modified?",
+      "revId": "7879737977ac7aceb8b65680829b133c0c9bc654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6d5aaf84",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 10046
+      },
+      "writtenOn": "2014-08-26T18:36:12Z",
+      "side": 1,
+      "message": "These changes include",
+      "revId": "7879737977ac7aceb8b65680829b133c0c9bc654",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
