@@ -16,6 +16,24 @@
       "revId": "c21549f44ca69581b92e3f4117892275d9d3004e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_69464325",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-26T03:20:36Z",
+      "side": 1,
+      "message": "A good thing to fix down the line (we should revisit moving to blinker)",
+      "parentUuid": "1abeadc6_2cb0e3f3",
+      "revId": "c21549f44ca69581b92e3f4117892275d9d3004e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
