@@ -649,7 +649,13 @@ class RoleAssignmentV3(controller.V3Controller):
         if 'project_id' in entity:
             formatted_entity['scope'] = (
                 {'project': {'id': entity['project_id']}})
-            target_link = '/projects/%s' % entity['project_id']
+            if 'inherited_to_projects' in entity:
+                formatted_entity['scope']['OS-INHERIT:inherited_to'] = (
+                    'projects')
+                target_link = '/OS-INHERIT/projects/%s' % entity['project_id']
+                suffix = '/inherited_to_projects'
+            else:
+                target_link = '/projects/%s' % entity['project_id']
         if 'domain_id' in entity:
             formatted_entity['scope'] = (
                 {'domain': {'id': entity['domain_id']}})
@@ -725,7 +731,28 @@ class RoleAssignmentV3(controller.V3Controller):
                           (group_id, user['id'])))
         return user_entry
 
-    def _build_project_equivalent_of_user_domain_role(
+    def _build_proj_equivalent_of_user_parent_role(
+            self, context, project_id, parent_id, template):
+        """Create a user project assignment equivalent to the parent
+        project one.
+
+        The template has had the parent 'project' entity removed, so
+        substitute a 'project' one, modifying the 'assignment' link
+        to match.
+
+        """
+        project_entry = copy.deepcopy(template)
+        project_entry['scope']['project'] = {'id': project_id}
+        project_entry['links']['assignment'] = (
+            self.base_url(
+                context,
+                '/OS-INHERIT/projects/%s/users/%s/roles/%s'
+                '/inherited_to_projects' % (
+                    parent_id, project_entry['user']['id'],
+                    project_entry['role']['id'])))
+        return project_entry
+
+    def _build_proj_equivalent_of_user_domain_role(
             self, context, project_id, domain_id, template):
         """Create a user project assignment equivalent to the domain one.
 
@@ -745,7 +772,30 @@ class RoleAssignmentV3(controller.V3Controller):
                     project_entry['role']['id'])))
         return project_entry
 
-    def _build_project_equivalent_of_group_domain_role(
+    def _build_proj_equivalent_of_group_parent_role(
+            self, context, user_id, group_id, project_id, parent_id, template):
+        """Create a user project equivalent to the parent project group one.
+
+        The template has had the parent 'project' and 'group' entities removed,
+        so substitute a 'user-project' one, modifying the 'assignment' link
+        to match.
+
+        """
+        project_entry = copy.deepcopy(template)
+        project_entry['user'] = {'id': user_id}
+        project_entry['scope']['project'] = {'id': project_id}
+        project_entry['links']['assignment'] = (
+            self.base_url(context,
+                          '/OS-INHERIT/projects/%s/groups/%s/roles/%s'
+                          '/inherited_to_projects' % (
+                              parent_id, group_id,
+                              project_entry['role']['id'])))
+        project_entry['links']['membership'] = (
+            self.base_url(context, '/groups/%s/users/%s' %
+                          (group_id, user_id)))
+        return project_entry
+
+    def _build_proj_equivalent_of_group_domain_role(
             self, context, user_id, group_id, project_id, domain_id, template):
         """Create a user project equivalent to the domain group one.
 
@@ -780,38 +830,64 @@ class RoleAssignmentV3(controller.V3Controller):
           a group.
 
         """
-
-        project_ids = (
-            [x['id'] for x in
-                self.assignment_api.list_projects_in_domain(
-                    ref['scope']['domain']['id'])])
         base_entry = copy.deepcopy(ref)
-        domain_id = base_entry['scope']['domain']['id']
-        base_entry['scope'].pop('domain')
+        inherit_from_project = 'project' in base_entry['scope']
 
         new_refs = []
-        for p in project_ids:
-            if project_id and p != project_id:
-                continue
+        if inherit_from_project:
+            # If it is an inherited assignment in a project hierarchy,
+            # the root project also have to be returned
+            new_refs.append(ref)
 
-            if 'group' in base_entry:
-                members = self._get_group_members(base_entry)
-                if user_id:
-                    members = [x for x in members
-                               if x['id'] == user_id]
-                sub_entry = copy.deepcopy(base_entry)
-                group_id = sub_entry['group']['id']
-                sub_entry.pop('group')
+            project_ids = [x['id'] for x in
+                           self.assignment_api.get_project_subtree(
+                               ref['scope']['project']['id'])]
+            target_id = base_entry['scope']['project']['id']
+            base_entry['scope'].pop('project')
+        else:
+            project_ids = [x['id'] for x in
+                           self.assignment_api.list_projects_in_domain(
+                               ref['scope']['domain']['id'])]
+            target_id = base_entry['scope']['domain']['id']
+            base_entry['scope'].pop('domain')
+
+        # If it is being filtered by project, then ignore other projects
+        if project_id:
+            project_ids = [x for x in project_ids if x == project_id]
+
+        if 'group' in base_entry:
+            members = self._get_group_members(base_entry)
+
+            # If it is being filtered by user, then ignore other users
+            if user_id:
+                members = [x for x in members if x['id'] == user_id]
+
+            group_id = base_entry['group']['id']
+            base_entry.pop('group')
+
+            for p in project_ids:
                 for m in members:
-                    new_entry = (
-                        self._build_project_equivalent_of_group_domain_role(
-                            context, m['id'], group_id, p,
-                            domain_id, sub_entry))
+                    if inherit_from_project:
+                        new_entry = (
+                            self._build_proj_equivalent_of_group_parent_role(
+                                context, m['id'], group_id, p,
+                                target_id, base_entry))
+                    else:
+                        new_entry = (
+                            self._build_proj_equivalent_of_group_domain_role(
+                                context, m['id'], group_id, p,
+                                target_id, base_entry))
                     new_refs.append(new_entry)
-            else:
-                new_entry = (
-                    self._build_project_equivalent_of_user_domain_role(
-                        context, p, domain_id, base_entry))
+        else:
+            for p in project_ids:
+                if inherit_from_project:
+                    new_entry = (
+                        self._build_proj_equivalent_of_user_parent_role(
+                            context, p, target_id, base_entry))
+                else:
+                    new_entry = (
+                        self._build_proj_equivalent_of_user_domain_role(
+                            context, p, target_id, base_entry))
                 new_refs.append(new_entry)
 
         return new_refs
@@ -883,6 +959,13 @@ class RoleAssignmentV3(controller.V3Controller):
 
         return new_refs
 
+    def _filter_inherited(self, entry):
+        if ('inherited_to_projects' in entry and
+                not CONF.os_inherit.enabled):
+            return False
+        else:
+            return True
+
     def _get_actors(self, user_id, group_id, effective):
         actors = None
         if user_id:
@@ -908,13 +991,6 @@ class RoleAssignmentV3(controller.V3Controller):
             targets = [domain_id]
 
         return targets
-
-    def _filter_inherited(self, entry):
-        if ('inherited_to_projects' in entry and
-                not CONF.os_inherit.enabled):
-            return False
-        else:
-            return True
 
     def _extract_query_params(self, context, filters):
         query_params = {}
