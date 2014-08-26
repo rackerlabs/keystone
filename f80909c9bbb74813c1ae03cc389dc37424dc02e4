@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_fc4f4b32",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 29
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-26T20:34:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_ca473376",
+      "revId": "f80909c9bbb74813c1ae03cc389dc37424dc02e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_30d00c53",
         "filename": "keystone/catalog/schema.py",
         "patchSetId": 29
@@ -48,6 +66,24 @@
       "writtenOn": "2014-08-26T18:55:08Z",
       "side": 1,
       "message": "This is missing URL.",
+      "revId": "f80909c9bbb74813c1ae03cc389dc37424dc02e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_819c345f",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-26T20:34:33Z",
+      "side": 1,
+      "message": "I don\u0027t think URL is a region property? \n\nhttps://github.com/openstack/identity-api/blob/master/v3/src/markdown/identity-api-v3.md#create-region-post-regions\n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/sql/migrate_repo/versions/037_add_region_table.py#L25-L28",
+      "parentUuid": "1abeadc6_30d00c53",
       "revId": "f80909c9bbb74813c1ae03cc389dc37424dc02e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_618398cc",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-26T20:34:33Z",
+      "side": 1,
+      "message": "i was basing this off of: \n\nhttps://github.com/openstack/identity-api/blob/master/v3/src/markdown/identity-api-v3.md#services-v3services\n\nbut yes, checking the actual database schema and I think type, enabled, and ID are the only things that are required, if name is supplied in the request it is shoved into the \u0027extra\u0027 column.\n\nThe identity-api documentation should be updated as well.",
+      "parentUuid": "1abeadc6_0902103e",
+      "revId": "f80909c9bbb74813c1ae03cc389dc37424dc02e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_7058c4fa",
         "filename": "keystone/catalog/schema.py",
         "patchSetId": 29
@@ -105,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_9c12d756",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-26T20:34:33Z",
+      "side": 1,
+      "message": "You mean with this change? \n\nhttps://review.openstack.org/#/c/108862/",
+      "parentUuid": "1abeadc6_7058c4fa",
+      "revId": "f80909c9bbb74813c1ae03cc389dc37424dc02e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_d09d1859",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 29
@@ -116,6 +188,24 @@
       "writtenOn": "2014-08-26T18:55:08Z",
       "side": 1,
       "message": "We can replace this entire block with \"ref[\u0027interface\u0027] \u003d interface\" if we used \u0027public\u0027 as the default instead of None.",
+      "revId": "f80909c9bbb74813c1ae03cc389dc37424dc02e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3c7703a1",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-26T20:34:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_d09d1859",
       "revId": "f80909c9bbb74813c1ae03cc389dc37424dc02e4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
