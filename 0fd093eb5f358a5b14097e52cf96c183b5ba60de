@@ -34,6 +34,24 @@
       "revId": "0fd093eb5f358a5b14097e52cf96c183b5ba60de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_09ddb070",
+        "filename": "keystone/common/profiler.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-26T17:44:54Z",
+      "side": 1,
+      "message": "YEah the translation hints are the _LW(), _LI() stuff from keystone.i18n module\n\nYou\u0027ll see it elsewhere in the code base. it just replaces _ with _L\u003clog_level\u003e so translators know the priority",
+      "parentUuid": "1abeadc6_76c4655f",
+      "revId": "0fd093eb5f358a5b14097e52cf96c183b5ba60de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
