@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_355815fa",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-26T08:58:54Z",
+      "side": 1,
+      "message": "nit: better not to add extra blank lines",
+      "revId": "5a8481956a7460a8be6252cf2518018adcacd9cc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
