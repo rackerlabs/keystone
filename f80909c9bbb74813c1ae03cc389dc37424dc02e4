@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_ca473376",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 29
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-08-26T14:13:09Z",
+      "side": 1,
+      "message": "I had another patch related with this topic in https://bugs.launchpad.net/keystone/+bug/1284430 and I\u0027ve abandoned in favor or this patch. So, I think could be a good idea add Closes-bug in the commit message, like:\n\nCloses-Bug: #1284430",
+      "revId": "f80909c9bbb74813c1ae03cc389dc37424dc02e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
