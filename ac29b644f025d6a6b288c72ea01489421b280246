@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_c1aaac19",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T20:24:00Z",
+      "side": 1,
+      "message": "yes, it should be.",
+      "parentUuid": "1abeadc6_a13e9027",
+      "revId": "ac29b644f025d6a6b288c72ea01489421b280246",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_61355845",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 8
@@ -64,6 +82,24 @@
       "writtenOn": "2014-08-26T20:19:21Z",
       "side": 1,
       "message": "you never use most of these??",
+      "revId": "ac29b644f025d6a6b288c72ea01489421b280246",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_c171ccdf",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T20:24:00Z",
+      "side": 1,
+      "message": "the pycadf federated credential should be created here, and that\u0027ll use the other args.\n\nthen attach that to the initiator.",
+      "parentUuid": "1abeadc6_e14de8c5",
       "revId": "ac29b644f025d6a6b288c72ea01489421b280246",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
