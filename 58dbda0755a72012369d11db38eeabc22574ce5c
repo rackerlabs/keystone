@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_3e8e2dd1",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-26T12:31:29Z",
+      "side": 1,
+      "message": "Since this is called from create and update, we might beed to be a bit more clever.  While fine for create, think of the following update scenario.\n\n1) I\u0027m using \u0027region\u0027 rather than \u0027region_id\"\n\n2) I create the endpoint with endpoint[\u0027region\u0027] \u003d my-region\n\n3) This succeeds and my-region is auto-created\n\n4) I then want to move the endpoint to my-other-region\n\n5) So I do:\n* ref \u003d get_endpoint()\n* ref[\u0027region\u0027] \u003d my-other-region\n*update_endpoint()\n\n...which will not work, since region_id is ALSO defined\n\nWhat I think we need to do is examine both region and region_id for the update case and see if either have been changed.  If they are updating using \u0027region\u0027 then we support that (and auto create if necessary)",
+      "revId": "58dbda0755a72012369d11db38eeabc22574ce5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1e2091f6",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-26T12:31:29Z",
+      "side": 1,
+      "message": "This comment would be better after the subsequent if endpoint.get(\u0027region\u0027) line...",
+      "revId": "58dbda0755a72012369d11db38eeabc22574ce5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
