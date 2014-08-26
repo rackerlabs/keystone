@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_aa12f75f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-26T14:14:59Z",
+      "side": 1,
+      "message": "a couple of things:\n\n1) I don\u0027t think domain_id is allowed to be None here\n\n2) I think you also need to check if domain_specific_drivers are enabled, since it might be that although the default domain is not domain aware, other domains are supported via other domain specific config files\n\nPerhaps this whole test should sit are the identity manager layer (e.g. self.identity_api.multiple_domains_support() ) rather than encode the logic in a test in assignment.",
+      "revId": "cdd6f58fb4f4261a3fa5c76ee70bfbda449bf72b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
