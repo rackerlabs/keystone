@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_47db191b",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-26T15:31:36Z",
+      "side": 1,
+      "message": "I believe that in v3 version, the region_id should be provided precedence over region entry. For maintaining the backward compatibility, region is considered, region_id is not provided in the request. so we should not change the behavior.",
+      "parentUuid": "1abeadc6_3e8e2dd1",
+      "revId": "58dbda0755a72012369d11db38eeabc22574ce5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_1e2091f6",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 20
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-26T12:31:29Z",
       "side": 1,
       "message": "This comment would be better after the subsequent if endpoint.get(\u0027region\u0027) line...",
+      "revId": "58dbda0755a72012369d11db38eeabc22574ce5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_07f8417b",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-26T15:31:36Z",
+      "side": 1,
+      "message": "will do in the next patch",
+      "parentUuid": "1abeadc6_1e2091f6",
       "revId": "58dbda0755a72012369d11db38eeabc22574ce5c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
