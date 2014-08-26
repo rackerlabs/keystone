@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_15fdcc3b",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-26T14:29:35Z",
+      "side": 1,
+      "message": "this should be update_project_validator.validate",
+      "revId": "07e7a37e7ae1841a47cd3ccbd207ea540a2f6361",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3593a8fb",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-26T14:29:35Z",
+      "side": 1,
+      "message": "this should be update_domain_validator.validate",
+      "revId": "07e7a37e7ae1841a47cd3ccbd207ea540a2f6361",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
