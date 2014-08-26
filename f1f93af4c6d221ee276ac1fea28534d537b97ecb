@@ -1,0 +1,531 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_9920249d",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "I don\u0027t see list_endpoint_groups implemented:\n\nhttps://github.com/openstack/identity-api/blob/master/v3/src/markdown/identity-api-v3-os-ep-filter-ext.md#list-all-endpoint-groups-get-os-ep-filterendpoint_groups",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_96263367",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "set nullable \u003d true,\n\nalso there is a major typo here:\n\n  description \u003d name \u003d ...",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3650ffd3",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "I don\u0027t think this is needed, the one under keystone.common.sql should be fine.",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_9658f3fb",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "rely on sql.to_dict ? \n\nI don\u0027t think this is needed",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b6aecf96",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "capitalize Project\n\nProject to Endpoint group relationship table.",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_96b473f3",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "you have 2 primary keys defined here?",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_56dd7b13",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "definitely no, let the backend do basic store/retrieval, any computations involving other apis should be at the controller level",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_568f3b23",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "might want to create your own exception class for endpoint groups.",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f69da758",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "call this delete_endpoint_group\n\nreserve remove for when the object stays in tact, like removing a role from a user, it doesn\u0027t delete either.",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_162063f6",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "Add a comment here? I didn\u0027t know you could just create an entry by referencing the table, neat.",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_562bbbea",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "same as line 203, condense into 1 function",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d6d0abf9",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "return something meaningful much earlier, maybe the endpoint_group_refs?",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_56b65bdd",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "this should happen at the controller level. definitely not the backend level",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f64e87c1",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "this seems useless, it\u0027s used once at the controller level,\n\njust call self.endpoint_filter.get_endpoint_group(some_id), and get the filter?",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b92320a6",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "I don\u0027t see list_endpoint_groups implemented:\n\nhttps://github.com/openstack/identity-api/blob/master/v3/src/markdown/identity-api-v3-os-ep-filter-ext.md#list-all-endpoint-groups-get-os-ep-filterendpoint_groups",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b6eb2f77",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "i don\u0027t see any changes to policy.json or v3 policy.json, so right now these APIs cant be reached",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_56ee5b8c",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "require attribute name?\n\ni would like to see some validation of filters, right now I could create a filter with a useless value",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_16fce33d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "delete this line, it should return 204 no content.",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b6b96f7b",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "delete_endpoint_group",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d6afcb29",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "Delete",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7666f72a",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "remove this line",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_36a55f47",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "try to not use \\\n\nwrap in () instead",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f6d5a7b7",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "self.endpoint_filter_api.get_endpoint_group(endpoint_group_id)[\u0027filters\u0027] ?",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_193414dd",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "missing list_endpoint_groups",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f962f8d7",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "no, create a new migration repo, 002_add_endpoint_groups.py",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f9a918de",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "set nullable \u003d false",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_799ee8b9",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "set nullable \u003d true",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b9a880dc",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "set nullable \u003d false\n\nalso you had this as json blob in sql backend",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5974cc9b",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "2 primary keys?",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_79850858",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "there should also be a GET /OS-EP-FILTER/endpoint_groups",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d9953c89",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-26T22:22:11Z",
+      "side": 1,
+      "message": "add a get action to list all endpoint groups",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
