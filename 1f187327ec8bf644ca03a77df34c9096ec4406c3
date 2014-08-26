@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_a18f8774",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-08-26T11:41:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ac7a964_e84a4282",
+      "revId": "1f187327ec8bf644ca03a77df34c9096ec4406c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac7a964_a334ebde",
         "filename": "keystone/tests/test_sync_migrations.py",
         "patchSetId": 64
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-15T01:11:57Z",
       "side": 1,
       "message": "I don\u0027t see this used anywhere. What\u0027s it supposed to do? Add a docstring.",
+      "revId": "1f187327ec8bf644ca03a77df34c9096ec4406c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_dced4690",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-08-26T11:41:38Z",
+      "side": 1,
+      "message": "This method is overrided method from oslo.db.sqlalchemy.test_migrations.ModelsMigrationsSync, as described in the docstring of this mixin. https://github.com/openstack/oslo.db/blob/master/oslo/db/sqlalchemy/test_migrations.py#L296\n\n\nhttps://github.com/openstack/oslo.db/blob/master/oslo/db/sqlalchemy/test_migrations.py#L406",
+      "parentUuid": "7ac7a964_a334ebde",
       "revId": "1f187327ec8bf644ca03a77df34c9096ec4406c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_bc7deab3",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-08-26T11:41:38Z",
+      "side": 1,
+      "message": "It is not so easy, sometimes we need to ignore some tables. \n\n\"Return True for objects that should be compared.\" as described in the original method docstring, not all tables in a database.",
+      "parentUuid": "7ac7a964_23a61b11",
+      "revId": "1f187327ec8bf644ca03a77df34c9096ec4406c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac7a964_63af33e4",
         "filename": "keystone/tests/test_sync_migrations.py",
         "patchSetId": 64
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_d7cfe1b1",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-08-26T11:41:38Z",
+      "side": 1,
+      "message": "This is an overrided abstract method https://github.com/openstack/oslo.db/blob/master/oslo/db/sqlalchemy/test_migrations.py#L279\n\nWe need it because the base mixin doesn\u0027t know what the engine needs every particular test case in a projects. So to avoid congestion of the __init__ method, we prepared interface to provide an engine. Keystone is pretty plain case, so it looks strange, but in common case we need it.",
+      "parentUuid": "7ac7a964_63af33e4",
+      "revId": "1f187327ec8bf644ca03a77df34c9096ec4406c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac7a964_83ac4fef",
         "filename": "keystone/tests/test_sync_migrations.py",
         "patchSetId": 64
@@ -81,6 +153,24 @@
       "writtenOn": "2014-08-15T01:11:57Z",
       "side": 1,
       "message": "This doesn\u0027t seem useful. Why don\u0027t I just use sql.ModelBase.metadata?",
+      "revId": "1f187327ec8bf644ca03a77df34c9096ec4406c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_77c0cd7c",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 64
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-08-26T11:41:38Z",
+      "side": 1,
+      "message": "Same description as previous one.",
+      "parentUuid": "7ac7a964_83ac4fef",
       "revId": "1f187327ec8bf644ca03a77df34c9096ec4406c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
