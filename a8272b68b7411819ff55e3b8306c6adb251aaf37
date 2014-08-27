@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_dda25bfb",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T20:15:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_3c61c3a8",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_3cd62328",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-26T20:41:36Z",
       "side": 1,
       "message": "Many of the docstrings here don\u0027t match the style guide. http://docs.openstack.org/developer/hacking/#docstrings",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_dd797b83",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T20:15:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_3cd62328",
       "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_1d73f380",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T20:15:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_9ce65715",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_bce153fe",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 8
@@ -64,6 +118,24 @@
       "writtenOn": "2014-08-26T20:41:36Z",
       "side": 1,
       "message": "This one too.",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_fd5ab7f0",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T20:15:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_bce153fe",
       "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_dd55fbc2",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T20:15:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_dcf0cfcb",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_1cba47e1",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 8
@@ -98,6 +188,24 @@
       "writtenOn": "2014-08-26T20:41:36Z",
       "side": 1,
       "message": "This one too.",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_9d5f03e5",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T20:15:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_1cba47e1",
       "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_bd64bfb9",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T20:15:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_5cb4bff1",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_dcc7ef62",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 8
@@ -132,6 +258,24 @@
       "writtenOn": "2014-08-26T20:41:36Z",
       "side": 1,
       "message": "This one too.",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7d4f8734",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T20:15:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_dcc7ef62",
       "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_fd28f734",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T20:15:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_9c7bb728",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_1ca167a9",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 8
@@ -166,6 +328,24 @@
       "writtenOn": "2014-08-26T20:41:36Z",
       "side": 1,
       "message": "This one too.",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5d52cbde",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T20:15:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_1ca167a9",
       "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_1d21334d",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T20:15:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_9c949745",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_fcbe6bad",
         "filename": "keystone/trust/schema.py",
         "patchSetId": 8
@@ -206,6 +404,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_5daacb71",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T20:15:53Z",
+      "side": 1,
+      "message": "Done, refactored to use parameter_types.id_string instead.",
+      "parentUuid": "1abeadc6_fcbe6bad",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_3c070383",
         "filename": "keystone/trust/schema.py",
         "patchSetId": 8
@@ -217,6 +433,24 @@
       "writtenOn": "2014-08-26T20:41:36Z",
       "side": 1,
       "message": "Is this right?",
+      "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_dd0fbb37",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T20:15:53Z",
+      "side": 1,
+      "message": "Nope, fixing.",
+      "parentUuid": "1abeadc6_3c070383",
       "revId": "a8272b68b7411819ff55e3b8306c6adb251aaf37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
