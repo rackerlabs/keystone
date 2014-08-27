@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_cef2c799",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T06:17:55Z",
+      "side": 1,
+      "message": "nit, you can define token_id \u003d auth_payload[\u0027id\u0027] at line 51, and use token_id. But this works.",
+      "revId": "0074d0fbcdfa3c54f9b33815c5afca250beeca56",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
