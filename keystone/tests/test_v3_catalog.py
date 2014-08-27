@@ -435,6 +435,13 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         ref['enabled'] = True
         self.assertValidEndpointResponse(r, ref)
 
+    def test_create_endpoint_with_invalid_service_id_fails(self):
+        ref = self.new_endpoint_ref(service_id=uuid.uuid4().hex)
+        r = self.post(
+            '/endpoints',
+            body={'endpoint': ref},
+            expected_status=400)
+
     def test_create_endpoint_enabled_true(self):
         """Call ``POST /endpoints`` with enabled: true."""
         ref = self.new_endpoint_ref(service_id=self.service_id,
@@ -527,6 +534,13 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             body={'endpoint': ref})
         ref['enabled'] = True
         self.assertValidEndpointResponse(r, ref)
+
+    def test_update_endpoint_with_invalid_service_id_fails(self):
+        r = self.patch(
+            '/endpoints/%(endpoint_id)s' % {
+                'endpoint_id': self.endpoint_id},
+            body={'endpoint': {'service_id': uuid.uuid4().hex}},
+            expected_status=400)
 
     def test_update_endpoint_enabled_true(self):
         """Call ``PATCH /endpoints/{endpoint_id}`` with enabled: True."""
