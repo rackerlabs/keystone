@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_521aba6f",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-27T19:13:13Z",
+      "side": 1,
+      "message": "I still think this should be a 400 since it\u0027s a validation error.  I think the test should be renamed to test_create_endpoint_with_invalid_region_id.",
+      "revId": "7a55e2e108ca419f606d73930b12a1ec73020d6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
