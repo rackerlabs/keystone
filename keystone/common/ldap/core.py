@@ -1689,7 +1689,9 @@ class EnabledEmuMixIn(BaseLdap):
                 except ldap.NO_SUCH_OBJECT:
                     attr_list = [('objectClass', ['groupOfNames']),
                                  ('member',
-                                     [self._id_to_dn(object_id)])]
+                                 [self._id_to_dn(object_id)]),
+                                 (self.id_attr,
+                                 self._dn_to_id(self.enabled_emulation_dn))]
                     if self.use_dumb_member:
                         attr_list[1][1].append(self.dumb_member)
                     conn.add_s(self.enabled_emulation_dn, attr_list)
