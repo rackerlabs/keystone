@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_6880cb46",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T04:43:20Z",
+      "side": 1,
+      "message": "i\u0027m going to remove this option",
+      "parentUuid": "1abeadc6_a5bf6efb",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_4a794cfb",
         "filename": "keystone/common/config.py",
         "patchSetId": 35
@@ -117,6 +135,24 @@
       "writtenOn": "2014-08-27T03:51:58Z",
       "side": 1,
       "message": "which would all be true by default if you use tempfile.mkdtemp()",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e8b4db36",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T04:43:20Z",
+      "side": 1,
+      "message": "since it\u0027s a single file, i don\u0027t think it\u0027s necessary to use mkdtemp()... using just tempfile.NamedTemporaryFile which calls mkstemp() (same as mkdtemp but no directory)",
+      "parentUuid": "1abeadc6_e5b96616",
       "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
