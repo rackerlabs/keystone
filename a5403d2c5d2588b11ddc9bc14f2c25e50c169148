@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7ac7a964_f34e836e",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-27T06:05:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ac7a964_c7e71311",
+      "revId": "a5403d2c5d2588b11ddc9bc14f2c25e50c169148",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac7a964_a7869711",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7ac7a964_13521f13",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-27T06:05:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ac7a964_a7869711",
+      "revId": "a5403d2c5d2588b11ddc9bc14f2c25e50c169148",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac7a964_c7ce3383",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2014-08-15T19:00:38Z",
       "side": 1,
       "message": "consider updating this line if you create a local user_id variable",
+      "revId": "a5403d2c5d2588b11ddc9bc14f2c25e50c169148",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ac7a964_3359db36",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-27T06:05:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ac7a964_c7ce3383",
       "revId": "a5403d2c5d2588b11ddc9bc14f2c25e50c169148",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
