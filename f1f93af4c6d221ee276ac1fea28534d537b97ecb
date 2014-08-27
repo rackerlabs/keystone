@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_540ac621",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_9920249d",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_96263367",
         "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-26T22:22:11Z",
       "side": 1,
       "message": "set nullable \u003d true,\n\nalso there is a major typo here:\n\n  description \u003d name \u003d ...",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ecd7984d",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_96263367",
       "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_accda0b9",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "If I remove these overridden methods then I get complaints about an \"extra\" column being required.",
+      "parentUuid": "1abeadc6_3650ffd3",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_9658f3fb",
         "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
         "patchSetId": 9
@@ -64,6 +118,24 @@
       "writtenOn": "2014-08-26T22:22:11Z",
       "side": 1,
       "message": "rely on sql.to_dict ? \n\nI don\u0027t think this is needed",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_397d43e8",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Same as above.",
+      "parentUuid": "1abeadc6_9658f3fb",
       "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_6cbd48d7",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_b6aecf96",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_96b473f3",
         "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
         "patchSetId": 9
@@ -98,6 +188,24 @@
       "writtenOn": "2014-08-26T22:22:11Z",
       "side": 1,
       "message": "you have 2 primary keys defined here?",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4f4a3e84",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_96b473f3",
       "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_4ca16ca8",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_56dd7b13",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_568f3b23",
         "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
         "patchSetId": 9
@@ -132,6 +258,24 @@
       "writtenOn": "2014-08-26T22:22:11Z",
       "side": 1,
       "message": "might want to create your own exception class for endpoint groups.",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d9c44f42",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_568f3b23",
       "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_cca2dc99",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done. Thanks for the explanation.",
+      "parentUuid": "1abeadc6_f69da758",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_162063f6",
         "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
         "patchSetId": 9
@@ -166,6 +328,24 @@
       "writtenOn": "2014-08-26T22:22:11Z",
       "side": 1,
       "message": "Add a comment here? I didn\u0027t know you could just create an entry by referencing the table, neat.",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ca5d5c4a",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_162063f6",
       "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_8520b79c",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_562bbbea",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_d6d0abf9",
         "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
         "patchSetId": 9
@@ -200,6 +398,24 @@
       "writtenOn": "2014-08-26T22:22:11Z",
       "side": 1,
       "message": "return something meaningful much earlier, maybe the endpoint_group_refs?",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a523f3a5",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_d6d0abf9",
       "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_c539cfd9",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_56b65bdd",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_f64e87c1",
         "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
         "patchSetId": 9
@@ -234,6 +468,24 @@
       "writtenOn": "2014-08-26T22:22:11Z",
       "side": 1,
       "message": "this seems useless, it\u0027s used once at the controller level,\n\njust call self.endpoint_filter.get_endpoint_group(some_id), and get the filter?",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_054bc759",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_f64e87c1",
       "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_8ece0f82",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_b92320a6",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_b6eb2f77",
         "filename": "keystone/contrib/endpoint_filter/controllers.py",
         "patchSetId": 9
@@ -268,6 +538,24 @@
       "writtenOn": "2014-08-26T22:22:11Z",
       "side": 1,
       "message": "i don\u0027t see any changes to policy.json or v3 policy.json, so right now these APIs cant be reached",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_8e252fc4",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done - Added modified policy files to changelist",
+      "parentUuid": "1abeadc6_b6eb2f77",
       "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_de5ef0e8",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_56ee5b8c",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_16fce33d",
         "filename": "keystone/contrib/endpoint_filter/controllers.py",
         "patchSetId": 9
@@ -302,6 +608,24 @@
       "writtenOn": "2014-08-26T22:22:11Z",
       "side": 1,
       "message": "delete this line, it should return 204 no content.",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e51a4b17",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_16fce33d",
       "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -325,6 +649,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_ae682b22",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_b6b96f7b",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_d6afcb29",
         "filename": "keystone/contrib/endpoint_filter/controllers.py",
         "patchSetId": 9
@@ -336,6 +678,24 @@
       "writtenOn": "2014-08-26T22:22:11Z",
       "side": 1,
       "message": "Delete",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_8e6d2f35",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_d6afcb29",
       "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -359,6 +719,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_a807431c",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done - HEAD is now returning 204",
+      "parentUuid": "1abeadc6_7666f72a",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_36a55f47",
         "filename": "keystone/contrib/endpoint_filter/controllers.py",
         "patchSetId": 9
@@ -376,6 +754,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_6e87f3d7",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_36a55f47",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_f6d5a7b7",
         "filename": "keystone/contrib/endpoint_filter/controllers.py",
         "patchSetId": 9
@@ -387,6 +783,24 @@
       "writtenOn": "2014-08-26T22:22:11Z",
       "side": 1,
       "message": "self.endpoint_filter_api.get_endpoint_group(endpoint_group_id)[\u0027filters\u0027] ?",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d31a7016",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_f6d5a7b7",
       "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -427,6 +841,42 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_1975e797",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_19e7b441",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ce064720",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_193414dd",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_36539f3a",
         "filename": "keystone/contrib/endpoint_filter/core.py",
         "patchSetId": 9
@@ -438,6 +888,24 @@
       "writtenOn": "2014-08-26T22:23:38Z",
       "side": 1,
       "message": "this takes an id and ref as arguments",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_99c49793",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_36539f3a",
       "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -461,6 +929,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_b9bf93fb",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_5631fb09",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_b63ecfd8",
         "filename": "keystone/contrib/endpoint_filter/core.py",
         "patchSetId": 9
@@ -472,6 +958,24 @@
       "writtenOn": "2014-08-26T22:23:38Z",
       "side": 1,
       "message": "s/json/dictionary",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f95d8b16",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_b63ecfd8",
       "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -495,6 +999,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_59a67f11",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_f61f676e",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_f962f8d7",
         "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
         "patchSetId": 9
@@ -506,6 +1028,24 @@
       "writtenOn": "2014-08-26T22:22:11Z",
       "side": 1,
       "message": "no, create a new migration repo, 002_add_endpoint_groups.py",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b41b1a1b",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_f962f8d7",
       "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -529,6 +1069,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_f4fe72ad",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_f9a918de",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_799ee8b9",
         "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
         "patchSetId": 9
@@ -540,6 +1098,24 @@
       "writtenOn": "2014-08-26T22:22:11Z",
       "side": 1,
       "message": "set nullable \u003d true",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d40336b6",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_799ee8b9",
       "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -563,6 +1139,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_b4f4facf",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_b9a880dc",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_5974cc9b",
         "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
         "patchSetId": 9
@@ -574,6 +1168,24 @@
       "writtenOn": "2014-08-26T22:22:11Z",
       "side": 1,
       "message": "2 primary keys?",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_142dae46",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_5974cc9b",
       "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -597,6 +1209,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_f9a82b79",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_79850858",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_d9953c89",
         "filename": "keystone/contrib/endpoint_filter/routers.py",
         "patchSetId": 9
@@ -608,6 +1238,24 @@
       "writtenOn": "2014-08-26T22:22:11Z",
       "side": 1,
       "message": "add a get action to list all endpoint groups",
+      "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_59b11fe0",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T08:44:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_d9953c89",
       "revId": "f1f93af4c6d221ee276ac1fea28534d537b97ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
