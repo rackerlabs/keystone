@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_a5bf6efb",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-27T03:51:58Z",
+      "side": 1,
+      "message": "for security, i\u0027d suggest defaulting to tempfile.mkdtemp()",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_4a794cfb",
         "filename": "keystone/common/config.py",
         "patchSetId": 35
@@ -83,6 +100,23 @@
       "side": 1,
       "message": "Done, deleting the sentence as i agree with brant.",
       "parentUuid": "1abeadc6_aa8660d9",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e5b96616",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-27T03:51:58Z",
+      "side": 1,
+      "message": "which would all be true by default if you use tempfile.mkdtemp()",
       "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
