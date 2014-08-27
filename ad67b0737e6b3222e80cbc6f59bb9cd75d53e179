@@ -50,6 +50,142 @@
       "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_131051a7",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T15:24:11Z",
+      "side": 1,
+      "message": "nit: i think you can remove \u0027expected_status\u003d201\u0027 as thats the default for post requests.\n\ni think you should save the response \n\n  r \u003d self.post(...)\n\nand then assert some data about the response instead...",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_93e0e197",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T15:24:11Z",
+      "side": 1,
+      "message": "could do:\n\n  invalid_body \u003d copy(self.DEFAULT_ENDPOINT_GROUP_BODY)\n  invalid_body[\u0027filters\u0027] \u003d {\u0027foobar\u0027: \u0027admin\u0027}\n\njust cause it\u0027s fewer lines",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7381858e",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 611,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T15:24:11Z",
+      "side": 1,
+      "message": "can you compare name/description and filter too?",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_53aba91d",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T15:24:11Z",
+      "side": 1,
+      "message": "don\u0027t need body\u003d\u0027\u0027",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_93538138",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T15:24:11Z",
+      "side": 1,
+      "message": "s/remove/delete",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_33254dc2",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T15:24:11Z",
+      "side": 1,
+      "message": "no need for body\u003d\u0027\u0027\n\nalso, you can double check it was actually deleted:\n\n  self.get(url, expected_status\u003d404)",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ce29d08a",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 724,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T15:24:11Z",
+      "side": 1,
+      "message": "s/remove/delete",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6e1d1c66",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 733,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T15:24:11Z",
+      "side": 1,
+      "message": "same comment about body",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
