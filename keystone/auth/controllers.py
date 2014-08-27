@@ -271,6 +271,7 @@ class AuthInfo(object):
         # make sure auth method is supported
         for method_name in self.get_method_names():
             if method_name not in AUTH_METHODS:
+                raise Exception('AuthMethod %s not supported 1111' % method_name)
                 raise exception.AuthMethodNotSupported()
 
     def _validate_and_normalize_auth_data(self):
