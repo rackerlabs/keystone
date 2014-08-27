@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_572c6cac",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T19:11:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_774328af",
+      "revId": "f5cdbc372d99df04f645644c49972e482ccb6457",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_9790c444",
         "filename": "keystone/assignment/schema.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-27T19:04:21Z",
       "side": 1,
       "message": "revert this, if the domain_id is not supplied in the reference _normalize_domain_id() in the identity/controller.py will populate it. We should never have a case were the `domain_id` isn\u0027t in the reference by the time we hit backend code.",
+      "revId": "f5cdbc372d99df04f645644c49972e482ccb6457",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_372370be",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T19:11:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_9790c444",
       "revId": "f5cdbc372d99df04f645644c49972e482ccb6457",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_77a4084b",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T19:11:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_f79bb863",
+      "revId": "f5cdbc372d99df04f645644c49972e482ccb6457",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_d7addc85",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 9
@@ -64,6 +118,24 @@
       "writtenOn": "2014-08-27T19:04:21Z",
       "side": 1,
       "message": "this test is invalid",
+      "revId": "f5cdbc372d99df04f645644c49972e482ccb6457",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_377530cb",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T19:11:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_d7addc85",
       "revId": "f5cdbc372d99df04f645644c49972e482ccb6457",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_777b28be",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T19:11:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_37c8d054",
+      "revId": "f5cdbc372d99df04f645644c49972e482ccb6457",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_77bec8af",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 9
@@ -98,6 +188,24 @@
       "writtenOn": "2014-08-27T19:04:21Z",
       "side": 1,
       "message": "remove",
+      "revId": "f5cdbc372d99df04f645644c49972e482ccb6457",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d7387cf0",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T19:11:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_77bec8af",
       "revId": "f5cdbc372d99df04f645644c49972e482ccb6457",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_b73780fe",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T19:11:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_b7e300d8",
+      "revId": "f5cdbc372d99df04f645644c49972e482ccb6457",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_d7e4fce1",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 9
@@ -132,6 +258,24 @@
       "writtenOn": "2014-08-27T19:04:21Z",
       "side": 1,
       "message": "remove",
+      "revId": "f5cdbc372d99df04f645644c49972e482ccb6457",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_9732840e",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T19:11:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_d7e4fce1",
       "revId": "f5cdbc372d99df04f645644c49972e482ccb6457",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_77524836",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T19:11:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_f7e9f8b7",
+      "revId": "f5cdbc372d99df04f645644c49972e482ccb6457",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_9705247c",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 9
@@ -166,6 +328,24 @@
       "writtenOn": "2014-08-27T19:04:21Z",
       "side": 1,
       "message": "this test is invalid",
+      "revId": "f5cdbc372d99df04f645644c49972e482ccb6457",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_172674ce",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-27T19:11:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_9705247c",
       "revId": "f5cdbc372d99df04f645644c49972e482ccb6457",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
