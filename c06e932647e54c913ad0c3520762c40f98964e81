@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_c99c6511",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/002_add_endpoint_groups.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T18:13:04Z",
+      "side": 1,
+      "message": "nit: either give your company credit (HP) or don\u0027t give credit at all.",
+      "revId": "c06e932647e54c913ad0c3520762c40f98964e81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_298799b6",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 615,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T18:13:04Z",
+      "side": 1,
+      "message": "oh noes another white space",
+      "revId": "c06e932647e54c913ad0c3520762c40f98964e81",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
