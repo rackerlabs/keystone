@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_e43b0de9",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-27T16:25:02Z",
+      "side": 1,
+      "message": "This is still used in the disable cases. Disable events are used a few places,  but we don\u0027t *do* anything in the manager on this side during disable, instead the callback system listens for the disable.",
+      "parentUuid": "1abeadc6_262a722c",
+      "revId": "83fe5b0581ddf9fa3ab51b03cd3e4cf2376b1fc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_46204e49",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 9
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_242505c2",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-27T16:25:02Z",
+      "side": 1,
+      "message": "same",
+      "parentUuid": "1abeadc6_46204e49",
+      "revId": "83fe5b0581ddf9fa3ab51b03cd3e4cf2376b1fc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_a6c3e255",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 9
@@ -47,6 +83,24 @@
       "writtenOn": "2014-08-27T13:46:23Z",
       "side": 1,
       "message": "doesn\u0027t this need to be implemented before this merges?",
+      "revId": "83fe5b0581ddf9fa3ab51b03cd3e4cf2376b1fc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e4122d61",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-27T16:25:02Z",
+      "side": 1,
+      "message": "This is only used from this point forward. I could split it out.",
+      "parentUuid": "1abeadc6_a6c3e255",
       "revId": "83fe5b0581ddf9fa3ab51b03cd3e4cf2376b1fc9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
