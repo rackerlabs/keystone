@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_70bedb00",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-27T14:53:34Z",
+      "side": 1,
+      "message": "endpoint \u003d self._validate_endpoint_region(endpoint) might be better",
+      "revId": "c68f94e4608ca72699e706c4fb3ca36db8f6811b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
