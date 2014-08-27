@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_67e728e5",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-27T06:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_56074081",
+      "revId": "dbeb1ba244c28a8b145cec4ce346e4f486ae033b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_746b7d85",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-26T01:48:59Z",
       "side": 1,
       "message": "probably still worth using functools.partial https://docs.python.org/2/library/functools.html",
+      "revId": "dbeb1ba244c28a8b145cec4ce346e4f486ae033b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a7d060f8",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-27T06:04:10Z",
+      "side": 1,
+      "message": "Done.  THANKS DOLPH",
+      "parentUuid": "1abeadc6_746b7d85",
       "revId": "dbeb1ba244c28a8b145cec4ce346e4f486ae033b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_e7c33836",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-27T06:04:10Z",
+      "side": 1,
+      "message": "doh!  done. accidentally got in there when I rebased",
+      "parentUuid": "1abeadc6_341f450b",
+      "revId": "dbeb1ba244c28a8b145cec4ce346e4f486ae033b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_8f02c409",
         "filename": "keystone/notifications.py",
         "patchSetId": 7
@@ -82,6 +136,24 @@
       "writtenOn": "2014-08-26T01:48:59Z",
       "side": 1,
       "message": "add a : after (topol)",
+      "revId": "dbeb1ba244c28a8b145cec4ce346e4f486ae033b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ce772701",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-27T06:04:10Z",
+      "side": 1,
+      "message": "todo is removed cause its done",
+      "parentUuid": "1abeadc6_8f02c409",
       "revId": "dbeb1ba244c28a8b145cec4ce346e4f486ae033b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_4e5b1787",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-27T06:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_6a3396f6",
+      "revId": "dbeb1ba244c28a8b145cec4ce346e4f486ae033b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_0a5ce224",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 7
@@ -122,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_e72ed8a4",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 787,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-27T06:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_0a5ce224",
+      "revId": "dbeb1ba244c28a8b145cec4ce346e4f486ae033b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_2a40be34",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 7
@@ -133,6 +241,24 @@
       "writtenOn": "2014-08-26T01:48:59Z",
       "side": 1,
       "message": "use python convention, _assert_last_note",
+      "revId": "dbeb1ba244c28a8b145cec4ce346e4f486ae033b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2718d083",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 799,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-27T06:04:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_2a40be34",
       "revId": "dbeb1ba244c28a8b145cec4ce346e4f486ae033b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
