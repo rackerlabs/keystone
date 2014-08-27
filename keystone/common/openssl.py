@@ -51,7 +51,7 @@ class BaseCertificateConfigure(object):
         self.request_file_name = os.path.join(self.conf_dir, "req.pem")
         self.ssl_dictionary = {'conf_dir': self.conf_dir,
                                'ca_cert': conf_obj.ca_certs,
-                               'default_md': 'default',
+                               'default_md': conf_obj.message_digest_algorithm,
                                'ssl_config': self.ssl_config_file_name,
                                'ca_private_key': conf_obj.ca_key,
                                'request_file': self.request_file_name,
@@ -66,7 +66,8 @@ class BaseCertificateConfigure(object):
             openssl_ver = environment.subprocess.Popen(
                 ['openssl', 'version'],
                 stdout=environment.subprocess.PIPE).stdout.read()
-            if "OpenSSL 0." in openssl_ver:
+            if ("OpenSSL 0." in openssl_ver and
+                    self.ssl_dictionary['default_md'] == 'default'):
                 self.ssl_dictionary['default_md'] = 'sha1'
         except OSError:
             LOG.warn('Failed to invoke ``openssl version``, '

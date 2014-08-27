@@ -1459,6 +1459,12 @@
 # signing. (string value)
 #cert_subject=/C=US/ST=Unset/L=Unset/O=Unset/CN=www.example.com
 
+# Message digest algorithm to use for the signing certificate
+# (auto generated certificate). This must be an algorithm
+# supported by openssl. If 'default' is used then openssl will
+# use its default digest algorithm. (string value)
+#message_digest_algorithm=default
+
 
 [ssl]
 
@@ -1499,6 +1505,12 @@
 # SSL certificate subject (auto generated certificate).
 # (string value)
 #cert_subject=/C=US/ST=Unset/L=Unset/O=Unset/CN=localhost
+
+# Message digest algorithm to use for the SSL certificate
+# (auto generated certificate). This must be an algorithm
+# supported by openssl. If 'default' is used then openssl will
+# use its default digest algorithm. (string value)
+#message_digest_algorithm=default
 
 
 [token]
