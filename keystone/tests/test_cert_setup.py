@@ -105,6 +105,45 @@ class CertSetupTestCase(rest.RestfulTestCase):
         self.assertTrue(os.path.exists(CONF.ssl.certfile))
         self.assertTrue(os.path.exists(CONF.ssl.keyfile))
 
+    def _test_validate_cert_algorithm(self, expected_algorithm,
+                                      digest_algorithm=None):
+
+        if digest_algorithm:
+            self.config_fixture.config(
+                group='ssl', message_digest_algorithm=digest_algorithm)
+
+        self.assertFalse(os.path.exists(CONF.ssl.certfile))
+
+        # Generate cert file.
+        ssl = openssl.ConfigureSSL(None, None)
+        ssl.run()
+
+        # Extract info from the certfile.
+        subprocess = environment.subprocess
+        popen = subprocess.Popen(
+            ['openssl', 'x509', '-in', CONF.ssl.certfile, '-text', ],
+            stdout=subprocess.PIPE)
+
+        stdoutdata, dummy_stderrdata = popen.communicate()
+
+        if popen.returncode != 0:
+            raise Exception('Popen for openssl x509 failed with %s' %
+                            popen.returncode)
+
+        exp_line = 'Signature Algorithm: %s' % expected_algorithm
+        self.assertIn(exp_line, stdoutdata)
+
+    def test_validate_cert_algorithm_default(self):
+        # The default cert algorithm is sha1.
+        self._test_validate_cert_algorithm(
+            expected_algorithm='sha1WithRSAEncryption')
+
+    def test_validate_cert_algorithm_sha256(self):
+        # Can override the cert algorithm to be sha256.
+        self._test_validate_cert_algorithm(
+            digest_algorithm='sha256',
+            expected_algorithm='sha256WithRSAEncryption')
+
     def test_fetch_signing_cert(self, rebuild=False):
         pki = openssl.ConfigurePKI(None, None, rebuild=rebuild)
         pki.run()
