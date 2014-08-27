@@ -34,6 +34,24 @@
       "revId": "7a55e2e108ca419f606d73930b12a1ec73020d6b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f2f586ed",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-27T19:17:38Z",
+      "side": 1,
+      "message": "This also is changing behavior of the REST API, which is, imo a bigger concern (at least it\u0027s within the same status class, 4XX)",
+      "parentUuid": "1abeadc6_32661eee",
+      "revId": "7a55e2e108ca419f606d73930b12a1ec73020d6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
