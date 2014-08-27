@@ -38,11 +38,24 @@ notifier_opts = [
 LOG = log.getLogger(__name__)
 # NOTE(gyee): actions that can be notified. One must update this list whenever
 # a new action is supported.
-CREATED = 'created'
-DELETED = 'deleted'
-DISABLED = 'disabled'
-UPDATED = 'updated'
-INTERNAL = 'internal'
+
+
+class NotificationAction(object):
+    def __init__(self, action):
+        self.__action = action
+
+    def __repr__(self):
+        return self.__action
+
+    def __eq__(self, other):
+        return self.__action == other
+
+
+CREATED = NotificationAction('created')
+DELETED = NotificationAction('deleted')
+DISABLED = NotificationAction('disabled')
+UPDATED = NotificationAction('updated')
+INTERNAL = NotificationAction('internal')
 
 ACTIONS = frozenset([CREATED, DELETED, DISABLED, UPDATED, INTERNAL])
 # resource types that can be notified
@@ -164,7 +177,8 @@ def register_event_callback(event, resource_type, callbacks):
     if event not in ACTIONS:
         raise ValueError(_('%(event)s is not a valid notification event, must '
                            'be one of: %(actions)s') %
-                         {'event': event, 'actions': ', '.join(ACTIONS)})
+                         {'event': event,
+                          'actions': ', '.join(str(a) for a in ACTIONS)})
 
     if not hasattr(callbacks, '__iter__'):
         callbacks = [callbacks]
@@ -183,7 +197,7 @@ def register_event_callback(event, resource_type, callbacks):
                     '`%(event)s`.')
             callback_info = _get_callback_info(callback)
             callback_str = '.'.join(i for i in callback_info if i is not None)
-            event_str = '.'.join(['identity', resource_type, event])
+            event_str = '.'.join(['identity', resource_type, str(event)])
             LOG.info(msg, {'callback': callback_str, 'event': event_str})
 
 
