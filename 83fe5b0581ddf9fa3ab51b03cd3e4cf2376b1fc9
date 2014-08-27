@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_262a722c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-27T13:46:23Z",
+      "side": 1,
+      "message": "so, this method can be deleted? or is deleted in a later patchset?",
+      "revId": "83fe5b0581ddf9fa3ab51b03cd3e4cf2376b1fc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_46204e49",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-27T13:46:23Z",
+      "side": 1,
+      "message": "same",
+      "revId": "83fe5b0581ddf9fa3ab51b03cd3e4cf2376b1fc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a6c3e255",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-27T13:46:23Z",
+      "side": 1,
+      "message": "doesn\u0027t this need to be implemented before this merges?",
+      "revId": "83fe5b0581ddf9fa3ab51b03cd3e4cf2376b1fc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
