@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_c9854a5a",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T15:46:36Z",
+      "side": 1,
+      "message": "you should run this through valid filter keys too.",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_f03bcbe8",
         "filename": "keystone/contrib/endpoint_filter/core.py",
         "patchSetId": 11
@@ -217,6 +234,159 @@
       "writtenOn": "2014-08-27T15:24:11Z",
       "side": 1,
       "message": "same comment about body",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_0e5e6876",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 735,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T15:46:36Z",
+      "side": 1,
+      "message": "overall, this doesn\u0027t cut it for me, i still need proof that the association was made, \n\nit looks like you do that in test_list_projects_associated_with_endpoint_group\n\nwhich probably has a lot of code duplication with this test.\n\nI\u0027d rather you scrap this test entirely and keep test_list_projects_associated_with_endpoint_group\n\nJust add a comment saying that you are exercises both the LIST and the PUT method.\n\nor put the code in a common place\n\njust my 2c",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4e3a2035",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T15:46:36Z",
+      "side": 1,
+      "message": "if you just need 1 project, you could use self.project_id, since you extend v3RestfulTestCase, it should exist",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2e26c416",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 748,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T15:46:36Z",
+      "side": 1,
+      "message": "try not to use \\, break this up if need be",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_0e02e86e",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 752,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T15:46:36Z",
+      "side": 1,
+      "message": "last comment about body\u003d\u0027\u0027 but it\u0027s in a bunch of spots below",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6e2fdca1",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 768,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T15:46:36Z",
+      "side": 1,
+      "message": "this is a lot of duplicated code, the only diff between this and test_add_endpoint_group_to_project is one line:\n\n  self.head(url, body\u003d\u0027\u0027, expected_status\u003d204)",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4935bad9",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 790,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T15:46:36Z",
+      "side": 1,
+      "message": "maybe a helper function\n\n  def _create_valid_endpoint()\n    r \u003d self.post(self.DEFAULT_ENDPOINT_GROUP_URL,\n           body\u003dself.DEFAULT_ENDPOINT_GROUP_BODY)\n    return r.result[\u0027endpoint_group\u0027][\u0027id\u0027]\n\ni\u0027ve seen this too many times now",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a9ff2e00",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T15:46:36Z",
+      "side": 1,
+      "message": "avoid using \\\u0027s",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_696276d9",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 823,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T15:46:36Z",
+      "side": 1,
+      "message": "assert something about the data being returned",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_c99e2ab8",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 876,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T15:46:36Z",
+      "side": 1,
+      "message": "copy the default and edit the filter?",
       "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
