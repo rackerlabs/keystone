@@ -1346,7 +1346,10 @@ class BaseLdap(object):
         object_classes = self.structural_classes + [self.object_class]
         attrs = [('objectClass', object_classes)]
         for k, v in six.iteritems(values):
-            if k == 'id' or k in self.attribute_ignore:
+            if k in self.attribute_ignore:
+                continue
+            if k == 'id':
+                attrs.append((self.id_attr, [v]))
                 continue
             if v is not None:
                 attr_type = self.attribute_mapping.get(k, k)
