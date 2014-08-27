@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_d0d6cf26",
+        "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T14:54:28Z",
+      "side": 1,
+      "message": "i dont think this is actually needed",
+      "revId": "d1798c6161c72c9bdb5fbc8d8769bc150cae08e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
