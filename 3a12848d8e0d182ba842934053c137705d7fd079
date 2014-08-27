@@ -1,0 +1,310 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_aa38203e",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 35
+      },
+      "lineNbr": 713,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-27T01:05:35Z",
+      "side": 1,
+      "message": "generate the sample config file using `tox -e sample_config`.",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4a794cfb",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-27T01:05:35Z",
+      "side": 1,
+      "message": "lowercase \"assertions\"",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_aa8660d9",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-27T01:05:35Z",
+      "side": 1,
+      "message": "change \"for a\" to \"to the\"\n\nAlso, this sentence seems pretty obvious so could be removed.",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6a15289a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-27T01:05:35Z",
+      "side": 1,
+      "message": "(nit) leave a trailing , for consistency.",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_cadabce8",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-27T01:05:35Z",
+      "side": 1,
+      "message": "remove \"# noqa\"",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2ae09095",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-27T01:05:35Z",
+      "side": 1,
+      "message": "remove \"# noqa\"",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ca01dc3a",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-27T01:05:35Z",
+      "side": 1,
+      "message": "remove \"# noqa\"",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6a98c81b",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-27T01:05:35Z",
+      "side": 1,
+      "message": "remove \"# noqa\"",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ca763cd8",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-27T01:05:35Z",
+      "side": 1,
+      "message": "remove \"Keystone\". what else would it be?",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2a7c10b5",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-27T01:05:35Z",
+      "side": 1,
+      "message": "remove \"Keystone\"",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4a4a2c84",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-27T01:05:35Z",
+      "side": 1,
+      "message": "remove Keystone",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4a314c0a",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-27T01:05:35Z",
+      "side": 1,
+      "message": "this should be expiration_time since it\u0027s not the number of seconds to expiration anymore.",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_c5670fe9",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-27T01:05:35Z",
+      "side": 1,
+      "message": "this method is untested.",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_653abb99",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-27T01:05:35Z",
+      "side": 1,
+      "message": "with tempfile.NamedTemporaryFile(dir\u003dassertions_dir) as assertion_file:\n\nshould be used instead.",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e5d7ab4d",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-27T01:05:35Z",
+      "side": 1,
+      "message": "what\u0027s the point of catching one exception and re-raising it? isn\u0027t the result the same as if there was no try/except/else?",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_45885f22",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-27T01:05:35Z",
+      "side": 1,
+      "message": "remove \"# noqa\"",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a585b308",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-27T01:05:35Z",
+      "side": 1,
+      "message": "remove \"# noqa\"",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a59cd35e",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 1599,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-27T01:05:35Z",
+      "side": 1,
+      "message": "os.path.join should be used to create paths consistently.",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
