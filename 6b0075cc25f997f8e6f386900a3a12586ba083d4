@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_8541923b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-27T03:47:19Z",
+      "side": 1,
+      "message": "Sure, for v3 API, there should be a note saying that V3 APIs are backward compatible and all the endpoint response will be provided with both region and region_id in place for V3.\n\nany thing missing here to doc, please suggest. thanks",
+      "parentUuid": "1abeadc6_1655c3c5",
+      "revId": "6b0075cc25f997f8e6f386900a3a12586ba083d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_56d01b53",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 21
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-26T21:51:39Z",
       "side": 1,
       "message": "Are we assuming that if you are using region_id that if already exists? I think that\u0027s fine, but wanted clarification.",
+      "revId": "6b0075cc25f997f8e6f386900a3a12586ba083d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e215dce5",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-27T03:47:19Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "1abeadc6_56d01b53",
       "revId": "6b0075cc25f997f8e6f386900a3a12586ba083d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_4245b06e",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-27T03:47:19Z",
+      "side": 1,
+      "message": "sure. i will do this in the next patch",
+      "parentUuid": "1abeadc6_36c39f58",
+      "revId": "6b0075cc25f997f8e6f386900a3a12586ba083d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_e22ec6a4",
         "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
         "patchSetId": 21
@@ -64,6 +118,24 @@
       "writtenOn": "2014-08-26T21:51:39Z",
       "side": 1,
       "message": "You\u0027re not taking into account the size difference between the columns",
+      "revId": "6b0075cc25f997f8e6f386900a3a12586ba083d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e52fa686",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-27T03:47:19Z",
+      "side": 1,
+      "message": "Thanks for pointing out this.\nWith this patch in place tempest passes with 64 in size so we can safely assume that there won\u0027t be any side effect. But this is an valid technical fact. so shall we increase the size of region.id to 255 from 64 in size?",
+      "parentUuid": "1abeadc6_e22ec6a4",
       "revId": "6b0075cc25f997f8e6f386900a3a12586ba083d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_02c81821",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-27T03:47:19Z",
+      "side": 1,
+      "message": "As this logic is kept in the backend and there is a test case written for the same.",
+      "parentUuid": "1abeadc6_820fd287",
+      "revId": "6b0075cc25f997f8e6f386900a3a12586ba083d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_02ed82b7",
         "filename": "keystone/tests/test_v3_catalog.py",
         "patchSetId": 21
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_42a05043",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-27T03:47:19Z",
+      "side": 1,
+      "message": "Now the endpoint.region_id is made as foreign key ref to the region.id. so raising the region not found would be more appropriate. as v3 api mandates to create the region before creating the regioned endpoint. and below test case \u0027test_create_endpoint_wit_region\u0027 take cares the backward compatibility.",
+      "parentUuid": "1abeadc6_02ed82b7",
+      "revId": "6b0075cc25f997f8e6f386900a3a12586ba083d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_4215ba99",
         "filename": "keystone/tests/test_v3_catalog.py",
         "patchSetId": 21
@@ -115,6 +223,24 @@
       "writtenOn": "2014-08-26T21:51:39Z",
       "side": 1,
       "message": "Should we also validate here the the new region was created?",
+      "revId": "6b0075cc25f997f8e6f386900a3a12586ba083d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_c29380f8",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 10487
+      },
+      "writtenOn": "2014-08-27T03:47:19Z",
+      "side": 1,
+      "message": "sure. i will update the next patch with this check in place",
+      "parentUuid": "1abeadc6_4215ba99",
       "revId": "6b0075cc25f997f8e6f386900a3a12586ba083d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
