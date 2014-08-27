@@ -22,6 +22,7 @@ import mock
 from testtools import matchers
 
 from keystone import assignment
+from keystone.assignment.backends import ldap as ldap_assignment_backend
 from keystone.common import cache
 from keystone.common import ldap as common_ldap
 from keystone.common.ldap import core as common_ldap_core
@@ -1824,6 +1825,33 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         user_ref = self.identity_api.get_user('crap')
         self.assertEqual('crap', user_ref['id'])
         self.assertEqual('Foo Bar', user_ref['name'])
+
+    @mock.patch.object(common_ldap_core.KeystoneLDAPHandler, 'add_s')
+    def test_extra_attrs_for_add_user(self, mocked_add_s):
+        """Ensure the extra attributes for add_user are being passed.
+
+        This is more of a unit test, but since we are already mocking out one
+        method, to actually have a unit test we should have to mock out others
+        as well (like connecting to ldap). Keeping it here is just easier. Note
+        the attributes are also hardcoded so we can match with the expected
+        values.
+        """
+
+        user_id = '123456'
+        role_id = 'member'
+        tenant_id = 'bar'
+        role_dn = u'cn=member,cn=bar,ou=Groups,cn=example,cn=com'
+        user_dn = u'cn=123456,ou=Users,cn=example,cn=com'
+
+        expected_attrs = [
+            ('objectClass', ['organizationalRole']),
+            ('roleOccupant', [user_dn]),
+            ('cn', role_id)
+        ]
+
+        api_obj = ldap_assignment_backend.RoleApi(CONF)
+        api_obj.add_user(role_id, role_dn, user_dn, user_id, tenant_id)
+        mocked_add_s.assert_called_with(role_dn, expected_attrs)
 
 
 class LDAPIdentityEnabledEmulation(LDAPIdentity):
