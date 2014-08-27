@@ -130,11 +130,11 @@ class Manager(manager.Manager):
             notifications.DISABLED: [
                 ['user', self._user_callback],
                 ['project', self._project_callback],
-                ['domain', self._domain_callback]
+                ['domain', self._domain_callback],
             ],
             notifications.INTERNAL: [
                 [notifications.INVALIDATE_USER_TOKEN_PERSISTENCE,
-                 self._user_callback]
+                 self._user_callback],
             ]
         }
 
