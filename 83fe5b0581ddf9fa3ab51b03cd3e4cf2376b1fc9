@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_12e842e1",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T19:25:35Z",
+      "side": 1,
+      "message": "thanks for adding the patch",
+      "parentUuid": "1abeadc6_5252bade",
+      "revId": "83fe5b0581ddf9fa3ab51b03cd3e4cf2376b1fc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_46204e49",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 9
