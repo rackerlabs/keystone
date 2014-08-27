@@ -1462,7 +1462,7 @@
 # Message digest algorithm to use for the signing certificate.
 # This must be an algorithm supported by openssl (auto
 # generated certificate). (string value)
-#message_digest_algorithm=default
+#message_digest_algorithm=sha256
 
 
 [ssl]
@@ -1508,7 +1508,7 @@
 # Message digest algorithm to use for the SSL certificate.
 # This must be an algorithm supported by openssl (auto
 # generated certificate). (string value)
-#message_digest_algorithm=default
+#message_digest_algorithm=sha256
 
 
 [token]
