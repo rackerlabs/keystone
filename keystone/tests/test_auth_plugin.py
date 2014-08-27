@@ -66,15 +66,20 @@ class TestAuthPlugin(tests.SQLDriverOverrides, tests.TestCase):
         config_files.append(tests.dirs.tests_conf('test_auth_plugin.conf'))
         return config_files
 
-    def config_overrides(self):
-        super(TestAuthPlugin, self).config_overrides()
+    def auth_plugin_config_override(self):
         self.config_fixture.config(
             group='auth',
-            methods=[
-                'keystone.auth.plugins.external.DefaultDomain',
-                'keystone.auth.plugins.password.Password',
-                'keystone.auth.plugins.token.Token',
-                'keystone.tests.test_auth_plugin.SimpleChallengeResponse'])
+            methods=['external', 'password', 'token', METHOD_NAME])
+        self._setup_authentication()
+        opts = dict(
+            [
+                ('external', 'keystone.auth.plugins.external.DefaultDomain'),
+                ('password', 'keystone.auth.plugins.password.Password'),
+                ('token', 'keystone.auth.plugins.token.Token'),
+                (METHOD_NAME,
+                 'keystone.tests.test_auth_plugin.SimpleChallengeResponse'),
+            ])
+        self.config_fixture.config(group='auth', **opts)
 
     def test_unsupported_auth_method(self):
         method_name = uuid.uuid4().hex
