@@ -124,15 +124,15 @@ class CertSetupTestCase(rest.RestfulTestCase):
         self.assertIn(exp_line, out)
 
     def test_validate_cert_algorithm_default(self):
-        # The default cert algorithm is sha1.
+        # The default cert algorithm is sha256.
         self._test_validate_cert_algorithm(
-            expected_algorithm='sha1WithRSAEncryption')
-
-    def test_validate_cert_algorithm_sha256(self):
-        # Can override the cert algorithm to be sha256.
-        self._test_validate_cert_algorithm(
-            digest_algorithm='sha256',
             expected_algorithm='sha256WithRSAEncryption')
+
+    def test_validate_cert_algorithm_sha1(self):
+        # Can override the cert algorithm to be sha1.
+        self._test_validate_cert_algorithm(
+            digest_algorithm='sha1',
+            expected_algorithm='sha1WithRSAEncryption')
 
     def test_fetch_signing_cert(self, rebuild=False):
         pki = openssl.ConfigurePKI(None, None, rebuild=rebuild)
