@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_53e9007f",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T05:20:22Z",
+      "side": 1,
+      "message": "nit, you can just write taxonomy.OUTCOME_SUCESS in the line below.",
+      "revId": "4e07f7c5e598ff5a442fffa9f67af8b80449f6b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_73ec3c90",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T05:20:22Z",
+      "side": 1,
+      "message": "same comment as above",
+      "revId": "4e07f7c5e598ff5a442fffa9f67af8b80449f6b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_137a28f1",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T05:20:22Z",
+      "side": 1,
+      "message": "remove this comment",
+      "revId": "4e07f7c5e598ff5a442fffa9f67af8b80449f6b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d34ef0c0",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T05:20:22Z",
+      "side": 1,
+      "message": "token? what token?",
+      "revId": "4e07f7c5e598ff5a442fffa9f67af8b80449f6b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b3d6d4c1",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T05:20:22Z",
+      "side": 1,
+      "message": "++ nice",
+      "revId": "4e07f7c5e598ff5a442fffa9f67af8b80449f6b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_53d2e0d2",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T05:20:22Z",
+      "side": 1,
+      "message": "i think token is a required parameter for Credential, not FederatedCredential",
+      "revId": "4e07f7c5e598ff5a442fffa9f67af8b80449f6b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
