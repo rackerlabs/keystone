@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_0e0d8837",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-27T15:26:35Z",
+      "side": 1,
+      "message": "Does \u0027region\u0027 needs to become \u0027region_id\u0027 - see: https://review.openstack.org/#/c/113183/21 - you may want to re-base on that.",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_5072bfe3",
         "filename": "keystone/contrib/endpoint_filter/controllers.py",
         "patchSetId": 11
@@ -47,6 +64,23 @@
       "writtenOn": "2014-08-27T15:07:26Z",
       "side": 1,
       "message": "nit: missed listing the params",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_8e8b5867",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-27T15:26:35Z",
+      "side": 1,
+      "message": "I guess technically that for the above APIs, OS-EP-FILTER should really come after the project (since this is where we are extending the core API), e.g.:\n\nGET /projects/$project_id/OS-EP-FILTER/endpoints/$endpoint_id\n\n...but I guess it\u0027s a bit late now?",
       "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
