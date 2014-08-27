@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_4a822c53",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-27T00:25:35Z",
+      "side": 1,
+      "message": "(nit) add a trailing , so it\u0027s easier to modify.",
+      "revId": "737befd80a3863cfe55f7186f3db795fac7a999e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ca4abc26",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 741,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-27T00:25:35Z",
+      "side": 1,
+      "message": "this comment needs updating since this is also used for if the password changed, etc.",
+      "revId": "737befd80a3863cfe55f7186f3db795fac7a999e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ca71dc78",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-27T00:25:35Z",
+      "side": 1,
+      "message": "(suggestion) these should be like\n\nclass Action:\n    CREATED \u003d \u0027created\u0027\n    ...\n\nthis will put it into a namespace.\n\nAlso, I\u0027d rather this was done in a commit separate than the addition of the internal action.",
+      "revId": "737befd80a3863cfe55f7186f3db795fac7a999e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
