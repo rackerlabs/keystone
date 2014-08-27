@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_a62cb89a",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-27T17:30:27Z",
+      "side": 1,
+      "message": "We need to maintain the 255 length (as much as I dislike that) for region id (in short, you\u0027ll need to increase region.id column size not reduce the column size of the endpoint.region_id column).\n\nThis is strictly compatibility because previously region wasn\u0027t a model but a free-form string field.\n\nhttps://github.com/openstack/keystone/blob/stable/havana/keystone/catalog/backends/sql.py#L45\n\nThis was in Havana. Updating those regions since then may not have worked since the lack of a corresponding region id in the region table, but it could happen that it was never updated for an endpoint.\n\nIf this is viewed as a non-breaking issue by other cores please ignore the -1 here, and move through to approving (at this moment I see a +2 on the revew already)",
+      "revId": "b4290019d1f8cff3fe3d707e57fbbb589e1d0479",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a632f8a4",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-27T17:30:27Z",
+      "side": 1,
+      "message": "See other comment on region_id (in the sql.py file)",
+      "revId": "b4290019d1f8cff3fe3d707e57fbbb589e1d0479",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
