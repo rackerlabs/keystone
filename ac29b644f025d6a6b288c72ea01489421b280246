@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_6e5e1378",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-27T06:03:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_c1aaac19",
+      "revId": "ac29b644f025d6a6b288c72ea01489421b280246",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_61355845",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 8
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_cefc8741",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-27T06:03:54Z",
+      "side": 1,
+      "message": "this should now be fixed",
+      "parentUuid": "1abeadc6_61355845",
+      "revId": "ac29b644f025d6a6b288c72ea01489421b280246",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_2160c034",
         "filename": "keystone/notifications.py",
         "patchSetId": 8
@@ -65,6 +101,24 @@
       "writtenOn": "2014-08-26T20:19:21Z",
       "side": 1,
       "message": "pycadf 0.6.0 support what you need, right?",
+      "revId": "ac29b644f025d6a6b288c72ea01489421b280246",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4ea07743",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-27T06:03:54Z",
+      "side": 1,
+      "message": "yep its perfect, thanks!",
+      "parentUuid": "1abeadc6_2160c034",
       "revId": "ac29b644f025d6a6b288c72ea01489421b280246",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -100,6 +154,24 @@
       "side": 1,
       "message": "the pycadf federated credential should be created here, and that\u0027ll use the other args.\n\nthen attach that to the initiator.",
       "parentUuid": "1abeadc6_e14de8c5",
+      "revId": "ac29b644f025d6a6b288c72ea01489421b280246",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_0e967ff0",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-27T06:03:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_c171ccdf",
       "revId": "ac29b644f025d6a6b288c72ea01489421b280246",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
