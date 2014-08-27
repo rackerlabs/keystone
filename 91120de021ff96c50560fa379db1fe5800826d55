@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_4fadb0e8",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-27T21:29:57Z",
+      "side": 1,
+      "message": "Unrelated Whitespace change",
+      "revId": "91120de021ff96c50560fa379db1fe5800826d55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4f94d08a",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-27T21:29:57Z",
+      "side": 1,
+      "message": "Commented out code like this shouldn\u0027t remain in the code base. if it\u0027s docstring worthy it should be converted.\n\nSuggest removing.",
+      "revId": "91120de021ff96c50560fa379db1fe5800826d55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_0ff658f9",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-27T21:29:57Z",
+      "side": 1,
+      "message": "This is a nice way to handle nullable.",
+      "revId": "91120de021ff96c50560fa379db1fe5800826d55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
