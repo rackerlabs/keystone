@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_7a4b1a59",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-08-27T14:12:00Z",
+      "side": 1,
+      "message": "children_ids already exists, union creates a new set each time. Why not just .update() children_ids? https://docs.python.org/2/library/stdtypes.html#set.update",
+      "revId": "ebef9f4e3ecf7e570e7f1ef584a5e2cc489c6c37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7af15acc",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-08-27T14:12:00Z",
+      "side": 1,
+      "message": "Same as keystone/assignment/backends/kvs.py line: 233\nM.b. use something like this:\nchildren_ids.update(map(operator.itemgetter(\u0027id\u0027), self.get_project_subtree(assignment.target_id)))",
+      "revId": "ebef9f4e3ecf7e570e7f1ef584a5e2cc489c6c37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
