@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_bbf870c5",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-08-27T02:06:28Z",
+      "side": 1,
+      "message": "Can you please add at least one example using json_home in the curl examples which are part of documents.?",
+      "revId": "02aa3851c9ec107fd1d9dd1f032f231b64c00013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_9b857409",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-08-27T02:06:28Z",
+      "side": 1,
+      "message": "group_role_inherited_to_projects  or group_role_assignments_inherited_to_projects is more meaningful. The prefix \"domain\" just confuses the meaning\nOr domains_group_role_assignments inherited to projects.",
+      "revId": "02aa3851c9ec107fd1d9dd1f032f231b64c00013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1b716444",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-08-27T02:06:28Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "02aa3851c9ec107fd1d9dd1f032f231b64c00013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5b92fc4b",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-08-27T02:06:28Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "02aa3851c9ec107fd1d9dd1f032f231b64c00013",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_a7f14d6c",
         "filename": "keystone/tests/test_versions.py",
         "patchSetId": 8
