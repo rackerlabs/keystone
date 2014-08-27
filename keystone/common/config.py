@@ -268,6 +268,11 @@ FILE_OPTIONS = {
                         "middleware must be configured with the "
                         "hash_algorithms, otherwise token revocation will "
                         "not be processed correctly."),
+        cfg.StrOpt('message_digest_algorithm',
+                   help="The message digest algorithm to use when signing PKI "
+                        "tokens. This can be set to any value supported by "
+                        "python-keystoneclient's cms_hash_token function. "
+                        "The default is to use cms_hash_token's default."),
     ],
     'revoke': [
         cfg.StrOpt('driver',

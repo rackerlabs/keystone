@@ -1416,6 +1416,12 @@
 # revocation will not be processed correctly. (string value)
 #hash_algorithm=md5
 
+# The message digest algorithm to use when signing PKI tokens.
+# This can be set to any value supported by python-
+# keystoneclient's cms_hash_token function. The default is to
+# use cms_hash_token's default. (string value)
+#message_digest_algorithm=<None>
+
 
 [trust]
 
