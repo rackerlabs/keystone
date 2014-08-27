@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_a93d6991",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 608,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T17:58:11Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "64aec42fb3136b44c77b9a055d37b329e9d2c954",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_8938ada1",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 615,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T17:58:11Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "64aec42fb3136b44c77b9a055d37b329e9d2c954",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_29c23985",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T17:58:11Z",
+      "side": 1,
+      "message": "you can delete these few lines, since it seems you are using the copy",
+      "revId": "64aec42fb3136b44c77b9a055d37b329e9d2c954",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
