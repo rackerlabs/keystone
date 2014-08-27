@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_ff4ad381",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T03:18:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_4a794cfb",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_aa8660d9",
         "filename": "keystone/common/config.py",
         "patchSetId": 35
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_3f452b70",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T03:18:14Z",
+      "side": 1,
+      "message": "Done, deleting the sentence as i agree with brant.",
+      "parentUuid": "1abeadc6_aa8660d9",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_6a15289a",
         "filename": "keystone/common/config.py",
         "patchSetId": 35
@@ -64,6 +100,41 @@
       "writtenOn": "2014-08-27T01:05:35Z",
       "side": 1,
       "message": "(nit) leave a trailing , for consistency.",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1f35cff6",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T03:18:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_6a15289a",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ff31f30b",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 822,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T03:18:14Z",
+      "side": 1,
+      "message": "added a trailing , here too",
       "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +226,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_5f3f47d6",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T03:18:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_ca763cd8",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_2a7c10b5",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 35
@@ -166,6 +255,24 @@
       "writtenOn": "2014-08-27T01:05:35Z",
       "side": 1,
       "message": "remove \"Keystone\"",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7f25e3c0",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T03:18:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_2a7c10b5",
       "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +296,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_9f20ffb1",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T03:18:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_4a4a2c84",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_4a314c0a",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 35
@@ -200,6 +325,24 @@
       "writtenOn": "2014-08-27T01:05:35Z",
       "side": 1,
       "message": "this should be expiration_time since it\u0027s not the number of seconds to expiration anymore.",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1f1cef76",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T03:18:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_4a314c0a",
       "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +366,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_e2187c77",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T03:18:14Z",
+      "side": 1,
+      "message": "I\u0027ll update tests in the next patch, responding to minor issues first",
+      "parentUuid": "1abeadc6_c5670fe9",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_653abb99",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 35
@@ -234,6 +395,24 @@
       "writtenOn": "2014-08-27T01:05:35Z",
       "side": 1,
       "message": "with tempfile.NamedTemporaryFile(dir\u003dassertions_dir) as assertion_file:\n\nshould be used instead.",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_42585032",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T03:18:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_653abb99",
       "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +436,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_e25ddc16",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T03:18:14Z",
+      "side": 1,
+      "message": "i\u0027m not sure what the point was here, it\u0027s a pretty small set of branches so i don\u0027t think we\u0027re going to end up with invalid xml.\n\ni\u0027m going to go ahead and remove the try/catch/else",
+      "parentUuid": "1abeadc6_e5d7ab4d",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_45885f22",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 35
@@ -268,6 +465,24 @@
       "writtenOn": "2014-08-27T01:05:35Z",
       "side": 1,
       "message": "remove \"# noqa\"",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6280ec46",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T03:18:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_45885f22",
       "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +506,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_427db06d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T03:18:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_a585b308",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_a59cd35e",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 35
@@ -302,6 +535,24 @@
       "writtenOn": "2014-08-27T01:05:35Z",
       "side": 1,
       "message": "os.path.join should be used to create paths consistently.",
+      "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_82e7c811",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 1599,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T03:18:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_a59cd35e",
       "revId": "3a12848d8e0d182ba842934053c137705d7fd079",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
