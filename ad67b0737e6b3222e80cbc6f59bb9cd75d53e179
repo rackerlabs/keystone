@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_f083cbc9",
+        "filename": "etc/policy.json",
+        "patchSetId": 11
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T15:07:26Z",
+      "side": 1,
+      "message": "nit: list_endpoint_groups\n\nno need to say \u0027all\u0027",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5072bfe3",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T15:07:26Z",
+      "side": 1,
+      "message": "nice",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f03bcbe8",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-27T15:07:26Z",
+      "side": 1,
+      "message": "nit: missed listing the params",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
