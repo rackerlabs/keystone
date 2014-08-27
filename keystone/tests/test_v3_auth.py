@@ -130,9 +130,9 @@ class TokenAPITests(object):
         self.assertIsNotNone(self.get_scoped_token())
 
     def sign_token(self, resp):
-        return cms.cms_sign_token(resp.body,
-                                  CONF.signing.certfile,
-                                  CONF.signing.keyfile)
+        return cms.cms_sign_token(
+            resp.body, CONF.signing.certfile, CONF.signing.keyfile,
+            message_digest=CONF.token.message_digest_algorithm)
 
     def test_v3_token_id(self):
         auth_data = self.build_authentication_request(

@@ -540,9 +540,9 @@ class Auth(controller.V3Controller):
                     t['expires'] = timeutils.isotime(expires)
         data = {'revoked': tokens}
         json_data = jsonutils.dumps(data)
-        signed_text = cms.cms_sign_text(json_data,
-                                        CONF.signing.certfile,
-                                        CONF.signing.keyfile)
+        signed_text = cms.cms_sign_text(
+            json_data, CONF.signing.certfile, CONF.signing.keyfile,
+            message_digest=CONF.token.message_digest_algorithm)
 
         return {'signed': signed_text}
 
