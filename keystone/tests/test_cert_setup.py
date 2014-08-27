@@ -106,17 +106,17 @@ class CertSetupTestCase(rest.RestfulTestCase):
         self.assertTrue(os.path.exists(CONF.ssl.keyfile))
 
     def test_validate_cert_algorithm_default(self):
-        # The default cert algorithm is 'default'.
-        ssl = openssl.ConfigureSSL(None, None)
-        self.assertEqual('default', ssl.ssl_dictionary['default_md'])
-
-    def test_validate_cert_algorithm_sha256(self):
-        # Can override the cert algorithm to be sha256.
-        self.config_fixture.config(
-            group='ssl', message_digest_algorithm='sha256')
-
+        # The default cert algorithm is 'sha256'.
         ssl = openssl.ConfigureSSL(None, None)
         self.assertEqual('sha256', ssl.ssl_dictionary['default_md'])
+
+    def test_validate_cert_algorithm_sha512(self):
+        # Can override the cert algorithm to be sha256.
+        self.config_fixture.config(
+            group='ssl', message_digest_algorithm='sha512')
+
+        ssl = openssl.ConfigureSSL(None, None)
+        self.assertEqual('sha512', ssl.ssl_dictionary['default_md'])
 
     def test_fetch_signing_cert(self, rebuild=False):
         pki = openssl.ConfigurePKI(None, None, rebuild=rebuild)
