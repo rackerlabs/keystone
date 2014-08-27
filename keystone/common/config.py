@@ -360,6 +360,10 @@ FILE_OPTIONS = {
                    default='/C=US/ST=Unset/L=Unset/O=Unset/CN=localhost',
                    help='SSL certificate subject (auto generated '
                         'certificate).'),
+        cfg.StrOpt('message_digest_algorithm', default='default',
+                   help='Message digest algorithm to use for the SSL '
+                        'certificate. This must be an algorithm supported by '
+                        'openssl (auto generated certificate).'),
     ],
     'signing': [
         cfg.StrOpt('token_format',
@@ -391,6 +395,10 @@ FILE_OPTIONS = {
                             'CN=www.example.com'),
                    help='Certificate subject (auto generated certificate) for '
                         'token signing.'),
+        cfg.StrOpt('message_digest_algorithm', default='default',
+                   help='Message digest algorithm to use for the signing '
+                        'certificate. This must be an algorithm supported by '
+                        'openssl (auto generated certificate).'),
     ],
     'assignment': [
         # assignment has no default for backward compatibility reasons.
