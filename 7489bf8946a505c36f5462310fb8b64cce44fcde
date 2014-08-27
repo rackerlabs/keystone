@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_4d2ffdf6",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-27T06:04:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_352683bb",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_7520fb9b",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 6
@@ -81,6 +99,24 @@
       "writtenOn": "2014-08-18T03:33:06Z",
       "side": 1,
       "message": "you could put outcome on this line",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2d2ac1e7",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-27T06:04:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_7520fb9b",
       "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_0deee5b4",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-27T06:04:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_298e0b2f",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_e9f9734e",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 6
@@ -121,6 +175,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_edab6973",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-27T06:04:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_e9f9734e",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_3574c39b",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 6
@@ -132,6 +204,24 @@
       "writtenOn": "2014-08-18T03:33:06Z",
       "side": 1,
       "message": "I would put these earlier than line 95,\nso instead of sending None, None to send_saml_auth... you can send user_id and group_ids. \n\nPassing in None parameters is not obvious, and non-pythonic.",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_cd9ead54",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-27T06:04:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_3574c39b",
       "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -190,6 +280,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_adf6d18e",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-27T06:04:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_55793f92",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_e94b33ae",
         "filename": "keystone/auth/plugins/saml2.py",
         "patchSetId": 6
@@ -201,6 +309,24 @@
       "writtenOn": "2014-08-18T20:38:04Z",
       "side": 1,
       "message": "remove \"e\"",
+      "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_8d02f56d",
+        "filename": "keystone/auth/plugins/saml2.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-27T06:04:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_e94b33ae",
       "revId": "7489bf8946a505c36f5462310fb8b64cce44fcde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
