@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_44bf61fc",
+        "filename": "etc/policy.json",
+        "patchSetId": 11
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_f083cbc9",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_0e0d8837",
         "filename": "keystone/contrib/endpoint_filter/controllers.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-27T15:26:35Z",
       "side": 1,
       "message": "Does \u0027region\u0027 needs to become \u0027region_id\u0027 - see: https://review.openstack.org/#/c/113183/21 - you may want to re-base on that.",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_244b452c",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_0e0d8837",
       "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_a4baf5de",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_c9854a5a",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_f03bcbe8",
         "filename": "keystone/contrib/endpoint_filter/core.py",
         "patchSetId": 11
@@ -81,6 +135,24 @@
       "writtenOn": "2014-08-27T15:07:26Z",
       "side": 1,
       "message": "nit: missed listing the params",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_c4b9b1cc",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_f03bcbe8",
       "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_24ca654f",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "This would require touching old/new APIs and time is not on our side. I\u0027ve logged bug https://bugs.launchpad.net/keystone/+bug/1362245 to track this going forward.",
+      "parentUuid": "1abeadc6_8e8b5867",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_131051a7",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 11
@@ -115,6 +205,24 @@
       "writtenOn": "2014-08-27T15:24:11Z",
       "side": 1,
       "message": "nit: i think you can remove \u0027expected_status\u003d201\u0027 as thats the default for post requests.\n\ni think you should save the response \n\n  r \u003d self.post(...)\n\nand then assert some data about the response instead...",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_067d6c1c",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_131051a7",
       "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_3fc50c3d",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "Good point. Done.",
+      "parentUuid": "1abeadc6_93e0e197",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_7381858e",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 11
@@ -149,6 +275,24 @@
       "writtenOn": "2014-08-27T15:24:11Z",
       "side": 1,
       "message": "can you compare name/description and filter too?",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_9fbc606e",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 611,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_7381858e",
       "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -172,6 +316,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_9f4aa081",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_53aba91d",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_93538138",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 11
@@ -183,6 +345,24 @@
       "writtenOn": "2014-08-27T15:24:11Z",
       "side": 1,
       "message": "s/remove/delete",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_064c8c41",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_93538138",
       "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +386,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_df3b38e9",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_33254dc2",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_ce29d08a",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 11
@@ -217,6 +415,24 @@
       "writtenOn": "2014-08-27T15:24:11Z",
       "side": 1,
       "message": "s/remove/delete",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1f25b0c1",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 724,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_ce29d08a",
       "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -240,6 +456,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_3f20acaf",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 733,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_6e1d1c66",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_0e5e6876",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 11
@@ -251,6 +485,24 @@
       "writtenOn": "2014-08-27T15:46:36Z",
       "side": 1,
       "message": "overall, this doesn\u0027t cut it for me, i still need proof that the association was made, \n\nit looks like you do that in test_list_projects_associated_with_endpoint_group\n\nwhich probably has a lot of code duplication with this test.\n\nI\u0027d rather you scrap this test entirely and keep test_list_projects_associated_with_endpoint_group\n\nJust add a comment saying that you are exercises both the LIST and the PUT method.\n\nor put the code in a common place\n\njust my 2c",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_c680d4c1",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 735,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "Done - Added code in a common place.",
+      "parentUuid": "1abeadc6_0e5e6876",
       "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -274,6 +526,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_a3a10afa",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_4e3a2035",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_2e26c416",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 11
@@ -285,6 +555,24 @@
       "writtenOn": "2014-08-27T15:46:36Z",
       "side": 1,
       "message": "try not to use \\, break this up if need be",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_636612bd",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 748,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_2e26c416",
       "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -308,6 +596,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_03cf1e80",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 752,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_0e02e86e",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_6e2fdca1",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 11
@@ -319,6 +625,24 @@
       "writtenOn": "2014-08-27T15:46:36Z",
       "side": 1,
       "message": "this is a lot of duplicated code, the only diff between this and test_add_endpoint_group_to_project is one line:\n\n  self.head(url, body\u003d\u0027\u0027, expected_status\u003d204)",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_26db487d",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 768,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "Done - Reduced the fat in the method.",
+      "parentUuid": "1abeadc6_6e2fdca1",
       "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -342,6 +666,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_463124ec",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 790,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_4935bad9",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_a9ff2e00",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 11
@@ -353,6 +695,24 @@
       "writtenOn": "2014-08-27T15:46:36Z",
       "side": 1,
       "message": "avoid using \\\u0027s",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_03963e4c",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_a9ff2e00",
       "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -376,6 +736,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_86197c8a",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 823,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_696276d9",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_c99e2ab8",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 11
@@ -387,6 +765,24 @@
       "writtenOn": "2014-08-27T15:46:36Z",
       "side": 1,
       "message": "copy the default and edit the filter?",
+      "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_c3e446e2",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 876,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-27T17:51:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_c99e2ab8",
       "revId": "ad67b0737e6b3222e80cbc6f59bb9cd75d53e179",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
