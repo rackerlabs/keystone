@@ -1463,7 +1463,7 @@
 # (auto generated certificate). This must be an algorithm
 # supported by openssl. If 'default' is used then openssl will
 # use its default digest algorithm. (string value)
-#message_digest_algorithm=default
+#message_digest_algorithm=sha256
 
 
 [ssl]
@@ -1510,7 +1510,7 @@
 # (auto generated certificate). This must be an algorithm
 # supported by openssl. If 'default' is used then openssl will
 # use its default digest algorithm. (string value)
-#message_digest_algorithm=default
+#message_digest_algorithm=sha256
 
 
 [token]
