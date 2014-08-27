@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_ccc0ee52",
+        "filename": "etc/policy.json",
+        "patchSetId": 14
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-08-27T21:33:11Z",
+      "side": 1,
+      "message": "s/associated_with/for/?\n\nAnyway, not a big deal.",
+      "revId": "b03861fa9c003871d77c63db1033f386da967c1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4c7a1e25",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-08-27T21:33:11Z",
+      "side": 1,
+      "message": "shouldn\u0027t description be sql.Text?",
+      "revId": "b03861fa9c003871d77c63db1033f386da967c1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2c5fa242",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-08-27T21:33:11Z",
+      "side": 1,
+      "message": "collection_name",
+      "revId": "b03861fa9c003871d77c63db1033f386da967c1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6c551a1d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-08-27T21:33:11Z",
+      "side": 1,
+      "message": "member_name",
+      "revId": "b03861fa9c003871d77c63db1033f386da967c1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_cc50ee34",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-08-27T21:33:11Z",
+      "side": 1,
+      "message": "Why do we need it? We get it for free in controller.V3Controller. Just need to define collection_name and member_name.",
+      "revId": "b03861fa9c003871d77c63db1033f386da967c1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ec412a64",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-08-27T21:33:11Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "b03861fa9c003871d77c63db1033f386da967c1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_cf054012",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-08-27T21:33:11Z",
+      "side": 1,
+      "message": "InvalidFilterException?",
+      "revId": "b03861fa9c003871d77c63db1033f386da967c1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6c035a10",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-08-27T21:33:11Z",
+      "side": 1,
+      "message": "do we really need a method for this?",
+      "revId": "b03861fa9c003871d77c63db1033f386da967c1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6f5fcc0f",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/002_add_endpoint_groups.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-08-27T21:33:11Z",
+      "side": 1,
+      "message": "sql.Text?",
+      "revId": "b03861fa9c003871d77c63db1033f386da967c1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
