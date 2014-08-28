@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_267a3f88",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-28T15:55:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_fb1c63c4",
+      "revId": "e522026e6dff6f48402a331e70b6a231ce8b72a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_1b711f0c",
         "filename": "keystone/contrib/endpoint_filter/controllers.py",
         "patchSetId": 18
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-28T14:06:20Z",
       "side": 1,
       "message": "This won\u0027t work on Python 3. Please use six.iteritems.",
+      "revId": "e522026e6dff6f48402a331e70b6a231ce8b72a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_10649920",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-28T15:55:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_1b711f0c",
       "revId": "e522026e6dff6f48402a331e70b6a231ce8b72a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_306995f9",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-28T15:55:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_5bcd5730",
+      "revId": "e522026e6dff6f48402a331e70b6a231ce8b72a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_3b641b21",
         "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/002_add_endpoint_groups.py",
         "patchSetId": 18
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_fca61953",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/002_add_endpoint_groups.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-28T15:55:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_3b641b21",
+      "revId": "e522026e6dff6f48402a331e70b6a231ce8b72a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_ed8cad82",
         "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/002_add_endpoint_groups.py",
         "patchSetId": 18
@@ -81,6 +153,24 @@
       "writtenOn": "2014-08-28T13:22:51Z",
       "side": 1,
       "message": "Why was filters changed to text, should be jsonblob I think.",
+      "revId": "e522026e6dff6f48402a331e70b6a231ce8b72a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_dcacfdef",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/002_add_endpoint_groups.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-28T15:55:17Z",
+      "side": 1,
+      "message": "I was getting a runtime failure with the upgrade script with the use of jsonblob. And I noticed other extensions using sql.Text for upgrade.",
+      "parentUuid": "1abeadc6_ed8cad82",
       "revId": "e522026e6dff6f48402a331e70b6a231ce8b72a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -115,6 +205,24 @@
       "writtenOn": "2014-08-28T13:22:51Z",
       "side": 1,
       "message": "I disagree with calling this not found. That\u0027s usually reserved for retreival, if something has invalid tequest form it should be 400 / ValidationError",
+      "revId": "e522026e6dff6f48402a331e70b6a231ce8b72a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b02205b7",
+        "filename": "keystone/exception.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-28T15:55:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_4d3da18e",
       "revId": "e522026e6dff6f48402a331e70b6a231ce8b72a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
