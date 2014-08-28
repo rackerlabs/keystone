@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_2165dbb4",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 938,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-28T10:09:10Z",
+      "side": 1,
+      "message": "I think we still need to use the protected wrapper here - it does the RBAC checking",
+      "revId": "b424310f63cb93eb6e10384d9c02bfcd26d6df84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_57b375e8",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 939,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-28T10:09:10Z",
+      "side": 1,
+      "message": "If we are planing to support ALL the possible filters via \"must act on\" params, then we should probably add a comment to say why we don\u0027t build a hints dict (i.e. all the possible filters are always satisfied)",
+      "revId": "b424310f63cb93eb6e10384d9c02bfcd26d6df84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_37a99990",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 940,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-28T10:09:10Z",
+      "side": 1,
+      "message": "...and if we have the filters param..we can pick these out of there",
+      "revId": "b424310f63cb93eb6e10384d9c02bfcd26d6df84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
