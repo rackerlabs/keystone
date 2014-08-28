@@ -34,6 +34,24 @@
       "revId": "79d4fe1ce3a40a0c605244681112757fabbb9c52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_bba202ac",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-28T00:21:34Z",
+      "side": 1,
+      "message": "This wasn\u0027t my comment... it was to put these constants into a namespace...\n\nclass Action:\n  CREATED \u003d \u0027created\u0027\n  DELETED \u003d \u0027deleted\u0027\n  DISABLED \u003d \u0027disabled\u0027\n...\n\nI\u0027m not sure what the class for NotificationAction is getting us.\n\nAlso, it would be nice if ACTIONS was put in there somehow... make Action iterable? That might require an instance but be doable...\n\n class _Action:\n   def __iter__(self): ...\n\n Action \u003d _Action()",
+      "parentUuid": "1abeadc6_5bad6ee8",
+      "revId": "79d4fe1ce3a40a0c605244681112757fabbb9c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
