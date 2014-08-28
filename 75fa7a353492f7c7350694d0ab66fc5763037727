@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_d6531515",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-28T00:59:04Z",
+      "side": 1,
+      "message": "++ good call. perfect use of try/else",
+      "parentUuid": "1abeadc6_db641ebb",
+      "revId": "75fa7a353492f7c7350694d0ab66fc5763037727",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_bb0682cc",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-28T00:15:44Z",
       "side": 1,
       "message": "this needs to be moved down after where group_ids and user_ids is set. The way it is now user_id and group_ids will always be None when this is called.",
+      "revId": "75fa7a353492f7c7350694d0ab66fc5763037727",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f6a2d1fa",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-28T00:59:04Z",
+      "side": 1,
+      "message": "user_id is defined in L82, but i\u0027d sort of expect group_ids to be None on the first call... maybe that should be removed from the partial? (and use mostly kwargs instead)",
+      "parentUuid": "1abeadc6_bb0682cc",
       "revId": "75fa7a353492f7c7350694d0ab66fc5763037727",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
