@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_ee3ad1cb",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 641,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-28T22:09:01Z",
+      "side": 1,
+      "message": "what\u0027s the difference between the index below and indexed\u003dTrue here?",
+      "revId": "7facc01d1ef1a8a722f51730e53d4c083cc6daed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ce599536",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1375,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-28T22:09:01Z",
+      "side": 1,
+      "message": "not much of a test without it",
+      "revId": "7facc01d1ef1a8a722f51730e53d4c083cc6daed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
