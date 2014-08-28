@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_db641ebb",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-28T00:15:44Z",
+      "side": 1,
+      "message": "it\u0027s possible that the send_notification(SUCCESS) raise, then it would get to here and try to send the failure. So then you\u0027d potentially see a success and a failure for the same event. This is a place where\n\n except Exception:\n    send_notification(FAILURE)\n    raise\n else:\n    send_notification(SUCCESS)\n\nmakes more sense.",
+      "revId": "75fa7a353492f7c7350694d0ab66fc5763037727",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_bb0682cc",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-28T00:15:44Z",
+      "side": 1,
+      "message": "this needs to be moved down after where group_ids and user_ids is set. The way it is now user_id and group_ids will always be None when this is called.",
+      "revId": "75fa7a353492f7c7350694d0ab66fc5763037727",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3b735281",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-28T00:15:44Z",
+      "side": 1,
+      "message": "same comment here.",
+      "revId": "75fa7a353492f7c7350694d0ab66fc5763037727",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1b293637",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-28T00:15:44Z",
+      "side": 1,
+      "message": "revert the whitespace change on the previous line.",
+      "revId": "75fa7a353492f7c7350694d0ab66fc5763037727",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5b1e4e0d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-28T00:15:44Z",
+      "side": 1,
+      "message": "I assume this is supposed to be outcome and not OUTCOME_PENDING.",
+      "revId": "75fa7a353492f7c7350694d0ab66fc5763037727",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
