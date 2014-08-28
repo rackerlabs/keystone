@@ -16,6 +16,24 @@
       "revId": "4b2c5af3fd77c292df004dbcee963ad5411385fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6266dabc",
+        "filename": "keystone/policy/schema.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-28T20:10:20Z",
+      "side": 1,
+      "message": "well, the backend is already doing that, through whatever behavior (truncating or barfing), but yes. i wouldn\u0027t consider it a blocker though",
+      "parentUuid": "1abeadc6_556b5bb8",
+      "revId": "4b2c5af3fd77c292df004dbcee963ad5411385fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
