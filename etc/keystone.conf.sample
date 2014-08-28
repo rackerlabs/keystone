@@ -501,10 +501,10 @@
 #expiration_time=600
 
 # Dogpile.cache backend module. It is recommended that
-# Memcache (dogpile.cache.memcached) or Redis
-# (dogpile.cache.redis) be used in production deployments.
-# Small workloads (single process) like devstack can use the
-# dogpile.cache.memory backend. (string value)
+# Memcache with pooling (keystone.cache.memcache_pool) or
+# Redis (dogpile.cache.redis) be used in production
+# deployments.  Small workloads (single process) like devstack
+# can use the dogpile.cache.memory backend. (string value)
 #backend=keystone.common.cache.noop
 
 # Arguments supplied to the backend module. Specify this
@@ -527,6 +527,31 @@
 # with the keys/values.  Typically this should be left set to
 # false. (boolean value)
 #debug_cache_backend=false
+
+# Memcache servers in the format of "host:port"
+# (dogpile.cache.memcache and keystone.cache.memcache_pool
+# backends only). (list value)
+#memcache_servers=localhost:11211
+
+# Number of seconds memcached server is considered dead before
+# its tried again (dogpile.cache.memcache and
+# keystone.cache.memcache_pool backends only). (integer value)
+#memcache_dead_retry=300
+
+# Timeout in seconds for every call to a server.
+# (dogpile.cache.memcache and keystone.cache.memcache_pool
+# backends only). (integer value)
+#memcache_socket_timeout=3
+
+# Max total number of open connections to every memcached
+# server (keystone.cache.memcache_pool backend only) (integer
+# value)
+#memcache_pool_maxsize=10
+
+# Number of seconds a connection to memcached is held unused
+# in the pool before it is closed
+# (keystone.cache.memcache_pool backend only). (integer value)
+#memcache_pool_unused_timeout=60
 
 
 [catalog]
@@ -1199,10 +1224,28 @@
 # Memcache servers in the format of "host:port". (list value)
 #servers=localhost:11211
 
-# Number of compare-and-set attempts to make when using
-# compare-and-set in the token memcache back end. (integer
-# value)
-#max_compare_and_set_retry=16
+# Number of seconds memcached server is considered dead before
+# its tried again. This option only affects dogpile-based Key-
+# Value-Store drivers (e.g. memcache token persistence
+# driver). (integer value)
+#dead_retry=300
+
+# Timeout in seconds for every call to a server.  This option
+# only affects dogpile-based Key-Value-Store drivers (e.g.
+# memcache token persistence driver). (integer value)
+#socket_timeout=3
+
+# Max total number of open connections to every memcached
+# server. This option only affects dogpile-based Key-Value-
+# Store drivers (e.g. memcache token persistence driver).
+# (integer value)
+#pool_maxsize=10
+
+# Number of seconds a connection to memcached is held unused
+# in the pool before it is closed. This option only affects
+# dogpile-based Key-Value-Store drivers (e.g. memcache token
+# persistence driver). (integer value)
+#pool_unused_timeout=60
 
 
 [oauth1]
@@ -1274,7 +1317,7 @@
 # backend. (integer value)
 #expiration_buffer=1800
 
-# Toggle for revocation event cacheing. This has no effect
+# Toggle for revocation event caching. This has no effect
 # unless global caching is enabled. (boolean value)
 #caching=true
 
@@ -1469,13 +1512,13 @@
 # Controls the token construction, validation, and revocation
 # operations. Core providers are
 # "keystone.token.providers.[pkiz|pki|uuid].Provider". The
-# default provider is pkiz. (string value)
+# default provider is uuid. (string value)
 #provider=<None>
 
 # Token persistence backend driver. (string value)
 #driver=keystone.token.persistence.backends.sql.Token
 
-# Toggle for token system cacheing. This has no effect unless
+# Toggle for token system caching. This has no effect unless
 # global caching is enabled. (boolean value)
 #caching=true
 
