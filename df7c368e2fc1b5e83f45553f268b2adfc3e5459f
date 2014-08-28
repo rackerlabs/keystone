@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_c13187ee",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-28T08:52:01Z",
+      "side": 1,
+      "message": "what happens if the regions created before down grade have IDs \u003e 64?  I assume this truncates it (which is probably OK)?  What happens if the IDs are not unique within 64 chars?  Would the downgrade fail with duplicated PKs?",
+      "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
