@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_f619da7a",
+        "filename": "keystone/tests/test_injection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-28T14:10:14Z",
+      "side": 1,
+      "message": "even though provider_name is the only parameter in the resolve_future_dependencies method signature, we should pass it in as a kwarg: \n\n    dependency.resolve_future_dependencies(provider_name\u003d\u0027some_provider\u0027)",
+      "revId": "9cbceabaf55ae946984076a1c00c219e62a22d50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
