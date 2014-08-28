@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_fed9c357",
+        "filename": "requirements-py3.txt",
+        "patchSetId": 29
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-28T05:20:37Z",
+      "side": 1,
+      "message": "Keep comment after with same spaces?",
+      "revId": "8c5fc58f308cfb47691599489025a1e37bdf2c92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
