@@ -365,6 +365,8 @@ behavior is that subsystem caching is enabled, but the global toggle is set to d
     * ``dogpile.cache.dbm`` - local DBM file backend
     * ``dogpile.cache.memory`` - in-memory cache
     * ``keystone.cache.mongo`` - MongoDB as caching backend
+    * ``keystone.cacone.memcache_pool`` - An eventlet safe implementation of ``dogpile.cache.memcached.
+                                          This implementation also provides client connection re-use.
 
         .. WARNING::
             ``dogpile.cache.memory`` is not suitable for use outside of unit testing
@@ -375,6 +377,12 @@ behavior is that subsystem caching is enabled, but the global toggle is set to d
             and cache invalidation will not be consistent or reliable
             when using ``Keystone`` and the ``dogpile.cache.memory`` backend under
             any real workload.
+
+        .. WARNING::
+            Do not use ``dogpile.cache.memcached`` backend if you are deploying
+            Keystone under eventlet. There are known issues with the use of ``thread.local``
+            under eventlet that can allow the leaking of memcache client objects and
+            consumption of extra sockets/file descriptors.
 
 * ``expiration_time`` - int, the default length of time to cache a specific value. A value of ``0``
     indicates to not cache anything.  It is recommended that the ``enabled`` option be used to disable
