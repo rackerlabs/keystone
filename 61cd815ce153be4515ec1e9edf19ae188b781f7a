@@ -16,6 +16,24 @@
       "revId": "61cd815ce153be4515ec1e9edf19ae188b781f7a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_685f99e5",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 1354,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-28T21:09:07Z",
+      "side": 1,
+      "message": "If the other parameters were deprecated already then I\u0027d make it a parameter to pki/ssl_setup, but they\u0027re not.",
+      "parentUuid": "1abeadc6_68007901",
+      "revId": "61cd815ce153be4515ec1e9edf19ae188b781f7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
