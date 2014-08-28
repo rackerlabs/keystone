@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_1fef4288",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-28T17:33:55Z",
+      "side": 1,
+      "message": "The name property is defined to be 255 characters here: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/validation/parameter_types.py#n25\n\nThe actual domain.name column is only 64: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/assignment/backends/sql.py#n598",
+      "revId": "6e9453093ab595a7cf1486849390b0fa24888a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5f57fa59",
+        "filename": "keystone/assignment/schema.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-28T17:33:55Z",
+      "side": 1,
+      "message": "The name property is defined to be 255 characters here: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/validation/parameter_types.py#n25\n\nThe actual domain.name column is only 64: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/assignment/backends/sql.py#n598",
+      "revId": "6e9453093ab595a7cf1486849390b0fa24888a29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
