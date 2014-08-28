@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_a2c2b2e6",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-28T20:45:24Z",
+      "side": 1,
+      "message": "Done, nice catch... \n\nWe\u0027ll have to update the docs to it looks like. https://github.com/openstack/identity-api/blob/master/v3/src/markdown/identity-api-v3.md#create-region-post-regions",
+      "parentUuid": "1abeadc6_df114505",
+      "revId": "a0b5338542108db373335d6f81810ad491db0fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_bc79f783",
         "filename": "keystone/catalog/schema.py",
         "patchSetId": 31
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-28T19:53:59Z",
       "side": 1,
       "message": "Our SQL backend requires description.\nhttp://git.openstack.org/cgit/openstack/keystone/tree/keystone/catalog/backends/sql.py#n29\n\nAssuming this is correct I\u0027ve updated the docs: https://review.openstack.org/117599",
+      "revId": "a0b5338542108db373335d6f81810ad491db0fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_62525a36",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-28T20:45:24Z",
+      "side": 1,
+      "message": "We should need to require `description` here because of https://github.com/openstack/keystone/blob/master/keystone/catalog/core.py#L98-L101\n\nThe manager layer will always check if description is provided in the reference, so the reference should never reach the driver with `description` as null.",
+      "parentUuid": "1abeadc6_bc79f783",
       "revId": "a0b5338542108db373335d6f81810ad491db0fff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_adfb8379",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-28T20:45:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_7fef5187",
+      "revId": "a0b5338542108db373335d6f81810ad491db0fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_dfd305d3",
         "filename": "keystone/catalog/schema.py",
         "patchSetId": 31
@@ -64,6 +118,24 @@
       "writtenOn": "2014-08-28T19:53:59Z",
       "side": 1,
       "message": "Should we constrain this to 255? http://git.openstack.org/cgit/openstack/keystone/tree/keystone/catalog/backends/sql.py#n55",
+      "revId": "a0b5338542108db373335d6f81810ad491db0fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_cd00bf68",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-28T20:45:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_dfd305d3",
       "revId": "a0b5338542108db373335d6f81810ad491db0fff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
