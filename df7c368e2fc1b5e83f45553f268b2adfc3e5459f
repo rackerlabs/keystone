@@ -16,6 +16,24 @@
       "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_12daeb4b",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-28T10:34:35Z",
+      "side": 1,
+      "message": "Here\u0027s a test that would check the issue:\n\n1) Before upgrade, have a couple of endpoints like:\n\nenpointA[\u0027region\u0027] \u003d \u0027a long region name that has..........................................................more than 64 chars\u0027\nenpointB[\u0027region\u0027] \u003d \u0027a long region name that has..........................................................more than 64 chars as well\u0027\n\n2) After upgrade, we\u0027ll have two auto-created regions with those IDs\n\n3) now downgrade and we\u0027ll attempt to truncate both IDs to 64....and as it\u0027s the primary key, I don\u0027t see how that will work (it\u0027s possible it will work in sqllite since that kind of ignores column lengths anyway).\n\nIn terms of fixing...I think the least worst option would be to dump any regions that clash with an existing one using a 64 char PK.  That will at least ensure the downgrade goes ahead and all the endpoints get put back they way they were...the region table may or may not have some extra rows....but that\u0027s probably ok.  \n\nTo that I think you\u0027ll need to scan there region table and manually curtail the length of the ID...and either catch the exception on the update or manually spot the clash.",
+      "parentUuid": "1abeadc6_c13187ee",
+      "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
