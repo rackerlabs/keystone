@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_c9451cb5",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-28T16:28:49Z",
+      "side": 1,
+      "message": "I thought that myself originally but the validation error message is of the format: \"Expecting to find XYZ\". And so I\u0027m passing in the list of valid filter keys.",
+      "parentUuid": "1abeadc6_09bb94e5",
+      "revId": "76f09bd9a93ce93d7b6f03509aa73bb27d486179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_69b6c8fa",
         "filename": "keystone/contrib/endpoint_filter/controllers.py",
         "patchSetId": 20
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-28T16:21:05Z",
       "side": 1,
       "message": "can probably just pass in key",
+      "revId": "76f09bd9a93ce93d7b6f03509aa73bb27d486179",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e919f8d1",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-28T16:28:49Z",
+      "side": 1,
+      "message": "See comment above.",
+      "parentUuid": "1abeadc6_69b6c8fa",
       "revId": "76f09bd9a93ce93d7b6f03509aa73bb27d486179",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
