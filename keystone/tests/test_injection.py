@@ -40,9 +40,14 @@ class TestDependencyInjection(tests.BaseTestCase):
 
         @dependency.requires('first_api', 'second_api')
         class Consumer(object):
+            def _dependencies_injected(self):
+                self.attr = (self.first_api.do_work() and
+                             self.second_api.do_work())
+
             def do_work_with_dependencies(self):
                 assert self.first_api.do_work()
                 assert self.second_api.do_work()
+                assert self.attr
 
         # initialize dependency providers
         first_api = FirstImplementation()
@@ -178,12 +183,20 @@ class TestDependencyInjection(tests.BaseTestCase):
         @dependency.provider(p1_name)
         @dependency.requires(p2_name)
         class P1(object):
-            pass
+            def _dependencies_injected(self):
+                self.attr = getattr(self, p2_name).do_work()
+
+            def do_work(self):
+                return True
 
         @dependency.provider(p2_name)
         @dependency.requires(p1_name)
         class P2(object):
-            pass
+            def _dependencies_injected(self):
+                self.attr = getattr(self, p1_name).do_work()
+
+            def do_work(self):
+                return True
 
         p1 = P1()
         p2 = P2()
@@ -192,6 +205,7 @@ class TestDependencyInjection(tests.BaseTestCase):
 
         self.assertIs(getattr(p1, p2_name), p2)
         self.assertIs(getattr(p2, p1_name), p1)
+        self.assertTrue(p1.attr and p2.attr)
 
     def test_reset(self):
         # Can reset the registry of providers.
@@ -250,12 +264,20 @@ class TestDependencyInjection(tests.BaseTestCase):
         @dependency.requires(p2_name)
         @dependency.optional(optional_name)
         class P1(object):
-            pass
+            def _dependencies_injected(self):
+                self.attr = getattr(self, p2_name).do_work()
+
+            def do_work(self):
+                return True
 
         @dependency.provider(p2_name)
         @dependency.requires(p1_name)
         class P2(object):
-            pass
+            def _dependencies_injected(self):
+                self.attr = getattr(self, p1_name).do_work()
+
+            def do_work(self):
+                return True
 
         p1 = P1()
         p2 = P2()
@@ -265,3 +287,4 @@ class TestDependencyInjection(tests.BaseTestCase):
         self.assertIs(getattr(p1, p2_name), p2)
         self.assertIs(getattr(p2, p1_name), p1)
         self.assertIsNone(getattr(p1, optional_name))
+        self.assertTrue(p1.attr and p2.attr)

@@ -35,6 +35,9 @@ REGISTRY = {}
 _future_dependencies = {}
 _future_optionals = {}
 _factories = {}
+_incomplete_objects = {}
+
+DEPENDENCIES_INJECECTED_CALLBACK = '_dependencies_injected'
 
 
 class UnresolvableDependencyException(Exception):
@@ -117,22 +120,33 @@ def provider(name):
     return wrapper
 
 
+def _notify_dependencies_injected(obj):
+    if (hasattr(obj, DEPENDENCIES_INJECECTED_CALLBACK)
+            and callable(getattr(obj, DEPENDENCIES_INJECECTED_CALLBACK))):
+        getattr(obj, DEPENDENCIES_INJECECTED_CALLBACK)()
+
+
 def _process_dependencies(obj):
     # Any dependencies that can be resolved immediately are resolved.
     # Dependencies that cannot be resolved immediately are stored for
     # resolution in resolve_future_dependencies.
 
-    def process(obj, attr_name, unresolved_in_out):
+    def process(obj, attr_name, unresolved_in_out, incomplete_objects=None):
         for dependency in getattr(obj, attr_name, []):
             if dependency not in REGISTRY:
                 # We don't know about this dependency, so save it for later.
                 unresolved_in_out.setdefault(dependency, []).append(obj)
+                if incomplete_objects is not None:
+                    incomplete_objects.setdefault(id(obj),
+                                                  []).append(dependency)
                 continue
 
             setattr(obj, dependency, REGISTRY[dependency])
 
-    process(obj, '_dependencies', _future_dependencies)
+    process(obj, '_dependencies', _future_dependencies, _incomplete_objects)
     process(obj, '_optionals', _future_optionals)
+    if id(obj) not in _incomplete_objects:
+        _notify_dependencies_injected(obj)
 
 
 def requires(*dependencies):
@@ -223,6 +237,16 @@ def resolve_future_dependencies(provider_name=None):
     the optional argument is used internally, and should be treated as an
     implementation detail.
     """
+    def _handle_dependency(target, dependency):
+        setattr(target, dependency, REGISTRY[dependency])
+        target_id = id(target)
+        if (_incomplete_objects.get(target_id) and
+                dependency in _incomplete_objects[target_id]):
+            _incomplete_objects[target_id].remove(dependency)
+            if not _incomplete_objects[target_id]:
+                del _incomplete_objects[target_id]
+                _notify_dependencies_injected(target)
+
     new_providers = dict()
     if provider_name:
         # A provider was registered, so take care of any objects depending on
@@ -231,7 +255,7 @@ def resolve_future_dependencies(provider_name=None):
         targets.extend(_future_optionals.pop(provider_name, []))
 
         for target in targets:
-            setattr(target, provider_name, REGISTRY[provider_name])
+            _handle_dependency(target, provider_name)
 
         return
 
@@ -264,9 +288,10 @@ def resolve_future_dependencies(provider_name=None):
                     raise UnresolvableDependencyException(dependency)
 
             for target in targets:
-                setattr(target, dependency, REGISTRY[dependency])
+                _handle_dependency(target, dependency)
     finally:
         _future_dependencies.clear()
+        _incomplete_objects.clear()
     return new_providers
 
 
@@ -280,3 +305,4 @@ def reset():
     REGISTRY.clear()
     _future_dependencies.clear()
     _future_optionals.clear()
+    _incomplete_objects.clear()
