@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_b3092286",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-28T21:59:02Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1abeadc6_13a1f693",
+      "revId": "a9ef68e99331e0ea9343724c1208cbc6cc39da59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_53a7eea6",
         "filename": "keystone/catalog/schema.py",
         "patchSetId": 33
@@ -47,6 +65,24 @@
       "writtenOn": "2014-08-28T21:52:48Z",
       "side": 1,
       "message": "ideally, region and region_id should not be allowed in the same request",
+      "revId": "a9ef68e99331e0ea9343724c1208cbc6cc39da59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d35cde7f",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-28T21:59:02Z",
+      "side": 1,
+      "message": "I don\u0027t know it jsonschema can do that, but it would be a trivial controller fix.",
+      "parentUuid": "1abeadc6_93bc26bd",
       "revId": "a9ef68e99331e0ea9343724c1208cbc6cc39da59",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
