@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_df306aeb",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 938,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-08-28T17:31:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_2165dbb4",
+      "revId": "b424310f63cb93eb6e10384d9c02bfcd26d6df84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_57b375e8",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-28T10:09:10Z",
       "side": 1,
       "message": "If we are planing to support ALL the possible filters via \"must act on\" params, then we should probably add a comment to say why we don\u0027t build a hints dict (i.e. all the possible filters are always satisfied)",
+      "revId": "b424310f63cb93eb6e10384d9c02bfcd26d6df84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_bf372ee2",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 939,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-08-28T17:31:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_57b375e8",
       "revId": "b424310f63cb93eb6e10384d9c02bfcd26d6df84",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_9f3a72cb",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 940,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-08-28T17:31:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_37a99990",
+      "revId": "b424310f63cb93eb6e10384d9c02bfcd26d6df84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_5738d53c",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 2
@@ -82,6 +136,24 @@
       "writtenOn": "2014-08-28T10:12:57Z",
       "side": 1,
       "message": "Should add doc string and param refs here",
+      "revId": "b424310f63cb93eb6e10384d9c02bfcd26d6df84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5f545afd",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 747,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-08-28T17:31:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_5738d53c",
       "revId": "b424310f63cb93eb6e10384d9c02bfcd26d6df84",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
