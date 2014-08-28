@@ -52,6 +52,24 @@
       "revId": "79d4fe1ce3a40a0c605244681112757fabbb9c52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_56a1c592",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-28T01:12:44Z",
+      "side": 1,
+      "message": "I misread your comment.\n\nIn either case I don\u0027t really see a benefit to namespacing these besides using more dots in the code. I don\u0027t think it\u0027s giving us anything we don\u0027t have now. Perhaps what we\u0027re looking for is a named tuple:\n\n  Actions \u003d NamedTuple(CREATED\u003d\u0027created\u0027, ...)\n\nthen we can reference:\n\n  Actions.CREATED\n\nor \n\n  for action in ACTIONS\n\netc",
+      "parentUuid": "1abeadc6_bba202ac",
+      "revId": "79d4fe1ce3a40a0c605244681112757fabbb9c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
