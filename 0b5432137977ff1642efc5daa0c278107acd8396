@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_d6c07552",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-28T01:16:52Z",
+      "side": 0,
+      "message": "for other reviewers, because this caught me off guard and it took me a minute to follow along: description is still nullable at the controller layer thanks to validation.nullable() (in which case the manager maps description\u003dNone to description\u003d\u0027\u0027 for the backend)",
+      "revId": "0b5432137977ff1642efc5daa0c278107acd8396",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

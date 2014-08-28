@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_96c27d51",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-28T01:16:52Z",
+      "side": 1,
+      "message": "++",
+      "revId": "295e4f845ec3c3f7908d5128b1e9d54c302bb54b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_16858d06",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-28T01:16:52Z",
+      "side": 1,
+      "message": "not sure if it\u0027s a discrepancy, but it\u0027s nullable here",
+      "revId": "295e4f845ec3c3f7908d5128b1e9d54c302bb54b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
