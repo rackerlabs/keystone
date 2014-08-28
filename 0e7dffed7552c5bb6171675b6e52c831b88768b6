@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_30c275e9",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 609,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-28T15:24:05Z",
+      "side": 1,
+      "message": "`\u0026` should be `And` here ?",
+      "revId": "0e7dffed7552c5bb6171675b6e52c831b88768b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b074c5cf",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-28T15:24:05Z",
+      "side": 1,
+      "message": "from keystone.common.ldap import expr\nshould after:\nfrom keystone import exception",
+      "revId": "0e7dffed7552c5bb6171675b6e52c831b88768b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_703dcddc",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1370,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-28T15:24:05Z",
+      "side": 1,
+      "message": "\u0026 -\u003e And",
+      "revId": "0e7dffed7552c5bb6171675b6e52c831b88768b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_900c2944",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1387,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-28T15:24:05Z",
+      "side": 1,
+      "message": "Also here",
+      "revId": "0e7dffed7552c5bb6171675b6e52c831b88768b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_9313535b",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1406,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-28T15:24:05Z",
+      "side": 1,
+      "message": "use all() instead of \u0026\u003d",
+      "revId": "0e7dffed7552c5bb6171675b6e52c831b88768b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f3164748",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1545,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-28T15:24:05Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "0e7dffed7552c5bb6171675b6e52c831b88768b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
