@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_eeb0118d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 813,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-28T23:00:36Z",
+      "side": 1,
+      "message": "(nit) consume more whitespace\n\ngood text though",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_8e379dfe",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-28T23:00:36Z",
+      "side": 1,
+      "message": "nit throughout this module that will be enforced by hacking soon: follow your one line summary with a blank line. also, none of these are actually summaries and they\u0027re completely redundant :(",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a2062d1a",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-28T23:00:36Z",
+      "side": 1,
+      "message": "as mentioned in a previous review, use mkstemp",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_e01e8b6f",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 37
@@ -13,6 +64,24 @@
       "writtenOn": "2014-08-28T00:00:40Z",
       "side": 1,
       "message": "remove this or add a comment why it\u0027s needed, because it shouldn\u0027t be necessary.",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4e002502",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-28T23:00:36Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1abeadc6_e01e8b6f",
       "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -36,6 +105,23 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_22485d5b",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-28T23:00:36Z",
+      "side": 1,
+      "message": "i\u0027m not sure what the point of trying to catch any of this is, but definitely DO NOT raise a new IOError - that discards the root traceback",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_c0198f89",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 37
@@ -47,6 +133,75 @@
       "writtenOn": "2014-08-28T00:00:40Z",
       "side": 1,
       "message": "assertion_file should have been deleted when the NamedTemporaryFile context was closed (the context should be expanded to include this line).",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_22b69d3e",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-28T23:00:36Z",
+      "side": 1,
+      "message": "yeah... this shouldn\u0027t work at all, according to my understanding. maybe the flush is making this funky?",
+      "parentUuid": "1abeadc6_c0198f89",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a20c6ded",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-28T23:00:36Z",
+      "side": 1,
+      "message": "regarding this whole bit, i took a stab at rewriting some of it to my understanding. this is untested though: http://pasteraw.com/43iidlfh6kooyw0gitm6ia54e3olob6",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6e76fc3f",
+        "filename": "test-requirements.txt",
+        "patchSetId": 37
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-28T23:00:36Z",
+      "side": 1,
+      "message": "it\u0027s an optional requirement that\u0027s *required* for keystone2keystone",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6e9fdc5f",
+        "filename": "test-requirements.txt",
+        "patchSetId": 37
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-28T23:00:36Z",
+      "side": 1,
+      "message": "yay!",
       "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
