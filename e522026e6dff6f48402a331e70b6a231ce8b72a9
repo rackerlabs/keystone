@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_ed8cad82",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/002_add_endpoint_groups.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-28T13:22:51Z",
+      "side": 1,
+      "message": "Why was filters changed to text, should be jsonblob I think.",
+      "revId": "e522026e6dff6f48402a331e70b6a231ce8b72a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ed1cadc4",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-28T13:22:51Z",
+      "side": 1,
+      "message": "++",
+      "revId": "e522026e6dff6f48402a331e70b6a231ce8b72a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4d3da18e",
+        "filename": "keystone/exception.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-28T13:22:51Z",
+      "side": 1,
+      "message": "I disagree with calling this not found. That\u0027s usually reserved for retreival, if something has invalid tequest form it should be 400 / ValidationError",
+      "revId": "e522026e6dff6f48402a331e70b6a231ce8b72a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
