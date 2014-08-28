@@ -1369,6 +1369,12 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertEqual(2, session.query(endpoint_table).
                          filter_by(region=_region_name).count())
 
+    def test_add_actor_id_index(self):
+        self.upgrade(52)
+        self.upgrade(53)
+        # TODO(henry-nash): Check index has actually been created
+        self.downgrade(52)
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
