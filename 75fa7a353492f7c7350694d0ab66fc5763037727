@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_bb14bde9",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-28T04:40:00Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1abeadc6_d6531515",
+      "revId": "75fa7a353492f7c7350694d0ab66fc5763037727",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_bb0682cc",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 11
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "user_id is defined in L82, but i\u0027d sort of expect group_ids to be None on the first call... maybe that should be removed from the partial? (and use mostly kwargs instead)",
       "parentUuid": "1abeadc6_bb0682cc",
+      "revId": "75fa7a353492f7c7350694d0ab66fc5763037727",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_bbebddda",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-28T04:40:00Z",
+      "side": 1,
+      "message": "is there a way to get the group_ids from line 99 to be put into the partial function?",
+      "parentUuid": "1abeadc6_f6a2d1fa",
       "revId": "75fa7a353492f7c7350694d0ab66fc5763037727",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -117,6 +153,24 @@
       "writtenOn": "2014-08-28T00:15:44Z",
       "side": 1,
       "message": "I assume this is supposed to be outcome and not OUTCOME_PENDING.",
+      "revId": "75fa7a353492f7c7350694d0ab66fc5763037727",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3b298d37",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-28T04:40:00Z",
+      "side": 1,
+      "message": "!! good catch",
+      "parentUuid": "1abeadc6_5b1e4e0d",
       "revId": "75fa7a353492f7c7350694d0ab66fc5763037727",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
