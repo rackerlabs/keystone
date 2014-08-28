@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_556b5bb8",
+        "filename": "keystone/policy/schema.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-28T18:21:51Z",
+      "side": 1,
+      "message": "Should we constrain this to 255 characters?\n\nhttp://git.openstack.org/cgit/openstack/keystone/tree/keystone/policy/backends/sql.py#n20",
+      "revId": "4b2c5af3fd77c292df004dbcee963ad5411385fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
