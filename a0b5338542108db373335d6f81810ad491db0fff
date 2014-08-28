@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_df114505",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-28T19:53:59Z",
+      "side": 1,
+      "message": "We need to add the URL here. http://git.openstack.org/cgit/openstack/keystone/tree/keystone/catalog/backends/sql.py#n29",
+      "revId": "a0b5338542108db373335d6f81810ad491db0fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_bc79f783",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-28T19:53:59Z",
+      "side": 1,
+      "message": "Our SQL backend requires description.\nhttp://git.openstack.org/cgit/openstack/keystone/tree/keystone/catalog/backends/sql.py#n29\n\nAssuming this is correct I\u0027ve updated the docs: https://review.openstack.org/117599",
+      "revId": "a0b5338542108db373335d6f81810ad491db0fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7fef5187",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-28T19:53:59Z",
+      "side": 1,
+      "message": "Name is not listed here, but is in the docs. http://docs.openstack.org/api/openstack-identity-service/3/content/services-v3services.html",
+      "revId": "a0b5338542108db373335d6f81810ad491db0fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_dfd305d3",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-28T19:53:59Z",
+      "side": 1,
+      "message": "Should we constrain this to 255? http://git.openstack.org/cgit/openstack/keystone/tree/keystone/catalog/backends/sql.py#n55",
+      "revId": "a0b5338542108db373335d6f81810ad491db0fff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
