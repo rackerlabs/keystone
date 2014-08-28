@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_5bad6ee8",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-28T00:05:32Z",
+      "side": 1,
+      "message": "lol i\u0027m going to let bkhudson comment on this one since it was his nit a few patchsets ago :)",
+      "revId": "79d4fe1ce3a40a0c605244681112757fabbb9c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
