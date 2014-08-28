@@ -34,6 +34,24 @@
       "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_10b739d9",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-28T15:12:46Z",
+      "side": 1,
+      "message": "Agree with Henry.",
+      "parentUuid": "1abeadc6_12daeb4b",
+      "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
