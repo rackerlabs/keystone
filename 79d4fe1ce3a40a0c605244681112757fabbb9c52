@@ -16,6 +16,24 @@
       "revId": "79d4fe1ce3a40a0c605244681112757fabbb9c52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_fbb1da01",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-28T00:18:33Z",
+      "side": 1,
+      "message": "Yeah, I figure this will get nixed as a pattern, but it saved a lot of referencing class methods in weird ways (or duplicating code)",
+      "parentUuid": "1abeadc6_5bad6ee8",
+      "revId": "79d4fe1ce3a40a0c605244681112757fabbb9c52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
