@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_e01e8b6f",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-28T00:00:40Z",
+      "side": 1,
+      "message": "remove this or add a comment why it\u0027s needed, because it shouldn\u0027t be necessary.",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_0042a767",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-28T00:00:40Z",
+      "side": 1,
+      "message": "assertion_file might not have been bound at this point.",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_c0198f89",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-28T00:00:40Z",
+      "side": 1,
+      "message": "assertion_file should have been deleted when the NamedTemporaryFile context was closed (the context should be expanded to include this line).",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
