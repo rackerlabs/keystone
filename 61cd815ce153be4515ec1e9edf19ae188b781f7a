@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_68007901",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 1354,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-08-28T20:58:20Z",
+      "side": 1,
+      "message": "This is a a parameter for the tool keystone-manage and it has nothing to do with keystone server. Do we need this in keystone.conf as keystone server never use this field.\n\nThis comment is same as this defect\nhttps://bugs.launchpad.net/keystone/+bug/1287414",
+      "revId": "61cd815ce153be4515ec1e9edf19ae188b781f7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
