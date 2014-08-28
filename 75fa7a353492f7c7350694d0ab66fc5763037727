@@ -108,6 +108,23 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_fb18f5d4",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-28T04:55:43Z",
+      "side": 1,
+      "message": "why use \"if not\" here if always set user_id \u003d parse.quote(mapped_properties[\u0027name\u0027]) ?",
+      "revId": "75fa7a353492f7c7350694d0ab66fc5763037727",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_3b735281",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 11
