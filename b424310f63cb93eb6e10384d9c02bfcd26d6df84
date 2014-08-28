@@ -50,6 +50,23 @@
       "revId": "b424310f63cb93eb6e10384d9c02bfcd26d6df84",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5738d53c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 747,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-28T10:12:57Z",
+      "side": 1,
+      "message": "Should add doc string and param refs here",
+      "revId": "b424310f63cb93eb6e10384d9c02bfcd26d6df84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
