@@ -95,10 +95,12 @@ class Manager(manager.Manager):
             msg = _('Duplicate ID, %s.') % region_ref['id']
             raise exception.Conflict(type='region', details=msg)
 
-        # NOTE(lbragstad): The description column of the region database
-        # can not be null. So if the user doesn't pass in a description then
-        # set it to an empty string.
-        region_ref.setdefault('description', '')
+        # NOTE(lbragstad,dstanek): The description column of the region
+        # database can not be null. So if the user doesn't pass in a
+        # description or passes in a null description then set it to an
+        # empty string.
+        if region_ref.get('description') is None:
+            region_ref['description'] = ''
         try:
             return self.driver.create_region(region_ref)
         except exception.NotFound:
@@ -115,6 +117,12 @@ class Manager(manager.Manager):
 
     @notifications.updated(_REGION, public=False)
     def update_region(self, region_id, region_ref):
+        # NOTE(lbragstad,dstanek): The description column of the region
+        # database can not be null. So if the user doesn't pass in a
+        # description or passes in a null description then set it to an
+        # empty string.
+        if region_ref.get('description') is None:
+            region_ref['description'] = ''
         return self.driver.update_region(region_id, region_ref)
 
     @notifications.deleted(_REGION, public=False)
