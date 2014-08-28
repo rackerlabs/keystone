@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_ed02db3c",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-28T20:55:54Z",
+      "side": 1,
+      "message": "Nit, for a follow up patch, we should comment on why we set token_id to None here (because the user is coming in from an idp)",
+      "revId": "804181f8358afa4f6d4ab609e29193ad988ede15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_cdb8bf77",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-28T20:55:54Z",
+      "side": 1,
+      "message": "I think you want:\n\n  send_notification \u003d functools.partial(notifications.send_saml_audit_notification, \n  \u0027authenticate\u0027, context, user_id, group_ids, \n  identity_provider, protocol,\ttoken_id)\n\nat line 100, then you don\u0027t have to call it twice, (i think).",
+      "revId": "804181f8358afa4f6d4ab609e29193ad988ede15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ad6aa3ea",
+        "filename": "requirements.txt",
+        "patchSetId": 12
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-28T20:55:54Z",
+      "side": 1,
+      "message": "note sure if we should wait until: https://review.openstack.org/#/c/111620/29 is merged, so you don\u0027t have to edit this file by hand.",
+      "revId": "804181f8358afa4f6d4ab609e29193ad988ede15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
