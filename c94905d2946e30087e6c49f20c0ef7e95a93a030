@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_50fb717a",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-08-28T15:33:14Z",
+      "side": 1,
+      "message": "If hard-coding of \u0027_dependencies_injected()\u0027 is being avoided, please invoke getattr(obj, DEPENDENCIES_INJECECTED_CALLBACK)() instead of obj._dependencies_injected()",
+      "revId": "c94905d2946e30087e6c49f20c0ef7e95a93a030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_10c81921",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-08-28T15:33:14Z",
+      "side": 1,
+      "message": "In order to use obj as a dictionary key it has to be hashable - is it guaranteed?",
+      "revId": "c94905d2946e30087e6c49f20c0ef7e95a93a030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
