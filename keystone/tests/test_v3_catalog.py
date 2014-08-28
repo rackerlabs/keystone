@@ -229,6 +229,16 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             body={'region': region})
         self.assertValidRegionResponse(r, region)
 
+    def test_update_region_with_null_description(self):
+        """Call ``PATCH /regions/{region_id}``."""
+        region = self.new_region_ref()
+        del region['id']
+        region['description']= None
+        r = self.patch('/regions/%(region_id)s' % {
+            'region_id': self.region_id},
+            body={'region': region})
+        self.assertValidRegionResponse(r, region)
+
     def test_delete_region(self):
         """Call ``DELETE /regions/{region_id}``."""
         self.delete('/regions/%(region_id)s' % {
