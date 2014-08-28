@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_fb1c63c4",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-28T14:06:20Z",
+      "side": 1,
+      "message": "This doesn\u0027t appear to be used.",
+      "revId": "e522026e6dff6f48402a331e70b6a231ce8b72a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1b711f0c",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-28T14:06:20Z",
+      "side": 1,
+      "message": "This won\u0027t work on Python 3. Please use six.iteritems.",
+      "revId": "e522026e6dff6f48402a331e70b6a231ce8b72a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5bcd5730",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-28T14:06:20Z",
+      "side": 1,
+      "message": "Same Python 3 issue here.",
+      "revId": "e522026e6dff6f48402a331e70b6a231ce8b72a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3b641b21",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/002_add_endpoint_groups.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-28T14:06:20Z",
+      "side": 1,
+      "message": "This should be removed unless you work for the Foundation. If you do then please change the date.",
+      "revId": "e522026e6dff6f48402a331e70b6a231ce8b72a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_ed8cad82",
         "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/002_add_endpoint_groups.py",
         "patchSetId": 18
