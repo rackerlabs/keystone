@@ -51,6 +51,24 @@
       "revId": "49e46edacd1875c6cc08bd5c63266b613294fe37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4edf45d6",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-28T22:35:51Z",
+      "side": 1,
+      "message": "There was one test that set methods to \u0027\u0027, so i wanted to maintain that. This might be a bit odd now that i look at it, it shouldn\u0027t matter as long as methods is \u0027\u0027",
+      "parentUuid": "1abeadc6_b31da264",
+      "revId": "49e46edacd1875c6cc08bd5c63266b613294fe37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
