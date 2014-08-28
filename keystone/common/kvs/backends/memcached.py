@@ -22,6 +22,7 @@ import time
 from dogpile.cache import api
 from dogpile.cache.backends import memcached
 
+from keystone.common.cache.backends import memcache_pool
 from keystone.common import manager
 from keystone import config
 from keystone import exception
@@ -36,7 +37,7 @@ NO_VALUE = api.NO_VALUE
 
 VALID_DOGPILE_BACKENDS = dict(pylibmc=memcached.PylibmcBackend,
                               bmemcached=memcached.BMemcachedBackend,
-                              memcached=memcached.MemcachedBackend)
+                              memcached=memcache_pool.PooledMemcachedBackend)
 
 
 class MemcachedLock(object):
