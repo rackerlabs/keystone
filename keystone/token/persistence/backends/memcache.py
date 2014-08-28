@@ -27,4 +27,7 @@ class Token(kvs.Token):
         kwargs['no_expiry_keys'] = [self.revocation_key]
         kwargs['memcached_expire_time'] = CONF.token.expiration
         kwargs['url'] = CONF.memcache.servers
+        for arg in ('dead_retry', 'socket_timeout', 'pool_maxsize',
+                    'pool_unuzed_timeout', 'pool_debug'):
+            kwargs[arg] = getattr(CONF.memcache, arg)
         super(Token, self).__init__(*args, **kwargs)
