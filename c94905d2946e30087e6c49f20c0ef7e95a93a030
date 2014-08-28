@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_79bdb167",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-28T19:49:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_50fb717a",
+      "revId": "c94905d2946e30087e6c49f20c0ef7e95a93a030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_10c81921",
         "filename": "keystone/common/dependency.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-28T15:33:14Z",
       "side": 1,
       "message": "In order to use obj as a dictionary key it has to be hashable - is it guaranteed?",
+      "revId": "c94905d2946e30087e6c49f20c0ef7e95a93a030",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5c52a335",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-08-28T19:49:04Z",
+      "side": 1,
+      "message": "In practice all such objects are hashable, but I\u0027m not sure we can guarantee that. So thanks for bringing this up, will use id(obj) as key.",
+      "parentUuid": "1abeadc6_10c81921",
       "revId": "c94905d2946e30087e6c49f20c0ef7e95a93a030",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
