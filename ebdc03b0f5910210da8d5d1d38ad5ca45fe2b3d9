@@ -16,6 +16,24 @@
       "revId": "ebdc03b0f5910210da8d5d1d38ad5ca45fe2b3d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_424b9eb0",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-28T20:16:36Z",
+      "side": 1,
+      "message": "yeah, we can come back and figure out the lazy load bit, I tried @dstanek\u0027s suggestions in one of his reviews but couldn\u0027t get it completely fleshed out.",
+      "parentUuid": "1abeadc6_bf09ee32",
+      "revId": "ebdc03b0f5910210da8d5d1d38ad5ca45fe2b3d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
