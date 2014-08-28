@@ -34,6 +34,24 @@
       "revId": "7b609714b24e5d4abc17218a78ded2d2a945eecd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b3a04f91",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-28T15:34:16Z",
+      "side": 1,
+      "message": "Actually, no, str() is superfluous here :P, these are already strings.",
+      "parentUuid": "1abeadc6_7384f70a",
+      "revId": "7b609714b24e5d4abc17218a78ded2d2a945eecd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
