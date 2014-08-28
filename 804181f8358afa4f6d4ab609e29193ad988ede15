@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_0ecc6d88",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-28T22:22:45Z",
+      "side": 1,
+      "message": "i agree",
+      "parentUuid": "1abeadc6_73130ab8",
+      "revId": "804181f8358afa4f6d4ab609e29193ad988ede15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_13d9f6f2",
         "filename": "keystone/notifications.py",
         "patchSetId": 12
@@ -101,6 +119,24 @@
       "writtenOn": "2014-08-28T22:03:08Z",
       "side": 1,
       "message": "(unnecessary fun fact)\n\n  user_id \u003d user_id or taxonomy.UNKNOWN\n\nthe result of a boolean expression is the short circuited value.\n\nbut is \u0027unknown\u0027 actually appropriate in these cases? it seems null is much more correct than \"i don\u0027t know.\" there *is* no token, and you *know* that. it\u0027s not \"unknown\" (by my definition/understanding, anyway). thoughts?",
+      "revId": "804181f8358afa4f6d4ab609e29193ad988ede15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6ea241af",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-28T22:22:45Z",
+      "side": 1,
+      "message": "null will make pycadf explode",
+      "parentUuid": "1abeadc6_13d9f6f2",
       "revId": "804181f8358afa4f6d4ab609e29193ad988ede15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
