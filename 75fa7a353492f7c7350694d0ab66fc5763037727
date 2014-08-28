@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_24d15757",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-28T20:27:09Z",
+      "side": 1,
+      "message": "Great Catch Brant!!! I sleep very well at night knowing you reviewed the code!!! Done in next patch",
+      "parentUuid": "1abeadc6_db641ebb",
+      "revId": "75fa7a353492f7c7350694d0ab66fc5763037727",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_bb0682cc",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 11
@@ -108,6 +126,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_621a5ac7",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-28T20:27:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_bb0682cc",
+      "revId": "75fa7a353492f7c7350694d0ab66fc5763037727",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_f0e3a231",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 11
@@ -119,6 +155,24 @@
       "writtenOn": "2014-08-28T13:30:20Z",
       "side": 1,
       "message": "This seems to be repeated, I\u0027d remove this line, and put the send notification in the conditional.",
+      "revId": "75fa7a353492f7c7350694d0ab66fc5763037727",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a27f12df",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-28T20:27:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_f0e3a231",
       "revId": "75fa7a353492f7c7350694d0ab66fc5763037727",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -142,6 +196,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_e2858acf",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-28T20:27:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_fb18f5d4",
+      "revId": "75fa7a353492f7c7350694d0ab66fc5763037727",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_3b735281",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 11
@@ -153,6 +225,24 @@
       "writtenOn": "2014-08-28T00:15:44Z",
       "side": 1,
       "message": "same comment here.",
+      "revId": "75fa7a353492f7c7350694d0ab66fc5763037727",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_026e062f",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-28T20:27:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_3b735281",
       "revId": "75fa7a353492f7c7350694d0ab66fc5763037727",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
