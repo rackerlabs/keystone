@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_6d832b56",
+        "filename": "keystone/credential/schema.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-28T21:38:18Z",
+      "side": 1,
+      "message": "hmm... i\u0027m not sure we want to be strict about expected type values. people may already be using this API for something else",
+      "revId": "502654816b8e3a232facfe541ac8f1729acc7ab5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
