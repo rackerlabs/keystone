@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_0b9b5666",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-29T14:55:54Z",
+      "side": 1,
+      "message": "If a deployer doesn\u0027t fill out these config options in the Keystone config and we try building a contact person, should we be making sure that the values aren\u0027t none?",
+      "revId": "aed2bc9953485da116e7513feca866850cb502c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_83220150",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 15
@@ -47,6 +64,23 @@
       "writtenOn": "2014-08-29T07:35:03Z",
       "side": 1,
       "message": "Try to load this only once? Setup will do it for every test.",
+      "revId": "aed2bc9953485da116e7513feca866850cb502c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_0b00b664",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1701,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-29T14:55:54Z",
+      "side": 1,
+      "message": "suggest shortening these lines to avoid \\ line continuation.",
       "revId": "aed2bc9953485da116e7513feca866850cb502c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
