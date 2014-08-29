@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_16bb9f0f",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-29T01:24:49Z",
+      "side": 1,
+      "message": "Agreed. Will add a Note in my next patch",
+      "parentUuid": "1abeadc6_13cf3657",
+      "revId": "804181f8358afa4f6d4ab609e29193ad988ede15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_cdb8bf77",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 12
@@ -108,6 +126,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_f6ac63ef",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-29T01:24:49Z",
+      "side": 1,
+      "message": "me too. CURSE YOU Partials.... :-).  I\u0027m glad I learned how to use them though",
+      "parentUuid": "1abeadc6_0ecc6d88",
+      "revId": "804181f8358afa4f6d4ab609e29193ad988ede15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_13d9f6f2",
         "filename": "keystone/notifications.py",
         "patchSetId": 12
@@ -143,6 +179,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_1648ff5a",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-29T01:24:49Z",
+      "side": 1,
+      "message": "Yep it will.... fire in the hole :-)",
+      "parentUuid": "1abeadc6_6ea241af",
+      "revId": "804181f8358afa4f6d4ab609e29193ad988ede15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_ad6aa3ea",
         "filename": "requirements.txt",
         "patchSetId": 12
@@ -172,6 +226,24 @@
       "side": 1,
       "message": "they\u0027ll merge together cleanly. doesn\u0027t matter at all",
       "parentUuid": "1abeadc6_ad6aa3ea",
+      "revId": "804181f8358afa4f6d4ab609e29193ad988ede15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1631dfec",
+        "filename": "requirements.txt",
+        "patchSetId": 12
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-29T01:24:49Z",
+      "side": 1,
+      "message": "Yay!!!",
+      "parentUuid": "1abeadc6_13ae562e",
       "revId": "804181f8358afa4f6d4ab609e29193ad988ede15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
