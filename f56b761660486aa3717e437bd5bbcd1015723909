@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_2bdd72e0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-29T15:00:06Z",
+      "side": 1,
+      "message": "A 400 is for a validation error: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/exception.py#n78\n\nThere is nothing to say that a user has to run Keystone behind a webserver so we can\u0027t/don\u0027t rely on one.",
+      "parentUuid": "1abeadc6_cab7ae1f",
+      "revId": "f56b761660486aa3717e437bd5bbcd1015723909",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_ada8e38c",
         "filename": "keystone/tests/test_v3_catalog.py",
         "patchSetId": 1
