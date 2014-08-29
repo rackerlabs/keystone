@@ -104,6 +104,23 @@
       "revId": "a9ef68e99331e0ea9343724c1208cbc6cc39da59",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4ae9deb5",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-29T06:36:51Z",
+      "side": 1,
+      "message": "Just my question, why use `https` here?",
+      "revId": "a9ef68e99331e0ea9343724c1208cbc6cc39da59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
