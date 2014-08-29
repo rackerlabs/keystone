@@ -159,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_e2554f50",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 1609,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T22:48:56Z",
+      "side": 1,
+      "message": "OK",
+      "parentUuid": "1abeadc6_628a1f1c",
+      "revId": "5229311e0bc1c43f318edb18cc9c45ed62744c77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_02cb2b72",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 42
@@ -170,6 +188,24 @@
       "writtenOn": "2014-08-29T22:39:29Z",
       "side": 1,
       "message": "not sure this is worth a debug",
+      "revId": "5229311e0bc1c43f318edb18cc9c45ed62744c77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e2dc6fe6",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 1617,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T22:48:56Z",
+      "side": 1,
+      "message": "yeah, i was debating that too, i guess i\u0027ll take it out here and leave it in above",
+      "parentUuid": "1abeadc6_02cb2b72",
       "revId": "5229311e0bc1c43f318edb18cc9c45ed62744c77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -193,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_22e3c7a4",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 1706,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T22:48:56Z",
+      "side": 1,
+      "message": "alrighty",
+      "parentUuid": "1abeadc6_e2a46fa7",
+      "revId": "5229311e0bc1c43f318edb18cc9c45ed62744c77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_22abc775",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 42
@@ -204,6 +258,24 @@
       "writtenOn": "2014-08-29T22:39:29Z",
       "side": 1,
       "message": "instead of \u0027\\n\u0027\n\n  import os\n  os.linesep  # celebrate platform independence day",
+      "revId": "5229311e0bc1c43f318edb18cc9c45ed62744c77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_42de03db",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 1724,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T22:48:56Z",
+      "side": 1,
+      "message": "neat",
+      "parentUuid": "1abeadc6_22abc775",
       "revId": "5229311e0bc1c43f318edb18cc9c45ed62744c77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
