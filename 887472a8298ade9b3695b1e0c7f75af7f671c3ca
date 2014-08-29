@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_0e47dabc",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T20:15:26Z",
+      "side": 1,
+      "message": "thanks\n\n(nit) s/foer/for",
+      "revId": "887472a8298ade9b3695b1e0c7f75af7f671c3ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4e14729f",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T20:15:26Z",
+      "side": 1,
+      "message": "(nit) s/foer/for",
+      "revId": "887472a8298ade9b3695b1e0c7f75af7f671c3ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_8ee68aae",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T20:15:26Z",
+      "side": 1,
+      "message": "this is really for backwards compatibility with clients that create endpoints with a region attribute without creating that region first. it\u0027s an artifact of v2, but it\u0027s really a backwards compatibility with even existing v3 clients.",
+      "revId": "887472a8298ade9b3695b1e0c7f75af7f671c3ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ceb16290",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T20:15:26Z",
+      "side": 1,
+      "message": "i\u0027m still not clear on what benefit trading a 404 with region ID for a 400 with slightly less info provides",
+      "revId": "887472a8298ade9b3695b1e0c7f75af7f671c3ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4e65521c",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T20:15:26Z",
+      "side": 1,
+      "message": "(nit) should this be six.text_type() for py3? or six.b?",
+      "revId": "887472a8298ade9b3695b1e0c7f75af7f671c3ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
