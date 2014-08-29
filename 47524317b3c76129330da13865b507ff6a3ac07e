@@ -19,6 +19,42 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_60d04dc9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-08-29T23:54:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_9ac0a27d",
+      "revId": "47524317b3c76129330da13865b507ff6a3ac07e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_20cad51a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-08-29T23:54:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_9ac0a27d",
+      "revId": "47524317b3c76129330da13865b507ff6a3ac07e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_ba69e68d",
         "filename": "/COMMIT_MSG",
         "patchSetId": 4
@@ -30,6 +66,24 @@
       "writtenOn": "2014-07-21T13:44:39Z",
       "side": 1,
       "message": "Is there documentation on the plugin dev process? If so, it should be referenced here.",
+      "revId": "47524317b3c76129330da13865b507ff6a3ac07e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e04c5dca",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-08-29T23:54:13Z",
+      "side": 1,
+      "message": "it\u0027s in plugin directory...\nI don\u0027t see any reason to put it in commit message..",
+      "parentUuid": "baada198_ba69e68d",
       "revId": "47524317b3c76129330da13865b507ff6a3ac07e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +107,42 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_80d3a9d3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-08-29T23:54:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_5a428a0f",
+      "revId": "47524317b3c76129330da13865b507ff6a3ac07e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_004879b1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-08-29T23:54:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baada198_5a428a0f",
+      "revId": "47524317b3c76129330da13865b507ff6a3ac07e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_7fd53142",
         "filename": "rally-scenarios/README.rst",
         "patchSetId": 4
@@ -64,6 +154,24 @@
       "writtenOn": "2014-08-08T21:25:43Z",
       "side": 1,
       "message": "Any reason these links aren\u0027t using RST syntax?",
+      "revId": "47524317b3c76129330da13865b507ff6a3ac07e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_60e76dac",
+        "filename": "rally-scenarios/README.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-08-29T23:54:13Z",
+      "side": 1,
+      "message": "nope, I\u0027ll fix",
+      "parentUuid": "baada198_7fd53142",
       "revId": "47524317b3c76129330da13865b507ff6a3ac07e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
