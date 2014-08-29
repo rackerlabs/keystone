@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_1f0e348c",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-29T13:53:47Z",
+      "side": 1,
+      "message": "isn\u0027t this the issuer_url, according to line 43?",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_bf62a03b",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-29T13:53:47Z",
+      "side": 1,
+      "message": "recipient_url? or change issuer_name above to be issuer",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ba970eeb",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-29T13:53:47Z",
+      "side": 1,
+      "message": "tests are failing here because a file isn\u0027t being found.",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7ad9f620",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 1686,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-29T13:53:47Z",
+      "side": 1,
+      "message": "nit: s/Test the/Test that the/",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
