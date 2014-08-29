@@ -1467,14 +1467,41 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                           self.assignment_api.get_project,
                           project['id'])
 
+    def test_domain_delete_hierarchy(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
     def test_check_leaf_projects(self):
-        self.skipTest('LDAP does not support hierarchical projects')
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
 
     def test_get_project_subtree(self):
-        self.skipTest('LDAP does not support hierarchical projects')
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
 
     def test_list_project_parents(self):
-        self.skipTest('LDAP does not support hierarchical projects')
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_hierarchical_projects_crud(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_create_project_with_invalid_parent(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_create_leaf_project_with_invalid_domain(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_update_project_parent(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_delete_hierarchical_leaf_project(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_delete_hierarchical_not_leaf_project(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_create_project_allowed_depth(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_create_project_not_allowed_depth(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
 
     @tests.skip_if_cache_disabled('assignment')
     def test_cache_layer_project_crud(self):
@@ -1851,6 +1878,9 @@ class LdapIdentitySqlAssignment(BaseLDAPIdentity, tests.SQLDriverOverrides,
     def test_list_domains(self):
         domains = self.assignment_api.list_domains()
         self.assertEqual([assignment.calc_default_domain()], domains)
+
+    def test_domain_delete_hierarchy(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
 
     def test_list_domains_non_default_domain_id(self):
         # If change the default_domain_id, the ID of the default domain
