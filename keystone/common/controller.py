@@ -15,6 +15,8 @@
 import functools
 import uuid
 
+import six
+
 from keystone.common import authorization
 from keystone.common import dependency
 from keystone.common import driver_hints
@@ -318,6 +320,27 @@ class V3Controller(wsgi.Application):
             url = '%s?%s' % (url, context['environment']['QUERY_STRING'])
 
         return url
+
+    @classmethod
+    def _query_filter_is_true(cls, filter_value):
+        """Determine if bool query param is 'True'.
+
+        We treat this the same way as we do for policy
+        enforcement:
+
+        {bool_param}=0 is treated as False
+
+        Any other value is considered to be equivalent to
+        True, including the absence of a value
+
+        """
+
+        if (isinstance(filter_value, six.string_types) and
+                filter_value == '0'):
+            val = False
+        else:
+            val = True
+        return val
 
     @classmethod
     def _add_self_referential_link(cls, context, ref):
