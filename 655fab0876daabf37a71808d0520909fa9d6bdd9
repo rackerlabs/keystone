@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_2fc2dd33",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T15:27:24Z",
+      "side": 1,
+      "message": "++ is it a name or URL? URI?",
+      "parentUuid": "1abeadc6_1f0e348c",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_bf62a03b",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 39
@@ -88,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_6f069587",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T15:27:24Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1abeadc6_10b623f9",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_10438313",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 39
@@ -99,6 +135,24 @@
       "writtenOn": "2014-08-29T14:35:35Z",
       "side": 1,
       "message": "Dolph, why not keep the assertions in one place? Easier to restrict the access for others.",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_cfd249d0",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T15:27:24Z",
+      "side": 1,
+      "message": "i\u0027m not sure i follow the question. i didn\u0027t write this code and i have no idea what fileutils.write_to_tempfile does.",
+      "parentUuid": "1abeadc6_10438313",
       "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -140,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_cf6ec9ff",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T15:27:24Z",
+      "side": 1,
+      "message": "depending on how write_to_tempfile works, a child process might not have access to the file.",
+      "parentUuid": "1abeadc6_10b2a3e4",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_10cc63ba",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 39
@@ -174,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_8f4f7191",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T15:27:24Z",
+      "side": 1,
+      "message": "just remove the except block if you\u0027re not going to have a useful log message",
+      "parentUuid": "1abeadc6_d08d8b32",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_70faf743",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 39
@@ -185,6 +275,24 @@
       "writtenOn": "2014-08-29T14:42:45Z",
       "side": 1,
       "message": "assertIsInstance?",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6f1a157e",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 1635,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T15:27:24Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1abeadc6_70faf743",
       "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -236,6 +344,23 @@
       "writtenOn": "2014-08-29T14:42:45Z",
       "side": 1,
       "message": "assertIsInstance?",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d20aee1e",
+        "filename": "keystone/tests/xml/signed_saml2_assertion.xml",
+        "patchSetId": 39
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T15:27:24Z",
+      "side": 1,
+      "message": "instead of naming this directory \"xml\" - can you name it something about the directory contents, and not just their format? like saml2/ or federation/ or whatever",
       "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
