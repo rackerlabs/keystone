@@ -104,8 +104,9 @@ class EndpointFilterV3Controller(_ControllerBase):
         self.assignment_api.get_project(project_id)
         refs = self.endpoint_filter_api.list_endpoints_for_project(project_id)
 
-        filtered_endpoints = dict((ref.endpoint_id, self.catalog_api.get_endpoint(
-            ref.endpoint_id)) for ref in refs)
+        filtered_endpoints = dict((
+            ref.endpoint_id, self.catalog_api.get_endpoint(
+                ref.endpoint_id)) for ref in refs)
 
         # need to recover endpoint_groups associated with project
         # then for each endpoint group return the endpoints.
@@ -248,6 +249,24 @@ class ProjectEndpointGroupV3Controller(_ControllerBase):
 
     def __init__(self):
         super(ProjectEndpointGroupV3Controller, self).__init__()
+        notifications.register_event_callback(
+            'deleted', 'project',
+            self._on_project_or_endpoint_group_delete)
+        notifications.register_event_callback(
+            'deleted', 'OS-EP-FILTER:endpoint_group',
+            self._on_project_or_endpoint_group_delete)
+
+    def _on_project_or_endpoint_group_delete(self, service, resource_type,
+                                             operation, payload):
+        project_or_endpoint_group_id = payload['resource_info']
+        if resource_type == 'project':
+            (self.endpoint_filter_api.
+                delete_endpoint_group_association_by_project(
+                    project_or_endpoint_group_id))
+        else:
+            (self.endpoint_filter_api.
+                delete_endpoint_group_association_by_endpoint_group(
+                    project_or_endpoint_group_id))
 
     @controller.protected()
     def get_endpoint_group_in_project(self, context, endpoint_group_id,
