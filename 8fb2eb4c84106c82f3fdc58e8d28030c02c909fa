@@ -104,6 +104,24 @@
       "revId": "8fb2eb4c84106c82f3fdc58e8d28030c02c909fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f4cc5637",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1298,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-08-29T04:06:16Z",
+      "side": 1,
+      "message": "If you extract out that check as function, then you can call that for id and name mapping",
+      "parentUuid": "1abeadc6_6bda2979",
+      "revId": "8fb2eb4c84106c82f3fdc58e8d28030c02c909fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
