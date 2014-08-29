@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_75bca4dc",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T16:01:08Z",
+      "side": 1,
+      "message": "this could/should be token_ref.user_id but as-is, it won\u0027t fail until we introduce v4",
+      "revId": "a64bb889292f07bd155fdf264933056b6e010ad0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f596f44a",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T16:01:08Z",
+      "side": 1,
+      "message": ".\n  token, so we",
+      "revId": "a64bb889292f07bd155fdf264933056b6e010ad0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
