@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_fe7b48f2",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 609,
+      "author": {
+        "id": 13009
+      },
+      "writtenOn": "2014-08-29T10:12:51Z",
+      "side": 1,
+      "message": "There is no mistake. \u0027And\u0027 is not overloaded operator. So I use \u0027\u0026\u0027 because of need to overload it.",
+      "parentUuid": "1abeadc6_30c275e9",
+      "revId": "0e7dffed7552c5bb6171675b6e52c831b88768b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_b074c5cf",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-28T15:24:05Z",
       "side": 1,
       "message": "from keystone.common.ldap import expr\nshould after:\nfrom keystone import exception",
+      "revId": "0e7dffed7552c5bb6171675b6e52c831b88768b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_592296a3",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 13009
+      },
+      "writtenOn": "2014-08-29T10:12:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_b074c5cf",
       "revId": "0e7dffed7552c5bb6171675b6e52c831b88768b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +117,24 @@
       "writtenOn": "2014-08-28T15:24:05Z",
       "side": 1,
       "message": "use all() instead of \u0026\u003d",
+      "revId": "0e7dffed7552c5bb6171675b6e52c831b88768b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_590b7623",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1406,
+      "author": {
+        "id": 13009
+      },
+      "writtenOn": "2014-08-29T10:12:51Z",
+      "side": 1,
+      "message": "There is no need to use all() instead of \u0026\u003d. \u0027\u0026\u0027 is overloaded.",
+      "parentUuid": "1abeadc6_9313535b",
       "revId": "0e7dffed7552c5bb6171675b6e52c831b88768b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
