@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_dfb853ca",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 822,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-29T04:26:21Z",
+      "side": 1,
+      "message": "ah this would be a major issue in the real world, register shouldn\u0027t make a config option it should just register it. but yes this is an issue. The implementation in the tests.core is the correct one (mocked to use the config_fixture)",
+      "parentUuid": "1abeadc6_56619737",
+      "revId": "49e46edacd1875c6cc08bd5c63266b613294fe37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_48a49d4a",
         "filename": "keystone/tests/core.py",
         "patchSetId": 3
