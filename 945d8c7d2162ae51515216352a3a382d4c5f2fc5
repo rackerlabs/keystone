@@ -16,6 +16,24 @@
       "revId": "945d8c7d2162ae51515216352a3a382d4c5f2fc5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4ce0fa25",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 811,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T21:04:53Z",
+      "side": 1,
+      "message": "it\u0027s mocked in tests to behave differently, hence it\u0027s segregated out",
+      "parentUuid": "1abeadc6_518a531b",
+      "revId": "945d8c7d2162ae51515216352a3a382d4c5f2fc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
