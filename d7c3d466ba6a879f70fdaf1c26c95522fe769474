@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_85a13bfa",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-29T00:01:21Z",
+      "side": 1,
+      "message": "Done - I\u0027ve taken these two method specifications out. I was going to add the delete notification logic into this review but it swells up the code count and so I took it out except for these two lingering methods which I will kill now.",
+      "parentUuid": "1abeadc6_a27f0d16",
+      "revId": "d7c3d466ba6a879f70fdaf1c26c95522fe769474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_e27ca522",
         "filename": "keystone/contrib/endpoint_filter/core.py",
         "patchSetId": 22
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-28T23:13:55Z",
       "side": 1,
       "message": "(NIT) Same as above.",
+      "revId": "d7c3d466ba6a879f70fdaf1c26c95522fe769474",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_25b6a73e",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-29T00:01:21Z",
+      "side": 1,
+      "message": "Done - removed as above.",
+      "parentUuid": "1abeadc6_e27ca522",
       "revId": "d7c3d466ba6a879f70fdaf1c26c95522fe769474",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
