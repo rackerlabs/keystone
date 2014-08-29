@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_c9dfae0b",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-29T12:20:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_13a1f693",
+      "revId": "a9ef68e99331e0ea9343724c1208cbc6cc39da59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_53a7eea6",
         "filename": "keystone/catalog/schema.py",
         "patchSetId": 33
@@ -118,6 +136,24 @@
       "writtenOn": "2014-08-29T06:36:51Z",
       "side": 1,
       "message": "Just my question, why use `https` here?",
+      "revId": "a9ef68e99331e0ea9343724c1208cbc6cc39da59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4928fee1",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-29T12:20:22Z",
+      "side": 1,
+      "message": "Here we are just populating some test data for the endpoint reference dictionary. The regular expression that is being used to match valid URLs will not raise an exception on a URL like \u0027https://example.com\u0027. We could do the same test with \u0027http://example.com\u0027. The purpose of ref[\u0027url\u0027] is to hold some valid URL value for the sake of building a endpoint reference.",
+      "parentUuid": "1abeadc6_4ae9deb5",
       "revId": "a9ef68e99331e0ea9343724c1208cbc6cc39da59",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
