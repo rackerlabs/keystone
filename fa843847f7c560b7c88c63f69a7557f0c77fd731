@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_f409b695",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 813,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T05:42:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_eeb0118d",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_8e379dfe",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 37
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_f430d657",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T05:42:51Z",
+      "side": 1,
+      "message": "I tweaked all the docstrings to be less brief.",
+      "parentUuid": "1abeadc6_8e379dfe",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_a2062d1a",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 37
@@ -65,6 +101,24 @@
       "writtenOn": "2014-08-28T23:00:36Z",
       "side": 1,
       "message": "as mentioned in a previous review, use mkstemp",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5460aa00",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T05:42:51Z",
+      "side": 1,
+      "message": "changed to mkstemp",
+      "parentUuid": "1abeadc6_a2062d1a",
       "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -106,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_1443926c",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T05:42:51Z",
+      "side": 1,
+      "message": "w/o the flush, the data was not being saved to the file.",
+      "parentUuid": "1abeadc6_e01e8b6f",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_0042a767",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 37
@@ -123,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_343deedd",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T05:42:51Z",
+      "side": 1,
+      "message": "swapped to the suggestions dolph wrote",
+      "parentUuid": "1abeadc6_0042a767",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_22485d5b",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 37
@@ -134,6 +224,24 @@
       "writtenOn": "2014-08-28T23:00:36Z",
       "side": 1,
       "message": "i\u0027m not sure what the point of trying to catch any of this is, but definitely DO NOT raise a new IOError - that discards the root traceback",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f4361602",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T05:42:51Z",
+      "side": 1,
+      "message": "swapped to the suggestions dolph wrote",
+      "parentUuid": "1abeadc6_22485d5b",
       "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -175,6 +283,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_942de2aa",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T05:42:51Z",
+      "side": 1,
+      "message": "swapped to the suggestions dolph wrote",
+      "parentUuid": "1abeadc6_22b69d3e",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_a20c6ded",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 37
@@ -186,6 +312,24 @@
       "writtenOn": "2014-08-28T23:00:36Z",
       "side": 1,
       "message": "regarding this whole bit, i took a stab at rewriting some of it to my understanding. this is untested though: http://pasteraw.com/43iidlfh6kooyw0gitm6ia54e3olob6",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_34140e4c",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T05:42:51Z",
+      "side": 1,
+      "message": "tried something else",
+      "parentUuid": "1abeadc6_a20c6ded",
       "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
