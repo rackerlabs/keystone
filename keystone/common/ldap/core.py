@@ -1276,13 +1276,30 @@ class BaseLdap(object):
         return utf8_decode(ldap.dn.str2dn(utf8_encode(dn))[0][0][1])
 
     def _ldap_res_to_model(self, res):
-        obj = self.model(id=self._dn_to_id(res[0]))
         # LDAP attribute names may be returned in a different case than
         # they are defined in the mapping, so we need to check for keys
         # in a case-insensitive way.  We use the case specified in the
         # mapping for the model to ensure we have a predictable way of
         # retrieving values later.
         lower_res = dict((k.lower(), v) for k, v in six.iteritems(res[1]))
+
+        id_attr = lower_res.get(self.id_attr.lower())
+        if not id_attr or len(id_attr) < 1:
+            message = _('ID attribute %(id_attr)s not found in LDAP '
+                        'object %(dn)s') % ({'id_attr': self.id_attr,
+                                             'dn': res[0]})
+            raise exception.NotFound(message=message)
+        elif len(id_attr) > 1:
+            # NOTE(gyee): if this is a multi-value attribute and it has
+            # multiple values, we can't use it as ID.
+            raise exception.Conflict(
+                type=self.id_attr,
+                details=_('LDAP object %(dn)s has multivalued attribute '
+                          '%(id_attr)s which cannot be used as ID') % (
+                              {'dn': res[0],
+                               'id_attr': self.id_attr}))
+        obj = self.model(id=id_attr[0])
+
         for k in obj.known_keys:
             if k in self.attribute_ignore:
                 continue
@@ -1346,11 +1363,16 @@ class BaseLdap(object):
         object_classes = self.structural_classes + [self.object_class]
         attrs = [('objectClass', object_classes)]
         for k, v in six.iteritems(values):
-            if k == 'id' or k in self.attribute_ignore:
+            if k in self.attribute_ignore:
                 continue
-            if v is not None:
+            if k == 'id':
+                if v is None or len(v) == 0:
+                    message = _('ID attribute must have a value')
+                    raise exception.NotFound(message=message)
+                attrs.append((self.id_attr, [v]))
+            elif v is not None:
                 attr_type = self.attribute_mapping.get(k, k)
-                if attr_type is not None:
+                if attr_type is not None and attr_type != self.id_attr:
                     attrs.append((attr_type, [v]))
                 extra_attrs = [attr for attr, name
                                in six.iteritems(self.extra_attr_mapping)
@@ -1358,7 +1380,8 @@ class BaseLdap(object):
                 for attr in extra_attrs:
                     attrs.append((attr, [v]))
 
-        if 'groupOfNames' in object_classes and self.use_dumb_member:
+        if ('groupOfNames' in object_classes and self.use_dumb_member and
+                'member' != self.id_attr):
             attrs.append(('member', [self.dumb_member]))
         try:
             conn.add_s(self._id_to_dn(values['id']), attrs)
@@ -1377,7 +1400,8 @@ class BaseLdap(object):
                     'filter': (ldap_filter or self.ldap_filter or ''),
                     'object_class': self.object_class})
         try:
-            attrs = list(set((self.attribute_mapping.values() +
+            attrs = list(set(([self.id_attr] +
+                              self.attribute_mapping.values() +
                               self.extra_attr_mapping.keys())))
             res = conn.search_s(self.tree_dn, self.LDAP_SCOPE, query, attrs)
         except ldap.NO_SUCH_OBJECT:
@@ -1395,7 +1419,8 @@ class BaseLdap(object):
                                             self.ldap_filter or
                                             '', self.object_class)
         try:
-            attrs = list(set((self.attribute_mapping.values() +
+            attrs = list(set(([self.id_attr] +
+                              self.attribute_mapping.values() +
                               self.extra_attr_mapping.keys())))
             return conn.search_s(self.tree_dn,
                                  self.LDAP_SCOPE,
