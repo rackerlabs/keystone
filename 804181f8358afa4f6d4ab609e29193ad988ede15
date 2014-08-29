@@ -144,6 +144,23 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_36fdfbb1",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T01:32:29Z",
+      "side": 1,
+      "message": "remove user_id\u003dNone since that\u0027s the default.",
+      "revId": "804181f8358afa4f6d4ab609e29193ad988ede15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_13d9f6f2",
         "filename": "keystone/notifications.py",
         "patchSetId": 12
@@ -191,6 +208,40 @@
       "side": 1,
       "message": "Yep it will.... fire in the hole :-)",
       "parentUuid": "1abeadc6_6ea241af",
+      "revId": "804181f8358afa4f6d4ab609e29193ad988ede15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_16aabf70",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 796,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T01:32:29Z",
+      "side": 1,
+      "message": "(suggestion) this is always called with self.ACTION, self.IDP, self.PROTOCOL, so might as well not pass them in.",
+      "revId": "804181f8358afa4f6d4ab609e29193ad988ede15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_56def711",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 972,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T01:32:29Z",
+      "side": 1,
+      "message": "would be nice to see a test for a failing outcome.",
       "revId": "804181f8358afa4f6d4ab609e29193ad988ede15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
