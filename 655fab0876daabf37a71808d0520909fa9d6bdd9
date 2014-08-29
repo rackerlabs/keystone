@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_8984c95e",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T18:04:29Z",
+      "side": 1,
+      "message": "changed to issuer_url, as it\u0027s a url",
+      "parentUuid": "1abeadc6_2fc2dd33",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_bf62a03b",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 39
@@ -83,6 +101,24 @@
       "writtenOn": "2014-08-29T14:42:45Z",
       "side": 1,
       "message": "This represents the version of the SAML spec right?",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_69e04d26",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T18:04:29Z",
+      "side": 1,
+      "message": "correcto",
+      "parentUuid": "1abeadc6_30e95fe6",
       "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -300,6 +336,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_09e999e5",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T18:04:29Z",
+      "side": 1,
+      "message": "I logged a message and stacktrace",
+      "parentUuid": "1abeadc6_8f4f7191",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_70faf743",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 39
@@ -335,6 +389,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_897689a2",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 1635,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T18:04:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_70faf743",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_1037034e",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 39
@@ -346,6 +418,24 @@
       "writtenOn": "2014-08-29T14:42:45Z",
       "side": 1,
       "message": "Probably should switch the order of these two. The order should be (expected, observed).",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_096a79b2",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 1637,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T18:04:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_1037034e",
       "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -369,6 +459,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_695bed21",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 1686,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T18:04:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_7ad9f620",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_308b1fc4",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 39
@@ -380,6 +488,24 @@
       "writtenOn": "2014-08-29T14:42:45Z",
       "side": 1,
       "message": "assertIsInstance?",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_4960f1ce",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 1700,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T18:04:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_308b1fc4",
       "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -403,6 +529,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_a92b4580",
+        "filename": "keystone/tests/xml/signed_saml2_assertion.xml",
+        "patchSetId": 39
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T18:04:29Z",
+      "side": 1,
+      "message": "went with saml2",
+      "parentUuid": "1abeadc6_d20aee1e",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_d0682bf7",
         "filename": "test-requirements.txt",
         "patchSetId": 39
@@ -414,6 +558,24 @@
       "writtenOn": "2014-08-29T14:42:45Z",
       "side": 1,
       "message": "(nit) i don\u0027t think the \u0027f\u0027 and \u0027m\u0027 here need to be capitalized.",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_093c39c7",
+        "filename": "test-requirements.txt",
+        "patchSetId": 39
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T18:04:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_d0682bf7",
       "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
