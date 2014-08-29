@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_22b7473b",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 641,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-29T22:17:05Z",
+      "side": 1,
+      "message": "I\u0027m not a fan of using the index\u003dTrue kwarg, it\u0027s gotten us into a bind in a previous timeframe, not that you\u0027re using it in the context of a migration.",
+      "revId": "0cb9c042ac90395ad510ab04cf9442c723a60a33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
