@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_47fc55b5",
+        "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T21:59:05Z",
+      "side": 1,
+      "message": "(nit) primary",
+      "revId": "7618e1d701865831573383c0e914db9edda1d040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_87174da2",
+        "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T21:59:05Z",
+      "side": 1,
+      "message": "this is a bad pattern - whatever requires this should be done at the manager layer",
+      "revId": "7618e1d701865831573383c0e914db9edda1d040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_a7336960",
+        "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T21:59:05Z",
+      "side": 1,
+      "message": "the manager should do this work, not the driver.",
+      "revId": "7618e1d701865831573383c0e914db9edda1d040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e7f9e180",
+        "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T21:59:05Z",
+      "side": 1,
+      "message": "if you used a composite primary key across all three columns, you wouldn\u0027t have to do this :-/ ... as-is, this is open to a race condition",
+      "revId": "7618e1d701865831573383c0e914db9edda1d040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_274759bd",
+        "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T21:59:05Z",
+      "side": 1,
+      "message": "drivers should not reach into other drivers -- do this work at the manager layer",
+      "revId": "7618e1d701865831573383c0e914db9edda1d040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
