@@ -36,6 +36,41 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_904eb336",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-29T14:35:35Z",
+      "side": 1,
+      "message": "no, it creates the object, not the url.",
+      "parentUuid": "1abeadc6_bf62a03b",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_10438313",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-29T14:35:35Z",
+      "side": 1,
+      "message": "Dolph, why not keep the assertions in one place? Easier to restrict the access for others.",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_ba970eeb",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 39
@@ -47,6 +82,41 @@
       "writtenOn": "2014-08-29T13:53:47Z",
       "side": 1,
       "message": "tests are failing here because a file isn\u0027t being found.",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_10b2a3e4",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-29T14:35:35Z",
+      "side": 1,
+      "message": "they passed on my laptop, which rather means it\u0027s the jenkins vm which is (properly) hardened....",
+      "parentUuid": "1abeadc6_ba970eeb",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_10cc63ba",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-29T14:35:35Z",
+      "side": 1,
+      "message": "I think we should log the error here. Also, if xmlsec1 fails to sign the XML the XMLParsingError will be raised, this also should be logged (at least at the debug level).",
       "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
