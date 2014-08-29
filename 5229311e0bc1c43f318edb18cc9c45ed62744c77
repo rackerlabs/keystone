@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_22f02790",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 42
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T22:42:39Z",
+      "side": 1,
+      "message": "fixing now",
+      "parentUuid": "1abeadc6_02796b2e",
+      "revId": "5229311e0bc1c43f318edb18cc9c45ed62744c77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_426fe35f",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 42
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-29T22:34:50Z",
       "side": 1,
       "message": "same comment here.",
+      "revId": "5229311e0bc1c43f318edb18cc9c45ed62744c77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_42eb63a3",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 42
+      },
+      "lineNbr": 889,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T22:42:39Z",
+      "side": 1,
+      "message": "fixing now",
+      "parentUuid": "1abeadc6_426fe35f",
       "revId": "5229311e0bc1c43f318edb18cc9c45ed62744c77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_02232b05",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T22:42:39Z",
+      "side": 1,
+      "message": "doesn\u0027t appear so, would it reduce the chance of a race condition?",
+      "parentUuid": "1abeadc6_62df7f0d",
+      "revId": "5229311e0bc1c43f318edb18cc9c45ed62744c77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_02c7ab45",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 42
@@ -64,6 +118,24 @@
       "writtenOn": "2014-08-29T22:39:29Z",
       "side": 1,
       "message": "why would you get an oserror here?",
+      "revId": "5229311e0bc1c43f318edb18cc9c45ed62744c77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6214df9f",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T22:42:39Z",
+      "side": 1,
+      "message": "in case we failed to remove the file\n\nhttp://stackoverflow.com/questions/10840533/most-pythonic-way-to-delete-a-file-which-may-not-exist",
+      "parentUuid": "1abeadc6_02c7ab45",
       "revId": "5229311e0bc1c43f318edb18cc9c45ed62744c77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
