@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_227f47ac",
+        "filename": "keystone/contrib/federation/schema.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-29T22:59:00Z",
+      "side": 1,
+      "message": "nit: could make this private knowing that it shouldn\u0027t be used outside of this module.",
+      "revId": "6fbf2c301f9d17e6b15be8485279e1850b6742b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
