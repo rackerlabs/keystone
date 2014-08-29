@@ -159,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_98cc1537",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-29T16:34:13Z",
+      "side": 1,
+      "message": "write_to_tempfile uses mkstemp and writes the contents to the file then returns the path while cleaning up the FD. It is just a wrapper for mkstemp.  This might need a prefix, etc.",
+      "parentUuid": "1abeadc6_cfd249d0",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_ba970eeb",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 39
