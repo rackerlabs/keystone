@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_52b7be20",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-29T15:32:02Z",
+      "side": 1,
+      "message": "While I agree with you, that\u0027s a different issue. We currently use 400 so when I thought this should be a client error I believe that would have been the correct error code based on our current implementation.",
+      "parentUuid": "1abeadc6_efdc65e6",
+      "revId": "f56b761660486aa3717e437bd5bbcd1015723909",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_ada8e38c",
         "filename": "keystone/tests/test_v3_catalog.py",
         "patchSetId": 1
