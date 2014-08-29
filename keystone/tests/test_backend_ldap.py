@@ -1090,7 +1090,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
             'cn=junk,dc=example,dc=com',
             {
                 'sN': [uuid.uuid4().hex],
-                'eMaIl': [uuid.uuid4().hex]
+                'eMaIl': [uuid.uuid4().hex],
+                'cn': ['junk']
             }
         )
         user = self.identity_api.get_user('junk')

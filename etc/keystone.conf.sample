@@ -36,25 +36,24 @@
 
 # The base public endpoint URL for keystone that are
 # advertised to clients (NOTE: this does NOT affect how
-# keystone listens for connections) (string value).
-# Defaults to the base host URL of the request. Eg a
-# request to http://server:5000/v2.0/users will
-# default to http://server:5000. You should only need
-# to set this value if the base URL contains a path
-# (eg /prefix/v2.0) or the endpoint should be found on
-# a different server.
-#public_endpoint=http://localhost:%(public_port)s/
+# keystone listens for connections). Defaults to the base host
+# URL of the request. Eg a request to
+# http://server:5000/v2.0/users will default to
+# http://server:5000. You should only need to set this value
+# if the base URL contains a path (eg /prefix/v2.0) or the
+# endpoint should be found on a different server. (string
+# value)
+#public_endpoint=<None>
 
 # The base admin endpoint URL for keystone that are advertised
 # to clients (NOTE: this does NOT affect how keystone listens
-# for connections) (string value).
-# Defaults to the base host URL of the request. Eg a
-# request to http://server:35357/v2.0/users will
-# default to http://server:35357. You should only need
-# to set this value if the base URL contains a path
-# (eg /prefix/v2.0) or the endpoint should be found on
-# a different server.
-#admin_endpoint=http://localhost:%(admin_port)s/
+# for connections). Defaults to the base host URL of the
+# request. Eg a request to http://server:35357/v2.0/users will
+# default to http://server:35357. You should only need to set
+# this value if the base URL contains a path (eg /prefix/v2.0)
+# or the endpoint should be found on a different server.
+# (string value)
+#admin_endpoint=<None>
 
 # onready allows you to send a notification when the process
 # is ready to serve For example, to have it notify using
@@ -133,10 +132,6 @@
 # Size of RPC connection pool. (integer value)
 #rpc_conn_pool_size=30
 
-# Modules of exceptions that are permitted to be recreated
-# upon receiving exception data from an rpc call. (list value)
-#allowed_rpc_exception_modules=oslo.messaging.exceptions,nova.exception,cinder.exception,exceptions
-
 # Qpid broker hostname. (string value)
 #qpid_hostname=localhost
 
@@ -165,6 +160,10 @@
 
 # Whether to disable the Nagle algorithm. (boolean value)
 #qpid_tcp_nodelay=true
+
+# The number of prefetched messages held by receiver. (integer
+# value)
+#qpid_receiver_capacity=1
 
 # The qpid topology version to use.  Version 1 is what was
 # originally used by impl_qpid.  Version 2 includes some
@@ -274,15 +273,6 @@
 
 # Heartbeat time-to-live. (integer value)
 #matchmaker_heartbeat_ttl=600
-
-# Host to locate redis. (string value)
-#host=127.0.0.1
-
-# Use this port to connect to redis host. (integer value)
-#port=6379
-
-# Password for Redis server (optional). (string value)
-#password=<None>
 
 # Size of RPC greenthread pool. (integer value)
 #rpc_thread_pool_size=64
@@ -590,6 +580,12 @@
 # catalog collection. (integer value)
 #list_limit=<None>
 
+# List of possible substitutions for use in formatting
+# endpoints. Use caution when modifying this list. It will
+# give users with permission to create endpoints the ability
+# to see those values in your configuration file. (list value)
+#endpoint_substitution_whitelist=tenant_id,user_id,public_bind_host,admin_bind_host,compute_host,compute_port,admin_port,public_port,public_endpoint,admin_endpoint
+
 
 [credential]
 
@@ -868,7 +864,8 @@
 # LDAP objectClass for users. (string value)
 #user_objectclass=inetOrgPerson
 
-# LDAP attribute mapped to user id. (string value)
+# LDAP attribute mapped to user id. WARNING: must not be a
+# multivalued attribute. (string value)
 #user_id_attribute=cn
 
 # LDAP attribute mapped to user name. (string value)
@@ -1082,6 +1079,22 @@
 # valid options for tls_req_cert are demand, never, and allow.
 # (string value)
 #tls_req_cert=demand
+
+
+[matchmaker_redis]
+
+#
+# Options defined in oslo.messaging
+#
+
+# Host to locate redis. (string value)
+#host=127.0.0.1
+
+# Use this port to connect to redis host. (integer value)
+#port=6379
+
+# Password for Redis server (optional). (string value)
+#password=<None>
 
 
 [matchmaker_ring]
