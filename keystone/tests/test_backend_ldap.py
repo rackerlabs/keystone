@@ -1205,7 +1205,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
             'cn=junk,dc=example,dc=com',
             {
                 'sn': [uuid.uuid4().hex],
-                'email': [uuid.uuid4().hex]
+                'email': [uuid.uuid4().hex],
+                'cn': ['junk']
             }
         )
 
@@ -1357,7 +1358,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
             'cn=junk,dc=example,dc=com',
             {
                 'sN': [uuid.uuid4().hex],
-                'MaIl': [uuid.uuid4().hex]
+                'MaIl': [uuid.uuid4().hex],
+                'cn': ['junk']
             }
         )
         user = self.identity_api.get_user('junk')
@@ -1663,6 +1665,42 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         for group_ref in groups:
             self.assertNotIn('dn', group_ref)
         self.assertEqual(set(expected_group_ids), group_ids)
+
+    def test_user_id_map_for_readonly_ldap(self):
+        conf = self.get_config(CONF.identity.default_domain_id)
+        conf.ldap.user_allow_create = False
+        conf.ldap.user_allow_update = False
+        conf.ldap.user_allow_delete = False
+        conf.ldap.user_id_attribute = 'mail'
+        self.reload_backends(CONF.identity.default_domain_id)
+
+        user_ref = self.identity_api.get_user(self.user_foo['email'])
+        # for read-only LDAP, the attribute map should be honored, which means
+        # user_ref['id'] should contains the email attribute
+        self.assertEqual(self.user_foo['email'], user_ref['id'])
+
+    @mock.patch.object(common_ldap_core.BaseLdap, '_ldap_get')
+    def test_multivalued_attribute_cannot_be_used_as_id(self, mock_ldap_get):
+        self.config_fixture.config(group='ldap',
+                                   user_allow_create=False,
+                                   user_allow_delete=False,
+                                   user_allow_update=False,
+                                   user_id_attribute='email')
+        # make 'email' multivalued so we can test the error condition
+        email1 = uuid.uuid4().hex
+        email2 = uuid.uuid4().hex
+        mock_ldap_get.return_value = (
+            'cn=nobodycares,dc=example,dc=com',
+            {
+                'sn': [uuid.uuid4().hex],
+                'email': [email1, email2]
+            }
+        )
+
+        user_api = identity.backends.ldap.UserApi(CONF)
+        self.assertRaises(exception.Conflict,
+                          user_api.get,
+                          email1)
 
 
 class LDAPIdentityEnabledEmulation(LDAPIdentity):
