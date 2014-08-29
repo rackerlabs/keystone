@@ -210,3 +210,22 @@ class EndpointFilter(object):
         query = query.filter_by(endpoint_group_id=endpoint_group_id)
         endpoint_group_refs = query.all()
         return endpoint_group_refs
+
+    def delete_endpoint_group_association_by_endpoint_group(self,
+                                                            endpoint_group_id):
+        session = sql.get_session()
+        with session.begin():
+            query = session.query(ProjectEndpointGroupMembership)
+            query = query.filter_by(endpoint_group_id=endpoint_group_id)
+            endpoint_group_project_refs = query.all()
+            for ref in endpoint_group_project_refs:
+                session.delete(ref)
+
+    def delete_endpoint_group_association_by_project(self, project_id):
+        session = sql.get_session()
+        with session.begin():
+            query = session.query(ProjectEndpointGroupMembership)
+            query = query.filter_by(project_id=project_id)
+            endpoint_group_project_refs = query.all()
+            for ref in endpoint_group_project_refs:
+                session.delete(ref)

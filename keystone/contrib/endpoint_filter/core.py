@@ -21,6 +21,7 @@ from keystone.common import extension
 from keystone.common import manager
 from keystone import config
 from keystone import exception
+from keystone import notifications
 from keystone.openstack.common import log
 
 
@@ -56,8 +57,14 @@ class Manager(manager.Manager):
 
     """
 
+    _ENDPOINT_GROUP = "OS-EP-FILTER:endpoint_group"
+
     def __init__(self):
         super(Manager, self).__init__(CONF.endpoint_filter.driver)
+
+    @notifications.deleted(_ENDPOINT_GROUP)
+    def delete_endpoint_group(self, endpoint_group_id):
+        return self.driver.delete_endpoint_group(endpoint_group_id)
 
 
 @six.add_metaclass(abc.ABCMeta)
@@ -273,6 +280,29 @@ class Driver(object):
         :type project_id: string
         :raises: exception.NotFound
         :returns: None.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def delete_endpoint_group_association_by_endpoint_group(self,
+                                                            endpoint_group_id):
+        """Removes endpoint_group to project associations.
+
+        :param endpoint_group_id: identity of endpoint group to check
+        :type endpoint_group_id: string
+        :returns: None
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def delete_endpoint_group_association_by_project(self, project_id):
+        """Removes endpoint_group to project associations.
+
+        :param project_id: identity of the project to check
+        :type project_id: string
+        :returns: None
 
         """
         raise exception.NotImplemented()  # pragma: no cover
