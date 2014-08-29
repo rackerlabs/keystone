@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_50933ba2",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-29T14:28:40Z",
+      "side": 1,
+      "message": "Is this tested? Some tests should be added to check to make sure the schema validates or invalidates requests.",
+      "revId": "a81f1ffa3cc00fdf9239378f8b5390d974a83e2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_30b15f47",
+        "filename": "keystone/contrib/federation/schema.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-29T14:28:40Z",
+      "side": 1,
+      "message": "suggest pulling these properties out into a _saml_properties dictionary and sharing them on line 32 as well.",
+      "revId": "a81f1ffa3cc00fdf9239378f8b5390d974a83e2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
