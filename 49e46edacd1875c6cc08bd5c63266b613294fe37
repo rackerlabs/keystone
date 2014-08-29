@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_56619737",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 822,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T01:36:52Z",
+      "side": 1,
+      "message": "opt should be method_name, right? since _register does cfg.StrOpt on it.",
+      "revId": "49e46edacd1875c6cc08bd5c63266b613294fe37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_48a49d4a",
         "filename": "keystone/tests/core.py",
         "patchSetId": 3
