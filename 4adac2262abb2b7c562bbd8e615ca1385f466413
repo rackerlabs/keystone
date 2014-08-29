@@ -34,6 +34,24 @@
       "revId": "4adac2262abb2b7c562bbd8e615ca1385f466413",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_9bb24a04",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 915,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-08-29T19:25:23Z",
+      "side": 1,
+      "message": "Decided to keep the logic here. The migration complexity wouldn\u0027t bing much benefits.",
+      "parentUuid": "1abeadc6_bce497e0",
+      "revId": "4adac2262abb2b7c562bbd8e615ca1385f466413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
