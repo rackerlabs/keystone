@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_757bc4f4",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-29T16:10:18Z",
+      "side": 1,
+      "message": "++ a follow up patch to cleanup would be good",
+      "parentUuid": "1abeadc6_75bca4dc",
+      "revId": "a64bb889292f07bd155fdf264933056b6e010ad0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_f596f44a",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 16
