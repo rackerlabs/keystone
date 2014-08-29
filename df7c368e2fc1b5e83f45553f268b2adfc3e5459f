@@ -207,6 +207,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_8f9a1112",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-29T15:22:58Z",
+      "side": 1,
+      "message": "I\u0027d actually like to see this raise a validation error saying that the region_id is not valid. That way the user gets a proper 400 instead or a 404.",
+      "parentUuid": "1abeadc6_0e246d0b",
+      "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_ce8515d0",
         "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
         "patchSetId": 25
