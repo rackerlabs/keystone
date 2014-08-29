@@ -33,6 +33,108 @@
       "revId": "5229311e0bc1c43f318edb18cc9c45ed62744c77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_62df7f0d",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T22:39:29Z",
+      "side": 1,
+      "message": "you don\u0027t need a process.wait() in here?",
+      "revId": "5229311e0bc1c43f318edb18cc9c45ed62744c77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_02c7ab45",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T22:39:29Z",
+      "side": 1,
+      "message": "why would you get an oserror here?",
+      "revId": "5229311e0bc1c43f318edb18cc9c45ed62744c77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_628a1f1c",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 1609,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T22:39:29Z",
+      "side": 1,
+      "message": "this should not be an instance method - make it a module method",
+      "revId": "5229311e0bc1c43f318edb18cc9c45ed62744c77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_02cb2b72",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 1617,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T22:39:29Z",
+      "side": 1,
+      "message": "not sure this is worth a debug",
+      "revId": "5229311e0bc1c43f318edb18cc9c45ed62744c77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e2a46fa7",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 1706,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T22:39:29Z",
+      "side": 1,
+      "message": "preferrably wrap the test method with:\n\n  @unittest.skipIf(not _is_xmlsec1_installed(), \u0027xmlsec1 is not installed\u0027)",
+      "revId": "5229311e0bc1c43f318edb18cc9c45ed62744c77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_22abc775",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 1724,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T22:39:29Z",
+      "side": 1,
+      "message": "instead of \u0027\\n\u0027\n\n  import os\n  os.linesep  # celebrate platform independence day",
+      "revId": "5229311e0bc1c43f318edb18cc9c45ed62744c77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
