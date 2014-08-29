@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_ffa0aff5",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-29T04:27:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_ed02db3c",
+      "revId": "804181f8358afa4f6d4ab609e29193ad988ede15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_cdb8bf77",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 12
@@ -161,6 +179,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_d42d9aff",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-29T04:27:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_36fdfbb1",
+      "revId": "804181f8358afa4f6d4ab609e29193ad988ede15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_13d9f6f2",
         "filename": "keystone/notifications.py",
         "patchSetId": 12
@@ -214,6 +250,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_f4bb76c1",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-29T04:27:53Z",
+      "side": 1,
+      "message": "But I will use the fun fact cause I see all the cool python programmers do it that way :-)",
+      "parentUuid": "1abeadc6_1648ff5a",
+      "revId": "804181f8358afa4f6d4ab609e29193ad988ede15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_16aabf70",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 12
@@ -242,6 +296,24 @@
       "writtenOn": "2014-08-29T01:32:29Z",
       "side": 1,
       "message": "would be nice to see a test for a failing outcome.",
+      "revId": "804181f8358afa4f6d4ab609e29193ad988ede15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_7f93bfa2",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 972,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-29T04:27:53Z",
+      "side": 1,
+      "message": "will look at adding this in a subsequent patch",
+      "parentUuid": "1abeadc6_56def711",
       "revId": "804181f8358afa4f6d4ab609e29193ad988ede15",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
