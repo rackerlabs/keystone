@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_0058e788",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T01:20:10Z",
+      "side": 1,
+      "message": "is this related to a bug or blueprint?",
+      "revId": "295e4f845ec3c3f7908d5128b1e9d54c302bb54b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_bb9bb464",
+        "filename": "keystone/common/validation/__init__.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T01:20:10Z",
+      "side": 1,
+      "message": "I think \"optional\" would be a better name. That you can use null is an implementation detail.",
+      "revId": "295e4f845ec3c3f7908d5128b1e9d54c302bb54b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_96c27d51",
         "filename": "keystone/common/validation/__init__.py",
         "patchSetId": 5
@@ -19,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_bbdf3439",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T01:20:10Z",
+      "side": 1,
+      "message": "I don\u0027t entirely follow why this is here. Keystone supports multiple backends so the sql model is interesting but it\u0027s not everything you need to know.",
+      "revId": "295e4f845ec3c3f7908d5128b1e9d54c302bb54b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_16858d06",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 5
@@ -30,6 +81,176 @@
       "writtenOn": "2014-08-28T01:16:52Z",
       "side": 1,
       "message": "not sure if it\u0027s a discrepancy, but it\u0027s nullable here",
+      "revId": "295e4f845ec3c3f7908d5128b1e9d54c302bb54b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_fbf52c83",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T01:20:10Z",
+      "side": 1,
+      "message": "why not have a parameter_types.nullable_description?",
+      "revId": "295e4f845ec3c3f7908d5128b1e9d54c302bb54b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_5b1380b7",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T01:20:10Z",
+      "side": 1,
+      "message": "there\u0027s a lot of things that are copy-pasted from entity_create, and they have to be the same (such as the type and properties are going to be the same. So these should be put in a variable and shared.",
+      "revId": "295e4f845ec3c3f7908d5128b1e9d54c302bb54b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_db54f055",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T01:20:10Z",
+      "side": 1,
+      "message": "I always consider success to be the default in tests. Also, \"succeeds\" can be confusing since something can be working as designed when it \"fails\". So \"validates\" would be a better term here.",
+      "revId": "295e4f845ec3c3f7908d5128b1e9d54c302bb54b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_bba1f447",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T01:20:10Z",
+      "side": 1,
+      "message": "this sentence doesn\u0027t make sense to me.",
+      "revId": "295e4f845ec3c3f7908d5128b1e9d54c302bb54b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3b524435",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T01:20:10Z",
+      "side": 1,
+      "message": "this assert should print out the format if it fails so that we can tell which one failed.",
+      "revId": "295e4f845ec3c3f7908d5128b1e9d54c302bb54b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_bb3d74df",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T01:20:10Z",
+      "side": 1,
+      "message": "this assert should print out the format if it fails so that we can tell which one failed.",
+      "revId": "295e4f845ec3c3f7908d5128b1e9d54c302bb54b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3b29649b",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T01:20:10Z",
+      "side": 1,
+      "message": "this method should have \"_succeeds\" to be consistent.",
+      "revId": "295e4f845ec3c3f7908d5128b1e9d54c302bb54b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b60bcb22",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T01:20:10Z",
+      "side": 1,
+      "message": "\u0027name\u0027 isn\u0027t required.",
+      "revId": "295e4f845ec3c3f7908d5128b1e9d54c302bb54b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3617bb46",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T01:20:10Z",
+      "side": 1,
+      "message": "there should be a test for setting \u0027name\u0027 to None, too (should fail)",
+      "revId": "295e4f845ec3c3f7908d5128b1e9d54c302bb54b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d641273a",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T01:20:10Z",
+      "side": 1,
+      "message": "this is a copy of test_update_entity_with_missing_required_parameter_succeeds",
       "revId": "295e4f845ec3c3f7908d5128b1e9d54c302bb54b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
