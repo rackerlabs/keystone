@@ -84,6 +84,23 @@
       "revId": "887472a8298ade9b3695b1e0c7f75af7f671c3ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_11561b2a",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 320,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-29T20:56:24Z",
+      "side": 1,
+      "message": "weird...where did this come from...I\u0027ll remove",
+      "revId": "887472a8298ade9b3695b1e0c7f75af7f671c3ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
