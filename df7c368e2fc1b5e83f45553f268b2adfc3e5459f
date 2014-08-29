@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_35e5cc37",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-29T19:53:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_ee72d17a",
+      "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_6e06c1cf",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 25
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-28T22:33:26Z",
       "side": 1,
       "message": "(nit) prefer a step by step approach instead of a multiline chain wrapped in parens\n\n  q \u003d session.query(region)\n  q \u003d q.filter_by(parent_region_id\u003dregion.id)\n  children \u003d q.all()\n\nor after dropping the else block and giving yourself more horizontal space, just:\n\n  for child in session.query(region).filter_by(parent_region_id\u003dregion.id):",
+      "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_750744ca",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-29T19:53:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_6e06c1cf",
       "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_95cce036",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-29T19:53:32Z",
+      "side": 1,
+      "message": "Unfortunately that doesn\u0027t seem to work for sqlite",
+      "parentUuid": "1abeadc6_6ed40120",
+      "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_4eebc5db",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 25
@@ -64,6 +118,24 @@
       "writtenOn": "2014-08-28T22:33:26Z",
       "side": 1,
       "message": "as mentioned in a previous review, the controller should not be setting a description like this, it should be left to the manager to set a default description",
+      "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d5a01844",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-29T19:53:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_4eebc5db",
       "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_158610b9",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-29T19:53:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_eee73110",
+      "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_8e315d5c",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 25
@@ -98,6 +188,24 @@
       "writtenOn": "2014-08-28T22:33:26Z",
       "side": 1,
       "message": "now you\u0027re passing \u0027region_id\u0027 and \u0027region\u0027 both into the backend in L310, causing them to be persisted side by side, and potentially become out of sync. .pop() instead",
+      "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f86ee92d",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-29T19:53:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_8e315d5c",
       "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_f8a429a7",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-29T19:53:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_4ebe65af",
+      "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_eed1f1fb",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 25
@@ -132,6 +258,24 @@
       "writtenOn": "2014-08-28T22:33:26Z",
       "side": 1,
       "message": "why do you need to do this? it\u0027s a FK",
+      "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_38ab0176",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-29T19:53:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_eed1f1fb",
       "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -173,6 +317,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_b8e631ae",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-29T19:53:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_ee3f3123",
+      "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_6e1321b8",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 25
@@ -184,6 +346,24 @@
       "writtenOn": "2014-08-28T22:33:26Z",
       "side": 1,
       "message": "does wrap collection not call wrap member which calls filter_endpoint already?",
+      "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_989a5512",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-29T19:53:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_6e1321b8",
       "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -225,6 +405,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_03dfba69",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-29T19:53:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_8f9a1112",
+      "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_ce8515d0",
         "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
         "patchSetId": 25
@@ -236,6 +434,24 @@
       "writtenOn": "2014-08-28T22:33:26Z",
       "side": 1,
       "message": "as mentioned in a previous review, this comment is now outdated. regions don\u0027t have names",
+      "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3e1be973",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-29T19:53:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_ce8515d0",
       "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -295,6 +511,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_1e48ed2b",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_endpoint_to_region_association.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-29T19:53:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_12daeb4b",
+      "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_2f01fdae",
         "filename": "keystone/exception.py",
         "patchSetId": 25
@@ -306,6 +540,24 @@
       "writtenOn": "2014-08-29T15:13:52Z",
       "side": 1,
       "message": "nit: \"Unable to delete region %(region_id)s because it or its child regions have associated endpoints.\"",
+      "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_9e631db0",
+        "filename": "keystone/exception.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-29T19:53:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_2f01fdae",
       "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
