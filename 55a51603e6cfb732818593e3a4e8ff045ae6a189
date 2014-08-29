@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_1251c661",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T15:45:06Z",
+      "side": 1,
+      "message": "these are already referenced above, just use those (lines 58-61)",
+      "revId": "55a51603e6cfb732818593e3a4e8ff045ae6a189",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
