@@ -54,6 +54,40 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_30e95fe6",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-29T14:42:45Z",
+      "side": 1,
+      "message": "This represents the version of the SAML spec right?",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_10b623f9",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-29T14:42:45Z",
+      "side": 1,
+      "message": "(nit) i don\u0027t there this comment and the next provide any value",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_10438313",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 39
@@ -123,6 +157,57 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_d08d8b32",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-29T14:42:45Z",
+      "side": 1,
+      "message": "Why catch the error just to re-raise it?",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_70faf743",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 1635,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-29T14:42:45Z",
+      "side": 1,
+      "message": "assertIsInstance?",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_1037034e",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 1637,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-29T14:42:45Z",
+      "side": 1,
+      "message": "Probably should switch the order of these two. The order should be (expected, observed).",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_7ad9f620",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 39
@@ -134,6 +219,40 @@
       "writtenOn": "2014-08-29T13:53:47Z",
       "side": 1,
       "message": "nit: s/Test the/Test that the/",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_308b1fc4",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 1700,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-29T14:42:45Z",
+      "side": 1,
+      "message": "assertIsInstance?",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d0682bf7",
+        "filename": "test-requirements.txt",
+        "patchSetId": 39
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-29T14:42:45Z",
+      "side": 1,
+      "message": "(nit) i don\u0027t think the \u0027f\u0027 and \u0027m\u0027 here need to be capitalized.",
       "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
