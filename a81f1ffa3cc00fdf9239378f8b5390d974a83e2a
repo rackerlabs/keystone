@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_023ecbb7",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T22:50:47Z",
+      "side": 1,
+      "message": "I\u0027ll add some tests, should be easy enough.",
+      "parentUuid": "1abeadc6_50933ba2",
+      "revId": "a81f1ffa3cc00fdf9239378f8b5390d974a83e2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_30b15f47",
         "filename": "keystone/contrib/federation/schema.py",
         "patchSetId": 18
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-29T14:28:40Z",
       "side": 1,
       "message": "suggest pulling these properties out into a _saml_properties dictionary and sharing them on line 32 as well.",
+      "revId": "a81f1ffa3cc00fdf9239378f8b5390d974a83e2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_c2585333",
+        "filename": "keystone/contrib/federation/schema.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T22:50:47Z",
+      "side": 1,
+      "message": "i can\u0027t do it at this level, since it\u0027s token and region underneath, but I do it at the level below.",
+      "parentUuid": "1abeadc6_30b15f47",
       "revId": "a81f1ffa3cc00fdf9239378f8b5390d974a83e2a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
