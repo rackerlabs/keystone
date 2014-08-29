@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_518a531b",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 811,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-08-29T20:34:41Z",
+      "side": 1,
+      "message": "not sure why we need a separate method for this. Anyway, not a big deal.",
+      "revId": "945d8c7d2162ae51515216352a3a382d4c5f2fc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
