@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_ab19a1d2",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T02:56:18Z",
+      "side": 1,
+      "message": "have any suggestions for what to do? I kinda wanted to keep the XML, but I guess since we\u0027re checking in an XML file, its not necessary",
+      "parentUuid": "1abeadc6_8e379dfe",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_a2062d1a",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 37
@@ -185,6 +203,24 @@
       "writtenOn": "2014-08-28T23:00:36Z",
       "side": 1,
       "message": "it\u0027s an optional requirement that\u0027s *required* for keystone2keystone",
+      "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6b3ce92f",
+        "filename": "test-requirements.txt",
+        "patchSetId": 37
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T02:56:18Z",
+      "side": 1,
+      "message": "ha! I\u0027ll make it clearer",
+      "parentUuid": "1abeadc6_6e76fc3f",
       "revId": "fa843847f7c560b7c88c63f69a7557f0c77fd731",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
