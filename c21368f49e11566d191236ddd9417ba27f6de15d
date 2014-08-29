@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1abeadc6_7bf4bc5a",
+        "filename": "keystone/common/router.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-08-29T01:10:55Z",
+      "side": 1,
+      "message": "There\u0027s two indentation styles in this one logical line of code :(",
+      "revId": "c21368f49e11566d191236ddd9417ba27f6de15d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_5b0620cf",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 1
