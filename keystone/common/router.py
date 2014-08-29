@@ -59,29 +59,28 @@ class Router(wsgi.ComposableRouter):
             action='delete_%s' % self.key,
             conditions=dict(method=['DELETE']))
 
-        if self._resource_descriptions is not None:
-            # Add the collection resource and entity resource to the resource
-            # descriptions.
+        # Add the collection resource and entity resource to the resource
+        # descriptions.
 
-            collection_rel = json_home.build_v3_resource_relation(
-                self.collection_key)
+        collection_rel = json_home.build_v3_resource_relation(
+            self.collection_key)
+        self._resource_descriptions.append(
+            (collection_rel,
+             {
+                 'href': collection_path,
+             }
+             ))
+
+        if self._is_entity_implemented:
+            entity_rel = json_home.build_v3_resource_relation(self.key)
+            id_str = '%s_id' % self.key
+            id_param_rel = json_home.build_v3_parameter_relation(id_str)
             self._resource_descriptions.append(
-                (collection_rel,
+                (entity_rel,
                  {
-                     'href': collection_path,
+                     'href-template': entity_path,
+                     'href-vars': {
+                         id_str: id_param_rel,
+                     },
                  }
                  ))
-
-            if self._is_entity_implemented:
-                entity_rel = json_home.build_v3_resource_relation(self.key)
-                id_str = '%s_id' % self.key
-                id_param_rel = json_home.build_v3_parameter_relation(id_str)
-                self._resource_descriptions.append(
-                    (entity_rel,
-                     {
-                         'href-template': entity_path,
-                         'href-vars': {
-                             id_str: id_param_rel,
-                         },
-                     }
-                     ))
