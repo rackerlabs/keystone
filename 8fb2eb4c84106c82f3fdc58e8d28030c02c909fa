@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_9456c228",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1293,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-08-29T04:10:09Z",
+      "side": 1,
+      "message": "ListType implies multiple values. Why do you want to check for len?\nAssume id is mapped to name, and there are 2 Guang and  1 Haneef in LDAP. I don\u0027t want the code to work when searched for Haneef and not work when searched for \"Guang\"",
+      "parentUuid": "1abeadc6_4bb1ed45",
+      "revId": "8fb2eb4c84106c82f3fdc58e8d28030c02c909fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_71bcddbb",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 1
