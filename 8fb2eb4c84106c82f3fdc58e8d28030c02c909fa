@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_31fd05b2",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1293,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-08-29T01:50:55Z",
+      "side": 1,
+      "message": "Don\u0027t understand this checking.  Just checking ListType is not enough, why do we want to check the len",
+      "revId": "8fb2eb4c84106c82f3fdc58e8d28030c02c909fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_71bcddbb",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1296,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-08-29T01:50:55Z",
+      "side": 1,
+      "message": "Remove one \"used\"  from message",
+      "revId": "8fb2eb4c84106c82f3fdc58e8d28030c02c909fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b1a7550a",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1298,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-08-29T01:50:55Z",
+      "side": 1,
+      "message": "Isn\u0027t this multi value check also true for  *_name_attribute mapping?\n\nMay be out of scope for this review, but it is better to do the same checking for name too. We also expect name mapping to be unqiue",
+      "revId": "8fb2eb4c84106c82f3fdc58e8d28030c02c909fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
