@@ -155,6 +155,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_aff18d02",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-29T15:13:52Z",
+      "side": 1,
+      "message": "According to the Identity API, \u0027region_id\u0027 is preferred: \n\nhttps://github.com/openstack/identity-api/blob/master/v3/src/markdown/identity-api-v3.md#endpoints-v3endpoints",
+      "parentUuid": "1abeadc6_ee3f3123",
+      "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_6e1321b8",
         "filename": "keystone/catalog/controllers.py",
         "patchSetId": 25
@@ -253,6 +271,23 @@
       "side": 1,
       "message": "Agree with Henry.",
       "parentUuid": "1abeadc6_12daeb4b",
+      "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2f01fdae",
+        "filename": "keystone/exception.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-29T15:13:52Z",
+      "side": 1,
+      "message": "nit: \"Unable to delete region %(region_id)s because it or its child regions have associated endpoints.\"",
       "revId": "df7c368e2fc1b5e83f45553f268b2adfc3e5459f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
