@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_304ddf3e",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-08-29T14:47:33Z",
+      "side": 1,
+      "message": "Generator here can save some memory:\nchildren_ids.update((x[\u0027id\u0027] for x in self.get_project_subtree(project_id)))\nJust replace [x[\u0027id\u0027] for x in ...] with (x[\u0027id\u0027] for x in ...)",
+      "revId": "bd0b234ab56f35b9d58968d2813b5be4c6217324",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f0a367fd",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-08-29T14:47:33Z",
+      "side": 1,
+      "message": "Intermediate set here can be avoided too, just as children_ids - by using update() :)",
+      "revId": "bd0b234ab56f35b9d58968d2813b5be4c6217324",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_70ef57e9",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-08-29T14:47:33Z",
+      "side": 1,
+      "message": "This block can be optimized with .update() and generator like similar one in kvs.py, line: 235",
+      "revId": "bd0b234ab56f35b9d58968d2813b5be4c6217324",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_10d383d5",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 914,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-08-29T14:47:33Z",
+      "side": 1,
+      "message": "Not sure if this line is necessary ;)",
+      "revId": "bd0b234ab56f35b9d58968d2813b5be4c6217324",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
