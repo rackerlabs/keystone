@@ -409,6 +409,9 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_get_roles_for_user_and_domain(self):
         self.skipTest('N/A: LDAP does not support multiple domains')
 
+    def test_domain_delete_hierarchy(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
     def test_list_role_assignments_unfiltered(self):
         new_domain = self._get_domain_fixture()
         new_user = {'name': uuid.uuid4().hex, 'password': uuid.uuid4().hex,
@@ -1498,6 +1501,30 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         self.skipTest('N/A: LDAP does not support hierarchical projects')
 
     def test_list_project_parents(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_hierarchical_projects_crud(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_create_project_with_invalid_parent(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_create_leaf_project_with_invalid_domain(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_update_project_parent(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_delete_hierarchical_leaf_project(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_delete_hierarchical_not_leaf_project(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_create_project_allowed_depth(self):
+        self.skipTest('N/A: LDAP does not support hierarchical projects')
+
+    def test_create_project_not_allowed_depth(self):
         self.skipTest('N/A: LDAP does not support hierarchical projects')
 
     @tests.skip_if_cache_disabled('assignment')
