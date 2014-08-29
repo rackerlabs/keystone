@@ -262,6 +262,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_ff3fb884",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-29T13:12:26Z",
+      "side": 1,
+      "message": "Not sure how we\u0027d do that, if the request_to_validate succeeds validation without raising an exception it should be available in the trace.",
+      "parentUuid": "1abeadc6_3b524435",
+      "revId": "295e4f845ec3c3f7908d5128b1e9d54c302bb54b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_bb3d74df",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 5
