@@ -18,6 +18,7 @@ import functools
 import os.path
 import re
 import sys
+import types
 import weakref
 
 import ldap
@@ -1275,13 +1276,34 @@ class BaseLdap(object):
         return utf8_decode(ldap.dn.str2dn(utf8_encode(dn))[0][0][1])
 
     def _ldap_res_to_model(self, res):
-        obj = self.model(id=self._dn_to_id(res[0]))
         # LDAP attribute names may be returned in a different case than
         # they are defined in the mapping, so we need to check for keys
         # in a case-insensitive way.  We use the case specified in the
         # mapping for the model to ensure we have a predictable way of
         # retrieving values later.
         lower_res = dict((k.lower(), v) for k, v in six.iteritems(res[1]))
+
+        if not (self.allow_create and self.allow_delete and self.allow_delete):
+            # NOTE(gyee): for read-only LDAP, we have no control over the
+            # DIT. We can only use the attribute maps. Therefore, we need to
+            # honor the attribute map for all attributes.
+            id = lower_res[self.id_attr.lower()]
+            if isinstance(id, types.ListType):
+                # NOTE(gyee): if this is a multi-value attribute and it has
+                # multiple values, we can't use it as ID.
+                if len(id) != 1:
+                    raise exception.Conflict(
+                        type=self.id_attr,
+                        details=_('Multi-value attribute cannot be used'
+                                  'used as ID: %s ') % id)
+                else:
+                    id = id[0]
+            obj = self.model(id=id)
+        else:
+            # not read-only LDAP. Retain the dn_to_id behavior so it is
+            # consistent with other writeable LDAP design.
+            obj = self.model(id=self._dn_to_id(res[0]))
+
         for k in obj.known_keys:
             if k in self.attribute_ignore:
                 continue
