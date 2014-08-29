@@ -16,6 +16,23 @@
       "revId": "0cb9c042ac90395ad510ab04cf9442c723a60a33",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e2de2f6c",
+        "filename": "keystone/common/sql/migrate_repo/versions/054_add_actor_id_index.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T22:19:43Z",
+      "side": 1,
+      "message": "as the ASSIGNMENT_TABLE name is shared, the ix_actor_id string can be shared.\n\nAlso, the entire function could be shared because could just pass in the method name.",
+      "revId": "0cb9c042ac90395ad510ab04cf9442c723a60a33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
