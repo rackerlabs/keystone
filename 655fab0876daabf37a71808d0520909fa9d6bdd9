@@ -230,6 +230,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_1e10ed4c",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 414,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-29T17:08:42Z",
+      "side": 1,
+      "message": "ugh right, i forgot that the machines we run this on won\u0027t necessarily have xmlsec installed... i think thats the cause.",
+      "parentUuid": "1abeadc6_cf6ec9ff",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_10cc63ba",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 39
