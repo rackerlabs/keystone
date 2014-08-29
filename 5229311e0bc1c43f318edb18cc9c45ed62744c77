@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_02796b2e",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 42
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-29T22:34:50Z",
+      "side": 1,
+      "message": "I don\u0027t think this config update is related to this change.",
+      "revId": "5229311e0bc1c43f318edb18cc9c45ed62744c77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_426fe35f",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 42
+      },
+      "lineNbr": 889,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-08-29T22:34:50Z",
+      "side": 1,
+      "message": "same comment here.",
+      "revId": "5229311e0bc1c43f318edb18cc9c45ed62744c77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
