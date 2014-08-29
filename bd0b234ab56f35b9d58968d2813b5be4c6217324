@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_1e51cd61",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-08-29T20:50:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_304ddf3e",
+      "revId": "bd0b234ab56f35b9d58968d2813b5be4c6217324",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_f0a367fd",
         "filename": "keystone/assignment/backends/kvs.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_fe55f14f",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-08-29T20:50:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_f0a367fd",
+      "revId": "bd0b234ab56f35b9d58968d2813b5be4c6217324",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_70ef57e9",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2014-08-29T14:47:33Z",
       "side": 1,
       "message": "This block can be optimized with .update() and generator like similar one in kvs.py, line: 235",
+      "revId": "bd0b234ab56f35b9d58968d2813b5be4c6217324",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_3e4cc9c7",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-08-29T20:50:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_70ef57e9",
       "revId": "bd0b234ab56f35b9d58968d2813b5be4c6217324",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
