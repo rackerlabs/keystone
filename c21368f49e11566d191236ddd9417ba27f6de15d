@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_317b45bf",
+        "filename": "keystone/common/router.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T01:56:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_7bf4bc5a",
+      "revId": "c21368f49e11566d191236ddd9417ba27f6de15d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_5b0620cf",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-29T01:03:29Z",
       "side": 1,
       "message": "if rel is a required parameter, why has it been listed next to last and defaulted? why not move it into the position behind path and take away the default value?",
+      "revId": "c21368f49e11566d191236ddd9417ba27f6de15d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_91417965",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T01:56:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_5b0620cf",
       "revId": "c21368f49e11566d191236ddd9417ba27f6de15d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
