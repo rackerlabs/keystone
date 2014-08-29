@@ -228,7 +228,7 @@ class RevokeTree(object):
                         bundle.append(
                             tree.get('%s=%s' % (name, token_data[alt_name])))
             # tree.get returns `None` if there is no match, so `bundle.append`
-            # adds a 'None' entry. This call remoes the `None` entries.
+            # adds a 'None' entry. This call removes the `None` entries.
             partial_matches = [x for x in bundle if x is not None]
             if not partial_matches:
                 # If we end up with no branches to follow means that the token
