@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_b5339c60",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T16:06:08Z",
+      "side": 1,
+      "message": "I still think these should not be copy-pasted.",
+      "revId": "1a164379d17ef4b2b301a468f4258ee21ee381a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_95bb00c3",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-29T16:06:08Z",
+      "side": 1,
+      "message": "\u0027name\u0027 isn\u0027t required.",
+      "revId": "1a164379d17ef4b2b301a468f4258ee21ee381a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
