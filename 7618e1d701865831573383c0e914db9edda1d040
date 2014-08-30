@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_dbcd955e",
+        "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-30T08:21:29Z",
+      "side": 1,
+      "message": "Ok, yep, I agree...the core crud methods are good here...it\u0027s the list processing ones that need to be lifted out...new patch on the way...",
+      "parentUuid": "1abeadc6_87174da2",
+      "revId": "7618e1d701865831573383c0e914db9edda1d040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_a7336960",
         "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
         "patchSetId": 12
