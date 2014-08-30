@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2014-08-04 06:06+0000\n"
+"POT-Creation-Date: 2014-08-30 06:05+0000\n"
 "PO-Revision-Date: 2014-07-25 15:11+0000\n"
 "Last-Translator: Andi Chandler <andi@gowling.com>\n"
 "Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/"
@@ -29,3 +29,10 @@ msgstr "task %(func_name)s run outlasted interval by %(delay).2f sec"
 #, python-format
 msgid "pid %d not in child list"
 msgstr "pid %d not in child list"
+
+#: keystone/token/persistence/core.py:232
+#, python-format
+msgid ""
+"`token_api.%s` is deprecated as of Juno in favor of utilizing methods on "
+"`token_provider_api` and may be removed in Kilo."
+msgstr ""

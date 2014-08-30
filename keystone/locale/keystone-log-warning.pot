@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: keystone 2014.2.dev64.g1ac4379\n"
+"Project-Id-Version: keystone 2014.2.dev269.ge0d8377\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2014-08-04 06:06+0000\n"
+"POT-Creation-Date: 2014-08-30 06:05+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,5 +25,12 @@ msgstr ""
 #: keystone/openstack/common/service.py:364
 #, python-format
 msgid "pid %d not in child list"
+msgstr ""
+
+#: keystone/token/persistence/core.py:232
+#, python-format
+msgid ""
+"`token_api.%s` is deprecated as of Juno in favor of utilizing methods on "
+"`token_provider_api` and may be removed in Kilo."
 msgstr ""
 
