@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_706ca0d0",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-30T06:26:58Z",
+      "side": 1,
+      "message": "If you don\u0027t really need extra, leave it out. We\u0027ve been talking about removing extra from existing models.",
+      "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_705580f8",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-30T06:26:58Z",
+      "side": 1,
+      "message": "Should this be a foreign key?",
+      "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_10444c45",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-30T06:26:58Z",
+      "side": 1,
+      "message": "or this one?",
+      "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_f05fd00c",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-30T06:26:58Z",
+      "side": 1,
+      "message": "Same here...",
+      "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d06494e6",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-30T06:26:58Z",
+      "side": 1,
+      "message": "My concern with not having a separate primary key is that the database won\u0027t validate that the IDs are real.",
+      "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_309dc8bc",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-30T06:26:58Z",
+      "side": 1,
+      "message": "I don\u0027t think this is needed anymore.",
+      "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_d0abb4d3",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-30T06:26:58Z",
+      "side": 1,
+      "message": "On line 38 you are returning a list. Why is this a dict?",
+      "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_10e0cc24",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-30T06:26:58Z",
+      "side": 1,
+      "message": "Instead of this it\u0027s probably a good idea to use jsonschema validators.",
+      "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_b0c5588f",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-30T06:26:58Z",
+      "side": 1,
+      "message": "We\u0027re not using value here so should this be iterkeys?",
+      "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
