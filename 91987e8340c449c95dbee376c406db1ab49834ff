@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_01c24833",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-30T00:16:43Z",
+      "side": 1,
+      "message": "YAY validation!",
+      "revId": "91987e8340c449c95dbee376c406db1ab49834ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_e1cd4c5e",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-30T00:16:43Z",
+      "side": 1,
+      "message": "This is a minor change in behavior in the test (not in the resulting user-facing logic). I assume that this is to test actual validation vs. non-existent property, a comment would be good to indicate the difference here.",
+      "revId": "91987e8340c449c95dbee376c406db1ab49834ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
