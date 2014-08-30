@@ -213,6 +213,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_bbc5398f",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-08-30T07:46:05Z",
+      "side": 1,
+      "message": "and I was referring to the preffix. Why did we remove option \u0027assertion_dir\u0027? IMHO it may be easier to keep assertions in one place and be able to specify it.",
+      "parentUuid": "1abeadc6_98cc1537",
+      "revId": "655fab0876daabf37a71808d0520909fa9d6bdd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_ba970eeb",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 39
