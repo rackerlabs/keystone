@@ -1,0 +1,361 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_8dcbe2a2",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T17:15:08Z",
+      "side": 1,
+      "message": "remove \"Comma separated\"",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_ade89ee2",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T17:15:08Z",
+      "side": 1,
+      "message": "suggest change \"recipient_url\" to \"recipient\" for consistency.",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_2dbc8edb",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T17:15:08Z",
+      "side": 1,
+      "message": "this isn\u0027t mentioned in the docstring.",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_6dfcc672",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T17:15:08Z",
+      "side": 1,
+      "message": "looking at some docs, if the name format is URI then name needs to be a URI, but here the name is just \"user\", which isn\u0027t a URI.\n\nThis comment applies to all the names.",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_0dd432e7",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T17:15:08Z",
+      "side": 1,
+      "message": "this should be openstack_identity_roles or openstack_roles",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_72b598cc",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T17:15:08Z",
+      "side": 1,
+      "message": "openstack_project",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_12dd2c15",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T17:15:08Z",
+      "side": 1,
+      "message": "this isn\u0027t mentioned in the docstring.",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_32e230d6",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 285,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T17:15:08Z",
+      "side": 1,
+      "message": "use \u0027 for strings consistently",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_52e7b4e4",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T17:15:08Z",
+      "side": 1,
+      "message": "some of these are mentioned in the docstring.",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b2cd4060",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T17:15:08Z",
+      "side": 1,
+      "message": "chang \"canonical\" to \"canonicalization\"",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_32095096",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T17:15:08Z",
+      "side": 1,
+      "message": "are we stuck with SHA1?",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_92f75c8c",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T17:15:08Z",
+      "side": 1,
+      "message": "could just put this at line 359.",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_5235f444",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T17:15:08Z",
+      "side": 1,
+      "message": "I\u0027d prefer it if this method was moved out of the class. It\u0027s a lot different than the other methods.",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f24508b4",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T17:15:08Z",
+      "side": 1,
+      "message": "add a comment why this is necessary.",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_32307056",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T17:15:08Z",
+      "side": 1,
+      "message": "do we want to require using the PKI certificate for the k2k certificate?\n\nI think we should have a separate certificate for this.",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_d24804cf",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T17:15:08Z",
+      "side": 1,
+      "message": "how does this work if idp_public_key or idp_private_key contains a , ? Does xmlsec1 provide some way to escape a , in the filename?",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_926cbc38",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T17:15:08Z",
+      "side": 1,
+      "message": "use check_output. https://docs.python.org/2/library/subprocess.html#subprocess.check_output\n\nThis isn\u0027t valid because the process might still be running, or not even started yet.",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f21c28c4",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T17:15:08Z",
+      "side": 1,
+      "message": "why only checking for IOError? Any error that occurs here is an error when signing assertion.",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_721118ac",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T17:15:08Z",
+      "side": 1,
+      "message": "use _LE",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_321790a5",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T17:15:08Z",
+      "side": 1,
+      "message": "Raise a new exception rather than log and raise the old one. The caller can log any error that occurs, all it needs is the info.",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f2734813",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 1622,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T17:15:08Z",
+      "side": 1,
+      "message": "looks like this could also be a class variable.",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
