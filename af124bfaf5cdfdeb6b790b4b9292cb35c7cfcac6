@@ -291,6 +291,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_72ed988b",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-30T17:27:48Z",
+      "side": 1,
+      "message": "I was going to say .communicate() but same net effect.",
+      "parentUuid": "fa98f980_926cbc38",
+      "revId": "af124bfaf5cdfdeb6b790b4b9292cb35c7cfcac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_f21c28c4",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 47
