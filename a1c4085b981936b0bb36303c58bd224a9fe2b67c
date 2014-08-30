@@ -19,6 +19,91 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_d5bd4e04",
+        "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "what\u0027s the point of doing this query when the table has a unique constraint on it already? add a comment.",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b5c0ca7d",
+        "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "what is this line supposed to do?",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_1537d6b1",
+        "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "these need to both be in the same transaction otherwise it\u0027s not going to work as expeted.",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b5d9aa85",
+        "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "There should be a PolicyNotFound like we have all the other NotFounds.\n\nthe docstring for this method says it raises keystone.exception.InvalidPolicyAssociation. Also, the docstring doesn\u0027t say that it raises NotFound.",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_155ef6e9",
+        "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "the docstring for this method says it raises keystone.exception.InvalidPolicyAssociation.",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_92883cc8",
         "filename": "keystone/contrib/endpoint_policy/core.py",
         "patchSetId": 14
@@ -30,6 +115,295 @@
       "writtenOn": "2014-08-30T17:30:16Z",
       "side": 1,
       "message": "get rid of this it doesn\u0027t do anything.",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_526df403",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "use _LW",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f27d08b3",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "use _LE",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_d2572425",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "use _LW",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f2542823",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "use _LW",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_15ffd602",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "this would be more readable if it was put into a function.",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_9512e656",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "there\u0027s an extra space after \"region\"",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f519727a",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "looks like this is trying to break out of the loop if there\u0027s no parent_region_id. No need to be sneaky here, just break if there\u0027s no parent_region_id:\n\n  parent_region_id \u003d region.get(\u0027parent_region_id\u0027)\n  if parent_region_id is None:\n     break",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_3236b004",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "remove \", None\" since that\u0027s the default.",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_1231ac0b",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "use _LE",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b5360ae6",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "lowercase service",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_752582aa",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "the extra ( shouldn\u0027t be required here since there\u0027s already a (",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f55172d9",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "this should say under what condition the exception can be raised. (This comment applies to all the :raises:)",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b53d2abe",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "PolicyNotFound ?",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_3563fab2",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "change \"association\" to \"associations\"\n\nchange \"with specific\" to \"with the specific\"",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_35793a94",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "change \"association\" to \"associations\"\n\nchange \"with specific\" to \"with the specific\" (add the)",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b2ac6037",
+        "filename": "keystone/exception.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "lowercase \"association\"",
+      "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_d2a9e425",
+        "filename": "keystone/exception.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-30T18:17:17Z",
+      "side": 1,
+      "message": "somebody who gets this error is going to have no idea why their policy association is invalid.",
       "revId": "a1c4085b981936b0bb36303c58bd224a9fe2b67c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
