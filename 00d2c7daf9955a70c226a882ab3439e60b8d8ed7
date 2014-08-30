@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_6a9af114",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 45
+      },
+      "lineNbr": 1697,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-30T04:02:52Z",
+      "side": 1,
+      "message": "apparently this is making python 2.6 fail",
+      "revId": "00d2c7daf9955a70c226a882ab3439e60b8d8ed7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
