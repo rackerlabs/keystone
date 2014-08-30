@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "1abeadc6_a79d290c",
+        "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-30T08:16:47Z",
+      "side": 1,
+      "message": "So I tried that first.  Since these columns are nullable, this makes a composite PK much harder.",
+      "parentUuid": "1abeadc6_e7f9e180",
+      "revId": "7618e1d701865831573383c0e914db9edda1d040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_274759bd",
         "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
         "patchSetId": 12
