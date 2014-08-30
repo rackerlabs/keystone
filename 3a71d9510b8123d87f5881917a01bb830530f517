@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1abeadc6_e75abc4e",
+        "filename": "keystone/common/router.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-30T03:13:46Z",
+      "side": 1,
+      "message": "Nice, that is much easier to read!",
+      "revId": "3a71d9510b8123d87f5881917a01bb830530f517",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1abeadc6_47337013",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 633,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-08-30T03:13:46Z",
+      "side": 1,
+      "message": "That is an amazingly simple way to make something required! I\u0027m gonna have to remember that trick :-)",
+      "revId": "3a71d9510b8123d87f5881917a01bb830530f517",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
