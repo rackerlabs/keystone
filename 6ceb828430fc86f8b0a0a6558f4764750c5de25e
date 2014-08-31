@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_2d03a610",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 19
+      },
+      "lineNbr": 706,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-08-31T18:29:39Z",
+      "side": 1,
+      "message": "ok, this actually comes from the patch this is dependant on (and fixes one of the comments made on that)",
+      "revId": "6ceb828430fc86f8b0a0a6558f4764750c5de25e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
