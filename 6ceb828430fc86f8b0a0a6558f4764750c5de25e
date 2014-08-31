@@ -16,6 +16,193 @@
       "revId": "6ceb828430fc86f8b0a0a6558f4764750c5de25e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_9ebbda71",
+        "filename": "keystone/contrib/endpoint_policy/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-31T23:26:35Z",
+      "side": 1,
+      "message": "Creates? Deletes? Checks\nGet? List?\nUniq the verbose name?",
+      "revId": "6ceb828430fc86f8b0a0a6558f4764750c5de25e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_3e63ce1b",
+        "filename": "keystone/contrib/endpoint_policy/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-31T23:26:35Z",
+      "side": 1,
+      "message": "Checks",
+      "revId": "6ceb828430fc86f8b0a0a6558f4764750c5de25e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_5e6892f5",
+        "filename": "keystone/contrib/endpoint_policy/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-31T23:26:35Z",
+      "side": 1,
+      "message": "Deletes",
+      "revId": "6ceb828430fc86f8b0a0a6558f4764750c5de25e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_3e4aee83",
+        "filename": "keystone/contrib/endpoint_policy/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-31T23:26:35Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "6ceb828430fc86f8b0a0a6558f4764750c5de25e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_7e447674",
+        "filename": "keystone/contrib/endpoint_policy/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-31T23:26:35Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "6ceb828430fc86f8b0a0a6558f4764750c5de25e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_9e491a8e",
+        "filename": "keystone/contrib/endpoint_policy/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-31T23:26:35Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "6ceb828430fc86f8b0a0a6558f4764750c5de25e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_be5dfe4a",
+        "filename": "keystone/contrib/endpoint_policy/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-31T23:26:35Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "6ceb828430fc86f8b0a0a6558f4764750c5de25e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_fe578624",
+        "filename": "keystone/contrib/endpoint_policy/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-31T23:26:35Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "6ceb828430fc86f8b0a0a6558f4764750c5de25e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_1e552a1d",
+        "filename": "keystone/contrib/endpoint_policy/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-31T23:26:35Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "6ceb828430fc86f8b0a0a6558f4764750c5de25e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_3e310e0c",
+        "filename": "keystone/contrib/endpoint_policy/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-31T23:26:35Z",
+      "side": 1,
+      "message": "no \u0027s\u0027  here",
+      "revId": "6ceb828430fc86f8b0a0a6558f4764750c5de25e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_5e36d204",
+        "filename": "keystone/contrib/endpoint_policy/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-31T23:26:35Z",
+      "side": 1,
+      "message": "and here",
+      "revId": "6ceb828430fc86f8b0a0a6558f4764750c5de25e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
