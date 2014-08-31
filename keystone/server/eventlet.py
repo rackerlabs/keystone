@@ -17,21 +17,10 @@
 import logging
 import os
 import socket
-import sys
 
 from oslo import i18n
 import pbr.version
 
-
-# If ../keystone/__init__.py exists, add ../ to Python search path, so that
-# it will override what happens to be installed in /usr/(local/)lib/python...
-possible_topdir = os.path.normpath(os.path.join(os.path.abspath(__file__),
-                                   os.pardir,
-                                   os.pardir))
-if os.path.exists(os.path.join(possible_topdir,
-                               'keystone',
-                               '__init__.py')):
-    sys.path.insert(0, possible_topdir)
 
 # NOTE(dstanek): i18n.enable_lazy() must be called before
 # keystone.i18n._() is called to ensure it has the desired lazy lookup
@@ -40,16 +29,14 @@ if os.path.exists(os.path.join(possible_topdir,
 i18n.enable_lazy()
 
 
-from keystone import backends
-from keystone.common import dependency
 from keystone.common import environment
-from keystone.common import sql
 from keystone.common import utils
 from keystone import config
 from keystone.i18n import _
 from keystone.openstack.common import processutils
 from keystone.openstack.common import service
 from keystone.openstack.common import systemd
+from keystone.server import common
 from keystone import service as keystone_service
 
 
@@ -114,7 +101,7 @@ def _get_workers(worker_type_config_opt):
     return worker_count
 
 
-if __name__ == '__main__':
+def run(possible_topdir):
     dev_conf = os.path.join(possible_topdir,
                             'etc',
                             'keystone.conf')
@@ -122,15 +109,9 @@ if __name__ == '__main__':
     if os.path.exists(dev_conf):
         config_files = [dev_conf]
 
-    config.configure()
-    sql.initialize()
-    config.set_default_for_default_log_levels()
-
-    CONF(project='keystone',
-         version=pbr.version.VersionInfo('keystone').version_string(),
-         default_config_files=config_files)
-
-    config.setup_logging()
+    common.configure(
+        version=pbr.version.VersionInfo('keystone').version_string(),
+        config_files=config_files)
 
     paste_config = config.find_paste_config()
 
@@ -144,22 +125,22 @@ if __name__ == '__main__':
         monkeypatch_thread = False
     environment.use_eventlet(monkeypatch_thread)
 
-    backends.load_backends()
+    def create_servers():
+        admin_worker_count = _get_workers('admin_workers')
+        public_worker_count = _get_workers('public_workers')
 
-    admin_worker_count = _get_workers('admin_workers')
-    public_worker_count = _get_workers('public_workers')
+        servers = []
+        servers.append(create_server(paste_config,
+                                     'admin',
+                                     CONF.admin_bind_host,
+                                     int(CONF.admin_port),
+                                     admin_worker_count))
+        servers.append(create_server(paste_config,
+                                     'main',
+                                     CONF.public_bind_host,
+                                     int(CONF.public_port),
+                                     public_worker_count))
+        return servers
 
-    servers = []
-    servers.append(create_server(paste_config,
-                                 'admin',
-                                 CONF.admin_bind_host,
-                                 int(CONF.admin_port),
-                                 admin_worker_count))
-    servers.append(create_server(paste_config,
-                                 'main',
-                                 CONF.public_bind_host,
-                                 int(CONF.public_port),
-                                 public_worker_count))
-
-    dependency.resolve_future_dependencies()
+    _unused, servers = common.setup_backends(create_servers)
     serve(*servers)
