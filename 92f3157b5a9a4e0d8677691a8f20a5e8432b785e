@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_417efce5",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-31T21:19:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_706ca0d0",
+      "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_705580f8",
         "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
         "patchSetId": 26
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-30T06:26:58Z",
       "side": 1,
       "message": "Should this be a foreign key?",
+      "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_8c2bbb2f",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-31T21:19:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_705580f8",
       "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_ac1f9f08",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-31T21:19:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_10444c45",
+      "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_f05fd00c",
         "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
         "patchSetId": 26
@@ -64,6 +118,24 @@
       "writtenOn": "2014-08-30T06:26:58Z",
       "side": 1,
       "message": "Same here...",
+      "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_8188e4e8",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-31T21:19:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_f05fd00c",
       "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_21c73814",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-31T21:19:25Z",
+      "side": 1,
+      "message": "We validate project and endpoint group id are real before inserts/updates. And I added checks for endpoint group id. I don\u0027t feel we need a surrogate key for this table with the checks in place for project_id and endpoint_group_id.",
+      "parentUuid": "1abeadc6_d06494e6",
+      "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_309dc8bc",
         "filename": "keystone/contrib/endpoint_filter/controllers.py",
         "patchSetId": 26
@@ -98,6 +188,24 @@
       "writtenOn": "2014-08-30T06:26:58Z",
       "side": 1,
       "message": "I don\u0027t think this is needed anymore.",
+      "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_c1210cb6",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-31T21:19:25Z",
+      "side": 1,
+      "message": "I removed the redundant @dependency.requires.",
+      "parentUuid": "1abeadc6_309dc8bc",
       "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_81d624c4",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-31T21:19:25Z",
+      "side": 1,
+      "message": "Agreed - this should be a list. Done.",
+      "parentUuid": "1abeadc6_d0abb4d3",
+      "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_10e0cc24",
         "filename": "keystone/contrib/endpoint_filter/controllers.py",
         "patchSetId": 26
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_e1e450ae",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-31T21:19:25Z",
+      "side": 1,
+      "message": "I agree this would be a nice addition. I would prefer to postpone this change for a future patch if possible due to time constraints, if possible?",
+      "parentUuid": "1abeadc6_10e0cc24",
+      "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_b0c5588f",
         "filename": "keystone/contrib/endpoint_filter/controllers.py",
         "patchSetId": 26
@@ -149,6 +293,24 @@
       "writtenOn": "2014-08-30T06:26:58Z",
       "side": 1,
       "message": "We\u0027re not using value here so should this be iterkeys?",
+      "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_61e8607d",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-31T21:19:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_b0c5588f",
       "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
