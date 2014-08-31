@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_e0128057",
+        "filename": "keystone/contrib/revoke/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-31T23:32:38Z",
+      "side": 1,
+      "message": "Modify indents, looks pretty\n\n@versionutils.deprecated(versionutils.deprecated.JUNO,\n    in_favor_of\u003d\u0027keystone.contrib.revoke.backends.sql\u0027,\n    remove_in\u003d+1,\n    what\u003d\u0027keystone.contrib.revoke.backends.kvs\u0027)",
+      "revId": "e10b063c6b019bdee0ea5cf62a623e5af16d0b64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
