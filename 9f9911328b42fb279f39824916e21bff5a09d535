@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_8d0f32e1",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 15
+      },
+      "lineNbr": 706,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-31T17:24:41Z",
+      "side": 1,
+      "message": "regenerate the sample config.",
+      "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_0d5502c6",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-31T17:24:41Z",
+      "side": 1,
+      "message": "remove this it\u0027s not used.",
+      "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_ede35e03",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-31T17:24:41Z",
+      "side": 1,
+      "message": "can call this region_id. What\u0027s next about it?",
+      "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_edca7e6d",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-31T17:24:41Z",
+      "side": 1,
+      "message": "Remove \"So\"",
+      "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_cd713a79",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-31T17:24:41Z",
+      "side": 1,
+      "message": "change \"the\" to \"there\"",
+      "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_ed6efe95",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-31T17:24:41Z",
+      "side": 1,
+      "message": "change \"the\" to \"there\"",
+      "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_0d6c229c",
+        "filename": "keystone/exception.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-08-31T17:24:41Z",
+      "side": 1,
+      "message": "put what a valid mix would be in the message.",
+      "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
