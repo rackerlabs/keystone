@@ -195,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_be67bee9",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-08-31T21:51:27Z",
+      "side": 1,
+      "message": "I\u0027ve created a second patch (https://review.openstack.org/#/c/117723/) to deal with cleaning up dangling references via delete notification.",
+      "parentUuid": "fa98f980_fe1ce66c",
+      "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_309dc8bc",
         "filename": "keystone/contrib/endpoint_filter/controllers.py",
         "patchSetId": 26
