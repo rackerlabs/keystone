@@ -16,6 +16,24 @@
       "revId": "824f66df77fbb85fb3d5a36cb7a1fc2308ca519d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_ad5f9671",
+        "filename": "keystone/token/providers/pki.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-31T18:05:40Z",
+      "side": 1,
+      "message": "This is a straight backport. That type change (and yes it would be more readable) can be applied to master but not here.",
+      "parentUuid": "1abeadc6_fe6463ba",
+      "revId": "824f66df77fbb85fb3d5a36cb7a1fc2308ca519d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
