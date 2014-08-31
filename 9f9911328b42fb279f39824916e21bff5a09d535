@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_0d81828f",
+        "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-31T18:29:42Z",
+      "side": 1,
+      "message": "We should only select a specific value out here, saves the overhead of the object housekeeping. This can be done as a followup patch.",
+      "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_8d449275",
+        "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-31T18:29:42Z",
+      "side": 1,
+      "message": "Same as above, we only care about the policy_id we should select that out and not do all the object house keeping.",
+      "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_0d5502c6",
         "filename": "keystone/contrib/endpoint_policy/core.py",
         "patchSetId": 15
@@ -30,6 +64,24 @@
       "writtenOn": "2014-08-31T17:24:41Z",
       "side": 1,
       "message": "remove this it\u0027s not used.",
+      "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_cd5dba4a",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-31T18:29:42Z",
+      "side": 1,
+      "message": "++ Should be done in a followup patch.",
+      "parentUuid": "fa98f980_0d5502c6",
       "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -115,6 +167,24 @@
       "writtenOn": "2014-08-31T17:24:41Z",
       "side": 1,
       "message": "put what a valid mix would be in the message.",
+      "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_8d12d260",
+        "filename": "keystone/exception.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-08-31T18:29:42Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "fa98f980_0d6c229c",
       "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
