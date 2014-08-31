@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_ec752733",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-08-31T07:51:54Z",
+      "side": 1,
+      "message": "i think the endpoint-\u003eregion_id patch messed something up here",
+      "revId": "91987e8340c449c95dbee376c406db1ab49834ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_e1cd4c5e",
         "filename": "keystone/tests/test_v3_catalog.py",
         "patchSetId": 36
