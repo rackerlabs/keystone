@@ -177,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_fe1ce66c",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-31T21:40:35Z",
+      "side": 1,
+      "message": "Do you need to add checks when deleting an endpoint or project? It would be entirely possible to delete either of those and have invalid records here.",
+      "parentUuid": "fa98f980_21c73814",
+      "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_309dc8bc",
         "filename": "keystone/contrib/endpoint_filter/controllers.py",
         "patchSetId": 26
@@ -276,6 +294,24 @@
       "side": 1,
       "message": "I agree this would be a nice addition. I would prefer to postpone this change for a future patch if possible due to time constraints, if possible?",
       "parentUuid": "1abeadc6_10e0cc24",
+      "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_1e1a8a6e",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-08-31T21:40:35Z",
+      "side": 1,
+      "message": "I don\u0027t mind waiting. If I have a little time I may propose a patch.",
+      "parentUuid": "fa98f980_e1e450ae",
       "revId": "92f3157b5a9a4e0d8677691a8f20a5e8432b785e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
