@@ -1,0 +1,8 @@
+Verified+2: Jenkins
+Workflow+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Sun, 31 Aug 2014 14:54:55 +0000
+Reviewed-on: https://review.openstack.org/104065
+Project: openstack/keystone
+Branch: refs/heads/master
