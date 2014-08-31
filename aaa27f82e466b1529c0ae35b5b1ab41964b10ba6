@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_c0aadcd3",
+        "filename": "requirements-py3.txt",
+        "patchSetId": 31
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-31T23:39:54Z",
+      "side": 1,
+      "message": "Spaces different here?",
+      "revId": "aaa27f82e466b1529c0ae35b5b1ab41964b10ba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e0ae00e7",
+        "filename": "requirements.txt",
+        "patchSetId": 31
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-08-31T23:39:54Z",
+      "side": 1,
+      "message": "same here?",
+      "revId": "aaa27f82e466b1529c0ae35b5b1ab41964b10ba6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
