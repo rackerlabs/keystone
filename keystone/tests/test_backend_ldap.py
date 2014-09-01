@@ -1319,7 +1319,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
 
         self.config_fixture.config(
             group='ldap',
-            user_additional_attribute_mapping=['description:description'])
+            user_additional_attribute_mapping=['ldap_description:description'])
         self.load_backends()
 
         description = uuid.uuid4().hex
