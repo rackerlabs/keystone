@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_cff847c7",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 20
+      },
+      "lineNbr": 706,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-01T04:41:35Z",
+      "side": 1,
+      "message": "This fixes one of the left over comments made on a (now merged) patch that this was dependant on (https://review.openstack.org/#/c/115362/)",
+      "revId": "695158320aa32a9db7afabaa3920dfa07b2c526f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
