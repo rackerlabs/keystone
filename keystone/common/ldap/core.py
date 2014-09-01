@@ -1295,13 +1295,14 @@ class BaseLdap(object):
         # in a case-insensitive way.  We use the case specified in the
         # mapping for the model to ensure we have a predictable way of
         # retrieving values later.
-        lower_res = dict((k.lower(), v) for k, v in six.iteritems(res[1]))
+        dn, results = res
+        lower_res = dict((k.lower(), v) for k, v in six.iteritems(results))
 
         id_attrs = lower_res.get(self.id_attr.lower())
         if not id_attrs:
             message = _('ID attribute %(id_attr)s not found in LDAP '
                         'object %(dn)s') % ({'id_attr': self.id_attr,
-                                             'dn': res[0]})
+                                             'dn': dn})
             raise exception.NotFound(message=message)
         if len(id_attrs) > 1:
             # FIXME(gyee): if this is a multi-value attribute and it has
@@ -1313,33 +1314,45 @@ class BaseLdap(object):
                           'has multiple values and therefore cannot be used '
                           'as an ID. Will get the ID from DN instead') % (
                               {'id_attr': self.id_attr,
-                               'dn': res[0]})
+                               'dn': dn})
             LOG.warn(message)
-            id_val = self._dn_to_id(res[0])
+            id_val = self._dn_to_id(dn)
         else:
             id_val = id_attrs[0]
         obj = self.model(id=id_val)
 
-        for k in obj.known_keys:
-            if k in self.attribute_ignore:
-                continue
+        # Prepare attribute mappings: ldap_key => model_key
+        watched_keys = set(obj.known_keys).difference(self.attribute_ignore)
+        # Since all LDAP keys are lower-cased in the process
+        # we have to preserve model keys in initial form
+        # mapped to with lower-cased keys
+        mapping = dict((k.lower(), k) for k in watched_keys)
 
-            try:
-                map_attr = self.attribute_mapping.get(k, k)
-                if map_attr is None:
-                    # Ignore attributes that are mapped to None.
-                    continue
+        def _update_mapping(_ldap_key, _model_key):
+            # Ignore not needed attributes and those mapped to None
+            if _ldap_key is not None and _model_key in watched_keys:
+                mapping[_ldap_key.lower()] = _model_key
 
-                v = lower_res[map_attr.lower()]
-            except KeyError:
-                pass
+        # reverse attribute mapping: model_key, ldap_key => ldap_key, model_key
+        for model_key, ldap_key in six.iteritems(self.attribute_mapping):
+            _update_mapping(ldap_key, model_key)
+        # extra mapping
+        for ldap_key, model_key in six.iteritems(self.extra_attr_mapping):
+            if model_key in obj.known_keys:
+                _update_mapping(ldap_key, model_key)
             else:
-                try:
-                    obj[k] = v[0]
-                except IndexError:
-                    obj[k] = None
+                LOG.warn(_LW('Missed extra mapping. '
+                             'dn: "%(target)s", key: "%(key)s"'),
+                         {'target': dn, 'key': model_key})
 
-        return obj
+        for ldap_key, v in six.iteritems(lower_res):
+            model_key = mapping[ldap_key]
+            obj[model_key] = v[0] if v else None
+
+        only = set(self.attribute_mapping.keys()).union(
+            self.extra_attr_mapping.values())
+
+        return obj.validate(only=only, strict=False)
 
     def check_allow_create(self):
         if not self.allow_create:
