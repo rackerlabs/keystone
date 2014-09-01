@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_71c48092",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-01T17:44:24Z",
+      "side": 1,
+      "message": "this should be user email address.",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_91dac476",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-01T17:44:24Z",
+      "side": 1,
+      "message": "this doesn\u0027t look like an email address.",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_11efb41f",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-01T17:44:24Z",
+      "side": 1,
+      "message": "the user name is going to be an email address?",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_31103801",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-01T17:44:24Z",
+      "side": 1,
+      "message": "remove FriendlyName since it\u0027s the same as name.\n\nAlso, change Name\u003d\"openstack_user\" to match the code.\n\nThis comment applies to other FriendlyName and Name values in this example.",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_714ba02b",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-01T17:44:24Z",
+      "side": 1,
+      "message": "remove this since the default is unspecified.",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f12cf04c",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-01T17:44:24Z",
+      "side": 1,
+      "message": "change projects to project.",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_36b74e88",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-01T17:44:24Z",
+      "side": 1,
+      "message": "friendly_name is optional and there\u0027s no reason to have it if it\u0027s the same as the name. Remove this.\n\nAlso, this applies in other places where friendly_name is used.",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_16cdea31",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-01T17:44:24Z",
+      "side": 1,
+      "message": "name_format is optional and the default is unspecified, so just leave it off.\n\nThis applies in other places where name_format is unspecified.",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_161eca70",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-01T17:44:24Z",
+      "side": 1,
+      "message": "it looks like this function is actually trying to figure out if ID is used or id is used... why would ID ever be used? Why would id ever be used? Why is it correct to do this?",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b19fc85e",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-01T17:44:24Z",
+      "side": 1,
+      "message": "could have this return an empty list and then wouldn\u0027t have to check \"if id_tags\" below.",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_51269cb8",
+        "filename": "keystone/exception.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-01T17:44:24Z",
+      "side": 1,
+      "message": "500 is the default so remove this line.",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_31583832",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-01T17:44:24Z",
+      "side": 1,
+      "message": "the name should be signing_certfile since there\u0027s an ssl certfile, too.",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b14b4858",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-01T17:44:24Z",
+      "side": 1,
+      "message": "signing_keyfile",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
