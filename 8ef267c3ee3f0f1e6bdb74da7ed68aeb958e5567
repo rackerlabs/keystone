@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_85dd2273",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-01T16:35:29Z",
+      "side": 1,
+      "message": "Should this be constrained to 255 characters like the SQL column?",
+      "revId": "8ef267c3ee3f0f1e6bdb74da7ed68aeb958e5567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_afb943eb",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 37
