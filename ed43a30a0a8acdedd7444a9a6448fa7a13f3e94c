@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_9560ff36",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-01T13:48:49Z",
+      "side": 1,
+      "message": "I rolled back to get_cert() function, as I believe we should catch here pysaml2 specific exception, as well as IOError and explicitely log an error here.",
+      "revId": "ed43a30a0a8acdedd7444a9a6448fa7a13f3e94c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_15024f3e",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-01T13:48:49Z",
+      "side": 1,
+      "message": "So it\u0027s kind of weird to me, because indeed it looks like contract_type should be a ContractType_ (or even ContractTypeType_) object, but then I found md.EntityDescriptor.verify() method failing.",
+      "revId": "ed43a30a0a8acdedd7444a9a6448fa7a13f3e94c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
