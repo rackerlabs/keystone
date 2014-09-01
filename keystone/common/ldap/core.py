@@ -4,7 +4,7 @@
 # not use this file except in compliance with the License. You may obtain
 # a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+# http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
@@ -66,6 +66,7 @@ def utf8_encode(value):
     else:
         raise TypeError("value must be basestring, "
                         "not %s" % value.__class__.__name__)
+
 
 _utf8_decoder = codecs.getdecoder('utf-8')
 
@@ -401,6 +402,7 @@ class LDAPHandler(object):
     to load and run making it impossible to forget updating all the
     derived classes.
     '''
+
     @abc.abstractmethod
     def __init__(self, conn=None):
         self.conn = conn
@@ -1277,32 +1279,57 @@ class BaseLdap(object):
 
     def _ldap_res_to_model(self, res):
         obj = self.model(id=self._dn_to_id(res[0]))
-        # LDAP attribute names may be returned in a different case than
-        # they are defined in the mapping, so we need to check for keys
-        # in a case-insensitive way.  We use the case specified in the
-        # mapping for the model to ensure we have a predictable way of
-        # retrieving values later.
-        lower_res = dict((k.lower(), v) for k, v in six.iteritems(res[1]))
-        for k in obj.known_keys:
-            if k in self.attribute_ignore:
-                continue
+        # According to python-ldap documentation:
+        #   Each result tuple is of the form (dn, attrs),
+        #   where dn is a string containing the DN (distinguished name)
+        #   of the entry, and attrs is a dictionary containing
+        #   the attributes associated with the entry.
+        #   The keys of attrs are strings,
+        #   and the associated values are lists of strings.
+        dn, results = res
 
-            try:
-                map_attr = self.attribute_mapping.get(k, k)
-                if map_attr is None:
-                    # Ignore attributes that are mapped to None.
-                    continue
+        watched_keys = set(obj.known_keys) - set(self.attribute_ignore)
 
-                v = lower_res[map_attr.lower()]
-            except KeyError:
-                pass
-            else:
-                try:
-                    obj[k] = v[0]
-                except IndexError:
-                    obj[k] = None
+        # Prepare attribute mappings: ldap_key => model_key
+        mapping = dict()
 
-        return obj
+        def _update_mapping(_ldap_key, _model_key):
+            # Ignore not needed and attributes mapped to None
+            if _ldap_key is not None and _model_key in watched_keys:
+                # LDAP attribute names may be returned in a different case than
+                # they are defined in the mapping, so we need to check for keys
+                # in a case-insensitive way.  We use the case specified in the
+                # mapping for the model to ensure we have a predictable way of
+                # retrieving values later.
+                mapping[_ldap_key.lower()] = _model_key
+
+        # Since all LDAP keys are lower-cased in the process
+        # we have to preserve model keys in initial form in the mapping
+        # as values associated with lower-cased keys
+        for model_key in watched_keys:
+            _update_mapping(model_key, model_key)
+
+        only = set()
+        # reverse attribute mapping: model_key, ldap_key => ldap_key, model_key
+        for model_key, ldap_key in six.iteritems(self.attribute_mapping):
+            only.add(model_key)
+            _update_mapping(ldap_key, model_key)
+        # extra mapping
+        for ldap_key, model_key in six.iteritems(self.extra_attr_mapping):
+            if model_key not in obj.known_keys:
+                raise exception.ValidationError(
+                    attribute=model_key,
+                    target=dn
+                )
+            only.add(model_key)
+            _update_mapping(ldap_key, model_key)
+
+        for k, v in six.iteritems(results):
+            ldap_key = k.lower()
+            model_key = mapping[ldap_key]
+            obj[model_key] = v[0] if v else None
+
+        return obj.validate(only)
 
     def check_allow_create(self):
         if not self.allow_create:
@@ -1390,10 +1417,14 @@ class BaseLdap(object):
             return None
 
     def _ldap_get_all(self, ldap_filter=None):
+        """LDAP search
+
+        Found records keys are "as is" and to be remapped to use in model
+        """
         conn = self.get_connection()
-        query = u'(&%s(objectClass=%s))' % (ldap_filter or
-                                            self.ldap_filter or
-                                            '', self.object_class)
+        query = '(&%s(objectClass=%s))' % (ldap_filter or
+                                           self.ldap_filter or
+                                           '', self.object_class)
         try:
             attrs = list(set((self.attribute_mapping.values() +
                               self.extra_attr_mapping.keys())))
@@ -1644,7 +1675,7 @@ class EnabledEmuMixIn(BaseLdap):
             except ldap.NO_SUCH_OBJECT:
                 attr_list = [('objectClass', ['groupOfNames']),
                              ('member',
-                                 [self._id_to_dn(object_id)])]
+                              [self._id_to_dn(object_id)])]
                 if self.use_dumb_member:
                     attr_list[1][1].append(self.dumb_member)
                 conn.add_s(self.enabled_emulation_dn, attr_list)
