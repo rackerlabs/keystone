@@ -16,6 +16,24 @@
       "revId": "16c5cf3c194f90802e9af5ecd1ed47e7ec83221c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_427c1e21",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-01T12:29:14Z",
+      "side": 1,
+      "message": "This was the pattern throughout the code. But I agree with you, whould be a more specific name.",
+      "parentUuid": "fa98f980_74873262",
+      "revId": "16c5cf3c194f90802e9af5ecd1ed47e7ec83221c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
