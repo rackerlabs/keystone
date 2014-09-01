@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_4edb641b",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-01T14:31:21Z",
+      "side": 1,
+      "message": "we are only checking by \"user_id\" because the \"DN\" field is always mapped to a \"user_id\".",
+      "parentUuid": "1abeadc6_71ccaf35",
+      "revId": "44e2d1f651ca6a48e52e8e44d8bf24c84a0eacdf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_91b4eb82",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-29T20:52:45Z",
       "side": 1,
       "message": "So one of the design criteria was that some configurations might use the same ID for a user and group (e.g. in LDAP)...which one of the reason why the assignment table has a type field.  This patch kind of breaks this, since you don\u0027t pass down the type of the actor.  Now, I\u0027ve never been quite sure how likely this common ID usage is in practice....but we\u0027d have to decide to drop that ability unless we pass more data across.",
+      "revId": "44e2d1f651ca6a48e52e8e44d8bf24c84a0eacdf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_4efc443f",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 943,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-01T14:31:21Z",
+      "side": 1,
+      "message": "Ahh... I get your point, so in LDAP backend we would filter by user_id and by the assignment type, right?\n\nMaybe spliting actors into users and groups would fix this? (the backend would have the ability to filter by the assignment type)",
+      "parentUuid": "1abeadc6_91b4eb82",
       "revId": "44e2d1f651ca6a48e52e8e44d8bf24c84a0eacdf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
