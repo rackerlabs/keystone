@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_49a7f74f",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 15
+      },
+      "lineNbr": 706,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-01T04:30:55Z",
+      "side": 1,
+      "message": "Done (in patch for controller)",
+      "parentUuid": "fa98f980_8d0f32e1",
+      "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_0d81828f",
         "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
         "patchSetId": 15
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_54bcee6c",
+        "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-01T04:30:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_0d81828f",
+      "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_8d449275",
         "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
         "patchSetId": 15
@@ -47,6 +83,24 @@
       "writtenOn": "2014-08-31T18:29:42Z",
       "side": 1,
       "message": "Same as above, we only care about the policy_id we should select that out and not do all the object house keeping.",
+      "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_74c1f2e3",
+        "filename": "keystone/contrib/endpoint_policy/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-01T04:30:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_8d449275",
       "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_f4ac0238",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-01T04:30:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_cd5dba4a",
+      "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_ede35e03",
         "filename": "keystone/contrib/endpoint_policy/core.py",
         "patchSetId": 15
@@ -99,6 +171,24 @@
       "writtenOn": "2014-08-31T17:24:41Z",
       "side": 1,
       "message": "can call this region_id. What\u0027s next about it?",
+      "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_347e8aaf",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-01T04:30:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_ede35e03",
       "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -122,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_54630e1a",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-01T04:30:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_edca7e6d",
+      "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_cd713a79",
         "filename": "keystone/contrib/endpoint_policy/core.py",
         "patchSetId": 15
@@ -139,6 +247,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_f47322e5",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-01T04:30:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_cd713a79",
+      "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_ed6efe95",
         "filename": "keystone/contrib/endpoint_policy/core.py",
         "patchSetId": 15
@@ -150,6 +276,24 @@
       "writtenOn": "2014-08-31T17:24:41Z",
       "side": 1,
       "message": "change \"the\" to \"there\"",
+      "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_1481868f",
+        "filename": "keystone/contrib/endpoint_policy/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-01T04:30:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_ed6efe95",
       "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -185,6 +329,24 @@
       "side": 1,
       "message": "++",
       "parentUuid": "fa98f980_0d6c229c",
+      "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b440ba57",
+        "filename": "keystone/exception.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-01T04:30:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_8d12d260",
       "revId": "9f9911328b42fb279f39824916e21bff5a09d535",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
