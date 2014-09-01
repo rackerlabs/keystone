@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_54186e84",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 849,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-01T04:37:41Z",
+      "side": 1,
+      "message": "upon further investigation, the CLI tool might not have access to this directory, so i think this is fine.",
+      "parentUuid": "1abeadc6_c3e319a2",
+      "revId": "9bd2e6c9551d92bfe54d93b9288c526f324be1b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_b43a7a34",
         "filename": "keystone/contrib/federation/routers.py",
         "patchSetId": 4
@@ -71,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_d4245ec8",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-01T04:37:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_b43a7a34",
+      "revId": "9bd2e6c9551d92bfe54d93b9288c526f324be1b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_cb9a3e13",
         "filename": "keystone/exception.py",
         "patchSetId": 4
@@ -82,6 +118,41 @@
       "writtenOn": "2014-08-29T15:01:09Z",
       "side": 1,
       "message": "Same comment from Steve on previous patch set. Also, would we be able to inject the metadata file location? Might be useful for the user.",
+      "revId": "9bd2e6c9551d92bfe54d93b9288c526f324be1b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_3455aa1d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-01T04:37:41Z",
+      "side": 1,
+      "message": "changed to reading*",
+      "parentUuid": "1abeadc6_cb9a3e13",
+      "revId": "9bd2e6c9551d92bfe54d93b9288c526f324be1b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_ef0fcb2c",
+        "filename": "keystone/tests/xml/idp_saml2_metadata.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-01T04:37:41Z",
+      "side": 1,
+      "message": "adding contact information here",
       "revId": "9bd2e6c9551d92bfe54d93b9288c526f324be1b0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
