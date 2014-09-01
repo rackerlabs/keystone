@@ -17,6 +17,11 @@
 Unless marked otherwise, all fields are strings.
 
 """
+from keystone import exception
+from keystone.i18n import _LW
+from keystone.openstack.common import log
+
+LOG = log.getLogger(__name__)
 
 
 class Model(dict):
@@ -25,8 +30,39 @@ class Model(dict):
         return self['id'].__hash__()
 
     @property
-    def known_keys(cls):
-        return cls.required_keys + cls.optional_keys
+    def known_keys(self):
+        # required_keys and optional_keys are class attributes
+        # accessible from the instance
+        return (getattr(self, 'required_keys', tuple())
+                + getattr(self, 'optional_keys', tuple()))
+
+    def validate(self, only=None, strict=False):
+        """Instance level model validation
+
+        :type strict: boolean
+        :param strict: whether to raise Validation error
+        :type only: iterable
+        :param only: restricts validation to attributes provided
+
+        Check if all required attributes present in a model
+        Raise exception.ValidationError on incomplete model if strict is True
+        """
+        missing = set(getattr(self, 'required_keys', tuple()))
+        if isinstance(only, (list, tuple, set, dict)):
+            missing.intersection_update(only)
+        missing.difference_update(self)
+
+        if missing:
+            if strict:
+                raise exception.ValidationError(
+                    attribute=', '.join(missing),
+                    target=self.get('id'))
+            else:
+                LOG.warn(_LW('Expecting to find %(missing)s in %(id)s') % {
+                    'missing': ', '.join(missing),
+                    'id': self.get('id')
+                })
+        return self
 
 
 class Token(Model):
