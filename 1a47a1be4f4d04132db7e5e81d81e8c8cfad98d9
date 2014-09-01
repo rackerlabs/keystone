@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_c3174650",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-09-01T01:39:10Z",
+      "side": 1,
+      "message": "Nice! even using using Lance\u0027s schema validation!",
+      "revId": "1a47a1be4f4d04132db7e5e81d81e8c8cfad98d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_2381f28f",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-09-01T01:39:10Z",
+      "side": 1,
+      "message": "Yay!!! Using token_model.KeystoneToken!!",
+      "revId": "1a47a1be4f4d04132db7e5e81d81e8c8cfad98d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_a3b6c288",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-09-01T01:39:10Z",
+      "side": 1,
+      "message": "Well I\u0027m glad someone was able to use functools.partial successfully :-)",
+      "revId": "1a47a1be4f4d04132db7e5e81d81e8c8cfad98d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
