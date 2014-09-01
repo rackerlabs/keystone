@@ -16,6 +16,24 @@
       "revId": "c48ec389fd2e4efc5e35b16735bf5a250db6b0cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e3ae0ae7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-01T00:41:45Z",
+      "side": 1,
+      "message": "Keystone doesn\u0027t support filtering users by email.",
+      "parentUuid": "fa98f980_3eee6e8c",
+      "revId": "c48ec389fd2e4efc5e35b16735bf5a250db6b0cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
