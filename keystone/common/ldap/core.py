@@ -850,6 +850,9 @@ class KeystoneLDAPHandler(LDAPHandler):
         super(KeystoneLDAPHandler, self).__init__(conn=conn)
         self.page_size = 0
 
+    def __enter__(self):
+        return self
+
     def _disable_paging(self):
         # Disable the pagination from now on
         self.page_size = 0
@@ -1039,6 +1042,9 @@ class KeystoneLDAPHandler(LDAPHandler):
                   dn, serverctrls, clientctrls)
         dn_utf8 = utf8_encode(dn)
         return self.conn.delete_ext_s(dn_utf8, serverctrls, clientctrls)
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.unbind_s()
 
 
 _HANDLERS = {}
@@ -1260,8 +1266,7 @@ class BaseLdap(object):
     def _id_to_dn(self, object_id):
         if self.LDAP_SCOPE == ldap.SCOPE_ONELEVEL:
             return self._id_to_dn_string(object_id)
-        conn = self.get_connection()
-        try:
+        with self.get_connection() as conn:
             search_result = conn.search_s(
                 self.tree_dn, self.LDAP_SCOPE,
                 u'(&(%(id_attr)s=%(id)s)(objectclass=%(objclass)s))' %
@@ -1270,8 +1275,6 @@ class BaseLdap(object):
                      six.text_type(object_id)),
                  'objclass': self.object_class},
                 attrlist=['1.1'])
-        finally:
-            conn.unbind_s()
         if search_result:
             dn, attrs = search_result[0]
             return dn
@@ -1349,7 +1352,6 @@ class BaseLdap(object):
 
     def create(self, values):
         self.affirm_unique(values)
-        conn = self.get_connection()
         object_classes = self.structural_classes + [self.object_class]
         attrs = [('objectClass', object_classes)]
         for k, v in six.iteritems(values):
@@ -1367,14 +1369,11 @@ class BaseLdap(object):
 
         if 'groupOfNames' in object_classes and self.use_dumb_member:
             attrs.append(('member', [self.dumb_member]))
-        try:
+        with self.get_connection() as conn:
             conn.add_s(self._id_to_dn(values['id']), attrs)
-        finally:
-            conn.unbind_s()
         return values
 
     def _ldap_get(self, object_id, ldap_filter=None):
-        conn = self.get_connection()
         query = (u'(&(%(id_attr)s=%(id)s)'
                  u'%(filter)s'
                  u'(objectClass=%(object_class)s))'
@@ -1383,39 +1382,38 @@ class BaseLdap(object):
                         six.text_type(object_id)),
                     'filter': (ldap_filter or self.ldap_filter or ''),
                     'object_class': self.object_class})
-        try:
-            attrs = list(set((self.attribute_mapping.values() +
-                              self.extra_attr_mapping.keys())))
-            res = conn.search_s(self.tree_dn, self.LDAP_SCOPE, query, attrs)
-        except ldap.NO_SUCH_OBJECT:
-            return None
-        finally:
-            conn.unbind_s()
+        with self.get_connection() as conn:
+            try:
+                attrs = list(set((self.attribute_mapping.values() +
+                                  self.extra_attr_mapping.keys())))
+                res = conn.search_s(self.tree_dn,
+                                    self.LDAP_SCOPE,
+                                    query,
+                                    attrs)
+            except ldap.NO_SUCH_OBJECT:
+                return None
         try:
             return res[0]
         except IndexError:
             return None
 
     def _ldap_get_all(self, ldap_filter=None):
-        conn = self.get_connection()
         query = u'(&%s(objectClass=%s))' % (ldap_filter or
                                             self.ldap_filter or
                                             '', self.object_class)
-        try:
-            attrs = list(set((self.attribute_mapping.values() +
-                              self.extra_attr_mapping.keys())))
-            return conn.search_s(self.tree_dn,
-                                 self.LDAP_SCOPE,
-                                 query,
-                                 attrs)
-        except ldap.NO_SUCH_OBJECT:
-            return []
-        finally:
-            conn.unbind_s()
+        with self.get_connection() as conn:
+            try:
+                attrs = list(set((self.attribute_mapping.values() +
+                                  self.extra_attr_mapping.keys())))
+                return conn.search_s(self.tree_dn,
+                                     self.LDAP_SCOPE,
+                                     query,
+                                     attrs)
+            except ldap.NO_SUCH_OBJECT:
+                return []
 
     def _ldap_get_list(self, search_base, scope, query_params=None,
                        attrlist=None):
-        conn = self.get_connection()
         query = u'(objectClass=%s)' % self.object_class
         if query_params:
 
@@ -1426,10 +1424,8 @@ class BaseLdap(object):
             query = (u'(&%s%s)' %
                      (query, ''.join([calc_filter(k, v) for k, v in
                                       six.iteritems(query_params)])))
-        try:
+        with self.get_connection() as conn:
             return conn.search_s(search_base, scope, query, attrlist)
-        finally:
-            conn.unbind_s()
 
     def get(self, object_id, ldap_filter=None):
         res = self._ldap_get(object_id, ldap_filter)
@@ -1486,37 +1482,31 @@ class BaseLdap(object):
                 modlist.append((op, self.attribute_mapping.get(k, k), [v]))
 
         if modlist:
-            conn = self.get_connection()
-            try:
-                conn.modify_s(self._id_to_dn(object_id), modlist)
-            except ldap.NO_SUCH_OBJECT:
-                raise self._not_found(object_id)
-            finally:
-                conn.unbind_s()
+            with self.get_connection() as conn:
+                try:
+                    conn.modify_s(self._id_to_dn(object_id), modlist)
+                except ldap.NO_SUCH_OBJECT:
+                    raise self._not_found(object_id)
 
         return self.get(object_id)
 
     def delete(self, object_id):
-        conn = self.get_connection()
-        try:
-            conn.delete_s(self._id_to_dn(object_id))
-        except ldap.NO_SUCH_OBJECT:
-            raise self._not_found(object_id)
-        finally:
-            conn.unbind_s()
+        with self.get_connection() as conn:
+            try:
+                conn.delete_s(self._id_to_dn(object_id))
+            except ldap.NO_SUCH_OBJECT:
+                raise self._not_found(object_id)
 
     def deleteTree(self, object_id):
-        conn = self.get_connection()
         tree_delete_control = ldap.controls.LDAPControl(CONTROL_TREEDELETE,
                                                         0,
                                                         None)
-        try:
-            conn.delete_ext_s(self._id_to_dn(object_id),
-                              serverctrls=[tree_delete_control])
-        except ldap.NO_SUCH_OBJECT:
-            raise self._not_found(object_id)
-        finally:
-            conn.unbind_s()
+        with self.get_connection() as conn:
+            try:
+                conn.delete_ext_s(self._id_to_dn(object_id),
+                                  serverctrls=[tree_delete_control])
+            except ldap.NO_SUCH_OBJECT:
+                raise self._not_found(object_id)
 
     def add_member(self, member_dn, member_list_dn):
         """Add member to the member list.
@@ -1528,19 +1518,18 @@ class BaseLdap(object):
         :raises: exception.Conflict: If the user was already a member.
                  self.NotFound: If the group entry didn't exist.
         """
-        conn = self.get_connection()
-        try:
-            mod = (ldap.MOD_ADD, self.member_attribute, member_dn)
-            conn.modify_s(member_list_dn, [mod])
-        except ldap.TYPE_OR_VALUE_EXISTS:
-            raise exception.Conflict(_('Member %(member)s is already a member'
-                                       ' of group %(group)s') % {
-                                     'member': member_dn,
-                                     'group': member_list_dn})
-        except ldap.NO_SUCH_OBJECT:
-            raise self._not_found(member_list_dn)
-        finally:
-            conn.unbind_s()
+        with self.get_connection() as conn:
+            try:
+                mod = (ldap.MOD_ADD, self.member_attribute, member_dn)
+                conn.modify_s(member_list_dn, [mod])
+            except ldap.TYPE_OR_VALUE_EXISTS:
+                raise exception.Conflict(_('Member %(member)s '
+                                           'is already a member'
+                                           ' of group %(group)s') % {
+                                         'member': member_dn,
+                                         'group': member_list_dn})
+            except ldap.NO_SUCH_OBJECT:
+                raise self._not_found(member_list_dn)
 
     def remove_member(self, member_dn, member_list_dn):
         """Remove member from the member list.
@@ -1552,17 +1541,14 @@ class BaseLdap(object):
         :raises: self.NotFound: If the group entry didn't exist.
                  ldap.NO_SUCH_ATTRIBUTE: If the user wasn't a member.
         """
-        conn = self.get_connection()
-        try:
-            mod = (ldap.MOD_DELETE, self.member_attribute, member_dn)
-            conn.modify_s(member_list_dn, [mod])
-        except ldap.NO_SUCH_OBJECT:
-            raise self._not_found(member_list_dn)
-        finally:
-            conn.unbind_s()
+        with self.get_connection() as conn:
+            try:
+                mod = (ldap.MOD_DELETE, self.member_attribute, member_dn)
+                conn.modify_s(member_list_dn, [mod])
+            except ldap.NO_SUCH_OBJECT:
+                raise self._not_found(member_list_dn)
 
     def _delete_tree_nodes(self, search_base, scope, query_params=None):
-        conn = self.get_connection()
         query = u'(objectClass=%s)' % self.object_class
         if query_params:
             query = (u'(&%s%s)' %
@@ -1571,24 +1557,24 @@ class BaseLdap(object):
                                       for k, v in
                                       six.iteritems(query_params)])))
         not_deleted_nodes = []
-        try:
-            # RFC 4511 (The LDAP Protocol) defines a list containing only the
-            # OID "1.1" as indicating that no attributes should be returned.
-            # The following code only needs the DN of the entries.
-            request_no_attributes = ['1.1']
-            nodes = conn.search_s(search_base, scope, query,
-                                  attrlist=request_no_attributes)
-        except ldap.NO_SUCH_OBJECT:
-            LOG.debug('Could not find entry with dn=%s', search_base)
-            raise self._not_found(self._dn_to_id(search_base))
-        else:
-            for node_dn, _t in nodes:
-                try:
-                    conn.delete_s(node_dn)
-                except ldap.NO_SUCH_OBJECT:
-                    not_deleted_nodes.append(node_dn)
-        finally:
-            conn.unbind_s()
+        with self.get_connection() as conn:
+            try:
+                # RFC 4511 (The LDAP Protocol) defines a list containing
+                # only the OID "1.1" as indicating that no attributes
+                # should be returned. The following code only needs
+                # the DN of the entries.
+                request_no_attributes = ['1.1']
+                nodes = conn.search_s(search_base, scope, query,
+                                      attrlist=request_no_attributes)
+            except ldap.NO_SUCH_OBJECT:
+                LOG.debug('Could not find entry with dn=%s', search_base)
+                raise self._not_found(self._dn_to_id(search_base))
+            else:
+                for node_dn, _t in nodes:
+                    try:
+                        conn.delete_s(node_dn)
+                    except ldap.NO_SUCH_OBJECT:
+                        not_deleted_nodes.append(node_dn)
 
         if not_deleted_nodes:
             LOG.warn(_("When deleting entries for %(search_base)s, could not"
@@ -1626,49 +1612,43 @@ class EnabledEmuMixIn(BaseLdap):
                                          (self.options_name, self.tree_dn))
 
     def _get_enabled(self, object_id):
-        conn = self.get_connection()
         dn = self._id_to_dn(object_id)
         query = '(member=%s)' % dn
-        try:
-            enabled_value = conn.search_s(self.enabled_emulation_dn,
-                                          ldap.SCOPE_BASE,
-                                          query, ['cn'])
-        except ldap.NO_SUCH_OBJECT:
-            return False
-        else:
-            return bool(enabled_value)
-        finally:
-            conn.unbind_s()
+        with self.get_connection() as conn:
+            try:
+                enabled_value = conn.search_s(self.enabled_emulation_dn,
+                                              ldap.SCOPE_BASE,
+                                              query, ['cn'])
+            except ldap.NO_SUCH_OBJECT:
+                return False
+            else:
+                return bool(enabled_value)
 
     def _add_enabled(self, object_id):
         if not self._get_enabled(object_id):
-            conn = self.get_connection()
             modlist = [(ldap.MOD_ADD,
                         'member',
                         [self._id_to_dn(object_id)])]
-            try:
-                conn.modify_s(self.enabled_emulation_dn, modlist)
-            except ldap.NO_SUCH_OBJECT:
-                attr_list = [('objectClass', ['groupOfNames']),
-                             ('member',
-                                 [self._id_to_dn(object_id)])]
-                if self.use_dumb_member:
-                    attr_list[1][1].append(self.dumb_member)
-                conn.add_s(self.enabled_emulation_dn, attr_list)
-            finally:
-                conn.unbind_s()
+            with self.get_connection() as conn:
+                try:
+                    conn.modify_s(self.enabled_emulation_dn, modlist)
+                except ldap.NO_SUCH_OBJECT:
+                    attr_list = [('objectClass', ['groupOfNames']),
+                                 ('member',
+                                     [self._id_to_dn(object_id)])]
+                    if self.use_dumb_member:
+                        attr_list[1][1].append(self.dumb_member)
+                    conn.add_s(self.enabled_emulation_dn, attr_list)
 
     def _remove_enabled(self, object_id):
-        conn = self.get_connection()
         modlist = [(ldap.MOD_DELETE,
                     'member',
                     [self._id_to_dn(object_id)])]
-        try:
-            conn.modify_s(self.enabled_emulation_dn, modlist)
-        except (ldap.NO_SUCH_OBJECT, ldap.NO_SUCH_ATTRIBUTE):
-            pass
-        finally:
-            conn.unbind_s()
+        with self.get_connection() as conn:
+            try:
+                conn.modify_s(self.enabled_emulation_dn, modlist)
+            except (ldap.NO_SUCH_OBJECT, ldap.NO_SUCH_ATTRIBUTE):
+                pass
 
     def create(self, values):
         if self.enabled_emulation:
