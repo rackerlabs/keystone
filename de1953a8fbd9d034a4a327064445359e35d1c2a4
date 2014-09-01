@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_80bb74c3",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 815,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-01T01:09:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_4d82aa53",
+      "revId": "de1953a8fbd9d034a4a327064445359e35d1c2a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_6d876e62",
         "filename": "keystone/common/config.py",
         "patchSetId": 49
@@ -30,6 +48,24 @@
       "writtenOn": "2014-08-31T17:03:53Z",
       "side": 1,
       "message": "since this is the same as the signing keyfile default, make a variable so that it\u0027s shared.",
+      "revId": "de1953a8fbd9d034a4a327064445359e35d1c2a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_c0b57cce",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 821,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-01T01:09:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_6d876e62",
       "revId": "de1953a8fbd9d034a4a327064445359e35d1c2a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_40550c1c",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-01T01:09:36Z",
+      "side": 1,
+      "message": "I think it\u0027s best to leave it as unspecified urn:oasis:names:tc:SAML:2.0:attrname-format:unspecified\n\nShibboleth\u0027s doc:\nhttps://wiki.shibboleth.net/confluence/display/SHIB2/AttributeNaming\n\nMy interpretation is that we don\u0027t need to have it be a URI, but if we did want to we could do something like:\n\n  https://openstack.org/identity/attributes/openstack_user",
+      "parentUuid": "fa98f980_0d4b425a",
+      "revId": "de1953a8fbd9d034a4a327064445359e35d1c2a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_8d6e52c8",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 49
@@ -64,6 +118,24 @@
       "writtenOn": "2014-08-31T17:03:53Z",
       "side": 1,
       "message": "add a comment why this is necessary.",
+      "revId": "de1953a8fbd9d034a4a327064445359e35d1c2a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e3e60a16",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-01T01:09:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_8d6e52c8",
       "revId": "de1953a8fbd9d034a4a327064445359e35d1c2a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_03e4ee0b",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-01T01:09:36Z",
+      "side": 1,
+      "message": "Blows up if a comma is in the file path:\n\n  cp examples/pki/private/signing_key.pem testcomma,dot.pem\n  xmlsec1 --sign --privkey-pem testcomma,dot.pem,examples/pki/certs/signing_cert.pem --id-attr:ID Assertion /tmp/tmp0OMnPZ/tmp1ZeYyY\n\n  func\u003dxmlSecOpenSSLAppKeyLoad:file\u003dapp.c:line\u003d131:obj\u003dunknown:subj\u003dBIO_new_file:error\u003d4:crypto library function failed:filename\u003dtestcomma;errno\u003d2\n  func\u003dxmlSecAppCryptoSimpleKeysMngrKeyAndCertsLoad:file\u003dcrypto.c:line\u003d118:obj\u003dunknown:subj\u003dxmlSecCryptoAppKeyLoad:error\u003d1:xmlsec library function failed:uri\u003dtestcomma\n  Error: failed to load private key from \"testcomma\".\n\nI\u0027ve added this limitation to the config file.",
+      "parentUuid": "fa98f980_0d6262d8",
+      "revId": "de1953a8fbd9d034a4a327064445359e35d1c2a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_0d90a294",
         "filename": "keystone/tests/core.py",
         "patchSetId": 49
@@ -98,6 +188,24 @@
       "writtenOn": "2014-08-31T17:03:53Z",
       "side": 1,
       "message": "create a variable and share it.",
+      "revId": "de1953a8fbd9d034a4a327064445359e35d1c2a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_60b690de",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 49
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-01T01:09:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_0d90a294",
       "revId": "de1953a8fbd9d034a4a327064445359e35d1c2a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
