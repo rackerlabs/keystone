@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_f4ab22d4",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-01T03:45:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_e3e01528",
+      "revId": "aed2bc9953485da116e7513feca866850cb502c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_0b9b5666",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 15
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_74ee5224",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 489,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-01T03:45:20Z",
+      "side": 1,
+      "message": "i\u0027d like to see if we can come up with a reasonable default instead of enforcing these values.",
+      "parentUuid": "1abeadc6_0b9b5666",
+      "revId": "aed2bc9953485da116e7513feca866850cb502c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_83220150",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 15
@@ -47,6 +83,24 @@
       "writtenOn": "2014-08-29T07:35:03Z",
       "side": 1,
       "message": "Should contact type be a pysaml class?",
+      "revId": "aed2bc9953485da116e7513feca866850cb502c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_26dbc01c",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-01T03:45:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_83220150",
       "revId": "aed2bc9953485da116e7513feca866850cb502c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_74a012f5",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1694,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-01T03:45:20Z",
+      "side": 1,
+      "message": "for some reason load_fixtures seems to be messing up. leaving this as-is for now.",
+      "parentUuid": "1abeadc6_238e8d2e",
+      "revId": "aed2bc9953485da116e7513feca866850cb502c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_0b00b664",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 15
@@ -99,6 +171,24 @@
       "writtenOn": "2014-08-29T14:55:54Z",
       "side": 1,
       "message": "suggest shortening these lines to avoid \\ line continuation.",
+      "revId": "aed2bc9953485da116e7513feca866850cb502c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_d4129e57",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1701,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-01T03:45:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_0b00b664",
       "revId": "aed2bc9953485da116e7513feca866850cb502c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -133,6 +223,24 @@
       "writtenOn": "2014-08-29T07:35:03Z",
       "side": 1,
       "message": "Missing contact type",
+      "revId": "aed2bc9953485da116e7513feca866850cb502c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_549b0ec9",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1745,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-01T03:45:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1abeadc6_43af097d",
       "revId": "aed2bc9953485da116e7513feca866850cb502c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
