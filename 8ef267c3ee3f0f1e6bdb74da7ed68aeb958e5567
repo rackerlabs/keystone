@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_433b2f3a",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-01T18:12:17Z",
+      "side": 1,
+      "message": "Remove this since it\u0027s not used.",
+      "revId": "8ef267c3ee3f0f1e6bdb74da7ed68aeb958e5567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_85dd2273",
         "filename": "keystone/catalog/schema.py",
         "patchSetId": 37
@@ -13,6 +30,23 @@
       "writtenOn": "2014-09-01T16:35:29Z",
       "side": 1,
       "message": "Should this be constrained to 255 characters like the SQL column?",
+      "revId": "8ef267c3ee3f0f1e6bdb74da7ed68aeb958e5567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_836fd791",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-01T18:12:17Z",
+      "side": 1,
+      "message": "This note is inaccurate and it would be easier to just remove it. You can use a PUT or POST and specify the ID.",
       "revId": "8ef267c3ee3f0f1e6bdb74da7ed68aeb958e5567",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
