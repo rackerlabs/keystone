@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_e90b4b29",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 817,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-01T03:32:28Z",
+      "side": 1,
+      "message": "because I forgot. next patch will have this updated :)",
+      "parentUuid": "fa98f980_06231c06",
+      "revId": "9a0822cf5f476c409d42ca715ba1813b300a59f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_667948fc",
         "filename": "keystone/common/config.py",
         "patchSetId": 50
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_29063321",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 824,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-01T03:32:28Z",
+      "side": 1,
+      "message": "same",
+      "parentUuid": "fa98f980_667948fc",
+      "revId": "9a0822cf5f476c409d42ca715ba1813b300a59f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_66606836",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 50
@@ -47,6 +83,24 @@
       "writtenOn": "2014-09-01T02:19:12Z",
       "side": 1,
       "message": "why ...? that seems like a strange value",
+      "revId": "9a0822cf5f476c409d42ca715ba1813b300a59f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_69183b85",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 50
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-01T03:32:28Z",
+      "side": 1,
+      "message": "it\u0027s actually longer, i just didn\u0027t want to break 80 characters, they all start the same \"urn:oasis:names:tc:SAML:2.0\"",
+      "parentUuid": "fa98f980_66606836",
       "revId": "9a0822cf5f476c409d42ca715ba1813b300a59f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
