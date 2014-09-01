@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_532db645",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-01T22:13:29Z",
+      "side": 1,
+      "message": "since this is now unspecified i think it can be a username.",
+      "parentUuid": "fa98f980_71c48092",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_91dac476",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 52
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-01T17:44:24Z",
       "side": 1,
       "message": "this doesn\u0027t look like an email address.",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b0ced8b2",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-01T22:13:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_91dac476",
       "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_77e46d0d",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-01T22:13:29Z",
+      "side": 1,
+      "message": "Actually we should not force email identification, so I am removing it.",
+      "parentUuid": "fa98f980_11efb41f",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_31103801",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 52
@@ -64,6 +118,24 @@
       "writtenOn": "2014-09-01T17:44:24Z",
       "side": 1,
       "message": "remove FriendlyName since it\u0027s the same as name.\n\nAlso, change Name\u003d\"openstack_user\" to match the code.\n\nThis comment applies to other FriendlyName and Name values in this example.",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_10dc0412",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-01T22:13:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_31103801",
       "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_70e1d0cf",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-01T22:13:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_714ba02b",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_f12cf04c",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 52
@@ -98,6 +188,24 @@
       "writtenOn": "2014-09-01T17:44:24Z",
       "side": 1,
       "message": "change projects to project.",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_90363451",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-01T22:13:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_f12cf04c",
       "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_d368c6bc",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-01T22:13:29Z",
+      "side": 1,
+      "message": "removed friendly names everywhere.",
+      "parentUuid": "fa98f980_36b74e88",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_16cdea31",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 52
@@ -132,6 +258,24 @@
       "writtenOn": "2014-09-01T17:44:24Z",
       "side": 1,
       "message": "name_format is optional and the default is unspecified, so just leave it off.\n\nThis applies in other places where name_format is unspecified.",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_93a63e0f",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-01T22:13:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_16cdea31",
       "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_7309dadc",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-01T22:13:29Z",
+      "side": 1,
+      "message": "id is a xml tag with a certain value assigned to it for a unique identification. \u003cSignature\u003e \u0027template\u0027 should be filled with \u0027#\u0027\u003cid-tag-value\u003e so only this particular part instead of the whole XML is signed. We want to sign \u003cAssertion\u003e only. ID or id need to be specified to the xmlsec1 binary so it can properly parse and find XML objects.\n\nHowever, since we can predict what will the tag name be (\u0027ID\u0027, not \u0027id\u0027 nor \u0027Id\u0027) we can enforce name in the command_list and therefore remove this subfunction.",
+      "parentUuid": "fa98f980_161eca70",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_b19fc85e",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 52
@@ -166,6 +328,24 @@
       "writtenOn": "2014-09-01T17:44:24Z",
       "side": 1,
       "message": "could have this return an empty list and then wouldn\u0027t have to check \"if id_tags\" below.",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_304588b3",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-01T22:13:29Z",
+      "side": 1,
+      "message": "yes.",
+      "parentUuid": "fa98f980_b19fc85e",
       "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_5c95d03e",
+        "filename": "keystone/exception.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-01T22:13:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_51269cb8",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_31583832",
         "filename": "keystone/tests/core.py",
         "patchSetId": 52
@@ -206,6 +404,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_33ed92f0",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-01T22:13:29Z",
+      "side": 1,
+      "message": "Do want me to change this entry as well as the filename in the filesystem, or have separate files and other ones called signing_certfile.pem etc?",
+      "parentUuid": "fa98f980_31583832",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_b14b4858",
         "filename": "keystone/tests/core.py",
         "patchSetId": 52
@@ -217,6 +433,24 @@
       "writtenOn": "2014-09-01T17:44:24Z",
       "side": 1,
       "message": "signing_keyfile",
+      "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_93b55ef0",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 52
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-01T22:13:29Z",
+      "side": 1,
+      "message": "same as above.",
+      "parentUuid": "fa98f980_b14b4858",
       "revId": "2a199434463bd76720ab7b94e24abf5b6b474511",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
