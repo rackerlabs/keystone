@@ -33,6 +33,24 @@
       "revId": "8ef267c3ee3f0f1e6bdb74da7ed68aeb958e5567",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_9f6ad518",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 37
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-01T16:03:32Z",
+      "side": 1,
+      "message": "correct, if the \u0027url\u0027 isn\u0027t provided in the reference from new_endpoint_ref, but as it stands right now, \u0027url\u0027 is returned from new_endpoint_ref()",
+      "parentUuid": "fa98f980_4fa1b7a8",
+      "revId": "8ef267c3ee3f0f1e6bdb74da7ed68aeb958e5567",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
