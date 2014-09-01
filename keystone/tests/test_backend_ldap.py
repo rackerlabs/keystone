@@ -1018,6 +1018,21 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                           self.identity_api.get_user,
                           dumb_id)
 
+    def test_project_extra_attribute_mapping(self):
+        self.config_fixture.config(
+            group='ldap', project_name_attribute='ou',
+            project_desc_attribute='description',
+            project_enabled_attribute='enabled',
+            project_additional_attribute_mapping=[
+                'objectCategory:notexistingfield1',
+                'whenChanged:notexistingfield2'])
+        self.clear_database()
+        self.load_backends()
+        self.assertRaisesRegexp(exception.ValidationError,
+                                r'.*notexistingfield[12].*',
+                                self.load_fixtures,
+                                default_fixtures)
+
     def test_project_attribute_mapping(self):
         self.config_fixture.config(
             group='ldap', project_name_attribute='ou',
@@ -1377,7 +1392,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
 
         self.config_fixture.config(
             group='ldap',
-            user_additional_attribute_mapping=['description:description'])
+            user_additional_attribute_mapping=['ldap_description:description'])
         self.load_backends()
 
         description = uuid.uuid4().hex
