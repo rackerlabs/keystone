@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_cb20269e",
+        "filename": "keystone/exception.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-01T14:03:39Z",
+      "side": 1,
+      "message": "changed to class inheriting from UnexpectedError",
+      "parentUuid": "fa98f980_baed038e",
+      "revId": "12664df04fc1edef43e7ca6be6705d86339c20d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_8f355f48",
         "filename": "keystone/tests/core.py",
         "patchSetId": 51
