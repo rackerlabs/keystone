@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_0ff24f9a",
+        "filename": "keystone/exception.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-01T05:13:29Z",
+      "side": 1,
+      "message": "This message makes this sound more like a 500 than a 403.",
+      "revId": "12664df04fc1edef43e7ca6be6705d86339c20d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_8f355f48",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 51
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-01T05:13:29Z",
+      "side": 1,
+      "message": "I wouldn\u0027t hold anything up because of it, but I would prefer to have these settings mocked closer to the test where they are used.",
+      "revId": "12664df04fc1edef43e7ca6be6705d86339c20d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
