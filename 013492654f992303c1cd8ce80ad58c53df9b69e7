@@ -152,6 +152,23 @@
       "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f471fbe0",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 1835,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-02T20:49:47Z",
+      "side": 1,
+      "message": "thanks for the negatives!",
+      "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
