@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_774fd8bd",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-02T16:22:05Z",
+      "side": 1,
+      "message": "Validation of this can be done with timeutils.parse_isotime, so you don\u0027t need to just validate it\u0027s a string/null. It does require a custom validation code path. (Let\u0027s do that as a followup patch?)\n\nAll datetime validation can be done that way, it should avoid the non-apache license issue",
+      "revId": "6b469390a6bc0bbf27f7f6841babc01d23a9add2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
