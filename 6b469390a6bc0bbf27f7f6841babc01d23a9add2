@@ -16,6 +16,24 @@
       "revId": "6b469390a6bc0bbf27f7f6841babc01d23a9add2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_17a4cc55",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-02T16:23:59Z",
+      "side": 1,
+      "message": "Alternatively, doing a regex like you did for URL to handle isotime would be acceptable.",
+      "parentUuid": "fa98f980_774fd8bd",
+      "revId": "6b469390a6bc0bbf27f7f6841babc01d23a9add2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
