@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_5ea68f11",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 19
+      },
+      "lineNbr": 1299,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-02T04:11:10Z",
+      "side": 1,
+      "message": "always use example.com for things like this. idp.com is a real domain. ICANN reserves example.com just for things like this.",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_3eed4b26",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 833,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-02T04:11:10Z",
+      "side": 1,
+      "message": "identity",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_d6e189ff",
         "filename": "keystone/common/config.py",
         "patchSetId": 19
@@ -13,6 +47,125 @@
       "writtenOn": "2014-09-02T02:53:04Z",
       "side": 1,
       "message": "(nit) Maybe call out that this is the given name...",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_be469b1f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 852,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-02T04:11:10Z",
+      "side": 1,
+      "message": "quote looks to be in the wrong place\n\npersons\u0027 is plural and possible.. so the name of a group of people? which doesn\u0027t make much sense",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_be6dbb9b",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 856,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-02T04:11:10Z",
+      "side": 1,
+      "message": "doesn\u0027t Oslo support enumeration options types??",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_3ebe2bd5",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-02T04:11:10Z",
+      "side": 1,
+      "message": "this method name is_reallyhardtoread.",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_9e7c7722",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-02T04:11:10Z",
+      "side": 1,
+      "message": "did you mean to use get_cert here?",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_3ebaabc0",
+        "filename": "keystone/tests/federation_fixtures.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-02T04:11:10Z",
+      "side": 1,
+      "message": "acme.example.com",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_febf43a8",
+        "filename": "keystone/tests/federation_fixtures.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-02T04:11:10Z",
+      "side": 1,
+      "message": "same",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_dedb5f19",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1767,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-02T04:11:10Z",
+      "side": 1,
+      "message": "would appreciate some negative tests!",
       "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
