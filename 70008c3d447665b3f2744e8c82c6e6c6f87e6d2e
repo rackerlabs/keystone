@@ -16,6 +16,24 @@
       "revId": "70008c3d447665b3f2744e8c82c6e6c6f87e6d2e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_25a508a2",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-09-02T23:23:13Z",
+      "side": 1,
+      "message": "Prefer refactoring here. :)",
+      "parentUuid": "fa98f980_621b8673",
+      "revId": "70008c3d447665b3f2744e8c82c6e6c6f87e6d2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
