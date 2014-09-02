@@ -34,6 +34,24 @@
       "revId": "63c6087b427d03957ec3b563d70c0dcda793e681",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_77d7dbbf",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-02T15:19:59Z",
+      "side": 1,
+      "message": "I\u0027ve added \u0027null\u0027 to the type for expires_at: \n\n        \u0027expires_at\u0027: {\n        \u0027type\u0027: [\u0027null\u0027, \u0027string\u0027],\n\nBut still hitting some issues, I\u0027ll clean up what I have and push another revision.",
+      "parentUuid": "fa98f980_3c40da55",
+      "revId": "63c6087b427d03957ec3b563d70c0dcda793e681",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
