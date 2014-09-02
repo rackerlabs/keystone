@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_c59c3c12",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-09-02T23:35:00Z",
+      "side": 1,
+      "message": "loop too complex.\nfunctional programming like filter/reduce/generator, could be better.",
+      "revId": "86d2a83463a3709fadea4074d38b121de3e98721",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
