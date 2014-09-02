@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_8ad40621",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 22
+      },
+      "lineNbr": 1319,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T21:40:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_8e68a188",
+      "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_a9055f7b",
         "filename": "keystone/common/config.py",
         "patchSetId": 22
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-02T19:13:29Z",
       "side": 1,
       "message": "This config option should document that a value is required to generate the IDP Metadata.",
+      "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_4a1bfe1a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T21:40:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_a9055f7b",
       "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,41 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_2a1cfa12",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 842,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T21:40:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_29f96f80",
+      "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_8a06c6cc",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 844,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T21:40:58Z",
+      "side": 1,
+      "message": "changed to language",
+      "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_899b3b71",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 22
@@ -64,6 +135,24 @@
       "writtenOn": "2014-09-02T19:13:29Z",
       "side": 1,
       "message": "should document that exception.ValidationError will be raised if the required configuration options aren\u0027t set.",
+      "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_ea867212",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T21:40:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_899b3b71",
       "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_aae1cad1",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T21:40:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_2ecfb580",
+      "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_4e08792d",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 22
@@ -98,6 +205,24 @@
       "writtenOn": "2014-09-02T19:13:29Z",
       "side": 1,
       "message": "seems weird for a URL to have a language.",
+      "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_2acdda5d",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 477,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T21:40:58Z",
+      "side": 1,
+      "message": "i thought so too, but pysaml blew up if it wasn\u0027t specified.",
+      "parentUuid": "fa98f980_4e08792d",
       "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_aa08ea91",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T21:40:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_690457c0",
+      "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_89ffbba9",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 22
@@ -138,6 +281,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_caffee65",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T21:40:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_89ffbba9",
+      "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_c930e3a0",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 22
@@ -149,6 +310,24 @@
       "writtenOn": "2014-09-02T19:13:29Z",
       "side": 1,
       "message": "this should be _() since wherever the exception is caught might not log it at error level.",
+      "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_ea02f26d",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T21:40:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_c930e3a0",
       "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
