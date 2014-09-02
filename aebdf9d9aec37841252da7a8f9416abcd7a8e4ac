@@ -85,6 +85,24 @@
       "revId": "aebdf9d9aec37841252da7a8f9416abcd7a8e4ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_1be33c06",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-09-02T02:24:29Z",
+      "side": 1,
+      "message": "We all use tenant in this file. So, I think we should make consistent with others.",
+      "parentUuid": "fa98f980_8ac0b8e1",
+      "revId": "aebdf9d9aec37841252da7a8f9416abcd7a8e4ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
