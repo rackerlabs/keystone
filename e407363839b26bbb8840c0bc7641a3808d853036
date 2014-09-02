@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_22609e00",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1291,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-02T23:02:10Z",
+      "side": 1,
+      "message": "@Morgan Fainberg, I am so glad you asked me to test this part! Turns out I don\u0027t need the explicit check here. According to the doc, (http://www.python-ldap.org/doc/html/ldap.html)\n\n\"\nEach result tuple is of the form (dn, attrs), where dn is a string containing the DN (distinguished name) of the entry, and attrs is a dictionary containing the attributes associated with the entry. The keys of attrs are strings, and the associated values are lists of strings.\n\"\n\nI\u0027ll properly mock it for the testing.",
+      "revId": "e407363839b26bbb8840c0bc7641a3808d853036",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
