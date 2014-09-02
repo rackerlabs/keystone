@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_decb38a3",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-02T19:26:23Z",
+      "side": 1,
+      "message": "Here, we should explicitly accept UnicodeErrors and then throw in some logging so that it provides the user some level of information, instead of returning None.",
+      "revId": "736517be1e3f86cc3f19d9e10a139169af943c2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
