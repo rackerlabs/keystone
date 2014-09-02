@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_60f8134a",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-09-02T02:11:05Z",
+      "side": 1,
+      "message": "I don\u0027t think so. Why does self must contain OS-TRUST:trust? The token can be a non-trust-scope token.",
+      "parentUuid": "fa98f980_a5784d90",
+      "revId": "a792ef017d416de673270a54232ceea93299eb40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_456321dc",
         "filename": "keystone/models/token_model.py",
         "patchSetId": 8
