@@ -121,7 +121,10 @@ def ldap2py(val):
         return int(val)
     except ValueError:
         pass
-    return utf8_decode(val)
+    try:
+        return utf8_decode(val)
+    except Exception:
+        return
 
 
 def convert_ldap_result(ldap_result):
