@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_ba2da748",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-02T16:47:09Z",
+      "side": 1,
+      "message": "(NIT): This could be done with:\n\n    ref \u003d {\n        \u0027id\u0027: uuid.uuid4().hex,\n        \u0027trustor_uder_id\u0027: trustor_user_id,\n        ...\n    }\n\nThe dict() constructor is always slower/ickier to use.",
+      "revId": "6b469390a6bc0bbf27f7f6841babc01d23a9add2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_7adc1f13",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1123,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-02T16:47:09Z",
+      "side": 1,
+      "message": "make this timeutils.strtime in a followup patch.",
+      "revId": "6b469390a6bc0bbf27f7f6841babc01d23a9add2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_9ad703ed",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1158,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-02T16:47:09Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "6b469390a6bc0bbf27f7f6841babc01d23a9add2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_774fd8bd",
         "filename": "keystone/trust/schema.py",
         "patchSetId": 12
