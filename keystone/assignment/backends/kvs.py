@@ -283,11 +283,12 @@ class Assignment(kvs.Base, assignment.Driver):
                 template['domain_id'] = meta_project_or_domain_id
 
             entry = self.db.get(key)
-            inherited = False
-            for r in self._roles_from_role_dicts(entry.get('roles', {}),
-                                                 inherited):
+            for r in entry.get('roles', {}):
                 role_assignment = template.copy()
-                role_assignment['role_id'] = r
+                role_assignment['role_id'] = r['id']
+                # If it is an inherited role, put this in the role assignment
+                if r.get('inherited_to', None) == 'projects':
+                    role_assignment['inherited_to_projects'] = 'projects'
                 assignment_list.append(role_assignment)
 
         metadata_keys = (k for k in self.db.keys()
@@ -302,11 +303,12 @@ class Assignment(kvs.Base, assignment.Driver):
                 template['domain_id'] = meta_project_or_domain_id
 
             entry = self.db.get(key)
-            inherited = False
-            for r in self._roles_from_role_dicts(entry.get('roles', {}),
-                                                 inherited):
+            for r in entry.get('roles', {}):
                 role_assignment = template.copy()
-                role_assignment['role_id'] = r
+                role_assignment['role_id'] = r['id']
+                # If it is an inherited role, put this in the role assignment
+                if r.get('inherited_to', None) == 'projects':
+                    role_assignment['inherited_to_projects'] = 'projects'
                 assignment_list.append(role_assignment)
 
         return assignment_list
