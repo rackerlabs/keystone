@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_1fe15e9a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T06:36:06Z",
+      "side": 1,
+      "message": "suggest: keystone-manage --saml_idp_metadata command",
+      "parentUuid": "fa98f980_fe1bc3c7",
+      "revId": "53735c1260dda973ea4ff5e3f32335cac43e049d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_f074ee9d",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 5
