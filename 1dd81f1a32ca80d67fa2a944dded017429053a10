@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_725b822e",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-09-02T05:46:26Z",
+      "side": 1,
+      "message": "generator could be better?\n\nwhile len(children) \u003e 0:\n        children \u003d self._get_children(ref[\u0027id\u0027] for ref in children)\n        yield children",
+      "revId": "1dd81f1a32ca80d67fa2a944dded017429053a10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_7272a2ae",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-09-02T05:46:26Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "1dd81f1a32ca80d67fa2a944dded017429053a10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_d2beeefe",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-09-02T05:46:26Z",
+      "side": 1,
+      "message": "the while logic seems no relations with backends, could be implemented as a func",
+      "revId": "1dd81f1a32ca80d67fa2a944dded017429053a10",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
