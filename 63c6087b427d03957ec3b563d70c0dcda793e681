@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_7210e2a8",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-02T05:51:00Z",
+      "side": 1,
+      "message": "This seems to be a problem. How do we want to go about validating datetime objects or strings? Jsonschema offers format checking with `time` and `datetime` but that relies on rfc39999, which isn\u0027t Apache license. \n\nAny ideas on how we should go about this type of validation? Or we just keep it as a string for now?",
+      "revId": "63c6087b427d03957ec3b563d70c0dcda793e681",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
