@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_37f9d080",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 833,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-02T16:42:44Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "fa98f980_92636ddb",
+      "revId": "f17e1f1d3b7fbd945b3bcef70a34bbbbbcce08b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_fc3012a0",
         "filename": "keystone/common/config.py",
         "patchSetId": 21
@@ -135,6 +153,24 @@
       "writtenOn": "2014-09-02T15:18:24Z",
       "side": 1,
       "message": "seems like not everyone\u0027s going to want english for their org name.",
+      "revId": "f17e1f1d3b7fbd945b3bcef70a34bbbbbcce08b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_5a1cbb13",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-02T16:42:44Z",
+      "side": 1,
+      "message": "++ should probably be a CONF",
+      "parentUuid": "fa98f980_b7c0632b",
       "revId": "f17e1f1d3b7fbd945b3bcef70a34bbbbbcce08b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
