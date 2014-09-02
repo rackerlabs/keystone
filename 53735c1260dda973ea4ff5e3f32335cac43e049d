@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_fe1bc3c7",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-02T04:19:51Z",
+      "side": 1,
+      "message": "which keystone-manage command?",
+      "revId": "53735c1260dda973ea4ff5e3f32335cac43e049d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_f074ee9d",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 5
@@ -31,6 +48,23 @@
       "side": 1,
       "message": "I think so, the message is going to have enough information in there. \n\nif anything we should log the error as well.",
       "parentUuid": "fa98f980_f074ee9d",
+      "revId": "53735c1260dda973ea4ff5e3f32335cac43e049d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_7ed513b8",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-02T04:19:51Z",
+      "side": 1,
+      "message": "this is an oddly one-off route",
       "revId": "53735c1260dda973ea4ff5e3f32335cac43e049d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
