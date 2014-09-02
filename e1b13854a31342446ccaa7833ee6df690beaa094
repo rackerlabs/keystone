@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_e0ba436d",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-09-02T02:23:27Z",
+      "side": 1,
+      "message": "I\u0027m lost :) , correct me if I\u0027m wrong.\n\n(x[\u0027id\u0027] for x in self.get_project_subtree(project_id)) will always return same value during the for loop block, right?\nso, why need update in loop?",
+      "revId": "e1b13854a31342446ccaa7833ee6df690beaa094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_9b62ccab",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-09-02T02:23:27Z",
+      "side": 1,
+      "message": "filter_assignment \u003d lambda assignment: (assignment.type \u003d\u003d AssignmentType.USER_PROJECT or assignment.type \u003d\u003d AssignmentType.GROUP_PROJECT) and assignment.inherited\n\nassignment_list \u003d filter(fitler_assignment, assignments)\n\nget_children_ids \u003d lambda assignment: (x[\u0027id\u0027] for x in self.get_project_subtree(assignment.target_id)\n\nchildren_ids_list \u003d (get_children_ids(i) for i in assignment_list)\n\nproject_ids \u003d reduce((lambda x,y: x | y), children_ids_list)",
+      "revId": "e1b13854a31342446ccaa7833ee6df690beaa094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
