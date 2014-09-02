@@ -12,9 +12,13 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import webob
+
 from keystone.common import extension
+from keystone.common import json_home
 from keystone.common import wsgi
 from keystone import exception
+from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
 
 
@@ -24,6 +28,26 @@ MEDIA_TYPE_JSON = 'application/vnd.openstack.identity-%s+json'
 MEDIA_TYPE_XML = 'application/vnd.openstack.identity-%s+xml'
 
 _VERSIONS = []
+
+
+def request_v3_json_home(new_prefix):
+
+    # FIXME(blk-u): the v3_router needs to be injected into the version
+    # controller somehow.
+    from keystone import service
+
+    if not service.v3_router:
+        # No V3 router, so just return an empty JSON Home doc.
+        return {'resources': {}}
+
+    req = webob.Request.blank(
+        '/', headers={'Accept': 'application/json-home'})
+    v3_json_home_str = req.get_response(service.v3_router).body
+
+    v3_json_home = jsonutils.loads(v3_json_home_str)
+    json_home.translate_urls(v3_json_home, new_prefix)
+
+    return v3_json_home
 
 
 class Extensions(wsgi.Application):
@@ -65,7 +89,7 @@ class MimeTypes:
     JSON_HOME = 'application/json-home'
 
 
-def v3_mime_type_best_match(context):
+def version_accept_best_match(context):
 
     # accept_header is a WebOb MIMEAccept object so supports best_match.
     accept_header = context['accept_header']
@@ -144,6 +168,14 @@ class Version(wsgi.Application):
         return versions
 
     def get_versions(self, context):
+
+        req_mime_type = version_accept_best_match(context)
+        if req_mime_type == MimeTypes.JSON_HOME:
+            v3_json_home = request_v3_json_home('/v3')
+            return wsgi.render_response(
+                body=v3_json_home,
+                headers=(('Content-Type', MimeTypes.JSON_HOME),))
+
         versions = self._get_versions_list(context)
         return wsgi.render_response(status=(300, 'Multiple Choices'), body={
             'versions': {
@@ -152,6 +184,14 @@ class Version(wsgi.Application):
         })
 
     def get_version_v2(self, context):
+
+        req_mime_type = version_accept_best_match(context)
+        if req_mime_type == MimeTypes.JSON_HOME:
+            v3_json_home = request_v3_json_home('/../v3')
+            return wsgi.render_response(
+                body=v3_json_home,
+                headers=(('Content-Type', MimeTypes.JSON_HOME),))
+
         versions = self._get_versions_list(context)
         if 'v2.0' in _VERSIONS:
             return wsgi.render_response(body={
@@ -174,7 +214,7 @@ class Version(wsgi.Application):
     def get_version_v3(self, context):
         versions = self._get_versions_list(context)
         if 'v3' in _VERSIONS:
-            req_mime_type = v3_mime_type_best_match(context)
+            req_mime_type = version_accept_best_match(context)
 
             if req_mime_type == MimeTypes.JSON_HOME:
                 return wsgi.render_response(

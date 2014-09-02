@@ -35,6 +35,14 @@ from keystone import trust
 CONF = config.CONF
 LOG = log.getLogger(__name__)
 
+v2_admin_version_router = None
+v2_public_version_router = None
+public_version_router = None
+admin_version_router = None
+v3_admin_version_router = None
+v3_public_version_router = None
+v3_router = None
+
 
 def fail_gracefully(f):
     """Logs exceptions and aborts."""
@@ -54,38 +62,48 @@ def fail_gracefully(f):
 
 @fail_gracefully
 def public_app_factory(global_conf, **local_conf):
+    global v2_public_version_router
     controllers.register_version('v2.0')
+    v2_public_version_router = routers.VersionV2('public')
     return wsgi.ComposingRouter(routes.Mapper(),
                                 [assignment.routers.Public(),
                                  token.routers.Router(),
-                                 routers.VersionV2('public'),
+                                 v2_public_version_router,
                                  routers.Extension(False)])
 
 
 @fail_gracefully
 def admin_app_factory(global_conf, **local_conf):
+    global v2_admin_version_router
+    v2_admin_version_router = routers.VersionV2('admin')
     return wsgi.ComposingRouter(routes.Mapper(),
                                 [identity.routers.Admin(),
                                  assignment.routers.Admin(),
-                                    token.routers.Router(),
-                                    routers.VersionV2('admin'),
-                                    routers.Extension()])
+                                 token.routers.Router(),
+                                 v2_admin_version_router,
+                                 routers.Extension()])
 
 
 @fail_gracefully
 def public_version_app_factory(global_conf, **local_conf):
-    return wsgi.ComposingRouter(routes.Mapper(),
-                                [routers.Versions('public')])
+    global public_version_router
+    public_version_router = routers.Versions('public')
+    return wsgi.ComposingRouter(routes.Mapper(), [public_version_router])
 
 
 @fail_gracefully
 def admin_version_app_factory(global_conf, **local_conf):
-    return wsgi.ComposingRouter(routes.Mapper(),
-                                [routers.Versions('admin')])
+    global admin_version_router
+    admin_version_router = routers.Versions('admin')
+    return wsgi.ComposingRouter(routes.Mapper(), [admin_version_router])
 
 
 @fail_gracefully
 def v3_app_factory(global_conf, **local_conf):
+    global v3_admin_version_router
+    global v3_public_version_router
+    global v3_router
+
     controllers.register_version('v3')
     mapper = routes.Mapper()
     sub_routers = []
@@ -101,7 +119,11 @@ def v3_app_factory(global_conf, **local_conf):
         routers_instance.append_v3_routers(mapper, sub_routers)
 
     # Add in the v3 version api
-    sub_routers.append(routers.VersionV3('admin', _routers))
-    sub_routers.append(routers.VersionV3('public', _routers))
+    v3_admin_version_router = routers.VersionV3('admin', _routers)
+    sub_routers.append(v3_admin_version_router)
+    v3_public_version_router = routers.VersionV3('public', _routers)
+    sub_routers.append(v3_public_version_router)
     # TODO(ayoung): put token routes here
-    return wsgi.ComposingRouter(mapper, sub_routers)
+
+    v3_router = wsgi.ComposingRouter(mapper, sub_routers)
+    return v3_router
