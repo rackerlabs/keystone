@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_c0a61f10",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1099,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-09-02T02:02:43Z",
+      "side": 1,
+      "message": "This method is inherited from AuthWithTrust object.",
+      "parentUuid": "fa98f980_ea54e455",
+      "revId": "aebdf9d9aec37841252da7a8f9416abcd7a8e4ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_8ac0b8e1",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 3
