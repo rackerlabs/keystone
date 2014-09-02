@@ -52,6 +52,24 @@
       "revId": "6b469390a6bc0bbf27f7f6841babc01d23a9add2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_5af59bc9",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-02T16:36:41Z",
+      "side": 1,
+      "message": "sounds good, I agree",
+      "parentUuid": "fa98f980_5a3d9bba",
+      "revId": "6b469390a6bc0bbf27f7f6841babc01d23a9add2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
