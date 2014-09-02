@@ -16,6 +16,24 @@
       "revId": "63c6087b427d03957ec3b563d70c0dcda793e681",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_3c40da55",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-02T14:59:28Z",
+      "side": 1,
+      "message": "I think the issue is that this needs to be nullable. It seems from the tests that None somehow gets passed in here. That\u0027s backed up by the current validation code that explicitly checks for None: https://github.com/openstack/keystone/blob/master/keystone/trust/controllers.py#L183",
+      "parentUuid": "fa98f980_7210e2a8",
+      "revId": "63c6087b427d03957ec3b563d70c0dcda793e681",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
