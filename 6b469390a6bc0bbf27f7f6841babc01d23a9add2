@@ -34,6 +34,24 @@
       "revId": "6b469390a6bc0bbf27f7f6841babc01d23a9add2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_5a3d9bba",
+        "filename": "keystone/trust/schema.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-02T16:30:16Z",
+      "side": 1,
+      "message": "Yeah, right now we are already validating here: https://github.com/openstack/keystone/blob/master/keystone/trust/controllers.py#L183\n\nI agree that it would be nice to follow up with a fix.",
+      "parentUuid": "fa98f980_17a4cc55",
+      "revId": "6b469390a6bc0bbf27f7f6841babc01d23a9add2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
