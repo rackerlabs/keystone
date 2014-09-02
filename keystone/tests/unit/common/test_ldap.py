@@ -167,3 +167,7 @@ class DnCompareTest(tests.BaseTestCase):
         descendant = ldap.dn.str2dn('cn=Babs Jansen,ou=OpenStack')
         dn = ldap.dn.str2dn('ou=OpenStack')
         self.assertTrue(ks_ldap.dn_startswith(descendant, dn))
+
+    def test_that_non_encodable_chars_do_not_cause_ldap2py_to_crash(self):
+        val = u"\u30b9\u30d1\u30e2"
+        self.assertTrue(ks_ldap.ldap2py(val))
