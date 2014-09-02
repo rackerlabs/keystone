@@ -16,6 +16,41 @@
       "revId": "f17e1f1d3b7fbd945b3bcef70a34bbbbbcce08b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_dcd42e22",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 862,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T14:49:03Z",
+      "side": 1,
+      "message": "we can do a follow up patch for this.",
+      "parentUuid": "fa98f980_fc3012a0",
+      "revId": "f17e1f1d3b7fbd945b3bcef70a34bbbbbcce08b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_bc9bea70",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 1777,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T14:49:03Z",
+      "side": 1,
+      "message": "nice",
+      "revId": "f17e1f1d3b7fbd945b3bcef70a34bbbbbcce08b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
