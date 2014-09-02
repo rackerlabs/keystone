@@ -120,6 +120,41 @@
       "revId": "fc58831bf96f4d36a07ea299eb8f1e446471e8a8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_34554e50",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 908,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-02T16:00:26Z",
+      "side": 1,
+      "message": "++ for fixtures",
+      "parentUuid": "AAAAWH//yLA\u003d",
+      "revId": "fc58831bf96f4d36a07ea299eb8f1e446471e8a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_74e6f6b5",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 923,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-02T16:00:26Z",
+      "side": 1,
+      "message": "Reverse the order here for these. It should be (expected, observed)",
+      "revId": "fc58831bf96f4d36a07ea299eb8f1e446471e8a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
