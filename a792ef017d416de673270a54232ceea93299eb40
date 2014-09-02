@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_a5784d90",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-09-02T01:36:08Z",
+      "side": 1,
+      "message": "self.setdefault(\u0027OS-TRUST:trust\u0027, {})\n\nreturn self[\u0027OS-TRUST:trust\u0027].get(\u0027impersonation\u0027)\n\ncould be better?",
+      "revId": "a792ef017d416de673270a54232ceea93299eb40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_456321dc",
+        "filename": "keystone/models/token_model.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-09-02T01:36:08Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "a792ef017d416de673270a54232ceea93299eb40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
