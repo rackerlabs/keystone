@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_985e4475",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 53
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-02T07:53:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_3b21e0fb",
+      "revId": "60b2c8e7a8b1cf8cf08d92fafa4514e27ea7c13a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_db5e1476",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 53
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-02T02:32:49Z",
       "side": 1,
       "message": "this should be openstack_user",
+      "revId": "60b2c8e7a8b1cf8cf08d92fafa4514e27ea7c13a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_184a54ac",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 53
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-02T07:53:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_db5e1476",
       "revId": "60b2c8e7a8b1cf8cf08d92fafa4514e27ea7c13a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_38ef1889",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 53
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-02T07:53:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_fb54b855",
+      "revId": "60b2c8e7a8b1cf8cf08d92fafa4514e27ea7c13a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_3b4f20bf",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 53
@@ -64,6 +118,24 @@
       "writtenOn": "2014-09-02T02:32:49Z",
       "side": 1,
       "message": "should be openstack_projects",
+      "revId": "60b2c8e7a8b1cf8cf08d92fafa4514e27ea7c13a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_58f21c70",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 53
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-02T07:53:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_3b4f20bf",
       "revId": "60b2c8e7a8b1cf8cf08d92fafa4514e27ea7c13a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_58993c1e",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 53
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-02T07:53:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_bbe95082",
+      "revId": "60b2c8e7a8b1cf8cf08d92fafa4514e27ea7c13a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_7b9608f2",
         "filename": "keystone/tests/core.py",
         "patchSetId": 53
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_d821acfd",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 53
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-02T07:53:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_7b9608f2",
+      "revId": "60b2c8e7a8b1cf8cf08d92fafa4514e27ea7c13a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_9b99ec21",
         "filename": "keystone/tests/core.py",
         "patchSetId": 53
@@ -115,6 +223,24 @@
       "writtenOn": "2014-09-02T02:32:49Z",
       "side": 1,
       "message": "change the variable to signing_keyfile.",
+      "revId": "60b2c8e7a8b1cf8cf08d92fafa4514e27ea7c13a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_181c14c1",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 53
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-02T07:53:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_9b99ec21",
       "revId": "60b2c8e7a8b1cf8cf08d92fafa4514e27ea7c13a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
