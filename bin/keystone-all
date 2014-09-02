@@ -20,7 +20,6 @@ import socket
 import sys
 
 from oslo import i18n
-from paste import deploy
 import pbr.version
 
 
@@ -73,7 +72,7 @@ class ServerWrapper(object):
 
 
 def create_server(conf, name, host, port, workers):
-    app = deploy.loadapp('config:%s' % conf, name=name)
+    app = service.loadapp('config:%s' % conf, name=name)
     server = environment.Server(app, host=host, port=port,
                                 keepalive=CONF.tcp_keepalive,
                                 keepidle=CONF.tcp_keepidle)
