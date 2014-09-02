@@ -4398,6 +4398,34 @@ class InheritanceTests(object):
         user_projects = self.assignment_api.list_projects_for_user(user1['id'])
         self.assertEqual(5, len(user_projects))
 
+    def test_list_inherited_role_assignment_format(self):
+        group = {'name': uuid.uuid4().hex, 'domain_id': DEFAULT_DOMAIN_ID}
+        group = self.identity_api.create_group(group)
+
+        self.assignment_api.create_grant(user_id=self.user_foo['id'],
+                                         domain_id=DEFAULT_DOMAIN_ID,
+                                         role_id=self.role_member['id'],
+                                         inherited_to_projects=True)
+
+        self.assignment_api.create_grant(group_id=group['id'],
+                                         domain_id=DEFAULT_DOMAIN_ID,
+                                         role_id=self.role_member['id'],
+                                         inherited_to_projects=True)
+
+        assignment_list = self.assignment_api.list_role_assignments()
+
+        self.assertIn({'inherited_to_projects': 'projects',
+                       'user_id': self.user_foo['id'],
+                       'domain_id': DEFAULT_DOMAIN_ID,
+                       'role_id': self.role_member['id']},
+                      assignment_list)
+
+        self.assertIn({'inherited_to_projects': 'projects',
+                       'group_id': group['id'],
+                       'domain_id': DEFAULT_DOMAIN_ID,
+                       'role_id': self.role_member['id']},
+                      assignment_list)
+
 
 class FilterTests(filtering.FilterTests):
     def test_list_users_filtered(self):
