@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_86a093a0",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-09-02T14:13:31Z",
+      "side": 1,
+      "message": "In fact, we can update into the loop, we just shouldn\u0027t continue the loop once we get an inherited role, as done for domain inherited role.\n\nIt should be:\n                if CONF.os_inherit.enabled:\n                    data \u003d self.db.get(key)\n                    for role in data.get(\u0027roles\u0027, []):\n                        if role.get(\u0027inherited_to\u0027, \u0027\u0027) \u003d\u003d \u0027projects\u0027:\n                            project_ids.update(\n                                x[\u0027id\u0027]\n                                for x in self.get_project_subtree(project_id))\n                            break\n\nIn addition, this code should be placed inside the try at line 199 because that is the place for the case of a meta_project_id was just retrieved.",
+      "parentUuid": "fa98f980_e0ba436d",
+      "revId": "e1b13854a31342446ccaa7833ee6df690beaa094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_9b62ccab",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-02T02:23:27Z",
       "side": 1,
       "message": "filter_assignment \u003d lambda assignment: (assignment.type \u003d\u003d AssignmentType.USER_PROJECT or assignment.type \u003d\u003d AssignmentType.GROUP_PROJECT) and assignment.inherited\n\nassignment_list \u003d filter(fitler_assignment, assignments)\n\nget_children_ids \u003d lambda assignment: (x[\u0027id\u0027] for x in self.get_project_subtree(assignment.target_id)\n\nchildren_ids_list \u003d (get_children_ids(i) for i in assignment_list)\n\nproject_ids \u003d reduce((lambda x,y: x | y), children_ids_list)",
+      "revId": "e1b13854a31342446ccaa7833ee6df690beaa094",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_a6d757ec",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-09-02T14:13:31Z",
+      "side": 1,
+      "message": "I don\u0027t think it\u0027s the better way to do this.\n\nIt doesn\u0027t improve performance neither code readability.",
+      "parentUuid": "fa98f980_9b62ccab",
       "revId": "e1b13854a31342446ccaa7833ee6df690beaa094",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
