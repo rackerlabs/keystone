@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_621b8673",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-09-02T22:38:27Z",
+      "side": 1,
+      "message": "Notice that the code at 274-292 and 294-312 do the same work for different types of actor.\nIt could be refactored by using a for statement to wrap the common code, as shown below:\n\n    for actor_type in (\u0027user\u0027, \u0027group\u0027):\n\nI didn\u0027t do it directly because I\u0027m not sure if it\u0027s a good idea to put a bug fix and a refactoring into the same patch.",
+      "revId": "70008c3d447665b3f2744e8c82c6e6c6f87e6d2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
