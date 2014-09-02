@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_6ef29dd3",
+        "filename": "bin/keystone-all",
+        "patchSetId": 1
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-02T18:23:49Z",
+      "side": 0,
+      "message": "removed in favor of: \n\nhttps://github.com/openstack/keystone/blob/master/keystone/openstack/common/service.py#L388\nhttps://github.com/openstack/keystone/blob/master/keystone/openstack/common/service.py#L168",
+      "revId": "61394c8e9720d2671ea842ccc659a89ac500bce0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
