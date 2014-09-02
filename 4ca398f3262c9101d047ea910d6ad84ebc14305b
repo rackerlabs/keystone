@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_1b4072a4",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-02T19:13:54Z",
+      "side": 1,
+      "message": "see comment below about py3 compat.",
+      "revId": "4ca398f3262c9101d047ea910d6ad84ebc14305b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_3bf45686",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1290,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-02T19:13:54Z",
+      "side": 1,
+      "message": "Do not shadow the built-in \u0027id\u0027, suggest naming this something other than \"id\" (id_from_attr?)",
+      "revId": "4ca398f3262c9101d047ea910d6ad84ebc14305b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_5bdcba12",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1291,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-02T19:13:54Z",
+      "side": 1,
+      "message": "In python 3 the types module is removed,  just use:\n\n    if isinstance(id, list):",
+      "revId": "4ca398f3262c9101d047ea910d6ad84ebc14305b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
