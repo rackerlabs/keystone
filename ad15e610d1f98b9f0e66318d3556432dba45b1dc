@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_f81bdbc7",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T03:40:24Z",
+      "side": 1,
+      "message": "they are not, thanks for catching that, it\u0027s because auth_controllers.Auth already required them.",
+      "parentUuid": "fa98f980_7aa63bc3",
+      "revId": "ad15e610d1f98b9f0e66318d3556432dba45b1dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_3a8d937c",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 29
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_3ba55db5",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1878,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T03:40:24Z",
+      "side": 1,
+      "message": "I think these two are 404\u0027s as I liken it to the current behaviour seen when creating a project/user when the domain name is garbage:\n\n  def test_domain_not_found(self):\n    ref \u003d self.new_user_ref(domain_id\u003d\u0027adadsadasd\u0027)\n    self.post(\u0027/users\u0027, body\u003d{\u0027user\u0027: ref}, expected_status\u003d404)",
+      "parentUuid": "fa98f980_3a8d937c",
+      "revId": "ad15e610d1f98b9f0e66318d3556432dba45b1dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_baf8a3e6",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 29
@@ -47,6 +83,24 @@
       "writtenOn": "2014-09-01T06:11:16Z",
       "side": 1,
       "message": "Same thing here",
+      "revId": "ad15e610d1f98b9f0e66318d3556432dba45b1dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_7bafe594",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1890,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T03:40:24Z",
+      "side": 1,
+      "message": "same",
+      "parentUuid": "fa98f980_baf8a3e6",
       "revId": "ad15e610d1f98b9f0e66318d3556432dba45b1dc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
