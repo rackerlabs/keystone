@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_e36ea600",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-02T18:11:23Z",
+      "side": 1,
+      "message": "these calls to _add_resource need rel values for JSON Home (endpoint discovery) support.",
+      "revId": "32eaabe7b13c6514b7c5d079646380765f0a9d3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
