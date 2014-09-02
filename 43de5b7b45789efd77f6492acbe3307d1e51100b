@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_e3cb111c",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-02T13:48:27Z",
+      "side": 1,
+      "message": "it\u0027s --id-attr:ID at line 395 -- so this line shouldn\u0027t have changed.",
+      "revId": "43de5b7b45789efd77f6492acbe3307d1e51100b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
