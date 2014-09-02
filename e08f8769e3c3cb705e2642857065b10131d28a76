@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_df3c36c2",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 19
+      },
+      "lineNbr": 1299,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T06:34:39Z",
+      "side": 1,
+      "message": "Regenerate this file afterward",
+      "parentUuid": "fa98f980_5ea68f11",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_7f9a6a64",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 830,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T06:34:39Z",
+      "side": 1,
+      "message": "use keystone.example.com",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_3eed4b26",
         "filename": "keystone/common/config.py",
         "patchSetId": 19
@@ -30,6 +65,40 @@
       "writtenOn": "2014-09-02T04:11:10Z",
       "side": 1,
       "message": "identity",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_9f9d4e5c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 835,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T06:34:39Z",
+      "side": 1,
+      "message": "use keystone.example.com",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_3f89c226",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 844,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T06:34:39Z",
+      "side": 1,
+      "message": "Company of contact person.",
       "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +122,58 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_1e2de746",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 846,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T06:34:39Z",
+      "side": 1,
+      "message": "Given name of contact person.",
+      "parentUuid": "fa98f980_d6e189ff",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_bf7cd221",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 848,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T06:34:39Z",
+      "side": 1,
+      "message": "Surname of contact person.",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_ff765a3d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 850,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T06:34:39Z",
+      "side": 1,
+      "message": "E-mail address of contact person",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_be469b1f",
         "filename": "keystone/common/config.py",
         "patchSetId": 19
@@ -64,6 +185,24 @@
       "writtenOn": "2014-09-02T04:11:10Z",
       "side": 1,
       "message": "quote looks to be in the wrong place\n\npersons\u0027 is plural and possible.. so the name of a group of people? which doesn\u0027t make much sense",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_1f9b1e73",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 852,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T06:34:39Z",
+      "side": 1,
+      "message": "Telephone number of contact person.",
+      "parentUuid": "fa98f980_be469b1f",
       "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +243,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_3fde2212",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 465,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T06:34:39Z",
+      "side": 1,
+      "message": "_create_idpsso_descriptor ?\n\nor _create_idp_sso_descriptor",
+      "parentUuid": "fa98f980_3ebe2bd5",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_9e7c7722",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 19
@@ -115,6 +272,24 @@
       "writtenOn": "2014-09-02T04:11:10Z",
       "side": 1,
       "message": "did you mean to use get_cert here?",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_dff3569d",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T06:34:39Z",
+      "side": 1,
+      "message": "I say remove the get_cert() function. I think sigver has sufficient error handling",
+      "parentUuid": "fa98f980_9e7c7722",
       "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +364,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_ff49fad0",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1776,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T06:34:39Z",
+      "side": 1,
+      "message": "look @ http://git.openstack.org/cgit/openstack/keystone/tree/keystone/tests/test_versions.py#n362 for guidance",
+      "parentUuid": "fa98f980_16c6b149",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_d602696e",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 19
@@ -200,6 +393,24 @@
       "writtenOn": "2014-09-02T02:53:04Z",
       "side": 1,
       "message": "Is there anything we can check about the value here?",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_7f5b4a87",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1804,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T06:34:39Z",
+      "side": 1,
+      "message": "this should be renamed to test_serialize_metadata_object as it currently doesn\u0027t run.\n\nyou *could* do the following to assert some data:\n  metadata_xml \u003d self.generator.generate_metadata().to_string()\n  metadata \u003d etree.fromstring(metadata_xml)\n  ...\n  go through metadata using [0] and .text to look for values.",
+      "parentUuid": "fa98f980_d602696e",
       "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
