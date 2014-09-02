@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_0dbbf7e5",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1067,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-09-02T06:13:11Z",
+      "side": 1,
+      "message": "why not put this in the ldap backend? it\u0027s not used by SQL and shouldn\u0027t be needed generally.",
+      "revId": "af69b499cae7de5cf249c461da476a4307406f92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_cddbaf19",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_add_parent_project.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-09-02T06:13:11Z",
+      "side": 1,
+      "message": "nit on this everywhere: i feel that calling this parent_project_id is redundant. The object is a project, therefore parent_id is a project. There should be no need to mention that the parent is a project like in project.parent_project_id",
+      "revId": "af69b499cae7de5cf249c461da476a4307406f92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
