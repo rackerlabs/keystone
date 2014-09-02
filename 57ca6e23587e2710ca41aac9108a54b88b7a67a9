@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_2a85daac",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-02T21:44:33Z",
+      "side": 1,
+      "message": "change \"Raises\" to \"Raised\"",
+      "revId": "57ca6e23587e2710ca41aac9108a54b88b7a67a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
