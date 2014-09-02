@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_d6e189ff",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 846,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-02T02:53:04Z",
+      "side": 1,
+      "message": "(nit) Maybe call out that this is the given name...",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_16c6b149",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1776,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-02T02:53:04Z",
+      "side": 1,
+      "message": "Probably should be using the configuration fixture and this could just be called from setUp.",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_d602696e",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1804,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-02T02:53:04Z",
+      "side": 1,
+      "message": "Is there anything we can check about the value here?",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
