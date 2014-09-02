@@ -16,6 +16,24 @@
       "revId": "53735c1260dda973ea4ff5e3f32335cac43e049d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_be63fbdb",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T03:59:05Z",
+      "side": 1,
+      "message": "I think so, the message is going to have enough information in there. \n\nif anything we should log the error as well.",
+      "parentUuid": "fa98f980_f074ee9d",
+      "revId": "53735c1260dda973ea4ff5e3f32335cac43e049d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
