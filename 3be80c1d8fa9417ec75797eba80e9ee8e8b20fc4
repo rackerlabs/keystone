@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_af8c7c36",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 868,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-02T21:24:50Z",
+      "side": 1,
+      "message": "s/should/may/ IF there are other ways to create the data?",
+      "revId": "3be80c1d8fa9417ec75797eba80e9ee8e8b20fc4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_afed5c27",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 869,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-02T21:24:50Z",
+      "side": 1,
+      "message": "there\u0027s no --\n\nit\u0027s just \"keystone-manage saml_idp_metadata\"",
+      "revId": "3be80c1d8fa9417ec75797eba80e9ee8e8b20fc4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_6f68d487",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1884,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-02T21:24:50Z",
+      "side": 1,
+      "message": "get_metadata_with_wrong_path_configured_by_default? _fail is too generic",
+      "revId": "3be80c1d8fa9417ec75797eba80e9ee8e8b20fc4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
