@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_a01649a5",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-02T22:32:05Z",
+      "side": 1,
+      "message": "I find it easier to read when a query is built and used, but this doesn\u0027t need to be changed (example):\n\n    try:\n        query \u003d session.query(EndpointGroup)\n        query \u003d query.filter_by(endpoint_group_id\u003dendpoint_group_id)\n        ref \u003d query.one()\n    except sql.NotFound:\n        raise exception.EndpointGroupNotFound(\n            endpoint_group_id\u003dendpoint_group_id)\n    return ref",
+      "revId": "bfe9276aff7bdcc93f2211c270f444f2b9cc40ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_206419e4",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-02T22:32:05Z",
+      "side": 1,
+      "message": "You have the id, you can do a delete by ID instead of needing to create the object to delete it.\n\nSuggest building a query and using that to delete:\n\n    query \u003d session.query(EndpointGroup).filter_by(endpoint_group_id\u003dendpoint_group_id)\n    query.delete()\n\n\nThis can be done as a followup cleanup patch (before RC)",
+      "revId": "bfe9276aff7bdcc93f2211c270f444f2b9cc40ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_601621f3",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-02T22:32:05Z",
+      "side": 1,
+      "message": "This likely needs to be:\n    return [e.to_dict() for e in endpoint_group_refs]",
+      "revId": "bfe9276aff7bdcc93f2211c270f444f2b9cc40ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_20d97983",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-02T22:32:05Z",
+      "side": 1,
+      "message": "Same comment as above, don\u0027t create the ref just to delete it. That is a lot of overhead.",
+      "revId": "bfe9276aff7bdcc93f2211c270f444f2b9cc40ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_80ef8586",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-02T22:32:05Z",
+      "side": 1,
+      "message": "This can probably (in the future) be optimized into a single filtered query rather than needing to do a get for each group_id (adding functionality to endpoint_filter_api)",
+      "revId": "bfe9276aff7bdcc93f2211c270f444f2b9cc40ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
