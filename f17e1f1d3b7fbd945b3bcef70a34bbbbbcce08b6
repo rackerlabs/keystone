@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_5dc6754a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 862,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T18:03:33Z",
+      "side": 1,
+      "message": "doesn\u0027t look like this exists, i\u0027ll check the options in the controller",
+      "parentUuid": "fa98f980_d7a247ad",
+      "revId": "f17e1f1d3b7fbd945b3bcef70a34bbbbbcce08b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_37463324",
         "filename": "keystone/common/config.py",
         "patchSetId": 21
@@ -119,6 +137,24 @@
       "writtenOn": "2014-09-02T15:18:24Z",
       "side": 1,
       "message": "leave the trailing , so that there\u0027s one fewer line change if a new section is added.",
+      "revId": "f17e1f1d3b7fbd945b3bcef70a34bbbbbcce08b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_d403220b",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 863,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T18:03:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_37463324",
       "revId": "f17e1f1d3b7fbd945b3bcef70a34bbbbbcce08b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -177,6 +213,41 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_123dbdde",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T18:03:33Z",
+      "side": 1,
+      "message": "I made this a CONF option, defaults to english",
+      "parentUuid": "fa98f980_b7c0632b",
+      "revId": "f17e1f1d3b7fbd945b3bcef70a34bbbbbcce08b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e3830602",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 1767,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T18:03:33Z",
+      "side": 1,
+      "message": "I addressed this.",
+      "revId": "f17e1f1d3b7fbd945b3bcef70a34bbbbbcce08b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_77699b24",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 21
@@ -188,6 +259,24 @@
       "writtenOn": "2014-09-02T15:18:24Z",
       "side": 1,
       "message": "should be able to override self.config_overrides for consistency.",
+      "revId": "f17e1f1d3b7fbd945b3bcef70a34bbbbbcce08b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_c38c4238",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 1776,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-02T18:03:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_77699b24",
       "revId": "f17e1f1d3b7fbd945b3bcef70a34bbbbbcce08b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
