@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_4a94dee1",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 24
+      },
+      "lineNbr": 1311,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-02T21:45:56Z",
+      "side": 1,
+      "message": "close enough to what brant said",
+      "revId": "57ca6e23587e2710ca41aac9108a54b88b7a67a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_2a85daac",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 24
@@ -13,6 +30,23 @@
       "writtenOn": "2014-09-02T21:44:33Z",
       "side": 1,
       "message": "change \"Raises\" to \"Raised\"",
+      "revId": "57ca6e23587e2710ca41aac9108a54b88b7a67a9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_ea7112e1",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-02T21:45:56Z",
+      "side": 1,
+      "message": "i don\u0027t think there\u0027s supposed to be a colon immediately after :raises",
       "revId": "57ca6e23587e2710ca41aac9108a54b88b7a67a9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
