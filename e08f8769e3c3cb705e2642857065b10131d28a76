@@ -512,6 +512,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_9a68e388",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-02T16:40:44Z",
+      "side": 1,
+      "message": "1) it shouldn\u0027t log anything for us, but it\u0027s reasonable for us to wrap our call to it with a catch to log failures. so, I agree.\n\n2) it seems reasonable to re-raise these as an UnexpectedError with a custom message.\n\n3) read_cert_from_file() looks like it\u0027s going to leak file descriptors. that bug should be filed and addressed upstream. I\u0027m fine with (A) if that\u0027s viable, else file a bug against keystone that we\u0027re going to leak descriptors when we use that method, and target it to juno-3 / RC1. hopefully we\u0027ll be able to see an upstream release to fix that issue soon?",
+      "parentUuid": "fa98f980_703b6938",
+      "revId": "e08f8769e3c3cb705e2642857065b10131d28a76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_3ebaabc0",
         "filename": "keystone/tests/federation_fixtures.py",
         "patchSetId": 19
