@@ -122,8 +122,7 @@ class SAMLGenerator(object):
         """Create an object that represents a SAML Subject.
 
         <ns0:Subject>
-            <ns0:NameID
-              Format="urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress">
+            <ns0:NameID>
                 john@smith.com</ns0:NameID>
             <ns0:SubjectConfirmation
               Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
@@ -155,19 +154,17 @@ class SAMLGenerator(object):
         <ns0:AttributeStatement
           xmlns:ns0="urn:oasis:names:tc:SAML:2.0:assertion"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:Attribute Name="user">
+            <ns0:Attribute Name="openstack_user">
                 <ns0:AttributeValue
                   xsi:type="xs:string">test_user</ns0:AttributeValue>
             </ns0:Attribute>
-            <ns0:Attribute Name="roles"
-              NameFormat="urn:oasis:...:SAML:2.0:attrname-format:unspecified">
+            <ns0:Attribute Name="openstack_roles">
                 <ns0:AttributeValue
                   xsi:type="xs:string">admin</ns0:AttributeValue>
                 <ns0:AttributeValue
                   xsi:type="xs:string">member</ns0:AttributeValue>
             </ns0:Attribute>
-            <ns0:Attribute Name="projects"
-              NameFormat="urn:oasis:...:SAML:2.0:attrname-format:unspecified">
+            <ns0:Attribute Name="openstack_projects">
                 <ns0:AttributeValue
                   xsi:type="xs:string">development</ns0:AttributeValue>
             </ns0:Attribute>
@@ -388,7 +385,7 @@ def _sign_assertion(assertion):
     idp_private_key = CONF.saml.keyfile
     idp_public_key = CONF.saml.certfile
 
-    # xmlsec1 --sign --privkey-pem privkey,cert --id-attr:ID <tag> <file>
+    # xmlsec1 --sign --privkey-pem privkey,cert --id-attr:id <tag> <file>
     certificates = '%(idp_private_key)s,%(idp_public_key)s' % {
         'idp_public_key': idp_public_key,
         'idp_private_key': idp_private_key
