@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_5773b77f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 833,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-02T15:18:24Z",
+      "side": 1,
+      "message": "why are these defaulting to \u0027\u0027 rather than having no default? I think no default would make more sense.",
+      "revId": "f17e1f1d3b7fbd945b3bcef70a34bbbbbcce08b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_fc3012a0",
         "filename": "keystone/common/config.py",
         "patchSetId": 21
@@ -31,6 +48,92 @@
       "side": 1,
       "message": "we can do a follow up patch for this.",
       "parentUuid": "fa98f980_fc3012a0",
+      "revId": "f17e1f1d3b7fbd945b3bcef70a34bbbbbcce08b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_d7a247ad",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 862,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-02T15:18:24Z",
+      "side": 1,
+      "message": "I was thinking the same thing.",
+      "parentUuid": "fa98f980_fc3012a0",
+      "revId": "f17e1f1d3b7fbd945b3bcef70a34bbbbbcce08b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_37463324",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 863,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-02T15:18:24Z",
+      "side": 1,
+      "message": "leave the trailing , so that there\u0027s one fewer line change if a new section is added.",
+      "revId": "f17e1f1d3b7fbd945b3bcef70a34bbbbbcce08b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b7722347",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-02T15:18:24Z",
+      "side": 1,
+      "message": "is this going to work if CONF.saml.idp_entity_id is the default?",
+      "revId": "f17e1f1d3b7fbd945b3bcef70a34bbbbbcce08b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b7c0632b",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-02T15:18:24Z",
+      "side": 1,
+      "message": "seems like not everyone\u0027s going to want english for their org name.",
+      "revId": "f17e1f1d3b7fbd945b3bcef70a34bbbbbcce08b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_77699b24",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 1776,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-02T15:18:24Z",
+      "side": 1,
+      "message": "should be able to override self.config_overrides for consistency.",
       "revId": "f17e1f1d3b7fbd945b3bcef70a34bbbbbcce08b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
