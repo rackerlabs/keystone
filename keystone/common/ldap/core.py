@@ -121,7 +121,11 @@ def ldap2py(val):
         return int(val)
     except ValueError:
         pass
-    return utf8_decode(val)
+    try:
+        return utf8_decode(val)
+    except UnicodeDecodeError as err:
+        LOG.warn('UnicodeDecodeError: %s.'
+                 '  Unable to decode value returned from ldap driver: %s', err, val)
 
 
 def convert_ldap_result(ldap_result):
