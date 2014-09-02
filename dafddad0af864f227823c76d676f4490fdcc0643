@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_17112cac",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 867,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-02T16:22:13Z",
+      "side": 1,
+      "message": "Where we going to specify which command like Dolph asked?",
+      "revId": "dafddad0af864f227823c76d676f4490fdcc0643",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
