@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_8e68a188",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 22
+      },
+      "lineNbr": 1319,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-02T19:13:29Z",
+      "side": 1,
+      "message": "should be \"Language of the organization name values\"",
+      "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_a9055f7b",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-02T19:13:29Z",
+      "side": 1,
+      "message": "This config option should document that a value is required to generate the IDP Metadata.",
+      "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_29f96f80",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 842,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-02T19:13:29Z",
+      "side": 1,
+      "message": "This config option should document that a value is required to generate the IDP Metadata.",
+      "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_899b3b71",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-02T19:13:29Z",
+      "side": 1,
+      "message": "should document that exception.ValidationError will be raised if the required configuration options aren\u0027t set.",
+      "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_2ecfb580",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-02T19:13:29Z",
+      "side": 1,
+      "message": "this should be _() rather than _LE() since it\u0027s used in an exception, so we don\u0027t know where it\u0027s going to be used (it will probably be printed to stdout.)",
+      "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_4e08792d",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 477,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-02T19:13:29Z",
+      "side": 1,
+      "message": "seems weird for a URL to have a language.",
+      "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_690457c0",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-02T19:13:29Z",
+      "side": 1,
+      "message": "this should be _() since wherever the exception is caught might not log it at error level.",
+      "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_89ffbba9",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-02T19:13:29Z",
+      "side": 1,
+      "message": "this should be _() since wherever the exception is caught might not log it at error level.",
+      "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_c930e3a0",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-02T19:13:29Z",
+      "side": 1,
+      "message": "this should be _() since wherever the exception is caught might not log it at error level.",
+      "revId": "013492654f992303c1cd8ce80ad58c53df9b69e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
