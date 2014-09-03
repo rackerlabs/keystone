@@ -139,3 +139,107 @@ class HackingCode(fixtures.Fixture):
             (36, 9, 'K005'),
         ]
     }
+
+    assert_non_debug_logging_must_use_hints = {
+        'code': """
+            import logging
+            import logging as stlib_logging
+            from keystone.i18n import _
+            from keystone.i18n import _ as oslog_i18n
+            from keystone.i18n import _LC
+            from keystone.i18n import _LE
+            from keystone.i18n import _LE as error_hint
+            from keystone.i18n import _LI
+            from keystone.i18n import _LW
+            from keystone.openstack.common import log
+            from keystone.openstack.common import log as oslo_logging
+
+            # stdlib logging
+            L0 = logging.getLogger()
+            L0.info(_('text'))
+            class C:
+                def __init__(self):
+                    L0.warn(oslog_i18n('text', {}))
+                    L0.warn(_LW('text', {}))
+
+            # stdlib logging w/ alias and specifying a logger
+            class C:
+                def __init__(self):
+                    self.L1 = logging.getLogger(__name__)
+                def m(self):
+                    self.L1.warning(
+                        _('text'), {}
+                    )
+                    self.L1.warning(
+                        _LW('text'), {}
+                    )
+
+            # oslo logging and specifying a logger
+            L2 = log.getLogger(__name__)
+            L2.error(oslog_i18n('text'))
+            L2.error(error_hint('text'))
+
+            # oslo logging w/ alias
+            class C:
+                def __init__(self):
+                    self.L3 = oslo_logging.getLogger()
+                    self.L3.critical(_('text'))
+                    self.L3.critical(_LC('text'))
+
+            # translation on a separate line
+            msg = _('text')
+            L2.exception(msg)
+            msg = _LE('text')
+            L2.exception(msg)
+
+            # ensure the correct helper is being used
+            L2.warn(_LI('this should cause an error'))
+
+            # debug should not allow any helpers either
+            L2.debug(_LI('this should cause an error'))
+
+            # this should not be an error
+            msg = _('text')
+            L2.warn(msg)
+            raise Exception(msg)
+
+            # this should not be an error
+            msg = _('text')
+            L2.warn(msg)
+            something = True  # add an extra statement here
+            raise Exception(msg)
+
+            # this should be an error
+            msg = _('text')
+            L2.warn(msg)
+            raise Exception('some other message')
+
+            # this should not be an error
+            if True:
+                msg = _('text')
+            else:
+                msg = _('text')
+            L2.warn(msg)
+            raise Exception(msg)
+
+            # this should not be an error
+            if True:
+                msg = _('text')
+            else:
+                msg = _('text')
+            L2.warn(msg)
+            raise Exception('some error happened')
+        """,
+        'expected_errors': [
+            (15, 8, 'K006'),
+            (18, 16, 'K006'),
+            (27, 12, 'K006'),
+            (35, 9, 'K006'),
+            (42, 25, 'K006'),
+            (47, 13, 'K006'),
+            (52, 8, 'K006'),
+            (55, 9, 'K005'),
+            (70, 8, 'K006'),
+            (86, 8, 'K006'),
+        ]
+    }

@@ -83,13 +83,19 @@ class TestAssertingNoneEquality(BaseStyleCheck):
         self.assert_has_errors(code, expected_errors=errors)
 
 
-class TestCheckForTranslationsInDebugLogging(BaseStyleCheck):
+class TestCheckForLoggingIssues(BaseStyleCheck):
 
     def get_checker(self):
-        return checks.CheckForTranslationsInDebugLogging
+        return checks.CheckForLoggingIssues
 
-    def test(self):
+    def test_for_translations_in_debug_logging(self):
         fixture = self.code_ex.assert_no_translations_for_debug_logging
+        code = fixture['code']
+        errors = fixture['expected_errors']
+        self.assert_has_errors(code, expected_errors=errors)
+
+    def test_non_debug_logging_must_use_hints(self):
+        fixture = self.code_ex.assert_non_debug_logging_must_use_hints
         code = fixture['code']
         errors = fixture['expected_errors']
         self.assert_has_errors(code, expected_errors=errors)
