@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_42fbd7c0",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-03T06:10:55Z",
+      "side": 0,
+      "message": "this section no longer exists",
+      "revId": "67b474f4ba3428eca97a4a6faaaba5951253f236",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_62f8dbc3",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-03T06:10:55Z",
+      "side": 0,
+      "message": "this section no longer exists",
+      "revId": "67b474f4ba3428eca97a4a6faaaba5951253f236",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
