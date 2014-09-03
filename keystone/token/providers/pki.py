@@ -20,6 +20,7 @@ from keystone.common import environment
 from keystone import config
 from keystone import exception
 from keystone.i18n import _
+from keystone.i18n import _LE
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
 from keystone.token.providers import common
@@ -42,6 +43,6 @@ class Provider(common.BaseProvider):
                                               CONF.signing.keyfile))
             return token_id
         except environment.subprocess.CalledProcessError:
-            LOG.exception(_('Unable to sign token'))
+            LOG.exception(_LE('Unable to sign token'))
             raise exception.UnexpectedError(_(
                 'Unable to sign token.'))
