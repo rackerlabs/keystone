@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_704d023e",
+        "filename": "keystone/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6282
+      },
+      "writtenOn": "2014-09-03T08:59:44Z",
+      "side": 1,
+      "message": "Crazy... \n\nso, api_v3 only for main/public router?\n\nIn etc/keystone-paste.ini, both public \u0026 admin mapping to api_v3, so I think this change not enough. correct me if I\u0027m wrong.\n\n102 [composite:main]                                                                \n                                                         \n105 /v3 \u003d api_v3                                                                    \n\n108 [composite:admin]                                                               \n\n111 /v3 \u003d api_v3",
+      "revId": "af0cec12e750061e78a5c4fdcdd998cd3f506574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
