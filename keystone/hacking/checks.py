@@ -141,7 +141,22 @@ class CheckForTranslationsInDebugLogging(BaseASTChecker):
 
     CHECK_DESC = 'K005 Using translated string in debug logging'
     LOG_MODULES = ('logging', 'keystone.openstack.common.log')
-    I18N_MODULES = ('keystone.i18n._')
+    I18N_MODULES = (
+        'keystone.i18n._',
+        'keystone.i18n._LI',
+        'keystone.i18n._LW',
+        'keystone.i18n._LE',
+        'keystone.i18n._LC',
+    )
+    TRANS_HELPER_MAP = {
+        'debug': None,
+        'info': '_LI',
+        'warn': '_LW',
+        'warning': '_LW',
+        'error': '_LE',
+        'exception': '_LE',
+        'critical': '_LC',
+    }
 
     def __init__(self, tree, filename):
         super(CheckForTranslationsInDebugLogging, self).__init__(
@@ -235,7 +250,7 @@ class CheckForTranslationsInDebugLogging(BaseASTChecker):
             self.logger_names.append(target_name)
 
     def visit_Call(self, node):
-        """Look for the 'LOG.debug' calls.
+        """Look for the 'LOG.*' calls.
 
         """
 
@@ -250,24 +265,41 @@ class CheckForTranslationsInDebugLogging(BaseASTChecker):
             else:  # could be Subscript, Call or many more
                 return
 
-            # must be a logger instance and the debug method
-            if obj_name not in self.logger_names or method_name != 'debug':
+            # must be a logger instance and one of the support logging methods
+            if (obj_name not in self.logger_names
+                    or method_name not in self.TRANS_HELPER_MAP):
                 return
 
             # the call must have arguments
             if not len(node.args):
                 return
 
-            # if first arg is a call to a i18n name
-            if (isinstance(node.args[0], ast.Call)
-                    and isinstance(node.args[0].func, ast.Name)
-                    and node.args[0].func.id in self.i18n_names):
+            if method_name == 'debug':
+                self._process_debug(node)
+            elif method_name in self.TRANS_HELPER_MAP:
+                self._process_non_debug(node, method_name)
+
+    def _process_debug(self, node):
+        # if first arg is a call to a i18n name
+        if (isinstance(node.args[0], ast.Call)
+                and isinstance(node.args[0].func, ast.Name)
+                and node.args[0].func.id in self.i18n_names):
+            self.add_error(node.args[0])
+
+        # if the first arg is a reference to a i18n call
+        elif (isinstance(node.args[0], ast.Name)
+                and node.args[0].id in self.assignments):
+            self.add_error(node.args[0])
+
+    def _process_non_debug(self, node, method_name):
+        if isinstance(node.args[0], ast.Call):
+            message = node.args[0].func
+            if message.id != self.TRANS_HELPER_MAP[method_name]:
                 self.add_error(node.args[0])
 
-            # if the first arg is a reference to a i18n call
-            elif (isinstance(node.args[0], ast.Name)
-                    and node.args[0].id in self.assignments):
-                self.add_error(node.args[0])
+        #elif (isinstance(node.args[0], ast.Name)
+        #        and node.args[0].id in self.assignments):
+        #    self.add_error(node.args[0])
 
 
 def factory(register):
