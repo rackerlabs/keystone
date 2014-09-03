@@ -16,6 +16,24 @@
       "revId": "af0cec12e750061e78a5c4fdcdd998cd3f506574",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_0db9f4cb",
+        "filename": "keystone/service.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-03T13:56:32Z",
+      "side": 1,
+      "message": "They\u0027re the same pipeline so this function (v3_app_factory) doesn\u0027t know if it\u0027s for the public or for the admin app. This patch isn\u0027t changing the behavior of the server in any way, as explained in the commit message. The previous line didn\u0027t do anything and this one was always being used instead.",
+      "parentUuid": "fa98f980_704d023e",
+      "revId": "af0cec12e750061e78a5c4fdcdd998cd3f506574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
