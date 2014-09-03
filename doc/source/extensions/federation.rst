@@ -42,9 +42,7 @@ To enable the federation extension:
    ``keystone-paste.ini``. For example::
 
        [pipeline:api_v3]
-       pipeline = access_log sizelimit url_normalize token_auth admin_token_auth
-       xml_body json_body ec2_extension s3_extension federation_extension
-       service_v3
+       pipeline = sizelimit url_normalize build_auth_context token_auth admin_token_auth xml_body_v3 json_body ec2_extension_v3 s3_extension simple_cert_extension revoke_extension service_v3 federation_extension service_v3
 
 4. Create the federation extension tables if using the provided SQL backend.
    For example::
