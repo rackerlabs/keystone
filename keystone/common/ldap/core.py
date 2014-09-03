@@ -1584,8 +1584,8 @@ class BaseLdap(object):
             conn.unbind_s()
 
         if not_deleted_nodes:
-            LOG.warn(_("When deleting entries for %(search_base)s, could not"
-                       " delete nonexistent entries %(entries)s%(dots)s"),
+            LOG.warn(_LW("When deleting entries for %(search_base)s, could not"
+                         " delete nonexistent entries %(entries)s%(dots)s"),
                      {'search_base': search_base,
                       'entries': not_deleted_nodes[:3],
                       'dots': '...' if len(not_deleted_nodes) > 3 else ''})

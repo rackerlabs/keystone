@@ -29,6 +29,7 @@ from keystone.common import manager
 from keystone import config
 from keystone import exception
 from keystone.i18n import _
+from keystone.i18n import _LW
 from keystone.identity.mapping_backends import mapping
 from keystone import notifications
 from keystone.openstack.common import importutils
@@ -98,7 +99,7 @@ class DomainConfigs(dict):
             domain_ref = assignment_api.get_domain_by_name(domain_name)
         except exception.DomainNotFound:
             LOG.warning(
-                _('Invalid domain name (%s) found in config file name'),
+                _LW('Invalid domain name (%s) found in config file name'),
                 domain_name)
             return
 
@@ -122,7 +123,7 @@ class DomainConfigs(dict):
 
         conf_dir = CONF.identity.domain_config_dir
         if not os.path.exists(conf_dir):
-            LOG.warning(_('Unable to locate domain config directory: %s'),
+            LOG.warning(_LW('Unable to locate domain config directory: %s'),
                         conf_dir)
             return
 
