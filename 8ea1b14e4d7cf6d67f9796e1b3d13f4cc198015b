@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_3a52703b",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-03T13:40:56Z",
+      "side": 1,
+      "message": "I think this is wrong here...why would we not want this to copy *all* of the time?",
+      "revId": "8ea1b14e4d7cf6d67f9796e1b3d13f4cc198015b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
