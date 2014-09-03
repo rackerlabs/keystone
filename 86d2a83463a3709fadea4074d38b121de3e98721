@@ -16,6 +16,24 @@
       "revId": "86d2a83463a3709fadea4074d38b121de3e98721",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_8d979939",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2014-09-03T18:22:24Z",
+      "side": 1,
+      "message": "What exactly do you think is complex here? I understand without problems.",
+      "parentUuid": "fa98f980_c59c3c12",
+      "revId": "86d2a83463a3709fadea4074d38b121de3e98721",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
