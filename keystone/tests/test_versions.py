@@ -317,7 +317,7 @@ V3_JSON_HOME_RESOURCES_INHERIT_ENABLED.update((
              'role_id': json_home.Parameters.ROLE_ID,
              'user_id': json_home.Parameters.USER_ID,
          },
-    }),
+     }),
     (build_os_inherit_relation(
         resource_name='domain_group_role_inherited_to_projects'),
      {
@@ -328,7 +328,7 @@ V3_JSON_HOME_RESOURCES_INHERIT_ENABLED.update((
              'group_id': json_home.Parameters.GROUP_ID,
              'role_id': json_home.Parameters.ROLE_ID,
          },
-    }),
+     }),
     (build_os_inherit_relation(
         resource_name='domain_user_roles_inherited_to_projects'),
      {
@@ -338,7 +338,7 @@ V3_JSON_HOME_RESOURCES_INHERIT_ENABLED.update((
              'domain_id': json_home.Parameters.DOMAIN_ID,
              'user_id': json_home.Parameters.USER_ID,
          },
-    }),
+     }),
     (build_os_inherit_relation(
         resource_name='domain_group_roles_inherited_to_projects'),
      {
@@ -348,7 +348,7 @@ V3_JSON_HOME_RESOURCES_INHERIT_ENABLED.update((
              'domain_id': json_home.Parameters.DOMAIN_ID,
              'group_id': json_home.Parameters.GROUP_ID,
          },
-    }),
+     }),
 ))
 
 
