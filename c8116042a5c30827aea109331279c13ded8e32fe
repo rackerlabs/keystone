@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_fc247961",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-09-03T02:14:38Z",
+      "side": 1,
+      "message": "I do not think we need to set default parent project.",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_3cdfe16a",
+        "filename": "keystone/tests/default_fixtures.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-09-03T02:14:38Z",
+      "side": 1,
+      "message": "Do not use None.",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_9ce28d2d",
+        "filename": "keystone/tests/default_fixtures.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-09-03T02:14:38Z",
+      "side": 1,
+      "message": "Do not use None.",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_dcd7b549",
+        "filename": "keystone/tests/default_fixtures.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-09-03T02:14:38Z",
+      "side": 1,
+      "message": "Do not use None.",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_5cc3c588",
+        "filename": "keystone/tests/default_fixtures.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-09-03T02:14:38Z",
+      "side": 1,
+      "message": "Do not use None.",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_1ca93ddf",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2704,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-09-03T02:14:38Z",
+      "side": 1,
+      "message": "Change None to uuid.uuid4.hex will be better.",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_fc7ab975",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2725,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-09-03T02:14:38Z",
+      "side": 1,
+      "message": "Same to line2704.",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_1c805d45",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2741,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-09-03T02:14:38Z",
+      "side": 1,
+      "message": "Same to line2704.",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_31562a5d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1490,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-09-03T02:14:38Z",
+      "side": 1,
+      "message": "I think change None to uuid.uuid4.hex will be better.",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_914996b9",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1736,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-09-03T02:14:38Z",
+      "side": 1,
+      "message": "Same to line 1490.",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_717512f9",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-09-03T02:14:38Z",
+      "side": 1,
+      "message": "You can\u0027t add parent_id in new_ref method. Because almost all keystone objects use this method to create new instance. I think you can add parent_id in new_project_ref mehod at line 300.",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
