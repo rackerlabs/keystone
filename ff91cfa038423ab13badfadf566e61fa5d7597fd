@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_278b2c69",
+        "filename": "keystone/common/json_home.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-03T17:26:10Z",
+      "side": 1,
+      "message": "i\u0027d prefer a tuple so it\u0027s clear what item[1] is vs what you\u0027re ignoring",
+      "revId": "ff91cfa038423ab13badfadf566e61fa5d7597fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_27b96c15",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-03T17:26:10Z",
+      "side": 1,
+      "message": "cool",
+      "revId": "ff91cfa038423ab13badfadf566e61fa5d7597fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_875698cc",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-03T17:26:10Z",
+      "side": 1,
+      "message": "awesome",
+      "revId": "ff91cfa038423ab13badfadf566e61fa5d7597fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
