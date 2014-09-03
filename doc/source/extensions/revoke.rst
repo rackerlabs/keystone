@@ -15,12 +15,7 @@
 Enabling the Revocation Extension
 =================================
 
-.. WARNING::
-
-    The ``OS-REVOKE`` Extension is considered experimental in Icehouse and will
-    continue to see improvement over the next development cycle.
-
-To enable the ``OS-REVOKE`` extension:
+By default, the ``OS-REVOKE`` extension already enabled:
 
 1. Add the driver fields and values in the ``[revoke]`` section
    in ``keystone.conf``.  For the KVS Driver::
@@ -32,6 +27,9 @@ To enable the ``OS-REVOKE`` extension:
 
     driver = keystone.contrib.revoke.backends.sql.Revoke
 
+.. NOTE::
+
+    Note that as of the Juno release the following steps are performed by default.
 
 2. Add the required ``filter`` to the ``pipeline`` in ``keystone-paste.ini``::
 
@@ -39,10 +37,8 @@ To enable the ``OS-REVOKE`` extension:
     paste.filter_factory = keystone.contrib.revoke.routers:RevokeExtension.factory
 
     [pipeline:api_v3]
-    pipeline = access_log sizelimit url_normalize token_auth admin_token_auth xml_body json_body revoke_extension service_v3
+    pipeline = sizelimit url_normalize build_auth_context token_auth admin_token_auth xml_body_v3 json_body ec2_extension_v3 s3_extension simple_cert_extension revoke_extension service_v3 service_v3
 
 3. Optionally, create the extension tables if using the provided SQL backend::
 
     ./bin/keystone-manage db_sync --extension revoke
-
-   Note that as of the Juno release this extension is now migrated by default.
