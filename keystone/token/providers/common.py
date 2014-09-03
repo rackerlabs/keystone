@@ -21,6 +21,7 @@ from keystone import config
 from keystone.contrib import federation
 from keystone import exception
 from keystone.i18n import _
+from keystone.i18n import _LE
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
 from keystone import token
@@ -555,7 +556,7 @@ class BaseProvider(provider.Provider):
                     token_ref, roles_ref, catalog_ref)
             return token_data
         except exception.ValidationError as e:
-            LOG.exception(_('Failed to validate token'))
+            LOG.exception(_LE('Failed to validate token'))
             raise exception.TokenNotFound(e)
 
     def validate_v3_token(self, token_ref):
