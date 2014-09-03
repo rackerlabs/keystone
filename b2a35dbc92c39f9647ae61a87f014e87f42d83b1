@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_12c66868",
+        "filename": "doc/source/extensions/endpoint_policy.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-03T17:58:42Z",
+      "side": 1,
+      "message": "Is this OK?",
+      "revId": "b2a35dbc92c39f9647ae61a87f014e87f42d83b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
