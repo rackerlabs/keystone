@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_17867613",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-03T03:29:48Z",
+      "side": 1,
+      "message": "actually, it\u0027s needed to maintain the compatibility. Once the object is retrieved, we need to fill it with the fields that weren\u0027t stored by the backend.",
+      "parentUuid": "fa98f980_fc247961",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_3cdfe16a",
         "filename": "keystone/tests/default_fixtures.py",
         "patchSetId": 6
@@ -87,6 +105,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_b7912a49",
+        "filename": "keystone/tests/default_fixtures.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-03T03:29:48Z",
+      "side": 1,
+      "message": "None was the chosen value to represent that a project doesn\u0027t have a parent. Which makes sense, if you imagine a classical tree data structure.",
+      "parentUuid": "fa98f980_5cc3c588",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_1ca93ddf",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 6
@@ -98,6 +134,24 @@
       "writtenOn": "2014-09-03T02:14:38Z",
       "side": 1,
       "message": "Change None to uuid.uuid4.hex will be better.",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_97bfc6a9",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2704,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-03T03:29:48Z",
+      "side": 1,
+      "message": "This project doesn\u0027t have a parent, the value should be None.",
+      "parentUuid": "fa98f980_1ca93ddf",
       "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +209,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_37d37a05",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1490,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-03T03:29:48Z",
+      "side": 1,
+      "message": "Same comment as the previous file. None is to represent that this project doesn\u0027t have a parent.",
+      "parentUuid": "fa98f980_31562a5d",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_914996b9",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 6
@@ -183,6 +255,24 @@
       "writtenOn": "2014-09-03T02:14:38Z",
       "side": 1,
       "message": "You can\u0027t add parent_id in new_ref method. Because almost all keystone objects use this method to create new instance. I think you can add parent_id in new_project_ref mehod at line 300.",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_57f71e8b",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-03T03:29:48Z",
+      "side": 1,
+      "message": "The field was added to the backend, so it must be present at the ref. We are adding it as None, to do not change the tests behavior.",
+      "parentUuid": "fa98f980_717512f9",
       "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
