@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_ca2a758f",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-03T12:26:20Z",
+      "side": 1,
+      "message": "It would be safer to use singletones instead of mutable global vars",
+      "revId": "0a266b46b146cae2f7738fe4462b33a762dbe99e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_0a68fd1b",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-03T12:26:20Z",
+      "side": 1,
+      "message": "What about this?\n    cb \u003d getattr(obj, DEPENDENCIES_INJECECTED_CALLBACK, None)\n    callable(cb) and cb()\nNot a silver bullet, simply less code :)",
+      "revId": "0a266b46b146cae2f7738fe4462b33a762dbe99e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_aa91b1f2",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-03T12:26:20Z",
+      "side": 1,
+      "message": "if dependency in _incomplete_objects.get(target_id, []):",
+      "revId": "0a266b46b146cae2f7738fe4462b33a762dbe99e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
