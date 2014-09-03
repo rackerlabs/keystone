@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_a5c2c231",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-09-03T14:11:19Z",
+      "side": 1,
+      "message": "Following the original style of this code",
+      "parentUuid": "fa98f980_ca2a758f",
+      "revId": "0a266b46b146cae2f7738fe4462b33a762dbe99e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_0a68fd1b",
         "filename": "keystone/common/dependency.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_656ffa2b",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-09-03T14:11:19Z",
+      "side": 1,
+      "message": "Much nicer, thanks!",
+      "parentUuid": "fa98f980_0a68fd1b",
+      "revId": "0a266b46b146cae2f7738fe4462b33a762dbe99e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_aa91b1f2",
         "filename": "keystone/common/dependency.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2014-09-03T12:26:20Z",
       "side": 1,
       "message": "if dependency in _incomplete_objects.get(target_id, []):",
+      "revId": "0a266b46b146cae2f7738fe4462b33a762dbe99e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_85013e3a",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-09-03T14:11:19Z",
+      "side": 1,
+      "message": "Agree, shorter is better",
+      "parentUuid": "fa98f980_aa91b1f2",
       "revId": "0a266b46b146cae2f7738fe4462b33a762dbe99e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
