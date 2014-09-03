@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_1ee2f92e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-03T15:59:50Z",
+      "side": 1,
+      "message": "the commit hash should be used: https://wiki.openstack.org/wiki/GitCommitMessages#Information_in_commit_messages",
+      "revId": "b5f33dc027ec403d1c697d8e75d9c829e9e0c88a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
