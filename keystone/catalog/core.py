@@ -167,6 +167,14 @@ class Manager(manager.Manager):
 
     @notifications.created(_ENDPOINT, public=False)
     def create_endpoint(self, endpoint_id, endpoint_ref):
+
+        if 'region' in endpoint_ref:
+            try:
+                self.get_region(endpoint_ref['region'])
+            except exception.RegionNotFound:
+                region_ref = dict(id=endpoint_ref['region'])
+                self.create_region(region_ref)
+
         try:
             return self.driver.create_endpoint(endpoint_id, endpoint_ref)
         except exception.RegionNotFound:

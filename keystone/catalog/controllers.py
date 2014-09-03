@@ -99,13 +99,6 @@ class Endpoint(controller.V2Controller):
         # service_id is necessary
         self._require_attribute(endpoint, 'service_id')
 
-        if endpoint.get('region') is not None:
-            try:
-                self.catalog_api.get_region(endpoint['region'])
-            except exception.RegionNotFound:
-                region = dict(id=endpoint['region'])
-                self.catalog_api.create_region(region)
-
         legacy_endpoint_ref = endpoint.copy()
 
         urls = {}
