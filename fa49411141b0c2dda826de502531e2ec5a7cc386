@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_2a1f815c",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1286,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-03T11:55:49Z",
+      "side": 1,
+      "message": "Can be simplified with any()",
+      "revId": "fa49411141b0c2dda826de502531e2ec5a7cc386",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
