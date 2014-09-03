@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_9c127455",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-03T15:30:00Z",
+      "side": 1,
+      "message": "This is where the attribute is set to None.\n\nGiven the change above, this should be removed.",
+      "revId": "e9b88247d6aa50b9a68fc34a808f0f3ea6b8babb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
