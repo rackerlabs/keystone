@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_9075c965",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-04T18:16:17Z",
+      "side": 1,
+      "message": "so instead of handling non-utf8 characters, this is going to return garbage data... i don\u0027t think that\u0027s a fix. why is your server returning non-utf8 and is should the encoding be configurable instead?\n\nif returning garbage is the correct solution, this should use the keyword argument\n\n  errors\u003d\u0027replace\u0027\n\nand contain an inline comment explaining why it\u0027s safe to trash the data we can\u0027t decode properly.",
+      "revId": "10efa3d9e0998b6bb4dfed152ec84cebe382f86d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
