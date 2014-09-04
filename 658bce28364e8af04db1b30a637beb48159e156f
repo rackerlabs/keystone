@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_e85709c8",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-04T20:03:29Z",
+      "side": 1,
+      "message": "this is wrong, I was assuming this was talking about the `policy` resource and not the policy stuff we get from Oslo. This should point to the policy enforcement stuff of oslo.",
+      "revId": "658bce28364e8af04db1b30a637beb48159e156f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
