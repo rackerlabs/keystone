@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_973863d4",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-04T16:19:14Z",
+      "side": 1,
+      "message": "We might want this to be \u0027%r\u0027 not \u0027%s\u0027 on the value replacement, this should help give us  a cleaner view of the value (repr sometimes is easier to read)\n\nThis also needs log hints.",
+      "revId": "09f499d675d743f886dea0be98568b45875e9713",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_37a5f703",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-04T16:19:14Z",
+      "side": 1,
+      "message": "This doesn\u0027t actually test the issue. This will decode just fine, you\u0027re getting a string representation of the un-decodable value:\n\n    \u003e\u003e\u003e val \u003d \u0027?\"?gZK??[J????\u0027\n    \u003e\u003e\u003e codecs.getdecoder(\u0027utf-8\u0027)(val)\n    (u\u0027?\"?gZK??[J????\u0027, 14)",
+      "revId": "09f499d675d743f886dea0be98568b45875e9713",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
