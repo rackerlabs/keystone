@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_d5803cf9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-09-04T03:32:38Z",
+      "side": 1,
+      "message": "parent_id",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_fc247961",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 6
