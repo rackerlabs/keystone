@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_2335c045",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-04T13:42:40Z",
+      "side": 1,
+      "message": "Slightly faster and more compact: ref \u003d dict(ref, parent_id\u003dNone)",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e363b83f",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-04T13:42:40Z",
+      "side": 1,
+      "message": "map() is a good candidate here:\nelif isinstance(ref, list):\n\treturn map(self._set_default_parent_project, ref)",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_fc247961",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 6
@@ -133,6 +167,24 @@
       "writtenOn": "2014-09-03T03:29:48Z",
       "side": 1,
       "message": "None was the chosen value to represent that a project doesn\u0027t have a parent. Which makes sense, if you imagine a classical tree data structure.",
+      "parentUuid": "fa98f980_5cc3c588",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_03519c35",
+        "filename": "keystone/tests/default_fixtures.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-04T13:42:40Z",
+      "side": 1,
+      "message": "Excuse me, I\u0027m a little confused: is there any alternative way to mark NULL value in a fixture?",
       "parentUuid": "fa98f980_5cc3c588",
       "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
