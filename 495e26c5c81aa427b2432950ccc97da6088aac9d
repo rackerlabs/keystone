@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_b13acc96",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-09-04T21:57:28Z",
+      "side": 1,
+      "message": "This should be: notifications.ACTIONS.deleted",
+      "revId": "495e26c5c81aa427b2432950ccc97da6088aac9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_314edc3b",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-09-04T21:57:28Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "495e26c5c81aa427b2432950ccc97da6088aac9d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
