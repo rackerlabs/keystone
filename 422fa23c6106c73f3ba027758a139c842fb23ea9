@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_b12f2c3e",
+        "filename": "keystone/tests/test_backend_ldap_pool.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-04T22:08:18Z",
+      "side": 1,
+      "message": "change \"if fixed\" to \"is fixed\"",
+      "revId": "422fa23c6106c73f3ba027758a139c842fb23ea9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_119c785c",
+        "filename": "keystone/tests/test_backend_ldap_pool.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-04T22:08:18Z",
+      "side": 1,
+      "message": "you mean PatchObject? or is there something new?\n\nAlso, why can\u0027t we switch to PatchObject now? Looks like PatchObject was in the original release of oslotest.",
+      "revId": "422fa23c6106c73f3ba027758a139c842fb23ea9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f1b37407",
+        "filename": "keystone/tests/test_backend_ldap_pool.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-04T22:08:18Z",
+      "side": 1,
+      "message": "If setUp raises then addCleanup won\u0027t happen. Use try/finally.",
+      "revId": "422fa23c6106c73f3ba027758a139c842fb23ea9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
