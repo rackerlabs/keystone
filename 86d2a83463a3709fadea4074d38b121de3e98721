@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_8cda264a",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-04T09:55:51Z",
+      "side": 1,
+      "message": "Shadows built-in \u0027type\u0027",
+      "revId": "86d2a83463a3709fadea4074d38b121de3e98721",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_c59c3c12",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 6
@@ -31,6 +48,41 @@
       "side": 1,
       "message": "What exactly do you think is complex here? I understand without problems.",
       "parentUuid": "fa98f980_c59c3c12",
+      "revId": "86d2a83463a3709fadea4074d38b121de3e98721",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_ecb1f28f",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-04T09:55:51Z",
+      "side": 1,
+      "message": "Maybe like this? But in does not look any simplier...\n        children_ids \u003d reduce(lambda a, l: a.update(l) or a,\n                              map(lambda a:\n                                  map(operator.itemgetter(\u0027id\u0027),\n                                      self.get_project_subtree(a.target_id)),\n                                  filter(lambda a: a.inherited\n                                                   and a.type in (AssignmentType.USER_PROJECT,\n                                                                  AssignmentType.GROUP_PROJECT),\n                                         assignments),\n                                  set())",
+      "parentUuid": "fa98f980_c59c3c12",
+      "revId": "86d2a83463a3709fadea4074d38b121de3e98721",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_ecfad2bb",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-04T09:55:51Z",
+      "side": 1,
+      "message": "It can be done once after the loop",
       "revId": "86d2a83463a3709fadea4074d38b121de3e98721",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
