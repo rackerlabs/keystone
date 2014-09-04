@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_6357c858",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-04T13:43:05Z",
+      "side": 1,
+      "message": "I\u0027m not a fan of type checking like this. It makes more sense to me to expect a dict and use list comprehensions is places where you know you have a list.",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_2335c045",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 6
@@ -82,6 +99,23 @@
       "side": 1,
       "message": "actually, it\u0027s needed to maintain the compatibility. Once the object is retrieved, we need to fill it with the fields that weren\u0027t stored by the backend.",
       "parentUuid": "fa98f980_fc247961",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_83ae6c2c",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_add_parent_project.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-04T13:43:05Z",
+      "side": 1,
+      "message": "(nit) Since you already have the table object in the caller why not just pass it in instead of meta?",
       "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -227,6 +261,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_43472477",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2704,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-04T13:43:05Z",
+      "side": 1,
+      "message": "If the project doesn\u0027t have a parent why even specify the parent_id? Is there a test somewhere that proves that you can create a project without specifying the project_id?",
+      "parentUuid": "fa98f980_97bfc6a9",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_fc7ab975",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 6
@@ -342,6 +394,24 @@
       "side": 1,
       "message": "The field was added to the backend, so it must be present at the ref. We are adding it as None, to do not change the tests behavior.",
       "parentUuid": "fa98f980_717512f9",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_c329549c",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-04T13:43:05Z",
+      "side": 1,
+      "message": "I agree that this should not be here. It should be somewhere project specific.",
+      "parentUuid": "fa98f980_57f71e8b",
       "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
