@@ -16,6 +16,24 @@
       "revId": "d813fa5bd1dcf3cf7a939ff378e371d77d1b6574",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_7b7b01f5",
+        "filename": "doc/source/extensions/endpoint_policy.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-04T05:43:49Z",
+      "side": 1,
+      "message": "seems like someone just determined their next patch :)\n\nbut in all honesty, i was thinking the same thing... i have something in the works for that - I hope to upgrade the \u0027enable extensions\u0027 section to the landing page, and provide a brief summary for each one. \n\nLeaving these as just straight enabling docs.",
+      "parentUuid": "fa98f980_1222da51",
+      "revId": "d813fa5bd1dcf3cf7a939ff378e371d77d1b6574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
