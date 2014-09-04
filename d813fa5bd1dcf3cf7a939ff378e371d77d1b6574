@@ -34,6 +34,24 @@
       "revId": "d813fa5bd1dcf3cf7a939ff378e371d77d1b6574",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e3cad819",
+        "filename": "doc/source/extensions/endpoint_policy.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-09-04T13:36:27Z",
+      "side": 1,
+      "message": "K, that works :-). Thanks for the clarification",
+      "parentUuid": "fa98f980_7b7b01f5",
+      "revId": "d813fa5bd1dcf3cf7a939ff378e371d77d1b6574",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
