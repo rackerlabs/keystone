@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_f28636da",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 655,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-09-04T02:50:22Z",
+      "side": 1,
+      "message": "This refactoring is a lot easier to read. Great job. I still don\u0027t believe that you have a messy garage :-)",
+      "revId": "0ad8d079afa214dddfd9b9b30d64bc454801e95f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
