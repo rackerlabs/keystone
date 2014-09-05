@@ -34,6 +34,24 @@
       "revId": "62df2ca2eb306279e3f7d4aa805bf31c50119aac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_eb6a7c7f",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-09-05T21:00:55Z",
+      "side": 1,
+      "message": "Correct.  If we encounter a binary value for a multi-valued attribute, I\u0027m skipping the entire attribute.  We are processing other attributes.\n\nIt\u0027s arguable if we should include the attribute at all given that Keystone really shouldn\u0027t be configured to want any attributes that allow binary values in the first place.  I can change this though if we\u0027d prefer to keep processing through the values.",
+      "parentUuid": "fa98f980_b94d3140",
+      "revId": "62df2ca2eb306279e3f7d4aa805bf31c50119aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
