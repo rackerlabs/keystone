@@ -541,6 +541,24 @@
       "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_96fda570",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-05T14:30:42Z",
+      "side": 1,
+      "message": "Sorry, now I get what is your point. Fixed.",
+      "parentUuid": "fa98f980_d6d00d21",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
