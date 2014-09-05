@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_d874b3d0",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-05T19:31:31Z",
+      "side": 1,
+      "message": "This already exists so I don\u0027t think it should be addressed in this review.",
+      "parentUuid": "fa98f980_8cda264a",
+      "revId": "86d2a83463a3709fadea4074d38b121de3e98721",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_c59c3c12",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 6
@@ -72,6 +90,41 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_b860cf01",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-05T19:31:31Z",
+      "side": 1,
+      "message": "That is so unreadable I would have to -2 a patch like that.",
+      "parentUuid": "fa98f980_ecb1f28f",
+      "revId": "86d2a83463a3709fadea4074d38b121de3e98721",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_1317fc45",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-05T19:31:31Z",
+      "side": 1,
+      "message": "What is x in this case? A tree or something else? may be good to give it a name.\n\nI\u0027m assuming that it\u0027s referring to projects since the id ultimately gets into project_ids.",
+      "revId": "86d2a83463a3709fadea4074d38b121de3e98721",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_ecfad2bb",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 6
@@ -83,6 +136,24 @@
       "writtenOn": "2014-09-04T09:55:51Z",
       "side": 1,
       "message": "It can be done once after the loop",
+      "revId": "86d2a83463a3709fadea4074d38b121de3e98721",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_384dbf9a",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-05T19:31:31Z",
+      "side": 1,
+      "message": "++ or just add directly to project_ids and don\u0027t use children_ids at all. Then there would be no need for a temporary variable.",
+      "parentUuid": "fa98f980_ecfad2bb",
       "revId": "86d2a83463a3709fadea4074d38b121de3e98721",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
