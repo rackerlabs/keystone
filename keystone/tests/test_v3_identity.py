@@ -19,6 +19,7 @@ from testtools import matchers
 
 from keystone.common import controller
 from keystone import exception
+from keystone.openstack.common import jsonutils
 from keystone import tests
 from keystone.tests import test_v3
 
@@ -940,6 +941,63 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         """Call ``DELETE /roles/{role_id}``."""
         self.delete('/roles/%(role_id)s' % {
             'role_id': self.role_id})
+
+    # TODO(lbragstad): Move this test to tests/test_v3_assignment.py
+    def test_delete_user_before_removing_role_assignment_succeeds(self):
+        """Call `DELETE` on the user before the role assignment."""
+        # Create a new user
+        new_user_ref = self.new_user_ref(domain_id=self.domain_id)
+        response = self.post('/users', body={'user': new_user_ref},
+                             expected_status=201)
+        response_json = jsonutils.loads(response.body)
+        user_id = response_json['user']['id']
+        # Assign the user a role on the project
+        collection_url = (
+            '/projects/%(project_id)s/users/%(user_id)s/roles' % {
+                'project_id': self.project_id,
+                'user_id': user_id})
+        member_url = ('%(collection_url)s/%(role_id)s' % {
+            'collection_url': collection_url,
+            'role_id': self.role_id})
+        self.put(member_url, expected_status=204)
+
+        # Check the user has the role assigned
+        self.head(member_url, expected_status=204)
+
+        # Delete the user
+        self.identity_api.driver.delete_user(user_id)
+
+        # Attempt revoking the role from the user
+        self.delete(member_url, expected_status=204)
+
+    # TODO(lbragstad): Move this test to tests/test_v3_assignment.py
+    def test_delete_user_and_check_role_assignment_fails(self):
+        """Call `DELETE` on the user and check the role assignment."""
+        # Create a new user
+        new_user_ref = self.new_user_ref(domain_id=self.domain_id)
+        response = self.post('/users', body={'user': new_user_ref},
+                             expected_status=201)
+        response_json = jsonutils.loads(response.body)
+        user_id = response_json['user']['id']
+        # Assign the user a role on the project
+        collection_url = (
+            '/projects/%(project_id)s/users/%(user_id)s/roles' % {
+                'project_id': self.project_id,
+                'user_id': user_id})
+        member_url = ('%(collection_url)s/%(role_id)s' % {
+            'collection_url': collection_url,
+            'role_id': self.role_id})
+        self.put(member_url, expected_status=204)
+
+        # Check the user has the role assigned
+        self.head(member_url, expected_status=204)
+
+        # Delete the user
+        self.identity_api.driver.delete_user(user_id)
+
+        # We should get a 404 when looking for the user in the Identity
+        # backend.
+        self.head(member_url, expected_status=404)
 
     def test_crud_user_project_role_grants(self):
         collection_url = (
