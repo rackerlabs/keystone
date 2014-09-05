@@ -52,6 +52,24 @@
       "revId": "b5bb0eef7081073a8f449e89c36e87dbe488755b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_edd8d7f0",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 2101
+      },
+      "writtenOn": "2014-09-05T18:42:39Z",
+      "side": 1,
+      "message": "Brant - I can\u0027t log the DN from here, all I have is \u0027val\u0027 being passed in for translation.\n\nI\u0027ll add the truncate, that\u0027s easy enough.",
+      "parentUuid": "fa98f980_e2c62799",
+      "revId": "b5bb0eef7081073a8f449e89c36e87dbe488755b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
