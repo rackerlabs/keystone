@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_3dcf8d57",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1298,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-05T00:45:37Z",
+      "side": 1,
+      "message": "use \u003e 1 since if the len wound up being 0 then the exception message would be incorrect since it\u0027s not multivalued in that case.",
+      "revId": "e050cbf383419e556042e7063342f061321dad5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_1d280999",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1371,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-05T00:45:37Z",
+      "side": 1,
+      "message": "This could wind up adding 2 values to attrs with the same attribute, if an attribute maps to the same entry.\n\nChange line 1375 and 1380 to check if the attr_type is already in the tuple and append to the value list if it is.\n\nMaybe it would be easier to use a map of id_attr -\u003e [v] and append, then turn it into the item list the add_s.",
+      "revId": "e050cbf383419e556042e7063342f061321dad5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
