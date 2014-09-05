@@ -941,6 +941,29 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.delete('/roles/%(role_id)s' % {
             'role_id': self.role_id})
 
+    # FIXME(lbragstad): Move this test to tests/test_v3_assignment.py
+    def test_delete_user_before_role_assignment_succeeds(self):
+        """Call ``DELETE`` on the user before the role assignment."""
+        # Assign the user a role on the project
+        collection_url = (
+            '/projects/%(project_id)s/users/%(user_id)s/roles' % {
+                'project_id': self.project_id,
+                'user_id': self.user_id})
+        member_url = ('%(collection_url)s/%(role_id)s' % {
+            'collection_url': collection_url,
+            'role_id': self.role_id})
+        self.put(member_url)
+
+        # Delete the user
+        self.delete('/users/%(user_id)s' % {'user_id': self.user['id']})
+
+        # Check if the user has the specified role on the project
+        # FIXME(lbragstad): locally, this is raising a 401 Unauthorized
+        self.head(member_url, expected_status=404)
+
+        # Attempt revoking the role from the user
+        self.delete(member_url, expected_status=404)
+
     def test_crud_user_project_role_grants(self):
         collection_url = (
             '/projects/%(project_id)s/users/%(user_id)s/roles' % {
