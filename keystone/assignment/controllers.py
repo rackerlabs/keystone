@@ -502,7 +502,15 @@ class RoleV3(controller.V3Controller):
         if role_id:
             ref['role'] = self.assignment_api.get_role(role_id)
         if user_id:
-            ref['user'] = self.identity_api.get_user(user_id)
+            try:
+                ref['user'] = self.identity_api.get_user(user_id)
+            except exception.UserNotFound:
+                # NOTE(lbragstad): This will allow users to clean up role
+                # assignments from the backend in the event the user was
+                # removed prior to the role assignment being removed.
+                if context['environment']['REQUEST_METHOD'] != 'DELETE':
+                    raise
+
         else:
             ref['group'] = self.identity_api.get_group(group_id)
 
