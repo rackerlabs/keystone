@@ -16,6 +16,24 @@
       "revId": "dbd85f95f3289658b0eff238a6a5514f86da6b2a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_d9592b36",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1408,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-09-05T08:17:50Z",
+      "side": 1,
+      "message": "So, your proposal is change attrlist\u003dNone to attrlist\u003d[] on function header, is it?\n\nThen, do you want to raise an exception in case the value sent in attrlist would be None?",
+      "parentUuid": "fa98f980_ae7c6cb6",
+      "revId": "dbd85f95f3289658b0eff238a6a5514f86da6b2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
