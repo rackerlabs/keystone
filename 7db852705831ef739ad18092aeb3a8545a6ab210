@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_99f5cdee",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-09-05T20:27:47Z",
+      "side": 1,
+      "message": "Agree, but 403 was used to preserve compatibility with LDAP driver which returns it in domain crud operations:\n\nraise exception.Forbidden(_(\u0027Domains are read-only against LDAP\u0027))\n\nso at least test_domain_crud in test_backedn_ldap will fail. Should we update LDAP driver to throw 400 instead of 403? It would be a separate change, I suppose.",
+      "parentUuid": "fa98f980_a29edf04",
+      "revId": "7db852705831ef739ad18092aeb3a8545a6ab210",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_42a4534a",
         "filename": "keystone/identity/core.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-05T16:35:37Z",
       "side": 1,
       "message": "(grammar) i\u0027m not sure the plurality of \"domains\" makes sense here, and given that there\u0027s a cost to change method names in these interfaces later, i\u0027m going to suggest any one of:\n\n  multiple_domain_support()\n\n  multiple_domains_supported()\n\n(i\u0027m not really sure which you intended, but they all work for me)\n\nthis should also probably be a @property (in which case _supported might make the most sense in usage)",
+      "revId": "7db852705831ef739ad18092aeb3a8545a6ab210",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_730be87c",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 846,
+      "author": {
+        "id": 12215
+      },
+      "writtenOn": "2014-09-05T20:27:47Z",
+      "side": 1,
+      "message": "I like your suggestion about @property, agree that multiple_domains_supported makes more sense. Will fix it in the next patch.",
+      "parentUuid": "fa98f980_42a4534a",
       "revId": "7db852705831ef739ad18092aeb3a8545a6ab210",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
