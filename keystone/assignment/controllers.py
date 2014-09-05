@@ -547,7 +547,7 @@ class RoleV3(controller.V3Controller):
             role_id, user_id, group_id, domain_id, project_id,
             self._check_if_inherited(context))
 
-    @controller.protected(callback=_check_grant_protection)
+    @controller.protected()
     def revoke_grant(self, context, role_id, user_id=None,
                      group_id=None, domain_id=None, project_id=None):
         """Revokes a role from user/group on either a domain or project."""
