@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_65fdecb0",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2014-09-05T10:59:03Z",
+      "side": 1,
+      "message": "I\u0027d say multiple Keystone instanes, not \"Keystones\".",
+      "revId": "3bcf0fb50a453c066d3a92eb074bb7e0e328703b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e5b63cf8",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2014-09-05T10:59:03Z",
+      "side": 1,
+      "message": "Being a non native English speaker I would rephrase the \"while benign\" to something more understandable.",
+      "revId": "3bcf0fb50a453c066d3a92eb074bb7e0e328703b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_4548e8cb",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 693,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2014-09-05T10:59:03Z",
+      "side": 1,
+      "message": "Where should it be configured?",
+      "revId": "3bcf0fb50a453c066d3a92eb074bb7e0e328703b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_2524c40b",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 727,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2014-09-05T10:59:03Z",
+      "side": 1,
+      "message": "Where should it be configured?",
+      "revId": "3bcf0fb50a453c066d3a92eb074bb7e0e328703b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_257a0424",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2014-09-05T10:59:03Z",
+      "side": 1,
+      "message": "s/developments environment/development environments/",
+      "revId": "3bcf0fb50a453c066d3a92eb074bb7e0e328703b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_a57fd4de",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 1040,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2014-09-05T10:59:03Z",
+      "side": 1,
+      "message": "\"you must use \u0027https\u0027 instead of \u0027http\u0027\".",
+      "revId": "3bcf0fb50a453c066d3a92eb074bb7e0e328703b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e5855ccf",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 1123,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2014-09-05T10:59:03Z",
+      "side": 1,
+      "message": "\u0027https\u0027 instead of \u0027http\u0027.",
+      "revId": "3bcf0fb50a453c066d3a92eb074bb7e0e328703b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_256be41e",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 1130,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2014-09-05T10:59:03Z",
+      "side": 1,
+      "message": "s/real/production/",
+      "revId": "3bcf0fb50a453c066d3a92eb074bb7e0e328703b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_45ac688c",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 1543,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2014-09-05T10:59:03Z",
+      "side": 1,
+      "message": "Why is this here?",
+      "revId": "3bcf0fb50a453c066d3a92eb074bb7e0e328703b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
