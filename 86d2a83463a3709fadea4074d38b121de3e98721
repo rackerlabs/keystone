@@ -125,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_b3971047",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-09-05T19:42:31Z",
+      "side": 1,
+      "message": "We could also assume that it\u0027s refering to project because of self.get_project_subtre. But I agree that naming x makes the code more readable.",
+      "parentUuid": "fa98f980_1317fc45",
+      "revId": "86d2a83463a3709fadea4074d38b121de3e98721",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_ecfad2bb",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 6
@@ -154,6 +172,24 @@
       "side": 1,
       "message": "++ or just add directly to project_ids and don\u0027t use children_ids at all. Then there would be no need for a temporary variable.",
       "parentUuid": "fa98f980_ecfad2bb",
+      "revId": "86d2a83463a3709fadea4074d38b121de3e98721",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f3743837",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-09-05T19:42:31Z",
+      "side": 1,
+      "message": "++ for adding directly to project_ids",
+      "parentUuid": "fa98f980_384dbf9a",
       "revId": "86d2a83463a3709fadea4074d38b121de3e98721",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
