@@ -345,7 +345,7 @@ class GroupApi(common_ldap.BaseLdap):
         try:
             attrs = conn.search_s(group_dn,
                                   ldap.SCOPE_BASE,
-                                  query, ['%s' % self.member_attribute])
+                                  query, attrlist=[self.member_attribute])
         except ldap.NO_SUCH_OBJECT:
             return []
         finally:
