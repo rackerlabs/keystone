@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_abd96558",
+        "filename": "keystone/tests/test_backend_ldap_pool.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-05T12:20:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_b12f2c3e",
+      "revId": "422fa23c6106c73f3ba027758a139c842fb23ea9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_119c785c",
         "filename": "keystone/tests/test_backend_ldap_pool.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_0bd19122",
+        "filename": "keystone/tests/test_backend_ldap_pool.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-05T12:20:02Z",
+      "side": 1,
+      "message": "We can\u0027t use PatchObject because of the oslotest bug. We have to make sure that our cleanUp is registered after oslotest\u0027s cleanup.",
+      "parentUuid": "fa98f980_119c785c",
+      "revId": "422fa23c6106c73f3ba027758a139c842fb23ea9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_f1b37407",
         "filename": "keystone/tests/test_backend_ldap_pool.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2014-09-04T22:08:18Z",
       "side": 1,
       "message": "If setUp raises then addCleanup won\u0027t happen. Use try/finally.",
+      "revId": "422fa23c6106c73f3ba027758a139c842fb23ea9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_6bc21d54",
+        "filename": "keystone/tests/test_backend_ldap_pool.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-05T12:20:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_f1b37407",
       "revId": "422fa23c6106c73f3ba027758a139c842fb23ea9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
