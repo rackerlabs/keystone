@@ -16,6 +16,24 @@
       "revId": "ca1ee7c65d6691d5f83f0c4f0476139c6c09af02",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_7343e86b",
+        "filename": "keystone/common/cache/backends/memcache_pool.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-05T19:52:13Z",
+      "side": 1,
+      "message": "It\u0027s _debug from _cleaner\u0027s args. It\u0027s a bit confusing, yeah.",
+      "parentUuid": "fa98f980_53a7c4bc",
+      "revId": "ca1ee7c65d6691d5f83f0c4f0476139c6c09af02",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
