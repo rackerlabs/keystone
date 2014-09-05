@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: ayoung <ayoung@redhat.com>
+Workflow+1: ayoung <ayoung@redhat.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 05 Sep 2014 13:44:56 +0000
+Reviewed-on: https://review.openstack.org/118902
+Project: openstack/keystone
+Branch: refs/heads/master
