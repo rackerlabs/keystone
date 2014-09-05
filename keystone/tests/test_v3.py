@@ -1042,6 +1042,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             self.assertIsNotNone(entity)
             self.assertValidRoleAssignment(entity)
         if ref:
+            entity = [x for x in entities if x['id'] == ref['id']][0]
             self.assertValidRoleAssignment(entity, ref)
         return entities
 
