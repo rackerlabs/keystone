@@ -1,0 +1,22 @@
+Verified+2: Jenkins
+Workflow+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+1: Jorge L. Williams <jorge.williams@rackspace.com>
+Code-Review+1: Joe Savak <jsavak@gmail.com>
+Code-Review+2: guang-yee <guang.yee@hp.com>
+Code-Review-1: ayoung <ayoung@redhat.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+1: David Lyle <david.lyle@hp.com>
+Code-Review+2: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+1: Wu Wenxiang <wu.wenxiang@99cloud.net>
+Code-Review+1: Brad Topol <btopol@us.ibm.com>
+Code-Review+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Code-Review-1: Robbie Harwood <rharwood@redhat.com>
+Code-Review+2: Jamie Lennox <jamielennox@redhat.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 05 Sep 2014 17:08:00 +0000
+Reviewed-on: https://review.openstack.org/110488
+Project: openstack/keystone
+Branch: refs/heads/master
