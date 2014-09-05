@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_001ecb0b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-05T14:27:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_d5803cf9",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_6357c858",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-04T13:43:05Z",
       "side": 1,
       "message": "I\u0027m not a fan of type checking like this. It makes more sense to me to expect a dict and use list comprehensions is places where you know you have a list.",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_00d96bf2",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-05T14:27:48Z",
+      "side": 1,
+      "message": "I agree with you. The reason behind the implementation is like that is to keep the pattern as _set_default_domain() and use the same method to set the domain and parent: _set_default_domain_and_parent().\n\nI could change both methods, but I thought that a refactoring from a method that is not part from this change scope would not be acceptable.",
+      "parentUuid": "fa98f980_6357c858",
       "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_d343bf3f",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-05T14:27:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_2335c045",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_e363b83f",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2014-09-04T13:42:40Z",
       "side": 1,
       "message": "map() is a good candidate here:\nelif isinstance(ref, list):\n\treturn map(self._set_default_parent_project, ref)",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_33dfabd7",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-05T14:27:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_e363b83f",
       "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -116,6 +188,24 @@
       "writtenOn": "2014-09-04T13:43:05Z",
       "side": 1,
       "message": "(nit) Since you already have the table object in the caller why not just pass it in instead of meta?",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_d3b1ff47",
+        "filename": "keystone/common/sql/migrate_repo/versions/053_add_parent_project.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-05T14:27:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_83ae6c2c",
       "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -279,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_d3df3f67",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2704,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-05T14:27:48Z",
+      "side": 1,
+      "message": "For this case, the returned project from backend contains a None parent_id, if we do not add it here, the asserts would fail.",
+      "parentUuid": "fa98f980_43472477",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_fc7ab975",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 6
@@ -412,6 +520,24 @@
       "side": 1,
       "message": "I agree that this should not be here. It should be somewhere project specific.",
       "parentUuid": "fa98f980_57f71e8b",
+      "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_d6d00d21",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-05T14:27:48Z",
+      "side": 1,
+      "message": "This is here because at the test_delete_domain() test in test_v3_identity, it does a get_project() and checks if it is equal to self.project (which is created with this method).",
+      "parentUuid": "fa98f980_c329549c",
       "revId": "c8116042a5c30827aea109331279c13ded8e32fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
