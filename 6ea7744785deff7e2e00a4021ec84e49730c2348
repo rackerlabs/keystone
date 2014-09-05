@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_f610b14f",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-05T14:55:46Z",
+      "side": 1,
+      "message": "Typo: OS-INERIT-\u003eOS-INHERIT",
+      "revId": "6ea7744785deff7e2e00a4021ec84e49730c2348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_d66acdb1",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-05T14:55:46Z",
+      "side": 1,
+      "message": "Two lines above may be reduced:\ndomain_id \u003d base_entry[\u0027scope\u0027].pop(\u0027domain\u0027)[\u0027id\u0027]",
+      "revId": "6ea7744785deff7e2e00a4021ec84e49730c2348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f6d8b1f0",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-05T14:55:46Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "6ea7744785deff7e2e00a4021ec84e49730c2348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f65b5151",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-05T14:55:46Z",
+      "side": 1,
+      "message": "Same as at line 700: pop() will return deleted element",
+      "revId": "6ea7744785deff7e2e00a4021ec84e49730c2348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_31bde302",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 785,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-05T14:55:46Z",
+      "side": 1,
+      "message": "Maybe wrap everything in try/except?\n\ntry:\n    target \u003d \u0027Domain: %s\u0027 % ref[\u0027scope\u0027][\u0027domain\u0027].get(\u0027id\u0027, \u0027Unknown\u0027)\nexcept KeyError:\n    try:\n        target \u003d \u0027Project: %s\u0027 % ref[\u0027scope\u0027][\u0027project\u0027].get(\u0027id\u0027, \u0027Unknown\u0027)\n    except KeyError:\n        target \u003d \u0027Unknown\u0027\n\nAnd same for the role.",
+      "revId": "6ea7744785deff7e2e00a4021ec84e49730c2348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
