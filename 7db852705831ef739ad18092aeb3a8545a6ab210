@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_a29edf04",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 313,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-05T16:35:37Z",
+      "side": 1,
+      "message": "a custom message here would provide a better user feedback than a generic 403 message.\n\ni\u0027m also not sure that a 403 is the most appropriate status. it\u0027s almost a 400 error instead. a 403 implies the request can be repeated with different auth and succeed, which isn\u0027t the case here. a 400 suggests that a different value in the request might cause it to succeed (like a different domain ID, which is true here).",
+      "revId": "7db852705831ef739ad18092aeb3a8545a6ab210",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_42a4534a",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 846,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-05T16:35:37Z",
+      "side": 1,
+      "message": "(grammar) i\u0027m not sure the plurality of \"domains\" makes sense here, and given that there\u0027s a cost to change method names in these interfaces later, i\u0027m going to suggest any one of:\n\n  multiple_domain_support()\n\n  multiple_domains_supported()\n\n(i\u0027m not really sure which you intended, but they all work for me)\n\nthis should also probably be a @property (in which case _supported might make the most sense in usage)",
+      "revId": "7db852705831ef739ad18092aeb3a8545a6ab210",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
