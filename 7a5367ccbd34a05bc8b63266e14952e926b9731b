@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_3b992b20",
+        "filename": "keystone/common/cache/backends/memcache_pool.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-06T22:44:48Z",
+      "side": 1,
+      "message": "Look into this FIXME",
+      "revId": "7a5367ccbd34a05bc8b63266e14952e926b9731b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_dbfadf42",
+        "filename": "keystone/common/cache/backends/memcache_pool.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-06T22:44:48Z",
+      "side": 1,
+      "message": "(NIT): use of __name is probably not needed, simply calling this \"name\" is probably sufficient.",
+      "revId": "7a5367ccbd34a05bc8b63266e14952e926b9731b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_bbfd1b3e",
+        "filename": "keystone/common/cache/backends/memcache_pool.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-06T22:44:48Z",
+      "side": 1,
+      "message": "The pool should probably only be used under eventlet not under apache. we should ensure that we only do the pool logic when we patch eventlet. otherwise the threadlocal implementation is sufficient (and even may be desireable).\n\nI am unsure if we can isolate to eventlet-only runtime.",
+      "revId": "7a5367ccbd34a05bc8b63266e14952e926b9731b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
