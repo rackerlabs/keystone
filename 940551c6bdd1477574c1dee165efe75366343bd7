@@ -16,6 +16,24 @@
       "revId": "940551c6bdd1477574c1dee165efe75366343bd7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_db565f2a",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-09-06T23:07:34Z",
+      "side": 1,
+      "message": "I could go either way on this myself too.  Keystone shouldn\u0027t be configured for binary attributes in the first place, though I expect that there would be other exceptions encountered once those attributes are missing due to this new code (which would be logged at higher severities).  It\u0027s probably best to just avoid the string freeze at this point IMHO.",
+      "parentUuid": "fa98f980_9b8777b6",
+      "revId": "940551c6bdd1477574c1dee165efe75366343bd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
