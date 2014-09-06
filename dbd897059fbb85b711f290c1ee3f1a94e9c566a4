@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_da566029",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-06T06:11:58Z",
+      "side": 1,
+      "message": "use \u0027docs\u0027 instead of manual, the file you are changes is under http://docs.openstack.org/developer/keystone/ \n\nthe manuals are whole other thing at: http://docs.openstack.org/admin-guide-cloud/content/ch-identity-mgmt-config.html",
+      "revId": "dbd897059fbb85b711f290c1ee3f1a94e9c566a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_1a3468fa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-06T06:11:58Z",
+      "side": 1,
+      "message": "try to limit these lines to 80 characters per line",
+      "revId": "dbd897059fbb85b711f290c1ee3f1a94e9c566a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_7a3d74dc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-06T06:11:58Z",
+      "side": 1,
+      "message": "use a dash as a bullet instead of \u0027o\u0027",
+      "revId": "dbd897059fbb85b711f290c1ee3f1a94e9c566a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
