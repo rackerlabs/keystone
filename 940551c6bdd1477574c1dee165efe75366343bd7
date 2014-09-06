@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_9b8777b6",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-06T22:48:16Z",
+      "side": 1,
+      "message": "This might be something that should be a warning level. The deployer *should* take action to correct this (keystone shouldn\u0027t be configured to want binary attrs)\n\nThis would require a STRING Freeze Exception if made warning level (probably not an issue).",
+      "revId": "940551c6bdd1477574c1dee165efe75366343bd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
