@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_8f71eae2",
+        "filename": "keystone/common/cache/backends/memcache_pool.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-07T15:40:32Z",
+      "side": 1,
+      "message": "Nah, we should ensure that we release connection we\u0027ve acquired from parent pool. Otherwise this connection will just leak and pool capacity will shrink. It\u0027s like we had this logic with the parent class:\n\n    conn \u003d pool.acquire()\n    try:\n        \u003cdo_smth\u003e\n    finally:\n        pool.release(conn)\n\nAnd now we want to put smth before try: block. We need to be sure we either enter try: block and finally: block gets executed or we release connection ourselves on any error.\n\nAlthough there should be no exceptions here at all, I\u0027d prefer to avoid possible leakage.",
+      "parentUuid": "fa98f980_3b992b20",
+      "revId": "7a5367ccbd34a05bc8b63266e14952e926b9731b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_dbfadf42",
         "filename": "keystone/common/cache/backends/memcache_pool.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_cf7212e3",
+        "filename": "keystone/common/cache/backends/memcache_pool.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-07T15:40:32Z",
+      "side": 1,
+      "message": "If we use \"name\" here, we can\u0027t use \"name\" arg in kwargs, hence relying on magic renaming.",
+      "parentUuid": "fa98f980_dbfadf42",
+      "revId": "7a5367ccbd34a05bc8b63266e14952e926b9731b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_bbfd1b3e",
         "filename": "keystone/common/cache/backends/memcache_pool.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2014-09-06T22:44:48Z",
       "side": 1,
       "message": "The pool should probably only be used under eventlet not under apache. we should ensure that we only do the pool logic when we patch eventlet. otherwise the threadlocal implementation is sufficient (and even may be desireable).\n\nI am unsure if we can isolate to eventlet-only runtime.",
+      "revId": "7a5367ccbd34a05bc8b63266e14952e926b9731b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_ef56f629",
+        "filename": "keystone/common/cache/backends/memcache_pool.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-07T15:40:32Z",
+      "side": 1,
+      "message": "Pool still provides benefits to threading-based server. Although there is small overhead (negligible compared to network interaction), we also gain propagation of \"dead\" hosts and better connection reuse (the same connection can be used by another thread while owner thread sleeps in DB access, for example).",
+      "parentUuid": "fa98f980_bbfd1b3e",
       "revId": "7a5367ccbd34a05bc8b63266e14952e926b9731b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
