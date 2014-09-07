@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_edf35e9d",
+        "filename": "keystone/common/cache/backends/memcache_pool.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-07T18:58:04Z",
+      "side": 1,
+      "message": "Please update the FIXME with a NOTE then to cover why we handle all exceptions.",
+      "parentUuid": "fa98f980_8f71eae2",
+      "revId": "7a5367ccbd34a05bc8b63266e14952e926b9731b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_dbfadf42",
         "filename": "keystone/common/cache/backends/memcache_pool.py",
         "patchSetId": 2
@@ -102,6 +120,24 @@
       "side": 1,
       "message": "Well, _debug was confusing because of masquerading global name. This one doesn\u0027t mask anything, and gives 100% guarantees it won\u0027t accidentally ruin function call with non-obvious error. I see \"fn_name\" just as readable as \"__name\" but w/o those guarantees.",
       "parentUuid": "fa98f980_d207191c",
+      "revId": "7a5367ccbd34a05bc8b63266e14952e926b9731b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_0df18295",
+        "filename": "keystone/common/cache/backends/memcache_pool.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-07T18:58:04Z",
+      "side": 1,
+      "message": "I\u0027ve never liked the use of the magic rename in python, i don\u0027t disagree with your argument. This can be left.",
+      "parentUuid": "fa98f980_cd493a34",
       "revId": "7a5367ccbd34a05bc8b63266e14952e926b9731b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
