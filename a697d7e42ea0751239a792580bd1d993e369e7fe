@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_8d11f25f",
+        "filename": "rally-scenarios/keystone.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-07T19:31:03Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be removed?",
+      "revId": "a697d7e42ea0751239a792580bd1d993e369e7fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
