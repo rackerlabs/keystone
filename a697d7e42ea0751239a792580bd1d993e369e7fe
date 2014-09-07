@@ -16,6 +16,24 @@
       "revId": "a697d7e42ea0751239a792580bd1d993e369e7fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_2868f486",
+        "filename": "rally-scenarios/keystone.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-09-07T20:06:58Z",
+      "side": 1,
+      "message": "Hm, why? It just shows usage of builit-in benchmarks ..",
+      "parentUuid": "fa98f980_8d11f25f",
+      "revId": "a697d7e42ea0751239a792580bd1d993e369e7fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
