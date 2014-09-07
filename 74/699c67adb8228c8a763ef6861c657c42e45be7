@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Workflow+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+1: Wu Wenxiang <wu.wenxiang@99cloud.net>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Workflow+1: David Stanek <dstanek@dstanek.com>
+Submitted-by: Jenkins
+Submitted-at: Sun, 07 Sep 2014 05:48:00 +0000
+Reviewed-on: https://review.openstack.org/118054
+Project: openstack/keystone
+Branch: refs/heads/master
