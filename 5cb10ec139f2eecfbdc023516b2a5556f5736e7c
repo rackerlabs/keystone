@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_adba366c",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1042,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-07T19:24:40Z",
+      "side": 1,
+      "message": "lost a line of whitespace here -- two lines between dissimilar module-level objects",
+      "revId": "5cb10ec139f2eecfbdc023516b2a5556f5736e7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
