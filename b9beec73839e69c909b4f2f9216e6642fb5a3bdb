@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_a3488588",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1289,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-07T23:53:24Z",
+      "side": 1,
+      "message": "that would be handy.",
+      "parentUuid": "fa98f980_e6b70639",
+      "revId": "b9beec73839e69c909b4f2f9216e6642fb5a3bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_26810e4e",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 7
@@ -47,6 +65,57 @@
       "writtenOn": "2014-09-07T00:16:27Z",
       "side": 1,
       "message": "Shouldn\u0027t we also check if the value is None for the id?  This wasn\u0027t done before since we weren\u0027t even adding the id attribute to the LDAP entry, but we should be raising an exception if we have no value:\n\nif k \u003d\u003d \u0027id\u0027:\n    if v is not None:\n        attrs.append((self.id_attr, [v]))\n    else:\n        # raise exception, log error\nelif v is not None:\n    ...",
+      "revId": "b9beec73839e69c909b4f2f9216e6642fb5a3bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_4330b907",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1366,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-07T23:53:24Z",
+      "side": 1,
+      "message": "This fix should only be fixing gets. There shouldn\u0027t be a change in the create case. If there is then this is fixing a different problem. There shouldn\u0027t be any change in create.",
+      "revId": "b9beec73839e69c909b4f2f9216e6642fb5a3bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_a33fa5d5",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1209,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-07T23:53:24Z",
+      "side": 1,
+      "message": "nice.",
+      "revId": "b9beec73839e69c909b4f2f9216e6642fb5a3bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_032eb1a5",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1671,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-07T23:53:24Z",
+      "side": 1,
+      "message": "you got rid of the code that required setting these allow_create, etc., so you can get rid of the mess in the tests.",
       "revId": "b9beec73839e69c909b4f2f9216e6642fb5a3bdb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
