@@ -16,6 +16,24 @@
       "revId": "87386c164d332b02224d594d86b2a305a8bb1d38",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_88e640e7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-07T20:38:14Z",
+      "side": 1,
+      "message": "It\u0027s the merge: http://git.openstack.org/cgit/openstack/oslo-incubator/commit/?id\u003d32e7f0b56f527427544050f251999f3de588ac93",
+      "parentUuid": "fa98f980_68bafcc1",
+      "revId": "87386c164d332b02224d594d86b2a305a8bb1d38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
