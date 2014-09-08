@@ -33,10 +33,7 @@ from keystone.openstack.common import versionutils
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
-SHOULD_CACHE = cache.should_cache_fn('role')
-
-# NOTE(blk-u): The config option is not available at import time.
-EXPIRATION_TIME = lambda: CONF.role.cache_time
+MEMOIZE = cache.get_memoization_decorator('role')
 
 
 def deprecated_to_role_api(f):
@@ -916,15 +913,14 @@ class RoleManager(manager.Manager):
 
         super(RoleManager, self).__init__(role_driver)
 
-    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
-                        expiration_time=EXPIRATION_TIME)
+    @MEMOIZE
     def get_role(self, role_id):
         return self.driver.get_role(role_id)
 
     @notifications.created(_ROLE)
     def create_role(self, role_id, role):
         ret = self.driver.create_role(role_id, role)
-        if SHOULD_CACHE(ret):
+        if MEMOIZE.should_cache_fn(ret):
             self.get_role.set(ret, self, role_id)
         return ret
 
