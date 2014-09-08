@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_886b8784",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-08T16:15:07Z",
+      "side": 1,
+      "message": "Unrelated whitespace change.\n\nWhitespace changes should be in a separate commit \n\nhttps://wiki.openstack.org/wiki/GitCommitMessages (see \"Things to avoid when creating commits\" section)",
+      "revId": "f3a3c4f6c9de47fe721f1b54f5a5447d04a4416b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_c804afc8",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-08T16:15:07Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "f3a3c4f6c9de47fe721f1b54f5a5447d04a4416b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_28145bf4",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-08T16:15:07Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "f3a3c4f6c9de47fe721f1b54f5a5447d04a4416b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_48251f09",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1424,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-08T16:15:07Z",
+      "side": 1,
+      "message": "This looks to be an unrelated change.",
+      "revId": "f3a3c4f6c9de47fe721f1b54f5a5447d04a4416b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_a845abb4",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1428,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-08T16:15:07Z",
+      "side": 1,
+      "message": "This looks to be an unrelated change",
+      "revId": "f3a3c4f6c9de47fe721f1b54f5a5447d04a4416b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_080cf793",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1679,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-08T16:15:07Z",
+      "side": 1,
+      "message": "Unrelated whitespace change",
+      "revId": "f3a3c4f6c9de47fe721f1b54f5a5447d04a4416b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_a8720b47",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-08T16:15:07Z",
+      "side": 1,
+      "message": "Unrelated whitespace change",
+      "revId": "f3a3c4f6c9de47fe721f1b54f5a5447d04a4416b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_2887fb10",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-08T16:15:07Z",
+      "side": 1,
+      "message": "Unrelated whitespace change.",
+      "revId": "f3a3c4f6c9de47fe721f1b54f5a5447d04a4416b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
