@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_ff392442",
+        "filename": "keystone/tests/test_backend_kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-08T19:31:42Z",
+      "side": 1,
+      "message": "but inheritance is an assignments feature, not an identity one... i don\u0027t see the point of setting the identity backend to use KVS here?",
+      "revId": "178bf52b4a9ea53e6c61be5ca2c0665d0204ab33",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
