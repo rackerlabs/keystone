@@ -34,6 +34,40 @@
       "revId": "940551c6bdd1477574c1dee165efe75366343bd7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_d493704d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T14:33:38Z",
+      "side": 1,
+      "message": "there\u0027s an unnecessary space at the end of the string. Remove it.",
+      "revId": "940551c6bdd1477574c1dee165efe75366343bd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_141178ac",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1369,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T14:33:38Z",
+      "side": 1,
+      "message": "this test should be in keystone/tests/unit, not in test_backend_ldap.",
+      "revId": "940551c6bdd1477574c1dee165efe75366343bd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
