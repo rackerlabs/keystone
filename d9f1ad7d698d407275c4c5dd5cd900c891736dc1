@@ -16,6 +16,57 @@
       "revId": "d9f1ad7d698d407275c4c5dd5cd900c891736dc1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bad4c104_474b4eb0",
+        "filename": "keystone/common/sql/migrate_repo/versions/050_add_rotated_passwords_table.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-08T19:50:08Z",
+      "side": 1,
+      "message": "maybe rename it to just \u0027user_password\u0027 since this table has more use cases beyond rotation",
+      "revId": "d9f1ad7d698d407275c4c5dd5cd900c891736dc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bad4c104_7931d6eb",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-08T19:50:08Z",
+      "side": 1,
+      "message": "this should iterate over all valid passwords until a match is found or the list is exhausted",
+      "revId": "d9f1ad7d698d407275c4c5dd5cd900c891736dc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bad4c104_e72462c8",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-08T19:50:08Z",
+      "side": 1,
+      "message": "use case?",
+      "revId": "d9f1ad7d698d407275c4c5dd5cd900c891736dc1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
