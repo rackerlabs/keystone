@@ -33,10 +33,10 @@ from keystone.openstack.common import versionutils
 CONF = config.CONF
 LOG = log.getLogger(__name__)
 SHOULD_CACHE = cache.should_cache_fn('token')
+EXPIRATION_TIME = cache.get_expiration_time_fn('token')
 
 # NOTE(blk-u): The config options are not available at import time.
-EXPIRATION_TIME = lambda: CONF.token.cache_time
-REVOCATION_CACHE_EXPIRATION_TIME = lambda: CONF.token.revocation_cache_time
+REVOCATION_CACHE_EXPIRATION_TIME = lambda: CONF.revoke.cache_time
 
 
 @dependency.requires('assignment_api', 'identity_api', 'token_provider_api',

@@ -1273,9 +1273,16 @@
 # backend. (integer value)
 #expiration_buffer=1800
 
-# Toggle for revocation event cacheing. This has no effect
+# Toggle for revocation event caching. This has no effect
 # unless global caching is enabled. (boolean value)
 #caching=true
+
+# Time to cache the revocation list and the revocation events
+# if revoke extension is enabled (in seconds). This has no
+# effect unless global and token caching are enabled. (integer
+# value)
+# Deprecated group/name - [token]/revocation_cache_time
+#cache_time=3600
 
 
 [saml]
@@ -1468,21 +1475,15 @@
 # Controls the token construction, validation, and revocation
 # operations. Core providers are
 # "keystone.token.providers.[pkiz|pki|uuid].Provider". The
-# default provider is pkiz. (string value)
+# default provider is uuid. (string value)
 #provider=<None>
 
 # Token persistence backend driver. (string value)
 #driver=keystone.token.persistence.backends.sql.Token
 
-# Toggle for token system cacheing. This has no effect unless
+# Toggle for token system caching. This has no effect unless
 # global caching is enabled. (boolean value)
 #caching=true
-
-# Time to cache the revocation list and the revocation events
-# if revoke extension is enabled (in seconds). This has no
-# effect unless global and token caching are enabled. (integer
-# value)
-#revocation_cache_time=3600
 
 # Time to cache tokens (in seconds). This has no effect unless
 # global and token caching are enabled. (integer value)

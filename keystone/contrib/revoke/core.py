@@ -53,8 +53,7 @@ extension.register_admin_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 extension.register_public_extension(EXTENSION_DATA['alias'], EXTENSION_DATA)
 
 SHOULD_CACHE = cache.should_cache_fn('revoke')
-# TODO(ayoung): migrate from the token section
-REVOCATION_CACHE_EXPIRATION_TIME = lambda: CONF.token.revocation_cache_time
+REVOCATION_CACHE_EXPIRATION_TIME = cache.get_expiration_time_fn('revoke')
 
 
 def revoked_before_cutoff_time():

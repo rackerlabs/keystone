@@ -34,8 +34,7 @@ from keystone.openstack.common import log
 CONF = config.CONF
 LOG = log.getLogger(__name__)
 SHOULD_CACHE = cache.should_cache_fn('catalog')
-
-EXPIRATION_TIME = lambda: CONF.catalog.cache_time
+EXPIRATION_TIME = cache.get_expiration_time_fn('catalog')
 
 
 def format_url(url, substitutions):
