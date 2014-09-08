@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_bff15997",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-08T22:01:24Z",
+      "side": 1,
+      "message": "will do",
+      "parentUuid": "fa98f980_bc4887cd",
+      "revId": "780f9106202de7026f51f7917d7832e3290f9289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_fc784ffa",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-08T20:36:56Z",
       "side": 1,
       "message": "call this id_attrs so we know that it\u0027s a list.",
+      "revId": "780f9106202de7026f51f7917d7832e3290f9289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_6203d473",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1286,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-08T22:01:24Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "fa98f980_fc784ffa",
       "revId": "780f9106202de7026f51f7917d7832e3290f9289",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_a2f4dc87",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1287,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-08T22:01:24Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "fa98f980_9c22e3ff",
+      "revId": "780f9106202de7026f51f7917d7832e3290f9289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_7c88dfc6",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 8
@@ -64,6 +118,24 @@
       "writtenOn": "2014-09-08T20:36:56Z",
       "side": 1,
       "message": "change elif to if, or put \"obj \u003d self.model(id\u003did_attr[0])\" in an else leg.",
+      "revId": "780f9106202de7026f51f7917d7832e3290f9289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_c2f1e096",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1292,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-08T22:01:24Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "fa98f980_7c88dfc6",
       "revId": "780f9106202de7026f51f7917d7832e3290f9289",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_623af437",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1295,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-08T22:01:24Z",
+      "side": 1,
+      "message": "I can live with that.",
+      "parentUuid": "fa98f980_fffe8104",
+      "revId": "780f9106202de7026f51f7917d7832e3290f9289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_dc7d4bb3",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 8
@@ -98,6 +188,24 @@
       "writtenOn": "2014-09-08T20:36:56Z",
       "side": 1,
       "message": "why is this new check added? add a comment.",
+      "revId": "780f9106202de7026f51f7917d7832e3290f9289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_02dda814",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1375,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-08T22:01:24Z",
+      "side": 1,
+      "message": "actually I don\u0027t need this check. Good catch!",
+      "parentUuid": "fa98f980_dc7d4bb3",
       "revId": "780f9106202de7026f51f7917d7832e3290f9289",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_6249148b",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1384,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-08T22:01:24Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "fa98f980_bcfb2746",
+      "revId": "780f9106202de7026f51f7917d7832e3290f9289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_3f20099b",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 8
@@ -132,6 +258,24 @@
       "writtenOn": "2014-09-08T20:36:56Z",
       "side": 1,
       "message": "I thought you were going to get rid of all these.",
+      "revId": "780f9106202de7026f51f7917d7832e3290f9289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_c261e0d4",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1681,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-08T22:01:24Z",
+      "side": 1,
+      "message": "k, for real this time :)",
+      "parentUuid": "fa98f980_3f20099b",
       "revId": "780f9106202de7026f51f7917d7832e3290f9289",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
