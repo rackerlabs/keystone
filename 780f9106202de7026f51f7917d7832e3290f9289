@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_bc4887cd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T20:36:56Z",
+      "side": 1,
+      "message": "If this is going to say that it closes this bug then there should be a unit test for it -- that verifies that the keystone server is always providing the naming attribute on create.",
+      "revId": "780f9106202de7026f51f7917d7832e3290f9289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_fc784ffa",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1286,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T20:36:56Z",
+      "side": 1,
+      "message": "call this id_attrs so we know that it\u0027s a list.",
+      "revId": "780f9106202de7026f51f7917d7832e3290f9289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_9c22e3ff",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1287,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T20:36:56Z",
+      "side": 1,
+      "message": "not id_attr and len(id_attr) \u003c 1 are checking the same thing. change this to\n\n if not id_attr:",
+      "revId": "780f9106202de7026f51f7917d7832e3290f9289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_7c88dfc6",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1292,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T20:36:56Z",
+      "side": 1,
+      "message": "change elif to if, or put \"obj \u003d self.model(id\u003did_attr[0])\" in an else leg.",
+      "revId": "780f9106202de7026f51f7917d7832e3290f9289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_fffe8104",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1295,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T20:36:56Z",
+      "side": 1,
+      "message": "I think that this is going to break existing deployments that have user_id_attr\u003dcn and has multiple cn for entries. Have it use self._dn_to_id(res[0]) for the id if there\u0027s multiple values.",
+      "revId": "780f9106202de7026f51f7917d7832e3290f9289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_dc7d4bb3",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1375,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T20:36:56Z",
+      "side": 1,
+      "message": "why is this new check added? add a comment.",
+      "revId": "780f9106202de7026f51f7917d7832e3290f9289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_bcfb2746",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1384,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T20:36:56Z",
+      "side": 1,
+      "message": "who\u0027s going to set the id_attr to member?? that\u0027s pretty much always multi-valued anyways. Revert this change. Add a comment to the config option that says that user_id_attr can\u0027t be a multivalued attribute.",
+      "revId": "780f9106202de7026f51f7917d7832e3290f9289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_3f20099b",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1681,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T20:36:56Z",
+      "side": 1,
+      "message": "I thought you were going to get rid of all these.",
+      "revId": "780f9106202de7026f51f7917d7832e3290f9289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
