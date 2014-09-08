@@ -40,13 +40,11 @@ from keystone.token import persistence
 CONF = config.CONF
 LOG = log.getLogger(__name__)
 SHOULD_CACHE = cache.should_cache_fn('token')
+EXPIRATION_TIME = cache.get_expiration_time_fn('token')
 
 # NOTE(morganfainberg): This is for compatibility in case someone was relying
 # on the old location of the UnsupportedTokenVersionException for their code.
 UnsupportedTokenVersionException = exception.UnsupportedTokenVersionException
-
-# NOTE(blk-u): The config options are not available at import time.
-EXPIRATION_TIME = lambda: CONF.token.cache_time
 
 # supported token versions
 V2 = token_model.V2

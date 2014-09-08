@@ -183,6 +183,40 @@ def should_cache_fn(section):
     return should_cache
 
 
+def get_expiration_time_fn(section):
+    """Build a function that returns a config section's expiration time status.
+
+    For any given driver in keystone that has caching capabilities, an int
+    config option called ``cache_time`` for that driver's section
+    (e.g. ``token``) should exist and default to ``None``. This function will
+    use that value to tell the caching decorator of the TTL override for
+    caching the resulting objects. If the value of the config option is
+    ``None`` the default value provided in the ``[cache] expiration_time``
+    option will be used by the decorator.
+
+    To properly use this with the decorator, pass this function the
+    configuration section and assign the result to a variable. Pass the new
+    variable to the caching decorator as the named argument
+    ``expiration_time``.  e.g.::
+
+        from keystone.common import cache
+
+        EXPIRATION_TIME = cache.get_expiration_time_fn('token')
+
+        @cache.on_arguments(expiration_time=EXPIRATION_TIME)
+        def function(arg1, arg2):
+            ...
+
+    :param section: name of the configuration section to examine
+    :type section: string
+    :returns: function reference
+    """
+    def get_expiration_time():
+        conf_group = getattr(CONF, section)
+        return getattr(conf_group, 'cache_time', None)
+    return get_expiration_time
+
+
 def key_generate_to_str(s):
     # NOTE(morganfainberg): Since we need to stringify all arguments, attempt
     # to stringify and handle the Unicode error explicitly as needed.
