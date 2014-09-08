@@ -39,14 +39,11 @@ from keystone.token import persistence
 
 CONF = config.CONF
 LOG = log.getLogger(__name__)
-SHOULD_CACHE = cache.should_cache_fn('token')
+MEMOIZE = cache.get_memoization_decorator('token')
 
 # NOTE(morganfainberg): This is for compatibility in case someone was relying
 # on the old location of the UnsupportedTokenVersionException for their code.
 UnsupportedTokenVersionException = exception.UnsupportedTokenVersionException
-
-# NOTE(blk-u): The config options are not available at import time.
-EXPIRATION_TIME = lambda: CONF.token.cache_time
 
 # supported token versions
 V2 = token_model.V2
@@ -312,8 +309,7 @@ class Manager(manager.Manager):
         unique_id = self.unique_id(token_id)
         self.validate_v3_token(unique_id)
 
-    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
-                        expiration_time=EXPIRATION_TIME)
+    @MEMOIZE
     def _validate_token(self, token_id):
         token_ref = self._persistence.get_token(token_id)
         version = self.driver.get_token_version(token_ref)
@@ -323,13 +319,11 @@ class Manager(manager.Manager):
             return self.driver.validate_v2_token(token_ref)
         raise exception.UnsupportedTokenVersionException()
 
-    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
-                        expiration_time=EXPIRATION_TIME)
+    @MEMOIZE
     def _validate_v2_token(self, token_id):
         return self.driver.validate_v2_token(token_id)
 
-    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
-                        expiration_time=EXPIRATION_TIME)
+    @MEMOIZE
     def _validate_v3_token(self, token_id):
         return self.driver.validate_v3_token(token_id)
 
