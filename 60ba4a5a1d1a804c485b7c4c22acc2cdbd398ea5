@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_7a9b8272",
+        "filename": "doc/source/extensions/revoke.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-08T19:54:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_9a4ca678",
+      "revId": "60ba4a5a1d1a804c485b7c4c22acc2cdbd398ea5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_3a649ae4",
         "filename": "doc/source/extensions/revoke.rst",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-08T19:42:54Z",
       "side": 1,
       "message": "The KVS driver shouldn\u0027t even be mentioned, it\u0027s deprecated.",
+      "revId": "60ba4a5a1d1a804c485b7c4c22acc2cdbd398ea5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_ba8c0a37",
+        "filename": "doc/source/extensions/revoke.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-08T19:54:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_3a649ae4",
       "revId": "60ba4a5a1d1a804c485b7c4c22acc2cdbd398ea5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_1aa2769a",
+        "filename": "doc/source/extensions/revoke.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-08T19:54:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_7a5e2214",
+      "revId": "60ba4a5a1d1a804c485b7c4c22acc2cdbd398ea5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_7ab54230",
         "filename": "doc/source/extensions/revoke.rst",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2014-09-08T19:42:54Z",
       "side": 1,
       "message": "this has service_v3 twice.",
+      "revId": "60ba4a5a1d1a804c485b7c4c22acc2cdbd398ea5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_7aa9c27a",
+        "filename": "doc/source/extensions/revoke.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-08T19:54:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_7ab54230",
       "revId": "60ba4a5a1d1a804c485b7c4c22acc2cdbd398ea5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
