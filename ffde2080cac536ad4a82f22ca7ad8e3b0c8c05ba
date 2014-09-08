@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_fc9a0fc4",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-08T20:21:38Z",
+      "side": 1,
+      "message": "This should not be null here.  If you need it to be nullable from here: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/validation/__init__.py#n41",
+      "revId": "ffde2080cac536ad4a82f22ca7ad8e3b0c8c05ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_1c87d362",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-08T20:21:38Z",
+      "side": 1,
+      "message": "tenant_id and domain_id should probably be the id_string type from here: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/validation/parameter_types.py#n31",
+      "revId": "ffde2080cac536ad4a82f22ca7ad8e3b0c8c05ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_5c46bb24",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-08T20:21:38Z",
+      "side": 1,
+      "message": "The v2 API is deprecated so I\u0027m not sure that we want to add this validation.",
+      "revId": "ffde2080cac536ad4a82f22ca7ad8e3b0c8c05ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_7cdc5f75",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-08T20:21:38Z",
+      "side": 1,
+      "message": "This doesn\u0027t follow the schema module pattern that is used in the rest of the code. For example, the assignment schemas are all in keystone.assignment.schema so I would expect the identity schemas to be found at keystone.identity.schema. See http://git.openstack.org/cgit/openstack/keystone/tree/keystone/assignment/schema.py for details.",
+      "revId": "ffde2080cac536ad4a82f22ca7ad8e3b0c8c05ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_fca04fa7",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-08T20:21:38Z",
+      "side": 1,
+      "message": "These two should just use id_string.",
+      "revId": "ffde2080cac536ad4a82f22ca7ad8e3b0c8c05ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_dc51cbd9",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-08T20:21:38Z",
+      "side": 1,
+      "message": "Why not use the validated decorator like: http://git.openstack.org/cgit/openstack/keystone/tree/keystone/assignment/controllers.py#n397",
+      "revId": "ffde2080cac536ad4a82f22ca7ad8e3b0c8c05ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_5c2b1b30",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-08T20:21:38Z",
+      "side": 1,
+      "message": "Why are we not validating this too?",
+      "revId": "ffde2080cac536ad4a82f22ca7ad8e3b0c8c05ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
