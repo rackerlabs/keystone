@@ -177,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_7071de76",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1295,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-09-08T22:31:20Z",
+      "side": 1,
+      "message": "In addition, I would still log a message (warn or debug as you see fit).  The order of returned attribute values is ambiguous, so we should log something to help in troubleshooting when a multi-vauled ID attribute is encountered.",
+      "parentUuid": "fa98f980_fffe8104",
+      "revId": "780f9106202de7026f51f7917d7832e3290f9289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_dc7d4bb3",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 8
