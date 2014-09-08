@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_dee2c200",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 720,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T00:48:48Z",
+      "side": 1,
+      "message": "all of valid_days, cert_subject, key_size, and ca_key can be removed from keystone.conf after generating the certificates, so they shouldn\u0027t be in separate sections.",
+      "revId": "3bcf0fb50a453c066d3a92eb074bb7e0e328703b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_2524c40b",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 13
@@ -64,6 +81,23 @@
       "writtenOn": "2014-09-05T10:59:03Z",
       "side": 1,
       "message": "Where should it be configured?",
+      "revId": "3bcf0fb50a453c066d3a92eb074bb7e0e328703b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_5ebed2d5",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 727,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T00:48:48Z",
+      "side": 1,
+      "message": "This should explain how to do it or point to existing documentation.",
       "revId": "3bcf0fb50a453c066d3a92eb074bb7e0e328703b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -132,6 +166,40 @@
       "writtenOn": "2014-09-05T10:59:03Z",
       "side": 1,
       "message": "s/real/production/",
+      "revId": "3bcf0fb50a453c066d3a92eb074bb7e0e328703b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_fec6a667",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 1130,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T00:48:48Z",
+      "side": 1,
+      "message": "suggest change \"can use\" to \"must use\"",
+      "revId": "3bcf0fb50a453c066d3a92eb074bb7e0e328703b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_7eaab686",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 1142,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T00:48:48Z",
+      "side": 1,
+      "message": "this should have a comment that this is only needed if using SSL.",
       "revId": "3bcf0fb50a453c066d3a92eb074bb7e0e328703b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
