@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_7e25565b",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T00:40:28Z",
+      "side": 1,
+      "message": "Notifications aren\u0027t required for this. Just call delete_endpoint_group_association_by_endpoint_group here.",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_fe0146b0",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T00:40:28Z",
+      "side": 1,
+      "message": "this magic string should be shared with the same string in core.py.",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_debf22fb",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T00:40:28Z",
+      "side": 1,
+      "message": "this is an unrelated change. Put it in a separate commit.",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_9e459a19",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T00:40:28Z",
+      "side": 1,
+      "message": "change \"endpoint_group\" to \"endpoint group\"",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_be497e34",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T00:40:28Z",
+      "side": 1,
+      "message": "change \"endpoint_group\" to \"endpoint group\"",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_fe5306e0",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 979,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T00:40:28Z",
+      "side": 1,
+      "message": "change \"associated\" to \"associate\"",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_be709e74",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 996,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T00:40:28Z",
+      "side": 1,
+      "message": "change \"associated\" to \"associate\"",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_5e0972dc",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1008,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T00:40:28Z",
+      "side": 1,
+      "message": "this didn\u0027t fail before? seems like it would fail already because `/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s` doesn\u0027t exist so something under that wouldn\u0027t exist either.",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
