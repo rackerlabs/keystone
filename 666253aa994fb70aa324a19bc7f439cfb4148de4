@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_2240fa55",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-09-08T15:21:28Z",
+      "side": 1,
+      "message": "No not remove.  Change the value if you want, but the \"placeholder\" was there specifically to tell people that there is no id due to this being a PKI token.",
+      "revId": "666253aa994fb70aa324a19bc7f439cfb4148de4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
