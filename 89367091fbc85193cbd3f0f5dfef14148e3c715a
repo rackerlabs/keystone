@@ -16,6 +16,24 @@
       "revId": "89367091fbc85193cbd3f0f5dfef14148e3c715a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_9a2ae6e5",
+        "filename": "doc/source/adding_extensions.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-08T19:56:56Z",
+      "side": 1,
+      "message": "Done, renamed the file, too.",
+      "parentUuid": "fa98f980_3ad9fa83",
+      "revId": "89367091fbc85193cbd3f0f5dfef14148e3c715a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
