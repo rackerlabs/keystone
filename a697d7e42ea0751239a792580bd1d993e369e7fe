@@ -52,6 +52,24 @@
       "revId": "a697d7e42ea0751239a792580bd1d993e369e7fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_1c6353b2",
+        "filename": "rally-scenarios/keystone.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6172
+      },
+      "writtenOn": "2014-09-08T20:15:38Z",
+      "side": 1,
+      "message": "So this is good question. I will try to explain this in more words. \n\nMajor goal of Rally is to bind together Operators (that are working with real clouds in production) and Developers (that are usually have devstack/gate clouds)\n\nSo only thing that requires Rally is access to public OpenStack API (otherwise Operators won\u0027t use it). That\u0027s why we should have as much as possible benchmarks inside Rally...\n\n\nFrom other side, during the work on Rally, we have to create functional testing for it. As a result we create performance jobs, that in result are very useful for other projects.\n\nFor example to check that your fix actually improves performance, you can do 3 steps workflow:\n\n  1) Specify in this file what benchmark to run  (put on review patch set1)\n  # get base results\n  2) Same change + your fix (put on review patch set2)\n  # get new results and compare with base\n  3) Remove changes in this task (left just fix) and merge\n  # in case of better performance\n\nAs we all know OpenStack API is very rich, and there is a lot of functionallity and it\u0027s impossible to cover absolute everything by benchmarks. Or sometimes you really need to check something very specific that won\u0027t be accepted in rally tree. This is the major reason why we added plugins. In other words, keystone team, can add everything: load generators, benchmark scenarios and context, and put in plugins dir and use in their gates (fully avoiding interaction with rally team). \n\nBut in case of really good benchmark, it can be moved by rally or keystone team to rally tree and (still used).\n\nSo this plugin was added just as a sample.",
+      "parentUuid": "fa98f980_9a1106b2",
+      "revId": "a697d7e42ea0751239a792580bd1d993e369e7fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
