@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_3ad9fa83",
+        "filename": "doc/source/adding_extensions.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T19:44:54Z",
+      "side": 1,
+      "message": "This should be \"Enabling Extensions\", otherwise I think it\u0027s about how to write my own extension.",
+      "revId": "89367091fbc85193cbd3f0f5dfef14148e3c715a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
