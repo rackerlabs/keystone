@@ -770,29 +770,6 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
 
         self.assertEqual(role_id, role_ref['id'])
 
-    def test_utf8_conversion(self):
-        value_unicode = u'fäké1'
-        value_utf8 = value_unicode.encode('utf-8')
-
-        result_utf8 = common_ldap_core.utf8_encode(value_unicode)
-        self.assertEqual(value_utf8, result_utf8)
-
-        result_utf8 = common_ldap_core.utf8_encode(value_utf8)
-        self.assertEqual(value_utf8, result_utf8)
-
-        result_unicode = common_ldap_core.utf8_decode(value_utf8)
-        self.assertEqual(value_unicode, result_unicode)
-
-        result_unicode = common_ldap_core.utf8_decode(value_unicode)
-        self.assertEqual(value_unicode, result_unicode)
-
-        self.assertRaises(TypeError,
-                          common_ldap_core.utf8_encode,
-                          100)
-
-        result_unicode = common_ldap_core.utf8_decode(100)
-        self.assertEqual(u'100', result_unicode)
-
     def test_delete_group_removes_role_assignments(self):
         # When a group is deleted any role assignments for the group are
         # removed.
@@ -1188,7 +1165,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         user_ref = self.identity_api.get_user(user_ref['id'])
         self.assertIs(True, user_ref['enabled'])
 
-    @mock.patch.object(common_ldap_core.BaseLdap, '_ldap_get')
+    @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
     def test_user_enabled_invert_no_enabled_value(self, mock_ldap_get):
         self.config_fixture.config(group='ldap', user_enabled_invert=True,
                                    user_enabled_default=False)
@@ -1209,7 +1186,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # from the resource default.
         self.assertIs(not CONF.ldap.user_enabled_default, user_ref['enabled'])
 
-    @mock.patch.object(common_ldap_core.KeystoneLDAPHandler, 'simple_bind_s')
+    @mock.patch.object(common_ldap.KeystoneLDAPHandler, 'simple_bind_s')
     def test_user_api_get_connection_no_user_password(self, mocked_method):
         """Don't bind in case the user and password are blank."""
         # Ensure the username/password are in-fact blank
@@ -1219,7 +1196,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         self.assertFalse(mocked_method.called,
                          msg='`simple_bind_s` method was unexpectedly called')
 
-    @mock.patch.object(common_ldap_core.KeystoneLDAPHandler, 'connect')
+    @mock.patch.object(common_ldap.KeystoneLDAPHandler, 'connect')
     def test_chase_referrals_off(self, mocked_fakeldap):
         self.config_fixture.config(
             group='ldap',
@@ -1233,7 +1210,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # is as expected.
         self.assertFalse(mocked_fakeldap.call_args[-1]['chase_referrals'])
 
-    @mock.patch.object(common_ldap_core.KeystoneLDAPHandler, 'connect')
+    @mock.patch.object(common_ldap.KeystoneLDAPHandler, 'connect')
     def test_chase_referrals_on(self, mocked_fakeldap):
         self.config_fixture.config(
             group='ldap',
@@ -1247,7 +1224,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # is as expected.
         self.assertTrue(mocked_fakeldap.call_args[-1]['chase_referrals'])
 
-    @mock.patch.object(common_ldap_core.KeystoneLDAPHandler, 'connect')
+    @mock.patch.object(common_ldap.KeystoneLDAPHandler, 'connect')
     def test_debug_level_set(self, mocked_fakeldap):
         level = 12345
         self.config_fixture.config(
@@ -1343,7 +1320,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         new_user = [u for u in res if u['id'] == user['id']][0]
         self.assertThat(new_user['description'], matchers.Equals(description))
 
-    @mock.patch.object(common_ldap_core.BaseLdap, '_ldap_get')
+    @mock.patch.object(common_ldap.BaseLdap, '_ldap_get')
     def test_user_mixed_case_attribute(self, mock_ldap_get):
         # Mock the search results to return attribute names
         # with unexpected case.
@@ -1360,21 +1337,6 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                          user['name'])
         self.assertEqual(mock_ldap_get.return_value[1]['MaIl'][0],
                          user['email'])
-
-    def test_binary_attribute_values(self):
-        result = [(
-            'cn=junk,dc=example,dc=com',
-            {
-                'cn': ['junk'],
-                'sn': [uuid.uuid4().hex],
-                'mail': [uuid.uuid4().hex],
-                'binary_attr': ['\x00\xFF\x00\xFF']
-            }
-        ), ]
-        py_result = common_ldap_core.convert_ldap_result(result)
-        # The attribute containing the binary value should
-        # not be present in the converted result.
-        self.assertNotIn('binary_attr', py_result[0][1])
 
     def test_parse_extra_attribute_mapping(self):
         option_list = ['description:name', 'gecos:password',
