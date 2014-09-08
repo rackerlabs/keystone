@@ -119,6 +119,23 @@
       "revId": "3708527656a338509699eb76b2fb8a0b3bdd6415",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAXH//A1g\u003d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-08T19:55:15Z",
+      "side": 1,
+      "message": "what\u0027s asserting that this has the wrong content type? fix it instead!",
+      "revId": "3708527656a338509699eb76b2fb8a0b3bdd6415",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
