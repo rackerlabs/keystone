@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_ae94dbe8",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T13:51:33Z",
+      "side": 1,
+      "message": "UserApi is used in RoleApi and not in ProjectApi.",
+      "parentUuid": "fa98f980_ccb4cad3",
+      "revId": "59145c40d25ea9ec1074ace4b875958153c46633",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_ec498e33",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-08T13:00:37Z",
       "side": 1,
       "message": "Reading several comments in other patches, I was understanding that is not a good idea to mix assignment API with Identity API.\n\nHas changed or I\u0027m missing something?",
+      "revId": "59145c40d25ea9ec1074ace4b875958153c46633",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_ee3a63e6",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T13:51:33Z",
+      "side": 1,
+      "message": "You\u0027re not missing anything. The LDAP assignment backend is poorly done and makes calls to identity API when it shouldn\u0027t. There\u0027s a comment at line 289 \"LDAP assignments only supports LDAP identity.\" which is the only reason we get away with this.\n\nIf I have time I\u0027ll propose a change that makes this a requirement -- the server shouldn\u0027t start if you have LDAP assignment and non-LDAP identity.",
+      "parentUuid": "fa98f980_ec498e33",
       "revId": "59145c40d25ea9ec1074ace4b875958153c46633",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
