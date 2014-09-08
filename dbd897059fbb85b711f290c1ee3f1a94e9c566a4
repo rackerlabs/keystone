@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_a08158fd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-09-08T02:12:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_da566029",
+      "revId": "dbd897059fbb85b711f290c1ee3f1a94e9c566a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_1a3468fa",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_c0865c13",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-09-08T02:12:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_1a3468fa",
+      "revId": "dbd897059fbb85b711f290c1ee3f1a94e9c566a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_7a3d74dc",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2014-09-06T06:11:58Z",
       "side": 1,
       "message": "use a dash as a bullet instead of \u0027o\u0027",
+      "revId": "dbd897059fbb85b711f290c1ee3f1a94e9c566a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e07a8024",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-09-08T02:12:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_7a3d74dc",
       "revId": "dbd897059fbb85b711f290c1ee3f1a94e9c566a4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
