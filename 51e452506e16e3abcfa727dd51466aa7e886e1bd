@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_c39490ea",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1584,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-08T16:31:49Z",
+      "side": 1,
+      "message": "what does _ud_ mean? can that be made more verbose?",
+      "revId": "51e452506e16e3abcfa727dd51466aa7e886e1bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_036db804",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1633,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-08T16:31:49Z",
+      "side": 1,
+      "message": "same as above, _gd_ ?",
+      "revId": "51e452506e16e3abcfa727dd51466aa7e886e1bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
