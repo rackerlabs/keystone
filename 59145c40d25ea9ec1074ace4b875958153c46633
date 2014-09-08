@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_ccb4cad3",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-09-08T13:09:02Z",
+      "side": 1,
+      "message": "I think self.user should be in ProjectApi call, because you are using this object inside ProjectApi class, not in RoleApi class.\n\nself.project \u003d ProjectApi(CONF, self.user)\nself.role \u003d RoleApi(CONF)\tself.role \u003d RoleApi(CONF)",
+      "revId": "59145c40d25ea9ec1074ace4b875958153c46633",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_ec498e33",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 2
