@@ -10,6 +10,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import uuid
+
 import ldap.dn
 
 from keystone.common import ldap as ks_ldap
@@ -171,3 +173,20 @@ class DnCompareTest(tests.BaseTestCase):
         descendant = ldap.dn.str2dn('cn=Babs Jansen,ou=OpenStack')
         dn = ldap.dn.str2dn('ou=OpenStack')
         self.assertTrue(ks_ldap.dn_startswith(descendant, dn))
+
+
+class ConvertTestCase(tests.BaseTestCase):
+    def test_binary_attribute_values(self):
+        result = [(
+            'cn=junk,dc=example,dc=com',
+            {
+                'cn': ['junk'],
+                'sn': [uuid.uuid4().hex],
+                'mail': [uuid.uuid4().hex],
+                'binary_attr': ['\x00\xFF\x00\xFF']
+            }
+        ), ]
+        py_result = ks_ldap.convert_ldap_result(result)
+        # The attribute containing the binary value should
+        # not be present in the converted result.
+        self.assertNotIn('binary_attr', py_result[0][1])
