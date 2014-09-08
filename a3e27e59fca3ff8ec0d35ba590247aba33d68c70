@@ -84,6 +84,23 @@
       "revId": "a3e27e59fca3ff8ec0d35ba590247aba33d68c70",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_570f822e",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 847,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-08T14:50:22Z",
+      "side": 1,
+      "message": "It\u0027d better to create new entries explicitly:\n1. Improves readability - function will turn into dict construction with visible structure\n2. Deprecates external template preparations\nIf entry template structure is so unstructured you always know what entry must be returned by the function.",
+      "revId": "a3e27e59fca3ff8ec0d35ba590247aba33d68c70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
