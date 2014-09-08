@@ -34,6 +34,24 @@
       "revId": "87386c164d332b02224d594d86b2a305a8bb1d38",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_6e54b3ca",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2014-09-08T13:31:39Z",
+      "side": 1,
+      "message": "Oh, you should use the non-merge commit since merge commits don\u0027t show up in gerrit and that\u0027s what I was using the link for.  Not a huge deal, but I probably won\u0027t be the only one to ask about it.",
+      "parentUuid": "fa98f980_88e640e7",
+      "revId": "87386c164d332b02224d594d86b2a305a8bb1d38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
