@@ -34,6 +34,24 @@
       "revId": "a697d7e42ea0751239a792580bd1d993e369e7fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_9a1106b2",
+        "filename": "rally-scenarios/keystone.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-08T19:58:47Z",
+      "side": 1,
+      "message": "i assumed you were replacing this with the plugin below; what\u0027s the point of keeping the built in benchmark?",
+      "parentUuid": "fa98f980_2868f486",
+      "revId": "a697d7e42ea0751239a792580bd1d993e369e7fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
