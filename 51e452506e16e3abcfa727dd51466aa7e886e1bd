@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_a9e84a17",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1584,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-09-08T18:24:56Z",
+      "side": 1,
+      "message": "It means user-domain.\nI followed the same pattern found at test_get_role_assignments and test_filtered_role_assignments.",
+      "parentUuid": "fa98f980_c39490ea",
+      "revId": "51e452506e16e3abcfa727dd51466aa7e886e1bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_036db804",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-08T16:31:49Z",
       "side": 1,
       "message": "same as above, _gd_ ?",
+      "revId": "51e452506e16e3abcfa727dd51466aa7e886e1bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e9c972ad",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1633,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-09-08T18:24:56Z",
+      "side": 1,
+      "message": "It means group-domain.",
+      "parentUuid": "fa98f980_036db804",
       "revId": "51e452506e16e3abcfa727dd51466aa7e886e1bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
