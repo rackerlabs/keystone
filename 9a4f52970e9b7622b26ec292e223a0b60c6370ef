@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_4ebd2402",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-08T18:03:18Z",
+      "side": 1,
+      "message": "same in v3 controller layer",
+      "revId": "9a4f52970e9b7622b26ec292e223a0b60c6370ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_0ec31c8b",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-08T18:03:18Z",
+      "side": 1,
+      "message": "the same is still being done in v3",
+      "revId": "9a4f52970e9b7622b26ec292e223a0b60c6370ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
