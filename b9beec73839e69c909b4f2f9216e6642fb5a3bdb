@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_cb8106fd",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1289,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-08T20:09:13Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "fa98f980_a3488588",
+      "revId": "b9beec73839e69c909b4f2f9216e6642fb5a3bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_26810e4e",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 7
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_eb86ca12",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1297,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-08T20:09:13Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "fa98f980_26810e4e",
+      "revId": "b9beec73839e69c909b4f2f9216e6642fb5a3bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_26258eae",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 7
@@ -65,6 +101,24 @@
       "writtenOn": "2014-09-07T00:16:27Z",
       "side": 1,
       "message": "Shouldn\u0027t we also check if the value is None for the id?  This wasn\u0027t done before since we weren\u0027t even adding the id attribute to the LDAP entry, but we should be raising an exception if we have no value:\n\nif k \u003d\u003d \u0027id\u0027:\n    if v is not None:\n        attrs.append((self.id_attr, [v]))\n    else:\n        # raise exception, log error\nelif v is not None:\n    ...",
+      "revId": "b9beec73839e69c909b4f2f9216e6642fb5a3bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_dc30ebea",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1365,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-08T20:09:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_26258eae",
       "revId": "b9beec73839e69c909b4f2f9216e6642fb5a3bdb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -106,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_9c64a3e6",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1366,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-08T20:09:13Z",
+      "side": 1,
+      "message": "I\u0027ll reference the bug in this patch. I need this fix in order for the tests to be happy.",
+      "parentUuid": "fa98f980_9ef75af5",
+      "revId": "b9beec73839e69c909b4f2f9216e6642fb5a3bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_a33fa5d5",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 7
@@ -140,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_68aca336",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1671,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-08T20:09:13Z",
+      "side": 1,
+      "message": "good catch!",
+      "parentUuid": "fa98f980_032eb1a5",
+      "revId": "b9beec73839e69c909b4f2f9216e6642fb5a3bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_a6db3e7c",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 7
@@ -151,6 +241,24 @@
       "writtenOn": "2014-09-07T00:16:27Z",
       "side": 1,
       "message": "This comment doesn\u0027t apply to this test.  Remove it.",
+      "revId": "b9beec73839e69c909b4f2f9216e6642fb5a3bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_086dd704",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1711,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-08T20:09:13Z",
+      "side": 1,
+      "message": "good catch!",
+      "parentUuid": "fa98f980_a6db3e7c",
       "revId": "b9beec73839e69c909b4f2f9216e6642fb5a3bdb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
