@@ -196,6 +196,44 @@ def should_cache_fn(section):
     return should_cache
 
 
+def get_expiration_time_fn(section):
+    """Build a function that returns a config section's expiration time status.
+
+    For any given driver in keystone that has caching capabilities, an int
+    config option called ``cache_time`` for that driver's section
+    (e.g. ``token``) should exist and typically default to ``None``. This
+    function wil use that value to tell the caching decorator of the TTL
+    override for caching the resulting objects. If the value of the config
+    option is ``None`` the default value provided in the
+    ``[cache] expiration_time`` option will be used by the decorator. The
+    default may be set to something other than ``None`` in cases where the
+    caching TTL should not be tied to the global default(s) (e.g.
+    revocation_list changes very infrenquently and can be cached for >1h by
+    default).
+
+    To properly use this with the decorator, pass this function the
+    configuration section and assign the result to a variable. Pass the new
+    variable to the caching decorator as the named argument
+    ``expiration_time``.  e.g.::
+
+        from keystone.common import cache
+
+        EXPIRATION_TIME = cache.get_expiration_time_fn('token')
+
+        @cache.on_arguments(expiration_time=EXPIRATION_TIME)
+        def function(arg1, arg2):
+            ...
+
+    :param section: name of the configuration section to examine
+    :type section: string
+    :returns: function reference
+    """
+    def get_expiration_time():
+        conf_group = getattr(CONF, section)
+        return getattr(conf_group, 'cache_time', None)
+    return get_expiration_time
+
+
 def key_generate_to_str(s):
     # NOTE(morganfainberg): Since we need to stringify all arguments, attempt
     # to stringify and handle the Unicode error explicitly as needed.
@@ -214,3 +252,57 @@ def function_key_generator(namespace, fn, to_str=key_generate_to_str):
 REGION = dogpile.cache.make_region(
     function_key_generator=function_key_generator)
 on_arguments = REGION.cache_on_arguments
+
+
+def get_memoization_decorator(section, expiration_section=None):
+    """Build a function based on the `on_arguments` decorator for the section.
+
+    For any given driver in Keystone that has caching capabilities, a
+    pair of functions is required to properly determine the status of the
+    caching capabilities (a toggle to indicate caching is enabled and any
+    override of the default TTL for cached data). This function will return
+    an object that has the memoization decorator ``on_arguments``
+    pre-configured for the driver.
+
+    Example usage::
+
+        from keystone.common import cache
+
+        cache_on_arguments = cache.get_memoization_decorator(section='token')
+
+        @cache_on_arguments
+        def function(arg1, arg2):
+            ...
+
+
+        cache_on_args_separate_expiration = cache.get_memoization_decorator(
+            section='token', expiration_section='revoke')
+
+        @cache_on_args_separate_expiration
+        def function2(arg1, arg2):
+            ...
+
+    :param section: name of the configuration section to examine
+    :type section: string
+    :param expiration_section: name of the configuration section to examine
+                               for the expiration option. This will fall back
+                               to using ``section`` if the value is unspecified
+                               or ``None``
+    :type expiration_section: string
+    :return: function reference
+    """
+    if expiration_section is None:
+        expiration_section = section
+    should_cache = should_cache_fn(section)
+    expiration_time = get_expiration_time_fn(expiration_section)
+
+    memoize = REGION.cache_on_arguments(should_cache_fn=should_cache,
+                                        expiration_time=expiration_time)
+
+    # Make sure the actual "should_cache" and "expiration_time" methods are
+    # available. This is potentially interesting/useful to pre-seed cache
+    # values.
+    setattr(memoize, 'should_cache_fn', should_cache)
+    setattr(memoize, 'expiration_time_fn', expiration_time)
+
+    return memoize
