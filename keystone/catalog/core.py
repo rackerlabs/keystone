@@ -34,9 +34,7 @@ from keystone.openstack.common import log
 
 CONF = config.CONF
 LOG = log.getLogger(__name__)
-SHOULD_CACHE = cache.should_cache_fn('catalog')
-
-EXPIRATION_TIME = lambda: CONF.catalog.cache_time
+MEMOIZE = cache.get_memoization_decorator(section='catalog')
 
 
 def format_url(url, substitutions):
@@ -110,8 +108,7 @@ class Manager(manager.Manager):
             parent_region_id = region_ref.get('parent_region_id')
             raise exception.RegionNotFound(region_id=parent_region_id)
 
-    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
-                        expiration_time=EXPIRATION_TIME)
+    @MEMOIZE
     def get_region(self, region_id):
         try:
             return self.driver.get_region(region_id)
@@ -140,8 +137,7 @@ class Manager(manager.Manager):
         service_ref.setdefault('enabled', True)
         return self.driver.create_service(service_id, service_ref)
 
-    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
-                        expiration_time=EXPIRATION_TIME)
+    @MEMOIZE
     def get_service(self, service_id):
         try:
             return self.driver.get_service(service_id)
@@ -193,8 +189,7 @@ class Manager(manager.Manager):
         except exception.NotFound:
             raise exception.EndpointNotFound(endpoint_id=endpoint_id)
 
-    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
-                        expiration_time=EXPIRATION_TIME)
+    @MEMOIZE
     def get_endpoint(self, endpoint_id):
         try:
             return self.driver.get_endpoint(endpoint_id)
