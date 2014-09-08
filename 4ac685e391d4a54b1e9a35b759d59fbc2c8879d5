@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_a425cfaf",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-08T18:48:55Z",
+      "side": 1,
+      "message": "i don\u0027t think this was a typo? \"collapse in sane manner\" makes perfect sense to me, although i think the sentence is missing a comma to improve readability.",
+      "revId": "4ac685e391d4a54b1e9a35b759d59fbc2c8879d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
