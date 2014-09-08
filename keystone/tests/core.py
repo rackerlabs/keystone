@@ -218,6 +218,10 @@ class UnexpectedExit(Exception):
     pass
 
 
+class BadLog(Exception):
+    pass
+
+
 class TestClient(object):
     def __init__(self, app=None, token=None):
         self.app = app
@@ -423,6 +427,9 @@ class TestCase(BaseTestCase):
 
         self.exit_patch = self.useFixture(mockpatch.PatchObject(sys, 'exit'))
         self.exit_patch.mock.side_effect = UnexpectedExit
+        logging_error_fixture = self.useFixture(
+            mockpatch.PatchObject(logging.Handler, 'handleError'))
+        logging_error_fixture.mock.side_effect = BadLog
         self.config_fixture = self.useFixture(config_fixture.Config(CONF))
         self.config(self.config_files())
 
