@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_ec498e33",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-09-08T13:00:37Z",
+      "side": 1,
+      "message": "Reading several comments in other patches, I was understanding that is not a good idea to mix assignment API with Identity API.\n\nHas changed or I\u0027m missing something?",
+      "revId": "59145c40d25ea9ec1074ace4b875958153c46633",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
