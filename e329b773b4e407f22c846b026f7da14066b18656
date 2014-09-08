@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_cb0bc67b",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-08T17:48:45Z",
+      "side": 1,
+      "message": "if you\u0027re using a virtualenv, you should NEVER have to use sudo. In fact, `sudo pip` is a bit of a anti-pattern by itself.",
+      "revId": "e329b773b4e407f22c846b026f7da14066b18656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
