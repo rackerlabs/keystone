@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_df8ffdca",
+        "filename": "doc/source/extensions/revoke.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-08T20:54:33Z",
+      "side": 1,
+      "message": "This is a little misleading because it\u0027s only true for new installations right?",
+      "revId": "1b3bf7f7a0fdbfc8a993f756bc9ebe5ad3e27487",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_ff620115",
+        "filename": "doc/source/extensions/revoke.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-08T20:54:33Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "1b3bf7f7a0fdbfc8a993f756bc9ebe5ad3e27487",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
