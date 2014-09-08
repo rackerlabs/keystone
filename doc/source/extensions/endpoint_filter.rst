@@ -27,7 +27,8 @@ To enable the endpoint filter extension:
     driver = keystone.contrib.endpoint_filter.backends.catalog_sql.EndpointFilterCatalog
 
 2. Add the ``endpoint_filter_extension`` filter to the ``api_v3`` pipeline in
-   ``keystone-paste.ini``. For example::
+   ``keystone-paste.ini``. This can work anywhere in the pipeline except as the last
+   entry. For example::
 
     [pipeline:api_v3]
     pipeline = access_log sizelimit url_normalize token_auth admin_token_auth xml_body json_body ec2_extension s3_extension endpoint_filter_extension service_v3

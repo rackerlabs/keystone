@@ -33,7 +33,8 @@ To enable the ``OS-REVOKE`` extension:
     driver = keystone.contrib.revoke.backends.sql.Revoke
 
 
-2. Add the required ``filter`` to the ``pipeline`` in ``keystone-paste.ini``::
+2. Add the required ``filter`` to the ``pipeline`` in ``keystone-paste.ini``.
+   This can work anywhere in the pipeline except as the last entry. For example::
 
     [filter:revoke_extension]
     paste.filter_factory = keystone.contrib.revoke.routers:RevokeExtension.factory
