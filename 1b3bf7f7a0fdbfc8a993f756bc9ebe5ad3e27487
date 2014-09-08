@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_e22b4492",
+        "filename": "doc/source/extensions/revoke.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-08T21:29:29Z",
+      "side": 1,
+      "message": "you are right - I tried to change this up to reflect that",
+      "parentUuid": "fa98f980_df8ffdca",
+      "revId": "1b3bf7f7a0fdbfc8a993f756bc9ebe5ad3e27487",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_ff620115",
         "filename": "doc/source/extensions/revoke.rst",
         "patchSetId": 6
