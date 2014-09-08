@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_40450cb2",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-08T02:29:44Z",
+      "side": 1,
+      "message": "This whitespace change is required to pass pep8",
+      "parentUuid": "1abeadc6_e147ed1b",
+      "revId": "b0b105c4d3418e0e1f61a1dd77dbcc317e4deac3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ac7a964_c8ee66ec",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "http://legacy.python.org/dev/peps/pep-0008/#function-names",
       "parentUuid": "7ac7a964_c8ee66ec",
+      "revId": "b0b105c4d3418e0e1f61a1dd77dbcc317e4deac3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_601130af",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-08T02:29:44Z",
+      "side": 1,
+      "message": "I prefer the function to the lambda, and it should change names if we are changing it.",
+      "parentUuid": "1abeadc6_210005aa",
       "revId": "b0b105c4d3418e0e1f61a1dd77dbcc317e4deac3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
