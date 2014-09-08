@@ -16,6 +16,24 @@
       "revId": "4ac685e391d4a54b1e9a35b759d59fbc2c8879d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_04f85be4",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-08T18:51:29Z",
+      "side": 1,
+      "message": "This is a small typo, should be \u0027in a sane manner\u0027 if anything is fixed.\n\n\u0027in same manner\u0027 does not make this more clear.",
+      "parentUuid": "fa98f980_a425cfaf",
+      "revId": "4ac685e391d4a54b1e9a35b759d59fbc2c8879d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
