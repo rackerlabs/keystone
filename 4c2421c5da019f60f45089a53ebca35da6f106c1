@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_d5c9a7ad",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-08T16:38:32Z",
+      "side": 1,
+      "message": "_existing_",
+      "revId": "4c2421c5da019f60f45089a53ebca35da6f106c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
