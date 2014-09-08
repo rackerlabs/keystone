@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_f10ec6e4",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 679,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-08T14:34:50Z",
+      "side": 1,
+      "message": "So \u0027group\u0027 in ref and \u0027OS-INHERIT:inherited_to\u0027 in ref[\u0027scope\u0027] are mutually exclusive? Is it checked anywhere?\nI\u0027m not so familiar with the code yet and there may be some caveats about this constraint, but maybe change \u0027elif\u0027 to \u0027if\u0027 here?",
+      "revId": "a3e27e59fca3ff8ec0d35ba590247aba33d68c70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_1188aae6",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 699,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-08T14:34:50Z",
+      "side": 1,
+      "message": "I really cannot see why use deep copy when shallow copy is ehough.\nbase_entry \u003d copy.deepcopy(ref) \u003d\u003e base_entry \u003d dict(ref)",
+      "revId": "a3e27e59fca3ff8ec0d35ba590247aba33d68c70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f4a4f409",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 700,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-08T14:34:50Z",
+      "side": 1,
+      "message": "As far as I understand domain is removed from the scope only to be filled somewhere else.",
+      "revId": "a3e27e59fca3ff8ec0d35ba590247aba33d68c70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_91e1fa9c",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 708,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-08T14:34:50Z",
+      "side": 1,
+      "message": "Again deepcopy. You do here nothing changing values referenced neither by base_entry nor by sub_entry.\nMore to say there is a potential risk in using deep copy: running into a cyclic reference.",
+      "revId": "a3e27e59fca3ff8ec0d35ba590247aba33d68c70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_145c1825",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 844,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-08T14:34:50Z",
+      "side": 1,
+      "message": "Function expects template with particular modifications, so please either validate it or do modifications here, accepting template in some canonical form.",
+      "revId": "a3e27e59fca3ff8ec0d35ba590247aba33d68c70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
