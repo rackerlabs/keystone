@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_3f080c2d",
+        "filename": "doc/source/extensions/endpoint_filter.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T19:39:36Z",
+      "side": 1,
+      "message": "this has service_v3 in it twice, remove the first one.",
+      "revId": "480439e617c765802a0e200df6cf5b0074094dc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_9afe6604",
+        "filename": "doc/source/extensions/federation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T19:39:36Z",
+      "side": 1,
+      "message": "remove the first service_v3",
+      "revId": "480439e617c765802a0e200df6cf5b0074094dc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_da08ee2a",
+        "filename": "doc/source/extensions/oauth1.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T19:39:36Z",
+      "side": 1,
+      "message": "remove service_v3.",
+      "revId": "480439e617c765802a0e200df6cf5b0074094dc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
