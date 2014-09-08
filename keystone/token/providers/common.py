@@ -54,8 +54,7 @@ class V2TokenDataHelper(object):
         if audit_info is None:
             audit_info = provider.audit_info(token_ref.get('parent_audit_id'))
 
-        o = {'access': {'token': {'id': token_ref['id'],
-                                  'expires': expires,
+        o = {'access': {'token': {'expires': expires,
                                   'issued_at': timeutils.strtime(),
                                   'audit_ids': audit_info
                                   },

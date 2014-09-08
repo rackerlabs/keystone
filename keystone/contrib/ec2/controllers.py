@@ -263,8 +263,7 @@ class Ec2Controller(Ec2ControllerCommon, controller.V2Controller):
         user_ref = self.v3_to_v2_user(user_ref)
         auth_token_data = dict(user=user_ref,
                                tenant=tenant_ref,
-                               metadata=metadata_ref,
-                               id='placeholder')
+                               metadata=metadata_ref)
         (token_id, token_data) = self.token_provider_api.issue_v2_token(
             auth_token_data, roles_ref, catalog_ref)
         return token_data

@@ -3383,13 +3383,13 @@ class TokenCacheInvalidation(object):
 
         # Create an equivalent of a scoped token
         token_dict = {'user': self.user, 'tenant': self.tenant,
-                      'metadata': {}, 'id': 'placeholder'}
+                      'metadata': {}}
         token_id, data = self.token_provider_api.issue_v2_token(token_dict)
         self.scoped_token_id = token_id
 
         # ..and an un-scoped one
         token_dict = {'user': self.user, 'tenant': None,
-                      'metadata': {}, 'id': 'placeholder'}
+                      'metadata': {}}
         token_id, data = self.token_provider_api.issue_v2_token(token_dict)
         self.unscoped_token_id = token_id
 

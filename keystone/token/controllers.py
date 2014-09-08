@@ -132,7 +132,6 @@ class Auth(controller.V2Controller):
         else:
             catalog_ref = {}
 
-        auth_token_data['id'] = 'placeholder'
         if bind:
             auth_token_data['bind'] = bind
 
