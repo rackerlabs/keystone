@@ -31,7 +31,8 @@ By default, the ``OS-REVOKE`` extension is already enabled:
 
     Note that as of the Juno release the following steps are performed by default.
 
-2. Add the required ``filter`` to the ``pipeline`` in ``keystone-paste.ini``::
+2. Add the required ``filter`` to the ``pipeline`` in ``keystone-paste.ini``.
+   This can work anywhere in the pipeline except as the last entry. For example::
 
     [filter:revoke_extension]
     paste.filter_factory = keystone.contrib.revoke.routers:RevokeExtension.factory
