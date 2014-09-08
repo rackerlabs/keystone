@@ -88,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_9ef75af5",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1366,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-08T00:11:55Z",
+      "side": 1,
+      "message": "Also, this is the same change as https://review.openstack.org/#/c/119345/1/keystone/common/ldap/core.py , so either use that one or we can abandon that one and mark this one as closing the same bug.",
+      "parentUuid": "fa98f980_4330b907",
+      "revId": "b9beec73839e69c909b4f2f9216e6642fb5a3bdb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_a33fa5d5",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 7
