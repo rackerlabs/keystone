@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_e230b2a0",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-08T15:12:48Z",
+      "side": 1,
+      "message": "This code is duplicated in keystone/catalog/core.py: 40\nIs there any standard configuration interface to avoid this?",
+      "revId": "f8df07320e7a654fe68ef733fea4070d67124569",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_62ca0270",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-08T15:12:48Z",
+      "side": 1,
+      "message": "Duplicates keystone/assignment/core.py: 40\nIs it a temporary solution?",
+      "revId": "f8df07320e7a654fe68ef733fea4070d67124569",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
