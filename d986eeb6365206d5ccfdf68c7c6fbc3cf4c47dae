@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_5ef3ef09",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-09T18:20:17Z",
+      "side": 1,
+      "message": "not sure if we should get rid of it from here in the comment, i don\u0027t think it\u0027s necessary to remove it, just pointing it out.",
+      "revId": "d986eeb6365206d5ccfdf68c7c6fbc3cf4c47dae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
