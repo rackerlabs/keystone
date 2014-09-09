@@ -23,6 +23,7 @@ from testtools import matchers
 import webob
 
 from keystone.common import environment
+from keystone.common import utils
 from keystone.common import wsgi
 from keystone import exception
 from keystone.openstack.common import jsonutils
@@ -88,7 +89,7 @@ class ApplicationTest(BaseWSGITest):
 
     def test_render_response(self):
         data = {'attribute': 'value'}
-        body = b'{"attribute": "value"}'
+        body = jsonutils.json.dumps(data, cls=utils.SmarterEncoder)
 
         resp = wsgi.render_response(body=data)
         self.assertEqual(resp.status, '200 OK')
