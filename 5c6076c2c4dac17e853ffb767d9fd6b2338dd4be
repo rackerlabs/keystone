@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_7f58aafa",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-09T22:14:44Z",
+      "side": 1,
+      "message": "Yeah I agree. endpoint_group.id is a foreign key of endpoint_group_project. In general, we do not need notification for stuff that are internal to the extension.",
+      "parentUuid": "fa98f980_7e25565b",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_7f26ea69",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-09T22:14:44Z",
+      "side": 1,
+      "message": "you don\u0027t need a notification for this. Just delete the associations prior to deleting the endpoint group.",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_fe0146b0",
         "filename": "keystone/contrib/endpoint_filter/controllers.py",
         "patchSetId": 5
@@ -30,6 +65,23 @@
       "writtenOn": "2014-09-08T00:40:28Z",
       "side": 1,
       "message": "this magic string should be shared with the same string in core.py.",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_9fe0eefb",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-09T22:14:44Z",
+      "side": 1,
+      "message": "you don\u0027t need a notification for this",
       "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
