@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_9b25690c",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-09T17:58:08Z",
+      "side": 1,
+      "message": "Would it make sense to replace I with Icehouse and J with Juno, since we know the names of the releases?",
+      "revId": "8bd1d844c537d03ebe57148e21c68134ab5c78bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
