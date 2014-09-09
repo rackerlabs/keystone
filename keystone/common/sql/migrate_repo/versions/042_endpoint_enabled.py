@@ -30,7 +30,7 @@ column.
 
 from oslo.utils import strutils
 import sqlalchemy as sql
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.sql.expression import select
 
 from keystone.openstack.common import jsonutils
 
@@ -105,10 +105,7 @@ def upgrade(migrate_engine):
 def _downgrade_endpoint_table_with_copy(meta, migrate_engine):
     # Used with databases that don't support dropping a column (e.g., sqlite).
 
-    maker = sessionmaker(bind=migrate_engine)
-    session = maker()
-
-    session.execute('ALTER TABLE endpoint RENAME TO orig_endpoint;')
+    migrate_engine.execute('ALTER TABLE endpoint RENAME TO orig_endpoint;')
 
     # Need to load the metadata for the service table since it's used as
     # foreign key.
@@ -128,23 +125,14 @@ def _downgrade_endpoint_table_with_copy(meta, migrate_engine):
     endpoint_table.create(migrate_engine, checkfirst=True)
 
     orig_endpoint_table = sql.Table('orig_endpoint', meta, autoload=True)
-    for endpoint in session.query(orig_endpoint_table):
-        new_values = {
-            'id': endpoint.id,
-            'legacy_endpoint_id': endpoint.legacy_endpoint_id,
-            'interface': endpoint.interface,
-            'region': endpoint.region,
-            'service_id': endpoint.service_id,
-            'url': endpoint.url,
-            'extra': endpoint.extra,
-        }
-        session.execute('insert into endpoint (id, legacy_endpoint_id, '
-                        'interface, region, service_id, url, extra) '
-                        'values ( :id, :legacy_endpoint_id, :interface, '
-                        ':region, :service_id, :url, :extra);',
-                        new_values)
-    session.execute('drop table orig_endpoint;')
-    session.close()
+
+    columns_list = ['id', 'legacy_endpoint_id', 'interface',
+                    'region', 'service_id', 'url', 'extra']
+    insert_from_select = endpoint_table.insert().from_select(
+        columns_list,
+        select([getattr(orig_endpoint_table.c, c) for c in columns_list]))
+    migrate_engine.execute(insert_from_select)
+    migrate_engine.execute('DROP TABLE orig_endpoint;')
 
 
 def downgrade(migrate_engine):
