@@ -30,7 +30,6 @@ column.
 
 from oslo.utils import strutils
 import sqlalchemy as sql
-from sqlalchemy.orm import sessionmaker
 
 from keystone.openstack.common import jsonutils
 
@@ -105,10 +104,7 @@ def upgrade(migrate_engine):
 def _downgrade_endpoint_table_with_copy(meta, migrate_engine):
     # Used with databases that don't support dropping a column (e.g., sqlite).
 
-    maker = sessionmaker(bind=migrate_engine)
-    session = maker()
-
-    session.execute('ALTER TABLE endpoint RENAME TO orig_endpoint;')
+    migrate_engine.execute('ALTER TABLE endpoint RENAME TO orig_endpoint;')
 
     # Need to load the metadata for the service table since it's used as
     # foreign key.
@@ -127,24 +123,11 @@ def _downgrade_endpoint_table_with_copy(meta, migrate_engine):
         sql.Column('extra', sql.Text()))
     endpoint_table.create(migrate_engine, checkfirst=True)
 
-    orig_endpoint_table = sql.Table('orig_endpoint', meta, autoload=True)
-    for endpoint in session.query(orig_endpoint_table):
-        new_values = {
-            'id': endpoint.id,
-            'legacy_endpoint_id': endpoint.legacy_endpoint_id,
-            'interface': endpoint.interface,
-            'region': endpoint.region,
-            'service_id': endpoint.service_id,
-            'url': endpoint.url,
-            'extra': endpoint.extra,
-        }
-        session.execute('insert into endpoint (id, legacy_endpoint_id, '
-                        'interface, region, service_id, url, extra) '
-                        'values ( :id, :legacy_endpoint_id, :interface, '
-                        ':region, :service_id, :url, :extra);',
-                        new_values)
-    session.execute('drop table orig_endpoint;')
-    session.close()
+    migrate_engine.execute(
+        'INSERT INTO endpoint (id, legacy_endpoint_id, interface, region, '
+        'service_id, url, extra) SELECT id, legacy_endpoint_id, interface, '
+        'region, service_id, url, extra FROM orig_endpoint;')
+    migrate_engine.execute('DROP TABLE orig_endpoint;')
 
 
 def downgrade(migrate_engine):
