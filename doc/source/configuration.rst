@@ -1108,24 +1108,24 @@ provide additional (often optional) information. For example, the command
 
     # Using token auth env variables
     $ export OS_SERVICE_ENDPOINT=http://127.0.0.1:35357/v2.0/
-    $ export OS_SERVICE_TOKEN=secrete_token
+    $ export OS_SERVICE_TOKEN=secret_token
     $ keystone user-list
     $ keystone tenant-create --name=demo
 
     # Using token auth flags
-    $ keystone --os-token=secrete --os-endpoint=http://127.0.0.1:35357/v2.0/ user-list
-    $ keystone --os-token=secrete --os-endpoint=http://127.0.0.1:35357/v2.0/ tenant-create --name=demo
+    $ keystone --os-token=secret --os-endpoint=http://127.0.0.1:35357/v2.0/ user-list
+    $ keystone --os-token=secret --os-endpoint=http://127.0.0.1:35357/v2.0/ tenant-create --name=demo
 
     # Using user + password + tenant_name env variables
     $ export OS_USERNAME=admin
-    $ export OS_PASSWORD=secrete
+    $ export OS_PASSWORD=secret
     $ export OS_TENANT_NAME=admin
     $ keystone user-list
     $ keystone tenant-create --name=demo
 
     # Using user + password + tenant_name flags
-    $ keystone --os_username=admin --os_password=secrete --os_tenant_name=admin user-list
-    $ keystone --os_username=admin --os_password=secrete --os_tenant_name=admin tenant-create --name=demo
+    $ keystone --os_username=admin --os_password=secret --os_tenant_name=admin user-list
+    $ keystone --os_username=admin --os_password=secret --os_tenant_name=admin tenant-create --name=demo
 
 Tenants
 -------
@@ -1180,7 +1180,7 @@ example::
 
     $ keystone user-create
     --name=admin \
-    --pass=secrete \
+    --pass=secret \
     --tenant_id=2395953419144b67955ac4bab96b8fd2 \
     --email=admin@example.com
 

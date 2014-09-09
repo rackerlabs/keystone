@@ -42,7 +42,7 @@
 # environment variables. A common default password for all the services can be used by
 # setting the "SERVICE_PASSWORD" environment variable.
 
-ADMIN_PASSWORD=${ADMIN_PASSWORD:-secrete}
+ADMIN_PASSWORD=${ADMIN_PASSWORD:-secret}
 NOVA_PASSWORD=${NOVA_PASSWORD:-${SERVICE_PASSWORD:-nova}}
 GLANCE_PASSWORD=${GLANCE_PASSWORD:-${SERVICE_PASSWORD:-glance}}
 EC2_PASSWORD=${EC2_PASSWORD:-${SERVICE_PASSWORD:-ec2}}
