@@ -16,6 +16,24 @@
       "revId": "e329b773b4e407f22c846b026f7da14066b18656",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_030a07d2",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-09-09T01:31:46Z",
+      "side": 1,
+      "message": "what about the installation without virtualenv? and what do you mean by \"anti-pattern\"? thanks",
+      "parentUuid": "fa98f980_cb0bc67b",
+      "revId": "e329b773b4e407f22c846b026f7da14066b18656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
