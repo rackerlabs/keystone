@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_71a2c09b",
+        "filename": "doc/source/extensions/endpoint_filter.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-09T00:46:38Z",
+      "side": 1,
+      "message": "it doesn\u0027t work anywhere. It\u0027ll have to be after url_normalize, build_auth_context, etc.",
+      "revId": "64d6cc37103ac75eaab76a5261feb8fcea826eb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_919f2450",
+        "filename": "doc/source/extensions/endpoint_policy.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-09T00:46:38Z",
+      "side": 1,
+      "message": "same comment applies to all of these.",
+      "revId": "64d6cc37103ac75eaab76a5261feb8fcea826eb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
