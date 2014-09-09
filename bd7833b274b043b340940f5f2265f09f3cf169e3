@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_f1a070a7",
+        "filename": "doc/source/extensions/revoke.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-09T00:44:23Z",
+      "side": 1,
+      "message": "Are you sure about this? The default backend is kvs, so why would the migrations be done already?",
+      "revId": "bd7833b274b043b340940f5f2265f09f3cf169e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_315838fa",
+        "filename": "doc/source/extensions/revoke.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-09T00:44:23Z",
+      "side": 1,
+      "message": "change \"steps\" to \"step\"",
+      "revId": "bd7833b274b043b340940f5f2265f09f3cf169e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b19ee861",
+        "filename": "doc/source/extensions/revoke.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-09T00:44:23Z",
+      "side": 1,
+      "message": "Since the default is kvs, I\u0027d think that this is pretty much necessary.\n\nAlso, why is the default kvs?",
+      "revId": "bd7833b274b043b340940f5f2265f09f3cf169e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
