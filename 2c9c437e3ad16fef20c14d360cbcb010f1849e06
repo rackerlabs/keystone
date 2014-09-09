@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_83d99785",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 9
+      },
+      "lineNbr": 894,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-09T04:52:29Z",
+      "side": 1,
+      "message": "we\u0027ll need to change the default at some point",
+      "parentUuid": "fa98f980_f6622615",
+      "revId": "2c9c437e3ad16fef20c14d360cbcb010f1849e06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_96739ae6",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 9
@@ -64,6 +82,24 @@
       "writtenOn": "2014-09-09T00:35:14Z",
       "side": 1,
       "message": "change the name since a multivalued attr can be used as id.",
+      "revId": "2c9c437e3ad16fef20c14d360cbcb010f1849e06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_dc2aa0e6",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1694,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-09T04:52:29Z",
+      "side": 1,
+      "message": "done",
+      "parentUuid": "fa98f980_913644e6",
       "revId": "2c9c437e3ad16fef20c14d360cbcb010f1849e06",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
