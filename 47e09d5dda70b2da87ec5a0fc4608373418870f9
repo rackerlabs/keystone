@@ -69,6 +69,24 @@
       "revId": "47e09d5dda70b2da87ec5a0fc4608373418870f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_a51bed7e",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1272,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-09T15:15:20Z",
+      "side": 1,
+      "message": "Sorry, my fault: didn\u0027t know about this magic",
+      "parentUuid": "fa98f980_9009d42e",
+      "revId": "47e09d5dda70b2da87ec5a0fc4608373418870f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
