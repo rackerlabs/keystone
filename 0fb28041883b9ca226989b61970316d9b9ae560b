@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_0d2bf7eb",
+        "filename": "bin/keystone-all",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-09T21:51:19Z",
+      "side": 1,
+      "message": "name is not keyword arg",
+      "revId": "0fb28041883b9ca226989b61970316d9b9ae560b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_ed4313ad",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-09T21:51:19Z",
+      "side": 1,
+      "message": "name is not keyword arg?",
+      "revId": "0fb28041883b9ca226989b61970316d9b9ae560b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_ad202bf9",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-09T21:51:19Z",
+      "side": 1,
+      "message": "why called latest_app? can this be more than one app?",
+      "revId": "0fb28041883b9ca226989b61970316d9b9ae560b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_2d7c3beb",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-09T21:51:19Z",
+      "side": 1,
+      "message": "clever",
+      "revId": "0fb28041883b9ca226989b61970316d9b9ae560b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_ad674b50",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-09T21:51:19Z",
+      "side": 1,
+      "message": "so for JSON home this is 200, as oppose to 300 for version discovery?",
+      "revId": "0fb28041883b9ca226989b61970316d9b9ae560b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_cd4d6fc6",
+        "filename": "keystone/service.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-09-09T21:51:19Z",
+      "side": 1,
+      "message": "what happen if latest_app is already set?",
+      "revId": "0fb28041883b9ca226989b61970316d9b9ae560b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
