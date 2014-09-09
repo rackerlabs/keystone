@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_23354b46",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-09-09T01:56:49Z",
+      "side": 1,
+      "message": "The following commmand is for virtualenv or for installation without virtualenv, a little confused here.",
+      "revId": "e329b773b4e407f22c846b026f7da14066b18656",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_cb0bc67b",
         "filename": "doc/source/setup.rst",
         "patchSetId": 4
