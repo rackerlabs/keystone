@@ -23,6 +23,7 @@ from testtools import matchers
 import webob
 
 from keystone.common import environment
+from keystone.common import utils
 from keystone.common import wsgi
 from keystone import exception
 from keystone.openstack.common import jsonutils
