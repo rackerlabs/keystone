@@ -16,6 +16,24 @@
       "revId": "074e0b349224a0bc1ffa6f8ba9c42f7f78e485f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_122cf649",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-09-09T20:48:50Z",
+      "side": 1,
+      "message": "If we return empty list instead of None (by removing lines 444-445), we should change line 498 to be\n\n    if assignment_types !\u003d []:",
+      "parentUuid": "fa98f980_b2a96adf",
+      "revId": "074e0b349224a0bc1ffa6f8ba9c42f7f78e485f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
