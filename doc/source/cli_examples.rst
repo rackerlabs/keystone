@@ -79,7 +79,7 @@ example:
 
     $ keystone user-create
     --name=admin \
-    --pass=secrete \
+    --pass=secretsecret \
     --tenant_id=2395953419144b67955ac4bab96b8fd2 \
     --email=admin@example.com
 
