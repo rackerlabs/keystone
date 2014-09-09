@@ -144,7 +144,9 @@ class TokenAPITests(object):
         self.assertIn('expires_at', token_data['token'])
 
         expected_token_id = self.sign_token(resp)
-        self.assertEqual(expected_token_id, token_id)
+        # PKI(Z) token providers convert token_id to str
+        # so do I to expected_token_id
+        self.assertEqual(str(expected_token_id), token_id)
         # should be able to validate hash PKI token as well
         hash_token_id = cms.cms_hash_token(token_id)
         headers = {'X-Subject-Token': hash_token_id}
