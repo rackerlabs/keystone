@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_f6622615",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 9
+      },
+      "lineNbr": 894,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-09T00:35:14Z",
+      "side": 1,
+      "message": "the irony here is that cn is typically multivalued.",
+      "revId": "2c9c437e3ad16fef20c14d360cbcb010f1849e06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_96739ae6",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1298,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-09T00:35:14Z",
+      "side": 1,
+      "message": "use _LW",
+      "revId": "2c9c437e3ad16fef20c14d360cbcb010f1849e06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_161dea73",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1306,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-09T00:35:14Z",
+      "side": 1,
+      "message": "(suggestion) since both legs doing self.model, move that out of the branching code --\n\n if len(id_attrs) \u003e 1:\n   ...\n   id_ \u003d self._dn_to_id(res[0])\n else:\n   id_ \u003d id_attrs[0]\n\n obj \u003d self.model(id\u003did_)",
+      "revId": "2c9c437e3ad16fef20c14d360cbcb010f1849e06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_913644e6",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1694,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-09T00:35:14Z",
+      "side": 1,
+      "message": "change the name since a multivalued attr can be used as id.",
+      "revId": "2c9c437e3ad16fef20c14d360cbcb010f1849e06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
