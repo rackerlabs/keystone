@@ -15,6 +15,8 @@
 import os
 import uuid
 
+from testtools import matchers
+
 from keystone import tests
 from keystone.tests import default_fixtures
 from keystone.tests.ksfixtures import database
@@ -118,3 +120,86 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
 
     def test_service_filtering(self):
         self.skipTest("kvs backend doesn't support filtering")
+
+    def test_delete_endpoint(self):
+        self.skipTest('Templated backend does not support endpoint deletion')
+
+    def test_delete_endpoint_404(self):
+        self.skipTest('Templated backend does not support endpoint deletion')
+
+    def test_endpoint_create(self):
+        self.skipTest('Templated backend does not support endpoint creation')
+
+    def test_create_endpoint(self):
+        self.skipTest('Templated backend does not support endpoint creation')
+
+    def test_create_endpoint_404(self):
+        self.skipTest('Templated backend does not support endpoint creation')
+
+    def test_endpoint_create_with_null_adminurl(self):
+        self.skipTest('Templated backend does not support endpoint creation')
+
+    def test_endpoint_create_with_empty_internalurl(self):
+        self.skipTest('Templated backend does not support endpoint creation')
+
+    def test_endpoint_create_with_empty_publicurl(self):
+        self.skipTest('Templated backend does not support endpoint creation')
+
+    def test_endpoint_create_with_empty_service_id(self):
+        self.skipTest('Templated backend does not support endpoint creation')
+
+    def test_delete_service(self):
+        self.skipTest('Templated backend does not support service deletion')
+
+    def test_service_delete_404(self):
+        self.skipTest('Templated backend does not support service deletion')
+
+    def test_delete_service_404(self):
+        self.skipTest('Templated backend does not support service deletion')
+
+    def test_delete_service_with_endpoint(self):
+        self.skipTest('Templated backend does not support service deletion')
+
+    def test_cache_layer_delete_service_with_endpoint(self):
+        self.skipTest('Templated backend does not support service deletion')
+
+    def test_cache_layer_region_crud(self):
+        self.skipTest('Templated backend does not support region CRUD')
+
+    def test_cache_layer_service_crud(self):
+        self.skipTest('Templated backend does not support service CRUD')
+
+    def test_service_crud(self):
+        # create
+        # Templated backend does not support service creation
+
+        # list
+        services = self.catalog_api.list_services()
+        service_id = '1'
+        self.assertIn(service_id, [x['id'] for x in services])
+
+        # delete
+        # Templated backend does not support service deletion
+
+    def test_create_region_invalid_parent_region_404(self):
+        self.skipTest('Templated backend does not support region creation')
+
+    def test_create_region_with_duplicate_id(self):
+        self.skipTest('Templated backend does not support region creation')
+
+    def test_region_crud(self):
+        # create
+        # Templated backend does not support region creation
+
+        # list
+        region_id = 'RegionOne'
+        regions = self.catalog_api.list_regions()
+        self.assertThat(regions, matchers.HasLength(1))
+        region_ids = [x['id'] for x in regions]
+        self.assertIn(region_id, region_ids)
+
+        # delete
+        # Templated backend does not support region deletion
+
+    def test_delete_region_404(self):
+        self.skipTest('Templated backend does not support region deletion')
