@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_e5d415bf",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-09T15:08:39Z",
+      "side": 1,
+      "message": "this code wasn\u0027t added or changed as part of this review so it\u0027s unrelated. If this needs to be changed then propose a separate change for it.",
+      "parentUuid": "fa98f980_4d9515e3",
+      "revId": "47e09d5dda70b2da87ec5a0fc4608373418870f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_9009d42e",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-09T09:47:14Z",
       "side": 1,
       "message": "Strange identifier for the attribute: \u00271.1\u0027\nAre you restricting result set to \u00271.1\u0027 key? Is this key exist or you simply want guaranteed empty result?",
+      "revId": "47e09d5dda70b2da87ec5a0fc4608373418870f9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_45e5e1a6",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1272,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-09T15:08:39Z",
+      "side": 1,
+      "message": "this code wasn\u0027t added or changed as part of this review so it\u0027s unrelated. If this needs to be changed then propose a separate change for it.",
+      "parentUuid": "fa98f980_9009d42e",
       "revId": "47e09d5dda70b2da87ec5a0fc4608373418870f9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
