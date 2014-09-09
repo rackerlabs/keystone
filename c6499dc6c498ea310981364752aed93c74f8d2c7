@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_e35fc373",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-09-09T02:03:29Z",
+      "side": 1,
+      "message": "This seems like an unrelated change that doesn\u0027t belong here.",
+      "revId": "c6499dc6c498ea310981364752aed93c74f8d2c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_0365a744",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-09-09T02:03:29Z",
+      "side": 1,
+      "message": "Same as previous comment...",
+      "revId": "c6499dc6c498ea310981364752aed93c74f8d2c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
