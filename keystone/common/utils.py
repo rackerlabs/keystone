@@ -80,6 +80,9 @@ def read_cached_file(filename, cache_info, reload_func=None):
 
 class SmarterEncoder(jsonutils.json.JSONEncoder):
     """Help for JSON encoding dict-like objects."""
+    item_separator = ','
+    key_separator = ':'
+
     def default(self, obj):
         if not isinstance(obj, dict) and hasattr(obj, 'iteritems'):
             return dict(obj.iteritems())
