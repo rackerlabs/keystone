@@ -17,6 +17,7 @@ import uuid
 import six
 
 from keystone import catalog
+from keystone import exception
 from keystone import tests
 from keystone.tests.ksfixtures import database
 from keystone.tests import rest
@@ -32,9 +33,13 @@ class V2CatalogTestCase(rest.RestfulTestCase):
         self.service_id = uuid.uuid4().hex
         self.service = self.new_service_ref()
         self.service['id'] = self.service_id
-        self.catalog_api.create_service(
-            self.service_id,
-            self.service.copy())
+        try:
+            self.catalog_api.create_service(
+                self.service_id,
+                self.service.copy())
+        except exception.NotImplemented:
+            self.skipTest('Templated backend does not support endpoint '
+                          'creation')
 
         # TODO(termie): add an admin user to the fixtures and use that user
         # override the fixtures, for now
