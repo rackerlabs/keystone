@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_c679bbfd",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-10T13:47:09Z",
+      "side": 1,
+      "message": "Is there any reason why subclasses of this don\u0027t call the parent\u0027s __init__?",
+      "revId": "5772e8b2676ae9a1cdb57bcd4b78e5259a53b91d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_a644b7b7",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-10T13:47:09Z",
+      "side": 1,
+      "message": "Missing a newline",
+      "revId": "5772e8b2676ae9a1cdb57bcd4b78e5259a53b91d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_c6c7fb10",
+        "filename": "keystone/tests/test_expr.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-10T13:47:09Z",
+      "side": 1,
+      "message": "Missing the license and the imports are all out of order.\n\nhttp://docs.openstack.org/developer/hacking/#imports",
+      "revId": "5772e8b2676ae9a1cdb57bcd4b78e5259a53b91d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_46022b3f",
+        "filename": "keystone/tests/test_expr.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-10T13:47:09Z",
+      "side": 1,
+      "message": "Only import modules.",
+      "revId": "5772e8b2676ae9a1cdb57bcd4b78e5259a53b91d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
