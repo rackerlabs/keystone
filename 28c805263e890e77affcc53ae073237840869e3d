@@ -16,6 +16,24 @@
       "revId": "28c805263e890e77affcc53ae073237840869e3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_9abf03aa",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1543,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-09-10T16:50:46Z",
+      "side": 1,
+      "message": "Ok.  What should I do?\n1) Wait for 120478 to merge?\n2) Code my patch in such a way that if DN_ONLY is available, use it, otherwise, use [\u00271.1\u0027]?\n3) Change my code to use DN_ONLY, and specify that my commit has a dependency on 120478, and resubmit the patch for review?",
+      "parentUuid": "fa98f980_9a8b8367",
+      "revId": "28c805263e890e77affcc53ae073237840869e3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
