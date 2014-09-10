@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_7daa591a",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-09-10T17:34:40Z",
+      "side": 1,
+      "message": "Are we planning to add this check in code?  Throw error in case this header is set.",
+      "revId": "05c01e26d1e62298489ba3894576faf3c352e2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
