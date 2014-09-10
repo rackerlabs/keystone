@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_9a8b8367",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1543,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-10T16:42:03Z",
+      "side": 1,
+      "message": "just proposed https://review.openstack.org/#/c/120478/ to introduce a DN_ONLY constant so that you don\u0027t have to provide a verbose explanation, every time [1.1] is used.",
+      "revId": "28c805263e890e77affcc53ae073237840869e3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
