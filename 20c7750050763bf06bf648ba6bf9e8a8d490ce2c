@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_fd82c9fe",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-10T17:39:50Z",
+      "side": 1,
+      "message": "MultiStrOpt doesn\u0027t quite work. For example, pylibmc backend expects nested dict with some integer tunables, or even \u0027url\u0027 value is expected to be a list of host:port pairs. You can\u0027t get this with backend_argument. It can only provide raw string values. So since dogpile.cache backends expect arbitrary dicts, JSON value seems like a right fit. We can limit it to only dicts, for example, but we should support any values in them.",
+      "parentUuid": "fa98f980_979fdf5e",
+      "revId": "20c7750050763bf06bf648ba6bf9e8a8d490ce2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_b7ece3f4",
         "filename": "keystone/common/config.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-10T15:05:14Z",
       "side": 1,
       "message": "This is a *global* that will affect all KVS backends. This is not how the keystone kvs backends were meant to be used. Each of the kvs backends needs it\u0027s *own* set of backend arguments, not one that is passed globally.",
+      "revId": "20c7750050763bf06bf648ba6bf9e8a8d490ce2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_fde8097e",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 802,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-10T17:39:50Z",
+      "side": 1,
+      "message": "Good point, will look into spreading such option across other sections. Or should we just have different options for different backends here?",
+      "parentUuid": "fa98f980_b7ece3f4",
       "revId": "20c7750050763bf06bf648ba6bf9e8a8d490ce2c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
