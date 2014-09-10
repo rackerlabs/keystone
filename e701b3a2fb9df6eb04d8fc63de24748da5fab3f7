@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_771d1866",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 621,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-10T16:11:38Z",
+      "side": 1,
+      "message": ":) works for me",
+      "revId": "e701b3a2fb9df6eb04d8fc63de24748da5fab3f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_972fdc87",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-10T16:11:38Z",
+      "side": 1,
+      "message": "i\u0027d prefer all these were handled via notifications (eventually)",
+      "revId": "e701b3a2fb9df6eb04d8fc63de24748da5fab3f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
