@@ -28,7 +28,7 @@ from keystone.common import driver_hints
 from keystone.common import manager
 from keystone import config
 from keystone import exception
-from keystone.i18n import _
+from keystone.i18n import _, _LE
 from keystone.identity.mapping_backends import mapping
 from keystone import notifications
 from keystone.openstack.common import importutils
@@ -94,6 +94,27 @@ class DomainConfigs(dict):
         domain_config['driver'].assignment_api = assignment_api
 
     def _load_config(self, assignment_api, file_list, domain_name):
+
+        def multiple_sql_drivers(new_config):
+            """Return True if there is more than one sql driver.
+
+            Check to see if the addition of the driver in this new config
+            would cause there to now be more than one sql driver.
+
+            """
+            def is_sql_driver(driver):
+                return 'backends.sql' in driver
+
+            if is_sql_driver(new_config.identity.driver):
+                # Is there another sql driver in the specific configs?
+                for domain in self:
+                    if is_sql_driver(self[domain]['cfg'].identity.driver):
+                        return True
+                # Is the standard driver sql?
+                if is_sql_driver(CONF.identity.driver):
+                    return True
+            return False
+
         try:
             domain_ref = assignment_api.get_domain_by_name(domain_name)
         except exception.DomainNotFound:
@@ -108,11 +129,22 @@ class DomainConfigs(dict):
         # service calls via this Manager, we'll index via this domain
         # config dict to make sure we call the right driver
         domain = domain_ref['id']
-        self[domain] = {}
-        self[domain]['cfg'] = cfg.ConfigOpts()
-        config.configure(conf=self[domain]['cfg'])
-        self[domain]['cfg'](args=[], project='keystone',
-                            default_config_files=file_list)
+        domain_config = {}
+        domain_config['cfg'] = cfg.ConfigOpts()
+        config.configure(conf=domain_config['cfg'])
+        domain_config['cfg'](args=[], project='keystone',
+                             default_config_files=file_list)
+        if multiple_sql_drivers(domain_config['cfg']):
+            # The addition of this driver would cause us to have more than one
+            # sql driver, so ignore it and log a warning.
+
+            LOG.error(_LE('Found more than one SQL driver had been '
+                          'configured, while loading sql config for '
+                          'domain: %s'),
+                      domain_name)
+            raise exception.MultipleSQLDriversInConfig()
+
+        self[domain] = domain_config
         self._load_driver(assignment_api, domain)
 
     def setup_domain_drivers(self, standard_driver, assignment_api):

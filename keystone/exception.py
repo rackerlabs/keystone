@@ -398,6 +398,11 @@ class ConfigFileNotFound(UnexpectedError):
                              "could not be found.")
 
 
+class MultipleSQLDriversInConfig(UnexpectedError):
+    debug_message_format = _("The Keystone configuration files define "
+                             "multiple sql drivers - only one is permitted.")
+
+
 class MigrationNotProvided(Exception):
     def __init__(self, mod_name, path):
         super(MigrationNotProvided, self).__init__(_(
