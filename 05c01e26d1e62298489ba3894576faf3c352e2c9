@@ -16,6 +16,24 @@
       "revId": "05c01e26d1e62298489ba3894576faf3c352e2c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_a382de4f",
+        "filename": "doc/source/http-api.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-10T18:16:27Z",
+      "side": 1,
+      "message": "no, the point of the warning is that the issue is outside the scope of keystone",
+      "parentUuid": "fa98f980_7daa591a",
+      "revId": "05c01e26d1e62298489ba3894576faf3c352e2c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
