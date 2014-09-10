@@ -16,6 +16,24 @@
       "revId": "8bd1d844c537d03ebe57148e21c68134ab5c78bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_8f609836",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-10T22:01:45Z",
+      "side": 1,
+      "message": "Lance - I agree that would be better, but this is coming from oslo.config so we\u0027d have to fix it there.",
+      "parentUuid": "fa98f980_9b25690c",
+      "revId": "8bd1d844c537d03ebe57148e21c68134ab5c78bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
