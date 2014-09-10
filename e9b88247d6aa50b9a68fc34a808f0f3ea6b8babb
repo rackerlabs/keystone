@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_21a0b142",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-10T14:19:12Z",
+      "side": 1,
+      "message": "the test directly conflicts with this - how can you test this without reaching into it\u0027s implementation details?",
+      "revId": "e9b88247d6aa50b9a68fc34a808f0f3ea6b8babb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_9c127455",
         "filename": "keystone/common/dependency.py",
         "patchSetId": 4
@@ -13,6 +30,23 @@
       "writtenOn": "2014-09-03T15:30:00Z",
       "side": 1,
       "message": "This is where the attribute is set to None.\n\nGiven the change above, this should be removed.",
+      "revId": "e9b88247d6aa50b9a68fc34a808f0f3ea6b8babb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_41ba156f",
+        "filename": "keystone/tests/test_injection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-10T14:19:12Z",
+      "side": 1,
+      "message": "from the function\u0027s docstr: \"the optional argument is used internally, and should be treated as an implementation detail\"",
       "revId": "e9b88247d6aa50b9a68fc34a808f0f3ea6b8babb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
