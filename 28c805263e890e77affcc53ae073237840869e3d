@@ -34,6 +34,24 @@
       "revId": "28c805263e890e77affcc53ae073237840869e3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_bd5e81e7",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1543,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-10T17:17:38Z",
+      "side": 1,
+      "message": "You could rebase this patch on top of dolph\u0027s patch:\n\n  * Checkout that patch dolph made\n  * cherry-pick this patch on top\n  * submit to gerrit \n\nThose steps will make your patch depend on his and pass tests.",
+      "parentUuid": "fa98f980_9abf03aa",
+      "revId": "28c805263e890e77affcc53ae073237840869e3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
