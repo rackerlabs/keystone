@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_6f461451",
+        "filename": "bin/keystone-all",
+        "patchSetId": 5
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-10T21:52:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_0d2bf7eb",
+      "revId": "0fb28041883b9ca226989b61970316d9b9ae560b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_ed4313ad",
         "filename": "httpd/keystone.py",
         "patchSetId": 5
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_2f632cde",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-10T21:52:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_ed4313ad",
+      "revId": "0fb28041883b9ca226989b61970316d9b9ae560b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_ad202bf9",
         "filename": "keystone/controllers.py",
         "patchSetId": 5
@@ -65,6 +101,24 @@
       "writtenOn": "2014-09-09T21:51:19Z",
       "side": 1,
       "message": "why called latest_app? can this be more than one app?",
+      "revId": "0fb28041883b9ca226989b61970316d9b9ae560b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_0f4bc82b",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-10T21:52:28Z",
+      "side": 1,
+      "message": "Done. Added some more docs.",
+      "parentUuid": "fa98f980_ad202bf9",
       "revId": "0fb28041883b9ca226989b61970316d9b9ae560b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -134,6 +188,24 @@
       "writtenOn": "2014-09-09T21:51:19Z",
       "side": 1,
       "message": "what happen if latest_app is already set?",
+      "revId": "0fb28041883b9ca226989b61970316d9b9ae560b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_2f9ecc54",
+        "filename": "keystone/service.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-10T21:52:28Z",
+      "side": 1,
+      "message": "Added more docs in controllers.",
+      "parentUuid": "fa98f980_cd4d6fc6",
       "revId": "0fb28041883b9ca226989b61970316d9b9ae560b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
