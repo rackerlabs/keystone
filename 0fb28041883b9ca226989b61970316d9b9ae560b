@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_e398711d",
+        "filename": "httpd/keystone.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-10T13:41:12Z",
+      "side": 1,
+      "message": "out of scope for this patch though",
+      "parentUuid": "fa98f980_ed4313ad",
+      "revId": "0fb28041883b9ca226989b61970316d9b9ae560b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_ad202bf9",
         "filename": "keystone/controllers.py",
         "patchSetId": 5
@@ -81,6 +99,24 @@
       "writtenOn": "2014-09-09T21:51:19Z",
       "side": 1,
       "message": "so for JSON home this is 200, as oppose to 300 for version discovery?",
+      "revId": "0fb28041883b9ca226989b61970316d9b9ae560b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_661baf1c",
+        "filename": "keystone/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-10T13:41:12Z",
+      "side": 1,
+      "message": "yep! per the json home spec",
+      "parentUuid": "fa98f980_ad674b50",
       "revId": "0fb28041883b9ca226989b61970316d9b9ae560b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
