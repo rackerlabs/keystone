@@ -52,6 +52,24 @@
       "revId": "28c805263e890e77affcc53ae073237840869e3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e844c575",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1543,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-10T18:11:33Z",
+      "side": 1,
+      "message": "submit to gerrit using:\n\n  git-review --no-rebase\n\nto avoid rebasing the patch that is gating!",
+      "parentUuid": "fa98f980_bd5e81e7",
+      "revId": "28c805263e890e77affcc53ae073237840869e3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
