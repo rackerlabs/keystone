@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_979fdf5e",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-10T15:05:14Z",
+      "side": 1,
+      "message": "I do not want to support arbitrary JSON strings in our config file. Ideally we should look at why the multistr opt on the next line is insufficient and correct that, but a raw \"load json string\" seems like a very very bad idea.",
+      "revId": "20c7750050763bf06bf648ba6bf9e8a8d490ce2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b7ece3f4",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 802,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-10T15:05:14Z",
+      "side": 1,
+      "message": "This is a *global* that will affect all KVS backends. This is not how the keystone kvs backends were meant to be used. Each of the kvs backends needs it\u0027s *own* set of backend arguments, not one that is passed globally.",
+      "revId": "20c7750050763bf06bf648ba6bf9e8a8d490ce2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f78bcb1b",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-10T15:05:14Z",
+      "side": 1,
+      "message": "See comment in config.py",
+      "revId": "20c7750050763bf06bf648ba6bf9e8a8d490ce2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
