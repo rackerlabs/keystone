@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_bf2e558a",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-11T15:31:22Z",
+      "side": 1,
+      "message": "oslo.config generates the text and put that there. Not sure why it works that way.",
+      "parentUuid": "fa98f980_455ccc4b",
+      "revId": "8bd1d844c537d03ebe57148e21c68134ab5c78bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_c537dcfd",
         "filename": "doc/source/man/keystone-manage.rst",
         "patchSetId": 1
