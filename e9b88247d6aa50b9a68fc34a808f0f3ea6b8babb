@@ -68,6 +68,24 @@
       "revId": "e9b88247d6aa50b9a68fc34a808f0f3ea6b8babb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_21323f5f",
+        "filename": "keystone/tests/test_injection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-11T19:59:47Z",
+      "side": 1,
+      "message": "http://git.openstack.org/cgit/openstack/keystone/tree/bin/keystone-all#n151\n\nhttp://git.openstack.org/cgit/openstack/keystone/tree/httpd/keystone.py#n61\n\nhttp://git.openstack.org/cgit/openstack/keystone/tree/keystone/tests/core.py#n509",
+      "parentUuid": "fa98f980_4197433a",
+      "revId": "e9b88247d6aa50b9a68fc34a808f0f3ea6b8babb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
