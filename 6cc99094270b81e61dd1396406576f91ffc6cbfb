@@ -69,6 +69,24 @@
       "revId": "6cc99094270b81e61dd1396406576f91ffc6cbfb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_a4c5685d",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 974,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-11T15:14:29Z",
+      "side": 1,
+      "message": "It\u0027s going to be tough to leverage the identity api to delete the user but not delete the role assignment at the same time. The identity api cleans up the assignments for the user in the sql driver, after the identity driver has deleted the user \n\nhttps://github.com/openstack/keystone/blob/12655bf17276ace37ea27e8b981a1a53d1572781/keystone/identity/backends/sql.py#L246",
+      "parentUuid": "fa98f980_d38a3863",
+      "revId": "6cc99094270b81e61dd1396406576f91ffc6cbfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
