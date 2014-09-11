@@ -105,6 +105,24 @@
       "revId": "6cc99094270b81e61dd1396406576f91ffc6cbfb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_5f42c93e",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 974,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-11T15:32:00Z",
+      "side": 1,
+      "message": "I\u0027ll rebase on that and get another revision pushed up, thanks Brant.",
+      "parentUuid": "fa98f980_848784b4",
+      "revId": "6cc99094270b81e61dd1396406576f91ffc6cbfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
