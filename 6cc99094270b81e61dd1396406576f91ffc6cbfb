@@ -87,6 +87,24 @@
       "revId": "6cc99094270b81e61dd1396406576f91ffc6cbfb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_848784b4",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 974,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-11T15:26:16Z",
+      "side": 1,
+      "message": "That problem is fixed in https://review.openstack.org/#/c/119629/6 Rebase on that and then self.identity_api.driver.delete_user(). Although this case really only applies to the LDAP backend so maybe this should be in test_backend_ldap.",
+      "parentUuid": "fa98f980_a4c5685d",
+      "revId": "6cc99094270b81e61dd1396406576f91ffc6cbfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
