@@ -50,6 +50,24 @@
       "revId": "e9b88247d6aa50b9a68fc34a808f0f3ea6b8babb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_4197433a",
+        "filename": "keystone/tests/test_injection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 11434
+      },
+      "writtenOn": "2014-09-11T19:57:20Z",
+      "side": 1,
+      "message": "Where in the code is resolve_future_dependencies called without an argument in the keystone code?  I only see this in test_injection",
+      "parentUuid": "fa98f980_41ba156f",
+      "revId": "e9b88247d6aa50b9a68fc34a808f0f3ea6b8babb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
