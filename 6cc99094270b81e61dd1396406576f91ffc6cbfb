@@ -51,6 +51,24 @@
       "revId": "6cc99094270b81e61dd1396406576f91ffc6cbfb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_d38a3863",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 974,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-11T13:43:38Z",
+      "side": 1,
+      "message": "That\u0027s what I started working on after I found the decorator that calls into the identity backend. It does appear that identity API is cleaning up all assignments when removing the user, which isn\u0027t the case we want here I don\u0027t think. \n\nI was trying to think of ways that we could remove the user from the backend without removing the assignments. Not sure what the best way to do this would be. The _load_sample_data() method from test_v3.py calls directly into the identity_api but I\u0027m not sure that will help here. \n\nhttps://github.com/openstack/keystone/blob/8566b7001d5aaf3eb40315c065fd701e34658f4a/keystone/tests/test_v3.py#L193",
+      "parentUuid": "fa98f980_e50f8037",
+      "revId": "6cc99094270b81e61dd1396406576f91ffc6cbfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
