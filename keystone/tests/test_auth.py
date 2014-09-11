@@ -73,9 +73,6 @@ class AuthTest(tests.TestCase):
         self.load_backends()
         self.load_fixtures(default_fixtures)
 
-        # need to register the token provider first because auth controller
-        # depends on it
-        token.provider.Manager()
         self.context_with_remote_user = {'environment':
                                          {'REMOTE_USER': 'FOO',
                                           'AUTH_TYPE': 'Negotiate'}}
