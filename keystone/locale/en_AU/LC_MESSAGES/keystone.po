@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2014-09-07 06:05+0000\n"
+"POT-Creation-Date: 2014-09-11 06:08+0000\n"
 "PO-Revision-Date: 2014-04-19 01:30+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: English (Australia) "
@@ -435,29 +435,33 @@ msgstr "Domain is disabled: %s"
 msgid "Project is disabled: %s"
 msgstr "Project is disabled: %s"
 
-#: keystone/assignment/core.py:382
+#: keystone/assignment/core.py:325
+msgid "Multiple domains are not supported"
+msgstr ""
+
+#: keystone/assignment/core.py:385
 msgid "delete the default domain"
 msgstr ""
 
-#: keystone/assignment/core.py:393
+#: keystone/assignment/core.py:396
 msgid "cannot delete a domain that is enabled, please disable it first."
 msgstr ""
 
-#: keystone/assignment/core.py:615
+#: keystone/assignment/core.py:618
 #, python-format
 msgid "Project (%s)"
 msgstr "Project (%s)"
 
-#: keystone/assignment/core.py:617
+#: keystone/assignment/core.py:620
 #, python-format
 msgid "Domain (%s)"
 msgstr "Domain (%s)"
 
-#: keystone/assignment/core.py:619
+#: keystone/assignment/core.py:622
 msgid "Unknown Target"
 msgstr "Unknown Target"
 
-#: keystone/assignment/core.py:1105 keystone/common/controller.py:286
+#: keystone/assignment/core.py:1108 keystone/common/controller.py:286
 #: keystone/identity/core.py:310
 #, python-format
 msgid "Expected dict or list: %s"
@@ -476,13 +480,13 @@ msgstr ""
 
 #: keystone/assignment/backends/ldap.py:215
 #: keystone/assignment/backends/ldap.py:259 keystone/catalog/core.py:96
-#: keystone/common/ldap/core.py:1340 keystone/identity/backends/kvs.py:120
+#: keystone/common/ldap/core.py:1347 keystone/identity/backends/kvs.py:120
 #: keystone/identity/backends/kvs.py:225
 #, python-format
 msgid "Duplicate ID, %s."
 msgstr "Duplicate ID, %s."
 
-#: keystone/assignment/backends/ldap.py:223 keystone/common/ldap/core.py:1330
+#: keystone/assignment/backends/ldap.py:223 keystone/common/ldap/core.py:1337
 #: keystone/identity/backends/kvs.py:128 keystone/identity/backends/kvs.py:155
 #: keystone/identity/backends/kvs.py:232 keystone/identity/backends/kvs.py:260
 #, python-format
@@ -510,7 +514,7 @@ msgstr ""
 msgid "Role %s not found"
 msgstr "Role %s not found"
 
-#: keystone/assignment/backends/ldap.py:646
+#: keystone/assignment/backends/ldap.py:648
 #, python-format
 msgid "Cannot duplicate name %s"
 msgstr ""
@@ -897,66 +901,66 @@ msgstr ""
 msgid "`key_mangler` functions must be callable."
 msgstr ""
 
-#: keystone/common/ldap/core.py:177
+#: keystone/common/ldap/core.py:182
 #, python-format
 msgid "Invalid LDAP deref option: %(option)s. Choose one of: %(options)s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:187
+#: keystone/common/ldap/core.py:192
 #, python-format
 msgid "Invalid LDAP TLS certs option: %(option)s. Choose one of: %(options)s"
 msgstr "Invalid LDAP TLS certs option: %(option)s. Choose one of: %(options)s"
 
-#: keystone/common/ldap/core.py:199
+#: keystone/common/ldap/core.py:204
 #, python-format
 msgid "Invalid LDAP scope: %(scope)s. Choose one of: %(options)s"
 msgstr "Invalid LDAP scope: %(scope)s. Choose one of: %(options)s"
 
-#: keystone/common/ldap/core.py:573
+#: keystone/common/ldap/core.py:579
 msgid "Invalid TLS / LDAPS combination"
 msgstr "Invalid TLS / LDAPS combination"
 
-#: keystone/common/ldap/core.py:577
+#: keystone/common/ldap/core.py:583
 #, python-format
 msgid "Invalid LDAP TLS_AVAIL option: %s. TLS not available"
 msgstr "Invalid LDAP TLS_AVAIL option: %s. TLS not available"
 
-#: keystone/common/ldap/core.py:587
+#: keystone/common/ldap/core.py:593
 #, python-format
 msgid "tls_cacertfile %s not found or is not a file"
 msgstr "tls_cacertfile %s not found or is not a file"
 
-#: keystone/common/ldap/core.py:599
+#: keystone/common/ldap/core.py:605
 #, python-format
 msgid "tls_cacertdir %s not found or is not a directory"
 msgstr "tls_cacertdir %s not found or is not a directory"
 
-#: keystone/common/ldap/core.py:1309
+#: keystone/common/ldap/core.py:1316
 #, python-format
 msgid "LDAP %s create"
 msgstr "LDAP %s create"
 
-#: keystone/common/ldap/core.py:1314
+#: keystone/common/ldap/core.py:1321
 #, python-format
 msgid "LDAP %s update"
 msgstr "LDAP %s update"
 
-#: keystone/common/ldap/core.py:1319
+#: keystone/common/ldap/core.py:1326
 #, python-format
 msgid "LDAP %s delete"
 msgstr "LDAP %s delete"
 
-#: keystone/common/ldap/core.py:1462
+#: keystone/common/ldap/core.py:1469
 #, python-format
 msgid "Cannot change %(option_name)s %(attr)s"
 msgstr "Cannot change %(option_name)s %(attr)s"
 
-#: keystone/common/ldap/core.py:1529
+#: keystone/common/ldap/core.py:1536
 #, python-format
 msgid "Member %(member)s is already a member of group %(group)s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:1587
+#: keystone/common/ldap/core.py:1594
 #, python-format
 msgid ""
 "When deleting entries for %(search_base)s, could not delete nonexistent "
