@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_255fc842",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 945,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-11T01:58:36Z",
+      "side": 1,
+      "message": "TODO, especially since that module doesn\u0027t exist yet, and it\u0027s valid without the change",
+      "revId": "6cc99094270b81e61dd1396406576f91ffc6cbfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_ea5bd2f3",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 3
@@ -13,6 +30,24 @@
       "writtenOn": "2014-09-10T22:29:47Z",
       "side": 1,
       "message": "This is what\u0027s calling the identity API:\n\nhttps://github.com/openstack/keystone/blob/12655bf17276ace37ea27e8b981a1a53d1572781/keystone/assignment/controllers.py#L505\n\n\nWhich is called from a callback wrapping the revoke_grant method: \n\nhttps://github.com/openstack/keystone/blob/12655bf17276ace37ea27e8b981a1a53d1572781/keystone/assignment/controllers.py#L550",
+      "revId": "6cc99094270b81e61dd1396406576f91ffc6cbfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e50f8037",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 974,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-11T01:58:36Z",
+      "side": 1,
+      "message": "now that i\u0027m reading the test written out... if the assignment was cleaned up correctly after the user was deleted, i\u0027d still expect this to return 404 (because there\u0027s no assignment to delete)...\n\ndoes this test class have access to directly delete the user out of the identity backend (without using HTTP, which should succeed) before attempting to delete the assignment (via HTTP, which would then 204, because an assignment is being deleted)?",
+      "parentUuid": "fa98f980_ea5bd2f3",
       "revId": "6cc99094270b81e61dd1396406576f91ffc6cbfb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
