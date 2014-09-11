@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_e5b76ad6",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1309,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-11T16:52:37Z",
+      "side": 1,
+      "message": "This is strange. Why not just pass it in once?",
+      "revId": "4183a497f680bc26dec33fc9792342a6b81061c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e5192a89",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-11T16:52:37Z",
+      "side": 1,
+      "message": "Missing a newline here",
+      "revId": "4183a497f680bc26dec33fc9792342a6b81061c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_25333263",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-11T16:52:37Z",
+      "side": 1,
+      "message": "Why do you need to do a getattr? I would think that any model should have these defined.",
+      "revId": "4183a497f680bc26dec33fc9792342a6b81061c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_656e1a31",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-11T16:52:37Z",
+      "side": 1,
+      "message": "These should probably be in the order that the appear in the method signature.",
+      "revId": "4183a497f680bc26dec33fc9792342a6b81061c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e5c84a24",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-11T16:52:37Z",
+      "side": 1,
+      "message": "Don\u0027t use % when logging. Use a comma instead.",
+      "revId": "4183a497f680bc26dec33fc9792342a6b81061c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_6527fa12",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-11T16:52:37Z",
+      "side": 0,
+      "message": "Yes, this really should be self since the instance is passed in and not the class.",
+      "revId": "1cacde3f59b9b6ff5b2c810c83ea50e3e5e5cdc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
