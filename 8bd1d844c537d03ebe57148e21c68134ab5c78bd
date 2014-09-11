@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_455ccc4b",
+        "filename": "doc/source/man/keystone-all.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-09-11T01:57:07Z",
+      "side": 1,
+      "message": "looks like an extra space here",
+      "revId": "8bd1d844c537d03ebe57148e21c68134ab5c78bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_c537dcfd",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-09-11T01:57:07Z",
+      "side": 1,
+      "message": "Extra space again?",
+      "revId": "8bd1d844c537d03ebe57148e21c68134ab5c78bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_9b25690c",
         "filename": "doc/source/man/keystone-manage.rst",
         "patchSetId": 1
