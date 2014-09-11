@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_846a16eb",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1547,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-11T22:17:11Z",
+      "side": 1,
+      "message": "the intent behind rebasing onto https://review.openstack.org/#/c/120478/ was to replace this attrlist with DN_ONLY and drop the redundant explanation",
+      "revId": "0ac8b35891a0514354d8f23c4249be6ab7e772b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
