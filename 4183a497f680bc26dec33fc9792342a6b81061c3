@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_d7485d5e",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1309,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-11T17:08:36Z",
+      "side": 1,
+      "message": "Common case is _update_mapping(ldap_key, model_key) and here is default mapping to get case-insensitivity (see comment in code above)",
+      "parentUuid": "fa98f980_e5b76ad6",
+      "revId": "4183a497f680bc26dec33fc9792342a6b81061c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_e5192a89",
         "filename": "keystone/common/models.py",
         "patchSetId": 9
@@ -47,6 +65,24 @@
       "writtenOn": "2014-09-11T16:52:37Z",
       "side": 1,
       "message": "Why do you need to do a getattr? I would think that any model should have these defined.",
+      "revId": "4183a497f680bc26dec33fc9792342a6b81061c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_179d85bc",
+        "filename": "keystone/common/models.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-11T17:08:36Z",
+      "side": 1,
+      "message": "It\u0027s never checked, we can\u0027t rely on it.",
+      "parentUuid": "fa98f980_25333263",
       "revId": "4183a497f680bc26dec33fc9792342a6b81061c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
