@@ -10,10 +10,17 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import ldap.dn
+import os
+import shutil
+import tempfile
+
+import ldap
 
 from keystone.common import ldap as ks_ldap
+from keystone import config
 from keystone import tests
+
+CONF = config.CONF
 
 
 class DnCompareTest(tests.BaseTestCase):
@@ -171,3 +178,79 @@ class DnCompareTest(tests.BaseTestCase):
         descendant = ldap.dn.str2dn('cn=Babs Jansen,ou=OpenStack')
         dn = ldap.dn.str2dn('ou=OpenStack')
         self.assertTrue(ks_ldap.dn_startswith(descendant, dn))
+
+
+class SslTlsTest(tests.TestCase):
+    """Tests for the SSL/TLS functionality in keystone.common.ldap.core."""
+
+    def _init_ldap_connection(self, config):
+        # Attempt to connect to initialize python-ldap.
+        base_ldap = ks_ldap.BaseLdap(config)
+        try:
+            base_ldap.get_connection()
+        except ldap.SERVER_DOWN:
+            # The tests should not require that an actual LDAP server be
+            # available to connect to, but we also want to be tolerant of
+            # the existance of an LDAP server on the local test system.  With
+            # this aim, we swallow the SERVER_DOWN exception since we really
+            # just want to initialize the LDAP library and don't care about
+            # the outcome of making any actual connections.
+            pass
+
+    def test_certfile_trust_tls(self):
+        # We need this to actually exist, so we create a tempfile.
+        (handle, certfile) = tempfile.mkstemp()
+        self.addCleanup(os.unlink, certfile)
+        self.addCleanup(os.close, handle)
+        self.config_fixture.config(group='ldap',
+                                   url='ldap://localhost',
+                                   use_tls=True,
+                                   tls_cacertfile=certfile)
+
+        self._init_ldap_connection(CONF)
+
+        # Ensure the cert trust option is set.
+        self.assertEqual(certfile, ldap.get_option(ldap.OPT_X_TLS_CACERTFILE))
+
+    def test_certdir_trust_tls(self):
+        # We need this to actually exist, so we create a tempdir.
+        certdir = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, certdir)
+        self.config_fixture.config(group='ldap',
+                                   url='ldap://localhost',
+                                   use_tls=True,
+                                   tls_cacertdir=certdir)
+
+        self._init_ldap_connection(CONF)
+
+        # Ensure the cert trust option is set.
+        self.assertEqual(certdir, ldap.get_option(ldap.OPT_X_TLS_CACERTDIR))
+
+    def test_certfile_trust_ldaps(self):
+        # We need this to actually exist, so we create a tempfile.
+        (handle, certfile) = tempfile.mkstemp()
+        self.addCleanup(os.unlink, certfile)
+        self.addCleanup(os.close, handle)
+        self.config_fixture.config(group='ldap',
+                                   url='ldaps://localhost',
+                                   use_tls=False,
+                                   tls_cacertfile=certfile)
+
+        self._init_ldap_connection(CONF)
+
+        # Ensure the cert trust option is set.
+        self.assertEqual(certfile, ldap.get_option(ldap.OPT_X_TLS_CACERTFILE))
+
+    def test_certdir_trust_ldaps(self):
+        # We need this to actually exist, so we create a tempdir.
+        certdir = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, certdir)
+        self.config_fixture.config(group='ldap',
+                                   url='ldaps://localhost',
+                                   use_tls=False,
+                                   tls_cacertdir=certdir)
+
+        self._init_ldap_connection(CONF)
+
+        # Ensure the cert trust option is set.
+        self.assertEqual(certdir, ldap.get_option(ldap.OPT_X_TLS_CACERTDIR))
