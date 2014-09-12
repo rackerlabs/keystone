@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_8e921355",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-12T22:46:36Z",
+      "side": 1,
+      "message": "reference the bug # 1368772 in the comment so we can find the code.",
+      "revId": "bc29ea184f7f2aabce21619175fd4a2246002854",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_ce989b77",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-12T22:46:36Z",
+      "side": 1,
+      "message": "this is subtree scope, not SCOPE_BASE.",
+      "revId": "bc29ea184f7f2aabce21619175fd4a2246002854",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_8965ade2",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-12T22:46:36Z",
+      "side": 1,
+      "message": "use \u0027 for strings consistently.",
+      "revId": "bc29ea184f7f2aabce21619175fd4a2246002854",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_a960b1cf",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-12T22:46:36Z",
+      "side": 1,
+      "message": "use \u0027 for strings consistently (applies throughout these changes)",
+      "revId": "bc29ea184f7f2aabce21619175fd4a2246002854",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_69b16946",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-12T22:46:36Z",
+      "side": 1,
+      "message": "why wouldn\u0027t they be created?",
+      "revId": "bc29ea184f7f2aabce21619175fd4a2246002854",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_497e656b",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-12T22:46:36Z",
+      "side": 1,
+      "message": "replace 244-248 with self.assertEqual([grandchild_dn, child_dn, base_dn], sort_ents)",
+      "revId": "bc29ea184f7f2aabce21619175fd4a2246002854",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
