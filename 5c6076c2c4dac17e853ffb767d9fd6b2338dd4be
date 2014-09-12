@@ -37,6 +37,42 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_87667f4f",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-09-12T17:43:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_7f58aafa",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_a7570359",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-09-12T17:43:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_7e25565b",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_7f26ea69",
         "filename": "keystone/contrib/endpoint_filter/controllers.py",
         "patchSetId": 5
@@ -48,6 +84,24 @@
       "writtenOn": "2014-09-09T22:14:44Z",
       "side": 1,
       "message": "you don\u0027t need a notification for this. Just delete the associations prior to deleting the endpoint group.",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e76d8b33",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-09-12T17:43:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_7f26ea69",
       "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +125,58 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_4771f70a",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-09-12T17:43:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_fe0146b0",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e7266b15",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-09-12T17:43:54Z",
+      "side": 1,
+      "message": "Removed - No longer used",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_471ad7c6",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-09-12T17:43:54Z",
+      "side": 1,
+      "message": "No longer used after removing notification below.",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_9fe0eefb",
         "filename": "keystone/contrib/endpoint_filter/core.py",
         "patchSetId": 5
@@ -82,6 +188,24 @@
       "writtenOn": "2014-09-09T22:14:44Z",
       "side": 1,
       "message": "you don\u0027t need a notification for this",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_a7e463e0",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-09-12T17:43:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_9fe0eefb",
       "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_c7e967b8",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-09-12T17:43:54Z",
+      "side": 1,
+      "message": "I have removed this change from this particular commit.",
+      "parentUuid": "fa98f980_debf22fb",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_9e459a19",
         "filename": "keystone/contrib/endpoint_filter/core.py",
         "patchSetId": 5
@@ -116,6 +258,24 @@
       "writtenOn": "2014-09-08T00:40:28Z",
       "side": 1,
       "message": "change \"endpoint_group\" to \"endpoint group\"",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_c737a74b",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-09-12T17:43:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_9e459a19",
       "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -139,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_e73f4b23",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-09-12T17:43:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_be497e34",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_fe5306e0",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 5
@@ -150,6 +328,24 @@
       "writtenOn": "2014-09-08T00:40:28Z",
       "side": 1,
       "message": "change \"associated\" to \"associate\"",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_2769538c",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 979,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-09-12T17:43:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_fe5306e0",
       "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -173,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_0770cf70",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 996,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-09-12T17:43:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_be709e74",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_5e0972dc",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 5
@@ -184,6 +398,24 @@
       "writtenOn": "2014-09-08T00:40:28Z",
       "side": 1,
       "message": "this didn\u0027t fail before? seems like it would fail already because `/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s` doesn\u0027t exist so something under that wouldn\u0027t exist either.",
+      "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_67d43b20",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1008,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-09-12T17:43:54Z",
+      "side": 1,
+      "message": "\u0027/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s\u0027 is created on line 1002 and I\u0027ll add an additional comment to make this clear. \n\nIf the endpoint group did not exist then the attempt to delete it on line 1006 would have failed with a 404 Not Found.\n\nGood point though. I will make this clear. Thanks.",
+      "parentUuid": "fa98f980_5e0972dc",
       "revId": "5c6076c2c4dac17e853ffb767d9fd6b2338dd4be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
