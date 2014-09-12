@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_789bfc17",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 584,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-09-12T18:34:40Z",
+      "side": 1,
+      "message": "Does this check also valid for LDAP?\n\nldap.TLS_AVAIL",
+      "revId": "09decf013f76d506496abbe44d92780335043fd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
