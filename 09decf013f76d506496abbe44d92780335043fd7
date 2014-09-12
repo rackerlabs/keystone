@@ -34,6 +34,24 @@
       "revId": "09decf013f76d506496abbe44d92780335043fd7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_69fa4976",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 584,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-09-12T23:16:09Z",
+      "side": 1,
+      "message": "Yes.  This checks if SSL/TLS (for LDAPS or startTLS) support was compiled into the LDAP libraries.  The name is misleading.",
+      "parentUuid": "fa98f980_98b34099",
+      "revId": "09decf013f76d506496abbe44d92780335043fd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
