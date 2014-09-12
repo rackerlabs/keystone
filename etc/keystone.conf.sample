@@ -172,6 +172,10 @@
 # Whether to disable the Nagle algorithm. (boolean value)
 #qpid_tcp_nodelay=true
 
+# The number of prefetched messages held by receiver. (integer
+# value)
+#qpid_receiver_capacity=1
+
 # The qpid topology version to use.  Version 1 is what was
 # originally used by impl_qpid.  Version 2 includes some
 # backwards-incompatible changes that allow broker federation
@@ -501,10 +505,10 @@
 #expiration_time=600
 
 # Dogpile.cache backend module. It is recommended that
-# Memcache (dogpile.cache.memcached) or Redis
-# (dogpile.cache.redis) be used in production deployments.
-# Small workloads (single process) like devstack can use the
-# dogpile.cache.memory backend. (string value)
+# Memcache with pooling (keystone.cache.memcache_pool) or
+# Redis (dogpile.cache.redis) be used in production
+# deployments.  Small workloads (single process) like devstack
+# can use the dogpile.cache.memory backend. (string value)
 #backend=keystone.common.cache.noop
 
 # Arguments supplied to the backend module. Specify this
@@ -527,6 +531,36 @@
 # with the keys/values.  Typically this should be left set to
 # false. (boolean value)
 #debug_cache_backend=false
+
+# Memcache servers in the format of "host:port".
+# (dogpile.cache.memcache and keystone.cache.memcache_pool
+# backends only) (list value)
+#memcache_servers=localhost:11211
+
+# Number of seconds memcached server is considered dead before
+# its tried again. (dogpile.cache.memcache and
+# keystone.cache.memcache_pool backends only) (integer value)
+#memcache_dead_retry=300
+
+# Timeout in seconds for every call to a server.
+# (dogpile.cache.memcache and keystone.cache.memcache_pool
+# backends only) (integer value)
+#memcache_socket_timeout=3
+
+# Max total number of open connections to every memcached
+# server. (keystone.cache.memcache_pool backend only) (integer
+# value)
+#memcache_pool_maxsize=10
+
+# Number of seconds a connection to memcached is held unused
+# in the pool before its closed. (keystone.cache.memcache_pool
+# backend only) (integer value)
+#memcache_pool_unuzed_timeout=60
+
+# Turn on debug logging for memcached pool (beware of high log
+# volume, keystone.cache.memcache_pool backend only) (boolean
+# value)
+#memcache_pool_debug=false
 
 
 [catalog]
@@ -1203,6 +1237,26 @@
 # value)
 #max_compare_and_set_retry=16
 
+# Number of seconds memcached server is considered dead before
+# its tried again. (integer value)
+#dead_retry=300
+
+# Timeout in seconds for every call to a server. (integer
+# value)
+#socket_timeout=3
+
+# Max total number of open connections to every memcached
+# server. (integer value)
+#pool_maxsize=10
+
+# Number of seconds a connection to memcached is held unused
+# in the pool before its closed. (integer value)
+#pool_unuzed_timeout=60
+
+# Turn on debug logging for memcached pool (beware of high log
+# volume) (boolean value)
+#pool_debug=false
+
 
 [oauth1]
 
@@ -1417,7 +1471,7 @@
 # Controls the token construction, validation, and revocation
 # operations. Core providers are
 # "keystone.token.providers.[pkiz|pki|uuid].Provider". The
-# default provider is pkiz. (string value)
+# default provider is uuid. (string value)
 #provider=<None>
 
 # Token persistence backend driver. (string value)
