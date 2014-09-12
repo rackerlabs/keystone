@@ -16,6 +16,24 @@
       "revId": "09decf013f76d506496abbe44d92780335043fd7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_98b34099",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 584,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-09-12T18:35:43Z",
+      "side": 1,
+      "message": "is that valid for ldaps too?",
+      "parentUuid": "fa98f980_789bfc17",
+      "revId": "09decf013f76d506496abbe44d92780335043fd7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
