@@ -15,6 +15,9 @@
 # under the License.
 
 import copy
+import os
+import shutil
+import tempfile
 import uuid
 
 import ldap
@@ -1281,6 +1284,92 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # chase_referrals. Check to make sure the value of chase_referrals
         # is as expected.
         self.assertTrue(mocked_fakeldap.call_args[-1]['chase_referrals'])
+
+    def test_certfile_trust_tls(self):
+        # We need this to actually exist, so we create a tempfile.
+        (handle, certfile) = tempfile.mkstemp()
+        self.config_fixture.config(group='ldap',
+                                   url='ldap://localhost',
+                                   use_tls=True,
+                                   tls_cacertfile=certfile)
+
+        # Attempt to connect to initialize python-ldap.
+        base_ldap = common_ldap.BaseLdap(CONF)
+        try:
+            base_ldap.get_connection()
+        except ldap.SERVER_DOWN:
+            pass
+
+        # Cleanup tempfile.
+        os.close(handle)
+        os.unlink(certfile)
+
+        # Ensure the cert trust option is set.
+        self.assertEqual(certfile, ldap.get_option(ldap.OPT_X_TLS_CACERTFILE))
+
+    def test_certdir_trust_tls(self):
+        # We need this to actually exist, so we create a tempdir.
+        certdir = tempfile.mkdtemp()
+        self.config_fixture.config(group='ldap',
+                                   url='ldap://localhost',
+                                   use_tls=True,
+                                   tls_cacertdir=certdir)
+
+        # Attempt to connect to initialize python-ldap.
+        base_ldap = common_ldap.BaseLdap(CONF)
+        try:
+            base_ldap.get_connection()
+        except ldap.SERVER_DOWN:
+            pass
+
+        # Cleanup tempdir.
+        shutil.rmtree(certdir)
+
+        # Ensure the cert trust option is set.
+        self.assertEqual(certdir, ldap.get_option(ldap.OPT_X_TLS_CACERTDIR))
+
+    def test_certfile_trust_ldaps(self):
+        # We need this to actually exist, so we create a tempfile.
+        (handle, certfile) = tempfile.mkstemp()
+        self.config_fixture.config(group='ldap',
+                                   url='ldaps://localhost',
+                                   use_tls=False,
+                                   tls_cacertfile=certfile)
+
+        # Attempt to connect to initialize python-ldap.
+        base_ldap = common_ldap.BaseLdap(CONF)
+        try:
+            base_ldap.get_connection()
+        except ldap.SERVER_DOWN:
+            pass
+
+        # Cleanup tempfile.
+        os.close(handle)
+        os.unlink(certfile)
+
+        # Ensure the cert trust option is set.
+        self.assertEqual(certfile, ldap.get_option(ldap.OPT_X_TLS_CACERTFILE))
+
+    def test_certdir_trust_ldaps(self):
+        # We need this to actually exist, so we create a tempdir.
+        certdir = tempfile.mkdtemp()
+        self.config_fixture.config(group='ldap',
+                                   url='ldaps://localhost',
+                                   use_tls=False,
+                                   tls_cacertdir=certdir)
+
+        # Attempt to connect to initialize python-ldap.
+        base_ldap = common_ldap.BaseLdap(CONF)
+        try:
+            base_ldap.get_connection()
+        except ldap.SERVER_DOWN:
+            pass
+
+        # Cleanup tempdir.
+        shutil.rmtree(certdir)
+
+        # Ensure the cert trust option is set.
+        self.assertEqual(certdir, ldap.get_option(ldap.OPT_X_TLS_CACERTDIR))
 
     @mock.patch.object(common_ldap_core.KeystoneLDAPHandler, 'connect')
     def test_debug_level_set(self, mocked_fakeldap):
