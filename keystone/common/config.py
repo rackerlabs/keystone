@@ -798,29 +798,35 @@ FILE_OPTIONS = {
     'memcache': [
         cfg.ListOpt('servers', default=['localhost:11211'],
                     help='Memcache servers in the format of "host:port".'),
-        cfg.IntOpt('max_compare_and_set_retry', default=16,
-                   help='Number of compare-and-set attempts to make when '
-                        'using compare-and-set in the token memcache back '
-                        'end.'),
         cfg.IntOpt('dead_retry',
                    default=5 * 60,
-                   help='Number of seconds memcached server is considered dead'
-                   ' before its tried again.'),
+                   help='Number of seconds memcached server is considered'
+                        ' dead before its tried again. This option only'
+                        ' affects dogpile-based Key-Value-Store drivers'
+                        ' (e.g. memcache token persistence driver).'),
         cfg.IntOpt('socket_timeout',
                    default=3,
-                   help='Timeout in seconds for every call to a server.'),
+                   help='Timeout in seconds for every call to a server.  This'
+                        ' option only affects dogpile-based Key-Value-Store'
+                        ' drivers (e.g. memcache token persistence driver).'),
         cfg.IntOpt('pool_maxsize',
                    default=10,
                    help='Max total number of open connections to every'
-                   ' memcached server.'),
+                        ' memcached server. This option only affects'
+                        ' dogpile-based Key-Value-Store drivers (e.g. memcache'
+                        ' token persistence driver).'),
         cfg.IntOpt('pool_unuzed_timeout',
                    default=60,
                    help='Number of seconds a connection to memcached is held'
-                   ' unused in the pool before its closed.'),
+                        ' unused in the pool before its closed. This option'
+                        ' only affects dogpile-based Key-Value-Store drivers'
+                        ' (e.g. memcache token persistence driver).'),
         cfg.BoolOpt('pool_debug',
                     default=False,
                     help='Turn on debug logging for memcached pool (beware of'
-                    ' high log volume)'),
+                         ' high log volume). This option only affects'
+                         ' dogpile-based Key-Value-Store drivers (e.g.'
+                         ' memcache token persistence driver).'),
     ],
     'catalog': [
         cfg.StrOpt('template_file',
