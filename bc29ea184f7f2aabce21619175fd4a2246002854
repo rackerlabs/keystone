@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_c9eb35a2",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-09-12T23:20:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_8e921355",
+      "revId": "bc29ea184f7f2aabce21619175fd4a2246002854",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_ce989b77",
         "filename": "keystone/tests/fakeldap.py",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-12T22:46:36Z",
       "side": 1,
       "message": "this is subtree scope, not SCOPE_BASE.",
+      "revId": "bc29ea184f7f2aabce21619175fd4a2246002854",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e92d59ff",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-09-12T23:20:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_ce989b77",
       "revId": "bc29ea184f7f2aabce21619175fd4a2246002854",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_2934c148",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-09-12T23:20:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_8965ade2",
+      "revId": "bc29ea184f7f2aabce21619175fd4a2246002854",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_a960b1cf",
         "filename": "keystone/tests/unit/common/test_ldap.py",
         "patchSetId": 15
@@ -64,6 +118,24 @@
       "writtenOn": "2014-09-12T22:46:36Z",
       "side": 1,
       "message": "use \u0027 for strings consistently (applies throughout these changes)",
+      "revId": "bc29ea184f7f2aabce21619175fd4a2246002854",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_4937454d",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-09-12T23:20:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_a960b1cf",
       "revId": "bc29ea184f7f2aabce21619175fd4a2246002854",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_e91479a1",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-09-12T23:20:15Z",
+      "side": 1,
+      "message": "I don\u0027t know - perhaps some regression in FakeLdap?  As a developer, I would rather have the test blow up after adding the entries, then I know immediately that the problem was that the entries could not be created, rather than having the test blow up attempting to delete the entries because they are not there, and getting a different unexpected exception.",
+      "parentUuid": "fa98f980_69b16946",
+      "revId": "bc29ea184f7f2aabce21619175fd4a2246002854",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_497e656b",
         "filename": "keystone/tests/unit/common/test_ldap.py",
         "patchSetId": 15
@@ -98,6 +188,24 @@
       "writtenOn": "2014-09-12T22:46:36Z",
       "side": 1,
       "message": "replace 244-248 with self.assertEqual([grandchild_dn, child_dn, base_dn], sort_ents)",
+      "revId": "bc29ea184f7f2aabce21619175fd4a2246002854",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_0918ddd1",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-09-12T23:20:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_497e656b",
       "revId": "bc29ea184f7f2aabce21619175fd4a2246002854",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
