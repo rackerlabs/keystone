@@ -725,7 +725,7 @@ class LdapWrapper(object):
         if use_tls and using_ldaps:
             raise AssertionError(_('Invalid TLS / LDAPS combination'))
 
-        if use_tls:
+        if use_tls or using_ldaps:
             if not ldap.TLS_AVAIL:
                 raise ValueError(_('Invalid LDAP TLS_AVAIL option: %s. TLS '
                                    'not available') % ldap.TLS_AVAIL)
