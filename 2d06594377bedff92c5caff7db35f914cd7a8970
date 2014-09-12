@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_f37486d0",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-09-12T02:09:15Z",
+      "side": 1,
+      "message": "i meant to mention in the previous review that this should be a formal FIXME (preferably in the tests rather than here?). it should also explain the cause of the expectation and the consequence(s).\n\nalternatively, correct the issue before this lands so we don\u0027t have to merge something so # BAD",
+      "revId": "2d06594377bedff92c5caff7db35f914cd7a8970",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
