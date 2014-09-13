@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2014-09-07 06:05+0000\n"
+"POT-Creation-Date: 2014-09-13 06:06+0000\n"
 "PO-Revision-Date: 2014-04-19 01:30+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: English (Australia) "
@@ -384,7 +384,7 @@ msgstr ""
 msgid "Failed to send %(res_id)s %(event_type)s notification"
 msgstr "Failed to send %(res_id)s %(event_type)s notification"
 
-#: keystone/notifications.py:457
+#: keystone/notifications.py:455
 #, python-format
 msgid "Failed to send %(action)s %(event_type)s notification"
 msgstr ""
@@ -435,29 +435,33 @@ msgstr "Domain is disabled: %s"
 msgid "Project is disabled: %s"
 msgstr "Project is disabled: %s"
 
-#: keystone/assignment/core.py:382
+#: keystone/assignment/core.py:325
+msgid "Multiple domains are not supported"
+msgstr ""
+
+#: keystone/assignment/core.py:385
 msgid "delete the default domain"
 msgstr ""
 
-#: keystone/assignment/core.py:393
+#: keystone/assignment/core.py:396
 msgid "cannot delete a domain that is enabled, please disable it first."
 msgstr ""
 
-#: keystone/assignment/core.py:615
+#: keystone/assignment/core.py:618
 #, python-format
 msgid "Project (%s)"
 msgstr "Project (%s)"
 
-#: keystone/assignment/core.py:617
+#: keystone/assignment/core.py:620
 #, python-format
 msgid "Domain (%s)"
 msgstr "Domain (%s)"
 
-#: keystone/assignment/core.py:619
+#: keystone/assignment/core.py:622
 msgid "Unknown Target"
 msgstr "Unknown Target"
 
-#: keystone/assignment/core.py:1105 keystone/common/controller.py:286
+#: keystone/assignment/core.py:1108 keystone/common/controller.py:286
 #: keystone/identity/core.py:310
 #, python-format
 msgid "Expected dict or list: %s"
@@ -476,13 +480,13 @@ msgstr ""
 
 #: keystone/assignment/backends/ldap.py:215
 #: keystone/assignment/backends/ldap.py:259 keystone/catalog/core.py:96
-#: keystone/common/ldap/core.py:1340 keystone/identity/backends/kvs.py:120
+#: keystone/common/ldap/core.py:1351 keystone/identity/backends/kvs.py:120
 #: keystone/identity/backends/kvs.py:225
 #, python-format
 msgid "Duplicate ID, %s."
 msgstr "Duplicate ID, %s."
 
-#: keystone/assignment/backends/ldap.py:223 keystone/common/ldap/core.py:1330
+#: keystone/assignment/backends/ldap.py:223 keystone/common/ldap/core.py:1341
 #: keystone/identity/backends/kvs.py:128 keystone/identity/backends/kvs.py:155
 #: keystone/identity/backends/kvs.py:232 keystone/identity/backends/kvs.py:260
 #, python-format
@@ -510,7 +514,7 @@ msgstr ""
 msgid "Role %s not found"
 msgstr "Role %s not found"
 
-#: keystone/assignment/backends/ldap.py:646
+#: keystone/assignment/backends/ldap.py:648
 #, python-format
 msgid "Cannot duplicate name %s"
 msgstr ""
@@ -897,66 +901,66 @@ msgstr ""
 msgid "`key_mangler` functions must be callable."
 msgstr ""
 
-#: keystone/common/ldap/core.py:177
+#: keystone/common/ldap/core.py:186
 #, python-format
 msgid "Invalid LDAP deref option: %(option)s. Choose one of: %(options)s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:187
+#: keystone/common/ldap/core.py:196
 #, python-format
 msgid "Invalid LDAP TLS certs option: %(option)s. Choose one of: %(options)s"
 msgstr "Invalid LDAP TLS certs option: %(option)s. Choose one of: %(options)s"
 
-#: keystone/common/ldap/core.py:199
+#: keystone/common/ldap/core.py:208
 #, python-format
 msgid "Invalid LDAP scope: %(scope)s. Choose one of: %(options)s"
 msgstr "Invalid LDAP scope: %(scope)s. Choose one of: %(options)s"
 
-#: keystone/common/ldap/core.py:573
+#: keystone/common/ldap/core.py:583
 msgid "Invalid TLS / LDAPS combination"
 msgstr "Invalid TLS / LDAPS combination"
 
-#: keystone/common/ldap/core.py:577
+#: keystone/common/ldap/core.py:587
 #, python-format
 msgid "Invalid LDAP TLS_AVAIL option: %s. TLS not available"
 msgstr "Invalid LDAP TLS_AVAIL option: %s. TLS not available"
 
-#: keystone/common/ldap/core.py:587
+#: keystone/common/ldap/core.py:597
 #, python-format
 msgid "tls_cacertfile %s not found or is not a file"
 msgstr "tls_cacertfile %s not found or is not a file"
 
-#: keystone/common/ldap/core.py:599
+#: keystone/common/ldap/core.py:609
 #, python-format
 msgid "tls_cacertdir %s not found or is not a directory"
 msgstr "tls_cacertdir %s not found or is not a directory"
 
-#: keystone/common/ldap/core.py:1309
+#: keystone/common/ldap/core.py:1320
 #, python-format
 msgid "LDAP %s create"
 msgstr "LDAP %s create"
 
-#: keystone/common/ldap/core.py:1314
+#: keystone/common/ldap/core.py:1325
 #, python-format
 msgid "LDAP %s update"
 msgstr "LDAP %s update"
 
-#: keystone/common/ldap/core.py:1319
+#: keystone/common/ldap/core.py:1330
 #, python-format
 msgid "LDAP %s delete"
 msgstr "LDAP %s delete"
 
-#: keystone/common/ldap/core.py:1462
+#: keystone/common/ldap/core.py:1473
 #, python-format
 msgid "Cannot change %(option_name)s %(attr)s"
 msgstr "Cannot change %(option_name)s %(attr)s"
 
-#: keystone/common/ldap/core.py:1529
+#: keystone/common/ldap/core.py:1540
 #, python-format
 msgid "Member %(member)s is already a member of group %(group)s"
 msgstr ""
 
-#: keystone/common/ldap/core.py:1587
+#: keystone/common/ldap/core.py:1594
 #, python-format
 msgid ""
 "When deleting entries for %(search_base)s, could not delete nonexistent "
@@ -969,11 +973,11 @@ msgid ""
 " self "
 msgstr ""
 
-#: keystone/common/sql/core.py:400
+#: keystone/common/sql/core.py:401
 msgid "Duplicate Entry"
 msgstr ""
 
-#: keystone/common/sql/core.py:416
+#: keystone/common/sql/core.py:417
 #, python-format
 msgid "An unexpected error occurred when trying to store %s"
 msgstr ""
@@ -1137,7 +1141,7 @@ msgstr ""
 
 #: keystone/contrib/revoke/core.py:221 keystone/token/provider.py:234
 #: keystone/token/provider.py:256 keystone/token/provider.py:354
-#: keystone/token/provider.py:361 keystone/token/providers/common.py:558
+#: keystone/token/provider.py:361 keystone/token/providers/common.py:574
 msgid "Failed to validate token"
 msgstr "Failed to validate token"
 
@@ -1377,44 +1381,44 @@ msgid ""
 "revocation list."
 msgstr ""
 
-#: keystone/token/providers/common.py:190
-#: keystone/token/providers/common.py:293
+#: keystone/token/providers/common.py:195
+#: keystone/token/providers/common.py:298
 #, python-format
 msgid "User %(user_id)s has no access to project %(project_id)s"
 msgstr "User %(user_id)s has no access to project %(project_id)s"
 
-#: keystone/token/providers/common.py:195
-#: keystone/token/providers/common.py:298
+#: keystone/token/providers/common.py:200
+#: keystone/token/providers/common.py:303
 #, python-format
 msgid "User %(user_id)s has no access to domain %(domain_id)s"
 msgstr "User %(user_id)s has no access to domain %(domain_id)s"
 
-#: keystone/token/providers/common.py:220
+#: keystone/token/providers/common.py:225
 msgid "Trustor is disabled."
 msgstr "Trustor is disabled."
 
-#: keystone/token/providers/common.py:284
+#: keystone/token/providers/common.py:289
 msgid "Trustee has no delegated roles."
 msgstr "Trustee has no delegated roles."
 
-#: keystone/token/providers/common.py:337
+#: keystone/token/providers/common.py:342
 #, python-format
 msgid "Invalid audit info data type: %(data)s (%(type)s)"
 msgstr ""
 
-#: keystone/token/providers/common.py:358
+#: keystone/token/providers/common.py:363
 msgid "User is not a trustee."
 msgstr "User is not a trustee."
 
-#: keystone/token/providers/common.py:430
+#: keystone/token/providers/common.py:440
 msgid "Oauth is disabled."
 msgstr "Oauth is disabled."
 
-#: keystone/token/providers/common.py:487
+#: keystone/token/providers/common.py:497
 msgid "Non-default domain is not supported"
 msgstr "Non-default domain is not supported"
 
-#: keystone/token/providers/common.py:495
+#: keystone/token/providers/common.py:505
 msgid "Domain scoped token is not supported"
 msgstr "Domain scoped token is not supported"
 
