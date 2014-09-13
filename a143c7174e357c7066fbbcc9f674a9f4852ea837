@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_aff0b191",
+        "filename": "keystone/common/cache/backends/_memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-13T02:35:44Z",
+      "side": 1,
+      "message": "This is still hard to read because of the mixture of boolean \"debug\" and then _debug. Suggest making this _debug_logger to be more descriptive (and the instance properties mirror the name).\n\nThis can be fixed in a followup patch or when we spin this off into it\u0027s own library.",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_0fe37dd9",
+        "filename": "keystone/common/cache/backends/_memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-13T02:35:44Z",
+      "side": 1,
+      "message": "This *should* be an abstract base class and _create_connection should be an abcmethod.\n\nThis is not something that needs to be fixed before merging. It can occur in either a followup patch or if/when this is spun out into it\u0027s own library.",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_0f31bd59",
+        "filename": "keystone/common/cache/backends/_memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-13T02:35:44Z",
+      "side": 1,
+      "message": "This really generally speaking worries me, spinning up a thread *just* for cleaning it sets a precedent I\u0027d rather not see become a pattern in Keystone as we shouldn\u0027t need this running in a non-eventlet environment.\n\nI\u0027m not opposed to this based upon the need and potential severity of the bug.",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_2f34c148",
+        "filename": "keystone/common/cache/backends/_memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-13T02:35:44Z",
+      "side": 1,
+      "message": "See above comment about ABC classes/abstract methods.",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_4fe905b6",
+        "filename": "keystone/common/cache/backends/_memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-13T02:35:44Z",
+      "side": 1,
+      "message": "Based on the implementation, this could simply do \u0027pass\u0027 and let a pool that needs to override it do so. Second this appears to be an @staticmethod not an @classmethod.\n\nThis can be fixed later as a followup *or* a when this is spun off into a library in K cycle.",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_8f3ccd30",
+        "filename": "keystone/common/cache/backends/_memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-13T02:35:44Z",
+      "side": 1,
+      "message": "Do not use \u0027_\u0027 as an unused name binding, we use _ for gettext translations on exceptions.\n\nThis should be fixed in a followup patch before RC is cut if not fixed here.",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_6f4169a8",
+        "filename": "keystone/common/cache/backends/_memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-13T02:35:44Z",
+      "side": 1,
+      "message": "Suggest making this a house-keeping object instead of explicitly a tuple each time, it makes the .pop not require the \u0027_\u0027 unused value and would make it so it\u0027s clear you\u0027re looking for \u0027pool_connection_object.conn\u0027 and can look at \u0027pool_connection_object.timeout\u0027 or similar instead of needing the indexable item.\n\nThis can be fixed in a followup patch or when spun off to a dedicated lib.",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_4f0e658d",
+        "filename": "keystone/common/cache/backends/memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-13T02:35:44Z",
+      "side": 1,
+      "message": "(NIT): Extra whitespace line needed here above LOG",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
