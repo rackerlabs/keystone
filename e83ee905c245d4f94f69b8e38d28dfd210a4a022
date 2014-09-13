@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_5043616b",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1288,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-13T16:26:52Z",
+      "side": 1,
+      "message": "these are testing the backend. Move it to a different file... probably ldap unit tests.",
+      "revId": "e83ee905c245d4f94f69b8e38d28dfd210a4a022",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_705ce57d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 3
