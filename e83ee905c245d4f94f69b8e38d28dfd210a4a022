@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_705ce57d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1301,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-13T16:03:13Z",
+      "side": 1,
+      "message": "the test shouldn\u0027t be guessing if it\u0027s going to get an exception or not. Remove the try/except or assert that it raises.\n\nAlso, this code is copy-pasted around. Make it a function.",
+      "revId": "e83ee905c245d4f94f69b8e38d28dfd210a4a022",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_307fbde1",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1304,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-13T16:03:13Z",
+      "side": 1,
+      "message": "if any of the previous statements raises then this isn\u0027t going to happen. self.addCleanup() can be used to get rid of it.",
+      "revId": "e83ee905c245d4f94f69b8e38d28dfd210a4a022",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_10639942",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1326,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-13T16:03:13Z",
+      "side": 1,
+      "message": "same comment here. This applies throughout all these changes.",
+      "revId": "e83ee905c245d4f94f69b8e38d28dfd210a4a022",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
