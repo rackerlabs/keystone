@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_579190ef",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1301,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2014-09-14T18:44:25Z",
+      "side": 1,
+      "message": "I think what Brant means is that, if you expect get_connection() to always fail and throw SERVER_DOWN, then use assertRaises, or perhaps assertThat with some sort of exception matcher.",
+      "parentUuid": "fa98f980_e842a966",
+      "revId": "e83ee905c245d4f94f69b8e38d28dfd210a4a022",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_307fbde1",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 3
