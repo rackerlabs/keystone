@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_e842a966",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1301,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-09-14T00:36:40Z",
+      "side": 1,
+      "message": "I didn\u0027t want to make the tests fail if there happens to be an LDAP server listening locally on the test system.  If I assert that ldap.SERVER_DOWN is raised, then the tests results will be influenced by the presence of a local LDAP server.",
+      "parentUuid": "fa98f980_705ce57d",
+      "revId": "e83ee905c245d4f94f69b8e38d28dfd210a4a022",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_307fbde1",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 3
