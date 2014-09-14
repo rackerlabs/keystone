@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_3cc15380",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-14T12:54:41Z",
+      "side": 1,
+      "message": "change \"enable\" to \"enabled\"",
+      "revId": "20eb5f40869e7ef9368292b6295290e1f6a6dcda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_09329da6",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 2
