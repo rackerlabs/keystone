@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_c2305c58",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-14T22:42:22Z",
+      "side": 1,
+      "message": "This should probably exist on the endpoint_filter_api directly not on the controller. This can be fixed as a cleanup item down the line.",
+      "revId": "d176359e6e6ac75ff416f994521d907557d566a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
