@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_f77d246e",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1288,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-09-14T16:34:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_5043616b",
+      "revId": "e83ee905c245d4f94f69b8e38d28dfd210a4a022",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_705ce57d",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 3
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_1798e8be",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1301,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-09-14T16:34:59Z",
+      "side": 1,
+      "message": "The next patch pulls this logic into a function to allow for reuse.\n\nI\u0027m leaving the exception swallowing code, but I added a comment in the code explaining why I think that it\u0027s necessary.",
+      "parentUuid": "fa98f980_e842a966",
+      "revId": "e83ee905c245d4f94f69b8e38d28dfd210a4a022",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_307fbde1",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 3
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_b7871c60",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1304,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-09-14T16:34:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_307fbde1",
+      "revId": "e83ee905c245d4f94f69b8e38d28dfd210a4a022",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_10639942",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 3
@@ -82,6 +136,24 @@
       "writtenOn": "2014-09-13T16:03:13Z",
       "side": 1,
       "message": "same comment here. This applies throughout all these changes.",
+      "revId": "e83ee905c245d4f94f69b8e38d28dfd210a4a022",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_d77ae075",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1326,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-09-14T16:34:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_10639942",
       "revId": "e83ee905c245d4f94f69b8e38d28dfd210a4a022",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
