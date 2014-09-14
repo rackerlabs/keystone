@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_828c94d8",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-14T23:27:47Z",
+      "side": 1,
+      "message": "change the test to \n\n if context[\u0027environment\u0027][\u0027REQUEST_METHOD\u0027] !\u003d \u0027DELETE\u0027:\n\nthen don\u0027t need the pass.\n\nAlso, this should just raise since get_user was supposedly raising the right exception before.\n\nSo, this should be\n\n if context[\u0027environment\u0027][\u0027REQUEST_METHOD\u0027] !\u003d \u0027DELETE\u0027:\n     raise",
+      "revId": "924fffa608b415dcbb3aa6a92895f154c4d366b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_e2b48083",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 945,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-14T23:27:47Z",
+      "side": 1,
+      "message": "there is no test_v3_assignment.",
+      "revId": "924fffa608b415dcbb3aa6a92895f154c4d366b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_02b8a473",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 947,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-14T23:27:47Z",
+      "side": 1,
+      "message": "this should have `` rather than ` to be consistent",
+      "revId": "924fffa608b415dcbb3aa6a92895f154c4d366b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_82a3b441",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 971,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-14T23:27:47Z",
+      "side": 1,
+      "message": "there should be another call to self.head(member_url, expected_status\u003d204) since that would show that something changed.",
+      "revId": "924fffa608b415dcbb3aa6a92895f154c4d366b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_42ad4c30",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 975,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-14T23:27:47Z",
+      "side": 1,
+      "message": "this should have `` rather than ` to be consistent",
+      "revId": "924fffa608b415dcbb3aa6a92895f154c4d366b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_a265181f",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 993,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-14T23:27:47Z",
+      "side": 1,
+      "message": "there\u0027s a lot of copied code here that should be moved into a function.",
+      "revId": "924fffa608b415dcbb3aa6a92895f154c4d366b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
