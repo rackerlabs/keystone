@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_02d344d5",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-14T23:05:25Z",
+      "side": 1,
+      "message": "to have a test not require an actual server, fake out the functionality. This test should fake out the connect function.",
+      "revId": "d2203cb5c3767cf1dbfd3ff072c9419297cef4a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
