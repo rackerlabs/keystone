@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_fde8a5b4",
+        "filename": "keystone/cli.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-15T01:05:08Z",
+      "side": 1,
+      "message": "these aren\u0027t configuration files.\n\nChange this to \"Rebuild certificate files\"",
+      "revId": "4c2421c5da019f60f45089a53ebca35da6f106c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_d5c9a7ad",
         "filename": "keystone/common/openssl.py",
         "patchSetId": 10
@@ -13,6 +30,125 @@
       "writtenOn": "2014-09-08T16:38:32Z",
       "side": 1,
       "message": "_existing_",
+      "revId": "4c2421c5da019f60f45089a53ebca35da6f106c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_5df0d190",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-15T01:05:08Z",
+      "side": 1,
+      "message": "leave the trailing , so that this is easier to extend.",
+      "revId": "4c2421c5da019f60f45089a53ebca35da6f106c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_ddfcc174",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-15T01:05:08Z",
+      "side": 1,
+      "message": "change \"want\" to \"wants\"",
+      "revId": "4c2421c5da019f60f45089a53ebca35da6f106c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_fdffc563",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-15T01:05:08Z",
+      "side": 1,
+      "message": "use , rather than %",
+      "revId": "4c2421c5da019f60f45089a53ebca35da6f106c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_9d2dd900",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-15T01:05:08Z",
+      "side": 1,
+      "message": "no need to use len since a list is false if it\u0027s empty:\n\n if existing_files:",
+      "revId": "4c2421c5da019f60f45089a53ebca35da6f106c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_3df5cd82",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-15T01:05:08Z",
+      "side": 1,
+      "message": "If I use --rebuild and a file can\u0027t be deleted, this is going to say I should use --rebuild to regenerate it, so this is going to be confusing. The command shouldn\u0027t tell me to rebuild when I\u0027m already using rebuild.",
+      "revId": "4c2421c5da019f60f45089a53ebca35da6f106c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_dd33e15f",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-15T01:05:08Z",
+      "side": 1,
+      "message": "This shouldn\u0027t be logged, it should be printed to stderr as a normal error message.",
+      "revId": "4c2421c5da019f60f45089a53ebca35da6f106c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_5d47f1bb",
+        "filename": "keystone/tests/test_cert_setup.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-15T01:05:08Z",
+      "side": 1,
+      "message": "Why change this test? It doesn\u0027t make sense to me to change it.",
       "revId": "4c2421c5da019f60f45089a53ebca35da6f106c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
