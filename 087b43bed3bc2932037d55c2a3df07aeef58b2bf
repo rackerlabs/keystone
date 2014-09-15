@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_422d338e",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-15T18:59:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_b3ac7ba0",
+      "revId": "087b43bed3bc2932037d55c2a3df07aeef58b2bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_93cf7728",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 9
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_620797ca",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2063,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-15T18:59:46Z",
+      "side": 1,
+      "message": "It could...although I was trying to not disturb the other tests...so probably not worth it..",
+      "parentUuid": "fa98f980_93cf7728",
+      "revId": "087b43bed3bc2932037d55c2a3df07aeef58b2bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_33decbda",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 9
@@ -47,6 +83,24 @@
       "writtenOn": "2014-09-15T16:26:44Z",
       "side": 1,
       "message": "open a bug to investigate?",
+      "revId": "087b43bed3bc2932037d55c2a3df07aeef58b2bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_02f6cbd6",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2086,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-15T18:59:46Z",
+      "side": 1,
+      "message": "It\u0027s probably overkill...and it\u0027s just a code style improvement...it\u0027s on my list to come back in for Kilo.",
+      "parentUuid": "fa98f980_33decbda",
       "revId": "087b43bed3bc2932037d55c2a3df07aeef58b2bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
