@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_a50a74cf",
+        "filename": "keystone/common/cache/backends/_memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-15T16:27:10Z",
+      "side": 1,
+      "message": "(nit) this needs an extra newline here",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_aff0b191",
         "filename": "keystone/common/cache/backends/_memcache_pool.py",
         "patchSetId": 5
@@ -13,6 +30,24 @@
       "writtenOn": "2014-09-13T02:35:44Z",
       "side": 1,
       "message": "This is still hard to read because of the mixture of boolean \"debug\" and then _debug. Suggest making this _debug_logger to be more descriptive (and the instance properties mirror the name).\n\nThis can be fixed in a followup patch or when we spin this off into it\u0027s own library.",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_8562d03b",
+        "filename": "keystone/common/cache/backends/_memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-15T16:27:10Z",
+      "side": 1,
+      "message": "I might take it one step further and make it a method of the ConnectionPool class.",
+      "parentUuid": "fa98f980_aff0b191",
       "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -139,6 +174,23 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_8591f048",
+        "filename": "keystone/common/cache/backends/_memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-15T16:27:10Z",
+      "side": 1,
+      "message": "Is this del significant? I would think that the garbage collection would be sufficient and if now wouldn\u0027t you need to also del the conn reference?",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_4f0e658d",
         "filename": "keystone/common/cache/backends/memcache_pool.py",
         "patchSetId": 5
@@ -150,6 +202,23 @@
       "writtenOn": "2014-09-13T02:35:44Z",
       "side": 1,
       "message": "(NIT): Extra whitespace line needed here above LOG",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_851490a0",
+        "filename": "keystone/common/cache/backends/memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-15T16:27:10Z",
+      "side": 1,
+      "message": "Is it possible that this is too brittle? I think this is wrapping the backend and if it is what happens when an object asks the proxy for something that isn\u0027t a callable. Right now there appear to be one public property: http://dogpilecache.readthedocs.org/en/latest/api.html#backend-api",
       "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
