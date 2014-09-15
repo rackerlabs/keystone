@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_ad9a4f5f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-15T21:53:46Z",
+      "side": 1,
+      "message": "Following our discussion...this is now implemented.",
+      "parentUuid": "fa98f980_48df2a69",
+      "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_5c5377e1",
         "filename": "keystone/identity/core.py",
         "patchSetId": 7
