@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_103c60c7",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-15T15:14:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_828c94d8",
+      "revId": "924fffa608b415dcbb3aa6a92895f154c4d366b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_e2b48083",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-14T23:27:47Z",
       "side": 1,
       "message": "there is no test_v3_assignment.",
+      "revId": "924fffa608b415dcbb3aa6a92895f154c4d366b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_255be454",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 945,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-15T15:14:43Z",
+      "side": 1,
+      "message": "Correct, this is something I was visiting with dolphm about but given how close we are to RC1 we decided to hold off on the refactor. \n\nhttps://bugs.launchpad.net/keystone/+bug/1367778\n\nAt some point, we will create a tests/test_v3_assignment.py module and move the related tests.",
+      "parentUuid": "fa98f980_e2b48083",
       "revId": "924fffa608b415dcbb3aa6a92895f154c4d366b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_5049885e",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 947,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-15T15:14:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_02b8a473",
+      "revId": "924fffa608b415dcbb3aa6a92895f154c4d366b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_bdf37d71",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2014-09-15T01:39:31Z",
       "side": 1,
       "message": "Use \u0027self.identity_api.create_user\u0027 directly?",
+      "revId": "924fffa608b415dcbb3aa6a92895f154c4d366b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_bd21ac9f",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 953,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-15T15:14:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_bdf37d71",
       "revId": "924fffa608b415dcbb3aa6a92895f154c4d366b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_9df14803",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 971,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-15T15:14:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_82a3b441",
+      "revId": "924fffa608b415dcbb3aa6a92895f154c4d366b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_42ad4c30",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 6
@@ -98,6 +188,24 @@
       "writtenOn": "2014-09-14T23:27:47Z",
       "side": 1,
       "message": "this should have `` rather than ` to be consistent",
+      "revId": "924fffa608b415dcbb3aa6a92895f154c4d366b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_7044cc46",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 975,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-15T15:14:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_42ad4c30",
       "revId": "924fffa608b415dcbb3aa6a92895f154c4d366b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_5d28c085",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 993,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-15T15:14:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_a265181f",
+      "revId": "924fffa608b415dcbb3aa6a92895f154c4d366b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_3d514d62",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 6
@@ -132,6 +258,24 @@
       "writtenOn": "2014-09-15T01:39:31Z",
       "side": 1,
       "message": "I think we can just have one test that calls both delete and head.",
+      "revId": "924fffa608b415dcbb3aa6a92895f154c4d366b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_bd836c01",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1000,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-15T15:14:43Z",
+      "side": 1,
+      "message": "I\u0027ve pulled the common code into a separate function according to bknudson\u0027s comment above, in which case, I think it makes sense to keep the tests separate.",
+      "parentUuid": "fa98f980_3d514d62",
       "revId": "924fffa608b415dcbb3aa6a92895f154c4d366b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
