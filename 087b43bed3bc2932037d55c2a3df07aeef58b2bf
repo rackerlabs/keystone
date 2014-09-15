@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_b3ac7ba0",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-15T16:26:44Z",
+      "side": 1,
+      "message": "Could this info be build into the MultipleSQLDriversInConfig() exception?\n\nAlso, could the config that the extra sql drivers were found in be printed too? That might be helpful information for the user as well.",
+      "revId": "087b43bed3bc2932037d55c2a3df07aeef58b2bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_93cf7728",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2063,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-15T16:26:44Z",
+      "side": 1,
+      "message": "should expected_status default to something?",
+      "revId": "087b43bed3bc2932037d55c2a3df07aeef58b2bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_33decbda",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2086,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-15T16:26:44Z",
+      "side": 1,
+      "message": "open a bug to investigate?",
+      "revId": "087b43bed3bc2932037d55c2a3df07aeef58b2bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
