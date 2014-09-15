@@ -406,7 +406,7 @@ class Middleware(Application):
             return cls(app, **local_config)
         return _factory
 
-    def __init__(self, application):
+    def __init__(self, application, **local_config):
         super(Middleware, self).__init__()
         self.application = application
 
@@ -579,7 +579,7 @@ class ExtensionRouter(Router):
 
     Expects to be subclassed.
     """
-    def __init__(self, application, mapper=None):
+    def __init__(self, application, mapper=None, **local_config):
         if mapper is None:
             mapper = routes.Mapper()
         self.application = application
