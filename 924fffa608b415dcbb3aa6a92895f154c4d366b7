@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_bdf37d71",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 953,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-09-15T01:39:31Z",
+      "side": 1,
+      "message": "Use \u0027self.identity_api.create_user\u0027 directly?",
+      "revId": "924fffa608b415dcbb3aa6a92895f154c4d366b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_82a3b441",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 6
@@ -98,6 +115,23 @@
       "writtenOn": "2014-09-14T23:27:47Z",
       "side": 1,
       "message": "there\u0027s a lot of copied code here that should be moved into a function.",
+      "revId": "924fffa608b415dcbb3aa6a92895f154c4d366b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_3d514d62",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1000,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-09-15T01:39:31Z",
+      "side": 1,
+      "message": "I think we can just have one test that calls both delete and head.",
       "revId": "924fffa608b415dcbb3aa6a92895f154c4d366b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
