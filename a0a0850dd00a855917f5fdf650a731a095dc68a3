@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_8c94b437",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-15T18:09:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_113e1fb8",
+      "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_5376efa4",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 2
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_eca460a7",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-15T18:09:31Z",
+      "side": 1,
+      "message": "went with deployments",
+      "parentUuid": "fa98f980_91a04ff5",
+      "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_f197db8d",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 2
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_4c7accba",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-15T18:09:31Z",
+      "side": 1,
+      "message": "@stanek, the reasoning between org display name and name is in the docs:\n\n  \"organization\": {\n    \"name\": [(\"Example Company\",\"en\"), (\"Exempel AB\",\"se\")],\n    \"display_name\": [\"Exempel AB\"],\n    \"url\": [(\"http://example.com\",\"en\"),(\"http://exempel.se\",\"se\")],\n  }\n\nI can\u0027t find any docs that say URL safe specifically, but they clearly should be, since it\u0027ll mess up the XML transformation otherwise. I\u0027ve added a note.",
+      "parentUuid": "fa98f980_f197db8d",
+      "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_cca6bc0e",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 2
@@ -82,6 +136,24 @@
       "writtenOn": "2014-09-15T17:46:04Z",
       "side": 1,
       "message": "Split into 2 sentences: \n\n\"...metadata must be exchanged. To create metadata for your..\"",
+      "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_8c4f5491",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-15T18:09:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_cca6bc0e",
       "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -140,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_2c56682a",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-15T18:09:31Z",
+      "side": 1,
+      "message": "I believe so, Brant started it in here: http://docs.openstack.org/developer/keystone/api_curl_examples.html",
+      "parentUuid": "fa98f980_b1a9d391",
+      "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_516fc75f",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 2
@@ -157,6 +247,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_4c51ec2e",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-15T18:09:31Z",
+      "side": 1,
+      "message": "you are definitely right, i renamed the section",
+      "parentUuid": "fa98f980_516fc75f",
+      "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_cc595cfe",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 2
@@ -168,6 +276,24 @@
       "writtenOn": "2014-09-15T17:46:04Z",
       "side": 1,
       "message": "Is this sentece correct? \nHow about:\nAt this point the SAML Assertion can be sent to the Service Provider Keystone, and a valid OpenStack roken, issued by a Service Provider Keystone, will be returned.",
+      "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_8c367401",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-15T18:09:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_cc595cfe",
       "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
