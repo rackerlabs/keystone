@@ -406,8 +406,9 @@ class Middleware(Application):
             return cls(app, **local_config)
         return _factory
 
-    def __init__(self, application):
+    def __init__(self, application, **local_config):
         super(Middleware, self).__init__()
+        self.kwargs = local_config
         self.application = application
 
     def process_request(self, request):
@@ -579,9 +580,10 @@ class ExtensionRouter(Router):
 
     Expects to be subclassed.
     """
-    def __init__(self, application, mapper=None):
+    def __init__(self, application, mapper=None, **local_config):
         if mapper is None:
             mapper = routes.Mapper()
+        self.kwargs = local_config
         self.application = application
         self.add_routes(mapper)
         mapper.connect('{path_info:.*}', controller=self.application)

@@ -189,8 +189,7 @@ class ApplicationTest(BaseWSGITest):
 class ExtensionRouterTest(BaseWSGITest):
     def test_extensionrouter_local_config(self):
         class FakeRouter(wsgi.ExtensionRouter):
-            def __init__(self, *args, **kwargs):
-                self.kwargs = kwargs
+            pass
 
         factory = FakeRouter.factory({}, testkey="test")
         app = factory(self.app)
@@ -263,8 +262,7 @@ class MiddlewareTest(BaseWSGITest):
 
     def test_middleware_local_config(self):
         class FakeMiddleware(wsgi.Middleware):
-            def __init__(self, *args, **kwargs):
-                self.kwargs = kwargs
+            pass
 
         factory = FakeMiddleware.factory({}, testkey="test")
         app = factory(self.app)
