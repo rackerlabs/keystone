@@ -153,6 +153,23 @@
       "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_20e3cfa4",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-15T15:51:11Z",
+      "side": 1,
+      "message": "Don\u0027t we need to regenerate the config file for these?",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
