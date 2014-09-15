@@ -125,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_47fc65b5",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-15T18:17:57Z",
+      "side": 1,
+      "message": "Nice, thanks. Yeah, looking at this it was not clean why I would need two different names.",
+      "parentUuid": "fa98f980_4c7accba",
+      "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_cca6bc0e",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 2
