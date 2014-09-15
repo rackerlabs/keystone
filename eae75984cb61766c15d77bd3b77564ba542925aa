@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_f9db524c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-15T09:49:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_9c395fa6",
+      "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_dc3f6785",
         "filename": "keystone/identity/backends/sql.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-14T13:21:49Z",
       "side": 1,
       "message": "add a comment why this is method is overridden -- primordial support for domain-specific SQL backend.",
+      "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_8853d2e0",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-15T09:49:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_dc3f6785",
       "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_68486e2d",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-15T09:49:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_bc3c6394",
+      "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_9c607fa6",
         "filename": "keystone/identity/core.py",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2014-09-14T13:21:49Z",
       "side": 1,
       "message": "add a method to the driver instead that returns its type, or better yet returns its capabilities. This isn\u0027t safe because someone might have their own SQL driver and it\u0027s in a different location.",
+      "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_48df2a69",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-15T09:49:30Z",
+      "side": 1,
+      "message": "So we could do that...my only concern is that we\u0027d have to load the object for that....do you think instantiating the class might be conceptually dangerous, since it might upset the underlying sql?  I think our standard one is fine, but who knows what people will put in __init__() ?",
+      "parentUuid": "fa98f980_9c607fa6",
       "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_99708609",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-15T09:49:30Z",
+      "side": 1,
+      "message": "changed to LE",
+      "parentUuid": "fa98f980_5c5377e1",
+      "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_1c748f66",
         "filename": "keystone/identity/core.py",
         "patchSetId": 7
@@ -98,6 +188,24 @@
       "writtenOn": "2014-09-14T13:21:49Z",
       "side": 1,
       "message": "I don\u0027t think it\u0027s safe to log a warning and ignore the config. For one thing, the configs may be loaded in a different order and so you could get different backends ignored on separate reboots. Raise an exception.",
+      "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b962aa3b",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-15T09:49:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_1c748f66",
       "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_623250f3",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2139,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-15T09:49:30Z",
+      "side": 1,
+      "message": "...now why didn\u0027t I think of that.....",
+      "parentUuid": "fa98f980_7c659bad",
+      "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_9c079fc9",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 7
@@ -132,6 +258,24 @@
       "writtenOn": "2014-09-14T13:21:49Z",
       "side": 1,
       "message": "revert these changes they\u0027re unrelated.",
+      "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_c204dc16",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2204,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-15T09:49:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_9c079fc9",
       "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_e2072016",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2288,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-15T09:49:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_bc0aa3cf",
+      "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_1cfbafc1",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 7
@@ -166,6 +328,24 @@
       "writtenOn": "2014-09-14T13:21:49Z",
       "side": 1,
       "message": "change \"taling\" to \"talking\" (ant at line 2427).\n\nAlso, why have a test that doesn\u0027t work with real LDAP? just get rid of it.",
+      "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_4210ec4d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2423,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-15T09:49:30Z",
+      "side": 1,
+      "message": "It\u0027s a weird test, that relies on code that was added to our fake ldap driver...weird, indeed.",
+      "parentUuid": "fa98f980_1cfbafc1",
       "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_621b3073",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2448,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-15T09:49:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_7cfcbbb5",
+      "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_9c2ebf41",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 7
@@ -200,6 +398,24 @@
       "writtenOn": "2014-09-14T13:21:49Z",
       "side": 1,
       "message": "seems like the database should be cleared before the backends are loaded.",
+      "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_822d7491",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2468,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-15T09:49:30Z",
+      "side": 1,
+      "message": "...actually it\u0027s not needed at all here...deleted.",
+      "parentUuid": "fa98f980_9c2ebf41",
       "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_c2521c12",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2496,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-15T09:49:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_dc24c761",
+      "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_fc27cb60",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 7
@@ -234,6 +468,24 @@
       "writtenOn": "2014-09-14T13:21:49Z",
       "side": 1,
       "message": "change \"specifc\" to \"specific\"",
+      "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_a24fd869",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2526,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-15T09:49:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_fc27cb60",
       "revId": "eae75984cb61766c15d77bd3b77564ba542925aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
