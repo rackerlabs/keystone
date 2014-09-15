@@ -152,6 +152,24 @@
       "revId": "4c2421c5da019f60f45089a53ebca35da6f106c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_c39dbbbd",
+        "filename": "keystone/tests/test_cert_setup.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-09-15T07:32:10Z",
+      "side": 1,
+      "message": "This test is used by test_fetch_signing_cert_when_rebuild in line 138.",
+      "parentUuid": "fa98f980_5d47f1bb",
+      "revId": "4c2421c5da019f60f45089a53ebca35da6f106c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
