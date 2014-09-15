@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_113e1fb8",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-15T17:17:32Z",
+      "side": 1,
+      "message": "Configuration?",
+      "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_5376efa4",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 2
@@ -13,6 +30,92 @@
       "writtenOn": "2014-09-15T16:05:54Z",
       "side": 1,
       "message": "s/Keystones/Keystone deployments/\n\ns/Keystones/Keystone servers/ \n\n?",
+      "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_91a04ff5",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-15T17:17:32Z",
+      "side": 1,
+      "message": "I think I like deployments here because at the summit I was talking to lots of people already using multiple servers in a standard load balanced configuration.",
+      "parentUuid": "fa98f980_5376efa4",
+      "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f197db8d",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-15T17:17:32Z",
+      "side": 1,
+      "message": "Why is this different from \"display name\"? Does it have to be URL safe?",
+      "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f1fa7bbb",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-15T17:17:32Z",
+      "side": 1,
+      "message": "Are these URLs typically http and not https?",
+      "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b1a9d391",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 358,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-15T17:17:32Z",
+      "side": 1,
+      "message": "Is having the OS_TOKEN  set a convention already in the docs? I\u0027m not saying this is bad, I just don\u0027t know what the audience already knows.",
+      "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_516fc75f",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-15T17:17:32Z",
+      "side": 1,
+      "message": "Should this be called out a as test to make sure the configuration worked? It\u0027s not really a stop in the configuration right?",
       "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
