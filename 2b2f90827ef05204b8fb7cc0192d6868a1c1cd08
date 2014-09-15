@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_22182f1d",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-15T18:55:39Z",
+      "side": 1,
+      "message": "I think that you should remove this",
+      "revId": "2b2f90827ef05204b8fb7cc0192d6868a1c1cd08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
