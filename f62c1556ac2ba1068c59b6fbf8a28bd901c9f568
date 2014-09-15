@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_60beb766",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-15T15:53:58Z",
+      "side": 1,
+      "message": "Agree with Brant\u0027s comment, this needs to be unit tested.",
+      "revId": "f62c1556ac2ba1068c59b6fbf8a28bd901c9f568",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
