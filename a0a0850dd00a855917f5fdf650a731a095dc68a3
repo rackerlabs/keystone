@@ -71,6 +71,23 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_cca6bc0e",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-15T17:46:04Z",
+      "side": 1,
+      "message": "Split into 2 sentences: \n\n\"...metadata must be exchanged. To create metadata for your..\"",
+      "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_f1fa7bbb",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 2
@@ -82,6 +99,24 @@
       "writtenOn": "2014-09-15T17:17:32Z",
       "side": 1,
       "message": "Are these URLs typically http and not https?",
+      "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_2cb7483b",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-15T17:46:04Z",
+      "side": 1,
+      "message": "rather https, changed.",
+      "parentUuid": "fa98f980_f1fa7bbb",
       "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -116,6 +151,23 @@
       "writtenOn": "2014-09-15T17:17:32Z",
       "side": 1,
       "message": "Should this be called out a as test to make sure the configuration worked? It\u0027s not really a stop in the configuration right?",
+      "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_cc595cfe",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-15T17:46:04Z",
+      "side": 1,
+      "message": "Is this sentece correct? \nHow about:\nAt this point the SAML Assertion can be sent to the Service Provider Keystone, and a valid OpenStack roken, issued by a Service Provider Keystone, will be returned.",
       "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
