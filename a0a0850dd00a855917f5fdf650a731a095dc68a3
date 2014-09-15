@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_5376efa4",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-15T16:05:54Z",
+      "side": 1,
+      "message": "s/Keystones/Keystone deployments/\n\ns/Keystones/Keystone servers/ \n\n?",
+      "revId": "a0a0850dd00a855917f5fdf650a731a095dc68a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
