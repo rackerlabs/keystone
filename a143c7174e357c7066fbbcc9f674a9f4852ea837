@@ -106,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_16045516",
+        "filename": "keystone/common/cache/backends/_memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-15T17:03:57Z",
+      "side": 1,
+      "message": "Is there any reason why this needs a cleanup thread. This to me implies that we can\u0027t be sure that we can return the connection to the pool after a greenlet uses it, but since this is handled in this module as a context manager is it really a problem?",
+      "parentUuid": "fa98f980_c05be383",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_2f34c148",
         "filename": "keystone/common/cache/backends/_memcache_pool.py",
         "patchSetId": 5
@@ -185,6 +203,23 @@
       "writtenOn": "2014-09-15T16:27:10Z",
       "side": 1,
       "message": "Is this del significant? I would think that the garbage collection would be sufficient and if now wouldn\u0027t you need to also del the conn reference?",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f1143b45",
+        "filename": "keystone/common/cache/backends/_memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-15T17:03:57Z",
+      "side": 1,
+      "message": "Does our memcached library not do this for us?",
       "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
