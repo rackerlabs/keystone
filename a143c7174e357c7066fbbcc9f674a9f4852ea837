@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_c05be383",
+        "filename": "keystone/common/cache/backends/_memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-15T15:49:43Z",
+      "side": 1,
+      "message": "if we decide to merge this as is, I think Morgan\u0027s concerns would make for a good inline comment.",
+      "parentUuid": "fa98f980_0f31bd59",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_2f34c148",
         "filename": "keystone/common/cache/backends/_memcache_pool.py",
         "patchSetId": 5
