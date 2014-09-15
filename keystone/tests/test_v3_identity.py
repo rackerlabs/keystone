@@ -1101,6 +1101,51 @@ class IdentityTestCase(test_v3.RestfulTestCase):
 
         self.put(member_url, expected_status=404)
 
+    def test_token_revoked_once_group_role_grant_revoked(self):
+        """Test token is revoked when group role grant is revoked'
+
+        Test that a project scoped token becomes invalid when
+        a role granted to a group the user belongs is revoked.
+        """
+
+        # If enabled, the revoke API will revoke tokens first.
+        # This ensures that tokens are revoked even without revoke API.
+        self.assignment_api.revoke_api = None
+
+        # creates grant from group on project.
+        self.assignment_api.create_grant(role_id=self.role['id'],
+                                         project_id=self.project['id'],
+                                         group_id=self.group['id'])
+
+        # adds user to the project and to the group.
+        self.assignment_api.add_user_to_project(user_id=self.user['id'],
+                                                tenant_id=self.project['id'])
+        self.identity_api.add_user_to_group(user_id=self.user['id'],
+                                            group_id=self.group['id'])
+
+        # creates a token for the user
+        auth_body = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            project_id=self.project['id'])
+        token_resp = self.post('/auth/tokens', body=auth_body)
+        token = token_resp.headers.get('x-subject-token')
+
+        # validates the returned token; it should be valid.
+        self.head('/auth/tokens',
+                  headers={'x-subject-token': token},
+                  expected_status=200)
+
+        # revokes the grant from group on project.
+        self.assignment_api.delete_grant(role_id=self.role['id'],
+                                         project_id=self.project['id'],
+                                         group_id=self.group['id'])
+
+        # validates the same token again; it should not longer be valid.
+        self.head('/auth/tokens',
+                  headers={'x-subject-token': token},
+                  expected_status=404)
+
     def test_get_role_assignments(self):
         """Call ``GET /role_assignments``.
 
