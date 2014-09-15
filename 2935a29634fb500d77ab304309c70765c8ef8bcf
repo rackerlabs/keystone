@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_3d794d2f",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-15T00:46:24Z",
+      "side": 1,
+      "message": "I\u0027d prefer it if this had section\u003d\u0027catalog\u0027 so that we know it\u0027s the section name.\n\nAlso, as a cleanup, there could be one function that handled both functions:\n\n SHOULD_CACHE, EXPIRATION_TIME \u003d cache.get_cache_fns(section\u003d\u0027catalog\u0027)\n\nAlternatively, could return an instance with should_cache and expiration_time members:\n\n CACHE_INFO \u003d cache.get_cache_fns(section\u003d\u0027catalog\u0027)\n\n @cache.on_arguments(should_cache_fn\u003dCACHE_INFO.should_cache, \n                                     expiration_time\u003dCACHE_INFO.expiration_time_fn)\n\nCACHE_INFO could just have the decorator:\n\n  @CACHE_INFO.on_arguments",
+      "revId": "2935a29634fb500d77ab304309c70765c8ef8bcf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_3da06d8f",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 191,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-15T00:46:24Z",
+      "side": 1,
+      "message": "what if it doesn\u0027t default to None?",
+      "revId": "2935a29634fb500d77ab304309c70765c8ef8bcf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_5d745135",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-15T00:46:24Z",
+      "side": 1,
+      "message": "shouldn\u0027t it be an error if there\u0027s no cache_time? e.g., this should be\n\n  return conf_group.cache_time",
+      "revId": "2935a29634fb500d77ab304309c70765c8ef8bcf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_fd9a6560",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-15T00:46:24Z",
+      "side": 1,
+      "message": "The docstring for get_expiration_time_fn says this should default to None.",
+      "revId": "2935a29634fb500d77ab304309c70765c8ef8bcf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_5dab7174",
+        "filename": "keystone/tests/test_cache.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-15T00:46:24Z",
+      "side": 1,
+      "message": "why not just split this into 2 functions?",
+      "revId": "2935a29634fb500d77ab304309c70765c8ef8bcf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
