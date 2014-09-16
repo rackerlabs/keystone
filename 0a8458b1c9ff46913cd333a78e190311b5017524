@@ -50,6 +50,24 @@
       "revId": "0a8458b1c9ff46913cd333a78e190311b5017524",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_488d382a",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-16T16:56:28Z",
+      "side": 1,
+      "message": "So in the future it might indeed instantiate a unique sql backend, from the details in conf.  However, since today we only support one, really the only crucial thing is the module that is providing the sql driver...which of course is already used to get us to this point in the code.  So in reality, today it is done this way to look like the LDAP case, in the future we might actually use it inside this module.",
+      "parentUuid": "fa98f980_482a9830",
+      "revId": "0a8458b1c9ff46913cd333a78e190311b5017524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
