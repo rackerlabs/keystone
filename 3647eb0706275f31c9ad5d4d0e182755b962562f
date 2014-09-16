@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_81a8e4dc",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1105,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-16T13:18:38Z",
+      "side": 1,
+      "message": "extra \u0027 ?",
+      "revId": "3647eb0706275f31c9ad5d4d0e182755b962562f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_617a2079",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1108,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-16T13:18:38Z",
+      "side": 1,
+      "message": "Maybe you should make clear the scenario you are considering",
+      "revId": "3647eb0706275f31c9ad5d4d0e182755b962562f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_015074d3",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1122,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-16T13:18:38Z",
+      "side": 1,
+      "message": "isn\u0027t the grant given for the group? This is unecessary",
+      "revId": "3647eb0706275f31c9ad5d4d0e182755b962562f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
