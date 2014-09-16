@@ -37,6 +37,57 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_2fa8f376",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 19
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-16T21:44:34Z",
+      "side": 1,
+      "message": "if it\u0027s a list, is it meant to be comma separated? add a note?",
+      "revId": "db0de93809561fc1f647d4f5c9d53ddd16d18478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_4fb457d4",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 19
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-16T21:44:34Z",
+      "side": 1,
+      "message": "it\u0027s?",
+      "revId": "db0de93809561fc1f647d4f5c9d53ddd16d18478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_cfc76745",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 19
+      },
+      "lineNbr": 1228,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-16T21:44:34Z",
+      "side": 1,
+      "message": "it\u0027s?",
+      "revId": "db0de93809561fc1f647d4f5c9d53ddd16d18478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_6686a818",
         "filename": "keystone/common/cache/_memcache_pool.py",
         "patchSetId": 19
@@ -136,6 +187,23 @@
       "side": 1,
       "message": "I think we\u0027re mostly ok here. We might leak a little over the top, but we\u0027re still talking coroutines in eventlet and we should be mostly safe on that front since the coroutine *probably* wont yield in this creation loop.",
       "parentUuid": "fa98f980_c6b754f4",
+      "revId": "db0de93809561fc1f647d4f5c9d53ddd16d18478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_0fd96f22",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-16T21:44:34Z",
+      "side": 1,
+      "message": "refer to comments at keystone/etc/keystone.conf.sample",
       "revId": "db0de93809561fc1f647d4f5c9d53ddd16d18478",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
