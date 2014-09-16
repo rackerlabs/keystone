@@ -1,0 +1,412 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_1ebd43b1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "the commit message shouldn\u0027t rely on someone having an internet connection.",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_3edf670e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "what backend?",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_1ed463e7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "this is \"dead_retry\" in the sample above.",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_3e068786",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "this is \"socket_timeout\" in the sample above.",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_9eff7365",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "change \"its\" to \"It\u0027s\"",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_def49b88",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "just use standard python logging. It already supports disabling loggers.",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b9fa91ba",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "why does the filename start with _?",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_99b5cdee",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "url should be urls since it\u0027s a list.",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_59bfe5cf",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "Add a comment why 0 is used here. Seems like None would be the obvious choice.",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_1998fd73",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "shouldn\u0027t these all be private?",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f9c5f95b",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "use regular python logging to control whether debug messages are printed or not.",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_19a63dab",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "how about make the prefix a regular string (don\u0027t do replacement), and then do the replacement here:\n\n prefix \u003d \u0027Memcached client pool %(pool)s, thread %(thread)s: \u0027\n kwargs[\u0027pool\u0027] \u003d id(self)\n kwargs[\u0027thread\u0027] \u003d thread_id\n LOG.debug(prefix + msg, **kwargs)\n\nThen the code won\u0027t have to look over the prefix string twice.",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_79ae6982",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "This should say \"Created\" rather than \"Creating\"",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_19bd5db1",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "Seems like ths should be higher than debug if it\u0027s so unexpected.",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_d9c67548",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "should be able to use just e here rather than str(e).",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f9e2599e",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "change \"play role only for\" to \"be used only by the\"",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_79e669b1",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "change \"unuzed\" to \"unused\"",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f9f9794e",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "add a . at the end of the help text. This applies to all these options.",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_799d8909",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "change \"unuzed\" to \"unused\"",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b98a91bc",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "change \"its\" to \"it\u0027s\"",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_59c1a5e2",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 802,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "I don\u0027t understand how it is we can get rid of the cas retry option?",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f99099ee",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 819,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "change \"unuzed\" to \"unused\"",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f9a7b94d",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "So the other one isn\u0027t a valid backend anymore?",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_996eadfe",
+        "filename": "keystone/token/persistence/backends/memcache.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T01:33:24Z",
+      "side": 1,
+      "message": "change \"unuzed\" to \"unused\"",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
