@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_83661e28",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 2033,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-09-16T19:18:38Z",
+      "side": 1,
+      "message": "you are the only person I have seen kind enough to comment why this is done.  It is done all over the place and I figured out why but nice to see you make it clear",
+      "revId": "57e508461156ae5faeeff072f094bba89c466691",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
