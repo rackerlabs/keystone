@@ -1,0 +1,135 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_c3474676",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-16T19:18:51Z",
+      "side": 1,
+      "message": "_destroy_connection is no longer @classmethod",
+      "revId": "21dc32f128105452b6b11f9b98f0b18cd6cefe31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_43f7d659",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-16T19:18:51Z",
+      "side": 1,
+      "message": "I\u0027m not sure how that worked, replaced with isEnabledFor",
+      "range": {
+        "startLine": 61,
+        "startChar": 11,
+        "endLine": 61,
+        "endChar": 41
+      },
+      "revId": "21dc32f128105452b6b11f9b98f0b18cd6cefe31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_63169a5a",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-16T19:18:51Z",
+      "side": 1,
+      "message": "This moved to release - the later we run cleanup the more connections we reap.",
+      "revId": "21dc32f128105452b6b11f9b98f0b18cd6cefe31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_2356522b",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-16T19:18:51Z",
+      "side": 1,
+      "message": "I\u0027ve added a descriptive pool item here.",
+      "revId": "21dc32f128105452b6b11f9b98f0b18cd6cefe31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_c33e66da",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-16T19:18:51Z",
+      "side": 1,
+      "message": "This would mean that when we don\u0027t find any good connections we do nothing. Fixed that.",
+      "revId": "21dc32f128105452b6b11f9b98f0b18cd6cefe31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_03ab0e1f",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-16T19:18:51Z",
+      "side": 1,
+      "message": "There\u0027s no need for separate variable anymore.",
+      "revId": "21dc32f128105452b6b11f9b98f0b18cd6cefe31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_c37026df",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 802,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-16T19:18:51Z",
+      "side": 1,
+      "message": "This seems excessive as we are already in [memcache] section.",
+      "range": {
+        "startLine": 800,
+        "startChar": 54,
+        "endLine": 802,
+        "endChar": 67
+      },
+      "revId": "21dc32f128105452b6b11f9b98f0b18cd6cefe31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
