@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_599a8514",
+        "filename": "keystone/exception.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-16T01:31:49Z",
+      "side": 1,
+      "message": "nit: s/a second/additional/",
+      "revId": "ebf682a599e6d4c76a4c1d6ee1705c72a38da821",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
