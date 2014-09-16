@@ -104,6 +104,24 @@
       "revId": "087b43bed3bc2932037d55c2a3df07aeef58b2bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b9037140",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2086,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-16T01:29:11Z",
+      "side": 1,
+      "message": "Good deal, just wanted to make sure it didn\u0027t get lost. Thanks for the responses Henry!",
+      "parentUuid": "fa98f980_02f6cbd6",
+      "revId": "087b43bed3bc2932037d55c2a3df07aeef58b2bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
