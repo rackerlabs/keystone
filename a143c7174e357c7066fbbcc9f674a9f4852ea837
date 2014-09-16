@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_b2fc6041",
+        "filename": "keystone/common/cache/backends/_memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-16T10:24:44Z",
+      "side": 1,
+      "message": "It intentionally have been kept out of ConnectionPool to allow use of this method from background thread.",
+      "parentUuid": "fa98f980_8562d03b",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_0fe37dd9",
         "filename": "keystone/common/cache/backends/_memcache_pool.py",
         "patchSetId": 5
@@ -65,6 +83,24 @@
       "writtenOn": "2014-09-13T02:35:44Z",
       "side": 1,
       "message": "This *should* be an abstract base class and _create_connection should be an abcmethod.\n\nThis is not something that needs to be fixed before merging. It can occur in either a followup patch or if/when this is spun out into it\u0027s own library.",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b28380a8",
+        "filename": "keystone/common/cache/backends/_memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-16T10:24:44Z",
+      "side": 1,
+      "message": "Using ABC here seems superfluous given we have only one subclass here.",
+      "parentUuid": "fa98f980_0fe37dd9",
       "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -124,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_727038dd",
+        "filename": "keystone/common/cache/backends/_memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-16T10:24:44Z",
+      "side": 1,
+      "message": "Cleaner thread here is not to return connections to the pool. It is here to shrink pool when connections are not used. This way we\u0027ll be able to have enough connections (hundreds?) when we need them but don\u0027t keep these connections around for too long.\n\nIf that\u0027s not needed then we can just create fixed-size pool and live with e.g. 100 extra (idle) connections to memcached for every Keystone process.",
+      "parentUuid": "fa98f980_16045516",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_2f34c148",
         "filename": "keystone/common/cache/backends/_memcache_pool.py",
         "patchSetId": 5
@@ -152,6 +206,24 @@
       "writtenOn": "2014-09-13T02:35:44Z",
       "side": 1,
       "message": "Based on the implementation, this could simply do \u0027pass\u0027 and let a pool that needs to override it do so. Second this appears to be an @staticmethod not an @classmethod.\n\nThis can be fixed later as a followup *or* a when this is spun off into a library in K cycle.",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_1248cc89",
+        "filename": "keystone/common/cache/backends/_memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-16T10:24:44Z",
+      "side": 1,
+      "message": "It should be a class method to allow subclasses use their class methods here. Yes, \u0027pass\u0027 would be enough here.",
+      "parentUuid": "fa98f980_4fe905b6",
       "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -192,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_72475878",
+        "filename": "keystone/common/cache/backends/_memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-16T10:24:44Z",
+      "side": 1,
+      "message": "Yes, I thought about using namedtuple here instead.",
+      "parentUuid": "fa98f980_6f4169a8",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_8591f048",
         "filename": "keystone/common/cache/backends/_memcache_pool.py",
         "patchSetId": 5
@@ -209,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_b21f0070",
+        "filename": "keystone/common/cache/backends/_memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-16T10:24:44Z",
+      "side": 1,
+      "message": "Yes, it is. This thread will sleep for most of the time and keeping reference to connections around might use significant amount of resources. conn should be del\u0027ed here to.",
+      "parentUuid": "fa98f980_8591f048",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_f1143b45",
         "filename": "keystone/common/cache/backends/_memcache_pool.py",
         "patchSetId": 5
@@ -220,6 +328,24 @@
       "writtenOn": "2014-09-15T17:03:57Z",
       "side": 1,
       "message": "Does our memcached library not do this for us?",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b2062020",
+        "filename": "keystone/common/cache/backends/_memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-16T10:24:44Z",
+      "side": 1,
+      "message": "No, it doesn\u0027t. Here we propagate same values for deaduntil\u0027s to all Client instances we have in the pool.",
+      "parentUuid": "fa98f980_f1143b45",
       "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -254,6 +380,24 @@
       "writtenOn": "2014-09-15T16:27:10Z",
       "side": 1,
       "message": "Is it possible that this is too brittle? I think this is wrapping the backend and if it is what happens when an object asks the proxy for something that isn\u0027t a callable. Right now there appear to be one public property: http://dogpilecache.readthedocs.org/en/latest/api.html#backend-api",
+      "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_d2e2c49f",
+        "filename": "keystone/common/cache/backends/memcache_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-16T10:24:44Z",
+      "side": 1,
+      "message": "We wrap every call to memcache.Client instances, not to dogpile\u0027s backend. So we need to fetch new Client from the pool for every get/set/whatever.",
+      "parentUuid": "fa98f980_851490a0",
       "revId": "a143c7174e357c7066fbbcc9f674a9f4852ea837",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
