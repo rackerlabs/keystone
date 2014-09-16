@@ -393,6 +393,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_6bdbec4e",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-16T02:10:11Z",
+      "side": 1,
+      "message": "No this replaces it because the other backend will leak client connections under eventlet.",
+      "parentUuid": "fa98f980_f9a7b94d",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_996eadfe",
         "filename": "keystone/token/persistence/backends/memcache.py",
         "patchSetId": 10
