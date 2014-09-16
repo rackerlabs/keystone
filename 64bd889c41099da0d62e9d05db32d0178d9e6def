@@ -240,6 +240,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_abcf947d",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-16T02:12:34Z",
+      "side": 1,
+      "message": "This requires a string freeze exception, I\u0027ll upgrade to log.exception if it receives a +2 I\u0027ll send an email to the list about this.",
+      "parentUuid": "fa98f980_19bd5db1",
+      "revId": "64bd889c41099da0d62e9d05db32d0178d9e6def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_d9c67548",
         "filename": "keystone/common/cache/_memcache_pool.py",
         "patchSetId": 10
