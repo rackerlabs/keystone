@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_d2063921",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-16T16:05:40Z",
+      "side": 1,
+      "message": "(nit) This line is a little long and will be automatically shortened when using certain tools to view commits.\n\nhttps://wiki.openstack.org/wiki/GitCommitMessages#Summary_of_GIT_commit_message_structure",
+      "revId": "2e4d3e4b6f59f58e681f7d1d07516cd6b5cd4156",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
