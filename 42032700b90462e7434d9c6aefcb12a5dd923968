@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_e948ab30",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T20:09:22Z",
+      "side": 1,
+      "message": "This will apply to every API that uses _check_grant_protection and not just delete role assignment. Rather than change the behavior for every resource, have _check_grant_protection accept a new parameter (for example, allow_no_user\u003dFalse), change the delete role assignment operation to set allow_no_user\u003dTrue, and use that flag here rather than finding the request method.",
+      "revId": "42032700b90462e7434d9c6aefcb12a5dd923968",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_795669cf",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 8
