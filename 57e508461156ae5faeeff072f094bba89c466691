@@ -2,6 +2,91 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_69d11b2f",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T20:26:45Z",
+      "side": 1,
+      "message": "this could be a property so it\u0027s not all java-y.",
+      "revId": "57e508461156ae5faeeff072f094bba89c466691",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_29ef13eb",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T20:26:45Z",
+      "side": 1,
+      "message": "domain_id isn\u0027t used anymore, so remove it.",
+      "revId": "57e508461156ae5faeeff072f094bba89c466691",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_299d5367",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T20:26:45Z",
+      "side": 1,
+      "message": "if this function did the raise-ing then the caller would be simpler.\n\nAlso, seems like it would be easier to just keep a boolean that indicated whether an sql driver had been loaded already and check that instead of looking through all the backends every time.\n\n self._any_sql \u003d False\n\n driver \u003d self._load_driver(...)\n if driver.is_sql and self._any_sql: raise\n self._any_sql \u003d driver.is_sql",
+      "revId": "57e508461156ae5faeeff072f094bba89c466691",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_c99cc760",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T20:26:45Z",
+      "side": 1,
+      "message": "if self._load_driver() doesn\u0027t use domain, then this is the only place it\u0027s used, so probably don\u0027t need the domain variable at line 128...\n\n self[domain_ref[\u0027id\u0027]] \u003d domain_config",
+      "revId": "57e508461156ae5faeeff072f094bba89c466691",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_29c2b334",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 870,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T20:26:45Z",
+      "side": 1,
+      "message": "suggest make this a property.",
+      "revId": "57e508461156ae5faeeff072f094bba89c466691",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_83661e28",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 13
