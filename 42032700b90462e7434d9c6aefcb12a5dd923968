@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_795669cf",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-09-16T01:18:46Z",
+      "side": 1,
+      "message": "So if the user is not found raise an exception UNLESS it is a delete operation.  Very cool!",
+      "revId": "42032700b90462e7434d9c6aefcb12a5dd923968",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f969798c",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 946,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-09-16T01:18:46Z",
+      "side": 1,
+      "message": "Love all the comments!",
+      "revId": "42032700b90462e7434d9c6aefcb12a5dd923968",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b9d291fd",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 963,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-09-16T01:18:46Z",
+      "side": 1,
+      "message": "This is the test case I wanted to see. Very nice!",
+      "revId": "42032700b90462e7434d9c6aefcb12a5dd923968",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
