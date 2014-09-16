@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_4967f7b7",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 959,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-16T20:11:34Z",
+      "side": 1,
+      "message": "why wouldn\u0027t the user have the role assignment? don\u0027t we have a test already that shows if you do self.put a role assignment that the user has the role?",
+      "revId": "42032700b90462e7434d9c6aefcb12a5dd923968",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_b9d291fd",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 8
