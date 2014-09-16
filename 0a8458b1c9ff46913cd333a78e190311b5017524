@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_ad9cf65e",
+        "filename": "keystone/exception.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-16T16:44:20Z",
+      "side": 1,
+      "message": "(nit) SQL and single quotes",
+      "revId": "0a8458b1c9ff46913cd333a78e190311b5017524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_edcb5e48",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-16T16:44:20Z",
+      "side": 1,
+      "message": "(nit) missing a newline",
+      "revId": "0a8458b1c9ff46913cd333a78e190311b5017524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_482a9830",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-16T16:44:20Z",
+      "side": 1,
+      "message": "Is this supposed to use the configuration to rig up the driver based on the config passed in or is this just to make the interface the same as the LDAP driver?",
+      "revId": "0a8458b1c9ff46913cd333a78e190311b5017524",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
