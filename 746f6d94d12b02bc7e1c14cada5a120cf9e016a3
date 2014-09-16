@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_557a3e78",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-16T10:44:53Z",
+      "side": 1,
+      "message": "It\u0027s _thread_-safe, no matter the color.",
+      "revId": "746f6d94d12b02bc7e1c14cada5a120cf9e016a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f58a5263",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-16T10:44:53Z",
+      "side": 1,
+      "message": "Squashing these two classes together is a bad idea. They have been separated by functionality: connection pooling and python-memcache handling. I think it\u0027s harder to read now.",
+      "revId": "746f6d94d12b02bc7e1c14cada5a120cf9e016a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_55f15e00",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-16T10:44:53Z",
+      "side": 1,
+      "message": "This will always be False. We\u0027ll exceed max_pool_size easily.",
+      "range": {
+        "startLine": 78,
+        "startChar": 23,
+        "endLine": 78,
+        "endChar": 42
+      },
+      "revId": "746f6d94d12b02bc7e1c14cada5a120cf9e016a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b5be0aff",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-16T10:44:53Z",
+      "side": 1,
+      "message": "This was absolutely not the intention of unused_timeout in the original version. I don\u0027t see any point in closing-reopening connections here.\n\nMoreover cleanup must happen from the other side of pool or we\u0027ll have rotting connections on the bottom of the stack.",
+      "range": {
+        "startLine": 88,
+        "startChar": 74,
+        "endLine": 90,
+        "endChar": 78
+      },
+      "revId": "746f6d94d12b02bc7e1c14cada5a120cf9e016a3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
