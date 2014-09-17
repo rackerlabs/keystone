@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_cb6bc6ef",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-17T15:37:37Z",
+      "side": 1,
+      "message": "This sounds awkward. Maybe something more like:\n\n%(file_path)r can\u0027t be removed: %(error)s\n\nor:\n\nFailed to remove file %(file_path)r: %(error)s",
+      "revId": "d40b9afe6b83d10b78a7113bde61ac9f7e5bfe18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_6e44a8b7",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-17T15:37:37Z",
+      "side": 1,
+      "message": "This is also awkward. Maybe:\n\nAn error occurred when rebuilding cert files.",
+      "revId": "d40b9afe6b83d10b78a7113bde61ac9f7e5bfe18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_8e770c08",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-17T15:37:37Z",
+      "side": 1,
+      "message": "I think we want to be more explicit with this message.\n\n... use --rebuild to remove the existing files before regenerating",
+      "revId": "d40b9afe6b83d10b78a7113bde61ac9f7e5bfe18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
