@@ -16,6 +16,24 @@
       "revId": "c7f7a3124b091e325cdf9e3315c4636d15d33bed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_38c90a7a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-17T14:09:00Z",
+      "side": 1,
+      "message": "this isn\u0027t the right bug.",
+      "parentUuid": "fa98f980_4a744236",
+      "revId": "c7f7a3124b091e325cdf9e3315c4636d15d33bed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
