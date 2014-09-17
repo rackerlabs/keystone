@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_c42e53fa",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-17T16:16:53Z",
+      "side": 1,
+      "message": "this note comment belongs at line 562 now.",
+      "revId": "2f713d022fe802b727b3e6d9bc37380e04aff58c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_44c5033c",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-17T16:16:53Z",
+      "side": 1,
+      "message": "there\u0027s unnecessary duplication here:\n\n try:\n    ref[\u0027user\u0027] \u003d self.identity_api.get_user(user_id)\n except exception.UserNotFound:\n     if not allow_no_user:\n         raise",
+      "revId": "2f713d022fe802b727b3e6d9bc37380e04aff58c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
