@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_7afe22b0",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-17T17:28:06Z",
+      "side": 1,
+      "message": "as soon as possible?",
+      "revId": "c3ec76972c2dca436ca08ba3916fea84c5f02163",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_9ad10632",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-17T17:28:06Z",
+      "side": 1,
+      "message": "How about raise exception.NotImplemented() ?",
+      "revId": "c3ec76972c2dca436ca08ba3916fea84c5f02163",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_bad6ca25",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-17T17:28:06Z",
+      "side": 1,
+      "message": "How about raise exception.NotImplemented() ?",
+      "revId": "c3ec76972c2dca436ca08ba3916fea84c5f02163",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
