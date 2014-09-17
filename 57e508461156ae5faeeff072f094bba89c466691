@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_960813db",
+        "filename": "keystone/identity/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-17T06:36:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_69d11b2f",
+      "revId": "57e508461156ae5faeeff072f094bba89c466691",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_29ef13eb",
         "filename": "keystone/identity/core.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-16T20:26:45Z",
       "side": 1,
       "message": "domain_id isn\u0027t used anymore, so remove it.",
+      "revId": "57e508461156ae5faeeff072f094bba89c466691",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_76c56f09",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-17T06:36:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_29ef13eb",
       "revId": "57e508461156ae5faeeff072f094bba89c466691",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_968bb31d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-17T06:36:13Z",
+      "side": 1,
+      "message": "yes, I think that is indeed simpler. Done.",
+      "parentUuid": "fa98f980_299d5367",
+      "revId": "57e508461156ae5faeeff072f094bba89c466691",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_c99cc760",
         "filename": "keystone/identity/core.py",
         "patchSetId": 13
@@ -64,6 +118,24 @@
       "writtenOn": "2014-09-16T20:26:45Z",
       "side": 1,
       "message": "if self._load_driver() doesn\u0027t use domain, then this is the only place it\u0027s used, so probably don\u0027t need the domain variable at line 128...\n\n self[domain_ref[\u0027id\u0027]] \u003d domain_config",
+      "revId": "57e508461156ae5faeeff072f094bba89c466691",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b6b27704",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-17T06:36:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_c99cc760",
       "revId": "57e508461156ae5faeeff072f094bba89c466691",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_f6d87ff2",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 870,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-17T06:36:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_29c2b334",
+      "revId": "57e508461156ae5faeeff072f094bba89c466691",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_83661e28",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 13
@@ -98,6 +188,24 @@
       "writtenOn": "2014-09-16T19:18:38Z",
       "side": 1,
       "message": "you are the only person I have seen kind enough to comment why this is done.  It is done all over the place and I figured out why but nice to see you make it clear",
+      "revId": "57e508461156ae5faeeff072f094bba89c466691",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_3656872b",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 2033,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-17T06:36:13Z",
+      "side": 1,
+      "message": "yw",
+      "parentUuid": "fa98f980_83661e28",
       "revId": "57e508461156ae5faeeff072f094bba89c466691",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
