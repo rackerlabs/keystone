@@ -158,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_af2303a6",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-17T00:54:29Z",
+      "side": 1,
+      "message": "That\u0027s a good question. I don\u0027t think you can continue to wait. We would either have to fail or proceed without a cache. On second thought you could have a busy loop that will wait for X seconds, then log \u0027still waiting\u0027 and wait some more.",
+      "parentUuid": "fa98f980_3453ea3a",
+      "revId": "db0de93809561fc1f647d4f5c9d53ddd16d18478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_c6b754f4",
         "filename": "keystone/common/cache/_memcache_pool.py",
         "patchSetId": 19
@@ -187,6 +205,24 @@
       "side": 1,
       "message": "I think we\u0027re mostly ok here. We might leak a little over the top, but we\u0027re still talking coroutines in eventlet and we should be mostly safe on that front since the coroutine *probably* wont yield in this creation loop.",
       "parentUuid": "fa98f980_c6b754f4",
+      "revId": "db0de93809561fc1f647d4f5c9d53ddd16d18478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_af7143aa",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-17T00:54:29Z",
+      "side": 1,
+      "message": "Hmm...I guess even if it does all other greenthreads will block on line 71..",
+      "parentUuid": "fa98f980_54486e8a",
       "revId": "db0de93809561fc1f647d4f5c9d53ddd16d18478",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
