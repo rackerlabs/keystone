@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_db856608",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-17T05:31:12Z",
+      "side": 1,
+      "message": "i *think* you might need to add a similar function for EndpointFilterV3Controller",
+      "revId": "2c49007a04abaf2aa3d433cb96724407c33777ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_bb97c239",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-17T05:31:12Z",
+      "side": 1,
+      "message": "update the doc string?",
+      "revId": "2c49007a04abaf2aa3d433cb96724407c33777ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
