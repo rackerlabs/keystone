@@ -16,6 +16,24 @@
       "revId": "2b2f90827ef05204b8fb7cc0192d6868a1c1cd08",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_0549328e",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-17T20:29:22Z",
+      "side": 1,
+      "message": "copyright info \n\nhttp://lists.openstack.org/pipermail/legal-discuss/2013-April/000010.html\n\nhttps://wiki.openstack.org/wiki/LegalIssuesFAQ#Copyright_Headers\n\nThere is a wiki out there somewhere that explains who can add OpenStack Foundation Copyright, but I don\u0027t think I found it.",
+      "parentUuid": "fa98f980_22182f1d",
+      "revId": "2b2f90827ef05204b8fb7cc0192d6868a1c1cd08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
