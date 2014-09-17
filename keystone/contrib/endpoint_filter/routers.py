@@ -36,11 +36,12 @@ class EndpointFilterExtension(wsgi.V3ExtensionRouter):
 
     The API looks like::
 
-        GET /OS-EP-FILTER/projects/$project_id/endpoints/$endpoint_id
-        HEAD /OS-EP-FILTER/projects/$project_id/endpoints/$endpoint_id
-        DELETE /OS-EP-FILTER/projects/$project_id/endpoints/$endpoint_id
+        PUT /projects/$project_id/OS-EP-FILTER/endpoints/$endpoint_id
+        GET /projects/$project_id/OS-EP-FILTER/endpoints/$endpoint_id
+        HEAD /projects/$project_id/OS-EP-FILTER/endpoints/$endpoint_id
+        DELETE /projects/$project_id/OS-EP-FILTER/endpoints/$endpoint_id
         GET /OS-EP-FILTER/endpoints/$endpoint_id/projects
-        GET /OS-EP-FILTER/projects/$project_id/endpoints
+        GET /projects/$project_id/OS-EP-FILTER/endpoints
 
         GET /OS-EP-FILTER/endpoint_groups
         POST /OS-EP-FILTER/endpoint_groups
@@ -52,18 +53,29 @@ class EndpointFilterExtension(wsgi.V3ExtensionRouter):
         GET /OS-EP-FILTER/endpoint_groups/$endpoint_group_id/projects
         GET /OS-EP-FILTER/endpoint_groups/$endpoint_group_id/endpoints
 
-        PUT /OS-EP-FILTER/endpoint_groups/$endpoint_group/projects/$project_id
-        GET /OS-EP-FILTER/endpoint_groups/$endpoint_group/projects/$project_id
-        HEAD /OS-EP-FILTER/endpoint_groups/$endpoint_group/projects/$project_id
-        DELETE /OS-EP-FILTER/endpoint_groups/$endpoint_group/projects/
-            $project_id
+        PUT /projects/$project_id/OS-EP-FILTER/endpoint_groups/
+            $endpoint_group_id
+        GET /projects/$project_id/OS-EP-FILTER/endpoint_groups/
+            $endpoint_group_id
+        HEAD /projects/$project_id/OS-EP-FILTER/endpoint_groups/
+            $endpoint_group_id
+        DELETE /projects/$project_id/OS-EP-FILTER/endpoint_groups/
+            $endpoint_group_id
+
+        # NOTE(bobt): For Icehouse Backward Compatibility:
+        PUT /OS-EP-FILTER/projects/$project_id/endpoints/$endpoint_id
+        GET /OS-EP-FILTER/projects/$project_id/endpoints/$endpoint_id
+        HEAD /OS-EP-FILTER/projects/$project_id/endpoints/$endpoint_id
+        DELETE /OS-EP-FILTER/projects/$project_id/endpoints/$endpoint_id
+        GET /OS-EP-FILTER/projects/$project_id/endpoints
 
     """
     PATH_PREFIX = '/OS-EP-FILTER'
-    PATH_PROJECT_ENDPOINT = '/projects/{project_id}/endpoints/{endpoint_id}'
+    PATH_PROJECT_ENDPOINT = '/projects/{project_id}' + PATH_PREFIX + (
+        '/endpoints/{endpoint_id}')
     PATH_ENDPOINT_GROUPS = '/endpoint_groups/{endpoint_group_id}'
-    PATH_ENDPOINT_GROUP_PROJECTS = PATH_ENDPOINT_GROUPS + (
-        '/projects/{project_id}')
+    PATH_ENDPOINT_GROUP_PROJECTS = '/projects/{project_id}' + PATH_PREFIX + (
+        PATH_ENDPOINT_GROUPS)
 
     def add_routes(self, mapper):
         endpoint_filter_controller = controllers.EndpointFilterV3Controller()
@@ -81,7 +93,7 @@ class EndpointFilterExtension(wsgi.V3ExtensionRouter):
             })
         self._add_resource(
             mapper, endpoint_filter_controller,
-            path=self.PATH_PREFIX + self.PATH_PROJECT_ENDPOINT,
+            path=self.PATH_PROJECT_ENDPOINT,
             get_head_action='check_endpoint_in_project',
             put_action='add_endpoint_to_project',
             delete_action='remove_endpoint_from_project',
@@ -92,7 +104,7 @@ class EndpointFilterExtension(wsgi.V3ExtensionRouter):
             })
         self._add_resource(
             mapper, endpoint_filter_controller,
-            path=self.PATH_PREFIX + '/projects/{project_id}/endpoints',
+            path='/projects/{project_id}' + self.PATH_PREFIX + '/endpoints',
             get_action='list_endpoints_for_project',
             rel=build_resource_relation(resource_name='project_endpoints'),
             path_vars={
@@ -116,7 +128,7 @@ class EndpointFilterExtension(wsgi.V3ExtensionRouter):
             })
         self._add_resource(
             mapper, project_endpoint_group_controller,
-            path=self.PATH_PREFIX + self.PATH_ENDPOINT_GROUP_PROJECTS,
+            path=self.PATH_ENDPOINT_GROUP_PROJECTS,
             get_head_action='get_endpoint_group_in_project',
             put_action='add_endpoint_group_to_project',
             delete_action='remove_endpoint_group_from_project',
@@ -145,4 +157,28 @@ class EndpointFilterExtension(wsgi.V3ExtensionRouter):
                 resource_name='endpoints_in_endpoint_group'),
             path_vars={
                 'endpoint_group_id': ENDPOINT_GROUP_PARAMETER_RELATION
+            })
+        # NOTE(bobt): For backward compability with Endpoint Filter API
+        # defined in Icehouse release.
+        self._add_resource(
+            mapper, endpoint_filter_controller,
+            path=self.PATH_PREFIX + '/projects/{project_id}' + (
+                '/endpoints/{endpoint_id}'),
+            get_head_action='check_endpoint_in_project',
+            put_action='add_endpoint_to_project',
+            delete_action='remove_endpoint_from_project',
+            rel=build_resource_relation(resource_name='project_endpoint'),
+            path_vars={
+                'endpoint_id': json_home.Parameters.ENDPOINT_ID,
+                'project_id': json_home.Parameters.PROJECT_ID,
+            })
+        # NOTE(bobt): For backward compability with Endpoint Filter API
+        # defined in Icehouse release.
+        self._add_resource(
+            mapper, endpoint_filter_controller,
+            path=self.PATH_PREFIX + '/projects/{project_id}/endpoints',
+            get_action='list_endpoints_for_project',
+            rel=build_resource_relation(resource_name='project_endpoints'),
+            path_vars={
+                'project_id': json_home.Parameters.PROJECT_ID,
             })
