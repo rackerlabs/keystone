@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_cb2adb8f",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-17T22:11:59Z",
+      "side": 1,
+      "message": "The super\u0027s need to go if this is to be used in Apache.",
+      "revId": "30dedada763c2760c40137eba939161ac4bb6d2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_2bfd276f",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-17T22:11:59Z",
+      "side": 1,
+      "message": "Why isn\u0027t this \u0027return queue.Queue._qsize(self) + self._acquired\u0027? That would actually represent the number of things in the queue?",
+      "revId": "30dedada763c2760c40137eba939161ac4bb6d2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
