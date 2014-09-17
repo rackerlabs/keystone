@@ -16,6 +16,24 @@
       "revId": "c0ddc5c14dd2209ceaf5cadf3e898011d3b2474f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_1fd988f4",
+        "filename": "keystone/exception.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-17T16:51:55Z",
+      "side": 1,
+      "message": "I sent an email to the i18n list:\n\nhttp://lists.openstack.org/pipermail/openstack-i18n/2014-September/000771.html",
+      "parentUuid": "fa98f980_1f93485d",
+      "revId": "c0ddc5c14dd2209ceaf5cadf3e898011d3b2474f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
