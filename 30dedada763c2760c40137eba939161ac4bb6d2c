@@ -33,6 +33,24 @@
       "revId": "30dedada763c2760c40137eba939161ac4bb6d2c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_b6533ee1",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-17T22:34:26Z",
+      "side": 1,
+      "message": "No, so this is just mind bending logic. Event with nothing in the queue it will report as full until a new client is created. Then it reports as maxsize-1. The _get will realize that event though the queue says it\u0027s full that it need to create a client. This in turn allows the pool.put to work.",
+      "parentUuid": "fa98f980_2bfd276f",
+      "revId": "30dedada763c2760c40137eba939161ac4bb6d2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
