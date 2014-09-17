@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_3618471e",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-09-17T06:14:59Z",
+      "side": 1,
+      "message": "Steve, the legacy EndpointFilterV3Controller did not overload the this method.",
+      "parentUuid": "fa98f980_db856608",
+      "revId": "2c49007a04abaf2aa3d433cb96724407c33777ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_bb97c239",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-17T05:31:12Z",
       "side": 1,
       "message": "update the doc string?",
+      "revId": "2c49007a04abaf2aa3d433cb96724407c33777ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_16bfc3fd",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-09-17T06:14:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_bb97c239",
       "revId": "2c49007a04abaf2aa3d433cb96724407c33777ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
