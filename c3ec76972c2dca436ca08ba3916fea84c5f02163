@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_7c0a9f28",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-17T18:30:28Z",
+      "side": 1,
+      "message": "This is really an idle timeout. So connection that haven\u0027t been used in unused_timeout seconds may be reaped. Right now that\u0027s implemented during the connection release. So everytime a connection is released we check to see if any can be removed.",
+      "parentUuid": "fa98f980_7afe22b0",
+      "revId": "c3ec76972c2dca436ca08ba3916fea84c5f02163",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_9ad10632",
         "filename": "keystone/common/cache/_memcache_pool.py",
         "patchSetId": 26
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_9f3c95c1",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-17T18:30:28Z",
+      "side": 1,
+      "message": "That is an exception to say a Keystone feature isn\u0027t implemented which is a different error.",
+      "parentUuid": "fa98f980_9ad10632",
+      "revId": "c3ec76972c2dca436ca08ba3916fea84c5f02163",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_bad6ca25",
         "filename": "keystone/common/cache/_memcache_pool.py",
         "patchSetId": 26
@@ -83,6 +119,24 @@
       "writtenOn": "2014-09-17T17:28:06Z",
       "side": 1,
       "message": "How about raise exception.NotImplemented() ?",
+      "revId": "c3ec76972c2dca436ca08ba3916fea84c5f02163",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_ff7201af",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-17T18:30:28Z",
+      "side": 1,
+      "message": "Same here.",
+      "parentUuid": "fa98f980_bad6ca25",
       "revId": "c3ec76972c2dca436ca08ba3916fea84c5f02163",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
