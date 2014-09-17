@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa98f980_9d98361d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-17T03:18:51Z",
+      "side": 1,
+      "message": "remove the trailing period here",
+      "revId": "42032700b90462e7434d9c6aefcb12a5dd923968",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_e948ab30",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 8
@@ -81,6 +98,23 @@
       "writtenOn": "2014-09-16T01:18:46Z",
       "side": 1,
       "message": "This is the test case I wanted to see. Very nice!",
+      "revId": "42032700b90462e7434d9c6aefcb12a5dd923968",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_5de08e96",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 973,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-17T03:18:51Z",
+      "side": 1,
+      "message": "silly question, why not move these to assignment now?",
       "revId": "42032700b90462e7434d9c6aefcb12a5dd923968",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
