@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_bf1b1972",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-17T18:28:36Z",
+      "side": 1,
+      "message": "nope, they are released as they are unused. probably could be better phrased.",
+      "parentUuid": "fa98f980_7afe22b0",
+      "revId": "c3ec76972c2dca436ca08ba3916fea84c5f02163",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_9ad10632",
         "filename": "keystone/common/cache/_memcache_pool.py",
         "patchSetId": 26
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-17T17:28:06Z",
       "side": 1,
       "message": "How about raise exception.NotImplemented() ?",
+      "revId": "c3ec76972c2dca436ca08ba3916fea84c5f02163",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_5f24edae",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-17T18:28:36Z",
+      "side": 1,
+      "message": "Sure. However, you can\u0027t instantiate this class or a subclass without overriding/redefining the method (Same for below)",
+      "parentUuid": "fa98f980_9ad10632",
       "revId": "c3ec76972c2dca436ca08ba3916fea84c5f02163",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
