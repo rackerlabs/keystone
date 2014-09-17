@@ -34,17 +34,21 @@ class TestExtensionCase(test_v3.RestfulTestCase):
 
     def setUp(self):
         super(TestExtensionCase, self).setUp()
-        self.default_request_url = (
-            '/OS-EP-FILTER/projects/%(project_id)s'
-            '/endpoints/%(endpoint_id)s' % {
-                'project_id': self.default_domain_project_id,
-                'endpoint_id': self.endpoint_id})
+        self.default_request_url = get_project_endpoint_association_url(
+                self.default_domain_project_id, self.endpoint_id)
+
+
+def get_project_endpoint_association_url(project_id, endpoint_id):
+    return ('/projects/%(project_id)s/OS-EP-FILTER/'
+               '/endpoints/%(endpoint_id)s' % {
+                   'project_id': project_id,
+                   'endpoint_id': endpoint_id})
 
 
 class EndpointFilterCRUDTestCase(TestExtensionCase):
 
     def test_create_endpoint_project_association(self):
-        """PUT /OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id}
+        """PUT /projects/$project_id/OS-EP-FILTER/endpoints/{endpoint_id}
 
         Valid endpoint and project id test case.
 
@@ -54,33 +58,29 @@ class EndpointFilterCRUDTestCase(TestExtensionCase):
                  expected_status=204)
 
     def test_create_endpoint_project_association_with_invalid_project(self):
-        """PUT OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id}
+        """PUT /projects/{project_id}/OS-EP-FILTER/endpoints/{endpoint_id}
 
         Invalid project id test case.
 
         """
-        self.put('/OS-EP-FILTER/projects/%(project_id)s'
-                 '/endpoints/%(endpoint_id)s' % {
-                     'project_id': uuid.uuid4().hex,
-                     'endpoint_id': self.endpoint_id},
+        self.put(get_project_endpoint_association_url(uuid.uuid4().hex,
+                                                      self.endpoint_id),
                  body='',
                  expected_status=404)
 
     def test_create_endpoint_project_association_with_invalid_endpoint(self):
-        """PUT /OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id}
+        """PUT /projects/$project_id/OS-EP-FILTER/endpoints/{endpoint_id}
 
         Invalid endpoint id test case.
 
         """
-        self.put('/OS-EP-FILTER/projects/%(project_id)s'
-                 '/endpoints/%(endpoint_id)s' % {
-                     'project_id': self.default_domain_project_id,
-                     'endpoint_id': uuid.uuid4().hex},
+        self.put(get_project_endpoint_association_url(
+                     self.default_domain_project_id, uuid.uuid4().hex),
                  body='',
                  expected_status=404)
 
     def test_create_endpoint_project_association_with_unexpected_body(self):
-        """PUT /OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id}
+        """PUT /projects/$project_id/OS-EP-FILTER/endpoints/{endpoint_id}
 
         Unexpected body in request. The body should be ignored.
 
@@ -90,7 +90,7 @@ class EndpointFilterCRUDTestCase(TestExtensionCase):
                  expected_status=204)
 
     def test_check_endpoint_project_association(self):
-        """HEAD /OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id}
+        """HEAD /projects/$project_id/OS-EP-FILTER/endpoints/{endpoint_id}
 
         Valid project and endpoint id test case.
 
@@ -98,61 +98,55 @@ class EndpointFilterCRUDTestCase(TestExtensionCase):
         self.put(self.default_request_url,
                  body='',
                  expected_status=204)
-        self.head('/OS-EP-FILTER/projects/%(project_id)s'
-                  '/endpoints/%(endpoint_id)s' % {
-                      'project_id': self.default_domain_project_id,
-                      'endpoint_id': self.endpoint_id},
+        self.head(get_project_endpoint_association_url(
+                      self.default_domain_project_id, self.endpoint_id),
                   expected_status=204)
 
     def test_check_endpoint_project_association_with_invalid_project(self):
-        """HEAD /OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id}
+        """HEAD /projects/$project_id/OS-EP-FILTER/endpoints/{endpoint_id}
 
         Invalid project id test case.
 
         """
         self.put(self.default_request_url)
-        self.head('/OS-EP-FILTER/projects/%(project_id)s'
-                  '/endpoints/%(endpoint_id)s' % {
-                      'project_id': uuid.uuid4().hex,
-                      'endpoint_id': self.endpoint_id},
+        self.head(get_project_endpoint_association_url(uuid.uuid4().hex,
+                                                       self.endpoint_id),
                   body='',
                   expected_status=404)
 
     def test_check_endpoint_project_association_with_invalid_endpoint(self):
-        """HEAD /OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id}
+        """HEAD /projects/$project_id/OS-EP-FILTER/endpoints/{endpoint_id}
 
         Invalid endpoint id test case.
 
         """
         self.put(self.default_request_url)
-        self.head('/OS-EP-FILTER/projects/%(project_id)s'
-                  '/endpoints/%(endpoint_id)s' % {
-                      'project_id': self.default_domain_project_id,
-                      'endpoint_id': uuid.uuid4().hex},
+        self.head(get_project_endpoint_association_url(
+                      self.default_domain_project_id, uuid.uuid4().hex),
                   body='',
                   expected_status=404)
 
     def test_list_endpoints_associated_with_valid_project(self):
-        """GET /OS-EP-FILTER/projects/{project_id}/endpoints
+        """GET /projects/$project_id/OS-EP-FILTER/endpoints
 
         Valid project and endpoint id test case.
 
         """
         self.put(self.default_request_url)
-        resource_url = '/OS-EP-FILTER/projects/%(project_id)s/endpoints' % {
+        resource_url = '/projects/%(project_id)s/OS-EP-FILTER/endpoints' % {
                        'project_id': self.default_domain_project_id}
         r = self.get(resource_url)
         self.assertValidEndpointListResponse(r, self.endpoint,
                                              resource_url=resource_url)
 
     def test_list_endpoints_associated_with_invalid_project(self):
-        """GET /OS-EP-FILTER/projects/{project_id}/endpoints
+        """GET /projects/$project_id/OS-EP-FILTER/endpoints
 
         Invalid project id test case.
 
         """
         self.put(self.default_request_url)
-        self.get('/OS-EP-FILTER/projects/%(project_id)s/endpoints' % {
+        self.get('/projects/%(project_id)s/OS-EP-FILTER/endpoints' % {
                  'project_id': uuid.uuid4().hex},
                  body='',
                  expected_status=404)
@@ -192,43 +186,37 @@ class EndpointFilterCRUDTestCase(TestExtensionCase):
                  expected_status=404)
 
     def test_remove_endpoint_project_association(self):
-        """DELETE /OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id}
+        """DELETE /projects/$project_id/OS-EP-FILTER/endpoints/{endpoint_id}
 
         Valid project id and endpoint id test case.
 
         """
         self.put(self.default_request_url)
-        self.delete('/OS-EP-FILTER/projects/%(project_id)s'
-                    '/endpoints/%(endpoint_id)s' % {
-                        'project_id': self.default_domain_project_id,
-                        'endpoint_id': self.endpoint_id},
+        self.delete(get_project_endpoint_association_url(
+                      self.default_domain_project_id, self.endpoint_id),
                     expected_status=204)
 
     def test_remove_endpoint_project_association_with_invalid_project(self):
-        """DELETE /OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id}
+        """DELETE /projects/$project_id/OS-EP-FILTER/endpoints/{endpoint_id}
 
         Invalid project id test case.
 
         """
         self.put(self.default_request_url)
-        self.delete('/OS-EP-FILTER/projects/%(project_id)s'
-                    '/endpoints/%(endpoint_id)s' % {
-                        'project_id': uuid.uuid4().hex,
-                        'endpoint_id': self.endpoint_id},
+        self.delete(get_project_endpoint_association_url(uuid.uuid4().hex,
+                                                         self.endpoint_id),
                     body='',
                     expected_status=404)
 
     def test_remove_endpoint_project_association_with_invalid_endpoint(self):
-        """DELETE /OS-EP-FILTER/projects/{project_id}/endpoints/{endpoint_id}
+        """DELETE /projects/$project_id/OS-EP-FILTER/endpoints/{endpoint_id}
 
         Invalid endpoint id test case.
 
         """
         self.put(self.default_request_url)
-        self.delete('/OS-EP-FILTER/projects/%(project_id)s'
-                    '/endpoints/%(endpoint_id)s' % {
-                        'project_id': self.default_domain_project_id,
-                        'endpoint_id': uuid.uuid4().hex},
+        self.delete(get_project_endpoint_association_url(
+                      self.default_domain_project_id, uuid.uuid4().hex),
                     body='',
                     expected_status=404)
 
@@ -247,7 +235,7 @@ class EndpointFilterCRUDTestCase(TestExtensionCase):
 
     def test_endpoint_project_association_cleanup_when_endpoint_deleted(self):
         self.put(self.default_request_url)
-        association_url = '/OS-EP-FILTER/projects/%(project_id)s/endpoints' % {
+        association_url = '/projects/%(project_id)s/OS-EP-FILTER/endpoints' % {
             'project_id': self.default_domain_project_id}
         r = self.get(association_url, expected_status=200)
         self.assertValidEndpointListResponse(r, expected_length=1)
@@ -257,6 +245,17 @@ class EndpointFilterCRUDTestCase(TestExtensionCase):
 
         r = self.get(association_url, expected_status=200)
         self.assertValidEndpointListResponse(r, expected_length=0)
+
+    def test_icehouse_api_endpoint_project_association(self):
+        """Test the legacy api calls for endpoint project association"""
+        icehouse_url = ('/OS-EP-FILTER/projects/%(project_id)s'
+                           '/endpoints/%(endpoint_id)s' % {
+                               'project_id': self.project_id,
+                               'endpoint_id': self.endpoint_id})
+        self.put(icehouse_url)
+        self.head(icehouse_url)
+        self.delete(icehouse_url)
+        self.head(icehouse_url, expected_status=404)
 
 
 class EndpointFilterTokenRequestTestCase(TestExtensionCase):
@@ -283,10 +282,8 @@ class EndpointFilterTokenRequestTestCase(TestExtensionCase):
         self.assertValidUserResponse(r)
 
         # add one endpoint to the project
-        self.put('/OS-EP-FILTER/projects/%(project_id)s'
-                 '/endpoints/%(endpoint_id)s' % {
-                     'project_id': project['id'],
-                     'endpoint_id': self.endpoint_id},
+        self.put(get_project_endpoint_association_url(self.project['id'],
+                                                      self.endpoint_id),
                  body='',
                  expected_status=204)
 
@@ -305,10 +302,8 @@ class EndpointFilterTokenRequestTestCase(TestExtensionCase):
     def test_default_scoped_token_using_endpoint_filter(self):
         """Verify endpoints from default scoped token filtered."""
         # add one endpoint to default project
-        self.put('/OS-EP-FILTER/projects/%(project_id)s'
-                 '/endpoints/%(endpoint_id)s' % {
-                     'project_id': self.project['id'],
-                     'endpoint_id': self.endpoint_id},
+        self.put(get_project_endpoint_association_url(self.project['id'],
+                                                      self.endpoint_id),
                  body='',
                  expected_status=204)
 
@@ -352,10 +347,8 @@ class EndpointFilterTokenRequestTestCase(TestExtensionCase):
         self.assertValidUserResponse(r)
 
         # add one endpoint to the project
-        self.put('/OS-EP-FILTER/projects/%(project_id)s'
-                 '/endpoints/%(endpoint_id)s' % {
-                     'project_id': project['id'],
-                     'endpoint_id': self.endpoint_id},
+        self.put(get_project_endpoint_association_url(self.project['id'],
+                                                      self.endpoint_id),
                  body='',
                  expected_status=204)
 
@@ -379,10 +372,8 @@ class EndpointFilterTokenRequestTestCase(TestExtensionCase):
 
         """
         # add one endpoint to default project
-        self.put('/OS-EP-FILTER/projects/%(project_id)s'
-                 '/endpoints/%(endpoint_id)s' % {
-                     'project_id': self.project['id'],
-                     'endpoint_id': self.endpoint_id},
+        self.put(get_project_endpoint_association_url(self.project['id'],
+                                                      self.endpoint_id),
                  body='',
                  expected_status=204)
 
@@ -458,10 +449,8 @@ class EndpointFilterTokenRequestTestCase(TestExtensionCase):
     def test_invalid_endpoint_project_association(self):
         """Verify an invalid endpoint-project association is handled."""
         # add first endpoint to default project
-        self.put('/OS-EP-FILTER/projects/%(project_id)s'
-                 '/endpoints/%(endpoint_id)s' % {
-                     'project_id': self.project['id'],
-                     'endpoint_id': self.endpoint_id},
+        self.put(get_project_endpoint_association_url(self.project['id'],
+                                                      self.endpoint_id),
                  body='',
                  expected_status=204)
 
@@ -474,10 +463,8 @@ class EndpointFilterTokenRequestTestCase(TestExtensionCase):
             self.endpoint2.copy())
 
         # add second endpoint to default project
-        self.put('/OS-EP-FILTER/projects/%(project_id)s'
-                 '/endpoints/%(endpoint_id)s' % {
-                     'project_id': self.project['id'],
-                     'endpoint_id': self.endpoint_id2},
+        self.put(get_project_endpoint_association_url(self.project['id'],
+                                                      self.endpoint_id2),
                  body='',
                  expected_status=204)
 
@@ -502,10 +489,8 @@ class EndpointFilterTokenRequestTestCase(TestExtensionCase):
     def test_disabled_endpoint(self):
         """Test that a disabled endpoint is handled."""
         # Add an enabled endpoint to the default project
-        self.put('/OS-EP-FILTER/projects/%(project_id)s'
-                 '/endpoints/%(endpoint_id)s' % {
-                     'project_id': self.project['id'],
-                     'endpoint_id': self.endpoint_id},
+        self.put(get_project_endpoint_association_url(self.project['id'],
+                                                      self.endpoint_id),
                  expected_status=204)
 
         # Add a disabled endpoint to the default project.
@@ -520,11 +505,8 @@ class EndpointFilterTokenRequestTestCase(TestExtensionCase):
         })
         self.catalog_api.create_endpoint(disabled_endpoint_id,
                                          disabled_endpoint_ref)
-
-        self.put('/OS-EP-FILTER/projects/%(project_id)s'
-                 '/endpoints/%(endpoint_id)s' % {
-                     'project_id': self.project['id'],
-                     'endpoint_id': disabled_endpoint_id},
+        self.put(get_project_endpoint_association_url(self.project['id'],
+                                                      disabled_endpoint_id),
                  expected_status=204)
 
         # Authenticate to get token with catalog
@@ -566,8 +548,8 @@ class JsonHomeTests(TestExtensionCase, test_v3.JsonHomeTestMixin):
         },
         'http://docs.openstack.org/api/openstack-identity/3/ext/OS-EP-FILTER/'
         '1.0/rel/endpoint_group_to_project_association': {
-            'href-template': '/OS-EP-FILTER/endpoint_groups/'
-                '{endpoint_group_id}/projects/{project_id}',
+            'href-template': '/projects/{project_id}/OS-EP-FILTER'
+                '/endpoint_groups/{endpoint_group_id}',
             'href-vars': {
                 'project_id':
                 'http://docs.openstack.org/api/openstack-identity/3/param/'
@@ -790,12 +772,8 @@ class EndpointGroupCRUDTestCase(TestExtensionCase):
         # create an endpoint group to work with
         endpoint_group_id = self._create_valid_endpoint_group(
           self.DEFAULT_ENDPOINT_GROUP_URL, self.DEFAULT_ENDPOINT_GROUP_BODY)
-
         # associate endpoint group with project
-        url = ('/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s'
-              '/projects/%(project_id)s' % {
-                 'endpoint_group_id': endpoint_group_id,
-                 'project_id': 'abc'})
+        url = self._get_project_endpoint_group_url(endpoint_group_id, 'abc')
         self.put(url, expected_status=404)
 
     def test_get_endpoint_group_in_project(self):
@@ -805,10 +783,8 @@ class EndpointGroupCRUDTestCase(TestExtensionCase):
           self.DEFAULT_ENDPOINT_GROUP_URL, self.DEFAULT_ENDPOINT_GROUP_BODY)
 
         # associate endpoint group with project
-        url = ('/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s'
-              '/projects/%(project_id)s' % {
-                 'endpoint_group_id': endpoint_group_id,
-                 'project_id': self.project_id})
+        url = self._get_project_endpoint_group_url(endpoint_group_id,
+                                                   self.project_id)
         self.put(url)
         response = self.get(url)
         self.assertEqual(endpoint_group_id,
@@ -818,11 +794,8 @@ class EndpointGroupCRUDTestCase(TestExtensionCase):
 
     def test_get_invalid_endpoint_group_in_project(self):
         """Test retrieving project endpoint group association."""
-        url = ('/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s'
-              '/projects/%(project_id)s' % {
-                 'endpoint_group_id': 'foo',
-                 'project_id': 'bar'})
-        response = self.get(url, expected_status=404)
+        url = self._get_project_endpoint_group_url('foo', 'bar')
+        self.get(url, expected_status=404)
 
     def test_check_endpoint_group_to_project(self):
         """Test HEAD with a valid endpoint group and project association."""
@@ -830,10 +803,8 @@ class EndpointGroupCRUDTestCase(TestExtensionCase):
             self.DEFAULT_ENDPOINT_GROUP_URL, self.DEFAULT_ENDPOINT_GROUP_BODY)
         self._create_endpoint_group_project_association(endpoint_group_id,
                                                         self.project_id)
-        url = ('/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s'
-              '/projects/%(project_id)s' % {
-                 'endpoint_group_id': endpoint_group_id,
-                 'project_id': self.project_id})
+        url = self._get_project_endpoint_group_url(
+                  endpoint_group_id, self.project_id)
         self.head(url, expected_status=200)
 
     def test_check_endpoint_group_to_project_with_invalid_project_id(self):
@@ -843,17 +814,11 @@ class EndpointGroupCRUDTestCase(TestExtensionCase):
           self.DEFAULT_ENDPOINT_GROUP_URL, self.DEFAULT_ENDPOINT_GROUP_BODY)
 
         # create an endpoint group to project association
-        url = ('/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s'
-              '/projects/%(project_id)s' % {
-                 'endpoint_group_id': endpoint_group_id,
-                 'project_id': self.project_id})
-        self.put(url)
+        self._create_endpoint_group_project_association(endpoint_group_id,
+                                                        self.project_id)
 
         # send a head request with an invalid project id
-        url = ('/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s'
-              '/projects/%(project_id)s' % {
-                 'endpoint_group_id': endpoint_group_id,
-                 'project_id': 'abc'})
+        url = self._get_project_endpoint_group_url(endpoint_group_id, 'abc')
         self.head(url, expected_status=404)
 
     def test_list_endpoint_groups(self):
@@ -927,7 +892,7 @@ class EndpointGroupCRUDTestCase(TestExtensionCase):
         self.assertEqual(endpoint_id, r.result['endpoints'][0].get('id'))
 
     def test_list_endpoints_associated_with_project_endpoint_group(self):
-        """GET /OS-EP-FILTER/projects/{project_id}/endpoints
+        """GET /projects/$project_id/OS-EP-FILTER/endpoints
 
         Valid project, endpoint id, and endpoint group test case.
 
@@ -957,7 +922,7 @@ class EndpointGroupCRUDTestCase(TestExtensionCase):
           endpoint_group_id, self.default_domain_project_id)
 
         # Now get a list of the filtered endpoints
-        endpoints_url = '/OS-EP-FILTER/projects/%(project_id)s/endpoints' % {
+        endpoints_url = '/projects/%(project_id)s/OS-EP-FILTER/endpoints' % {
                        'project_id': self.default_domain_project_id}
         r = self.get(endpoints_url)
         endpoints = self.assertValidEndpointListResponse(r)
@@ -1029,8 +994,8 @@ class EndpointGroupCRUDTestCase(TestExtensionCase):
     def _get_project_endpoint_group_url(self,
                                         endpoint_group_id,
                                         project_id):
-        return ('/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s'
-                 '/projects/%(project_id)s' % {
+        return ('/projects/%(project_id)s/OS-EP-FILTER'
+                 '/endpoint_groups/%(endpoint_group_id)s' % {
                      'endpoint_group_id': endpoint_group_id,
                      'project_id': project_id})
 
@@ -1049,7 +1014,7 @@ class EndpointGroupCRUDTestCase(TestExtensionCase):
         endpoint = response.result['endpoint']
 
         # now add endpoint to project
-        self.put('/OS-EP-FILTER/projects/%(project_id)s'
+        self.put('/projects/%(project_id)s/OS-EP-FILTER'
                  '/endpoints/%(endpoint_id)s' % {
                      'project_id': self.project['id'],
                      'endpoint_id': endpoint['id']})
