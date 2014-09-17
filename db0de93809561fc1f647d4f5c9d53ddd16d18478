@@ -229,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_bb58a28b",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-17T05:41:54Z",
+      "side": 1,
+      "message": "\u003e it\u0027s possible that we have more than _maxsize\n\nNo, its not. We\u0027re leaving previous loop on one of two conditions: either we have connection in pool or we have some quota to create new connections. So if we failed in try: block, then pool is empty and number of connections currently not in the pool is less than maxsize.",
+      "parentUuid": "fa98f980_c6b754f4",
+      "revId": "db0de93809561fc1f647d4f5c9d53ddd16d18478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_0fd96f22",
         "filename": "keystone/common/config.py",
         "patchSetId": 19
