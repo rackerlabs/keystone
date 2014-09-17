@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_1f93485d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-17T16:45:10Z",
+      "side": 1,
+      "message": "This violates string freeze, please send a message to the localization team as a heads up.",
+      "revId": "c0ddc5c14dd2209ceaf5cadf3e898011d3b2474f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
