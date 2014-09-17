@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_45aa5a86",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-17T20:16:52Z",
+      "side": 1,
+      "message": "(NIT): should rephrase this to be a bit more clear. It works but if we have subsequent patches lets clean it up.\n\nPulled forward from previous comment.",
+      "revId": "35e8d1a9628347afc618fbf9e41e514a9bb9d1b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_05b5b2cf",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-17T20:16:52Z",
+      "side": 1,
+      "message": "This needs to be swapped to keystone.common._memcache_pool",
+      "revId": "35e8d1a9628347afc618fbf9e41e514a9bb9d1b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
