@@ -87,6 +87,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_9872f6ae",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 959,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-17T13:56:51Z",
+      "side": 1,
+      "message": "I\u0027m sure we do, I\u0027d have to check. I was just being verbose in the test. I can remove if needed.",
+      "parentUuid": "fa98f980_4967f7b7",
+      "revId": "42032700b90462e7434d9c6aefcb12a5dd923968",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_b9d291fd",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 8
@@ -115,6 +133,24 @@
       "writtenOn": "2014-09-17T03:18:51Z",
       "side": 1,
       "message": "silly question, why not move these to assignment now?",
+      "revId": "42032700b90462e7434d9c6aefcb12a5dd923968",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_18ad26eb",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 973,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-17T13:56:51Z",
+      "side": 1,
+      "message": "I was talking to dolphm about doing that but we decided to wait until we cut RC1, since the refactor probably takes less precedence than other things for RC1.",
+      "parentUuid": "fa98f980_5de08e96",
       "revId": "42032700b90462e7434d9c6aefcb12a5dd923968",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
