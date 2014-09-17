@@ -176,6 +176,8 @@ class XmlBodyMiddleware(wsgi.Middleware):
 
     def process_response(self, request, response):
         """Transform the response from JSON to XML."""
+        if 'text/html' in str(response.content_type):
+            return response
         outgoing_xml = 'application/xml' in str(request.accept)
         if outgoing_xml and response.body:
             response.content_type = 'application/xml'

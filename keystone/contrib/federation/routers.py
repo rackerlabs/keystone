@@ -188,3 +188,58 @@ class FederationExtension(wsgi.V3ExtensionRouter):
             path=self._construct_url('saml2/metadata'),
             get_action='get_metadata',
             rel=build_resource_relation(resource_name='metadata'))
+#        mapper.connect(
+#            self._construct_url('mappings/{mapping_id}'),
+#            controller=mapping_controller,
+#            action='create_mapping',
+#            conditions=dict(method=['PUT']))
+#
+#        mapper.connect(
+#            self._construct_url('mappings'),
+#            controller=mapping_controller,
+#            action='list_mappings',
+#            conditions=dict(method=['GET']))
+#
+#        mapper.connect(
+#            self._construct_url('mappings/{mapping_id}'),
+#            controller=mapping_controller,
+#            action='get_mapping',
+#            conditions=dict(method=['GET']))
+#
+#        mapper.connect(
+#            self._construct_url('mappings/{mapping_id}'),
+#            controller=mapping_controller,
+#            action='delete_mapping',
+#            conditions=dict(method=['DELETE']))
+#
+#        mapper.connect(
+#            self._construct_url('mappings/{mapping_id}'),
+#            controller=mapping_controller,
+#            action='update_mapping',
+#            conditions=dict(method=['PATCH']))
+#
+#        mapper.connect(
+#            self._construct_url('domains'),
+#            controller=domain_controller,
+#            action='list_domains_for_groups',
+#            conditions=dict(method=['GET']))
+#
+#        mapper.connect(
+#            self._construct_url('projects'),
+#            controller=project_controller,
+#            action='list_projects_for_groups',
+#            conditions=dict(method=['GET']))
+
+        mapper.connect(
+            self._construct_url('websso'),
+            controller=auth_controller,
+            action='federated_authentication_from_assertion',
+            conditions=dict(method=['GET', 'POST'])
+        )
+#        mapper.connect(
+#            self._construct_url('identity_providers/'
+#                                '{identity_provider}/protocols/'
+#                                '{protocol}/auth'),
+#            controller=auth_controller,
+#            action='federated_authentication',
+#            conditions=dict(method=['GET', 'POST']))

@@ -463,7 +463,9 @@ FILE_OPTIONS = {
         cfg.StrOpt('assertion_prefix', default='',
                    help='Value to be used when filtering assertion parameters '
                         'from the environment.'),
-    ],
+        cfg.StrOpt('websso_return_url', default='',
+                   help='Url for postback after websso authentication')],
+
     'policy': [
         cfg.StrOpt('driver',
                    default='keystone.policy.backends.sql.Policy',

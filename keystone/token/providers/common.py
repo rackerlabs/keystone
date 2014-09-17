@@ -209,6 +209,9 @@ class V3TokenDataHelper(object):
         roles = self.assignment_api.get_roles_for_groups(group_ids,
                                                          project_id,
                                                          domain_id)
+        uroles = self.assignment_api.get_roles_for_user_and_project(user_id,
+                                                                    project_id)
+        roles += [self.assignment_api.get_role(id) for id in uroles]
         _check_roles(roles, user_id, project_id, domain_id)
         return roles
 
@@ -467,6 +470,11 @@ class BaseProvider(provider.Provider):
         group_ids = auth_context['group_ids']
         idp = auth_context[federation.IDENTITY_PROVIDER]
         protocol = auth_context[federation.PROTOCOL]
+
+# WebSSO patch
+#        group_ids=[]
+#        if 'group_ids' in auth_context:
+#            group_ids = auth_context['group_ids']
         token_data = {
             'user': {
                 'id': user_id,
@@ -486,6 +494,18 @@ class BaseProvider(provider.Provider):
             token_data['user'][federation.FEDERATION].update({
                 'groups': [{'id': x} for x in group_ids]
             })
+# WEBSSO
+#           if federation.IDENTITY_PROVIDER in auth_context:
+#                idp = auth_context[federation.IDENTITY_PROVIDER]
+#                protocol = auth_context[federation.PROTOCOL]
+#                token_data['user'].update({
+#                    federation.FEDERATION: {
+#                        'identity_provider': {'id': idp},
+#                        'protocol': {'id': protocol},
+#                        'groups': [{'id': x} for x in group_ids]
+#                    },
+#                })
+# Added WebSSO feature
         return token_data
 
     def _verify_token_ref(self, token_ref):
@@ -540,7 +560,8 @@ class BaseProvider(provider.Provider):
 
     def validate_v2_token(self, token_ref):
         try:
-            self._assert_default_domain(token_ref)
+            if not 'saml2' in token_ref['token_data']['token']['methods']:
+                self._assert_default_domain(token_ref)
             # FIXME(gyee): performance or correctness? Should we return the
             # cached token or reconstruct it? Obviously if we are going with
             # the cached token, any role, project, or domain name changes
