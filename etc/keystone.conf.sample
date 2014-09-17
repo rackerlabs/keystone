@@ -1199,6 +1199,12 @@
 # Memcache servers in the format of "host:port". (list value)
 #servers=localhost:11211
 
+# Memcached backend driver. (string value)
+# Currnetly, three memcached backends are supported:
+# bmemcached, pylibmc, memcached.
+# By default the ``memcached`` backend is used.
+#memcached_backend=memcached
+
 # Number of compare-and-set attempts to make when using
 # compare-and-set in the token memcache back end. (integer
 # value)

@@ -564,8 +564,10 @@ memcached servers, lock_timeout, etc).
 
 The memcached backend uses the Keystone manager mechanism to support the use of any of the
 provided memcached backends (``bmemcached``, ``pylibmc``, and basic ``memcached``).
-By default the ``memcached`` backend is used.  Currently the Memcache URLs come from the
-``servers`` option in the ``[memcache]`` configuration section of the Keystone config.
+By default the ``memcached`` backend is used.  An alternative is to specify the
+``memcached_backend`` option in the ``[memcache]`` configuration section. Currently the
+Memcache URLs come from the ``servers`` option in the ``[memcache]`` configuration section
+of the Keystone config.
 
 The following is an example showing how to configure the KVS system to use a
 KeyValueStore object named "TestKVSRegion" and a specific Memcached driver:
