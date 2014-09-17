@@ -265,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_9a8d862d",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2014-09-17T17:17:55Z",
+      "side": 1,
+      "message": "What?.. No! We are doing all this under _no_free_condition\u0027s lock. No other thread can do anything with this pool while we\u0027re doing this.\n\nWe don\u0027t need another try-except here. If we failed to create connection, exception is thrown and we never reach line \u0027self._acquired +\u003d 1\u0027, so nothing changes about pool at all.",
+      "parentUuid": "fa98f980_8ec54c0c",
+      "revId": "db0de93809561fc1f647d4f5c9d53ddd16d18478",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_0fd96f22",
         "filename": "keystone/common/config.py",
         "patchSetId": 19
