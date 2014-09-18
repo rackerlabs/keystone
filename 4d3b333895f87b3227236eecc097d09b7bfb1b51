@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_f0e060fa",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-18T10:28:38Z",
+      "side": 1,
+      "message": "it looks like even if somebody calls Icehouse URL (/OS-EP-FILTER/{....}) he will get new format of the link. Whereas I can see some reasoning behind that, I am not sure if we shouldn\u0027t keep links section consistent?",
+      "revId": "4d3b333895f87b3227236eecc097d09b7bfb1b51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_d0cfdc55",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-18T10:28:38Z",
+      "side": 1,
+      "message": "is this reflected in the docstrings?\nIt should be PUT /OS-EP-FILTER/projects/..... ?",
+      "revId": "4d3b333895f87b3227236eecc097d09b7bfb1b51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
