@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_38f00366",
+        "filename": "doc/source/extensions/federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-18T18:35:54Z",
+      "side": 1,
+      "message": "My suggestion:\n\nAs of the Juno release, multiple Keystone deployments can now be federated. To do so, the `pysaml2 \u003chttps://pypi.python.org/pypi/pysaml2\u003e`_ library is required. Since OS-FEDERATION is an extension, ``pysaml2`` is not installed by default, it must be installed manually. For Example:: \n\n  pip install --upgrade $(grep pysaml2 test-requirements.txt)",
+      "revId": "219c3a5bb06f7d3bf358430c915a9d86880ea7dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_588227c9",
+        "filename": "doc/source/extensions/federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-18T18:35:54Z",
+      "side": 1,
+      "message": "I don\u0027t know what you mean by \u0027as a whole\u0027",
+      "revId": "219c3a5bb06f7d3bf358430c915a9d86880ea7dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
