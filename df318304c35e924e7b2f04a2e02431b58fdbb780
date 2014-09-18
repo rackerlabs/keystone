@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_56a4b94a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-18T18:10:42Z",
+      "side": 1,
+      "message": "the oslo-incubator commit hash should be in the message so that it\u0027s easier to figure out the changes for the next sync.",
+      "revId": "df318304c35e924e7b2f04a2e02431b58fdbb780",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
