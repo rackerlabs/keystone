@@ -33,6 +33,24 @@
       "revId": "20eb5f40869e7ef9368292b6295290e1f6a6dcda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_8aa358b0",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-09-18T15:36:38Z",
+      "side": 1,
+      "message": "What would I test?  It was  bypassing the public API and going right to the data specific to the provider;  I corrected it.  The logic is the same.  I could make a test that shows that it was broken before, but, unless we revert this exact change, that test is kindof useless.  And a test won\u0027t be able to prevent someone from doing this somewhere else.",
+      "parentUuid": "fa98f980_09329da6",
+      "revId": "20eb5f40869e7ef9368292b6295290e1f6a6dcda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
