@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_11933450",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-18T00:06:36Z",
+      "side": 1,
+      "message": "This requires a string freeze exception. I\u0027ll send the email once we\u0027re sure this is desired/and happy with the rest of the code.",
+      "revId": "429b8c73e0ff618eb2cf22cd230aafcca087b843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
