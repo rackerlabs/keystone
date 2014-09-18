@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_1b0419c5",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-09-18T19:00:53Z",
+      "side": 1,
+      "message": "For the new endpoint grouping APIs we won\u0027t need to concern ourselves with Icehouse backward compatibility.",
+      "parentUuid": "fa98f980_f0e060fa",
+      "revId": "4d3b333895f87b3227236eecc097d09b7bfb1b51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_d0cfdc55",
         "filename": "keystone/contrib/endpoint_filter/routers.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-18T10:28:38Z",
       "side": 1,
       "message": "is this reflected in the docstrings?\nIt should be PUT /OS-EP-FILTER/projects/..... ?",
+      "revId": "4d3b333895f87b3227236eecc097d09b7bfb1b51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_5b406107",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2014-09-18T19:00:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa98f980_d0cfdc55",
       "revId": "4d3b333895f87b3227236eecc097d09b7bfb1b51",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
