@@ -155,6 +155,23 @@
     },
     {
       "key": {
+        "uuid": "fa98f980_a85032d5",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 1129,
+      "author": {
+        "id": 91
+      },
+      "writtenOn": "2014-09-18T08:07:39Z",
+      "side": 1,
+      "message": "There is no such an \"official CA\", but trusted and untrusted CA. I would rephrase it to something like \"If you are using certificates sigend by an untrusted CA (e.g. self signed certiciates)...)\" or something similar.",
+      "revId": "3bcf0fb50a453c066d3a92eb074bb7e0e328703b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_256be41e",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 13
