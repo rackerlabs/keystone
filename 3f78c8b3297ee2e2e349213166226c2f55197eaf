@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_dbab7173",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-18T19:09:18Z",
+      "side": 1,
+      "message": "We\u0027ll want the JSON Home document to have the relationship pointing to the new resource link rather than the old one.\n\nI think what we\u0027ll want to do here is enhance self._add_resource() to take a \"deprecated_path\" option that the mappings are also created for, but it doesn\u0027t register the relationship with the JSON Home info.",
+      "revId": "3f78c8b3297ee2e2e349213166226c2f55197eaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
