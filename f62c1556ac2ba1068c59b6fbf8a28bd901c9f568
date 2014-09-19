@@ -34,6 +34,24 @@
       "revId": "f62c1556ac2ba1068c59b6fbf8a28bd901c9f568",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_f7af487b",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 13130
+      },
+      "writtenOn": "2014-09-19T19:29:15Z",
+      "side": 1,
+      "message": "It should not change the data that is stored/fetched.\nIt is just helping old style LDAP servers, which can\u0027t add the missing attribute on their own, to store data.\nThe new style LDAPs automatically add that attribute(if it\u0027s missing) and won\u0027t error out if it\u0027s explicitly mentioned too",
+      "parentUuid": "fa98f980_d249758f",
+      "revId": "f62c1556ac2ba1068c59b6fbf8a28bd901c9f568",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
