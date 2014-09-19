@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_2050b209",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 448,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-09-19T12:21:13Z",
+      "side": 1,
+      "message": "K, So if logging.Handler handleError method is called the side effect is to raise the BadLog  Exception defined above. Very Nice!",
+      "revId": "011c856c0dac3163a1d1f4acd814c6a6969a7459",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
