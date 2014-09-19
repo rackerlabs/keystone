@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "da9df570_94882ac8",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-19T22:17:35Z",
+      "side": 1,
+      "message": "makes sense.",
+      "parentUuid": "da9df570_5199746d",
+      "revId": "429b8c73e0ff618eb2cf22cd230aafcca087b843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_d4755233",
         "filename": "keystone/token/persistence/backends/memcache.py",
         "patchSetId": 29
@@ -47,6 +65,24 @@
       "writtenOn": "2014-09-19T22:03:13Z",
       "side": 1,
       "message": "What is this change for? It seems unrelated.",
+      "revId": "429b8c73e0ff618eb2cf22cd230aafcca087b843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_14bc3a6c",
+        "filename": "keystone/token/persistence/backends/memcache.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-19T22:17:35Z",
+      "side": 1,
+      "message": "This is to push the options from CONF.memcache to the pool, without this we don\u0027t end up passing the dogpile args down.",
+      "parentUuid": "da9df570_d4755233",
       "revId": "429b8c73e0ff618eb2cf22cd230aafcca087b843",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
