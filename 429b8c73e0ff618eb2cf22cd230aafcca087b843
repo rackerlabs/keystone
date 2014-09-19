@@ -16,6 +16,40 @@
       "revId": "429b8c73e0ff618eb2cf22cd230aafcca087b843",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_5199746d",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-19T22:03:13Z",
+      "side": 1,
+      "message": "(nit) if we have to push again we may want a note saying this is for the difference in interface between eventlet and stdlib\u0027s queue implementation.",
+      "revId": "429b8c73e0ff618eb2cf22cd230aafcca087b843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_d4755233",
+        "filename": "keystone/token/persistence/backends/memcache.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-19T22:03:13Z",
+      "side": 1,
+      "message": "What is this change for? It seems unrelated.",
+      "revId": "429b8c73e0ff618eb2cf22cd230aafcca087b843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
