@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_63d561b6",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-19T15:15:08Z",
+      "side": 1,
+      "message": "Don\u0027t you need: \n\n    global git_available\n    git_available \u003d True \n\nif you want to use the global variable?",
+      "revId": "c08a549c970d66b4fd8dbeef6244e16a9b4ac2e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_c3ed2d90",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-19T15:15:08Z",
+      "side": 1,
+      "message": "same comment as above.",
+      "revId": "c08a549c970d66b4fd8dbeef6244e16a9b4ac2e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
