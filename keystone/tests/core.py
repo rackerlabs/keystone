@@ -116,7 +116,19 @@ class dirs:
 DEFAULT_TEST_DB_FILE = dirs.tmp('test.db')
 
 
+git_available = None
+
+
+def is_git_unavailable():
+    return git_available is False
+
+
 def checkout_vendor(repo, rev):
+    global git_available
+
+    if git_available is False:
+        return
+
     # TODO(termie): this function is a good target for some optimizations :PERF
     name = repo.split('/')[-1]
     if name.endswith('.git'):
@@ -144,6 +156,9 @@ def checkout_vendor(repo, rev):
             fd.write('1')
     except environment.subprocess.CalledProcessError:
         LOG.warning(_('Failed to checkout %s'), repo)
+        git_available = False
+    else:
+        git_available = True
     os.chdir(working_dir)
     return revdir
 

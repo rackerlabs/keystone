@@ -69,6 +69,8 @@ class CompatTestCase(tests.NoModule, tests.TestCase):
             revdir = self.checkout_info
         else:
             revdir = tests.checkout_vendor(*self.checkout_info)
+            if tests.is_git_unavailable():
+                self.skip('Failed to checkout %s' % list(self.checkout_info))
         self.add_path(revdir)
         self.clear_module('keystoneclient')
 
