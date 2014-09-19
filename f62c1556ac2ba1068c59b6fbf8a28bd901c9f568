@@ -16,6 +16,24 @@
       "revId": "f62c1556ac2ba1068c59b6fbf8a28bd901c9f568",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa98f980_d249758f",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-09-19T18:13:34Z",
+      "side": 1,
+      "message": "Does this change the data that is stored and fetched?  If so, this code is already in production:  it will mean different values are written going forward than are used now, and I don\u0027t know how LDAP will handle the mixed approach.",
+      "parentUuid": "fa98f980_60beb766",
+      "revId": "f62c1556ac2ba1068c59b6fbf8a28bd901c9f568",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
