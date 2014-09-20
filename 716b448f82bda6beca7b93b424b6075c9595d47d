@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "da9df570_10527ddd",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1694,
+      "author": {
+        "id": 13130
+      },
+      "writtenOn": "2014-09-20T16:38:38Z",
+      "side": 1,
+      "message": "I didn\u0027t understand what this class does, but making changes in FakeLDAP required this to change for the tests to succeed.",
+      "revId": "716b448f82bda6beca7b93b424b6075c9595d47d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_503c0594",
         "filename": "keystone/tests/fakeldap.py",
         "patchSetId": 4
