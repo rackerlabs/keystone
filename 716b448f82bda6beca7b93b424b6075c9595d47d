@@ -16,6 +16,23 @@
       "revId": "716b448f82bda6beca7b93b424b6075c9595d47d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_503c0594",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 13130
+      },
+      "writtenOn": "2014-09-20T16:35:55Z",
+      "side": 1,
+      "message": "dummy_v contains all values for particular attribute(key). If any attribute and value matches the one extracted from dn, mark the id_attr_in_modlist flag as true.",
+      "revId": "716b448f82bda6beca7b93b424b6075c9595d47d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
