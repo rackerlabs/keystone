@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_b0c37189",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 540,
+      "author": {
+        "id": 13130
+      },
+      "writtenOn": "2014-09-20T16:32:07Z",
+      "side": 1,
+      "message": "I changed the fix which I made earlier. Replaced the call to _dn_to_id with role_id since that is already available in the arguments.\n\nAlso, with _dn_to_id will the utf8 characters be converted in the attributes list while those characters in dn remains unchanged ? Is this correct ?",
+      "revId": "716b448f82bda6beca7b93b424b6075c9595d47d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
