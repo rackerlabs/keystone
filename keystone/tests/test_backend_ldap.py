@@ -2292,9 +2292,9 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
                 self.identity_api.list_users(domain_scope=domain),
                 matchers.HasLength(1))
 
-        # Domain3 has a user created before we switched on
-        # multiple backends, plus one created afterwards - and it's
-        # backend has not changed - so we should fined two.
+        # domain3 had a user created before we switched on
+        # multiple backends, plus one created afterwards - and its
+        # backend has not changed - so we should find two.
         self.assertThat(
             self.identity_api.list_users(
                 domain_scope=self.domains['domain3']['id']),
