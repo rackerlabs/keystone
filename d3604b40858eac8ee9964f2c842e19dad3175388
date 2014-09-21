@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_ce24d2c8",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-21T02:21:33Z",
+      "side": 1,
+      "message": "missing get_timeout here?",
+      "revId": "d3604b40858eac8ee9964f2c842e19dad3175388",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_ee2196b5",
+        "filename": "keystone/token/persistence/backends/memcache_pool.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-21T02:21:33Z",
+      "side": 1,
+      "message": "both of the comments here are not worth a -1",
+      "revId": "d3604b40858eac8ee9964f2c842e19dad3175388",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_8e6d6a07",
+        "filename": "keystone/token/persistence/backends/memcache_pool.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-21T02:21:33Z",
+      "side": 1,
+      "message": "theres a lot of common code between this and the memcache backend, we can probably create a common class or something.",
+      "revId": "d3604b40858eac8ee9964f2c842e19dad3175388",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_6e6846f6",
+        "filename": "keystone/token/persistence/backends/memcache_pool.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-21T02:21:33Z",
+      "side": 1,
+      "message": "this option should be added to the memcache backend too",
+      "revId": "d3604b40858eac8ee9964f2c842e19dad3175388",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
