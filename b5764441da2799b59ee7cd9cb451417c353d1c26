@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "da9df570_3bdade78",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1694,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-22T22:43:30Z",
+      "side": 1,
+      "message": "Actually, this is incorrect since the second part of the tuple should be a list like the other attrs.",
+      "parentUuid": "da9df570_45f6e1d8",
+      "revId": "b5764441da2799b59ee7cd9cb451417c353d1c26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_2eaabe70",
         "filename": "keystone/tests/fakeldap.py",
         "patchSetId": 5
