@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_fc25c20a",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-09-22T12:02:20Z",
+      "side": 1,
+      "message": "s/doc/assertion/",
+      "revId": "1a244023d33eb751745370f399aeaa4440fd2dbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
