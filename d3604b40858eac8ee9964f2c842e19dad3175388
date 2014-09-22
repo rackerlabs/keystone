@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "da9df570_3c066a21",
+        "filename": "keystone/token/persistence/backends/memcache_pool.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-22T12:19:22Z",
+      "side": 1,
+      "message": "Is this correct though? Do any of the authors work for the Foundation?",
+      "revId": "d3604b40858eac8ee9964f2c842e19dad3175388",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_8e6d6a07",
         "filename": "keystone/token/persistence/backends/memcache_pool.py",
         "patchSetId": 30
