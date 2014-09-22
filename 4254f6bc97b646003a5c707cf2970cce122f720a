@@ -34,6 +34,24 @@
       "revId": "4254f6bc97b646003a5c707cf2970cce122f720a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_8d48fd5c",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2295,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-22T14:04:24Z",
+      "side": 1,
+      "message": "Kept it lowercase since it\u0027s a variable",
+      "parentUuid": "da9df570_1458a455",
+      "revId": "4254f6bc97b646003a5c707cf2970cce122f720a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
