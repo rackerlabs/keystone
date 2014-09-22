@@ -76,6 +76,9 @@ class PolicyTestCase(tests.TestCase):
             "example:early_or_success": [["rule:true"], ["false:false"]],
             "example:lowercase_admin": [["role:admin"], ["role:sysadmin"]],
             "example:uppercase_admin": [["role:ADMIN"], ["role:sysadmin"]],
+            "example:test_dict_key_missing": [["environment.nonexistentkey:APPLE"]],
+            "example:test_dict_missing": [["nonexistentdict.nonexistentkey:ORANGE"]],
+            "example:test_deep_dictionary": [["a.b.c.d.e.f.g.h:PEAR"]],
         }
 
         # NOTE(vish): then overload underlying policy engine
@@ -136,6 +139,25 @@ class PolicyTestCase(tests.TestCase):
 
     def test_early_AND_enforcement(self):
         action = "example:early_and_fail"
+        self.assertRaises(exception.ForbiddenAction, rules.enforce,
+                          self.credentials, action, self.target)
+
+    def test_deep_dictionary_lookup(self):
+        action = "example:test_deep_dictionary"
+        self.assertRaises(exception.ForbiddenAction, rules.enforce,
+                          self.credentials, action, self.target)
+        self.credentials['a'] = {'b': {'c': {'d': {'e': {'f': {'g': {'h': 'HAMBURGER'}}}}}}}
+        self.assertRaises(exception.ForbiddenAction, rules.enforce,
+                          self.credentials, action, self.target)
+        self.credentials['a']['b']['c']['d']['e']['f']['g']['h'] = 'PEAR'
+        rules.enforce(self.credentials, action, self.target)
+
+    def test_target_dictionary_lookups_missing(self):
+        self.credentials['environment'] = {'foo': 'bar'}
+        action = "example:test_dict_key_missing"
+        self.assertRaises(exception.ForbiddenAction, rules.enforce,
+                          self.credentials, action, self.target)
+        action = "example:test_dict_missing"
         self.assertRaises(exception.ForbiddenAction, rules.enforce,
                           self.credentials, action, self.target)
 
