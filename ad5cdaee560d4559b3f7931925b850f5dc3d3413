@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_bcddfa44",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-22T11:48:27Z",
+      "side": 1,
+      "message": "Maybe I\u0027m just missing it, but I can\u0027t see where we do this.  All I can see member_role_id/name be used for is if we call the v2 update_user method (and we are changing default tenant), or we call the v2 create_user method for for a new user. What\u0027s database migration got to do with it?",
+      "revId": "ad5cdaee560d4559b3f7931925b850f5dc3d3413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
