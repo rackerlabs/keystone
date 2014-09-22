@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_be35f247",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-22T10:43:06Z",
+      "side": 1,
+      "message": "The only difference between these 2 loops is metadata key.\nIn patchset 6 DRY was implemented, here it is no more.\nAnd I suggest using regexp here:\n        import re\n....\n        metadata_re \u003d re.compile(r\u0027^(metadata_(user|group))-([^-]+)-([^-]+)$\u0027)\n        for match in filter(None, map(metadata_re.match, self.db.keys())):\n            i, key, meta_project_or_domain_id, object_id \u003d match.groups()\n            template \u003d {\u0027%s_id\u0027 % key: object_id}\n\u003crest of loop here\u003e",
+      "revId": "2d0a7dfb1053e292785bdfd5be839c11ee17bac1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
