@@ -16,6 +16,24 @@
       "revId": "ad5cdaee560d4559b3f7931925b850f5dc3d3413",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_c0a63fc1",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6772
+      },
+      "writtenOn": "2014-09-22T22:03:52Z",
+      "side": 1,
+      "message": "I think it was originally done in https://review.openstack.org/#/c/21327/ and has since been removed again.",
+      "parentUuid": "da9df570_bcddfa44",
+      "revId": "ad5cdaee560d4559b3f7931925b850f5dc3d3413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
