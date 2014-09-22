@@ -875,8 +875,6 @@ class GenericCheck(Check):
             True:%(user.enabled)s
             'Member':%(role.name)s
         """
-
-        # TODO(termie): do dict inspection via dot syntax
         try:
             match = self.match % target
         except KeyError:
@@ -889,7 +887,10 @@ class GenericCheck(Check):
             leftval = ast.literal_eval(self.kind)
         except ValueError:
             try:
-                leftval = creds[self.kind]
+                kind_parts = self.kind.split('.')
+                leftval = creds
+                for kind_part in kind_parts:
+                    leftval = leftval[kind_part]
             except KeyError:
                 return False
         return match == six.text_type(leftval)
