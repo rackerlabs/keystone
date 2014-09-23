@@ -2,6 +2,380 @@
   "comments": [
     {
       "key": {
+        "uuid": "da9df570_987d7971",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 31
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "you don\u0027t need to use SQL for identity or assignment. I think this last sentence can be removed.",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_78ed3525",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 31
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "change \"servers urls\" to \"server URLs\"",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_d8c46194",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 31
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "This one should be documented first if we\u0027re going to warn people not to use the other one.",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_18bfc9fc",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 31
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "change \"are due\" to \"is due\"",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_58895125",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "This is unused. Remove it.",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_d86d4134",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "use super() here",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_78645549",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "add a docstring what this is supposed to do. e.g., if this is supposed to be overwritten to return a connection, document that.",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_985bb986",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "add a docstring what this is supposed to do.",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_a3a68e0e",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "add a comment why this is here.",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_a3de8e3d",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "this could use a docstring if you\u0027re expecting subclasses to override.",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_c3e1d2ff",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "this could use a docstring if you\u0027re expecting subclasses to override.",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_633826a1",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "rather than have to comment some section of code, put it in a function.",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_635f46e6",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "This class could use a docstring.",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_c32ab22b",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "use super()",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_63a2e6af",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "use finally",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_e320964b",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "use super()",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_c302b26e",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "this is confusing since we use self._hosts_deaduntil and self._hosts_deaduntil[i]. Would be simpler to not use self._hosts_deaduntil in the if here and always use self._hosts_deaduntil[i] in the loop body.\n\nDo deaduntil \u003d self._hosts_deaduntil[i] in the loop body.",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_e326d615",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "this is worth more than a debug. I think admins are going to want to know that all their memcache hosts are dead.",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_231b7e1c",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "use super()",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_9578df90",
+        "filename": "keystone/common/cache/backends/memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "where are these defaults coming from?",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_bd3a2132",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "put . at the end of all these for consistency.",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_9d547d55",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-23T20:19:27Z",
+      "side": 1,
+      "message": "we\u0027re going to want this in the default logging config too.",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_a746babd",
         "filename": "keystone/token/persistence/backends/memcache_pool.py",
         "patchSetId": 31
