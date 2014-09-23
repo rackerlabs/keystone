@@ -34,6 +34,24 @@
       "revId": "2d0a7dfb1053e292785bdfd5be839c11ee17bac1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_f859255c",
+        "filename": "keystone/assignment/backends/kvs.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-09-23T14:38:32Z",
+      "side": 1,
+      "message": "This code was changed till 9th patchset, so I thought it\u0027s yours now :)\nIf not it is just a nit.",
+      "parentUuid": "da9df570_bdd5cfba",
+      "revId": "2d0a7dfb1053e292785bdfd5be839c11ee17bac1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
