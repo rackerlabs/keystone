@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa98f980_acd4b1bb",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 586,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-09-23T01:26:51Z",
+      "side": 1,
+      "message": "Nice catch!",
+      "revId": "ca50b6315909faf92db9eaf2981782bcd80cfab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
