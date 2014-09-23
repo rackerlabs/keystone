@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_e4bb520c",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1674,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-09-23T01:49:29Z",
+      "side": 1,
+      "message": "This will not properly handle DN\u0027s with multi-valued RDNs.  That\u0027s fine, as I know that there are plenty of other areas that won\u0027t handle multi-valued RDNs in Keystone.  It might be worth at least adding a comment here.",
+      "revId": "abd6dce869174199b5c6a1aa13f772356ac0ddfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
