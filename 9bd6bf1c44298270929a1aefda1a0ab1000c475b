@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_5ca69c54",
+        "filename": "etc/policy.cloudsample.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-09-23T18:31:54Z",
+      "side": 1,
+      "message": "for cloud_admin, use the role \"admin\" instead of \"cloud_admin\".  This will enable us to support backward compatibility.  All the current deployment use the role \"admin\" which is same as \"cloud_admin\"",
+      "revId": "9bd6bf1c44298270929a1aefda1a0ab1000c475b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_d70d0739",
+        "filename": "etc/policy.cloudsample.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-09-23T18:31:54Z",
+      "side": 1,
+      "message": "Do yo expect domain_admin should not be able to handle his domains_project?\nI thought project_admin is going to be subset of domain_admin.",
+      "revId": "9bd6bf1c44298270929a1aefda1a0ab1000c475b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
