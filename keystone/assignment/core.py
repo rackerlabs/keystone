@@ -566,8 +566,12 @@ class Manager(manager.Manager):
             try:
                 # NOTE(morganfainberg): The user ids are the important part
                 # for invalidating tokens below, so extract them here.
+                hints = None
+                if domain_id:
+                    hints = driver_hints.Hints()
+                    hints.add_filter('domain_id', domain_id)
                 for user in self.identity_api.list_users_in_group(group_id,
-                                                                  domain_id):
+                                                                  hints):
                     if user['id'] != user_id:
                         self._emit_invalidate_user_token_persistence(
                             user['id'])
