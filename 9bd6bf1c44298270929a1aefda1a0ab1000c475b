@@ -33,6 +33,24 @@
       "revId": "9bd6bf1c44298270929a1aefda1a0ab1000c475b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_f72a0a8f",
+        "filename": "etc/policy.cloudsample.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2014-09-23T19:28:52Z",
+      "side": 1,
+      "message": "Our thought is that domain_admin is responsible for control users. Who controls projects is the cloud_admin and the project_admin of the our project. This is wrong?",
+      "parentUuid": "da9df570_d70d0739",
+      "revId": "9bd6bf1c44298270929a1aefda1a0ab1000c475b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
