@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_f52cde4c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-23T04:46:27Z",
+      "side": 1,
+      "message": "Add the following so we know what the issue is, and what bug it\u0027s closing:\n\nCloses-Bug: #1369388",
+      "revId": "1d177b70c96eb727a3df4de5cfb227b29e5f4727",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
