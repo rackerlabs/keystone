@@ -1,0 +1,12 @@
+Verified+2: Jenkins
+Code-Review+2: guang-yee <guang.yee@hp.com>
+Code-Review+2: ayoung <ayoung@redhat.com>
+Workflow+1: ayoung <ayoung@redhat.com>
+Code-Review+1: Brad Topol <btopol@us.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: Richard Megginson <rmeggins@redhat.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 23 Sep 2014 19:36:35 +0000
+Reviewed-on: https://review.openstack.org/120954
+Project: openstack/keystone
+Branch: refs/heads/master
