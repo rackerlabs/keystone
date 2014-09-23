@@ -31,6 +31,27 @@ PROTOCOL_ID_PARAMETER_RELATION = build_parameter_relation(
     parameter_name='protocol_id')
 
 
+class SAMLMetadataServer(wsgi.V3ExtensionRouter):
+    """API Endpoints for the Federation extension.
+
+        The API looks like::
+
+        GET /OS-FEDERATION/saml2/metadata
+    """
+    def add_routes(self, mapper):
+        # This is needed for dependency injection
+        # it loads the Federation driver which registers it as a dependency.
+        federation.Manager()
+        saml_metadata_controller = controllers.SAMLMetadataV3()
+
+        # Keystone-Identity-Provider metadata endpoint
+        self._add_resource(
+            mapper, saml_metadata_controller,
+            path='/OS-FEDERATION/saml2/metadata',
+            get_action='get_metadata',
+            rel=build_resource_relation(resource_name='metadata'))
+
+
 class FederationExtension(wsgi.V3ExtensionRouter):
     """API Endpoints for the Federation extension.
 
@@ -70,8 +91,6 @@ class FederationExtension(wsgi.V3ExtensionRouter):
 
         POST /auth/OS-FEDERATION/saml2
 
-        GET /OS-FEDERATION/saml2/metadata
-
 
     """
     def _construct_url(self, suffix):
@@ -87,7 +106,6 @@ class FederationExtension(wsgi.V3ExtensionRouter):
         mapping_controller = controllers.MappingController()
         project_controller = controllers.ProjectV3()
         domain_controller = controllers.DomainV3()
-        saml_metadata_controller = controllers.SAMLMetadataV3()
 
         # Identity Provider CRUD operations
 
@@ -181,10 +199,3 @@ class FederationExtension(wsgi.V3ExtensionRouter):
             path='/auth' + self._construct_url('saml2'),
             post_action='create_saml_assertion',
             rel=build_resource_relation(resource_name='saml2'))
-
-        # Keystone-Identity-Provider metadata endpoint
-        self._add_resource(
-            mapper, saml_metadata_controller,
-            path=self._construct_url('saml2/metadata'),
-            get_action='get_metadata',
-            rel=build_resource_relation(resource_name='metadata'))
