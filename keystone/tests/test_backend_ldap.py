@@ -257,6 +257,16 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_delete_group_with_user_project_domain_links(self):
         self.skipTest('N/A: LDAP does not support multiple domains')
 
+    def test_crud_user_domain_grant(self):
+        self.assertRaises(
+            exception.NotImplemented,
+            super(BaseLDAPIdentity, self).test_crud_user_domain_grant)
+
+    def test_crud_group_domain_grant(self):
+        self.assertRaises(
+            exception.NotImplemented,
+            super(BaseLDAPIdentity, self).test_crud_group_domain_grant)
+
     def test_list_projects_for_user(self):
         domain = self._get_domain_fixture()
         user1 = {'name': uuid.uuid4().hex, 'password': uuid.uuid4().hex,
@@ -1962,6 +1972,12 @@ class LdapIdentitySqlAssignment(BaseLDAPIdentity, tests.SQLDriverOverrides,
                           domain['id'],
                           domain)
 
+    def test_crud_user_domain_grant(self):
+        super(BaseLDAPIdentity, self).test_crud_user_domain_grant()
+
+    def test_crud_group_domain_grant(self):
+        super(BaseLDAPIdentity, self).test_crud_group_domain_grant()
+
 
 class LdapIdentitySqlAssignmentWithMapping(LdapIdentitySqlAssignment):
     """Class to test mapping of default LDAP backend.
@@ -2373,6 +2389,12 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
                           self.assignment_api.get_domain,
                           domain['id'])
 
+    def test_crud_user_domain_grant(self):
+        super(BaseLDAPIdentity, self).test_crud_user_domain_grant()
+
+    def test_crud_group_domain_grant(self):
+        super(BaseLDAPIdentity, self).test_crud_group_domain_grant()
+
 
 class DomainSpecificLDAPandSQLIdentity(
     BaseLDAPIdentity, tests.SQLDriverOverrides, tests.TestCase,
@@ -2519,6 +2541,12 @@ class DomainSpecificLDAPandSQLIdentity(
     def test_user_id_comma_grants(self):
         self.skipTest('Only valid if it is guaranteed to be talking to '
                       'the fakeldap backend')
+
+    def test_crud_user_domain_grant(self):
+        super(BaseLDAPIdentity, self).test_crud_user_domain_grant()
+
+    def test_crud_group_domain_grant(self):
+        super(BaseLDAPIdentity, self).test_crud_group_domain_grant()
 
 
 class DomainSpecificSQLIdentity(DomainSpecificLDAPandSQLIdentity):

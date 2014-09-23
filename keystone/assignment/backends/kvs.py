@@ -508,8 +508,6 @@ class Assignment(kvs.Base, assignment.Driver):
                   domain_id=None, project_id=None,
                   inherited_to_projects=False):
         self.get_role(role_id)
-        if group_id:
-            self.get_group(group_id)
         if domain_id:
             self.get_domain(domain_id)
         if project_id:

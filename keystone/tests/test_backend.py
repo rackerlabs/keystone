@@ -1705,6 +1705,67 @@ class IdentityTests(object):
                           self.assignment_api.delete_role,
                           uuid.uuid4().hex)
 
+    # Role grant CRUD tests
+
+    def _test_crud_grant(self, user_id=None, group_id=None,
+                         project_id=None, domain_id=None, inherited=False):
+
+        # Create a new role to ensure that no grant is loaded from fixtures
+        role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_role(role['id'], role)
+
+        self.assignment_api.create_grant(role_id=role['id'],
+                                         user_id=user_id,
+                                         group_id=group_id,
+                                         project_id=project_id,
+                                         domain_id=domain_id,
+                                         inherited_to_projects=inherited)
+
+        self.assignment_api.get_grant(role_id=role['id'],
+                                      user_id=user_id,
+                                      group_id=group_id,
+                                      project_id=project_id,
+                                      domain_id=domain_id,
+                                      inherited_to_projects=inherited)
+
+        self.assignment_api.delete_grant(role_id=role['id'],
+                                         user_id=user_id,
+                                         group_id=group_id,
+                                         project_id=project_id,
+                                         domain_id=domain_id,
+                                         inherited_to_projects=inherited)
+
+        self.assertRaises(exception.RoleNotFound,
+                          self.assignment_api.get_grant,
+                          role_id=role['id'],
+                          user_id=user_id,
+                          group_id=group_id,
+                          project_id=project_id,
+                          domain_id=domain_id,
+                          inherited_to_projects=inherited)
+
+    def test_crud_user_project_grant(self):
+        self._test_crud_grant(user_id=self.user_foo['id'],
+                              project_id=self.tenant_baz['id'])
+
+    def test_crud_user_domain_grant(self):
+        self._test_crud_grant(user_id=self.user_foo['id'],
+                              domain_id=self.domain_default['id'])
+
+    def test_crud_group_project_grant(self):
+        group = {'domain_id': DEFAULT_DOMAIN_ID, 'name': uuid.uuid4().hex}
+        group = self.identity_api.create_group(group)
+
+        self._test_crud_grant(group_id=group['id'],
+                              project_id=self.tenant_baz['id'])
+
+    def test_crud_group_domain_grant(self):
+        group = {'domain_id': DEFAULT_DOMAIN_ID, 'name': uuid.uuid4().hex}
+        group = self.identity_api.create_group(group)
+
+        self._test_crud_grant(group_id=group['id'],
+                              domain_id=self.domain_default['id'])
+
     def test_create_update_delete_unicode_project(self):
         unicode_project_name = u'name \u540d\u5b57'
         project = {'id': uuid.uuid4().hex,
