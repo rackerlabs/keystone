@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_ed585334",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-24T22:25:33Z",
+      "side": 1,
+      "message": "You can actually fix this message from the gerrit website, just look for the pencil and paper icon next to the message. It should be structured like the following:\n\n  Title of the change (Fix spelling mistake in doc string)\n\n  Description (fixed a spelling mistake in keystone/common/utils.py)\n\n  Closes-Bug: #1372287",
+      "revId": "d4baac54cf07e73deb6b82ea4e1425c523048ce8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
