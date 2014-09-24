@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_43386fa0",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-09-24T03:14:05Z",
+      "side": 1,
+      "message": "These comments are incredibly helpful. I always hated the dependency injection but these comments make it bearable!",
+      "revId": "5e432fc52860ce7789f646dcde52c4e9b1792cf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
