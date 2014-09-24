@@ -946,13 +946,34 @@ configuration file.
 Each Keystone v3 API has a line in the policy file which dictates what level
 of protection is applied to it, where each line is of the form::
 
-  <api name>: <rule statement> or <match statement>
+    <api name>: <match statement> or <rule reference>
 
-where:
+If an empty string is specified in place of a ``<match statement>`` or
+``<rule reference>``, the specified API call will be authorized for all
+authenticated users.
 
-``<rule statement>`` can contain ``<rule statement>`` or ``<match statement>``
+It is possible to combine multiple ``<match statement>`` and ``<rule reference>``
+elements using boolean `and` and `or` keywords. When using these boolean
+keywords, boolean logic can be controlled with the use of parentheses.
+For example:
 
-``<match statement>`` is a set of identifiers that must match between the token
+    "identity:ec2_delete_credential": "rule:admin_required or (rule:owner and user_id:%(target.credential.user_id)s)"
+
+It should be noted that certain API calls may have additional hard-coded
+authorization restrictions that are enforced after the RBAC policy is checked.
+The policy rules in the JSON policy file are not able to override these
+hard-coded authorization restrictions, though the policy rules can make these
+API calls more restricted. An example of this behavior is the trust extension,
+where most API calls have hard-coded restrictions.
+
+If an API is not specified in the JSON policy file, a special default rule is
+applied for that API call.  For more details, see the rule statements section
+below.
+
+Match Statements
+----------------
+
+A ``<match statement>`` is a set of identifiers that must match between the token
 provided by the caller of the API and the parameters or target entities of
 the API call in question. For example:
 
@@ -967,9 +988,9 @@ create.  In other words, you must have the admin role on the domain in which
 you are creating the user, and the token you are using must be scoped to that
 domain.
 
-Each component of a match statement is of the form::
+Each component of a ``<match statement>`` is of the form::
 
-  <attribute from token>:<constant> or <attribute related to API call>
+    <attribute from token>:<constant> or <attribute related to API call>
 
 The following attributes are available
 
@@ -1025,6 +1046,26 @@ List of object attributes:
     * target.project.enabled
     * target.project.id
     * target.project.name
+
+Rule Statements
+---------------
+
+A ``<rule reference>`` is a reference to a defined rule in the JSON policy file.
+A rule allows for easy reuse of a ``<match statement>`` across multiple API
+calls.  A ``<rule reference>`` takes the form of:
+
+    rule: <rule name>
+
+A ``<rule name>`` is the name of the ``<rule statement>`` that is being referred to.
+A ``<rule statement>`` is of the form:
+
+    <rule name>: <rule reference> or <match statement>
+
+A special default rule with a ``<rule name>`` of `default` is applied to any
+API calls which are not defined in the JSON policy file.
+
+Sample Policy Files
+-------------------
 
 The default policy.json file supplied provides a somewhat basic example of
 API protection, and does not assume any particular use of domains. For
