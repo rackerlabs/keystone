@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_089e6556",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-24T23:38:34Z",
+      "side": 1,
+      "message": "maybe in this comment, it should be clear that hard-coded checks isn\u0027t a desired behaviour in most cases?",
+      "revId": "6d1c1319f12df66b3d638a65253e7fa6afaaaafb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
