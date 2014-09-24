@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_ee8cda37",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 66
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-24T14:49:16Z",
+      "side": 1,
+      "message": "Could this be broken out into something that\u0027s a little more readable?",
+      "revId": "5ab6ed339f0608d5366d863fcde32c9a475702aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
