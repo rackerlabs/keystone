@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "da9df570_3dcff6b1",
+        "filename": "etc/policy.cloudsample.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 10765
+      },
+      "writtenOn": "2014-09-24T17:24:56Z",
+      "side": 1,
+      "message": "You\u0027re right, this is a security issue. We are working on this right now",
+      "parentUuid": "da9df570_6fb71287",
+      "revId": "9bd6bf1c44298270929a1aefda1a0ab1000c475b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_d70d0739",
         "filename": "etc/policy.cloudsample.json",
         "patchSetId": 1
