@@ -16,6 +16,24 @@
       "revId": "6d1c1319f12df66b3d638a65253e7fa6afaaaafb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_088825e6",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-09-24T23:49:37Z",
+      "side": 1,
+      "message": "I initially had the same reaction, but it arguably is desired to have hard-coded restrictions in some cases.  The hard-coded restrictions prevent one from making a mistake in the policy file that opens up access to something that should never be authorized.\n\nThe way that Keystone is coded is that the policy can always make an option more strict, but it will not be allowed to relax a hard-coded policy.  This might be limiting from a usability standpoint, but it is a \"belt and suspenders\" sort of approach from a security standpoint (which is a good thing).",
+      "parentUuid": "da9df570_089e6556",
+      "revId": "6d1c1319f12df66b3d638a65253e7fa6afaaaafb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
