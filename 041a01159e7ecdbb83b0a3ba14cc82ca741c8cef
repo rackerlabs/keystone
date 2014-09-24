@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_faef3985",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 573,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-24T14:24:19Z",
+      "side": 1,
+      "message": "...actually, I think the correct fix is to not pass hints or domain_id in.  My rationale is:\n\n1) Any user that is part of this group might have gotten a token to this domain anyway.....irrespective as to whether they are in that domain\n\n2) A backend identity driver does not have to honor hints(), it is best effort (so, in general, hints should only be used for calls that come in via the controller since the controller wrappers will apply any un-implemented hints filters)",
+      "revId": "041a01159e7ecdbb83b0a3ba14cc82ca741c8cef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
