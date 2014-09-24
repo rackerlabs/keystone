@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da9df570_077021a4",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 66
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-24T16:00:27Z",
+      "side": 1,
+      "message": "As I recall, metaclasses should be \u0027type\u0027 not \u0027object\u0027",
+      "revId": "5ab6ed339f0608d5366d863fcde32c9a475702aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_24ec43c7",
         "filename": "keystone/tests/test_sync_migrations.py",
         "patchSetId": 66
@@ -13,6 +30,24 @@
       "writtenOn": "2014-09-24T15:46:01Z",
       "side": 1,
       "message": "I fear that this is overly complicated and will not be easy to understand by those not familiar with dynamically creating classes. Is this just to same lines of code?",
+      "revId": "5ab6ed339f0608d5366d863fcde32c9a475702aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_67364de9",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 66
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-24T16:00:27Z",
+      "side": 1,
+      "message": "Good question, I am also concerned about metaclass use and it\u0027s complexity. \n\nWhile there are exceptions, typically metaclasses in python bring complexity and everything can be done in a more readable way without them. Is this a case that really justifies the metaclass use?",
+      "parentUuid": "da9df570_24ec43c7",
       "revId": "5ab6ed339f0608d5366d863fcde32c9a475702aa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
