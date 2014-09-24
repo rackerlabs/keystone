@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_22b0aa42",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-24T21:45:44Z",
+      "side": 1,
+      "message": "You should add a brief title at least to the commit message, e.g. \"Fix spelling mistake in doc string.\"",
+      "revId": "fea7d664be6829a96c6a8a79ee21f0c5004b0750",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
