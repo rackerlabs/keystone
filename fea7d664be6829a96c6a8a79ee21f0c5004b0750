@@ -16,6 +16,23 @@
       "revId": "fea7d664be6829a96c6a8a79ee21f0c5004b0750",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_4264cee4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-24T21:46:20Z",
+      "side": 1,
+      "message": "The following guide does a great job of outlining OpenStack commit message etiquette. \n\nhttps://wiki.openstack.org/wiki/GitCommitMessages\n\nI understand that this is a spelling fix, but it\u0027s a useful practice to follow when committing more technical patches.\n\nSomething like: \n\n    Fix a minor spelling mistake in keystone/common/utils.py\n\n    Closes-Bug: 1372287",
+      "revId": "fea7d664be6829a96c6a8a79ee21f0c5004b0750",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
