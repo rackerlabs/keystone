@@ -16,6 +16,40 @@
       "revId": "1e985609f7535e340acd1d571d281644785338f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_8f940344",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1668,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-25T18:04:59Z",
+      "side": 1,
+      "message": "NIT: use \u0027 not \"",
+      "revId": "1e985609f7535e340acd1d571d281644785338f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_4faf7b94",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1709,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-09-25T18:04:59Z",
+      "side": 1,
+      "message": "(NIT): build -\u003e built",
+      "revId": "1e985609f7535e340acd1d571d281644785338f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
