@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_10212b4d",
+        "filename": "keystone/common/sql/migrate_repo/versions/055_add_index_to_user_id.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-25T04:45:36Z",
+      "side": 1,
+      "message": "super nit: how about 055_add_token_table_indexes?\n\ncurrently it just says user_id, but we\u0027re doing trusts too.",
+      "revId": "583ef9045fa600eb51af104a90fd1a86719488ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_902d1b49",
+        "filename": "keystone/common/sql/migrate_repo/versions/055_add_index_to_user_id.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-25T04:45:36Z",
+      "side": 1,
+      "message": "remove this comment block?",
+      "revId": "583ef9045fa600eb51af104a90fd1a86719488ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
