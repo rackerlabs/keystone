@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_4d6a2cb4",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 621,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-25T14:25:31Z",
+      "side": 0,
+      "message": "note to reviewers, i removed this line since this implies we only support changes to catalog vs CLI, when you could use cURL or client libraries.",
+      "revId": "08416ac2b7236d7288a34ce89326945a214a4e19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
