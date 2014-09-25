@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_7e53186b",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-25T16:02:58Z",
+      "side": 1,
+      "message": "we still need this one though, right?",
+      "revId": "1e985609f7535e340acd1d571d281644785338f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
