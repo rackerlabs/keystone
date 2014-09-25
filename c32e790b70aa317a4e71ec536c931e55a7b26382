@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_246a6cb3",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2014-09-25T09:03:57Z",
+      "side": 1,
+      "message": "(NIT) either replace \u0027tenant\u0027 with \u0027project\u0027 to be consistent with the subsection\u0027s name, or rename subsection as \u0027tenant-create\u0027 to match the next subsection",
+      "revId": "c32e790b70aa317a4e71ec536c931e55a7b26382",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
