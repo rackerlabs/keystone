@@ -34,6 +34,24 @@
       "revId": "6d1c1319f12df66b3d638a65253e7fa6afaaaafb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_908b5267",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-25T12:07:08Z",
+      "side": 1,
+      "message": "Thanks for your reply, now I understand... My only concern is about hard-coded checks that shouldn\u0027t be there and are actually bugs. This is more common at other components, though.",
+      "parentUuid": "da9df570_088825e6",
+      "revId": "6d1c1319f12df66b3d638a65253e7fa6afaaaafb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
