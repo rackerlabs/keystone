@@ -16,6 +16,24 @@
       "revId": "c32e790b70aa317a4e71ec536c931e55a7b26382",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_aa2a9e8d",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-25T14:19:31Z",
+      "side": 1,
+      "message": "Ah, you caught this before I uploaded a new patch! I was going to do this today :)",
+      "parentUuid": "da9df570_246a6cb3",
+      "revId": "c32e790b70aa317a4e71ec536c931e55a7b26382",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
