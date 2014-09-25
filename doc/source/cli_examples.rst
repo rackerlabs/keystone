@@ -18,279 +18,271 @@
 Command Line Interface Examples
 ===============================
 
--------
-Tenants
--------
+--------
+Projects
+--------
 
-Tenants are the high level grouping within Keystone that represent groups of
-users. A tenant is the grouping that owns virtual machines within Nova, or
-containers within Swift. A tenant can have zero or more users, Users can be
-associated with more than one tenant, and each tenant - user pairing can have
-a role associated with it.
+``project create``
+------------------
 
-``tenant-create``
------------------
+positional arguments::
 
-keyword arguments
+  <project-name>                        New project name
 
-* name
-* description (optional, defaults to None)
-* enabled (optional, defaults to True)
+optional arguments::
+
+  --description <project-description>   New project description
+  --enable                              Enable project (default)
+  --disable                             Disable project
 
 example:
 
 .. code-block:: bash
 
-    $ keystone tenant-create --name=demo
+    $ openstack project create demo
 
-creates a tenant named "demo".
+``project delete``
+------------------
 
-``tenant-delete``
------------------
+positional arguments::
 
-arguments
-
-* tenant_id
+  <project>   Project to delete (name or ID)
 
 example:
 
 .. code-block:: bash
 
-    $ keystone tenant-delete f2b7b39c860840dfa47d9ee4adffa0b3
+    $ openstack project delete demo
 
 -----
 Users
 -----
 
-``user-create``
+``user create``
 ---------------
 
-keyword arguments
+positional arguments::
 
-* name
-* pass
-* email
-* tenant_id (optional, defaults to None)
-* enabled (optional, defaults to True)
+  <user-name>                  New user name
+
+optional arguments::
+
+  --password <user-password>   New user password
+  --password-prompt            Prompt interactively for password
+  --email <user-email>         New user email address
+  --project <project>          Set default project (name or ID)
+  --enable                     Enable user (default)
+  --disable                    Disable user
+
 
 example:
 
 .. code-block:: bash
 
-    $ keystone user-create
-    --name=admin \
-    --pass=secrete \
-    --tenant_id=2395953419144b67955ac4bab96b8fd2 \
-    --email=admin@example.com
+    $ openstack user create heat-user \
+    --password secrete \
+    --project demo \
+    --email admin@example.com
 
-``user-delete``
+``user delete``
 ---------------
 
-keyword arguments
+positional arguments::
 
-* user_id
+  <user>   User to delete (name or ID)
 
 example:
 
 .. code-block:: bash
 
-    $ keystone user-delete f2b7b39c860840dfa47d9ee4adffa0b3
+    $ openstack user delete heat-user
 
-``user-list``
+``user list``
 -------------
 
-list users in the system, optionally by a specific tenant (identified by tenant_id)
+optional arguments::
 
-arguments
-
-* tenant_id (optional, defaults to None)
-
-example:
-
-.. code-block:: bash
-
-    $ keystone user-list
-
-``user-update``
----------------
-
-arguments
-
-* user_id
-
-keyword arguments
-
-* name     Desired new user name (Optional)
-* email    Desired new email address (Optional)
-* enabled <true|false>   Enable or disable user (Optional)
-
+  --project <project>   Filter users by project (name or ID)
+  --long                List additional fields in output
 
 example:
 
 .. code-block:: bash
 
-    $ keystone user-update 03c84b51574841ba9a0d8db7882ac645 --email=newemail@example.com
+    $ openstack user list
 
-``user-password-update``
-------------------------
+``user set``
+------------
 
-arguments
+positional arguments::
 
-* user_id
-* password
+  <user>                       User to change (name or ID)
+
+optional arguments::
+
+  --name <new-user-name>       New user name
+  --password <user-password>   New user password
+  --password-prompt            Prompt interactively for password
+  --email <user-email>         New user email address
+  --project <project>          New default project (name or ID)
+  --enable                     Enable user (default)
+  --disable                    Disable user
+
 
 example:
 
 .. code-block:: bash
 
-    $ keystone user-password-update --pass foo 03c84b51574841ba9a0d8db7882ac645
+    $ openstack user set heat-user --email newemail@example.com
 
 -----
 Roles
 -----
 
-``role-create``
+``role create``
 ---------------
 
-arguments
+positional arguments::
 
-* name
+  <role-name>           New role name
 
 example:
 
 .. code-block:: bash
 
-    $ keystone role-create --name=demo
+    $ openstack role create demo
 
-``role-delete``
+``role delete``
 ---------------
 
-arguments
+positional arguments::
 
-* role_id
+  <role>      Name or ID of role to delete
 
 example:
 
 .. code-block:: bash
 
-    $ keystone role-delete 19d1d3344873464d819c45f521ff9890
+    $ openstack role delete demo
 
-``role-list``
+``role list``
 -------------
 
 example:
 
 .. code-block:: bash
 
-    $ keystone role-list
+    $ openstack role list
 
-``role-get``
+``role show``
+-------------
+
+positional arguments::
+
+  <role>                Name or ID of role to display
+
+example:
+
+.. code-block:: bash
+
+    $ openstack role show demo
+
+
+``role add``
 ------------
 
-arguments
+positional arguments::
 
-* role_id
+  <role>                Role name or ID to add to user
 
-example:
+optional arguments::
 
-.. code-block:: bash
+  --project <project>   Include project (name or ID)
+  --user <user>         Name or ID of user to include
 
-    $ keystone role-get 19d1d3344873464d819c45f521ff9890
-
-
-``user-role-add``
------------------
-
-keyword arguments
-
-* user <user-id>
-* role <role-id>
-* tenant_id <tenant-id>
 
 example:
 
 .. code-block:: bash
 
-    $ keystone user-role-add  \
-      --user=96a6ebba0d4c441887aceaeced892585  \
-      --role=f8dd5a2e4dc64a41b96add562d9a764e  \
-      --tenant_id=2395953419144b67955ac4bab96b8fd2
+    $ openstack user role add  demo --user heat-user --project heat
 
-``user-role-remove``
---------------------
+``role remove``
+---------------
 
-keyword arguments
+positional arguments::
 
-* user <user-id>
-* role <role-id>
-* tenant_id <tenant-id>
+  <role>               Role name or ID to remove from user
+
+optional arguments::
+
+  --project <project>  Project to include (name or ID)
+  --user <user>        Name or ID of user
+
 
 example:
 
 .. code-block:: bash
 
-    $ keystone user-role-remove  \
-      --user=96a6ebba0d4c441887aceaeced892585  \
-      --role=f8dd5a2e4dc64a41b96add562d9a764e  \
-      --tenant_id=2395953419144b67955ac4bab96b8fd2
+    $ openstack user role remove  demo --user heat-user --project heat
 
 --------
 Services
 --------
 
-``service-create``
+``service create``
 ------------------
 
-keyword arguments
+positional arguments::
 
-* name
-* type
-* description
+  <service-name>   New service name
+
+optional arguments::
+
+  --type <service-type>   New service type (compute, image, identity, volume, etc)
+  --description <service-description>   New service description
 
 example:
 
 .. code-block:: bash
 
-    $ keystone service-create \
-    --name=nova \
-    --type=compute \
-    --description="Nova Compute Service"
+  $ openstack service create nova --type compute --description "Nova Compute Service"
 
-``service-list``
+``service list``
 ----------------
 
-arguments
+optional arguments::
 
-* service_id
-
-example:
-
-.. code-block:: bash
-
-    $ keystone service-list
-
-``service-get``
----------------
-
-arguments
-
-* service_id
+  --long   List additional fields in output
 
 example:
 
 .. code-block:: bash
 
-    $ keystone service-get 08741d8ed88242ca88d1f61484a0fe3b
+  $ openstack service list
 
-``service-delete``
+``service show``
+----------------
+
+positional arguments::
+
+  <service>   Service to display (type, name or ID)
+
+example:
+
+.. code-block:: bash
+
+  $ openstack service show nova
+
+``service delete``
 ------------------
 
-arguments
+positional arguments::
 
-* service_id
+  <service>   Service to delete (name or ID)
 
 example:
 
 .. code-block:: bash
 
-    $ keystone service-delete 08741d8ed88242ca88d1f61484a0fe3b
+  $ openstack service delete nova
