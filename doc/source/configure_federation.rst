@@ -295,6 +295,11 @@ Example cURL
 Keystone as an Identity Provider (IdP)
 --------------------------------------
 
+.. WARNING::
+
+    Running Keystone as an IdP is considered experimental for the Juno release
+    and will continue to see improvement over the next development cycle.
+
 Configuration Options
 ---------------------
 
