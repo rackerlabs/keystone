@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_3092af9f",
+        "filename": "keystone/common/sql/migrate_repo/versions/055_add_index_to_user_id.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-09-25T04:27:18Z",
+      "side": 1,
+      "message": "I think this is wrong",
+      "revId": "526ef0f441121531e3fc5aadd30feb9c5d68679b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
