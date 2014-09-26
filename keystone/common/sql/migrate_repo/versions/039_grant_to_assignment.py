@@ -82,6 +82,7 @@ def migrate_grant_table(meta, migrate_engine, session, table_name):
             migrate_engine.execute(new_entry)
 
     # Delete all the rows
+    session.commit()
     migrate_engine.execute(upgrade_table.delete())
 
 
@@ -208,6 +209,7 @@ def downgrade_assignment_table(meta, migrate_engine):
             session.commit()
 
     # Delete all the rows
+    session.commit()
     migrate_engine.execute(downgrade_table.delete())
 
     session.commit()
