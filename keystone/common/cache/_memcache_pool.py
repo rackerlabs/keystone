@@ -35,11 +35,6 @@ from keystone.openstack.common import log
 
 LOG = log.getLogger(__name__)
 
-# NOTE(morganfainberg): This is used as the maximum number of seconds a get
-# of a new connection will wait for before raising an exception indicating
-# a serious / most likely non-recoverable delay has occurred.
-CONNECTION_GET_TIMEOUT = 120
-
 # This 'class' is taken from http://stackoverflow.com/a/22520633/238308
 # Don't inherit client from threading.local so that we can reuse clients in
 # different threads
@@ -72,7 +67,7 @@ class ConnectionPool(queue.Queue):
                                  indefinite.
         :type conn_get_timeout: int
         """
-        queue.Queue.__init__(self, maxsize)
+        super(ConnectionPool, self).__init__(maxsize)
         self._unused_timeout = unused_timeout
         self._connection_get_timeout = conn_get_timeout
         self._acquired = 0
@@ -121,23 +116,29 @@ class ConnectionPool(queue.Queue):
         self._acquired += 1
         return conn
 
-    def _put(self, conn):
-        self.queue.append(_PoolItem(
-            ttl=time.time() + self._unused_timeout,
-            connection=conn,
-        ))
-        self._acquired -= 1
-        # Drop all expired connections from the right end of the queue
+    def _drop_expired_connections(self, conn):
+        """Drop all expired connections from the right end of the queue.
+
+        :param: connection object
+        """
         now = time.time()
         while self.queue and self.queue[0].ttl < now:
             conn = self.queue.popleft().connection
             self._debug_logger('Reaping connection %s', id(conn))
             self._destroy_connection(conn)
 
+    def _put(self, conn):
+        self.queue.append(_PoolItem(
+            ttl=time.time() + self._unused_timeout,
+            connection=conn,
+        ))
+        self._acquired -= 1
+        self._drop_expired_connections(conn)
+
 
 class MemcacheClientPool(ConnectionPool):
     def __init__(self, urls, arguments, **kwargs):
-        ConnectionPool.__init__(self, **kwargs)
+        super(MemcacheClientPool, self).__init__(**kwargs)
         self.urls = urls
         self._arguments = arguments
         # NOTE(morganfainberg): The host objects expect an int for the
@@ -152,7 +153,7 @@ class MemcacheClientPool(ConnectionPool):
         conn.disconnect_all()
 
     def _get(self):
-        conn = ConnectionPool._get(self)
+        conn = super(MemcacheClientPool, self)._get()
         try:
             # Propagate host state known to us to this client's list
             now = time.time()
@@ -164,7 +165,7 @@ class MemcacheClientPool(ConnectionPool):
             # We need to be sure that connection doesn't leak from the pool.
             # This code runs before we enter context manager's try-finally
             # block, so we need to explicitly release it here
-            ConnectionPool._put(self, conn)
+            super(MemcacheClientPool, self)._put(conn)
             raise
         return conn
 
@@ -173,9 +174,8 @@ class MemcacheClientPool(ConnectionPool):
             # If this client found that one of the hosts is dead, mark it as
             # such in our internal list
             now = time.time()
-            for i, deaduntil, host in zip(itertools.count(),
-                                          self._hosts_deaduntil,
-                                          conn.servers):
+            for i, host in zip(itertools.count(), conn.servers):
+                deaduntil = self._hosts_deaduntil[i]
                 # Do nothing if we already know this host is dead
                 if deaduntil <= now:
                     if host.deaduntil > now:
@@ -193,4 +193,4 @@ class MemcacheClientPool(ConnectionPool):
                 self._debug_logger('All hosts are dead. Marking them as live.')
                 self._hosts_deaduntil[:] = [0] * len(self._hosts_deaduntil)
         finally:
-            ConnectionPool._put(self, conn)
+            super(MemcacheClientPool, self)._put(conn)
