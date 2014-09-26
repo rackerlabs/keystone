@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_1ad02ff5",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-26T22:49:47Z",
+      "side": 1,
+      "message": "s/project/project name/ ? (since if you use project ID I assume we don\u0027t need to specific a domain)",
+      "revId": "6ee69e753d9322592de2bbf602732e62b14d67d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_bafc8373",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-09-26T22:49:47Z",
+      "side": 1,
+      "message": "remove blank line?",
+      "revId": "6ee69e753d9322592de2bbf602732e62b14d67d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
