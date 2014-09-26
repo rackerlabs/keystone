@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_bdc5738f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 4992
+      },
+      "writtenOn": "2014-09-26T08:44:38Z",
+      "side": 1,
+      "message": "nit: duplicate \"project_admin\"",
+      "revId": "449127dfe50f16c7301c2d3813c4d9b4b72b73b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
