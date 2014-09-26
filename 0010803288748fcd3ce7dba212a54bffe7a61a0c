@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da9df570_7a7a2478",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 31
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-26T15:33:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9df570_987d7971",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_78ed3525",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 31
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-23T20:19:27Z",
       "side": 1,
       "message": "change \"servers urls\" to \"server URLs\"",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_3aeb3c14",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 31
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-26T15:33:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9df570_78ed3525",
       "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da9df570_1a5038d3",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 31
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-26T15:33:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9df570_d8c46194",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_18bfc9fc",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 31
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "da9df570_5ad7204b",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 31
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-26T15:33:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9df570_18bfc9fc",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_58895125",
         "filename": "keystone/common/cache/_memcache_pool.py",
         "patchSetId": 31
@@ -81,6 +153,24 @@
       "writtenOn": "2014-09-23T20:19:27Z",
       "side": 1,
       "message": "This is unused. Remove it.",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_bafaccba",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-26T15:33:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9df570_58895125",
       "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -115,6 +205,24 @@
       "writtenOn": "2014-09-26T15:32:51Z",
       "side": 1,
       "message": "Same as other comments to super.",
+      "parentUuid": "da9df570_d86d4134",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_bae80ce3",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-26T15:33:49Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "da9df570_d86d4134",
       "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -224,6 +332,24 @@
     },
     {
       "key": {
+        "uuid": "da9df570_1a9af86d",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-26T15:33:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9df570_633826a1",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_635f46e6",
         "filename": "keystone/common/cache/_memcache_pool.py",
         "patchSetId": 31
@@ -235,6 +361,23 @@
       "writtenOn": "2014-09-23T20:19:27Z",
       "side": 1,
       "message": "This class could use a docstring.",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_5a964040",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-26T15:33:49Z",
+      "side": 1,
+      "message": "use super()",
       "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -269,6 +412,24 @@
       "writtenOn": "2014-09-26T15:12:44Z",
       "side": 1,
       "message": "Queue is an old style class. Super cannot be used.",
+      "parentUuid": "da9df570_c32ab22b",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_1aa83876",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-26T15:33:49Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "da9df570_c32ab22b",
       "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -328,6 +489,24 @@
     },
     {
       "key": {
+        "uuid": "da9df570_3adfbc0e",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-26T15:33:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9df570_e320964b",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_c302b26e",
         "filename": "keystone/common/cache/_memcache_pool.py",
         "patchSetId": 31
@@ -339,6 +518,24 @@
       "writtenOn": "2014-09-23T20:19:27Z",
       "side": 1,
       "message": "this is confusing since we use self._hosts_deaduntil and self._hosts_deaduntil[i]. Would be simpler to not use self._hosts_deaduntil in the if here and always use self._hosts_deaduntil[i] in the loop body.\n\nDo deaduntil \u003d self._hosts_deaduntil[i] in the loop body.",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_ba400ca6",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-26T15:33:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9df570_c302b26e",
       "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -397,6 +594,24 @@
     },
     {
       "key": {
+        "uuid": "da9df570_9a0fc887",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-26T15:33:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9df570_231b7e1c",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_9578df90",
         "filename": "keystone/common/cache/backends/memcache_pool.py",
         "patchSetId": 31
@@ -431,6 +646,24 @@
     },
     {
       "key": {
+        "uuid": "da9df570_9a70a8dd",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-26T15:33:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9df570_bd3a2132",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_9d547d55",
         "filename": "keystone/tests/core.py",
         "patchSetId": 31
@@ -442,6 +675,24 @@
       "writtenOn": "2014-09-23T20:19:27Z",
       "side": 1,
       "message": "we\u0027re going to want this in the default logging config too.",
+      "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_75a31700",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-09-26T15:33:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9df570_9d547d55",
       "revId": "0010803288748fcd3ce7dba212a54bffe7a61a0c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
