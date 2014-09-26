@@ -731,7 +731,8 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.put('/groups/%(group_id)s/users/%(user_id)s' % {
             'group_id': self.group_id, 'user_id': self.user['id']})
         self.head('/groups/%(group_id)s/users/%(user_id)s' % {
-            'group_id': self.group_id, 'user_id': self.user['id']})
+            'group_id': self.group_id, 'user_id': self.user['id']},
+            expected_status=204)
 
     def test_list_users_in_group(self):
         """Call ``GET /groups/{group_id}/users``."""
@@ -990,7 +991,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             'role_id': self.role_id}
 
         self.put(member_url)
-        self.head(member_url)
+        self.head(member_url, expected_status=204)
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, ref=self.role,
                                          resource_url=collection_url)
@@ -1031,7 +1032,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             'role_id': self.role_id}
 
         self.put(member_url)
-        self.head(member_url)
+        self.head(member_url, expected_status=204)
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, ref=self.role,
                                          resource_url=collection_url)
@@ -1070,7 +1071,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             'role_id': self.role_id}
 
         self.put(member_url)
-        self.head(member_url)
+        self.head(member_url, expected_status=204)
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, ref=self.role,
                                          resource_url=collection_url)
@@ -1110,7 +1111,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             'role_id': self.role_id}
 
         self.put(member_url)
-        self.head(member_url)
+        self.head(member_url, expected_status=204)
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, ref=self.role,
                                          resource_url=collection_url)
@@ -1654,7 +1655,7 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
         self.put(member_url)
 
         # Check we can read it back
-        self.head(member_url)
+        self.head(member_url, expected_status=204)
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, ref=role_list[0],
                                          resource_url=collection_url)
@@ -1719,7 +1720,7 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
         collection_url = base_collection_url + '/inherited_to_projects'
 
         self.put(member_url)
-        self.head(member_url)
+        self.head(member_url, expected_status=204)
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, ref=role_list[3],
                                          resource_url=collection_url)
@@ -1815,7 +1816,7 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
         collection_url = base_collection_url + '/inherited_to_projects'
 
         self.put(member_url)
-        self.head(member_url)
+        self.head(member_url, expected_status=204)
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, ref=role_list[3],
                                          resource_url=collection_url)
@@ -1924,7 +1925,7 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
         collection_url = base_collection_url + '/inherited_to_projects'
 
         self.put(member_url)
-        self.head(member_url)
+        self.head(member_url, expected_status=204)
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, ref=role_list[3],
                                          resource_url=collection_url)
@@ -2024,7 +2025,7 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
         collection_url = base_collection_url + '/inherited_to_projects'
 
         self.put(member_url)
-        self.head(member_url)
+        self.head(member_url, expected_status=204)
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, ref=role_list[3],
                                          resource_url=collection_url)
@@ -2039,7 +2040,7 @@ class IdentityInheritanceTestCase(test_v3.RestfulTestCase):
         collection_url = base_collection_url + '/inherited_to_projects'
 
         self.put(member_url)
-        self.head(member_url)
+        self.head(member_url, expected_status=204)
         r = self.get(collection_url)
         self.assertValidRoleListResponse(r, ref=role_list[4],
                                          resource_url=collection_url)
