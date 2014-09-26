@@ -12,6 +12,8 @@
 #   License for the specific language governing permissions and limitations
 #   under the License.
 
+import sys
+
 from testtools import matchers
 
 from keystone.openstack.common import log
@@ -22,6 +24,10 @@ LOG = log.getLogger(__name__)
 
 
 class TestTestCase(tests.TestCase):
+    def testUnexpectedExit(self):
+        self.assertThat(lambda: sys.exit(),
+                        matchers.raises(tests.UnexpectedExit))
+
     def testBadLog(self):
         self.assertThat(
             lambda: LOG.warn('String %(p1)s %(p2)s', {'p1': 'something'}),
