@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_b0266dcc",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-26T16:31:47Z",
+      "side": 0,
+      "message": "I removed this bit since it was the only part of the doc that gave a description to the resource... seemed out of place.",
+      "revId": "e9f4462160e820dd718aee128b47d40ae0b66e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
