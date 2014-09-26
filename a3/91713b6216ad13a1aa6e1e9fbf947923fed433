@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Workflow+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Adam Gandelman <adamg@ubuntu.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 26 Sep 2014 17:25:18 +0000
+Reviewed-on: https://review.openstack.org/120924
+Project: openstack/keystone
+Branch: refs/heads/stable/icehouse
