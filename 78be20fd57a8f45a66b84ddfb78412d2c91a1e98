@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da9df570_9fcfba7e",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1122,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-26T15:00:05Z",
+      "side": 1,
+      "message": "++, using your suggestion.",
+      "parentUuid": "da9df570_c34c1645",
+      "revId": "78be20fd57a8f45a66b84ddfb78412d2c91a1e98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_43bca6dc",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "da9df570_5fa9d28e",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1148,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-26T15:00:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9df570_43bca6dc",
+      "revId": "78be20fd57a8f45a66b84ddfb78412d2c91a1e98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_43910646",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2014-09-26T08:49:48Z",
       "side": 1,
       "message": "Maybe this should say \"For additional examples using  ``python-keystoneclient`` refer...\"",
+      "revId": "78be20fd57a8f45a66b84ddfb78412d2c91a1e98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_9f96da4a",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1233,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-26T15:00:05Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9df570_43910646",
       "revId": "78be20fd57a8f45a66b84ddfb78412d2c91a1e98",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
