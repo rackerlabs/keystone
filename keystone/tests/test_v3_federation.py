@@ -25,9 +25,9 @@ from saml2 import sigver
 import xmldsig
 
 from keystone.auth import controllers as auth_controllers
-from keystone.common import dependency
 from keystone.common import serializer
 from keystone import config
+from keystone.contrib import federation
 from keystone.contrib.federation import controllers as federation_controllers
 from keystone.contrib.federation import idp as keystone_idp
 from keystone.contrib.federation import utils as mapping_utils
@@ -49,7 +49,6 @@ def dummy_validator(*args, **kwargs):
     pass
 
 
-@dependency.requires('federation_api')
 class FederationTests(test_v3.RestfulTestCase):
 
     EXTENSION_NAME = 'federation'
@@ -768,6 +767,15 @@ class MappingRuleEngineTests(FederationTests):
 
 
 class FederatedTokenTests(FederationTests):
+
+    def load_extra_backends(self):
+        return {'federation_api': federation.Manager()}
+
+    def auth_plugin_config_override(self):
+        methods = ['saml2']
+        method_classes = {'saml2': 'keystone.auth.plugins.saml2.Saml2'}
+        super(FederatedTokenTests, self).auth_plugin_config_override(
+            methods, **method_classes)
 
     def setUp(self):
         super(FederatedTokenTests, self).setUp()
