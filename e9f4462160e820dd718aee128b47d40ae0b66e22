@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9df570_6a97a4ec",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-27T13:49:19Z",
+      "side": 1,
+      "message": "openstack help by itself does nothing useful, openstack -h is more useful",
+      "revId": "e9f4462160e820dd718aee128b47d40ae0b66e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_ea8ab4bd",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1128,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-27T13:49:19Z",
+      "side": 1,
+      "message": "suggest change v2.0 to \"the Identity v2.0 API\"",
+      "revId": "e9f4462160e820dd718aee128b47d40ae0b66e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_2a911cf1",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1137,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-27T13:49:19Z",
+      "side": 1,
+      "message": "change \"compability\" to \"compatibility\"",
+      "revId": "e9f4462160e820dd718aee128b47d40ae0b66e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_4a8e60d1",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1139,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-27T13:49:19Z",
+      "side": 1,
+      "message": "it\u0027s not deprecated in Juno.",
+      "revId": "e9f4462160e820dd718aee128b47d40ae0b66e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_aab42c82",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1180,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-27T13:49:19Z",
+      "side": 1,
+      "message": "change \"not that\" to \"note that\"",
+      "revId": "e9f4462160e820dd718aee128b47d40ae0b66e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9df570_eab1d48f",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1239,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-09-27T13:49:19Z",
+      "side": 1,
+      "message": "remove one of the \"using\"",
+      "revId": "e9f4462160e820dd718aee128b47d40ae0b66e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
