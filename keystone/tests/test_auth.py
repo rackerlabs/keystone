@@ -25,6 +25,7 @@ from keystone import auth
 from keystone.common import authorization
 from keystone.common import environment
 from keystone import config
+from keystone.contrib import revoke
 from keystone import exception
 from keystone.models import token_model
 from keystone import tests
@@ -227,6 +228,9 @@ class AuthBadRequests(AuthTest):
 
 
 class AuthWithToken(AuthTest):
+    def load_extra_backends(self):
+        return {'revoke_api': revoke.Manager()}
+
     def test_unscoped_token(self):
         """Verify getting an unscoped token with password creds."""
         body_dict = _build_user_auth(username='FOO',
