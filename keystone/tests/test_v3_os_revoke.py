@@ -16,7 +16,7 @@ import uuid
 from oslo.utils import timeutils
 import six
 
-from keystone.common import dependency
+from keystone.contrib import revoke
 from keystone.contrib.revoke import model
 from keystone.tests import test_v3
 from keystone.token import provider
@@ -28,7 +28,6 @@ def _future_time_string():
     return timeutils.isotime(future_time)
 
 
-@dependency.requires('revoke_api')
 class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
     EXTENSION_NAME = 'revoke'
     EXTENSION_TO_ADD = 'revoke_extension'
@@ -39,6 +38,9 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
             'href': '/OS-REVOKE/events',
         },
     }
+
+    def load_extra_backends(self):
+        return {'revoke_api': revoke.Manager()}
 
     def test_get_empty_list(self):
         resp = self.get('/OS-REVOKE/events')

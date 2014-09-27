@@ -41,8 +41,8 @@ class UnresolvableDependencyException(Exception):
     """An UnresolvableDependencyException is raised when a required dependency
     is not resolvable; see 'resolve_future_dependencies'.
     """
-    def __init__(self, name):
-        msg = 'Unregistered dependency: %s' % name
+    def __init__(self, name, targets):
+        msg = 'Unregistered dependency: %s for %s' % (name, targets)
         super(UnresolvableDependencyException, self).__init__(msg)
 
 
@@ -261,7 +261,7 @@ def resolve_future_dependencies(provider_name=None):
                     REGISTRY[dependency] = provider
                     new_providers[dependency] = provider
                 else:
-                    raise UnresolvableDependencyException(dependency)
+                    raise UnresolvableDependencyException(dependency, targets)
 
             for target in targets:
                 setattr(target, dependency, REGISTRY[dependency])
