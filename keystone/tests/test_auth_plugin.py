@@ -17,6 +17,7 @@ import uuid
 import mock
 
 from keystone import auth
+from keystone.contrib import federation
 from keystone import exception
 from keystone import tests
 
@@ -65,6 +66,9 @@ class TestAuthPlugin(tests.SQLDriverOverrides, tests.TestCase):
         config_files = super(TestAuthPlugin, self).config_files()
         config_files.append(tests.dirs.tests_conf('test_auth_plugin.conf'))
         return config_files
+
+    def load_extra_backends(self):
+        return {'federation_api': federation.Manager()}
 
     def config_overrides(self):
         super(TestAuthPlugin, self).config_overrides()
@@ -171,6 +175,9 @@ class TestMapped(tests.TestCase):
         config_files = super(TestMapped, self).config_files()
         config_files.append(tests.dirs.tests_conf('test_auth_plugin.conf'))
         return config_files
+
+    def load_extra_backends(self):
+        return {'federation_api': federation.Manager()}
 
     def config_overrides(self):
         # don't override configs so we can use test_auth_plugin.conf only
