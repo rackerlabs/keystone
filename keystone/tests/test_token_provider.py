@@ -16,6 +16,7 @@ import datetime
 
 from oslo.utils import timeutils
 
+from keystone.common import dependency
 from keystone import config
 from keystone import exception
 from keystone import tests
@@ -743,14 +744,17 @@ class TestTokenProvider(tests.TestCase):
                          token.provider.Manager.get_token_provider())
 
     def test_default_providers_without_token_format(self):
+        dependency.reset()
         self.config_fixture.config(group='token',
                                    provider=token.provider.UUID_PROVIDER)
         token.provider.Manager()
 
+        dependency.reset()
         self.config_fixture.config(group='token',
                                    provider=token.provider.PKI_PROVIDER)
         token.provider.Manager()
 
+        dependency.reset()
         self.config_fixture.config(group='token',
                                    provider=token.provider.PKIZ_PROVIDER)
         token.provider.Manager()
