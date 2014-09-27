@@ -24,7 +24,8 @@ from keystone import notifications
 from keystone.openstack.common import jsonutils
 
 
-@dependency.requires('federation_api', 'identity_api', 'token_provider_api')
+@dependency.requires('identity_api', 'token_provider_api')
+@dependency.optional('federation_api')
 class Mapped(auth.AuthMethodHandler):
 
     def authenticate(self, context, auth_payload, auth_context):
@@ -40,6 +41,9 @@ class Mapped(auth.AuthMethodHandler):
         ``group_ids``, ``OS-FEDERATION:identity_provider`` and
         ``OS-FEDERATION:protocol``
         """
+
+        if not self.federation_api:
+            raise Exception()  # FIXME(blk-u): better exception.
 
         if 'id' in auth_payload:
             fields = self._handle_scoped_token(context, auth_payload)
