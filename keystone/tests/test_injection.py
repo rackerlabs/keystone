@@ -204,7 +204,7 @@ class TestDependencyInjection(tests.BaseTestCase):
 
         p_inst = P()
 
-        self.assertIs(dependency.REGISTRY[p_id], p_inst)
+        self.assertIs(dependency.get_provider(p_id), p_inst)
 
         dependency.reset()
 
