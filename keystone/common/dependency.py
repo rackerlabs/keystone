@@ -103,6 +103,8 @@ def provider(name):
 
             def __wrapped_init__(self, *args, **kwargs):
                 """Initialize the wrapped object and add it to the registry."""
+                if name in REGISTRY:
+                    raise Exception("%s was already registered." % name)
                 init(self, *args, **kwargs)
                 REGISTRY[name] = self
                 register_event_callbacks(self)
@@ -243,6 +245,8 @@ def resolve_future_dependencies(provider_name=None):
             factory = _factories.get(dependency)
             if factory:
                 provider = factory()
+                if dependency in REGISTRY:
+                    raise Exception("%s was already registered." % dependency)
                 REGISTRY[dependency] = provider
                 new_providers[dependency] = provider
         for target in targets:
@@ -258,6 +262,9 @@ def resolve_future_dependencies(provider_name=None):
                 factory = _factories.get(dependency)
                 if factory:
                     provider = factory()
+                    if dependency in REGISTRY:
+                        raise Exception(
+                            "%s was already registered." % dependency)
                     REGISTRY[dependency] = provider
                     new_providers[dependency] = provider
                 else:
