@@ -14,9 +14,14 @@
 
 import functools
 
+from keystone.common import dependency
 from keystone.common import json_home
 from keystone.common import wsgi
+from keystone.contrib import example  # import to register provider.
 from keystone.contrib.example import controllers
+
+
+example = example  # Use the import for pep8
 
 
 build_resource_relation = functools.partial(
@@ -29,6 +34,9 @@ class ExampleRouter(wsgi.V3ExtensionRouter):
     PATH_PREFIX = '/OS-EXAMPLE'
 
     def add_routes(self, mapper):
+        # Make sure the example_api manager instance exists.
+        dependency.create('example_api')
+
         example_controller = controllers.ExampleV3Controller()
 
         self._add_resource(
