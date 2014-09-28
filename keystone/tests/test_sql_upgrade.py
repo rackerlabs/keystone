@@ -126,6 +126,19 @@ INITIAL_EXTENSION_TABLE_STRUCTURE = {
     ],
 }
 
+
+INITIAL_DROP_TABLE_SEQUENCE = [
+    # First, the set of tables to which nobody has FKs
+    'credential', 'endpoint', 'group_domain_metadata', 'group_project_metadata',
+    'policy', 'role', 'token', 'trust_role',
+    'user_domain_metadata', 'user_group_membership', 'user_project_metadata',
+    # Now, the tables that were the basis for those FKs, unless they have
+    # a 2nd level FK pointing to them
+    'group', 'service', 'trust', 'user',
+    # Finally any base tables for the chain of FKs
+    'project', 'domain']
+
+
 EXTENSIONS = {'federation': federation,
               'revoke': revoke}
 
@@ -179,9 +192,33 @@ class SqlMigrateBase(tests.SQLDriverOverrides, tests.TestCase):
         meta = sqlalchemy.MetaData()
         meta.bind = self.engine
         meta.reflect(self.engine)
+        # In order to cleanly drop everything, we first downgrade ourselves as far
+        # as we can go, then manually drop the rest.
+        try:
+            if self.schema.version > migrate_repo.DB_INIT_VERSION + 1:
+                self.downgrade(migrate_repo.DB_INIT_VERSION + 1)
+        except sql.DbMigrationError:
+            # If tear down is being called when we only have loaded an
+            # extension repo, then we'll get a DBMigrationError from
+            # oslo.db (since the main repo is not under DB control)
+            pass
+
+        # Since we are back to DB_INIT_VERSION + 1, we shouldn't have any
+        # tables left, but we'll clean them up anyway, including the
+        # migration version table.
         for table in list(meta.tables.keys()):
-            table = sqlalchemy.Table(table, meta, autoload=True)
-            table.drop(self.engine, checkfirst=True)
+            if table not in INITIAL_DROP_TABLE_SEQUENCE:
+                table = sqlalchemy.Table(table, meta, autoload=True)
+                table.drop(self.engine, checkfirst=True)
+        # Finally drop all the initial tables, in a sequence that ensures we
+        # handle any FK relationships
+        for table in INITIAL_DROP_TABLE_SEQUENCE:
+            try:
+                table = sqlalchemy.Table(table, meta, autoload=True)
+                table.drop(self.engine, checkfirst=True)
+            except sql.NoSuchTableError:
+                pass
+
         sql.cleanup()
         super(SqlMigrateBase, self).tearDown()
 
@@ -237,7 +274,7 @@ class SqlMigrateBase(tests.SQLDriverOverrides, tests.TestCase):
         self.initialize_sql()
         table = self.select_table(table_name)
         actual_cols = [col.name for col in table.columns]
-        self.assertEqual(expected_cols, actual_cols, '%s table' % table_name)
+        self.assertEqual(expected_cols.sort(), actual_cols.sort(), '%s table' % table_name)
 
     @property
     def initial_db_version(self):
@@ -758,6 +795,7 @@ class SqlUpgradeTests(SqlMigrateBase):
         # we should have 3 trusts in base
         self.assertEqual(3, session.query(trust_table).count())
 
+        session.close()
         self.downgrade(40)
         session = self.Session()
         trust_table = sqlalchemy.Table(
@@ -795,8 +833,6 @@ class SqlUpgradeTests(SqlMigrateBase):
     def test_upgrade_service_enabled_data(self):
         """Migration 44 has to migrate data from `extra` to `enabled`."""
 
-        session = self.Session()
-
         def add_service(**extra_data):
             service_id = uuid.uuid4().hex
 
@@ -811,6 +847,7 @@ class SqlUpgradeTests(SqlMigrateBase):
             return service_id
 
         self.upgrade(43)
+        session = self.Session()
 
         # Different services with expected enabled and extra values, and a
         # description.
@@ -839,7 +876,9 @@ class SqlUpgradeTests(SqlMigrateBase):
              (False, random_attr), random_attr_enabled_false_str),
         ]
 
+        session.close()
         self.upgrade(44)
+        session = self.Session()
 
         # Verify that the services have the expected values.
 
@@ -859,7 +898,7 @@ class SqlUpgradeTests(SqlMigrateBase):
 
             enabled, extra = fetch_service(service_id)
 
-            self.assertIs(exp_enabled, enabled, msg)
+            self.assertEqual(exp_enabled, enabled, msg)
             self.assertEqual(exp_extra, extra, msg)
 
     def test_downgrade_service_enabled_data(self):
@@ -869,8 +908,6 @@ class SqlUpgradeTests(SqlMigrateBase):
         `extra`. Any disabled services have 'enabled': False put into 'extra'.
 
         """
-
-        session = self.Session()
 
         def add_service(enabled=True, **extra_data):
             service_id = uuid.uuid4().hex
@@ -887,6 +924,7 @@ class SqlUpgradeTests(SqlMigrateBase):
             return service_id
 
         self.upgrade(44)
+        session = self.Session()
 
         # Insert some services using the new format.
 
@@ -912,7 +950,9 @@ class SqlUpgradeTests(SqlMigrateBase):
              "enabled=False, something='whatever'"),
         ]
 
+        session.close()
         self.downgrade(43)
+        session = self.Session()
 
         # Verify that the services have the expected values.
 
@@ -959,8 +999,6 @@ class SqlUpgradeTests(SqlMigrateBase):
     def test_upgrade_endpoint_enabled_data(self):
         """Migration 42 has to migrate data from `extra` to `enabled`."""
 
-        session = self.Session()
-
         def add_service():
             service_id = uuid.uuid4().hex
 
@@ -988,6 +1026,7 @@ class SqlUpgradeTests(SqlMigrateBase):
             return endpoint_id
 
         self.upgrade(41)
+        session = self.Session()
 
         # Insert some endpoints using the old format where `enabled` is in
         # `extra` JSON.
@@ -1024,7 +1063,9 @@ class SqlUpgradeTests(SqlMigrateBase):
              (False, random_attr), random_attr_enabled_false_str),
         ]
 
+        session.close()
         self.upgrade(42)
+        session = self.Session()
 
         # Verify that the endpoints have the expected values.
 
@@ -1044,7 +1085,9 @@ class SqlUpgradeTests(SqlMigrateBase):
 
             enabled, extra = fetch_endpoint(endpoint_id)
 
-            self.assertIs(exp_enabled, enabled, msg)
+            # NOTE(henry-nash): Different databases may return enabled as a
+            # real boolean of 0/1 - so we use assertEqual not assertIs here.
+            self.assertEqual(exp_enabled, enabled, msg)
             self.assertEqual(exp_extra, extra, msg)
 
     def test_downgrade_endpoint_enabled_data(self):
@@ -1054,8 +1097,6 @@ class SqlUpgradeTests(SqlMigrateBase):
         `extra`. Any disabled endpoints have 'enabled': False put into 'extra'.
 
         """
-
-        session = self.Session()
 
         def add_service():
             service_id = uuid.uuid4().hex
@@ -1085,6 +1126,7 @@ class SqlUpgradeTests(SqlMigrateBase):
             return endpoint_id
 
         self.upgrade(42)
+        session = self.Session()
 
         # Insert some endpoints using the new format.
 
@@ -1109,7 +1151,9 @@ class SqlUpgradeTests(SqlMigrateBase):
              "enabled=False, something='whatever'"),
         ]
 
+        session.close()
         self.downgrade(41)
+        session = self.Session()
 
         # Verify that the endpoints have the expected values.
 
@@ -1137,7 +1181,6 @@ class SqlUpgradeTests(SqlMigrateBase):
         Create two regions with the same description.
 
         """
-        session = self.Session()
 
         def add_region():
             region_uuid = uuid.uuid4().hex
@@ -1151,6 +1194,7 @@ class SqlUpgradeTests(SqlMigrateBase):
             return region_uuid
 
         self.upgrade(43)
+        session = self.Session()
         # Write one region to the database
         add_region()
         # Write another region to the database with the same description
@@ -1165,7 +1209,6 @@ class SqlUpgradeTests(SqlMigrateBase):
         Create two regions with the same description.
 
         """
-        session = self.Session()
 
         def add_region(table):
             region_uuid = uuid.uuid4().hex
@@ -1185,6 +1228,7 @@ class SqlUpgradeTests(SqlMigrateBase):
 
         # Migrate to version 42
         self.upgrade(42)
+        session = self.Session()
         region_table = sqlalchemy.Table('region',
                                         get_metadata(),
                                         autoload=True)
@@ -1205,16 +1249,18 @@ class SqlUpgradeTests(SqlMigrateBase):
             # into more specific exception objects, we should catch both of
             # sqlalchemy and oslo.db exceptions. If an old oslo.db version
             # is installed, IntegrityError is raised. If >=0.4.0 version of
-            # oslo.db is installed, DBDuplicateEntry is raised.
+            # oslo.db is installed, DBError is raised.
             # When the global requirements is updated with
             # the version fixes exceptions wrapping, IntegrityError must be
             # removed from the tuple.
-            (sqlalchemy.exc.IntegrityError, db_exception.DBDuplicateEntry),
+            (sqlalchemy.exc.IntegrityError, db_exception.DBError),
             add_region,
             table=region_unique_table)
 
         # migrate to 43, unique constraint should be dropped
+        session.close()
         self.upgrade(43)
+        session = self.Session()
 
         # reload the region table from the schema
         region_nonunique = sqlalchemy.Table('region',
@@ -1267,7 +1313,9 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.insert_dict(session, 'region', acme)
         region_table = sqlalchemy.Table('region', self.metadata, autoload=True)
         self.assertEqual(2, session.query(region_table).count())
+        session.close()
         self.downgrade(51)
+        session = self.Session()
         self.metadata.clear()
         region_table = sqlalchemy.Table('region', self.metadata, autoload=True)
         self.assertEqual(2, session.query(region_table).count())
@@ -1344,7 +1392,9 @@ class SqlUpgradeTests(SqlMigrateBase):
         add_endpoint(_service_id_, region=None)
 
         # upgrade to 53
+        session.close()
         self.upgrade(53)
+        session = self.Session()
         self.metadata.clear()
 
         region_table = sqlalchemy.Table('region', self.metadata, autoload=True)
@@ -1366,8 +1416,11 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertEqual(1, session.query(endpoint_table).
                          filter_by(region_id=_small_region_name).count())
 
-        # downgrade to 52
+        # downgrade to 52 - don't hold the session open while we do this or
+        # SQA can get itself confused
+        session.close()
         self.downgrade(52)
+        session = self.Session()
         self.metadata.clear()
 
         region_table = sqlalchemy.Table('region', self.metadata, autoload=True)
