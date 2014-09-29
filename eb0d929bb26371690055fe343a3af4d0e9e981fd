@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_93e67e15",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T02:19:14Z",
+      "side": 1,
+      "message": "definitely not",
+      "revId": "eb0d929bb26371690055fe343a3af4d0e9e981fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_f3c42a61",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T02:19:14Z",
+      "side": 1,
+      "message": "here you are passing None instead of []",
+      "revId": "eb0d929bb26371690055fe343a3af4d0e9e981fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_d3f006cc",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T02:19:14Z",
+      "side": 1,
+      "message": "prefix this with an underscore\n\n  _extract_interface_from_string()",
+      "revId": "eb0d929bb26371690055fe343a3af4d0e9e981fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_93cd9e89",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T02:19:14Z",
+      "side": 1,
+      "message": "i think you can default hints to None in the signature here - and not pass in an empty array at line 251, same for line 166",
+      "revId": "eb0d929bb26371690055fe343a3af4d0e9e981fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_73b03af5",
+        "filename": "keystone/tests/test_backend_templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T02:19:14Z",
+      "side": 1,
+      "message": "instead of skip, can we catch the exception that is raised?",
+      "revId": "eb0d929bb26371690055fe343a3af4d0e9e981fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_53ab3689",
+        "filename": "keystone/tests/test_backend_templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T02:19:14Z",
+      "side": 1,
+      "message": "s/cud/CRUD",
+      "revId": "eb0d929bb26371690055fe343a3af4d0e9e981fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_f39b4a70",
+        "filename": "keystone/tests/test_backend_templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T02:19:14Z",
+      "side": 1,
+      "message": "move this below, it\u0027s not needed until the assert",
+      "revId": "eb0d929bb26371690055fe343a3af4d0e9e981fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_d39e4663",
+        "filename": "keystone/tests/test_backend_templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T02:19:14Z",
+      "side": 1,
+      "message": "what about the other properties?",
+      "revId": "eb0d929bb26371690055fe343a3af4d0e9e981fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
