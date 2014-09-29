@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_9ccf62b0",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T14:57:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9df570_2aa83c1f",
+      "revId": "ae5e4aa7abb13db1712804e61074108278c80521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_4aa58045",
         "filename": "doc/source/cli_examples.rst",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-27T13:51:32Z",
       "side": 1,
       "message": "change to \"the Identity v2.0 API\"",
+      "revId": "ae5e4aa7abb13db1712804e61074108278c80521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_dcc00a7f",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T14:57:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9df570_4aa58045",
       "revId": "ae5e4aa7abb13db1712804e61074108278c80521",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_bcc34689",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T14:57:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9df570_6a65e41c",
+      "revId": "ae5e4aa7abb13db1712804e61074108278c80521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_50962140",
         "filename": "doc/source/cli_examples.rst",
         "patchSetId": 6
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_dc472a1c",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T14:57:26Z",
+      "side": 1,
+      "message": "the v3 commands are in the next patch",
+      "parentUuid": "da9df570_50962140",
+      "revId": "ae5e4aa7abb13db1712804e61074108278c80521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_8a6a08ec",
         "filename": "doc/source/cli_examples.rst",
         "patchSetId": 6
@@ -81,6 +153,24 @@
       "writtenOn": "2014-09-27T13:51:32Z",
       "side": 1,
       "message": "?",
+      "revId": "ae5e4aa7abb13db1712804e61074108278c80521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_bc718679",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T14:57:26Z",
+      "side": 1,
+      "message": "the dashes should be the same length as the title",
+      "parentUuid": "da9df570_8a6a08ec",
       "revId": "ae5e4aa7abb13db1712804e61074108278c80521",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
