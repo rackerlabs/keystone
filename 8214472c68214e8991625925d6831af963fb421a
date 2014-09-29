@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_93f83ec6",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1219,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T02:00:59Z",
+      "side": 1,
+      "message": "what\u0027s going on here? this isn\u0027t mentioned in the commit message. should it be a separate commit?",
+      "revId": "8214472c68214e8991625925d6831af963fb421a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
