@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_0886cdb9",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-09-29T16:08:38Z",
+      "side": 1,
+      "message": "nit: must ... must",
+      "revId": "59de5f0f07bbf1b10042f28aae24ce0027a15721",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
