@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_57822c53",
+        "filename": "keystone/token/backends/swift.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 860
+      },
+      "writtenOn": "2014-09-29T18:43:02Z",
+      "side": 1,
+      "message": "So you are using a token value from a conf file (preauthtoken)? Is this value also stored in Swift (with no expiry time)?\n\nGiven that Swift will ask Keystone to validate this token, instead of using a fixed token, why not create a token on the fly, store it in memcache, and when you see Swift asking to validate it, you recognise that it\u0027s the token you just created for this interaction. You could create a token for each individual request, or a token with a very short lifetime (a second or so).\n\nIf you supply username/password, the first thing swiftclient will do is call Keystone to get a token. Once Keystone creates the token, won\u0027t it want to store it in Swift? So it then calls swiftclient.Connection()....ie. circular loop! Or have I missed something?",
+      "revId": "24c4ec85390782a74168d69373312aab3152fc55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
