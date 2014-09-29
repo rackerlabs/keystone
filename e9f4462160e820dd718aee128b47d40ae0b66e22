@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_5c797a92",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 654,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T14:46:00Z",
+      "side": 1,
+      "message": "using --help",
+      "parentUuid": "da9df570_6a97a4ec",
+      "revId": "e9f4462160e820dd718aee128b47d40ae0b66e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_ea8ab4bd",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-09-27T13:49:19Z",
       "side": 1,
       "message": "suggest change v2.0 to \"the Identity v2.0 API\"",
+      "revId": "e9f4462160e820dd718aee128b47d40ae0b66e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_7c6e3ecb",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1128,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T14:46:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9df570_ea8ab4bd",
       "revId": "e9f4462160e820dd718aee128b47d40ae0b66e22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_9c73e2b0",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1137,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T14:46:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9df570_2a911cf1",
+      "revId": "e9f4462160e820dd718aee128b47d40ae0b66e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_4a8e60d1",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 3
@@ -64,6 +118,24 @@
       "writtenOn": "2014-09-27T13:49:19Z",
       "side": 1,
       "message": "it\u0027s not deprecated in Juno.",
+      "revId": "e9f4462160e820dd718aee128b47d40ae0b66e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_1c5ff20f",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1139,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T14:46:00Z",
+      "side": 1,
+      "message": "Removed the content after the comma.",
+      "parentUuid": "da9df570_4a8e60d1",
       "revId": "e9f4462160e820dd718aee128b47d40ae0b66e22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_7ca55e03",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1180,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T14:46:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9df570_aab42c82",
+      "revId": "e9f4462160e820dd718aee128b47d40ae0b66e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9df570_eab1d48f",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 3
@@ -98,6 +188,24 @@
       "writtenOn": "2014-09-27T13:49:19Z",
       "side": 1,
       "message": "remove one of the \"using\"",
+      "revId": "e9f4462160e820dd718aee128b47d40ae0b66e22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_9caa02d3",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1239,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T14:46:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9df570_eab1d48f",
       "revId": "e9f4462160e820dd718aee128b47d40ae0b66e22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
