@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_33d87253",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1055,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T02:07:52Z",
+      "side": 1,
+      "message": "add another : to the end here",
+      "revId": "f746ad53c14fdeb4eb7d172555971901e82a81d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_13d36e39",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1060,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T02:07:52Z",
+      "side": 1,
+      "message": "add another : to the end here, so you get some basic code/syntax highlighting",
+      "revId": "f746ad53c14fdeb4eb7d172555971901e82a81d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_b31c6215",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1074,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T02:07:52Z",
+      "side": 1,
+      "message": "fwiw, i think it should be ``policy.v3cloudsample.json``",
+      "revId": "f746ad53c14fdeb4eb7d172555971901e82a81d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
