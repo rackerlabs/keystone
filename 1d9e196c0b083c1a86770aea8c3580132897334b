@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_1018c483",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-09-29T01:30:31Z",
+      "side": 1,
+      "message": "do the oauth1 extension too?",
+      "revId": "1d9e196c0b083c1a86770aea8c3580132897334b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
