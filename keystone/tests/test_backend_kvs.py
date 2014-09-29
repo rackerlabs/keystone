@@ -302,7 +302,7 @@ class KvsTokenCacheInvalidation(tests.TestCase,
             driver='keystone.identity.backends.kvs.Identity')
         self.config_fixture.config(
             group='token',
-            driver='keystone.token.backends.kvs.Token')
+            driver='keystone.token.persistence.backends.kvs.Token')
 
 
 class KvsInheritanceTests(tests.TestCase, test_backend.InheritanceTests):
