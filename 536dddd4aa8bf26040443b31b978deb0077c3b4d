@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_a302023c",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-10-01T20:07:19Z",
+      "side": 0,
+      "message": "surprised this doesn\u0027t violate the one-import-per-line already",
+      "revId": "536dddd4aa8bf26040443b31b978deb0077c3b4d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
