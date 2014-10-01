@@ -1238,6 +1238,10 @@
 # Options defined in keystone
 #
 
+# Name of specific dogpile.cache memcached driver: memcached,
+# bmemcached, pylibmc. (string value)
+#memcached_backend=memcached
+
 # Memcache servers in the format of "host:port". (list value)
 #servers=localhost:11211
 
