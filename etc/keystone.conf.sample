@@ -1238,6 +1238,12 @@
 # Options defined in keystone
 #
 
+# Memcached backend driver. (string value)
+# Currnetly, three memcached backends are supported:
+# bmemcached, pylibmc, memcached.
+# By default the ``memcached`` backend is used.
+#memcached_backend=memcached
+
 # Memcache servers in the format of "host:port". (list value)
 #servers=localhost:11211
 

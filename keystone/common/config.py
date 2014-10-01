@@ -798,6 +798,9 @@ FILE_OPTIONS = {
                         'the available pipelines.'),
     ],
     'memcache': [
+        cfg.StrOpt('memcached_backend', default='memcached',
+                   help='Name of specific dogpile.cache memcached driver: '
+                        'memcached, bmemcached, pylibmc.'),
         cfg.ListOpt('servers', default=['localhost:11211'],
                     help='Memcache servers in the format of "host:port".'),
         cfg.IntOpt('dead_retry',
