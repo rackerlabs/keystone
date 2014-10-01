@@ -52,6 +52,24 @@
       "revId": "ad5cdaee560d4559b3f7931925b850f5dc3d3413",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_49ffb767",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-10-01T21:08:06Z",
+      "side": 1,
+      "message": "yes it is still needed as it\u0027s used during v2 user creation, but apparently not during a migration any longer (which is unnecessary, as it\u0027s created on demand anyway)",
+      "parentUuid": "baa201ad_336312b3",
+      "revId": "ad5cdaee560d4559b3f7931925b850f5dc3d3413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
