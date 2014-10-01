@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_9d3abdcb",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1269,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-10-01T18:02:27Z",
+      "side": 1,
+      "message": "should really use context manager for all these, but looks fine as-is",
+      "revId": "e9de141fcdc543f9093e094c59bd8ee77e194840",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
