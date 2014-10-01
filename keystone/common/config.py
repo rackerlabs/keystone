@@ -629,8 +629,8 @@ FILE_OPTIONS = {
                         'using enabled emulation.'),
         cfg.ListOpt('user_additional_attribute_mapping',
                     default=[],
-                    help='List of additional LDAP attributes used for mapping '
-                         'additional attribute mappings for users. Attribute '
+                    help='List of additional LDAP attributes for required '
+                         'fields when creating new users. Attribute '
                          'mapping format is <ldap_attr>:<user_attr>, where '
                          'ldap_attr is the attribute in the LDAP entry and '
                          'user_attr is the Identity API attribute.'),
@@ -706,7 +706,8 @@ FILE_OPTIONS = {
                     deprecated_opts=[cfg.DeprecatedOpt(
                         'tenant_additional_attribute_mapping', group='ldap')],
                     default=[],
-                    help='Additional attribute mappings for projects. '
+                    help='List of additional LDAP attributes for required '
+                         'fields when creating new projects. '
                          'Attribute mapping format is '
                          '<ldap_attr>:<user_attr>, where ldap_attr is the '
                          'attribute in the LDAP entry and user_attr is the '
@@ -735,7 +736,8 @@ FILE_OPTIONS = {
                     help='Allow role deletion in LDAP backend.'),
         cfg.ListOpt('role_additional_attribute_mapping',
                     default=[],
-                    help='Additional attribute mappings for roles. Attribute '
+                    help='List of additional LDAP attributes for required '
+                         'fields when creating new roles. Attribute '
                          'mapping format is <ldap_attr>:<user_attr>, where '
                          'ldap_attr is the attribute in the LDAP entry and '
                          'user_attr is the Identity API attribute.'),
@@ -765,7 +767,8 @@ FILE_OPTIONS = {
                     help='Allow group deletion in LDAP backend.'),
         cfg.ListOpt('group_additional_attribute_mapping',
                     default=[],
-                    help='Additional attribute mappings for groups. Attribute '
+                    help='List of additional LDAP attributes for required '
+                         'fields when creating new groups. Attribute '
                          'mapping format is <ldap_attr>:<user_attr>, where '
                          'ldap_attr is the attribute in the LDAP entry and '
                          'user_attr is the Identity API attribute.'),
