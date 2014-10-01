@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_147a22f1",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-01T22:06:37Z",
+      "side": 1,
+      "message": "unrelated whitespace change?",
+      "revId": "a93f6860e98dc3db802e85bda742397d6fcc9e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_545bca86",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-01T22:06:37Z",
+      "side": 1,
+      "message": "type of validation could be done with jsonschema, right?",
+      "revId": "a93f6860e98dc3db802e85bda742397d6fcc9e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_54d2ead2",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-01T22:06:37Z",
+      "side": 1,
+      "message": "inject the tenant_id in this error so that it get reported to the user.",
+      "revId": "a93f6860e98dc3db802e85bda742397d6fcc9e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_14c86221",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-01T22:06:37Z",
+      "side": 1,
+      "message": "unrelated whitespace change?",
+      "revId": "a93f6860e98dc3db802e85bda742397d6fcc9e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_b4ab161d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-01T22:06:37Z",
+      "side": 1,
+      "message": "Is this documented somewhere? Release notes maybe?",
+      "revId": "a93f6860e98dc3db802e85bda742397d6fcc9e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_d4aa5a18",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1740,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-01T22:06:37Z",
+      "side": 1,
+      "message": "are these fixing pep8 issues?",
+      "revId": "a93f6860e98dc3db802e85bda742397d6fcc9e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
