@@ -1435,8 +1435,7 @@ class BaseLdap(object):
         with self.get_connection() as conn:
             try:
                 attrs = list(set(([self.id_attr] +
-                                  self.attribute_mapping.values() +
-                                  self.extra_attr_mapping.keys())))
+                                  self.attribute_mapping.values())))
                 res = conn.search_s(self.tree_dn,
                                     self.LDAP_SCOPE,
                                     query,
@@ -1455,8 +1454,7 @@ class BaseLdap(object):
         with self.get_connection() as conn:
             try:
                 attrs = list(set(([self.id_attr] +
-                                  self.attribute_mapping.values() +
-                                  self.extra_attr_mapping.keys())))
+                                  self.attribute_mapping.values())))
                 return conn.search_s(self.tree_dn,
                                      self.LDAP_SCOPE,
                                      query,
