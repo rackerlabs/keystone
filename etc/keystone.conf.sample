@@ -957,9 +957,9 @@
 # enabled emulation. (string value)
 #user_enabled_emulation_dn=<None>
 
-# List of additional LDAP attributes used for mapping
-# additional attribute mappings for users. Attribute mapping
-# format is <ldap_attr>:<user_attr>, where ldap_attr is the
+# List of additional LDAP attributes for required fields
+# when creating new  users. Attribute mapping format is
+# <ldap_attr>:<user_attr>, where ldap_attr is the
 # attribute in the LDAP entry and user_attr is the Identity
 # API attribute. (list value)
 #user_additional_attribute_mapping=
@@ -1029,8 +1029,9 @@
 # Deprecated group/name - [ldap]/tenant_enabled_emulation_dn
 #project_enabled_emulation_dn=<None>
 
-# Additional attribute mappings for projects. Attribute
-# mapping format is <ldap_attr>:<user_attr>, where ldap_attr
+# List of additional LDAP attributes for required fields
+# when creating new projects. Attribute mapping format is
+# <ldap_attr>:<user_attr>, where ldap_attr
 # is the attribute in the LDAP entry and user_attr is the
 # Identity API attribute. (list value)
 # Deprecated group/name - [ldap]/tenant_additional_attribute_mapping
@@ -1067,7 +1068,8 @@
 # Allow role deletion in LDAP backend. (boolean value)
 #role_allow_delete=true
 
-# Additional attribute mappings for roles. Attribute mapping
+# List of additional LDAP attributes for required fields
+# when creating new roles. Attribute mapping
 # format is <ldap_attr>:<user_attr>, where ldap_attr is the
 # attribute in the LDAP entry and user_attr is the Identity
 # API attribute. (list value)
@@ -1108,7 +1110,8 @@
 # Allow group deletion in LDAP backend. (boolean value)
 #group_allow_delete=true
 
-# Additional attribute mappings for groups. Attribute mapping
+# List of additional LDAP attributes for required fields
+# when creating new groups. Attribute mapping
 # format is <ldap_attr>:<user_attr>, where ldap_attr is the
 # attribute in the LDAP entry and user_attr is the Identity
 # API attribute. (list value)
