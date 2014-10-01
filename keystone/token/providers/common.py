@@ -336,7 +336,7 @@ class V3TokenDataHelper(object):
                                    timeutils.isotime(subsecond=True))
 
     def _populate_audit_info(self, token_data, audit_info=None):
-        if audit_info is None or isinstance(audit_info, six.string_types):
+        if audit_info is None or isinstance(audit_info, six.binary_type):
             token_data['audit_ids'] = provider.audit_info(audit_info)
         elif isinstance(audit_info, list):
             token_data['audit_ids'] = audit_info
