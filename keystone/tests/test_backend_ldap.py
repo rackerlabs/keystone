@@ -1323,13 +1323,13 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         dn, attrs = self.identity_api.driver.user._ldap_get(user['id'])
         self.assertThat([user['name']], matchers.Equals(attrs['description']))
 
-    def test_user_extra_attribute_mapping_description_is_returned(self):
-        # Given a mapping like description:description, the description is
-        # returned.
+    def test_user_extra_attribute_mapping_description_is_passed(self):
+        # Given a mapping like desc:description, the description is
+        # passed to backend.
 
         self.config_fixture.config(
             group='ldap',
-            user_additional_attribute_mapping=['description:description'])
+            user_additional_attribute_mapping=['desc:description'])
         self.load_backends()
 
         description = uuid.uuid4().hex
@@ -1339,11 +1339,18 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
             'password': uuid.uuid4().hex,
             'domain_id': CONF.identity.default_domain_id
         }
-        user = self.identity_api.create_user(user)
-        res = self.identity_api.driver.user.get_all()
-
-        new_user = [u for u in res if u['id'] == user['id']][0]
-        self.assertThat(new_user['description'], matchers.Equals(description))
+        # Since we rejected the capability to request extra fields from LDAP
+        # we have to mock backend call to be sure it is called with correct
+        # arguments.
+        with mock.patch.object(fakeldap.FakeLdap, 'add_s'):
+            self.identity_api.create_user(user)
+            # A hack to get actual CN since we haven't it in local context
+            dn, a2 = fakeldap.FakeLdap.add_s.call_args[0]
+            # Turn values back to dict to be able to compare with expected
+            values = dict(a2)
+            cn = values['cn'][0]
+            self.assertEqual('cn=%s,ou=Users,cn=example,cn=com' % cn, dn)
+            self.assertEqual(values['desc'], [user['description']])
 
     @mock.patch.object(common_ldap_core.BaseLdap, '_ldap_get')
     def test_user_mixed_case_attribute(self, mock_ldap_get):
