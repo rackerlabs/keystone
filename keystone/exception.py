@@ -327,6 +327,12 @@ class RequestTooLarge(Error):
     title = 'Request is too large.'
 
 
+class UnsupportedMediaType(Error):
+    message_format = _("Unsupported media type: %(media_type)s")
+    code = 415
+    title = 'Unsupported media type.'
+
+
 class UnexpectedError(SecurityError):
     """Avoids exposing details of failures, unless in debug mode."""
     _message_format = _("An unexpected error prevented the server "
