@@ -90,14 +90,14 @@ Ubuntu 12.04:
 
 .. code-block:: bash
 
-    $ sudo apt-get install python-dev libxml2-dev libxslt1-dev libsasl2-dev libsqlite3-dev libssl-dev libldap2-dev libffi-dev
+    $ sudo apt-get install python-dev libxslt1-dev libsasl2-dev libsqlite3-dev libssl-dev libldap2-dev libffi-dev
 
 
 Fedora 19+:
 
 .. code-block:: bash
 
-    $ sudo yum install python-sqlite2 python-lxml python-greenlet-devel python-ldap sqlite-devel openldap-devel python-devel libxslt-devel openssl-devel
+    $ sudo yum install python-sqlite2 python-greenlet-devel python-ldap sqlite-devel openldap-devel python-devel libxslt-devel openssl-devel
 
 PyPi Packages and VirtualEnv
 ----------------------------
