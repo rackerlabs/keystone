@@ -123,11 +123,3 @@ class Catalog(kvs.Catalog):
                 catalog[region][service] = service_data
 
         return catalog
-
-
-@versionutils.deprecated(
-    versionutils.deprecated.ICEHOUSE,
-    in_favor_of='keystone.catalog.backends.templated.Catalog',
-    remove_in=+2)
-class TemplatedCatalog(Catalog):
-    pass
