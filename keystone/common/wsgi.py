@@ -50,6 +50,10 @@ CONTEXT_ENV = 'openstack.context'
 PARAMS_ENV = 'openstack.params'
 
 
+# Environment variable for Content-Type
+CONTENT_TYPE = 'CONTENT_TYPE'
+
+
 def validate_token_bind(context, token_ref):
     bind_mode = CONF.token.enforce_token_bind
 
@@ -203,6 +207,12 @@ class Application(BaseApplication):
         context['environment'] = req.environ
         context['accept_header'] = req.accept
         req.environ = None
+
+        _JSON_ENCODE_CONTENT_TYPES = ('application/json',
+                                      'application/json-home',)
+        content_type = req.environ.get(CONTENT_TYPE, None)
+        if content_type not in _JSON_ENCODE_CONTENT_TYPES:
+            raise exception.UnsupportedMediaType(media_type=content_type)
 
         params.update(arg_dict)
 
