@@ -21,12 +21,8 @@ class ProjectEndpoint(sql.ModelBase, sql.DictBase):
     """project-endpoint relationship table."""
     __tablename__ = 'project_endpoint'
     attributes = ['endpoint_id', 'project_id']
-    endpoint_id = sql.Column(sql.String(64),
-                             primary_key=True,
-                             nullable=False)
-    project_id = sql.Column(sql.String(64),
-                            primary_key=True,
-                            nullable=False)
+    endpoint_id = sql.Column(sql.String(64), primary_key=True, nullable=False)
+    project_id = sql.Column(sql.String(64), primary_key=True, nullable=False)
 
 
 class EndpointGroup(sql.ModelBase, sql.ModelDictMixin):

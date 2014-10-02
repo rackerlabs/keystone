@@ -205,15 +205,6 @@ class EndpointGroupV3Controller(_ControllerBase):
             context, self._get_endpoint_groups_for_project(project_id))
 
     @controller.protected()
-    def remove_endpoint_group_from_project(self, context, endpoint_group_id,
-                                           project_id):
-        """Remove the endpoint group from associated project."""
-        self.assignment_api.get_project(project_id)
-        self.endpoint_filter_api.get_endpoint_group(endpoint_group_id)
-        self.endpoint_filter_api.remove_endpoint_group_from_project(
-            endpoint_group_id, project_id)
-
-    @controller.protected()
     def list_projects_associated_with_endpoint_group(self,
                                                      context,
                                                      endpoint_group_id):
@@ -286,3 +277,12 @@ class ProjectEndpointGroupV3Controller(_ControllerBase):
                    'project_id': ref['project_id']})
         ref.setdefault('links', {})
         ref['links']['self'] = url
+
+    @controller.protected()
+    def remove_endpoint_group_from_project(self, context, endpoint_group_id,
+                                           project_id):
+        """Remove the endpoint group from associated project."""
+        self.assignment_api.get_project(project_id)
+        self.endpoint_filter_api.get_endpoint_group(endpoint_group_id)
+        self.endpoint_filter_api.remove_endpoint_group_from_project(
+            endpoint_group_id, project_id)
