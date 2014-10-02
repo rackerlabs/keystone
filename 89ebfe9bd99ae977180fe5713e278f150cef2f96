@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_f5cbc31b",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-02T19:08:15Z",
+      "side": 1,
+      "message": "no need to have this function in the backport, just call cms.verify_token directly.",
+      "revId": "89ebfe9bd99ae977180fe5713e278f150cef2f96",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
