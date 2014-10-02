@@ -16,6 +16,24 @@
       "revId": "419166b7c83603a3106fd3b6000dd13c6b18c11d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_59c0497c",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-02T21:09:12Z",
+      "side": 1,
+      "message": "Since this code isn\u0027t new and is essentially just moving existing code from one place to another I kept the copyright as it was in the original file.",
+      "parentUuid": "baa201ad_35de3d12",
+      "revId": "419166b7c83603a3106fd3b6000dd13c6b18c11d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
