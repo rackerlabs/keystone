@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_bc75a399",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1082,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-10-02T22:35:49Z",
+      "side": 1,
+      "message": "Why do you still say Keystone Client if it is the OpenStack Client you are using in the example? Perhaps you should say OpenStack Client for Keystone???",
+      "revId": "bd99d04f7b260837700bf01cfa391ab9516899ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_bc9cc3c1",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1128,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-10-02T22:35:49Z",
+      "side": 1,
+      "message": "typo: the the  remove one of them",
+      "revId": "bd99d04f7b260837700bf01cfa391ab9516899ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_3f42853e",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1169,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-10-02T22:35:49Z",
+      "side": 1,
+      "message": "consider adding \"instead of python-openstackclient\" to make this more clear what the options are",
+      "revId": "bd99d04f7b260837700bf01cfa391ab9516899ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
