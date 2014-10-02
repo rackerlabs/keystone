@@ -314,8 +314,8 @@ class Auth(controller.V2Controller):
         if not environment.get('REMOTE_USER'):
             raise ExternalAuthNotApplicable()
 
-        # NOTE(jamielennox): xml and json differ and get confused about what
-        # empty auth should look like so just reset it.
+        # NOTE(jamielennox): set auth to empty dictionary, as a lot of the
+        # auth related functions depend on it being a dictionary.
         if not auth:
             auth = {}
 
