@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_215e0713",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 3
+      },
+      "lineNbr": 1241,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-10-02T00:02:15Z",
+      "side": 1,
+      "message": "You can\u0027t modify this file directly. It is automatically generated using:\n    tox -e sample_config",
+      "revId": "ea7a795df1015298fb45a1e0c236a79aab6bc4f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_a1803747",
+        "filename": "keystone/token/persistence/backends/memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-10-02T00:02:15Z",
+      "side": 1,
+      "message": "Something should be done about this too if you no longer need it.",
+      "revId": "ea7a795df1015298fb45a1e0c236a79aab6bc4f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_41830b56",
+        "filename": "keystone/token/persistence/backends/memcache.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-10-02T00:02:15Z",
+      "side": 1,
+      "message": "Something should be done about this too if you no longer need it.",
+      "revId": "ea7a795df1015298fb45a1e0c236a79aab6bc4f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
