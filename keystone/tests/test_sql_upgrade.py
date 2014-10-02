@@ -47,7 +47,6 @@ from keystone.common.sql import migration_helpers
 from keystone import config
 from keystone.contrib import federation
 from keystone.contrib import revoke
-from keystone import exception
 from keystone import tests
 from keystone.tests import default_fixtures
 from keystone.tests.ksfixtures import database
@@ -1603,15 +1602,6 @@ class VersionTests(SqlMigrateBase):
         self.assertRaises(ImportError,
                           migration_helpers.get_db_version,
                           extension=extension_name)
-
-    def test_unversioned_extension(self):
-        """The version for extensions without migrations raise an exception.
-
-        """
-
-        self.assertRaises(exception.MigrationNotProvided,
-                          migration_helpers.get_db_version,
-                          extension='access')
 
     def test_initial_with_extension_version_None(self):
         """When performing a default migration, also migrate extensions."""
