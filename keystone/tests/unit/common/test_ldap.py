@@ -287,7 +287,8 @@ class SslTlsTest(tests.TestCase):
 
     @mock.patch.object(ks_ldap.core.KeystoneLDAPHandler, 'simple_bind_s')
     @mock.patch.object(ldap.ldapobject.LDAPObject, 'start_tls_s')
-    def _init_ldap_connection(self, config, mock_ldap_one, mock_ldap_two):
+    def _init_ldap_connection(self, config, mock_ldap_simple_bind,
+                              mock_ldap_start_tls):
         # Attempt to connect to initialize python-ldap.
         base_ldap = ks_ldap.BaseLdap(config)
         base_ldap.get_connection()

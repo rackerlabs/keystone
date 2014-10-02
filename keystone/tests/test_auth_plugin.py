@@ -17,6 +17,7 @@ import uuid
 import mock
 
 from keystone import auth
+from keystone.auth.plugins import mapped
 from keystone import exception
 from keystone import tests
 
@@ -177,8 +178,7 @@ class TestMapped(tests.TestCase):
         pass
 
     def _test_mapped_invocation_with_method_name(self, method_name):
-        with mock.patch.object(auth.plugins.mapped.Mapped,
-                               'authenticate',
+        with mock.patch.object(mapped.Mapped, 'authenticate',
                                return_value=None) as authenticate:
             context = {'environment': {}}
             auth_data = {
@@ -197,27 +197,25 @@ class TestMapped(tests.TestCase):
              kwargs) = authenticate.call_args
             self.assertEqual(method_name, auth_payload['protocol'])
 
-    def test_mapped_with_remote_user(self):
-        with mock.patch.object(auth.plugins.mapped.Mapped,
-                               'authenticate',
-                               return_value=None) as authenticate:
-            # external plugin should fail and pass to mapped plugin
-            method_name = 'saml2'
-            auth_data = {'methods': [method_name]}
-            # put the method name in the payload so its easier to correlate
-            # method name with payload
-            auth_data[method_name] = {'protocol': method_name}
-            auth_data = {'identity': auth_data}
-            auth_info = auth.controllers.AuthInfo.create(None, auth_data)
-            auth_context = {'extras': {},
-                            'method_names': [],
-                            'user_id': uuid.uuid4().hex}
-            environment = {'environment': {'REMOTE_USER': 'foo@idp.com'}}
-            self.api.authenticate(environment, auth_info, auth_context)
-            # make sure Mapped plugin got invoked with the correct payload
-            ((context, auth_payload, auth_context),
-             kwargs) = authenticate.call_args
-            self.assertEqual(auth_payload['protocol'], method_name)
+    @mock.patch.object(mapped.Mapped, 'authenticate', return_value=None)
+    def test_mapped_with_remote_user(self, authenticate):
+        # external plugin should fail and pass to mapped plugin
+        method_name = 'saml2'
+        auth_data = {'methods': [method_name]}
+        # put the method name in the payload so its easier to correlate
+        # method name with payload
+        auth_data[method_name] = {'protocol': method_name}
+        auth_data = {'identity': auth_data}
+        auth_info = auth.controllers.AuthInfo.create(None, auth_data)
+        auth_context = {'extras': {},
+                        'method_names': [],
+                        'user_id': uuid.uuid4().hex}
+        environment = {'environment': {'REMOTE_USER': 'foo@idp.com'}}
+        self.api.authenticate(environment, auth_info, auth_context)
+        # make sure Mapped plugin got invoked with the correct payload
+        ((context, auth_payload, auth_context),
+         kwargs) = authenticate.call_args
+        self.assertEqual(auth_payload['protocol'], method_name)
 
     def test_supporting_multiple_methods(self):
         for method_name in ['saml2', 'openid', 'x509']:
