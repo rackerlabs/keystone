@@ -137,13 +137,6 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertValidDomainListResponse(r, ref=self.domain,
                                            resource_url=resource_url)
 
-    def test_list_domains_xml(self):
-        """Call ``GET /domains (xml data)``."""
-        resource_url = '/domains'
-        r = self.get(resource_url, content_type='xml')
-        self.assertValidDomainListResponse(r, ref=self.domain,
-                                           resource_url=resource_url)
-
     def test_get_domain(self):
         """Call ``GET /domains/{domain_id}``."""
         r = self.get('/domains/%(domain_id)s' % {
@@ -438,13 +431,6 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertValidProjectListResponse(r, ref=self.project,
                                             resource_url=resource_url)
 
-    def test_list_projects_xml(self):
-        """Call ``GET /projects`` (xml data)."""
-        resource_url = '/projects'
-        r = self.get(resource_url, content_type='xml')
-        self.assertValidProjectListResponse(r, ref=self.project,
-                                            resource_url=resource_url)
-
     def test_create_project(self):
         """Call ``POST /projects``."""
         ref = self.new_project_ref(domain_id=self.domain_id)
@@ -657,13 +643,6 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertValidUserListResponse(r, ref=user,
                                          resource_url=resource_url)
 
-    def test_list_users_xml(self):
-        """Call ``GET /users`` (xml data)."""
-        resource_url = '/users'
-        r = self.get(resource_url, content_type='xml')
-        self.assertValidUserListResponse(r, ref=self.user,
-                                         resource_url=resource_url)
-
     def test_get_user(self):
         """Call ``GET /users/{user_id}``."""
         r = self.get('/users/%(user_id)s' % {
@@ -850,13 +829,6 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.assertValidGroupListResponse(r, ref=self.group,
                                           resource_url=resource_url)
 
-    def test_list_groups_xml(self):
-        """Call ``GET /groups`` (xml data)."""
-        resource_url = '/groups'
-        r = self.get(resource_url, content_type='xml')
-        self.assertValidGroupListResponse(r, ref=self.group,
-                                          resource_url=resource_url)
-
     def test_get_group(self):
         """Call ``GET /groups/{group_id}``."""
         r = self.get('/groups/%(group_id)s' % {
@@ -911,13 +883,6 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         """Call ``GET /roles``."""
         resource_url = '/roles'
         r = self.get(resource_url)
-        self.assertValidRoleListResponse(r, ref=self.role,
-                                         resource_url=resource_url)
-
-    def test_list_roles_xml(self):
-        """Call ``GET /roles`` (xml data)."""
-        resource_url = '/roles'
-        r = self.get(resource_url, content_type='xml')
         self.assertValidRoleListResponse(r, ref=self.role,
                                          resource_url=resource_url)
 
