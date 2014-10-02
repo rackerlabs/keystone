@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_2a84170b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-02T11:57:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_147a22f1",
+      "revId": "a93f6860e98dc3db802e85bda742397d6fcc9e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_545bca86",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2014-10-01T22:06:37Z",
       "side": 1,
       "message": "type of validation could be done with jsonschema, right?",
+      "revId": "a93f6860e98dc3db802e85bda742397d6fcc9e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_0a8d9331",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-02T11:57:15Z",
+      "side": 1,
+      "message": "can you exemplify how to accomplish that with jsonschema? Just removed the \"is not None\" since empty values are not allowed as well.",
+      "parentUuid": "baa201ad_545bca86",
       "revId": "a93f6860e98dc3db802e85bda742397d6fcc9e85",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_aaae4783",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-02T11:57:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_54d2ead2",
+      "revId": "a93f6860e98dc3db802e85bda742397d6fcc9e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_14c86221",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 13
@@ -64,6 +118,24 @@
       "writtenOn": "2014-10-01T22:06:37Z",
       "side": 1,
       "message": "unrelated whitespace change?",
+      "revId": "a93f6860e98dc3db802e85bda742397d6fcc9e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_caa9cb7c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-02T11:57:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_14c86221",
       "revId": "a93f6860e98dc3db802e85bda742397d6fcc9e85",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_6acb7f53",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-02T11:57:15Z",
+      "side": 1,
+      "message": "this was one of the decisions made in the spec. What\u0027s the best place to leave the documentation for the release?",
+      "parentUuid": "baa201ad_b4ab161d",
+      "revId": "a93f6860e98dc3db802e85bda742397d6fcc9e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_d4aa5a18",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 13
@@ -98,6 +188,24 @@
       "writtenOn": "2014-10-01T22:06:37Z",
       "side": 1,
       "message": "are these fixing pep8 issues?",
+      "revId": "a93f6860e98dc3db802e85bda742397d6fcc9e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_4f5977fd",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1740,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-02T11:57:15Z",
+      "side": 1,
+      "message": "These new lines are related to an auto format pep8 tool. Will fix them.",
+      "parentUuid": "baa201ad_d4aa5a18",
       "revId": "a93f6860e98dc3db802e85bda742397d6fcc9e85",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
