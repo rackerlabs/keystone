@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_75d99382",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-02T18:46:32Z",
+      "side": 1,
+      "message": "Gotta remove this guy here",
+      "revId": "ea6555ce91a77d3272aed9e10d21dc0e2ee2cd07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
