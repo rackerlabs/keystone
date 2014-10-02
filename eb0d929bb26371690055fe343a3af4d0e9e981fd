@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_504e6f97",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-10-02T08:14:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_f3c42a61",
+      "revId": "eb0d929bb26371690055fe343a3af4d0e9e981fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_d3f006cc",
         "filename": "keystone/catalog/backends/templated.py",
         "patchSetId": 4
@@ -47,6 +65,24 @@
       "writtenOn": "2014-09-29T02:19:14Z",
       "side": 1,
       "message": "prefix this with an underscore\n\n  _extract_interface_from_string()",
+      "revId": "eb0d929bb26371690055fe343a3af4d0e9e981fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_3032cb10",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-10-02T08:14:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_d3f006cc",
       "revId": "eb0d929bb26371690055fe343a3af4d0e9e981fd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_cb0e3432",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-10-02T08:14:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_93cd9e89",
+      "revId": "eb0d929bb26371690055fe343a3af4d0e9e981fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_73b03af5",
         "filename": "keystone/tests/test_backend_templated.py",
         "patchSetId": 4
@@ -81,6 +135,24 @@
       "writtenOn": "2014-09-29T02:19:14Z",
       "side": 1,
       "message": "instead of skip, can we catch the exception that is raised?",
+      "revId": "eb0d929bb26371690055fe343a3af4d0e9e981fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_2b9c20c0",
+        "filename": "keystone/tests/test_backend_templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-10-02T08:14:23Z",
+      "side": 1,
+      "message": "This catch exception, should be for all the \"not supported\" actions related to templated catalog?",
+      "parentUuid": "baa201ad_73b03af5",
       "revId": "eb0d929bb26371690055fe343a3af4d0e9e981fd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_8ba98ce1",
+        "filename": "keystone/tests/test_backend_templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-10-02T08:14:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_53ab3689",
+      "revId": "eb0d929bb26371690055fe343a3af4d0e9e981fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_f39b4a70",
         "filename": "keystone/tests/test_backend_templated.py",
         "patchSetId": 4
@@ -115,6 +205,24 @@
       "writtenOn": "2014-09-29T02:19:14Z",
       "side": 1,
       "message": "move this below, it\u0027s not needed until the assert",
+      "revId": "eb0d929bb26371690055fe343a3af4d0e9e981fd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_0b8cbc7e",
+        "filename": "keystone/tests/test_backend_templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-10-02T08:14:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_f39b4a70",
       "revId": "eb0d929bb26371690055fe343a3af4d0e9e981fd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
