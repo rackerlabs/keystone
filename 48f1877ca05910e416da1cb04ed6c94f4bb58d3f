@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_04849f0a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-02T17:03:52Z",
+      "side": 1,
+      "message": "not getting linked, add bp before \u0027removed-as-of-kilo\u0027",
+      "revId": "48f1877ca05910e416da1cb04ed6c94f4bb58d3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
