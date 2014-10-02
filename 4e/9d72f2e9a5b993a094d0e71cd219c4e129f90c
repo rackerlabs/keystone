@@ -1,0 +1,13 @@
+Verified+2: Jenkins
+Code-Review+2: Lance Bragstad <lbragstad@gmail.com>
+Workflow+1: Lance Bragstad <lbragstad@gmail.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: Marek Denis <marek.denis@cern.ch>
+Code-Review+1: Juan Antonio Osorio Robles <juan.osorio.robles@ericsson.com>
+Code-Review+1: Alexander Makarov <amakarov@mirantis.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 02 Oct 2014 07:37:39 +0000
+Reviewed-on: https://review.openstack.org/119679
+Project: openstack/keystone
+Branch: refs/heads/master
