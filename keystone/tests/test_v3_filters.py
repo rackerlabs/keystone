@@ -434,11 +434,3 @@ class IdentityTestListLimitCase(IdentityTestFilteredCase):
         r = self.get('/services', auth=self.auth)
         self.assertEqual(len(r.result.get('services')), 10)
         self.assertIsNone(r.result.get('truncated'))
-
-
-class IdentityTestFilteredCaseXML(IdentityTestFilteredCase):
-    content_type = 'xml'
-
-
-class IdentityTestListLimitCaseXML(IdentityTestListLimitCase):
-    content_type = 'xml'
