@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_0b0e728d",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-02T15:25:44Z",
+      "side": 1,
+      "message": "same issue as other methods in previous patch, just pass () and change the signature to default hints to None.",
+      "revId": "6bc404561aa588d384a40606b6b6f2c27a8f6ccb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
