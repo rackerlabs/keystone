@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_1b25bc5b",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-10-03T20:55:17Z",
+      "side": 1,
+      "message": "(nit) It would be nice to say \"user id\" and \"project id\" instead of saying \"id\" twice.",
+      "revId": "4b9a412ef05c463465e1adaba1c4d33d321a1795",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_bb1590e6",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-10-03T20:55:17Z",
+      "side": 1,
+      "message": "(nit) I would say \"and to authenticate...\".",
+      "revId": "4b9a412ef05c463465e1adaba1c4d33d321a1795",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_5bcca46a",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-10-03T20:55:17Z",
+      "side": 1,
+      "message": "This seems odd.  We\u0027re saying that the role is named \u0027admin\u0027 already in the first sentence of this paragraph, aren\u0027t we?  If we want to menion that the role name might be diferent, we should say something like:\n\n\"Create an administrative role for the service accounts, typically named ``admin`` (however the name can be whatever you choose).  For adding the administrative role to...\"",
+      "revId": "4b9a412ef05c463465e1adaba1c4d33d321a1795",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_5bd3c403",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-10-03T20:55:17Z",
+      "side": 1,
+      "message": "If we\u0027re stating that the name could be something other than ``admin``, we should say \"grant the administrative role\" here instead of explicitly referring to ``admin``.",
+      "revId": "4b9a412ef05c463465e1adaba1c4d33d321a1795",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
