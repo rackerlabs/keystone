@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_91534be1",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-03T22:47:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_1b25bc5b",
+      "revId": "4b9a412ef05c463465e1adaba1c4d33d321a1795",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_bb1590e6",
         "filename": "doc/source/configuringservices.rst",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-10-03T20:55:17Z",
       "side": 1,
       "message": "(nit) I would say \"and to authenticate...\".",
+      "revId": "4b9a412ef05c463465e1adaba1c4d33d321a1795",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_7167c7e9",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-03T22:47:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_bb1590e6",
       "revId": "4b9a412ef05c463465e1adaba1c4d33d321a1795",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_51fba3c0",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-03T22:47:34Z",
+      "side": 1,
+      "message": "Done, thanks for the suggestion",
+      "parentUuid": "baa201ad_5bcca46a",
+      "revId": "4b9a412ef05c463465e1adaba1c4d33d321a1795",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_5bd3c403",
         "filename": "doc/source/configuringservices.rst",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2014-10-03T20:55:17Z",
       "side": 1,
       "message": "If we\u0027re stating that the name could be something other than ``admin``, we should say \"grant the administrative role\" here instead of explicitly referring to ``admin``.",
+      "revId": "4b9a412ef05c463465e1adaba1c4d33d321a1795",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_312a9f2c",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-03T22:47:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_5bd3c403",
       "revId": "4b9a412ef05c463465e1adaba1c4d33d321a1795",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
