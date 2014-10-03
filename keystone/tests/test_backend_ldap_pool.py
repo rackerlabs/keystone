@@ -215,7 +215,7 @@ class LdapIdentitySqlAssignment(LdapPoolCommonTestMixin,
     def setUp(self):
         # NOTE(dstanek): We need to patch the Connector before the
         # parent setUp is executed. The patch cleanup needs to happen
-        # after the parent setUp runs because olsotest will try to
+        # after the parent setUp runs because oslotest will try to
         # automagically stop all patches and that will cause an
         # exception. We could just not cleanup after ourselves since
         # oslotest will do it, but that seems wrong. Once bug #1365678
