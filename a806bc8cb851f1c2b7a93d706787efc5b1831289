@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_eb275f62",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2014-10-03T04:05:00Z",
+      "side": 1,
+      "message": "should we be clear that this is only needed it project name is supplied?  if project id is supplied, the domain info is not required.",
+      "revId": "a806bc8cb851f1c2b7a93d706787efc5b1831289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
