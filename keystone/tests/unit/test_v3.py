@@ -27,6 +27,7 @@ from keystone.common import cache
 from keystone.common.validation import validators
 from keystone import exception
 from keystone import middleware
+from keystone.resource.backends import base as resource_base
 from keystone.tests.common import auth as common_auth
 from keystone.tests import unit
 from keystone.tests.unit import rest
@@ -188,18 +189,32 @@ class RestfulTestCase(unit.SQLDriverOverrides, rest.RestfulTestCase,
     def load_fixtures(self, fixtures):
         self.load_sample_data()
 
-    def _populate_default_domain(self):
+    def _populate_default_domain(self, create_root_domain):
         try:
             self.resource_api.get_domain(DEFAULT_DOMAIN_ID)
         except exception.DomainNotFound:
+            # TODO(wxy): when FK is enabled in sqlite, a lot of tests will fail
+            # due to the root domain is missing. So we should open FKs for the
+            # tests one by one. If the FKs is enabled for one test,
+            # `create_root_domain` should be `true` here to ensure the root
+            # domain is created. Once all tests enable FKs, the
+            # ``create_root_domain`` can be removed.
+            if create_root_domain:
+                root_domain = unit.new_domain_ref(
+                    id=resource_base.NULL_DOMAIN_ID,
+                    name=resource_base.NULL_DOMAIN_ID
+                )
+                self.resource_api.create_domain(resource_base.NULL_DOMAIN_ID,
+                                                root_domain)
             domain = unit.new_domain_ref(
                 description=(u'The default domain'),
                 id=DEFAULT_DOMAIN_ID,
                 name=u'Default')
             self.resource_api.create_domain(DEFAULT_DOMAIN_ID, domain)
 
-    def load_sample_data(self, create_region_and_endpoints=True):
-        self._populate_default_domain()
+    def load_sample_data(self, create_region_and_endpoints=True,
+                         create_root_domain=False):
+        self._populate_default_domain(create_root_domain=create_root_domain)
         self.domain = unit.new_domain_ref()
         self.domain_id = self.domain['id']
         self.resource_api.create_domain(self.domain_id, self.domain)
