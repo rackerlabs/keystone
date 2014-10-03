@@ -159,8 +159,10 @@ ROLE_ASSIGNMENTS = [
     },
 ]
 
-DOMAINS = [{'description':
-            (u'The default domain'),
+DOMAINS = [{'enabled': True,
+            'id': '<<keystone.domain.root>>',
+            'name': '<<keystone.domain.root>>'},
+           {'description': (u'The default domain'),
             'enabled': True,
             'id': DEFAULT_DOMAIN_ID,
             'name': u'Default'}]
