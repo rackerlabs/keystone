@@ -34,6 +34,24 @@
       "revId": "a806bc8cb851f1c2b7a93d706787efc5b1831289",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_fd5e4275",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2014-10-03T05:54:55Z",
+      "side": 1,
+      "message": "oh.. I thought this code allows passing project_id: https://github.com/openstack/python-openstackclient/blob/1212ddb431c8ecdebbc89dc54a5854ac7794ace5/openstackclient/shell.py#L224",
+      "parentUuid": "baa201ad_0bb583cc",
+      "revId": "a806bc8cb851f1c2b7a93d706787efc5b1831289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
