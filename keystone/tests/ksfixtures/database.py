@@ -68,6 +68,9 @@ def initialize_sql_session():
     db_options.set_defaults(
         CONF,
         connection=tests.IN_MEM_DB_CONN_STRING)
+    engine = sql.get_engine()
+    if engine.name == 'sqlite':
+        engine.execute('pragma foreign_keys=on')
 
 
 @run_once
