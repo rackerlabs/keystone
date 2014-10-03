@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_6c129058",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-10-03T23:48:31Z",
+      "side": 1,
+      "message": "I agree with this comment. Generally speaking manually managing the order is going to be largely unmaintainable in the long run.",
+      "parentUuid": "baa201ad_ef33dd5f",
+      "revId": "e9de141fcdc543f9093e094c59bd8ee77e194840",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_9d3abdcb",
         "filename": "keystone/tests/test_sql_upgrade.py",
         "patchSetId": 5
