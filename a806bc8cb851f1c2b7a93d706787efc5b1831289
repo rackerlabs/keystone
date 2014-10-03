@@ -52,6 +52,24 @@
       "revId": "a806bc8cb851f1c2b7a93d706787efc5b1831289",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_7de17299",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-03T06:02:58Z",
+      "side": 1,
+      "message": "oops, you are right, it\u0027s just user-id that is unsupported.\n\nnext patch should have a small change to mention these are only needed if using project_name",
+      "parentUuid": "baa201ad_fd5e4275",
+      "revId": "a806bc8cb851f1c2b7a93d706787efc5b1831289",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
