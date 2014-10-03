@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_a0c39f55",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1186,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-03T20:07:16Z",
+      "side": 1,
+      "message": "ahh good catch! thanks, i\u0027ll fix these up",
+      "parentUuid": "baa201ad_e02da796",
+      "revId": "15364c6ec5f4a469fd4af1d59c7ccccb1b14ccd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_4015933e",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 6
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_e0a8478f",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1200,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-03T20:07:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_4015933e",
+      "revId": "15364c6ec5f4a469fd4af1d59c7ccccb1b14ccd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_a02f1f87",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 6
@@ -47,6 +83,24 @@
       "writtenOn": "2014-10-03T19:38:28Z",
       "side": 1,
       "message": "Same thing with hyphens vs. underscores here.  It also seems odd to have some parameters with \u0027\u003d\u0027 and some without in the same example.  They both work, so pick one and be consistent.  This applies throughout the examples in this file.",
+      "revId": "15364c6ec5f4a469fd4af1d59c7ccccb1b14ccd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_0098eb68",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 1236,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-03T20:07:16Z",
+      "side": 1,
+      "message": "thanks for catching this, i tried to make it consistent, guess I missed a few, let\u0027s stick to using \u003d in between the key and the value.",
+      "parentUuid": "baa201ad_a02f1f87",
       "revId": "15364c6ec5f4a469fd4af1d59c7ccccb1b14ccd9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
