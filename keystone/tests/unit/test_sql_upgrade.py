@@ -140,7 +140,11 @@ class SqlMigrateBase(tests.SQLDriverOverrides, tests.TestCase):
 
     def setUp(self):
         super(SqlMigrateBase, self).setUp()
-        database.initialize_sql_session()
+
+        # NOTE(dstanek): SQLAlchemy's migrate makes some assumptions in the
+        # SQLite driver about the lack of foreign key enforcement.
+        database.initialize_sql_session(enforce_sqlite_fks=False)
+
         conn_str = CONF.database.connection
         if (conn_str != tests.IN_MEM_DB_CONN_STRING and
                 conn_str.startswith('sqlite') and
