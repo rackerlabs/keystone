@@ -42,13 +42,17 @@ def run_once(f):
 
 # NOTE(I159): Every execution all the options will be cleared. The method must
 # be called at the every fixture initialization.
-def initialize_sql_session(connection_str=unit.IN_MEM_DB_CONN_STRING):
+def initialize_sql_session(connection_str=unit.IN_MEM_DB_CONN_STRING,
+                           enforce_sqlite_fks=True):
     # Make sure the DB is located in the correct location, in this case set
     # the default value, as this should be able to be overridden in some
     # test cases.
     db_options.set_defaults(
         CONF,
         connection=connection_str)
+    engine = sql.get_engine()
+    if engine.name == 'sqlite' and enforce_sqlite_fks:
+        engine.execute('pragma foreign_keys=on')
 
 
 @run_once
