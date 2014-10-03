@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_8f15f1e6",
+        "filename": "keystone/tests/test_backend_templated.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-03T15:11:45Z",
+      "side": 1,
+      "message": "i think the names for these tests are slightly backwards...\n\nit should be test_service_delete_404 ... not sure why they are not being skipped.. http://logs.openstack.org/11/120011/6/check/gate-keystone-python26/3764230/testr_results.html.gz",
+      "revId": "1cca3fb49a3085ad7f14d728dcf41b5e0f8cd62c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
