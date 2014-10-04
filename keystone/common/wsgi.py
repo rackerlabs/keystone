@@ -21,6 +21,7 @@
 import copy
 
 from oslo import i18n
+from oslo.utils import importutils
 import routes.middleware
 import six
 import webob.dec
@@ -34,7 +35,6 @@ from keystone.i18n import _
 from keystone.i18n import _LI
 from keystone.i18n import _LW
 from keystone.models import token_model
-from keystone.openstack.common import importutils
 from keystone.openstack.common import jsonutils
 from keystone.openstack.common import log
 
