@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_bc71fc77",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1124,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-05T20:10:08Z",
+      "side": 1,
+      "message": "remove `` from users projects and roles.",
+      "revId": "081eb90d722725f05beff6d8dfb3504004a0dcc4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_dc6a4080",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1127,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-05T20:10:08Z",
+      "side": 1,
+      "message": "Keystone here should be in `` and also be lowercase.",
+      "revId": "081eb90d722725f05beff6d8dfb3504004a0dcc4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_7c13140d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 1181,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-05T20:10:08Z",
+      "side": 1,
+      "message": "why should the user have the admin role? It made sense when the sentence started with \"To administer a Keystone endpoint\", but that\u0027s been removed, so now it seems like anyone using Keystone needs the admin role.",
+      "revId": "081eb90d722725f05beff6d8dfb3504004a0dcc4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
