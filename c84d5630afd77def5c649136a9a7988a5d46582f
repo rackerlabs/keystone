@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_87dce674",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-05T13:42:38Z",
+      "side": 1,
+      "message": "https://review.openstack.org/#/c/80630/ isn\u0027t merged yet.",
+      "revId": "c84d5630afd77def5c649136a9a7988a5d46582f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
