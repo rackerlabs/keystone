@@ -156,6 +156,36 @@ user has failed to authenticate:
         "timestamp": "2014-02-14T01:20:47.932842"
     }
 
+In the case of a user authenticating through Federation, then the initiator
+portion of the payload will have additional data. For the purposes of this
+examples, only the initiator portion is shown, for instance:
+
+.. code-block:: javascript
+
+	{
+	    "payload": {
+	        "typeURI": "http://schemas.dmtf.org/cloud/audit/1.0/event",
+	        "initiator": {
+	            "credential": {
+	                "type": "http://docs.oasis-open.org/security/saml/v2.0",
+	                "token": "671da331c47d4e29bb6ea1d270154ec3",
+	                "identity_provider": "ACME",
+	                "user": "joeuser",
+	                "groups": [
+	                    "developers"
+	                ]
+	            },
+	            "typeURI": "service/security/account/user",
+	            "host": {
+	                "agent": "curl/7.22.0(x86_64-pc-linux-gnu)",
+	                "address": "127.0.0.1"
+	            },
+	            "id": "openstack:5ee22124-6f41-4d23-a9f7-862c13a53a66",
+	            "name": "joeuser"
+	        }
+	    }
+	}
+
 The following CADF example illustrates a Keystone event record whereby the
 user has assigned a role to a group on a specific project:
 
