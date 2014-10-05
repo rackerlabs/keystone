@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_5cd010c9",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-05T21:23:52Z",
+      "side": 1,
+      "message": "change \"compability\" to \"compatibility\"",
+      "revId": "f2057748ed00db1e4f14ac9db650957f1bbbb12c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
