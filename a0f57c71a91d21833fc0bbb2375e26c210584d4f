@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_9c04384b",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-05T21:27:43Z",
+      "side": 1,
+      "message": "Change Keystone v3 to Identity API v3 throughout this document. There is no Keystone v3.",
+      "revId": "a0f57c71a91d21833fc0bbb2375e26c210584d4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_3c9d0c0c",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-05T21:27:43Z",
+      "side": 1,
+      "message": "putting optional arguments / positional arguments is too much detail for this document. Point to openstack cli docs instead otherwise we\u0027ll have to keep them in sync.",
+      "revId": "a0f57c71a91d21833fc0bbb2375e26c210584d4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
