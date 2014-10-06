@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_4ec68169",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-06T20:52:50Z",
+      "side": 1,
+      "message": "How is this testing the change? Shouldn\u0027t this validate `local_config` somehow?",
+      "revId": "fb3c6cbd4e79ea0d4e96f4e6661086af735c2930",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
