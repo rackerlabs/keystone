@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_ae80cdc0",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-06T21:15:23Z",
+      "side": 1,
+      "message": "If ldap backends are not going to support h-m, shouldn\u0027t we have NotImplemented() here?",
+      "revId": "83b24f143cc0065fb2c4341d7c0732f0a77ca13e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_8ec94928",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-06T21:15:23Z",
+      "side": 1,
+      "message": "if this isn\u0027t a public method could it be renamed? \n\n    def _list_project_parents(self, project_id):",
+      "revId": "83b24f143cc0065fb2c4341d7c0732f0a77ca13e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_2e013d38",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 2129,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-06T21:15:23Z",
+      "side": 1,
+      "message": "Not sure if it would be necessary, but we could add the case where we have another project (project 4) that is a child project of project2 (so sibling of project3) and ensure the list_project_parents response for both project3 and project4 are equal.",
+      "revId": "83b24f143cc0065fb2c4341d7c0732f0a77ca13e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
