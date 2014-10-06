@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_6e018505",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-06T21:51:11Z",
+      "side": 1,
+      "message": "nit: possibly reference the config option (CONF.max_project_tree_depth) here so that the user knows that in order to achieve greater hierarchical depth, at the cost of performance, they have up modify their config (it\u0027s not a hardcoded limitation of the implementation).",
+      "revId": "c6d7e584f6bb64a3429aaf8293570614b31844bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_712fa488",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-06T21:51:11Z",
+      "side": 1,
+      "message": "could this if statement be replaced with: \n\n    if tenant.get(\u0027parent_id\u0027) is not None:",
+      "revId": "c6d7e584f6bb64a3429aaf8293570614b31844bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_f171d4a8",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-06T21:51:11Z",
+      "side": 1,
+      "message": "nit: \n\n    if tenant.get(\u0027parent_id\u0027) \u003d\u003d parent_id",
+      "revId": "c6d7e584f6bb64a3429aaf8293570614b31844bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_71e24430",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-06T21:51:11Z",
+      "side": 1,
+      "message": "so this means that in order for a user to delete a specific project that isn\u0027t a leaf node, they have to go through and delete every subtree, correct? \n\nHow are we going to address the case where subtrees are massive? I know this might be a little out of the scope of this review given there are scale issues above a given hierarchical depth. Is there plans to delete a project, possibly recursively?",
+      "revId": "c6d7e584f6bb64a3429aaf8293570614b31844bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_71ec04f4",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 2656,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-06T21:51:11Z",
+      "side": 1,
+      "message": "rookie question time: isn\u0027t a project without a parent project a domain?",
+      "revId": "c6d7e584f6bb64a3429aaf8293570614b31844bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_b1966c3d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 2821,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-06T21:51:11Z",
+      "side": 1,
+      "message": "s/beeing/being/",
+      "revId": "c6d7e584f6bb64a3429aaf8293570614b31844bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_11a578a1",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 2831,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-06T21:51:11Z",
+      "side": 1,
+      "message": "could this be put into a loop?",
+      "revId": "c6d7e584f6bb64a3429aaf8293570614b31844bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
