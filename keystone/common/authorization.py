@@ -18,6 +18,7 @@
 
 from keystone import exception
 from keystone.i18n import _
+from keystone.common import config
 from keystone.models import token_model
 from keystone.openstack.common import log
 
@@ -39,6 +40,7 @@ It is a dictionary with the following attributes:
 """
 
 LOG = log.getLogger(__name__)
+CONF = config.CONF
 
 
 def token_to_auth_context(token):
@@ -60,6 +62,9 @@ def token_to_auth_context(token):
         auth_context['domain_id'] = token.domain_id
     else:
         LOG.debug('RBAC: Proceeding without project or domain scope')
+        
+    if token.version == token_model.V2 and token.project_scoped:
+        auth_context['domain_id'] = CONF.identity.default_domain_id
 
     if token.trust_scoped:
         auth_context['is_delegated_auth'] = True
