@@ -177,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_ee7015de",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-06T21:17:04Z",
+      "side": 1,
+      "message": "The spec seems like a good place for now.",
+      "parentUuid": "baa201ad_6acb7f53",
+      "revId": "a93f6860e98dc3db802e85bda742397d6fcc9e85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_d4aa5a18",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 13
