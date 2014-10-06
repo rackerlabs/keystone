@@ -16,6 +16,41 @@
       "revId": "6f66ef2597e385b1491e4e808e74682649b13fc6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_eef655f8",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-06T22:20:39Z",
+      "side": 1,
+      "message": "good point",
+      "parentUuid": "baa201ad_486598b3",
+      "revId": "6f66ef2597e385b1491e4e808e74682649b13fc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_2edcdd72",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-06T22:20:39Z",
+      "side": 1,
+      "message": "i\u0027ll clean these up too",
+      "revId": "6f66ef2597e385b1491e4e808e74682649b13fc6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
