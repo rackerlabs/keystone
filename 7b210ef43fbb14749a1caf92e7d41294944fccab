@@ -34,6 +34,24 @@
       "revId": "7b210ef43fbb14749a1caf92e7d41294944fccab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_52962540",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-06T18:57:48Z",
+      "side": 1,
+      "message": "Thanks Steve!",
+      "parentUuid": "baa201ad_cf2d24aa",
+      "revId": "7b210ef43fbb14749a1caf92e7d41294944fccab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
