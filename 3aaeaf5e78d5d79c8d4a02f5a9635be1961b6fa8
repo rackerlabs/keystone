@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_ed59db8e",
+        "filename": "keystone/token/persistence/backends/memcache.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-07T21:52:17Z",
+      "side": 1,
+      "message": "can tests be added for this? Test that memcached_backend is set to \u0027memcached\u0027 backend by default?",
+      "revId": "3aaeaf5e78d5d79c8d4a02f5a9635be1961b6fa8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
