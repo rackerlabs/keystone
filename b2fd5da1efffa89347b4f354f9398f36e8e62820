@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_a7029cb1",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 2431,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-07T15:05:41Z",
+      "side": 1,
+      "message": "do you mean to add this semi-colon?",
+      "revId": "b2fd5da1efffa89347b4f354f9398f36e8e62820",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
