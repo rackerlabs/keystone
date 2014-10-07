@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_e2b3af4a",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-07T17:13:04Z",
+      "side": 1,
+      "message": "Yeah, totally agree. We didn\u0027t add this check though, because this situation is only possible if the parent_id update was allowed, which isn\u0027t.\n\nBut I think that makes sense to add this check, since we prevent that when adding the update parent_id feature, we fall into this situation.",
+      "parentUuid": "baa201ad_6d9975c3",
+      "revId": "a7dbdc354aa6bbda8619388f155047ec661f8bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_cd8a6163",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 18
