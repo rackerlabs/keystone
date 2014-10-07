@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_69aec299",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-07T20:08:17Z",
+      "side": 1,
+      "message": "jsonutils is being removed from openstack-common.conf right? So we\u0027re not going to keep it in sync but we can\u0027t remove it?",
+      "revId": "faa6aed1a8ece2e5c67f3d9d678f989de89a50c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
