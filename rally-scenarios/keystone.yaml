@@ -6,4 +6,6 @@
       runner:
         type: "constant"
         times: 2500
-        concurrency: 60
+        concurrency: 50
+      sla:
+        max_seconds_per_iteration: 2
