@@ -155,8 +155,6 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         if new_paste_file:
             app_conf = 'config:%s' % (new_paste_file)
 
-        self.useFixture(database.Database(self.get_extensions()))
-
         super(RestfulTestCase, self).setUp(app_conf=app_conf)
 
         self.empty_context = {'environment': {}}
