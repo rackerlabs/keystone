@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_81702873",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-07T14:02:41Z",
+      "side": 1,
+      "message": "Now this will find all the projects in the domain...so by implication, we are assuming that an inherited role placed on the domain will be inherited by the whole hierarchy. I think that is the goal, but might be worth a comment",
+      "revId": "41f35737279e7f235fa1b8e366270e2b9745a974",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
