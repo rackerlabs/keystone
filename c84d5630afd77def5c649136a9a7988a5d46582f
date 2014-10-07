@@ -16,6 +16,24 @@
       "revId": "c84d5630afd77def5c649136a9a7988a5d46582f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_6b9decbb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 19
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-10-07T08:03:20Z",
+      "side": 1,
+      "message": "Good point, these patches should be dependent. Thank you!",
+      "parentUuid": "baa201ad_87dce674",
+      "revId": "c84d5630afd77def5c649136a9a7988a5d46582f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
