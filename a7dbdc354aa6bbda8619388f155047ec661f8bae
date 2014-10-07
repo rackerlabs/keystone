@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_6d9975c3",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-07T15:56:22Z",
+      "side": 1,
+      "message": "I guess I am always a little nervous when there is no check for circular references.  I know that we check for depth on create project in the follow on patch (which btw, isn\u0027t quiet the same thing).  Maybe we should check whether the project ID is already in the list...and if it is, we have a problem and should error out.",
+      "revId": "a7dbdc354aa6bbda8619388f155047ec661f8bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_cd8a6163",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-07T15:56:22Z",
+      "side": 1,
+      "message": "similar to above",
+      "revId": "a7dbdc354aa6bbda8619388f155047ec661f8bae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
