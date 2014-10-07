@@ -2617,8 +2617,7 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         self.trustee_user_id = self.trustee_user['id']
 
     def test_create_trust_400(self):
-        # The server returns a 403 Forbidden rather than a 400, see bug 1133435
-        self.post('/OS-TRUST/trusts', body={'trust': {}}, expected_status=403)
+        self.post('/OS-TRUST/trusts', body={'trust': {}}, expected_status=400)
 
     def test_create_unscoped_trust(self):
         ref = self.new_trust_ref(
@@ -3204,6 +3203,335 @@ class TestTrustAuth(test_v3.RestfulTestCase):
             token=trust_token,
             trust_id=trust1['id'])
         r = self.v3_authenticate_token(auth_data, expected_status=403)
+
+    def test_trust_delegated(self):
+        """Test that delegated trust token can be used to redelegate the trust
+
+        Create an A->B trust, then create A->C trust as user B.
+        """
+        # create a sub-trustee user
+        sub_trustee_user = self.new_user_ref(
+            domain_id=test_v3.DEFAULT_DOMAIN_ID)
+        password = sub_trustee_user['password']
+        sub_trustee_user = self.identity_api.create_user(sub_trustee_user)
+        sub_trustee_user['password'] = password
+        sub_trustee_user_id = sub_trustee_user['id']
+
+        # create a new role
+        role = self.new_role_ref()
+        self.assignment_api.create_role(role['id'], role)
+
+        # assign the new role to trustee
+        self.put(
+            '/projects/%(project_id)s/users/%(user_id)s/roles/%(role_id)s' % {
+                'project_id': self.project_id,
+                'user_id': self.trustee_user_id,
+                'role_id': role['id']})
+
+        # create a trust from trustor -> trustee
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            impersonation=True,
+            expires=dict(minutes=2),
+            role_ids=[self.role_id])
+        ref['redelegation_count'] = 2
+        r = self.post('/OS-TRUST/trusts', body={'trust': ref})
+        self.assertValidTrustResponse(r)
+
+        # authenticate as trustee so we can create a second trust
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user_id,
+            password=self.trustee_user['password'],
+        )
+        token = self.get_requested_token(auth_data)
+
+        # create a trust from trustor -> sub-trustee using trustee token
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=sub_trustee_user_id,
+            project_id=self.project_id,
+            impersonation=True,
+            expires=dict(minutes=1),
+            role_ids=[self.role_id])
+        r = self.post('/OS-TRUST/trusts', token=token, body={'trust': ref})
+        trust2 = self.assertValidTrustResponse(r)
+
+        # authenticate as sub-trustee and get a trust token
+        auth_data = self.build_authentication_request(
+            user_id=sub_trustee_user['id'],
+            password=sub_trustee_user['password'],
+            trust_id=trust2['id'])
+        self.get_requested_token(auth_data)
+
+    def test_trust_redelegation_rejects_surplus_count(self):
+        """Test that a trust token can be used to delegate the trust
+
+        Create an A->B trust, then A->C trust as user B
+        with redelegation_count more than allowed.
+        """
+        # self.skip('Delegation is not yet implemented')
+
+        # create a sub-trustee user
+        sub_trustee_user = self.new_user_ref(
+            domain_id=test_v3.DEFAULT_DOMAIN_ID)
+        password = sub_trustee_user['password']
+        sub_trustee_user = self.identity_api.create_user(sub_trustee_user)
+        sub_trustee_user['password'] = password
+        sub_trustee_user_id = sub_trustee_user['id']
+
+        # create a new role
+        role = self.new_role_ref()
+        self.assignment_api.create_role(role['id'], role)
+
+        # assign the new role to trustee
+        self.put(
+            '/projects/%(project_id)s/users/%(user_id)s/roles/%(role_id)s' % {
+                'project_id': self.project_id,
+                'user_id': self.trustee_user_id,
+                'role_id': role['id']})
+
+        # create a trust from trustor -> trustee
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            impersonation=True,
+            expires=dict(minutes=2),
+            role_ids=[self.role_id])
+        ref['redelegation_count'] = 2
+        r = self.post('/OS-TRUST/trusts', body={'trust': ref})
+        self.assertValidTrustResponse(r)
+
+        # authenticate as trustee so we can create a second trust
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user_id,
+            password=self.trustee_user['password'],
+        )
+        token = self.get_requested_token(auth_data)
+
+        # create a trust from trustor -> sub-trustee using trustee token
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=sub_trustee_user_id,
+            project_id=self.project_id,
+            impersonation=True,
+            expires=dict(minutes=1),
+            role_ids=[self.role_id])
+        ref['redelegation_count'] = 3
+        r = self.post('/OS-TRUST/trusts', token=token, body={'trust': ref},
+                      expected_status=403)
+        self.assertResponseStatus(r, 403)
+
+    def test_trust_redelegation_roles_merging(self):
+        """Create trust conjunction."""
+        # create a sub-trustee user
+        sub_trustee_user = self.new_user_ref(
+            domain_id=test_v3.DEFAULT_DOMAIN_ID)
+        password = sub_trustee_user['password']
+        sub_trustee_user = self.identity_api.create_user(sub_trustee_user)
+        sub_trustee_user['password'] = password
+        sub_trustee_user_id = sub_trustee_user['id']
+
+        # create 2 new roles
+        roles = self.new_role_ref(), self.new_role_ref()
+        for role in roles:
+            # create and assign the new role to trustor
+            self.assignment_api.create_role(role['id'], role)
+            self.put(
+                '/projects/%(project_id)s/users/%(user_id)s'
+                '/roles/%(role_id)s' % {
+                    'project_id': self.project_id,
+                    'user_id': self.user_id,
+                    'role_id': role['id']})
+
+            # create a trust from trustor -> trustee
+            ref = self.new_trust_ref(
+                trustor_user_id=self.user_id,
+                trustee_user_id=self.trustee_user_id,
+                project_id=self.project_id,
+                impersonation=True,
+                expires=dict(minutes=2),
+                role_ids=[role['id']])
+            ref['redelegation_count'] = 2
+            r = self.post('/OS-TRUST/trusts', body={'trust': ref})
+            self.assertValidTrustResponse(r)
+
+        # authenticate as trustee so we can create a second trust
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user_id,
+            password=self.trustee_user['password'],
+        )
+        token = self.get_requested_token(auth_data)
+
+        # create a trust from trustor -> sub-trustee using trustee token
+        # and all roles to merge
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=sub_trustee_user_id,
+            project_id=self.project_id,
+            impersonation=True,
+            expires=dict(minutes=1),
+            role_ids=[roles[0]['id'], roles[1]['id']])
+        r = self.post('/OS-TRUST/trusts', token=token, body={'trust': ref})
+        trust2 = self.assertValidTrustResponse(r)
+        self.assertEqual(sorted([roles[0]['id'], roles[1]['id']]),
+                         sorted([role['id'] for role in trust2['roles']]))
+
+        # authenticate as sub-trustee and get a trust token
+        auth_data = self.build_authentication_request(
+            user_id=sub_trustee_user['id'],
+            password=sub_trustee_user['password'],
+            trust_id=trust2['id'])
+        self.get_requested_token(auth_data)
+
+    def test_trust_redelegation_rejects_roles_superset(self):
+        """Try to delegate roles absent in available trusts."""
+        # create a sub-trustee user
+        sub_trustee_user = self.new_user_ref(
+            domain_id=test_v3.DEFAULT_DOMAIN_ID)
+        password = sub_trustee_user['password']
+        sub_trustee_user = self.identity_api.create_user(sub_trustee_user)
+        sub_trustee_user['password'] = password
+        sub_trustee_user_id = sub_trustee_user['id']
+
+        # create 2 new roles
+        roles = self.new_role_ref(), self.new_role_ref()
+        for role in roles:
+            # create and assign the new role to trustor
+            self.assignment_api.create_role(role['id'], role)
+            self.put(
+                '/projects/%(project_id)s/users/%(user_id)s'
+                '/roles/%(role_id)s' % {
+                    'project_id': self.project_id,
+                    'user_id': self.user_id,
+                    'role_id': role['id']})
+
+        # create a trust from trustor -> trustee for only 1 role
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            impersonation=True,
+            expires=dict(minutes=2),
+            role_ids=[role['id']])
+        ref['redelegation_count'] = 2
+        r = self.post('/OS-TRUST/trusts', body={'trust': ref})
+        self.assertValidTrustResponse(r)
+
+        # authenticate as trustee so we can create a second trust
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user_id,
+            password=self.trustee_user['password'],
+        )
+        token = self.get_requested_token(auth_data)
+
+        # create a trust from trustor -> sub-trustee using trustee token
+        # and all roles to merge
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=sub_trustee_user_id,
+            project_id=self.project_id,
+            impersonation=True,
+            expires=dict(minutes=1),
+            role_ids=[roles[0]['id'], roles[1]['id']])
+        self.post('/OS-TRUST/trusts', token=token, body={'trust': ref},
+                  expected_status=403)
+
+    def test_trust_redelegation_rejects_role_overtime(self):
+        """Try to redelegate role for more than allowed time."""
+        # create a sub-trustee user
+        sub_trustee_user = self.new_user_ref(
+            domain_id=test_v3.DEFAULT_DOMAIN_ID)
+        password = sub_trustee_user['password']
+        sub_trustee_user = self.identity_api.create_user(sub_trustee_user)
+        sub_trustee_user['password'] = password
+        sub_trustee_user_id = sub_trustee_user['id']
+
+        # create a new role
+        role = self.new_role_ref()
+        self.assignment_api.create_role(role['id'], role)
+
+        # assign the new role to trustee
+        self.put(
+            '/projects/%(project_id)s/users/%(user_id)s/roles/%(role_id)s' % {
+                'project_id': self.project_id,
+                'user_id': self.trustee_user_id,
+                'role_id': role['id']})
+
+        # create a trust from trustor -> trustee
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            impersonation=True,
+            expires=dict(minutes=2),
+            role_ids=[self.role_id])
+        ref['redelegation_count'] = 2
+        r = self.post('/OS-TRUST/trusts', body={'trust': ref})
+        self.assertValidTrustResponse(r)
+
+        # authenticate as trustee so we can create a second trust
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user_id,
+            password=self.trustee_user['password'],
+        )
+        token = self.get_requested_token(auth_data)
+
+        # create a trust from trustor -> sub-trustee using trustee token
+        # with expiration delay 20 minutes (> 2)
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=sub_trustee_user_id,
+            project_id=self.project_id,
+            impersonation=True,
+            expires=dict(minutes=20),
+            role_ids=[self.role_id])
+        self.post('/OS-TRUST/trusts', token=token, body={'trust': ref},
+                  expected_status=403)
+
+    def test_trust_redelegation_rejects_untrusted(self):
+        """Try to redelegate with a user having no trusts."""
+        # create a sub-trustee user
+        sub_trustee_user = self.new_user_ref(
+            domain_id=test_v3.DEFAULT_DOMAIN_ID)
+        password = sub_trustee_user['password']
+        sub_trustee_user = self.identity_api.create_user(sub_trustee_user)
+        sub_trustee_user['password'] = password
+        sub_trustee_user_id = sub_trustee_user['id']
+
+        # create a new role
+        role = self.new_role_ref()
+        self.assignment_api.create_role(role['id'], role)
+
+        # assign the new role to trustee
+        self.put(
+            '/projects/%(project_id)s/users/%(user_id)s/roles/%(role_id)s' % {
+                'project_id': self.project_id,
+                'user_id': self.trustee_user_id,
+                'role_id': role['id']})
+
+        # DON'T create a trust from trustor -> trustee
+
+        # authenticate as trustee so we can create a second trust
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user_id,
+            password=self.trustee_user['password'],
+        )
+        token = self.get_requested_token(auth_data)
+
+        # create a trust from trustor -> sub-trustee using trustee token
+        # with expiration delay 20 minutes (> 2)
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=sub_trustee_user_id,
+            project_id=self.project_id,
+            impersonation=True,
+            expires=dict(minutes=20),
+            role_ids=[self.role_id])
+        self.post('/OS-TRUST/trusts', token=token, body={'trust': ref},
+                  expected_status=403)
 
     def assertTrustTokensRevoked(self, trust_id):
         revocation_response = self.get('/OS-REVOKE/events',

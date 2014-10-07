@@ -105,7 +105,7 @@
     "identity:revocation_list": "rule:service_or_admin",
     "identity:revoke_token": "rule:admin_or_owner",
 
-    "identity:create_trust": "user_id:%(trust.trustor_user_id)s",
+    "identity:create_trust": "",
     "identity:get_trust": "rule:admin_or_owner",
     "identity:list_trusts": "",
     "identity:list_roles_for_trust": "",
