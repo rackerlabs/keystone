@@ -16,6 +16,24 @@
       "revId": "faa6aed1a8ece2e5c67f3d9d678f989de89a50c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_894206ac",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-07T20:12:00Z",
+      "side": 1,
+      "message": "Things that aren\u0027t in openstack-common.conf are still kept in sync because the sync tool picks up all the changes through internal dependencies, too.",
+      "parentUuid": "baa201ad_69aec299",
+      "revId": "faa6aed1a8ece2e5c67f3d9d678f989de89a50c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
