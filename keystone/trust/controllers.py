@@ -11,6 +11,7 @@
 #    WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 #    License for the specific language governing permissions and limitations
 #    under the License.
+import functools
 
 import uuid
 
@@ -122,35 +123,83 @@ class TrustV3(controller.V3Controller):
     @controller.protected()
     @validation.validated(schema.trust_create, 'trust')
     def create_trust(self, context, trust=None):
-        """Create a new trust.
+        """Create a new trust"""
+        # Trust validation
+        if not trust:
+            raise exception.ValidationError(attribute='trust',
+                                            target='request')
+        self._prevent_impersonated_trust(context)
+        if trust.get('project_id'):
+            self._require_role(trust)
+        self._require_trustee_exists(trust['trustee_user_id'])
 
-        The user creating the trust must be the trustor.
+        trust['expires_at'] = self._parse_expiration_date(
+            trust.get('expires_at'))
 
-        """
-        # Explicitly prevent a trust token from creating a new trust.
+        # New trust contents
+        all_roles = self.assignment_api.list_roles()
+        clean_roles = self._clean_role_list(context, trust, all_roles)
+        user_id = self._get_user_id(context)
+        trust_id = uuid.uuid4().hex
+
+        # Trust or delegation?
+        if user_id == trust.get('trustor_user_id'):
+            ### Trustor creates trust
+            self._require_trustor_has_role_in_project(trust, clean_roles)
+        else:
+            ### Agent delegates trust
+            # Find all trusts available for delegation by this agent
+            trusts = self._delegable_trusts(context, trust, required=True)
+            # Collect delegation depths for requested roles
+            roles_checklist = \
+                dict((r['id'], trust['expires_at'].replace(tzinfo=None))
+                     for r in clean_roles)
+            redelegations = dict((r['id'], list()) for r in clean_roles)
+            for t in trusts:
+                t_expires = t.get('expires_at')
+                t_clean_roles = \
+                    self._clean_role_list(context, trust, all_roles)
+                for role in t_clean_roles:
+                    rid = role['id']
+                    expires = roles_checklist.get(rid)
+                    if expires and expires < t_expires:
+                        redelegations[rid].append(t['redelegation_count'])
+
+            # If roles_checklist still holds any non-delegable role
+            # then reject delegation
+            if any(k for k in roles_checklist if k not in redelegations):
+                raise exception.Forbidden(
+                    _("Agent has no trust to delegate requested roles "
+                      "for requested time period"))
+
+            # Redelegation counter verification & transfer
+            # Calculating maximum redelegation cont for each role
+            # Minimum of found minus 1 is the max-available depth
+            remaining_redelegations = \
+                min(map(max, six.itervalues(redelegations))) - 1
+            requested_redelegations = trust.get('redelegation_count', 'unassigned')
+
+            # trust's redelegation_count verification
+            if requested_redelegations == 'unassigned':
+                trust['redelegation_count'] = remaining_redelegations
+            elif requested_redelegations > remaining_redelegations:
+                raise exception.Forbidden(
+                    _("Agent requested delegation with "
+                      "too deep redelegation count"))
+
+        new_trust = self.trust_api.create_trust(trust_id, trust, clean_roles)
+        self._fill_in_roles(context, new_trust, all_roles)
+        return TrustV3.wrap_member(context, new_trust)
+
+    @staticmethod
+    def _prevent_impersonated_trust(context):
+        """Explicitly prevent a trust token from creating a new trust"""
         auth_context = context.get('environment',
                                    {}).get('KEYSTONE_AUTH_CONTEXT', {})
         if auth_context.get('is_delegated_auth'):
             raise exception.Forbidden(
-                _('Cannot create a trust'
-                  ' with a token issued via delegation.'))
-
-        if not trust:
-            raise exception.ValidationError(attribute='trust',
-                                            target='request')
-        if trust.get('project_id'):
-            self._require_role(trust)
-        self._require_user_is_trustor(context, trust)
-        self._require_trustee_exists(trust['trustee_user_id'])
-        all_roles = self.assignment_api.list_roles()
-        clean_roles = self._clean_role_list(context, trust, all_roles)
-        self._require_trustor_has_role_in_project(trust, clean_roles)
-        trust['expires_at'] = self._parse_expiration_date(
-            trust.get('expires_at'))
-        trust_id = uuid.uuid4().hex
-        new_trust = self.trust_api.create_trust(trust_id, trust, clean_roles)
-        self._fill_in_roles(context, new_trust, all_roles)
-        return TrustV3.wrap_member(context, new_trust)
+                _("Cannot create a trust "
+                  "with a token issued via delegation."))
 
     def _require_trustee_exists(self, trustee_user_id):
         self.identity_api.get_user(trustee_user_id)
@@ -160,6 +209,24 @@ class TrustV3(controller.V3Controller):
         if user_id != trust.get('trustor_user_id'):
             raise exception.Forbidden(
                 _("The authenticated user should match the trustor."))
+
+    def _delegable_trusts(self, context, trust, required=True):
+        """Delegable trusts for user
+
+        Active delegable trusts for user where
+        trustor and project match requested in trust parameter
+        """
+        user_id = self._get_user_id(context)
+        trustor_id = trust.get('trustor_user_id')
+        trusts = [t for t in self.trust_api.list_trusts_for_trustee(user_id)
+                  if t['trustor_user_id'] == trustor_id
+                  and t.get('project_id') == trust.get('project_id')
+                  and t.get('redelegation_count', 0) > 0]
+        if required and not trusts:
+                raise exception.Forbidden(
+                    _("The authenticated user should match the trustor "
+                      "or have delegable trusts."))
+        return trusts
 
     def _require_role(self, trust):
         if not trust.get('roles'):
