@@ -16,6 +16,24 @@
       "revId": "bc422376e1a39dcdc6e5b0a07309964be64c46d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_5e0ffd36",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-07T13:56:40Z",
+      "side": 1,
+      "message": "hehe absolutely \u003d)",
+      "parentUuid": "baa201ad_a80c3dee",
+      "revId": "bc422376e1a39dcdc6e5b0a07309964be64c46d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
