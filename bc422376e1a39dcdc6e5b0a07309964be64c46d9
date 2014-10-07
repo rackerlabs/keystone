@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_a80c3dee",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-07T03:40:27Z",
+      "side": 1,
+      "message": "can `ref` and `members` be added to the already nicely written doc string? \u003d)",
+      "revId": "bc422376e1a39dcdc6e5b0a07309964be64c46d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
