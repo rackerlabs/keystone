@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_ba15584a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-07T13:38:30Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "baa201ad_6e018505",
+      "revId": "c6d7e584f6bb64a3429aaf8293570614b31844bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_712fa488",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 16
@@ -30,6 +48,24 @@
       "writtenOn": "2014-10-06T21:51:11Z",
       "side": 1,
       "message": "could this if statement be replaced with: \n\n    if tenant.get(\u0027parent_id\u0027) is not None:",
+      "revId": "c6d7e584f6bb64a3429aaf8293570614b31844bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_b8b80112",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-07T13:38:30Z",
+      "side": 1,
+      "message": "++ nice \u003d)",
+      "parentUuid": "baa201ad_712fa488",
       "revId": "c6d7e584f6bb64a3429aaf8293570614b31844bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_5b054f44",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-07T13:38:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_f171d4a8",
+      "revId": "c6d7e584f6bb64a3429aaf8293570614b31844bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_71e24430",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 16
@@ -64,6 +118,24 @@
       "writtenOn": "2014-10-06T21:51:11Z",
       "side": 1,
       "message": "so this means that in order for a user to delete a specific project that isn\u0027t a leaf node, they have to go through and delete every subtree, correct? \n\nHow are we going to address the case where subtrees are massive? I know this might be a little out of the scope of this review given there are scale issues above a given hierarchical depth. Is there plans to delete a project, possibly recursively?",
+      "revId": "c6d7e584f6bb64a3429aaf8293570614b31844bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_fb3283a5",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-07T13:38:30Z",
+      "side": 1,
+      "message": "That\u0027s right. We are going to discuss about the best approach to delete not leaf projects in the Paris Summit. There are some options: delete the whole branch recursively; delete only the project and then, connect its child with its parent; or both, via some flag.\n\nNote that we delete all projects recursively from the leafs at delete_domain().",
+      "parentUuid": "baa201ad_71e24430",
       "revId": "c6d7e584f6bb64a3429aaf8293570614b31844bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_fb69a3f9",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 2656,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-07T13:38:30Z",
+      "side": 1,
+      "message": "not for now... we decided to maintain the domain_id column untouched so we could discuss this in the Summit.",
+      "parentUuid": "baa201ad_71ec04f4",
+      "revId": "c6d7e584f6bb64a3429aaf8293570614b31844bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_b1966c3d",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 16
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_feefd11b",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 2821,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-07T13:38:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_b1966c3d",
+      "revId": "c6d7e584f6bb64a3429aaf8293570614b31844bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_11a578a1",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 16
@@ -115,6 +223,24 @@
       "writtenOn": "2014-10-06T21:51:11Z",
       "side": 1,
       "message": "could this be put into a loop?",
+      "revId": "c6d7e584f6bb64a3429aaf8293570614b31844bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_1ef3b50a",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 2831,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-07T13:38:30Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "baa201ad_11a578a1",
       "revId": "c6d7e584f6bb64a3429aaf8293570614b31844bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
