@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_9aaed47f",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-07T12:00:33Z",
+      "side": 1,
+      "message": "I was thinking about maintaining compatibility and coherence for this method throughout different backends. A root project without children, which is always the case for LDAP backend, will always be a leaf project as well. Makes sense?\n\nWill add some comments to explain this approach. Please reply if you think that isn\u0027t appropriate.",
+      "parentUuid": "baa201ad_ae80cdc0",
+      "revId": "83b24f143cc0065fb2c4341d7c0732f0a77ca13e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_8ec94928",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 17
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_dacbfc50",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-07T12:00:33Z",
+      "side": 1,
+      "message": "We wanted to follow the pattern in the file, like for the previous method: list_projects_in_domain().",
+      "parentUuid": "baa201ad_8ec94928",
+      "revId": "83b24f143cc0065fb2c4341d7c0732f0a77ca13e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_2e013d38",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 17
@@ -47,6 +83,24 @@
       "writtenOn": "2014-10-06T21:15:23Z",
       "side": 1,
       "message": "Not sure if it would be necessary, but we could add the case where we have another project (project 4) that is a child project of project2 (so sibling of project3) and ensure the list_project_parents response for both project3 and project4 are equal.",
+      "revId": "83b24f143cc0065fb2c4341d7c0732f0a77ca13e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_fac8c056",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 2129,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-07T12:00:33Z",
+      "side": 1,
+      "message": "++ would be a nice case to test. will add it \u003d)",
+      "parentUuid": "baa201ad_2e013d38",
       "revId": "83b24f143cc0065fb2c4341d7c0732f0a77ca13e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
