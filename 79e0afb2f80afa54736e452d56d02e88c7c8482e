@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_a97087a4",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-08T21:10:17Z",
+      "side": 1,
+      "message": "This can be removed",
+      "revId": "79e0afb2f80afa54736e452d56d02e88c7c8482e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_c9986bc2",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-08T21:10:17Z",
+      "side": 1,
+      "message": "I wonder if these should be there own TestCases?",
+      "revId": "79e0afb2f80afa54736e452d56d02e88c7c8482e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_49ec7b2a",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-08T21:10:17Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "79e0afb2f80afa54736e452d56d02e88c7c8482e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_891f435a",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 756,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-08T21:10:17Z",
+      "side": 1,
+      "message": "This could probably be removed",
+      "revId": "79e0afb2f80afa54736e452d56d02e88c7c8482e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_e937efe0",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 767,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-08T21:10:17Z",
+      "side": 1,
+      "message": "Same comment here",
+      "revId": "79e0afb2f80afa54736e452d56d02e88c7c8482e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_e9c1af80",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 824,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-08T21:10:17Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "79e0afb2f80afa54736e452d56d02e88c7c8482e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
