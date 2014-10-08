@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_24c77897",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 693,
+      "author": {
+        "id": 11194
+      },
+      "writtenOn": "2014-10-08T03:24:50Z",
+      "side": 1,
+      "message": "\"When running keystone endpoint-create you\u0027ll need to make sure you specify https when passing in the --publicurl --adminurl and --internalurl parameters\"",
+      "parentUuid": "fa98f980_4548e8cb",
+      "revId": "3bcf0fb50a453c066d3a92eb074bb7e0e328703b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa98f980_dee2c200",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 13
@@ -98,6 +116,24 @@
       "writtenOn": "2014-09-08T00:48:48Z",
       "side": 1,
       "message": "This should explain how to do it or point to existing documentation.",
+      "revId": "3bcf0fb50a453c066d3a92eb074bb7e0e328703b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_844f4433",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 727,
+      "author": {
+        "id": 11194
+      },
+      "writtenOn": "2014-10-08T03:24:50Z",
+      "side": 1,
+      "message": "\"When running keystone endpoint-create you\u0027ll need to make sure you specify https when passing in the --publicurl --adminurl and --internalurl parameters\"",
+      "parentUuid": "fa98f980_5ebed2d5",
       "revId": "3bcf0fb50a453c066d3a92eb074bb7e0e328703b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -200,6 +236,23 @@
       "writtenOn": "2014-09-08T00:48:48Z",
       "side": 1,
       "message": "suggest change \"can use\" to \"must use\"",
+      "revId": "3bcf0fb50a453c066d3a92eb074bb7e0e328703b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_e45730c8",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 1136,
+      "author": {
+        "id": 11194
+      },
+      "writtenOn": "2014-10-08T03:24:50Z",
+      "side": 1,
+      "message": "You might want to point out that if you\u0027re using SSL the --os-endpoint will be \u0027https\u0027?",
       "revId": "3bcf0fb50a453c066d3a92eb074bb7e0e328703b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
