@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "baa201ad_87c74363",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-10-08T07:30:15Z",
+      "side": 1,
+      "message": "This likely belongs in configuring.rst instead or as well (the new text) as it is targeted at deployers too.",
+      "revId": "3aaeaf5e78d5d79c8d4a02f5a9635be1961b6fa8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_07b433f0",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 803,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-10-08T07:30:15Z",
+      "side": 1,
+      "message": "This needs to ad a little extera verbiage (see line 809 below) indicating what it is used for because we have multiple uses of dogpile.",
+      "revId": "3aaeaf5e78d5d79c8d4a02f5a9635be1961b6fa8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_ed59db8e",
         "filename": "keystone/token/persistence/backends/memcache.py",
         "patchSetId": 5
