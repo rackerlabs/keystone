@@ -16,6 +16,24 @@
       "revId": "fb3c6cbd4e79ea0d4e96f4e6661086af735c2930",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_253e8fda",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-10-08T09:13:03Z",
+      "side": 1,
+      "message": "Lance, thanks for your comments, I think the \"local_config\" will be verified by this testcase. The previous testcase can pass and unable to detect the defect as the testcase override the constructor and pss the local configuration in the \"kwargs\", thus, I modify \"wsgi.py\" to accept \"local_config\" instead.",
+      "parentUuid": "baa201ad_4ec68169",
+      "revId": "fb3c6cbd4e79ea0d4e96f4e6661086af735c2930",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
