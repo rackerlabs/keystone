@@ -34,6 +34,24 @@
       "revId": "fb3c6cbd4e79ea0d4e96f4e6661086af735c2930",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_e02c759b",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-10-08T09:14:12Z",
+      "side": 1,
+      "message": "pls kindly let me know if I miss something.",
+      "parentUuid": "baa201ad_4ec68169",
+      "revId": "fb3c6cbd4e79ea0d4e96f4e6661086af735c2930",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
