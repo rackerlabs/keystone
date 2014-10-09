@@ -545,7 +545,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         self.assertIsNotNone(entities)
 
         if expected_length is not None:
-            self.assertEqual(len(entities), expected_length)
+            self.assertEqual(expected_length, len(entities))
         elif ref is not None:
             # we're at least expecting the ref
             self.assertNotEmpty(entities)
