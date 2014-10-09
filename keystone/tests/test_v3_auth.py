@@ -3069,6 +3069,7 @@ class TestTrustAuth(test_v3.RestfulTestCase):
                          self.project['name'])
 
     def test_impersonation_token_cannot_create_new_trust(self):
+        self.skipTest("Redelegation implemented")
         ref = self.new_trust_ref(
             trustor_user_id=self.user_id,
             trustee_user_id=self.trustee_user_id,
@@ -3100,6 +3101,41 @@ class TestTrustAuth(test_v3.RestfulTestCase):
                   body={'trust': ref},
                   token=trust_token,
                   expected_status=403)
+
+    def test_impersonation_token_create_new_trust(self):
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            impersonation=True,
+            expires=dict(minutes=2),
+            role_ids=[self.role_id])
+        ref.update(allow_redelegation=True,
+                   redelegation_count=2)
+
+        r = self.post('/OS-TRUST/trusts', body={'trust': ref})
+        trust = self.assertValidTrustResponse(r)
+
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=trust['id'])
+
+        trust_token = self.get_requested_token(auth_data)
+
+        # Build second trust
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            impersonation=True,
+            expires=dict(minutes=1),
+            role_ids=[self.role_id])
+
+        self.post('/OS-TRUST/trusts',
+                  body={'trust': ref},
+                  token=trust_token,
+                  expected_status=201)
 
     def test_trust_deleted_grant(self):
         # create a new role
@@ -3241,6 +3277,54 @@ class TestTrustAuth(test_v3.RestfulTestCase):
             'trust_id': trust_id},
             expected_status=204)
         headers = {'X-Subject-Token': trust_token}
+        self.head('/auth/tokens', headers=headers, expected_status=404)
+        self.assertTrustTokensRevoked(trust_id)
+
+    def test_delete_trust_cascade(self):
+
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            impersonation=True,
+            expires=dict(minutes=2),
+            role_ids=[self.role_id])
+        ref.update(allow_redelegation=True,
+                   redelegation_count=2)
+        r = self.post('/OS-TRUST/trusts', body={'trust': ref})
+        trust = self.assertValidTrustResponse(r)
+        trust_id = trust['id']
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=trust_id)
+
+        trust_token = self.get_requested_token(auth_data)
+
+        # Build second trust
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user_id,
+            project_id=self.project_id,
+            impersonation=True,
+            expires=dict(minutes=1),
+            role_ids=[self.role_id])
+
+        r = self.post('/OS-TRUST/trusts', body={'trust': ref},
+                      token=trust_token)
+        trust2 = self.assertValidTrustResponse(r)
+
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=trust2['id'])
+
+        r = self.v3_authenticate_token(auth_data)
+        trust_token2 = r.headers['X-Subject-Token']
+        self.delete('/OS-TRUST/trusts/%(trust_id)s' % {
+            'trust_id': trust_id},
+            expected_status=204)
+        headers = {'X-Subject-Token': trust_token2}
         self.head('/auth/tokens', headers=headers, expected_status=404)
         self.assertTrustTokensRevoked(trust_id)
 
