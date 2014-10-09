@@ -25,6 +25,12 @@ _trust_properties = {
     'expires_at': {
         'type': ['null', 'string']
     },
+    'allow_redelegation': {
+        'type': ['boolean', 'null']
+    },
+    'redelegation_count': {
+        'type': ['integer', 'null']
+    },
     # TODO(lbragstad): Need to find a better way to do this. We should be
     # checking that a role is a list of IDs and/or names.
     'roles': validation.add_array_type(parameter_types.id_string)
