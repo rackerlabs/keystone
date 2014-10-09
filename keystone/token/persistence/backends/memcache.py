@@ -22,11 +22,10 @@ CONF = config.CONF
 
 class Token(kvs.Token):
     kvs_backend = 'openstack.kvs.Memcached'
-    memcached_backend = 'memcached'
 
     def __init__(self, *args, **kwargs):
-        kwargs['memcached_backend'] = self.memcached_backend
         kwargs['no_expiry_keys'] = [self.revocation_key]
         kwargs['memcached_expire_time'] = CONF.token.expiration
         kwargs['url'] = CONF.memcache.servers
+        kwargs['memcached_backend'] = CONF.memcache.memcached_backend
         super(Token, self).__init__(*args, **kwargs)

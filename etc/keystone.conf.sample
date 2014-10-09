@@ -1237,6 +1237,12 @@
 # Options defined in keystone
 #
 
+# When memcached is chosen as the token backend,there are
+# three clients supported to access memcached server: [
+# memcached, bmemcached, pylibmc, pooled_memcached ].
+# memcached is used by default. (string value)
+#memcached_backend=memcached
+
 # Memcache servers in the format of "host:port". (list value)
 #servers=localhost:11211
 

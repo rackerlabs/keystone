@@ -410,6 +410,13 @@ class KVSTest(tests.TestCase):
         self.assertIsInstance(kvs._region.backend.driver,
                               TestMemcacheDriver)
 
+    def test_kvs_memcached_manager_default_memcached_backend(self):
+        kvs = self._get_kvs_region()
+        kvs.configure('openstack.kvs.Memcached')
+        self.assertIsInstance(
+            kvs._region.backend.driver,
+            memcached.VALID_DOGPILE_BACKENDS['memcached'])
+
     def test_kvs_memcached_manager_invalid_dogpile_memcached_backend(self):
         # Invalid dogpile memcache backend should raise ValueError
         kvs = self._get_kvs_region()
