@@ -323,6 +323,11 @@ The drivers Keystone provides are:
   token persistence backend. This backend relies on ``dogpile.cache`` and stores
   the token data in a set of memcached servers. The servers urls are specified
   in the ``[memcache]\servers`` configuration option in the Keystone config.
+  The memcached backend uses the Keystone manager mechanism to support the use
+  of any of the provided memcached backends (``bmemcached``, ``pylibmc``, 
+  ``pooled_memcached``, and basic ``memcached``). By default the ``memcached``
+  backend is used. An alternative is to specify the
+  ``[memcache]\memcached_backend`` configuration option.
 
 * ``keystone.token.persistence.backends.memcache_pool.Token`` - The pooled memcached
   token persistence engine. This backend supports the concept of pooled memcache

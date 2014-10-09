@@ -81,8 +81,8 @@ class MemcachedBackend(manager.Manager):
     """Pivot point to leverage the various dogpile.cache memcached backends.
 
     To specify a specific dogpile.cache memcached driver, pass the argument
-    `memcached_driver` set to one of the provided memcached drivers (at this
-    time `memcached`, `bmemcached`, `pylibmc` are valid).
+    `memcached_backend` set to one of the provided memcached drivers (at this
+    time `memcached`, `bmemcached`, `pylibmc`, `pooled_memcached` are valid).
     """
     def __init__(self, arguments):
         self._key_mangler = None
