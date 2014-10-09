@@ -545,7 +545,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         self.assertIsNotNone(entities)
 
         if expected_length is not None:
-            self.assertEqual(len(entities), expected_length)
+            self.assertEqual(expected_length, len(entities))
         elif ref is not None:
             # we're at least expecting the ref
             self.assertNotEmpty(entities)
@@ -1030,7 +1030,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         entities = resp.result.get('role_assignments')
 
         if expected_length is not None:
-            self.assertEqual(len(entities), expected_length)
+            self.assertEqual(expected_length, len(entities))
         elif ref is not None:
             # we're at least expecting the ref
             self.assertNotEmpty(entities)
@@ -1098,7 +1098,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
                 pass
             else:
                 found_count += 1
-        self.assertEqual(found_count, expected)
+        self.assertEqual(expected, found_count)
 
     def assertRoleAssignmentNotInListResponse(
             self, resp, ref, link_url=None):
