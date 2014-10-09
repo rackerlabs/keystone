@@ -21,12 +21,15 @@ from keystone import assignment
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import validation
+from keystone import config
 from keystone import exception
 from keystone.i18n import _
 from keystone.models import token_model
 from keystone.openstack.common import log
 from keystone.trust import schema
 
+
+CONF = config.CONF
 
 LOG = log.getLogger(__name__)
 
@@ -127,17 +130,48 @@ class TrustV3(controller.V3Controller):
         The user creating the trust must be the trustor.
 
         """
-        # Explicitly prevent a trust token from creating a new trust.
-        auth_context = context.get('environment',
-                                   {}).get('KEYSTONE_AUTH_CONTEXT', {})
-        if auth_context.get('is_delegated_auth'):
-            raise exception.Forbidden(
-                _('Cannot create a trust'
-                  ' with a token issued via delegation.'))
-
         if not trust:
             raise exception.ValidationError(attribute='trust',
                                             target='request')
+
+        auth_context = context.get('environment',
+                                   {}).get('KEYSTONE_AUTH_CONTEXT', {})
+        if auth_context.get('is_delegated_auth'):
+            # Redelegation case
+            if not CONF.trust.enabled:
+                raise exception.Forbidden('Trusts are disabled.')
+            src_trust_id = auth_context['trust_id']
+            redelegated_trust = self.trust_api.get_trust(src_trust_id)
+
+            # Validate against:
+            # * allow_redelegation
+            valid = bool(redelegated_trust.get('allow_redelegation'))
+            # * 0 < redelegation_count < max_redelegation_count
+            max_redelegation_count = CONF.trust.max_redelegation_count
+            redelegation_count = redelegated_trust.get('redelegation_count', 0)
+            valid &= 0 < redelegation_count < max_redelegation_count
+            # * remaining_uses is None
+            valid &= trust.get('remaining_uses') is None
+            # * expiry times
+
+            trust_expiry = self._parse_expiration_date(trust.get('expires_at'))
+            parent_expiry = redelegated_trust['expires_at']
+            valid &= trust_expiry is None or \
+                parent_expiry > trust_expiry.replace(tzinfo=None)
+            # * role subset
+            parent_roles = set(role['id']
+                               for role in redelegated_trust['roles'])
+            valid &= all(role['id'] in parent_roles for role in trust['roles'])
+            if not valid:
+                raise exception.Forbidden(
+                    _("Redelegation prerequisites are not meet"))
+
+            # Populate trust with:
+            # * redelegation_count--
+            trust.setdefault('redelegation_count', redelegation_count - 1)
+            # * redelegated_trust_id
+            trust['redelegated_trust_id'] = redelegated_trust['id']
+
         if trust.get('project_id'):
             self._require_role(trust)
         self._require_user_is_trustor(context, trust)
@@ -231,7 +265,14 @@ class TrustV3(controller.V3Controller):
 
         user_id = self._get_user_id(context)
         _admin_trustor_only(context, trust, user_id)
-        self.trust_api.delete_trust(trust_id)
+        trusts = self.trust_api.list_trusts_for_trustor(
+            trust['trustor_user_id'])
+        victims = [trust_id]
+        while victims:
+            victim_id = victims.pop()
+            victims.extend(t['id'] for t in trusts
+                           if t.get('redelegated_trust_id') == victim_id)
+            self.trust_api.delete_trust(victim_id)
 
     @controller.protected()
     def list_roles_for_trust(self, context, trust_id):

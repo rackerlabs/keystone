@@ -216,6 +216,8 @@ FILE_OPTIONS = {
         cfg.BoolOpt('enabled', default=True,
                     help='Delegation and impersonation features can be '
                          'optionally disabled.'),
+        cfg.IntOpt('max_redelegation_count', default=3,
+                   help='Maximum depth of trust redelegation.'),
         cfg.StrOpt('driver',
                    default='keystone.trust.backends.sql.Trust',
                    help='Trust backend driver.')],
