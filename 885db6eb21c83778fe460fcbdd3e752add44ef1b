@@ -16,6 +16,24 @@
       "revId": "885db6eb21c83778fe460fcbdd3e752add44ef1b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_ad040c4a",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-09T03:50:58Z",
+      "side": 1,
+      "message": "looks like it tries to migrate the \u0027access\u0027 extension?",
+      "parentUuid": "baa201ad_3b98551b",
+      "revId": "885db6eb21c83778fe460fcbdd3e752add44ef1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
