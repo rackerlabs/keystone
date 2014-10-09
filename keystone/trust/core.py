@@ -45,18 +45,144 @@ class Manager(manager.Manager):
     def __init__(self):
         super(Manager, self).__init__(CONF.trust.driver)
 
+    @staticmethod
+    def _validate_trust(trust):
+        # Validate against:
+        # * remaining_uses is int and >=0 if any
+        #   and allow_redelegation is not set
+        if trust.setdefault('remaining_uses', None) is not None:
+            if (trust['remaining_uses'] <= 0 or
+                    not isinstance(trust['remaining_uses'], int) or
+                    trust.get('allow_redelegation')):
+                msg = _('remaining_uses must be a positive integer or null.')
+                raise exception.ValidationError(msg)
+        # * 0 < redelegation_count <= max_redelegation_count if any
+        #   and allow_redelegation is set
+        if trust.get('allow_redelegation'):
+            max_redelegation_count = CONF.trust.max_redelegation_count
+            redelegation_count = trust.get('redelegation_count')
+            if (redelegation_count and not
+                    (0 < redelegation_count <= max_redelegation_count)):
+                raise exception.Forbidden(
+                    _('Requested redelegation depth of %(redelegation_count)d'
+                      ' out of allowed range of [0..%(max_count)d]'),
+                    redelegation_count=redelegation_count,
+                    max_count=max_redelegation_count)
+
+    @staticmethod
+    def _validate_redelegation(redelegated_trust, trust):
+        # Validate against:
+        # * allow_redelegation
+        if (not redelegated_trust.get('allow_redelegation')
+                or not CONF.trust.allow_redelegation):
+            raise exception.Forbidden(
+                _('Redelegation is not allowed'))
+
+        # * f0 < redelegation_count <= max_redelegation_count
+        max_redelegation_count = CONF.trust.max_redelegation_count
+        redelegation_depth = redelegated_trust.get('redelegation_count', 0)
+        if not (0 < redelegation_depth <= max_redelegation_count):
+            raise exception.Forbidden(
+                _('Remaining redelegation depth of %(redelegation_depth)d'
+                  ' out of allowed range of [0..%(max_count)d]'),
+                redelegation_depth=redelegation_depth,
+                max_count=max_redelegation_count)
+
+        # * remaining_uses is None
+        if trust.get('remaining_uses') is not None:
+            raise exception.Forbidden(
+                _('Field "remaining_uses" is set to %(value)s'
+                  ' while it must not be set in order to redelegate a trust'),
+                value=trust.get('remaining_uses'))
+
+        # * expiry times
+        trust_expiry = trust.get('expires_at')
+        redelegated_expiry = redelegated_trust['expires_at']
+        if trust_expiry:
+            if redelegated_expiry < trust_expiry.replace(tzinfo=None):
+                raise exception.Forbidden(
+                    _('Requested expiration time is more '
+                      'than redelegated trust can provide'))
+        else:
+            trust['expires_at'] = redelegated_expiry
+
+        # * role subset
+        parent_roles = set(role['id']
+                           for role in redelegated_trust['roles'])
+        if not all(role['id'] in parent_roles for role in trust['roles']):
+            raise exception.Forbidden(
+                _('Some of requested roles are not in redelegated trust'))
+
+    def get_trust_pedigree(self, trust_id):
+        trust = self.driver.get_trust(trust_id)
+        trust_chain = [trust]
+        if trust and trust.get('redelegated_trust_id'):
+            trusts = self.driver.list_trusts_for_trustor(
+                trust['trustor_user_id'])
+            while trust_chain[-1].get('redelegated_trust_id'):
+                for t in trusts:
+                    if t['id'] == trust_chain[-1]['redelegated_trust_id']:
+                        trust_chain.append(t)
+                        break
+
+        return trust_chain
+
+    def get_trust(self, trust_id, deleted=False):
+        trust = self.driver.get_trust(trust_id, deleted)
+
+        if trust and trust.get('redelegated_trust_id') and not deleted:
+            trust_chain = self.get_trust_pedigree(trust_id)
+
+            for parent, child in zip(trust_chain[1:], trust_chain):
+                self._validate_redelegation(parent, child)
+
+        return trust
+
     @notifications.created(_TRUST)
-    def create_trust(self, trust_id, trust, roles):
+    def create_trust(self, trust_id, trust, roles, redelegated_trust=None):
         """Create a new trust.
 
         :returns: a new trust
         """
-        trust.setdefault('remaining_uses', None)
-        if trust['remaining_uses'] is not None:
-            if (trust['remaining_uses'] <= 0 or
-                    not isinstance(trust['remaining_uses'], int)):
-                msg = _('remaining_uses must be a positive integer or null.')
-                raise exception.ValidationError(msg)
+        redelegatable = trust.get('allow_redelegation')
+        if not redelegatable:
+            trust.pop('redelegation_count', None)
+
+        if redelegated_trust:
+            # Error on attempt to redelegate using non-redelegable trust
+            if not redelegated_trust.get('allow_redelegation'):
+                msg = _('Redelegation of non-redelegable trust is forbidden')
+                raise exception.Forbidden(msg)
+
+            # Populate trust with:
+            # * redelegated_trust_id
+            trust['redelegated_trust_id'] = redelegated_trust['id']
+
+            # * redelegation_count - 1 (if further redelegation is allowed)
+            if redelegatable:
+                remaining_depth = redelegated_trust.get(
+                    'redelegation_count') - 1
+                requested_depth = trust.setdefault(
+                    'redelegation_count', remaining_depth)
+
+                # Check whether agent leave redelegation_count intact
+                if remaining_depth != requested_depth:
+                    msg = _('Modifying redelegation_count upon redelegation is'
+                            ' forbidden. Omitting this parameter is advised.')
+                    raise exception.Forbidden(msg)
+
+            # Check entire trust pedigree validity
+            pedigree = self.get_trust_pedigree(redelegated_trust['id'])
+            for t in pedigree:
+                self._validate_redelegation(t, trust)
+
+        elif redelegatable:
+            # Default for initial trust in chain is max_redelegation_count
+            trust.setdefault('redelegation_count',
+                             CONF.trust.max_redelegation_count)
+
+        self._validate_trust(trust)
+
         return self.driver.create_trust(trust_id, trust, roles)
 
     @notifications.deleted(_TRUST)
@@ -65,6 +191,24 @@ class Manager(manager.Manager):
 
         :raises: keystone.exception.TrustNotFound
         """
+        trust = self.driver.get_trust(trust_id)
+        if not trust:
+            raise exception.TrustNotFound(trust_id)
+
+        trusts = self.driver.list_trusts_for_trustor(
+            trust['trustor_user_id'])
+
+        for t in trusts:
+            if t.get('redelegated_trust_id') == trust_id:
+                # recursive call to make sure all notifications are sent
+                try:
+                    self.delete_trust(t['id'])
+                except exception.TrustNotFound:
+                    # if trust was deleted by concurrent process
+                    # consistency must not suffer
+                    pass
+
+        # end recursion
         self.driver.delete_trust(trust_id)
 
 
