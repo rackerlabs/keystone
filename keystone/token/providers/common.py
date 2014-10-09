@@ -363,6 +363,14 @@ class V3TokenDataHelper(object):
         if CONF.trust.enabled and trust:
             if user_id != trust['trustee_user_id']:
                 raise exception.Forbidden(_('User is not a trustee.'))
+            if trust.get('redelegated_trust_id'):
+                for t in self.trust_api.get_trust_pedigree(trust['id']):
+                    try:
+                        self.identity_api.assert_user_enabled(
+                            t['trustee_user_id'])
+                    except AssertionError:
+                        raise exception.Forbidden(
+                            _('One of the trust agents is disabled.'))
 
         if bind:
             token_data['bind'] = bind
