@@ -45,12 +45,74 @@ class Manager(manager.Manager):
     def __init__(self):
         super(Manager, self).__init__(CONF.trust.driver)
 
+    def _validate_redelegation(self, redelegated_trust, trust):
+        # Validate against:
+        # * allow_redelegation
+        if not redelegated_trust.get('allow_redelegation') \
+                or not CONF.trust.allow_redelegation:
+            raise exception.Forbidden(
+                _("Redelegation is not allowed"))
+
+        # * 0 < redelegation_count < max_redelegation_count
+        max_redelegation_count = CONF.trust.max_redelegation_count
+        redelegation_count = redelegated_trust.get('redelegation_count', 0)
+        if not (0 < redelegation_count < max_redelegation_count):
+            raise exception.Forbidden(
+                _("redelegation_count out of bounds "
+                  "0..max_redelegation_count"))
+
+        # * remaining_uses is None
+        if trust.get('remaining_uses') is not None:
+            raise exception.Forbidden(
+                _("remaining_uses MUST NOT be set to allow redelegation"))
+
+        # * expiry times
+        trust_expiry = trust.get('expires_at')
+        redelegated_expiry = redelegated_trust['expires_at']
+        if trust_expiry:
+            if redelegated_expiry < trust_expiry.replace(tzinfo=None):
+                raise exception.Forbidden(
+                    _("Requested expiration time is more "
+                      "than redelegated trust can provide"))
+        else:
+            trust['expires_at'] = redelegated_expiry
+
+        # * role subset
+        parent_roles = set(role['id']
+                           for role in redelegated_trust['roles'])
+        if not all(role['id'] in parent_roles for role in trust['roles']):
+            raise exception.Forbidden(
+                _("Some of requested roles cannot be granted "
+                  "using this redelegated trust"))
+
     @notifications.created(_TRUST)
-    def create_trust(self, trust_id, trust, roles):
+    def create_trust(self, trust_id, trust, roles, redelegated_trust=None):
         """Create a new trust.
 
         :returns: a new trust
         """
+        if redelegated_trust:
+            # Check entire trust pedigree validity
+            trust_bucket = self.driver.list_trusts_for_trustor(
+                trust['trustor_user_id'])
+            pedigree = [redelegated_trust]
+            while pedigree[-1].get('redelegated_trust_id'):
+                for t in trust_bucket:
+                    if t['id'] == pedigree[-1]['redelegated_trust_id'] \
+                            and t not in pedigree:
+                        # Collect pedigree to avoid cycles
+                        pedigree.append(t)
+                        break
+            for t in pedigree:
+                self._validate_redelegation(t, trust)
+
+            # Populate trust with:
+            # * redelegation_count--
+            trust.setdefault('redelegation_count',
+                             redelegated_trust.get('redelegation_count') - 1)
+            # * redelegated_trust_id
+            trust['redelegated_trust_id'] = redelegated_trust['id']
+
         trust.setdefault('remaining_uses', None)
         if trust['remaining_uses'] is not None:
             if (trust['remaining_uses'] <= 0 or

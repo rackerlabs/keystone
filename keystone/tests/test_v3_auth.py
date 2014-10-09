@@ -2593,6 +2593,208 @@ class TestTrustOptional(test_v3.RestfulTestCase):
 
 
 @dependency.requires('revoke_api')
+class TestTrustRedelegation(test_v3.RestfulTestCase):
+    EXTENSION_NAME = 'revoke'
+    EXTENSION_TO_ADD = 'revoke_extension'
+
+    def config_overrides(self):
+        super(TestTrustRedelegation, self).config_overrides()
+        self.config_fixture.config(
+            group='revoke',
+            driver='keystone.contrib.revoke.backends.kvs.Revoke')
+        self.config_fixture.config(
+            group='token',
+            provider='keystone.token.providers.pki.Provider',
+            revoke_by_id=False)
+        self.config_fixture.config(
+            group='trust',
+            enabled=True,
+            allow_redelegation=True)
+
+    def setUp(self):
+        super(TestTrustRedelegation, self).setUp()
+
+        # create a trustee to delegate stuff to
+        self.trustee_user = self.new_user_ref(domain_id=self.domain_id)
+        password = self.trustee_user['password']
+        self.trustee_user = self.identity_api.create_user(self.trustee_user)
+        self.trustee_user['password'] = password
+
+        # create a trustee to delegate stuff to
+        self.sub_trustee_user = self.new_user_ref(domain_id=self.domain_id)
+        password = self.sub_trustee_user['password']
+        self.sub_trustee_user = \
+            self.identity_api.create_user(self.sub_trustee_user)
+        self.sub_trustee_user['password'] = password
+
+        # trustor->trustee
+        self.redelegated_trust_ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user['id'],
+            project_id=self.project_id,
+            impersonation=True,
+            expires=dict(minutes=2),
+            role_ids=[self.role_id])
+        self.redelegated_trust_ref.update(
+            allow_redelegation=True,
+            redelegation_count=2)
+
+        # trustor->trustee (no redelegation)
+        self.chained_trust_ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user['id'],
+            project_id=self.project_id,
+            impersonation=True,
+            expires=dict(minutes=1),
+            role_ids=[self.role_id])
+
+        self.expired_chained_trust_ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=self.trustee_user['id'],
+            project_id=self.project_id,
+            impersonation=True,
+            expires=dict(minutes=10),
+            role_ids=[self.role_id])
+
+    def test_delete_trust_cascade(self):
+
+        r = self.post('/OS-TRUST/trusts',
+                      body={'trust': self.redelegated_trust_ref})
+        trust = self.assertValidTrustResponse(r)
+        trust_id = trust['id']
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=trust_id)
+
+        trust_token = self.get_requested_token(auth_data)
+
+        # Build second trust
+        r = self.post('/OS-TRUST/trusts',
+                      body={'trust': self.chained_trust_ref},
+                      token=trust_token)
+        trust2 = self.assertValidTrustResponse(r)
+
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=trust2['id'])
+
+        trust_token2 = self.get_requested_token(auth_data)
+        self.delete('/OS-TRUST/trusts/%(trust_id)s' % {
+            'trust_id': trust_id},
+            expected_status=204)
+        headers = {'X-Subject-Token': trust_token2}
+        self.head('/auth/tokens', headers=headers, expected_status=404)
+        self.assertTrustTokensRevoked(trust_id)
+
+    def assertTrustTokensRevoked(self, trust_id):
+        revocation_response = self.get('/OS-REVOKE/events',
+                                       expected_status=200)
+        revocation_events = revocation_response.json_body['events']
+        found = False
+        for event in revocation_events:
+            if event.get('OS-TRUST:trust_id') == trust_id:
+                found = True
+        self.assertTrue(found, 'event with trust_id %s not found in list' %
+                        trust_id)
+
+    def test_redelegation_count(self):
+        ref = dict(self.redelegated_trust_ref,
+                   redelegation_count=0)
+        r = self.post('/OS-TRUST/trusts',
+                      body={'trust': ref})
+        trust = self.assertValidTrustResponse(r)
+        trust_id = trust['id']
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=trust_id)
+
+        trust_token = self.get_requested_token(auth_data)
+
+        # Build second trust
+        self.post('/OS-TRUST/trusts',
+                  body={'trust': self.chained_trust_ref},
+                  token=trust_token,
+                  expected_status=403)
+
+    def test_redelegation_expiry(self):
+        ref = dict(self.redelegated_trust_ref)
+        r = self.post('/OS-TRUST/trusts',
+                      body={'trust': ref})
+        trust = self.assertValidTrustResponse(r)
+        trust_id = trust['id']
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=trust_id)
+
+        trust_token = self.get_requested_token(auth_data)
+
+        # Build second trust
+        ref = dict(self.expired_chained_trust_ref)
+
+        self.post('/OS-TRUST/trusts',
+                  body={'trust': ref},
+                  token=trust_token,
+                  expected_status=403)
+
+    def test_redelegation_remaining_uses(self):
+        ref = dict(self.redelegated_trust_ref)
+        r = self.post('/OS-TRUST/trusts',
+                      body={'trust': ref})
+        trust = self.assertValidTrustResponse(r)
+        trust_id = trust['id']
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=trust_id)
+
+        trust_token = self.get_requested_token(auth_data)
+
+        # Build second trust
+        ref = dict(self.chained_trust_ref, remaining_uses=5)
+        self.post('/OS-TRUST/trusts',
+                  body={'trust': ref},
+                  token=trust_token,
+                  expected_status=403)
+
+    def test_redelegation_roles(self):
+        ref = dict(self.redelegated_trust_ref)
+        r = self.post('/OS-TRUST/trusts',
+                      body={'trust': ref})
+        trust = self.assertValidTrustResponse(r)
+        trust_id = trust['id']
+        auth_data = self.build_authentication_request(
+            user_id=self.trustee_user['id'],
+            password=self.trustee_user['password'],
+            trust_id=trust_id)
+
+        trust_token = self.get_requested_token(auth_data)
+
+        # Build second trust
+        role = self.new_role_ref()
+        self.assignment_api.create_role(role['id'], role)
+
+        grant_url = (
+            '/projects/%(project_id)s/users/%(user_id)s/'
+            'roles/%(role_id)s' % {
+                'project_id': self.project_id,
+                'user_id': self.user_id,
+                'role_id': role['id']})
+
+        # assign a new role
+        self.put(grant_url)
+
+        ref = dict(self.chained_trust_ref, roles=[{'id': role['id']}])
+        self.post('/OS-TRUST/trusts',
+                  body={'trust': ref},
+                  token=trust_token,
+                  expected_status=403)
+
+
+@dependency.requires('revoke_api')
 class TestTrustAuth(test_v3.RestfulTestCase):
     EXTENSION_NAME = 'revoke'
     EXTENSION_TO_ADD = 'revoke_extension'
