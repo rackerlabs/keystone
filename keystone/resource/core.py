@@ -416,13 +416,7 @@ class Manager(manager.Manager):
                          'please disable it first.'))
 
         self._delete_domain_contents(domain_id)
-        # TODO(henry-nash): Although the controller will ensure deletion of
-        # all users & groups within the domain (which will cause all
-        # assignments for those users/groups to also be deleted), there
-        # could still be assignments on this domain for users/groups in
-        # other domains - so we should delete these here by making a call
-        # to the backend to delete all assignments for this domain.
-        # (see Bug #1277847)
+        self.assignment_api.delete_domain_assignments(domain_id)
         self.driver.delete_domain(domain_id)
         self.get_domain.invalidate(self, domain_id)
         self.get_domain_by_name.invalidate(self, domain['name'])
