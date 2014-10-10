@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_96bba574",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-10T17:21:45Z",
+      "side": 1,
+      "message": "Totally agree, changed this after an old review suggesting to use map(), didn\u0027t know about the return difference in Python 3. Going back to list comprehension.",
+      "parentUuid": "baa201ad_16dc1574",
+      "revId": "e5df009e58a1c7034b1bf91292fb92cdeab70646",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_73c4935f",
         "filename": "keystone/common/sql/migrate_repo/versions/056_add_parent_project.py",
         "patchSetId": 18
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_16afb52c",
+        "filename": "keystone/common/sql/migrate_repo/versions/056_add_parent_project.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-10T17:21:45Z",
+      "side": 1,
+      "message": "My fault... Didn\u0027t read the comments in the placeholder file.\n\nDone \u003d)",
+      "parentUuid": "baa201ad_3647591f",
+      "revId": "e5df009e58a1c7034b1bf91292fb92cdeab70646",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_13d0a7f6",
         "filename": "keystone/common/sql/migrate_repo/versions/056_add_parent_project.py",
         "patchSetId": 18
@@ -119,6 +155,24 @@
       "side": 1,
       "message": "FKs can be nullable, it just means that if we have a value the FK needs to map to a valid target.",
       "parentUuid": "baa201ad_b62a697c",
+      "revId": "e5df009e58a1c7034b1bf91292fb92cdeab70646",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_76a64155",
+        "filename": "keystone/common/sql/migrate_repo/versions/056_add_parent_project.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-10T17:21:45Z",
+      "side": 1,
+      "message": "Thanks for the insight @Morgan.",
+      "parentUuid": "baa201ad_9603a575",
       "revId": "e5df009e58a1c7034b1bf91292fb92cdeab70646",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
