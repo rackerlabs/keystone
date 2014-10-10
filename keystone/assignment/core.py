@@ -37,6 +37,7 @@ LOG = log.getLogger(__name__)
 MEMOIZE = cache.get_memoization_decorator(group='role')
 
 
+@notifications.listener
 @dependency.provider('assignment_api')
 @dependency.requires('credential_api', 'identity_api', 'resource_api',
                      'revoke_api', 'role_api')
@@ -66,6 +67,16 @@ class Manager(manager.Manager):
             assignment_driver = identity_driver.default_assignment_driver()
 
         super(Manager, self).__init__(assignment_driver)
+        self.event_callbacks = {
+            notifications.ACTIONS.deleted: {
+                'domain': [self._delete_domain_assignments],
+            },
+        }
+
+    def _delete_domain_assignments(self, service, resource_type, operations,
+                                   payload):
+        domain_id = payload['resource_info']
+        self.driver.delete_domain_assignments(domain_id)
 
     def _get_group_ids_for_user_id(self, user_id):
         # TODO(morganfainberg): Implement a way to get only group_ids
@@ -1069,7 +1080,10 @@ class AssignmentDriverBase(object):
 class AssignmentDriverV9(AssignmentDriverBase):
     """New or augmented methods in V9."""
 
-    pass
+    @abc.abstractmethod
+    def delete_domain_assignments(self, domain_id):
+        """Deletes all assignments for a domain."""
+        raise exception.NotImplemented()
 
 
 @six.add_metaclass(abc.ABCMeta)
