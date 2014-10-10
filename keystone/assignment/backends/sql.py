@@ -634,11 +634,9 @@ class Assignment(keystone_assignment.Driver):
         with sql.transaction() as session:
             ref = self._get_domain(session, domain_id)
 
-            # TODO(henry-nash): Although the controller will ensure deletion of
-            # all users & groups within the domain (which will cause all
-            # assignments for those users/groups to also be deleted), there
-            # could still be assignments on this domain for users/groups in
-            # other domains - so we should delete these here (see Bug #1277847)
+            q = session.query(RoleAssignment)
+            q = q.filter_by(target_id=domain_id)
+            q.delete(False)
 
             session.delete(ref)
 
