@@ -16,6 +16,24 @@
       "revId": "7c18b7076c51ba770d74a5efea081246430d05fc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_970bb47c",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-10T04:54:03Z",
+      "side": 1,
+      "message": "I\u0027m not entirely sure but I think the py33/py34 test that run are here: \n\nhttps://github.com/openstack/keystone/blob/master/tox.ini#L22\n\nDoesn\u0027t look like test_sql_upgrade is in that list so might only be supported in python 2.7. David is more of a python 3 expert than I am however \u003d)",
+      "parentUuid": "baa201ad_9915ed9d",
+      "revId": "7c18b7076c51ba770d74a5efea081246430d05fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
