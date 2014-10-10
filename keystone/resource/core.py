@@ -581,13 +581,6 @@ class Manager(manager.Manager):
         self.domain_config_api.delete_config_options(domain_id)
         self.domain_config_api.delete_config_options(domain_id, sensitive=True)
         self.domain_config_api.release_registration(domain_id)
-        # TODO(henry-nash): Although the controller will ensure deletion of
-        # all users & groups within the domain (which will cause all
-        # assignments for those users/groups to also be deleted), there
-        # could still be assignments on this domain for users/groups in
-        # other domains - so we should delete these here by making a call
-        # to the backend to delete all assignments for this domain.
-        # (see Bug #1277847)
         self.driver.delete_domain(domain_id)
         notifications.Audit.deleted(self._DOMAIN, domain_id, initiator)
         self.get_domain.invalidate(self, domain_id)

@@ -944,6 +944,12 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
             super(BaseLDAPIdentity, self).
             test_list_role_assignment_by_user_with_domain_group_roles)
 
+    def test_remove_assignments_when_deleting_a_domain(self):
+        self.assertRaises(
+            (exception.Forbidden, exception.DomainNotFound),
+            super(BaseLDAPIdentity,
+                  self).test_remove_assignments_when_deleting_a_domain)
+
 
 class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
 
