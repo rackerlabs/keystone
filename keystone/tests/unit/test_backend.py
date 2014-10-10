@@ -4102,6 +4102,48 @@ class IdentityTests(AssignmentTestHelperMixin):
                                   {'name': self.role_member['name']})
         # If the previous line didn't raise an exception then the test passes.
 
+    def test_remove_assignments_when_deleting_a_domain(self):
+        # A user and a group are created in default domain and then assigned
+        # a role on a different domain. The test makes sure that when the new
+        # domain is deleted, the role assignments of the user and the group in
+        # default domain is deleted for the deleted domain.
+        domain1 = unit.new_domain_ref()
+        self.resource_api.create_domain(domain1['id'], domain1)
+        domain2 = unit.new_domain_ref()
+        self.resource_api.create_domain(domain2['id'], domain2)
+        group = unit.new_group_ref(domain_id=DEFAULT_DOMAIN_ID)
+        group = self.identity_api.create_group(group)
+        user = unit.new_user_ref(domain_id=DEFAULT_DOMAIN_ID)
+        user = self.identity_api.create_user(user)
+        role = unit.new_role_ref()
+        self.role_api.create_role(role['id'], role)
+        # Assign roles in domain1 and domain2
+        for domain_id in [domain1['id'], domain2['id']]:
+            self.assignment_api.create_grant(group_id=group['id'],
+                                             domain_id=domain_id,
+                                             role_id=role['id'])
+            self.assignment_api.create_grant(user_id=user['id'],
+                                         domain_id=domain_id,
+                                         role_id=role['id'])
+
+        role_assignments = self.assignment_api.list_role_assignments(
+            role_id=role['id'])
+        self.assertThat(role_assignments, matchers.HasLength(4))
+        # Delete domain1
+        self.resource_api.update_domain(domain1['id'], {'enabled': False})
+        self.resource_api.delete_domain(domain1['id'])
+
+        role_assignments = self.assignment_api.list_role_assignments(
+            role_id=role['id'])
+        self.assertThat(role_assignments, matchers.HasLength(2))
+        # Delete domain2
+        self.resource_api.update_domain(domain2['id'], {'enabled': False})
+        self.resource_api.delete_domain(domain2['id'])
+        # There should be no role assignments left now.
+        role_assignments = self.assignment_api.list_role_assignments(
+            role_id=role['id'])
+        self.assertEqual([], role_assignments)
+
 
 class TokenTests(object):
     def _create_token_id(self):
