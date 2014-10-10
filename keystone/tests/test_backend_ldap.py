@@ -793,6 +793,9 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         result_unicode = common_ldap_core.utf8_decode(100)
         self.assertEqual(u'100', result_unicode)
 
+    def test_remove_assignments_for_foreign_actors_when_deleting_domain(self):
+        self.skipTest('N/A: LDAP does not support multiple domains')
+
 
 class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
 
