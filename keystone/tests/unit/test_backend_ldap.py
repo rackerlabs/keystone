@@ -883,6 +883,9 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         # returned as part of the ref.
         self.assertIs(True, project_info['enabled'])
 
+    def test_remove_assignments_for_foreign_actors_when_deleting_domain(self):
+        self.skipTest('N/A: LDAP does not support multiple domains')
+
 
 class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
 
