@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_acd4dc47",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 20
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-10-10T21:56:22Z",
+      "side": 1,
+      "message": "Perhaps something like this?\n\n # Maximum depth of the project hierarchy. (integer value)\n # WARNING: setting it to a large value may adversely impact performance.",
+      "revId": "fd7d8f432483df4af6e43e992c1c7ea41969739f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_eca984e0",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-10-10T21:56:22Z",
+      "side": 1,
+      "message": "Is there a corresponding identity-api review for this? Also, to be consistent with \u0027nocatalog\u0027, can we have something like \u0027needparents\u0027?",
+      "revId": "fd7d8f432483df4af6e43e992c1c7ea41969739f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_4cb8d02a",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-10-10T21:56:22Z",
+      "side": 1,
+      "message": "same as above, \u0027needsubtree\u0027 maybe?",
+      "revId": "fd7d8f432483df4af6e43e992c1c7ea41969739f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
