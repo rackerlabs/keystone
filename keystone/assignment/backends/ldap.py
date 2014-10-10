@@ -249,6 +249,9 @@ class Assignment(assignment.AssignmentDriverV9):
     def delete_role_assignments(self, role_id):
         self.role.roles_delete_subtree_by_role(role_id, self.project.tree_dn)
 
+    def delete_domain_assignments(self, domain_id):
+        raise exception.NotImplemented()
+
 
 # TODO(termie): turn this into a data object and move logic to driver
 class ProjectApi(common_ldap.ProjectLdapStructureMixin,
