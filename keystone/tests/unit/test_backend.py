@@ -3817,6 +3817,36 @@ class IdentityTests(object):
                                   {'name': self.role_member['name']})
         # If the previous line didn't raise an exception then the test passes.
 
+    def test_remove_assignments_when_deleting_a_domain(self):
+        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_domain(domain['id'], domain)
+        group = {'name': uuid.uuid4().hex, 'domain_id': DEFAULT_DOMAIN_ID}
+        group = self.identity_api.create_group(group)
+        user = {'name': uuid.uuid4().hex, 'password': uuid.uuid4().hex,
+                'domain_id': DEFAULT_DOMAIN_ID, 'enabled': True}
+        user = self.identity_api.create_user(user)
+        role = {'id': uuid.uuid4().hex,
+                'name': uuid.uuid4().hex}
+        self.assignment_api.create_role(role['id'], role)
+
+        self.assignment_api.create_grant(group_id=group['id'],
+                                         domain_id=domain['id'],
+                                         role_id=role['id'])
+        self.assignment_api.create_grant(user_id=user['id'],
+                                         domain_id=domain['id'],
+                                         role_id=role['id'])
+
+        role_assignments = self.assignment_api.list_role_assignments_for_role(
+            role_id=role['id'])
+        self.assertThat(role_assignments, matchers.HasLength(2))
+
+        self.assignment_api.update_domain(domain['id'], {'enabled': False})
+        self.assignment_api.delete_domain(domain['id'])
+
+        role_assignments = self.assignment_api.list_role_assignments_for_role(
+            role_id=role['id'])
+        self.assertEqual([], role_assignments)
+
 
 class TokenTests(object):
     def _create_token_id(self):

@@ -919,6 +919,12 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         # returned as part of the ref.
         self.assertIs(True, project_info['enabled'])
 
+    def test_remove_assignments_when_deleting_a_domain(self):
+        self.assertRaises(
+            (exception.Forbidden, exception.DomainNotFound),
+            super(BaseLDAPIdentity,
+                  self).test_remove_assignments_when_deleting_a_domain)
+
 
 class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
 
@@ -2454,6 +2460,12 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
     def test_list_domains_non_default_domain_id(self):
         self.skipTest(
             'N/A: Not relevant for multi ldap testing')
+
+    def test_remove_assignments_when_deleting_a_domain(self):
+        # With multi LDAP this method should work, so override the override
+        # from BaseLDAPIdentity
+        super(BaseLDAPIdentity,
+              self).test_remove_assignments_when_deleting_a_domain()
 
     def test_list_users(self):
         # Override the standard list users, since we have added an extra user
