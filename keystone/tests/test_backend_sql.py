@@ -371,6 +371,36 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         user_domains = self.assignment_api.list_domains_for_user(user['id'])
         self.assertThat(user_domains, matchers.HasLength(3))
 
+    def test_remove_assignments_for_foreign_actors_when_deleting_domain(self):
+        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_domain(domain['id'], domain)
+        group = {'name': uuid.uuid4().hex, 'domain_id': DEFAULT_DOMAIN_ID}
+        group = self.identity_api.create_group(group)
+        user = {'name': uuid.uuid4().hex, 'password': uuid.uuid4().hex,
+                'domain_id': DEFAULT_DOMAIN_ID, 'enabled': True}
+        user = self.identity_api.create_user(user)
+        role = {'id': uuid.uuid4().hex,
+                'name': uuid.uuid4().hex}
+        self.assignment_api.create_role(role['id'], role)
+
+        self.assignment_api.create_grant(group_id=group['id'],
+                                         domain_id=domain['id'],
+                                         role_id=role['id'])
+        self.assignment_api.create_grant(user_id=user['id'],
+                                         domain_id=domain['id'],
+                                         role_id=role['id'])
+
+        role_assignments = self.assignment_api.list_role_assignments_for_role(
+            role_id=role['id'])
+        self.assertEqual(2, len(role_assignments))
+
+        self.assignment_api.update_domain(domain['id'], {'enabled': False})
+        self.assignment_api.delete_domain(domain['id'])
+
+        role_assignments = self.assignment_api.list_role_assignments_for_role(
+            role_id=role['id'])
+        self.assertEqual(0, len(role_assignments))
+
 
 class SqlTrust(SqlTests, test_backend.TrustTests):
     pass
