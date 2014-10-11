@@ -50,6 +50,23 @@
       "revId": "fd7d8f432483df4af6e43e992c1c7ea41969739f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_b276ea04",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-10-11T02:12:56Z",
+      "side": 1,
+      "message": "Here we should void make ring, that is, the parent of A is B but the parent of B is A, also the parent of A is B, the parent of B is C, but the parent of C is A, and etc...",
+      "revId": "fd7d8f432483df4af6e43e992c1c7ea41969739f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
