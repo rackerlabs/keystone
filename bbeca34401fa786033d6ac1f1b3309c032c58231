@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_8dcaab6c",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-10-11T02:38:10Z",
+      "side": 1,
+      "message": "Here, can we use *for* too?",
+      "revId": "bbeca34401fa786033d6ac1f1b3309c032c58231",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_4d2523aa",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-10-11T02:38:10Z",
+      "side": 1,
+      "message": "Because the project tree has the max depth, the number of parents of one project should be less than max depth. So, I think here we\u0027d better use *for* to loop which can void the danger of stuck in a death circle.",
+      "revId": "bbeca34401fa786033d6ac1f1b3309c032c58231",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
