@@ -67,6 +67,23 @@
       "revId": "fd7d8f432483df4af6e43e992c1c7ea41969739f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_0d315ba2",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-10-11T02:30:07Z",
+      "side": 1,
+      "message": "Should we make sure the hierarchy always is a tree?",
+      "revId": "fd7d8f432483df4af6e43e992c1c7ea41969739f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
