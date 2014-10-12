@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_ae5afb27",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 68
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-12T21:04:09Z",
+      "side": 1,
+      "message": "Change \"Comparision\" to \"Comparison\"",
+      "revId": "b78d008ef849f8d9c0d03494206c81f1a620d5e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_0e4b075a",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 68
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-12T21:04:09Z",
+      "side": 1,
+      "message": "endpoint_policy is missing now. \n\nAlso, token.persistence.\n\nHow is this list going to be kept in sync?",
+      "revId": "b78d008ef849f8d9c0d03494206c81f1a620d5e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
