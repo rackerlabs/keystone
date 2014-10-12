@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_0e6227d8",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-12T21:26:36Z",
+      "side": 1,
+      "message": "there\u0027s an extra space after ID.",
+      "revId": "2ebf707e26325007ea17c850de71e72f092bbdb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_8ea53706",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-12T21:26:36Z",
+      "side": 1,
+      "message": "rather than keep adding \"and_\" to the method name, give it a generic name. _set_default_attributes() or something.\n\nNot sure why we have to set the parent project ID if it\u0027s None... is there a spec change for this?",
+      "revId": "2ebf707e26325007ea17c850de71e72f092bbdb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_4e826f53",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 2511,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-12T21:26:36Z",
+      "side": 1,
+      "message": "Is parent-Id: None required? If not, don\u0027t add it here since the tests should continue to work as they did before.",
+      "revId": "2ebf707e26325007ea17c850de71e72f092bbdb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
