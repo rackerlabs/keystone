@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_c6454916",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2014-10-13T22:08:25Z",
+      "side": 1,
+      "message": "I think this line needs to be wrapped to be shorter.\n\nSee https://wiki.openstack.org/wiki/Documentation/DocBook_conventions#Avoid_long_lines\n\nThe length is not strictly followed in this doc though, however would still be nice to wrap the line for readability and consistency.",
+      "revId": "b8af874635adee252f420bb6b7f4545692bc995b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
