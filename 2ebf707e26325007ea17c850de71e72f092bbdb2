@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_835ee5e7",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-13T12:32:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_0e6227d8",
+      "revId": "2ebf707e26325007ea17c850de71e72f092bbdb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_8ea53706",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 19
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_43f23d9b",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-13T12:32:06Z",
+      "side": 1,
+      "message": "Done (regarding the \"and_\" in the method).\n\nIn the HM spec I think that we do not specify the LDAP backend. We have some reasons to add the parent_id here:\n- keep the API return consistent and maintain the semantics. As a user, I\u0027d wonder why the \"parent_id\" is not present in the returned objects\n- we have tons of backend tests that are not overriden by the test_backend_ldap tests (and shouldn\u0027t, since they are cases which must pass in this backend)",
+      "parentUuid": "baa201ad_8ea53706",
+      "revId": "2ebf707e26325007ea17c850de71e72f092bbdb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_4e826f53",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 19
@@ -47,6 +83,24 @@
       "writtenOn": "2014-10-12T21:26:36Z",
       "side": 1,
       "message": "Is parent-Id: None required? If not, don\u0027t add it here since the tests should continue to work as they did before.",
+      "revId": "2ebf707e26325007ea17c850de71e72f092bbdb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_a3e049cd",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 2511,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-13T12:32:06Z",
+      "side": 1,
+      "message": "Actually, here and in the next test they are required because the checking is done via assertDictEqual() instead of assertDictContainsSubset() like the previous test.",
+      "parentUuid": "baa201ad_4e826f53",
       "revId": "2ebf707e26325007ea17c850de71e72f092bbdb2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
