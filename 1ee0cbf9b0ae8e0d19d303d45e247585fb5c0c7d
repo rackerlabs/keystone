@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_fa8aef62",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-10-13T14:40:53Z",
+      "side": 1,
+      "message": "I\u0027d probably remove all of these comments now that everything applies to JSON only.",
+      "revId": "1ee0cbf9b0ae8e0d19d303d45e247585fb5c0c7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_fa4f4f32",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-10-13T14:40:53Z",
+      "side": 1,
+      "message": "What does JSON empty auth look like and can we just do that here instead?",
+      "revId": "1ee0cbf9b0ae8e0d19d303d45e247585fb5c0c7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
