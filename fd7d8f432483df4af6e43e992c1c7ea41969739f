@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_0ed3f538",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 20
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-13T16:44:24Z",
+      "side": 1,
+      "message": "++ thanks for the suggestion.",
+      "parentUuid": "baa201ad_acd4dc47",
+      "revId": "fd7d8f432483df4af6e43e992c1c7ea41969739f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_eca984e0",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 20
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_0e885521",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-13T16:44:24Z",
+      "side": 1,
+      "message": "The review that handle this changes is this one: https://review.openstack.org/#/c/111355/\n\nRegarding the changing of the paramater name, makes sense to wait for reviews in the indentity-api patch, right?",
+      "parentUuid": "baa201ad_eca984e0",
+      "revId": "fd7d8f432483df4af6e43e992c1c7ea41969739f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_4cb8d02a",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 20
@@ -47,6 +83,24 @@
       "writtenOn": "2014-10-10T21:56:22Z",
       "side": 1,
       "message": "same as above, \u0027needsubtree\u0027 maybe?",
+      "revId": "fd7d8f432483df4af6e43e992c1c7ea41969739f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_2e8b591f",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-13T16:44:24Z",
+      "side": 1,
+      "message": "same as above \u003d)",
+      "parentUuid": "baa201ad_4cb8d02a",
       "revId": "fd7d8f432483df4af6e43e992c1c7ea41969739f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +135,24 @@
       "writtenOn": "2014-10-11T02:30:07Z",
       "side": 1,
       "message": "Should we make sure the hierarchy always is a tree?",
+      "revId": "fd7d8f432483df4af6e43e992c1c7ea41969739f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_6e38013e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-13T16:44:24Z",
+      "side": 1,
+      "message": "it\u0027s impossible to add circular references via create_project(). Since we would need to update A or B parents after their creation. Also, it\u0027s not possible to create circular references via update_project() (the parent_id update is forbidden).",
+      "parentUuid": "baa201ad_0d315ba2",
       "revId": "fd7d8f432483df4af6e43e992c1c7ea41969739f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
