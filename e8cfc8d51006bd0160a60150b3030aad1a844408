@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_cff656f9",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-10-13T09:14:53Z",
+      "side": 1,
+      "message": "Please, add a space after comma",
+      "revId": "e8cfc8d51006bd0160a60150b3030aad1a844408",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_2fe7e241",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 796,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-10-13T09:14:53Z",
+      "side": 1,
+      "message": "Three or four?",
+      "revId": "e8cfc8d51006bd0160a60150b3030aad1a844408",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
