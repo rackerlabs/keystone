@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_a4583e57",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 548,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2014-10-13T23:16:51Z",
+      "side": 0,
+      "message": "This seems correct.\n\nThe test is based from oslotest, and the sample test I found in there have the expected result as second argument.\n\nhttps://github.com/openstack/oslotest/blob/356f0603ca4af81527c80a00e04149a92aabdd7f/tests/unit/test_base.py",
+      "revId": "9025b64a8f2bf5cf01a18453d6728e081bd2c3b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
