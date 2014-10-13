@@ -33,6 +33,24 @@
       "revId": "bbeca34401fa786033d6ac1f1b3309c032c58231",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_6ecd61b7",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-13T16:34:32Z",
+      "side": 1,
+      "message": "circular references are not possible right now, since we do not allow the parent_id update (see the next patch in the series). In the previous patch we have a comment where we decided to not have such check. So I think that we should maintain the code as it is, using the while loop.",
+      "parentUuid": "baa201ad_4d2523aa",
+      "revId": "bbeca34401fa786033d6ac1f1b3309c032c58231",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
