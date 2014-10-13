@@ -201,6 +201,8 @@ Protocol
 A protocol contains information that dictates which Mapping rules to use for an incoming
 request made by an IdP. An IdP may have multiple supported protocols.
 
+In the case of SAML2 federation, and in order to be able to authenticate with the SAML authentication plugins shipped with the keystoneclient library, the protocol **must** be named ``saml2`` as shown above in the Apache configuration sample.
+
 Add `Protocol object
 <https://github.com/openstack/identity-api/blob/master/v3/src/markdown/identity-api-v3-os-federation-ext.md#add-a-supported-protocol-and-attribute-mapping-combination-to-an-identity-provider-put-os-federationidentity_providersidp_idprotocolsprotocol_id>`__ and specify the mapping id
 you want to use with the combination of the IdP and Protocol.
