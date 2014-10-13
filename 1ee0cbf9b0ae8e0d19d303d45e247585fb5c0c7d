@@ -69,6 +69,24 @@
       "revId": "1ee0cbf9b0ae8e0d19d303d45e247585fb5c0c7d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_f72e7da4",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-13T19:49:04Z",
+      "side": 1,
+      "message": "So, from what I understand just by glancing through the code, if auth \u003d dict() then def _get_project_id_from_auth() will return tenant_id \u003d None. As a result, if tenant_id is None def _get_project_roles_and_ref() will return (None, []) as the tenant_ref and role list. \n\nI *think* what Jamie means by that comment is that _get_project_id_from_auth() has auth.get() calls, expecting auth to be of type dictionary.",
+      "parentUuid": "baa201ad_7758cdfa",
+      "revId": "1ee0cbf9b0ae8e0d19d303d45e247585fb5c0c7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
