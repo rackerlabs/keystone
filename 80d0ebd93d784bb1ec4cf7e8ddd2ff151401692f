@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_baa947df",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-13T14:32:29Z",
+      "side": 0,
+      "message": "Why are you omitting some operations?",
+      "revId": "80d0ebd93d784bb1ec4cf7e8ddd2ff151401692f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_3a9e37b9",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-13T14:32:29Z",
+      "side": 0,
+      "message": "Same here.",
+      "revId": "80d0ebd93d784bb1ec4cf7e8ddd2ff151401692f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_7aa8bfdb",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-13T14:32:29Z",
+      "side": 0,
+      "message": "And here...",
+      "revId": "80d0ebd93d784bb1ec4cf7e8ddd2ff151401692f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
