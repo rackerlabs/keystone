@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_7f624dd9",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-14T13:27:27Z",
+      "side": 1,
+      "message": "Hi @Alexander, this implementation does not use recursion (is a simple BFS algorithm) and is not a prototype, it\u0027s a first solution proposal and the scalability concerns are covered right now by limiting the tree depth, which we suggest to be only 3 or 5 levels (this restriction is made in the next patch of this series). The algorithm makes one db query for each level of the tre, using the \"in\" statement, in the worst case we would make N db queries, where N is the tree depth.\n\nI wasn\u0027t aware about MPTT and looks like a great solution for the next steps of hierarchical multitenancy, IMHO.\n\nWill wait for more reviews and expect some feedback about the current implementation and the proposal do modify the schema/code do use MPTT.",
+      "parentUuid": "baa201ad_39954540",
+      "revId": "8f64e9884bb3b5fdf8b448994d41da712ed1888c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_39caa54f",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 22
