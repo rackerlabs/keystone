@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_39954540",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-10-14T12:37:24Z",
+      "side": 1,
+      "message": "Is this request really needed?\nCan\u0027t you just pass project_id to _get_children below?\nFurthermore: recursion can be totally avoided if materialized paths or MPTT is used.\nAs a prototype it\u0027s ok, but there is nonzero chance that it\u0027ll land into master just like that...",
+      "revId": "8f64e9884bb3b5fdf8b448994d41da712ed1888c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_39caa54f",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-10-14T12:37:24Z",
+      "side": 1,
+      "message": "Both patterns stated above provide this function out of the box.\nI suggest using materialized path.\nThe only disadvantage is an additional field to data model.",
+      "revId": "8f64e9884bb3b5fdf8b448994d41da712ed1888c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_b9ddb516",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-10-14T12:37:24Z",
+      "side": 1,
+      "message": "MPTT gives opportunity to detect leaves without database query.",
+      "revId": "8f64e9884bb3b5fdf8b448994d41da712ed1888c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
