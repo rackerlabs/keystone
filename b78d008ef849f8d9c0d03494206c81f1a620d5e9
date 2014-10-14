@@ -69,6 +69,24 @@
       "revId": "b78d008ef849f8d9c0d03494206c81f1a620d5e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_dc08a7db",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 68
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-10-14T12:57:57Z",
+      "side": 1,
+      "message": "I have no better idea than automate the list collecting.",
+      "parentUuid": "baa201ad_22f1bacd",
+      "revId": "b78d008ef849f8d9c0d03494206c81f1a620d5e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
