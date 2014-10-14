@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_8bfed3ac",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-10-14T18:22:24Z",
+      "side": 1,
+      "message": "There is an example for sqlalchemy: https://bitbucket.org/zzzeek/sqlalchemy/src/master//examples/nested_sets/nested_sets.py\n\nBut I\u0027d rather use materialized path: it has 1 additional field and not require mass update on data change as MPTT.\nI mentioned MPTT since it\u0027s known as a popular pattern implemented many times.\n\nSimply put MP adds a field with the path from root to leaf separated with something:\n\"a1bc,cf21,edb3\"\nIt gives:\n* all hierarchy ids in place [a1bc,cf21,edb3]\n* all descendants as \"select ... where path like \u0027a1bc,cf21,edb3,%\u0027\" (index is applicable)\n\nIf RDBMS allows array field as a path, replace \"like\" with \"in\" and be happy :)",
+      "parentUuid": "baa201ad_7f624dd9",
+      "revId": "8f64e9884bb3b5fdf8b448994d41da712ed1888c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_39caa54f",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 22
