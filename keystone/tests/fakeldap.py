@@ -31,6 +31,7 @@ from six import moves
 
 from keystone.common.ldap import core
 from keystone.common import utils
+from keystone import exception
 from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log
 
@@ -376,3 +377,13 @@ class FakeLdap(object):
 
         LOG.debug('search result: %s', objects)
         return objects
+
+    def search_ext(self, base, scope,
+                   filterstr='(objectClass=*)', attrlist=None, attrsonly=0,
+                   serverctrls=None, clientctrls=None,
+                   timeout=-1, sizelimit=0):
+        raise exception.NotImplemented()
+
+    def result3(self, msgid=ldap.RES_ANY, all=1, timeout=None,
+                resp_ctrl_classes=None):
+        raise exception.NotImplemented()
