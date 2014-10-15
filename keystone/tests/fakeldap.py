@@ -31,6 +31,7 @@ from six import moves
 
 from keystone.common.ldap import core
 from keystone.common import utils
+from keystone import exception
 from keystone.openstack.common.gettextutils import _
 from keystone.openstack.common import log
 
@@ -186,6 +187,7 @@ class FakeLdap(object):
             self.db = FakeShelves[url]
         else:
             self.db = shelve.open(url[7:])
+        self.page_size = 0
 
     def simple_bind_s(self, dn, password):
         """This method is ignored, but provided for compatibility."""
@@ -376,3 +378,84 @@ class FakeLdap(object):
 
         LOG.debug('search result: %s', objects)
         return objects
+
+    def _paged_search_s(self, dn, scope, query, attrlist=None):
+        res = []
+        use_old_paging_api = False
+        # The API for the simple paged results control changed between
+        # python-ldap 2.3 and 2.4.  We need to detect the capabilities
+        # of the python-ldap version we are using.
+        if hasattr(ldap, 'LDAP_CONTROL_PAGE_OID'):
+            use_old_paging_api = True
+            lc = ldap.controls.SimplePagedResultsControl(
+                controlType=ldap.LDAP_CONTROL_PAGE_OID,
+                criticality=True,
+                controlValue=(self.page_size, ''))
+            page_ctrl_oid = ldap.LDAP_CONTROL_PAGE_OID
+        else:
+            lc = ldap.controls.libldap.SimplePagedResultsControl(
+                criticality=True,
+                size=self.page_size,
+                cookie='')
+            page_ctrl_oid = ldap.controls.SimplePagedResultsControl.controlType
+
+        dn_utf8 = utf8_encode(dn)
+        query_utf8 = utf8_encode(query)
+        if attrlist is None:
+            attrlist_utf8 = None
+        else:
+            attrlist = [attr for attr in attrlist if attr is not None]
+            attrlist_utf8 = map(utf8_encode, attrlist)
+        msgid = self.search_ext(dn_utf8,
+                                scope,
+                                query_utf8,
+                                attrlist_utf8,
+                                serverctrls=[lc])
+        # Endless loop request pages on ldap server until it has no data
+        while True:
+            # Request to the ldap server a page with 'page_size' entries
+            rtype, rdata, rmsgid, serverctrls = self.result3(msgid)
+            # Receive the data
+            res.extend(rdata)
+            pctrls = [c for c in serverctrls
+                      if c.controlType == page_ctrl_oid]
+            if pctrls:
+                # LDAP server supports pagination
+                if use_old_paging_api:
+                    est, cookie = pctrls[0].controlValue
+                    lc.controlValue = (self.page_size, cookie)
+                else:
+                    cookie = lc.cookie = pctrls[0].cookie
+
+                if cookie:
+                    # There is more data still on the server
+                    # so we request another page
+                    msgid = self.search_ext(dn_utf8,
+                                            scope,
+                                            query_utf8,
+                                            attrlist_utf8,
+                                            serverctrls=[lc])
+                else:
+                    # Exit condition no more data on server
+                    break
+            else:
+                LOG.warning(_('LDAP Server does not support paging. '
+                              'Disable paging in keystone.conf to '
+                              'avoid this message.'))
+                self._disable_paging()
+                break
+        return res
+
+    def _disable_paging(self):
+        # Disable the pagination from now on
+        self.page_size = 0
+
+    def search_ext(self, base, scope,
+                   filterstr='(objectClass=*)', attrlist=None, attrsonly=0,
+                   serverctrls=None, clientctrls=None,
+                   timeout=-1, sizelimit=0):
+        raise exception.NotImplemented()
+
+    def result3(self, msgid=ldap.RES_ANY, all=1, timeout=None,
+                resp_ctrl_classes=None):
+        raise exception.NotImplemented()
