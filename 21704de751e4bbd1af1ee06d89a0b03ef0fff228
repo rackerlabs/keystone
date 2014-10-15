@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_11ca0d4f",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-10-15T13:19:50Z",
+      "side": 1,
+      "message": "Seem strange to maintain the valid stat through all of these calls when you could just as easily short circuit and exit after each failed check.",
+      "revId": "21704de751e4bbd1af1ee06d89a0b03ef0fff228",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_512015f7",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-10-15T13:19:50Z",
+      "side": 1,
+      "message": "The majority of this logic probably should be in the manager.  THe controller should only hold code that is specific to an HTTP of the function.  If you can imagein a case where some other work flow could execute the code that by passed this controller, then you should move code to the Manager.",
+      "revId": "21704de751e4bbd1af1ee06d89a0b03ef0fff228",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_912c3d4c",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-10-15T13:19:50Z",
+      "side": 1,
+      "message": "use a better name than victims.  It is not immediately clear who is a \"victim.\"  And it sounds morbid.\n\nGood approach deleting from the top down.  That should avoid race conditions.",
+      "revId": "21704de751e4bbd1af1ee06d89a0b03ef0fff228",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
