@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_a3b0ed8b",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-15T23:03:33Z",
+      "side": 1,
+      "message": "I think this is correct...but the implication of this is that you must use a domain scoped token for anything that uses rule:cloud_admin",
+      "revId": "3e753db685fd8043bc5d0b4f9cfd03390c9d9413",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
