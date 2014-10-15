@@ -960,10 +960,22 @@ class KeystoneLDAPHandler(LDAPHandler):
 
     def _paged_search_s(self, base, scope, filterstr, attrlist=None):
         res = []
-        lc = ldap.controls.SimplePagedResultsControl(
-            controlType=ldap.LDAP_CONTROL_PAGE_OID,
-            criticality=True,
-            controlValue=(self.page_size, ''))
+        # The API for the simple paged results control changed between
+        # python-ldap 2.3 and 2.4.  We need to detect the capabilities
+        # of the python-ldap version we are using.
+        if hasattr(ldap, 'LDAP_CONTROL_PAGE_OID'):
+            lc = ldap.controls.SimplePagedResultsControl(
+                controlType=ldap.LDAP_CONTROL_PAGE_OID,
+                criticality=True,
+                controlValue=(self.page_size, ''))
+            page_ctrl_oid = ldap.LDAP_CONTROL_PAGE_OID
+        else:
+            lc = ldap.controls.SimplePagedResultsControl(
+                criticality=True,
+                size=self.page_size,
+                cookie='')
+            page_ctrl_oid = ldap.controls.SimplePagedResultsControl.controlType
+
         base_utf8 = utf8_encode(base)
         filterstr_utf8 = utf8_encode(filterstr)
         if attrlist is None:
@@ -983,7 +995,7 @@ class KeystoneLDAPHandler(LDAPHandler):
             # Receive the data
             res.extend(rdata)
             pctrls = [c for c in serverctrls
-                      if c.controlType == ldap.LDAP_CONTROL_PAGE_OID]
+                      if c.controlType == page_ctrl_oid]
             if pctrls:
                 # LDAP server supports pagination
                 est, cookie = pctrls[0].controlValue
