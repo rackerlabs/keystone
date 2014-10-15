@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_463d8f8e",
+        "filename": "etc/policy.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-10-15T23:30:28Z",
+      "side": 1,
+      "message": "I think that these should be restricted to the \"cloud_admin\" rule only.  We don\u0027t want project admins performing write operations against regions.  See my related patch to the existing domain-aware v3 policy:\n\n  https://review.openstack.org/128788",
+      "revId": "d12f5a53edd6e3696608c533f59e3a96cc8ce2a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
