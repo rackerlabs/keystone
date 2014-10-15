@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_1ca761a8",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 6534
+      },
+      "writtenOn": "2014-10-15T17:16:41Z",
+      "side": 1,
+      "message": "This is conceptually wrong. The protocol field should tell keystone which protocol handling module to use in order to decode the incoming authentication information, and that is all.\n\nWhich mapping rule to use should be independent of the protocol i.e. the same mapping rule(s) can be used by multiple protocols, or it should be possible to specify that no mapping rules are to be used for a particular IDP/protocol combination. It is not possible at the current time to do the latter.\n\nFurthermore, it should be possible to change the mapping rules to be used without changing an IdP/Protocol combination.",
+      "revId": "ae625a6da2fdbd0e1c8b7d565ca8668216426eab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
