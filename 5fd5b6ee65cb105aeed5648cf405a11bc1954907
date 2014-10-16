@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_47ad709a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-16T19:48:51Z",
+      "side": 1,
+      "message": "no, this is checking that if you included a different parent_id that update can no proceed.\n\nThe get will return None if there isn\u0027t a parent_id key.",
+      "parentUuid": "baa201ad_a480e1bf",
+      "revId": "5fd5b6ee65cb105aeed5648cf405a11bc1954907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_242cf1ab",
         "filename": "keystone/common/config.py",
         "patchSetId": 23
@@ -30,6 +48,24 @@
       "writtenOn": "2014-10-16T15:53:26Z",
       "side": 1,
       "message": "for some reason this sentence doesn\u0027t read well, maybe:\n\n\"The maximum depth of project hierarchy, limited for performance reasons\"",
+      "revId": "5fd5b6ee65cb105aeed5648cf405a11bc1954907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_4784900a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-16T19:48:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_242cf1ab",
       "revId": "5fd5b6ee65cb105aeed5648cf405a11bc1954907",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_a7745c36",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 2690,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-16T19:48:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_3f2eba8c",
+      "revId": "5fd5b6ee65cb105aeed5648cf405a11bc1954907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_ffe4320e",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 23
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_e77bc4f2",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-16T19:48:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_ffe4320e",
+      "revId": "5fd5b6ee65cb105aeed5648cf405a11bc1954907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_1f1736ef",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 23
@@ -81,6 +153,24 @@
       "writtenOn": "2014-10-16T15:53:26Z",
       "side": 1,
       "message": "same here",
+      "revId": "5fd5b6ee65cb105aeed5648cf405a11bc1954907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_077fe8e0",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-16T19:48:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_1f1736ef",
       "revId": "5fd5b6ee65cb105aeed5648cf405a11bc1954907",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
