@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_9e040519",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-16T17:54:43Z",
+      "side": 1,
+      "message": "this comment doesn\u0027t tell us enough about whats going on, how about:\n\n  Refactor: create a helper function to create users",
+      "revId": "ccd56374a6fa355a3f0345c4abc966d69e3d7adb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_1e43b56c",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 370,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-16T17:54:43Z",
+      "side": 1,
+      "message": "maybe have this in test_v3.py there are lots of instances aside from test_v3_protection that do this. Some will change more than password though.",
+      "revId": "ccd56374a6fa355a3f0345c4abc966d69e3d7adb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_fe68b1f6",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-16T17:54:43Z",
+      "side": 1,
+      "message": "user[\u0027password\u0027] \u003d uuid.uuid4().hex",
+      "revId": "ccd56374a6fa355a3f0345c4abc966d69e3d7adb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_7eada130",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-16T17:54:43Z",
+      "side": 1,
+      "message": "you can just type:\n\n  return self.identity_api.create_user(user)",
+      "revId": "ccd56374a6fa355a3f0345c4abc966d69e3d7adb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_be8c69d8",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 375,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-16T17:54:43Z",
+      "side": 1,
+      "message": "this line seems unnecessary",
+      "revId": "ccd56374a6fa355a3f0345c4abc966d69e3d7adb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
