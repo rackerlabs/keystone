@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_6d609501",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-16T21:18:10Z",
+      "side": 1,
+      "message": "...(maybe I\u0027m being dumb), but if you have already set a parent_id (i.e. existing parent_id is not None) and then you go to update that project to change, say, the description, won\u0027t this check fire if you don\u0027t include the same parent_id in the update request?",
+      "parentUuid": "baa201ad_47ad709a",
+      "revId": "5fd5b6ee65cb105aeed5648cf405a11bc1954907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_242cf1ab",
         "filename": "keystone/common/config.py",
         "patchSetId": 23
