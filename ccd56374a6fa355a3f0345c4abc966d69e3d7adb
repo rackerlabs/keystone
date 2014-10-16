@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_01cd1831",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 10765
+      },
+      "writtenOn": "2014-10-16T18:19:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa201ad_816588e2",
+      "revId": "ccd56374a6fa355a3f0345c4abc966d69e3d7adb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_e14f3469",
         "filename": "keystone/tests/test_v3_protection.py",
         "patchSetId": 1
