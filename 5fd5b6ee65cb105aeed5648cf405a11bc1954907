@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_a480e1bf",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-16T15:53:26Z",
+      "side": 1,
+      "message": "...so does this mean you HAVE to include a parent_id in the update project details?  That\u0027s a bit odd...since normally you can just not include those attributes you don\u0027t want to change.",
+      "revId": "5fd5b6ee65cb105aeed5648cf405a11bc1954907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_242cf1ab",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-16T15:53:26Z",
+      "side": 1,
+      "message": "for some reason this sentence doesn\u0027t read well, maybe:\n\n\"The maximum depth of project hierarchy, limited for performance reasons\"",
+      "revId": "5fd5b6ee65cb105aeed5648cf405a11bc1954907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_3f2eba8c",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 2690,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-16T15:53:26Z",
+      "side": 1,
+      "message": "Shouldn\u0027t there be an update test here to make sure that you can update a project that has a value parent_id (i.e. update, say, the description)",
+      "revId": "5fd5b6ee65cb105aeed5648cf405a11bc1954907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_ffe4320e",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-16T15:53:26Z",
+      "side": 1,
+      "message": "You should probably test the number of projects returned in parents...if it return more than you expected, the current test would not spot it.  Remember Jurassic Park? :-)",
+      "revId": "5fd5b6ee65cb105aeed5648cf405a11bc1954907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_1f1736ef",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-16T15:53:26Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "5fd5b6ee65cb105aeed5648cf405a11bc1954907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
