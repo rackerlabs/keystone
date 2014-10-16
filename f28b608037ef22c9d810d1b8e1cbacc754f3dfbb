@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_fec191e4",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-16T17:52:53Z",
+      "side": 1,
+      "message": "How about something like:\n\nwhile children:\n    children_ids \u003d []\n    for ref in children:\n        if ref in subtree:\n            raise error here\n        children_ids.append(ref)\n    subtree +\u003d children\n    children \u003d self._get_children(session, children_ids)",
+      "parentUuid": "baa201ad_29004caa",
+      "revId": "f28b608037ef22c9d810d1b8e1cbacc754f3dfbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_69d41420",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 24
