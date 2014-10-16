@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_29004caa",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-16T14:59:09Z",
+      "side": 1,
+      "message": "I know we have discussed this before....but I have to say, on reflection, I am still against leaving an unqualified loop here.  I agree that as the code standard today, this can\u0027t recurse indefinitely, but someone might change it without understanding or some other bug might lead to incorrect data being pumped into the DB...and in that case it\u0027s OK if we fail, but not lock up in an infinite loop.\n\nI would really suggest we change this.  Either by a simple \"have I been here before\" check or some of the more advanced suggestions by other reviewers.",
+      "revId": "f28b608037ef22c9d810d1b8e1cbacc754f3dfbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_69d41420",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-16T14:59:09Z",
+      "side": 1,
+      "message": "same here...",
+      "revId": "f28b608037ef22c9d810d1b8e1cbacc754f3dfbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_c95a60f1",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-16T14:59:09Z",
+      "side": 1,
+      "message": "Is this method going to be exposed as a public API?  I don\u0027t see that in any of the follow on patches....if it is not, then do we need protection?",
+      "revId": "f28b608037ef22c9d810d1b8e1cbacc754f3dfbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_a9a8bc8c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 921,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-16T14:59:09Z",
+      "side": 1,
+      "message": "It would be good, for completeness, to add the param descriptions here and in the methods below.",
+      "revId": "f28b608037ef22c9d810d1b8e1cbacc754f3dfbb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
