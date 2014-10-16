@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_cc2d0791",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 10765
+      },
+      "writtenOn": "2014-10-16T18:28:29Z",
+      "side": 1,
+      "message": "The variable \u0027password\u0027 is needed due to some tests that build an auth variable, like in here: https://github.com/openstack/keystone/blob/master/keystone/tests/test_v3_protection.py#L543",
+      "revId": "08315dbd88c5c95c386e215d12ef9a3cffd01efb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_4c591734",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 10765
+      },
+      "writtenOn": "2014-10-16T18:28:29Z",
+      "side": 1,
+      "message": "The password used to build auth variables is get here.",
+      "revId": "08315dbd88c5c95c386e215d12ef9a3cffd01efb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
