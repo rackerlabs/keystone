@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_816588e2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2014-10-16T17:58:29Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "baa201ad_9e040519",
+      "revId": "ccd56374a6fa355a3f0345c4abc966d69e3d7adb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_e14f3469",
         "filename": "keystone/tests/test_v3_protection.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-10-16T17:56:29Z",
       "side": 1,
       "message": "You\u0027re creating the user1 twice. Change this for user3.",
+      "revId": "ccd56374a6fa355a3f0345c4abc966d69e3d7adb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_e1ebb410",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2014-10-16T17:58:29Z",
+      "side": 1,
+      "message": "And before, the users 2 and 3 are creating in DomainB, not in DomainA.",
+      "parentUuid": "baa201ad_e14f3469",
       "revId": "ccd56374a6fa355a3f0345c4abc966d69e3d7adb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
