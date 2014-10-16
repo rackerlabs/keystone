@@ -109,9 +109,11 @@ class Identity(identity.Driver):
         try:
             user_ref = self._get_user(session, user_id)
         except exception.UserNotFound:
-            raise AssertionError(_('Invalid user / password'))
+            raise AssertionError(_('Invalid user %s or invalid password') %
+                                 user_ref.name)
         if not self._check_password(password, user_ref):
-            raise AssertionError(_('Invalid user / password'))
+            raise AssertionError(_('Invalid user %s or invalid password') %
+                                 user_ref.name)
         return identity.filter_user(user_ref.to_dict())
 
     # user crud
