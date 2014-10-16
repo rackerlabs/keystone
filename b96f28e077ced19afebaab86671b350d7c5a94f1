@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_4e71160b",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 1500,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-16T14:35:24Z",
+      "side": 1,
+      "message": "...in general it\u0027s not usually safe to hold the session open over the downgrade....with some databases if you subsequently use that session after this, you can get incorrect results....have a look at some of the other tests.",
+      "revId": "b96f28e077ced19afebaab86671b350d7c5a94f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
