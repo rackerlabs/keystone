@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "baa201ad_a2537c15",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3072,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2014-10-16T10:15:25Z",
+      "side": 1,
+      "message": "redelegation should be disabled by default, e.g this test should still work, so can we remove the skip?",
+      "revId": "21704de751e4bbd1af1ee06d89a0b03ef0fff228",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_62b3544d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3329,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2014-10-16T10:15:25Z",
+      "side": 1,
+      "message": "Do we also need to test that creating a new token via trust2 doesn\u0027t work?",
+      "revId": "21704de751e4bbd1af1ee06d89a0b03ef0fff228",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_11ca0d4f",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 5
@@ -19,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_c2c7a096",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2014-10-16T10:15:25Z",
+      "side": 1,
+      "message": "Agree, seems like this should be something like:\n\n  if not redelegated_trust.get(\u0027allow_redelegation\u0027):\n    raise exception.Forbidden   ...\n\nIt\u0027d also be nice to avoid the cast to bool, if possible.",
+      "parentUuid": "baa201ad_11ca0d4f",
+      "revId": "21704de751e4bbd1af1ee06d89a0b03ef0fff228",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_512015f7",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 5
@@ -30,6 +82,23 @@
       "writtenOn": "2014-10-15T13:19:50Z",
       "side": 1,
       "message": "The majority of this logic probably should be in the manager.  THe controller should only hold code that is specific to an HTTP of the function.  If you can imagein a case where some other work flow could execute the code that by passed this controller, then you should move code to the Manager.",
+      "revId": "21704de751e4bbd1af1ee06d89a0b03ef0fff228",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_a20b7cd4",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2014-10-16T10:15:25Z",
+      "side": 1,
+      "message": "Again, just returning instead of all the \u0026\u003d would be clearer IMO.\n\nAlso all of these cases need tests.",
       "revId": "21704de751e4bbd1af1ee06d89a0b03ef0fff228",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
