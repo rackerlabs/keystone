@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_420b9b7c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-16T22:42:34Z",
+      "side": 1,
+      "message": "(so I may still be being dumb, but....) \n\nLet\u0027s say you have created a project with a parent_id.  You then call update_project() to update the description.  It should be possible that the body is just (i.e. you should only have to include the fields you are updating):\n\n{\n    \u0027description\u0027: \u0027my text\u0027\n}\n\nHowever, with the code as written, that wouldn\u0027t work, since the code would claim you are changing the parent_id.  If the code, however, was written like this:\n\nif \u0027parent_id\u0027 in tenant and tenant.get(\u0027parent_id\u0027) !\u003d parent_id:\n    raise exception...\n\nthen such an update would work, It would also ensure that if some one tried to explicitly set the parent_id to None for a project that already had a parent_id, e.g. \n\n{\n    \u0027parent_id\u0027: None\n}\n\n..then this would fail as required.",
+      "parentUuid": "baa201ad_5fa1b444",
+      "revId": "5fd5b6ee65cb105aeed5648cf405a11bc1954907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_242cf1ab",
         "filename": "keystone/common/config.py",
         "patchSetId": 23
