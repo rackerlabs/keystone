@@ -190,6 +190,12 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
                           'name': u'Default'}
                 self.assignment_api.create_domain(DEFAULT_DOMAIN_ID, domain)
 
+    def create_user(self, domain_id):
+        user = self.new_user_ref(domain_id=domain_id)
+        user['password'] = uuid.uuid4().hex
+
+        return self.identity_api.create_user(user)
+
     def load_sample_data(self):
         self._populate_default_domain()
         self.domain_id = uuid.uuid4().hex
@@ -203,10 +209,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         self.project['id'] = self.project_id
         self.assignment_api.create_project(self.project_id, self.project)
 
-        self.user = self.new_user_ref(domain_id=self.domain_id)
-        password = self.user['password']
-        self.user = self.identity_api.create_user(self.user)
-        self.user['password'] = password
+        self.user = self.create_user(self.domain_id)
         self.user_id = self.user['id']
 
         self.default_domain_project_id = uuid.uuid4().hex
