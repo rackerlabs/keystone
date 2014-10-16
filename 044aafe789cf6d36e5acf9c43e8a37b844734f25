@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_b9e49c0d",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1427,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-16T00:40:01Z",
+      "side": 1,
+      "message": "The \u0026 \u0027\u0027 possibility is confusing and should be unnecessary. It would make more sense to split it this up and only if ldap_filter or self.ldap_filter.\n\n query \u003d (expr.objectClass \u003d\u003d self.object_class)\n if ldap_filter or self.ldap_filter:\n    query \u0026\u003d ldap_filter or self.ldap_filter",
+      "revId": "044aafe789cf6d36e5acf9c43e8a37b844734f25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_d99b2071",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1598,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-16T00:40:01Z",
+      "side": 1,
+      "message": "this happens a few times so seems like it could be a function.",
+      "revId": "044aafe789cf6d36e5acf9c43e8a37b844734f25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_19892826",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-16T00:40:01Z",
+      "side": 1,
+      "message": "import ldap.dn and use ldap.dn rather than have to rename to ldap_dn.",
+      "revId": "044aafe789cf6d36e5acf9c43e8a37b844734f25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_39bc2cbb",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-16T00:40:01Z",
+      "side": 1,
+      "message": "super is called here but not for Equality.",
+      "revId": "044aafe789cf6d36e5acf9c43e8a37b844734f25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_f9bd44b2",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-16T00:40:01Z",
+      "side": 1,
+      "message": "this library is going to support \u0026 but not | ?",
+      "revId": "044aafe789cf6d36e5acf9c43e8a37b844734f25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_f9d464ea",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-16T00:40:01Z",
+      "side": 1,
+      "message": "This isn\u0027t going to work because \u0027*\u0027 is going to be escaped: \n \u003e\u003e\u003e str(expr.ALL)\n \u0027(objectClass\u003d\\\\2a)\u0027\n\nIt needs to be (objectClass\u003d*).\n\nAdd a test.",
+      "revId": "044aafe789cf6d36e5acf9c43e8a37b844734f25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_d9732014",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 348,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-16T00:40:01Z",
+      "side": 1,
+      "message": "It looks like a mistake to have \u0027\u0027 here. Maybe a more obvious sentinel could be used instead (expr.NO_FILTER or something). Or, make filter \u0026 self.ldap_filter handle an empty self.ldap_filter so \u0027\u0027 isn\u0027t needed.",
+      "revId": "044aafe789cf6d36e5acf9c43e8a37b844734f25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_595570c0",
+        "filename": "keystone/tests/test_expr.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-16T00:40:01Z",
+      "side": 1,
+      "message": "This should be in keystone/tests/unit/common/ldap/",
+      "revId": "044aafe789cf6d36e5acf9c43e8a37b844734f25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
