@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_ca1a327c",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-17T15:49:36Z",
+      "side": 1,
+      "message": "is this called from anywhere?",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_00a41906",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 875,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-17T15:49:36Z",
+      "side": 1,
+      "message": "It took me a whole to think through why you are doing this...it might be worthy of a slightly more verbose comment",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
