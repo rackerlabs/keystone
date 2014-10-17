@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_4a6ac2b3",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-17T14:54:21Z",
+      "side": 1,
+      "message": "this doesn\u0027t look quite right...isn\u0027t this going to always be true for the first time you come into this while loop?",
+      "revId": "2a478184dd326cc46f4d81511f588c4ae61ad8b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
