@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_481ba372",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 2851,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-17T20:44:12Z",
+      "side": 1,
+      "message": "might it be a good idea to actually use the CONF value directly here...that way if we change this value in the future, we won\u0027t have to change this test?",
+      "revId": "f6ce160213481ec7de7fab9e527658a9fc481457",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
