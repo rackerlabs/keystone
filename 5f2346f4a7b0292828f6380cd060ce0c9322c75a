@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_176a9a19",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-10-17T19:00:00Z",
+      "side": 1,
+      "message": "Please add a check that the initial trust is not disabled.  It can\u0027t be implicit from the token.",
+      "revId": "5f2346f4a7b0292828f6380cd060ce0c9322c75a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
