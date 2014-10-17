@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa201ad_bd9d2f0c",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-17T20:35:59Z",
+      "side": 1,
+      "message": "Is there a reason you didn\u0027t use _LE() here in place of than _() ?",
+      "revId": "7a3b54eabf3b18ab6702bdae3906db4e2f1a7225",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa201ad_ddb75383",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 351,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-17T20:35:59Z",
+      "side": 1,
+      "message": "same here....",
+      "revId": "7a3b54eabf3b18ab6702bdae3906db4e2f1a7225",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
