@@ -255,10 +255,6 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
             values['enabled'] = orig_enabled
         return values
 
-    def check_password(self, user_id, password):
-        user = self.get(user_id)
-        return utils.check_password(password, user.password)
-
     def get_filtered(self, user_id):
         user = self.get(user_id)
         return self.filter_attributes(user)
