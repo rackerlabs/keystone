@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "baa201ad_58a70a0b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-17T00:40:54Z",
+      "side": 1,
+      "message": "Ahh, now I get the use cases. You are right. Will fix it, thanks \u003d)",
+      "parentUuid": "baa201ad_420b9b7c",
+      "revId": "5fd5b6ee65cb105aeed5648cf405a11bc1954907",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_242cf1ab",
         "filename": "keystone/common/config.py",
         "patchSetId": 23
