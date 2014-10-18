@@ -16,6 +16,24 @@
       "revId": "f6ce160213481ec7de7fab9e527658a9fc481457",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_d89e6163",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 2851,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-18T03:06:47Z",
+      "side": 1,
+      "message": "great suggestion @henry-nash, will also change the test with the allowed depth",
+      "parentUuid": "baa201ad_481ba372",
+      "revId": "f6ce160213481ec7de7fab9e527658a9fc481457",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
