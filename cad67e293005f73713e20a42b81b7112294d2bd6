@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_63e86a7d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 856,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-18T09:51:21Z",
+      "side": 1,
+      "message": "Well...I don\u0027t think we actually treat it that way...don\u0027t we honour any inherited assignments we find, even if the OS-INHERIT extension has now been disabled?  If so, I think that was wrong before too!  I\u0027d argue that if the extension is disabled, then we should ignore any inherited assignments we find (we leave them in the DB, but just ignore them)\n\nIf I have the above correct, then maybe we should raises a separate bug to about this and fix it independently of this code refactor - but for now maybe change the comment (and reference the bug) to make it obvious what this code does.",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_00a41906",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 11
@@ -30,6 +47,57 @@
       "writtenOn": "2014-10-17T15:49:36Z",
       "side": 1,
       "message": "It took me a whole to think through why you are doing this...it might be worthy of a slightly more verbose comment",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_c3fe7638",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 896,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-18T09:51:21Z",
+      "side": 1,
+      "message": "...don\u0027t we need to set inherited_to_projects \u003d True?\n\nIf so, quite a few of the methods below need changing too. \n\nAlso, if these are bugs, then it is showing us that our testing is insufficient since these didn\u0027t get caught.",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_0374fefb",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1046,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-18T09:51:21Z",
+      "side": 1,
+      "message": "This method (plus all the methods it calls within this file) is now pretty complex.  That\u0027s not a criticism, just a statement.  I think we really need a very comprehensive doc string that describes what this method has to do in order to satisfy the request.  In particular I\u0027m thinking that we need to explain the algorithms at a high-level in the two cases, depending on whether the effective option is being used.",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_83d62ec4",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1064,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-18T09:51:21Z",
+      "side": 1,
+      "message": "So \u0027effective\u0027 implies we will honour any inherited assignments....which is kind of not obvious from the way this is laid out. Indeed \u0027inherited\u0027 is not used in the block of \u0027effective\u0027 below.  Maybe move the \u0027inherited\u0027 setting to inside the \u0027else\u0027 block below where it is used?\n\nAgain, another thing to but in the doctoring above :-)",
       "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
