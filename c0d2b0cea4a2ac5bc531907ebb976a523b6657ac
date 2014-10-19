@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_115fdf0f",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 975,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-19T19:15:52Z",
+      "side": 1,
+      "message": "The docs say the class is ldap.controls.libldap.SimplePagedResultsControl rather than ldap.controls.SimplePagedResultsControl : http://www.python-ldap.org/doc/html/ldap-\ncontrols.html#ldap.controls.libldap.SimplePagedResultsControl\n\n(I don\u0027t have a python-ldap 2.4 system here so I can only go by the documentation.)",
+      "revId": "c0d2b0cea4a2ac5bc531907ebb976a523b6657ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_319b03cb",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 979,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-19T19:15:52Z",
+      "side": 1,
+      "message": "The docs don\u0027t have controlType as an attribute of SimplePagedResultsControl",
+      "revId": "c0d2b0cea4a2ac5bc531907ebb976a523b6657ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_d1ab97d4",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1008,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-19T19:15:52Z",
+      "side": 1,
+      "message": "suggest combine these lines.",
+      "revId": "c0d2b0cea4a2ac5bc531907ebb976a523b6657ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_b1ae13e6",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1013,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-19T19:15:52Z",
+      "side": 1,
+      "message": "Get rid of this since it was set at line 1005 or 1008",
+      "revId": "c0d2b0cea4a2ac5bc531907ebb976a523b6657ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_11b6ff3d",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-19T19:15:52Z",
+      "side": 1,
+      "message": "this should be moved right after line 361",
+      "revId": "c0d2b0cea4a2ac5bc531907ebb976a523b6657ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_717cab73",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-19T19:15:52Z",
+      "side": 1,
+      "message": "There\u0027s no assert in the test so what is it testing?",
+      "revId": "c0d2b0cea4a2ac5bc531907ebb976a523b6657ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
