@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_bb67d2e9",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-19T07:58:54Z",
+      "side": 1,
+      "message": "The way inherited_to_projects is used here means that it is impossible to  just list all the assignments that are NOT inherited....that may be OK....but is probably not an obvious result of calling the API with inherited_to_projects \u003d False.",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_63e86a7d",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 11
@@ -64,6 +81,23 @@
       "writtenOn": "2014-10-18T09:51:21Z",
       "side": 1,
       "message": "...don\u0027t we need to set inherited_to_projects \u003d True?\n\nIf so, quite a few of the methods below need changing too. \n\nAlso, if these are bugs, then it is showing us that our testing is insufficient since these didn\u0027t get caught.",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_fb615ad4",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 926,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-19T07:58:54Z",
+      "side": 1,
+      "message": "...the way list_role_assignmenst() is currently defined, this call will get both inherited and non-inherited assignments....not sure that\u0027s what we want?",
       "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
