@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "9aa7fdbe_2012b4b1",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2014-10-20T19:35:55Z",
+      "side": 1,
+      "message": "Should we also add an index to parent_id in the project table?",
+      "revId": "3df0d0b97d9450cec39295325c29989beef22ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_2089d4eb",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2014-10-20T19:35:55Z",
+      "side": 1,
+      "message": "nit: subtree.extend(children)",
+      "revId": "3df0d0b97d9450cec39295325c29989beef22ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_a07ea4ac",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2014-10-20T19:35:55Z",
+      "side": 1,
+      "message": "Would it be safer to use \"project.get(\u0027parent_id\u0027)\" here instead?",
+      "revId": "3df0d0b97d9450cec39295325c29989beef22ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_1182684f",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 28
@@ -31,6 +82,24 @@
       "side": 1,
       "message": "I think \"get\" is a better name, because \"subtree\" is just one \"entity\": the subtree of this project. And since we have the docstring specifying that it returns a list, that shouldn\u0027t cause any confusion.",
       "parentUuid": "9aa7fdbe_1182684f",
+      "revId": "3df0d0b97d9450cec39295325c29989beef22ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_e0bb4cc2",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2014-10-20T19:35:55Z",
+      "side": 1,
+      "message": "I wonder if we should add an option for the user to just see the list of direct child projects under the parent project rather than traversing and returning all child projects.",
+      "parentUuid": "9aa7fdbe_541dbe0e",
       "revId": "3df0d0b97d9450cec39295325c29989beef22ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
