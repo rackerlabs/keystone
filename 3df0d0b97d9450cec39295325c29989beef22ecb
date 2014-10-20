@@ -157,6 +157,24 @@
       "revId": "3df0d0b97d9450cec39295325c29989beef22ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_b43185a4",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-20T19:45:43Z",
+      "side": 1,
+      "message": "Do you have an use case for that? We return the whole subtree mainly for hierarchical quotas and inherited roles use cases.",
+      "parentUuid": "9aa7fdbe_e0bb4cc2",
+      "revId": "3df0d0b97d9450cec39295325c29989beef22ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
