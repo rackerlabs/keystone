@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_b4798595",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 970,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-20T19:40:20Z",
+      "side": 1,
+      "message": "Can you use _get_project_endpoint_group_url() to generate the URL here?",
+      "revId": "fc56e36f2936ec1a5b497e81d0e391d112d3dd2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
