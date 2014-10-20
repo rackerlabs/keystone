@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_5a79652e",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-20T18:10:14Z",
+      "side": 1,
+      "message": "this seems unnecessary. If keystone wants to return a content-type it should be able to do it.",
+      "revId": "eeb427e96849fe8578c58ce58e418bd54dce91ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_da7e35e4",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1677,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-20T18:10:14Z",
+      "side": 1,
+      "message": "should change this to just TestAuth.",
+      "revId": "eeb427e96849fe8578c58ce58e418bd54dce91ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_9a74adfe",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1678,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-20T18:10:14Z",
+      "side": 1,
+      "message": "shouldn\u0027t need this anymore.",
+      "revId": "eeb427e96849fe8578c58ce58e418bd54dce91ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_9a1d8dc0",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1823,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-20T18:10:14Z",
+      "side": 1,
+      "message": "the assertion here should be changed to verify it\u0027s an empty list and the comment removed.\n\n self.assertEqual([], r.result[\u0027token\u0027][\u0027catalog\u0027])",
+      "revId": "eeb427e96849fe8578c58ce58e418bd54dce91ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_9a4bcdaf",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-20T18:10:14Z",
+      "side": 1,
+      "message": "shouldn\u0027t need this anymore.",
+      "revId": "eeb427e96849fe8578c58ce58e418bd54dce91ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_1aeefd88",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-20T18:10:14Z",
+      "side": 1,
+      "message": "weird... seems like shouldn\u0027t have to reset auth based on the original comment.",
+      "revId": "eeb427e96849fe8578c58ce58e418bd54dce91ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
