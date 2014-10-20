@@ -16,6 +16,24 @@
       "revId": "3df0d0b97d9450cec39295325c29989beef22ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_541dbe0e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-20T16:55:10Z",
+      "side": 1,
+      "message": "I think \"get\" is a better name, because \"subtree\" is just one \"entity\": the subtree of this project. And since we have the docstring specifying that it returns a list, that shouldn\u0027t cause any confusion.",
+      "parentUuid": "9aa7fdbe_1182684f",
+      "revId": "3df0d0b97d9450cec39295325c29989beef22ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
