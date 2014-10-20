@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_8b03890e",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-10-20T16:05:46Z",
+      "side": 1,
+      "message": "Note that this is not sufficient to test against an invalid trust setup, as the user could be deactivated, or had a role removed.  Much safer to confirm the trust preconditions upon execution of the trust.",
+      "revId": "7e57fcea735e842968eb1dc826faeac698044efc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_eea50305",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-10-20T16:05:46Z",
+      "side": 1,
+      "message": "You could make a comparable call upon \"get_trust\" and deny any get for an invalid trust.  Probably need an override param for \"I know this trust is invalid, but I need to see it anyway\" that should not be used as part of the auth pipeline",
+      "revId": "7e57fcea735e842968eb1dc826faeac698044efc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
