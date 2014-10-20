@@ -193,6 +193,24 @@
       "revId": "3df0d0b97d9450cec39295325c29989beef22ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_794b8eb0",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-20T23:51:28Z",
+      "side": 1,
+      "message": "I guess that\u0027s opinion :-)  In general, we have had a drive to be much stricter with our naming of methods...if it returns a list, then you call it \"list_xyz()\", if it returns a single entity, then it\u0027s a \"get_xyz()\".  This returns a list.",
+      "parentUuid": "9aa7fdbe_541dbe0e",
+      "revId": "3df0d0b97d9450cec39295325c29989beef22ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
