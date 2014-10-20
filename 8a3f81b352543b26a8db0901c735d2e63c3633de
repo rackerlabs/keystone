@@ -52,6 +52,24 @@
       "revId": "8a3f81b352543b26a8db0901c735d2e63c3633de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_3dff5203",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-10-20T04:57:36Z",
+      "side": 1,
+      "message": "One additional thing to note is that the \u0027test_user_extra_attribute_mapping_description_is_returned\u0027 test will need to be removed if we change the search code.  It is expecting that the returned user object has the additional attributes.",
+      "parentUuid": "9aa7fdbe_22a73351",
+      "revId": "8a3f81b352543b26a8db0901c735d2e63c3633de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
