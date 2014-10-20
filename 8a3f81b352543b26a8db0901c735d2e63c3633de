@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_4c2b8eeb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-20T00:17:48Z",
+      "side": 1,
+      "message": "the additional attribute mappings are also used when the object is returned, so this is incorrect. See http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/ldap/core.py#n1421 and http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/ldap/core.py#n1441",
+      "revId": "8a3f81b352543b26a8db0901c735d2e63c3633de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
