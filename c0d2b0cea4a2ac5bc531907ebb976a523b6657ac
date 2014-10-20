@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_6736ad05",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 975,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-10-20T03:05:17Z",
+      "side": 1,
+      "message": "Interesting.  I followed the in-tree simple paged result example from python-ldap.  I\u0027ll try out the class as described in the docs and use it (assuming it works of course).  I did test this patch with python-ldap 2.4.x, and it works properly.",
+      "parentUuid": "9aa7fdbe_115fdf0f",
+      "revId": "c0d2b0cea4a2ac5bc531907ebb976a523b6657ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_319b03cb",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-10-19T19:15:52Z",
       "side": 1,
       "message": "The docs don\u0027t have controlType as an attribute of SimplePagedResultsControl",
+      "revId": "c0d2b0cea4a2ac5bc531907ebb976a523b6657ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_8712b160",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 979,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-10-20T03:05:17Z",
+      "side": 1,
+      "message": "This comes from the base class for all request controls (RequestControl):\n\n  http://www.python-ldap.org/doc/html/ldap-controls.html#ldap.controls.RequestControl\n\nThis is also the way that the python-ldap in-tree simple paged results example demonstrates use of the API.",
+      "parentUuid": "9aa7fdbe_319b03cb",
       "revId": "c0d2b0cea4a2ac5bc531907ebb976a523b6657ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_8257ff01",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1008,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-10-20T03:05:17Z",
+      "side": 1,
+      "message": "Will do.",
+      "parentUuid": "9aa7fdbe_d1ab97d4",
+      "revId": "c0d2b0cea4a2ac5bc531907ebb976a523b6657ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_b1ae13e6",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2014-10-19T19:15:52Z",
       "side": 1,
       "message": "Get rid of this since it was set at line 1005 or 1008",
+      "revId": "c0d2b0cea4a2ac5bc531907ebb976a523b6657ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_a25c0327",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1013,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-10-20T03:05:17Z",
+      "side": 1,
+      "message": "Will do.",
+      "parentUuid": "9aa7fdbe_b1ae13e6",
       "revId": "c0d2b0cea4a2ac5bc531907ebb976a523b6657ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_4274379c",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-10-20T03:05:17Z",
+      "side": 1,
+      "message": "Will do.",
+      "parentUuid": "9aa7fdbe_11b6ff3d",
+      "revId": "c0d2b0cea4a2ac5bc531907ebb976a523b6657ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_717cab73",
         "filename": "keystone/tests/unit/common/test_ldap.py",
         "patchSetId": 5
@@ -98,6 +188,24 @@
       "writtenOn": "2014-10-19T19:15:52Z",
       "side": 1,
       "message": "There\u0027s no assert in the test so what is it testing?",
+      "revId": "c0d2b0cea4a2ac5bc531907ebb976a523b6657ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_024b0f5a",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-10-20T03:05:17Z",
+      "side": 1,
+      "message": "It\u0027s testing that an exception isn\u0027t thrown by _paged_search_s().  Before the actual fix from this patch, this test would trigger an AttributeError inside of _paged_search_s() when using python-ldap 2.4.x.",
+      "parentUuid": "9aa7fdbe_717cab73",
       "revId": "c0d2b0cea4a2ac5bc531907ebb976a523b6657ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
