@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_ecc60249",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-20T00:12:20Z",
+      "side": 1,
+      "message": "This file should be renamed to test_assignment.py . There wasn\u0027t an assignment backend when we had v2, so no need to specify the API version. Also, most of these tests use the backend and not the API so mentioning the version doesn\u0027t make sense.",
+      "revId": "87d14849512bc890514827923db3ed323b1b4071",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_6c94d237",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-20T00:12:20Z",
+      "side": 1,
+      "message": "it would be great if we could get rid of these comments.",
+      "revId": "87d14849512bc890514827923db3ed323b1b4071",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
