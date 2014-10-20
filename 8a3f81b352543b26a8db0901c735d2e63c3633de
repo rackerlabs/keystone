@@ -34,6 +34,24 @@
       "revId": "8a3f81b352543b26a8db0901c735d2e63c3633de",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_22a73351",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 17
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-10-20T04:41:49Z",
+      "side": 1,
+      "message": "A code inspection shows that we are searching for the extra attributes for no reason, as they aren\u0027t actually used for anything.  The only place where the extra attribute mapping should be used is in the create() method here:\n\n  http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/ldap/core.py#n1397\n\nPlease remove the extra attributes from _ldap_get() and _ldap_get_all() in the areas that Brant pointed out.  The behavior will then match your commit message, which is the correct behavior IMHO.  Thanks to Brant for catching this additional area that should be cleaned up!",
+      "parentUuid": "9aa7fdbe_c253c76a",
+      "revId": "8a3f81b352543b26a8db0901c735d2e63c3633de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
