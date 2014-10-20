@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_22e2d39f",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-20T04:32:05Z",
+      "side": 1,
+      "message": "I think quite a few different protocols use this header to dump authZ data. I\u0027m not sure what the flow is here, I\u0027m worried we are working ourselves into a corner by depending on \u0027basic\u0027 being found at line 27ish.\n\nHow is this class consumed? nothing actually uses this class today, and there is no proposal to use it.",
+      "revId": "3b9c3e305fc23b2644f02b212bdf3b24412b5f3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
