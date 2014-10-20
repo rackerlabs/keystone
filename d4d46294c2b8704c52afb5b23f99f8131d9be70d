@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_acd6bac3",
+        "filename": "doc/source/extensions/federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-20T00:31:23Z",
+      "side": 1,
+      "message": "will change to command line tool: http://linux.die.net/man/1/xmlsec1\n\n\"xmlsec1 is a command line tool...\"",
+      "parentUuid": "9aa7fdbe_cc6cde39",
+      "revId": "d4d46294c2b8704c52afb5b23f99f8131d9be70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_2f1729a5",
         "filename": "doc/source/extensions/federation.rst",
         "patchSetId": 1
@@ -47,6 +65,42 @@
       "writtenOn": "2014-10-20T00:26:49Z",
       "side": 1,
       "message": "The other examples don\u0027t use $ so follow the same convention.",
+      "revId": "d4d46294c2b8704c52afb5b23f99f8131d9be70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_4cee2e8d",
+        "filename": "doc/source/extensions/federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-20T00:31:23Z",
+      "side": 1,
+      "message": "Just followed the pattern in other doc files, like https://github.com/openstack/keystone/blob/master/doc/source/configure_federation.rst#configure-apache-httpd-for-mod_shibboleth",
+      "parentUuid": "9aa7fdbe_2f1729a5",
+      "revId": "d4d46294c2b8704c52afb5b23f99f8131d9be70d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_cc53fe6a",
+        "filename": "doc/source/extensions/federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-20T00:31:23Z",
+      "side": 1,
+      "message": "Following the convention found in docs like: https://github.com/openstack/keystone/blob/master/doc/source/configure_federation.rst#configure-apache-httpd-for-mod_shibboleth",
+      "parentUuid": "9aa7fdbe_ec69a226",
       "revId": "d4d46294c2b8704c52afb5b23f99f8131d9be70d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
