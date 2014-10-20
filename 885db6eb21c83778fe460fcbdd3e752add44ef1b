@@ -34,6 +34,23 @@
       "revId": "885db6eb21c83778fe460fcbdd3e752add44ef1b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_ec91a253",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1604,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-20T00:02:17Z",
+      "side": 1,
+      "message": "This is removing a test that shows what happens when you try to migrate an extension that doesn\u0027t provide migrations. Pick a different extension like admin_crud.",
+      "revId": "885db6eb21c83778fe460fcbdd3e752add44ef1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
