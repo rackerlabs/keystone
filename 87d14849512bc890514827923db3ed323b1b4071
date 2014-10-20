@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_56bcf06c",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-20T11:58:21Z",
+      "side": 1,
+      "message": "It makes sense to not specify the API version on the file name. I\u0027d like to follow the pattern we have for other files though. Should we rename the other ones?\n\nJust to clarify, tests in this file use the backend in order to set up the test scenario, i.e., create the needed entities. I think this is done this way for simplicity.\nAfter this, API calls are done to test what the method is supposed to.",
+      "parentUuid": "9aa7fdbe_ecc60249",
+      "revId": "87d14849512bc890514827923db3ed323b1b4071",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_6c94d237",
         "filename": "keystone/tests/test_v3_assignment.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-10-20T00:12:20Z",
       "side": 1,
       "message": "it would be great if we could get rid of these comments.",
+      "revId": "87d14849512bc890514827923db3ed323b1b4071",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_56823053",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-20T11:58:21Z",
+      "side": 1,
+      "message": "I would like to maintain these comments because I think it makes easier to developers to find tests for a given entity.\n\nIn fact, what I really would like to do was to create different test classes for different entities. This is better described on an etherpad I created for tests improvements. Take a look at section \u0027Tests Modularization\u0027 at [1].\n\n[1] https://etherpad.openstack.org/p/Keystone_Tests_Improvement",
+      "parentUuid": "9aa7fdbe_6c94d237",
       "revId": "87d14849512bc890514827923db3ed323b1b4071",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
