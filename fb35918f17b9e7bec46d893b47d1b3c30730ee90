@@ -16,6 +16,24 @@
       "revId": "fb35918f17b9e7bec46d893b47d1b3c30730ee90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_ae2bfbe9",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 949,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-20T16:16:49Z",
+      "side": 1,
+      "message": "thanks, will fix it and ping you for the +2 \u003d)",
+      "parentUuid": "9aa7fdbe_4b928158",
+      "revId": "fb35918f17b9e7bec46d893b47d1b3c30730ee90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
