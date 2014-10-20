@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_2e3f0b27",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 2822,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-20T16:21:15Z",
+      "side": 1,
+      "message": "does fixtures need to be used for this?",
+      "revId": "93f1cac1623c13430c74f63aff040a23a6032296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_0e608731",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-20T16:21:15Z",
+      "side": 1,
+      "message": "Suggest breaking this comment into a multiline comment: \n\nhttp://legacy.python.org/dev/peps/pep-0257/#multi-line-docstrings",
+      "revId": "93f1cac1623c13430c74f63aff040a23a6032296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
