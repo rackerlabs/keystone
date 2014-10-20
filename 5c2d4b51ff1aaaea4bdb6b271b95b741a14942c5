@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_403fb825",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-20T19:24:14Z",
+      "side": 1,
+      "message": "looks like this is no longer used, can it be removed? \n\nhttps://github.com/openstack/keystone/blob/1e6a9b5d4c936c1d6c55c15bb3385e819c3653af/keystone/tests/test_v3.py#L126-L130",
+      "revId": "5c2d4b51ff1aaaea4bdb6b271b95b741a14942c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
