@@ -16,6 +16,24 @@
       "revId": "5f2346f4a7b0292828f6380cd060ce0c9322c75a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_5bddf913",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-10-20T11:12:31Z",
+      "side": 1,
+      "message": "Added validation of entire trust pedigree, but I can\u0027t invent appropriate test case. It would be nice to have one as I don\u0027t know how to reproduce such inconsistency in current implementation.",
+      "parentUuid": "baa201ad_176a9a19",
+      "revId": "5f2346f4a7b0292828f6380cd060ce0c9322c75a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
