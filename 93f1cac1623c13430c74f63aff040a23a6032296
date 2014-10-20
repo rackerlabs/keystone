@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_2e546b53",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 2855,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-20T16:34:34Z",
+      "side": 1,
+      "message": "the above code is just a copy and paste of that in test_create_project_allowed_depth() - which seems a waste.  Either make this code a private method called by both - or just have one method that checks depth...",
+      "revId": "93f1cac1623c13430c74f63aff040a23a6032296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_2ea38b9f",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 2857,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-20T16:34:34Z",
+      "side": 1,
+      "message": "nit: we don\u0027t know it\u0027s the 6th...it\u0027s just one more than max_project_tree_depth...",
+      "revId": "93f1cac1623c13430c74f63aff040a23a6032296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_0e608731",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 26
