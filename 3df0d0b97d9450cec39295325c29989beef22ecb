@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_1182684f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-20T16:28:05Z",
+      "side": 1,
+      "message": "should this perhaps be: list_projects_in_subtree() ???",
+      "revId": "3df0d0b97d9450cec39295325c29989beef22ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
