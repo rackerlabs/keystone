@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_f4814d4b",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-20T19:43:32Z",
+      "side": 1,
+      "message": "not sure about the answer here. But I think that need a *strong* reason to add an index, maybe after some data observed...",
+      "parentUuid": "9aa7fdbe_2012b4b1",
+      "revId": "3df0d0b97d9450cec39295325c29989beef22ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_2089d4eb",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 28
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_54e77940",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-20T19:43:32Z",
+      "side": 1,
+      "message": "actually I think +\u003d more readable",
+      "parentUuid": "9aa7fdbe_2089d4eb",
+      "revId": "3df0d0b97d9450cec39295325c29989beef22ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_a07ea4ac",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 28
@@ -47,6 +83,24 @@
       "writtenOn": "2014-10-20T19:35:55Z",
       "side": 1,
       "message": "Would it be safer to use \"project.get(\u0027parent_id\u0027)\" here instead?",
+      "revId": "3df0d0b97d9450cec39295325c29989beef22ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_54be9900",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-20T19:43:32Z",
+      "side": 1,
+      "message": "Why? Doesn\u0027t the result is the same?",
+      "parentUuid": "9aa7fdbe_a07ea4ac",
       "revId": "3df0d0b97d9450cec39295325c29989beef22ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
