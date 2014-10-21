@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_ad5be12c",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 2822,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-21T14:21:59Z",
+      "side": 1,
+      "message": "would be a good idea... maybe we should create an internal method that creates hierarchies? see the same example at test_v3_identity",
+      "parentUuid": "9aa7fdbe_2e3f0b27",
+      "revId": "93f1cac1623c13430c74f63aff040a23a6032296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_2e546b53",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 26
@@ -30,6 +48,24 @@
       "writtenOn": "2014-10-20T16:34:34Z",
       "side": 1,
       "message": "the above code is just a copy and paste of that in test_create_project_allowed_depth() - which seems a waste.  Either make this code a private method called by both - or just have one method that checks depth...",
+      "revId": "93f1cac1623c13430c74f63aff040a23a6032296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_e76d0a9b",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 2855,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-21T14:21:59Z",
+      "side": 1,
+      "message": "Replaced with one test called test_check_hierarchy_depth()",
+      "parentUuid": "9aa7fdbe_2e546b53",
       "revId": "93f1cac1623c13430c74f63aff040a23a6032296",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_076dae98",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 2857,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-21T14:21:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa7fdbe_2ea38b9f",
+      "revId": "93f1cac1623c13430c74f63aff040a23a6032296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_0e608731",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 26
@@ -64,6 +118,24 @@
       "writtenOn": "2014-10-20T16:21:15Z",
       "side": 1,
       "message": "Suggest breaking this comment into a multiline comment: \n\nhttp://legacy.python.org/dev/peps/pep-0257/#multi-line-docstrings",
+      "revId": "93f1cac1623c13430c74f63aff040a23a6032296",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_8710be02",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-21T14:21:59Z",
+      "side": 1,
+      "message": "++\n\nalso renamed the method to _create_projects_hierarchy() receiving a hierarchy_size parameter",
+      "parentUuid": "9aa7fdbe_0e608731",
       "revId": "93f1cac1623c13430c74f63aff040a23a6032296",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
