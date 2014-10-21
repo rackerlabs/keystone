@@ -25,11 +25,27 @@ import sys
 import eventlet
 import eventlet.wsgi
 import greenlet
+from oslo.config import cfg
 
 from keystone.i18n import _
 from keystone.i18n import _LE
 from keystone.i18n import _LI
 from keystone.openstack.common import log
+
+
+eventlet_opts = [
+    cfg.BoolOpt('wsgi_keep_alive', default=True,
+                help=_("If False, closes the client socket connection "
+                       "explicitly.")),
+    cfg.IntOpt('client_socket_timeout', default=900,
+               help=_("Timeout for client connections\' socket operations. "
+                      "If an incoming connection is idle for this number of "
+                      "seconds it will be closed. A value of \'0\' means "
+                      "wait forever.")),
+]
+
+CONF = cfg.CONF
+CONF.register_opts(eventlet_opts)
 
 
 LOG = log.getLogger(__name__)
@@ -72,6 +88,7 @@ class Server(object):
         self.keepalive = keepalive
         self.keepidle = keepidle
         self.socket = None
+        self.client_socket_timeout = CONF.client_socket_timeout or None
 
     def listen(self, key=None, backlog=128):
         """Create and start listening on socket.
@@ -179,7 +196,8 @@ class Server(object):
         try:
             eventlet.wsgi.server(socket, application, custom_pool=self.pool,
                                  log=EventletFilteringLogger(logger),
-                                 debug=False)
+                                 debug=False, keepalive=CONF.wsgi_keep_alive,
+                                 socket_timeout=self.client_socket_timeout)
         except greenlet.GreenletExit:
             # Wait until all servers have completed running
             pass
