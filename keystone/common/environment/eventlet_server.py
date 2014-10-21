@@ -26,8 +26,12 @@ import eventlet
 import eventlet.wsgi
 import greenlet
 
+from keystone.common import config
 from keystone.i18n import _LE, _LI
 from keystone.openstack.common import log
+
+
+CONF = config.CONF
 
 
 LOG = log.getLogger(__name__)
@@ -70,6 +74,7 @@ class Server(object):
         self.keepalive = keepalive
         self.keepidle = keepidle
         self.socket = None
+        self.client_socket_timeout = CONF.client_socket_timeout or None
 
     def listen(self, key=None, backlog=128):
         """Create and start listening on socket.
@@ -176,7 +181,8 @@ class Server(object):
         try:
             eventlet.wsgi.server(socket, application, custom_pool=self.pool,
                                  log=EventletFilteringLogger(logger),
-                                 debug=False)
+                                 debug=False, keepalive=CONF.wsgi_keep_alive,
+                                 socket_timeout=self.client_socket_timeout)
         except greenlet.GreenletExit:
             # Wait until all servers have completed running
             pass
