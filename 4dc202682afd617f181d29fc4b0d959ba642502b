@@ -16,6 +16,24 @@
       "revId": "4dc202682afd617f181d29fc4b0d959ba642502b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_f5a695c0",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-21T11:53:17Z",
+      "side": 1,
+      "message": "agree Henry, actually I\u0027m bad in naming things \u003d)\n\nlist_projects_in_subtree() is a much better name, thanks.",
+      "parentUuid": "9aa7fdbe_7a6a921b",
+      "revId": "4dc202682afd617f181d29fc4b0d959ba642502b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
