@@ -34,6 +34,24 @@
       "revId": "3b9c3e305fc23b2644f02b212bdf3b24412b5f3c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_20ef0a20",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-21T01:44:47Z",
+      "side": 1,
+      "message": "Ahh here it is, https://review.openstack.org/#/c/125457/\n\nput this in the commit msg, i didn\u0027t know it existed.",
+      "parentUuid": "9aa7fdbe_40a6ce11",
+      "revId": "3b9c3e305fc23b2644f02b212bdf3b24412b5f3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
