@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_501cc5c1",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-21T17:56:34Z",
+      "side": 1,
+      "message": "Clients can\u0027t pass in application/json-home data. No resource accepts it in a POST.\n\nWe don\u0027t know at this point what content types the resource is going to accept. It depends on the resource.\n\nSo we can\u0027t put out the correct message at this point because we don\u0027t know what the allowed content types are. It needs to be up to the resource handler to put out the message.",
+      "revId": "51cbb1924a6cf18c9b4017aab011c3842adefa83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
