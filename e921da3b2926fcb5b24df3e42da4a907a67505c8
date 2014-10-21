@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_9dac9def",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-21T00:24:44Z",
+      "side": 1,
+      "message": "We don\u0027t want the server to have behaviors that are specific to the SQL backend, so this test should be in test_backend.py.",
+      "revId": "e921da3b2926fcb5b24df3e42da4a907a67505c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_5d74f598",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 395,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-21T00:24:44Z",
+      "side": 1,
+      "message": "Use self.assertThat(role_assignments, matchers.HasLength(2))",
+      "revId": "e921da3b2926fcb5b24df3e42da4a907a67505c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_9d657de3",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-21T00:24:44Z",
+      "side": 1,
+      "message": "use assertEqual([], role_assignments)",
+      "revId": "e921da3b2926fcb5b24df3e42da4a907a67505c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
