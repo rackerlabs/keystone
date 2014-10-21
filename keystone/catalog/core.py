@@ -39,6 +39,24 @@ SHOULD_CACHE = cache.should_cache_fn('catalog')
 EXPIRATION_TIME = lambda: CONF.catalog.cache_time
 
 
+def safe_format_url(url, tenant_id, user_id):
+    """Performs simple substitution into a string.
+
+    :param str url: string that may need substituted values
+    :param str tenant_id:
+    :param str user_id:
+    :returns: a string with substitutions performed
+    """
+    # NOTE(dstanek): this function doesn't have any malformed URL logic
+    # because it is expected to be called before a call to ``format_url``.
+    # this function will be removed in L when we removed the catalog
+    # whitelist functionality.
+    url = url.replace('$(', '%(')
+    url = url.replace('%(tenant_id)s', tenant_id) if tenant_id else url
+    url = url.replace('%(user_id)s', user_id) if user_id else url
+    return url
+
+
 def format_url(url, substitutions):
     """Formats a user-defined URL with the given substitutions.
 

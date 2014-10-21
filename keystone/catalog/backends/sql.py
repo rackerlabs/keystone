@@ -21,6 +21,7 @@ from keystone.catalog import core
 from keystone.common import sql
 from keystone import config
 from keystone import exception
+from keystone.openstack.common import versionutils
 
 
 CONF = config.CONF
@@ -281,13 +282,19 @@ class Catalog(catalog.Driver):
 
         catalog = {}
 
+        used_substitution = False
         for endpoint in endpoints:
+            url = core.safe_format_url(endpoint['url'], tenant_id, user_id)
+
             if not endpoint.service['enabled']:
                 continue
             try:
-                url = core.format_url(endpoint['url'], substitutions)
+                formatted_url = core.format_url(url, substitutions)
             except exception.MalformedEndpoint:
                 continue  # this failure is already logged in format_url()
+
+            if url != formatted_url:
+                used_substitution = True
 
             region = endpoint['region_id']
             service_type = endpoint.service['type']
@@ -299,7 +306,12 @@ class Catalog(catalog.Driver):
             catalog.setdefault(region, {})
             catalog[region].setdefault(service_type, default_service)
             interface_url = '%sURL' % endpoint['interface']
-            catalog[region][service_type][interface_url] = url
+            catalog[region][service_type][interface_url] = formatted_url
+
+        if used_substitution:
+            versionutils.deprecated(as_of=versionutils.deprecated.JUNO,
+                                    what='catalog endpoint substitution',
+                                    remove_in=+1)(lambda: None)()
 
         return catalog
 
@@ -314,16 +326,23 @@ class Catalog(catalog.Driver):
                     options(sql.joinedload(Service.endpoints)).
                     all())
 
+        used_substitution = [False]  # NOTE(dstanek): a list for easy
+                                     # modification by inner functions
+
         def make_v3_endpoints(endpoints):
             for endpoint in (ep.to_dict() for ep in endpoints if ep.enabled):
+                url = core.safe_format_url(endpoint['url'], tenant_id, user_id)
                 del endpoint['service_id']
                 del endpoint['legacy_endpoint_id']
                 del endpoint['enabled']
                 endpoint['region'] = endpoint['region_id']
                 try:
-                    endpoint['url'] = core.format_url(endpoint['url'], d)
+                    endpoint['url'] = core.format_url(url, d)
                 except exception.MalformedEndpoint:
                     continue  # this failure is already logged in format_url()
+
+                if url != endpoint['url']:
+                    used_substitution[0] = True
 
                 yield endpoint
 
@@ -335,4 +354,11 @@ class Catalog(catalog.Driver):
                 service['name'] = name
             return service
 
-        return [make_v3_service(svc) for svc in services]
+        services = [make_v3_service(svc) for svc in services]
+
+        if used_substitution[0]:
+            versionutils.deprecated(as_of=versionutils.deprecated.JUNO,
+                                    what='catalog endpoint substitution',
+                                    remove_in=+1)(lambda: None)()
+
+        return services
