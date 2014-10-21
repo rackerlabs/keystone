@@ -16,6 +16,24 @@
       "revId": "73ad4036d62b3aa7cf50e11ddf7bee8278bbe4d0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_1d534d18",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1316,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-10-21T00:18:29Z",
+      "side": 0,
+      "message": "I don\u0027t think that some of the expected behaviors described in bug 1293698 are correct.  The real issue in that bug was that you could not map the description attribute from keystone to an attribute in LDAP due to a missing configuration settings.\n\nBefore the fix for bug 1293698, keystone would only allow a known attribute from the keystone object to be mapped to an attribute in LDAP.  The reason for this is that the extra attribute mapping feature is only designed to allow keystone to supply additional attribute when creating an LDAP entry.  This is also why we never returned those attributes form an LDAP search.\n\nTo explain it another way, a user object in keystone should only ever have the following fields that can come from LDAP:\n\n  - id\n  - name\n  - description\n  - enabled\n  - mail\n\nIf the objectclass for a user in LDAP requires the cn, sn, and uid attributes, we need a way to provide values for all of those attributes for the LDAP add operation to be successful.  Given a mapping like the following, an \"extra\" mapping would be needed to supply a value for the \"sn\" attribute:\n\n  (keystone:ldap)\n  id:uid\n  name:cn\n  description:desc\n  enabled:enabled\n  mail:mail\n  name:sn\n\nExtra attribute mappings are not designed to add additional fields to a user object in keystone, and I think it is a mistake to do so.",
+      "parentUuid": "9aa7fdbe_b936d601",
+      "revId": "73ad4036d62b3aa7cf50e11ddf7bee8278bbe4d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
