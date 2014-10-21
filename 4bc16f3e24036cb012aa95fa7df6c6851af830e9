@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_7a2d2046",
+        "filename": "keystone/tests/unit/test_core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-10-21T20:57:31Z",
+      "side": 1,
+      "message": "Nice!",
+      "revId": "4bc16f3e24036cb012aa95fa7df6c6851af830e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
