@@ -97,6 +97,16 @@
 # encrypt method. (integer value)
 #crypt_strength=40000
 
+# Timeout for client connections socket operations. If an
+# incoming connection is idle for this number of seconds it
+# will be closed. A value of '0' means wait forever. (integer
+# value)
+#client_socket_timeout=900
+
+# If False, closes the client socket connection explicitly.
+# (boolean value)
+#wsgi_keep_alive=true
+
 # Set this to true if you want to enable TCP_KEEPALIVE on
 # server sockets, i.e. sockets used by the Keystone wsgi
 # server for client connections. (boolean value)
