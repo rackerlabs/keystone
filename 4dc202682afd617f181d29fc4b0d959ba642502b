@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_7a6a921b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-21T11:21:10Z",
+      "side": 1,
+      "message": "Ok, so I apologise up front for being picky....so great we now have list_xxx(), but the name still doesn\u0027t \"sound good\".  Let\u0027s look at some of the other examples we already have here in assignment:\n\n* list_projects_for_user()\n* list_user_ids_for_project()\n* list_projects_in_domain()\n\n...this is why I suggested:\n\nlist_projects_in_subtree()\n\n..which I think describes what we are doing here better than list_project_subtree(). \n\nHenry",
+      "revId": "4dc202682afd617f181d29fc4b0d959ba642502b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
