@@ -211,6 +211,24 @@
       "revId": "3df0d0b97d9450cec39295325c29989beef22ecb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_ddc5455c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-21T00:42:22Z",
+      "side": 1,
+      "message": "hehe ok, will change the name and adapt the docstring. Thanks for the great reviews so far \u003d)",
+      "parentUuid": "9aa7fdbe_794b8eb0",
+      "revId": "3df0d0b97d9450cec39295325c29989beef22ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
