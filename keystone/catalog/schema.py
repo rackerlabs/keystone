@@ -29,7 +29,7 @@ _region_properties = {
 region_create = {
     'type': 'object',
     'properties': _region_properties,
-    'additionalProperties': True
+    'additionalProperties': False
     # NOTE(lbragstad): No parameters are required for creating regions.
 }
 

@@ -184,6 +184,12 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             body={'region': ref},
             expected_status=400)
 
+    def test_create_region_with_nonexist_property(self):
+        self.put(
+            '/regions/%s' % uuid.uuid4().hex,
+            body={'region': {'non_exist_key': 'value'}},
+            expected_status=400)
+
     def test_list_regions(self):
         """Call ``GET /regions``."""
         r = self.get('/regions')

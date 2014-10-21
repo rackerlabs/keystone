@@ -26,7 +26,7 @@ from keystone import exception
 CONF = config.CONF
 
 
-class Region(sql.ModelBase, sql.DictBase):
+class Region(sql.ModelBase, sql.ModelDictMixin):
     __tablename__ = 'region'
     attributes = ['id', 'description', 'parent_region_id', 'url']
     id = sql.Column(sql.String(255), primary_key=True)
@@ -43,13 +43,6 @@ class Region(sql.ModelBase, sql.DictBase):
     #                 model.
     parent_region_id = sql.Column(sql.String(255), nullable=True)
 
-    # TODO(jaypipes): I think it's absolutely stupid that every single model
-    #                 is required to have an "extra" column because of the
-    #                 DictBase in the keystone.common.sql.core module. Forcing
-    #                 tables to have pointless columns in the database is just
-    #                 bad. Remove all of this extra JSON blob stuff.
-    #                 See: https://bugs.launchpad.net/keystone/+bug/1265071
-    extra = sql.Column(sql.JsonBlob())
     endpoints = sqlalchemy.orm.relationship("Endpoint", backref="region")
 
 
