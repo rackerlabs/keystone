@@ -22,6 +22,7 @@ from keystone import config
 from keystone import exception
 from keystone.i18n import _LC
 from keystone.openstack.common import log
+from keystone.openstack.common import versionutils
 
 
 LOG = log.getLogger(__name__)
@@ -109,6 +110,7 @@ class Catalog(kvs.Catalog):
         substitutions = dict(six.iteritems(CONF))
         substitutions.update({'tenant_id': tenant_id, 'user_id': user_id})
 
+        used_substitution = False
         catalog = {}
         for region, region_ref in six.iteritems(self.templates):
             catalog[region] = {}
@@ -116,9 +118,17 @@ class Catalog(kvs.Catalog):
                 service_data = {}
                 try:
                     for k, v in six.iteritems(service_ref):
+                        url = core.safe_format_url(v, tenant_id, user_id)
                         service_data[k] = core.format_url(v, substitutions)
+                        if url != service_data[k]:
+                            used_substitution = True
                 except exception.MalformedEndpoint:
                     continue  # this failure is already logged in format_url()
                 catalog[region][service] = service_data
+
+        if used_substitution:
+            versionutils.deprecated(as_of=versionutils.deprecated.JUNO,
+                                    what='catalog endpoint substitution',
+                                    remove_in=+1)(lambda: None)()
 
         return catalog
