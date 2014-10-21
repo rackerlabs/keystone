@@ -16,6 +16,24 @@
       "revId": "b80c86929039d0625f260abaf2620a793cc0cf8c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_d016f554",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-10-21T18:08:35Z",
+      "side": 1,
+      "message": "i used `git-review -x 94251` to produce the backport -- it doesn\u0027t modify the commit message",
+      "parentUuid": "9aa7fdbe_dd31c5ed",
+      "revId": "b80c86929039d0625f260abaf2620a793cc0cf8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
