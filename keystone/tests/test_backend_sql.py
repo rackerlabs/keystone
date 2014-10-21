@@ -575,7 +575,7 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
         child_region = {
             'id': uuid.uuid4().hex,
             'description': uuid.uuid4().hex,
-            'parent_id': region['id']
+            'parent_region_id': region['id']
         }
         self.catalog_api.create_region(child_region)
         # create a service
