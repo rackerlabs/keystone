@@ -16,6 +16,7 @@ import gettext
 import socket
 import uuid
 
+import eventlet
 import mock
 from oslo import i18n
 from oslo.serialization import jsonutils
@@ -25,8 +26,12 @@ import webob
 
 from keystone.common import environment
 from keystone.common import wsgi
+from keystone import config
 from keystone import exception
 from keystone import tests
+
+
+CONF = config.CONF
 
 
 class FakeApp(wsgi.Application):
@@ -425,3 +430,39 @@ class ServerTest(tests.TestCase):
                                                     1)
 
         self.assertTrue(mock_listen.called)
+
+    def test_client_socket_timeout(self):
+        # mocking server method of eventlet.wsgi to check it is called with
+        # configured 'client_socket_timeout' value.
+        CONF.set_override('client_socket_timeout', 5)
+        server = environment.Server(mock.MagicMock(), host=self.host,
+                                    port=self.port)
+        with mock.patch.object(eventlet.wsgi, 'server') as mock_server:
+            fake_application = 1
+            fake_socket = 2
+            server._run(fake_application, fake_socket)
+            mock_server.assert_called_once_with(fake_socket,
+                                                fake_application,
+                                                debug=mock.ANY,
+                                                socket_timeout=5,
+                                                custom_pool=server.pool,
+                                                log=mock.ANY,
+                                                keepalive=mock.ANY)
+
+    def test_wsgi_keep_alive(self):
+        # mocking server method of eventlet.wsgi to check it is called with
+        # configured 'wsgi_keep_alive' value.
+        CONF.set_override('wsgi_keep_alive', False)
+        server = environment.Server(mock.MagicMock(), host=self.host,
+                                    port=self.port)
+        with mock.patch.object(eventlet.wsgi, 'server') as mock_server:
+            fake_application = 1
+            fake_socket = 2
+            server._run(fake_application, fake_socket)
+            mock_server.assert_called_once_with(fake_socket,
+                                                fake_application,
+                                                debug=mock.ANY,
+                                                socket_timeout=mock.ANY,
+                                                custom_pool=server.pool,
+                                                log=mock.ANY,
+                                                keepalive=False)
