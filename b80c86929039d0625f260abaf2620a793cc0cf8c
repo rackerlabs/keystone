@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_dd31c5ed",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-21T00:19:22Z",
+      "side": 1,
+      "message": "If this is a cherry-pick then it should have a cherry-picked from line... if it\u0027s not a cherry-pick then why not?",
+      "revId": "b80c86929039d0625f260abaf2620a793cc0cf8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
