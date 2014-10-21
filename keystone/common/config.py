@@ -1000,6 +1000,15 @@ FILE_OPTIONS = {
         cfg.IntOpt('admin_port', default=35357, deprecated_name='admin_port',
                    help='The port number which the admin service listens '
                         'on.'),
+        cfg.BoolOpt('wsgi_keep_alive', default=True,
+                    help="If set to false, disables keepalives on the server; "
+                         "all connections will be closed after serving one "
+                         "request."),
+        cfg.IntOpt('client_socket_timeout', default=900,
+                   help="Timeout for socket operations on a client "
+                        "connection. If an incoming connection is idle for "
+                        "this number of seconds it will be closed. A value "
+                        "of '0' means wait forever."),
         cfg.BoolOpt('tcp_keepalive', default=False,
                     deprecated_name='tcp_keepalive',
                     help='Set this to true if you want to enable '
