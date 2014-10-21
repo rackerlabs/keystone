@@ -16,6 +16,24 @@
       "revId": "3b9c3e305fc23b2644f02b212bdf3b24412b5f3c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_40a6ce11",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-10-21T01:39:18Z",
+      "side": 1,
+      "message": "This is explicitly the Basic-Auth middleware, so it makes sense that the authorization field is expected to have the Basic auth in it.  We could make a more complex solution for other simplistice mechanisms, but there is no real call for it.\n\nThis class, if put in the pipeline, would let a user make authenticated calls to Keystone without having an explicit token, and instead just userid and password.\n\nSee the spec.",
+      "parentUuid": "9aa7fdbe_22e2d39f",
+      "revId": "3b9c3e305fc23b2644f02b212bdf3b24412b5f3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
