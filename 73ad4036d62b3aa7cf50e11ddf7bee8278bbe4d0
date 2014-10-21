@@ -52,6 +52,24 @@
       "revId": "73ad4036d62b3aa7cf50e11ddf7bee8278bbe4d0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_e0efc2ae",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1316,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-10-21T02:30:26Z",
+      "side": 0,
+      "message": "It is not explicitly documented as such that I have seen, but the API docs that show user resources don\u0027t say or show anything with additional attributes.  The previous design around the extra mapping functionality also strongly implies this to be true:\n\n  - limiting mapped attributes to on keystone side to known attributes\n  - no read (search) support for additional mapped attributes\n  - no update support for additional mapped attributes\n  - no client support for additional mapped attributes\n\nI don\u0027t believe that we want to push more user data into Keystone since it promotes using it as a general purpose identity store.  This seemed to be a consensus amongst most of the Keystone developers in discussions at the last Summit and it\u0027s one that personally I agree with.  This is likely worth further discussion at a Keystone team meeting.",
+      "parentUuid": "9aa7fdbe_fdbcc96e",
+      "revId": "73ad4036d62b3aa7cf50e11ddf7bee8278bbe4d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
