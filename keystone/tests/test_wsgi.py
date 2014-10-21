@@ -16,6 +16,7 @@ import gettext
 import socket
 import uuid
 
+import eventlet
 import mock
 from oslo import i18n
 from oslo.serialization import jsonutils
@@ -425,3 +426,49 @@ class ServerTest(tests.TestCase):
                                                     1)
 
         self.assertTrue(mock_listen.called)
+
+    def test_client_socket_timeout(self):
+        # mocking server method of eventlet.wsgi to check it is called with
+        # configured 'client_socket_timeout' value.
+
+        # setting socket_timeout as 5, so that after 5 seconds client
+        # connection will be closed if it is idle.
+        socket_timeout = 5
+        self.config_fixture.config(client_socket_timeout=socket_timeout)
+        server = environment.Server(mock.MagicMock(), host=self.host,
+                                    port=self.port)
+        with mock.patch.object(eventlet.wsgi, 'server') as mock_server:
+            fake_application = uuid.uuid4().hex
+            fake_socket = uuid.uuid4().hex
+            server._run(fake_application, fake_socket)
+            mock_server.assert_called_once_with(fake_socket,
+                                                fake_application,
+                                                debug=mock.ANY,
+                                                socket_timeout=socket_timeout,
+                                                custom_pool=server.pool,
+                                                log=mock.ANY,
+                                                keepalive=mock.ANY)
+
+    def test_wsgi_keep_alive(self):
+        # mocking server method of eventlet.wsgi to check it is called with
+        # configured 'wsgi_keep_alive' value.
+
+        # setting wsgi_keepalive as False, so that after  connection will be
+        # closed automatically after response is sent and read successfully
+        # by the client.
+        wsgi_keepalive = False
+        self.config_fixture.config(wsgi_keep_alive=wsgi_keepalive)
+
+        server = environment.Server(mock.MagicMock(), host=self.host,
+                                    port=self.port)
+        with mock.patch.object(eventlet.wsgi, 'server') as mock_server:
+            fake_application = uuid.uuid4().hex
+            fake_socket = uuid.uuid4().hex
+            server._run(fake_application, fake_socket)
+            mock_server.assert_called_once_with(fake_socket,
+                                                fake_application,
+                                                debug=mock.ANY,
+                                                socket_timeout=mock.ANY,
+                                                custom_pool=server.pool,
+                                                log=mock.ANY,
+                                                keepalive=wsgi_keepalive)
