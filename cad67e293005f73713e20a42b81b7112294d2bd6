@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_13696725",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-21T21:32:57Z",
+      "side": 1,
+      "message": "Well... not anymore !\nRemoving this. :-)",
+      "parentUuid": "baa201ad_ca1a327c",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_bb67d2e9",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2014-10-19T07:58:54Z",
       "side": 1,
       "message": "The way inherited_to_projects is used here means that it is impossible to  just list all the assignments that are NOT inherited....that may be OK....but is probably not an obvious result of calling the API with inherited_to_projects \u003d False.",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_d3a35f4d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-21T21:32:57Z",
+      "side": 1,
+      "message": "In fact it does not mean what you said.\nNote that we only add a filter for inherited column if inherited_to_projects flag is true.\nOtherwise, we do not add it and then get results independently of this column.",
+      "parentUuid": "9aa7fdbe_bb67d2e9",
       "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_351bab1c",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 856,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-21T21:32:57Z",
+      "side": 1,
+      "message": "No, we don\u0027t honour any inherited assignments we find if the OS-INHERIT extension is disabled.\nTake a look at _filter_inherited(..) use at [1], we skip them.\n\nSo we\u0027re ok on this point, no bug to raise. :- )\n\n[1] https://github.com/openstack/keystone/blob/master/keystone/assignment/controllers.py#L886-L887",
+      "parentUuid": "9aa7fdbe_63e86a7d",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_00a41906",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 11
@@ -64,6 +118,24 @@
       "writtenOn": "2014-10-17T15:49:36Z",
       "side": 1,
       "message": "It took me a whole to think through why you are doing this...it might be worthy of a slightly more verbose comment",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_04967f4c",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 875,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-21T21:32:57Z",
+      "side": 1,
+      "message": "This comment connects with the method doc, that says if project_id is specified, the expanded assignments will be filtered by its value. I\u0027ll be more verbose by remembering what was said there.\n\n---\n\nBut WAIT ...\nI think we are not treating the case in which we have a non-inherited assignment on a domain and we want to filter returned role assignments by a specific domain_id.\nI\u0027ll go through the tests and check case-by-case...\n\nI do think we have to be exhaustive when testing the possible filter combinations ...",
+      "parentUuid": "baa201ad_00a41906",
       "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_e4133b0b",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 896,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-21T21:32:57Z",
+      "side": 1,
+      "message": "No, we don\u0027t.\nThese methods are used inside the _list_effective_assignments(..) method, that in turn has its returned assignments expanded at line 1075-1076.\n\nRemember that when we set effective option we want to get both inherited (later expanded) and direct role assignments.",
+      "parentUuid": "9aa7fdbe_c3fe7638",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_fb615ad4",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 11
@@ -98,6 +188,24 @@
       "writtenOn": "2014-10-19T07:58:54Z",
       "side": 1,
       "message": "...the way list_role_assignmenst() is currently defined, this call will get both inherited and non-inherited assignments....not sure that\u0027s what we want?",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_a430539f",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 926,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-21T21:32:57Z",
+      "side": 1,
+      "message": "Replied by the above discussion (line 896).",
+      "parentUuid": "9aa7fdbe_fb615ad4",
       "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_a93cace3",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1046,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-21T21:32:57Z",
+      "side": 1,
+      "message": "Totally agree. Let\u0027s review the docs on the next patch.",
+      "parentUuid": "9aa7fdbe_0374fefb",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_83d62ec4",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 11
@@ -132,6 +258,24 @@
       "writtenOn": "2014-10-18T09:51:21Z",
       "side": 1,
       "message": "So \u0027effective\u0027 implies we will honour any inherited assignments....which is kind of not obvious from the way this is laid out. Indeed \u0027inherited\u0027 is not used in the block of \u0027effective\u0027 below.  Maybe move the \u0027inherited\u0027 setting to inside the \u0027else\u0027 block below where it is used?\n\nAgain, another thing to but in the doctoring above :-)",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_c9bad06d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1064,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-21T21:32:57Z",
+      "side": 1,
+      "message": "I will move this to inside the \u0027else\u0027 block below ...   :)",
+      "parentUuid": "9aa7fdbe_83d62ec4",
       "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
