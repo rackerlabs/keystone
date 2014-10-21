@@ -34,6 +34,24 @@
       "revId": "73ad4036d62b3aa7cf50e11ddf7bee8278bbe4d0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_fdbcc96e",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1316,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-21T01:19:08Z",
+      "side": 0,
+      "message": "It might be a mistake but changing it now will break products that are depending on it, so it\u0027ll have to go through a period of deprecation before it can be removed.\n\nIs it documented somewhere that a user object in LDAP should only ever have the id, name, description, enabled, and mail fields?",
+      "parentUuid": "9aa7fdbe_1d534d18",
+      "revId": "73ad4036d62b3aa7cf50e11ddf7bee8278bbe4d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
