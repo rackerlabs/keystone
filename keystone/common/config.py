@@ -113,6 +113,14 @@ FILE_OPTIONS = {
         cfg.IntOpt('crypt_strength', default=40000,
                    help='The value passed as the keyword "rounds" to '
                         'passlib\'s encrypt method.'),
+        cfg.BoolOpt('wsgi_keep_alive', default=True,
+                    help="If False, closes the client socket connection "
+                         "explicitly."),
+        cfg.IntOpt('client_socket_timeout', default=900,
+                   help="Timeout for client connections socket operations. "
+                        "If an incoming connection is idle for this number "
+                        "of seconds it will be closed. A value of '0' "
+                        "means wait forever."),
         cfg.BoolOpt('tcp_keepalive', default=False,
                     help='Set this to true if you want to enable '
                          'TCP_KEEPALIVE on server sockets, i.e. sockets used '
