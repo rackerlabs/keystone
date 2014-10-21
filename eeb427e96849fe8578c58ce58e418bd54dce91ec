@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_81bee6d2",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-21T17:32:06Z",
+      "side": 1,
+      "message": "These content types are read from the Request object and not the Response object. Keystone can still return a different type depending on the Accept header from the user/client. \n\nThis allows us to give the user a more detailed message when they try to pass an unsupported Content-Type to Keystone (application/xml for example), instead of \"Couldn\u0027t parse JSON response\" or something similar.",
+      "parentUuid": "9aa7fdbe_5a79652e",
+      "revId": "eeb427e96849fe8578c58ce58e418bd54dce91ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_da7e35e4",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2014-10-20T18:10:14Z",
       "side": 1,
       "message": "should change this to just TestAuth.",
+      "revId": "eeb427e96849fe8578c58ce58e418bd54dce91ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_fcfd953c",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1677,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-21T17:32:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa7fdbe_da7e35e4",
       "revId": "eeb427e96849fe8578c58ce58e418bd54dce91ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_1cfdf93a",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1678,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-21T17:32:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa7fdbe_9a74adfe",
+      "revId": "eeb427e96849fe8578c58ce58e418bd54dce91ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_9a1d8dc0",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 8
@@ -64,6 +118,24 @@
       "writtenOn": "2014-10-20T18:10:14Z",
       "side": 1,
       "message": "the assertion here should be changed to verify it\u0027s an empty list and the comment removed.\n\n self.assertEqual([], r.result[\u0027token\u0027][\u0027catalog\u0027])",
+      "revId": "eeb427e96849fe8578c58ce58e418bd54dce91ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_bcba2d6c",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1823,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-21T17:32:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa7fdbe_9a1d8dc0",
       "revId": "eeb427e96849fe8578c58ce58e418bd54dce91ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_3ca63d54",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-21T17:32:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa7fdbe_9a4bcdaf",
+      "revId": "eeb427e96849fe8578c58ce58e418bd54dce91ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_1aeefd88",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 8
@@ -98,6 +188,24 @@
       "writtenOn": "2014-10-20T18:10:14Z",
       "side": 1,
       "message": "weird... seems like shouldn\u0027t have to reset auth based on the original comment.",
+      "revId": "eeb427e96849fe8578c58ce58e418bd54dce91ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_1c59795a",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-21T17:32:06Z",
+      "side": 1,
+      "message": "would it be better to ensure it was of type dict?",
+      "parentUuid": "9aa7fdbe_1aeefd88",
       "revId": "eeb427e96849fe8578c58ce58e418bd54dce91ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
