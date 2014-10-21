@@ -742,10 +742,12 @@ class RegionValidationTestCase(testtools.TestCase):
                                'parent_region_id': uuid.uuid4().hex}
         self.create_region_validator.validate(request_to_validate)
 
-    def test_validate_region_create_succeeds_with_extra_parameters(self):
+    def test_validate_region_create_fails_with_extra_parameters(self):
         """Validate create region request with extra values."""
         request_to_validate = {'other_attr': uuid.uuid4().hex}
-        self.create_region_validator.validate(request_to_validate)
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_region_validator.validate,
+                          request_to_validate)
 
     def test_validate_region_create_succeeds_with_url(self):
         """Validate `url` attribute in region create request."""
