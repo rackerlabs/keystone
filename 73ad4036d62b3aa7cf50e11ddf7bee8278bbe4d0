@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_b936d601",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1316,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-21T00:03:28Z",
+      "side": 0,
+      "message": "This test is here to ensure that we don\u0027t regress bug 1293698 . This needs to work otherwise we have a regression.",
+      "revId": "73ad4036d62b3aa7cf50e11ddf7bee8278bbe4d0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
