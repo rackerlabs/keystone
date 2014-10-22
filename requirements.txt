@@ -31,3 +31,5 @@ dogpile.cache>=0.5.3
 jsonschema>=2.0.0,<3.0.0
 pycadf>=0.6.0
 posix_ipc
+python-keyczar
+msgpack-python
