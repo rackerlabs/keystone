@@ -4320,7 +4320,6 @@ class TrustTests(object):
 class CatalogTests(object):
 
     _legacy_endpoint_id_in_endpoint = False
-    _enabled_default_to_true_when_creating_endpoint = False
 
     def test_region_crud(self):
         # create
@@ -4719,7 +4718,11 @@ class CatalogTests(object):
             'interface': 'public',
             'url': uuid.uuid4().hex,
         }
-        self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
+        res = self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
+        if self._legacy_endpoint_id_in_endpoint:
+            endpoint['legacy_endpoint_id'] = None
+        endpoint['enabled'] = True
+        self.assertDictEqual(endpoint, res)
 
     def test_update_endpoint(self):
         dummy_service_ref, endpoint_ref, dummy_disabled_endpoint_ref = (
@@ -4730,8 +4733,6 @@ class CatalogTests(object):
         expected_endpoint['interface'] = 'private'
         if self._legacy_endpoint_id_in_endpoint:
             expected_endpoint['legacy_endpoint_id'] = None
-        if self._enabled_default_to_true_when_creating_endpoint:
-            expected_endpoint['enabled'] = True
         self.assertDictEqual(expected_endpoint, res)
 
     def test_update_endpoint_non_exist_region_id(self):
