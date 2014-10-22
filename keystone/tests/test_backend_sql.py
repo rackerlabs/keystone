@@ -653,6 +653,17 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
                           self.catalog_api.delete_region,
                           region['id'])
 
+    def test_update_endpoint(self):
+        dummy_service_ref, endpoint_ref, dummy_disabled_endpoint_ref = (
+            self._create_endpoints())
+        res = self.catalog_api.update_endpoint(endpoint_ref['id'],
+                                               {'interface': 'private'})
+        expected_endpoint = endpoint_ref.copy()
+        expected_endpoint['interface'] = 'private'
+        expected_endpoint['legacy_endpoint_id'] = None
+        expected_endpoint['enabled'] = True
+        self.assertDictEqual(expected_endpoint, res)
+
 
 class SqlPolicy(SqlTests, test_backend.PolicyTests):
     pass
