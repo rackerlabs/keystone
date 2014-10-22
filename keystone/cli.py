@@ -20,6 +20,7 @@ from oslo.config import cfg
 import pbr.version
 
 from keystone import assignment
+from keystone.common import ae
 from keystone.common import openssl
 from keystone.common import sql
 from keystone.common.sql import migration_helpers
@@ -94,19 +95,16 @@ class DbVersion(BaseApp):
         migration_helpers.print_db_version(extension)
 
 
-class BaseCertificateSetup(BaseApp):
-    """Common user/group setup for PKI and SSL generation."""
+class BasePermissionsSetup(BaseApp):
+    """Common user/group setup for file permissions."""
 
     @classmethod
     def add_argument_parser(cls, subparsers):
-        parser = super(BaseCertificateSetup,
+        parser = super(BasePermissionsSetup,
                        cls).add_argument_parser(subparsers)
         running_as_root = (os.geteuid() == 0)
         parser.add_argument('--keystone-user', required=running_as_root)
         parser.add_argument('--keystone-group', required=running_as_root)
-        parser.add_argument('--rebuild', default=False, action='store_true',
-                            help=('Rebuild certificate files: erase previous '
-                                  'files and regenerate them.'))
         return parser
 
     @staticmethod
@@ -129,6 +127,19 @@ class BaseCertificateSetup(BaseApp):
             raise ValueError("Unknown group '%s' in --keystone-group" % a)
 
         return keystone_user_id, keystone_group_id
+
+
+class BaseCertificateSetup(BasePermissionsSetup):
+    """Provides common options for certificate setup."""
+
+    @classmethod
+    def add_argument_parser(cls, subparsers):
+        parser = super(BaseCertificateSetup,
+                       cls).add_argument_parser(subparsers)
+        parser.add_argument('--rebuild', default=False, action='store_true',
+                            help=('Rebuild certificate files: erase previous '
+                                  'files and regenerate them.'))
+        return parser
 
 
 class PKISetup(BaseCertificateSetup):
@@ -167,6 +178,49 @@ class SSLSetup(BaseCertificateSetup):
         conf_ssl = openssl.ConfigureSSL(keystone_user_id, keystone_group_id,
                                         rebuild=CONF.command.rebuild)
         conf_ssl.run()
+
+
+class AESetup(BasePermissionsSetup):
+    """Setup an key repository for AE tokens.
+
+    This also creates a primary key used for both creating and validating AE
+    tokens. To improve security, you should rotate your keys (using
+    keystone-manage ae_rotate, for example).
+
+    """
+
+    name = 'ae_setup'
+
+    @classmethod
+    def main(cls):
+        keystone_user_id, keystone_group_id = cls.get_user_group()
+        ae.create_key_directory(keystone_user_id, keystone_group_id)
+        if ae.validate_key_repository():
+            ae.initialize_key_repository(keystone_user_id, keystone_group_id)
+
+
+class AERotate(BasePermissionsSetup):
+    """Rotate AES keys for AES-based tokens.
+
+    This assumes you have already run keystone-manage ae_setup.
+
+    A new primary key is created, which is used for new tokens. The old primary
+    key is demoted to active, which can then still be used for validating
+    tokens. Excess active keys (beyond [ae_tokens] max_active_keys) are
+    revoked. Revoked keys are permanently deleted.
+
+    Rotating keys too frequently, or with [ae_tokens] max_active_keys set too
+    low, will cause tokens to become invalid prior to their expiration.
+
+    """
+
+    name = 'ae_rotate'
+
+    @classmethod
+    def main(cls):
+        keystone_user_id, keystone_group_id = cls.get_user_group()
+        if ae.validate_key_repository():
+            ae.rotate_keys(keystone_user_id, keystone_group_id)
 
 
 class TokenFlush(BaseApp):
@@ -274,6 +328,8 @@ class SamlIdentityProviderMetadata(BaseApp):
 
 
 CMDS = [
+    AERotate,
+    AESetup,
     DbSync,
     DbVersion,
     MappingPurge,
