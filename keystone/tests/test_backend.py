@@ -4358,6 +4358,13 @@ class CatalogTests(object):
         self.assertIn(parent_region_id, region_ids)
         self.assertIn(region_id, region_ids)
 
+        # update
+        region_desc_update = {'description': uuid.uuid4().hex}
+        res = self.catalog_api.update_region(region_id, region_desc_update)
+        expected_region = new_region.copy()
+        expected_region['description'] = region_desc_update['description']
+        self.assertDictEqual(expected_region, res)
+
         # delete
         self.catalog_api.delete_region(parent_region_id)
         self.assertRaises(exception.RegionNotFound,
@@ -4473,6 +4480,13 @@ class CatalogTests(object):
         # list
         services = self.catalog_api.list_services()
         self.assertIn(service_id, [x['id'] for x in services])
+
+        # update
+        service_name_update = {'name': uuid.uuid4().hex}
+        res = self.catalog_api.update_service(service_id, service_name_update)
+        expected_service = new_service.copy()
+        expected_service['name'] = service_name_update['name']
+        self.assertDictEqual(expected_service, res)
 
         # delete
         self.catalog_api.delete_service(service_id)
@@ -4702,6 +4716,32 @@ class CatalogTests(object):
             'url': uuid.uuid4().hex,
         }
         self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
+
+    def test_update_endpoint(self):
+        dummy_service_ref, endpoint_ref, dummy_disabled_endpoint_ref = (
+            self._create_endpoints())
+        res = self.catalog_api.update_endpoint(endpoint_ref['id'],
+                                               {'interface': 'private'})
+        expected_endpoint = endpoint_ref.copy()
+        expected_endpoint['interface'] = 'private'
+        if 'legacy_endpoint_id' in res:
+            # legacy_endpoint_id is just an internal attribute used for
+            # backward compatibility. It is not exposed to user and irrelevant
+            # to the tested behaviour
+            res.pop('legacy_endpoint_id')
+        if 'enabled' in res:
+            # TODO(wanghong) let the test pass, this will be removed in the
+            # following review which depends on this soon
+            expected_endpoint['enabled'] = True
+        self.assertDictEqual(expected_endpoint, res)
+
+    def test_update_endpoint_non_exist_region_id(self):
+        dummy_service_ref, endpoint_ref, dummy_disabled_endpoint_ref = (
+            self._create_endpoints())
+        self.assertRaises(exception.NotFound,
+                          self.catalog_api.update_endpoint,
+                          endpoint_ref['id'],
+                          {'region_id': uuid.uuid4().hex})
 
     def _create_endpoints(self):
         # Creates a service and 2 endpoints for the service in the same region.
