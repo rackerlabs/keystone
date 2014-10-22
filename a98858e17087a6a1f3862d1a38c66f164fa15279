@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_d67a49f0",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-22T17:10:03Z",
+      "side": 1,
+      "message": "extend(): 1 (lhcheng)\n+\u003d : 1 (rodrigods)\n\nthan it\u0027s a draw hehe \u003d)",
+      "parentUuid": "9aa7fdbe_f693cd4c",
+      "revId": "a98858e17087a6a1f3862d1a38c66f164fa15279",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_960441c1",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 30
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_f62f4df4",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 919,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-22T17:10:03Z",
+      "side": 1,
+      "message": "makes sense, both are equally good to me.",
+      "parentUuid": "9aa7fdbe_960441c1",
+      "revId": "a98858e17087a6a1f3862d1a38c66f164fa15279",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_d6bb29e3",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 30
@@ -47,6 +83,24 @@
       "writtenOn": "2014-10-22T17:05:10Z",
       "side": 1,
       "message": "with the comment above, \"list_childrens_for_project\" here?",
+      "revId": "a98858e17087a6a1f3862d1a38c66f164fa15279",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_16005166",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-22T17:10:03Z",
+      "side": 1,
+      "message": "don\u0027t think so, list_childrens does not make clear that we will return the whole subtree, instead of all direct children.",
+      "parentUuid": "9aa7fdbe_d6bb29e3",
       "revId": "a98858e17087a6a1f3862d1a38c66f164fa15279",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
