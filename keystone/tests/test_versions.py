@@ -715,7 +715,7 @@ class VersionInheritEnabledTestCase(tests.TestCase):
                         tt_matchers.Equals(exp_json_home_data))
 
 
-class XmlVersionTestCase(tests.TestCase):
+class XmlVersionTestCase(tests.TestCase, tests.XMLPasteMixin):
 
     REQUEST_HEADERS = {'Accept': 'application/xml'}
 
@@ -775,8 +775,10 @@ vnd.openstack.identity-v3+xml"/>
     def setUp(self):
         super(XmlVersionTestCase, self).setUp()
         self.load_backends()
-        self.public_app = self.loadapp('keystone', 'main')
-        self.admin_app = self.loadapp('keystone', 'admin')
+
+        app_conf = 'config:%s' % self.xml_paste_config()
+        self.public_app = self.loadapp(app_conf, 'main')
+        self.admin_app = self.loadapp(app_conf, 'admin')
 
         self.config_fixture.config(
             public_endpoint='http://localhost:%(public_port)d',
