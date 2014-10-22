@@ -336,6 +336,13 @@ class Conflict(Error):
     title = 'Conflict'
 
 
+class KeyczarReadError(Error):
+    message_format = _("%(details)s")
+
+    code = 500
+    title = 'Internal Server Error'
+
+
 class UnexpectedError(SecurityError):
     """Avoids exposing details of failures, unless in debug mode."""
     _message_format = _("An unexpected error prevented the server "
