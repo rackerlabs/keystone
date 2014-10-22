@@ -117,7 +117,8 @@ class AuthTestMixin(object):
 
 
 class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
-                      AuthTestMixin):
+                      AuthTestMixin, tests.ExtendedPasteMixin,
+                      tests.XMLPasteMixin):
     def config_files(self):
         config_files = super(RestfulTestCase, self).config_files()
         config_files.append(tests.dirs.tests_conf('backend_sql.conf'))
@@ -131,27 +132,15 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
 
     def generate_paste_config(self):
         new_paste_file = None
-        try:
-            new_paste_file = tests.generate_paste_config(self.EXTENSION_TO_ADD)
-        except AttributeError:
-            # no need to report this error here, as most tests will not have
-            # EXTENSION_TO_ADD defined.
-            pass
-        finally:
-            return new_paste_file
-
-    def remove_generated_paste_config(self):
-        try:
-            tests.remove_generated_paste_config(self.EXTENSION_TO_ADD)
-        except AttributeError:
-            pass
+        if hasattr(self, 'EXTENSION_TO_ADD'):
+            new_paste_file = self.extend_paste_config(self.EXTENSION_TO_ADD)
+        return self.xml_paste_config(new_paste_file)
 
     def setUp(self, app_conf='keystone'):
         """Setup for v3 Restful Test Cases.
 
         """
         new_paste_file = self.generate_paste_config()
-        self.addCleanup(self.remove_generated_paste_config)
         if new_paste_file:
             app_conf = 'config:%s' % (new_paste_file)
 
