@@ -228,6 +228,11 @@ FILE_OPTIONS = {
                          'owning domain or from projects higher in the '
                          'hierarchy can be optionally enabled.'),
     ],
+    'ae_tokens': [
+        cfg.StrOpt('key_repository',
+                   default='/etc/keystone/keys',
+                   help='Location for AE token signing keys.')
+    ],
     'token': [
         cfg.ListOpt('bind', default=[],
                     help='External auth mechanisms that should add bind '
@@ -244,7 +249,7 @@ FILE_OPTIONS = {
         cfg.StrOpt('provider',
                    help='Controls the token construction, validation, and '
                         'revocation operations. Core providers are '
-                        '"keystone.token.providers.[pkiz|pki|uuid].'
+                        '"keystone.token.providers.[ae|pkiz|pki|uuid].'
                         'Provider". The default provider is uuid.'),
         cfg.StrOpt('driver',
                    default='keystone.token.persistence.backends.sql.Token',

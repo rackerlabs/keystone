@@ -412,6 +412,16 @@
 #control_exchange = keystone
 
 
+[ae_tokens]
+
+#
+# From keystone
+#
+
+# Location for AE token signing keys. (string value)
+#key_repository = /etc/keystone/keys
+
+
 [assignment]
 
 #
@@ -1483,7 +1493,7 @@
 #expiration = 3600
 
 # Controls the token construction, validation, and revocation operations. Core
-# providers are "keystone.token.providers.[pkiz|pki|uuid].Provider". The
+# providers are "keystone.token.providers.[ae|pkiz|pki|uuid].Provider". The
 # default provider is uuid. (string value)
 #provider = <None>
 
