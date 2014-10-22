@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_5873e3e6",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 340,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2014-10-22T19:22:42Z",
+      "side": 1,
+      "message": "rofl - not a big deal since it does the same thing :)",
+      "parentUuid": "9aa7fdbe_d67a49f0",
+      "revId": "a98858e17087a6a1f3862d1a38c66f164fa15279",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_960441c1",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 30
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "don\u0027t think so, list_childrens does not make clear that we will return the whole subtree, instead of all direct children.",
       "parentUuid": "9aa7fdbe_d6bb29e3",
+      "revId": "a98858e17087a6a1f3862d1a38c66f164fa15279",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_db2a6d7d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2014-10-22T19:22:42Z",
+      "side": 1,
+      "message": "okay, as long as its \"list_\u003cobjects\u003e_for_project\" is used.\n\nWonder what henrynash thoughts on this, since he had a comment about the method name before.",
+      "parentUuid": "9aa7fdbe_16005166",
       "revId": "a98858e17087a6a1f3862d1a38c66f164fa15279",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
