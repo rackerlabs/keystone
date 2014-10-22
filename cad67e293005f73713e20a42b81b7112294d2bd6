@@ -72,6 +72,41 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_51f2f56f",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-22T09:30:01Z",
+      "side": 1,
+      "message": "I agree.  But I think that is a bit broken.  If I set \"inherited_to_projects\" \u003d True I get inherited projects, but if I set it to False I get all of them, including the inherited ones?  Very counter intuitive!",
+      "parentUuid": "9aa7fdbe_d3a35f4d",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_f103e9b5",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 771,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-22T09:30:01Z",
+      "side": 1,
+      "message": "If it is....",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_63e86a7d",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 11
@@ -101,6 +136,24 @@
       "side": 1,
       "message": "No, we don\u0027t honour any inherited assignments we find if the OS-INHERIT extension is disabled.\nTake a look at _filter_inherited(..) use at [1], we skip them.\n\nSo we\u0027re ok on this point, no bug to raise. :- )\n\n[1] https://github.com/openstack/keystone/blob/master/keystone/assignment/controllers.py#L886-L887",
       "parentUuid": "9aa7fdbe_63e86a7d",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_f6aaff17",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 856,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-22T09:30:01Z",
+      "side": 1,
+      "message": "Ok, yes I see, so actually we have already filtered them out before we call this method....so you\u0027re right there\u0027s no bug - although perhaps the doc string should make it clear that this filtering has already happened - since the way the doc string is written I was looking for where in this method do we check if OS-INHERIT is enabled.....",
+      "parentUuid": "9aa7fdbe_351bab1c",
       "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -177,6 +230,41 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_9110dda9",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 896,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-22T09:30:01Z",
+      "side": 1,
+      "message": "So in that case, I guess the question is WHY we are not setting inherited_to_projects \u003d True here?  In this method we know that we are only looking for roles that apply to a project - which means that the only way a domain role can get into the answer is if it is an inherited role.\n\nSame for all the other methods.",
+      "parentUuid": "9aa7fdbe_e4133b0b",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_ac958841",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 910,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-22T09:30:01Z",
+      "side": 1,
+      "message": "should set inherited_to_projects \u003d True here....",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_fb615ad4",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 11
@@ -206,6 +294,58 @@
       "side": 1,
       "message": "Replied by the above discussion (line 896).",
       "parentUuid": "9aa7fdbe_fb615ad4",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_ec1a3016",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 926,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-22T09:30:01Z",
+      "side": 1,
+      "message": "true...although see my comments about fixing the driver call!",
+      "parentUuid": "9aa7fdbe_a430539f",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_ecf23099",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 961,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-22T09:30:01Z",
+      "side": 1,
+      "message": "should set inherited_to_projects \u003d True here....",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_6c59e0fd",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 966,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-22T09:30:01Z",
+      "side": 1,
+      "message": "I have to think about it some more, but I\u0027m not sure if filtering by group_id makes sense in effective mode - basically groups should be expanded before any filtering (hence filtering by user makes sense, but not group).  I don\u0027t think the old code would work if you tried that.  Have a think about it, but we might be able to simplify this a bit.",
       "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -276,6 +416,23 @@
       "side": 1,
       "message": "I will move this to inside the \u0027else\u0027 block below ...   :)",
       "parentUuid": "9aa7fdbe_83d62ec4",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_ec4b1057",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1083,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-22T09:30:01Z",
+      "side": 1,
+      "message": "If inherited is False, the the above call will return all assignments, included the inherited ones (see my comment in sql.py).  I think that means that the subsequent formatting will include inherited assignments in the result if the OS-INHERIT extension is enabled.  I don\u0027t think this is what we want.\n\nI don\u0027t believe the fix is to change _filter_inherited(), rather it is to fix assignment_api.list_role_assigments() to correctly honour the inherited flag.",
       "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
