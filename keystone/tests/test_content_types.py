@@ -22,6 +22,7 @@ from testtools import matchers
 
 from keystone.common import extension as keystone_extension
 from keystone import config
+from keystone import tests
 from keystone.tests import rest
 
 
@@ -972,10 +973,11 @@ class LegacyV2UsernameTests(object):
         self.assertEqual(user.get('name'), user.get('username'))
 
 
-class RestfulTestCase(rest.RestfulTestCase):
+class RestfulTestCase(rest.RestfulTestCase, tests.XMLPasteMixin):
 
     def setUp(self):
-        super(RestfulTestCase, self).setUp()
+        app_conf = 'config:%s' % self.xml_paste_config()
+        super(RestfulTestCase, self).setUp(app_conf=app_conf)
 
         # TODO(termie): add an admin user to the fixtures and use that user
         # override the fixtures, for now

@@ -22,6 +22,7 @@ import re
 import shutil
 import socket
 import sys
+import tempfile
 import time
 import warnings
 
@@ -158,26 +159,107 @@ def remove_test_databases():
         os.unlink(pristine)
 
 
-def generate_paste_config(extension_name):
-    # Generate a file, based on keystone-paste.ini, that is named:
-    # extension_name.ini, and includes extension_name in the pipeline
-    with open(dirs.etc('keystone-paste.ini'), 'r') as f:
-        contents = f.read()
+class ExtendedPasteMixin(object):
+    def extend_paste_config(self, extension_name):
+        """Generates a paste config that includes the specified extension."""
+        with open(dirs.etc('keystone-paste.ini'), 'r') as f:
+            contents = f.read()
 
-    new_contents = contents.replace(' service_v3',
-                                    ' %s service_v3' % (extension_name))
+        contents = contents.replace(
+            ' service_v3',
+            ' %s service_v3' % extension_name)
 
-    new_paste_file = dirs.tmp(extension_name + '.ini')
-    with open(new_paste_file, 'w') as f:
-        f.write(new_contents)
+        with tempfile.NamedTemporaryFile(suffix='.ini', delete=False) as f:
+            f.write(contents)
+            self.addCleanup(os.remove, f.name)
+            return f.name
 
-    return new_paste_file
 
+class XMLPasteMixin(object):
+    def xml_paste_config(self, source=None):
+        """Generates a paste config that includes XML translation middleware.
 
-def remove_generated_paste_config(extension_name):
-    # Remove the generated paste config file, named extension_name.ini
-    paste_file_to_remove = dirs.tmp(extension_name + '.ini')
-    os.remove(paste_file_to_remove)
+        :param source: path to an existing paste file to modify.
+        :returns: an absolute path to the generated paste file.
+        """
+        # source paste file can be an already customized file
+        if source is None:
+            source = dirs.etc('keystone-paste.ini')
+
+        with open(source, 'r') as f:
+            contents = f.read()
+
+        # patch v2 public API pipeline
+        contents = contents.replace(
+            ' '.join((
+                'json_body',
+                'ec2_extension',
+                'user_crud_extension',
+                'public_service')),
+            ' '.join((
+                'xml_body_v2',
+                'json_body',
+                'ec2_extension',
+                'user_crud_extension',
+                'public_service')))
+
+        # patch v2 admin API pipeline
+        contents = contents.replace(
+            ' '.join((
+                'json_body',
+                'ec2_extension',
+                's3_extension',
+                'crud_extension',
+                'admin_service')),
+            ' '.join((
+                'xml_body_v2',
+                'json_body',
+                'ec2_extension',
+                'crud_extension',
+                'admin_service')))
+
+        # patch v3 API pipeline
+        contents = contents.replace(
+            ' '.join((
+                'json_body',
+                'ec2_extension_v3',
+                's3_extension',
+                'simple_cert_extension',
+                'revoke_extension',
+                'service_v3')),
+            ' '.join((
+                'xml_body_v3',
+                'json_body',
+                'ec2_extension_v3',
+                's3_extension',
+                'simple_cert_extension',
+                'revoke_extension',
+                'service_v3')))
+
+        # patch public version pipeline
+        contents = contents.replace(
+            ' '.join((
+                'url_normalize',
+                'public_version_service')),
+            ' '.join((
+                'url_normalize',
+                'xml_body',
+                'public_version_service')))
+
+        # patch admin version pipeline
+        contents = contents.replace(
+            ' '.join((
+                'url_normalize',
+                'admin_version_service')),
+            ' '.join((
+                'url_normalize',
+                'xml_body',
+                'admin_version_service')))
+
+        with tempfile.NamedTemporaryFile(suffix='.ini', delete=False) as f:
+            f.write(contents)
+            self.addCleanup(os.remove, f.name)
+            return f.name
 
 
 def skip_if_cache_disabled(*sections):
