@@ -4715,7 +4715,14 @@ class CatalogTests(object):
             'interface': 'public',
             'url': uuid.uuid4().hex,
         }
-        self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
+        res = self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
+        if 'legacy_endpoint_id' in res:
+            # legacy_endpoint_id is just an internal attribute used for
+            # backward compatibility. It is not exposed to user and irrelevant
+            # to the tested behaviour
+            res.pop('legacy_endpoint_id')
+        endpoint['enabled'] = True
+        self.assertDictEqual(endpoint, res)
 
     def test_update_endpoint(self):
         dummy_service_ref, endpoint_ref, dummy_disabled_endpoint_ref = (
@@ -4729,10 +4736,6 @@ class CatalogTests(object):
             # backward compatibility. It is not exposed to user and irrelevant
             # to the tested behaviour
             res.pop('legacy_endpoint_id')
-        if 'enabled' in res:
-            # TODO(wanghong) let the test pass, this will be removed in the
-            # following review which depends on this soon
-            expected_endpoint['enabled'] = True
         self.assertDictEqual(expected_endpoint, res)
 
     def test_update_endpoint_non_exist_region_id(self):
