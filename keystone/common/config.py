@@ -199,6 +199,17 @@ FILE_OPTIONS = {
                          'owning domain or from projects higher in the '
                          'hierarchy can be optionally enabled.'),
     ],
+    'klw_tokens': [
+        cfg.StrOpt('key_repository',
+                   default='/etc/keystone/keys/',
+                   help='Directory containing Keystone Lightweight token '
+                        'keys.'),
+        cfg.IntOpt('max_active_keys',
+                   default=1,
+                   help='This controls how many non-primary active keys are '
+                        'held in rotation by keystone-manage klw_rotate '
+                        'before they are deleted.')
+    ],
     'token': [
         cfg.ListOpt('bind', default=[],
                     help='External auth mechanisms that should add bind '
@@ -216,7 +227,7 @@ FILE_OPTIONS = {
                    default='keystone.token.providers.uuid.Provider',
                    help='Controls the token construction, validation, and '
                         'revocation operations. Core providers are '
-                        '"keystone.token.providers.[pkiz|pki|uuid].'
+                        '"keystone.token.providers.[klwt|pkiz|pki|uuid].'
                         'Provider". The default provider is uuid.'),
         cfg.StrOpt('driver',
                    default='keystone.token.persistence.backends.sql.Token',
