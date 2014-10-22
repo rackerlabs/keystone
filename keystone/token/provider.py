@@ -139,6 +139,13 @@ class Manager(manager.Manager):
                                                       callback_fns)
 
     @property
+    def _needs_persistence(self):
+        klwt_provider_str = 'keystone.token.providers.klwt.Provider'
+        using_klwt = (CONF.token.provider == klwt_provider_str)
+        needs_persistence = not using_klwt
+        return needs_persistence
+
+    @property
     def _persistence(self):
         # NOTE(morganfainberg): This should not be handled via __init__ to
         # avoid dependency injection oddities circular dependencies (where
@@ -223,9 +230,16 @@ class Manager(manager.Manager):
 
     def validate_v3_token(self, token_id):
         unique_id = self.unique_id(token_id)
-        # NOTE(morganfainberg): Ensure we never use the long-form token_id
-        # (PKI) as part of the cache_key.
-        token_ref = self._persistence.get_token(unique_id)
+        # NOTE(lbragstad): Only go to persistent storage if we have a token to
+        # fetch from the backend. If the KLWT provider is being used this step
+        # isn't necessary. The KLWT reference is persisted in the token_id, so
+        # in this case set the token_ref as the identifier of the token.
+        if not self._needs_persistence:
+            token_ref = token_id
+        else:
+            # NOTE(morganfainberg): Ensure we never use the long-form token_id
+            # (PKI) as part of the cache_key.
+            token_ref = self._persistence.get_token(unique_id)
         token = self._validate_v3_token(token_ref)
         self._is_valid_token(token)
         return token
@@ -268,6 +282,8 @@ class Manager(manager.Manager):
     @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
                         expiration_time=EXPIRATION_TIME)
     def _validate_token(self, token_id):
+        if not self._needs_persistence:
+            return self.driver.validate_v3_token(token_id)
         token_ref = self._persistence.get_token(token_id)
         version = self.driver.get_token_version(token_ref)
         if version == self.V3:
@@ -378,8 +394,8 @@ class Manager(manager.Manager):
                     token_data=token_data,
                     trust_id=trust['id'] if trust else None,
                     token_version=self.V3)
-
-        self._create_token(token_id, data)
+        if self._needs_persistence:
+            self._create_token(token_id, data)
         return token_id, token_data
 
     def invalidate_individual_token_cache(self, token_id):
