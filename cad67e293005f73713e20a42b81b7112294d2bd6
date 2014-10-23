@@ -531,6 +531,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_6b6fcf2b",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 966,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-23T22:19:50Z",
+      "side": 1,
+      "message": "So it that makes sense in non-effective mode, but I don\u0027t think it is does if you have specified effective. Two reasons:\n\n1) I\u0027m not sure it makes sense it terms of the REST API - at least as it is specified today. Specifying a filter is meant to be a function applied to the \"output of the API\"...i.e. you should only be able to filter on attributes that are being returned (and groups are never returned as part of an effective list_role_assignments call)\n\n2) It also doesn\u0027t make algorithmic sense...imagine (in your example) if a given role is assigned to a project in more than one way (e.g. a direct role AND via a group role)....would you include it or not?  In non-effective mode it\u0027s obvious what to do - since you would be asking explicitly about group assignments...but in effective-mode we are meant to normalise both groups and inheritance...so do you consider the assignment to have come from the group assignment or the direct one?",
+      "parentUuid": "9aa7fdbe_7ad31b04",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_0374fefb",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 11
@@ -630,6 +648,24 @@
       "side": 1,
       "message": "Now I got your point. I totally agree.\n\nI\u0027d suggest to supply inherited_to_projects\u003dTrue/False/None to the backend.\nNone means we don\u0027t wanna consider this field when filtering results.\n\nWhat do you think about this?",
       "parentUuid": "9aa7fdbe_ec4b1057",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_6b56ef5d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1083,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-23T22:19:50Z",
+      "side": 1,
+      "message": "So conceptually that makes sense to me (assuming it is considered reasonable pythonic).  None would be the default for inherited, so you\u0027d only probably ever specific True or False when calling it...otherwise just not set the parameter.",
+      "parentUuid": "9aa7fdbe_d71b02c8",
       "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
