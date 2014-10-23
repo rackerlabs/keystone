@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_4877883a",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-10-23T07:42:00Z",
+      "side": 1,
+      "message": "Suggest naming the exception: \"CircularRegionHierarchyError\" or \"CircularRegionParentError\".\n\nThe phrase \"Danger\" in this case doesn\u0027t help to convey the error case and could cause confusion.",
+      "revId": "e09476b2ba8310d139a393041c47f9be5381ca93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_e8459c17",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-10-23T07:42:00Z",
+      "side": 1,
+      "message": "Suggest: \"The specified parent region %(parent_region_id)s would create a circular region hierarchy\" or something similar.",
+      "revId": "e09476b2ba8310d139a393041c47f9be5381ca93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
