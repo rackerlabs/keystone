@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_7a0ebb3c",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-23T19:46:17Z",
+      "side": 1,
+      "message": "In addition, I am not sure that we still need to return a list of assignment types.\nAs for now, we call the backend by passing just one actor and one target.\n\n--\n\nWe could keep this logic if you prefer.\n\nThe advantage would be to do a single backend call on _list_effective_assignments_for_groups_and_project(..) by passing project_id and project\u0027s domain_id, for example, and not one for group direct roles on project + another for group inherited roles on that project\u0027s domain.",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_bb67d2e9",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 11
@@ -90,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_b7fafe40",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-23T19:46:17Z",
+      "side": 1,
+      "message": "+1\nWould suggest True/False/None. None means we don\u0027t wanna consider this field when filtering results.",
+      "parentUuid": "9aa7fdbe_51f2f56f",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_f103e9b5",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 11
@@ -101,6 +136,24 @@
       "writtenOn": "2014-10-22T09:30:01Z",
       "side": 1,
       "message": "If it is....",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_17810ac4",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 771,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-23T19:46:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa7fdbe_f103e9b5",
       "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -160,6 +213,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_976c1a37",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 856,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-23T19:46:17Z",
+      "side": 1,
+      "message": "I will improve the doc on this point.",
+      "parentUuid": "9aa7fdbe_f6aaff17",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_00a41906",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 11
@@ -189,6 +260,24 @@
       "side": 1,
       "message": "This comment connects with the method doc, that says if project_id is specified, the expanded assignments will be filtered by its value. I\u0027ll be more verbose by remembering what was said there.\n\n---\n\nBut WAIT ...\nI think we are not treating the case in which we have a non-inherited assignment on a domain and we want to filter returned role assignments by a specific domain_id.\nI\u0027ll go through the tests and check case-by-case...\n\nI do think we have to be exhaustive when testing the possible filter combinations ...",
       "parentUuid": "baa201ad_00a41906",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_e57690a3",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 875,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-23T19:46:17Z",
+      "side": 1,
+      "message": "I will submit a bug to work on a better suite of tests ..",
+      "parentUuid": "9aa7fdbe_04967f4c",
       "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -248,6 +337,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_da46c74e",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 896,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-23T19:46:17Z",
+      "side": 1,
+      "message": "Agreed! We already have got direct role assignment above at line 887.",
+      "parentUuid": "9aa7fdbe_9110dda9",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_ac958841",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 11
@@ -259,6 +366,24 @@
       "writtenOn": "2014-10-22T09:30:01Z",
       "side": 1,
       "message": "should set inherited_to_projects \u003d True here....",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_1a7ccf82",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 910,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-23T19:46:17Z",
+      "side": 1,
+      "message": "Agreed!",
+      "parentUuid": "9aa7fdbe_ac958841",
       "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -318,6 +443,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_37436e6d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 926,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-23T19:46:17Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa7fdbe_ec1a3016",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_ecf23099",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 11
@@ -335,6 +478,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_fa8aab19",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 961,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-23T19:46:17Z",
+      "side": 1,
+      "message": "Also agreed! :)",
+      "parentUuid": "9aa7fdbe_ecf23099",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_6c59e0fd",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 11
@@ -346,6 +507,24 @@
       "writtenOn": "2014-10-22T09:30:01Z",
       "side": 1,
       "message": "I have to think about it some more, but I\u0027m not sure if filtering by group_id makes sense in effective mode - basically groups should be expanded before any filtering (hence filtering by user makes sense, but not group).  I don\u0027t think the old code would work if you tried that.  Have a think about it, but we might be able to simplify this a bit.",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_7ad31b04",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 966,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-23T19:46:17Z",
+      "side": 1,
+      "message": "Suppose the following use case:\n\nAs a project admin, I\u0027d like to know what role assignments are being applied to my project (filter by project) for a given group  of users (suppose master_devs :-) inside my domain (filter by group).\n\nDoes it make sense?",
+      "parentUuid": "9aa7fdbe_6c59e0fd",
       "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -433,6 +612,24 @@
       "writtenOn": "2014-10-22T09:30:01Z",
       "side": 1,
       "message": "If inherited is False, the the above call will return all assignments, included the inherited ones (see my comment in sql.py).  I think that means that the subsequent formatting will include inherited assignments in the result if the OS-INHERIT extension is enabled.  I don\u0027t think this is what we want.\n\nI don\u0027t believe the fix is to change _filter_inherited(), rather it is to fix assignment_api.list_role_assigments() to correctly honour the inherited flag.",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_d71b02c8",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1083,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-23T19:46:17Z",
+      "side": 1,
+      "message": "Now I got your point. I totally agree.\n\nI\u0027d suggest to supply inherited_to_projects\u003dTrue/False/None to the backend.\nNone means we don\u0027t wanna consider this field when filtering results.\n\nWhat do you think about this?",
+      "parentUuid": "9aa7fdbe_ec4b1057",
       "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
