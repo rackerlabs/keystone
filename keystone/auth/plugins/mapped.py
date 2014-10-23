@@ -28,6 +28,9 @@ from keystone import notifications
 class Mapped(auth.AuthMethodHandler):
 
     def authenticate(self, context, auth_payload, auth_context):
+        self._authenticate(context, auth_payload, auth_context)
+
+    def _authenticate(self, context, auth_payload, auth_context):
         """Authenticate mapped user and return an authentication context.
 
         :param context: keystone's request context
