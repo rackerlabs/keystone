@@ -45,7 +45,11 @@ class Mapped(auth.AuthMethodHandler):
         In addition to ``user_id`` in ``auth_context``, this plugin sets
         ``group_ids``, ``OS-FEDERATION:identity_provider`` and
         ``OS-FEDERATION:protocol``
+
         """
+        return self._authenticate(context, auth_payload, auth_context)
+
+    def _authenticate(self, context, auth_payload, auth_context):
 
         if 'id' in auth_payload:
             fields = self._handle_scoped_token(context, auth_payload)
