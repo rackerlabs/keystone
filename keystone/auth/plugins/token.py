@@ -13,6 +13,7 @@
 # under the License.
 
 from keystone import auth
+from keystone.auth.plugins import mapped
 from keystone.common import dependency
 from keystone.common import wsgi
 from keystone import exception
@@ -28,20 +29,32 @@ class Token(auth.AuthMethodHandler):
 
     method = 'token'
 
+    def _get_token_ref(self, auth_payload):
+        token_id = auth_payload['id']
+        response = self.token_provider_api.validate_token(token_id)
+        return token_model.KeystoneToken(token_id=token_id,
+                                         token_data=response)
+
     def authenticate(self, context, auth_payload, user_context):
+        if 'id' not in auth_payload:
+            raise exception.ValidationError(attribute='id',
+                                            target=self.method)
+        token_ref = self._get_token_ref(auth_payload)
+        if token_ref.is_federated_user:
+            plugin = mapped.Mapped()
+        else:
+            plugin = self
+        plugin._authenticate(context, auth_payload, user_context)
+
+    def _authenticate(self, context, auth_payload, user_context):
         try:
-            if 'id' not in auth_payload:
-                raise exception.ValidationError(attribute='id',
-                                                target=self.method)
-            token_id = auth_payload['id']
-            response = self.token_provider_api.validate_token(token_id)
-            token_ref = token_model.KeystoneToken(token_id=token_id,
-                                                  token_data=response)
 
             # Do not allow tokens used for delegation to
             # create another token, or perform any changes of
             # state in Keystone. To do so is to invite elevation of
             # privilege attacks
+
+            token_ref = self._get_token_ref(auth_payload)
             if token_ref.oauth_scoped or token_ref.trust_scoped:
                 raise exception.Forbidden()
 
