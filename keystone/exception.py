@@ -115,6 +115,13 @@ class ValidationSizeError(Error):
     title = 'Bad Request'
 
 
+class CircleRegionDangerError(Error):
+    message_format = _("The specified parent region %(parent_region_id)s "
+                       "would make a circle in the hierarchical regions.")
+    code = 400
+    title = 'Bad Request'
+
+
 class PasswordVerificationError(Error):
     message_format = _("The password length must be less than or equal "
                        "to %(size)i. The server could not comply with the "

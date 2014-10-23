@@ -3824,6 +3824,49 @@ class CatalogTests(object):
                           self.catalog_api.create_region,
                           new_region)
 
+    def test_can_not_make_circle_via_update_region(self):
+        region_one = {
+            'id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+        }
+        self.catalog_api.create_region(region_one)
+
+        # self circle: region_one->region_one
+        self.assertRaises(exception.CircleRegionDangerError,
+                          self.catalog_api.update_region,
+                          region_one['id'],
+                          {'parent_region_id': region_one['id']})
+
+        # region_one->reiong_two->region_one
+        region_two = {
+            'id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'parent_region_id': region_one['id'],
+        }
+        self.catalog_api.create_region(region_two)
+        self.assertRaises(exception.CircleRegionDangerError,
+                          self.catalog_api.update_region,
+                          region_one['id'],
+                          {'parent_region_id': region_two['id']})
+
+        # region_one region_tow->region_three->region_four->region_two
+        region_three = {
+            'id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'parent_region_id': region_two['id'],
+        }
+        self.catalog_api.create_region(region_three)
+        region_four = {
+            'id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'parent_region_id': region_three['id'],
+        }
+        self.catalog_api.create_region(region_four)
+        self.assertRaises(exception.CircleRegionDangerError,
+                          self.catalog_api.update_region,
+                          region_two['id'],
+                          {'parent_region_id': region_four['id']})
+
     def test_service_crud(self):
         # create
         service_id = uuid.uuid4().hex

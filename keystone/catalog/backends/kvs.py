@@ -70,6 +70,7 @@ class Catalog(kvs.Base, catalog.Driver):
         self._check_parent_region(region)
         old_region = self.get_region(region_id)
         old_region.update(region)
+        self._ensure_no_circle_in_hierarchical_regions(old_region)
         self.db.set('region-%s' % region_id, old_region)
         return old_region
 

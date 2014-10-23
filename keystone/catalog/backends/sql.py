@@ -162,6 +162,7 @@ class Catalog(catalog.Driver):
             ref = self._get_region(session, region_id)
             old_dict = ref.to_dict()
             old_dict.update(region_ref)
+            self._ensure_no_circle_in_hierarchical_regions(old_dict)
             new_region = Region.from_dict(old_dict)
             for attr in Region.attributes:
                 if attr != 'id':
