@@ -1629,6 +1629,20 @@ class FederatedTokenTests(FederationTests):
         context['query_string'] = []
 
 
+class FederatedTokenTestsMethodToken(FederatedTokenTests):
+    AUTH_METHOD = 'token'
+
+    def config_overrides(self):
+        super(FederatedTokenTestsMethodToken, self).config_overrides()
+        method_classes = dict(
+            external='keystone.auth.plugins.external.DefaultDomain',
+            password='keystone.auth.plugins.password.Password',
+            token='keystone.auth.plugins.token.Token',
+            oauth1='keystone.auth.plugins.oauth1.OAuth',
+            saml2='keystone.auth.plugins.token.Token')
+        self.config_fixture.config(group='auth', **method_classes)
+
+
 class JsonHomeTests(FederationTests, test_v3.JsonHomeTestMixin):
     JSON_HOME_DATA = {
         'http://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/'

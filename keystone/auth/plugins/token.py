@@ -13,6 +13,7 @@
 # under the License.
 
 from keystone import auth
+from keystone.auth.plugins import mapped
 from keystone.common import dependency
 from keystone.common import wsgi
 from keystone import exception
@@ -29,23 +30,30 @@ class Token(auth.AuthMethodHandler):
     method = 'token'
 
     def authenticate(self, context, auth_payload, user_context):
+        if 'id' not in auth_payload:
+            raise exception.ValidationError(attribute='id',
+                                            target=self.method)
+        token_id = auth_payload['id']
+        response = self.token_provider_api.validate_token(token_id)
+        self.token_ref = token_model.KeystoneToken(token_id=token_id,
+                                                   token_data=response)
+        if self.token_ref.is_federated_user:
+            plugin = mapped.Mapped()
+        else:
+            plugin = self
+        return plugin._authenticate(context, auth_payload, user_context)
+
+    def _authenticate(self, context, auth_payload, user_context):
         try:
-            if 'id' not in auth_payload:
-                raise exception.ValidationError(attribute='id',
-                                                target=self.method)
-            token_id = auth_payload['id']
-            response = self.token_provider_api.validate_token(token_id)
-            token_ref = token_model.KeystoneToken(token_id=token_id,
-                                                  token_data=response)
 
             # Do not allow tokens used for delegation to
             # create another token, or perform any changes of
             # state in Keystone. To do so is to invite elevation of
             # privilege attacks
-            if token_ref.oauth_scoped or token_ref.trust_scoped:
+            if self.token_ref.oauth_scoped or self.token_ref.trust_scoped:
                 raise exception.Forbidden()
 
-            wsgi.validate_token_bind(context, token_ref)
+            wsgi.validate_token_bind(context, self.token_ref)
 
             # New tokens maintain the audit_id of the original token in the
             # chain (if possible) as the second element in the audit data
@@ -54,19 +62,19 @@ class Token(auth.AuthMethodHandler):
             # a token that has not been rescoped) or the audit_chain id (in
             # the case of a token that has been rescoped).
             try:
-                token_audit_id = token_ref.get('audit_ids', [])[-1]
+                token_audit_id = self.token_ref.get('audit_ids', [])[-1]
             except IndexError:
                 # NOTE(morganfainberg): In the case this is a token that was
                 # issued prior to audit id existing, the chain is not tracked.
                 token_audit_id = None
 
-            user_context.setdefault('expires_at', token_ref.expires)
+            user_context.setdefault('expires_at', self.token_ref.expires)
             user_context['audit_id'] = token_audit_id
-            user_context.setdefault('user_id', token_ref.user_id)
+            user_context.setdefault('user_id', self.token_ref.user_id)
             # TODO(morganfainberg: determine if token 'extras' can be removed
             # from the user_context
-            user_context['extras'].update(token_ref.get('extras', {}))
-            user_context['method_names'].extend(token_ref.methods)
+            user_context['extras'].update(self.token_ref.get('extras', {}))
+            user_context['method_names'].extend(self.token_ref.methods)
 
         except AssertionError as e:
             LOG.error(e)
