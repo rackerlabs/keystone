@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_f9a9e790",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 919,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-23T12:31:28Z",
+      "side": 1,
+      "message": "Both are OK, although I would probably agree that \"list_parents_for_project\"  is a slightly better name.",
+      "parentUuid": "9aa7fdbe_f62f4df4",
+      "revId": "a98858e17087a6a1f3862d1a38c66f164fa15279",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_d6bb29e3",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 30
@@ -137,6 +155,24 @@
       "side": 1,
       "message": "okay, as long as its \"list_\u003cobjects\u003e_for_project\" is used.\n\nWonder what henrynash thoughts on this, since he had a comment about the method name before.",
       "parentUuid": "9aa7fdbe_16005166",
+      "revId": "a98858e17087a6a1f3862d1a38c66f164fa15279",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_f9248761",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-23T12:31:28Z",
+      "side": 1,
+      "message": "I personally think this name is OK, it is pretty similar to \"list_projects_in_domain\", for example.",
+      "parentUuid": "9aa7fdbe_db2a6d7d",
       "revId": "a98858e17087a6a1f3862d1a38c66f164fa15279",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
