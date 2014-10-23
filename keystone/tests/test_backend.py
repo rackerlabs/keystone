@@ -23,6 +23,7 @@ from oslo.utils import timeutils
 import six
 from testtools import matchers
 
+from keystone.catalog import core
 from keystone.common import driver_hints
 from keystone import config
 from keystone import exception
@@ -4446,6 +4447,69 @@ class CatalogTests(object):
                           self.catalog_api.create_region,
                           new_region)
 
+    def test_can_not_create_circle_regions_via_region_update(self):
+        region_one = self._create_region_with_parent_id()
+
+        # self circle: region_one->region_one
+        self.assertRaises(exception.CircularRegionHierarchyError,
+                          self.catalog_api.update_region,
+                          region_one['id'],
+                          {'parent_region_id': region_one['id']})
+
+        # region_one->reiong_two->region_one
+        region_two = self._create_region_with_parent_id(region_one['id'])
+        self.assertRaises(exception.CircularRegionHierarchyError,
+                          self.catalog_api.update_region,
+                          region_one['id'],
+                          {'parent_region_id': region_two['id']})
+
+        # region_one region_tow->region_three->region_four->region_two
+        region_three = self._create_region_with_parent_id(region_two['id'])
+        region_four = self._create_region_with_parent_id(region_three['id'])
+        self.assertRaises(exception.CircularRegionHierarchyError,
+                          self.catalog_api.update_region,
+                          region_two['id'],
+                          {'parent_region_id': region_four['id']})
+
+    @mock.patch.object(core.Driver,
+                       "_ensure_no_circle_in_hierarchical_regions")
+    def test_circular_regions_can_be_deleted(self, mock_ensure_on_circle):
+        mock_ensure_on_circle.return_value = None
+
+        region_one = self._create_region_with_parent_id()
+
+        # self circle: region_one->region_one
+        self.catalog_api.update_region(
+            region_one['id'],
+            {'parent_region_id': region_one['id']})
+        self.catalog_api.delete_region(region_one['id'])
+
+        # region_one->region_two->region_one
+        region_one = self._create_region_with_parent_id()
+        region_two = self._create_region_with_parent_id(region_one['id'])
+        self.catalog_api.update_region(
+            region_one['id'],
+            {'parent_region_id': region_two['id']})
+        self.catalog_api.delete_region(region_one['id'])
+        self.assertRaises(exception.RegionNotFound,
+                          self.catalog_api.get_region,
+                          region_two['id'])
+
+        # region_one->region_two->region_three->region_one
+        region_one = self._create_region_with_parent_id()
+        region_two = self._create_region_with_parent_id(region_one['id'])
+        region_three = self._create_region_with_parent_id(region_two['id'])
+        self.catalog_api.update_region(
+            region_one['id'],
+            {'parent_region_id': region_three['id']})
+        self.catalog_api.delete_region(region_two['id'])
+        self.assertRaises(exception.RegionNotFound,
+                          self.catalog_api.get_region,
+                          region_one['id'])
+        self.assertRaises(exception.RegionNotFound,
+                          self.catalog_api.get_region,
+                          region_three['id'])
+
     def test_service_crud(self):
         # create
         service_id = uuid.uuid4().hex
@@ -4466,9 +4530,10 @@ class CatalogTests(object):
         self.assertIn(service_id, [x['id'] for x in services])
 
         # update
-        res = self.catalog_api.update_service(service_id, {'name': 'zz'})
+        service_name_update = {'name': uuid.uuid4().hex}
+        res = self.catalog_api.update_service(service_id, service_name_update)
         expected_service = new_service.copy()
-        expected_service['name'] = 'zz'
+        expected_service['name'] = service_name_update['name']
         self.assertDictEqual(expected_service, res)
 
         # delete
