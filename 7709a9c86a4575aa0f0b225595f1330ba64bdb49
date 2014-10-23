@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_01e2c302",
+        "filename": "keystone/exception.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-23T01:39:57Z",
+      "side": 1,
+      "message": "This isn\u0027t used as far as I can tell.",
+      "revId": "7709a9c86a4575aa0f0b225595f1330ba64bdb49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_e1b5bfee",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-23T01:39:57Z",
+      "side": 1,
+      "message": "Is there a test where this is a boolean? e.g., \u0027enabled\u0027: False\n\nDoesn\u0027t need to be addressed in this commit but if you want to add a new test that would be interesting.",
+      "revId": "7709a9c86a4575aa0f0b225595f1330ba64bdb49",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
