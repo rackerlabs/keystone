@@ -19,8 +19,12 @@ pymongo>=2.5
 # Optional backend: LDAP
 # python-ldap does not install on py3
 # authenticate against an existing LDAP server
-# python-ldap==2.3.13
+# python-ldap>=2.4
 # ldappool>=1.0 # MPL
+
+# Required for federation extension (although used only for federating multiple
+# Keystones)
+pysaml2
 
 # Testing
 # computes code coverage percentages
