@@ -66,6 +66,11 @@ class OSRevokeTests(test_v3.RestfulTestCase, test_v3.JsonHomeTestMixin):
         del (event['issued_before'])
         self.assertEqual(sample, event)
 
+    def test_revoked_list_self_url(self):
+        resp = self.get('/OS-REVOKE/events')
+        links = resp.json_body['links']
+        self.assertTrue(links['self'].endswith('/OS-REVOKE/events'))
+
     def test_revoked_token_in_list(self):
         user_id = uuid.uuid4().hex
         expires_at = provider.default_expire_time()
