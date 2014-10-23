@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_14c59f8d",
+        "filename": "keystone/tests/test_v3_os_revoke.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 13463
+      },
+      "writtenOn": "2014-10-23T02:12:06Z",
+      "side": 1,
+      "message": "I believe \u0027/OS-REVOKE/events\u0027 can be assigned to a variable, to avoid repetition. Also, if the url changes, you should expect the response to change as well.",
+      "revId": "84f215cac87b4a4c5eee5383ad2e0d92540e9a88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
