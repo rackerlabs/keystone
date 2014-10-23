@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_e1e85fb6",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-23T01:39:21Z",
+      "side": 1,
+      "message": "this should probably be a fixture.",
+      "revId": "a4c3849b7a4b3084f7e2abc831a134bc347a00d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_61c54f3b",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-23T01:39:21Z",
+      "side": 1,
+      "message": "remove : after param.",
+      "revId": "a4c3849b7a4b3084f7e2abc831a134bc347a00d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_21d26700",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-23T01:39:21Z",
+      "side": 1,
+      "message": "interesting!",
+      "revId": "a4c3849b7a4b3084f7e2abc831a134bc347a00d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_c108bb93",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-23T01:39:21Z",
+      "side": 1,
+      "message": "this seems excessive... how about just replace \"json_body(.* public_service)\" with \"xml_body_v2 json_body$1\" ? regex must support replacement variables?",
+      "revId": "a4c3849b7a4b3084f7e2abc831a134bc347a00d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_c12fdbf4",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-23T01:39:21Z",
+      "side": 1,
+      "message": "having a cleanup indicates that this would make more sense as a fixture.",
+      "revId": "a4c3849b7a4b3084f7e2abc831a134bc347a00d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
