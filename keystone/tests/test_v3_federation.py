@@ -1654,6 +1654,24 @@ class FederatedTokenTests(FederationTests):
         context['query_string'] = []
 
 
+class FederatedTokenTestsMethodToken(FederatedTokenTests):
+    """Test federation operation with unified scoping auth method.
+
+    Test all the operations with auth method set to ``token`` as a new, unified
+    way for scoping all the tokens.
+
+    """
+    AUTH_METHOD = 'token'
+
+    def config_overrides(self):
+        super(FederatedTokenTestsMethodToken, self).config_overrides()
+        method_classes = dict(
+            methods=['saml2', 'token'],
+            token='keystone.auth.plugins.token.Token',
+            saml2='keystone.auth.plugins.saml2.Saml2')
+        self.config_fixture.config(group='auth', **method_classes)
+
+
 class JsonHomeTests(FederationTests, test_v3.JsonHomeTestMixin):
     JSON_HOME_DATA = {
         'http://docs.openstack.org/api/openstack-identity/3/ext/OS-FEDERATION/'
