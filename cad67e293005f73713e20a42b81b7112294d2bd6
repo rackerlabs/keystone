@@ -567,6 +567,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_f57aac22",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 966,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-24T13:47:53Z",
+      "side": 1,
+      "message": "...so I think you are correct on 2)...we *could* distinguish (I knew there was a reason I put that membership info in there!!!)....but I think for now, we should not allow the group filter in effective mode.",
+      "parentUuid": "9aa7fdbe_e4d924f4",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_0374fefb",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 11
