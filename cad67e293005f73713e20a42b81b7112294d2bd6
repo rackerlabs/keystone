@@ -549,6 +549,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_e4d924f4",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 966,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-24T12:07:30Z",
+      "side": 1,
+      "message": "1) Ok ..\n2) We could include both since we have information from where it comes from inside the \u0027links\u0027 entry on the dict.\nTake a look at _build_project_equivalent_of_group_domain_role(..), we have group information on [\u0027links\u0027][\u0027assignment\u0027] and on [\u0027links\u0027][\u0027membership\u0027].\nSo we\u0027d be able to distinguish when it comes directly and when it comes via a group role.\n\nHowever, I think it is not related to this patch, then I will make the change to avoid the use of \u0027effective\u0027 and specifying a \u0027group_id\u0027 together, ok? I\u0027ll add a verification on the list_role_assignments method, as we do for constraints on combining filters.",
+      "parentUuid": "9aa7fdbe_6b6fcf2b",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_0374fefb",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 11
@@ -666,6 +684,24 @@
       "side": 1,
       "message": "So conceptually that makes sense to me (assuming it is considered reasonable pythonic).  None would be the default for inherited, so you\u0027d only probably ever specific True or False when calling it...otherwise just not set the parameter.",
       "parentUuid": "9aa7fdbe_d71b02c8",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_04e388a4",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1083,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-24T12:07:30Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9aa7fdbe_6b56ef5d",
       "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
