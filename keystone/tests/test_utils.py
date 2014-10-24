@@ -30,13 +30,13 @@
 import datetime
 import functools
 import os
+from oslo.serialization import jsonutils
 import time
 import uuid
 
 from keystone.common import utils
 from keystone import config
 from keystone import exception
-from keystone.openstack.common import jsonutils
 from keystone import service
 from keystone import tests
 
