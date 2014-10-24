@@ -585,6 +585,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_d042163d",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 966,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-24T14:07:06Z",
+      "side": 1,
+      "message": "When I think effective + group, I imagine the request returning all users in a group and their respective roles (group roles).\n\nI would return both group and user role, if we are querying user + effective.\n\nAlthough the 1) point makes sense to me. Effective will never follow any REST API-like behaviour, another example would be querying for domain + effective in an env with OS-INHERIT active.",
+      "parentUuid": "9aa7fdbe_f57aac22",
+      "revId": "cad67e293005f73713e20a42b81b7112294d2bd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_0374fefb",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 11
