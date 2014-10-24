@@ -145,9 +145,9 @@ keystone service-create --name=keystone \
                         --description="Keystone Identity Service")
 if [[ -z "$DISABLE_ENDPOINTS" ]]; then
     keystone endpoint-create --region RegionOne --service-id $KEYSTONE_SERVICE \
-        --publicurl "http://$CONTROLLER_PUBLIC_ADDRESS:\$(public_port)s/v2.0" \
-        --adminurl "http://$CONTROLLER_ADMIN_ADDRESS:\$(admin_port)s/v2.0" \
-        --internalurl "http://$CONTROLLER_INTERNAL_ADDRESS:\$(public_port)s/v2.0"
+        --publicurl "http://$CONTROLLER_PUBLIC_ADDRESS:\$(public_port)s" \
+        --adminurl "http://$CONTROLLER_ADMIN_ADDRESS:\$(admin_port)s" \
+        --internalurl "http://$CONTROLLER_INTERNAL_ADDRESS:\$(public_port)s"
 fi
 
 #
