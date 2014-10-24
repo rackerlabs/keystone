@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_37344e49",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2842,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-10-24T13:01:38Z",
+      "side": 1,
+      "message": "\"assign a new role to the trustor\"",
+      "revId": "310ec5315089c8efd6b9abbf80eee4852aa0e7d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
