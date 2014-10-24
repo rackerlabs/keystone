@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_8fc871a9",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1653,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-10-24T12:39:06Z",
+      "side": 1,
+      "message": "Though warn and warning are the same mb would be better to write somewhere in coding standard which one to prefer?\nThis is not about reviewed patch - just an idea.",
+      "revId": "314d58cc03594c808112b51887ceb0d801929baf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
