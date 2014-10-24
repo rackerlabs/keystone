@@ -155,9 +155,9 @@ openstack service create --name keystone \
                          identity
 if [[ -z "$DISABLE_ENDPOINTS" ]]; then
     openstack endpoint create --region RegionOne \
-        --publicurl "http://$CONTROLLER_PUBLIC_ADDRESS:\$(public_port)s/v2.0" \
-        --adminurl "http://$CONTROLLER_ADMIN_ADDRESS:\$(admin_port)s/v2.0" \
-        --internalurl "http://$CONTROLLER_INTERNAL_ADDRESS:\$(public_port)s/v2.0" \
+        --publicurl "http://$CONTROLLER_PUBLIC_ADDRESS:\$(public_port)s" \
+        --adminurl "http://$CONTROLLER_ADMIN_ADDRESS:\$(admin_port)s" \
+        --internalurl "http://$CONTROLLER_INTERNAL_ADDRESS:\$(public_port)s" \
         keystone
 fi
 
