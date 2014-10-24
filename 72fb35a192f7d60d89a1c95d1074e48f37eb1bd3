@@ -33,6 +33,24 @@
       "revId": "72fb35a192f7d60d89a1c95d1074e48f37eb1bd3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_3d7c2883",
+        "filename": "run_tests.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2014-10-24T01:21:58Z",
+      "side": 1,
+      "message": "@stevemar I believe the best option is to over-write the file. What do you think?\n\nand I agree that this may be optional using the --log \u003cfile_name\u003e",
+      "parentUuid": "AAAASn//i7w\u003d",
+      "revId": "72fb35a192f7d60d89a1c95d1074e48f37eb1bd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
