@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9aa7fdbe_8ac85fa9",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2014-10-24T13:27:36Z",
+      "side": 1,
+      "message": "I was hoping that redelegation would be enabled by default, but that creating a trust would require a specific flag to enable it per-trust.\n\nGlobally disabling it by default will make it harder for projects such as Heat/Solum/Murano to consume it, because chances are most deployers won\u0027t switch it on.",
+      "revId": "310ec5315089c8efd6b9abbf80eee4852aa0e7d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_37344e49",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 11
@@ -13,6 +30,40 @@
       "writtenOn": "2014-10-24T13:01:38Z",
       "side": 1,
       "message": "\"assign a new role to the trustor\"",
+      "revId": "310ec5315089c8efd6b9abbf80eee4852aa0e7d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_ea6bab1b",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2014-10-24T13:27:36Z",
+      "side": 1,
+      "message": "Would this be clearer if you used issubset?\n\ne.g\n  parent_roles \u003d set(role[\u0027id\u0027] for role in redelegated_trust[\u0027roles\u0027])\t\n  trust_roles \u003d set(role[\u0027id\u0027] for role in trust[\u0027roles\u0027])\n  if not trust_roles.issubset(parent_roles):\n    ...",
+      "revId": "310ec5315089c8efd6b9abbf80eee4852aa0e7d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_6acedb2f",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 4328
+      },
+      "writtenOn": "2014-10-24T13:27:36Z",
+      "side": 1,
+      "message": "\u0027pedigree\u0027 is a bit of a vague term IMO - I\u0027d either find another word which makes the function self-documenting, or add a docstring/comment explaining exactly what it does.",
       "revId": "310ec5315089c8efd6b9abbf80eee4852aa0e7d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
