@@ -18,7 +18,6 @@ import abc
 
 import six
 
-from keystone import clean
 from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import driver_hints
@@ -29,47 +28,55 @@ from keystone.i18n import _
 from keystone.i18n import _LI
 from keystone import notifications
 from keystone.openstack.common import log
+from keystone.openstack.common import versionutils
 
 
 CONF = config.CONF
 LOG = log.getLogger(__name__)
-SHOULD_CACHE = cache.should_cache_fn('assignment')
+SHOULD_CACHE = cache.should_cache_fn('role')
 
-# NOTE(blk-u): The config option is not available at import time.
-EXPIRATION_TIME = lambda: CONF.assignment.cache_time
+# NOTE(blk-u): The config options are not available at import time.
+EXPIRATION_TIME = lambda: CONF.role.cache_time
 
 
-def calc_default_domain():
-    return {'description':
-            (u'Owns users and tenants (i.e. projects)'
-                ' available on Identity API v2.'),
-            'enabled': True,
-            'id': CONF.identity.default_domain_id,
-            'name': u'Default'}
+def deprecated_to_resource(f):
+    """Specialized deprecation wrapper for assignment to resource.
+
+    This wraps the standard deprecation wrapper and fills in the method
+    names automatically.
+
+    """
+    @six.wraps(f)
+    def wrapper(*args, **kwargs):
+        x = versionutils.deprecated(
+            what='assignment.' + f.__name__ + '()',
+            as_of=versionutils.deprecated.KILO,
+            in_favor_of='resource.' + f.__name__ + '()')
+        return x(f)
+    return wrapper()
 
 
 @dependency.provider('assignment_api')
 @dependency.optional('revoke_api')
-@dependency.requires('credential_api', 'identity_api')
+@dependency.requires('credential_api', 'identity_api', 'resource_api',
+                     'role_api')
 class Manager(manager.Manager):
     """Default pivot point for the Assignment backend.
 
     See :mod:`keystone.common.manager.Manager` for more details on how this
     dynamically calls the backend.
-    assignment.Manager() and identity.Manager() have a circular dependency.
-    The late import works around this.  The if block prevents creation of the
-    api object by both managers.
+
     """
     _PROJECT = 'project'
-    _ROLE_REMOVED_FROM_USER = 'role_removed_from_user'
-    _INVALIDATION_USER_PROJECT_TOKENS = 'invalidate_user_project_tokens'
 
     def __init__(self):
+        # If there is a specific driver specified for assignment, then use it.
+        # Otherwise retrieve the driver type from the resource driver.
         assignment_driver = CONF.assignment.driver
 
         if assignment_driver is None:
-            identity_driver = dependency.REGISTRY['identity_api'].driver
-            assignment_driver = identity_driver.default_assignment_driver()
+            resource_driver = dependency.REGISTRY['resource_api'].driver
+            assignment_driver = resource_driver.default_assignment_driver()
 
         super(Manager, self).__init__(assignment_driver)
 
@@ -79,81 +86,9 @@ class Manager(manager.Manager):
         return [x['id'] for
                 x in self.identity_api.list_groups_for_user(user_id)]
 
-    @notifications.created(_PROJECT)
-    def create_project(self, tenant_id, tenant):
-        tenant = tenant.copy()
-        tenant.setdefault('enabled', True)
-        tenant['enabled'] = clean.project_enabled(tenant['enabled'])
-        tenant.setdefault('description', '')
-        ret = self.driver.create_project(tenant_id, tenant)
-        if SHOULD_CACHE(ret):
-            self.get_project.set(ret, self, tenant_id)
-            self.get_project_by_name.set(ret, self, ret['name'],
-                                         ret['domain_id'])
-        return ret
-
-    def assert_domain_enabled(self, domain_id, domain=None):
-        """Assert the Domain is enabled.
-
-        :raise AssertionError if domain is disabled.
-        """
-        if domain is None:
-            domain = self.get_domain(domain_id)
-        if not domain.get('enabled', True):
-            raise AssertionError(_('Domain is disabled: %s') % domain_id)
-
-    def assert_project_enabled(self, project_id, project=None):
-        """Assert the project is enabled and its associated domain is enabled.
-
-        :raise AssertionError if the project or domain is disabled.
-        """
-        if project is None:
-            project = self.get_project(project_id)
-        self.assert_domain_enabled(domain_id=project['domain_id'])
-        if not project.get('enabled', True):
-            raise AssertionError(_('Project is disabled: %s') % project_id)
-
-    @notifications.disabled(_PROJECT, public=False)
-    def _disable_project(self, project_id):
-        """Emit a notification to the callback system project is been disabled.
-
-        This method, and associated callback listeners, removes the need for
-        making direct calls to other managers to take action (e.g. revoking
-        project scoped tokens) when a project is disabled.
-
-        :param project_id: project identifier
-        :type project_id: string
-        """
-        pass
-
-    @notifications.updated(_PROJECT)
-    def update_project(self, tenant_id, tenant):
-        original_tenant = self.driver.get_project(tenant_id)
-        tenant = tenant.copy()
-        if 'enabled' in tenant:
-            tenant['enabled'] = clean.project_enabled(tenant['enabled'])
-        if (original_tenant.get('enabled', True) and
-                not tenant.get('enabled', True)):
-            self._disable_project(tenant_id)
-        ret = self.driver.update_project(tenant_id, tenant)
-        self.get_project.invalidate(self, tenant_id)
-        self.get_project_by_name.invalidate(self, original_tenant['name'],
-                                            original_tenant['domain_id'])
-        return ret
-
-    @notifications.deleted(_PROJECT)
-    def delete_project(self, tenant_id):
-        project = self.driver.get_project(tenant_id)
-        project_user_ids = self.list_user_ids_for_project(tenant_id)
-        for user_id in project_user_ids:
-            payload = {'user_id': user_id, 'project_id': tenant_id}
-            self._emit_invalidate_user_project_tokens_notification(payload)
-        ret = self.driver.delete_project(tenant_id)
-        self.get_project.invalidate(self, tenant_id)
-        self.get_project_by_name.invalidate(self, project['name'],
-                                            project['domain_id'])
-        self.credential_api.delete_credentials_for_project(tenant_id)
-        return ret
+    def list_user_ids_for_project(self, tenant_id):
+        self.resource_api.get_project(tenant_id)
+        return self.driver.list_user_ids_for_project(tenant_id)
 
     def get_roles_for_user_and_project(self, user_id, tenant_id):
         """Get the roles associated with a user within given project.
@@ -170,7 +105,7 @@ class Manager(manager.Manager):
         """
         def _get_group_project_roles(user_id, project_ref):
             group_ids = self._get_group_ids_for_user_id(user_id)
-            return self.driver.get_group_project_roles(
+            return self.driver.list_role_ids_for_groups_on_project(
                 group_ids,
                 project_ref['id'],
                 project_ref['domain_id'])
@@ -247,6 +182,21 @@ class Manager(manager.Manager):
         # Use set() to process the list to remove any duplicates
         return list(set(user_role_list + group_role_list))
 
+    def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
+        """Get a list of roles for this group on domain and/or project."""
+
+        if project_id is not None:
+            project = self.resource_api.get_project(project_id)
+            role_ids = self.driver.list_role_ids_for_groups_on_project(
+                group_ids, project_id, project['domain_id'])
+        elif domain_id is not None:
+            role_ids = self.driver.list_role_ids_for_groups_on_domain(
+                group_ids, domain_id)
+        else:
+            raise AttributeError(_("Must specify either domain or project"))
+
+        return self.role_api.list_roles_from_ids(role_ids)
+
     def add_user_to_project(self, tenant_id, user_id):
         """Add user to a tenant by creating a default role relationship.
 
@@ -254,7 +204,9 @@ class Manager(manager.Manager):
                  keystone.exception.UserNotFound
 
         """
+        self.resource_api.get_project(tenant_id)
         try:
+            self.role_api.get_role(config.CONF.member_role_id)
             self.driver.add_role_to_user_and_project(
                 user_id,
                 tenant_id,
@@ -265,12 +217,17 @@ class Manager(manager.Manager):
                      config.CONF.member_role_id)
             role = {'id': CONF.member_role_id,
                     'name': CONF.member_role_name}
-            self.driver.create_role(config.CONF.member_role_id, role)
+            self.role_api.create_role(config.CONF.member_role_id, role)
             # now that default role exists, the add should succeed
             self.driver.add_role_to_user_and_project(
                 user_id,
                 tenant_id,
                 config.CONF.member_role_id)
+
+    def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
+        self.resource_api.get_project(tenant_id)
+        self.role_api.get_role(role_id)
+        self.driver.add_role_to_user_and_project(user_id, tenant_id, role_id)
 
     def remove_user_from_project(self, tenant_id, user_id):
         """Remove user from a tenant
@@ -305,35 +262,25 @@ class Manager(manager.Manager):
         # projects for a user is pushed down into the driver to enable
         # optimization with the various backend technologies (SQL, LDAP etc.).
         group_ids = self._get_group_ids_for_user_id(user_id)
-        return self.driver.list_projects_for_user(
+        project_ids = self.driver.list_project_ids_for_user(
             user_id, group_ids, hints or driver_hints.Hints())
 
-    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
-                        expiration_time=EXPIRATION_TIME)
-    def get_domain(self, domain_id):
-        return self.driver.get_domain(domain_id)
+        if not CONF.os_inherit.enabled:
+            return self.resource_api.list_projects_from_ids(project_ids)
 
-    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
-                        expiration_time=EXPIRATION_TIME)
-    def get_domain_by_name(self, domain_name):
-        return self.driver.get_domain_by_name(domain_name)
+        # Inherited roles are enabled, so check to see if this user has any
+        # such roles (direct or group) on any domain, in which case we must
+        # add in all the projects in that domain.
 
-    @notifications.created('domain')
-    def create_domain(self, domain_id, domain):
-        if (not self.identity_api.multiple_domains_supported and
-                domain_id != CONF.identity.default_domain_id):
-            raise exception.Forbidden(_('Multiple domains are not supported'))
-        domain.setdefault('enabled', True)
-        domain['enabled'] = clean.domain_enabled(domain['enabled'])
-        ret = self.driver.create_domain(domain_id, domain)
-        if SHOULD_CACHE(ret):
-            self.get_domain.set(ret, self, domain_id)
-            self.get_domain_by_name.set(ret, self, ret['name'])
-        return ret
+        domain_ids = self.driver.list_domain_ids_for_user(
+            user_id, group_ids, hints or driver_hints.Hints(),
+            inherited=True)
 
-    @manager.response_truncated
-    def list_domains(self, hints=None):
-        return self.driver.list_domains(hints or driver_hints.Hints())
+        project_ids_from_domains = (
+            self.resource_api.list_project_ids_from_domain_ids(domain_ids))
+
+        return self.resource_api.list_projects_from_ids(
+            list(set(project_ids + project_ids_from_domains)))
 
     # TODO(henry-nash): We might want to consider list limiting this at some
     # point in the future.
@@ -345,182 +292,35 @@ class Manager(manager.Manager):
         # projects for a user is pushed down into the driver to enable
         # optimization with the various backend technologies (SQL, LDAP etc.).
         group_ids = self._get_group_ids_for_user_id(user_id)
-        return self.driver.list_domains_for_user(
+        domain_ids = self.driver.list_domain_ids_for_user(
             user_id, group_ids, hints or driver_hints.Hints())
-
-    @notifications.disabled('domain', public=False)
-    def _disable_domain(self, domain_id):
-        """Emit a notification to the callback system domain is been disabled.
-
-        This method, and associated callback listeners, removes the need for
-        making direct calls to other managers to take action (e.g. revoking
-        domain scoped tokens) when a domain is disabled.
-
-        :param domain_id: domain identifier
-        :type domain_id: string
-        """
-        pass
-
-    @notifications.updated('domain')
-    def update_domain(self, domain_id, domain):
-        original_domain = self.driver.get_domain(domain_id)
-        if 'enabled' in domain:
-            domain['enabled'] = clean.domain_enabled(domain['enabled'])
-        ret = self.driver.update_domain(domain_id, domain)
-        # disable owned users & projects when the API user specifically set
-        #     enabled=False
-        if (original_domain.get('enabled', True) and
-                not domain.get('enabled', True)):
-            self._disable_domain(domain_id)
-        self.get_domain.invalidate(self, domain_id)
-        self.get_domain_by_name.invalidate(self, original_domain['name'])
-        return ret
-
-    @notifications.deleted('domain')
-    def delete_domain(self, domain_id):
-        # explicitly forbid deleting the default domain (this should be a
-        # carefully orchestrated manual process involving configuration
-        # changes, etc)
-        if domain_id == CONF.identity.default_domain_id:
-            raise exception.ForbiddenAction(action=_('delete the default '
-                                                     'domain'))
-
-        domain = self.driver.get_domain(domain_id)
-
-        # To help avoid inadvertent deletes, we insist that the domain
-        # has been previously disabled.  This also prevents a user deleting
-        # their own domain since, once it is disabled, they won't be able
-        # to get a valid token to issue this delete.
-        if domain['enabled']:
-            raise exception.ForbiddenAction(
-                action=_('cannot delete a domain that is enabled, '
-                         'please disable it first.'))
-
-        self._delete_domain_contents(domain_id)
-        self.driver.delete_domain(domain_id)
-        self.get_domain.invalidate(self, domain_id)
-        self.get_domain_by_name.invalidate(self, domain['name'])
-
-    def _delete_domain_contents(self, domain_id):
-        """Delete the contents of a domain.
-
-        Before we delete a domain, we need to remove all the entities
-        that are owned by it, i.e. Users, Groups & Projects. To do this we
-        call the respective delete functions for these entities, which are
-        themselves responsible for deleting any credentials and role grants
-        associated with them as well as revoking any relevant tokens.
-
-        The order we delete entities is also important since some types
-        of backend may need to maintain referential integrity
-        throughout, and many of the entities have relationship with each
-        other. The following deletion order is therefore used:
-
-        Projects: Reference user and groups for grants
-        Groups: Reference users for membership and domains for grants
-        Users: Reference domains for grants
-
-        """
-        user_refs = self.identity_api.list_users(domain_scope=domain_id)
-        proj_refs = self.list_projects()
-        group_refs = self.identity_api.list_groups(domain_scope=domain_id)
-
-        # First delete the projects themselves
-        for project in proj_refs:
-            if project['domain_id'] == domain_id:
-                try:
-                    self.delete_project(project['id'])
-                except exception.ProjectNotFound:
-                    LOG.debug(('Project %(projectid)s not found when '
-                               'deleting domain contents for %(domainid)s, '
-                               'continuing with cleanup.'),
-                              {'projectid': project['id'],
-                               'domainid': domain_id})
-
-        for group in group_refs:
-            # Cleanup any existing groups.
-            if group['domain_id'] == domain_id:
-                try:
-                    self.identity_api.delete_group(group['id'])
-                except exception.GroupNotFound:
-                    LOG.debug(('Group %(groupid)s not found when deleting '
-                               'domain contents for %(domainid)s, continuing '
-                               'with cleanup.'),
-                              {'groupid': group['id'], 'domainid': domain_id})
-
-        # And finally, delete the users themselves
-        for user in user_refs:
-            if user['domain_id'] == domain_id:
-                try:
-                    self.identity_api.delete_user(user['id'])
-                except exception.UserNotFound:
-                    LOG.debug(('User %(userid)s not found when '
-                               'deleting domain contents for %(domainid)s, '
-                               'continuing with cleanup.'),
-                              {'userid': user['id'],
-                               'domainid': domain_id})
-
-    @manager.response_truncated
-    def list_projects(self, hints=None):
-        return self.driver.list_projects(hints or driver_hints.Hints())
-
-    # NOTE(henry-nash): list_projects_in_domain is actually an internal method
-    # and not exposed via the API.  Therefore there is no need to support
-    # driver hints for it.
-    def list_projects_in_domain(self, domain_id):
-        return self.driver.list_projects_in_domain(domain_id)
+        return self.resource_api.list_domains_from_ids(domain_ids)
 
     def list_user_projects(self, user_id, hints=None):
         return self.driver.list_user_projects(
             user_id, hints or driver_hints.Hints())
 
-    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
-                        expiration_time=EXPIRATION_TIME)
-    def get_project(self, project_id):
-        return self.driver.get_project(project_id)
+    def list_domains_for_groups(self, group_ids):
+        domain_ids = self.driver.list_domain_ids_for_groups(group_ids)
+        return self.resource_api.list_domains_from_ids(domain_ids)
 
-    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
-                        expiration_time=EXPIRATION_TIME)
-    def get_project_by_name(self, tenant_name, domain_id):
-        return self.driver.get_project_by_name(tenant_name, domain_id)
+    def list_projects_for_groups(self, group_ids):
+        project_ids = self.driver.list_project_ids_for_groups(group_ids)
+        if not CONF.os_inherit.enabled:
+            return self.resource_api.list_projects_from_ids(project_ids)
 
-    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
-                        expiration_time=EXPIRATION_TIME)
-    def get_role(self, role_id):
-        return self.driver.get_role(role_id)
+        # Inherited roles are enabled, so check to see if these groups have any
+        # roles on any domain, in which case we must add in all the projects
+        # in that domain.
 
-    @notifications.created('role')
-    def create_role(self, role_id, role):
-        ret = self.driver.create_role(role_id, role)
-        if SHOULD_CACHE(ret):
-            self.get_role.set(ret, self, role_id)
-        return ret
+        domain_ids = self.driver.list_domain_ids_for_groups(
+            group_ids, inherited=True)
 
-    @manager.response_truncated
-    def list_roles(self, hints=None):
-        return self.driver.list_roles(hints or driver_hints.Hints())
+        project_ids_from_domains = (
+            self.resource_api.list_project_ids_from_domain_ids(domain_ids))
 
-    @notifications.updated('role')
-    def update_role(self, role_id, role):
-        ret = self.driver.update_role(role_id, role)
-        self.get_role.invalidate(self, role_id)
-        return ret
-
-    @notifications.deleted('role')
-    def delete_role(self, role_id):
-        try:
-            self._delete_tokens_for_role(role_id)
-        except exception.NotImplemented:
-            # FIXME(morganfainberg): Not all backends (ldap) implement
-            # `list_role_assignments_for_role` which would have previously
-            # caused a NotImplmented error to be raised when called through
-            # the controller. Now error or proper action will always come from
-            # the `delete_role` method logic. Work needs to be done to make
-            # the behavior between drivers consistent (capable of revoking
-            # tokens for the same circumstances).  This is related to the bug
-            # https://bugs.launchpad.net/keystone/+bug/1221805
-            pass
-        self.driver.delete_role(role_id)
-        self.get_role.invalidate(self, role_id)
+        return self.resource_api.list_projects_from_ids(
+            list(set(project_ids + project_ids_from_domains)))
 
     def list_role_assignments_for_role(self, role_id=None):
         # NOTE(henry-nash): Currently the efficiency of the key driver
@@ -549,8 +349,37 @@ class Manager(manager.Manager):
     def create_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,
                      inherited_to_projects=False, context=None):
+        self.role_api.get_role(role_id)
+        if domain_id:
+            self.resource_api.get_domain(domain_id)
+        if project_id:
+            self.resource_api.get_project(project_id)
         self.driver.create_grant(role_id, user_id, group_id, domain_id,
                                  project_id, inherited_to_projects)
+
+    def get_grant(self, role_id, user_id=None, group_id=None,
+                  domain_id=None, project_id=None,
+                  inherited_to_projects=False):
+        role_ref = self.role_api.get_role(role_id)
+        if domain_id:
+            self.resource_api.get_domain(domain_id)
+        if project_id:
+            self.resource_api.get_project(project_id)
+        self.driver.check_grant_role_id(
+            role_id, user_id, group_id, domain_id, project_id,
+            inherited_to_projects)
+        return role_ref
+
+    def list_grants(self, user_id=None, group_id=None,
+                    domain_id=None, project_id=None,
+                    inherited_to_projects=False):
+        if domain_id:
+            self.resource_api.get_domain(domain_id)
+        if project_id:
+            self.resource_api.get_project(project_id)
+        grant_ids = self.driver.list_grant_role_ids(
+            user_id, group_id, domain_id, project_id, inherited_to_projects)
+        return self.role_api.list_roles_from_ids(grant_ids)
 
     @notifications.role_assignment('deleted')
     def delete_grant(self, role_id, user_id=None, group_id=None,
@@ -578,12 +407,17 @@ class Manager(manager.Manager):
                 LOG.debug('Group %s not found, no tokens to invalidate.',
                           group_id)
 
+        self.role_api.get_role(role_id)
+        if domain_id:
+            self.resource_api.get_domain(domain_id)
+        if project_id:
+            self.resource_api.get_project(project_id)
         self.driver.delete_grant(role_id, user_id, group_id, domain_id,
                                  project_id, inherited_to_projects)
         if user_id is not None:
             self._emit_invalidate_user_token_persistence(user_id)
 
-    def _delete_tokens_for_role(self, role_id):
+    def delete_tokens_for_role_assignments(self, role_id):
         assignments = self.list_role_assignments_for_role(role_id=role_id)
 
         # Iterate over the assignments for this role and build the list of
@@ -655,6 +489,91 @@ class Manager(manager.Manager):
         # from persistence if persistence is enabled.
         pass
 
+    # NOTE(henry-nash): In Kilo we moved a number of methods from the
+    # assignment manager to create the resource manager. For backward
+    # compatibility, we provide deprecated cross-manager calls to those
+    # methods. These are marked for deprecation in Kilo + 2.
+
+    @deprecated_to_resource
+    def create_project(self, project_id, project):
+        return self.resource_api.create_project(project_id, project)
+
+    @deprecated_to_resource
+    def get_project_by_name(self, tenant_name, domain_id):
+        return self.resource_api.get_project_by_name(tenant_name, domain_id)
+
+    @deprecated_to_resource
+    def get_project(self, project_id):
+        return self.resource_api.get_project(project_id)
+
+    @deprecated_to_resource
+    def update_project(self, project_id, project):
+        return self.resource_api.update_project(project_id, project)
+
+    @deprecated_to_resource
+    def delete_project(self, project_id):
+        return self.resource_api.delete_project(project_id)
+
+    @deprecated_to_resource
+    def list_projects(self, hints=None):
+        return self.resource_api.list_projects(hints=hints)
+
+    @deprecated_to_resource
+    def list_projects_in_domain(self, domain_id):
+        return self.resource_api.list_projects_in_domain(domain_id)
+
+    @deprecated_to_resource
+    def create_role(self, role_id, role):
+        return self.role_api.create_role(role_id, role)
+
+    @deprecated_to_resource
+    def get_role(self, role_id):
+        return self.role_api.get_role(role_id)
+
+    @deprecated_to_resource
+    def update_role(self, role_id, role):
+        return self.role_api.update_role(role_id, role)
+
+    @deprecated_to_resource
+    def delete_role(self, role_id):
+        return self.role_api.delete_role(role_id)
+
+    @deprecated_to_resource
+    def list_roles(self, hints=None):
+        return self.role_api.list_roles(hints=hints)
+
+    @deprecated_to_resource
+    def create_domain(self, domain_id, domain):
+        return self.resource_api.create_domain(domain_id, domain)
+
+    @deprecated_to_resource
+    def get_domain_by_name(self, domain_name):
+        return self.resource_api.get_domain_by_name(domain_name)
+
+    @deprecated_to_resource
+    def get_domain(self, domain_id):
+        return self.resource_api.get_domain(domain_id)
+
+    @deprecated_to_resource
+    def update_domain(self, domain_id, domain):
+        return self.resource_api.update_domain(domain_id, domain)
+
+    @deprecated_to_resource
+    def delete_domain(self, domain_id):
+        return self.resource_api.delete_domain(domain_id)
+
+    @deprecated_to_resource
+    def list_domains(self, hints=None):
+        return self.resource_api.list_domains(hints=hints)
+
+    @deprecated_to_resource
+    def assert_domain_enabled(self, domain_id, domain=None):
+        return self.resource_api.assert_domain_enabled(domain_id, domain)
+
+    @deprecated_to_resource
+    def assert_project_enabled(self, project_id, project=None):
+        return self.resource_api.assert_project_enabled(project_id, project)
+
 
 @six.add_metaclass(abc.ABCMeta)
 class Driver(object):
@@ -693,25 +612,11 @@ class Driver(object):
                                                      inherited).items()))
         return [dict(r) for r in role_set]
 
-    def _get_list_limit(self):
-        return CONF.assignment.list_limit or CONF.list_limit
-
-    @abc.abstractmethod
-    def get_project_by_name(self, tenant_name, domain_id):
-        """Get a tenant by name.
-
-        :returns: tenant_ref
-        :raises: keystone.exception.ProjectNotFound
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
     @abc.abstractmethod
     def list_user_ids_for_project(self, tenant_id):
         """Lists all user IDs with a role assignment in the specified project.
 
         :returns: a list of user_ids or an empty set.
-        :raises: keystone.exception.ProjectNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -720,9 +625,8 @@ class Driver(object):
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
         """Add a role to a user within given tenant.
 
-        :raises: keystone.exception.UserNotFound,
-                 keystone.exception.ProjectNotFound,
-                 keystone.exception.RoleNotFound
+        :raises: keystone.exception.Conflict
+
         """
         raise exception.NotImplemented()  # pragma: no cover
 
@@ -730,9 +634,7 @@ class Driver(object):
     def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
         """Remove a role from a user within given tenant.
 
-        :raises: keystone.exception.UserNotFound,
-                 keystone.exception.ProjectNotFound,
-                 keystone.exception.RoleNotFound
+        :raises: keystone.exception.RoleNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -749,39 +651,27 @@ class Driver(object):
         specified as inherited to owned projects (this requires
         the OS-INHERIT extension to be enabled).
 
-        :raises: keystone.exception.DomainNotFound,
-                 keystone.exception.ProjectNotFound,
-                 keystone.exception.RoleNotFound
+        :raises: keystone.exception.Conflict
 
         """
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def list_grants(self, user_id=None, group_id=None,
-                    domain_id=None, project_id=None,
-                    inherited_to_projects=False):
-        """Lists assignments/grants.
+    def list_grant_role_ids(self, user_id=None, group_id=None,
+                            domain_id=None, project_id=None,
+                            inherited_to_projects=False):
+        """Lists role ids for assignments/grants."""
 
-        :raises: keystone.exception.UserNotFound,
-                 keystone.exception.GroupNotFound,
-                 keystone.exception.ProjectNotFound,
-                 keystone.exception.DomainNotFound,
-                 keystone.exception.RoleNotFound
-
-        """
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def get_grant(self, role_id, user_id=None, group_id=None,
-                  domain_id=None, project_id=None,
-                  inherited_to_projects=False):
-        """Lists assignments/grants.
+    def check_grant_role_id(self, role_id, user_id=None, group_id=None,
+                            domain_id=None, project_id=None,
+                            inherited_to_projects=False):
+        """Checks an assignment/grant role id.
 
-        :raises: keystone.exception.UserNotFound,
-                 keystone.exception.GroupNotFound,
-                 keystone.exception.ProjectNotFound,
-                 keystone.exception.DomainNotFound,
-                 keystone.exception.RoleNotFound
+        :raises: keystone.exception.RoleNotFound
+        :returns: None or raises an exception if grant not found
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -792,9 +682,7 @@ class Driver(object):
                      inherited_to_projects=False):
         """Deletes assignments/grants.
 
-        :raises: keystone.exception.ProjectNotFound,
-                 keystone.exception.DomainNotFound,
-                 keystone.exception.RoleNotFound
+        :raises: keystone.exception.RoleNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -804,104 +692,9 @@ class Driver(object):
 
         raise exception.NotImplemented()  # pragma: no cover
 
-    # domain crud
     @abc.abstractmethod
-    def create_domain(self, domain_id, domain):
-        """Creates a new domain.
-
-        :raises: keystone.exception.Conflict
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def list_domains(self, hints):
-        """List domains in the system.
-
-        :param hints: filter hints which the driver should
-                      implement if at all possible.
-
-        :returns: a list of domain_refs or an empty list.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def get_domain(self, domain_id):
-        """Get a domain by ID.
-
-        :returns: domain_ref
-        :raises: keystone.exception.DomainNotFound
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def get_domain_by_name(self, domain_name):
-        """Get a domain by name.
-
-        :returns: domain_ref
-        :raises: keystone.exception.DomainNotFound
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def update_domain(self, domain_id, domain):
-        """Updates an existing domain.
-
-        :raises: keystone.exception.DomainNotFound,
-                 keystone.exception.Conflict
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def delete_domain(self, domain_id):
-        """Deletes an existing domain.
-
-        :raises: keystone.exception.DomainNotFound
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    # project crud
-    @abc.abstractmethod
-    def create_project(self, project_id, project):
-        """Creates a new project.
-
-        :raises: keystone.exception.Conflict
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def list_projects(self, hints):
-        """List projects in the system.
-
-        :param hints: filter hints which the driver should
-                      implement if at all possible.
-
-        :returns: a list of project_refs or an empty list.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def list_projects_in_domain(self, domain_id):
-        """List projects in the domain.
-
-        :param domain_id: the driver MUST only return projects
-                          within this domain.
-
-        :returns: a list of project_refs or an empty list.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def list_projects_for_user(self, user_id, group_ids, hints):
-        """List all projects associated with a given user.
+    def list_project_ids_for_user(self, user_id, group_ids, hints):
+        """List all project ids associated with a given user.
 
         :param user_id: the user in question
         :param group_ids: the groups this user is a member of.  This list is
@@ -910,45 +703,25 @@ class Driver(object):
         :param hints: filter hints which the driver should
                       implement if at all possible.
 
-        :returns: a list of project_refs or an empty list.
+        :returns: a list of project ids or an empty list.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
-        """List all the roles assigned to groups on either domain or
-        project.
-
-        If the project_id is not None, this value will be used, no matter what
-        was specified in the domain_id.
-
-        :param group_ids: iterable with group ids
-        :param project_id: id of the project
-        :param domain_id: id of the domain
-
-        :raises: AttributeError: In case both project_id and domain_id are set
-                                 to None
-
-        :returns: a list of Role entities matching groups and
-                  project_id or domain_id
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def list_projects_for_groups(self, group_ids):
-        """List projects accessible to specified groups.
+    def list_project_ids_for_groups(self, group_ids):
+        """List project ids accessible to specified groups.
 
         :param group_ids: List of group ids.
-        :returns: List of projects accessible to specified groups.
+        :returns: List of project ids accessible to specified groups.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def list_domains_for_user(self, user_id, group_ids, hints):
-        """List all domains associated with a given user.
+    def list_domain_ids_for_user(self, user_id, group_ids, hints,
+                                 inherited=False):
+        """List all domain ids associated with a given user.
 
         :param user_id: the user in question
         :param group_ids: the groups this user is a member of.  This list is
@@ -956,77 +729,30 @@ class Driver(object):
                           does not have to call across to identity.
         :param hints: filter hints which the driver should
                       implement if at all possible.
+        :param inherited: whether to return domain_ids that have inherited
+                          assignments or not.
 
-        :returns: a list of domain_refs or an empty list.
+        :returns: a list of domain ids or an empty list.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def list_domains_for_groups(self, group_ids):
-        """List domains accessible to specified groups.
+    def list_domain_ids_for_groups(self, group_ids, inherited=False):
+        """List domain ids accessible to specified groups.
 
         :param group_ids: List of group ids.
-        :returns: List of domains accessible to specified groups.
+        :param inherited: whether to return domain_ids that have inherited
+                          assignments or not.
+        :returns: List of domain ids accessible to specified groups.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def get_project(self, project_id):
-        """Get a project by ID.
-
-        :returns: project_ref
-        :raises: keystone.exception.ProjectNotFound
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def update_project(self, project_id, project):
-        """Updates an existing project.
-
-        :raises: keystone.exception.ProjectNotFound,
-                 keystone.exception.Conflict
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def delete_project(self, project_id):
-        """Deletes an existing project.
-
-        :raises: keystone.exception.ProjectNotFound
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    # role crud
-
-    @abc.abstractmethod
-    def create_role(self, role_id, role):
-        """Creates a new role.
-
-        :raises: keystone.exception.Conflict
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def list_roles(self, hints):
-        """List roles in the system.
-
-        :param hints: filter hints which the driver should
-                      implement if at all possible.
-
-        :returns: a list of role_refs or an empty list.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def get_group_project_roles(self, groups, project_id, project_domain_id):
-        """Get group roles for a specific project.
+    def list_role_ids_for_groups_on_project(self, groups, project_id,
+                                            project_domain_id):
+        """List the group role ids for a specific project.
 
         Supports the ``OS-INHERIT`` role inheritance from the project's domain
         if supported by the assignment driver.
@@ -1037,39 +763,53 @@ class Driver(object):
         :type project_id: str
         :param project_domain_id: project's domain identifier
         :type project_domain_id: str
-        :returns: list of role_refs for the project
+        :returns: list of role ids for the project
         :rtype: list
         """
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def get_role(self, role_id):
-        """Get a role by ID.
+    def list_role_ids_for_groups_on_domain(self, groups, domain_id):
+        """List the group role ids for a specific domain.
 
-        :returns: role_ref
-        :raises: keystone.exception.RoleNotFound
+        :param groups: list of group ids
+        :type groups: list
+        :param domain_id: domain identifier
+        :type domain_id: str
+        :returns: list of role ids for the project
+        :rtype: list
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def delete_project_assignments(self, project_id):
+        """Deletes all assignments for a project.
+
+        :raises: keystone.exception.ProjectNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def update_role(self, role_id, role):
-        """Updates an existing role.
+    def delete_domain_assignments(self, domain_id):
+        """Deletes all assignments for a domain.
 
-        :raises: keystone.exception.RoleNotFound,
-                 keystone.exception.Conflict
+        :raises: keystone.exception.DomainNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def delete_role(self, role_id):
-        """Deletes an existing role.
+    def delete_role_assignments(self, role_id):
+        """Deletes all assignments for a role.
 
         :raises: keystone.exception.RoleNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
+
+    # TODO(henry-nash): Rename the following two methods to match the more
+    # meaningfully named ones above.
 
 # TODO(ayoung): determine what else these two functions raise
     @abc.abstractmethod
@@ -1123,3 +863,131 @@ class Driver(object):
         """
         if domain_id != CONF.identity.default_domain_id:
             raise exception.DomainNotFound(domain_id=domain_id)
+
+
+@dependency.provider('role_api')
+@dependency.requires('assignment_api')
+class RoleManager(manager.Manager):
+    """Default pivot point for the Role backend."""
+
+    def __init__(self):
+        # If there is a specific driver specified for role, then use it.
+        # Otherwise retrieve the driver type from the resource driver.
+        role_driver = CONF.role.driver
+
+        if role_driver is None:
+            assignment_driver = dependency.REGISTRY['assignment_api'].driver
+            role_driver = assignment_driver.default_role_driver()
+
+        super(RoleManager, self).__init__(role_driver)
+
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=EXPIRATION_TIME)
+    def get_role(self, role_id):
+        return self.driver.get_role(role_id)
+
+    @notifications.created('role')
+    def create_role(self, role_id, role):
+        ret = self.driver.create_role(role_id, role)
+        if SHOULD_CACHE(ret):
+            self.get_role.set(ret, self, role_id)
+        return ret
+
+    @manager.response_truncated
+    def list_roles(self, hints=None):
+        return self.driver.list_roles(hints or driver_hints.Hints())
+
+    @notifications.updated('role')
+    def update_role(self, role_id, role):
+        ret = self.driver.update_role(role_id, role)
+        self.get_role.invalidate(self, role_id)
+        return ret
+
+    @notifications.deleted('role')
+    def delete_role(self, role_id):
+        try:
+            self.assignment_api.delete_tokens_for_role_assignments(role_id)
+        except exception.NotImplemented:
+            # FIXME(morganfainberg): Not all backends (ldap) implement
+            # `list_role_assignments_for_role` which would have previously
+            # caused a NotImplmented error to be raised when called through
+            # the controller. Now error or proper action will always come from
+            # the `delete_role` method logic. Work needs to be done to make
+            # the behavior between drivers consistent (capable of revoking
+            # tokens for the same circumstances).  This is related to the bug
+            # https://bugs.launchpad.net/keystone/+bug/1221805
+            pass
+        self.assignment_api.delete_role_assignments(role_id)
+        self.driver.delete_role(role_id)
+        self.get_role.invalidate(self, role_id)
+
+
+@six.add_metaclass(abc.ABCMeta)
+class RoleDriver(object):
+
+    def _get_list_limit(self):
+        return CONF.role.list_limit or CONF.list_limit
+
+    @abc.abstractmethod
+    def create_role(self, role_id, role):
+        """Creates a new role.
+
+        :raises: keystone.exception.Conflict
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def list_roles(self, hints):
+        """List roles in the system.
+
+        :param hints: filter hints which the driver should
+                      implement if at all possible.
+
+        :returns: a list of role_refs or an empty list.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def list_roles_from_ids(self, role_ids):
+        """List roles for the provided list of ids.
+
+        :param role_ids: list of ids
+
+        :returns: a list of role_refs.
+
+        This method is used internally by the assignment manager to bulk read
+        a set of roles given their ids.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def get_role(self, role_id):
+        """Get a role by ID.
+
+        :returns: role_ref
+        :raises: keystone.exception.RoleNotFound
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def update_role(self, role_id, role):
+        """Updates an existing role.
+
+        :raises: keystone.exception.RoleNotFound,
+                 keystone.exception.Conflict
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def delete_role(self, role_id):
+        """Deletes an existing role.
+
+        :raises: keystone.exception.RoleNotFound
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
