@@ -1,0 +1,225 @@
+# Copyright 2012-2013 OpenStack Foundation
+#
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+from __future__ import absolute_import
+
+import uuid
+
+import ldap as ldap
+import ldap.filter
+
+from keystone import base
+from keystone import clean
+from keystone.common import driver_hints
+from keystone.common import ldap as common_ldap
+from keystone.common import models
+from keystone import config
+from keystone import exception
+from keystone.i18n import _
+from keystone.openstack.common import log
+
+
+CONF = config.CONF
+LOG = log.getLogger(__name__)
+
+
+class Base(base.Driver):
+    def __init__(self):
+        super(Base, self).__init__()
+        self.LDAP_URL = CONF.ldap.url
+        self.LDAP_USER = CONF.ldap.user
+        self.LDAP_PASSWORD = CONF.ldap.password
+        self.suffix = CONF.ldap.suffix
+
+        self.project = ProjectApi(CONF)
+        self.role = RoleApi(CONF, self.user)
+
+    def get_project(self, tenant_id):
+        return self._set_default_domain(self.project.get(tenant_id))
+
+    def list_projects(self, hints):
+        return self._set_default_domain(self.project.get_all())
+
+    def list_projects_in_domain(self, domain_id):
+        # We don't support multiple domains within this driver, so ignore
+        # any domain specified
+        return self.list_projects(driver_hints.Hints())
+
+    def get_project_by_name(self, tenant_name, domain_id):
+        self._validate_default_domain_id(domain_id)
+        return self._set_default_domain(self.project.get_by_name(tenant_name))
+
+    def create_project(self, tenant_id, tenant):
+        self.project.check_allow_create()
+        tenant = self._validate_default_domain(tenant)
+        tenant['name'] = clean.project_name(tenant['name'])
+        data = tenant.copy()
+        if 'id' not in data or data['id'] is None:
+            data['id'] = str(uuid.uuid4().hex)
+        if 'description' in data and data['description'] in ['', None]:
+            data.pop('description')
+        return self._set_default_domain(self.project.create(data))
+
+    def update_project(self, tenant_id, tenant):
+        self.project.check_allow_update()
+        tenant = self._validate_default_domain(tenant)
+        if 'name' in tenant:
+            tenant['name'] = clean.project_name(tenant['name'])
+        return self._set_default_domain(self.project.update(tenant_id, tenant))
+
+    def get_role(self, role_id):
+        return self.role.get(role_id)
+
+    def list_roles(self, hints):
+        return self.role.get_all()
+
+    def create_role(self, role_id, role):
+        self.role.check_allow_create()
+        try:
+            self.get_role(role_id)
+        except exception.NotFound:
+            pass
+        else:
+            msg = _('Duplicate ID, %s.') % role_id
+            raise exception.Conflict(type='role', details=msg)
+
+        try:
+            self.role.get_by_name(role['name'])
+        except exception.NotFound:
+            pass
+        else:
+            msg = _('Duplicate name, %s.') % role['name']
+            raise exception.Conflict(type='role', details=msg)
+
+        return self.role.create(role)
+
+    def delete_role(self, role_id):
+        self.role.check_allow_delete()
+        return self.role.delete(role_id, self.project.tree_dn)
+
+    def delete_project(self, tenant_id):
+        self.project.check_allow_delete()
+        if self.project.subtree_delete_enabled:
+            self.project.deleteTree(tenant_id)
+        else:
+            tenant_dn = self.project._id_to_dn(tenant_id)
+            self.role.roles_delete_subtree_by_project(tenant_dn)
+            self.project.delete(tenant_id)
+
+    def update_role(self, role_id, role):
+        self.role.check_allow_update()
+        self.get_role(role_id)
+        return self.role.update(role_id, role)
+
+    def create_domain(self, domain_id, domain):
+        if domain_id == CONF.identity.default_domain_id:
+            msg = _('Duplicate ID, %s.') % domain_id
+            raise exception.Conflict(type='domain', details=msg)
+        raise exception.Forbidden(_('Domains are read-only against LDAP'))
+
+    def get_domain(self, domain_id):
+        self._validate_default_domain_id(domain_id)
+        return base.calc_default_domain()
+
+    def update_domain(self, domain_id, domain):
+        self._validate_default_domain_id(domain_id)
+        raise exception.Forbidden(_('Domains are read-only against LDAP'))
+
+    def delete_domain(self, domain_id):
+        self._validate_default_domain_id(domain_id)
+        raise exception.Forbidden(_('Domains are read-only against LDAP'))
+
+    def list_domains(self, hints):
+        return [base.calc_default_domain()]
+
+    def get_domain_by_name(self, domain_name):
+        default_domain = base.calc_default_domain()
+        if domain_name != default_domain['name']:
+            raise exception.DomainNotFound(domain_id=domain_name)
+        return default_domain
+
+
+# TODO(termie): turn this into a data object and move logic to driver
+class ProjectApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
+    DEFAULT_OU = 'ou=Groups'
+    DEFAULT_STRUCTURAL_CLASSES = []
+    DEFAULT_OBJECTCLASS = 'groupOfNames'
+    DEFAULT_ID_ATTR = 'cn'
+    DEFAULT_MEMBER_ATTRIBUTE = 'member'
+    NotFound = exception.ProjectNotFound
+    notfound_arg = 'project_id'  # NOTE(yorik-sar): while options_name = tenant
+    options_name = 'project'
+    attribute_options_names = {'name': 'name',
+                               'description': 'desc',
+                               'enabled': 'enabled',
+                               'domain_id': 'domain_id'}
+    immutable_attrs = ['name']
+    model = models.Project
+
+    def __init__(self, conf):
+        super(ProjectApi, self).__init__(conf)
+        self.member_attribute = (getattr(conf.ldap, 'project_member_attribute')
+                                 or self.DEFAULT_MEMBER_ATTRIBUTE)
+
+    def create(self, values):
+        data = values.copy()
+        if data.get('id') is None:
+            data['id'] = uuid.uuid4().hex
+        return super(ProjectApi, self).create(data)
+
+    def update(self, project_id, values):
+        old_obj = self.get(project_id)
+        return super(ProjectApi, self).update(project_id, values, old_obj)
+
+
+# TODO(termie): turn this into a data object and move logic to driver
+class RoleApi(common_ldap.BaseLdap):
+    DEFAULT_OU = 'ou=Roles'
+    DEFAULT_STRUCTURAL_CLASSES = []
+    DEFAULT_OBJECTCLASS = 'organizationalRole'
+    DEFAULT_MEMBER_ATTRIBUTE = 'roleOccupant'
+    NotFound = exception.RoleNotFound
+    options_name = 'role'
+    attribute_options_names = {'name': 'name'}
+    immutable_attrs = ['id']
+    model = models.Role
+
+    def __init__(self, conf, user_api):
+        super(RoleApi, self).__init__(conf)
+        self.member_attribute = (getattr(conf.ldap, 'role_member_attribute')
+                                 or self.DEFAULT_MEMBER_ATTRIBUTE)
+        self._user_api = user_api
+
+    def get(self, role_id, role_filter=None):
+        model = super(RoleApi, self).get(role_id, role_filter)
+        return model
+
+    def create(self, values):
+        return super(RoleApi, self).create(values)
+
+    # TODO(henry-nash): move to manager...
+    def roles_delete_subtree_by_project(self, tenant_dn):
+        self._delete_tree_nodes(tenant_dn, ldap.SCOPE_ONELEVEL)
+
+    def update(self, role_id, role):
+        try:
+            old_name = self.get_by_name(role['name'])
+            raise exception.Conflict(_('Cannot duplicate name %s') % old_name)
+        except exception.NotFound:
+            pass
+        return super(RoleApi, self).update(role_id, role)
+
+    def delete(self, role_id, tenant_dn):
+        self._delete_tree_nodes(tenant_dn, ldap.SCOPE_SUBTREE, query_params={
+            self.id_attr: role_id})
+        super(RoleApi, self).delete(role_id)
