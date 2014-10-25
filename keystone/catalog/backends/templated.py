@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import itertools
 import os.path
 
 import six
@@ -106,8 +107,17 @@ class Catalog(kvs.Catalog):
             raise
 
     def get_catalog(self, user_id, tenant_id, metadata=None):
-        substitutions = dict(six.iteritems(CONF))
+        substitutions = dict(
+            itertools.chain(six.iteritems(CONF),
+                            six.iteritems(CONF.eventlet_server)))
         substitutions.update({'tenant_id': tenant_id, 'user_id': user_id})
+        # TODO(blk-u): There should be substitutions for the public and admin
+        # endpoints. Get it from public_endpoint / admin_endpoint. If
+        # public/admin_endpoint are not set, then calculate it from the request
+        # (as in common.wsgi.render_exception() or base_url). Change
+        # default_catalog.template to use it. Update the config docs. Change
+        # the catalog in devstack to use it.
+        # Also, note that this same code is in sql.
 
         catalog = {}
         for region, region_ref in six.iteritems(self.templates):
