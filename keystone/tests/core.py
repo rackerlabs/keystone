@@ -401,6 +401,16 @@ class TestCase(BaseTestCase):
                 'stevedore.extension=INFO',
                 'keystone.notifications=INFO',
                 'keystone.common._memcache_pool=INFO',
+                # TODO(henry-nash): The following disables logging of
+                # deprecation messages during unit tests. This restriction
+                # is currently required due to the large number of unit tests
+                # that call the assignment manager even though the API they are
+                # calling is now in the resource manager. The cross-manager
+                # scaffolding support ensures these tests work, but will
+                # generate significant log output. Once the unit tests have
+                # been corrected, this disabling of deprecated logging can be
+                # removed.
+                'keystone.openstack.common.versionutils=ERROR',
             ])
         self.auth_plugin_config_override()
 
