@@ -1317,6 +1317,28 @@
 #list_limit=<None>
 
 
+[resource]
+
+#
+# Options defined in keystone
+#
+
+# Resource backend driver. (string value)
+#driver=<None>
+
+# Toggle for resource. This has no effect unless global
+# caching is enabled. (boolean value)
+#caching=true
+
+# TTL (in seconds) to cache assignment data. This has no
+# effect unless global caching is enabled. (integer value)
+#cache_time=<None>
+
+# Maximum number of entities that will be returned in an
+# resource collection. (integer value)
+#list_limit=<None>
+
+
 [revoke]
 
 #

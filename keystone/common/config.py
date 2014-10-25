@@ -426,7 +426,7 @@ FILE_OPTIONS = {
     ],
     'assignment': [
         # assignment has no default for backward compatibility reasons.
-        # If assignment driver is not specified, the identity driver chooses
+        # If assignment driver is not specified, the base driver chooses
         # the backend
         cfg.StrOpt('driver',
                    help='Assignment backend driver.'),
@@ -439,6 +439,22 @@ FILE_OPTIONS = {
         cfg.IntOpt('list_limit',
                    help='Maximum number of entities that will be returned '
                         'in an assignment collection.'),
+    ],
+    'resource': [
+        # resource has no default for backward compatibility reasons.
+        # If resource driver is not specified, the identity driver chooses
+        # the backend
+        cfg.StrOpt('driver',
+                   help='Resource backend driver.'),
+        cfg.BoolOpt('caching', default=True,
+                    help='Toggle for resource. This has no effect '
+                         'unless global caching is enabled.'),
+        cfg.IntOpt('cache_time',
+                   help='TTL (in seconds) to cache assignment data. This has '
+                        'no effect unless global caching is enabled.'),
+        cfg.IntOpt('list_limit',
+                   help='Maximum number of entities that will be returned '
+                        'in an resource collection.'),
     ],
     'credential': [
         cfg.StrOpt('driver',
