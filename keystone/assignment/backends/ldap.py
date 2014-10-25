@@ -19,8 +19,6 @@ import ldap as ldap
 import ldap.filter
 
 from keystone import assignment
-from keystone import clean
-from keystone.common import driver_hints
 from keystone.common import ldap as common_ldap
 from keystone.common import models
 from keystone import config
@@ -50,39 +48,6 @@ class Assignment(assignment.Driver):
 
         self.project = ProjectApi(CONF)
         self.role = RoleApi(CONF, self.user)
-
-    def get_project(self, tenant_id):
-        return self._set_default_domain(self.project.get(tenant_id))
-
-    def list_projects(self, hints):
-        return self._set_default_domain(self.project.get_all())
-
-    def list_projects_in_domain(self, domain_id):
-        # We don't support multiple domains within this driver, so ignore
-        # any domain specified
-        return self.list_projects(driver_hints.Hints())
-
-    def get_project_by_name(self, tenant_name, domain_id):
-        self._validate_default_domain_id(domain_id)
-        return self._set_default_domain(self.project.get_by_name(tenant_name))
-
-    def create_project(self, tenant_id, tenant):
-        self.project.check_allow_create()
-        tenant = self._validate_default_domain(tenant)
-        tenant['name'] = clean.project_name(tenant['name'])
-        data = tenant.copy()
-        if 'id' not in data or data['id'] is None:
-            data['id'] = str(uuid.uuid4().hex)
-        if 'description' in data and data['description'] in ['', None]:
-            data.pop('description')
-        return self._set_default_domain(self.project.create(data))
-
-    def update_project(self, tenant_id, tenant):
-        self.project.check_allow_update()
-        tenant = self._validate_default_domain(tenant)
-        if 'name' in tenant:
-            tenant['name'] = clean.project_name(tenant['name'])
-        return self._set_default_domain(self.project.update(tenant_id, tenant))
 
     def get_group_project_roles(self, groups, project_id, project_domain_id):
         self.get_project(project_id)
@@ -132,12 +97,6 @@ class Assignment(assignment.Driver):
         if not metadata_ref:
             return {}
         return {'roles': [self._role_to_dict(r, False) for r in metadata_ref]}
-
-    def get_role(self, role_id):
-        return self.role.get(role_id)
-
-    def list_roles(self, hints):
-        return self.role.get_all()
 
     def list_projects_for_user(self, user_id, group_ids, hints):
         user_dn = self.user._id_to_dn(user_id)
@@ -205,39 +164,6 @@ class Assignment(assignment.Driver):
                                     role_dn=role_dn,
                                     tenant_dn=tenant_dn)
 
-    def create_role(self, role_id, role):
-        self.role.check_allow_create()
-        try:
-            self.get_role(role_id)
-        except exception.NotFound:
-            pass
-        else:
-            msg = _('Duplicate ID, %s.') % role_id
-            raise exception.Conflict(type='role', details=msg)
-
-        try:
-            self.role.get_by_name(role['name'])
-        except exception.NotFound:
-            pass
-        else:
-            msg = _('Duplicate name, %s.') % role['name']
-            raise exception.Conflict(type='role', details=msg)
-
-        return self.role.create(role)
-
-    def delete_role(self, role_id):
-        self.role.check_allow_delete()
-        return self.role.delete(role_id, self.project.tree_dn)
-
-    def delete_project(self, tenant_id):
-        self.project.check_allow_delete()
-        if self.project.subtree_delete_enabled:
-            self.project.deleteTree(tenant_id)
-        else:
-            tenant_dn = self.project._id_to_dn(tenant_id)
-            self.role.roles_delete_subtree_by_project(tenant_dn)
-            self.project.delete(tenant_id)
-
     def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
         role_dn = self._subrole_id_to_dn(role_id, tenant_id)
         return self.role.delete_user(role_dn,
@@ -248,32 +174,6 @@ class Assignment(assignment.Driver):
         role_dn = self._subrole_id_to_dn(role_id, tenant_id)
         return self.role.delete_user(role_dn,
                                      self.group._id_to_dn(group_id), role_id)
-
-    def update_role(self, role_id, role):
-        self.role.check_allow_update()
-        self.get_role(role_id)
-        return self.role.update(role_id, role)
-
-    def create_domain(self, domain_id, domain):
-        if domain_id == CONF.identity.default_domain_id:
-            msg = _('Duplicate ID, %s.') % domain_id
-            raise exception.Conflict(type='domain', details=msg)
-        raise exception.Forbidden(_('Domains are read-only against LDAP'))
-
-    def get_domain(self, domain_id):
-        self._validate_default_domain_id(domain_id)
-        return assignment.calc_default_domain()
-
-    def update_domain(self, domain_id, domain):
-        self._validate_default_domain_id(domain_id)
-        raise exception.Forbidden(_('Domains are read-only against LDAP'))
-
-    def delete_domain(self, domain_id):
-        self._validate_default_domain_id(domain_id)
-        raise exception.Forbidden(_('Domains are read-only against LDAP'))
-
-    def list_domains(self, hints):
-        return [assignment.calc_default_domain()]
 
 # Bulk actions on User From identity
     def delete_user(self, user_id):
@@ -391,12 +291,6 @@ class Assignment(assignment.Driver):
         return [self.get_role(role_id) for role_id in
                 self._roles_from_role_dicts(metadata_ref.get('roles', []),
                                             inherited_to_projects)]
-
-    def get_domain_by_name(self, domain_name):
-        default_domain = assignment.calc_default_domain()
-        if domain_name != default_domain['name']:
-            raise exception.DomainNotFound(domain_id=domain_name)
-        return default_domain
 
     def list_role_assignments(self):
         role_assignments = []
