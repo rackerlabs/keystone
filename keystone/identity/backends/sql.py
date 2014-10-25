@@ -81,8 +81,8 @@ class Identity(identity.Driver):
     def __init__(self, conf=None):
         super(Identity, self).__init__()
 
-    def default_assignment_driver(self):
-        return "keystone.assignment.backends.sql.Assignment"
+    def default_base_driver(self):
+        return "keystone.base.backends.sql.Base"
 
     @property
     def is_sql(self):
