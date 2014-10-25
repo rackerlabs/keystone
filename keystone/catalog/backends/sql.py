@@ -13,6 +13,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import itertools
+
 import six
 import sqlalchemy
 from sqlalchemy.sql import true
@@ -271,7 +273,9 @@ class Catalog(catalog.Driver):
         return ref.to_dict()
 
     def get_catalog(self, user_id, tenant_id, metadata=None):
-        substitutions = dict(six.iteritems(CONF))
+        substitutions = dict(
+            itertools.chain(six.iteritems(CONF),
+                            six.iteritems(CONF.eventlet_server)))
         substitutions.update({'tenant_id': tenant_id, 'user_id': user_id})
 
         session = sql.get_session()
@@ -304,7 +308,9 @@ class Catalog(catalog.Driver):
         return catalog
 
     def get_v3_catalog(self, user_id, tenant_id, metadata=None):
-        d = dict(six.iteritems(CONF))
+        d = dict(
+            itertools.chain(six.iteritems(CONF),
+                            six.iteritems(CONF.eventlet_server)))
         d.update({'tenant_id': tenant_id,
                   'user_id': user_id})
 
