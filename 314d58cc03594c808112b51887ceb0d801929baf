@@ -16,6 +16,23 @@
       "revId": "314d58cc03594c808112b51887ceb0d801929baf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_0f254a08",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-25T20:24:20Z",
+      "side": 1,
+      "message": "why was this changed? seems unrelated.",
+      "revId": "314d58cc03594c808112b51887ceb0d801929baf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
