@@ -791,7 +791,7 @@ def render_exception(error, context=None, request=None, user_locale=None):
             if context:
                 url = Application.base_url(context, 'public')
             else:
-                url = 'http://localhost:%d' % CONF.public_port
+                url = 'http://localhost:%d' % CONF.eventlet_server.public_port
         else:
             url = url % CONF
 
