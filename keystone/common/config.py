@@ -430,19 +430,48 @@ FILE_OPTIONS = {
     ],
     'assignment': [
         # assignment has no default for backward compatibility reasons.
-        # If assignment driver is not specified, the identity driver chooses
+        # If assignment driver is not specified, the resource driver chooses
         # the backend
         cfg.StrOpt('driver',
                    help='Assignment backend driver.'),
+    ],
+    'resource': [
+        # The resource driver has no default for backward compatibility
+        # reasons. If resource driver is not specified, the identity driver
+        # chooses the backend.
+        cfg.StrOpt('driver',
+                   help='Resource backend driver.'),
         cfg.BoolOpt('caching', default=True,
-                    help='Toggle for assignment caching. This has no effect '
+                    deprecated_opts=[cfg.DeprecatedOpt('caching',
+                                                       group='assignment')],
+                    help='Toggle for resource. This has no effect '
                          'unless global caching is enabled.'),
         cfg.IntOpt('cache_time',
-                   help='TTL (in seconds) to cache assignment data. This has '
+                   deprecated_opts=[cfg.DeprecatedOpt('cache_time',
+                                                      group='assignment')],
+                   help='TTL (in seconds) to cache resource data. This has '
+                        'no effect unless global caching is enabled.'),
+        cfg.IntOpt('list_limit',
+                   deprecated_opts=[cfg.DeprecatedOpt('list_limit',
+                                                      group='assignment')],
+                   help='Maximum number of entities that will be returned '
+                        'in an resource collection.'),
+    ],
+    'role': [
+        # The role driver has no default for backward compatibility
+        # reasons. If role driver is not specified, the assignment driver
+        # chooses the backend.
+        cfg.StrOpt('driver',
+                   help='Role backend driver.'),
+        cfg.BoolOpt('caching', default=True,
+                    help='Toggle for role. This has no effect '
+                         'unless global caching is enabled.'),
+        cfg.IntOpt('cache_time',
+                   help='TTL (in seconds) to cache role data. This has '
                         'no effect unless global caching is enabled.'),
         cfg.IntOpt('list_limit',
                    help='Maximum number of entities that will be returned '
-                        'in an assignment collection.'),
+                        'in an role collection.'),
     ],
     'credential': [
         cfg.StrOpt('driver',
