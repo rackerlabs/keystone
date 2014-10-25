@@ -21,7 +21,7 @@ import ldap
 import mock
 from testtools import matchers
 
-from keystone import assignment
+from keystone import base
 from keystone.common import cache
 from keystone.common import ldap as common_ldap
 from keystone.common.ldap import core as common_ldap_core
@@ -561,7 +561,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_list_domains(self):
         domains = self.assignment_api.list_domains()
         self.assertEqual(
-            [assignment.calc_default_domain()],
+            [base.calc_default_domain()],
             domains)
 
     def test_list_domains_non_default_domain_id(self):
@@ -898,11 +898,11 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # could affect what the drivers would return up to the manager.  This
         # solves this assumption when working with aggressive (on-create)
         # cache population.
-        self.assignment_api.get_role.invalidate(self.assignment_api,
-                                                self.role_member['id'])
+        self.base_api.get_role.invalidate(self.base_api,
+                                          self.role_member['id'])
         self.assignment_api.get_role(self.role_member['id'])
-        self.assignment_api.get_project.invalidate(self.assignment_api,
-                                                   self.tenant_bar['id'])
+        self.base_api.get_project.invalidate(self.base_api,
+                                             self.tenant_bar['id'])
         self.assertRaises(exception.ProjectNotFound,
                           self.assignment_api.get_project,
                           self.tenant_bar['id'])
@@ -920,8 +920,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # could affect what the drivers would return up to the manager.  This
         # solves this assumption when working with aggressive (on-create)
         # cache population.
-        self.assignment_api.get_role.invalidate(self.assignment_api,
-                                                self.role_member['id'])
+        self.base_api.get_role.invalidate(self.base_api,
+                                          self.role_member['id'])
         self.assertRaises(exception.RoleNotFound,
                           self.assignment_api.get_role,
                           self.role_member['id'])
@@ -952,8 +952,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # could affect what the drivers would return up to the manager.  This
         # solves this assumption when working with aggressive (on-create)
         # cache population.
-        self.assignment_api.get_project.invalidate(self.assignment_api,
-                                                   self.tenant_baz['id'])
+        self.base_api.get_project.invalidate(self.base_api,
+                                             self.tenant_baz['id'])
         tenant_ref = self.assignment_api.get_project(self.tenant_baz['id'])
         self.assertEqual(self.tenant_baz['id'], tenant_ref['id'])
         self.assertEqual(self.tenant_baz['name'], tenant_ref['name'])
@@ -974,8 +974,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # could affect what the drivers would return up to the manager.  This
         # solves this assumption when working with aggressive (on-create)
         # cache population.
-        self.assignment_api.get_project.invalidate(self.assignment_api,
-                                                   self.tenant_baz['id'])
+        self.base_api.get_project.invalidate(self.base_api,
+                                             self.tenant_baz['id'])
         tenant_ref = self.assignment_api.get_project(self.tenant_baz['id'])
         self.assertEqual(self.tenant_baz['id'], tenant_ref['id'])
         self.assertEqual(self.tenant_baz['description'], tenant_ref['name'])
@@ -995,8 +995,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # that could affect what the drivers would return up to the manager.
         # This solves this assumption when working with aggressive (on-create)
         # cache population.
-        self.assignment_api.get_project.invalidate(self.assignment_api,
-                                                   self.tenant_baz['id'])
+        self.base_api.get_project.invalidate(self.base_api,
+                                             self.tenant_baz['id'])
         tenant_ref = self.assignment_api.get_project(self.tenant_baz['id'])
         self.assertEqual(self.tenant_baz['id'], tenant_ref['id'])
         self.assertNotIn('name', tenant_ref)
@@ -1014,8 +1014,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # could affect what the drivers would return up to the manager.  This
         # solves this assumption when working with aggressive (on-create)
         # cache population.
-        self.assignment_api.get_role.invalidate(self.assignment_api,
-                                                self.role_member['id'])
+        self.base_api.get_role.invalidate(self.base_api,
+                                          self.role_member['id'])
         role_ref = self.assignment_api.get_role(self.role_member['id'])
         self.assertEqual(self.role_member['id'], role_ref['id'])
         self.assertEqual(self.role_member['name'], role_ref['name'])
@@ -1028,8 +1028,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # could affect what the drivers would return up to the manager.  This
         # solves this assumption when working with aggressive (on-create)
         # cache population.
-        self.assignment_api.get_role.invalidate(self.assignment_api,
-                                                self.role_member['id'])
+        self.base_api.get_role.invalidate(self.base_api,
+                                          self.role_member['id'])
         role_ref = self.assignment_api.get_role(self.role_member['id'])
         self.assertEqual(self.role_member['id'], role_ref['id'])
         self.assertNotIn('name', role_ref)
@@ -1046,8 +1046,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # could affect what the drivers would return up to the manager.  This
         # solves this assumption when working with aggressive (on-create)
         # cache population.
-        self.assignment_api.get_role.invalidate(self.assignment_api,
-                                                self.role_member['id'])
+        self.base_api.get_role.invalidate(self.base_api,
+                                          self.role_member['id'])
         role_ref = self.assignment_api.get_role(self.role_member['id'])
         self.assertEqual(self.role_member['id'], role_ref['id'])
         self.assertNotIn('name', role_ref)
@@ -1462,48 +1462,45 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                    'description': uuid.uuid4().hex}
         project_id = project['id']
         # Create a project
-        self.assignment_api.create_project(project_id, project)
-        self.assignment_api.get_project(project_id)
+        self.base_api.create_project(project_id, project)
+        self.base_api.get_project(project_id)
         updated_project = copy.deepcopy(project)
         updated_project['description'] = uuid.uuid4().hex
-        # Update project, bypassing assignment_api manager
-        self.assignment_api.driver.update_project(project_id,
-                                                  updated_project)
+        # Update project, bypassing base_api manager
+        self.base_api.driver.update_project(project_id, updated_project)
         # Verify get_project still returns the original project_ref
         self.assertDictContainsSubset(
-            project, self.assignment_api.get_project(project_id))
+            project, self.base_api.get_project(project_id))
         # Invalidate cache
-        self.assignment_api.get_project.invalidate(self.assignment_api,
-                                                   project_id)
+        self.base_api.get_project.invalidate(self.assignment_api, project_id)
         # Verify get_project now returns the new project
         self.assertDictContainsSubset(
             updated_project,
-            self.assignment_api.get_project(project_id))
-        # Update project using the assignment_api manager back to original
-        self.assignment_api.update_project(project['id'], project)
+            self.base_api.get_project(project_id))
+        # Update project using the base_api manager back to original
+        self.base_api.update_project(project['id'], project)
         # Verify get_project returns the original project_ref
         self.assertDictContainsSubset(
-            project, self.assignment_api.get_project(project_id))
-        # Delete project bypassing assignment_api
-        self.assignment_api.driver.delete_project(project_id)
+            project, self.base_api.get_project(project_id))
+        # Delete project bypassing base_api
+        self.base_api.driver.delete_project(project_id)
         # Verify get_project still returns the project_ref
         self.assertDictContainsSubset(
-            project, self.assignment_api.get_project(project_id))
+            project, self.base_api.get_project(project_id))
         # Invalidate cache
-        self.assignment_api.get_project.invalidate(self.assignment_api,
-                                                   project_id)
+        self.base_api.get_project.invalidate(self.assignment_api, project_id)
         # Verify ProjectNotFound now raised
         self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.get_project,
+                          self.base_api.get_project,
                           project_id)
         # recreate project
-        self.assignment_api.create_project(project_id, project)
-        self.assignment_api.get_project(project_id)
+        self.base_api.create_project(project_id, project)
+        self.base_api.get_project(project_id)
         # delete project
-        self.assignment_api.delete_project(project_id)
+        self.base_api.delete_project(project_id)
         # Verify ProjectNotFound is raised
         self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.get_project,
+                          self.base_api.get_project,
                           project_id)
 
     def test_multi_role_grant_by_user_group_on_project_domain(self):
@@ -1924,6 +1921,9 @@ class LdapIdentitySqlAssignment(BaseLDAPIdentity, tests.SQLDriverOverrides,
             group='identity',
             driver='keystone.identity.backends.ldap.Identity')
         self.config_fixture.config(
+            group='base',
+            driver='keystone.base.backends.sql.Base')
+        self.config_fixture.config(
             group='assignment',
             driver='keystone.assignment.backends.sql.Assignment')
 
@@ -1932,7 +1932,7 @@ class LdapIdentitySqlAssignment(BaseLDAPIdentity, tests.SQLDriverOverrides,
 
     def test_list_domains(self):
         domains = self.assignment_api.list_domains()
-        self.assertEqual([assignment.calc_default_domain()], domains)
+        self.assertEqual([base.calc_default_domain()], domains)
 
     def test_list_domains_non_default_domain_id(self):
         # If change the default_domain_id, the ID of the default domain
@@ -2143,7 +2143,7 @@ class BaseMultiLDAPandSQLIdentity(object):
             self.domains[domain] = create_domain(
                 {'id': uuid.uuid4().hex, 'name': domain})
         self.domains['domain_default'] = create_domain(
-            assignment.calc_default_domain())
+            base.calc_default_domain())
 
     def test_authenticate_to_each_domain(self):
         """Test that a user in each domain can authenticate."""
@@ -2206,11 +2206,14 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
 
     def config_overrides(self):
         super(MultiLDAPandSQLIdentity, self).config_overrides()
-        # Make sure identity and assignment are actually SQL drivers,
+        # Make sure identity, base and assignment are actually SQL drivers,
         # BaseLDAPIdentity sets these options to use LDAP.
         self.config_fixture.config(
             group='identity',
             driver='keystone.identity.backends.sql.Identity')
+        self.config_fixture.config(
+            group='base',
+            driver='keystone.base.backends.sql.Base')
         self.config_fixture.config(
             group='assignment',
             driver='keystone.assignment.backends.sql.Assignment')
@@ -2458,8 +2461,11 @@ class DomainSpecificLDAPandSQLIdentity(
 
     def config_overrides(self):
         super(DomainSpecificLDAPandSQLIdentity, self).config_overrides()
-        # Make sure assignment is actually an SQL driver,
-        # BaseLDAPIdentity causes this option to use LDAP.
+        # Make sure base and assignment are actually SQL drivers,
+        # BaseLDAPIdentity causes these options to use LDAP.
+        self.config_fixture.config(
+            group='base',
+            driver='keystone.base.backends.sql.Base')
         self.config_fixture.config(
             group='assignment',
             driver='keystone.assignment.backends.sql.Assignment')
@@ -2605,6 +2611,9 @@ class DomainSpecificSQLIdentity(DomainSpecificLDAPandSQLIdentity):
             group='identity',
             driver='keystone.identity.backends.ldap.Identity')
         self.config_fixture.config(
+            group='base',
+            driver='keystone.base.backends.sql.Base')
+        self.config_fixture.config(
             group='assignment',
             driver='keystone.assignment.backends.sql.Assignment')
 
@@ -2630,6 +2639,9 @@ class DomainSpecificSQLIdentity(DomainSpecificLDAPandSQLIdentity):
             group='identity',
             driver='keystone.identity.backends.ldap.Identity')
         self.config_fixture.config(
+            group='base',
+            driver='keystone.base.backends.sql.Base')
+        self.config_fixture.config(
             group='assignment',
             driver='keystone.assignment.backends.sql.Assignment')
         self.load_backends()
@@ -2642,6 +2654,9 @@ class DomainSpecificSQLIdentity(DomainSpecificLDAPandSQLIdentity):
         self.config_fixture.config(
             group='identity',
             driver='keystone.identity.backends.sql.Identity')
+        self.config_fixture.config(
+            group='base',
+            driver='keystone.base.backends.sql.Base')
         self.config_fixture.config(
             group='assignment',
             driver='keystone.assignment.backends.sql.Assignment')
@@ -2656,6 +2671,9 @@ class DomainSpecificSQLIdentity(DomainSpecificLDAPandSQLIdentity):
         self.config_fixture.config(
             group='identity',
             driver='keystone.identity.backends.ldap.Identity')
+        self.config_fixture.config(
+            group='base',
+            driver='keystone.base.backends.sql.Base')
         self.config_fixture.config(
             group='assignment',
             driver='keystone.assignment.backends.sql.Assignment')

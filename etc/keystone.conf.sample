@@ -491,6 +491,28 @@
 #external=keystone.auth.plugins.external.DefaultDomain
 
 
+[base]
+
+#
+# Options defined in keystone
+#
+
+# Base backend driver. (string value)
+#driver=<None>
+
+# Toggle for base. This has no effect unless global caching is
+# enabled. (boolean value)
+#caching=true
+
+# TTL (in seconds) to cache assignment data. This has no
+# effect unless global caching is enabled. (integer value)
+#cache_time=<None>
+
+# Maximum number of entities that will be returned in an base
+# collection. (integer value)
+#list_limit=<None>
+
+
 [cache]
 
 #

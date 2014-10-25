@@ -12,6 +12,7 @@
 
 from keystone import assignment
 from keystone import auth
+from keystone import base
 from keystone import catalog
 from keystone.common import cache
 from keystone.contrib import endpoint_filter
@@ -28,13 +29,16 @@ def load_backends():
     # Configure and build the cache
     cache.configure_cache_region(cache.REGION)
 
-    # Ensure that the identity driver is created before the assignment manager.
-    # The default assignment driver is determined by the identity driver, so
-    # the identity driver must be available to the assignment manager.
+    # Ensure that the identity driver is created before the base manager, and
+    # that the base driver is created before the assignment manager.
+    # The default drivers of assignment depends on base, which in turn depends
+    # on identity - hence we need to ensure the chain is available.
     _IDENTITY_API = identity.Manager()
+    _BASE_API = base.Manager()
 
     DRIVERS = dict(
         assignment_api=assignment.Manager(),
+        base_api=_BASE_API,
         catalog_api=catalog.Manager(),
         credential_api=credential.Manager(),
         endpoint_filter_api=endpoint_filter.Manager(),
