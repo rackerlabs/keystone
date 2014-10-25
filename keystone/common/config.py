@@ -426,19 +426,50 @@ FILE_OPTIONS = {
     ],
     'assignment': [
         # assignment has no default for backward compatibility reasons.
-        # If assignment driver is not specified, the identity driver chooses
+        # If assignment driver is not specified, the base driver chooses
         # the backend
         cfg.StrOpt('driver',
                    help='Assignment backend driver.'),
+        # The assignment manager does not have any API calls that support
+        # caching or list limiting. However, these options are retained to
+        # provide backward comapatibility and are used to set the options in
+        # the resource manager if the equivalent resource options have not been
+        # set. For this reason, there are no defaults on these options.
+        cfg.BoolOpt('caching',
+                    help='Toggle for resource. This has no effect '
+                         'unless global caching is enabled. This option is '
+                         'deprecated in favor of the equivalent option '
+                         'in the resource config group.'),
+        cfg.IntOpt('cache_time',
+                   help='TTL (in seconds) to cache resource data. This has '
+                        'no effect unless global caching is enabled. This '
+                        'option is deprecated in favor of the equivalent '
+                        'option in the resource config group.'),
+        cfg.IntOpt('list_limit',
+                   help='Maximum number of entities that will be returned '
+                        'in an resource collection. This option is '
+                        'deprecated in favor of the equivalent option '
+                        'in the resource config group.'),
+    ],
+    'resource': [
+        # The resource driver has no default for backward compatibility
+        # reasons. If resource driver is not specified, the identity driver
+        # chooses the backend.
+        cfg.StrOpt('driver',
+                   help='Resource backend driver.'),
+        # If any of the following resource options are not set, then the
+        # equivalent options from assignment will be used. For caching, if
+        # the assignment has a non-default falue of False, that will override
+        # the resource default of True.
         cfg.BoolOpt('caching', default=True,
-                    help='Toggle for assignment caching. This has no effect '
+                    help='Toggle for resource. This has no effect '
                          'unless global caching is enabled.'),
         cfg.IntOpt('cache_time',
-                   help='TTL (in seconds) to cache assignment data. This has '
+                   help='TTL (in seconds) to cache resource data. This has '
                         'no effect unless global caching is enabled.'),
         cfg.IntOpt('list_limit',
                    help='Maximum number of entities that will be returned '
-                        'in an assignment collection.'),
+                        'in an resource collection.'),
     ],
     'credential': [
         cfg.StrOpt('driver',
