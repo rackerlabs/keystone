@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2014-10-22 06:12+0000\n"
-"PO-Revision-Date: 2014-10-21 00:51+0000\n"
+"POT-Creation-Date: 2014-10-25 06:06+0000\n"
+"PO-Revision-Date: 2014-10-24 15:10+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Japanese (http://www.transifex.com/projects/p/keystone/"
 "language/ja/)\n"
@@ -69,16 +69,6 @@ msgstr ""
 msgid "Error when signing assertion, reason: %(reason)s"
 msgstr ""
 
-#: keystone/openstack/common/excutils.py:76
-#, python-format
-msgid "Original exception being dropped: %s"
-msgstr "除去される元の例外: %s"
-
-#: keystone/openstack/common/excutils.py:105
-#, python-format
-msgid "Unexpected exception occurred %d time(s)... retrying."
-msgstr "予期せぬ例外が、%d回()発生しました。再試行中。"
-
 #: keystone/openstack/common/loopingcall.py:95
 msgid "in fixed duration looping call"
 msgstr "一定期間の呼び出しループ"
@@ -87,25 +77,17 @@ msgstr "一定期間の呼び出しループ"
 msgid "in dynamic looping call"
 msgstr "動的呼び出しループ"
 
-#: keystone/openstack/common/policy.py:508
+#: keystone/openstack/common/policy.py:535
+#: keystone/openstack/common/policy.py:815
 #, python-format
 msgid "Failed to understand rule %s"
 msgstr "ルール %s を解釈できませんでした"
 
-#: keystone/openstack/common/policy.py:518
+#: keystone/openstack/common/policy.py:545
 #, python-format
 msgid "No handler for matches of kind %s"
 msgstr "種類 %s の一致向けのハンドラーがありません"
 
-#: keystone/openstack/common/policy.py:788
-#, python-format
-msgid "Failed to understand rule %r"
-msgstr "ルール %r を解釈できませんでした"
-
-#: keystone/openstack/common/service.py:188
-msgid "Exception during rpc cleanup."
-msgstr "RPCクリーンアップ中に例外が発生"
-
-#: keystone/openstack/common/service.py:277
+#: keystone/openstack/common/service.py:269
 msgid "Unhandled exception"
 msgstr "未処理例外"
