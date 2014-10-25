@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_62e27230",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-10-25T01:09:29Z",
+      "side": 1,
+      "message": "You have defined them in common/config.py, so, here should be removed.",
+      "revId": "24d16026af6e4a9caaa3e852c009130d41dde94d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
