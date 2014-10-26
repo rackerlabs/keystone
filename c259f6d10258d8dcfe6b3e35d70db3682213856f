@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_971f8cb6",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-26T23:02:44Z",
+      "side": 0,
+      "message": "the extra JSON blob stuff hasn\u0027t been removed.",
+      "revId": "c259f6d10258d8dcfe6b3e35d70db3682213856f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
