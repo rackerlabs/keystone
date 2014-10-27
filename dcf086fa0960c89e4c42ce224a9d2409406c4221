@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_cf3deb90",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-27T15:59:15Z",
+      "side": 0,
+      "message": "why remove this?",
+      "revId": "dcf086fa0960c89e4c42ce224a9d2409406c4221",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
