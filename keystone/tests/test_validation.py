@@ -72,6 +72,15 @@ _VALID_ENABLED_FORMATS = [True, False]
 
 _INVALID_ENABLED_FORMATS = ['some string', 1, 0, 'True', 'False']
 
+_VALID_URL_TYPES = ['https://example.com', 'http://example.com/v3',
+                    'http://localhost', 'http://127.0.0.1:5000',
+                    'http://[::1]', 'http://[::1]:5000',
+                    'http://[1::8]', 'http://[fe80::8%eth0]',
+                    'http://[::1.2.3.4]', 'http://[2001:DB8::1.2.3.4]']
+
+_INVALID_URL_TYPES = [False, 'this is not a URL', 1234, 'www.example.com',
+                      'localhost', 'http://266.0.0.1', 'http://[::g]']
+
 
 class EntityValidationTestCase(testtools.TestCase):
 
@@ -158,7 +167,10 @@ class EntityValidationTestCase(testtools.TestCase):
         """Test that proper urls are successfully validated."""
         valid_urls = ['https://169.254.0.1', 'https://example.com',
                       'https://EXAMPLE.com', 'https://127.0.0.1:35357',
-                      'https://localhost']
+                      'https://localhost', 'https://[::1]',
+                      'http://[::1]:5000', 'http://[1::8]',
+                      'http://[fe80::8%eth0]', 'http://[::1.2.3.4]',
+                      'http://[2001:DB8::1.2.3.4]']
 
         for valid_url in valid_urls:
             request_to_validate = {'name': self.resource_name,
@@ -169,7 +181,9 @@ class EntityValidationTestCase(testtools.TestCase):
         """Test that an exception is raised when validating improper urls."""
         invalid_urls = ['http//something.com',
                         'https//something.com',
-                        'https://9.9.9']
+                        'https://9.9.9',
+                        'https://266.0.0.1',
+                        'https://[::g]']
 
         for invalid_url in invalid_urls:
             request_to_validate = {'name': self.resource_name,
@@ -706,11 +720,6 @@ class CredentialValidationTestCase(testtools.TestCase):
 class RegionValidationTestCase(testtools.TestCase):
     """Test for V3 Region API validation."""
 
-    _valid_url_types = ['https://example.com', 'http://example.com',
-                        'http://localhost', 'http://127.0.0.1:5000']
-    _invalid_url_types = [False, 'this is not a URL', 1234, 'www.example.com',
-                          'localhost']
-
     def setUp(self):
         super(RegionValidationTestCase, self).setUp()
 
@@ -749,13 +758,13 @@ class RegionValidationTestCase(testtools.TestCase):
 
     def test_validate_region_create_succeeds_with_url(self):
         """Validate `url` attribute in region create request."""
-        for url in self._valid_url_types:
+        for url in _VALID_URL_TYPES:
             request_to_validate = {'url': url}
             self.create_region_validator.validate(request_to_validate)
 
     def test_validate_region_create_fails_with_invalid_url(self):
         """Exception raised when passing invalid `url` in request."""
-        for url in self._invalid_url_types:
+        for url in _INVALID_URL_TYPES:
             request_to_validate = {'url': url}
             self.assertRaises(exception.SchemaValidationError,
                               self.create_region_validator.validate,
@@ -783,13 +792,13 @@ class RegionValidationTestCase(testtools.TestCase):
 
     def test_validate_region_update_succeeds_with_url(self):
         """Validate `url` attribute in region update request."""
-        for url in self._valid_url_types:
+        for url in _VALID_URL_TYPES:
             request_to_validate = {'url': url}
             self.update_region_validator.validate(request_to_validate)
 
     def test_validate_region_update_fails_with_invalid_url(self):
         """Exception raised when passing invalid `url` in request."""
-        for url in self._invalid_url_types:
+        for url in _INVALID_URL_TYPES:
             request_to_validate = {'url': url}
             self.assertRaises(exception.SchemaValidationError,
                               self.update_region_validator.validate,
@@ -1035,6 +1044,24 @@ class EndpointValidationTestCase(testtools.TestCase):
                           self.create_endpoint_validator.validate,
                           request_to_validate)
 
+    def test_validate_endpoint_create_succeeds_with_url(self):
+        """Validate `url` attribute in endpoint create request."""
+        request_to_validate = {'service_id': uuid.uuid4().hex,
+                               'interface': 'public'}
+        for url in _VALID_URL_TYPES:
+            request_to_validate['url'] = url
+            self.create_endpoint_validator.validate(request_to_validate)
+
+    def test_validate_endpoint_create_fails_with_invalid_url(self):
+        """Exception raised when passing invalid `url` in request."""
+        request_to_validate = {'service_id': uuid.uuid4().hex,
+                               'interface': 'public'}
+        for url in _INVALID_URL_TYPES:
+            request_to_validate['url'] = url
+            self.assertRaises(exception.SchemaValidationError,
+                              self.create_endpoint_validator.validate,
+                              request_to_validate)
+
     def test_validate_endpoint_create_fails_with_invalid_interface(self):
         """Exception raised with invalid `interface`."""
         request_to_validate = {'interface': uuid.uuid4().hex,
@@ -1092,6 +1119,24 @@ class EndpointValidationTestCase(testtools.TestCase):
                                'url': 'https://service.example.com:5000/',
                                'other_attr': uuid.uuid4().hex}
         self.update_endpoint_validator.validate(request_to_validate)
+
+    def test_validate_endpoint_update_succeeds_with_url(self):
+        """Validate `url` attribute in endpoint update request."""
+        request_to_validate = {'service_id': uuid.uuid4().hex,
+                               'interface': 'public'}
+        for url in _VALID_URL_TYPES:
+            request_to_validate['url'] = url
+            self.update_endpoint_validator.validate(request_to_validate)
+
+    def test_validate_endpoint_update_fails_with_invalid_url(self):
+        """Exception raised when passing invalid `url` in request."""
+        request_to_validate = {'service_id': uuid.uuid4().hex,
+                               'interface': 'public'}
+        for url in _INVALID_URL_TYPES:
+            request_to_validate['url'] = url
+            self.assertRaises(exception.SchemaValidationError,
+                              self.update_endpoint_validator.validate,
+                              request_to_validate)
 
 
 class TrustValidationTestCase(testtools.TestCase):
