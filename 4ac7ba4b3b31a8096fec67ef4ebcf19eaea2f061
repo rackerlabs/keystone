@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_1e99dfc3",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-10-27T18:02:53Z",
+      "side": 0,
+      "message": "Ah it was moved? Why?  Suggest moving it back.",
+      "parentUuid": "9aa7fdbe_e35728c8",
+      "revId": "4ac7ba4b3b31a8096fec67ef4ebcf19eaea2f061",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_035b4cf6",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 13
