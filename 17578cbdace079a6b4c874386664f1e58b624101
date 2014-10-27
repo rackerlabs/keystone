@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_f499a979",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-10-27T13:22:11Z",
+      "side": 1,
+      "message": "I don\u0027t see how it related to \u0027todo\u0027 removal",
+      "revId": "17578cbdace079a6b4c874386664f1e58b624101",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
