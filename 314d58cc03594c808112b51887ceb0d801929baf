@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9aa7fdbe_455ac183",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-27T14:55:56Z",
+      "side": 1,
+      "message": "question here, what\u0027s the difference between: \n\n    LOG.warning\n\nand \n\n    LOG.warn\n\nIs one preferred over the other?",
+      "revId": "314d58cc03594c808112b51887ceb0d801929baf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_8fc871a9",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 6
