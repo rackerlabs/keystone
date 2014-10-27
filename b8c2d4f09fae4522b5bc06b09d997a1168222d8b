@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "9aa7fdbe_4bfc86b8",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-10-27T21:25:40Z",
+      "side": 1,
+      "message": "This is really describing a boolean option and not what the option does.",
+      "revId": "b8c2d4f09fae4522b5bc06b09d997a1168222d8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_8b9e6e61",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 2596,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-10-27T21:25:40Z",
+      "side": 1,
+      "message": "It would be nice to break this up into multiple classes. The setUp appears to create lots of objects that are only used in some of the tests.",
+      "revId": "b8c2d4f09fae4522b5bc06b09d997a1168222d8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_cb8b161d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 2743,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-10-27T21:25:40Z",
+      "side": 1,
+      "message": "Any reason the camel case these?",
+      "revId": "b8c2d4f09fae4522b5bc06b09d997a1168222d8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_037fcc66",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 13
