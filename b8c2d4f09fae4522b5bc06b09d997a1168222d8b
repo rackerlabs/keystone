@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_037fcc66",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-10-27T17:53:08Z",
+      "side": 1,
+      "message": "(NIT): These two lines could be merged together:\n\n  for t in self.trust_api.get_trust_pedigree(trust[\u0027id\u0027]):",
+      "revId": "b8c2d4f09fae4522b5bc06b09d997a1168222d8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_83b81c12",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-10-27T17:53:08Z",
+      "side": 1,
+      "message": "This needs translation:\n\n  _(\u0027Trusts are disabled.\u0027)",
+      "revId": "b8c2d4f09fae4522b5bc06b09d997a1168222d8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_234e903b",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-10-27T17:53:08Z",
+      "side": 1,
+      "message": "(NIT, fix in next patch): use \u0027 instead of \"",
+      "revId": "b8c2d4f09fae4522b5bc06b09d997a1168222d8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_03298c36",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-10-27T17:53:08Z",
+      "side": 1,
+      "message": "Use \u0027 not \" this applies to everything",
+      "revId": "b8c2d4f09fae4522b5bc06b09d997a1168222d8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_03b7ccf5",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-10-27T17:53:08Z",
+      "side": 1,
+      "message": "This message should be more clear, what is \"max_redelegation_count\" this is a string in this case not the value ?\n\nSuggest: \"Maximum redelegation depth of %s exceeded\" % max_redelegation_count",
+      "revId": "b8c2d4f09fae4522b5bc06b09d997a1168222d8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_63c7b864",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-10-27T17:53:08Z",
+      "side": 1,
+      "message": "This is not a clear error message/case. What are you trying to communicate?",
+      "revId": "b8c2d4f09fae4522b5bc06b09d997a1168222d8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_a3a440ba",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-10-27T17:53:08Z",
+      "side": 1,
+      "message": "This is a good example/much clearer than the other messages.",
+      "revId": "b8c2d4f09fae4522b5bc06b09d997a1168222d8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_a3b9a0cd",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-10-27T17:53:08Z",
+      "side": 1,
+      "message": "(NIT): missing a period at the end of the string.\n\nWhat roles? Is this a 403 or a \"400\" in this case? We need a change to the docs for the v3 spec.",
+      "revId": "b8c2d4f09fae4522b5bc06b09d997a1168222d8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
