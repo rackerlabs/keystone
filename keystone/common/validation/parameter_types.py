@@ -11,6 +11,24 @@
 # under the License.
 """Common parameter types for validating a request reference."""
 
+rfc3986_dec_octet = '25[0-5]|(?:2[0-4]|1?[0-9])?[0-9]'
+rfc3986_ipv4_address = '(?:%(dec-octet)s\.){3}(?:%(dec-octet)s)' \
+    % {'dec-octet': rfc3986_dec_octet}
+rfc3986_h16 = '[0-9A-Fa-f]{1,4}'
+rfc3986_ls32 = '(?:%(h16)s):(?:%(h16)s)|(?:%(IPv4address)s)' \
+    % {'h16': rfc3986_h16, 'IPv4address': rfc3986_ipv4_address}
+rfc3986_ipv6_address = '(?:(?:%(h16)s:){6}(?:%(ls32)s)|' \
+    '::(?:%(h16)s:){5}(?:%(ls32)s)|' \
+    '(?:%(h16)s)?::(?:%(h16)s:){4}(?:%(ls32)s)|' \
+    '(?:(?:%(h16)s:)?%(h16)s)?::(?:%(h16)s:){3}(?:%(ls32)s)|' \
+    '(?:(?:%(h16)s:){,2}%(h16)s)?::(?:%(h16)s:){2}(?:%(ls32)s)|' \
+    '(?:(?:%(h16)s:){,3}%(h16)s)?::%(h16)s:(?:%(ls32)s)|' \
+    '(?:(?:%(h16)s:){,4}%(h16)s)?::(?:%(ls32)s)|' \
+    '(?:(?:%(h16)s:){,5}%(h16)s)?::%(h16)s|' \
+    '(?:(?:%(h16)s:){,6}%(h16)s)?::)' \
+    % {'h16': rfc3986_h16, 'ls32': rfc3986_ls32}
+rfc6874_zone_id = '(?:[0-9A-Za-z\-._~]|%[0-9A-Za-z]{2}){1,}'
+
 boolean = {
     'type': 'boolean',
     'enum': [True, False]
@@ -50,13 +68,16 @@ url = {
     # can validate URI formats but it depends on rfc3987 to do that
     # validation, and rfc3987 is GPL licensed. For our purposes here we will
     # use a regex and not rely on rfc3987 to validate URIs.
-    'pattern': '^https?://'
-               '(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)'
-               '+[a-zA-Z]{2,6}\.?|'
-               'localhost|'
-               '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})'
-               '(?::\d+)?'
-               '(?:/?|[/?]\S+)$'
+    'pattern': ('^https?://'
+                '(?:(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.)'
+                '+[a-zA-Z]{2,6}\.?|'
+                'localhost|'
+                '%(IPv4address)s|'
+                '\[%(IPv6address)s(?:%%25%(ZoneID)s)?\])'
+                '(?::\d+)?'
+                '(?:/?|[/?]\S+)$') % {'IPv4address': rfc3986_ipv4_address,
+                                      'IPv6address': rfc3986_ipv6_address,
+                                      'ZoneID': rfc6874_zone_id}
 }
 
 email = {
