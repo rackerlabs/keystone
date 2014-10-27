@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_a966e727",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-10-27T15:17:00Z",
+      "side": 1,
+      "message": "No difference: https://hg.python.org/cpython/file/a22ef88143b9/Lib/logging/__init__.py#l1288\n\nI like warn because it is shorted, but I don\u0027t think we have a preference as a team.",
+      "parentUuid": "9aa7fdbe_455ac183",
+      "revId": "314d58cc03594c808112b51887ceb0d801929baf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_8fc871a9",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 6
@@ -47,6 +65,24 @@
       "writtenOn": "2014-10-25T20:24:20Z",
       "side": 1,
       "message": "why was this changed? seems unrelated.",
+      "revId": "314d58cc03594c808112b51887ceb0d801929baf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_49001b34",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-10-27T15:17:00Z",
+      "side": 1,
+      "message": "I have a review later in the chain that checks for the correct helper. I believe it failed in this method because it detected that msg was not using _LE. With this change it can tell that msg is used later to raise an exception so it will not complain about the _.",
+      "parentUuid": "9aa7fdbe_0f254a08",
       "revId": "314d58cc03594c808112b51887ceb0d801929baf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
