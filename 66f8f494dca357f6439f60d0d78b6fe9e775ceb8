@@ -16,6 +16,24 @@
       "revId": "66f8f494dca357f6439f60d0d78b6fe9e775ceb8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_d21bcb7e",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-27T19:17:38Z",
+      "side": 1,
+      "message": "I believe so, but I\u0027ll have to check with Jamie.",
+      "parentUuid": "9aa7fdbe_2a3e6a8c",
+      "revId": "66f8f494dca357f6439f60d0d78b6fe9e775ceb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
