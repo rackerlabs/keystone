@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_d301e9af",
+        "filename": "keystone/exception.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 357,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-28T21:49:54Z",
+      "side": 1,
+      "message": "suggest renaming this to: PolicyParsingError\n\nalso you can base this off of UnexpectedError instead of Error, and get the 500 error code for free",
+      "revId": "efbf4230fc51de121f6ed495b94e64be644edfb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_d39d6967",
+        "filename": "keystone/tests/test_policy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-28T21:49:54Z",
+      "side": 1,
+      "message": "why the triple \"\"\" ? can you use single quotes instead?",
+      "revId": "efbf4230fc51de121f6ed495b94e64be644edfb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
