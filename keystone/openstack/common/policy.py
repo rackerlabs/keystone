@@ -210,7 +210,7 @@ class Enforcer(object):
         """
 
         if not isinstance(rules, dict):
-            raise TypeError(_("Rules must be an instance of dict or Rules, "
+            raise TypeError(_("rules must be an instance of dict or Rules, "
                             "got %s instead") % type(rules))
         self.use_conf = use_conf
         if overwrite:
@@ -898,7 +898,6 @@ class GenericCheck(Check):
         Matches look like:
 
             tenant:%(tenant_id)s
-            role:compute:admin
             True:%(user.enabled)s
             'Member':%(role.name)s
         """
