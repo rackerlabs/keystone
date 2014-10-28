@@ -52,6 +52,24 @@
       "revId": "66f8f494dca357f6439f60d0d78b6fe9e775ceb8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_e21b7d70",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-28T19:40:19Z",
+      "side": 1,
+      "message": "Removed per our discussion in #openstack-keystone",
+      "parentUuid": "9aa7fdbe_28eae8ab",
+      "revId": "66f8f494dca357f6439f60d0d78b6fe9e775ceb8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
