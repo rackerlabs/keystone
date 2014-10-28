@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_3df4c459",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-10-28T20:44:28Z",
+      "side": 1,
+      "message": "Is this the only way to get the expected behavior? If it is it seems like either our abstraction is incorrect or there needs to be something a little further up that makes this decision.",
+      "revId": "5b41e804d9cc2a550db3d070c9fbf9fedf4a8269",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
