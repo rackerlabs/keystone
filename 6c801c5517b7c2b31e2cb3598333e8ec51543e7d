@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_15052b13",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-10-28T12:10:03Z",
+      "side": 1,
+      "message": "Seems like next patch will be about removing this note :)",
+      "revId": "6c801c5517b7c2b31e2cb3598333e8ec51543e7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
