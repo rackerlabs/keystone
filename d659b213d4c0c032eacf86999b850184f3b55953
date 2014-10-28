@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_529ed208",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-28T23:12:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa7fdbe_d8182620",
+      "revId": "d659b213d4c0c032eacf86999b850184f3b55953",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_b86fe290",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 3
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_72a3d64f",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-28T23:12:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa7fdbe_b86fe290",
+      "revId": "d659b213d4c0c032eacf86999b850184f3b55953",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_faab2772",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 3
@@ -64,6 +100,24 @@
       "writtenOn": "2014-10-28T17:35:17Z",
       "side": 1,
       "message": "nit: restart the Identity server.",
+      "revId": "d659b213d4c0c032eacf86999b850184f3b55953",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_92875ab6",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-28T23:12:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa7fdbe_faab2772",
       "revId": "d659b213d4c0c032eacf86999b850184f3b55953",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
