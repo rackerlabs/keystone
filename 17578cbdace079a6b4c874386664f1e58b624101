@@ -16,6 +16,24 @@
       "revId": "17578cbdace079a6b4c874386664f1e58b624101",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_b77c71ed",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-10-28T00:59:05Z",
+      "side": 1,
+      "message": "According to the todo comment, he don\u0027t want region to have extra attribute. So, I remove it in this patch. That is say, region does not has extra now and because region does not have parent_id attribute, it will get an error when creating region.",
+      "parentUuid": "9aa7fdbe_f499a979",
+      "revId": "17578cbdace079a6b4c874386664f1e58b624101",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
