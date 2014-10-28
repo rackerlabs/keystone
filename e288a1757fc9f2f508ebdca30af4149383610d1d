@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_ae740468",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-10-28T17:57:23Z",
+      "side": 1,
+      "message": "Is there a standard regex for this somewhere? It would be nice to say that we got it here some source and copied it here. Otherwise this may take a fair amount of time to review.",
+      "revId": "e288a1757fc9f2f508ebdca30af4149383610d1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_4e3d588e",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-10-28T17:57:23Z",
+      "side": 1,
+      "message": "Why name these _TYPES? _VALID_URLS makes more send to me because that\u0027s what they are.",
+      "revId": "e288a1757fc9f2f508ebdca30af4149383610d1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
