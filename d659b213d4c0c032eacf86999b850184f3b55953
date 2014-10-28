@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_1a70eb3e",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-28T17:35:17Z",
+      "side": 1,
+      "message": "undo this change, as now the copyright appears in the published docs: http://docs-draft.openstack.org/19/131319/3/check/gate-keystone-docs/a8fbc30/doc/build/html/configuration.html",
+      "revId": "d659b213d4c0c032eacf86999b850184f3b55953",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_faab2772",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-28T17:35:17Z",
+      "side": 1,
+      "message": "nit: restart the Identity server.",
+      "revId": "d659b213d4c0c032eacf86999b850184f3b55953",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
