@@ -1,4 +1,4 @@
-..
+
       Copyright 2011-2012 OpenStack Foundation
       All Rights Reserved.
 
@@ -151,6 +151,13 @@ configuration file.
     Keystone does not support moving the contents of a domain (i.e. "it's"
     users and groups) from one backend to another, nor group membership across
     backend boundaries.
+
+.. NOTE::
+
+    To delete a domain that uses a domain specific backend, it's necessary
+    to first disable it, remove its specific configuration file (i.e. it's
+    corresponding keystone.<domain_name>.conf) and then restart the Identity
+    server.
 
 .. NOTE::
 
