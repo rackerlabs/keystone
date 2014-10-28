@@ -354,6 +354,11 @@ class UnexpectedError(SecurityError):
     title = 'Internal Server Error'
 
 
+class PolicyError(Error):
+    message_format = _("Unable to parse policy file %(policy_file)s.")
+    code = 500
+
+
 class TrustConsumeMaximumAttempt(UnexpectedError):
     debug_message_format = _("Unable to consume trust %(trust_id)s, unable to "
                              "acquire lock.")
