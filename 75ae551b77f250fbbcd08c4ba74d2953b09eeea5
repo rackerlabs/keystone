@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_c52770c8",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 972,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-28T14:46:51Z",
+      "side": 1,
+      "message": "since `_valid_url_types` and `_invalid_url_types` are being used in multiple test classes, they should be shared.",
+      "revId": "75ae551b77f250fbbcd08c4ba74d2953b09eeea5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
