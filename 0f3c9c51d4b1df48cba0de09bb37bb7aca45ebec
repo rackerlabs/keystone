@@ -16,6 +16,24 @@
       "revId": "0f3c9c51d4b1df48cba0de09bb37bb7aca45ebec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_5c77e09f",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-28T09:50:04Z",
+      "side": 1,
+      "message": "thanks, yep... I think that you need first to disable it.",
+      "parentUuid": "9aa7fdbe_59ec57bb",
+      "revId": "0f3c9c51d4b1df48cba0de09bb37bb7aca45ebec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
