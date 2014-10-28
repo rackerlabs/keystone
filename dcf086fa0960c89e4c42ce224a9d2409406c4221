@@ -16,6 +16,24 @@
       "revId": "dcf086fa0960c89e4c42ce224a9d2409406c4221",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_173e1dda",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-10-28T01:15:14Z",
+      "side": 0,
+      "message": "This will lead to a bug: if I update a region A which has parent_region_id B without parent_region_id property specified, here will update the parent_region_id of A to None...",
+      "parentUuid": "9aa7fdbe_cf3deb90",
+      "revId": "dcf086fa0960c89e4c42ce224a9d2409406c4221",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
