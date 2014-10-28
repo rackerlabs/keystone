@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_ab1fa059",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 571,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-10-28T12:48:17Z",
+      "side": 1,
+      "message": "Maybe replace None with something more verbose or even existent project\u0027s ID?\nNone as a parent_id might fail for some other reason than tested restriction.",
+      "revId": "947d5f77ee179871b12cb8d6e8abaf154856c2e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
