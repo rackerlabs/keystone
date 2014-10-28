@@ -23,9 +23,11 @@ from oslo import i18n
 import pbr.version
 
 
-# If ../keystone/__init__.py exists, add ../ to Python search path, so that
-# it will override what happens to be installed in /usr/(local/)lib/python...
+# If ../../keystone/__init__.py exists, add ../../ to Python search path, so
+# that it will override what happens to be installed in
+# /usr/(local/)lib/python...
 possible_topdir = os.path.normpath(os.path.join(os.path.abspath(__file__),
+                                   os.pardir,
                                    os.pardir,
                                    os.pardir))
 if os.path.exists(os.path.join(possible_topdir,
@@ -114,7 +116,7 @@ def _get_workers(worker_type_config_opt):
     return worker_count
 
 
-if __name__ == '__main__':
+def main():
     dev_conf = os.path.join(possible_topdir,
                             'etc',
                             'keystone.conf')
