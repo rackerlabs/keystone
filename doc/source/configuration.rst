@@ -154,6 +154,13 @@ configuration file.
 
 .. NOTE::
 
+    To delete a domain used in a domain specific backend, it's necessary
+    to remove first the domain specific configuration file (i.e. it's
+    correspondent keystone.<domain_name>.conf) and then restart Keystone
+    server.
+
+.. NOTE::
+
     Although Keystone supports multiple LDAP backends via domain specific
     configuration files, it currently only supports one SQL backend. This
     could be either the default driver or a single domain-specific backend,
