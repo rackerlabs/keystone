@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_3954f3c8",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-28T03:53:36Z",
+      "side": 1,
+      "message": "V2.0*",
+      "revId": "680d5b893fdaa97962b0353eca4ffd104a0accd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_99323fa5",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 559,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-28T03:53:36Z",
+      "side": 1,
+      "message": "These keys are no longer mentioned above and seem out of place",
+      "revId": "680d5b893fdaa97962b0353eca4ffd104a0accd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_191e4f0c",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-28T03:53:36Z",
+      "side": 1,
+      "message": "V2.0* ?",
+      "revId": "680d5b893fdaa97962b0353eca4ffd104a0accd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
