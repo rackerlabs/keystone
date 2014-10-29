@@ -16,6 +16,24 @@
       "revId": "5631e54f08a153dcab74113b70226bb0de05e0ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_d52d4caa",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-29T00:41:48Z",
+      "side": 1,
+      "message": "sorry, missed from the last patchset.",
+      "parentUuid": "9aa7fdbe_55431c6c",
+      "revId": "5631e54f08a153dcab74113b70226bb0de05e0ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
