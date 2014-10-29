@@ -16,6 +16,24 @@
       "revId": "6c801c5517b7c2b31e2cb3598333e8ec51543e7d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_e449c061",
+        "filename": "keystone/catalog/schema.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-10-29T06:40:12Z",
+      "side": 1,
+      "message": "I think this note is for \"required\" parameter.",
+      "parentUuid": "9aa7fdbe_15052b13",
+      "revId": "6c801c5517b7c2b31e2cb3598333e8ec51543e7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
