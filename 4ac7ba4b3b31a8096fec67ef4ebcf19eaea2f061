@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_3db592d0",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-10-29T13:15:54Z",
+      "side": 0,
+      "message": "trust[\u0027expires_at\u0027] must be handled anyway, so it has not to be under this \u0027if\u0027",
+      "parentUuid": "9aa7fdbe_1e99dfc3",
+      "revId": "4ac7ba4b3b31a8096fec67ef4ebcf19eaea2f061",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_035b4cf6",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 13
@@ -48,6 +66,24 @@
       "writtenOn": "2014-10-27T17:53:08Z",
       "side": 0,
       "message": "Revert unrelated whitespace change.",
+      "revId": "4ac7ba4b3b31a8096fec67ef4ebcf19eaea2f061",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_dd3ac633",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-10-29T13:15:54Z",
+      "side": 0,
+      "message": "Done",
+      "parentUuid": "9aa7fdbe_035b4cf6",
       "revId": "4ac7ba4b3b31a8096fec67ef4ebcf19eaea2f061",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
