@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "9aa7fdbe_6aed8d8e",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2014-10-29T14:36:17Z",
+      "side": 1,
+      "message": "Looks like that\u0027s just a graphical tool for testing a regex. I didn\u0027t see a standard regex for URLs or IP addresses there. Also note that this patch set has been superceded. See the newer patch set 7, which should be easier to read and provide better conformance to the relevant RFCs.",
+      "parentUuid": "9aa7fdbe_8a78f190",
+      "revId": "e288a1757fc9f2f508ebdca30af4149383610d1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_4e3d588e",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 3
