@@ -34,6 +34,24 @@
       "revId": "e59bc309f8127d5cd1f41b6ac45e017d0263712f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_2ac6204a",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2014-10-29T16:53:49Z",
+      "side": 1,
+      "message": "added more cases for both valid and invalid to better test IPv6 edge cases. See new patch set.",
+      "parentUuid": "9aa7fdbe_96af387d",
+      "revId": "e59bc309f8127d5cd1f41b6ac45e017d0263712f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
