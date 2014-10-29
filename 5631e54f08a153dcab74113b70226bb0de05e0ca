@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_55431c6c",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-29T00:39:41Z",
+      "side": 1,
+      "message": "undo this change (missing the 2 periods), as now the copyright appears in the generated docs: http://docs-draft.openstack.org/19/131319/3/check/gate-keystone-docs/a8fbc30/doc/build/html/configuration.html",
+      "revId": "5631e54f08a153dcab74113b70226bb0de05e0ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
