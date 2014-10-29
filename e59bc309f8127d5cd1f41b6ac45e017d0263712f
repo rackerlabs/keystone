@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_1bc37139",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-10-29T15:51:00Z",
+      "side": 1,
+      "message": "Would like to see a broader array of invalid IPv6 addresses here:  for example, too many segments, duplicate :: :: short cuts and the like.\n\nWould like  tests specifically for the IPv6 addresses, and then also the ones that unify v4 and v6 into a single set of valid/invalid urls.",
+      "revId": "e59bc309f8127d5cd1f41b6ac45e017d0263712f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
