@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_6da68255",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-29T17:39:23Z",
+      "side": 1,
+      "message": "So we may retrieve parent ids even if we have no role on them? Could that be a security issue?\n\nFor the list projects API call we can set access control using the policy. And here, no control?",
+      "revId": "bffd87a5fc53be29f550469667a7e8306bb3b04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_6d8f62cd",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-10-29T17:39:23Z",
+      "side": 1,
+      "message": "Same of above: we are able to retrieve project ids from the given subtree even if it has not an inherited role! Could that a security issue?",
+      "revId": "bffd87a5fc53be29f550469667a7e8306bb3b04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
