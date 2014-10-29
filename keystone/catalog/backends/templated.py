@@ -119,6 +119,11 @@ class Catalog(kvs.Catalog):
                         service_data[k] = core.format_url(v, substitutions)
                 except exception.MalformedEndpoint:
                     continue  # this failure is already logged in format_url()
+
+                # NOTE(stevemar): Templated Catalogs should also return an id
+                # since the data format for catalogs should be consistent
+                # across backends, since it has no id, assign it the name.
+                service_data['id'] = service_data['name']
                 catalog[region][service] = service_data
 
         return catalog

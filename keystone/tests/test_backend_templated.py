@@ -34,15 +34,15 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
                 'adminURL': 'http://localhost:8774/v1.1/bar',
                 'publicURL': 'http://localhost:8774/v1.1/bar',
                 'internalURL': 'http://localhost:8774/v1.1/bar',
-                'name': "'Compute Service'",
-                'id': '2'
+                'name': "Compute Service",
+                'id': "Compute Service",
             },
             'identity': {
                 'adminURL': 'http://localhost:35357/v2.0',
                 'publicURL': 'http://localhost:5000/v2.0',
-                'internalURL': 'http://localhost:35357/v2.0',
-                'name': "'Identity Service'",
-                'id': '1'
+                'internalURL': 'http://localhost:5000/v2.0',
+                'name': "Identity Service",
+                'id': "Identity Service",
             }
         }
     }
@@ -97,8 +97,8 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
                  'region': 'RegionOne',
                  'url': 'http://localhost:8774/v1.1/%s' % project_id}],
              'type': 'compute',
-             'name': "'Compute Service'",
-             'id': '2'},
+             'name': "Compute Service",
+             'id': 'Compute Service'},
             {'endpoints': [
                 {'interface': 'admin',
                  'region': 'RegionOne',
@@ -108,10 +108,10 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
                  'url': 'http://localhost:5000/v2.0'},
                 {'interface': 'internal',
                  'region': 'RegionOne',
-                 'url': 'http://localhost:35357/v2.0'}],
+                 'url': 'http://localhost:5000/v2.0'}],
              'type': 'identity',
-             'name': "'Identity Service'",
-             'id': '1'}]
+             'name': "Identity Service",
+             'id': 'Identity Service'}]
         self.assertEqual(exp_catalog, catalog_ref)
 
     def test_list_regions_filtered_by_parent_region_id(self):
