@@ -16,6 +16,24 @@
       "revId": "e59bc309f8127d5cd1f41b6ac45e017d0263712f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_96af387d",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-10-29T16:20:08Z",
+      "side": 1,
+      "message": "Yeah, I was about to make the same comment. This is a double edge sword though because we can\u0027t test against *every* case but at the same time we want a rich set of data to test against, so where do we draw the line. \n\nSince this is a \"roll your own\" implementation, we should probably have a broad set of test data.\n\nIf we were relying on a library to do this, I\u0027d say a smaller data set for testing would be acceptable.",
+      "parentUuid": "9aa7fdbe_1bc37139",
+      "revId": "e59bc309f8127d5cd1f41b6ac45e017d0263712f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
