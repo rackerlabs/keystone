@@ -16,6 +16,24 @@
       "revId": "1a354d5d2825258e26477f9da7adefbf0644c022",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_70673c26",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 10608
+      },
+      "writtenOn": "2014-10-29T15:29:23Z",
+      "side": 1,
+      "message": "fixed in patch set 8",
+      "parentUuid": "9aa7fdbe_ea6b3d1d",
+      "revId": "1a354d5d2825258e26477f9da7adefbf0644c022",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
