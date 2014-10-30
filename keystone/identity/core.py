@@ -631,13 +631,6 @@ class Manager(manager.Manager):
             user['enabled'] = clean.user_enabled(user['enabled'])
         if 'domain_id' in user:
             self.assignment_api.get_domain(user['domain_id'])
-        if 'id' in user:
-            if user_id != user['id']:
-                raise exception.ValidationError(_('Cannot change user ID'))
-            # Since any ID in the user dict is now irrelevant, remove its so as
-            # the driver layer won't be confused by the fact the this is the
-            # public ID not the local ID
-            user.pop('id')
 
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(user_id))

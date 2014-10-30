@@ -357,7 +357,7 @@ class IdentityTests(object):
                           user2['id'],
                           user2)
 
-    def test_update_user_id_fails(self):
+    def test_update_user_id_does_nothing(self):
         user = {'name': 'fake1',
                 'domain_id': DEFAULT_DOMAIN_ID,
                 'password': 'fakepass',
@@ -365,10 +365,7 @@ class IdentityTests(object):
         user = self.identity_api.create_user(user)
         original_id = user['id']
         user['id'] = 'fake2'
-        self.assertRaises(exception.ValidationError,
-                          self.identity_api.update_user,
-                          original_id,
-                          user)
+        self.identity_api.update_user(original_id, user)
         user_ref = self.identity_api.get_user(original_id)
         self.assertEqual(original_id, user_ref['id'])
         self.assertRaises(exception.UserNotFound,
