@@ -78,23 +78,11 @@ class IdentityTestProtectedCase(test_v3.RestfulTestCase):
         self.assignment_api.create_domain(self.domainC['id'], self.domainC)
 
         # Now create some users, one in domainA and two of them in domainB
-        self.user1 = self.new_user_ref(domain_id=self.domainA['id'])
-        password = uuid.uuid4().hex
-        self.user1['password'] = password
-        self.user1 = self.identity_api.create_user(self.user1)
-        self.user1['password'] = password
+        self.user1 = self.create_user(domain_id=self.domainA['id'])
 
-        self.user2 = self.new_user_ref(domain_id=self.domainB['id'])
-        password = uuid.uuid4().hex
-        self.user2['password'] = password
-        self.user2 = self.identity_api.create_user(self.user2)
-        self.user2['password'] = password
+        self.user2 = self.create_user(domain_id=self.domainB['id'])
 
-        self.user3 = self.new_user_ref(domain_id=self.domainB['id'])
-        password = uuid.uuid4().hex
-        self.user3['password'] = password
-        self.user3 = self.identity_api.create_user(self.user3)
-        self.user3['password'] = password
+        self.user3 = self.create_user(domain_id=self.domainB['id'])
 
         self.group1 = self.new_group_ref(domain_id=self.domainA['id'])
         self.group1 = self.identity_api.create_group(self.group1)
@@ -386,63 +374,66 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
         self.assignment_api.create_domain(self.domainA['id'], self.domainA)
         self.domainB = self.new_domain_ref()
         self.assignment_api.create_domain(self.domainB['id'], self.domainB)
-        self.admin_domain = {'id': 'admin_domain_id', 'name': 'Admin_domain'}
+        self.admin_domain = {'id': 'cloud_admin_domain_id',
+                             'name': 'Cloud_admin_domain'}
         self.assignment_api.create_domain(self.admin_domain['id'],
                                           self.admin_domain)
 
         # And our users
-        self.cloud_admin_user = self.new_user_ref(
+        self.cloud_admin_user = self.create_user(
             domain_id=self.admin_domain['id'])
-        password = uuid.uuid4().hex
-        self.cloud_admin_user['password'] = password
-        self.cloud_admin_user = (
-            self.identity_api.create_user(self.cloud_admin_user))
-        self.cloud_admin_user['password'] = password
-        self.just_a_user = self.new_user_ref(domain_id=self.domainA['id'])
-        password = uuid.uuid4().hex
-        self.just_a_user['password'] = password
-        self.just_a_user = self.identity_api.create_user(self.just_a_user)
-        self.just_a_user['password'] = password
-        self.domain_admin_user = self.new_user_ref(
+        self.domain_admin_user = self.create_user(domain_id=self.domainA['id'])
+        self.project_admin_user = self.create_user(
             domain_id=self.domainA['id'])
-        password = uuid.uuid4().hex
-        self.domain_admin_user['password'] = password
-        self.domain_admin_user = (
-            self.identity_api.create_user(self.domain_admin_user))
-        self.domain_admin_user['password'] = password
-        self.project_admin_user = self.new_user_ref(
+        self.project_member_user = self.create_user(
             domain_id=self.domainA['id'])
-        password = uuid.uuid4().hex
-        self.project_admin_user['password'] = password
-        self.project_admin_user = (
-            self.identity_api.create_user(self.project_admin_user))
-        self.project_admin_user['password'] = password
+        self.just_a_user = self.create_user(domain_id=self.domainA['id'])
 
         # The admin role and another plain role
-        self.admin_role = {'id': uuid.uuid4().hex, 'name': 'admin'}
-        self.assignment_api.create_role(self.admin_role['id'], self.admin_role)
-        self.role = self.new_role_ref()
-        self.assignment_api.create_role(self.role['id'], self.role)
+        self.cloud_admin_role = self.create_role(role_name='cloud_admin')
+        self.domain_admin_role = self.create_role(role_name='domain_admin')
+        self.project_admin_role = self.create_role(role_name='project_admin')
+        self.project_member_role = self.create_role(role_name='project_member')
+        self.role = self.create_role()
 
         # The cloud admin just gets the admin role
-        self.assignment_api.create_grant(self.admin_role['id'],
+        self.assignment_api.create_grant(self.cloud_admin_role['id'],
                                          user_id=self.cloud_admin_user['id'],
                                          domain_id=self.admin_domain['id'])
 
         # Assign roles to the domain
-        self.assignment_api.create_grant(self.admin_role['id'],
+        self.assignment_api.create_grant(self.cloud_admin_role['id'],
                                          user_id=self.domain_admin_user['id'],
                                          domain_id=self.domainA['id'])
+        self.assignment_api.create_grant(self.domain_admin_role['id'],
+                                         user_id=self.domain_admin_user['id'],
+                                         domain_id=self.domainA['id'])
+        self.assignment_api.create_grant(self.project_admin_role['id'],
+                                         user_id=self.project_admin_user['id'],
+                                         domain_id=self.domainA['id'])
+        self.assignment_api.create_grant(
+            self.project_member_role['id'],
+            user_id=self.project_member_user['id'],
+            domain_id=self.domainA['id'])
         self.assignment_api.create_grant(self.role['id'],
                                          user_id=self.just_a_user['id'],
                                          domain_id=self.domainA['id'])
 
         # Create and assign roles to the project
-        self.project = self.new_project_ref(domain_id=self.domainA['id'])
-        self.assignment_api.create_project(self.project['id'], self.project)
-        self.assignment_api.create_grant(self.admin_role['id'],
+        self.project = self.create_project(domain_id=self.domainA['id'])
+        self.assignment_api.create_grant(self.cloud_admin_role['id'],
+                                         user_id=self.cloud_admin_user['id'],
+                                         project_id=self.project['id'])
+        self.assignment_api.create_grant(self.domain_admin_role['id'],
+                                         user_id=self.domain_admin_user['id'],
+                                         project_id=self.project['id'])
+        self.assignment_api.create_grant(self.project_admin_role['id'],
                                          user_id=self.project_admin_user['id'],
                                          project_id=self.project['id'])
+        self.assignment_api.create_grant(
+            self.project_member_role['id'],
+            user_id=self.project_member_user['id'],
+            project_id=self.project['id'])
         self.assignment_api.create_grant(self.role['id'],
                                          user_id=self.just_a_user['id'],
                                          project_id=self.project['id'])

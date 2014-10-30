@@ -33,7 +33,7 @@ class CredentialBaseTestCase(test_v3.RestfulTestCase):
         credential_id = hashlib.sha256(blob['access']).hexdigest()
         credential = self.new_credential_ref(
             user_id=self.user['id'],
-            project_id=self.project_id)
+            project_id=self.project['id'])
         credential['id'] = credential_id
 
         # Store the blob as a dict *not* JSON ref bug #1259584
@@ -58,24 +58,24 @@ class CredentialTestCase(CredentialBaseTestCase):
         self.credential_id = uuid.uuid4().hex
         self.credential = self.new_credential_ref(
             user_id=self.user['id'],
-            project_id=self.project_id)
+            project_id=self.project['id'])
         self.credential['id'] = self.credential_id
         self.credential_api.create_credential(
             self.credential_id,
             self.credential)
 
     def test_credential_api_delete_credentials_for_project(self):
-        self.credential_api.delete_credentials_for_project(self.project_id)
+        self.credential_api.delete_credentials_for_project(self.project['id'])
         # Test that the credential that we created in .setUp no longer exists
-        # once we delete all credentials for self.project_id
+        # once we delete all credentials for self.project['id']
         self.assertRaises(exception.CredentialNotFound,
                           self.credential_api.get_credential,
                           credential_id=self.credential_id)
 
     def test_credential_api_delete_credentials_for_user(self):
-        self.credential_api.delete_credentials_for_user(self.user_id)
+        self.credential_api.delete_credentials_for_user(self.user['id'])
         # Test that the credential that we created in .setUp no longer exists
-        # once we delete all credentials for self.user_id
+        # once we delete all credentials for self.user['id']
         self.assertRaises(exception.CredentialNotFound,
                           self.credential_api.get_credential,
                           credential_id=self.credential_id)
@@ -121,7 +121,7 @@ class CredentialTestCase(CredentialBaseTestCase):
         """Call ``PATCH /credentials/{credential_id}``."""
         ref = self.new_credential_ref(
             user_id=self.user['id'],
-            project_id=self.project_id)
+            project_id=self.project['id'])
         del ref['id']
         r = self.patch(
             '/credentials/%(credential_id)s' % {
@@ -235,9 +235,9 @@ class TestCredentialTrustScoped(test_v3.RestfulTestCase):
         """Call ``POST /credentials`` for creating ec2 credential."""
         # Create the trust
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             impersonation=True,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -322,7 +322,7 @@ class TestCredentialEc2(CredentialBaseTestCase):
         """Test signature validation with a v3 ec2 credential."""
         ref = self.new_credential_ref(
             user_id=self.user['id'],
-            project_id=self.project_id)
+            project_id=self.project['id'])
         blob = {"access": uuid.uuid4().hex,
                 "secret": uuid.uuid4().hex}
         ref['blob'] = json.dumps(blob)
@@ -348,18 +348,18 @@ class TestCredentialEc2(CredentialBaseTestCase):
                                  secret=cred_blob['secret'])
 
     def _get_ec2_cred_uri(self):
-        return '/users/%s/credentials/OS-EC2' % self.user_id
+        return '/users/%s/credentials/OS-EC2' % self.user['id']
 
     def _get_ec2_cred(self):
         uri = self._get_ec2_cred_uri()
-        r = self.post(uri, body={'tenant_id': self.project_id})
+        r = self.post(uri, body={'tenant_id': self.project['id']})
         return r.result['credential']
 
     def test_ec2_create_credential(self):
         """Test ec2 credential creation."""
         ec2_cred = self._get_ec2_cred()
-        self.assertEqual(self.user_id, ec2_cred['user_id'])
-        self.assertEqual(self.project_id, ec2_cred['tenant_id'])
+        self.assertEqual(self.user['id'], ec2_cred['user_id'])
+        self.assertEqual(self.project['id'], ec2_cred['tenant_id'])
         self.assertIsNone(ec2_cred['trust_id'])
         self._validate_signature(access=ec2_cred['access'],
                                  secret=ec2_cred['secret'])
@@ -386,7 +386,7 @@ class TestCredentialEc2(CredentialBaseTestCase):
         uri = '/'.join([self._get_ec2_cred_uri(), ec2_cred['access']])
         cred_from_credential_api = (
             self.credential_api
-            .list_credentials_for_user(self.user_id))
+            .list_credentials_for_user(self.user['id']))
         self.assertEqual(1, len(cred_from_credential_api))
         self.delete(uri)
         self.assertRaises(exception.CredentialNotFound,

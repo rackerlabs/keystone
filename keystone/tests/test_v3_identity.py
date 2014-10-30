@@ -40,7 +40,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.credential_id = uuid.uuid4().hex
         self.credential = self.new_credential_ref(
             user_id=self.user['id'],
-            project_id=self.project_id)
+            project_id=self.project['id'])
         self.credential['id'] = self.credential_id
         self.credential_api.create_credential(
             self.credential_id,
@@ -193,7 +193,7 @@ class IdentityTestCase(test_v3.RestfulTestCase):
     def test_get_user_with_default_project(self):
         """Call ``GET /users/{user_id}`` making sure of default_project_id."""
         user = self.new_user_ref(domain_id=self.domain_id,
-                                 project_id=self.project_id)
+                                 project_id=self.project['id'])
         user = self.identity_api.create_user(user)
         r = self.get('/users/%(user_id)s' % {'user_id': user['id']})
         self.assertValidUserResponse(r, user)

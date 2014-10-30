@@ -378,7 +378,7 @@ class TokenAPITests(object):
         expires = self.token_data['token']['expires_at']
         auth_data = self.build_authentication_request(
             token=self.token,
-            project_id=self.project_id)
+            project_id=self.project['id'])
         r = self.v3_authenticate_token(auth_data)
         self.assertValidProjectScopedTokenResponse(r)
         # make sure expires stayed the same
@@ -467,10 +467,14 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
         """
         super(TestTokenRevokeSelfAndAdmin, self).load_sample_data()
         # DomainA setup
+        self.cloud_domain = {'id': 'cloud_admin_domain_id',
+                             'name': 'Cloud_admin_domain'}
+        self.assignment_api.create_domain(self.cloud_domain['id'],
+                                          self.cloud_domain)
         self.domainA = self.new_domain_ref()
         self.assignment_api.create_domain(self.domainA['id'], self.domainA)
 
-        self.userAdminA = self.new_user_ref(domain_id=self.domainA['id'])
+        self.userAdminA = self.new_user_ref(domain_id=self.cloud_domain['id'])
         password = self.userAdminA['password']
         self.userAdminA = self.identity_api.create_user(self.userAdminA)
         self.userAdminA['password'] = password
@@ -481,9 +485,10 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
         self.userNormalA = self.identity_api.create_user(self.userNormalA)
         self.userNormalA['password'] = password
 
-        self.assignment_api.create_grant(self.role['id'],
+        self.cloud_admin_role = self.create_role(role_name='cloud_admin')
+        self.assignment_api.create_grant(self.cloud_admin_role['id'],
                                          user_id=self.userAdminA['id'],
-                                         domain_id=self.domainA['id'])
+                                         domain_id=self.cloud_domain['id'])
 
         # Finally, switch to the v3 sample policy file
         self.orig_policy_file = CONF.policy_file
@@ -508,7 +513,7 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
             self.build_authentication_request(
                 user_id=self.userAdminA['id'],
                 password=self.userAdminA['password'],
-                domain_name=self.domainA['name']))
+                domain_name=self.cloud_domain['name']))
 
         self.head('/auth/tokens', headers=headers, expected_status=200,
                   token=adminA_token)
@@ -542,7 +547,7 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
             self.build_authentication_request(
                 user_id=self.userAdminA['id'],
                 password=self.userAdminA['password'],
-                domain_name=self.domainA['name']))
+                domain_name=self.cloud_domain['name']))
 
         self.head('/auth/tokens', headers=headers, expected_status=200,
                   token=adminA_token)
@@ -2392,7 +2397,7 @@ class TestAuthJSON(test_v3.RestfulTestCase):
         token = r.headers.get('X-Subject-Token')
 
         # using unscoped token with remote user succeeds
-        auth_params = {'token': token, 'project_id': self.project_id}
+        auth_params = {'token': token, 'project_id': self.project['id']}
         auth_data = self.build_authentication_request(**auth_params)
         r = self.v3_authenticate_token(auth_data)
         token = self.assertValidProjectScopedTokenResponse(r)
@@ -2624,24 +2629,24 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
     def test_create_unscoped_trust(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id)
         r = self.post('/OS-TRUST/trusts', body={'trust': ref})
         self.assertValidTrustResponse(r, ref)
 
     def test_create_trust_no_roles(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id)
+            project_id=self.project['id'])
         self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=403)
 
     def _initialize_test_consume_trust(self, count):
         # Make sure remaining_uses is decremented as we consume the trust
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             remaining_uses=count,
             role_ids=[self.role_id])
         r = self.post('/OS-TRUST/trusts', body={'trust': ref})
@@ -2697,9 +2702,9 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
     def _create_trust_with_bad_remaining_use(self, bad_value):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             remaining_uses=bad_value,
             role_ids=[self.role_id])
         self.post('/OS-TRUST/trusts',
@@ -2708,9 +2713,9 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
     def test_invalid_trust_request_without_impersonation(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             role_ids=[self.role_id])
 
         del ref['impersonation']
@@ -2721,9 +2726,9 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
     def test_invalid_trust_request_without_trustee(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             role_ids=[self.role_id])
 
         del ref['trustee_user_id']
@@ -2736,9 +2741,9 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         # by default trusts are unlimited in terms of tokens that can be
         # generated from them, this test creates such a trust explicitly
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             remaining_uses=None,
             role_ids=[self.role_id])
         r = self.post('/OS-TRUST/trusts', body={'trust': ref})
@@ -2764,9 +2769,9 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
     def test_trust_crud(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             role_ids=[self.role_id])
         r = self.post('/OS-TRUST/trusts', body={'trust': ref})
         trust = self.assertValidTrustResponse(r, ref)
@@ -2814,23 +2819,23 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
     def test_create_trust_trustee_404(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=uuid.uuid4().hex,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             role_ids=[self.role_id])
         self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=404)
 
     def test_create_trust_trustor_trustee_backwards(self):
         ref = self.new_trust_ref(
             trustor_user_id=self.trustee_user_id,
-            trustee_user_id=self.user_id,
-            project_id=self.project_id,
+            trustee_user_id=self.user['id'],
+            project_id=self.project['id'],
             role_ids=[self.role_id])
         self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=403)
 
     def test_create_trust_project_404(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
             project_id=uuid.uuid4().hex,
             role_ids=[self.role_id])
@@ -2838,25 +2843,25 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
     def test_create_trust_role_id_404(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             role_ids=[uuid.uuid4().hex])
         self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=404)
 
     def test_create_trust_role_name_404(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             role_names=[uuid.uuid4().hex])
         self.post('/OS-TRUST/trusts', body={'trust': ref}, expected_status=404)
 
     def test_create_expired_trust(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             expires=dict(seconds=-1),
             role_ids=[self.role_id])
         r = self.post('/OS-TRUST/trusts', body={'trust': ref})
@@ -2874,9 +2879,9 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
     def test_v3_v2_intermix_trustor_not_in_default_domain_failed(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.default_domain_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             impersonation=False,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -2942,7 +2947,7 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         ref = self.new_trust_ref(
             trustor_user_id=self.default_domain_user_id,
             trustee_user_id=trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             impersonation=False,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -3010,9 +3015,9 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
     def test_exercise_trust_scoped_token_without_impersonation(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             impersonation=False,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -3041,9 +3046,9 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
     def test_exercise_trust_scoped_token_with_impersonation(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             impersonation=True,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -3070,9 +3075,9 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
     def test_impersonation_token_cannot_create_new_trust(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             impersonation=True,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -3089,9 +3094,9 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
         # Build second trust
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             impersonation=True,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -3109,8 +3114,8 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         grant_url = (
             '/projects/%(project_id)s/users/%(user_id)s/'
             'roles/%(role_id)s' % {
-                'project_id': self.project_id,
-                'user_id': self.user_id,
+                'project_id': self.project['id'],
+                'user_id': self.user['id'],
                 'role_id': role['id']})
 
         # assign a new role
@@ -3118,9 +3123,9 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
         # create a trust that delegates the new role
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             impersonation=False,
             expires=dict(minutes=1),
             role_ids=[role['id']])
@@ -3161,15 +3166,15 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         # assign the new role to trustee
         self.put(
             '/projects/%(project_id)s/users/%(user_id)s/roles/%(role_id)s' % {
-                'project_id': self.project_id,
+                'project_id': self.project['id'],
                 'user_id': self.trustee_user_id,
                 'role_id': role['id']})
 
         # create a trust from trustor -> trustee
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             impersonation=True,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -3180,14 +3185,14 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         auth_data = self.build_authentication_request(
             user_id=self.trustee_user_id,
             password=self.trustee_user['password'],
-            project_id=self.project_id)
+            project_id=self.project['id'])
         token = self.get_requested_token(auth_data)
 
         # create a trust from trustee -> sub-trustee
         ref = self.new_trust_ref(
             trustor_user_id=self.trustee_user_id,
             trustee_user_id=sub_trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             impersonation=True,
             expires=dict(minutes=1),
             role_ids=[role['id']])
@@ -3220,9 +3225,9 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
     def test_delete_trust_revokes_tokens(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             impersonation=False,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -3250,9 +3255,9 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
     def test_trust_get_token_fails_if_trustor_disabled(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             impersonation=False,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -3277,9 +3282,9 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
     def test_trust_get_token_fails_if_trustee_disabled(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             impersonation=False,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -3304,9 +3309,9 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
     def test_delete_trust(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             impersonation=False,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -3335,9 +3340,9 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
     def test_list_trusts(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             impersonation=False,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -3352,21 +3357,21 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         self.assertValidTrustListResponse(r)
 
         r = self.get('/OS-TRUST/trusts?trustor_user_id=%s' %
-                     self.user_id, expected_status=200)
+                     self.user['id'], expected_status=200)
         trusts = r.result['trusts']
         self.assertEqual(3, len(trusts))
         self.assertValidTrustListResponse(r)
 
         r = self.get('/OS-TRUST/trusts?trustee_user_id=%s' %
-                     self.user_id, expected_status=200)
+                     self.user['id'], expected_status=200)
         trusts = r.result['trusts']
         self.assertEqual(0, len(trusts))
 
     def test_change_password_invalidates_trust_tokens(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             impersonation=True,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -3384,7 +3389,7 @@ class TestTrustAuth(test_v3.RestfulTestCase):
         trust_token = r.headers.get('X-Subject-Token')
 
         self.get('/OS-TRUST/trusts?trustor_user_id=%s' %
-                 self.user_id, expected_status=200,
+                 self.user['id'], expected_status=200,
                  token=trust_token)
 
         self.assertValidUserResponse(
@@ -3393,14 +3398,14 @@ class TestTrustAuth(test_v3.RestfulTestCase):
                        expected_status=200))
 
         self.get('/OS-TRUST/trusts?trustor_user_id=%s' %
-                 self.user_id, expected_status=401,
+                 self.user['id'], expected_status=401,
                  token=trust_token)
 
     def test_trustee_can_do_role_ops(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             impersonation=True,
             role_ids=[self.role_id])
 
@@ -3434,9 +3439,9 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
     def test_do_not_consume_remaining_uses_when_get_token_fails(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
+            trustor_user_id=self.user['id'],
             trustee_user_id=self.trustee_user_id,
-            project_id=self.project_id,
+            project_id=self.project['id'],
             impersonation=False,
             expires=dict(minutes=1),
             role_ids=[self.role_id],

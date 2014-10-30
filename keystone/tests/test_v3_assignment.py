@@ -89,7 +89,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         self.credential_id = uuid.uuid4().hex
         self.credential = self.new_credential_ref(
             user_id=self.user['id'],
-            project_id=self.project_id)
+            project_id=self.project['id'])
         self.credential['id'] = self.credential_id
         self.credential_api.create_credential(
             self.credential_id,
@@ -458,7 +458,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         """Call ``GET /projects/{project_id}``."""
         r = self.get(
             '/projects/%(project_id)s' % {
-                'project_id': self.project_id})
+                'project_id': self.project['id']})
         self.assertValidProjectResponse(r, self.project)
 
     def test_update_project(self):
@@ -467,7 +467,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         del ref['id']
         r = self.patch(
             '/projects/%(project_id)s' % {
-                'project_id': self.project_id},
+                'project_id': self.project['id']},
             body={'project': ref})
         self.assertValidProjectResponse(r, ref)
 
@@ -512,7 +512,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         # Now delete the project
         self.delete(
             '/projects/%(project_id)s' % {
-                'project_id': self.project_id})
+                'project_id': self.project['id']})
 
         # Deleting the project should have deleted any credentials
         # that reference this project
@@ -656,7 +656,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
     def test_crud_group_project_role_grants(self):
         collection_url = (
             '/projects/%(project_id)s/groups/%(group_id)s/roles' % {
-                'project_id': self.project_id,
+                'project_id': self.project['id'],
                 'group_id': self.group_id})
         member_url = '%(collection_url)s/%(role_id)s' % {
             'collection_url': collection_url,
@@ -685,7 +685,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
 
         collection_url = (
             '/projects/%(project_id)s/groups/%(group_id)s/roles' % {
-                'project_id': self.project_id,
+                'project_id': self.project['id'],
                 'group_id': group_id})
         member_url = '%(collection_url)s/%(role_id)s' % {
             'collection_url': collection_url,
@@ -741,7 +741,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         # Assign the user a role on the project
         collection_url = (
             '/projects/%(project_id)s/users/%(user_id)s/roles' % {
-                'project_id': self.project_id,
+                'project_id': self.project['id'],
                 'user_id': user_ref['id']})
         member_url = ('%(collection_url)s/%(role_id)s' % {
             'collection_url': collection_url,
@@ -884,7 +884,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         self.assertRoleAssignmentInListResponse(r, ud_entity, link_url=ud_url)
 
         gp_url, gp_entity = _build_role_assignment_url_and_entity(
-            project_id=self.project_id, group_id=self.group_id,
+            project_id=self.project['id'], group_id=self.group_id,
             role_id=self.role_id)
         self.put(gp_url)
         r = self.get(collection_url)
@@ -895,7 +895,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         self.assertRoleAssignmentInListResponse(r, gp_entity, link_url=gp_url)
 
         up_url, up_entity = _build_role_assignment_url_and_entity(
-            project_id=self.project_id, user_id=self.user1['id'],
+            project_id=self.project['id'], user_id=self.user1['id'],
             role_id=self.role_id)
         self.put(up_url)
         r = self.get(collection_url)
@@ -1277,7 +1277,7 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase):
         project_auth_data = self.build_authentication_request(
             user_id=user['id'],
             password=user['password'],
-            project_id=self.project_id)
+            project_id=self.project['id'])
 
         # Check the user cannot get a domain nor a project token
         self.v3_authenticate_token(domain_auth_data, expected_status=401)
@@ -1341,7 +1341,7 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase):
         project_auth_data = self.build_authentication_request(
             user_id=user['id'],
             password=user['password'],
-            project_id=self.project_id)
+            project_id=self.project['id'])
 
         # Check the user cannot get a domain nor a project token
         self.v3_authenticate_token(domain_auth_data, expected_status=401)

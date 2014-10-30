@@ -247,7 +247,7 @@ class OAuthFlowTests(OAuth1Tests):
         self.assertIsNotNone(self.consumer['secret'])
 
         url, headers = self._create_request_token(self.consumer,
-                                                  self.project_id)
+                                                  self.project['id'])
         content = self.post(
             url, headers=headers,
             response_content_type='application/x-www-urlformencoded')
@@ -287,13 +287,13 @@ class OAuthFlowTests(OAuth1Tests):
 class AccessTokenCRUDTests(OAuthFlowTests):
     def test_delete_access_token_dne(self):
         self.delete('/users/%(user)s/OS-OAUTH1/access_tokens/%(auth)s'
-                    % {'user': self.user_id,
+                    % {'user': self.user['id'],
                        'auth': uuid.uuid4().hex},
                     expected_status=404)
 
     def test_list_no_access_tokens(self):
         resp = self.get('/users/%(user_id)s/OS-OAUTH1/access_tokens'
-                        % {'user_id': self.user_id})
+                        % {'user_id': self.user['id']})
         entities = resp.result['access_tokens']
         self.assertEqual([], entities)
         self.assertValidListLinks(resp.result['links'])
@@ -301,7 +301,7 @@ class AccessTokenCRUDTests(OAuthFlowTests):
     def test_get_single_access_token(self):
         self.test_oauth_flow()
         url = '/users/%(user_id)s/OS-OAUTH1/access_tokens/%(key)s' % {
-              'user_id': self.user_id,
+              'user_id': self.user['id'],
               'key': self.access_token.key
         }
         resp = self.get(url)
@@ -312,14 +312,14 @@ class AccessTokenCRUDTests(OAuthFlowTests):
 
     def test_get_access_token_dne(self):
         self.get('/users/%(user_id)s/OS-OAUTH1/access_tokens/%(key)s'
-                 % {'user_id': self.user_id,
+                 % {'user_id': self.user['id'],
                     'key': uuid.uuid4().hex},
                  expected_status=404)
 
     def test_list_all_roles_in_access_token(self):
         self.test_oauth_flow()
         resp = self.get('/users/%(id)s/OS-OAUTH1/access_tokens/%(key)s/roles'
-                        % {'id': self.user_id,
+                        % {'id': self.user['id'],
                            'key': self.access_token.key})
         entities = resp.result['roles']
         self.assertTrue(entities)
@@ -328,7 +328,7 @@ class AccessTokenCRUDTests(OAuthFlowTests):
     def test_get_role_in_access_token(self):
         self.test_oauth_flow()
         url = ('/users/%(id)s/OS-OAUTH1/access_tokens/%(key)s/roles/%(role)s'
-               % {'id': self.user_id, 'key': self.access_token.key,
+               % {'id': self.user['id'], 'key': self.access_token.key,
                   'role': self.role_id})
         resp = self.get(url)
         entity = resp.result['role']
@@ -337,7 +337,7 @@ class AccessTokenCRUDTests(OAuthFlowTests):
     def test_get_role_in_access_token_dne(self):
         self.test_oauth_flow()
         url = ('/users/%(id)s/OS-OAUTH1/access_tokens/%(key)s/roles/%(role)s'
-               % {'id': self.user_id, 'key': self.access_token.key,
+               % {'id': self.user['id'], 'key': self.access_token.key,
                   'role': uuid.uuid4().hex})
         self.get(url, expected_status=404)
 
@@ -345,20 +345,20 @@ class AccessTokenCRUDTests(OAuthFlowTests):
         self.test_oauth_flow()
         # List access_tokens should be > 0
         resp = self.get('/users/%(user_id)s/OS-OAUTH1/access_tokens'
-                        % {'user_id': self.user_id})
+                        % {'user_id': self.user['id']})
         entities = resp.result['access_tokens']
         self.assertTrue(entities)
         self.assertValidListLinks(resp.result['links'])
 
         # Delete access_token
         resp = self.delete('/users/%(user)s/OS-OAUTH1/access_tokens/%(auth)s'
-                           % {'user': self.user_id,
+                           % {'user': self.user['id'],
                               'auth': self.access_token.key})
         self.assertResponseStatus(resp, 204)
 
         # List access_token should be 0
         resp = self.get('/users/%(user_id)s/OS-OAUTH1/access_tokens'
-                        % {'user_id': self.user_id})
+                        % {'user_id': self.user['id']})
         entities = resp.result['access_tokens']
         self.assertEqual([], entities)
         self.assertValidListLinks(resp.result['links'])
@@ -395,7 +395,7 @@ class AuthTokenTests(OAuthFlowTests):
 
         # Delete access token
         resp = self.delete('/users/%(user)s/OS-OAUTH1/access_tokens/%(auth)s'
-                           % {'user': self.user_id,
+                           % {'user': self.user['id'],
                               'auth': self.access_token.key})
         self.assertResponseStatus(resp, 204)
 
@@ -416,7 +416,7 @@ class AuthTokenTests(OAuthFlowTests):
 
         # List access_token should be 0
         resp = self.get('/users/%(user_id)s/OS-OAUTH1/access_tokens'
-                        % {'user_id': self.user_id})
+                        % {'user_id': self.user['id']})
         entities = resp.result['access_tokens']
         self.assertEqual([], entities)
 
@@ -455,7 +455,7 @@ class AuthTokenTests(OAuthFlowTests):
         self.assertValidTokenResponse(r, self.user)
 
         r = self.delete('/projects/%(project_id)s' % {
-            'project_id': self.project_id})
+            'project_id': self.project['id']})
 
         headers = {'X-Subject-Token': self.keystone_token_id,
                    'X-Auth-Token': self.keystone_token_id}
@@ -481,7 +481,7 @@ class AuthTokenTests(OAuthFlowTests):
         self.test_oauth_flow()
         self.token_provider_api._persistence.get_token(self.keystone_token_id)
         self.token_provider_api._persistence.delete_tokens(
-            self.user_id,
+            self.user['id'],
             consumer_id=self.consumer['key'])
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api._persistence.get_token,
@@ -489,9 +489,9 @@ class AuthTokenTests(OAuthFlowTests):
 
     def _create_trust_get_token(self):
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
-            trustee_user_id=self.user_id,
-            project_id=self.project_id,
+            trustor_user_id=self.user['id'],
+            trustee_user_id=self.user['id'],
+            project_id=self.project['id'],
             impersonation=True,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -515,7 +515,7 @@ class AuthTokenTests(OAuthFlowTests):
         self.assertIsNotNone(self.consumer['secret'])
 
         url, headers = self._create_request_token(self.consumer,
-                                                  self.project_id)
+                                                  self.project['id'])
         content = self.post(
             url, headers=headers,
             response_content_type='application/x-www-urlformencoded')
@@ -532,9 +532,9 @@ class AuthTokenTests(OAuthFlowTests):
     def test_oauth_token_cannot_create_new_trust(self):
         self.test_oauth_flow()
         ref = self.new_trust_ref(
-            trustor_user_id=self.user_id,
-            trustee_user_id=self.user_id,
-            project_id=self.project_id,
+            trustor_user_id=self.user['id'],
+            trustee_user_id=self.user['id'],
+            project_id=self.project['id'],
             impersonation=True,
             expires=dict(minutes=1),
             role_ids=[self.role_id])
@@ -557,7 +557,7 @@ class AuthTokenTests(OAuthFlowTests):
                           "identity:create_consumer": [],
                           "identity:authorize_request_token": []})
         self.test_oauth_flow()
-        url = '/users/%s/OS-OAUTH1/access_tokens' % self.user_id
+        url = '/users/%s/OS-OAUTH1/access_tokens' % self.user['id']
         self.get(url, token=self.keystone_token_id,
                  expected_status=403)
 
@@ -578,7 +578,7 @@ class AuthTokenTests(OAuthFlowTests):
         self._set_policy({"identity:list_access_tokens": [],
                           "identity:create_trust": []})
         trust_token = self._create_trust_get_token()
-        url = '/users/%s/OS-OAUTH1/access_tokens' % self.user_id
+        url = '/users/%s/OS-OAUTH1/access_tokens' % self.user['id']
         self.get(url, token=trust_token, expected_status=403)
 
 
@@ -588,7 +588,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         consumer = self._create_single_consumer()
         consumer_id = consumer['id']
         consumer = {'key': consumer_id, 'secret': uuid.uuid4().hex}
-        url, headers = self._create_request_token(consumer, self.project_id)
+        url, headers = self._create_request_token(consumer, self.project['id'])
         self.post(url, headers=headers, expected_status=401)
 
     def test_bad_request_token_key(self):
@@ -596,7 +596,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         consumer_id = consumer['id']
         consumer_secret = consumer['secret']
         consumer = {'key': consumer_id, 'secret': consumer_secret}
-        url, headers = self._create_request_token(consumer, self.project_id)
+        url, headers = self._create_request_token(consumer, self.project['id'])
         self.post(
             url, headers=headers,
             response_content_type='application/x-www-urlformencoded')
@@ -610,7 +610,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         consumer_secret = consumer['secret']
         consumer = {'key': consumer_id, 'secret': consumer_secret}
 
-        url, headers = self._create_request_token(consumer, self.project_id)
+        url, headers = self._create_request_token(consumer, self.project['id'])
         content = self.post(
             url, headers=headers,
             response_content_type='application/x-www-urlformencoded')
@@ -635,7 +635,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         consumer_secret = consumer['secret']
         consumer = {'key': consumer_id, 'secret': consumer_secret}
 
-        url, headers = self._create_request_token(consumer, self.project_id)
+        url, headers = self._create_request_token(consumer, self.project['id'])
         content = self.post(
             url, headers=headers,
             response_content_type='application/x-www-urlformencoded')
@@ -643,7 +643,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         request_key = credentials['oauth_token'][0]
 
         self.assignment_api.remove_role_from_user_and_project(
-            self.user_id, self.project_id, self.role_id)
+            self.user['id'], self.project['id'], self.role_id)
         url = self._authorize_request_token(request_key)
         body = {'roles': [{'id': self.role_id}]}
         self.admin_request(path=url, method='PUT',
@@ -659,7 +659,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         self.assertIsNotNone(self.consumer['key'])
 
         url, headers = self._create_request_token(self.consumer,
-                                                  self.project_id)
+                                                  self.project['id'])
         content = self.post(
             url, headers=headers,
             response_content_type='application/x-www-urlformencoded')
@@ -682,7 +682,7 @@ class MaliciousOAuth1Tests(OAuth1Tests):
         self.assertIsNotNone(self.consumer['key'])
 
         url, headers = self._create_request_token(self.consumer,
-                                                  self.project_id)
+                                                  self.project['id'])
         content = self.post(
             url, headers=headers,
             response_content_type='application/x-www-urlformencoded')

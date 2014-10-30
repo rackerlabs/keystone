@@ -783,7 +783,7 @@ class EndpointGroupCRUDTestCase(TestExtensionCase):
         endpoint_group_id = self._create_valid_endpoint_group(
           self.DEFAULT_ENDPOINT_GROUP_URL, self.DEFAULT_ENDPOINT_GROUP_BODY)
         self._create_endpoint_group_project_association(endpoint_group_id,
-                                                        self.project_id)
+                                                        self.project['id'])
 
     def test_add_endpoint_group_to_project_with_invalid_project_id(self):
         """Create an invalid endpoint group and project association."""
@@ -808,12 +808,12 @@ class EndpointGroupCRUDTestCase(TestExtensionCase):
         url = ('/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s'
               '/projects/%(project_id)s' % {
                  'endpoint_group_id': endpoint_group_id,
-                 'project_id': self.project_id})
+                 'project_id': self.project['id']})
         self.put(url)
         response = self.get(url)
         self.assertEqual(endpoint_group_id,
                          response.result['project_endpoint_group']['endpoint_group_id'])
-        self.assertEqual(self.project_id,
+        self.assertEqual(self.project['id'],
                          response.result['project_endpoint_group']['project_id'])
 
     def test_get_invalid_endpoint_group_in_project(self):
@@ -829,11 +829,11 @@ class EndpointGroupCRUDTestCase(TestExtensionCase):
         endpoint_group_id = self._create_valid_endpoint_group(
             self.DEFAULT_ENDPOINT_GROUP_URL, self.DEFAULT_ENDPOINT_GROUP_BODY)
         self._create_endpoint_group_project_association(endpoint_group_id,
-                                                        self.project_id)
+                                                        self.project['id'])
         url = ('/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s'
               '/projects/%(project_id)s' % {
                  'endpoint_group_id': endpoint_group_id,
-                 'project_id': self.project_id})
+                 'project_id': self.project['id']})
         self.head(url, expected_status=200)
 
     def test_check_endpoint_group_to_project_with_invalid_project_id(self):
@@ -846,7 +846,7 @@ class EndpointGroupCRUDTestCase(TestExtensionCase):
         url = ('/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s'
               '/projects/%(project_id)s' % {
                  'endpoint_group_id': endpoint_group_id,
-                 'project_id': self.project_id})
+                 'project_id': self.project['id']})
         self.put(url)
 
         # send a head request with an invalid project id
@@ -880,7 +880,7 @@ class EndpointGroupCRUDTestCase(TestExtensionCase):
 
         # associate endpoint group with project
         self._create_endpoint_group_project_association(endpoint_group_id,
-                                                        self.project_id)
+                                                        self.project['id'])
 
         # recover list of projects associated with endpoint group
         url = ('/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s'
@@ -917,7 +917,7 @@ class EndpointGroupCRUDTestCase(TestExtensionCase):
 
         # create association
         self._create_endpoint_group_project_association(endpoint_group_id,
-                                                        self.project_id)
+                                                        self.project['id'])
 
         # recover list of endpoints associated with endpoint group
         url = ('/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s'
