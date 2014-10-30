@@ -23,7 +23,6 @@ from oslo.config import cfg
 from oslo.utils import importutils
 import six
 
-from keystone import clean
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
@@ -555,9 +554,7 @@ class Manager(manager.Manager):
     @exception_translated('user')
     def create_user(self, user_ref):
         user = user_ref.copy()
-        user['name'] = clean.user_name(user['name'])
         user.setdefault('enabled', True)
-        user['enabled'] = clean.user_enabled(user['enabled'])
         domain_id = user['domain_id']
         self.assignment_api.get_domain(domain_id)
 
@@ -625,10 +622,6 @@ class Manager(manager.Manager):
     def update_user(self, user_id, user_ref):
         old_user_ref = self.get_user(user_id)
         user = user_ref.copy()
-        if 'name' in user:
-            user['name'] = clean.user_name(user['name'])
-        if 'enabled' in user:
-            user['enabled'] = clean.user_enabled(user['enabled'])
         if 'domain_id' in user:
             self.assignment_api.get_domain(user['domain_id'])
         if 'id' in user:

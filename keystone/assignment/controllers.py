@@ -23,6 +23,7 @@ import six
 from six.moves import urllib
 
 from keystone.assignment import schema
+from keystone import clean
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import validation
@@ -105,6 +106,8 @@ class Tenant(controller.V2Controller):
     @controller.v2_deprecated
     def create_project(self, context, tenant):
         tenant_ref = self._normalize_dict(tenant)
+        tenant_ref['enabled'] = clean.project_enabled(tenant_ref['enabled'])
+        tenant_ref['name'] = clean.project_name(tenant_ref['name'])
 
         if 'name' not in tenant_ref or not tenant_ref['name']:
             msg = _('Name field is required and cannot be empty')
@@ -124,6 +127,11 @@ class Tenant(controller.V2Controller):
         # be specifying that
         clean_tenant = tenant.copy()
         clean_tenant.pop('domain_id', None)
+        if 'enabled' in clean_tenant:
+            clean_tenant['enabled'] = clean.project_enabled(clean_tenant[
+                'enabled'])
+        if 'name' in clean_tenant:
+            tenant['name'] = clean.project_name(clean_tenant['name'])
 
         tenant_ref = self.assignment_api.update_project(
             tenant_id, clean_tenant)

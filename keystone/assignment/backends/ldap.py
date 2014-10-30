@@ -19,7 +19,6 @@ import ldap as ldap
 import ldap.filter
 
 from keystone import assignment
-from keystone import clean
 from keystone.common import driver_hints
 from keystone.common import ldap as common_ldap
 from keystone.common import models
@@ -69,7 +68,6 @@ class Assignment(assignment.Driver):
     def create_project(self, tenant_id, tenant):
         self.project.check_allow_create()
         tenant = self._validate_default_domain(tenant)
-        tenant['name'] = clean.project_name(tenant['name'])
         data = tenant.copy()
         if 'id' not in data or data['id'] is None:
             data['id'] = str(uuid.uuid4().hex)
@@ -80,8 +78,6 @@ class Assignment(assignment.Driver):
     def update_project(self, tenant_id, tenant):
         self.project.check_allow_update()
         tenant = self._validate_default_domain(tenant)
-        if 'name' in tenant:
-            tenant['name'] = clean.project_name(tenant['name'])
         return self._set_default_domain(self.project.update(tenant_id, tenant))
 
     def get_group_project_roles(self, groups, project_id, project_domain_id):

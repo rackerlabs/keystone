@@ -17,7 +17,6 @@ import uuid
 import ldap
 import ldap.filter
 
-from keystone import clean
 from keystone.common import driver_hints
 from keystone.common import ldap as common_ldap
 from keystone.common import models
@@ -123,7 +122,6 @@ class Identity(identity.Driver):
 
     def create_group(self, group_id, group):
         self.group.check_allow_create()
-        group['name'] = clean.group_name(group['name'])
         return common_ldap.filter_entity(self.group.create(group))
 
     def get_group(self, group_id):
@@ -131,8 +129,6 @@ class Identity(identity.Driver):
 
     def update_group(self, group_id, group):
         self.group.check_allow_update()
-        if 'name' in group:
-            group['name'] = clean.group_name(group['name'])
         return common_ldap.filter_entity(self.group.update(group_id, group))
 
     def delete_group(self, group_id):

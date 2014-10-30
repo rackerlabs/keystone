@@ -14,6 +14,7 @@
 
 """Workflow Logic the Identity service."""
 
+from keystone import clean
 from keystone.common import controller
 from keystone.common import dependency
 from keystone import config
@@ -66,9 +67,11 @@ class User(controller.V2Controller):
         if 'name' not in user or not user['name']:
             msg = _('Name field is required and cannot be empty')
             raise exception.ValidationError(message=msg)
+        user['name'] = clean.user_name(user['name'])
         if 'enabled' in user and not isinstance(user['enabled'], bool):
             msg = _('Enabled field must be a boolean')
             raise exception.ValidationError(message=msg)
+        user['enabled'] = clean.user_enabled(user['enabled'])
 
         default_project_id = user.pop('tenantId', None)
         if default_project_id is not None:
@@ -95,6 +98,10 @@ class User(controller.V2Controller):
         if 'enabled' in user and not isinstance(user['enabled'], bool):
             msg = _('Enabled field should be a boolean')
             raise exception.ValidationError(message=msg)
+        if 'name' in user:
+            user['name'] = clean.user_name(user['name'])
+        if 'enabled' in user:
+            user['enabled'] = clean.user_enabled(user['enabled'])
 
         default_project_id = user.pop('tenantId', None)
         if default_project_id is not None:
@@ -288,6 +295,9 @@ class GroupV3(controller.V3Controller):
     @controller.protected()
     def create_group(self, context, group):
         self._require_attribute(group, 'name')
+        # FIXME(lbragstad): remove this once the identity API is validated
+        # with keystone.common.validation.validators
+        group['name'] = clean.group_name(group['name'])
 
         # The manager layer will generate the unique ID for groups
         ref = self._normalize_dict(group)
@@ -319,6 +329,10 @@ class GroupV3(controller.V3Controller):
         self._require_matching_id(group_id, group)
         self._require_matching_domain_id(
             group_id, group, self.identity_api.get_group)
+        if 'name' in group:
+            # FIXME(lbragstad): remove this once the identity API is validated
+            # with keystone.common.validation.validators
+            group['name'] = clean.group_name(group['name'])
         ref = self.identity_api.update_group(group_id, group)
         return GroupV3.wrap_member(context, ref)
 

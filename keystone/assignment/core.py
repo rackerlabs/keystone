@@ -18,7 +18,6 @@ import abc
 
 import six
 
-from keystone import clean
 from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import driver_hints
@@ -83,7 +82,6 @@ class Manager(manager.Manager):
     def create_project(self, tenant_id, tenant):
         tenant = tenant.copy()
         tenant.setdefault('enabled', True)
-        tenant['enabled'] = clean.project_enabled(tenant['enabled'])
         tenant.setdefault('description', '')
         ret = self.driver.create_project(tenant_id, tenant)
         if SHOULD_CACHE(ret):
@@ -130,8 +128,6 @@ class Manager(manager.Manager):
     def update_project(self, tenant_id, tenant):
         original_tenant = self.driver.get_project(tenant_id)
         tenant = tenant.copy()
-        if 'enabled' in tenant:
-            tenant['enabled'] = clean.project_enabled(tenant['enabled'])
         if (original_tenant.get('enabled', True) and
                 not tenant.get('enabled', True)):
             self._disable_project(tenant_id)
@@ -324,7 +320,6 @@ class Manager(manager.Manager):
                 domain_id != CONF.identity.default_domain_id):
             raise exception.Forbidden(_('Multiple domains are not supported'))
         domain.setdefault('enabled', True)
-        domain['enabled'] = clean.domain_enabled(domain['enabled'])
         ret = self.driver.create_domain(domain_id, domain)
         if SHOULD_CACHE(ret):
             self.get_domain.set(ret, self, domain_id)
@@ -364,8 +359,6 @@ class Manager(manager.Manager):
     @notifications.updated('domain')
     def update_domain(self, domain_id, domain):
         original_domain = self.driver.get_domain(domain_id)
-        if 'enabled' in domain:
-            domain['enabled'] = clean.domain_enabled(domain['enabled'])
         ret = self.driver.update_domain(domain_id, domain)
         # disable owned users & projects when the API user specifically set
         #     enabled=False

@@ -16,7 +16,6 @@ import six
 import sqlalchemy
 
 from keystone import assignment as keystone_assignment
-from keystone import clean
 from keystone.common import sql
 from keystone import config
 from keystone import exception
@@ -439,7 +438,6 @@ class Assignment(keystone_assignment.Driver):
     # CRUD
     @sql.handle_conflicts(conflict_type='project')
     def create_project(self, tenant_id, tenant):
-        tenant['name'] = clean.project_name(tenant['name'])
         with sql.transaction() as session:
             tenant_ref = Project.from_dict(tenant)
             session.add(tenant_ref)
@@ -447,9 +445,6 @@ class Assignment(keystone_assignment.Driver):
 
     @sql.handle_conflicts(conflict_type='project')
     def update_project(self, tenant_id, tenant):
-        if 'name' in tenant:
-            tenant['name'] = clean.project_name(tenant['name'])
-
         with sql.transaction() as session:
             tenant_ref = self._get_project(session, tenant_id)
             old_project_dict = tenant_ref.to_dict()
