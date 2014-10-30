@@ -635,7 +635,7 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
         self.assertEqual(inherit, event.inherited_to_projects)
 
     def test_v3_authenticate_user_name_and_domain_id(self):
-        user_id = self.user_id
+        user_id = self.user['id']
         user_name = self.user['name']
         password = self.user['password']
         domain_id = self.domain_id
@@ -646,7 +646,7 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
         self._assert_last_note(self.ACTION, user_id)
 
     def test_v3_authenticate_user_id(self):
-        user_id = self.user_id
+        user_id = self.user['id']
         password = self.user['password']
         data = self.build_authentication_request(user_id=user_id,
                                                  password=password)
@@ -654,7 +654,7 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
         self._assert_last_note(self.ACTION, user_id)
 
     def test_v3_authenticate_user_name_and_domain_name(self):
-        user_id = self.user_id
+        user_id = self.user['id']
         user_name = self.user['name']
         password = self.user['password']
         domain_name = self.domain['name']
@@ -668,19 +668,19 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
                               user=None, group=None):
         self.put(url)
         action = "%s.%s" % (CREATED_OPERATION, self.ROLE_ASSIGNMENT)
-        self._assert_last_note(action, self.user_id)
+        self._assert_last_note(action, self.user['id'])
         self._assert_event(role, project, domain, user, group)
         self.delete(url)
         action = "%s.%s" % (DELETED_OPERATION, self.ROLE_ASSIGNMENT)
-        self._assert_last_note(action, self.user_id)
+        self._assert_last_note(action, self.user['id'])
         self._assert_event(role, project, domain, user, group)
 
     def test_user_project_grant(self):
         url = ('/projects/%s/users/%s/roles/%s' %
-               (self.project_id, self.user_id, self.role_id))
+               (self.project['id'], self.user['id'], self.role_id))
         self._test_role_assignment(url, self.role_id,
-                                   project=self.project_id,
-                                   user=self.user_id)
+                                   project=self.project['id'],
+                                   user=self.user['id'])
 
     def test_group_domain_grant(self):
         group_ref = self.new_group_ref(domain_id=self.domain_id)

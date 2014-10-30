@@ -190,6 +190,27 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
                           'name': u'Default'}
                 self.assignment_api.create_domain(DEFAULT_DOMAIN_ID, domain)
 
+    def create_user(self, domain_id):
+        user = self.new_user_ref(domain_id=domain_id)
+        password = uuid.uuid4().hex
+        user['password'] = password
+        user = self.identity_api.create_user(user)
+        user['password'] = password
+
+        return user
+
+    def create_role(self, role_name=None):
+        role = self.new_role_ref()
+        role['id'] = uuid.uuid4().hex
+        if role_name is not None:
+            role['name'] = role_name
+
+        return self.assignment_api.create_role(role['id'], role)
+
+    def create_project(self, domain_id=None):
+        project = self.new_project_ref(domain_id=domain_id)
+        return self.assignment_api.create_project(project['id'], project)
+
     def load_sample_data(self):
         self._populate_default_domain()
         self.domain_id = uuid.uuid4().hex
@@ -197,17 +218,9 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         self.domain['id'] = self.domain_id
         self.assignment_api.create_domain(self.domain_id, self.domain)
 
-        self.project_id = uuid.uuid4().hex
-        self.project = self.new_project_ref(
-            domain_id=self.domain_id)
-        self.project['id'] = self.project_id
-        self.assignment_api.create_project(self.project_id, self.project)
+        self.project = self.create_project(domain_id=self.domain_id)
 
-        self.user = self.new_user_ref(domain_id=self.domain_id)
-        password = self.user['password']
-        self.user = self.identity_api.create_user(self.user)
-        self.user['password'] = password
-        self.user_id = self.user['id']
+        self.user = self.create_user(self.domain_id)
 
         self.default_domain_project_id = uuid.uuid4().hex
         self.default_domain_project = self.new_project_ref(
@@ -231,12 +244,12 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         self.role['name'] = 'admin'
         self.assignment_api.create_role(self.role_id, self.role)
         self.assignment_api.add_role_to_user_and_project(
-            self.user_id, self.project_id, self.role_id)
+            self.user['id'], self.project['id'], self.role_id)
         self.assignment_api.add_role_to_user_and_project(
             self.default_domain_user_id, self.default_domain_project_id,
             self.role_id)
         self.assignment_api.add_role_to_user_and_project(
-            self.default_domain_user_id, self.project_id,
+            self.default_domain_user_id, self.project['id'],
             self.role_id)
 
         self.region_id = uuid.uuid4().hex
