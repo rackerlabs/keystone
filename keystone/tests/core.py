@@ -40,12 +40,17 @@ import webob
 from keystone.common import environment  # noqa
 environment.use_eventlet()
 
+# NOTE(lhcheng)
+# config.configure must run before any of the code that will try
+# to access the config values
+from keystone import config  # noqa
+config.configure()
+
 from keystone import auth
 from keystone.common import config as common_cfg
 from keystone.common import dependency
 from keystone.common import kvs
 from keystone.common.kvs import core as kvs_core
-from keystone import config
 from keystone import controllers
 from keystone import exception
 from keystone.i18n import _LW
@@ -62,8 +67,6 @@ from keystone.tests import utils
 #   oslo policy module automatically declares the option.
 from keystone.openstack.common import policy as common_policy  # noqa
 
-
-config.configure()
 
 LOG = log.getLogger(__name__)
 PID = six.text_type(os.getpid())
