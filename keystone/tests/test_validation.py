@@ -22,6 +22,7 @@ from keystone.common.validation import parameter_types
 from keystone.common.validation import validators
 from keystone.credential import schema as credential_schema
 from keystone import exception
+from keystone.identity import schema as identity_schema
 from keystone.policy import schema as policy_schema
 from keystone.trust import schema as trust_schema
 
@@ -1282,3 +1283,182 @@ class TrustValidationTestCase(testtools.TestCase):
                                'impersonation': False,
                                'roles': self._valid_roles}
         self.create_trust_validator.validate(request_to_validate)
+
+
+class UserValidationTestCase(testtools.TestCase):
+    """Test for V3 User API validation."""
+
+    def setUp(self):
+        super(UserValidationTestCase, self).setUp()
+
+        self.user_name = 'My User'
+
+        create = identity_schema.user_create
+        update = identity_schema.user_update
+        self.create_user_validator = validators.SchemaValidator(create)
+        self.update_user_validator = validators.SchemaValidator(update)
+
+    def test_validate_user_create_request_succeeds(self):
+        """Test that validating a user create request succeeds."""
+        request_to_validate = {'name': self.user_name}
+        self.create_user_validator.validate(request_to_validate)
+
+    def test_validate_user_create_with_all_valid_parameters(self):
+        """Test that validating a user create request succeeds."""
+        request_to_validate = {'name': self.user_name,
+                               'default_project_id': uuid.uuid4().hex,
+                               'domain_id': uuid.uuid4().hex,
+                               'description': 'Some description',
+                               'enabled': True,
+                               'email': 'my_user@example.com',
+                               'password': uuid.uuid4().hex}
+        self.create_user_validator.validate(request_to_validate)
+
+    def test_validate_user_create_fails_without_name(self):
+        """Exception raised when validating a user without name."""
+        request_to_validate = {'email': 'my_user@example.com'}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_user_validator.validate,
+                          request_to_validate)
+
+    def test_validate_user_create_fails_with_name_of_zero_length(self):
+        """Exception raised when validating a username with length of zero."""
+        request_to_validate = {'name': ''}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_user_validator.validate,
+                          request_to_validate)
+
+    def test_validate_user_create_fails_with_name_of_wrong_type(self):
+        """Exception raised when validating a username of wrong type."""
+        request_to_validate = {'name': True}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_user_validator.validate,
+                          request_to_validate)
+
+    def test_validate_user_create_succeeds_with_valid_enabled_formats(self):
+        """Validate acceptable enabled formats in create user requests."""
+        for enabled in _VALID_ENABLED_FORMATS:
+            request_to_validate = {'name': self.user_name,
+                                   'enabled': enabled}
+            self.create_user_validator.validate(request_to_validate)
+
+    def test_validate_user_create_fails_with_invalid_enabled_formats(self):
+        """Exception raised when enabled is not an acceptable format."""
+        for invalid_enabled in _INVALID_ENABLED_FORMATS:
+            request_to_validate = {'name': self.user_name,
+                                   'enabled': invalid_enabled}
+            self.assertRaises(exception.SchemaValidationError,
+                              self.create_user_validator.validate,
+                              request_to_validate)
+
+    def test_validate_user_create_succeeds_with_extra_attributes(self):
+        """Validate extra parameters on user create requests."""
+        request_to_validate = {'name': self.user_name,
+                               'other_attr': 'important stuff'}
+        self.create_user_validator.validate(request_to_validate)
+
+    def test_validate_user_create_succeeds_with_password_of_zero_length(self):
+        """Validate empty password on user create requests."""
+        request_to_validate = {'name': self.user_name,
+                               'password': ''}
+        self.create_user_validator.validate(request_to_validate)
+
+    def test_validate_user_create_succeeds_with_null_password(self):
+        """Validate that password is nullable on create user."""
+        request_to_validate = {'name': self.user_name,
+                               'password': None}
+        self.create_user_validator.validate(request_to_validate)
+
+    def test_validate_user_create_fails_with_invalid_password_type(self):
+        """Exception raised when user password is of the wrong type."""
+        request_to_validate = {'name': self.user_name,
+                               'password': True}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_user_validator.validate,
+                          request_to_validate)
+
+    def test_validate_user_create_succeeds_with_null_description(self):
+        """Validate that description can be nullable on create user."""
+        request_to_validate = {'name': self.user_name,
+                               'description': None}
+        self.create_user_validator.validate(request_to_validate)
+
+    def test_validate_user_update_succeeds(self):
+        """Validate an update user request."""
+        request_to_validate = {'email': 'joe.developer@example.com'}
+        self.update_user_validator.validate(request_to_validate)
+
+    def test_validate_user_update_fails_with_no_parameters(self):
+        """Exception raised when updating nothing."""
+        request_to_validate = {}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_user_validator.validate,
+                          request_to_validate)
+
+    def test_validate_user_update_succeeds_with_extra_parameters(self):
+        """Validate user update requests with extra parameters."""
+        request_to_validate = {'other_attr': 'useful stuff!'}
+        self.update_user_validator.validate(request_to_validate)
+
+
+class GroupValidationTestCase(testtools.TestCase):
+    """Test for V3 Group API validation."""
+
+    def setUp(self):
+        super(GroupValidationTestCase, self).setUp()
+
+        self.group_name = 'Dev Department'
+
+        create = identity_schema.group_create
+        update = identity_schema.group_update
+        self.create_group_validator = validators.SchemaValidator(create)
+        self.update_group_validator = validators.SchemaValidator(update)
+
+    def test_validate_group_create_succeeds(self):
+        """Validate create group requests."""
+        request_to_validate = {'name': self.group_name}
+        self.create_group_validator.validate(request_to_validate)
+
+    def test_validate_group_create_succeeds_with_all_parameters(self):
+        """Validate create group requests with all parameters."""
+        request_to_validate = {'name': self.group_name,
+                               'description': 'Group for Dev Dept.',
+                               'domain_id': uuid.uuid4().hex}
+        self.create_group_validator.validate(request_to_validate)
+
+    def test_validate_group_create_fails_without_group_name(self):
+        """Exception raised when group name is not provided in request."""
+        request_to_validate = {'description': 'some description'}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_group_validator.validate,
+                          request_to_validate)
+
+    def test_validate_group_create_fails_when_group_name_is_too_short(self):
+        """Exception raised when group name is equal to zero."""
+        request_to_validate = {'name': ''}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_group_validator.validate,
+                          request_to_validate)
+
+    def test_validate_group_create_succeeds_with_extra_parameters(self):
+        """Validate extra attributes on group create requests."""
+        request_to_validate = {'name': self.group_name,
+                               'other_attr': 'other group info'}
+        self.create_group_validator.validate(request_to_validate)
+
+    def test_validate_group_update_succeeds(self):
+        """Validate group update requests."""
+        request_to_validate = {'description': 'new description'}
+        self.update_group_validator.validate(request_to_validate)
+
+    def test_validate_group_update_fails_with_no_parameters(self):
+        """Exception raised when no parameters passed in on update."""
+        request_to_validate = {}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_group_validator.validate,
+                          request_to_validate)
+
+    def test_validate_group_update_succeeds_with_extra_parameters(self):
+        """Validate group update requests with extra parameters."""
+        request_to_validate = {'other_attr': 'interesting stuff'}
+        self.update_group_validator.validate(request_to_validate)

@@ -106,6 +106,13 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         """Call ``POST /users``."""
         self.post('/users', body={'user': {}}, expected_status=400)
 
+    def test_create_user_password_too_large_400(self):
+        """Call ``POST /users``."""
+        length = CONF.identity.max_password_length + 1
+        ref = self.new_user_ref(domain_id=self.domain_id)
+        ref['password'] = '0' * length
+        self.post('/users', body={'user': ref}, expected_status=400)
+
     def test_list_users(self):
         """Call ``GET /users``."""
         resource_url = '/users'
@@ -273,6 +280,16 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             'user_id': self.user['id']},
             body={'user': user})
         self.assertValidUserResponse(r, user)
+
+    def test_update_user_password_too_large_400(self):
+        """Call ``PATCH /users/{user_id}``."""
+        length = CONF.identity.max_password_length + 1
+        user = self.new_user_ref(domain_id=self.domain_id)
+        del user['id']
+        user['password'] = '0' * length
+        self.patch('/users/%(user_id)s' % {'user_id': self.user['id']},
+                   body={'user': user},
+                   expected_status=400)
 
     def test_admin_password_reset(self):
         # bootstrap a user as admin
