@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a8c0949_48046315",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-30T04:53:27Z",
+      "side": 1,
+      "message": "suggest making this a local variable instead of class variable",
+      "revId": "5b41e804d9cc2a550db3d070c9fbf9fedf4a8269",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_3df4c459",
         "filename": "keystone/auth/plugins/token.py",
         "patchSetId": 1
@@ -13,6 +30,24 @@
       "writtenOn": "2014-10-28T20:44:28Z",
       "side": 1,
       "message": "Is this the only way to get the expected behavior? If it is it seems like either our abstraction is incorrect or there needs to be something a little further up that makes this decision.",
+      "revId": "5b41e804d9cc2a550db3d070c9fbf9fedf4a8269",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_482b8382",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-10-30T04:53:27Z",
+      "side": 1,
+      "message": "you could do it before here: https://github.com/openstack/keystone/blob/master/keystone/auth/controllers.py#L491-L493\n\nbut the auth controller is sooo messy right now, this would just confuse things more so",
+      "parentUuid": "9aa7fdbe_3df4c459",
       "revId": "5b41e804d9cc2a550db3d070c9fbf9fedf4a8269",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
