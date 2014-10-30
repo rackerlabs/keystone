@@ -16,9 +16,11 @@
 
 from keystone.common import controller
 from keystone.common import dependency
+from keystone.common import validation
 from keystone import config
 from keystone import exception
 from keystone.i18n import _, _LW
+from keystone.identity import schema
 from keystone.openstack.common import log
 
 
@@ -203,9 +205,8 @@ class UserV3(controller.V3Controller):
         self.check_protection(context, prep_info, ref)
 
     @controller.protected()
+    @validation.validated(schema.user_create, 'user')
     def create_user(self, context, user):
-        self._require_attribute(user, 'name')
-
         # The manager layer will generate the unique ID for users
         ref = self._normalize_dict(user)
         ref = self._normalize_domain_id(context, ref)
@@ -239,6 +240,7 @@ class UserV3(controller.V3Controller):
         return UserV3.wrap_member(context, ref)
 
     @controller.protected()
+    @validation.validated(schema.user_update, 'user')
     def update_user(self, context, user_id, user):
         return self._update_user(context, user_id, user)
 
@@ -286,9 +288,8 @@ class GroupV3(controller.V3Controller):
         self.get_member_from_driver = self.identity_api.get_group
 
     @controller.protected()
+    @validation.validated(schema.group_create, 'group')
     def create_group(self, context, group):
-        self._require_attribute(group, 'name')
-
         # The manager layer will generate the unique ID for groups
         ref = self._normalize_dict(group)
         ref = self._normalize_domain_id(context, ref)
@@ -315,6 +316,7 @@ class GroupV3(controller.V3Controller):
         return GroupV3.wrap_member(context, ref)
 
     @controller.protected()
+    @validation.validated(schema.group_update, 'group')
     def update_group(self, context, group_id, group):
         self._require_matching_id(group_id, group)
         self._require_matching_domain_id(
