@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_4209a294",
+        "filename": "keystone/token/persistence/backends/kvs.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-10-30T02:05:58Z",
+      "side": 1,
+      "message": "_LW",
+      "revId": "37e8bd607f3f44a043ac785169acf9b718285a15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
