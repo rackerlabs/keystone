@@ -129,6 +129,12 @@
 # truncated to the maximum length. (boolean value)
 #strict_password_check=false
 
+# The HTTP header used to determine the scheme for the
+# original request, even if it was removed by an SSL
+# terminating proxy. Typical value is
+# "HTTP_X_FORWARDED_PROTO". (string value)
+#secure_proxy_ssl_header=<None>
+
 
 #
 # Options defined in oslo.messaging
@@ -145,7 +151,7 @@
 #rpc_conn_pool_size=30
 
 # Qpid broker hostname. (string value)
-#qpid_hostname=localhost
+#qpid_hostname=keystone
 
 # Qpid broker port. (integer value)
 #qpid_port=5672
@@ -206,7 +212,7 @@
 
 # The RabbitMQ broker address where a single node is used.
 # (string value)
-#rabbit_host=localhost
+#rabbit_host=keystone
 
 # The RabbitMQ broker port where a single node is used.
 # (integer value)
@@ -664,8 +670,9 @@
 # Deprecated group/name - [DATABASE]/sql_max_pool_size
 #max_pool_size=<None>
 
-# Maximum db connection retries during startup. Set to -1 to
-# specify an infinite retry count. (integer value)
+# Maximum number of database connection retries during
+# startup. Set to -1 to specify an infinite retry count.
+# (integer value)
 # Deprecated group/name - [DEFAULT]/sql_max_retries
 # Deprecated group/name - [DATABASE]/sql_max_retries
 #max_retries=10
@@ -864,7 +871,7 @@
 #
 
 # URL for connecting to the LDAP server. (string value)
-#url=ldap://localhost
+#url=ldap://keystone
 
 # User BindDN to query the LDAP server. (string value)
 #user=<None>
@@ -1491,7 +1498,7 @@
 
 # SSL certificate subject (auto generated certificate).
 # (string value)
-#cert_subject=/C=US/ST=Unset/L=Unset/O=Unset/CN=localhost
+#cert_subject=/C=US/ST=Unset/L=Unset/O=Unset/CN=keystone
 
 
 [token]
