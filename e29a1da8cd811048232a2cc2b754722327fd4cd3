@@ -34,6 +34,24 @@
       "revId": "e29a1da8cd811048232a2cc2b754722327fd4cd3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_1202653e",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-10-31T14:23:04Z",
+      "side": 1,
+      "message": "is that in general or in your deployment?",
+      "parentUuid": "7a8c0949_6f7e62b0",
+      "revId": "e29a1da8cd811048232a2cc2b754722327fd4cd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
