@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_3cce5a5b",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2014-10-31T13:15:33Z",
+      "side": 1,
+      "message": "Is there a way we can take the whole URL from this? not just the protocol. \n\nIf my load balancer is at https://keystone.public/ and my internal sites are like http://int-keystone.int/XXX then i want the keystone.public URL to be the one returned by the version request - not just the scheme to change.",
+      "revId": "e29a1da8cd811048232a2cc2b754722327fd4cd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
