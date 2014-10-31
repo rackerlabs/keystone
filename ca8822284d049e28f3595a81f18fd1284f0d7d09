@@ -16,6 +16,24 @@
       "revId": "ca8822284d049e28f3595a81f18fd1284f0d7d09",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_67868cbb",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-31T11:33:59Z",
+      "side": 1,
+      "message": "thanks for the suggestions.\n\n1) ++ (I was only concerned about a lot of notes in this topic)\n\n2) ++\n\n3) the restriction is more general, right? Not only related to the domain specific drivers?\n\n4) ++",
+      "parentUuid": "7a8c0949_01b138e1",
+      "revId": "ca8822284d049e28f3595a81f18fd1284f0d7d09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
