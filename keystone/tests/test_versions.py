@@ -888,3 +888,47 @@ vnd.openstack.identity-v3+xml"/>
         self.assertEqual(resp.status_int, 300)
         data = resp.body
         self.assertThat(data, matchers.XMLEquals(v2_only_response))
+
+
+class VersionBehidSslTestCase(tests.TestCase):
+    def setUp(self):
+        super(VersionBehidSslTestCase, self).setUp()
+        self.load_backends()
+        self.public_app = self.loadapp('keystone', 'main')
+
+    def _paste_in_port(self, response, port):
+        for link in response['links']:
+            if link['rel'] == 'self':
+                link['href'] = port
+
+    def _get_expected(self, host):
+        expected = VERSIONS_RESPONSE
+        for version in expected['versions']['values']:
+            if version['id'] == 'v3.0':
+                self._paste_in_port(version, host + 'v3/')
+            elif version['id'] == 'v2.0':
+                self._paste_in_port(version, host + 'v2.0/')
+        return expected
+
+    def test_versions_without_headers(self):
+        client = self.client(self.public_app)
+        host_name = 'host-%d' % random.randint(10, 30)
+        host_port = random.randint(10000, 30000)
+        host = 'http://%s:%s/' % (host_name, host_port)
+        resp = client.get(host)
+        self.assertEqual(resp.status_int, 300)
+        data = jsonutils.loads(resp.body)
+        expected = self._get_expected(host)
+        self.assertEqual(data, expected)
+
+    def test_versions_with_header(self):
+        client = self.client(self.public_app)
+        host_name = 'host-%d' % random.randint(10, 30)
+        host_port = random.randint(10000, 30000)
+        resp = client.get('http://%s:%s/' % (host_name, host_port),
+                          headers={'X-Forwarded-Proto': 'https'})
+        self.assertEqual(resp.status_int, 300)
+        data = jsonutils.loads(resp.body)
+        expected = self._get_expected('https://%s:%s/' % (host_name,
+                                                          host_port))
+        self.assertEqual(data, expected)

@@ -139,7 +139,12 @@ FILE_OPTIONS = {
                          'exceeds the maximum length, the operation will fail '
                          'with an HTTP 403 Forbidden error. If set to false, '
                          'passwords are automatically truncated to the '
-                         'maximum length.')],
+                         'maximum length.'),
+        cfg.StrOpt('secure_proxy_ssl_header',
+                   default='HTTP_X_FORWARDED_PROTO',
+                   help='The HTTP Header that will be used to determine which '
+                        'the original request protocol scheme was, even if it '
+                        'was removed by an SSL terminator proxy.')],
     'identity': [
         cfg.StrOpt('default_domain_id', default='default',
                    help='This references the domain to use for all '
