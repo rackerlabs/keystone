@@ -33,6 +33,24 @@
       "revId": "bffd87a5fc53be29f550469667a7e8306bb3b04e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_4777d0d4",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 429,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-10-31T11:37:53Z",
+      "side": 1,
+      "message": "For both calls exist use cases that require that a regular user is able to get all information about a project he/she has a role. One use case is hierarchical quotas. Since we are not talking a bout resellers (yet), I\u0027m not sure if this is indeed an issue.",
+      "parentUuid": "9aa7fdbe_6d8f62cd",
+      "revId": "bffd87a5fc53be29f550469667a7e8306bb3b04e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
