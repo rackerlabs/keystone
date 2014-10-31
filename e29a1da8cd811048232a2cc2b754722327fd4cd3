@@ -16,6 +16,24 @@
       "revId": "e29a1da8cd811048232a2cc2b754722327fd4cd3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_6f7e62b0",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-10-31T13:54:25Z",
+      "side": 1,
+      "message": "why I should to public url with https if I go to internal URL?\nload balancer changes only scheme of request and doesn\u0027t change host.\nso host_url variable of request.evironment dictionary set to right hostname for the response.",
+      "parentUuid": "7a8c0949_3cce5a5b",
+      "revId": "e29a1da8cd811048232a2cc2b754722327fd4cd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
