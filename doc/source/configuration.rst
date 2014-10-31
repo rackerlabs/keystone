@@ -146,6 +146,11 @@ the primary configuration file for the specified domain only. Domains without a
 specific configuration file will continue to use the options from the primary
 configuration file.
 
+It is important to notice that with the creation of other domains (by enabling
+this configuration), regular admin operations like list users and groups will
+need that either a domain filter is specified in the call or a domain scoped
+token is being used.
+
 .. NOTE::
 
     Keystone does not support moving the contents of a domain (i.e. "it's"
