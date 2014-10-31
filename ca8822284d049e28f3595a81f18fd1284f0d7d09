@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_01b138e1",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-10-31T09:26:10Z",
+      "side": 1,
+      "message": "I\u0027d suggest a few things here:\n\n1) Let\u0027s make this a NOTE::\n\n2) It isn\u0027t really the \"creation of other domains\" that causes this restriction, it is the enabling of domain-specific drivers.\n\n3) First describe the actual  restriction...that we do not support the listing of all users or groups in a single API call\n\n4) Then get specific...it is indeed ONLY GET /users and GET/groups that have this requirement to add a domain filter or be issued via a domain scoped token.",
+      "revId": "ca8822284d049e28f3595a81f18fd1284f0d7d09",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
