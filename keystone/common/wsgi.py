@@ -19,6 +19,7 @@
 """Utility methods for working with WSGI servers."""
 
 import copy
+import urlparse
 
 from oslo import i18n
 from oslo.serialization import jsonutils
@@ -364,6 +365,13 @@ class Application(BaseApplication):
             # host_url omits the path prefix, but there isn't another good
             # solution that will work for all urls.
             url = context['host_url']
+            env = context['environment']
+            scheme = env.get(CONF['secure_proxy_ssl_header'])
+            if scheme:
+                _, netloc, path, params, query, fragment =\
+                    urlparse.urlparse(url)
+                url = urlparse.urlunparse((scheme, netloc, path, params,
+                                           query, fragment))
 
         return url.rstrip('/')
 
