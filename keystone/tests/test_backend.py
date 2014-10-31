@@ -4173,19 +4173,26 @@ class PolicyTests(object):
     def test_update(self):
         ref = self._new_policy_ref()
         self.policy_api.create_policy(ref['id'], ref)
-        orig = ref
+        orig_id = ref['id']
 
         ref = self._new_policy_ref()
-
-        # (cannot change policy ID)
-        self.assertRaises(exception.ValidationError,
-                          self.policy_api.update_policy,
-                          orig['id'],
-                          ref)
-
-        ref['id'] = orig['id']
-        res = self.policy_api.update_policy(orig['id'], ref)
+        ref['id'] = orig_id
+        res = self.policy_api.update_policy(orig_id, ref)
         self.assertEqualPolicies(ref, res)
+
+    def test_update_id_does_nothing(self):
+        policy = self._new_policy_ref()
+        policy['id'] = 'fake1'
+        self.policy_api.create_policy(policy['id'], policy)
+
+        policy['id'] = 'fake2'
+        self.policy_api.update_policy('fake1', policy)
+
+        policy_ref = self.policy_api.get_policy('fake1')
+        self.assertEqual('fake1', policy_ref['id'])
+        self.assertRaises(exception.PolicyNotFound,
+                          self.policy_api.get_policy,
+                          'fake2')
 
     def test_delete(self):
         ref = self._new_policy_ref()

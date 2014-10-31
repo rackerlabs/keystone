@@ -14,6 +14,7 @@
 
 import uuid
 
+from keystone import exception
 from keystone.tests import test_v3
 
 
@@ -65,6 +66,14 @@ class PolicyTestCase(test_v3.RestfulTestCase):
                 'policy_id': self.policy_id},
             body={'policy': policy})
         self.assertValidPolicyResponse(r, policy)
+
+    def test_update_policy_id_fails(self):
+        policy = self.new_policy_ref()
+        self.patch(
+            '/policies/%(policy_id)s' % {
+                'policy_id': self.policy_id},
+            body={'policy': policy},
+            expected_status=exception.ValidationError.code)
 
     def test_delete_policy(self):
         """Call ``DELETE /policies/{policy_id}``."""

@@ -45,6 +45,7 @@ class PolicyV3(controller.V3Controller):
     @controller.protected()
     @validation.validated(schema.policy_update, 'policy')
     def update_policy(self, context, policy_id, policy):
+        self._require_matching_id(policy_id, policy)
         ref = self.policy_api.update_policy(policy_id, policy)
         return PolicyV3.wrap_member(context, ref)
 

@@ -53,8 +53,6 @@ class Manager(manager.Manager):
 
     @notifications.updated(_POLICY, public=False)
     def update_policy(self, policy_id, policy):
-        if 'id' in policy and policy_id != policy['id']:
-            raise exception.ValidationError('Cannot change policy ID')
         try:
             return self.driver.update_policy(policy_id, policy)
         except exception.NotFound:
