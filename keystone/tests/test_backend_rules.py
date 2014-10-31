@@ -45,6 +45,10 @@ class RulesPolicy(tests.TestCase, test_backend.PolicyTests):
         self.assertRaises(exception.NotImplemented,
                           super(RulesPolicy, self).test_update)
 
+    def test_update_id_does_nothing(self):
+        self.assertRaises(exception.NotImplemented,
+                          super(RulesPolicy, self).test_update_id_does_nothing)
+
     def test_delete(self):
         self.assertRaises(exception.NotImplemented,
                           super(RulesPolicy, self).test_delete)
