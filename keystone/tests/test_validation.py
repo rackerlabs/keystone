@@ -15,7 +15,6 @@ import uuid
 
 import testtools
 
-from keystone.assignment import schema as assignment_schema
 from keystone.catalog import schema as catalog_schema
 from keystone.common import validation
 from keystone.common.validation import parameter_types
@@ -23,6 +22,7 @@ from keystone.common.validation import validators
 from keystone.credential import schema as credential_schema
 from keystone import exception
 from keystone.policy import schema as policy_schema
+from keystone.resource import schema as resource_schema
 from keystone.trust import schema as trust_schema
 
 """Example model to validate create requests against. Assume that this is
@@ -298,8 +298,8 @@ class ProjectValidationTestCase(testtools.TestCase):
 
         self.project_name = 'My Project'
 
-        create = assignment_schema.project_create
-        update = assignment_schema.project_update
+        create = resource_schema.project_create
+        update = resource_schema.project_update
         self.create_project_validator = validators.SchemaValidator(create)
         self.update_project_validator = validators.SchemaValidator(update)
 
@@ -402,8 +402,8 @@ class DomainValidationTestCase(testtools.TestCase):
 
         self.domain_name = 'My Domain'
 
-        create = assignment_schema.domain_create
-        update = assignment_schema.domain_update
+        create = resource_schema.domain_create
+        update = resource_schema.domain_update
         self.create_domain_validator = validators.SchemaValidator(create)
         self.update_domain_validator = validators.SchemaValidator(update)
 
@@ -500,8 +500,8 @@ class RoleValidationTestCase(testtools.TestCase):
 
         self.role_name = 'My Role'
 
-        create = assignment_schema.role_create
-        update = assignment_schema.role_update
+        create = resource_schema.role_create
+        update = resource_schema.role_update
         self.create_role_validator = validators.SchemaValidator(create)
         self.update_role_validator = validators.SchemaValidator(update)
 
