@@ -31,7 +31,7 @@ build_os_inherit_relation = functools.partial(
 
 class Public(wsgi.ComposableRouter):
     def add_routes(self, mapper):
-        tenant_controller = controllers.Tenant()
+        tenant_controller = controllers.TenantAssignment()
         mapper.connect('/tenants',
                        controller=tenant_controller,
                        action='get_projects_for_token',
@@ -40,19 +40,8 @@ class Public(wsgi.ComposableRouter):
 
 class Admin(wsgi.ComposableRouter):
     def add_routes(self, mapper):
-        # Tenant Operations
-        tenant_controller = controllers.Tenant()
-        mapper.connect('/tenants',
-                       controller=tenant_controller,
-                       action='get_all_projects',
-                       conditions=dict(method=['GET']))
-        mapper.connect('/tenants/{tenant_id}',
-                       controller=tenant_controller,
-                       action='get_project',
-                       conditions=dict(method=['GET']))
-
         # Role Operations
-        roles_controller = controllers.Role()
+        roles_controller = controllers.RoleAssignmentV2()
         mapper.connect('/tenants/{tenant_id}/users/{user_id}/roles',
                        controller=roles_controller,
                        action='get_user_roles',
@@ -66,17 +55,8 @@ class Admin(wsgi.ComposableRouter):
 class Routers(wsgi.RoutersBase):
 
     def append_v3_routers(self, mapper, routers):
-        routers.append(
-            router.Router(controllers.DomainV3(),
-                          'domains', 'domain',
-                          resource_descriptions=self.v3_resources))
 
-        project_controller = controllers.ProjectV3()
-        routers.append(
-            router.Router(project_controller,
-                          'projects', 'project',
-                          resource_descriptions=self.v3_resources))
-
+        project_controller = controllers.ProjectAssignmentV3()
         self._add_resource(
             mapper, project_controller,
             path='/users/{user_id}/projects',
@@ -86,11 +66,7 @@ class Routers(wsgi.RoutersBase):
                 'user_id': json_home.Parameters.USER_ID,
             })
 
-        role_controller = controllers.RoleV3()
-        routers.append(
-            router.Router(role_controller, 'roles', 'role',
-                          resource_descriptions=self.v3_resources))
-
+        role_controller = controllers.GrantAssignmentV3()
         self._add_resource(
             mapper, role_controller,
             path='/projects/{project_id}/users/{user_id}/roles/{role_id}',
