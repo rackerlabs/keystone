@@ -20,13 +20,13 @@ import mock
 from oslo.utils import timeutils
 from testtools import matchers
 
-from keystone import assignment
 from keystone import auth
 from keystone.common import authorization
 from keystone.common import environment
 from keystone import config
 from keystone import exception
 from keystone.models import token_model
+from keystone import resource
 from keystone import tests
 from keystone.tests import default_fixtures
 from keystone.tests.ksfixtures import database
@@ -385,7 +385,7 @@ class AuthWithToken(AuthTest):
         self.assertEqual('FOO', bind['kerberos'])
 
     def test_deleting_role_revokes_token(self):
-        role_controller = assignment.controllers.Role()
+        role_controller = resource.controllers.Role()
         project1 = {'id': 'Project1', 'name': uuid.uuid4().hex,
                     'domain_id': DEFAULT_DOMAIN_ID}
         self.assignment_api.create_project(project1['id'], project1)
