@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a8c0949_eaeeb28a",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 9
+      },
+      "lineNbr": 1333,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-02T11:48:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8c0949_2af43af1",
+      "revId": "3f6031375c1e384b5052c1f8b5deeb32f7f490ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_aa558ac7",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-02T08:43:56Z",
       "side": 1,
       "message": "s/base/resource",
+      "revId": "3f6031375c1e384b5052c1f8b5deeb32f7f490ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_0af4de59",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-02T11:48:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8c0949_aa558ac7",
       "revId": "3f6031375c1e384b5052c1f8b5deeb32f7f490ad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7a8c0949_2ae99a80",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-02T11:48:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8c0949_ca52d6dc",
+      "revId": "3f6031375c1e384b5052c1f8b5deeb32f7f490ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_6af9e2c7",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 9
@@ -64,6 +118,24 @@
       "writtenOn": "2014-11-02T08:43:56Z",
       "side": 1,
       "message": "Rename this method to have a more meaningful name (delete_user_assignments)\nAs suggested by you on the backend sql (lines 366-368).",
+      "revId": "3f6031375c1e384b5052c1f8b5deeb32f7f490ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_aafcaa3f",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-02T11:48:38Z",
+      "side": 1,
+      "message": "I\u0027m trying to change as little as possible in one go. Agree these would be changed here if we change the sql ones...so have moved my comment from sql into core. I\u0027ll be putting up a series of follow-on patches that rationalise these calls once the basic change is in.",
+      "parentUuid": "7a8c0949_6af9e2c7",
       "revId": "3f6031375c1e384b5052c1f8b5deeb32f7f490ad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "7a8c0949_4aa50652",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-02T11:48:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8c0949_ca1736ec",
+      "revId": "3f6031375c1e384b5052c1f8b5deeb32f7f490ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_0ad93e57",
         "filename": "keystone/common/config.py",
         "patchSetId": 9
@@ -98,6 +188,24 @@
       "writtenOn": "2014-11-02T08:43:56Z",
       "side": 1,
       "message": "s/assignment/resource",
+      "revId": "3f6031375c1e384b5052c1f8b5deeb32f7f490ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_6a89e2c9",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-02T11:48:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8c0949_0ad93e57",
       "revId": "3f6031375c1e384b5052c1f8b5deeb32f7f490ad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "7a8c0949_8a860eb8",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-02T11:48:38Z",
+      "side": 1,
+      "message": "So this is just so that for installations that user an all LDAP configuration, they don\u0027t need to specific the driver type for resource (and assignment) explicitly.  This method is only referenced from the init of resources/core.py. It is provided for backward compatibility only.",
+      "parentUuid": "7a8c0949_2adefa3f",
+      "revId": "3f6031375c1e384b5052c1f8b5deeb32f7f490ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_6a7c8221",
         "filename": "keystone/resource/core.py",
         "patchSetId": 9
@@ -132,6 +258,24 @@
       "writtenOn": "2014-11-02T08:43:56Z",
       "side": 1,
       "message": "Maybe it\u0027s a good time to remove \u0027tenant\u0027 from this backend?",
+      "revId": "3f6031375c1e384b5052c1f8b5deeb32f7f490ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_ca9016ef",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-02T11:48:38Z",
+      "side": 1,
+      "message": "Agreed....although in this first patch I am trying to change as little as possible...I\u0027ll make that part of one of my follow-up patches.",
+      "parentUuid": "7a8c0949_6a7c8221",
       "revId": "3f6031375c1e384b5052c1f8b5deeb32f7f490ad",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
