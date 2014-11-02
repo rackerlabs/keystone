@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_2af43af1",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 9
+      },
+      "lineNbr": 1333,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-11-02T08:43:56Z",
+      "side": 1,
+      "message": "s/assignment/resource",
+      "revId": "3f6031375c1e384b5052c1f8b5deeb32f7f490ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_aa558ac7",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-11-02T08:43:56Z",
+      "side": 1,
+      "message": "s/base/resource",
+      "revId": "3f6031375c1e384b5052c1f8b5deeb32f7f490ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_ca52d6dc",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-11-02T08:43:56Z",
+      "side": 1,
+      "message": "Same here ...",
+      "revId": "3f6031375c1e384b5052c1f8b5deeb32f7f490ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_6af9e2c7",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-11-02T08:43:56Z",
+      "side": 1,
+      "message": "Rename this method to have a more meaningful name (delete_user_assignments)\nAs suggested by you on the backend sql (lines 366-368).",
+      "revId": "3f6031375c1e384b5052c1f8b5deeb32f7f490ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_ca1736ec",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-11-02T08:43:56Z",
+      "side": 1,
+      "message": "Actually, we have no more any circular dependency.\nNow Resource and Identity backend are completly independent from each other, and the Assignment backend depends on both.",
+      "revId": "3f6031375c1e384b5052c1f8b5deeb32f7f490ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_0ad93e57",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-11-02T08:43:56Z",
+      "side": 1,
+      "message": "s/assignment/resource",
+      "revId": "3f6031375c1e384b5052c1f8b5deeb32f7f490ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_2adefa3f",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-11-02T08:43:56Z",
+      "side": 1,
+      "message": "Why does Identity need to know that Resource backend even exists?\nI guess it\u0027s because we have user inside a domain.\n\nBut what about removing this dependency here?\nWe could have a special assignment to an entity from Identity on a resource from Resource with a role \u0027owned_by\u0027.\n\nThis way, potential advantages are:\n1) We have no dependency between Identity and Resource; \n2) We could even have user/group owned by projects (reseller ?);\n3) We could have a user/group with multiple parents (actor inside different projects, domains).",
+      "revId": "3f6031375c1e384b5052c1f8b5deeb32f7f490ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_6a7c8221",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-11-02T08:43:56Z",
+      "side": 1,
+      "message": "Maybe it\u0027s a good time to remove \u0027tenant\u0027 from this backend?",
+      "revId": "3f6031375c1e384b5052c1f8b5deeb32f7f490ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
