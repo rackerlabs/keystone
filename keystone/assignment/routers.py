@@ -40,17 +40,6 @@ class Public(wsgi.ComposableRouter):
 
 class Admin(wsgi.ComposableRouter):
     def add_routes(self, mapper):
-        # Tenant Operations
-        tenant_controller = controllers.Tenant()
-        mapper.connect('/tenants',
-                       controller=tenant_controller,
-                       action='get_all_projects',
-                       conditions=dict(method=['GET']))
-        mapper.connect('/tenants/{tenant_id}',
-                       controller=tenant_controller,
-                       action='get_project',
-                       conditions=dict(method=['GET']))
-
         # Role Operations
         roles_controller = controllers.Role()
         mapper.connect('/tenants/{tenant_id}/users/{user_id}/roles',
@@ -66,17 +55,8 @@ class Admin(wsgi.ComposableRouter):
 class Routers(wsgi.RoutersBase):
 
     def append_v3_routers(self, mapper, routers):
-        routers.append(
-            router.Router(controllers.DomainV3(),
-                          'domains', 'domain',
-                          resource_descriptions=self.v3_resources))
 
         project_controller = controllers.ProjectV3()
-        routers.append(
-            router.Router(project_controller,
-                          'projects', 'project',
-                          resource_descriptions=self.v3_resources))
-
         self._add_resource(
             mapper, project_controller,
             path='/users/{user_id}/projects',
@@ -87,10 +67,6 @@ class Routers(wsgi.RoutersBase):
             })
 
         role_controller = controllers.RoleV3()
-        routers.append(
-            router.Router(role_controller, 'roles', 'role',
-                          resource_descriptions=self.v3_resources))
-
         self._add_resource(
             mapper, role_controller,
             path='/projects/{project_id}/users/{user_id}/roles/{role_id}',
