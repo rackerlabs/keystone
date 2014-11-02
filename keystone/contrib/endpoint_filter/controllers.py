@@ -14,15 +14,16 @@
 
 import six
 
-from keystone import assignment
 from keystone.catalog import controllers as catalog_controllers
 from keystone.common import controller
 from keystone.common import dependency
 from keystone import exception
 from keystone import notifications
+from keystone import resource
 
 
-@dependency.requires('assignment_api', 'catalog_api', 'endpoint_filter_api')
+@dependency.requires('assignment_api', 'catalog_api', 'endpoint_filter_api',
+                     'resource_api')
 class _ControllerBase(controller.V3Controller):
     """Base behaviors for endpoint filter controllers."""
 
@@ -134,10 +135,10 @@ class EndpointFilterV3Controller(_ControllerBase):
         self.catalog_api.get_endpoint(endpoint_id)
         refs = self.endpoint_filter_api.list_projects_for_endpoint(endpoint_id)
 
-        projects = [self.assignment_api.get_project(
+        projects = [self.resource_api.get_project(
             ref.project_id) for ref in refs]
-        return assignment.controllers.ProjectV3.wrap_collection(context,
-                                                                projects)
+        return resource.controllers.ProjectV3.wrap_collection(context,
+                                                              projects)
 
 
 class EndpointGroupV3Controller(_ControllerBase):
@@ -214,12 +215,12 @@ class EndpointGroupV3Controller(_ControllerBase):
                                    endpoint_group_id))
         projects = []
         for endpoint_group_ref in endpoint_group_refs:
-            project = self.assignment_api.get_project(
+            project = self.resource_api.get_project(
                 endpoint_group_ref.project_id)
             if project:
                 projects.append(project)
-        return assignment.controllers.ProjectV3.wrap_collection(context,
-                                                                projects)
+        return resource.controllers.ProjectV3.wrap_collection(context,
+                                                              projects)
 
     @controller.protected()
     def list_endpoints_associated_with_endpoint_group(self,
