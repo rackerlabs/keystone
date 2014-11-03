@@ -16,6 +16,24 @@
       "revId": "9565fb100c328098991efedb8cd73ce7a4085282",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_55891e25",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-03T23:18:30Z",
+      "side": 1,
+      "message": "Not sure if changing the return is approachable right now, if I understood correctly the issue is caused mainly because we don\u0027t have a domain scoped token and 401 is returned in each domain related operation if you pass a project token. Maybe for *this* issue, the documentation is enough...",
+      "parentUuid": "7a8c0949_7ad7e923",
+      "revId": "9565fb100c328098991efedb8cd73ce7a4085282",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
