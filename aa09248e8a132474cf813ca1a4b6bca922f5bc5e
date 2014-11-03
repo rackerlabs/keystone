@@ -16,6 +16,24 @@
       "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_daa37d9c",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-11-03T19:18:33Z",
+      "side": 1,
+      "message": "Host will be \u0027hosta\u0027. It\u0027s in the \u0027requests\u0027 library. Code has \u0027HOST\u0027 http header with \u0027hosta\u0027 value and \u0027requests\u0027 library will concatenate it with \u0027wsgi.scheme\u0027 value.",
+      "parentUuid": "7a8c0949_1a918599",
+      "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
