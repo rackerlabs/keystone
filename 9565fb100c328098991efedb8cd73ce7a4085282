@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_7ad7e923",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-11-03T18:54:58Z",
+      "side": 1,
+      "message": "Documenting is really good.  But this review doesn\u0027t close the defect. We should throw  Not Supported or some  other error. We should not throw 401 which is misleading",
+      "revId": "9565fb100c328098991efedb8cd73ce7a4085282",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
