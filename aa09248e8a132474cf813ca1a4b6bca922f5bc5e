@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_1a918599",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-11-03T18:18:34Z",
+      "side": 1,
+      "message": "What will happen to the host name in case of SSL termination porxy?\n\nSSL terminates at :   https://hosta:35357\nKeystone runs at  : http://hostb:35357\n\nKeystone is going to get protocol as https, how about the host name? Link is going to return keystone host name, but you want  proxy\u0027s hostname.\n\nAm I missing something?",
+      "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
