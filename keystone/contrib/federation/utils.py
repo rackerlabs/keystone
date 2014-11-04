@@ -135,6 +135,7 @@ def validate_groups(group_ids, mapping_id, identity_api):
 
 
 def get_assertion_params_from_env(context):
+    LOG.debug(context['environment'])
     prefix = CONF.federation.assertion_prefix
     for k, v in context['environment'].items():
         if k.startswith(prefix):
