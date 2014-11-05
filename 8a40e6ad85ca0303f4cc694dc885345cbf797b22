@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a8c0949_1dded111",
+        "filename": "doc/source/extensions/openidc.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-05T08:39:31Z",
+      "side": 1,
+      "message": "3 blank lines?",
+      "revId": "8a40e6ad85ca0303f4cc694dc885345cbf797b22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_bdccdd62",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-05T08:39:31Z",
+      "side": 1,
+      "message": "did you mean to leave this in?",
+      "revId": "8a40e6ad85ca0303f4cc694dc885345cbf797b22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_b7ccfc62",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 2
@@ -13,6 +47,24 @@
       "writtenOn": "2014-11-05T02:05:58Z",
       "side": 1,
       "message": "this should be renamed to _handle_mapped_tokens(...) instead",
+      "revId": "8a40e6ad85ca0303f4cc694dc885345cbf797b22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_9d72c17a",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-05T08:39:31Z",
+      "side": 1,
+      "message": "is there a defect/wish list /bp for that?  I\u0027m sure we planned to fix that last time around!  Maybe we even do that in this patch?",
+      "parentUuid": "7a8c0949_b7ccfc62",
       "revId": "8a40e6ad85ca0303f4cc694dc885345cbf797b22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
