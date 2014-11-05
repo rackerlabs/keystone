@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a8c0949_6872b1ae",
+        "filename": "doc/source/extensions/openidc.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-05T09:08:23Z",
+      "side": 1,
+      "message": "oops! i\u0027ll remove this",
+      "parentUuid": "7a8c0949_1dded111",
+      "revId": "8a40e6ad85ca0303f4cc694dc885345cbf797b22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_bdccdd62",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-05T08:39:31Z",
       "side": 1,
       "message": "did you mean to leave this in?",
+      "revId": "8a40e6ad85ca0303f4cc694dc885345cbf797b22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_48a6d511",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-05T09:08:23Z",
+      "side": 1,
+      "message": "so i did mean to, but i think i\u0027ll post another patch for this, I was talking to nkinder about this and there is a lack of debug logging in the federation flows. So maybe i\u0027ll post all this in another patch.",
+      "parentUuid": "7a8c0949_bdccdd62",
       "revId": "8a40e6ad85ca0303f4cc694dc885345cbf797b22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -65,6 +101,24 @@
       "side": 1,
       "message": "is there a defect/wish list /bp for that?  I\u0027m sure we planned to fix that last time around!  Maybe we even do that in this patch?",
       "parentUuid": "7a8c0949_b7ccfc62",
+      "revId": "8a40e6ad85ca0303f4cc694dc885345cbf797b22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_a891f99b",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-05T09:08:23Z",
+      "side": 1,
+      "message": "i\u0027ll open a bug for this, it should have been fixed when we did bp generic-mapping-federation\n\nhttp://specs.openstack.org/openstack/keystone-specs/specs/juno/generic-mapping-federation.html\n\nso i think it\u0027s a legitimate bug.",
+      "parentUuid": "7a8c0949_9d72c17a",
       "revId": "8a40e6ad85ca0303f4cc694dc885345cbf797b22",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
