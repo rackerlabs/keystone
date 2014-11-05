@@ -3041,6 +3041,53 @@ class IdentityTests(object):
         self.assertThat(member_assignments,
                         matchers.Equals(orig_member_assignments))
 
+    def test_get_roles_for_groups_on_domain(self):
+        """Test retrieving group domain roles.
+
+        Test Plan:
+        - Create a domain, three groups and three roles
+        - Assign one an inherited and the others a non-inherited group role
+          to the domain
+        - Ensure that only the non-inherited roles are returned on the domain
+
+        """
+        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_domain(domain1['id'], domain1)
+        group_list = []
+        group_id_list = []
+        for _ in range(3):
+            group = {'name': uuid.uuid4().hex, 'domain_id': domain1['id']}
+            group = self.identity_api.create_group(group)
+            group_list.append(group)
+            group_id_list.append(group['id'])
+        role_list = []
+        for _ in range(3):
+            role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+            self.assignment_api.create_role(role['id'], role)
+            role_list.append(role)
+
+        # Assign the roles - one is inherited
+        self.assignment_api.create_grant(group_id=group_list[0]['id'],
+                                         domain_id=domain1['id'],
+                                         role_id=role_list[0]['id'])
+        self.assignment_api.create_grant(group_id=group_list[1]['id'],
+                                         domain_id=domain1['id'],
+                                         role_id=role_list[1]['id'])
+        self.assignment_api.create_grant(group_id=group_list[2]['id'],
+                                         domain_id=domain1['id'],
+                                         role_id=role_list[2]['id'],
+                                         inherited_to_projects=True)
+
+        # Now get the effective roles for the groups on the domain project. We
+        # shouldn't get back the inherited role.
+
+        role_refs = self.assignment_api.get_roles_for_groups(
+            group_id_list, domain_id=domain1['id'])
+
+        self.assertThat(role_refs, matchers.HasLength(2))
+        self.assertIn(role_list[0], role_refs)
+        self.assertIn(role_list[1], role_refs)
+
 
 class TokenTests(object):
     def _create_token_id(self):
