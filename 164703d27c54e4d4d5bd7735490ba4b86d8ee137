@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_0002d90a",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3044,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-05T19:46:10Z",
+      "side": 1,
+      "message": "what do you think about another test checking the roles of the users in those groups?",
+      "revId": "164703d27c54e4d4d5bd7735490ba4b86d8ee137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
