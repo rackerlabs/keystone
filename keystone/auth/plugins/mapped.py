@@ -20,6 +20,7 @@ from keystone import auth
 from keystone.common import dependency
 from keystone.contrib import federation
 from keystone.contrib.federation import utils
+from keystone import exception
 from keystone.models import token_model
 from keystone import notifications
 from keystone.openstack.common import log
@@ -90,9 +91,7 @@ class Mapped(auth.AuthMethodHandler):
         }
 
     def _handle_unscoped_token(self, context, auth_payload):
-        user_id, assertion = self._extract_assertion_data(context)
-        if user_id:
-            assertion['user_id'] = user_id
+        assertion = self._extract_assertion_data(context)
         identity_provider = auth_payload['identity_provider']
         protocol = auth_payload['protocol']
         group_ids = None
@@ -104,10 +103,13 @@ class Mapped(auth.AuthMethodHandler):
             mapped_properties = self._apply_mapping_filter(identity_provider,
                                                            protocol,
                                                            assertion)
-
             group_ids = mapped_properties['group_ids']
-            if not user_id:
-                user_id = parse.quote(mapped_properties['name'])
+            user_name = mapped_properties['name']
+            if user_name is None:
+                user_name = context['environment'].get('REMOTE_USER')
+                if user_name is None:
+                    raise exception.Unauthorized(_("Could not map user"))
+            user_id = parse.quote(user_name)
 
         except Exception:
             # NOTE(topol): Diaper defense to catch any exception, so we can
@@ -137,8 +139,7 @@ class Mapped(auth.AuthMethodHandler):
 
     def _extract_assertion_data(self, context):
         assertion = dict(utils.get_assertion_params_from_env(context))
-        user_id = context['environment'].get('REMOTE_USER')
-        return user_id, assertion
+        return assertion
 
     def _apply_mapping_filter(self, identity_provider, protocol, assertion):
         mapping = self.federation_api.get_mapping_from_idp_and_protocol(
