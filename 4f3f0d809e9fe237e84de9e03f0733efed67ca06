@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_6de8f5e2",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2014-11-06T00:31:15Z",
+      "side": 1,
+      "message": "For readability purpose, it seems that the cloud_admin rule should be defined before the admin_required rule.",
+      "revId": "4f3f0d809e9fe237e84de9e03f0733efed67ca06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_adae5d83",
+        "filename": "keystone/tests/test_policy.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2014-11-06T00:31:15Z",
+      "side": 1,
+      "message": "s/supossed/supposed",
+      "revId": "4f3f0d809e9fe237e84de9e03f0733efed67ca06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_0dbbf1c4",
+        "filename": "keystone/tests/test_policy.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2014-11-06T00:31:15Z",
+      "side": 1,
+      "message": "s/chenged/changed",
+      "revId": "4f3f0d809e9fe237e84de9e03f0733efed67ca06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
