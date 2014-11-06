@@ -85,6 +85,23 @@
       "revId": "7f72c029da18dd6561fdd545ab8f27ec61d6fa7f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_878c0a81",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-11-06T22:02:59Z",
+      "side": 1,
+      "message": "I tend to disagree with you.\n\nCheck the line no 46 which defines matching_target_project_domain_id , but it is used at line 10.",
+      "revId": "7f72c029da18dd6561fdd545ab8f27ec61d6fa7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
