@@ -34,6 +34,24 @@
       "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_67047ec0",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-11-06T22:29:04Z",
+      "side": 1,
+      "message": "May be I don\u0027t understand. If SSL is terminated at \"hosta\" then there will a new session from hosta to hostb. So far all practical purpose   \"hosta\" is a client to keystone server running at \"hostb\".\n\nThis interaction is same as   any client calling keystone. So what will the value of wsgi.scheme in the following cases\n\nClient A running at   host with name \"ClientA\"\n\nDirect call\nClientA  \u003e  hostb:35357\n\nSSL terminated call\n\nClientA  \u003e  hosta:35357  ( ssl is terminated here) \n                   hosta   -\u003e hosta:35357",
+      "parentUuid": "7a8c0949_daa37d9c",
+      "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
