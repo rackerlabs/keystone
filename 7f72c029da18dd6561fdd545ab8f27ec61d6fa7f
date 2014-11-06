@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a8c0949_21bb4673",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-11-06T18:36:35Z",
+      "side": 1,
+      "message": "Why are we using default_project_id. I believe it has to project_id",
+      "revId": "7f72c029da18dd6561fdd545ab8f27ec61d6fa7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_8194fae2",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-11-06T18:36:35Z",
+      "side": 1,
+      "message": "domain_admin\": \"role:domain_admin and rule:matching_target_project_domain_id\",\n\nIs this correct?  shouldn\u0027t it be matching_target_doman_domain_id?",
+      "revId": "7f72c029da18dd6561fdd545ab8f27ec61d6fa7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_a14ad6a9",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 9
