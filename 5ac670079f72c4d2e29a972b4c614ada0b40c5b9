@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7a8c0949_60d2af01",
+        "filename": "doc/source/extensions/openidc.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-06T14:34:08Z",
+      "side": 1,
+      "message": "thought that it always followed the same pattern \u003d)",
+      "parentUuid": "7a8c0949_655f2142",
+      "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_94f3659d",
         "filename": "doc/source/extensions/openidc.rst",
         "patchSetId": 4
@@ -119,6 +137,24 @@
       "side": 1,
       "message": "\u0027oidc\u0027 is not defined by the user as proposed in this patch.  It\u0027s a hard-coded mechanism, so you would have to create your protocol as \u0027oidc\u0027.  Of course this wouldn\u0027t be hardcoded if we follow my recommendation of making this configurable.",
       "parentUuid": "7a8c0949_34ec71c7",
+      "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_c0728348",
+        "filename": "doc/source/extensions/openidc.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-06T14:34:08Z",
+      "side": 1,
+      "message": "Didn\u0027t know that it needs to be the same as in the conf file, since there is no checking in here: https://github.com/openstack/keystone/blob/master/keystone/contrib/federation/controllers.py#L170",
+      "parentUuid": "7a8c0949_25b8b975",
       "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
