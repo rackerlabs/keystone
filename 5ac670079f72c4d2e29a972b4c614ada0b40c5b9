@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a8c0949_655f2142",
+        "filename": "doc/source/extensions/openidc.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-11-06T14:23:33Z",
+      "side": 1,
+      "message": "The details on where you set this are going to vary from distro to distro.  I think it\u0027s best to leave this portion of the instructions generic.",
+      "parentUuid": "7a8c0949_f4bae9be",
+      "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_94f3659d",
         "filename": "doc/source/extensions/openidc.rst",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-06T12:02:12Z",
       "side": 1,
       "message": "is this mod already installed in most distros?",
+      "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_400e9335",
+        "filename": "doc/source/extensions/openidc.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-11-06T14:23:33Z",
+      "side": 1,
+      "message": "It\u0027s not on Fedora/CentOS/Red Hat.  I do think that we should mention that the module needs to be installed.",
+      "parentUuid": "7a8c0949_94f3659d",
       "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -65,6 +101,24 @@
       "side": 1,
       "message": "also, \"oidc\" since the protocol_id is defined by the user.",
       "parentUuid": "7a8c0949_e4c4fa60",
+      "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_25b8b975",
+        "filename": "doc/source/extensions/openidc.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-11-06T14:23:33Z",
+      "side": 1,
+      "message": "\u0027oidc\u0027 is not defined by the user as proposed in this patch.  It\u0027s a hard-coded mechanism, so you would have to create your protocol as \u0027oidc\u0027.  Of course this wouldn\u0027t be hardcoded if we follow my recommendation of making this configurable.",
+      "parentUuid": "7a8c0949_34ec71c7",
       "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
