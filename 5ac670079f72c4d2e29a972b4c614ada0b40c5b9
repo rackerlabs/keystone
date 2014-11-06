@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a8c0949_f4bae9be",
+        "filename": "doc/source/extensions/openidc.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-06T12:02:12Z",
+      "side": 1,
+      "message": "add the following where? Maybe add a snippet of the file where this line was added.",
+      "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_94f3659d",
+        "filename": "doc/source/extensions/openidc.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-06T12:02:12Z",
+      "side": 1,
+      "message": "is this mod already installed in most distros?",
+      "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_e4c4fa60",
         "filename": "doc/source/extensions/openidc.rst",
         "patchSetId": 4
@@ -13,6 +47,24 @@
       "writtenOn": "2014-11-06T10:17:47Z",
       "side": 1,
       "message": "You should probably replace \u0027goog\u0027 with a placeholder here, such as \u0027\u003cidp_name\u003e\u0027.",
+      "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_34ec71c7",
+        "filename": "doc/source/extensions/openidc.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-06T12:02:12Z",
+      "side": 1,
+      "message": "also, \"oidc\" since the protocol_id is defined by the user.",
+      "parentUuid": "7a8c0949_e4c4fa60",
       "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -47,6 +99,24 @@
       "writtenOn": "2014-11-06T10:17:47Z",
       "side": 1,
       "message": "It would be nice if the federated methods could be specified as configuration to allow one to add new federation methods without touching code.",
+      "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_7478b92b",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-06T12:02:12Z",
+      "side": 1,
+      "message": "++ and a private method to check if the token is a federation one, something like _is_federation_token(self, token_method_names)",
+      "parentUuid": "7a8c0949_a4fe7236",
       "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
