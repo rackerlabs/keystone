@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_a14ad6a9",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-11-06T18:24:50Z",
+      "side": 1,
+      "message": "Can you please add test caes for list_services , list_endpoints? They don\u0027t work",
+      "revId": "7f72c029da18dd6561fdd545ab8f27ec61d6fa7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
