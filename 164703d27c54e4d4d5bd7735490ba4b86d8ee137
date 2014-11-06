@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a8c0949_19a6d3c1",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3044,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-06T09:20:38Z",
+      "side": 1,
+      "message": "I think that is checked else where (i.e. that a user in a group gets the any roles that have been assigned to that group)...but what I think I should add is a test for list_domains_for_groups().",
+      "parentUuid": "7a8c0949_0002d90a",
+      "revId": "164703d27c54e4d4d5bd7735490ba4b86d8ee137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_8d2281ff",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-06T01:14:36Z",
       "side": 1,
       "message": "I would suggest adding methods to the utils class to create models. This would help clean up the code.\n\nex:\ndef create_domain(id\u003dnew_uuid(), name\u003dnew_uuid()):\n    return {\u0027id\u0027: id, \u0027name\u0027: name}\n\nAlso, there currently exists a method under keystone/test/utils.py for generating uuids. (new_uuid)",
+      "revId": "164703d27c54e4d4d5bd7735490ba4b86d8ee137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_d9c0cb2c",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3054,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-06T09:20:38Z",
+      "side": 1,
+      "message": "so we do have a full set of methods for instantiating new models (e.g. new_domain_ref())...which are in test_v3.RestfulTestCase.  I\u0027m not actually sure why are only for the test the \"other side\" of the API boundary.  What\u0027s needed is to pul them out of there so that can be used more generally. I think that is a better solution, but outside the scope of this patch.",
+      "parentUuid": "7a8c0949_8d2281ff",
       "revId": "164703d27c54e4d4d5bd7735490ba4b86d8ee137",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7a8c0949_f9de6710",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3059,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-06T09:20:38Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "7a8c0949_8d69a127",
+      "revId": "164703d27c54e4d4d5bd7735490ba4b86d8ee137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_edef8585",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 1
@@ -64,6 +118,24 @@
       "writtenOn": "2014-11-06T01:14:36Z",
       "side": 1,
       "message": "Same as before but for roles.",
+      "revId": "164703d27c54e4d4d5bd7735490ba4b86d8ee137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_19e253d5",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3065,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-06T09:20:38Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "7a8c0949_edef8585",
       "revId": "164703d27c54e4d4d5bd7735490ba4b86d8ee137",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
