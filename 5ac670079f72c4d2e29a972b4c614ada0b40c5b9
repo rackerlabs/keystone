@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "7a8c0949_205c277e",
+        "filename": "doc/source/extensions/openidc.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-06T15:07:01Z",
+      "side": 1,
+      "message": "i\u0027ll try to elaborate a bit more",
+      "parentUuid": "7a8c0949_60d2af01",
+      "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_94f3659d",
         "filename": "doc/source/extensions/openidc.rst",
         "patchSetId": 4
@@ -84,6 +102,24 @@
       "side": 1,
       "message": "It\u0027s not on Fedora/CentOS/Red Hat.  I do think that we should mention that the module needs to be installed.",
       "parentUuid": "7a8c0949_94f3659d",
+      "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_c02b6392",
+        "filename": "doc/source/extensions/openidc.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-06T15:07:01Z",
+      "side": 1,
+      "message": "i\u0027ll mention this.",
+      "parentUuid": "7a8c0949_400e9335",
       "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -161,6 +197,24 @@
     },
     {
       "key": {
+        "uuid": "7a8c0949_1b0ec08d",
+        "filename": "doc/source/extensions/openidc.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-06T15:07:01Z",
+      "side": 1,
+      "message": "@rodrigods - the check is somewhere else, it\u0027s silly. \n\n@nkinder - what was your suggestion? i\u0027m not following?",
+      "parentUuid": "7a8c0949_c0728348",
+      "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_64400a57",
         "filename": "doc/source/extensions/openidc.rst",
         "patchSetId": 4
@@ -172,6 +226,24 @@
       "writtenOn": "2014-11-06T10:17:47Z",
       "side": 1,
       "message": "(nit)  I would split this into two sentences starting with \u0027this\u0027.",
+      "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_1b6fa0fe",
+        "filename": "doc/source/extensions/openidc.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-06T15:07:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a8c0949_64400a57",
       "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -207,6 +279,24 @@
       "side": 1,
       "message": "++ and a private method to check if the token is a federation one, something like _is_federation_token(self, token_method_names)",
       "parentUuid": "7a8c0949_a4fe7236",
+      "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_60270f13",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-06T15:07:01Z",
+      "side": 1,
+      "message": "I filed this under https://bugs.launchpad.net/keystone/+bug/1390100 since there are a few different fixes we can do, i\u0027m not resolving it in this patch set.",
+      "parentUuid": "7a8c0949_7478b92b",
       "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
