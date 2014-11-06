@@ -67,6 +67,24 @@
       "revId": "7f72c029da18dd6561fdd545ab8f27ec61d6fa7f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_ec6f75c3",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-06T19:04:05Z",
+      "side": 1,
+      "message": "I disagree here, think that having the mathing rules above the context it is being used helps when you try to look for it.",
+      "parentUuid": "7a8c0949_ac4e4d6d",
+      "revId": "7f72c029da18dd6561fdd545ab8f27ec61d6fa7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
