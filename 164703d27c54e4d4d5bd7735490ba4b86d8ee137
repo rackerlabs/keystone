@@ -16,6 +16,57 @@
       "revId": "164703d27c54e4d4d5bd7735490ba4b86d8ee137",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_8d2281ff",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3054,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2014-11-06T01:14:36Z",
+      "side": 1,
+      "message": "I would suggest adding methods to the utils class to create models. This would help clean up the code.\n\nex:\ndef create_domain(id\u003dnew_uuid(), name\u003dnew_uuid()):\n    return {\u0027id\u0027: id, \u0027name\u0027: name}\n\nAlso, there currently exists a method under keystone/test/utils.py for generating uuids. (new_uuid)",
+      "revId": "164703d27c54e4d4d5bd7735490ba4b86d8ee137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_8d69a127",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3059,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2014-11-06T01:14:36Z",
+      "side": 1,
+      "message": "Same as before but for groups.",
+      "revId": "164703d27c54e4d4d5bd7735490ba4b86d8ee137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_edef8585",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 3065,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2014-11-06T01:14:36Z",
+      "side": 1,
+      "message": "Same as before but for roles.",
+      "revId": "164703d27c54e4d4d5bd7735490ba4b86d8ee137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
