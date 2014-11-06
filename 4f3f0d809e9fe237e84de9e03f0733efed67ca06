@@ -50,6 +50,23 @@
       "revId": "4f3f0d809e9fe237e84de9e03f0733efed67ca06",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_34cf11b2",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-06T11:42:20Z",
+      "side": 1,
+      "message": "This, and other several changes are not related to this patch.",
+      "revId": "4f3f0d809e9fe237e84de9e03f0733efed67ca06",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
