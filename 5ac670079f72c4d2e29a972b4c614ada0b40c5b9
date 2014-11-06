@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_e4c4fa60",
+        "filename": "doc/source/extensions/openidc.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-11-06T10:17:47Z",
+      "side": 1,
+      "message": "You should probably replace \u0027goog\u0027 with a placeholder here, such as \u0027\u003cidp_name\u003e\u0027.",
+      "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_64400a57",
+        "filename": "doc/source/extensions/openidc.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-11-06T10:17:47Z",
+      "side": 1,
+      "message": "(nit)  I would split this into two sentences starting with \u0027this\u0027.",
+      "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_a4fe7236",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-11-06T10:17:47Z",
+      "side": 1,
+      "message": "It would be nice if the federated methods could be specified as configuration to allow one to add new federation methods without touching code.",
+      "revId": "5ac670079f72c4d2e29a972b4c614ada0b40c5b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
