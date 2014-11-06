@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a8c0949_b416a1ef",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-06T11:49:37Z",
+      "side": 1,
+      "message": "I think that you need to describe that OpenID part here as well",
+      "revId": "c3d38f5850a7f4d6514d344ad4c2e375f6fe2e8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
