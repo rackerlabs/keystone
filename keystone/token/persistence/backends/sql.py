@@ -173,8 +173,8 @@ class Token(token.persistence.Driver):
         tokens = []
         now = timeutils.utcnow()
         query = session.query(TokenModel)
-        query = query.filter(TokenModel.expires > now)
-        query = query.filter(TokenModel.trust_id == trust_id)
+        query = query.filter(TokenModel.expires > now,
+                             TokenModel.trust_id == trust_id)
 
         token_references = query.filter_by(valid=True)
         for token_ref in token_references:
@@ -187,8 +187,8 @@ class Token(token.persistence.Driver):
         tokens = []
         now = timeutils.utcnow()
         query = session.query(TokenModel)
-        query = query.filter(TokenModel.expires > now)
-        query = query.filter(TokenModel.user_id == user_id)
+        query = query.filter(TokenModel.expires > now,
+                             TokenModel.user_id == user_id)
 
         token_references = query.filter_by(valid=True)
         for token_ref in token_references:
@@ -203,8 +203,8 @@ class Token(token.persistence.Driver):
         with session.begin():
             now = timeutils.utcnow()
             query = session.query(TokenModel)
-            query = query.filter(TokenModel.expires > now)
-            query = query.filter(TokenModel.user_id == user_id)
+            query = query.filter(TokenModel.expires > now,
+                                 TokenModel.user_id == user_id)
             token_references = query.filter_by(valid=True)
 
             for token_ref in token_references:
