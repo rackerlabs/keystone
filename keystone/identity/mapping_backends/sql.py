@@ -47,9 +47,9 @@ class Mapping(identity.MappingDriver):
         # algorithm was immutable (e.g. it had always been sha256).
         session = sql.get_session()
         query = session.query(IDMapping.public_id)
-        query = query.filter_by(domain_id=local_entity['domain_id'])
-        query = query.filter_by(local_id=local_entity['local_id'])
-        query = query.filter_by(entity_type=local_entity['entity_type'])
+        query = query.filter_by(domain_id=local_entity['domain_id'],
+                                local_id=local_entity['local_id'],
+                                entity_type=local_entity['entity_type'])
         try:
             public_ref = query.one()
             public_id = public_ref.public_id
