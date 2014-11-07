@@ -102,6 +102,24 @@
       "revId": "7f72c029da18dd6561fdd545ab8f27ec61d6fa7f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_4994f0e1",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-07T12:36:52Z",
+      "side": 1,
+      "message": "For this case makes total sense, the rules should be right on the top where they are first used.",
+      "parentUuid": "7a8c0949_878c0a81",
+      "revId": "7f72c029da18dd6561fdd545ab8f27ec61d6fa7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
