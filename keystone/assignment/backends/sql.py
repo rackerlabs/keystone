@@ -51,8 +51,7 @@ class Assignment(keystone_assignment.Driver):
     def get_project_by_name(self, tenant_name, domain_id):
         with sql.transaction() as session:
             query = session.query(Project)
-            query = query.filter_by(name=tenant_name)
-            query = query.filter_by(domain_id=domain_id)
+            query = query.filter_by(name=tenant_name, domain_id=domain_id)
             try:
                 project_ref = query.one()
             except sql.NotFound:
@@ -63,8 +62,9 @@ class Assignment(keystone_assignment.Driver):
         with sql.transaction() as session:
             self._get_project(session, tenant_id)
             query = session.query(RoleAssignment.actor_id)
-            query = query.filter_by(type=AssignmentType.USER_PROJECT)
-            query = query.filter_by(target_id=tenant_id)
+            query = query.filter_by(
+                type=AssignmentType.USER_PROJECT,
+                target_id=tenant_id)
             query = query.distinct('actor_id')
             assignments = query.all()
             return [assignment.actor_id for assignment in assignments]
@@ -182,8 +182,7 @@ class Assignment(keystone_assignment.Driver):
         q = session.query(RoleAssignment)
         q = q.filter_by(actor_id=user_id or group_id)
         q = q.filter_by(target_id=project_id or domain_id)
-        q = q.filter_by(role_id=role_id)
-        q = q.filter_by(inherited=inherited_to_projects)
+        q = q.filter_by(role_id=role_id, inherited=inherited_to_projects)
         return q
 
     def get_grant(self, role_id, user_id=None, group_id=None,
@@ -506,9 +505,10 @@ class Assignment(keystone_assignment.Driver):
     def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
         with sql.transaction() as session:
             q = session.query(RoleAssignment)
-            q = q.filter_by(actor_id=user_id)
-            q = q.filter_by(target_id=tenant_id)
-            q = q.filter_by(role_id=role_id)
+            q = q.filter_by(
+                actor_id=user_id,
+                target_id=tenant_id,
+                role_id=role_id)
             if q.delete() == 0:
                 raise exception.RoleNotFound(message=_(
                     'Cannot remove role that has not been granted, %s') %
