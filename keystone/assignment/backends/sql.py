@@ -61,8 +61,8 @@ class Assignment(keystone_assignment.Driver):
     def list_user_ids_for_project(self, tenant_id):
         with sql.transaction() as session:
             query = session.query(RoleAssignment.actor_id)
-            query = query.filter_by(type=AssignmentType.USER_PROJECT)
-            query = query.filter_by(target_id=tenant_id)
+            query = query.filter_by(type=AssignmentType.USER_PROJECT,
+                                    target_id=tenant_id)
             query = query.distinct('actor_id')
             assignments = query.all()
             return [assignment.actor_id for assignment in assignments]
@@ -94,9 +94,9 @@ class Assignment(keystone_assignment.Driver):
                 else:
                     return AssignmentType.GROUP_DOMAIN
 
-        q = q.filter_by(type=_calc_assignment_type())
-        q = q.filter_by(actor_id=user_id or group_id)
-        q = q.filter_by(target_id=tenant_id or domain_id)
+        q = q.filter_by(type=_calc_assignment_type(),
+                        actor_id=user_id or group_id,
+                        target_id=tenant_id or domain_id)
         refs = q.all()
         if not refs:
             raise exception.MetadataNotFound()
@@ -143,10 +143,10 @@ class Assignment(keystone_assignment.Driver):
     def _build_grant_filter(self, session, role_id, user_id, group_id,
                             domain_id, project_id, inherited_to_projects):
         q = session.query(RoleAssignment)
-        q = q.filter_by(actor_id=user_id or group_id)
-        q = q.filter_by(target_id=project_id or domain_id)
-        q = q.filter_by(role_id=role_id)
-        q = q.filter_by(inherited=inherited_to_projects)
+        q = q.filter_by(actor_id=user_id or group_id,
+                        target_id=project_id or domain_id,
+                        role_id=role_id,
+                        inherited=inherited_to_projects)
         return q
 
     def check_grant_role_id(self, role_id, user_id=None, group_id=None,
@@ -320,9 +320,9 @@ class Assignment(keystone_assignment.Driver):
     def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
         with sql.transaction() as session:
             q = session.query(RoleAssignment)
-            q = q.filter_by(actor_id=user_id)
-            q = q.filter_by(target_id=tenant_id)
-            q = q.filter_by(role_id=role_id)
+            q = q.filter_by(actor_id=user_id,
+                            target_id=tenant_id,
+                            role_id=role_id)
             if q.delete() == 0:
                 raise exception.RoleNotFound(message=_(
                     'Cannot remove role that has not been granted, %s') %
