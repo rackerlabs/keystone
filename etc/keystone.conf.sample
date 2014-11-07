@@ -480,6 +480,11 @@
 # Default auth methods. (list value)
 #methods=external,password,token
 
+# List of federation authentication methods. It must be a
+# subset of 'methods' list. Examples: 'saml2, oidc' (list
+# value)
+#federation_methods=
+
 # The password auth plugin module. (string value)
 #password=keystone.auth.plugins.password.Password
 
