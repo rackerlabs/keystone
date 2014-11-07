@@ -387,6 +387,8 @@ class TestCase(BaseTestCase):
         self.config_fixture.config(
             group='saml', certfile=signing_certfile, keyfile=signing_keyfile)
         self.config_fixture.config(
+            group='auth', mapped_methods=['saml2', 'oidc'])
+        self.config_fixture.config(
             default_log_levels=[
                 'amqp=WARN',
                 'amqplib=WARN',
