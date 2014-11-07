@@ -419,6 +419,15 @@ class BaseProvider(provider.Provider):
         token_data['access']['token']['id'] = token_id
         return token_id, token_data
 
+    def _is_mapped_token(self, token_method_names):
+        mapped_methods = CONF.auth.federation_methods
+        if mapped_methods:
+            token_method_names = set(token_method_names)
+            for method in mapped_methods:
+                if method in token_method_names:
+                    return True
+        return False
+
     def issue_v3_token(self, user_id, method_names, expires_at=None,
                        project_id=None, domain_id=None, auth_context=None,
                        trust=None, metadata_ref=None, include_catalog=True,
@@ -429,8 +438,8 @@ class BaseProvider(provider.Provider):
             trust = self.trust_api.get_trust(metadata_ref['trust_id'])
 
         token_ref = None
-        if 'saml2' in method_names:
-            token_ref = self._handle_federation_tokens(
+        if self._is_mapped_token(method_names):
+            token_ref = self._handle_mapped_tokens(
                 auth_context, project_id, domain_id)
 
         access_token = None
@@ -458,7 +467,7 @@ class BaseProvider(provider.Provider):
         token_id = self._get_token_id(token_data)
         return token_id, token_data
 
-    def _handle_federation_tokens(self, auth_context, project_id, domain_id):
+    def _handle_mapped_tokens(self, auth_context, project_id, domain_id):
         user_id = auth_context['user_id']
         group_ids = auth_context['group_ids']
         idp = auth_context[federation.IDENTITY_PROVIDER]

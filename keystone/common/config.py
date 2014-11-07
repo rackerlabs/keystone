@@ -769,6 +769,12 @@ FILE_OPTIONS = {
     'auth': [
         cfg.ListOpt('methods', default=_DEFAULT_AUTH_METHODS,
                     help='Default auth methods.'),
+        # auth methods used for federation, they must be a subset of the
+        # methods conf
+        cfg.ListOpt('federation_methods', default=[],
+                    help='List of federation authentication methods. It must '
+                         'be a subset of \'methods\' list. Examples: '
+                         '\'saml2, oidc\''),
         cfg.StrOpt('password',
                    default='keystone.auth.plugins.password.Password',
                    help='The password auth plugin module.'),
