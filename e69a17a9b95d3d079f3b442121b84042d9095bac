@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7a8c0949_9f645223",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-11-07T08:40:12Z",
+      "side": 1,
+      "message": "inherited",
+      "revId": "e69a17a9b95d3d079f3b442121b84042d9095bac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_4503130d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 1
