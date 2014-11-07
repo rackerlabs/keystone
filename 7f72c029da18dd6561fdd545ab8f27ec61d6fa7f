@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7a8c0949_9e844d5f",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 10765
+      },
+      "writtenOn": "2014-11-07T13:28:32Z",
+      "side": 1,
+      "message": "I\u0027ll check that",
+      "parentUuid": "7a8c0949_8194fae2",
+      "revId": "7f72c029da18dd6561fdd545ab8f27ec61d6fa7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_a14ad6a9",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 9
@@ -47,6 +65,24 @@
       "writtenOn": "2014-11-06T18:24:50Z",
       "side": 1,
       "message": "Can you please add test caes for list_services , list_endpoints? They don\u0027t work",
+      "revId": "7f72c029da18dd6561fdd545ab8f27ec61d6fa7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_e48781d5",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 10765
+      },
+      "writtenOn": "2014-11-07T13:28:32Z",
+      "side": 1,
+      "message": "This is not in the scope of this patch, although it\u0027s a desired patch.\nIt\u0027s better to submit tests in another patch than in this one",
+      "parentUuid": "7a8c0949_a14ad6a9",
       "revId": "7f72c029da18dd6561fdd545ab8f27ec61d6fa7f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -117,6 +153,24 @@
       "side": 1,
       "message": "For this case makes total sense, the rules should be right on the top where they are first used.",
       "parentUuid": "7a8c0949_878c0a81",
+      "revId": "7f72c029da18dd6561fdd545ab8f27ec61d6fa7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a8c0949_046e4d2f",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 10765
+      },
+      "writtenOn": "2014-11-07T13:28:32Z",
+      "side": 1,
+      "message": "Sure, I\u0027ll fix that.",
+      "parentUuid": "7a8c0949_4994f0e1",
       "revId": "7f72c029da18dd6561fdd545ab8f27ec61d6fa7f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
