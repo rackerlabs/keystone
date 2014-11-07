@@ -382,7 +382,7 @@ class V3TokenDataHelper(object):
         return {'token': token_data}
 
 
-@dependency.optional('oauth_api')
+@dependency.optional('federation_api', 'oauth_api')
 @dependency.requires('assignment_api', 'catalog_api', 'identity_api',
                      'trust_api')
 class BaseProvider(provider.Provider):
@@ -419,6 +419,22 @@ class BaseProvider(provider.Provider):
         token_data['access']['token']['id'] = token_id
         return token_id, token_data
 
+    def _is_federation_token(self, token_method_names):
+        # NOTE(rodrigods): in order to fetch all protocols, we need first
+        # to get the identity providers and use them at the list_protocols()
+        # method
+        idps = [idp['id'] for idp in self.federation_api.list_idps()]
+        protocols = set()
+        for idp in idps:
+            protocols |= set([protocol['id'] for protocol in
+                              self.federation_api.list_protocols(idp)])
+
+        # Check if any of the federation protocols are in the method names
+        for protocol in protocols:
+            if protocol in token_method_names:
+                return True
+        return False
+
     def issue_v3_token(self, user_id, method_names, expires_at=None,
                        project_id=None, domain_id=None, auth_context=None,
                        trust=None, metadata_ref=None, include_catalog=True,
@@ -429,7 +445,7 @@ class BaseProvider(provider.Provider):
             trust = self.trust_api.get_trust(metadata_ref['trust_id'])
 
         token_ref = None
-        if 'saml2' in method_names:
+        if self.federation_api and self._is_federation_token(method_names):
             token_ref = self._handle_federation_tokens(
                 auth_context, project_id, domain_id)
 
