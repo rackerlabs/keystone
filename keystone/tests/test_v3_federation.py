@@ -37,6 +37,7 @@ from keystone.openstack.common import log
 from keystone.tests import federation_fixtures
 from keystone.tests import mapping_fixtures
 from keystone.tests import test_v3
+from keystone.token.providers import uuid as uuid_provider
 
 
 CONF = config.CONF
@@ -805,6 +806,11 @@ class FederatedTokenTests(FederationTests):
         }
     }
 
+    def config_overrides(self):
+        super(FederatedTokenTests, self).config_overrides()
+        self.config_fixture.config(
+            group='auth', mapped_methods=['saml2', 'oidc'])
+
     def _assert_last_notify(self, action, identity_provider, protocol,
                             user_id=None):
         self.assertTrue(self._notifications)
@@ -919,6 +925,32 @@ class FederatedTokenTests(FederationTests):
         r = api.federated_authentication(context, self.IDP, self.PROTOCOL)
         return r
 
+    def test_is_mapped_token_success(self):
+        """Test proper configuration of CONF.auth.mapped_methods
+
+        Make sure the token will be marked as 'mapped' if its auth method
+        intersects with ``CONF.auth.mapped_methods`` list.
+
+        """
+        auth_methods = ['saml2']
+        token_provider = uuid_provider.Provider()
+        self.assertEqual(set(auth_methods),
+                         token_provider._is_mapped_token(auth_methods))
+
+    def test_is_mapped_token_wrong_auth_methods(self):
+        """Test improper auth_method.
+
+        Make sure that token will not be marked as 'mapped' if is auth method
+        does not intersect with ``CONF.auth.mapped_methods`` list.
+        The test expcts to get an empty set (boolean False) from
+        ``uuid_provider.Provider._is_mapped_token()`` methods
+
+        """
+        auth_methods = [uuid.uuid4().hex]
+        token_provider = uuid_provider.Provider()
+        self.assertEqual(set([]),
+                         token_provider._is_mapped_token(auth_methods))
+
     def test_issue_unscoped_token_notify(self):
         self._issue_unscoped_token()
         self._assert_last_notify(self.ACTION, self.IDP, self.PROTOCOL)
@@ -926,6 +958,19 @@ class FederatedTokenTests(FederationTests):
     def test_issue_unscoped_token(self):
         r = self._issue_unscoped_token()
         self.assertIsNotNone(r.headers.get('X-Subject-Token'))
+
+    def test_issue_unscoped_token_not_matching_mapped_methods(self):
+        """Test whether token will not be treated as mapped.
+
+        Keystone should treat user as a local one and do a database lookup,
+        ending with an exception.UserNotFound raised.
+
+        """
+        self.config_fixture.config(
+            group='auth',
+            mapped_methods=[uuid.uuid4().hex, uuid.uuid4().hex])
+        self.assertRaises(exception.UserNotFound,
+                          self._issue_unscoped_token)
 
     def test_issue_unscoped_token_with_remote_user_as_empty_string(self):
         # make sure that REMOTE_USER set as the empty string won't interfere
