@@ -56,9 +56,9 @@ class EndpointPolicy(object):
                 # See if there is already a row for this association, and if
                 # so, update it with the new policy_id
                 query = session.query(PolicyAssociation)
-                query = query.filter_by(endpoint_id=endpoint_id)
-                query = query.filter_by(service_id=service_id)
-                query = query.filter_by(region_id=region_id)
+                query = query.filter_by(endpoint_id=endpoint_id,
+                                        service_id=service_id,
+                                        region_id=region_id)
                 association = query.one()
                 association.policy_id = policy_id
             except sql.NotFound:
@@ -88,10 +88,10 @@ class EndpointPolicy(object):
                                   service_id=None, region_id=None):
         with sql.transaction() as session:
             query = session.query(PolicyAssociation)
-            query = query.filter_by(policy_id=policy_id)
-            query = query.filter_by(endpoint_id=endpoint_id)
-            query = query.filter_by(service_id=service_id)
-            query = query.filter_by(region_id=region_id)
+            query = query.filter_by(policy_id=policy_id,
+                                    endpoint_id=endpoint_id,
+                                    service_id=service_id,
+                                    region_id=region_id)
             query.delete()
 
     def get_policy_association(self, endpoint_id=None,
