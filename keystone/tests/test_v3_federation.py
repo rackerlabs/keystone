@@ -34,6 +34,7 @@ from keystone.contrib.federation import utils as mapping_utils
 from keystone import exception
 from keystone import notifications
 from keystone.openstack.common import log
+from keystone import tests
 from keystone.tests import federation_fixtures
 from keystone.tests import mapping_fixtures
 from keystone.tests import test_v3
@@ -54,6 +55,13 @@ class FederationTests(test_v3.RestfulTestCase):
 
     EXTENSION_NAME = 'federation'
     EXTENSION_TO_ADD = 'federation_extension'
+
+    # NOTE(marek-denis): Enable auth configuration from test_auth_plugin.conf
+    def config_files(self):
+        config_files = super(FederationTests,
+                             self).config_files()
+        config_files.append(tests.dirs.tests_conf('test_auth_plugin.conf'))
+        return config_files
 
 
 class FederatedIdentityProviderTests(FederationTests):
