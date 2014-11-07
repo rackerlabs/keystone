@@ -137,8 +137,8 @@ class Identity(identity.Driver):
     def get_user_by_name(self, user_name, domain_id):
         session = sql.get_session()
         query = session.query(User)
-        query = query.filter_by(name=user_name)
-        query = query.filter_by(domain_id=domain_id)
+        query = query.filter_by(name=user_name,
+                                domain_id=domain_id)
         try:
             user_ref = query.one()
         except sql.NotFound:
@@ -167,8 +167,8 @@ class Identity(identity.Driver):
         self.get_group(group_id)
         self.get_user(user_id)
         query = session.query(UserGroupMembership)
-        query = query.filter_by(user_id=user_id)
-        query = query.filter_by(group_id=group_id)
+        query = query.filter_by(user_id=user_id,
+                                group_id=group_id)
         rv = query.first()
         if rv:
             return
@@ -182,8 +182,8 @@ class Identity(identity.Driver):
         self.get_group(group_id)
         self.get_user(user_id)
         query = session.query(UserGroupMembership)
-        query = query.filter_by(user_id=user_id)
-        query = query.filter_by(group_id=group_id)
+        query = query.filter_by(user_id=user_id,
+                                group_id=group_id)
         if not query.first():
             raise exception.NotFound(_("User '%(user_id)s' not found in"
                                        " group '%(group_id)s'") %
@@ -195,8 +195,8 @@ class Identity(identity.Driver):
         # We don't check if user or group are still valid and let the remove
         # be tried anyway - in case this is some kind of clean-up operation
         query = session.query(UserGroupMembership)
-        query = query.filter_by(user_id=user_id)
-        query = query.filter_by(group_id=group_id)
+        query = query.filter_by(user_id=user_id,
+                                group_id=group_id)
         membership_ref = query.first()
         if membership_ref is None:
             # Check if the group and user exist to return descriptive
@@ -277,8 +277,8 @@ class Identity(identity.Driver):
     def get_group_by_name(self, group_name, domain_id):
         session = sql.get_session()
         query = session.query(Group)
-        query = query.filter_by(name=group_name)
-        query = query.filter_by(domain_id=domain_id)
+        query = query.filter_by(name=group_name,
+                                domain_id=domain_id)
         try:
             group_ref = query.one()
         except sql.NotFound:

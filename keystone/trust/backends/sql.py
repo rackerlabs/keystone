@@ -86,8 +86,8 @@ class Trust(trust.Driver):
             with sql.transaction() as session:
                 try:
                     query_result = (session.query(TrustModel.remaining_uses).
-                                    filter_by(id=trust_id).
-                                    filter_by(deleted_at=None).one())
+                                    filter_by(id=trust_id,
+                                              deleted_at=None).one())
                 except sql.NotFound:
                     raise exception.TrustNotFound(trust_id=trust_id)
 
@@ -102,9 +102,9 @@ class Trust(trust.Driver):
                     # expected number of remaining uses.
                     rows_affected = (
                         session.query(TrustModel).
-                        filter_by(id=trust_id).
-                        filter_by(deleted_at=None).
-                        filter_by(remaining_uses=remaining_uses).
+                        filter_by(id=trust_id,
+                                  deleted_at=None,
+                                  remaining_uses=remaining_uses).
                         update({'remaining_uses': (remaining_uses - 1)},
                                synchronize_session=False))
                     if rows_affected == 1:
@@ -159,16 +159,16 @@ class Trust(trust.Driver):
     def list_trusts_for_trustee(self, trustee_user_id):
         session = sql.get_session()
         trusts = (session.query(TrustModel).
-                  filter_by(deleted_at=None).
-                  filter_by(trustee_user_id=trustee_user_id))
+                  filter_by(deleted_at=None,
+                            trustee_user_id=trustee_user_id))
         return [trust_ref.to_dict() for trust_ref in trusts]
 
     @sql.handle_conflicts(conflict_type='trust')
     def list_trusts_for_trustor(self, trustor_user_id):
         session = sql.get_session()
         trusts = (session.query(TrustModel).
-                  filter_by(deleted_at=None).
-                  filter_by(trustor_user_id=trustor_user_id))
+                  filter_by(deleted_at=None,
+                            trustor_user_id=trustor_user_id))
         return [trust_ref.to_dict() for trust_ref in trusts]
 
     @sql.handle_conflicts(conflict_type='trust')
