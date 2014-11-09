@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_6c412e0b",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-11-09T17:07:50Z",
+      "side": 1,
+      "message": "I\u0027m a bit undecided on what the default should be for the new option.  It feels a bit odd to list methods that aren\u0027t even enabled by default, but it does improve usability for the common cases when one enables \u0027saml2\u0027 or \u0027oidc\u0027 since there is one less step to take in the configuration.\n\nI\u0027m OK with what you have, or with an empty list by default.  I\u0027d like to see what others think about the default setting.",
+      "revId": "0d4118b2095a3f754815df365b5e7e6535f26fa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_4c3c7294",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2014-11-09T17:07:50Z",
+      "side": 1,
+      "message": "(nit) I think you should call this something other than \u0027protocols\u0027, such as \u0027mapped_methods\u0027.",
+      "revId": "0d4118b2095a3f754815df365b5e7e6535f26fa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
