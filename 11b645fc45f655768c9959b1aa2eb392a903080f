@@ -16,6 +16,24 @@
       "revId": "11b645fc45f655768c9959b1aa2eb392a903080f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_024b18b1",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-09T01:15:42Z",
+      "side": 1,
+      "message": "typo here, will fix \u003d)",
+      "parentUuid": "5a890539_22601435",
+      "revId": "11b645fc45f655768c9959b1aa2eb392a903080f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
