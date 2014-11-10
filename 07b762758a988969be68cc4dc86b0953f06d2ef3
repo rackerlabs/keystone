@@ -16,6 +16,24 @@
       "revId": "07b762758a988969be68cc4dc86b0953f06d2ef3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_d43c5696",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-10T22:49:50Z",
+      "side": 1,
+      "message": "Was following the bug \"description\". The domain deletion was only possible after removing the conf file and restarting Keystone. Not sure if works by only disabling it.",
+      "parentUuid": "5a890539_948d6e7e",
+      "revId": "07b762758a988969be68cc4dc86b0953f06d2ef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
