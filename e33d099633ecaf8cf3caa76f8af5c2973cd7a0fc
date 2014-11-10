@@ -16,6 +16,24 @@
       "revId": "e33d099633ecaf8cf3caa76f8af5c2973cd7a0fc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_78639a1a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 777,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-10T18:13:16Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a890539_f8da2ae8",
+      "revId": "e33d099633ecaf8cf3caa76f8af5c2973cd7a0fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
