@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_e9d09af9",
+        "filename": "doc/source/extensions/openidc.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-11-10T20:56:10Z",
+      "side": 1,
+      "message": "Was there any documentation you can refer the user to that describes what these values are in more detail and how to configure them?",
+      "revId": "4e12e19c87d3e0c66ca1aab238398be23b6c1553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
