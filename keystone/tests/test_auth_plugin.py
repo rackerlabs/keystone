@@ -220,5 +220,5 @@ class TestMapped(tests.TestCase):
             self.assertEqual(auth_payload['protocol'], method_name)
 
     def test_supporting_multiple_methods(self):
-        for method_name in ['saml2', 'openid', 'x509']:
+        for method_name in ['saml2', 'oidc', 'x509']:
             self._test_mapped_invocation_with_method_name(method_name)
