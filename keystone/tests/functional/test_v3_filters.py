@@ -20,8 +20,8 @@ from oslo.serialization import jsonutils
 from keystone import config
 from keystone.policy.backends import rules
 from keystone.tests import filtering
+from keystone.tests.functional import test_v3
 from keystone.tests.ksfixtures import temporaryfile
-from keystone.tests import test_v3
 
 
 CONF = config.CONF
