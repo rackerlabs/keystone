@@ -42,8 +42,8 @@ def _admin_trustor_only(context, trust, user_id):
         raise exception.Forbidden()
 
 
-@dependency.requires('assignment_api', 'identity_api', 'token_provider_api',
-                     'resource_api', 'trust_api')
+@dependency.requires('assignment_api', 'identity_api', 'resource_api',
+                     'token_provider_api', 'trust_api')
 class TrustV3(controller.V3Controller):
     collection_name = "trusts"
     member_name = "trust"
