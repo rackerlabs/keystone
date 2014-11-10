@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_a983f2ca",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-10T21:02:19Z",
+      "side": 1,
+      "message": "might be worth trying to make mapped_methods a set, and then comparing the two sets... since that will return a boolean too. if you think it\u0027s worth it, then change the patch, but i\u0027m okay with this",
+      "revId": "4adee0466dd4a3697d16b11701150c0ae2bb66cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
