@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_6e5e70eb",
+        "filename": "keystone/tests/config_files/test_auth_plugin.conf",
+        "patchSetId": 7
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-10T19:29:49Z",
+      "side": 1,
+      "message": "should be able to undo this change if you change tests/core.py",
+      "revId": "4f78705c1614ab75b3a4a11b2fc1301714d39f0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_eec34088",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-10T19:29:49Z",
+      "side": 1,
+      "message": "I think we want to avoid relying on .conf files for tests, so let\u0027s not pull this in. We can add a new section for [federation_methods] around here: https://github.com/openstack/keystone/blob/0e9aefe73baf06997067e06f2485b883a1c29e6c/keystone/tests/core.py#L379-L381",
+      "revId": "4f78705c1614ab75b3a4a11b2fc1301714d39f0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_ee4a6026",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-10T19:29:49Z",
+      "side": 1,
+      "message": "add some comments/docstring here explaining what the function does, it\u0027s a bit cryptic in it\u0027s current state",
+      "revId": "4f78705c1614ab75b3a4a11b2fc1301714d39f0e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
