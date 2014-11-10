@@ -16,6 +16,24 @@
       "revId": "4adee0466dd4a3697d16b11701150c0ae2bb66cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_f1440476",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-10T22:30:06Z",
+      "side": 1,
+      "message": "i had thought the same but didn\u0027t want to be too picky, especially since the \u0027problem domain\u0027 is small.\n\nif mapped_methods:\n    token_method_names \u003d set(token_method_names)\n    mapped_methods \u003d set(mapped_methods)\n    return token_methods.intersection(mapped_methods)\nreturn False",
+      "parentUuid": "5a890539_a983f2ca",
+      "revId": "4adee0466dd4a3697d16b11701150c0ae2bb66cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
