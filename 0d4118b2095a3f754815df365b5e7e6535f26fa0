@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_2c600635",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-10T08:28:24Z",
+      "side": 1,
+      "message": "they shouldn\u0027t be enabled as federation in general is an extension.",
+      "parentUuid": "5a890539_6c412e0b",
+      "revId": "0d4118b2095a3f754815df365b5e7e6535f26fa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_4c3c7294",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-09T17:07:50Z",
       "side": 1,
       "message": "(nit) I think you should call this something other than \u0027protocols\u0027, such as \u0027mapped_methods\u0027.",
+      "revId": "0d4118b2095a3f754815df365b5e7e6535f26fa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_a57329b0",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-10T08:28:24Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a890539_4c3c7294",
       "revId": "0d4118b2095a3f754815df365b5e7e6535f26fa0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
