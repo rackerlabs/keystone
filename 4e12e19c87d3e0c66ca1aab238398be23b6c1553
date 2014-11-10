@@ -16,6 +16,24 @@
       "revId": "4e12e19c87d3e0c66ca1aab238398be23b6c1553",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_e9533a6a",
+        "filename": "doc/source/extensions/openidc.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-10T21:05:36Z",
+      "side": 1,
+      "message": "the link of line 25 has more info about the different config options.\nI can submit a follow on patch to go into more detail, i\u0027ll probably do that once I\u0027ve tinkered around to get this to work different identity managers.",
+      "parentUuid": "5a890539_e9d09af9",
+      "revId": "4e12e19c87d3e0c66ca1aab238398be23b6c1553",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
