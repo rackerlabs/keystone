@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_948d6e7e",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2014-11-10T22:46:13Z",
+      "side": 1,
+      "message": "I don\u0027t think its *necessary* to remove the configuration file, but it would unhygienic if you don\u0027t.",
+      "revId": "07b762758a988969be68cc4dc86b0953f06d2ef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
