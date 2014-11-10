@@ -34,6 +34,24 @@
       "revId": "4adee0466dd4a3697d16b11701150c0ae2bb66cf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_3413da5d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-10T22:32:47Z",
+      "side": 1,
+      "message": "hmm... just learned something new about Python \u003dP (Java guy here), will update.",
+      "parentUuid": "5a890539_f1440476",
+      "revId": "4adee0466dd4a3697d16b11701150c0ae2bb66cf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
