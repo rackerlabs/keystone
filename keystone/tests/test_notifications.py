@@ -23,10 +23,9 @@ from pycadf import cadftype
 from pycadf import eventfactory
 from pycadf import resource as cadfresource
 import testtools
-
 from keystone.common import dependency
 from keystone import notifications
-from keystone.tests import test_v3
+from keystone.tests.functional import test_v3
 
 
 CONF = cfg.CONF

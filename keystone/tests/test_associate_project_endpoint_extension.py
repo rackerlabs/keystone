@@ -16,8 +16,7 @@ import copy
 import uuid
 
 # NOTE(morganfainberg): import endpoint filter to populate the SQL model
-from keystone.contrib import endpoint_filter  # flake8: noqa
-from keystone.tests import test_v3
+from keystone.tests.functional import test_v3
 
 
 class TestExtensionCase(test_v3.RestfulTestCase):
@@ -262,7 +261,7 @@ class EndpointFilterCRUDTestCase(TestExtensionCase):
 class EndpointFilterTokenRequestTestCase(TestExtensionCase):
 
     def test_project_scoped_token_using_endpoint_filter(self):
-        """Verify endpoints from project scoped token filtered.""" 
+        """Verify endpoints from project scoped token filtered."""
         # create a project to work with
         ref = self.new_project_ref(domain_id=self.domain_id)
         r = self.post('/projects', body={'project': ref})
@@ -325,7 +324,7 @@ class EndpointFilterTokenRequestTestCase(TestExtensionCase):
         self.assertEqual(r.result['token']['project']['id'],
                          self.project['id'])
 
-    def test_project_scoped_token_with_no_catalog_using_endpoint_filter(self): 
+    def test_project_scoped_token_with_no_catalog_using_endpoint_filter(self):
         """Verify endpoint filter when project scoped token returns no catalog.
 
         Test that the project scoped token response is valid for a given
@@ -441,7 +440,7 @@ class EndpointFilterTokenRequestTestCase(TestExtensionCase):
 
         Test that the default project scoped token response is valid when
         there are no endpoint-project associations defined.
-        
+
         """
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],

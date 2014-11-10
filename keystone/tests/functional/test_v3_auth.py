@@ -18,18 +18,17 @@ import json
 import operator
 import uuid
 
+from keystone.tests.functional import test_v3
 from keystoneclient.common import cms
 from oslo.utils import timeutils
 import six
 from testtools import matchers
 from testtools import testcase
-
 from keystone import auth
 from keystone.common import dependency
 from keystone import config
 from keystone import exception
 from keystone import tests
-from keystone.tests import test_v3
 
 
 CONF = config.CONF

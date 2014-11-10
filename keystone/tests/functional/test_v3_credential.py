@@ -16,11 +16,10 @@ import hashlib
 import json
 import uuid
 
+from keystone.tests.functional import test_v3
 from keystoneclient.contrib.ec2 import utils as ec2_utils
-
 from keystone import config
 from keystone import exception
-from keystone.tests import test_v3
 
 
 CONF = config.CONF

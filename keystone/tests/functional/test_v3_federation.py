@@ -23,7 +23,6 @@ import saml2
 from saml2 import saml
 from saml2 import sigver
 import xmldsig
-
 from keystone.auth import controllers as auth_controllers
 from keystone.common import dependency
 from keystone.common import serializer
@@ -36,7 +35,7 @@ from keystone import notifications
 from keystone.openstack.common import log
 from keystone.tests import federation_fixtures
 from keystone.tests import mapping_fixtures
-from keystone.tests import test_v3
+from keystone.tests.functional import test_v3
 
 
 CONF = config.CONF

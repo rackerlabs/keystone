@@ -16,13 +16,12 @@ import json
 import time
 import uuid
 
+from keystone.tests.functional import rest
 from keystoneclient.common import cms
 import six
 from testtools import matchers
-
 from keystone.common import extension as keystone_extension
 from keystone import config
-from keystone.tests import rest
 
 
 CONF = config.CONF

@@ -20,7 +20,6 @@ from oslo.serialization import jsonutils
 from oslo.utils import timeutils
 import six
 from testtools import matchers
-
 from keystone import auth
 from keystone.common import authorization
 from keystone.common import cache
@@ -30,8 +29,8 @@ from keystone import exception
 from keystone import middleware
 from keystone.policy.backends import rules
 from keystone import tests
+from keystone.tests.functional import rest
 from keystone.tests.ksfixtures import database
-from keystone.tests import rest
 
 
 CONF = config.CONF

@@ -17,14 +17,13 @@ import uuid
 
 from oslo.serialization import jsonutils
 from six.moves import urllib
-
 from keystone import config
 from keystone.contrib import oauth1
 from keystone.contrib.oauth1 import controllers
 from keystone.contrib.oauth1 import core
 from keystone import exception
+from keystone.tests.functional import test_v3
 from keystone.tests.ksfixtures import temporaryfile
-from keystone.tests import test_v3
 
 
 CONF = config.CONF
