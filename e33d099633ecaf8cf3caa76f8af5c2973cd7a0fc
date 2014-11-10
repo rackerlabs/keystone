@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_f8da2ae8",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 777,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-10T18:08:37Z",
+      "side": 1,
+      "message": "I would change it to:\n\n\"List of federation authentication methods. It must be a subset of \u0027methods\u0027 list. Examples: \u0027saml2, oidc\u0027\".",
+      "revId": "e33d099633ecaf8cf3caa76f8af5c2973cd7a0fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
