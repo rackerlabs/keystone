@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_409513e3",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-10T09:49:21Z",
+      "side": 1,
+      "message": "how about listing them in the help message?",
+      "parentUuid": "5a890539_2c600635",
+      "revId": "0d4118b2095a3f754815df365b5e7e6535f26fa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_4c3c7294",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 3
