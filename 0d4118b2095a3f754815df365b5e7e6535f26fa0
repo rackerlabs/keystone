@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_fe73ffe4",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-10T11:45:06Z",
+      "side": 1,
+      "message": "++ for leaving it empty and list on the help message",
+      "parentUuid": "5a890539_409513e3",
+      "revId": "0d4118b2095a3f754815df365b5e7e6535f26fa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_4c3c7294",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 3
@@ -84,6 +102,24 @@
       "side": 1,
       "message": "++",
       "parentUuid": "5a890539_4c3c7294",
+      "revId": "0d4118b2095a3f754815df365b5e7e6535f26fa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_3e7e67af",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-10T11:45:06Z",
+      "side": 1,
+      "message": "will rename the variable",
+      "parentUuid": "5a890539_a57329b0",
       "revId": "0d4118b2095a3f754815df365b5e7e6535f26fa0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
