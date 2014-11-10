@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_343f5a27",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-10T23:09:21Z",
+      "side": 1,
+      "message": "Can this be done with testr? please don\u0027t use nose as the \"default\" unless it\u0027s really required.\n\nWe can/should be able to support alternatives but the default should be testr.  \n\nPy33 is a special case.",
+      "revId": "f052c4f79f39c1ddddc76da995b749f87425e226",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
