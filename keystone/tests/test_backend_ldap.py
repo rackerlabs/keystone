@@ -194,6 +194,13 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                           project_id=self.tenant_baz['id'],
                           role_id='member')
 
+    def test_del_role_assignment_not_found(self):
+        self.assertRaises(exception.RoleNotFound,
+                          self.assignment_api.delete_grant,
+                          user_id=self.user_foo['id'],
+                          project_id=self.tenant_baz['id'],
+                          role_id='member')
+
     def test_get_and_remove_role_grant_by_group_and_project(self):
         new_domain = self._get_domain_fixture()
         new_group = {'domain_id': new_domain['id'],
