@@ -88,6 +88,24 @@
       "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_3e5d5e22",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-11-11T19:35:55Z",
+      "side": 1,
+      "message": "we use HAProxy",
+      "parentUuid": "5a890539_7472ac7d",
+      "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
