@@ -17,7 +17,7 @@ import uuid
 
 # NOTE(morganfainberg): import endpoint filter to populate the SQL model
 from keystone.contrib import endpoint_filter  # flake8: noqa
-from keystone.tests import test_v3
+from keystone.tests.functional import test_v3
 
 
 class TestExtensionCase(test_v3.RestfulTestCase):
