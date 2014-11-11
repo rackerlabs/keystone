@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_39f49df1",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-11T17:17:45Z",
+      "side": 1,
+      "message": "indeed",
+      "parentUuid": "5a890539_1fa189f8",
+      "revId": "1f54bebe65897b57845e09bd4e8d12ccc9323139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_df9f0202",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 3
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_59f969e8",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-11T17:17:45Z",
+      "side": 1,
+      "message": "indeed",
+      "parentUuid": "5a890539_7fafede3",
+      "revId": "1f54bebe65897b57845e09bd4e8d12ccc9323139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_dfb6228a",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 3
@@ -101,6 +137,24 @@
       "side": 1,
       "message": "ah, i guess it\u0027s resolved in patches biult on top of this one?",
       "parentUuid": "5a890539_dfb6228a",
+      "revId": "1f54bebe65897b57845e09bd4e8d12ccc9323139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_f9d05555",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3141,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-11T17:17:45Z",
+      "side": 1,
+      "message": "yes",
+      "parentUuid": "5a890539_9fac99ef",
       "revId": "1f54bebe65897b57845e09bd4e8d12ccc9323139",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
