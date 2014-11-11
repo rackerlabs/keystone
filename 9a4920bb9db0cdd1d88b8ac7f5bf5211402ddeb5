@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_816513e3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-11-11T20:28:48Z",
+      "side": 1,
+      "message": "assignments",
+      "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_01a123f8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-11-11T20:28:48Z",
+      "side": 1,
+      "message": "rationalizing*?",
+      "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_21cb7fa6",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-11-11T20:28:48Z",
+      "side": 1,
+      "message": "unrelated whitespace change?",
+      "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_a155afc7",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-11-11T20:28:48Z",
+      "side": 1,
+      "message": "named*",
+      "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_6172e77d",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-11-11T20:28:48Z",
+      "side": 1,
+      "message": "Remove copyrights?",
+      "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_4115ebef",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-11-11T20:28:48Z",
+      "side": 1,
+      "message": "s/Id/Identity/",
+      "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_21de1f40",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-11-11T20:28:48Z",
+      "side": 1,
+      "message": "resource validation should probably live in the Manager layer so that it effects all backends consistently",
+      "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_41e32b07",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-11-11T20:28:48Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_a1c84f75",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1031,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-11-11T20:28:48Z",
+      "side": 1,
+      "message": "why not use the resource_api here too?",
+      "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
