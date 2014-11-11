@@ -359,9 +359,11 @@ class Assignment(keystone_assignment.Driver):
     def _list_entities_for_groups(self, group_ids, entity):
         if entity == Domain:
             assignment_type = AssignmentType.GROUP_DOMAIN
-        else:
+        elif entity == Project:
             assignment_type = AssignmentType.GROUP_PROJECT
-
+        else:
+            raise exception.Error(message=_(
+                'Unexpected entity encountered, %s') %entity)
         group_sql_conditions = sqlalchemy.and_(
             RoleAssignment.type == assignment_type,
             entity.id == RoleAssignment.target_id,
