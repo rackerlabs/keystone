@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_610ca743",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-11-11T20:51:38Z",
+      "side": 1,
+      "message": "Suggest following this guide for writing commit messages and keeping the description paragraph under 74 characters per line. \n\nhttps://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "717c2776efbf6e9cc523a7af47a635e2d8f79894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
