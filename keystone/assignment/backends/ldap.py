@@ -224,7 +224,7 @@ class Assignment(assignment.Driver):
         role_ids = set(self._roles_from_role_dicts(
             metadata_ref.get('roles', []), inherited_to_projects))
         if role_id not in role_ids:
-            raise exception.RoleNotFound(role_id=role_id)
+            raise exception.RoleAssignmentNotFound(role_id=role_id)
 
     def delete_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,

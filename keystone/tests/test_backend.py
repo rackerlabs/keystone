@@ -845,6 +845,13 @@ class IdentityTests(object):
                           project_id=self.tenant_baz['id'],
                           role_id='member')
 
+    def test_get_role_assignment_not_found(self):
+        self.assertRaises(exception.RoleAssignmentNotFound,
+                          self.assignment_api.check_grant_role_id,
+                          user_id=self.user_foo['id'],
+                          project_id=self.tenant_baz['id'],
+                          role_id='member')
+
     def test_get_and_remove_role_grant_by_group_and_project(self):
         new_domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.assignment_api.create_domain(new_domain['id'], new_domain)

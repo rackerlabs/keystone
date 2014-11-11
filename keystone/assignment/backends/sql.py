@@ -160,7 +160,7 @@ class Assignment(keystone_assignment.Driver):
                     inherited_to_projects)
                 q.one()
             except sql.NotFound:
-                raise exception.RoleNotFound(role_id=role_id)
+                raise exception.RoleAssignmentNotFound(role_id=role_id)
 
     def delete_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,
@@ -170,7 +170,7 @@ class Assignment(keystone_assignment.Driver):
                 session, role_id, user_id, group_id, domain_id, project_id,
                 inherited_to_projects)
             if not q.delete(False):
-                raise exception.RoleNotFound(role_id=role_id)
+                raise exception.RoleAssignmentNotFound(role_id=role_id)
 
     def list_project_ids_for_user(self, user_id, group_ids, hints):
         # TODO(henry-nash): Now that we have a single assignment table, we
