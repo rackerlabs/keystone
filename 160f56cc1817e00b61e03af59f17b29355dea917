@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_126ed301",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-11T23:46:34Z",
+      "side": 1,
+      "message": "Assignments* ?",
+      "revId": "160f56cc1817e00b61e03af59f17b29355dea917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_5225bbc0",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-11T23:46:34Z",
+      "side": 1,
+      "message": "Not sure about the implications of renaming this class... But the methods are for \"Grants\", right?",
+      "revId": "160f56cc1817e00b61e03af59f17b29355dea917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_f21dc774",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-11T23:46:34Z",
+      "side": 1,
+      "message": "Same as above",
+      "revId": "160f56cc1817e00b61e03af59f17b29355dea917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
