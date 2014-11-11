@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_b246dfbd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-11T23:28:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_816513e3",
+      "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_01a123f8",
         "filename": "/COMMIT_MSG",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-11T20:28:48Z",
       "side": 1,
       "message": "rationalizing*?",
+      "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_9249e3d2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-11T23:28:07Z",
+      "side": 1,
+      "message": "Ha...I made up a new word!  Sounds vaguely dangerous.  Fixed!",
+      "parentUuid": "5a890539_01a123f8",
       "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_d2d36b36",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-11T23:28:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_21cb7fa6",
+      "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_a155afc7",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 12
@@ -64,6 +118,24 @@
       "writtenOn": "2014-11-11T20:28:48Z",
       "side": 1,
       "message": "named*",
+      "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_72e4770d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-11T23:28:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_a155afc7",
       "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_52ce9b84",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-11T23:28:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_6172e77d",
+      "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_4115ebef",
         "filename": "keystone/resource/backends/ldap.py",
         "patchSetId": 12
@@ -98,6 +188,24 @@
       "writtenOn": "2014-11-11T20:28:48Z",
       "side": 1,
       "message": "s/Id/Identity/",
+      "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_5295bb3e",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-11T23:28:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_4115ebef",
       "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_92dba31a",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-11T23:28:07Z",
+      "side": 1,
+      "message": "I agree with you - although was trying to make the minimum changes in this patch.  I\u0027ve raised this as bug #1391682 and will create a follow-on patch.",
+      "parentUuid": "5a890539_21de1f40",
+      "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_41e32b07",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 12
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_b2d89f1e",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-11T23:28:07Z",
+      "side": 1,
+      "message": "as above.",
+      "parentUuid": "5a890539_41e32b07",
+      "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_a1c84f75",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 12
@@ -149,6 +293,24 @@
       "writtenOn": "2014-11-11T20:28:48Z",
       "side": 1,
       "message": "why not use the resource_api here too?",
+      "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_723c7730",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1031,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-11T23:28:07Z",
+      "side": 1,
+      "message": "I was trying to make the minimum of changes...as the commit comment says, I\u0027ll be coming back in with a subsequent patch to update all the tests.",
+      "parentUuid": "5a890539_a1c84f75",
       "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
