@@ -70,6 +70,24 @@
       "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_7472ac7d",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-11-11T17:49:42Z",
+      "side": 1,
+      "message": "I think you are going for the specific case where SSL is terminated in the node itself by some service ( say stunnel). If SSL is terminated by external hardware LB, then host is going to be different.",
+      "parentUuid": "5a890539_c6b664dc",
+      "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
