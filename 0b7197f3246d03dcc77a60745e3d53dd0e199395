@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_3c4ac680",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-11T21:47:17Z",
+      "side": 1,
+      "message": "(nit):\u0027this examples\u0027 -\u003e \u0027this example\u0027",
+      "revId": "0b7197f3246d03dcc77a60745e3d53dd0e199395",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_3c41e65a",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-11T21:47:17Z",
+      "side": 1,
+      "message": "I would likely give the entire event, not just the initiator, it would be more consistent, and would be more in line with ensuring there is no confusion (yes i know you said \"only the initiator portion is shown\" above).",
+      "revId": "0b7197f3246d03dcc77a60745e3d53dd0e199395",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
