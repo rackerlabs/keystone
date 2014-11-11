@@ -12,7 +12,7 @@
 
 import uuid
 
-from keystone.tests import test_v3
+from keystone.tests.functional import test_v3
 
 
 class BaseTestCase(test_v3.RestfulTestCase):

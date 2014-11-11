@@ -250,6 +250,17 @@ common configuration of Python 2.7 and PEP-8), list the environments with the
 
     $ tox -e py27,pep8
 
+There is also a tox environment for running Keystone's functional tests. To run
+tests in the functional environment, execute the following tox command:
+
+.. code-block:: bash
+
+    $ tox -e functional
+
+Functional tests are isolated in their own environment so that it is easier
+for developers to run only the tests that assert API behavior and do some
+useful assertion with a response.
+
 See ``tox.ini`` for the full list of available test environments.
 
 Running with PDB
@@ -293,7 +304,12 @@ Test Structure
 
 Not all of the tests in the tests directory are strictly unit tests. Keystone
 intentionally includes tests that run the service locally and drives the entire
-configuration to achieve basic functional testing.
+configuration to achieve basic functional testing. These functional tests live
+in ``keystone/tests/functional/``. New functional tests should be added to the
+functional test directory. If a test describes the behavior of a single method
+or function is should not be added as a functional test. If a test describes
+the behavior of an API, it should be added to ``keystone/tests/functional/``
+appropriately.
 
 For the functional tests, an in-memory key-value store is used to keep the
 tests fast.
