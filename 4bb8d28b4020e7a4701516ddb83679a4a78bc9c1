@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_5e894ac9",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1120,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-11-11T20:06:24Z",
+      "side": 1,
+      "message": "Nit:  perhaps add the word \"token\" after customer/admin to make it more clear that the relationship of the domain sets you describe are associated with the tokens added in the tokens set above",
+      "revId": "4bb8d28b4020e7a4701516ddb83679a4a78bc9c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
