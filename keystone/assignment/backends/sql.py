@@ -199,7 +199,7 @@ class Assignment(keystone_assignment.Driver):
                     inherited_to_projects)
                 q.one()
             except sql.NotFound:
-                raise exception.RoleNotFound(role_id=role_id)
+                raise exception.RoleAssignmentNotFound(role_id=role_id)
 
             return role_ref.to_dict()
 
@@ -217,7 +217,7 @@ class Assignment(keystone_assignment.Driver):
                 session, role_id, user_id, group_id, domain_id, project_id,
                 inherited_to_projects)
             if not q.delete(False):
-                raise exception.RoleNotFound(role_id=role_id)
+                raise exception.RoleAssignmentNotFound(role_id=role_id)
 
     @sql.truncated
     def list_projects(self, hints):
