@@ -777,11 +777,10 @@ class Driver(object):
                   inherited_to_projects=False):
         """Lists assignments/grants.
 
-        :raises: keystone.exception.UserNotFound,
-                 keystone.exception.GroupNotFound,
-                 keystone.exception.ProjectNotFound,
+        :raises: keystone.exception.ProjectNotFound,
                  keystone.exception.DomainNotFound,
-                 keystone.exception.RoleNotFound
+                 keystone.exception.RoleNotFound,
+                 keystone.exception.RoleAssignmentNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -794,7 +793,8 @@ class Driver(object):
 
         :raises: keystone.exception.ProjectNotFound,
                  keystone.exception.DomainNotFound,
-                 keystone.exception.RoleNotFound
+                 keystone.exception.RoleNotFound,
+                 keystone.exception.RoleAssignmentNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover

@@ -185,6 +185,40 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                           project_id=self.tenant_baz['id'],
                           role_id='member')
 
+    def test_get_role_assignment_not_found(self):
+        # First, clean up the test environment in case grant has been
+        # created by other test cases but not properly cleaned up.
+        roles_ref = self.assignment_api.list_grants(
+            user_id=self.user_foo['id'],
+            project_id=self.tenant_baz['id'])
+        if len(roles_ref) > 0 and roles_ref[0] == self.role_member:
+            self.assignment_api.delete_grant(user_id=self.user_foo['id'],
+                                             project_id=self.tenant_baz['id'],
+                                             role_id='member')
+
+        self.assertRaises(exception.RoleAssignmentNotFound,
+                          self.assignment_api.get_grant,
+                          user_id=self.user_foo['id'],
+                          project_id=self.tenant_baz['id'],
+                          role_id='member')
+
+    def test_del_role_assignment_not_found(self):
+        # First, clean up the test environment in case grant has been
+        # created by other test cases but not properly cleaned up.
+        roles_ref = self.assignment_api.list_grants(
+            user_id=self.user_foo['id'],
+            project_id=self.tenant_baz['id'])
+        if len(roles_ref) > 0 and roles_ref[0] == self.role_member:
+            self.assignment_api.delete_grant(user_id=self.user_foo['id'],
+                                             project_id=self.tenant_baz['id'],
+                                             role_id='member')
+
+        self.assertRaises(exception.RoleAssignmentNotFound,
+                          self.assignment_api.delete_grant,
+                          user_id=self.user_foo['id'],
+                          project_id=self.tenant_baz['id'],
+                          role_id='member')
+
     def test_get_and_remove_role_grant_by_group_and_project(self):
         new_domain = self._get_domain_fixture()
         new_group = {'domain_id': new_domain['id'],
