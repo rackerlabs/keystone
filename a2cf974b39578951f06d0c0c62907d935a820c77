@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_289b6919",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-11T16:12:38Z",
+      "side": 1,
+      "message": "add yourself as co-author too!",
+      "revId": "a2cf974b39578951f06d0c0c62907d935a820c77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_c84e65c1",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-11T16:12:38Z",
+      "side": 1,
+      "message": "CAFS/CADF",
+      "revId": "a2cf974b39578951f06d0c0c62907d935a820c77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
