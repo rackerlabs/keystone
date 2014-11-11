@@ -52,6 +52,24 @@
       "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_c6b664dc",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-11-11T08:30:44Z",
+      "side": 1,
+      "message": "becasue of scheme.\nhost is not changing by SSL termination. scheme is changing.\nso if we have https://hosta from teh client then we have http://hosta in keystone. and client receives http://hosta in the list of protocols",
+      "parentUuid": "7a8c0949_67047ec0",
+      "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
