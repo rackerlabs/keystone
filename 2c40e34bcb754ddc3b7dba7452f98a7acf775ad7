@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_f3179f4f",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-11-11T11:48:40Z",
+      "side": 1,
+      "message": "Can this ever happen? I think that a test should be created for this case",
+      "revId": "2c40e34bcb754ddc3b7dba7452f98a7acf775ad7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_0e0f9e31",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-11-11T11:48:40Z",
+      "side": 1,
+      "message": "Is the exception catched somewhere?",
+      "revId": "2c40e34bcb754ddc3b7dba7452f98a7acf775ad7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
