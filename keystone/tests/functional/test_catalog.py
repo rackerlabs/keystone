@@ -18,8 +18,8 @@ import six
 
 from keystone import catalog
 from keystone import tests
+from keystone.tests.functional import rest
 from keystone.tests.ksfixtures import database
-from keystone.tests import rest
 
 
 BASE_URL = 'http://127.0.0.1:35357/v2'

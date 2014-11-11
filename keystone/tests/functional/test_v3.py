@@ -30,8 +30,8 @@ from keystone import exception
 from keystone import middleware
 from keystone.policy.backends import rules
 from keystone import tests
+from keystone.tests.functional import rest
 from keystone.tests.ksfixtures import database
-from keystone.tests import rest
 
 
 CONF = config.CONF

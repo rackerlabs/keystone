@@ -20,7 +20,7 @@ from testtools import matchers
 from keystone.common import controller
 from keystone import exception
 from keystone import tests
-from keystone.tests import test_v3
+from keystone.tests.functional import test_v3
 
 
 CONF = cfg.CONF

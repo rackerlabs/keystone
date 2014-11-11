@@ -17,8 +17,8 @@ import uuid
 
 from keystone import catalog
 from keystone import tests
+from keystone.tests.functional import test_v3
 from keystone.tests.ksfixtures import database
-from keystone.tests import test_v3
 
 
 class CatalogTestCase(test_v3.RestfulTestCase):

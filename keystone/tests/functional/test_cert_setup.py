@@ -23,7 +23,7 @@ from keystone.common import environment
 from keystone.common import openssl
 from keystone import exception
 from keystone import tests
-from keystone.tests import rest
+from keystone.tests.functional import rest
 from keystone import token
 
 

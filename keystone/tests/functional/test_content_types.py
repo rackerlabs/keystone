@@ -22,7 +22,7 @@ from testtools import matchers
 
 from keystone.common import extension as keystone_extension
 from keystone import config
-from keystone.tests import rest
+from keystone.tests.functional import rest
 
 
 CONF = config.CONF
