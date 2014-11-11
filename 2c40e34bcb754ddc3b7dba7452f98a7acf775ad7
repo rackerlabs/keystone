@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_c452d712",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-11-11T13:16:00Z",
+      "side": 1,
+      "message": "Thanks Boris.Currently, the entity should only be \"Domain\" or \"Project\" from the code where this private method is invoked, while IMO the check logic should cover any unexcepted behavior like what method of \"denormalize_role\" did. I am considering to create one testcase.",
+      "parentUuid": "5a890539_f3179f4f",
+      "revId": "2c40e34bcb754ddc3b7dba7452f98a7acf775ad7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_0e0f9e31",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-11T11:48:40Z",
       "side": 1,
       "message": "Is the exception catched somewhere?",
+      "revId": "2c40e34bcb754ddc3b7dba7452f98a7acf775ad7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_64904396",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-11-11T13:16:00Z",
+      "side": 1,
+      "message": "Can i think this exception will be catched the same manner as where the exception from the method of \"calculate_type\" or \"denormalize_role\"?",
+      "parentUuid": "5a890539_0e0f9e31",
       "revId": "2c40e34bcb754ddc3b7dba7452f98a7acf775ad7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
