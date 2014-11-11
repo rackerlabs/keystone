@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_7ff9ae4c",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 329,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-11T14:10:29Z",
+      "side": 1,
+      "message": "so, what should happen if a group had an inherited role assigned to a domain (effectively to all projects in a domain). Shouldn\u0027t it be listed here?",
+      "revId": "1f54bebe65897b57845e09bd4e8d12ccc9323139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_df9f0202",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-11T14:10:29Z",
+      "side": 1,
+      "message": "so, what should happen if a group had an inherited role assigned to a domain (effectively to all projects in a domain). Shouldn\u0027t it be listed here?",
+      "revId": "1f54bebe65897b57845e09bd4e8d12ccc9323139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_dfb6228a",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3141,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-11T14:10:29Z",
+      "side": 1,
+      "message": "Are there any tests where user scoped to a project within a domain with a roles inheriting to all the projects?",
+      "revId": "1f54bebe65897b57845e09bd4e8d12ccc9323139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
