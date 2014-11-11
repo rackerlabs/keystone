@@ -34,6 +34,24 @@
       "revId": "9565fb100c328098991efedb8cd73ce7a4085282",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_3de4960c",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-11T09:56:09Z",
+      "side": 1,
+      "message": "So I think that Haneef is correct, we shouldn\u0027t be throwing a 401 for this specific problem.  What confuses this is that there are two situations:\n\n1) With domain specific backends when no domain is specified when listing users or groups.  I think this should throw a 403 (Forbidden).\n\n2) If you do specify a domain when listing users and groups, but you don\u0027t have a role that gives you access to that API, then we should (and do) throw a 401 (Unathorized).  This is irrespective of whether we are using domain specific backends or not.\n\nSo I think we should fix 1), along with this doc change, which would involve changing the exception thown at the end of _get_domain_id_for_list_request() in common/controller.py",
+      "parentUuid": "7a8c0949_55891e25",
+      "revId": "9565fb100c328098991efedb8cd73ce7a4085282",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
