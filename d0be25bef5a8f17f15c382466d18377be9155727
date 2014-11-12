@@ -16,6 +16,24 @@
       "revId": "d0be25bef5a8f17f15c382466d18377be9155727",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_7371cadf",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-12T14:09:44Z",
+      "side": 1,
+      "message": "yes, I think this....I think this new way is more obvious...",
+      "parentUuid": "5a890539_b487a6d6",
+      "revId": "d0be25bef5a8f17f15c382466d18377be9155727",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
