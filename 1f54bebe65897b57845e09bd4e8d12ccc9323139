@@ -230,6 +230,40 @@
     },
     {
       "key": {
+        "uuid": "5a890539_9210e7a9",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-12T18:33:05Z",
+      "side": 1,
+      "message": "NIT: Please check for the actual result (e.g. what the bug causes to occur) not just skip the test.",
+      "revId": "1f54bebe65897b57845e09bd4e8d12ccc9323139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_327ad3f1",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-12T18:33:05Z",
+      "side": 1,
+      "message": "Same as above. Please validate that LDAP throws some specific error *not* just skip the test (in general we should never skip tests like this).",
+      "revId": "1f54bebe65897b57845e09bd4e8d12ccc9323139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_797d37e7",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 3
@@ -241,6 +275,24 @@
       "writtenOn": "2014-11-12T07:41:14Z",
       "side": 1,
       "message": "@henry, this fails because if there are no roles, then we 401? \n\nsource: https://github.com/openstack/keystone/blob/master/keystone/token/providers/common.py#L192-L207",
+      "revId": "1f54bebe65897b57845e09bd4e8d12ccc9323139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_725b7b87",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1082,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-12T18:33:05Z",
+      "side": 1,
+      "message": "Interesting...",
+      "parentUuid": "5a890539_797d37e7",
       "revId": "1f54bebe65897b57845e09bd4e8d12ccc9323139",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
