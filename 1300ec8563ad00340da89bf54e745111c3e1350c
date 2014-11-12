@@ -16,6 +16,24 @@
       "revId": "1300ec8563ad00340da89bf54e745111c3e1350c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_6e3806a1",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-12T10:04:13Z",
+      "side": 1,
+      "message": "So list_domains_for_user() is used to satisfy /auth/domains when a user_id is specified.  Now I\u0027m assuming (!), that the intention is for this to return those domains for which the user could get a domain scoped token (in the same way that /auth/projects does for projects).  The only way you are permitted to get a domain scoped token is if you have an actual role on the domain itself - ones inherited to projects don\u0027t count (since they are not actually active on the domain).  Hence, irrespective of whether there were projects in this domain, a user that ONLY has inherited roles assigned to it shouldn\u0027t be able to get a domain-scoped token, hence those domains should not be listed in /auth/domains. (The would, of course, be able to get a project-scoped token to one of the projects in the domain).\n\nHowever, it does occur to me that there might be a need for some /auth/domains?\u003csomething\u003e, that indicates the domains on which a user/group has any (e.g. domain or project)...but I don\u0027t think that\u0027s we currently support.  Also, even if we had this, I\u0027m not sure it helps you authenticate...since you might have the role on just one project in the domain...so how would you know what to ask for next?  This feels outside of the scope of this patch.",
+      "parentUuid": "5a890539_59323b11",
+      "revId": "1300ec8563ad00340da89bf54e745111c3e1350c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
