@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_8df2a298",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-12T00:25:40Z",
+      "side": 1,
+      "message": "following the pattern in the method bellow, this method would be: add_default_role_to_user_and_project()",
+      "revId": "e10ad1441f34f5d5a706a530e41caaaba05b6b8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_cd04aa80",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-12T00:25:40Z",
+      "side": 1,
+      "message": "Not related to this patch, but I think it\u0027s odd to have the method name updated and the docstring still using \"tenant\".",
+      "revId": "e10ad1441f34f5d5a706a530e41caaaba05b6b8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
