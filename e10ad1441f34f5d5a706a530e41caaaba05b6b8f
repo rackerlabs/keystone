@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a890539_54892225",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-12T08:27:32Z",
+      "side": 1,
+      "message": "i\u0027m digging the normalized function names.",
+      "revId": "e10ad1441f34f5d5a706a530e41caaaba05b6b8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_8df2a298",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 13
@@ -66,6 +83,23 @@
       "side": 1,
       "message": "agreed.  I\u0027ll add it to the clean up list.",
       "parentUuid": "5a890539_cd04aa80",
+      "revId": "e10ad1441f34f5d5a706a530e41caaaba05b6b8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_545f62e5",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-12T08:27:32Z",
+      "side": 1,
+      "message": "can this also be removed?",
       "revId": "e10ad1441f34f5d5a706a530e41caaaba05b6b8f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
