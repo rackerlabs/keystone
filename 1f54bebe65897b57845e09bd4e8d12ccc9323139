@@ -143,6 +143,40 @@
     },
     {
       "key": {
+        "uuid": "5a890539_99ff4367",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3057,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-12T07:41:14Z",
+      "side": 1,
+      "message": "there is no need to save the group objects, you are just plucking the id from them.",
+      "revId": "1f54bebe65897b57845e09bd4e8d12ccc9323139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_f93a0733",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3120,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-12T07:41:14Z",
+      "side": 1,
+      "message": "same comment as above, you can just write group_id_list[0]",
+      "revId": "1f54bebe65897b57845e09bd4e8d12ccc9323139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_dfb6228a",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 3
@@ -190,6 +224,23 @@
       "side": 1,
       "message": "yes",
       "parentUuid": "5a890539_9fac99ef",
+      "revId": "1f54bebe65897b57845e09bd4e8d12ccc9323139",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_797d37e7",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1082,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-12T07:41:14Z",
+      "side": 1,
+      "message": "@henry, this fails because if there are no roles, then we 401? \n\nsource: https://github.com/openstack/keystone/blob/master/keystone/token/providers/common.py#L192-L207",
       "revId": "1f54bebe65897b57845e09bd4e8d12ccc9323139",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
