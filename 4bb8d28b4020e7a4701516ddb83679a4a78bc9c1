@@ -16,6 +16,24 @@
       "revId": "4bb8d28b4020e7a4701516ddb83679a4a78bc9c1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_544be286",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1120,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-12T08:43:07Z",
+      "side": 1,
+      "message": "fair comment - if it\u0027s OK I\u0027ll leave this to a tidy up follow-on patch, unless, as you say, other things need changing.",
+      "parentUuid": "5a890539_5e894ac9",
+      "revId": "4bb8d28b4020e7a4701516ddb83679a4a78bc9c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
