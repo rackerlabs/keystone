@@ -33,6 +33,23 @@
       "revId": "11baf2ed1c1a5f31e36f02ac32eae471b05a168e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_0b73de15",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-11-12T20:50:06Z",
+      "side": 1,
+      "message": "IMO , we should allow disable of a project irrespective of leaf status. I agree it is complex to implement.\n\nIf some one understands the system, then they can take advantage of this  by creating  couple of child projects, and do whatever  they want using parent id.  An adminstrator won\u0027t be able to do anything with that parent id,  till he drills down and disables all his leaf tenants.\n\nAlso as per logic, even if leaf is disabled, we can\u0027t disable the parent. Am I missing something?",
+      "revId": "11baf2ed1c1a5f31e36f02ac32eae471b05a168e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
