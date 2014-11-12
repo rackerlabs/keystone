@@ -132,6 +132,7 @@ class Mapped(auth.AuthMethodHandler):
 
         return {
             'user_id': user_id,
+            'user_name': user_name,
             'group_ids': group_ids,
             federation.IDENTITY_PROVIDER: identity_provider,
             federation.PROTOCOL: protocol
