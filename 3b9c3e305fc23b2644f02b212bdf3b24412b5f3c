@@ -52,6 +52,23 @@
       "revId": "3b9c3e305fc23b2644f02b212bdf3b24412b5f3c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_2e043ebf",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-12T10:05:32Z",
+      "side": 1,
+      "message": "so, once the user is really authenticated his uesr_id will be stored under \u0027REMOTE_USER\u0027 and what else, somewhere in auth.controlers authentication method will be fired again?",
+      "revId": "3b9c3e305fc23b2644f02b212bdf3b24412b5f3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
