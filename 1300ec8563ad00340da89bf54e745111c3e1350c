@@ -34,6 +34,24 @@
       "revId": "1300ec8563ad00340da89bf54e745111c3e1350c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_8e1612a6",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-12T10:17:30Z",
+      "side": 1,
+      "message": "@Steve: yes, my understanding (after excersising OS-INHERIT with Henry) is that once you have role inheriting to a project it will be tied to projects within this domain, not the domain itself (effectively will be listed when working playing with projects, not domains)\n\n@Henry: I\u0027d also say that list_domains_for_user is rather for listing domains the user with a user_id can access. Same applies for domains for groups used in federation.",
+      "parentUuid": "5a890539_6e3806a1",
+      "revId": "1300ec8563ad00340da89bf54e745111c3e1350c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
