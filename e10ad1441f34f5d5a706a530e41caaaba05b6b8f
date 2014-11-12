@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_34b57631",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 350,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-12T08:13:58Z",
+      "side": 0,
+      "message": "i\u0027m surprised that domain was just CRUD, and no assignment bits, neat.",
+      "revId": "e10ad1441f34f5d5a706a530e41caaaba05b6b8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
