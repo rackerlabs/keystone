@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_b487a6d6",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-12T08:31:01Z",
+      "side": 1,
+      "message": "was this not needed before because common.manager had a reference to assignment_api already?",
+      "revId": "d0be25bef5a8f17f15c382466d18377be9155727",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
