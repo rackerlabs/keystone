@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_ee95d640",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-12T10:10:22Z",
+      "side": 1,
+      "message": "I know...balance between keeping as many code blocks as they are vs re-factoring too much.  If it\u0027s any consolation, this gets removed further up the patch change once we split resources and assignments.",
+      "parentUuid": "5a890539_5996bbf1",
+      "revId": "bfbe1ee96c871163e4af0eca7568e13be72b8fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_210a9f21",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-11T20:11:18Z",
       "side": 1,
       "message": "Project4 or Domain4?",
+      "revId": "bfbe1ee96c871163e4af0eca7568e13be72b8fde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_2ec99e78",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3285,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-12T10:10:22Z",
+      "side": 1,
+      "message": "I think it is correct as is...we only have 2 two domains...domain1 has projects1-3, and domain2 has project4",
+      "parentUuid": "5a890539_210a9f21",
       "revId": "bfbe1ee96c871163e4af0eca7568e13be72b8fde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
