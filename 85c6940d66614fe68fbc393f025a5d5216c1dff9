@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_d246ef20",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-12T18:18:28Z",
+      "side": 1,
+      "message": "i think user_name and user_id should be stored in a federated token. https://github.com/openstack/identity-api/blob/master/v3/src/markdown/identity-api-v3-os-federation-ext.md#request-an-unscoped-os-federation-token-getpost-os-federationidentity_providersidentity_providerprotocolsprotocolauth",
+      "parentUuid": "5a890539_9f163054",
+      "revId": "85c6940d66614fe68fbc393f025a5d5216c1dff9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_bf0ccc43",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 6
