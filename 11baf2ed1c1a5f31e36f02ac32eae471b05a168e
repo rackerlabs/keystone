@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_2b197a88",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-11-12T21:09:56Z",
+      "side": 1,
+      "message": "In fact it\u0027s more than ids: we get project info as we were doing a get project API call.",
+      "parentUuid": "5a890539_3532bd10",
+      "revId": "11baf2ed1c1a5f31e36f02ac32eae471b05a168e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_553589f5",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 31
