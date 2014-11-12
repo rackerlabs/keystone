@@ -16,6 +16,24 @@
       "revId": "8ab267bbf0ba7d49c780cf3eaa8bc8a4176bfc30",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_931c7779",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-12T13:55:07Z",
+      "side": 0,
+      "message": "No, I don\u0027t think this needed anymore - since it was call from list_projects_for_user() in the Driver above...which now has become list_project_ids_for_user()...which no longer has to get the project ref.",
+      "parentUuid": "5a890539_341656f2",
+      "revId": "8ab267bbf0ba7d49c780cf3eaa8bc8a4176bfc30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

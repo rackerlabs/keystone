@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_13008600",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-12T13:55:07Z",
+      "side": 1,
+      "message": ":-)",
+      "parentUuid": "5a890539_54892225",
+      "revId": "e10ad1441f34f5d5a706a530e41caaaba05b6b8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_8df2a298",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 13
@@ -100,6 +118,24 @@
       "writtenOn": "2014-11-12T08:27:32Z",
       "side": 1,
       "message": "can this also be removed?",
+      "revId": "e10ad1441f34f5d5a706a530e41caaaba05b6b8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_93c47693",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-12T13:55:07Z",
+      "side": 1,
+      "message": "Yep, you\u0027re right - we don\u0027t currently truncate any of the manager methods that remain in assignment.",
+      "parentUuid": "5a890539_545f62e5",
       "revId": "e10ad1441f34f5d5a706a530e41caaaba05b6b8f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
