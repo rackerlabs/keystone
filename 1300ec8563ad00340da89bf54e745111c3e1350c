@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_59323b11",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 411,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-12T07:57:42Z",
+      "side": 1,
+      "message": "so if there was a project in that domain, would the user have the role? or would that need to be specified at the user (or group) assignment level?",
+      "revId": "1300ec8563ad00340da89bf54e745111c3e1350c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
