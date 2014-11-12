@@ -69,6 +69,24 @@
       "revId": "3b9c3e305fc23b2644f02b212bdf3b24412b5f3c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_48133166",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-11-12T17:10:45Z",
+      "side": 1,
+      "message": "I\u0027d expect that the external plugin would come in to play, but by doing it as middleware, we could do more complex logic if we desired as well.",
+      "parentUuid": "5a890539_2e043ebf",
+      "revId": "3b9c3e305fc23b2644f02b212bdf3b24412b5f3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
