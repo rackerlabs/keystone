@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_9f163054",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-12T18:15:34Z",
+      "side": 1,
+      "message": "Is there any plan to use user_name?",
+      "revId": "85c6940d66614fe68fbc393f025a5d5216c1dff9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_bf0ccc43",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-12T18:15:34Z",
+      "side": 1,
+      "message": "See above comment.",
+      "revId": "85c6940d66614fe68fbc393f025a5d5216c1dff9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
