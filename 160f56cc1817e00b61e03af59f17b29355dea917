@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_9389d6cc",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-12T14:08:25Z",
+      "side": 1,
+      "message": "so we do still have controllers here...that hold the assignment APIs that are specific to Projects or Roles(really Grants)...the question, that has been raised by others, is whether we should rename these....I\u0027m kind of starting to think that we should....",
+      "parentUuid": "5a890539_f40e8e31",
+      "revId": "160f56cc1817e00b61e03af59f17b29355dea917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_5225bbc0",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 5
