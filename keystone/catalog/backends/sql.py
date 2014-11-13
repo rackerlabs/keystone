@@ -84,6 +84,8 @@ class Endpoint(sql.ModelBase, sql.DictBase):
     enabled = sql.Column(sql.Boolean, nullable=False, default=True,
                          server_default=sqlalchemy.sql.expression.true())
     extra = sql.Column(sql.JsonBlob())
+    __table_args__ = (sql.UniqueConstraint('service_id', 'region_id',
+                                           'interface', 'url'), {})
 
 
 class Catalog(catalog.CatalogDriverV8):

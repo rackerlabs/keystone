@@ -556,6 +556,25 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             body={'endpoint': ref},
             expected_status=http_client.BAD_REQUEST)
 
+    def test_create_endpoint_with_duplicate_entry(self):
+        """Call ``POST /endpoints``."""
+        ref = self.new_endpoint_ref(service_id=self.service_id,
+                                    region_id=self.region_id,
+                                    interface='internal',
+                                    url='https://example.com',
+                                    enabled=True)
+        r = self.post(
+            '/endpoints',
+            body={'endpoint': ref})
+        self.assertValidEndpointResponse(r, ref)
+
+        ref['id'] = uuid.uuid4().hex
+
+        r = self.post(
+            '/endpoints',
+            body={'endpoint': ref},
+            expected_status=http_client.CONFLICT)
+
     def test_create_endpoint_enabled_str_false(self):
         """Call ``POST /endpoints`` with enabled: 'False'."""
         ref = self.new_endpoint_ref(service_id=self.service_id,
