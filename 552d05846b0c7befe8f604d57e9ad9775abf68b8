@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_6ca477a6",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-13T00:24:53Z",
+      "side": 1,
+      "message": "the sentence is specifying \"all\" users and \"all\" groups, which is not supported.",
+      "parentUuid": "5a890539_cc9bab70",
+      "revId": "552d05846b0c7befe8f604d57e9ad9775abf68b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_0cbf73d1",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-13T00:20:57Z",
       "side": 1,
       "message": "\"will need that\" -\u003e \"must have\"?",
+      "revId": "552d05846b0c7befe8f604d57e9ad9775abf68b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_cca9eb7c",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-13T00:24:53Z",
+      "side": 1,
+      "message": "hm... good point, \"will need that\" sounds the same as \"must have\" to me...",
+      "parentUuid": "5a890539_0cbf73d1",
       "revId": "552d05846b0c7befe8f604d57e9ad9775abf68b8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
