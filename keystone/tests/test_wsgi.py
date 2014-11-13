@@ -169,9 +169,9 @@ class ApplicationTest(BaseWSGITest):
             def __init__(self, *args, **kwargs):
                 self.kwargs = kwargs
 
-        app = FakeApp.factory({}, testkey="test")
-        self.assertIn("testkey", app.kwargs)
-        self.assertEqual("test", app.kwargs["testkey"])
+        self.assertRaises(exception.LocalConfigNotAllowed,
+                          FakeApp.factory,
+                          {}, testkey="test")
 
     def test_render_exception(self):
         e = exception.Unauthorized(message=u'\u7f51\u7edc')
@@ -192,10 +192,9 @@ class ExtensionRouterTest(BaseWSGITest):
             def __init__(self, *args, **kwargs):
                 self.kwargs = kwargs
 
-        factory = FakeRouter.factory({}, testkey="test")
-        app = factory(self.app)
-        self.assertIn("testkey", app.kwargs)
-        self.assertEqual("test", app.kwargs["testkey"])
+        self.assertRaises(exception.LocalConfigNotAllowed,
+                          FakeRouter.factory,
+                          {}, testkey="test")
 
 
 class MiddlewareTest(BaseWSGITest):
@@ -266,10 +265,9 @@ class MiddlewareTest(BaseWSGITest):
             def __init__(self, *args, **kwargs):
                 self.kwargs = kwargs
 
-        factory = FakeMiddleware.factory({}, testkey="test")
-        app = factory(self.app)
-        self.assertIn("testkey", app.kwargs)
-        self.assertEqual("test", app.kwargs["testkey"])
+        self.assertRaises(exception.LocalConfigNotAllowed,
+                          FakeMiddleware.factory,
+                          {}, testkey="test")
 
 
 class LocalizedResponseTest(tests.TestCase):
