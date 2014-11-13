@@ -17,6 +17,7 @@ import sys
 
 from oslo_config import cfg
 from oslo_log import log
+from oslo_log import versionutils
 from paste import deploy
 import routes
 
@@ -27,6 +28,7 @@ from keystone.common import wsgi
 from keystone import controllers
 from keystone import credential
 from keystone import endpoint_policy
+from keystone.i18n import _LW
 from keystone import identity
 from keystone import policy
 from keystone import resource
@@ -65,6 +67,12 @@ def fail_gracefully(f):
 
 @fail_gracefully
 def public_app_factory(global_conf, **local_conf):
+    if local_conf:
+        versionutils.report_deprecated_feature(
+            LOG,
+            _LW('Defining local configuration in PasteDeploy INI is '
+                'deprecated in Mitaka and will be removed in O release. '
+                'Configuration must be in keystone.conf.'))
     controllers.register_version('v2.0')
     return wsgi.ComposingRouter(routes.Mapper(),
                                 [assignment.routers.Public(),
@@ -75,6 +83,12 @@ def public_app_factory(global_conf, **local_conf):
 
 @fail_gracefully
 def admin_app_factory(global_conf, **local_conf):
+    if local_conf:
+        versionutils.report_deprecated_feature(
+            LOG,
+            _LW('Defining local configuration in PasteDeploy INI is '
+                'deprecated in Mitaka and will be removed in O release. '
+                'Configuration must be in keystone.conf.'))
     controllers.register_version('v2.0')
     return wsgi.ComposingRouter(routes.Mapper(),
                                 [identity.routers.Admin(),
@@ -87,18 +101,36 @@ def admin_app_factory(global_conf, **local_conf):
 
 @fail_gracefully
 def public_version_app_factory(global_conf, **local_conf):
+    if local_conf:
+        versionutils.report_deprecated_feature(
+            LOG,
+            _LW('Defining local configuration in PasteDeploy INI is '
+                'deprecated in Mitaka and will be removed in O release. '
+                'Configuration must be in keystone.conf.'))
     return wsgi.ComposingRouter(routes.Mapper(),
                                 [routers.Versions('public')])
 
 
 @fail_gracefully
 def admin_version_app_factory(global_conf, **local_conf):
+    if local_conf:
+        versionutils.report_deprecated_feature(
+            LOG,
+            _LW('Defining local configuration in PasteDeploy INI is '
+                'deprecated in Mitaka and will be removed in O release. '
+                'Configuration must be in keystone.conf.'))
     return wsgi.ComposingRouter(routes.Mapper(),
                                 [routers.Versions('admin')])
 
 
 @fail_gracefully
 def v3_app_factory(global_conf, **local_conf):
+    if local_conf:
+        versionutils.report_deprecated_feature(
+            LOG,
+            _LW('Defining local configuration in PasteDeploy INI is '
+                'deprecated in Mitaka and will be removed in O release. '
+                'Configuration must be in keystone.conf.'))
     controllers.register_version('v3')
     mapper = routes.Mapper()
     sub_routers = []

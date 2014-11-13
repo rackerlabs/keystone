@@ -25,6 +25,7 @@ import wsgiref.util
 from oslo_config import cfg
 import oslo_i18n
 from oslo_log import log
+from oslo_log import versionutils
 from oslo_serialization import jsonutils
 from oslo_utils import importutils
 from oslo_utils import strutils
@@ -422,6 +423,13 @@ class Middleware(Application):
         but using the kwarg passing it shouldn't be necessary.
 
         """
+        if local_config:
+            versionutils.report_deprecated_feature(
+                LOG,
+                _LW('Defining local configuration in PasteDeploy INI is '
+                    'deprecated in Mitaka and will be removed in O release. '
+                    'Configuration must be in keystone.conf.'))
+
         def _factory(app):
             conf = global_config.copy()
             conf.update(local_config)
