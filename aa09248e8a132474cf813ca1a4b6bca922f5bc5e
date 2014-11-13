@@ -142,6 +142,24 @@
       "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_3128e8e1",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-11-13T20:09:47Z",
+      "side": 1,
+      "message": "Yes. That is the standard practice. If we are using haproxy or any load balancer they need to populate these headers and keystone should prioritize those headers.\n\nAlso in this case, why are we even adding non ssl endpoints in service catalog. Endpoint should match what the customer sees.\n\nAlso links should be derived from the endpoints defined in the table \n\n(ie)   public_urls for identity should be https://hosta:35357 in endpoint table\nand the link should use this protocol and name",
+      "parentUuid": "5a890539_1d179152",
+      "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
