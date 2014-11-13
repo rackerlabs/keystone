@@ -26,6 +26,7 @@ from keystone import catalog
 from keystone.common import wsgi
 from keystone import controllers
 from keystone import credential
+from keystone.i18n import _LW
 from keystone import identity
 from keystone import policy
 from keystone import resource
@@ -64,6 +65,19 @@ def fail_gracefully(f):
 
 @fail_gracefully
 def public_app_factory(global_conf, **local_conf):
+    warning_msg = ''
+    paste_deploy_config = None
+    if local_conf:
+        if global_conf:
+            paste_deploy_config = global_conf.get("__file__", None)
+        warning_msg = _LW("Define local configuration %(configuration)s "
+                          "in main keystone configuration file instead "
+                          "of PasteDeploy configuration file "
+                          "%(config_file)s.")
+    if warning_msg:
+        LOG.warn(warning_msg % {
+            'configuration': local_conf,
+            'config_file': paste_deploy_config})
     controllers.register_version('v2.0')
     return wsgi.ComposingRouter(routes.Mapper(),
                                 [assignment.routers.Public(),
@@ -74,6 +88,19 @@ def public_app_factory(global_conf, **local_conf):
 
 @fail_gracefully
 def admin_app_factory(global_conf, **local_conf):
+    warning_msg = ''
+    paste_deploy_config = None
+    if local_conf:
+        if global_conf:
+            paste_deploy_config = global_conf.get("__file__", None)
+        warning_msg = _LW("Define local configuration %(configuration)s "
+                          "in main keystone configuration file instead "
+                          "of PasteDeploy configuration file "
+                          "%(config_file)s.")
+    if warning_msg:
+        LOG.warn(warning_msg % {
+            'configuration': local_conf,
+            'config_file': paste_deploy_config})
     controllers.register_version('v2.0')
     return wsgi.ComposingRouter(routes.Mapper(),
                                 [identity.routers.Admin(),
@@ -98,6 +125,18 @@ def admin_version_app_factory(global_conf, **local_conf):
 
 @fail_gracefully
 def v3_app_factory(global_conf, **local_conf):
+    warning_msg = ''
+    paste_deploy_config = None
+    if local_conf:
+        if global_conf:
+            paste_deploy_config = global_conf.get("__file__", None)
+        warning_msg = _LW("Define local configuration %(configuration)s "
+                          "in main keystone configuration file instead "
+                          "of PasteDeploy configuration file %(config_file)s.")
+    if warning_msg:
+        LOG.warn(warning_msg % {
+            'configuration': local_conf,
+            'config_file': paste_deploy_config})
     controllers.register_version('v3')
     mapper = routes.Mapper()
     sub_routers = []
