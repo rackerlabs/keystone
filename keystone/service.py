@@ -17,6 +17,7 @@ import sys
 
 from oslo_config import cfg
 from oslo_log import log
+from oslo_log import versionutils
 from paste import deploy
 import routes
 
@@ -65,6 +66,13 @@ def fail_gracefully(f):
 
 @fail_gracefully
 def public_app_factory(global_conf, **local_conf):
+    if local_conf:
+        versionutils.deprecated(
+            as_of=versionutils.deprecated.LIBERTY,
+            in_favor_of='main keystone configuration file',
+            remove_in=+1,
+            what='Define local configuration in PasteDeploy '
+            'configuration file')(lambda: None)()
     controllers.register_version('v2.0')
     return wsgi.ComposingRouter(routes.Mapper(),
                                 [assignment.routers.Public(),
@@ -75,6 +83,13 @@ def public_app_factory(global_conf, **local_conf):
 
 @fail_gracefully
 def admin_app_factory(global_conf, **local_conf):
+    if local_conf:
+        versionutils.deprecated(
+            as_of=versionutils.deprecated.LIBERTY,
+            in_favor_of='main keystone configuration file',
+            remove_in=+1,
+            what='Define local configuration in PasteDeploy '
+            'configuration file')(lambda: None)()
     controllers.register_version('v2.0')
     return wsgi.ComposingRouter(routes.Mapper(),
                                 [identity.routers.Admin(),
@@ -99,6 +114,13 @@ def admin_version_app_factory(global_conf, **local_conf):
 
 @fail_gracefully
 def v3_app_factory(global_conf, **local_conf):
+    if local_conf:
+        versionutils.deprecated(
+            as_of=versionutils.deprecated.LIBERTY,
+            in_favor_of='main keystone configuration file',
+            remove_in=+1,
+            what='Define local configuration in PasteDeploy '
+            'configuration file')(lambda: None)()
     controllers.register_version('v3')
     mapper = routes.Mapper()
     sub_routers = []
