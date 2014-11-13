@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a890539_cc9bab70",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2014-11-13T00:21:54Z",
+      "side": 1,
+      "message": "should this be \"not fully supported\"? It still works but just requires additioanl argument or scope.",
+      "revId": "552d05846b0c7befe8f604d57e9ad9775abf68b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_0cbf73d1",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 3
