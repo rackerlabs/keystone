@@ -261,7 +261,7 @@ class EndpointFilterCRUDTestCase(EndpointFilterTestCase):
         endpoint_id2 = uuid.uuid4().hex
         endpoint2 = unit.new_endpoint_ref(service_id=self.service_id,
                                           region_id=self.region_id,
-                                          interface='public',
+                                          interface='internal',
                                           id=endpoint_id2)
         self.catalog_api.create_endpoint(endpoint_id2, endpoint2.copy())
 
@@ -323,7 +323,7 @@ class EndpointFilterCRUDTestCase(EndpointFilterTestCase):
         endpoint_id2 = uuid.uuid4().hex
         endpoint2 = unit.new_endpoint_ref(service_id=self.service_id,
                                           region_id=self.region_id,
-                                          interface='public',
+                                          interface='internal',
                                           id=endpoint_id2)
         self.catalog_api.create_endpoint(endpoint_id2, endpoint2.copy())
         # create endpoint project association.
@@ -478,7 +478,7 @@ class EndpointFilterTokenRequestTestCase(EndpointFilterTestCase):
         endpoint_id2 = uuid.uuid4().hex
         endpoint2 = unit.new_endpoint_ref(service_id=self.service_id,
                                           region_id=self.region_id,
-                                          interface='public',
+                                          interface='internal',
                                           id=endpoint_id2)
         self.catalog_api.create_endpoint(endpoint_id2, endpoint2.copy())
 
@@ -545,17 +545,21 @@ class EndpointFilterTokenRequestTestCase(EndpointFilterTestCase):
 
     def test_multiple_endpoint_project_associations(self):
 
-        def _create_an_endpoint():
-            endpoint_ref = unit.new_endpoint_ref(service_id=self.service_id,
-                                                 interface='public',
+        def _create_an_endpoint(interface, service_id=self.service_id):
+            endpoint_ref = unit.new_endpoint_ref(service_id=service_id,
+                                                 interface=interface,
                                                  region_id=self.region_id)
             r = self.post('/endpoints', body={'endpoint': endpoint_ref})
             return r.result['endpoint']['id']
 
+        new_service_ref = unit.new_service_ref()
+        response = self.post('/services', body={'service': new_service_ref})
+        new_service_id = response.result['service']['id']
+
         # create three endpoints
-        endpoint_id1 = _create_an_endpoint()
-        endpoint_id2 = _create_an_endpoint()
-        _create_an_endpoint()
+        endpoint_id1 = _create_an_endpoint('internal')
+        endpoint_id2 = _create_an_endpoint('admin')
+        _create_an_endpoint('public', service_id=new_service_id)
 
         # only associate two endpoints with project
         self.put('/OS-EP-FILTER/projects/%(project_id)s'

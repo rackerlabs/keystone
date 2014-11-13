@@ -438,7 +438,7 @@ class NotificationsForEntities(BaseNotificationTest):
 
     def test_create_endpoint(self):
         endpoint_ref = unit.new_endpoint_ref(service_id=self.service_id,
-                                             interface='public',
+                                             interface='internal',
                                              region_id=self.region_id)
         self.catalog_api.create_endpoint(endpoint_ref['id'], endpoint_ref)
         self._assert_notify_sent(endpoint_ref['id'], CREATED_OPERATION,
@@ -448,7 +448,7 @@ class NotificationsForEntities(BaseNotificationTest):
 
     def test_update_endpoint(self):
         endpoint_ref = unit.new_endpoint_ref(service_id=self.service_id,
-                                             interface='public',
+                                             interface='internal',
                                              region_id=self.region_id)
         self.catalog_api.create_endpoint(endpoint_ref['id'], endpoint_ref)
         self.catalog_api.update_endpoint(endpoint_ref['id'], endpoint_ref)
@@ -459,7 +459,7 @@ class NotificationsForEntities(BaseNotificationTest):
 
     def test_delete_endpoint(self):
         endpoint_ref = unit.new_endpoint_ref(service_id=self.service_id,
-                                             interface='public',
+                                             interface='internal',
                                              region_id=self.region_id)
         self.catalog_api.create_endpoint(endpoint_ref['id'], endpoint_ref)
         self.catalog_api.delete_endpoint(endpoint_ref['id'])
