@@ -157,7 +157,9 @@ class XmlBodyMiddleware(wsgi.Middleware):
         in_favor_of='support for "application/json" only',
         remove_in=+2)
     def __init__(self, *args, **kwargs):
-        super(XmlBodyMiddleware, self).__init__(*args, **kwargs)
+        if kwargs:
+            raise exception.LocalConfigNotAllowed(configuration=kwargs)
+        super(XmlBodyMiddleware, self).__init__(*args)
         self.xmlns = None
 
     def process_request(self, request):
@@ -192,7 +194,9 @@ class XmlBodyMiddlewareV2(XmlBodyMiddleware):
     """De/serializes XML to/from JSON for v2.0 API."""
 
     def __init__(self, *args, **kwargs):
-        super(XmlBodyMiddlewareV2, self).__init__(*args, **kwargs)
+        if kwargs:
+            raise exception.LocalConfigNotAllowed(configuration=kwargs)
+        super(XmlBodyMiddlewareV2, self).__init__(*args)
         self.xmlns = 'http://docs.openstack.org/identity/api/v2.0'
 
 
@@ -200,7 +204,9 @@ class XmlBodyMiddlewareV3(XmlBodyMiddleware):
     """De/serializes XML to/from JSON for v3 API."""
 
     def __init__(self, *args, **kwargs):
-        super(XmlBodyMiddlewareV3, self).__init__(*args, **kwargs)
+        if kwargs:
+            raise exception.LocalConfigNotAllowed(configuration=kwargs)
+        super(XmlBodyMiddlewareV3, self).__init__(*args)
         self.xmlns = 'http://docs.openstack.org/identity/api/v3'
 
 
@@ -222,7 +228,9 @@ class RequestBodySizeLimiter(wsgi.Middleware):
     """Limit the size of an incoming request."""
 
     def __init__(self, *args, **kwargs):
-        super(RequestBodySizeLimiter, self).__init__(*args, **kwargs)
+        if kwargs:
+            raise exception.LocalConfigNotAllowed(configuration=kwargs)
+        super(RequestBodySizeLimiter, self).__init__(*args)
 
     @webob.dec.wsgify()
     def __call__(self, req):
