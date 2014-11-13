@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_bc2be492",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-13T11:05:10Z",
+      "side": 1,
+      "message": "it just hit me, maybe it\u0027d be better to call it \u0027mapped_methods\u0027 ? I think at the end we decide here whether mapping engine will be used or not?",
+      "revId": "3ba21517c0f9298174d1dc20090be758b13ff6f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
