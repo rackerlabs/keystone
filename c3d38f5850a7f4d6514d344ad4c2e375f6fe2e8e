@@ -16,6 +16,24 @@
       "revId": "c3d38f5850a7f4d6514d344ad4c2e375f6fe2e8e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_fab1ebe1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-13T12:22:11Z",
+      "side": 1,
+      "message": "I think the point is that while the OpenID part is summarised here already, with details in its own .rst file, for SAML the details are (incorrectly) in the common .rst",
+      "parentUuid": "7a8c0949_b416a1ef",
+      "revId": "c3d38f5850a7f4d6514d344ad4c2e375f6fe2e8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
