@@ -51,6 +51,40 @@
       "revId": "85c6940d66614fe68fbc393f025a5d5216c1dff9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_fa848bd5",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-13T12:33:38Z",
+      "side": 1,
+      "message": "nit: is it the group_ids that are empty, or the list that is empty, assuming it is the later, then maybe say:\n\n\"should return an empty list of group_ids\"",
+      "revId": "85c6940d66614fe68fbc393f025a5d5216c1dff9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_9a4aa7aa",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 759,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-13T12:33:38Z",
+      "side": 1,
+      "message": "++",
+      "revId": "85c6940d66614fe68fbc393f025a5d5216c1dff9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
