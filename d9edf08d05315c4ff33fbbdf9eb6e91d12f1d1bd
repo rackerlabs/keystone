@@ -16,6 +16,24 @@
       "revId": "d9edf08d05315c4ff33fbbdf9eb6e91d12f1d1bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_1dbb1173",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-13T12:57:16Z",
+      "side": 1,
+      "message": "ahh, i changed the commit message and didn\u0027t remove that acapit :(",
+      "parentUuid": "5a890539_3db0cd42",
+      "revId": "d9edf08d05315c4ff33fbbdf9eb6e91d12f1d1bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
