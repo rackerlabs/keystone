@@ -273,6 +273,7 @@ def new_endpoint_ref(service_id, interface='public',
         'description': uuid.uuid4().hex,
         'interface': interface,
         'service_id': service_id,
+        'enabled': True,
         'url': 'https://' + uuid.uuid4().hex + '.com',
     }
 

@@ -246,6 +246,9 @@ class TestTemplatedCatalog(unit.TestCase, catalog_tests.CatalogTests):
     def test_create_endpoint(self):
         self.skipTest(BROKEN_WRITE_FUNCTIONALITY_MSG)
 
+    def test_create_endpoint_with_duplicate_entry(self):
+        self.skipTest(BROKEN_WRITE_FUNCTIONALITY_MSG)
+
     def test_update_endpoint(self):
         self.skipTest(BROKEN_WRITE_FUNCTIONALITY_MSG)
 
