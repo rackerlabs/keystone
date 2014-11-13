@@ -333,7 +333,8 @@ class EndpointFilterTokenRequestTestCase(TestExtensionCase):
 
         # create a second temporary endpoint
         self.endpoint_id2 = uuid.uuid4().hex
-        self.endpoint2 = self.new_endpoint_ref(service_id=self.service_id)
+        self.endpoint2 = self.new_endpoint_ref(service_id=self.service_id,
+                                               interface='internal')
         self.endpoint2['id'] = self.endpoint_id2
         self.catalog_api.create_endpoint(
             self.endpoint_id2,
@@ -402,15 +403,19 @@ class EndpointFilterTokenRequestTestCase(TestExtensionCase):
 
     def test_multiple_endpoint_project_associations(self):
 
-        def _create_an_endpoint():
-            endpoint_ref = self.new_endpoint_ref(service_id=self.service_id)
+        def _create_an_endpoint(interface, service_id=self.service_id):
+            endpoint_ref = self.new_endpoint_ref(service_id=service_id,
+                                                 interface=interface)
             r = self.post('/endpoints', body={'endpoint': endpoint_ref})
             return r.result['endpoint']['id']
 
+        new_service_ref = self.new_service_ref()
+        response = self.post('/services', body={'service': new_service_ref})
+        new_service_id = response.result['service']['id']
         # create three endpoints
-        endpoint_id1 = _create_an_endpoint()
-        endpoint_id2 = _create_an_endpoint()
-        _create_an_endpoint()
+        endpoint_id1 = _create_an_endpoint('internal')
+        endpoint_id2 = _create_an_endpoint('admin')
+        _create_an_endpoint('public', service_id=new_service_id)
 
         # only associate two endpoints with project
         self.put('/OS-EP-FILTER/projects/%(project_id)s'

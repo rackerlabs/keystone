@@ -643,6 +643,38 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.upgrade(75)
         self.assertTableColumns(config_registration, ['type', 'domain_id'])
 
+    def test_endpoint_unique_constraint(self):
+        self.upgrade(81)
+        service_id = uuid.uuid4().hex
+        interface = uuid.uuid4().hex[:8]
+        url = uuid.uuid4().hex
+        region_id = uuid.uuid4().hex
+        session = self.Session()
+
+        endpoint = {
+            'id': uuid.uuid4().hex,
+            'interface': interface,
+            'service_id': service_id,
+            'url': url,
+            'region_id': region_id
+        }
+        self.insert_dict(session, 'endpoint', endpoint)
+
+        endpoint_2 = {
+            'id': uuid.uuid4().hex,
+            'interface': interface,
+            'service_id': service_id,
+            'url': url,
+            'region_id': region_id
+        }
+
+        self.assertRaises(
+            db_exception.DBDuplicateEntry,
+            self.insert_dict,
+            session,
+            'endpoint',
+            endpoint_2)
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
