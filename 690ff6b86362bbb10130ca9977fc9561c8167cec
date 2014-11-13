@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a890539_ecb787d6",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2014-11-13T00:25:40Z",
+      "side": 1,
+      "message": "\"application\" without \"s\" to match the first sentence.",
+      "revId": "690ff6b86362bbb10130ca9977fc9561c8167cec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_3aed61f0",
         "filename": "doc/source/configuringservices.rst",
         "patchSetId": 1
