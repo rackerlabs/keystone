@@ -79,6 +79,8 @@ class Endpoint(sql.ModelBase, sql.DictBase):
     enabled = sql.Column(sql.Boolean, nullable=False, default=True,
                          server_default=sqlalchemy.sql.expression.true())
     extra = sql.Column(sql.JsonBlob())
+    __table_args__ = (sql.UniqueConstraint('service_id', 'region_id',
+                                           'interface'),)
 
 
 class Catalog(catalog.CatalogDriverV8):
@@ -213,9 +215,19 @@ class Catalog(catalog.CatalogDriverV8):
     # Endpoints
     def create_endpoint(self, endpoint_id, endpoint_ref):
         new_endpoint = Endpoint.from_dict(endpoint_ref)
-        with sql.session_for_write() as session:
-            session.add(new_endpoint)
-        return new_endpoint.to_dict()
+        try:
+            with sql.session_for_write() as session:
+                session.add(new_endpoint)
+            return new_endpoint.to_dict()
+        except sql.DBDuplicateEntry:
+            raise exception.Conflict(
+                message=_('There is already an existing endpoint with '
+                          'this combination of service_id, region_id and '
+                          'interface (%(service_id)s, %(region_id)s, '
+                          '%(interface)s).')
+                % {'service_id': endpoint_ref['service_id'],
+                    'region_id': endpoint_ref['region_id'],
+                    'interface': endpoint_ref['interface']})
 
     def delete_endpoint(self, endpoint_id):
         with sql.session_for_write() as session:

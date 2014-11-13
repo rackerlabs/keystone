@@ -29,6 +29,7 @@ WARNING::
     all data will be lost.
 """
 
+import copy
 import json
 import uuid
 
@@ -937,6 +938,65 @@ class SqlUpgradeTests(SqlMigrateBase):
                                  'protocol_id',
                                  'unique_id',
                                  'display_name'])
+
+    def test_endpoint_unique_constraint(self):
+        self.upgrade(94)
+        session = self.Session()
+        endpoint = {
+            'id': uuid.uuid4().hex,
+            'interface': uuid.uuid4().hex[:8],
+            'service_id': uuid.uuid4().hex,
+            'url': uuid.uuid4().hex,
+            'region_id': uuid.uuid4().hex
+        }
+        self.insert_dict(session, 'endpoint', endpoint)
+
+        self.upgrade(95)
+        # After the migration it is not possible to insert this same
+        # configuration with a different id
+        endpoint['id'] = uuid.uuid4().hex
+
+        self.assertRaises(
+            db_exception.DBDuplicateEntry,
+            self.insert_dict,
+            session,
+            'endpoint',
+            endpoint)
+
+        original_dict = copy.copy(endpoint)
+        # Insertion is allowed if any attribute is changed
+        endpoint['interface'] = uuid.uuid4().hex
+        endpoint['id'] = uuid.uuid4().hex
+        self.insert_dict(session, 'endpoint', endpoint)
+
+        endpoint = original_dict
+        endpoint['service_id'] = uuid.uuid4().hex
+        endpoint['id'] = uuid.uuid4().hex
+        self.insert_dict(session, 'endpoint', endpoint)
+
+        endpoint = original_dict
+        endpoint['region_id'] = uuid.uuid4().hex
+        endpoint['id'] = uuid.uuid4().hex
+        self.insert_dict(session, 'endpoint', endpoint)
+
+    def test_endpoint_unique_constraint_fails_if_duplicates(self):
+        self.upgrade(94)
+        session = self.Session()
+
+        endpoint = {
+            'id': uuid.uuid4().hex,
+            'interface': uuid.uuid4().hex[:8],
+            'service_id': uuid.uuid4().hex,
+            'url': uuid.uuid4().hex,
+            'region_id': uuid.uuid4().hex
+        }
+        self.insert_dict(session, 'endpoint', endpoint)
+
+        endpoint['id'] = uuid.uuid4().hex
+        self.insert_dict(session, 'endpoint', endpoint)
+        self.assertRaises(exception.Conflict,
+                          self.upgrade,
+                          95)
 
 
 class VersionTests(SqlMigrateBase):
