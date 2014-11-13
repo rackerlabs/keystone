@@ -16,9 +16,9 @@ from oslo.serialization import jsonutils
 import webob
 
 from keystone import config
+from keystone import exception
 from keystone import middleware
 from keystone import tests
-
 
 CONF = config.CONF
 
@@ -166,3 +166,22 @@ class XmlBodyMiddlewareTest(tests.TestCase):
         middleware.XmlBodyMiddleware(None).process_request(req)
         self.assertEqual(body, req.body)
         self.assertEqual(content_type, req.content_type)
+
+    def test_middle_local_config(self):
+        self.assertRaises(exception.LocalConfigNotAllowed,
+                          middleware.XmlBodyMiddleware,
+                          {}, testkey="test")
+
+
+class XmlBodyMiddlewareV2Test(tests.TestCase):
+    def test_middlev2_local_config(self):
+        self.assertRaises(exception.LocalConfigNotAllowed,
+                          middleware.XmlBodyMiddlewareV2,
+                          {}, testkey="test")
+
+
+class XmlBodyMiddlewareV3Test(tests.TestCase):
+    def test_middlev3_local_config(self):
+        self.assertRaises(exception.LocalConfigNotAllowed,
+                          middleware.XmlBodyMiddlewareV3,
+                          {}, testkey="test")
