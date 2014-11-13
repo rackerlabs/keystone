@@ -511,7 +511,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
     def test_create_endpoint_no_enabled(self):
         """Call ``POST /endpoints``."""
         ref = unit.new_endpoint_ref(service_id=self.service_id,
-                                    interface='public',
+                                    interface='internal',
                                     region_id=self.region_id)
         r = self.post('/endpoints', body={'endpoint': ref})
         ref['enabled'] = True
@@ -520,7 +520,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
     def test_create_endpoint_enabled_true(self):
         """Call ``POST /endpoints`` with enabled: true."""
         ref = unit.new_endpoint_ref(service_id=self.service_id,
-                                    interface='public',
+                                    interface='internal',
                                     region_id=self.region_id,
                                     enabled=True)
         r = self.post('/endpoints', body={'endpoint': ref})
@@ -529,7 +529,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
     def test_create_endpoint_enabled_false(self):
         """Call ``POST /endpoints`` with enabled: false."""
         ref = unit.new_endpoint_ref(service_id=self.service_id,
-                                    interface='public',
+                                    interface='internal',
                                     region_id=self.region_id,
                                     enabled=False)
         r = self.post('/endpoints', body={'endpoint': ref})
@@ -738,7 +738,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         valid_url = 'http://127.0.0.1:8774/v1.1/$(tenant_id)s'
 
         ref = unit.new_endpoint_ref(self.service_id,
-                                    interface='public',
+                                    interface='internal',
                                     region_id=self.region_id,
                                     url=valid_url)
         self.post('/endpoints', body={'endpoint': ref})
