@@ -424,6 +424,12 @@ class ConfigFileNotFound(UnexpectedError):
                              "could not be found.")
 
 
+class LocalConfigNotAllowed(UnexpectedError):
+    debug_message_format = _("The local configuration %(configuration)s "
+                             "is not allowed in PasteDeploy configuration "
+                             "file %(config_file)s.")
+
+
 class MultipleSQLDriversInConfig(UnexpectedError):
     message_format = _('The Keystone domain configuration file '
                        '%(config_file)s defines an additional SQL driver - '
