@@ -124,6 +124,24 @@
       "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_1d179152",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-11-13T12:59:59Z",
+      "side": 1,
+      "message": "from https://bugs.launchpad.net/heat/+bug/1235555 where same problem resolved - \n\nResearching in order to understand this bug I found that there is another header that could be handy: X-Forwarded-Proto, which contains the protocol used before the proxy removed the ssh thing (in this case is \u0027https\u0027).\nSo if the webob.Request instance is modified in order to use this schema instead of the one defined by Heat API, the call to webob.Request.relative_url() will return a URL with the correct schema.\nI think that the X-Forwarded-For won\u0027t be needed, because webob uses the env(HTTP_HOST) to create a URL in webob.Request.relative_url(), and that environment variable is the same that comes in X-Forwarded-For.\nThis modification could be done in heat.api.openstack.v1.util.make_url() or a new middleware could be added in order to alter the request. Any though about the best place to implement the change?",
+      "parentUuid": "5a890539_bf968c92",
+      "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
