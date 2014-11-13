@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_ec45b170",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-11-13T14:58:19Z",
+      "side": 1,
+      "message": "Since this patch all applications using local_config will fail, isn\u0027t it? Is it possible somebody still uses local_config?",
+      "revId": "45c02a86f86c186579c907c5cebe01e46d8bbc00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
