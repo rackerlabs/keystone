@@ -16,6 +16,23 @@
       "revId": "3ba21517c0f9298174d1dc20090be758b13ff6f7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_91c44a60",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-11-13T14:19:39Z",
+      "side": 1,
+      "message": "+1 to Marek Denis about naming if federation_methods are not used elsewhere.",
+      "revId": "3ba21517c0f9298174d1dc20090be758b13ff6f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
