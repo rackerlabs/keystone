@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_164ccb41",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-13T15:31:46Z",
+      "side": 1,
+      "message": "the copyright headers seem to be clobbered together",
+      "revId": "9d1e86e2a8ac3e25b1400289bc93a7b30d53af6b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
