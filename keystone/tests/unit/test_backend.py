@@ -5894,6 +5894,24 @@ class CatalogTests(object):
                                          region_id=None)
         self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
 
+    def test_create_endpoint_with_duplicate_entry(self):
+        service_ref = unit.new_service_ref()
+        self.catalog_api.create_service(service_ref['id'], service_ref)
+
+        region_ref = unit.new_region_ref()
+        self.catalog_api.create_region(region_ref)
+
+        new_endpoint = unit.new_endpoint_ref(service_id=service_ref['id'],
+                                             region_id=region_ref['id'])
+
+        self.catalog_api.create_endpoint(new_endpoint['id'], new_endpoint)
+
+        new_endpoint['id'] = uuid.uuid4().hex
+        self.assertRaises(exception.Conflict,
+                          self.catalog_api.create_endpoint,
+                          new_endpoint['id'],
+                          new_endpoint)
+
     def test_update_endpoint(self):
         dummy_service_ref, endpoint_ref, dummy_disabled_endpoint_ref = (
             self._create_endpoints())
