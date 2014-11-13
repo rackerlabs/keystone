@@ -87,6 +87,24 @@
       "revId": "3b9c3e305fc23b2644f02b212bdf3b24412b5f3c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_1c84f80a",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-13T10:49:24Z",
+      "side": 1,
+      "message": "slightly suboptimal :(",
+      "parentUuid": "5a890539_48133166",
+      "revId": "3b9c3e305fc23b2644f02b212bdf3b24412b5f3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
