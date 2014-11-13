@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_3db0cd42",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-13T12:37:27Z",
+      "side": 1,
+      "message": "So I\u0027m confused...where in the patch do we insure the ``user_name`` property appears in the token?  Do we mean that we included, but it\u0027s encoded in ``user_id``?",
+      "revId": "d9edf08d05315c4ff33fbbdf9eb6e91d12f1d1bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
