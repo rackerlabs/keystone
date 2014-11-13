@@ -822,6 +822,62 @@ class SqlUpgradeTests(SqlMigrateBase):
         constraint_names = [constraint['name'] for constraint in constraints]
         self.assertIn('duplicate_trust_constraint', constraint_names)
 
+    def test_endpoint_unique_constraint(self):
+        self.upgrade(87)
+        session = self.Session()
+        endpoint = {
+            'id': uuid.uuid4().hex,
+            'interface': uuid.uuid4().hex[:8],
+            'service_id': uuid.uuid4().hex,
+            'url': uuid.uuid4().hex,
+            'region_id': uuid.uuid4().hex
+        }
+        self.insert_dict(session, 'endpoint', endpoint)
+
+        self.upgrade(88)
+        # After the migration it is not possible to insert this same
+        # configuration with a different id
+        endpoint['id'] = uuid.uuid4().hex
+
+        self.assertRaises(
+            db_exception.DBDuplicateEntry,
+            self.insert_dict,
+            session,
+            'endpoint',
+            endpoint)
+
+        original_dict = copy.copy(endpoint)
+        # Insertion is allowed if any of the attributes is changed
+        endpoint['interface'] = uuid.uuid4().hex
+        endpoint['id'] = uuid.uuid4().hex
+        self.insert_dict(session, 'endpoint', endpoint)
+
+        endpoint = original_dict
+        endpoint['service_id'] = uuid.uuid4().hex
+        endpoint['id'] = uuid.uuid4().hex
+        self.insert_dict(session, 'endpoint', endpoint)
+
+        endpoint = original_dict
+        endpoint['region_id'] = uuid.uuid4().hex
+        endpoint['id'] = uuid.uuid4().hex
+        self.insert_dict(session, 'endpoint', endpoint)
+
+    def test_endpoint_unique_constraint_fails_if_duplicates(self):
+        self.upgrade(87)
+        session = self.Session()
+
+        endpoint = {
+            'id': uuid.uuid4().hex,
+            'interface': uuid.uuid4().hex[:8],
+            'service_id': uuid.uuid4().hex,
+            'url': uuid.uuid4().hex,
+            'region_id': uuid.uuid4().hex
+        }
+        self.insert_dict(session, 'endpoint', endpoint)
+
+        endpoint['id'] = uuid.uuid4().hex
+        self.insert_dict(session, 'endpoint', endpoint)
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
