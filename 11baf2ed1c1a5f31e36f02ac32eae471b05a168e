@@ -68,6 +68,24 @@
       "revId": "11baf2ed1c1a5f31e36f02ac32eae471b05a168e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_2f0b4126",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-13T01:09:48Z",
+      "side": 1,
+      "message": "We talked about this at the summit. Disable will / should be recursive. Delete will require a disable first. (e.g. cannot delete a parent if it isn\u0027t disabled).",
+      "parentUuid": "5a890539_0b73de15",
+      "revId": "11baf2ed1c1a5f31e36f02ac32eae471b05a168e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
