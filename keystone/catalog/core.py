@@ -19,6 +19,7 @@ import abc
 import itertools
 
 from oslo_config import cfg
+from oslo_db import exception as db_exception
 from oslo_log import log
 import six
 
@@ -237,7 +238,17 @@ class Manager(manager.Manager):
     def create_endpoint(self, endpoint_id, endpoint_ref, initiator=None):
         self._assert_region_exists(endpoint_ref.get('region_id'))
         self._assert_service_exists(endpoint_ref['service_id'])
-        ref = self.driver.create_endpoint(endpoint_id, endpoint_ref)
+        try:
+            ref = self.driver.create_endpoint(endpoint_id, endpoint_ref)
+        except db_exception.DBDuplicateEntry:
+            raise exception.Conflict(
+                message=_('There is already an existing endpoint with this '
+                          'combination of service_id, region_id and '
+                          'interface (%(service_id)s, %(region_id)s, '
+                          '%(interface)s)')
+                % {'service_id': endpoint_ref['service_id'],
+                   'region_id': endpoint_ref['region_id'],
+                   'interface': endpoint_ref['interface']})
 
         notifications.Audit.created(self._ENDPOINT, endpoint_id, initiator)
         return ref

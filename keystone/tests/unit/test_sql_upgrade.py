@@ -643,6 +643,56 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.upgrade(75)
         self.assertTableColumns(config_registration, ['type', 'domain_id'])
 
+    def test_change_url_type(self):
+        self.upgrade(81)
+        endpoint_table = sqlalchemy.Table('endpoint',
+                                          self.metadata,
+                                          autoload=True)
+        self.assertEqual(255, endpoint_table.c.url.type.length)
+
+    def test_endpoint_unique_constraint(self):
+        self.upgrade(80)
+        session = self.Session()
+        endpoint = {
+            'id': uuid.uuid4().hex,
+            'interface': uuid.uuid4().hex[:8],
+            'service_id': uuid.uuid4().hex,
+            'url': uuid.uuid4().hex,
+            'region_id': uuid.uuid4().hex
+        }
+        self.insert_dict(session, 'endpoint', endpoint)
+
+        self.upgrade(81)
+        # After the migration it is not
+        endpoint['id'] = uuid.uuid4().hex
+
+        self.assertRaises(
+            db_exception.DBDuplicateEntry,
+            self.insert_dict,
+            session,
+            'endpoint',
+            endpoint)
+
+    def test_endpoint_unique_constraint_fails_if_duplicates(self):
+        self.upgrade(80)
+        session = self.Session()
+
+        endpoint = {
+            'id': uuid.uuid4().hex,
+            'interface': uuid.uuid4().hex[:8],
+            'service_id': uuid.uuid4().hex,
+            'url': uuid.uuid4().hex,
+            'region_id': uuid.uuid4().hex
+        }
+        self.insert_dict(session, 'endpoint', endpoint)
+
+        endpoint['id'] = uuid.uuid4().hex
+        self.insert_dict(session, 'endpoint', endpoint)
+
+        self.assertRaises(db_exception.DBDuplicateEntry,
+                          self.upgrade,
+                          81)
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user

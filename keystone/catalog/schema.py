@@ -80,7 +80,7 @@ _endpoint_properties = {
     'service_id': {
         'type': 'string'
     },
-    'url': parameter_types.url
+    'url': parameter_types.url,
 }
 
 endpoint_create = {

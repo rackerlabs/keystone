@@ -525,7 +525,8 @@ class CatalogTestCase(test_v3.RestfulTestCase):
 
     def test_create_endpoint_no_enabled(self):
         """Call ``POST /endpoints``."""
-        ref = self.new_endpoint_ref(service_id=self.service_id)
+        ref = self.new_endpoint_ref(service_id=self.service_id,
+                                    interface='internal')
         r = self.post(
             '/endpoints',
             body={'endpoint': ref})
@@ -535,6 +536,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
     def test_create_endpoint_enabled_true(self):
         """Call ``POST /endpoints`` with enabled: true."""
         ref = self.new_endpoint_ref(service_id=self.service_id,
+                                    interface='internal',
                                     enabled=True)
         r = self.post(
             '/endpoints',
@@ -544,6 +546,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
     def test_create_endpoint_enabled_false(self):
         """Call ``POST /endpoints`` with enabled: false."""
         ref = self.new_endpoint_ref(service_id=self.service_id,
+                                    interface='internal',
                                     enabled=False)
         r = self.post(
             '/endpoints',
@@ -558,6 +561,25 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             '/endpoints',
             body={'endpoint': ref},
             expected_status=http_client.BAD_REQUEST)
+
+    def test_create_endpoint_with_duplicate_entry(self):
+        """Call ``POST /endpoints``."""
+        ref = self.new_endpoint_ref(service_id=self.service_id,
+                                    region_id=self.region_id,
+                                    interface='internal',
+                                    url='https://example.com',
+                                    enabled=True)
+        r = self.post(
+            '/endpoints',
+            body={'endpoint': ref})
+        self.assertValidEndpointResponse(r, ref)
+
+        ref['id'] = uuid.uuid4().hex
+
+        r = self.post(
+            '/endpoints',
+            body={'endpoint': ref},
+            expected_status=http_client.CONFLICT)
 
     def test_create_endpoint_enabled_str_false(self):
         """Call ``POST /endpoints`` with enabled: 'False'."""
@@ -730,7 +752,8 @@ class CatalogTestCase(test_v3.RestfulTestCase):
 
     def test_deleting_endpoint_with_space_in_url(self):
         # create a v3 endpoint ref
-        ref = self.new_endpoint_ref(service_id=self.service['id'])
+        ref = self.new_endpoint_ref(service_id=self.service['id'],
+                                    interface='internal')
 
         # add a space to all urls (intentional "i d" to test bug)
         url_with_space = "http://127.0.0.1:8774 /v1.1/\$(tenant_i d)s"
@@ -754,7 +777,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         # list one valid url is enough, no need to list too much
         valid_url = 'http://127.0.0.1:8774/v1.1/$(tenant_id)s'
 
-        ref = self.new_endpoint_ref(self.service_id)
+        ref = self.new_endpoint_ref(self.service_id, interface='internal')
         ref['url'] = valid_url
         self.post('/endpoints', body={'endpoint': ref})
 
