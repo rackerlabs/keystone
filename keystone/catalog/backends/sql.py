@@ -85,6 +85,8 @@ class Endpoint(sql.ModelBase, sql.DictBase):
     enabled = sql.Column(sql.Boolean, nullable=False, default=True,
                          server_default=sqlalchemy.sql.expression.true())
     extra = sql.Column(sql.JsonBlob())
+    __table_args__ = (sql.UniqueConstraint('service_id', 'region_id',
+                                           'interface', 'url'), {})
 
 
 class Catalog(catalog.Driver):
@@ -227,6 +229,10 @@ class Catalog(catalog.Driver):
         session = sql.get_session()
         new_endpoint = Endpoint.from_dict(endpoint_ref)
 
+        # NOTE(henry-nash): We'd like to just let the foreign key constraint
+        # check for existence of the region, but this won't work with sqlite.
+        if endpoint_ref.get('region_id') is not None:
+            self.get_region(endpoint_ref['region_id'])
         with session.begin():
             session.add(new_endpoint)
         return new_endpoint.to_dict()

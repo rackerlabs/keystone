@@ -553,6 +553,42 @@ class SqlUpgradeTests(SqlMigrateBase):
             self.assertFalse(self._does_index_exist('assignment',
                                                     'assignment_role_id_fkey'))
 
+    def test_unique_contraint_endpoint(self):
+        self.upgrade(73)
+        service_id = uuid.uuid4().hex
+        interface = uuid.uuid4().hex[:8]
+        url = uuid.uuid4().hex
+        region_id = uuid.uuid4().hex
+        session = self.Session()
+
+        endpoint = {
+            'id': uuid.uuid4().hex,
+            'interface': interface,
+            'service_id': service_id,
+            'url': url,
+            'region_id': region_id
+        }
+        self.insert_dict(session, 'endpoint', endpoint)
+
+        endpoint_2 = {
+            'id': uuid.uuid4().hex,
+            'interface': interface,
+            'service_id': service_id,
+            'url': url,
+            'region_id': region_id
+        }
+
+        self.assertRaises(
+            db_exception.DBDuplicateEntry,
+            self.insert_dict,
+            session,
+            'endpoint',
+            endpoint_2)
+
+        session.close()
+        session = self.Session()
+        self.metadata.clear()
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
