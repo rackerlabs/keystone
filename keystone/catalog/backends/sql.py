@@ -16,6 +16,7 @@
 import itertools
 
 from oslo_config import cfg
+from oslo_db import exception as db_exception
 import sqlalchemy
 from sqlalchemy.sql import true
 
@@ -23,6 +24,7 @@ from keystone import catalog
 from keystone.catalog import core
 from keystone.common import sql
 from keystone import exception
+from keystone.i18n import _
 
 
 CONF = cfg.CONF
@@ -84,6 +86,8 @@ class Endpoint(sql.ModelBase, sql.DictBase):
     enabled = sql.Column(sql.Boolean, nullable=False, default=True,
                          server_default=sqlalchemy.sql.expression.true())
     extra = sql.Column(sql.JsonBlob())
+    __table_args__ = (sql.UniqueConstraint('service_id', 'region_id',
+                                           'interface'), {})
 
 
 class Catalog(catalog.CatalogDriverV8):
@@ -226,8 +230,18 @@ class Catalog(catalog.CatalogDriverV8):
         session = sql.get_session()
         new_endpoint = Endpoint.from_dict(endpoint_ref)
 
-        with session.begin():
-            session.add(new_endpoint)
+        try:
+            with session.begin():
+                session.add(new_endpoint)
+        except db_exception.DBDuplicateEntry:
+            raise exception.ValidationError(
+                message=_('There is already an existing endpoint with this '
+                          'combination of service_id, region_id and '
+                          'interface (%(service_id)s, %(region_id)s, '
+                          '%(interface)s)')
+                % {'service_id': endpoint_ref['service_id'],
+                   'region_id': endpoint_ref['region_id'],
+                   'interface': endpoint_ref['interface']})
         return new_endpoint.to_dict()
 
     def delete_endpoint(self, endpoint_id):
