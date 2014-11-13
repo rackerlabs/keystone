@@ -439,7 +439,8 @@ class NotificationsForEntities(BaseNotificationTest):
                                 'OS-TRUST:trust', cadftaxonomy.SECURITY_TRUST)
 
     def test_create_endpoint(self):
-        endpoint_ref = self.new_endpoint_ref(service_id=self.service_id)
+        endpoint_ref = self.new_endpoint_ref(service_id=self.service_id,
+                                             interface='internal')
         self.catalog_api.create_endpoint(endpoint_ref['id'], endpoint_ref)
         self._assert_notify_sent(endpoint_ref['id'], CREATED_OPERATION,
                                  'endpoint')
@@ -447,7 +448,8 @@ class NotificationsForEntities(BaseNotificationTest):
                                 'endpoint', cadftaxonomy.SECURITY_ENDPOINT)
 
     def test_update_endpoint(self):
-        endpoint_ref = self.new_endpoint_ref(service_id=self.service_id)
+        endpoint_ref = self.new_endpoint_ref(service_id=self.service_id,
+                                             interface='internal')
         self.catalog_api.create_endpoint(endpoint_ref['id'], endpoint_ref)
         self.catalog_api.update_endpoint(endpoint_ref['id'], endpoint_ref)
         self._assert_notify_sent(endpoint_ref['id'], UPDATED_OPERATION,
@@ -456,7 +458,8 @@ class NotificationsForEntities(BaseNotificationTest):
                                 'endpoint', cadftaxonomy.SECURITY_ENDPOINT)
 
     def test_delete_endpoint(self):
-        endpoint_ref = self.new_endpoint_ref(service_id=self.service_id)
+        endpoint_ref = self.new_endpoint_ref(service_id=self.service_id,
+                                             interface='internal')
         self.catalog_api.create_endpoint(endpoint_ref['id'], endpoint_ref)
         self.catalog_api.delete_endpoint(endpoint_ref['id'])
         self._assert_notify_sent(endpoint_ref['id'], DELETED_OPERATION,
