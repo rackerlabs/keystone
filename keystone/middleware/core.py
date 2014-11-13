@@ -188,8 +188,8 @@ class NormalizingFilter(wsgi.Middleware):
 class RequestBodySizeLimiter(wsgi.Middleware):
     """Limit the size of an incoming request."""
 
-    def __init__(self, *args, **kwargs):
-        super(RequestBodySizeLimiter, self).__init__(*args, **kwargs)
+    def __init__(self, *args):
+        super(RequestBodySizeLimiter, self).__init__(*args)
 
     @webob.dec.wsgify()
     def __call__(self, req):
