@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_6030e501",
+        "filename": "rally-scenarios/keystone.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-11-13T15:08:09Z",
+      "side": 1,
+      "message": "Just curious, why change the concurrent here?",
+      "revId": "ad1331a597927c269675851c40f87d8196a6f9a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
