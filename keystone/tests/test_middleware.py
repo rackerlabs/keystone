@@ -18,7 +18,6 @@ from keystone import config
 from keystone import middleware
 from keystone import tests
 
-
 CONF = config.CONF
 
 

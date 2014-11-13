@@ -55,3 +55,8 @@ class TestRequestBodySizeLimiter(tests.TestCase):
         self.assertRaises(exception.RequestTooLarge,
                           self.request.get_response,
                           self.middleware)
+
+    def test_local_config(self):
+        self.assertRaises(exception.LocalConfigNotAllowed,
+                          middleware.RequestBodySizeLimiter,
+                          {}, testkey="test")
