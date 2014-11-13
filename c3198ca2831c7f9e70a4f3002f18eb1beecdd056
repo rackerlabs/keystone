@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_400f692e",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-11-13T14:48:44Z",
+      "side": 1,
+      "message": "Might be a good candidate for a comment too.",
+      "parentUuid": "1abeadc6_f437f6fc",
+      "revId": "c3198ca2831c7f9e70a4f3002f18eb1beecdd056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_ff050f11",
         "filename": "keystone/trust/core.py",
         "patchSetId": 2
