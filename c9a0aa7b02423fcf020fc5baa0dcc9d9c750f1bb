@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_2096dd4c",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-11-13T14:57:18Z",
+      "side": 1,
+      "message": "is this fixing pep8 or just preference?",
+      "revId": "c9a0aa7b02423fcf020fc5baa0dcc9d9c750f1bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
