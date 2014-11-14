@@ -178,6 +178,24 @@
       "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_b63e6ad8",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-11-14T17:10:03Z",
+      "side": 1,
+      "message": "In that case, better option is to use  X-Forwarded-Proto.   But still you will be having problem. \n\nAssume  some   external client calls token , he will get a catalog which will have endpoints with http.\n\nAs an example try   keystone user-list  using public endpoint. The following will happen\n\n--  Gets token via HTTPS\n---  Token catalog has http endpoint for identity\n---- User list will go via http",
+      "parentUuid": "5a890539_54bab46e",
+      "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
