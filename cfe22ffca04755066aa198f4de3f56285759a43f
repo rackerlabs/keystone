@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_eae2d02d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-11-14T11:58:07Z",
+      "side": 1,
+      "message": "s/assignment/resource",
+      "revId": "cfe22ffca04755066aa198f4de3f56285759a43f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_8a0eac39",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 349,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-11-14T11:58:07Z",
+      "side": 1,
+      "message": "Why not keep this (from patch set 1) ? :-)\n\n # TODO(henry-nash): Rename the following two methods to match the more \t\t\n # meaningfully names ones above.",
+      "revId": "cfe22ffca04755066aa198f4de3f56285759a43f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_0d7736a1",
+        "filename": "keystone/backends.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-11-14T11:58:07Z",
+      "side": 1,
+      "message": "Great explanation! :)",
+      "revId": "cfe22ffca04755066aa198f4de3f56285759a43f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_6d135a0d",
+        "filename": "keystone/resource/__init__.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-11-14T11:58:07Z",
+      "side": 1,
+      "message": "s/2013/2014 ?\nThe year of publication of this work :-)",
+      "revId": "cfe22ffca04755066aa198f4de3f56285759a43f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
