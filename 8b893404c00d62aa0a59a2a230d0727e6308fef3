@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_cfcfd054",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-14T22:03:34Z",
+      "side": 1,
+      "message": "agreed",
+      "parentUuid": "5a890539_191beaca",
+      "revId": "8b893404c00d62aa0a59a2a230d0727e6308fef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_f41aa56d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 16
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_0fd638f1",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-14T22:03:34Z",
+      "side": 1,
+      "message": "agreed.",
+      "parentUuid": "5a890539_f41aa56d",
+      "revId": "8b893404c00d62aa0a59a2a230d0727e6308fef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_19720a11",
         "filename": "keystone/common/config.py",
         "patchSetId": 16
@@ -47,6 +83,24 @@
       "writtenOn": "2014-11-14T20:41:50Z",
       "side": 1,
       "message": "These need to include the now deprecated assignment options. OR we need a way that the assignment options \n(when/if added) would populate these values.",
+      "revId": "8b893404c00d62aa0a59a2a230d0727e6308fef3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_2f069486",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-14T22:03:34Z",
+      "side": 1,
+      "message": "oh...yeah, nice catch...had not thought of that.",
+      "parentUuid": "5a890539_19720a11",
       "revId": "8b893404c00d62aa0a59a2a230d0727e6308fef3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
