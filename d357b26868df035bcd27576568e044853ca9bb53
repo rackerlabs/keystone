@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_19e04a95",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-14T20:41:50Z",
+      "side": 0,
+      "message": "We are probably going to need proxy methods that go:\n\nassignment_api-\u003eresource_api \n\nThese methods will need @deprecated decorator(s). this is to ensure that third party code still continues to work and not need to guess where our methods went.\n\nThis applies to all the methods being moved.",
+      "revId": "d357b26868df035bcd27576568e044853ca9bb53",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
