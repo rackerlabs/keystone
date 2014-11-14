@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_1b2da7a8",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-14T16:43:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_fbcffb53",
+      "revId": "0f85d91a680f5289217d863924374ecbfa4f3115",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_1bd92722",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-14T16:32:53Z",
       "side": 1,
       "message": "Same comment here.",
+      "revId": "0f85d91a680f5289217d863924374ecbfa4f3115",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_5b1acf7d",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-14T16:43:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_1bd92722",
       "revId": "0f85d91a680f5289217d863924374ecbfa4f3115",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
