@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_fbcffb53",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-11-14T16:32:53Z",
+      "side": 1,
+      "message": "This should have a note to the open bug if we are not going to fix it in this patch.",
+      "revId": "0f85d91a680f5289217d863924374ecbfa4f3115",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_1bd92722",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-11-14T16:32:53Z",
+      "side": 1,
+      "message": "Same comment here.",
+      "revId": "0f85d91a680f5289217d863924374ecbfa4f3115",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
