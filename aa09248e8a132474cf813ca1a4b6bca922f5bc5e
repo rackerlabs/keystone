@@ -196,6 +196,24 @@
       "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_4dbdb0b6",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-11-14T17:56:44Z",
+      "side": 1,
+      "message": "so in that case I implemented using of X-Forwarded-Proto ...\n\nchecked this -\n\u0027keystone user-list\u0027(using public endpoint) returns token catalog with https in public url and http in internal. and next call uses https.\n\nbut \u0027keystone discover\u0027 returns \u0027http://Public.Url\" ...",
+      "parentUuid": "5a890539_b63e6ad8",
+      "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
