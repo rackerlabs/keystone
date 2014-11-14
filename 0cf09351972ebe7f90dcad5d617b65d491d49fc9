@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_0ab9ce14",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-11-14T17:15:59Z",
+      "side": 1,
+      "message": "if some one is using third party client, it will break. Only keystone client handles version discovery.    Keystone doesn\u0027t even document how to handle version discovery, so any third party clients such as jcloud will likely fail",
+      "revId": "0cf09351972ebe7f90dcad5d617b65d491d49fc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
