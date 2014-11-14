@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_2af69863",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4190,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-11-14T11:31:39Z",
+      "side": 1,
+      "message": "Are you sure there is no exception thrown here? What i saw is the exception is still thrown within the method of \"_require_matching_id\"",
+      "revId": "1183b75dec35f3d15cf51bbc6e3555030fad52ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
