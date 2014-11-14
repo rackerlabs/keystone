@@ -16,6 +16,24 @@
       "revId": "45c02a86f86c186579c907c5cebe01e46d8bbc00",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_b0012908",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-11-14T12:01:01Z",
+      "side": 1,
+      "message": "yes, i once submit one patch here (https://review.openstack.org/#/c/121439/) but you can check some comments there, local config seems should never be allowed, so in this patch set i just intent to clean some useless code here.",
+      "parentUuid": "5a890539_ec45b170",
+      "revId": "45c02a86f86c186579c907c5cebe01e46d8bbc00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
