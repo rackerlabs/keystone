@@ -247,6 +247,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_9b80b7f8",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-11-14T16:30:58Z",
+      "side": 1,
+      "message": "Update with a NOTE saying that this will be fixed by bug #1391682 ?",
+      "parentUuid": "5a890539_92dba31a",
+      "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_41e32b07",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 12
@@ -276,6 +294,24 @@
       "side": 1,
       "message": "as above.",
       "parentUuid": "5a890539_41e32b07",
+      "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_db7ddf1d",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-11-14T16:30:58Z",
+      "side": 1,
+      "message": "Same as above",
+      "parentUuid": "5a890539_b2d89f1e",
       "revId": "9a4920bb9db0cdd1d88b8ac7f5bf5211402ddeb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
