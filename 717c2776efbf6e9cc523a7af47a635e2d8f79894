@@ -16,6 +16,24 @@
       "revId": "717c2776efbf6e9cc523a7af47a635e2d8f79894",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_946e2a00",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-11-16T02:17:51Z",
+      "side": 1,
+      "message": "Thanks Lance, and sorry for haven\u0027t take it seriously, pls hit me back if I still miss something.",
+      "parentUuid": "5a890539_610ca743",
+      "revId": "717c2776efbf6e9cc523a7af47a635e2d8f79894",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
