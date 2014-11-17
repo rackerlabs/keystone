@@ -467,6 +467,10 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
         """
         super(TestTokenRevokeSelfAndAdmin, self).load_sample_data()
         # DomainA setup
+        self.cloud_domain = {'id': 'cloud_admin_domain_id',
+                             'name': 'Cloud_admin_domain'}
+        self.assignment_api.create_domain(self.cloud_domain['id'],
+                                          self.cloud_domain)
         self.domainA = self.new_domain_ref()
         self.assignment_api.create_domain(self.domainA['id'], self.domainA)
 
@@ -481,9 +485,13 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
         self.userNormalA = self.identity_api.create_user(self.userNormalA)
         self.userNormalA['password'] = password
 
-        self.assignment_api.create_grant(self.role['id'],
+        self.cloud_admin_role = {'id': uuid.uuid4().hex, 'name': 'cloud_admin'}
+        self.assignment_api.create_role(self.cloud_admin_role['id'],
+                                        self.cloud_admin_role)
+
+        self.assignment_api.create_grant(self.cloud_admin_role['id'],
                                          user_id=self.userAdminA['id'],
-                                         domain_id=self.domainA['id'])
+                                         domain_id=self.cloud_domain['id'])
 
         # Finally, switch to the v3 sample policy file
         self.orig_policy_file = CONF.policy_file
@@ -508,7 +516,7 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
             self.build_authentication_request(
                 user_id=self.userAdminA['id'],
                 password=self.userAdminA['password'],
-                domain_name=self.domainA['name']))
+                domain_name=self.cloud_domain['name']))
 
         self.head('/auth/tokens', headers=headers, expected_status=200,
                   token=adminA_token)
@@ -542,7 +550,7 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
             self.build_authentication_request(
                 user_id=self.userAdminA['id'],
                 password=self.userAdminA['password'],
-                domain_name=self.domainA['name']))
+                domain_name=self.cloud_domain['name']))
 
         self.head('/auth/tokens', headers=headers, expected_status=200,
                   token=adminA_token)
