@@ -66,8 +66,8 @@ class Manager(object):
 
     """
 
-    def __init__(self, driver_name):
-        self.driver = importutils.import_object(driver_name)
+    def __init__(self, driver_name, *args, **kwargs):
+        self.driver = importutils.import_object(driver_name, *args, **kwargs)
 
     def __getattr__(self, name):
         """Forward calls to the underlying driver."""
