@@ -16,6 +16,40 @@
       "revId": "a6d05cfe9332784911c01d1d150e6bc3005e7f3c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_cd025cb3",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-11-17T12:57:08Z",
+      "side": 1,
+      "message": "s/paste.deploy/PasteDeploy/\n\nWe want to keep it consistent, right? :)",
+      "revId": "a6d05cfe9332784911c01d1d150e6bc3005e7f3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_edb8f812",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-11-17T12:57:08Z",
+      "side": 1,
+      "message": "s/(and will not) be/(and will not be)/",
+      "revId": "a6d05cfe9332784911c01d1d150e6bc3005e7f3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
