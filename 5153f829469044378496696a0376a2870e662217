@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_5670af71",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-17T20:58:17Z",
+      "side": 1,
+      "message": "I\u0027d be interested in people\u0027s views on how I\u0027ve done this....it doesn\u0027t feel very pretty or pythonic....but given how we use these config values (and that you can\u0027t SET a config value), I struggled for a better way.",
+      "revId": "5153f829469044378496696a0376a2870e662217",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
