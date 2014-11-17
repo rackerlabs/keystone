@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_37708a71",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-17T16:06:33Z",
+      "side": 1,
+      "message": "I\u0027m not the above method of setting CONF values is allowed (the class doesn\u0027t support __setattr__ etc. Need to re-write this bit...",
+      "revId": "55b4c84a9a68de3fff851c5e8b153c0a59e6745d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
