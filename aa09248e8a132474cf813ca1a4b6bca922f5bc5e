@@ -214,6 +214,24 @@
       "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_78711f0b",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-11-17T17:22:58Z",
+      "side": 1,
+      "message": "In that case,  keystone uses public url. What will happen for internal client? The internal clients are now going to use https? Is that what  you ant.",
+      "parentUuid": "5a890539_4dbdb0b6",
+      "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
