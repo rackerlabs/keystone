@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_04a8c88b",
+        "filename": "README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-11-17T07:40:04Z",
+      "side": 1,
+      "message": "Maybe an anchor should be added? It is tracked on http://specs.openstack.org/openstack/keystone-specs/#identity-program-specifications , right?",
+      "revId": "ae29aa86db65841620e543b64a4426112dfdbd88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
