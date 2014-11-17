@@ -286,6 +286,24 @@
       "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_45b2b74c",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-11-17T18:56:38Z",
+      "side": 1,
+      "message": "There are 2 places you can see keystone url\n\n1) Catalog\n2) Links\n\nYou can fix  links by using  X_Forwarded-*, but you can\u0027t do anything about catalog.  Most of the clients (keystone client) rely on catalog and not link\n\nIf your intention is for internal clients to use http and external to use https, then it is not going to happen.",
+      "parentUuid": "5a890539_a27b51bc",
+      "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
