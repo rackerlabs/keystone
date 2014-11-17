@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_887a02bb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-11-17T14:04:06Z",
+      "side": 1,
+      "message": "There are checks that only one of project/domain or user/group are passed to create/list/check/revoke_grant methods.",
+      "revId": "9ff05c3682aa1853c1819e4d4428eedc8359cb23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_c857aa24",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-11-17T14:04:06Z",
+      "side": 1,
+      "message": "only router calls these methods",
+      "revId": "9ff05c3682aa1853c1819e4d4428eedc8359cb23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_081c5277",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-11-17T14:04:06Z",
+      "side": 1,
+      "message": "URL scheme does not accept both project and user simultaneously",
+      "revId": "9ff05c3682aa1853c1819e4d4428eedc8359cb23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_2354d1fd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-11-17T14:04:06Z",
+      "side": 1,
+      "message": "That is why the cases...",
+      "revId": "9ff05c3682aa1853c1819e4d4428eedc8359cb23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
