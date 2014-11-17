@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_7cd66929",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 12612
+      },
+      "writtenOn": "2014-11-17T22:56:43Z",
+      "side": 1,
+      "message": "Just a nit, if there\u0027s another revision consider dropping the trailing whitespace?",
+      "revId": "3726b01ac8d47c340c42827dc4b20ca42a811b4e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
