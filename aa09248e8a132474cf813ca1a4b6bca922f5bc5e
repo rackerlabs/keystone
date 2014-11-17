@@ -304,6 +304,24 @@
       "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_a5435bad",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-11-17T19:13:09Z",
+      "side": 1,
+      "message": "I care only about links. Because they formed by keystone.\n\nAnd issue that I faced was with new cinder client.\nIt makes request to publicURL without path.\nIt takes response with versions and it takes URL from it. And this URL has \u0027http\u0027 and public name.\nAnd next call to \u0027http\u0027 + publicName + \u0027/tokens\u0027 fails.\n\nAll cinder commands work in this way.\ncinder version is \u00271.1.1\u0027",
+      "parentUuid": "5a890539_45b2b74c",
+      "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
