@@ -250,6 +250,24 @@
       "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_2244c119",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-11-17T18:24:51Z",
+      "side": 1,
+      "message": "Sorry typo.\n\nSince keystone is using public url from catalog and the public url has https endpoint, what will happen if you do keystone user-list from internal.\n\n(i.e)  OS_AUTH_URL points to http endpoint of  keystone \nkeystone  user-list  \n\nI believe this will be using https. Is that what you want?",
+      "parentUuid": "5a890539_8f9e7e61",
+      "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
