@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_5f8a7f64",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-11-17T23:28:32Z",
+      "side": 1,
+      "message": "In the first sentence it was referring to a single application that\u0027s using the middleware. In this sentence, it\u0027s referring to all the applicaitons that are using the middleware.",
+      "parentUuid": "5a890539_ecb787d6",
+      "revId": "690ff6b86362bbb10130ca9977fc9561c8167cec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a8c0949_3aed61f0",
         "filename": "doc/source/configuringservices.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-03T18:58:45Z",
       "side": 1,
       "message": "Do we need to specify, pre Juno it is keystoneclient?",
+      "revId": "690ff6b86362bbb10130ca9977fc9561c8167cec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_5fb35f4c",
+        "filename": "doc/source/configuringservices.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-11-17T23:28:32Z",
+      "side": 1,
+      "message": "If someone wants pre-Juno info they can look at the docs for that release.",
+      "parentUuid": "7a8c0949_3aed61f0",
       "revId": "690ff6b86362bbb10130ca9977fc9561c8167cec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
