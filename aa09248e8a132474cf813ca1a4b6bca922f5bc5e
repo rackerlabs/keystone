@@ -340,6 +340,24 @@
       "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_dc3747e1",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-11-18T13:27:52Z",
+      "side": 1,
+      "message": "I\u0027ve checked it -\ncinder, glance, ceilometer and heat don\u0027t work.\nnova, keystone, swift work.\n\nI\u0027ve downloaded all clients through \u0027pip install\u0027",
+      "parentUuid": "5a890539_9bd5e0e6",
+      "revId": "aa09248e8a132474cf813ca1a4b6bca922f5bc5e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
