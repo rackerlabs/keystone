@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_3350790a",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-18T14:17:07Z",
+      "side": 1,
+      "message": "Is there a reason these tests are duplicated here (is there a difference between these and the ones in test_backend.py)?  If not, then they\u0027ll get run against the ldap backend automatically.",
+      "revId": "0e64449855b6a92ec04810fed84e023e5b8dd316",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
