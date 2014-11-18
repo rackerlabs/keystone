@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_3553f917",
+        "filename": "keystone/tests/test_v3_os_revoke.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-18T16:31:49Z",
+      "side": 1,
+      "message": "This leads to a useless error message. Use this instead:\n\nself.assertThat(links[\u0027self\u0027], matchers.EndsWith(revoked_list_url))",
+      "revId": "88d6cc7ae8e7ad87a6c69f4d8b8cc940deb086e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
