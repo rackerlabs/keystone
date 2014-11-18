@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_9ae93ae8",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3837,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-18T16:42:03Z",
+      "side": 1,
+      "message": "nit: region_two",
+      "revId": "60fdd54d9e6b6e4bb37bd3ba8d8b69fd02c50c0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_3ae3e6d9",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3844,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-18T16:42:03Z",
+      "side": 1,
+      "message": "nit: region_two",
+      "revId": "60fdd54d9e6b6e4bb37bd3ba8d8b69fd02c50c0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_ba6a7617",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3855,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-18T16:42:03Z",
+      "side": 1,
+      "message": "Should put a comment above this line to let others know this turns off the enforcement so that cycles can be created for the test.",
+      "revId": "60fdd54d9e6b6e4bb37bd3ba8d8b69fd02c50c0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_fa423ea9",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3863,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-18T16:42:03Z",
+      "side": 1,
+      "message": "It would be good at add an assertion here to show if the record should or should not be deleted.",
+      "revId": "60fdd54d9e6b6e4bb37bd3ba8d8b69fd02c50c0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_9a569a5a",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3874,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-18T16:42:03Z",
+      "side": 1,
+      "message": "Maybe an assertion to show what happened to region_one?",
+      "revId": "60fdd54d9e6b6e4bb37bd3ba8d8b69fd02c50c0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_baffd632",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3889,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-18T16:42:03Z",
+      "side": 1,
+      "message": "Same as above here.",
+      "revId": "60fdd54d9e6b6e4bb37bd3ba8d8b69fd02c50c0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
