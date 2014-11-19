@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a890539_37675cec",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 3828,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-19T13:11:03Z",
+      "side": 1,
+      "message": "would change the test name to something like: test_avoid_creating_circular_references_in_regions_update()\n\ncircle_regions sounds a bit odd and does not make clear what is being tested.",
+      "revId": "60fdd54d9e6b6e4bb37bd3ba8d8b69fd02c50c0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_9ae93ae8",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 3
