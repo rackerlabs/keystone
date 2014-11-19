@@ -16,6 +16,24 @@
       "revId": "88d6cc7ae8e7ad87a6c69f4d8b8cc940deb086e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_7b6c8209",
+        "filename": "keystone/tests/test_v3_os_revoke.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-19T00:42:48Z",
+      "side": 1,
+      "message": "thanks David, will update with your suggestion.",
+      "parentUuid": "5a890539_3553f917",
+      "revId": "88d6cc7ae8e7ad87a6c69f4d8b8cc940deb086e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
