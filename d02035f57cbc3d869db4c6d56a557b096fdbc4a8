@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_463994d7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-19T15:08:30Z",
+      "side": 1,
+      "message": "Commit message could be a bit more clear that this is not just \"list projects\" fix, but includes a test for cloud admin to perform full project management as well.",
+      "revId": "d02035f57cbc3d869db4c6d56a557b096fdbc4a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
