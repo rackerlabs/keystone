@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_8e99dc21",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-11-19T11:23:57Z",
+      "side": 1,
+      "message": "Well, OK. I wonder why they where there before this patch.",
+      "parentUuid": "5a890539_18f45686",
+      "revId": "789afccfaa5d4057bcef74577fd6cd3e5d6b2de2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_da02c66e",
         "filename": "keystone/common/config.py",
         "patchSetId": 11
