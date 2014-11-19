@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_ba341a4b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-19T09:52:30Z",
+      "side": 1,
+      "message": "nit: ..to check if it is....",
+      "revId": "789afccfaa5d4057bcef74577fd6cd3e5d6b2de2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_da02c66e",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 776,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-19T09:52:30Z",
+      "side": 1,
+      "message": "I\u0027m not sure this sentence (\"It must be a subset of....\") will be particularly meaningful to a cloud deployer.  The examples are good...but maybe write it as something like  [saml2, odic]",
+      "revId": "789afccfaa5d4057bcef74577fd6cd3e5d6b2de2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
