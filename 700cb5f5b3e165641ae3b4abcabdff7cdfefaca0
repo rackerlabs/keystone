@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_b1499c90",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-11-19T12:38:20Z",
+      "side": 1,
+      "message": "Taking into account my comment at keystone/exception.py, you should pass role_id, user_id, group_id, domain_id and project_id here.",
+      "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_315dac49",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-11-19T12:38:20Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_f16c040b",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-11-19T12:38:20Z",
+      "side": 1,
+      "message": "Taking into account my comment at keystone/exception.py, you should pass role_id, user_id, group_id, domain_id and project_id here.",
+      "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_917d80b4",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-11-19T12:38:20Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_fd1e9c0c",
+        "filename": "keystone/exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-11-19T12:38:20Z",
+      "side": 1,
+      "message": "Suppose I provide a user_id and no role assignments are found for him, what message will I get? Something like:\n\"Could not find role assignment with role: \"\n\nIn other words, in the cases the user provides the role_id, this message containing only the role-id is enough.\nOn all the other cases, it won\u0027t be accurate enough.\n\nI suggest you to add more information in this message.",
+      "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_b4734ab3",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-11-19T12:38:20Z",
+      "side": 1,
+      "message": "We just need the code on lines 859-863.\nWe don\u0027t need to clean up things, they come from the loaded default fixtures.\n\nJust delete the code above and pass user_id\u003duuid.uuid4() in this call. :-)",
+      "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_5464e6e4",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 878,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-11-19T12:38:20Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
