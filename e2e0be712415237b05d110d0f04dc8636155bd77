@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_4dfee36c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-11-20T16:35:03Z",
+      "side": 1,
+      "message": "I guess the syntax is bp openid-connect, because now it\u0027s not clickable.",
+      "revId": "e2e0be712415237b05d110d0f04dc8636155bd77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
