@@ -16,6 +16,24 @@
       "revId": "ab3bdc086214ce04cbd58f3b9bcb1a704f090b8c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_58485587",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 19
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-20T23:46:04Z",
+      "side": 1,
+      "message": "that\u0027s fine, sometimes this happens when someone changes code in keystone.common.config without updating this, file, can you revert the changes here and I\u0027ll do a sync in another commit",
+      "parentUuid": "5a890539_f8c74110",
+      "revId": "ab3bdc086214ce04cbd58f3b9bcb1a704f090b8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
