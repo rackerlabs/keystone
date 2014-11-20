@@ -12,6 +12,10 @@
 
 """Extensions supporting Federation."""
 
+import string
+
+import webob
+
 from keystone.auth import controllers as auth_controllers
 from keystone.common import authorization
 from keystone.common import controller
@@ -23,10 +27,12 @@ from keystone.contrib.federation import idp as keystone_idp
 from keystone.contrib.federation import schema
 from keystone.contrib.federation import utils
 from keystone import exception
-from keystone.i18n import _
+from keystone.i18n import _, _LE
 from keystone.models import token_model
+from keystone.openstack.common import log
 
 
+LOG = log.getLogger(__name__)
 CONF = config.CONF
 
 
@@ -257,6 +263,46 @@ class Auth(auth_controllers.Auth):
         }
 
         return self.authenticate_for_token(context, auth=auth)
+
+    def federated_sso_auth(self, context, protocol_id):
+        try:
+            remote_id_name = CONF.federation.remote_id_attribute
+            identity_provider = context['environment'][remote_id_name]
+        except KeyError:
+            msg = _('Missing entity ID from environment')
+            LOG.error(msg)
+            raise exception.Unauthorized(msg)
+
+        res = self.federated_authentication(context, identity_provider,
+                                            protocol_id)
+        token_id = res.headers['X-Subject-Token']
+
+        if 'origin' in context['query_string']:
+            origin = context['query_string'].get('origin')
+        else:
+            msg = _('Request must have an origin query parameter')
+            LOG.error(msg)
+            raise exception.ValidationError(msg)
+
+        if origin in CONF.federation.trusted_dashboard:
+            return self.render_html_response(origin, token_id)
+        else:
+            msg = _LE('%(host)s is not a trusted dashboard host')
+            msg = msg % {'host': origin}
+            LOG.error(msg)
+            raise exception.Unauthorized(msg)
+
+    def render_html_response(self, host, token_id):
+        """Forms an HTML Form from a template with autosubmit."""
+
+        headers = [('Content-Type', 'text/html')]
+
+        with open(CONF.federation.sso_callback_template) as template:
+            src = string.Template(template.read())
+            subs = {'host': host, 'token': token_id}
+            body = src.substitute(subs)
+            return webob.Response(body=body, status='200',
+                                  headerlist=headers)
 
     @validation.validated(schema.saml_create, 'auth')
     def create_saml_assertion(self, context, auth):
