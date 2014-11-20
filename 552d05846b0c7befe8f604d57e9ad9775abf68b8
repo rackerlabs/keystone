@@ -69,6 +69,23 @@
       "revId": "552d05846b0c7befe8f604d57e9ad9775abf68b8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_de49ba8f",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-11-20T00:46:29Z",
+      "side": 1,
+      "message": "This should say what happens if you don\u0027t specify a domain filter... i.e., what error do you get back? That way this document might show up if someone googles for it.\n\nMaybe the error response can also be improved.",
+      "revId": "552d05846b0c7befe8f604d57e9ad9775abf68b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
