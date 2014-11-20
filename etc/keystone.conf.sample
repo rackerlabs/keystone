@@ -697,6 +697,14 @@
 # (string value)
 #assertion_prefix =
 
+# Value to be used when sending tokens to a trusted dashboard host. (multi
+# valued)
+#trusted_dashboard =
+
+# Location of Single Sign-On callback handler, will return a token to a trusted
+# dashboard host. (string value)
+#sso_callback = /etc/keystone/sso_callback_template.html
+
 
 [identity]
 
