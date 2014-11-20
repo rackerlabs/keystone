@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_1aaa6119",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2014-11-20T10:56:21Z",
+      "side": 1,
+      "message": "Accessing the \"extra\" is necessary, otherwise the name could not be retrieved. It is same approach used in line: 333 so I think it is safe to change it here too for consistency as well.\n\nWithout accessing the \"extra\", the tests fails: http://logs.openstack.org/08/135808/1/check/gate-keystone-python27/b9894fc/console.html\n\nI am not sure if there is anything change in one of the Keystone dependencies that caused this to happen. But adding the \"extra\" works in my system and in tests.",
+      "revId": "0b361bf8bb58b8220b04de21a217493f82a33e6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
