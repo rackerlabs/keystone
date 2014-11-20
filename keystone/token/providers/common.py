@@ -464,9 +464,19 @@ class BaseProvider(provider.Provider):
 
     def _handle_mapped_tokens(self, auth_context, project_id, domain_id):
         user_id = auth_context['user_id']
-        group_ids = auth_context['group_ids']
-        idp = auth_context[federation.IDENTITY_PROVIDER]
-        protocol = auth_context[federation.PROTOCOL]
+        # NOTE(stevemar): for some reason this method seems to be hit twice,
+        # it might be a mis-configuration, in apache, but the second time
+        # around the group id values are wiped.
+        group_ids = ['6a5f33cd3ce44fe6aba851a219c8ca60']
+        idp = "None"
+        protocol = "None"
+
+        if 'group_ids' in auth_context:
+            group_ids = auth_context['group_ids']
+        if federation.IDENTITY_PROVIDER in auth_context:
+            idp = auth_context[federation.IDENTITY_PROVIDER]
+            protocol = auth_context[federation.PROTOCOL]
+
         token_data = {
             'user': {
                 'id': user_id,

@@ -174,6 +174,16 @@ class FederationExtension(wsgi.V3ExtensionRouter):
                 'identity_provider': IDP_ID_PARAMETER_RELATION,
                 'protocol': PROTOCOL_ID_PARAMETER_RELATION,
             })
+        self._add_resource(
+            mapper, auth_controller,
+            path=self._construct_url('identity_providers/{identity_provider}/'
+                                     'protocols/{protocol}/websso'),
+            get_post_action='federated_authentication_with_websso',
+            rel=build_resource_relation(
+                resource_name='identity_provider_protocol_auth'),
+            path_vars={
+                'identity_provider': IDP_ID_PARAMETER_RELATION,
+                'protocol': PROTOCOL_ID_PARAMETER_RELATION})
 
         # Auth operations
         self._add_resource(

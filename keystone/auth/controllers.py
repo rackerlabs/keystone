@@ -373,7 +373,7 @@ class Auth(controller.V3Controller):
             self.authenticate(context, auth_info, auth_context)
             if auth_context.get('access_token_id'):
                 auth_info.set_scope(None, auth_context['project_id'], None)
-            self._check_and_set_default_scoping(auth_info, auth_context)
+            #self._check_and_set_default_scoping(auth_info, auth_context)
             (domain_id, project_id, trust) = auth_info.get_scope()
 
             method_names = auth_info.get_method_names()
