@@ -72,6 +72,8 @@ class FederationExtension(wsgi.V3ExtensionRouter):
 
         GET /OS-FEDERATION/saml2/metadata
 
+        GET/POST /auth/OS-FEDERATION/websso/{protocol}
+                 ?origin=https%3A//horizon.example.com
 
     """
     def _construct_url(self, suffix):
@@ -181,6 +183,11 @@ class FederationExtension(wsgi.V3ExtensionRouter):
             path='/auth' + self._construct_url('saml2'),
             post_action='create_saml_assertion',
             rel=build_resource_relation(resource_name='saml2'))
+        self._add_resource(
+            mapper, auth_controller,
+            path='/auth' + self._construct_url('websso/{protocol_id}'),
+            get_post_action='federated_authentication_from_assertion',
+            rel=build_resource_relation(resource_name='websso'))
 
         # Keystone-Identity-Provider metadata endpoint
         self._add_resource(

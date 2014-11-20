@@ -12,6 +12,10 @@
 
 """Extensions supporting Federation."""
 
+import string
+
+import webob
+
 from keystone.auth import controllers as auth_controllers
 from keystone.common import authorization
 from keystone.common import controller
@@ -254,6 +258,43 @@ class Auth(auth_controllers.Auth):
         }
 
         return self.authenticate_for_token(context, auth=auth)
+
+    def federated_authentication_from_assertion(self, context, protocol_id):
+        # TODO(stevemar): fix this to use remote_entity_id
+        try:
+            remote_id_name = 'Shib-Identity-Provider'
+            identity_provider = context['environment'][remote_id_name]
+        except KeyError:
+            raise exception.Unauthorized(('Missing parameter '
+                                          'Shib-Identity-Provider'))
+
+        res = self.federated_authentication(context, identity_provider,
+                                            protocol_id)
+        token_id = res.headers['X-Subject-Token']
+
+        if 'origin' in context['query_string']:
+            origin = context['query_string'].get('origin')
+        else:
+            msg = _('Request must have an origin query parameter')
+            raise exception.ValidationError(msg)
+
+        if origin in CONF.federation.trusted_dashboard:
+            return self.render_html_response(origin, token_id)
+        else:
+            msg = _('%s is not a trusted dashboard host')
+            raise exception.Unauthorized(msg % origin)
+
+    def render_html_response(self, host, token_id):
+        """Forms an HTML Form from a template with autosubmit."""
+
+        headers = [('Content-Type', 'text/html')]
+
+        with open(CONF.federation.sso_callback_template) as template:
+            src = string.Template(template.read())
+            subs = {'host': host, 'token': token_id}
+            body = src.substitute(subs)
+            return webob.Response(body=body, status=(200, 'OK'),
+                                  headerlist=headers)
 
     @validation.validated(schema.saml_create, 'auth')
     def create_saml_assertion(self, context, auth):

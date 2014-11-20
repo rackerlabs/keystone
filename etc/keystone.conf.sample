@@ -697,6 +697,15 @@
 # (string value)
 #assertion_prefix =
 
+# A list of trusted dashboard hosts. Before attempting to send tokens back to a
+# dashboard host for Single Sign-On, the host must first be a member of this
+# list. (multi valued)
+#trusted_dashboard =
+
+# Location of Single Sign-On callback handler, will return a token to a trusted
+# dashboard host. (string value)
+#sso_callback_template = /etc/keystone/sso_callback_template.html
+
 
 [identity]
 
