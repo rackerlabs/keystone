@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_950c513d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 15
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-20T18:32:46Z",
+      "side": 1,
+      "message": "Was this edited by hand or did you generate it?",
+      "revId": "23b756f4f1d793fb1066a945e8f31909f7ca6f7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_7558c5fa",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-20T18:32:46Z",
+      "side": 1,
+      "message": "The _is prefix on the method name signals to me that this returns a boolean value, but it actually doesn\u0027t. I\u0027d suggest changing the name to reflect that is returns a set of the mapped methods. Also it would probably be better to return an empty set instead of a False. (Unless of course you really want this to be used like a boolean and then it should return True/False.",
+      "revId": "23b756f4f1d793fb1066a945e8f31909f7ca6f7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
