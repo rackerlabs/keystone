@@ -16,6 +16,40 @@
       "revId": "0b361bf8bb58b8220b04de21a217493f82a33e6a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_adaae717",
+        "filename": "keystone/tests/test_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-11-20T16:44:40Z",
+      "side": 1,
+      "message": "assertIn maybe?",
+      "revId": "0b361bf8bb58b8220b04de21a217493f82a33e6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_0d313b0b",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 708,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-11-20T16:44:40Z",
+      "side": 1,
+      "message": "indentation;\nalso, assertIn",
+      "revId": "0b361bf8bb58b8220b04de21a217493f82a33e6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
