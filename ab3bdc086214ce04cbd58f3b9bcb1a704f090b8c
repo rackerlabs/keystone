@@ -34,6 +34,24 @@
       "revId": "ab3bdc086214ce04cbd58f3b9bcb1a704f090b8c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_e32f9286",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 19
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-20T23:50:40Z",
+      "side": 1,
+      "message": "++\n\nit happened because the removal from the mapped_methods config. Just hadn\u0027t noticed this before sending the review.",
+      "parentUuid": "5a890539_58485587",
+      "revId": "ab3bdc086214ce04cbd58f3b9bcb1a704f090b8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
