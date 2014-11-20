@@ -131,7 +131,8 @@ class TestV2CatalogAPISQL(tests.TestCase):
         self.catalog_api = catalog.Manager()
 
         self.service_id = uuid.uuid4().hex
-        service = {'id': self.service_id, 'name': uuid.uuid4().hex}
+        service = {'id': self.service_id, 'type': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex}
         self.catalog_api.create_service(self.service_id, service)
 
         endpoint = self.new_endpoint_ref(service_id=self.service_id)
@@ -179,3 +180,21 @@ class TestV2CatalogAPISQL(tests.TestCase):
         self.assertEqual(1, len(catalog))
         # all three endpoints appear in the backend
         self.assertEqual(3, len(self.catalog_api.list_endpoints()))
+
+    def test_get_catalog_returns_name_attr_with_no_service_name(self):
+        user_id = uuid.uuid4().hex
+        tenant_id = uuid.uuid4().hex
+
+        # create a service, with no name
+        service_id = uuid.uuid4().hex
+        service = {'id': service_id, 'type': uuid.uuid4().hex}
+        self.catalog_api.create_service(self.service_id, service)
+
+        endpoint = self.new_endpoint_ref(service_id=service_id)
+        self.catalog_api.create_endpoint(endpoint['id'], endpoint)
+
+        # all endpoint must have the name attribute
+        catalog = self.catalog_api.get_catalog(user_id, tenant_id)
+        for service_types in catalog.values():
+            for service_details in service_types.values():
+                self.assertTrue('name' in service_details)

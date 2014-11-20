@@ -690,6 +690,24 @@ class TestCatalogAPISQL(tests.TestCase):
         # all three appear in the backend
         self.assertEqual(3, len(self.catalog_api.list_endpoints()))
 
+    def test_get_catalog_returns_name_attr_with_no_service_name(self):
+        user_id = uuid.uuid4().hex
+        tenant_id = uuid.uuid4().hex
+
+        # create a service, with no name
+        service_id = uuid.uuid4().hex
+        service = {'id': service_id, 'type': uuid.uuid4().hex}
+        self.catalog_api.create_service(self.service_id, service)
+
+        endpoint = self.new_endpoint_ref(service_id=service_id)
+        self.catalog_api.create_endpoint(endpoint['id'], endpoint)
+
+        # all endpoint must have the name attribute
+        catalog = self.catalog_api.get_catalog(user_id, tenant_id)
+        for service_types in catalog.values():
+            for service_details in service_types.values():
+                self.assertTrue('name' in service_details)
+
 
 # TODO(dstanek): this needs refactoring with the test above, but we are in a
 # crunch so that will happen in a future patch.
