@@ -15,6 +15,7 @@
 from keystone import auth
 from keystone.common import dependency
 from keystone.common import wsgi
+from keystone.contrib import federation
 from keystone import exception
 from keystone.models import token_model
 from keystone.openstack.common import log
@@ -67,6 +68,15 @@ class Token(auth.AuthMethodHandler):
             # from the user_context
             user_context['extras'].update(token_ref.get('extras', {}))
             user_context['method_names'].extend(token_ref.methods)
+
+            # For the case when attempting to authenticate with a federation
+            # based token
+            if token_ref.is_federated_user:
+                user_context['group_ids'] = token_ref.federation_group_ids
+                user_context[federation.IDENTITY_PROVIDER] = (
+                    token_ref.federation_idp_id)
+                user_context[federation.PROTOCOL] = (
+                    token_ref.federation_protocol_id)
 
         except AssertionError as e:
             LOG.error(e)
