@@ -460,9 +460,16 @@ class BaseProvider(provider.Provider):
 
     def _handle_federation_tokens(self, auth_context, project_id, domain_id):
         user_id = auth_context['user_id']
-        group_ids = auth_context['group_ids']
-        idp = auth_context[federation.IDENTITY_PROVIDER]
-        protocol = auth_context[federation.PROTOCOL]
+        group_ids = []
+        idp = "None"
+        protocol = "None"
+
+        if 'group_ids' in auth_context:
+            group_ids = auth_context['group_ids']
+        if federation.IDENTITY_PROVIDER in auth_context:
+            idp = auth_context[federation.IDENTITY_PROVIDER]
+            protocol = auth_context[federation.PROTOCOL]
+
         token_data = {
             'user': {
                 'id': user_id,
