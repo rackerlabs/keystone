@@ -179,3 +179,37 @@ class TestV2CatalogAPISQL(tests.TestCase):
         self.assertEqual(1, len(catalog))
         # all three endpoints appear in the backend
         self.assertEqual(3, len(self.catalog_api.list_endpoints()))
+
+    def test_get_catalog_always_returns_service_name(self):
+        user_id = uuid.uuid4().hex
+        tenant_id = uuid.uuid4().hex
+
+        # create a service, with a name
+        svc_id = uuid.uuid4().hex
+        svc = {'id': svc_id, 'type': uuid.uuid4().hex,
+               'name': 'service-name'}
+        self.catalog_api.create_service(svc_id, svc)
+
+        endpoint = self.new_endpoint_ref(service_id=svc_id)
+        self.catalog_api.create_endpoint(endpoint['id'], endpoint)
+
+        # create a service, with no name
+        svc_id = uuid.uuid4().hex
+        svc = {'id': svc_id, 'type': uuid.uuid4().hex}
+        self.catalog_api.create_service(svc_id, svc)
+
+        endpoint = self.new_endpoint_ref(service_id=svc_id)
+        self.catalog_api.create_endpoint(endpoint['id'], endpoint)
+
+        # collect all service names
+        service_names = []
+        for service in self.catalog_api.list_services():
+            service_names.append(service.get('name', ''))
+
+        # all endpoints must have the name attribute and match
+        # in one of the fetched service names
+        catalog = self.catalog_api.get_catalog(user_id, tenant_id)
+        for service_types in catalog.values():
+            for service_endpoints in service_types.values():
+                self.assertIn('name', service_endpoints)
+                self.assertIn(service_endpoints['name'], service_names)
