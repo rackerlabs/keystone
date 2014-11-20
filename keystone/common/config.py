@@ -19,6 +19,7 @@ from oslo import messaging
 _DEFAULT_AUTH_METHODS = ['external', 'password', 'token']
 _CERTFILE = '/etc/keystone/ssl/certs/signing_cert.pem'
 _KEYFILE = '/etc/keystone/ssl/private/signing_key.pem'
+_SSO_CALLBACK = '/etc/keystone/sso_callback_template.html'
 
 
 FILE_OPTIONS = {
@@ -488,6 +489,12 @@ FILE_OPTIONS = {
         cfg.StrOpt('assertion_prefix', default='',
                    help='Value to be used when filtering assertion parameters '
                         'from the environment.'),
+        cfg.MultiStrOpt('trusted_dashboard', default=[],
+                        help='Value to be used when sending tokens to a '
+                             'trusted dashboard host.'),
+        cfg.StrOpt('sso_callback', default=_SSO_CALLBACK,
+                   help='Location of Single Sign-On callback handler, will '
+                        'return a token to a trusted dashboard host.'),
     ],
     'policy': [
         cfg.StrOpt('driver',
