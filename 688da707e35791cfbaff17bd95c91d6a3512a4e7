@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_4bbfa660",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 777,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-20T19:44:38Z",
+      "side": 1,
+      "message": "should the examples have quotes around them? \n\nlike [\u0027saml2\u0027, \u0027oidc\u0027] - i\u0027m not sure?",
+      "revId": "688da707e35791cfbaff17bd95c91d6a3512a4e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_eb577224",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-20T19:44:38Z",
+      "side": 1,
+      "message": "what happens if there is no intersection? what is returned?\n\n  return bool(token_method_names.intersection(mapped_methods)) \n\nmight be better",
+      "revId": "688da707e35791cfbaff17bd95c91d6a3512a4e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
