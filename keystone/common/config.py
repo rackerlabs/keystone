@@ -19,6 +19,7 @@ from oslo import messaging
 _DEFAULT_AUTH_METHODS = ['external', 'password', 'token']
 _CERTFILE = '/etc/keystone/ssl/certs/signing_cert.pem'
 _KEYFILE = '/etc/keystone/ssl/private/signing_key.pem'
+_SSO_CALLBACK = '/etc/keystone/sso_callback_template.html'
 
 
 FILE_OPTIONS = {
@@ -501,6 +502,14 @@ FILE_OPTIONS = {
                         'Identity Provider from the environment (e.g. if '
                         'using the mod_shib plugin this value is '
                         '`Shib-Identity-Provider`).'),
+        cfg.MultiStrOpt('trusted_dashboard', default=[],
+                        help='A list of trusted dashboard hosts. Before '
+                             'attempting to send tokens back to a dashboard '
+                             'host for Single Sign-On, the host must first be '
+                             'a member of this list.'),
+        cfg.StrOpt('sso_callback_template', default=_SSO_CALLBACK,
+                   help='Location of Single Sign-On callback handler, will '
+                        'return a token to a trusted dashboard host.'),
     ],
     'policy': [
         cfg.StrOpt('driver',
