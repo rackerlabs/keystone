@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_49716ddf",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-20T21:06:06Z",
+      "side": 1,
+      "message": "ayoung, what do you think of changing it to:\n\n  if federation.IDENTITY_PROVIDER in auth_context:\n    token_ref \u003d self._handle_mapped_tokens(blah)\n\nWhich i\u0027d be interested in seeing the result of, seems like it\u0027ll work!",
+      "revId": "100baaaed40e95a0eb550996e1db1cd917ea630c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
