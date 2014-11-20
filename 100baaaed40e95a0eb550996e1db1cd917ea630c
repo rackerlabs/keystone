@@ -16,6 +16,24 @@
       "revId": "100baaaed40e95a0eb550996e1db1cd917ea630c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_0f99251f",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-20T22:04:24Z",
+      "side": 1,
+      "message": "think that needs both idp and protocol, will test here and submit if seems to do the job",
+      "parentUuid": "5a890539_49716ddf",
+      "revId": "100baaaed40e95a0eb550996e1db1cd917ea630c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
