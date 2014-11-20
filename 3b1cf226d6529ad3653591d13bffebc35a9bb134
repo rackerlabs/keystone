@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_95853109",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 14
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-20T18:35:37Z",
+      "side": 1,
+      "message": "Are you able to amend this comment to say why we should be using this new value?",
+      "revId": "3b1cf226d6529ad3653591d13bffebc35a9bb134",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
