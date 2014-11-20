@@ -12,6 +12,8 @@
 
 """Extensions supporting Federation."""
 
+from webob import exc
+
 from keystone.auth import controllers as auth_controllers
 from keystone.common import authorization
 from keystone.common import controller
@@ -252,7 +254,16 @@ class Auth(auth_controllers.Auth):
             }
         }
 
-        return self.authenticate_for_token(context, auth=auth)
+        response = self.authenticate_for_token(context, auth=auth)
+
+        query_string = context.get('query_string')
+        if query_string and query_string.get('websso'):
+            token_id = response.headers['X-Subject-Token']
+            endpoint = CONF.federation.websso_redirect
+            url = endpoint + '?token=' + token_id
+            return exc.HTTPTemporaryRedirect(location=url)
+        else:
+            return response
 
     @validation.validated(schema.saml_create, 'auth')
     def create_saml_assertion(self, context, auth):
