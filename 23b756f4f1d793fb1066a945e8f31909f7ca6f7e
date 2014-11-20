@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_3531dd0b",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 15
+      },
+      "lineNbr": 486,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-20T18:48:42Z",
+      "side": 1,
+      "message": "++ seems like we need to regenerate, since the help sentence has changed.",
+      "parentUuid": "5a890539_950c513d",
+      "revId": "23b756f4f1d793fb1066a945e8f31909f7ca6f7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_7558c5fa",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-20T18:32:46Z",
       "side": 1,
       "message": "The _is prefix on the method name signals to me that this returns a boolean value, but it actually doesn\u0027t. I\u0027d suggest changing the name to reflect that is returns a set of the mapped methods. Also it would probably be better to return an empty set instead of a False. (Unless of course you really want this to be used like a boolean and then it should return True/False.",
+      "revId": "23b756f4f1d793fb1066a945e8f31909f7ca6f7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_953e11d9",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-20T18:48:42Z",
+      "side": 1,
+      "message": "I\u0027d go with the second: keep the method name as it is and make sure it returns only booleans. Will fix, thanks.",
+      "parentUuid": "5a890539_7558c5fa",
       "revId": "23b756f4f1d793fb1066a945e8f31909f7ca6f7e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
