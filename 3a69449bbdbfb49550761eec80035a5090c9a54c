@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_f7d4d948",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-20T02:38:54Z",
+      "side": 1,
+      "message": "What makes role end up in \"resource\" vs following the RoleAssignment backend. I\u0027m not sure why Roles are a resource independent of the assignment backend.\n\nIt looks like if you\u0027re implementing your own assignment backend, you likely are going to track roles your own way as well.",
+      "revId": "3a69449bbdbfb49550761eec80035a5090c9a54c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_97bd5505",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-20T02:38:54Z",
+      "side": 1,
+      "message": "I am not a real fan of this. Unfortunately the original design lacks a clear way to fall through. I\u0027m thinking we probably want to clean this up in a way that we make SHOULD_CACHE, EXPIRATION_TIME, and LIST_LIMIT smart enough to pull from the right locations.",
+      "revId": "3a69449bbdbfb49550761eec80035a5090c9a54c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
