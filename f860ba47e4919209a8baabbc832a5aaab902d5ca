@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_a27116e0",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-20T16:23:45Z",
+      "side": 1,
+      "message": "we should move this to test_v3_federation.py since it\u0027s only used there, and we don\u0027t create an unnecessary dependency.",
+      "revId": "f860ba47e4919209a8baabbc832a5aaab902d5ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_ad3bc7c6",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 923,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-20T16:23:45Z",
+      "side": 1,
+      "message": "we should move these all to a unit test. under tests.unit.federation.test_common.py or something",
+      "revId": "f860ba47e4919209a8baabbc832a5aaab902d5ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_8d67ebe9",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-20T16:23:45Z",
+      "side": 1,
+      "message": "if is_mapped returned a boolean, these would be easier to evaluate.",
+      "revId": "f860ba47e4919209a8baabbc832a5aaab902d5ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_8d128b56",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 436,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-20T16:23:45Z",
+      "side": 1,
+      "message": "do you think we should wrap this with bool() ?\n\nwhenever i see a is_xyz method, i think it returns a boolean.",
+      "revId": "f860ba47e4919209a8baabbc832a5aaab902d5ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
