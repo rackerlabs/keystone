@@ -697,6 +697,10 @@
 # (string value)
 #assertion_prefix =
 
+# Value to be used when sending tokens to a trusted Horizon host. (string
+# value)
+#trusted_horizon = http://localhost/
+
 
 [identity]
 
