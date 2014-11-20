@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_8644251c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 777,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-11-20T19:51:03Z",
+      "side": 1,
+      "message": "I guess they should be comma-separated, like in \"[auth] methods\"",
+      "parentUuid": "5a890539_4bbfa660",
+      "revId": "688da707e35791cfbaff17bd95c91d6a3512a4e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_eb577224",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 16
