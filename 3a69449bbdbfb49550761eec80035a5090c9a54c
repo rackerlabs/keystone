@@ -33,6 +33,24 @@
       "revId": "3a69449bbdbfb49550761eec80035a5090c9a54c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_27bd38d8",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-20T15:46:10Z",
+      "side": 1,
+      "message": "Agreed.  I was also trying to balance changing the minimum amount of things in one patch. I\u0027d be happy to come back in a follow-in patch to change the way this works.",
+      "parentUuid": "5a890539_97bd5505",
+      "revId": "3a69449bbdbfb49550761eec80035a5090c9a54c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
