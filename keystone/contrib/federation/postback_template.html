@@ -1,0 +1,18 @@
+<html>
+  <body>
+     <form id="sso" name="sso" action="$host" method="POST">
+       Please wait...
+       <br/>
+       <input type="hidden" name="token" id="token" value="$token"/>
+       <noscript>
+         <input type="submit" name="toto" id="toto"
+            value="If your Javascript is disabled, please click to continue"/>
+       </noscript>
+     </form>
+     <script>
+       window.onload = function() {
+         document.forms['sso'].submit();
+       }
+     </script>
+  </body>
+</html>

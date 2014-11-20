@@ -488,6 +488,9 @@ FILE_OPTIONS = {
         cfg.StrOpt('assertion_prefix', default='',
                    help='Value to be used when filtering assertion parameters '
                         'from the environment.'),
+        cfg.MultiStrOpt('trusted_dashboard', default=[],
+                        help='Value to be used when sending tokens to a '
+                        'trusted dashboard host.'),
     ],
     'policy': [
         cfg.StrOpt('driver',

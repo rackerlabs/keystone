@@ -697,6 +697,10 @@
 # (string value)
 #assertion_prefix =
 
+# Value to be used when sending tokens to a trusted dashboard host. (multi
+# valued)
+#trusted_dashboard =
+
 
 [identity]
 
