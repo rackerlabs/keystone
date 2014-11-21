@@ -33,6 +33,24 @@
       "revId": "8ae1364fd804b80972a8191e0b021a09610180dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_12e869b3",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 22
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-11-21T01:22:51Z",
+      "side": 1,
+      "message": "oh, I see this is for backwards compat...",
+      "parentUuid": "5a890539_929ff95e",
+      "revId": "8ae1364fd804b80972a8191e0b021a09610180dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
