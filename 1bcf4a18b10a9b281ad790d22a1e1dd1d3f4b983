@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_1d42233e",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-21T16:02:50Z",
+      "side": 1,
+      "message": "oh i can probably revert this change, i thought it was screwing things up, i don\u0027t believe it was",
+      "parentUuid": "5a890539_03b80be4",
+      "revId": "1bcf4a18b10a9b281ad790d22a1e1dd1d3f4b983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_23950740",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-21T13:23:26Z",
       "side": 1,
       "message": "Is this here because it\u0027s supposed to be a lazy import?",
+      "revId": "1bcf4a18b10a9b281ad790d22a1e1dd1d3f4b983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_1d6943be",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-21T16:02:50Z",
+      "side": 1,
+      "message": "lazy developer, not lazy import",
+      "parentUuid": "5a890539_23950740",
       "revId": "1bcf4a18b10a9b281ad790d22a1e1dd1d3f4b983",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_5d5f4b0f",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-21T16:02:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_839a3b6c",
+      "revId": "1bcf4a18b10a9b281ad790d22a1e1dd1d3f4b983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_83715b46",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 3
@@ -64,6 +118,24 @@
       "writtenOn": "2014-11-21T13:23:26Z",
       "side": 1,
       "message": "We should get this figured out!",
+      "revId": "1bcf4a18b10a9b281ad790d22a1e1dd1d3f4b983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_3dad1fea",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-21T16:02:50Z",
+      "side": 1,
+      "message": "yes, for some reason i\u0027m entering this function twice, so many re-directs makes it hard to figure out whats going on",
+      "parentUuid": "5a890539_83715b46",
       "revId": "1bcf4a18b10a9b281ad790d22a1e1dd1d3f4b983",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
