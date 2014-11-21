@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_32cb8654",
+        "filename": "keystone/token/persistence/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-21T20:02:42Z",
+      "side": 1,
+      "message": "Hey. this needs to be removed...",
+      "revId": "447dea0c5fc0a6e4bb695d4794ff9e62b9a19f8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
