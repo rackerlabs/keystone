@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_66662fef",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-21T20:38:44Z",
+      "side": 1,
+      "message": "Suggest making this:\n\n  Max hierarchy depth of %(depth)s exceeded for %(branch)s.\n\nThere is no reason to expose the config-file information in the exception itself.",
+      "revId": "c8853fbfe850c98873780d5bb25b7eec47320a4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_c6836354",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-21T20:38:44Z",
+      "side": 1,
+      "message": "Do we need to check the entire hierarchy here for sanity sake? is it safe to assume the hierarchy doesn\u0027t have *something* disabled above it and is in a bad state?\n\nI\u0027m going to advocate for a more defensive approach and say we shouldn\u0027t assume an enabled parent means an enabled hierarchy.",
+      "revId": "c8853fbfe850c98873780d5bb25b7eec47320a4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_c6ea830e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-21T20:38:44Z",
+      "side": 1,
+      "message": "Unrelated whitespace change.",
+      "revId": "c8853fbfe850c98873780d5bb25b7eec47320a4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_a6e1f72b",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 325,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-21T20:38:44Z",
+      "side": 1,
+      "message": "This move probably could have been isolated to another patch (don\u0027t need to change it now - but in the future, easier to do incremental change reviews).",
+      "revId": "c8853fbfe850c98873780d5bb25b7eec47320a4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_86bb1b0e",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-21T20:38:44Z",
+      "side": 1,
+      "message": "Suggest checking for the *actual* error not just a skip? Should this raise a NotImplemented? same applies for all tests below that skip.",
+      "revId": "c8853fbfe850c98873780d5bb25b7eec47320a4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
