@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_fde9d7b7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-21T16:17:16Z",
+      "side": 1,
+      "message": "This comment seems incorrect since this change is for v2 and v3 catalog responses.",
+      "revId": "cbae37b5732cf2b6d701d7456c9bb235b5ff8232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_3d6b5f1f",
+        "filename": "keystone/tests/test_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-21T16:17:16Z",
+      "side": 1,
+      "message": "I was hoping to make this test more precise. Make sure that a service without a name returns \u0027\u0027 and one with a name returns the correct name.",
+      "revId": "cbae37b5732cf2b6d701d7456c9bb235b5ff8232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_5d74abfd",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 720,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-21T16:17:16Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "cbae37b5732cf2b6d701d7456c9bb235b5ff8232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
