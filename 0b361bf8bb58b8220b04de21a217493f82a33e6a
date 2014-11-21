@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_e03bf5e8",
+        "filename": "keystone/tests/test_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-21T13:04:49Z",
+      "side": 1,
+      "message": "Why do we still need Python 2.6?",
+      "parentUuid": "5a890539_bf012c3b",
+      "revId": "0b361bf8bb58b8220b04de21a217493f82a33e6a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_0d313b0b",
         "filename": "keystone/tests/test_v3_catalog.py",
         "patchSetId": 2
