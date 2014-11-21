@@ -51,6 +51,57 @@
       "revId": "8ae1364fd804b80972a8191e0b021a09610180dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_3202c56f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-11-21T02:44:16Z",
+      "side": 1,
+      "message": "oslo.config already supports deprecated options, deprecated_name and deprecated_group should be used instead.",
+      "revId": "8ae1364fd804b80972a8191e0b021a09610180dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_b21b15c9",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-11-21T02:44:16Z",
+      "side": 1,
+      "message": "these should be in alphabetical order.",
+      "revId": "8ae1364fd804b80972a8191e0b021a09610180dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_7268cd21",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-11-21T02:44:16Z",
+      "side": 1,
+      "message": "resource?",
+      "revId": "8ae1364fd804b80972a8191e0b021a09610180dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
