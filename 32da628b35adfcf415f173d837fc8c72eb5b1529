@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_054bab2b",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1833,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-11-21T15:46:24Z",
+      "side": 1,
+      "message": "Actually, there\u0027s only 2 other tests in this class that don\u0027t use the config fixture properly. Here\u0027s the fix: https://review.openstack.org/136399",
+      "parentUuid": "5a890539_aa1b847e",
+      "revId": "32da628b35adfcf415f173d837fc8c72eb5b1529",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_e50cdf3d",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 2
