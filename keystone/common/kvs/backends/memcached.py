@@ -64,7 +64,7 @@ class MemcachedLock(object):
             elif not wait:
                 return False
             else:
-                sleep_time = (((i + 1) * random.random()) + 2 ** i) / 2.5
+                sleep_time = random.random() 
                 time.sleep(sleep_time)
             if i <= self.max_lock_attempts:
                 i += 1
