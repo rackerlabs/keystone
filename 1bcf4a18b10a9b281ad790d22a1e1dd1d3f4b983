@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_03b80be4",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-21T13:23:26Z",
+      "side": 1,
+      "message": "This will make the style checks fail. Any reason to not just delete it?",
+      "revId": "1bcf4a18b10a9b281ad790d22a1e1dd1d3f4b983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_23950740",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-21T13:23:26Z",
+      "side": 1,
+      "message": "Is this here because it\u0027s supposed to be a lazy import?",
+      "revId": "1bcf4a18b10a9b281ad790d22a1e1dd1d3f4b983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_839a3b6c",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-21T13:23:26Z",
+      "side": 1,
+      "message": "Whitespace?",
+      "revId": "1bcf4a18b10a9b281ad790d22a1e1dd1d3f4b983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_83715b46",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-21T13:23:26Z",
+      "side": 1,
+      "message": "We should get this figured out!",
+      "revId": "1bcf4a18b10a9b281ad790d22a1e1dd1d3f4b983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
