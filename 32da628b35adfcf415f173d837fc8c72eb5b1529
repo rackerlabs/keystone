@@ -16,6 +16,24 @@
       "revId": "32da628b35adfcf415f173d837fc8c72eb5b1529",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_79b42035",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1833,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-21T14:09:50Z",
+      "side": 1,
+      "message": "yeah, I think it would be the ideal, but just followed the pattern from all the other tests in this class.",
+      "parentUuid": "5a890539_d909942d",
+      "revId": "32da628b35adfcf415f173d837fc8c72eb5b1529",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
