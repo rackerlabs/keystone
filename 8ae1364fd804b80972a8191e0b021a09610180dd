@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_c6445fb9",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-21T05:04:56Z",
+      "side": 1,
+      "message": "++ ah yeah, we should do that, it will simplify the logic further down in the resource_api manager.",
+      "parentUuid": "5a890539_3202c56f",
+      "revId": "8ae1364fd804b80972a8191e0b021a09610180dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_b21b15c9",
         "filename": "keystone/identity/core.py",
         "patchSetId": 22
@@ -88,6 +106,23 @@
     },
     {
       "key": {
+        "uuid": "5a890539_265b6388",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-21T05:04:56Z",
+      "side": 1,
+      "message": "So, the more I am thinking about this the more that I am concerned that the RoleAsssignment backend is going to be overly complex (for a custom one) to handle Role -\u003e Actor,Resource mappings.\n\nThis works well for a SQL-system, but in the case of an ABAC type system (as role assignment), you\u0027re now needing to support a grouping of Action,Resource(project|domain) that resolves to a Role and then map that role to the Resource(role) that everything expects to be able to act on.\n\nThis feels like it\u0027s going to be a really bad UX.\n\nI need some clarification on how Role being (even as you said in a previous comment) the lingua franca makes the assignment backend better / easier to develop for vs. letting the assignment backend control the resulting Role as well. Alternatively, the Assignment backend may ignore the role(s) and produce something else, which in itself has some level of dissonance.",
+      "revId": "8ae1364fd804b80972a8191e0b021a09610180dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_7268cd21",
         "filename": "keystone/resource/core.py",
         "patchSetId": 22
@@ -99,6 +134,24 @@
       "writtenOn": "2014-11-21T02:44:16Z",
       "side": 1,
       "message": "resource?",
+      "revId": "8ae1364fd804b80972a8191e0b021a09610180dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_a64913d2",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-11-21T05:04:56Z",
+      "side": 1,
+      "message": "If we move to the \"deprecateD\" slo.config opt this whole set of logic can go away.",
+      "parentUuid": "5a890539_7268cd21",
       "revId": "8ae1364fd804b80972a8191e0b021a09610180dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
