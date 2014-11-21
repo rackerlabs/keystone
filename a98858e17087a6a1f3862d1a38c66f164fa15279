@@ -16,6 +16,24 @@
       "revId": "a98858e17087a6a1f3862d1a38c66f164fa15279",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_a6701741",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-21T21:25:42Z",
+      "side": 0,
+      "message": "removed because we extracted _query_filter_is_true() to the superclass",
+      "parentUuid": "5a890539_463bf3d0",
+      "revId": "a98858e17087a6a1f3862d1a38c66f164fa15279",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
