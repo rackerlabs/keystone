@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_d6ab2387",
+        "filename": "keystone/tests/test_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2014-11-21T13:52:45Z",
+      "side": 1,
+      "message": "I\u0027ll take the change out. opened https://bugs.launchpad.net/keystone/+bug/1394995",
+      "parentUuid": "5a890539_a3181785",
+      "revId": "c8bc01551a0329a68e3e65a3ecc70fd6883a1428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_66964b96",
         "filename": "keystone/tests/test_catalog.py",
         "patchSetId": 5
