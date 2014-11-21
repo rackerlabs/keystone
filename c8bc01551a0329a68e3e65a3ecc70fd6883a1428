@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_e3e85f7e",
+        "filename": "keystone/tests/test_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2014-11-21T13:34:26Z",
+      "side": 1,
+      "message": "Yes, the type is not really used. I added the type value since it is a required value for a Service - just for data correctness.",
+      "parentUuid": "5a890539_6b3a9435",
+      "revId": "c8bc01551a0329a68e3e65a3ecc70fd6883a1428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_66964b96",
         "filename": "keystone/tests/test_catalog.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-21T13:05:17Z",
       "side": 1,
       "message": "Is there anyway to make this test more specific to check for the expected value of \u0027name\u0027?",
+      "revId": "c8bc01551a0329a68e3e65a3ecc70fd6883a1428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_63938ffa",
+        "filename": "keystone/tests/test_catalog.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2014-11-21T13:34:26Z",
+      "side": 1,
+      "message": "Actually, what I like to test is that the name attribute always exist. \n\nI can update the test to check for existence and value of name",
+      "parentUuid": "5a890539_66964b96",
       "revId": "c8bc01551a0329a68e3e65a3ecc70fd6883a1428",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
