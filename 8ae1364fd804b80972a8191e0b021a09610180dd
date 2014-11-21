@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_03757e97",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 1505,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-11-21T01:17:57Z",
+      "side": 1,
+      "message": "change \"there is no assignment backend is\" to \"no assignment backend is\" (remove \"there is\")",
+      "revId": "8ae1364fd804b80972a8191e0b021a09610180dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_929ff95e",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 22
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-11-21T01:17:57Z",
+      "side": 1,
+      "message": "the toggle for resource is below, in the [resource] section",
+      "revId": "8ae1364fd804b80972a8191e0b021a09610180dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
