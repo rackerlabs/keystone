@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_fdd04955",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 69
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-21T13:59:35Z",
+      "side": 1,
+      "message": "Any reason for this newline?",
+      "revId": "a4d469869d4b5b3cb1f497dbc629faabe9b6067e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
