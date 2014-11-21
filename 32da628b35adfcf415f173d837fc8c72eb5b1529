@@ -34,6 +34,41 @@
       "revId": "32da628b35adfcf415f173d837fc8c72eb5b1529",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_aa1b847e",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1833,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-11-21T15:38:18Z",
+      "side": 1,
+      "message": "Yes, these need to be changed to use config fixture... I\u0027m fine with putting that in a separate commit.",
+      "parentUuid": "5a890539_79b42035",
+      "revId": "32da628b35adfcf415f173d837fc8c72eb5b1529",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_e50cdf3d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1841,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-11-21T15:38:18Z",
+      "side": 1,
+      "message": "The server shouldn\u0027t return a 500 response for anything that the client does. Add a bug # so we can track it.",
+      "revId": "32da628b35adfcf415f173d837fc8c72eb5b1529",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
