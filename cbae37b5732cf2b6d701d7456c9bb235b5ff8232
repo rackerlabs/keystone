@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_f2557ec2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2014-11-21T19:57:32Z",
+      "side": 1,
+      "message": "To handle the case when empty service name throws an error only occurs for v2 catalog.\n\nThe second sentence describes the change that applies to both.",
+      "parentUuid": "5a890539_fde9d7b7",
+      "revId": "cbae37b5732cf2b6d701d7456c9bb235b5ff8232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_3d6b5f1f",
         "filename": "keystone/tests/test_catalog.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-21T16:17:16Z",
       "side": 1,
       "message": "I was hoping to make this test more precise. Make sure that a service without a name returns \u0027\u0027 and one with a name returns the correct name.",
+      "revId": "cbae37b5732cf2b6d701d7456c9bb235b5ff8232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_72c50e5b",
+        "filename": "keystone/tests/test_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2014-11-21T19:57:32Z",
+      "side": 1,
+      "message": "How do you suggest I go about mapping the service endpoints from catalog to the expected service name?  Map the service-type from service endpoint back the service-type in the service object?",
+      "parentUuid": "5a890539_3d6b5f1f",
       "revId": "cbae37b5732cf2b6d701d7456c9bb235b5ff8232",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
