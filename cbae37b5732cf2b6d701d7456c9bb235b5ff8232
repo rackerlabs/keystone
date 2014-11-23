@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_1462e73d",
+        "filename": "keystone/tests/test_catalog.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-23T15:09:49Z",
+      "side": 1,
+      "message": "I submitted a patchset that changes this test to match what I was thinking. The same sort of thing would still need to be done for the other test if you agree with the approach.",
+      "parentUuid": "5a890539_72c50e5b",
+      "revId": "cbae37b5732cf2b6d701d7456c9bb235b5ff8232",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_5d74abfd",
         "filename": "keystone/tests/test_v3_catalog.py",
         "patchSetId": 6
