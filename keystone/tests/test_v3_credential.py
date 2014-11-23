@@ -340,6 +340,42 @@ class TestCredentialEc2(CredentialBaseTestCase):
         self._validate_signature(access=cred_blob['access'],
                                  secret=cred_blob['secret'])
 
+    def test_ec2_credential_signature_invalid(self):
+        # When the signature is invalid and doesn't contain a ":", Unauthorized
+        # is raised.
+
+        ref = self.new_credential_ref(
+            user_id=self.user['id'],
+            project_id=self.project_id)
+        blob = {"access": uuid.uuid4().hex,
+                "secret": uuid.uuid4().hex}
+        ref['blob'] = json.dumps(blob)
+        ref['type'] = 'ec2'
+        r = self.post(
+            '/credentials',
+            body={'credential': ref})
+
+        cred_blob = json.loads(r.result['credential']['blob'])
+
+        params = {'SignatureMethod': 'HmacSHA256',
+                  'SignatureVersion': '2',
+                  'AWSAccessKeyId': cred_blob['access']}
+        # This is an invalid signature.
+        signature = uuid.uuid4().hex
+
+        # Now make a request to validate the signed dummy request via the
+        # ec2tokens API, fails since the signature is invalid.
+        sig_ref = {'access': cred_blob['access'],
+                   'signature': signature,
+                   'host': 'foo',
+                   'verb': 'GET',
+                   'path': '/bar',
+                   'params': params}
+        self.post(
+            '/ec2tokens',
+            body={'ec2Credentials': sig_ref},
+            expected_status=401)
+
     def test_ec2_credential_signature_validate_legacy(self):
         """Test signature validation with a legacy v3 ec2 credential."""
         cred_json, credential_id = self._create_dict_blob_credential()

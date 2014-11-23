@@ -13,6 +13,7 @@
 import uuid
 
 from keystone.common import utils
+from keystone import exception
 from keystone import tests
 
 
@@ -41,3 +42,20 @@ class TestPasswordHashing(tests.BaseTestCase):
         new_hashed_password = utils.hash_password(self.hashed_password)
         self.assertFalse(utils.check_password(self.password,
                                               new_hashed_password))
+
+
+class TestVerifyLengthAndTruncPassword(tests.BaseTestCase):
+
+    def test_password_no_len_error(self):
+        # When the password parameter doesn't support len(), ValidationError is
+        # raised.
+        password = None  # None doesn't support len()
+        self.assertRaises(exception.ValidationError,
+                          utils.verify_length_and_trunc_password, password)
+
+
+class TestCheckOutput(tests.BaseTestCase):
+
+    def test_check_output(self):
+        ret = utils.check_output(['/bin/ls', '/dev/null'])
+        self.assertEqual('/dev/null\n', ret)
