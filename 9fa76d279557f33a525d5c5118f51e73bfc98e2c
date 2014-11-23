@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_f4439bac",
+        "filename": "keystone/tests/test_catalog.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-23T15:08:34Z",
+      "side": 1,
+      "message": "I\u0027m keeping the original service ref so I can use it later.",
+      "revId": "9fa76d279557f33a525d5c5118f51e73bfc98e2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_7486cbdc",
+        "filename": "keystone/tests/test_catalog.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-23T15:08:34Z",
+      "side": 1,
+      "message": "Now I find the specific endpoint that were created and check the service name. This prevents two possible test bugs:\n  - parallel tests could create endpoints between capturing the service list and doing the assertions - this would make the test fail if the service name was unknown\n  - if one service name was an empty string i could change the catalog to alway output empty string for service name and this test would still pass",
+      "revId": "9fa76d279557f33a525d5c5118f51e73bfc98e2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
