@@ -16,6 +16,24 @@
       "revId": "c4ddc0c50b292769fabe4f5e14a932fbf7c118e3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_af9b6316",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-11-24T16:51:03Z",
+      "side": 1,
+      "message": "Seems like this should be handled when the template is loaded? (i.e., in parse_templates)",
+      "parentUuid": "5a890539_0ff9d77f",
+      "revId": "c4ddc0c50b292769fabe4f5e14a932fbf7c118e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
