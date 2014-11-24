@@ -16,6 +16,24 @@
       "revId": "fbd2c7e9973c3315242828d8b4b57c1891b75fda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_521aa86f",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-24T16:54:26Z",
+      "side": 1,
+      "message": "Python 2.6 does have set literals or set/dict comprehensions. So it\u0027s ast module doesn\u0027t know anything about them.",
+      "parentUuid": "5a890539_390a7479",
+      "revId": "fbd2c7e9973c3315242828d8b4b57c1891b75fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
