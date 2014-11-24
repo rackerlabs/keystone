@@ -1560,6 +1560,120 @@ class SqlUpgradeTests(SqlMigrateBase):
                          'extra': json.dumps(extra)})
             self.engine.execute(ins)
 
+    def test_upgrade_service_name_column_exists(self):
+        """Migration 61 adds `name` column to the `service` table."""
+
+        self.upgrade(61)
+
+        # Make sure we have a `name` column in the `service` table
+        exp_columns = ['id', 'enabled', 'extra', 'name', 'type']
+        self.assertTableColumns('service', exp_columns)
+
+    def test_downgrade_service_name_column(self):
+        """Check columns when downgrading to migration 60.
+
+        This downgrade should remove the `name` column from the `service`
+        table.
+
+        """
+        self.upgrade(61)
+        self.downgrade(60)
+
+        exp_columns = ['id', 'enabled', 'extra', 'type']
+        self.assertTableColumns('service', exp_columns)
+
+    def test_upgrade_service_name(self):
+        """Migration 61 must migrate data from `extra` to `name`."""
+
+        session = self.Session()
+
+        def add_service(extra_data):
+            service_id = uuid.uuid4().hex
+
+            service = {
+                'id': service_id,
+                'type': uuid.uuid4().hex,
+                'enabled': True,
+                'extra': json.dumps(extra_data)
+            }
+
+            self.insert_dict(session, 'service', service)
+
+            return service_id
+
+        self.upgrade(60)
+
+        first_service = add_service({'name': 'Cinder'})
+        second_service = add_service({'name': 'Nova'})
+
+        self.upgrade(61)
+
+        self.metadata.clear()
+        service_table = sqlalchemy.Table('service', self.metadata,
+                                         autoload=True)
+
+        def get_service(service_id):
+            cols = [service_table.c.name, service_table.c.extra]
+            f = service_table.c.id == service_id
+            s = sqlalchemy.select(cols).where(f)
+            ep = session.execute(s).fetchone()
+
+            return ep
+
+        service = get_service(first_service)
+        extra_json = json.loads(service.extra)
+        self.assertNotIn('name', extra_json)
+        self.assertEqual('Cinder', service.name)
+
+        service = get_service(second_service)
+        extra_json = json.loads(service.extra)
+        self.assertNotIn('name', extra_json)
+        self.assertEqual('Nova', service.name)
+
+    def test_downgrade_service_name(self):
+        """Migration 61 should move service `name` to `extra` on downgrade."""
+
+        session = self.Session()
+
+        def add_service(service_name):
+            service_id = uuid.uuid4().hex
+
+            service = {
+                'id': service_id,
+                'type': uuid.uuid4().hex,
+                'enabled': True,
+                'name': service_name
+            }
+
+            self.insert_dict(session, 'service', service)
+
+            return service_id
+
+        self.upgrade(61)
+
+        first_service = add_service('Cinder')
+        second_service = add_service('Nova')
+
+        self.downgrade(60)
+
+        def get_service(service_id):
+            cols = [service_table.c.name, service_table.c.extra]
+            f = service_table.c.id == service_id
+            s = sqlalchemy.select(cols).where(f)
+            ep = session.execute(s).fetchone()
+
+            return ep
+
+        service = get_service(first_service)
+        extra_json = json.loads(service.extra)
+        self.asserIn('name', extra_json)
+        self.assertEqual('Cinder', extra_json['name'])
+
+        service = get_service(second_service)
+        extra_json = json.loads(service.extra)
+        self.asserIn('name', extra_json)
+        self.assertEqual('Nova', extra_json['name'])
+
     def _mysql_check_all_tables_innodb(self):
         database = self.engine.url.database
 
