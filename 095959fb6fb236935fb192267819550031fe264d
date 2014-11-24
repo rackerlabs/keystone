@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_ac1d2464",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-11-24T23:40:18Z",
+      "side": 1,
+      "message": "The config option should default to None and the server code should be changed so that if the config option is None then it won\u0027t check any headers. Since headers can be sent by the client the server shouldn\u0027t trust it by default.",
+      "revId": "095959fb6fb236935fb192267819550031fe264d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_4c45a041",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-11-24T23:40:18Z",
+      "side": 1,
+      "message": "use CONF.secure_proxy_ssl_header for consistency.",
+      "revId": "095959fb6fb236935fb192267819550031fe264d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_8cef881d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-11-24T23:40:18Z",
+      "side": 1,
+      "message": "It would be nice to have a comment that explains what this does and why it works.",
+      "revId": "095959fb6fb236935fb192267819550031fe264d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
