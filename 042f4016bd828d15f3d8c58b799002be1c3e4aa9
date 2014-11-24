@@ -16,6 +16,24 @@
       "revId": "042f4016bd828d15f3d8c58b799002be1c3e4aa9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_0d5c8818",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 9060
+      },
+      "writtenOn": "2014-11-24T13:25:54Z",
+      "side": 1,
+      "message": "The cherry pick was quite complicated and there were earlier comments in the bug report suggesting that the backport was non-trivial.",
+      "parentUuid": "5a890539_6d542cfe",
+      "revId": "042f4016bd828d15f3d8c58b799002be1c3e4aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
