@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a890539_08d5641b",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-24T02:10:10Z",
+      "side": 1,
+      "message": "Do we really want to catch all exceptions here?",
+      "revId": "ed36d3fbafaa0c376c359c0b9e2451d99efbf4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_be809747",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 2
