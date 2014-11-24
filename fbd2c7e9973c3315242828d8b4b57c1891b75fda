@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_390a7479",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-24T08:03:40Z",
+      "side": 1,
+      "message": "what was the problem with Py26 here? Lack of ast module? I thought it was there, at least in Python 2.6.6",
+      "revId": "fbd2c7e9973c3315242828d8b4b57c1891b75fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
