@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_101d86be",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2014-11-24T11:38:45Z",
+      "side": 1,
+      "message": "could just pass batch_size as argument to debug() rather than doing the string formatting here. (similar to the other change)",
+      "revId": "ee1d2ef1089fd74e13189a0ffb90017388adec43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
