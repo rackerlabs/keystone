@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_8d007867",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-11-24T13:43:19Z",
+      "side": 1,
+      "message": "I did some tests with this function and I\u0027ve realized that (role_assignment.user_dn.upper() in group_dns) is always FALSE. Example with 1 group granted into a project: \n\n(Pdb) role_assignment.user_dn.upper()\nu\u0027CN\u003dEE3AC9191CD9467A977679B31315BA9C,OU\u003dUSERGROUPS,CN\u003dEXAMPLE,CN\u003dCOM\u0027\n\n(Pdb) group_dns[0]\nu\u0027cn\u003dee3ac9191cd9467a977679b31315ba9c,ou\u003dUserGroups,cn\u003dexample,cn\u003dcom\u0027\n\nSo, the data is right but the problem is the upper() function. Not matching because uppercase.\n\nI propose to change the first line to: \n\ngroup_dns \u003d [self.group._id_to_dn(group_id).upper() for group_id in groups]",
+      "revId": "4c6c861a9e6f8a1a3ee387ce9fd963caecd0b035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
