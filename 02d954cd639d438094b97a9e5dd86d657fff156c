@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_517b7dbd",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-11-24T23:26:33Z",
+      "side": 1,
+      "message": "there shouldn\u0027t be a dependency from unit tests to test_backend. Move the shared piece out into a different module.",
+      "revId": "02d954cd639d438094b97a9e5dd86d657fff156c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
