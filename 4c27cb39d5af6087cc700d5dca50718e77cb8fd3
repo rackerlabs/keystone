@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_3538a6d2",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-24T17:26:44Z",
+      "side": 1,
+      "message": "Suggest: \"The HTTP header used to determine the scheme for the original request, even if it was removed by an SSL terminating proxy.\"",
+      "revId": "4c27cb39d5af6087cc700d5dca50718e77cb8fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_d5792283",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 930,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-24T17:26:44Z",
+      "side": 1,
+      "message": "Fix the order of the arguments. It should be (expected, observed).",
+      "revId": "4c27cb39d5af6087cc700d5dca50718e77cb8fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_f5a7fe08",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 933,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-24T17:26:44Z",
+      "side": 1,
+      "message": "Fix the order of the arguments. It should be (expected, observed).",
+      "revId": "4c27cb39d5af6087cc700d5dca50718e77cb8fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_d5a202fb",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 945,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-24T17:26:44Z",
+      "side": 1,
+      "message": "Fix the order of the arguments. It should be (expected, observed).",
+      "revId": "4c27cb39d5af6087cc700d5dca50718e77cb8fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
