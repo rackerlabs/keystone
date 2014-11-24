@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_0ff9d77f",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-24T16:46:39Z",
+      "side": 1,
+      "message": "Right now I don\u0027t think we enforce uniqueness of service name. Will this break expectations if some IDs are the same.",
+      "revId": "c4ddc0c50b292769fabe4f5e14a932fbf7c118e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
