@@ -53,7 +53,7 @@ _service_properties = {
 service_create = {
     'type': 'object',
     'properties': _service_properties,
-    'required': ['type'],
+    'required': ['type', 'name'],
     'additionalProperties': True,
 }
 

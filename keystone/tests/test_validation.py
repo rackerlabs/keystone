@@ -819,7 +819,8 @@ class ServiceValidationTestCase(testtools.TestCase):
     def test_validate_service_create_succeeds_with_required_parameters(self):
         """Validate a service create request with the required parameters."""
         # The only parameter type required for service creation is 'type'
-        request_to_validate = {'type': 'compute'}
+        request_to_validate = {'type': 'compute',
+                               'name': 'Nova'}
         self.create_service_validator.validate(request_to_validate)
 
     def test_validate_service_create_fails_without_type(self):
@@ -829,17 +830,26 @@ class ServiceValidationTestCase(testtools.TestCase):
                           self.create_service_validator.validate,
                           request_to_validate)
 
+    def test_validate_service_create_fails_without_name(self):
+        """Exception raised when trying to create a service without `name`."""
+        request_to_validate = {'type': 'compute'}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_service_validator.validate,
+                          request_to_validate)
+
     def test_validate_service_create_succeeds_with_extra_parameters(self):
         """Test that extra parameters pass validation on create service."""
         request_to_validate = {'other_attr': uuid.uuid4().hex,
-                               'type': uuid.uuid4().hex}
+                               'type': uuid.uuid4().hex,
+                               'name': uuid.uuid4().hex}
         self.create_service_validator.validate(request_to_validate)
 
     def test_validate_service_create_succeeds_with_valid_enabled(self):
         """Validate boolean values as enabled values on service create."""
         for valid_enabled in _VALID_ENABLED_FORMATS:
             request_to_validate = {'enabled': valid_enabled,
-                                   'type': uuid.uuid4().hex}
+                                   'type': uuid.uuid4().hex,
+                                   'name': uuid.uuid4().hex}
             self.create_service_validator.validate(request_to_validate)
 
     def test_validate_service_create_fails_with_invalid_enabled(self):
@@ -850,7 +860,8 @@ class ServiceValidationTestCase(testtools.TestCase):
         """
         for invalid_enabled in _INVALID_ENABLED_FORMATS:
             request_to_validate = {'enabled': invalid_enabled,
-                                   'type': uuid.uuid4().hex}
+                                   'type': uuid.uuid4().hex,
+                                   'name': uuid.uuid4().hex}
             self.assertRaises(exception.SchemaValidationError,
                               self.create_service_validator.validate,
                               request_to_validate)
@@ -875,14 +886,14 @@ class ServiceValidationTestCase(testtools.TestCase):
     def test_validate_service_create_fails_when_type_too_long(self):
         """Exception is raised when `type` is too long."""
         long_type_name = 'a' * 256
-        request_to_validate = {'type': long_type_name}
+        request_to_validate = {'type': long_type_name, 'name': 'Nova'}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_service_validator.validate,
                           request_to_validate)
 
     def test_validate_service_create_fails_when_type_too_short(self):
         """Exception is raised when `type` is too short."""
-        request_to_validate = {'type': ''}
+        request_to_validate = {'type': '', 'name': uuid.uuid4().hex}
         self.assertRaises(exception.SchemaValidationError,
                           self.create_service_validator.validate,
                           request_to_validate)
