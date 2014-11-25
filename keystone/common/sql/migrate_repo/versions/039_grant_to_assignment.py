@@ -17,6 +17,8 @@ import json
 import sqlalchemy as sql
 
 from keystone.assignment.backends import sql as assignment_sql
+from keystone.openstack.common import log
+from keystone.i18n import _, _LE, _LW
 
 USER_PROJECT_TABLE = 'user_project_metadata'
 GROUP_PROJECT_TABLE = 'group_project_metadata'
@@ -27,6 +29,8 @@ ASSIGNMENT_TABLE = 'assignment'
 
 GRANT_TABLES = [USER_PROJECT_TABLE, USER_DOMAIN_TABLE,
                 GROUP_PROJECT_TABLE, GROUP_DOMAIN_TABLE]
+
+LOG = log.getLogger(__name__)
 
 
 def migrate_grant_table(meta, session, table_name):
@@ -71,18 +75,26 @@ def migrate_grant_table(meta, session, table_name):
 
     # For each grant in this table, expand it out to be an assignment entry for
     # each role in the metadata
+    # NOTE(wfoster-b): Skip assignment table inserts if duplicate entries exist
+    # or keystone-manage db_sync fails when upgrading from Havana.
+
     for grant in session.query(upgrade_table).all():
         for grant_role in grant_to_grant_dict_list(table_name, grant):
-            new_entry = assignment_table.insert().values(
-                type=grant_role['type'],
-                actor_id=grant_role['actor_id'],
-                target_id=grant_role['target_id'],
-                role_id=grant_role['role_id'],
-                inherited=grant_role['inherited'])
-            session.execute(new_entry)
-            session.commit()
+            try:
+                new_entry = assignment_table.insert().values(
+                    type=grant_role['type'],
+                    actor_id=grant_role['actor_id'],
+                    target_id=grant_role['target_id'],
+                    role_id=grant_role['role_id'],
+                    inherited=grant_role['inherited'])
+                session.execute(new_entry)
+                session.commit()
+            except sql.exc.IntegrityError:
+                LOG.warning(_LW('Skipping older schema assignment table inserts, '
+                                'possible duplicate entries present'))
 
     # Delete all the rows
+    # This happens only once after mangling is done, dropping migrated table
     session.execute(upgrade_table.delete())
     session.commit()
 
