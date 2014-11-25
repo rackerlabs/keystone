@@ -319,15 +319,9 @@ class Manager(manager.Manager):
             list(set(project_ids + project_ids_from_domains)))
 
     def list_role_assignments_for_role(self, role_id=None):
-        # NOTE(henry-nash): Currently the efficiency of the key driver
-        # implementation (SQL) of list_role_assignments is severely hampered by
-        # the existence of the multiple grant tables - hence there is little
-        # advantage in pushing the logic of this method down into the driver.
-        # Once the single assignment table is implemented, then this situation
-        # will be different, and this method should have its own driver
-        # implementation.
-        return [r for r in self.driver.list_role_assignments()
-                if r['role_id'] == role_id]
+        # NOTE(samuelms): Calls to this method should be replaced by directly
+        # calls to list_role_assignments
+        return self.list_role_assignments(role_id=role_id)
 
     def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
         self.driver.remove_role_from_user_and_project(user_id, tenant_id,
@@ -683,8 +677,31 @@ class Driver(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def list_role_assignments(self):
+    def list_role_assignments(self, role_id=None,
+                              user_id=None, group_ids=None,
+                              project_id=None, domain_id=None,
+                              inherited_to_projects=None):
+        """Lists role assignments.
 
+        Supports the ``OS-INHERIT`` role inheritance from the project's domain
+        if supported by the assignment driver.
+
+        :param role_id: id from the role to be filtered
+        :type role_id: str
+        :param user_id: id from the user to be filtered
+        :type user_id: str
+        :param group_ids: id from the groups to be filtered
+        :type group_ids: list
+        :param project_id: id from the project to be filtered
+        :type project_id: str
+        :param domain_id: id from the domain to be filtered
+        :type domain_id: str
+        :param inherited_to_projects: if the target to be filtered is set
+                                      to be inhereted to projects
+        :type inherited_to_projects: bool
+        :returns: list of assingments
+        :rtype: list
+        """
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
