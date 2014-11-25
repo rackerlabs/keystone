@@ -13,7 +13,6 @@
 # under the License.
 
 import datetime
-import os
 import uuid
 
 import mock
@@ -30,15 +29,12 @@ from keystone.tests.ksfixtures import database
 
 CONF = config.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
-OPENSTACK_REPO = os.environ.get('OPENSTACK_REPO',
-                                'https://git.openstack.org/openstack')
-KEYSTONECLIENT_REPO = '%s/python-keystoneclient.git' % OPENSTACK_REPO
 
 
-class CompatTestCase(tests.NoModule, tests.TestCase):
+class ClientDrivenTestCase(tests.TestCase):
 
     def setUp(self):
-        super(CompatTestCase, self).setUp()
+        super(ClientDrivenTestCase, self).setUp()
 
         # FIXME(morganfainberg): Since we are running tests through the
         # controllers and some internal api drivers are SQL-only, the correct
@@ -64,13 +60,6 @@ class CompatTestCase(tests.NoModule, tests.TestCase):
         self.admin_server = fixture.server
 
         self.addCleanup(self.cleanup_instance('public_server', 'admin_server'))
-
-        if isinstance(self.checkout_info, str):
-            revdir = self.checkout_info
-        else:
-            revdir = tests.checkout_vendor(*self.checkout_info)
-        self.add_path(revdir)
-        self.clear_module('keystoneclient')
 
     def _public_url(self):
         public_port = self.public_server.socket_info['socket'][1]
@@ -113,10 +102,6 @@ class CompatTestCase(tests.NoModule, tests.TestCase):
                             password=user_ref['password'],
                             tenant_id=tenant_id,
                             admin=admin)
-
-
-class KeystoneClientTests(object):
-    """Tests for all versions of keystoneclient."""
 
     def test_authenticate_tenant_name_and_tenants(self):
         client = self.get_client()
@@ -1080,28 +1065,3 @@ class KeystoneClientTests(object):
         self.assertRaises(client_exceptions.Unauthorized, client.tenants.list)
         client.auth_token = new_token_id
         client.tenants.list()
-
-
-class KcMasterTestCase(CompatTestCase, KeystoneClientTests):
-    checkout_info = (KEYSTONECLIENT_REPO, 'master')
-
-    def setUp(self):
-        if os.environ.get('KSCTEST_PATH'):
-            self.skip('KSCTEST_PATH env set, running tests with local '
-                      'client instead.')
-        super(KcMasterTestCase, self).setUp()
-
-
-class KcOptTestCase(KcMasterTestCase):
-    # Set KSCTEST_PATH to the keystoneclient directory, then run this test.
-    #
-    # For example, to test your local keystoneclient,
-    #
-    # KSCTEST_PATH=/opt/stack/python-keystoneclient;
-    # tox -e py27 test_keystoneclient.KcOptTestCase
-
-    def setUp(self):
-        self.checkout_info = os.environ.get('KSCTEST_PATH')
-        if not self.checkout_info:
-            self.skip('Set KSCTEST_PATH env to test with local client')
-        super(KcOptTestCase, self).setUp()
