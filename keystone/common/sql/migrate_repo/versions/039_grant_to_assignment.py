@@ -71,21 +71,25 @@ def migrate_grant_table(meta, session, table_name):
 
     # For each grant in this table, expand it out to be an assignment entry for
     # each role in the metadata
-    for grant in session.query(upgrade_table).all():
-        for grant_role in grant_to_grant_dict_list(table_name, grant):
-            new_entry = assignment_table.insert().values(
-                type=grant_role['type'],
-                actor_id=grant_role['actor_id'],
-                target_id=grant_role['target_id'],
-                role_id=grant_role['role_id'],
-                inherited=grant_role['inherited'])
-            session.execute(new_entry)
-            session.commit()
+    # wfoster-b: #1395959 skip if there are duplicate entries else db_sync fails
+    try:
+        for grant in session.query(upgrade_table).all():
+            for grant_role in grant_to_grant_dict_list(table_name, grant):
+                new_entry = assignment_table.insert().values(
+                    type=grant_role['type'],
+                    actor_id=grant_role['actor_id'],
+                    target_id=grant_role['target_id'],
+                    role_id=grant_role['role_id'],
+                    inherited=grant_role['inherited'])
+                session.execute(new_entry)
+                session.commit()
 
-    # Delete all the rows
-    session.execute(upgrade_table.delete())
-    session.commit()
-
+        # Delete all the rows
+        session.execute(upgrade_table.delete())
+        session.commit()
+    except:
+         LOG.warning('Skipping assignment table inserts for older schema,'
+                     'possible duplicate entries present')
 
 def downgrade_assignment_table(meta, migrate_engine):
 
