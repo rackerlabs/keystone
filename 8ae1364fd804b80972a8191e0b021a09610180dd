@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_68b236e6",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 22
+      },
+      "lineNbr": 1505,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-25T14:21:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_03757e97",
+      "revId": "8ae1364fd804b80972a8191e0b021a09610180dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_929ff95e",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 22
@@ -89,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_639df865",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-25T14:21:58Z",
+      "side": 1,
+      "message": "very cool...had no idea this existed!  Done.",
+      "parentUuid": "5a890539_c6445fb9",
+      "revId": "8ae1364fd804b80972a8191e0b021a09610180dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_b21b15c9",
         "filename": "keystone/identity/core.py",
         "patchSetId": 22
@@ -100,6 +136,24 @@
       "writtenOn": "2014-11-21T02:44:16Z",
       "side": 1,
       "message": "these should be in alphabetical order.",
+      "revId": "8ae1364fd804b80972a8191e0b021a09610180dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_a38a8018",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-25T14:21:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_b21b15c9",
       "revId": "8ae1364fd804b80972a8191e0b021a09610180dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -152,6 +206,24 @@
       "side": 1,
       "message": "If we move to the \"deprecateD\" slo.config opt this whole set of logic can go away.",
       "parentUuid": "5a890539_7268cd21",
+      "revId": "8ae1364fd804b80972a8191e0b021a09610180dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_03e994b6",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-25T14:21:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_a64913d2",
       "revId": "8ae1364fd804b80972a8191e0b021a09610180dd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
