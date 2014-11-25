@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_0ceaa173",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-11-25T14:56:20Z",
+      "side": 1,
+      "message": "Commit message says about username, but this patchset is about logging user_id",
+      "revId": "357282ec7f0a610407f5248915094d25a6a377fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
