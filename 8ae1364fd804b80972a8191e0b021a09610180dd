@@ -195,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_f7e8c2b4",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-25T15:11:12Z",
+      "side": 1,
+      "message": "One additional comment: For token generation, the assignments manager/driver is, today, not responsible for mapping the role_id into the role entity (so that name can go in the token).  The token provider actually does this bit - so the key manager APIs for this speak ids, not role references.\n\nThe only proviso to the above is that the new code for federation (where we want roles for a set of groups) appears to expect the assignment manager to do this task...so this is the only case when we do this.  Which ever way we go, we should make this consistent.",
+      "parentUuid": "5a890539_4caca9ed",
+      "revId": "8ae1364fd804b80972a8191e0b021a09610180dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_7268cd21",
         "filename": "keystone/resource/core.py",
         "patchSetId": 22
