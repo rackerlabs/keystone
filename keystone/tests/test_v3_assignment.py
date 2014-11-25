@@ -1385,6 +1385,201 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
                                                 link_url=gp1_url)
 
 
+class RoleAssignmentTestCase(test_v3.RestfulTestCase):
+    """Test role assignments."""
+
+    def setUp(self):
+        super(RoleAssignmentTestCase, self).setUp()
+
+        self.group = self.new_group_ref(
+            domain_id=self.domain_id)
+        self.group = self.identity_api.create_group(self.group)
+        self.group_id = self.group['id']
+
+    def config_overrides(self):
+        super(RoleAssignmentTestCase, self).config_overrides()
+        self.config_fixture.config(group='os_inherit', enabled=True)
+
+    def _create_role(self, id=None, name=None):
+        ref = {'id': id or uuid.uuid4().hex,
+               'name': name or uuid.uuid4().hex}
+
+        self.assignment_api.create_role(ref['id'], ref)
+
+        return ref
+
+    def _get_assignment_url_and_entity(
+        self, project_id=None, domain_id=None, user_id=None, group_id=None,
+            role_id=None, inherited=False, effective=False):
+        entity = {'links': {}}
+
+        if domain_id:
+            url = '/domains/%(domain_id)s' % {'domain_id': domain_id}
+            if project_id:
+                entity['scope'] = {'project': {'id': project_id}}
+            else:
+                entity['scope'] = {'domain': {'id': domain_id}}
+        else:
+            entity['scope'] = {'project': {'id': project_id}}
+            url = '/projects/%(project_id)s' % {'project_id': project_id}
+
+        if group_id:
+            url += '/groups/%(group_id)s' % {'group_id': group_id}
+            if user_id:
+                entity['user'] = {'id': user_id}
+                entity['links']['membership'] = (
+                    '/groups/%(group_id)s/users/%(user_id)s' %
+                    {'group_id': group_id, 'user_id': user_id})
+            else:
+                entity['group'] = {'id': group_id}
+        else:
+            entity['user'] = {'id': user_id}
+            url += '/users/%(user_id)s' % {'user_id': user_id}
+
+        url += '/roles/%(role_id)s' % {'role_id': role_id}
+
+        entity['links']['self'] = url
+
+        if inherited:
+            url = '/OS-INHERIT%s/inherited_to_projects' % url
+            if not effective:
+                entity['OS-INHERIT:inherited_to'] = 'projects'
+
+        return (url, entity)
+
+    def _test_direct_assignment(self, project_id=None, domain_id=None,
+                                user_id=None, group_id=None, inherited=False):
+        role_id = self._create_role()['id']
+
+        url, ref = self._get_assignment_url_and_entity(
+            project_id=project_id, domain_id=domain_id,
+            user_id=user_id, group_id=group_id, role_id=role_id,
+            inherited=inherited)
+        self.put(url)
+
+        resource_url = '/role_assignments'
+        r = self.get(resource_url)
+
+        self.assertValidRoleAssignmentListResponse(
+            r, resource_url=resource_url)
+        self.assertRoleAssignmentInListResponse(r, ref, link_url=url)
+
+    def _test_noninherited_effective_assignment(self, project_id=None,
+                                                domain_id=None, user_id=None,
+                                                group_id=None):
+        if user_id and group_id:
+            self.identity_api.add_user_to_group(user_id, group_id)
+
+        url, ref = self._get_assignment_url_and_entity(
+            project_id=project_id, domain_id=domain_id, user_id=self.user_id,
+            group_id=group_id, role_id=self.role_id)
+        self.put(url)
+
+        resource_url = '/role_assignments?effective'
+        r = self.get(resource_url)
+
+        self.assertValidRoleAssignmentListResponse(
+            r, resource_url=resource_url)
+        self.assertRoleAssignmentInListResponse(r, ref, link_url=url)
+
+    def _test_inherited_effective_assignment(self, project_id=None,
+                                             domain_id=None, user_id=None,
+                                             group_id=None):
+        if user_id and group_id:
+            self.identity_api.add_user_to_group(user_id, group_id)
+
+        url, ref = self._get_assignment_url_and_entity(
+            project_id=project_id, domain_id=domain_id, user_id=self.user_id,
+            group_id=group_id, role_id=self.role_id, inherited=True)
+        self.put(url)
+
+        resource_url = '/role_assignments?effective'
+        r = self.get(resource_url)
+
+        self.assertValidRoleAssignmentListResponse(
+            r, resource_url=resource_url)
+        self.assertRoleAssignmentInListResponse(r, ref, link_url=url)
+
+    # non-inherited direct assignments
+
+    def test_noninherited_direct_user_project_assignment(self):
+        self._test_direct_assignment(project_id=self.project_id,
+                                     user_id=self.user_id)
+
+    def test_noninherited_direct_user_domain_assignment(self):
+        self._test_direct_assignment(domain_id=self.domain_id,
+                                     user_id=self.user_id)
+
+    def test_noninherited_direct_group_project_assignment(self):
+        self._test_direct_assignment(project_id=self.project_id,
+                                     group_id=self.group_id)
+
+    def test_noninherited_direct_group_domain_assignment(self):
+        self._test_direct_assignment(domain_id=self.domain_id,
+                                     group_id=self.group_id)
+
+    # non-inherited effective assignments
+
+    def test_noninherited_effective_user_project_assignment(self):
+        self._test_noninherited_effective_assignment(
+            project_id=self.project_id,
+            user_id=self.user_id)
+
+    def test_noninherited_effective_user_domain_assignment(self):
+        self._test_noninherited_effective_assignment(domain_id=self.domain_id,
+                                                     user_id=self.user_id)
+
+    def test_noninherited_effective_group_project_assignment(self):
+        self._test_noninherited_effective_assignment(
+            project_id=self.project_id,
+            user_id=self.user_id,
+            group_id=self.group_id)
+
+    def test_noninherited_effective_group_domain_assignment(self):
+        self._test_noninherited_effective_assignment(domain_id=self.domain_id,
+                                                     user_id=self.user_id,
+                                                     group_id=self.group_id)
+
+    # inherited direct assignments
+
+    def test_inherited_direct_user_project_assignment(self):
+        # Does not Apply
+        pass
+
+    def test_inherited_direct_user_domain_assignment(self):
+        self._test_direct_assignment(
+            domain_id=self.domain_id, user_id=self.user_id, inherited=True)
+
+    def test_inherited_direct_group_project_assignment(self):
+        # Does not Apply
+        pass
+
+    def test_inherited_direct_group_domain_assignment(self):
+        self._test_direct_assignment(
+            domain_id=self.domain_id, group_id=self.group_id, inherited=True)
+
+    # inherited effective assignments
+
+    def test_inherited_effective_user_project_assignment(self):
+        # Does not Apply
+        pass
+
+    def test_inherited_effective_user_domain_assignment(self):
+        self._test_inherited_effective_assignment(project_id=self.project_id,
+                                                  domain_id=self.domain_id,
+                                                  user_id=self.user_id)
+
+    def test_inherited_effective_group_project_assignment(self):
+        # Does not Apply
+        pass
+
+    def test_inherited_effective_group_domain_assignment(self):
+        self._test_inherited_effective_assignment(project_id=self.project_id,
+                                                  domain_id=self.domain_id,
+                                                  user_id=self.user_id,
+                                                  group_id=self.group_id)
+
+
 class AssignmentInheritanceTestCase(test_v3.RestfulTestCase):
     """Test inheritance crud and its effects."""
 
