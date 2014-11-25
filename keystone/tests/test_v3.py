@@ -13,6 +13,7 @@
 # under the License.
 
 import datetime
+import re
 import uuid
 
 from oslo.serialization import jsonutils
@@ -1061,17 +1062,20 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
                 self.assertEqual(ref['group']['id'], entity['group']['id'])
             if ref.get('role'):
                 self.assertEqual(ref['role']['id'], entity['role']['id'])
-            if ref['scope'].get('project'):
-                self.assertEqual(ref['scope']['project']['id'],
-                                 entity['scope']['project']['id'])
-            if ref['scope'].get('domain'):
-                self.assertEqual(ref['scope']['domain']['id'],
-                                 entity['scope']['domain']['id'])
-            if ref['scope'].get('OS-INHERIT:inherited_to'):
-                self.assertEqual(ref['scope']['OS-INHERIT:inherited_to'],
-                                 entity['scope']['OS-INHERIT:inherited_to'])
+            if ref.get('scope'):
+                if ref['scope'].get('project'):
+                    self.assertEqual(ref['scope']['project']['id'],
+                                     entity['scope']['project']['id'])
+                if ref['scope'].get('domain'):
+                    self.assertEqual(ref['scope']['domain']['id'],
+                                     entity['scope']['domain']['id'])
+                if ref['scope'].get('OS-INHERIT:inherited_to'):
+                    self.assertEqual(
+                        ref['scope']['OS-INHERIT:inherited_to'],
+                        entity['scope']['OS-INHERIT:inherited_to'])
         if url:
-            self.assertIn(url, entity['links']['assignment'])
+            self.assertIsNotNone(re.match('.+%s' % url,
+                                 entity['links']['assignment']))
 
     def assertRoleAssignmentInListResponse(
             self, resp, ref, link_url=None, expected=1):
