@@ -87,8 +87,8 @@ def migrate_grant_table(meta, session, table_name):
         # Delete all the rows
         session.execute(upgrade_table.delete())
         session.commit()
-    except: 
-        print "Omitting assignment table inserts from old schema, possible duplicate entries"
+    except:
+        print "Omitting assignment table inserts in old schema, possible duplicate entries"
 def downgrade_assignment_table(meta, migrate_engine):
 
     def add_to_dict_list(metadata, assignment_row):
