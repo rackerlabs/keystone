@@ -16,6 +16,24 @@
       "revId": "4c6c861a9e6f8a1a3ee387ce9fd963caecd0b035",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_893e91b6",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-11-25T08:01:09Z",
+      "side": 1,
+      "message": "You can check the result test here: http://logs.openstack.org/44/102244/15/check/gate-keystone-python27/370258a/console.html#_2014-11-24_14_48_22_907",
+      "parentUuid": "5a890539_8d007867",
+      "revId": "4c6c861a9e6f8a1a3ee387ce9fd963caecd0b035",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
