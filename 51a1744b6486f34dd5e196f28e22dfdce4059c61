@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a890539_06dfe23a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-11-25T14:00:37Z",
+      "side": 1,
+      "message": "I think the bug number should be removed from the subject and should be placed in description, in format \"Closes-Bug: #123456\" or \"Partial-Bug: #123456\".",
+      "revId": "51a1744b6486f34dd5e196f28e22dfdce4059c61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_2a574bcb",
         "filename": "keystone/common/sql/migrate_repo/versions/039_grant_to_assignment.py",
         "patchSetId": 2
