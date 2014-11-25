@@ -260,7 +260,10 @@ class Assignment(assignment.Driver):
         return self._roles_from_role_dicts(metadata_ref.get('roles', []),
                                            inherited_to_projects)
 
-    def list_role_assignments(self):
+    def list_role_assignments(self, role_id=None,
+                              user_id=None, group_ids=None,
+                              project_id=None, domain_id=None,
+                              inherited_to_projects=None):
         role_assignments = []
         for a in self.role.list_role_assignments(self.project.tree_dn):
             if isinstance(a, UserRoleAssociation):
@@ -273,6 +276,16 @@ class Assignment(assignment.Driver):
                     'role_id': self.role._dn_to_id(a.role_dn),
                     'group_id': self.group._dn_to_id(a.group_dn),
                     'project_id': self.project._dn_to_id(a.project_dn)}
+
+            if role_id and assignment['role_id'] != role_id:
+                continue
+            if user_id and assignment.get('user_id') != user_id:
+                continue
+            if group_ids and assignment.get('group_id') not in group_ids:
+                continue
+            if project_id and assignment['project_id'] != project_id:
+                continue
+
             role_assignments.append(assignment)
         return role_assignments
 
