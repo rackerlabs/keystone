@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_2a574bcb",
+        "filename": "keystone/common/sql/migrate_repo/versions/039_grant_to_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5511
+      },
+      "writtenOn": "2014-11-25T09:45:45Z",
+      "side": 1,
+      "message": "This is one of the reasons why pep8 fails - you should at least use except Exception.\n\nIdeally you want to use except sql.exc.IntegrityError but even that is not completely correct if you want to just make sure we are catching the duplicate error reported in the bug (for the complexity of figuring out the right exception per backend see https://github.com/openstack/oslo.db/blob/master/oslo/db/sqlalchemy/exc_filters.py)\n\nAlso and more importantly - the try should probably only catch the the single insert and skip it - not the whole loop?",
+      "revId": "51a1744b6486f34dd5e196f28e22dfdce4059c61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_ea2e2342",
+        "filename": "keystone/common/sql/migrate_repo/versions/039_grant_to_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5511
+      },
+      "writtenOn": "2014-11-25T09:45:45Z",
+      "side": 1,
+      "message": "You may also need to import LOG, and this line seems to be wrongly indented.",
+      "revId": "51a1744b6486f34dd5e196f28e22dfdce4059c61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
