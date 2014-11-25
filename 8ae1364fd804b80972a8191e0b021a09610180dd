@@ -177,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_4caca9ed",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-11-25T14:41:23Z",
+      "side": 1,
+      "message": "So these are all valid questions...and I have posted some information to the dev mailing list (see: http://lists.openstack.org/pipermail/openstack-dev/2014-November/051481.html).\n\nI guess at some level we have to decide which concepts are \"global\" and which are part of \"multi-tenant\" support in its broadest terms.  E.g.  Do we want individual domains to be able to build abstractions that are meaningful to them? (yes).  Do we want flexibility to support different assignments models? (yes). However, we might consider \"base roles\" are really on a trajectory to become \"the list of capabilities of supported services\", to which we will want to provide support for access control.  If roles really become service capabilities, then it doesn\u0027t feel to me that they should be (effectively) definable by anything that is \"multi tenant pluggable\"...they are system-wide (or, perhaps more correctly, service-wide).",
+      "parentUuid": "5a890539_265b6388",
+      "revId": "8ae1364fd804b80972a8191e0b021a09610180dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_7268cd21",
         "filename": "keystone/resource/core.py",
         "patchSetId": 22
