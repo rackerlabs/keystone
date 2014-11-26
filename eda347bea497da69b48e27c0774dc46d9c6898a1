@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_5c943736",
+        "filename": "keystone/tests/test_auth_plugin.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-26T11:25:24Z",
+      "side": 1,
+      "message": "i don\u0027t understand why is that here. saml2 seems to be turned off by default (tests/core.py) and its is not used here.\nPlus tox -repy27 passed all the tests. Is it for future reference?",
+      "revId": "eda347bea497da69b48e27c0774dc46d9c6898a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_fc9c036c",
+        "filename": "keystone/tests/test_auth_plugin.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-26T11:25:24Z",
+      "side": 1,
+      "message": "i don\u0027t understand why is that here. saml2 seems to be turned off by default (tests/core.py) and its is not used here.\nPlus tox -repy27 passed all the tests. Is it for future reference?",
+      "revId": "eda347bea497da69b48e27c0774dc46d9c6898a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
