@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_aa121607",
+        "filename": "keystone/common/sql/migrate_repo/versions/039_grant_to_assignment.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-26T21:58:27Z",
+      "side": 1,
+      "message": "LP?",
+      "revId": "d07146f740572c881e1ac0f86e8a5a5668673794",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
