@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_412d30fd",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-26T10:56:28Z",
+      "side": 1,
+      "message": "Yeah, good catch.\nMy initial thought was that since it becomes an object attribute i don\u0027t need to repeat that operation again in the _authenticate methods (like like 53-ish).\nI can either make it local and create KeystoneToken again or simply wrap it with try/expect/finally and make sure self.token_ref is cleaned in finally block.",
+      "parentUuid": "5a890539_22faf342",
+      "revId": "e71c021df1fe689ccdb09a1cc11c8eb4f76b1ff5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_02c7b745",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-26T00:27:55Z",
       "side": 1,
       "message": "nit: scoping",
+      "revId": "e71c021df1fe689ccdb09a1cc11c8eb4f76b1ff5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_019de865",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1687,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-26T10:56:28Z",
+      "side": 1,
+      "message": "thanks.",
+      "parentUuid": "5a890539_02c7b745",
       "revId": "e71c021df1fe689ccdb09a1cc11c8eb4f76b1ff5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
