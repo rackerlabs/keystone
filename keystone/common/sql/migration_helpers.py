@@ -27,7 +27,6 @@ import six
 import sqlalchemy
 
 from keystone.common import sql
-from keystone.common.sql import migrate_repo
 from keystone import contrib
 from keystone import exception
 from keystone.i18n import _
@@ -141,11 +140,25 @@ def find_migrate_repo(package=None, repo_name='migrate_repo'):
 
 def _sync_common_repo(version):
     abs_path = find_migrate_repo()
-    init_version = migrate_repo.DB_INIT_VERSION
+    init_version = get_init_version()
     engine = sql.get_engine()
     _assert_not_schema_downgrade(version=version)
     migration.db_sync(engine, abs_path, version=version,
                       init_version=init_version)
+
+
+def get_init_version(abs_path=None):
+    """Get an initial version of a migrate repository
+
+    param abs_path: Absolute path to migrate repository.
+    return:         initial version number or None, if DB is empty.
+    """
+    if abs_path is None:
+        abs_path = find_migrate_repo()
+
+    repo = migrate.versioning.repository.Repository(abs_path)
+    init_version = int(min(repo.versions.versions)) - 1
+    return init_version if init_version > 0 else None
 
 
 def _fix_federation_tables(engine):
@@ -190,7 +203,6 @@ def _assert_not_schema_downgrade(extension=None, version=None):
 
 
 def _sync_extension_repo(extension, version):
-    init_version = 0
     engine = sql.get_engine()
 
     try:
@@ -213,6 +225,8 @@ def _sync_extension_repo(extension, version):
         sys.exit(1)
 
     _assert_not_schema_downgrade(extension=extension, version=version)
+
+    init_version = get_init_version(abs_path)
 
     try:
         migration.db_sync(engine, abs_path, version=version,
@@ -252,7 +266,7 @@ def sync_database_to_version(extension=None, version=None):
 def get_db_version(extension=None):
     if not extension:
         return migration.db_version(sql.get_engine(), find_migrate_repo(),
-                                    migrate_repo.DB_INIT_VERSION)
+                                    get_init_version())
 
     try:
         package_name = '.'.join((contrib.__name__, extension))
