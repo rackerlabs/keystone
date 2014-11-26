@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_5647c1a2",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-26T04:55:51Z",
+      "side": 0,
+      "message": "If something calls this method with invalid data do we no longer care?",
+      "revId": "3d9184b6f5860f0b56091a326ed41d2a4c29fbe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

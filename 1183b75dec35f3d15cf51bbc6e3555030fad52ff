@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a890539_36e315a5",
+        "filename": "keystone/policy/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-26T04:55:51Z",
+      "side": 1,
+      "message": "I\u0027m not sure about this. I know you are saying that this makes it the same as other places, but I would push back and say that those other places may be wrong. To me this is business logic for the manager layer.",
+      "revId": "1183b75dec35f3d15cf51bbc6e3555030fad52ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_2af69863",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 2
