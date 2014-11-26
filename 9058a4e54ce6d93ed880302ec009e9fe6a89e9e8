@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a890539_a47dfd1d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6534
+      },
+      "writtenOn": "2014-11-26T14:09:11Z",
+      "side": 1,
+      "message": "Sorry but I seem to have missed the design document that outlined this proposed change, and in particular the security impact of letting a user change his own project id. \n\nWhat safeguards are there to stop a user escalating his privileges by saying he is a member of a project that he is not a member of?",
+      "revId": "9058a4e54ce6d93ed880302ec009e9fe6a89e9e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_30d4f4e7",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 1
