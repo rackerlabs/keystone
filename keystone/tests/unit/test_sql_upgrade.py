@@ -547,6 +547,15 @@ class SqlUpgradeTests(SqlMigrateBase):
             self.assertFalse(self._does_index_exist('assignment',
                                                     'assignment_role_id_fkey'))
 
+    def test_rename_assignment_actor_index(self):
+        self.upgrade(67)
+        self.assertTrue(self._does_index_exist('assignment', 'ix_actor_id'))
+
+        self.upgrade(68)
+        self.assertFalse(self._does_index_exist('assignment', 'ix_actor_id'))
+        self.assertTrue(self._does_index_exist('assignment',
+                                               'ix_assignment_actor_id'))
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
