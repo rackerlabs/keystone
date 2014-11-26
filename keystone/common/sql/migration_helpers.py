@@ -148,6 +148,25 @@ def _sync_common_repo(version):
                       init_version=init_version)
 
 
+def get_init_version(path=None):
+    """Get an initial version of a migrate repository
+
+    param path: path to migrate repository.
+    return:     initial version number or None, is DB is empty.
+    """
+    if path is None:
+        path = find_migrate_repo()
+
+    migration_scripts = []
+    for script in os.listdir(os.path.join(path, 'versions')):
+        if script.endswith('py') and script[:3].isdigit():
+            migration_scripts.append(script)
+
+    migration_versions = [int(script[:3]) for script in migration_scripts]
+    init_version = min(migration_versions) - 1
+    return init_version if init_version > 0 else None
+
+
 def _fix_federation_tables(engine):
     """Fix the identity_provider, federation_protocol and mapping tables
      to be InnoDB and Charset UTF8.
@@ -196,11 +215,12 @@ def _sync_extension_repo(extension, version):
     try:
         package_name = '.'.join((contrib.__name__, extension))
         package = importutils.import_module(package_name)
+        abs_path = find_migrate_repo(package)
+        init_version = get_init_version(abs_path)
     except ImportError:
         raise ImportError(_("%s extension does not exist.")
                           % package_name)
     try:
-        abs_path = find_migrate_repo(package)
         try:
             migration.db_version_control(sql.get_engine(), abs_path)
         # Register the repo with the version control API
@@ -252,7 +272,7 @@ def sync_database_to_version(extension=None, version=None):
 def get_db_version(extension=None):
     if not extension:
         return migration.db_version(sql.get_engine(), find_migrate_repo(),
-                                    migrate_repo.DB_INIT_VERSION)
+                                    get_init_version())
 
     try:
         package_name = '.'.join((contrib.__name__, extension))
