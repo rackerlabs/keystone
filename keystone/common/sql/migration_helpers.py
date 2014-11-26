@@ -27,7 +27,6 @@ import six
 import sqlalchemy
 
 from keystone.common import sql
-from keystone.common.sql import migrate_repo
 from keystone import contrib
 from keystone import exception
 from keystone.i18n import _
@@ -141,11 +140,25 @@ def find_migrate_repo(package=None, repo_name='migrate_repo'):
 
 def _sync_common_repo(version):
     abs_path = find_migrate_repo()
-    init_version = migrate_repo.DB_INIT_VERSION
+    init_version = get_init_version()
     engine = sql.get_engine()
     _assert_not_schema_downgrade(version=version)
     migration.db_sync(engine, abs_path, version=version,
                       init_version=init_version)
+
+
+def get_init_version(abs_path=None):
+    """Get an initial version of a migrate repository
+
+    param abs_path: Absolute path to migrate repository.
+    return:         initial version number or None, if DB is empty.
+    """
+    if abs_path is None:
+        abs_path = find_migrate_repo()
+
+    repo = migrate.versioning.repository.Repository(abs_path)
+    init_version = int(min(repo.versions.versions)) - 1
+    return init_version if init_version > 0 else None
 
 
 def _fix_federation_tables(engine):
@@ -196,11 +209,12 @@ def _sync_extension_repo(extension, version):
     try:
         package_name = '.'.join((contrib.__name__, extension))
         package = importutils.import_module(package_name)
+        abs_path = find_migrate_repo(package)
+        init_version = get_init_version(abs_path)
     except ImportError:
         raise ImportError(_("%s extension does not exist.")
                           % package_name)
     try:
-        abs_path = find_migrate_repo(package)
         try:
             migration.db_version_control(sql.get_engine(), abs_path)
         # Register the repo with the version control API
@@ -252,7 +266,7 @@ def sync_database_to_version(extension=None, version=None):
 def get_db_version(extension=None):
     if not extension:
         return migration.db_version(sql.get_engine(), find_migrate_repo(),
-                                    migrate_repo.DB_INIT_VERSION)
+                                    get_init_version())
 
     try:
         package_name = '.'.join((contrib.__name__, extension))
