@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_16fff934",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-26T04:59:07Z",
+      "side": 1,
+      "message": "Calling filter_by isn\u0027t actually querying the database. The Query object is just remembering all of the filters so that it can make the proper query when .all() is called.",
+      "revId": "ecc1ba4c7b4ff1b1e0d70efa588aa31635c15704",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
