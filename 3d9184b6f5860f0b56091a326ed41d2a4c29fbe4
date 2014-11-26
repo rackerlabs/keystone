@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_b0d29ffd",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 641,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-26T11:55:16Z",
+      "side": 0,
+      "message": "Mabe add a NOTE that this is aleady handled in UserV3._require_matching_id() ?",
+      "revId": "3d9184b6f5860f0b56091a326ed41d2a4c29fbe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
