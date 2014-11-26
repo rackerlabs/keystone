@@ -1447,6 +1447,12 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertIn(('ix_token_user_id', ['user_id']), index_data)
         self.assertIn(('ix_token_trust_id', ['trust_id']), index_data)
 
+    def test_actor_id_index_renamed(self):
+        self.upgrade(62)
+        table = sqlalchemy.Table('assignment', self.metadata, autoload=True)
+        index_data = [(idx.name, idx.columns.keys()) for idx in table.indexes]
+        self.assertIn(('ix_assignment_actor_id', ['actor_id']), index_data)
+
     def test_token_user_id_and_trust_id_index_downgrade(self):
         self.upgrade(55)
         self.downgrade(54)
