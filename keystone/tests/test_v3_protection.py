@@ -666,7 +666,6 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
 
         self._test_domain_management(
             expected=exception.ForbiddenAction.code)
-
         self.auth = self.build_authentication_request(
             user_id=self.cloud_admin_user['id'],
             password=self.cloud_admin_user['password'],

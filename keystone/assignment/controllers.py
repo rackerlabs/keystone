@@ -535,6 +535,7 @@ class RoleV3(controller.V3Controller):
             ref['domain'] = self.assignment_api.get_domain(domain_id)
         else:
             ref['project'] = self.assignment_api.get_project(project_id)
+            ref['member'] = ref['project']
 
         self.check_protection(context, protection, ref)
 

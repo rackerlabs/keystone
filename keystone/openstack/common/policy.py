@@ -460,10 +460,12 @@ class AndCheck(BaseCheck):
 
         Requires that all rules accept in order to return True.
         """
-
-        for rule in self.rules:
-            if not rule(target, cred, enforcer):
-                return False
+        try:
+            for rule in self.rules:
+                if not rule(target, cred, enforcer):
+                    return False
+        except Exception:
+            return False
 
         return True
 
@@ -503,10 +505,12 @@ class OrCheck(BaseCheck):
 
         Requires that at least one rule accept in order to return True.
         """
-
         for rule in self.rules:
-            if rule(target, cred, enforcer):
-                return True
+            try:
+                if rule(target, cred, enforcer):
+                    return True
+            except Exception:
+                pass
         return False
 
     def add_check(self, rule):
@@ -869,8 +873,11 @@ class RuleCheck(Check):
 class RoleCheck(Check):
     def __call__(self, target, creds, enforcer):
         """Check that there is a matching role in the cred dict."""
-
-        return self.match.lower() in [x.lower() for x in creds['roles']]
+        try:
+            return self.match.lower() in [x.lower() for x in creds['roles']]
+        except KeyError:
+            # No roles defined
+            return False
 
 
 @register('http')
