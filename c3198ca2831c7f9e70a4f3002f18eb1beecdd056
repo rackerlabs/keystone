@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_36a8751f",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-26T05:04:35Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1abeadc6_54618a03",
+      "revId": "c3198ca2831c7f9e70a4f3002f18eb1beecdd056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_f437f6fc",
         "filename": "keystone/trust/core.py",
         "patchSetId": 2
@@ -100,6 +118,24 @@
       "writtenOn": "2014-11-13T14:48:44Z",
       "side": 1,
       "message": "Might be a good candidate for a comment too.",
+      "parentUuid": "1abeadc6_f437f6fc",
+      "revId": "c3198ca2831c7f9e70a4f3002f18eb1beecdd056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_966849f6",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-11-26T05:04:35Z",
+      "side": 1,
+      "message": "Give the value a name or I would also be happy with calling this as a kwarg.",
       "parentUuid": "1abeadc6_f437f6fc",
       "revId": "c3198ca2831c7f9e70a4f3002f18eb1beecdd056",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
