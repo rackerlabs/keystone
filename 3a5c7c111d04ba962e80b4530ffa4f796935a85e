@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_cf76943f",
+        "filename": "keystone/common/sql/migrate_repo/versions/039_grant_to_assignment.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-26T21:20:00Z",
+      "side": 1,
+      "message": "you should change a bit this comment:\n\n# NOTE(wfoster-b): due bug #1395959 skip if duplicate entries exist, else db_sync fails\n\nfrom http://legacy.python.org/dev/peps/pep-0350/#what-are-codetags\n\nNOTE (HELP)\nNotes: Sections where a code reviewer found something that needs discussion or further investigation.",
+      "revId": "3a5c7c111d04ba962e80b4530ffa4f796935a85e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
