@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_c6abf1d3",
+        "filename": "keystone/common/sql/migrate_repo/versions/039_grant_to_assignment.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5511
+      },
+      "writtenOn": "2014-11-26T13:01:35Z",
+      "side": 0,
+      "message": "don\u0027t delete this line here - it is there to separate standard library imports (like json) from third party library imports (like sqlalchemy)",
+      "revId": "ea4fcec2a0da298c8484309966aa632d9ebfaeab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

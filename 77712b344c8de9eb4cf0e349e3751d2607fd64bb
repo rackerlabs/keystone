@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_4679c191",
+        "filename": "keystone/common/sql/migrate_repo/versions/039_grant_to_assignment.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5511
+      },
+      "writtenOn": "2014-11-26T13:01:35Z",
+      "side": 1,
+      "message": "I think these two lines need to stay out of the loops and thus the new try-except block too - they need to happen only once after the data mangling is done as they drop the table that was just migrated",
+      "revId": "77712b344c8de9eb4cf0e349e3751d2607fd64bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
