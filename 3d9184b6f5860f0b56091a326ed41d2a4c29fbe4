@@ -16,6 +16,24 @@
       "revId": "3d9184b6f5860f0b56091a326ed41d2a4c29fbe4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_a7c8ada8",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-11-26T07:34:14Z",
+      "side": 0,
+      "message": "I think this method should only be called by controller layer.",
+      "parentUuid": "5a890539_5647c1a2",
+      "revId": "3d9184b6f5860f0b56091a326ed41d2a4c29fbe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

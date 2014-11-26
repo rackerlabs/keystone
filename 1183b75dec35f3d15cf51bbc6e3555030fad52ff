@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_4789c96d",
+        "filename": "keystone/policy/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-11-26T07:34:14Z",
+      "side": 1,
+      "message": "I don\u0027t think so. I think it is right that check input parameters in controller layer.",
+      "parentUuid": "5a890539_36e315a5",
+      "revId": "1183b75dec35f3d15cf51bbc6e3555030fad52ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_2af69863",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 2
