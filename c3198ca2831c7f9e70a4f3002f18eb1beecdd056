@@ -143,6 +143,23 @@
     },
     {
       "key": {
+        "uuid": "5a890539_166530ae",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-11-26T10:22:18Z",
+      "side": 1,
+      "message": "Not sure whether we need SHOULD_CACHE in the global scope.",
+      "revId": "c3198ca2831c7f9e70a4f3002f18eb1beecdd056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_ff050f11",
         "filename": "keystone/trust/core.py",
         "patchSetId": 2
