@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_30d4f4e7",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-26T11:59:00Z",
+      "side": 1,
+      "message": "what is expected behaviour when you update the default_project_id, regarding the access? The default assignment disappears? Should test the user hasn\u0027t access to the old default_project_id or if the access remains unchanged after the update.",
+      "revId": "9058a4e54ce6d93ed880302ec009e9fe6a89e9e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
