@@ -26,7 +26,6 @@ import six
 import sqlalchemy
 
 from keystone.common import sql
-from keystone.common.sql import migrate_repo
 from keystone import config
 from keystone import contrib
 from keystone import exception
@@ -134,6 +133,16 @@ def find_migrate_repo(package=None, repo_name='migrate_repo'):
     raise exception.MigrationNotProvided(package.__name__, path)
 
 
+def get_init_version(path=None):
+    """Get init version of a migrate repo."""
+    path = path or find_migrate_repo()
+    v_dir = os.listdir(os.path.join(path, 'versions'))
+    m_scripts = filter(lambda x: x.endswith('py') and x[:3].isdigit(), v_dir)
+    versions = map(lambda x: int(x[:3]), m_scripts)
+    init_version = min(versions) - 1
+    return init_version if init_version > 0 else None
+
+
 def _fix_migration_37(engine):
     """Fix the region table to be InnoDB and Charset UTF8.
 
@@ -153,7 +162,7 @@ def _fix_migration_37(engine):
 
 def _sync_common_repo(version):
     abs_path = find_migrate_repo()
-    init_version = migrate_repo.DB_INIT_VERSION
+    init_version = get_init_version()
     engine = sql.get_engine()
     try:
         migration.db_sync(engine, abs_path, version=version,
@@ -214,7 +223,7 @@ def sync_database_to_version(extension=None, version=None):
 def get_db_version(extension=None):
     if not extension:
         return migration.db_version(sql.get_engine(), find_migrate_repo(),
-                                    migrate_repo.DB_INIT_VERSION)
+                                    get_init_version())
 
     try:
         package_name = '.'.join((contrib.__name__, extension))
