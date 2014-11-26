@@ -44,7 +44,6 @@ from sqlalchemy import schema
 
 from keystone.assignment.backends import sql as assignment_sql
 from keystone.common import sql
-from keystone.common.sql import migrate_repo
 from keystone.common.sql import migration_helpers
 from keystone import config
 from keystone.contrib import federation
@@ -272,37 +271,36 @@ class SqlMigrateBase(tests.SQLDriverOverrides, tests.TestCase):
 
 class SqlUpgradeTests(SqlMigrateBase):
 
-    _initial_db_version = migrate_repo.DB_INIT_VERSION
+    _initial_db_version = migration_helpers.get_init_version()
 
     def test_blank_db_to_start(self):
         self.assertTableDoesNotExist('user')
 
     def test_start_version_db_init_version(self):
         version = migration.db_version(sql.get_engine(), self.repo_path,
-                                       migrate_repo.DB_INIT_VERSION)
+                                       self._initial_db_version)
         self.assertEqual(
             version,
-            migrate_repo.DB_INIT_VERSION,
-            'DB is not at version %s' % migrate_repo.DB_INIT_VERSION)
+            self._initial_db_version,
+            'DB is not at version %s' % self._initial_db_version)
 
     def test_two_steps_forward_one_step_back(self):
         """You should be able to cleanly undo and re-apply all upgrades.
 
         Upgrades are run in the following order::
 
-            Starting with the initial version defined at
-            keystone.common.migrate_repo.DB_INIT_VERSION
+            Starting with the initial version.
 
             INIT +1 -> INIT +2 -> INIT +1 -> INIT +2 -> INIT +3 -> INIT +2 ...
             ^---------------------^          ^---------------------^
 
-        Downgrade to the DB_INIT_VERSION does not occur based on the
-        requirement that the base version be DB_INIT_VERSION + 1 before
-        migration can occur. Downgrade below DB_INIT_VERSION + 1 is no longer
+        Downgrade to the init version does not occur based on the
+        requirement that the base version be init version + 1 before
+        migration can occur. Downgrade below init version + 1 is no longer
         supported.
 
-        DB_INIT_VERSION is the number preceding the release schema version from
-        two releases prior. Example, Juno releases with the DB_INIT_VERSION
+        init version is the number preceding the release schema version from
+        two releases prior. Example, Juno releases with the init version
         being 35 where Havana (Havana was two releases before Juno) release
         schema version is 36.
 
@@ -311,18 +309,18 @@ class SqlUpgradeTests(SqlMigrateBase):
         applied.
 
         """
-        for x in range(migrate_repo.DB_INIT_VERSION + 1,
+        for x in range(self._initial_db_version + 1,
                        self.max_version + 1):
             self.upgrade(x)
             downgrade_ver = x - 1
             # Don't actually downgrade to the init version. This will raise
             # a not-implemented error.
-            if downgrade_ver != migrate_repo.DB_INIT_VERSION:
+            if downgrade_ver != self._initial_db_version:
                 self.downgrade(x - 1)
             self.upgrade(x)
 
     def test_upgrade_add_initial_tables(self):
-        self.upgrade(migrate_repo.DB_INIT_VERSION + 1)
+        self.upgrade(self._initial_db_version + 1)
         self.check_initial_table_structure()
 
     def check_initial_table_structure(self):
@@ -351,7 +349,7 @@ class SqlUpgradeTests(SqlMigrateBase):
         if self.engine.name == 'mysql':
             self._mysql_check_all_tables_innodb()
 
-        self.downgrade(migrate_repo.DB_INIT_VERSION + 1)
+        self.downgrade(self._initial_db_version + 1)
         self.check_initial_table_structure()
 
         meta = sqlalchemy.MetaData()
@@ -369,7 +367,7 @@ class SqlUpgradeTests(SqlMigrateBase):
         # supported. A NotImplementedError should be raised when attempting to
         # downgrade.
         self.assertRaises(NotImplementedError, self.downgrade,
-                          migrate_repo.DB_INIT_VERSION)
+                          self._initial_db_version)
 
     def insert_dict(self, session, table_name, d, table=None):
         """Naively inserts key-value pairs into a table, given a dictionary."""
@@ -1636,12 +1634,12 @@ class SqlUpgradeTests(SqlMigrateBase):
 
 class VersionTests(SqlMigrateBase):
 
-    _initial_db_version = migrate_repo.DB_INIT_VERSION
+    _initial_db_version = migration_helpers.get_init_version()
 
     def test_core_initial(self):
         """Get the version before migrated, it's the initial DB version."""
         version = migration_helpers.get_db_version()
-        self.assertEqual(migrate_repo.DB_INIT_VERSION, version)
+        self.assertEqual(self._initial_db_version, version)
 
     def test_core_max(self):
         """When get the version after upgrading, it's the new version."""
