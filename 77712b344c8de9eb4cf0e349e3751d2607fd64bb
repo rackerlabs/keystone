@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a890539_c6d93184",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5511
+      },
+      "writtenOn": "2014-11-26T13:02:47Z",
+      "side": 1,
+      "message": "This is also kind of missleading - as we just skip individual rows - not the migration of the whole table.",
+      "revId": "77712b344c8de9eb4cf0e349e3751d2607fd64bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_4679c191",
         "filename": "keystone/common/sql/migrate_repo/versions/039_grant_to_assignment.py",
         "patchSetId": 8
