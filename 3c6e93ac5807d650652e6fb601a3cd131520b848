@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "5a890539_10161349",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-26T11:42:43Z",
+      "side": 1,
+      "message": "it didn\u0027t fit in one line?",
+      "revId": "3c6e93ac5807d650652e6fb601a3cd131520b848",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa7fdbe_0820c499",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 1
@@ -30,6 +47,24 @@
       "writtenOn": "2014-10-27T20:08:23Z",
       "side": 1,
       "message": "do we have a test that asserts this is raised?",
+      "revId": "3c6e93ac5807d650652e6fb601a3cd131520b848",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_502b3b81",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-26T11:42:43Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9aa7fdbe_0820c499",
       "revId": "3c6e93ac5807d650652e6fb601a3cd131520b848",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
