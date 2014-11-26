@@ -121,10 +121,10 @@ def ldap2py(val):
         return LDAP_VALUES[val]
     except KeyError:
         pass
-    try:
-        return int(val)
-    except ValueError:
-        pass
+    #try:
+        #return int(val)
+    #except ValueError:
+        #pass
     return utf8_decode(val)
 
 
