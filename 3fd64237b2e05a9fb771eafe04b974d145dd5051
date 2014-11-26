@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_87155a4b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2014-11-26T18:42:31Z",
+      "side": 1,
+      "message": "The bp link shoud be below the Co-Authored.",
+      "revId": "3fd64237b2e05a9fb771eafe04b974d145dd5051",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_2293b401",
+        "filename": "etc/policy.json",
+        "patchSetId": 16
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2014-11-26T18:42:31Z",
+      "side": 1,
+      "message": "I think that this \"admin_required\" rule is not necessary because you are not use this rule in the policy.",
+      "revId": "3fd64237b2e05a9fb771eafe04b974d145dd5051",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
