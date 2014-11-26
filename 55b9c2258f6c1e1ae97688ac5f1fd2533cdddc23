@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_62a31bb2",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1444,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-26T00:20:21Z",
+      "side": 1,
+      "message": "Since this test does not apply, the server should return 403?",
+      "revId": "55b9c2258f6c1e1ae97688ac5f1fd2533cdddc23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
