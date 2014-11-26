@@ -33,6 +33,7 @@ import json
 import uuid
 
 from migrate.versioning import api as versioning_api
+from migrate.versioning import repository
 import mock
 from oslo_config import cfg
 from oslo_db import exception as db_exception
@@ -1007,6 +1008,61 @@ class VersionTests(SqlMigrateBase):
             db_exception.DbMigrationError,
             migration_helpers._sync_common_repo,
             self.max_version - 1)
+
+    @mock.patch.object(repository, 'Repository')
+    def test_get_init_version_no_path(self, repo):
+        migrate_versions = mock.MagicMock()
+        # make a version list starting with zero. `get_initial_version` will
+        # return None for this value.
+        migrate_versions.versions.versions = list(range(0, 5))
+        repo.return_value = migrate_versions
+
+        # os.path.isdir() is called by `find_migrate_repo()`. Mock it to avoid
+        # an exception.
+        with mock.patch('os.path.isdir', return_value=True):
+            # since 0 is the smallest version expect None
+            version = migration_helpers.get_init_version()
+            self.assertIsNone(version)
+
+        # check that the default path was used as the first argument to the
+        # first invocation of repo. Cannot match the full path because it is
+        # based on where the test is run.
+        param = repo.call_args_list[0][0][0]
+        self.assertTrue(param.endswith('/sql/migrate_repo'))
+
+    @mock.patch.object(repository, 'Repository')
+    def test_get_init_version_with_path_initial_version_0(self, repo):
+        migrate_versions = mock.MagicMock()
+        # make a version list starting with zero. `get_initial_version` will
+        # return None for this value.
+        migrate_versions.versions.versions = list(range(0, 5))
+        repo.return_value = migrate_versions
+
+        # os.path.isdir() is called by `find_migrate_repo()`. Mock it to avoid
+        # an exception.
+        with mock.patch('os.path.isdir', return_value=True):
+            path = '/keystone/migrate_repo/'
+
+            # since 0 is the smallest version expect None
+            version = migration_helpers.get_init_version(path)
+            self.assertIsNone(version)
+
+    @mock.patch.object(repository, 'Repository')
+    def test_get_init_version_with_path(self, repo):
+        initial_version = 10
+
+        migrate_versions = mock.MagicMock()
+        migrate_versions.versions.versions = list(range(initial_version + 1,
+                                                        initial_version + 5))
+        repo.return_value = migrate_versions
+
+        # os.path.isdir() is called by `find_migrate_repo()`. Mock it to avoid
+        # an exception.
+        with mock.patch('os.path.isdir', return_value=True):
+            path = '/keystone/migrate_repo/'
+
+            version = migration_helpers.get_init_version(path)
+            self.assertEqual(initial_version, version)
 
     def test_extension_not_controlled(self):
         """When get the version before controlling, raises DbMigrationError."""
