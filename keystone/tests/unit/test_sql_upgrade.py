@@ -34,6 +34,8 @@ import json
 import uuid
 
 from migrate.versioning import api as versioning_api
+from migrate.versioning import repository
+import mock
 from oslo_config import cfg
 from oslo_db import exception as db_exception
 from oslo_db.sqlalchemy import migration
@@ -690,6 +692,39 @@ class VersionTests(SqlMigrateBase):
             db_exception.DbMigrationError,
             migration_helpers._sync_common_repo,
             self.max_version - 1)
+
+    @mock.patch.object(repository, 'Repository')
+    @mock.patch.object(migration_helpers, 'find_migrate_repo',
+                       return_value='/keystone/migrate_repo/')
+    def test_get_init_version_no_path(self, find_migrate_repo, repo):
+        migrate_versions = mock.MagicMock()
+        migrate_versions.versions.versions = [0, 1, 2, 3, 4, 5]
+        repo.return_value = migrate_versions
+
+        migration_helpers.get_init_version()
+
+        find_migrate_repo.assert_called_with()
+        repo.assert_called_with('/keystone/migrate_repo/')
+
+    @mock.patch.object(repository, 'Repository')
+    @mock.patch.object(migration_helpers, 'find_migrate_repo')
+    def test_get_init_version_none(self, find_migrate_repo, repo):
+        migrate_versions = mock.MagicMock()
+        migrate_versions.versions.versions = [0, 1, 2, 3, 4, 5]
+        repo.return_value = migrate_versions
+
+        version = migration_helpers.get_init_version('/keystone/migrate_repo/')
+        self.assertIsNone(version)
+
+    @mock.patch.object(repository, 'Repository')
+    @mock.patch.object(migration_helpers, 'find_migrate_repo')
+    def test_get_init_version(self, find_migrate_repo, repo):
+        migrate_versions = mock.MagicMock()
+        migrate_versions.versions.versions = [11, 12, 13, 14, 15]
+        repo.return_value = migrate_versions
+
+        version = migration_helpers.get_init_version('/keystone/migrate_repo/')
+        self.assertEqual(10, version)
 
     def test_extension_not_controlled(self):
         """When get the version before controlling, raises DbMigrationError."""
