@@ -16,6 +16,24 @@
       "revId": "6d7eac6186a9b1763b2d11d64da9e220377a935c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_dfe2d49e",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-11-26T14:48:46Z",
+      "side": 1,
+      "message": "HI Marcos,\n\nSince this line has not been modified by this patch, you have to submit a separate bug.",
+      "parentUuid": "5a890539_29bc86db",
+      "revId": "6d7eac6186a9b1763b2d11d64da9e220377a935c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
