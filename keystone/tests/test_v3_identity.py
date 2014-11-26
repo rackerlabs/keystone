@@ -297,6 +297,25 @@ class IdentityTestCase(test_v3.RestfulTestCase):
             body={'user': user})
         self.assertValidUserResponse(r, user)
 
+    def test_update_user_default_project_id(self):
+        """Call ``PATCH /users/{user_id}`` with default_project_id."""
+        user = self.new_user_ref(domain_id=self.domain['id'],
+                                 project_id=self.default_domain_project_id)
+        user['password'] = 'password'
+        user = self.identity_api.create_user(user)
+
+        user_token = self.get_requested_token(
+            self.build_authentication_request(
+                user_id=user['id'],
+                password='password',
+                user_domain_id=user['domain_id']))
+
+        user['default_project_id'] = self.project_id
+        r = self.patch('/users/%(user_id)s' % {'user_id': user['id']},
+                       body={'user': user},
+                       token=user_token)
+        self.assertValidUserResponse(r, user)
+
     def test_delete_user(self):
         """Call ``DELETE /users/{user_id}``.
 
