@@ -122,7 +122,10 @@ def protected(callback=None):
                     key = '%s_id' % self.member_name
                     if key in kwargs:
                         ref = self.get_member_from_driver(kwargs[key])
-                        policy_dict['target'] = {self.member_name: ref}
+                        policy_dict['target'] = {
+                            self.member_name: ref,
+                            'member': ref
+                        }
 
                 # TODO(henry-nash): Move this entire code to a member
                 # method inside v3 Auth

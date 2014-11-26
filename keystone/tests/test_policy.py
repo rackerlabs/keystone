@@ -224,4 +224,40 @@ class PolicyJsonTestCase(tests.TestCase):
 
         diffs = set(policy_keys).difference(set(cloud_policy_keys))
 
-        self.assertThat(diffs, matchers.Equals(set()))
+        # With this new patch the policy will work with 3 levels of admins:
+        # Cloud admin, Domain admin and Project admin, some rules needed to be
+        # changed, and others need to be added.
+        # service_or_admin is now service_or_cloud_admin
+        # admin_or_owner is now cloud_admin_or_owner
+        changed_rules = set([
+            u'any_valid',
+            u'cloud_admin_or_owner',
+            u'domain_admin',
+            u'domain_admin_and_matching_domain_id',
+            u'domain_admin_and_matching_group_domain_id',
+            u'domain_admin_and_matching_project_domain_id',
+            u'domain_admin_and_matching_target_domain_id',
+            u'domain_admin_and_matching_target_group_domain_id',
+            u'domain_admin_and_matching_target_project_domain_id',
+            u'domain_admin_and_matching_target_user_domain_id',
+            u'domain_admin_and_matching_user_domain_id',
+            u'domain_admin_or_owner',
+            u'matching_group_domain_id',
+            u'matching_project_domain_id',
+            u'matching_target_credential_user_id',
+            u'matching_target_domain_id',
+            u'matching_target_group_domain_id',
+            u'matching_target_project_domain_id',
+            u'matching_target_project_id',
+            u'matching_target_user_domain_id',
+            u'matching_target_user_project_id',
+            u'matching_user_domain_id',
+            u'owner_and_matching_target_credential_user_id',
+            u'project_admin',
+            u'project_admin_and_matching_target_project_id',
+            u'project_member',
+            u'project_member_and_matching_target_project_id',
+            u'service_or_cloud_admin'
+        ])
+
+        self.assertThat(diffs, matchers.Equals(changed_rules))
