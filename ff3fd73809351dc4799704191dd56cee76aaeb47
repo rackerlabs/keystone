@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_e27d4b1d",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-26T00:24:52Z",
+      "side": 1,
+      "message": "There is no objection to create an empty password: https://github.com/openstack/keystone/blob/master/keystone/identity/controllers.py#L60",
+      "revId": "ff3fd73809351dc4799704191dd56cee76aaeb47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_2274b334",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-26T00:24:52Z",
+      "side": 1,
+      "message": "Don\u0027t think it\u0027s possible to reach the driver without a set user_id.",
+      "revId": "ff3fd73809351dc4799704191dd56cee76aaeb47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
