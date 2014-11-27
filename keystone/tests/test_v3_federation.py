@@ -59,9 +59,9 @@ class FederationTests(test_v3.RestfulTestCase):
 class FederatedIdentityProviderTests(FederationTests):
     """A test class for Identity Providers."""
 
-    idp_keys = ['description', 'enabled']
+    idp_keys = ['description', 'enabled', 'is_public']
 
-    default_body = {'description': None, 'enabled': True}
+    default_body = {'description': None, 'enabled': True, 'is_public': False}
 
     def base_url(self, suffix=None):
         if suffix is not None:
@@ -177,6 +177,107 @@ class FederatedIdentityProviderTests(FederationTests):
         entities_ids = set([e['id'] for e in entities])
         ids_intersection = entities_ids.intersection(ids)
         self.assertEqual(ids_intersection, ids)
+
+    def test_list_public_idps(self):
+        """Lists all publicly available IdentityProviders.
+
+        This test collects ids of created IdPs and
+        intersects it with the list of all publicly available IdPs.
+
+        """
+
+        iterations = 5
+        ids = []
+        for _ in range(iterations):
+            ipd_id = uuid.uuid4().hex
+            url = self.base_url(suffix=ipd_id)
+            ref = {'description': uuid.uuid4().hex, 'enabled': True,
+                   'is_public': True}
+            resp = self.put(url, body={'identity_provider': ref},
+                            expected_status=201)
+            observed_id = resp.result.get('identity_provider').get('id')
+            self.assertEqual(ipd_id, observed_id)
+            ids.append(ipd_id)
+        ids = set(ids)
+
+        keys_to_check = self.idp_keys
+        resp = self.get('/OS-FEDERATION/public_identity_providers')
+        self.assertValidListResponse(resp, 'identity_providers',
+                                     dummy_validator,
+                                     keys_to_check=keys_to_check)
+        entities = self._fetch_attribute_from_response(resp,
+                                                       'identity_providers')
+        [self.assertTrue(x['is_public']) for x in entities]
+        entities_ids = set([e['id'] for e in entities])
+        ids_intersection = entities_ids.intersection(ids)
+        self.assertEqual(ids_intersection, ids)
+
+    def test_list_public_and_private_idps(self):
+        """Lists all publicly available IdentityProviders.
+
+        This test collects ids of created IdPs and
+        intersects it with the list of all publicly available IdPs.
+
+        """
+
+        # Create 1 public idp and 2 private
+        public_idp_id = uuid.uuid4().hex
+        private_idp_id_1 = uuid.uuid4().hex
+        private_idp_id_2 = uuid.uuid4().hex
+        public_ref = {'description': uuid.uuid4().hex, 'enabled': True,
+                      'is_public': True}
+        private_ref_1 = {'description': uuid.uuid4().hex, 'enabled': True,
+                         'is_public': False}
+        # This entry should default it's is_public to False
+        private_ref_2 = {'description': uuid.uuid4().hex, 'enabled': True}
+
+        # Create public, check it's is_public flag, should be True
+        url = self.base_url(suffix=public_idp_id)
+        res = self.put(url, body={'identity_provider': public_ref},
+                       expected_status=201)
+        self.assertTrue(res.result.get('identity_provider').get('is_public'))
+
+        # Create private, check it's is_public flag, should be False
+        url = self.base_url(suffix=private_idp_id_1)
+        res = self.put(url, body={'identity_provider': private_ref_1},
+                       expected_status=201)
+        self.assertFalse(res.result.get('identity_provider').get('is_public'))
+
+        # Create private, check it's is_public flag, should be False
+        url = self.base_url(suffix=private_idp_id_2)
+        res = self.put(url, body={'identity_provider': private_ref_2},
+                       expected_status=201)
+        self.assertFalse(res.result.get('identity_provider').get('is_public'))
+
+        # Now check the size of list publicly, should be 1
+        resp = self.get('/OS-FEDERATION/public_identity_providers')
+        entities = self._fetch_attribute_from_response(resp,
+                                                       'identity_providers')
+        self.assertEqual(1, len(entities))
+
+        # Now check the size of list all, should be 3
+        resp = self.get('/OS-FEDERATION/identity_providers')
+        entities = self._fetch_attribute_from_response(resp,
+                                                       'identity_providers')
+        self.assertEqual(3, len(entities))
+
+        # Update the public idp to become private
+        url = self.base_url(suffix=public_idp_id)
+        ref = {'identity_provider': {'is_public': False}}
+        res = self.patch(url, body=ref)
+        self.assertFalse(res.result.get('identity_provider').get('is_public'))
+
+        # Now check the size of list publicly, should be 0
+        resp = self.get('/OS-FEDERATION/public_identity_providers')
+        entities = self._fetch_attribute_from_response(resp,
+                                                       'identity_providers')
+        self.assertEqual([], entities)
+
+        # Now check the size of list all, should be 3
+        resp = self.get('/OS-FEDERATION/identity_providers')
+        entities = self._fetch_attribute_from_response(resp,
+                                                       'identity_providers')
+        self.assertEqual(3, len(entities))
 
     def test_check_idp_uniqueness(self):
         """Add same IdP twice.
