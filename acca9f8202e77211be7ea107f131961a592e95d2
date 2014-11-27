@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_67677bb8",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-11-27T10:06:25Z",
+      "side": 1,
+      "message": "there is really no other way rather than making another ugly url? :(",
+      "revId": "acca9f8202e77211be7ea107f131961a592e95d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
