@@ -272,6 +272,17 @@ class FederationExtension(test_sql_upgrade.SqlMigrateBase):
         self.assertTableDoesNotExist(self.federation_protocol)
         self.assertTableDoesNotExist(self.mapping)
 
+    def test_upgrade_to_004(self):
+        self.upgrade(4, repository=self.repo_path)
+        self.assertTableColumns(self.identity_provider,
+                                ['id', 'enabled', 'description', 'is_public'])
+
+    def test_downgrade_to_003(self):
+        self.upgrade(4, repository=self.repo_path)
+        self.downgrade(3, repository=self.repo_path)
+        self.assertTableColumns(self.identity_provider,
+                                ['id', 'enabled', 'description'])
+
 
 _REVOKE_COLUMN_NAMES = ['id', 'domain_id', 'project_id', 'user_id', 'role_id',
                         'trust_id', 'consumer_id', 'access_token_id',

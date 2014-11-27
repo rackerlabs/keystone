@@ -12,6 +12,8 @@
 
 """Extensions supporting Federation."""
 
+from webob import exc
+
 from keystone.auth import controllers as auth_controllers
 from keystone.common import authorization
 from keystone.common import controller
@@ -46,8 +48,9 @@ class IdentityProvider(_ControllerBase):
     collection_name = 'identity_providers'
     member_name = 'identity_provider'
 
-    _mutable_parameters = frozenset(['description', 'enabled'])
-    _public_parameters = frozenset(['id', 'enabled', 'description', 'links'])
+    _mutable_parameters = frozenset(['description', 'enabled', 'is_public'])
+    _public_parameters = frozenset(['id', 'enabled', 'description',
+                                    'is_public', 'links'])
 
     @classmethod
     def _add_related_links(cls, context, ref):
@@ -83,6 +86,7 @@ class IdentityProvider(_ControllerBase):
     def create_identity_provider(self, context, idp_id, identity_provider):
         identity_provider = self._normalize_dict(identity_provider)
         identity_provider.setdefault('enabled', False)
+        identity_provider.setdefault('is_public', False)
         IdentityProvider.check_immutable_params(identity_provider)
         idp_ref = self.federation_api.create_idp(idp_id, identity_provider)
         response = IdentityProvider.wrap_member(context, idp_ref)
@@ -109,6 +113,14 @@ class IdentityProvider(_ControllerBase):
         IdentityProvider.check_immutable_params(identity_provider)
         idp_ref = self.federation_api.update_idp(idp_id, identity_provider)
         return IdentityProvider.wrap_member(context, idp_ref)
+
+    # NOTE(stevemar): This endpoint should be accessible publicly, no need
+    # for a token or other auth mechanisms. Thus, we do not add a decorator
+    def list_public_identity_providers(self, context):
+        ref = self.federation_api.list_idps()
+        ref = [self.filter_params(x) for x in ref]
+        ref[:] = [x for x in ref if x['is_public']]
+        return IdentityProvider.wrap_collection(context, ref)
 
 
 @dependency.requires('federation_api')
@@ -252,7 +264,16 @@ class Auth(auth_controllers.Auth):
             }
         }
 
-        return self.authenticate_for_token(context, auth=auth)
+        response = self.authenticate_for_token(context, auth=auth)
+
+        query_string = context.get('query_string')
+        if query_string and query_string.get('websso'):
+            token_id = response.headers['X-Subject-Token']
+            endpoint = CONF.federation.websso_redirect
+            url = endpoint + '?token=' + token_id
+            return exc.HTTPTemporaryRedirect(location=url)
+        else:
+            return response
 
     @validation.validated(schema.saml_create, 'auth')
     def create_saml_assertion(self, context, auth):

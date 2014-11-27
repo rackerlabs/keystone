@@ -463,6 +463,9 @@ FILE_OPTIONS = {
         cfg.StrOpt('assertion_prefix', default='',
                    help='Value to be used when filtering assertion parameters '
                         'from the environment.'),
+        cfg.StrOpt('websso_redirect', default='http://localhost/auth/websso/',
+                   help='Value to be used when filtering assertion parameters '
+                        'from the environment.'),
     ],
     'policy': [
         cfg.StrOpt('driver',

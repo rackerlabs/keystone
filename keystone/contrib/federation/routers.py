@@ -42,6 +42,8 @@ class FederationExtension(wsgi.V3ExtensionRouter):
         DELETE /OS-FEDERATION/identity_providers/$identity_provider
         PATCH /OS-FEDERATION/identity_providers/$identity_provider
 
+        GET /OS-FEDERATION/public_identity_providers
+
         PUT /OS-FEDERATION/identity_providers/
             $identity_provider/protocols/$protocol
         GET /OS-FEDERATION/identity_providers/
@@ -106,6 +108,11 @@ class FederationExtension(wsgi.V3ExtensionRouter):
             mapper, idp_controller,
             path=self._construct_url('identity_providers'),
             get_action='list_identity_providers',
+            rel=build_resource_relation(resource_name='identity_providers'))
+        self._add_resource(
+            mapper, idp_controller,
+            path=self._construct_url('public_identity_providers'),
+            get_action='list_public_identity_providers',
             rel=build_resource_relation(resource_name='identity_providers'))
 
         # Protocol CRUD operations

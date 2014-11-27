@@ -185,6 +185,8 @@ class XmlBodyMiddleware(wsgi.Middleware):
             except Exception:
                 LOG.exception('Serializer failed')
                 raise exception.Error(message=response.body)
+        if 'text/html' in str(response.content_type):
+            return response
         return response
 
 
