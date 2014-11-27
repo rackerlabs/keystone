@@ -16,6 +16,24 @@
       "revId": "a4d469869d4b5b3cb1f497dbc629faabe9b6067e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_2546e721",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 69
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-11-27T14:05:04Z",
+      "side": 1,
+      "message": "Nope",
+      "parentUuid": "9aa7fdbe_fdd04955",
+      "revId": "a4d469869d4b5b3cb1f497dbc629faabe9b6067e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
