@@ -568,7 +568,7 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
         password = self.userAdminB['password']
         self.userAdminB = self.identity_api.create_user(self.userAdminB)
         self.userAdminB['password'] = password
-        self.assignment_api.create_grant(self.role['id'],
+        self.assignment_api.create_grant(self.domain_role['id'],
                                          user_id=self.userAdminB['id'],
                                          domain_id=self.domainB['id'])
 
