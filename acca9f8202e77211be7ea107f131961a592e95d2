@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a890539_7ac2a935",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/004_add_is_public.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-27T15:26:25Z",
+      "side": 1,
+      "message": "nullable should be False, since it\u0027s a boolean. Not sure why this is failing... gotta dig into it.",
+      "revId": "acca9f8202e77211be7ea107f131961a592e95d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_67677bb8",
         "filename": "keystone/contrib/federation/routers.py",
         "patchSetId": 2
@@ -13,6 +30,24 @@
       "writtenOn": "2014-11-27T10:06:25Z",
       "side": 1,
       "message": "there is really no other way rather than making another ugly url? :(",
+      "revId": "acca9f8202e77211be7ea107f131961a592e95d2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_1ab445d0",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-27T15:26:25Z",
+      "side": 1,
+      "message": "i don\u0027t think so, if we try to re-use GET /identity_providers, then we will probably need a query parameter, and that endpoint has the policy engine decorator, and we probably don\u0027t want to remove that, or re-add the code in the body separately (that\u0027s just messy - but possible i think).",
+      "parentUuid": "5a890539_67677bb8",
       "revId": "acca9f8202e77211be7ea107f131961a592e95d2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
