@@ -239,6 +239,12 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             self.default_domain_user_id, self.project_id,
             self.role_id)
 
+        self.domain_role_id = uuid.uuid4().hex
+        self.domain_role = self.new_role_ref()
+        self.domain_role['id'] = self.domain_role_id
+        self.domain_role['name'] = 'domain_admin'
+        self.assignment_api.create_role(self.domain_role_id, self.domain_role)
+
         self.region_id = uuid.uuid4().hex
         self.region = self.new_region_ref()
         self.region['id'] = self.region_id
