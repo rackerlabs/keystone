@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_67fe9bb0",
+        "filename": "keystone/common/sql/migrate_repo/versions/039_grant_to_assignment.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 5511
+      },
+      "writtenOn": "2014-11-27T10:04:50Z",
+      "side": 1,
+      "message": "Not sure we need to add this particular comment  as it was like that even before this patch, but no need to hold up the fix for that.",
+      "revId": "4a0cab97df4dac6be0754b8aa96ecd7725e2fdb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
