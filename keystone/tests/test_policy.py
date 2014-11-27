@@ -224,4 +224,10 @@ class PolicyJsonTestCase(tests.TestCase):
 
         diffs = set(policy_keys).difference(set(cloud_policy_keys))
 
-        self.assertThat(diffs, matchers.Equals(set()))
+        # Since v3 sample policy are supposed to work with 3 levels of admins:
+        # Cloud admin, Domain admin and Project admin, some rules needed to be
+        # deleted: service_or_admin, admin_or_owner and service_or_admin
+        changed_rules = set([u'admin_or_owner', u'admin_required',
+                             u'service_or_admin'])
+
+        self.assertThat(diffs, matchers.Equals(changed_rules))

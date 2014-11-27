@@ -470,10 +470,10 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
         self.domainA = self.new_domain_ref()
         self.assignment_api.create_domain(self.domainA['id'], self.domainA)
 
-        self.userAdminA = self.new_user_ref(domain_id=self.domainA['id'])
-        password = self.userAdminA['password']
-        self.userAdminA = self.identity_api.create_user(self.userAdminA)
-        self.userAdminA['password'] = password
+        self.cloudAdmin = self.new_user_ref(domain_id=self.domainA['id'])
+        password = self.cloudAdmin['password']
+        self.cloudAdmin = self.identity_api.create_user(self.cloudAdmin)
+        self.cloudAdmin['password'] = password
 
         self.userNormalA = self.new_user_ref(
             domain_id=self.domainA['id'])
@@ -481,8 +481,14 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
         self.userNormalA = self.identity_api.create_user(self.userNormalA)
         self.userNormalA['password'] = password
 
-        self.assignment_api.create_grant(self.role['id'],
-                                         user_id=self.userAdminA['id'],
+        self.cloud_role_id = uuid.uuid4().hex
+        self.cloud_role = self.new_role_ref()
+        self.cloud_role['id'] = self.cloud_role_id
+        self.cloud_role['name'] = 'cloud_admin'
+        self.assignment_api.create_role(self.cloud_role_id, self.cloud_role)
+
+        self.assignment_api.create_grant(self.cloud_role['id'],
+                                         user_id=self.cloudAdmin['id'],
                                          domain_id=self.domainA['id'])
 
         # Finally, switch to the v3 sample policy file
@@ -504,14 +510,14 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
         self.assertNotEmpty(user_token)
         headers = {'X-Subject-Token': user_token}
 
-        adminA_token = self.get_requested_token(
+        cloudAdmin_token = self.get_requested_token(
             self.build_authentication_request(
-                user_id=self.userAdminA['id'],
-                password=self.userAdminA['password'],
+                user_id=self.cloudAdmin['id'],
+                password=self.cloudAdmin['password'],
                 domain_name=self.domainA['name']))
 
         self.head('/auth/tokens', headers=headers, expected_status=200,
-                  token=adminA_token)
+                  token=cloudAdmin_token)
         self.head('/auth/tokens', headers=headers, expected_status=200,
                   token=user_token)
         self.delete('/auth/tokens', headers=headers, expected_status=204,
@@ -524,10 +530,10 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
                     token=user_token)
         # valid X-Auth-Token and invalid X-Subject-Token (404)
         self.delete('/auth/tokens', headers=headers, expected_status=404,
-                    token=adminA_token)
+                    token=cloudAdmin_token)
         # valid X-Auth-Token and invalid X-Subject-Token (404)
         self.head('/auth/tokens', headers=headers, expected_status=404,
-                  token=adminA_token)
+                  token=cloudAdmin_token)
 
     def test_adminA_revokes_userA_token(self):
         user_token = self.get_requested_token(
@@ -538,27 +544,27 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
         self.assertNotEmpty(user_token)
         headers = {'X-Subject-Token': user_token}
 
-        adminA_token = self.get_requested_token(
+        cloudAdmin_token = self.get_requested_token(
             self.build_authentication_request(
-                user_id=self.userAdminA['id'],
-                password=self.userAdminA['password'],
+                user_id=self.cloudAdmin['id'],
+                password=self.cloudAdmin['password'],
                 domain_name=self.domainA['name']))
 
         self.head('/auth/tokens', headers=headers, expected_status=200,
-                  token=adminA_token)
+                  token=cloudAdmin_token)
         self.head('/auth/tokens', headers=headers, expected_status=200,
                   token=user_token)
         self.delete('/auth/tokens', headers=headers, expected_status=204,
-                    token=adminA_token)
+                    token=cloudAdmin_token)
         # invalid X-Auth-Token and invalid X-Subject-Token (401)
         self.head('/auth/tokens', headers=headers, expected_status=401,
                   token=user_token)
         # valid X-Auth-Token and invalid X-Subject-Token (404)
         self.delete('/auth/tokens', headers=headers, expected_status=404,
-                    token=adminA_token)
+                    token=cloudAdmin_token)
         # valid X-Auth-Token and invalid X-Subject-Token (404)
         self.head('/auth/tokens', headers=headers, expected_status=404,
-                  token=adminA_token)
+                  token=cloudAdmin_token)
 
     def test_adminB_fails_revoking_userA_token(self):
         # DomainB setup
@@ -568,7 +574,7 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
         password = self.userAdminB['password']
         self.userAdminB = self.identity_api.create_user(self.userAdminB)
         self.userAdminB['password'] = password
-        self.assignment_api.create_grant(self.role['id'],
+        self.assignment_api.create_grant(self.domain_role['id'],
                                          user_id=self.userAdminB['id'],
                                          domain_id=self.domainB['id'])
 
