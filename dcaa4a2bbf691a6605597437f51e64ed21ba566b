@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_7ffe0eb0",
+        "filename": "keystone/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-11-28T07:27:06Z",
+      "side": 1,
+      "message": "so keystone-manage db_version should output 60 or something... and keystone-manage db_version --extension federation should output 4.",
+      "revId": "dcaa4a2bbf691a6605597437f51e64ed21ba566b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
