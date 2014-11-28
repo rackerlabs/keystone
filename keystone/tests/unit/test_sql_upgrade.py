@@ -700,7 +700,9 @@ class VersionTests(SqlMigrateBase):
         self.assertRaises(
             db_exception.DbMigrationError,
             migration_helpers._sync_common_repo,
-            self.max_version - 1)
+            self.max_version - 1,
+            sql.get_engine(),
+        )
 
     @mock.patch.object(repository, 'Repository')
     @mock.patch.object(migration_helpers, 'find_migrate_repo',
@@ -765,7 +767,9 @@ class VersionTests(SqlMigrateBase):
                 db_exception.DbMigrationError,
                 migration_helpers._sync_extension_repo,
                 extension=name,
-                version=0)
+                version=0,
+                engine=sql.get_engine(),
+            )
 
     def test_extension_federation_upgraded_values(self):
         abs_path = migration_helpers.find_migrate_repo(federation)
