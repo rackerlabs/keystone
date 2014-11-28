@@ -16,6 +16,24 @@
       "revId": "0cf09351972ebe7f90dcad5d617b65d491d49fc9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_ffbafd6f",
+        "filename": "tools/sample_data.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 10657
+      },
+      "writtenOn": "2014-11-28T08:53:57Z",
+      "side": 1,
+      "message": "Yes, I think so, but, if so, we\u0027d better to ask them to use discovery...\n\nas you said :)\n\nhttps://bugs.launchpad.net/keystone/+bug/1374045/comments/3",
+      "parentUuid": "5a890539_0ab9ce14",
+      "revId": "0cf09351972ebe7f90dcad5d617b65d491d49fc9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
