@@ -138,10 +138,9 @@ def find_migrate_repo(package=None, repo_name='migrate_repo'):
     raise exception.MigrationNotProvided(package.__name__, path)
 
 
-def _sync_common_repo(version):
+def _sync_common_repo(version, engine):
     abs_path = find_migrate_repo()
     init_version = get_init_version()
-    engine = sql.get_engine()
     _assert_not_schema_downgrade(version=version)
     migration.db_sync(engine, abs_path, version=version,
                       init_version=init_version)
@@ -207,9 +206,8 @@ def _assert_not_schema_downgrade(extension=None, version=None):
             pass
 
 
-def _sync_extension_repo(extension, version):
+def _sync_extension_repo(extension, version, engine):
     init_version = 0
-    engine = sql.get_engine()
 
     try:
         package_name = '.'.join((contrib.__name__, extension))
@@ -221,7 +219,7 @@ def _sync_extension_repo(extension, version):
                           % package_name)
     try:
         try:
-            migration.db_version_control(sql.get_engine(), abs_path)
+            migration.db_version_control(engine, abs_path)
         # Register the repo with the version control API
         # If it already knows about the repo, it will throw
         # an exception that we can safely ignore
@@ -256,21 +254,23 @@ def _sync_extension_repo(extension, version):
             raise
 
 
-def sync_database_to_version(extension=None, version=None):
+def sync_database_to_version(extension=None, version=None, engine=None):
+    engine = engine or sql.get_engine()
     if not extension:
-        _sync_common_repo(version)
+        _sync_common_repo(version, engine)
         # If version is greater than 0, it is for the common
         # repository only, and only that will be synchronized.
         if version is None:
             for default_extension in DEFAULT_EXTENSIONS:
-                _sync_extension_repo(default_extension, version)
+                _sync_extension_repo(default_extension, version, engine)
     else:
-        _sync_extension_repo(extension, version)
+        _sync_extension_repo(extension, version, engine)
 
 
-def get_db_version(extension=None):
+def get_db_version(extension=None, engine=None):
+    engine = engine or sql.get_engine()
     if not extension:
-        return migration.db_version(sql.get_engine(), find_migrate_repo(),
+        return migration.db_version(engine, find_migrate_repo(),
                                     get_init_version())
 
     try:
@@ -280,8 +280,7 @@ def get_db_version(extension=None):
         raise ImportError(_("%s extension does not exist.")
                           % package_name)
 
-    return migration.db_version(
-        sql.get_engine(), find_migrate_repo(package), 0)
+    return migration.db_version(engine, find_migrate_repo(package), 0)
 
 
 def print_db_version(extension=None):
