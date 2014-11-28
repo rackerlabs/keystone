@@ -490,11 +490,6 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
         from keystone.policy.backends import rules
         rules.reset()
 
-    def config_overrides(self):
-        super(TestTokenRevokeSelfAndAdmin, self).config_overrides()
-        self.config_fixture.config(
-            policy_file=tests.dirs.etc('policy.v3cloudsample.json'))
-
     def test_user_revokes_own_token(self):
         user_token = self.get_requested_token(
             self.build_authentication_request(

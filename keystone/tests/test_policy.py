@@ -13,12 +13,9 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
-import json
-
 import mock
 import six
 from six.moves.urllib import request as urlrequest
-from testtools import matchers
 
 from keystone import exception
 from keystone.openstack.common import policy as common_policy
@@ -201,25 +198,3 @@ class DefaultPolicyTestCase(tests.TestCase):
         self._set_rules(new_default_rule)
         self.assertRaises(exception.ForbiddenAction, rules.enforce,
                           self.credentials, "example:noexist", {})
-
-
-class PolicyJsonTestCase(tests.TestCase):
-
-    def _load_entries(self, filename):
-        return set(json.load(open(filename)))
-
-    def test_json_examples_have_matching_entries(self):
-        policy_keys = self._load_entries(tests.dirs.etc('policy.json'))
-        cloud_policy_keys = self._load_entries(
-            tests.dirs.etc('policy.v3cloudsample.json'))
-
-        diffs = set(policy_keys).difference(set(cloud_policy_keys))
-
-        # Since v3 sample policy are supposed to work with 3 levels of admins:
-        # Cloud admin, Domain admin and Project admin, some rules needed to be
-        # changed
-        # service_or_admin is now service_or_cloud_admin
-        # admin_or_owner is now cloud_admin_or_owner
-        changed_rules = set([u'service_or_admin', u'admin_required'])
-
-        self.assertThat(diffs, matchers.Equals(changed_rules))
