@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_0b3b029d",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 18
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 10697
+      },
+      "writtenOn": "2014-11-28T16:08:12Z",
+      "side": 1,
+      "message": "Is it the same condition of line 15? If it is, I\u0027d prefer the shorter reference.",
+      "revId": "61f715859c9dd069034b27d27218c82d07bd5f54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
