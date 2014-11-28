@@ -1004,10 +1004,13 @@ class VersionTests(SqlMigrateBase):
 
     def test_assert_not_schema_downgrade(self):
         self.upgrade(self.max_version)
-        self.assertRaises(
-            db_exception.DbMigrationError,
-            migration_helpers._sync_common_repo,
-            self.max_version - 1)
+        with sql.session_for_write() as session:
+            self.assertRaises(
+                db_exception.DbMigrationError,
+                migration_helpers._sync_common_repo,
+                self.max_version - 1,
+                session.get_bind()
+            )
 
     @mock.patch.object(repository, 'Repository')
     def test_get_init_version_no_path(self, repo):
