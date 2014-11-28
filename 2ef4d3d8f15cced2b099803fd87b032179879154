@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_94fd583e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-28T13:49:36Z",
+      "side": 1,
+      "message": "I think it\u0027s appropriate to provide both: the fix in the current migration and the new script to fix broken deployments.",
+      "revId": "2ef4d3d8f15cced2b099803fd87b032179879154",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_f4ecdc94",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-28T13:49:36Z",
+      "side": 1,
+      "message": "Missing bug reference in the commit message: \n Partial-Bug: #\nor\n Related-Bug: #",
+      "revId": "2ef4d3d8f15cced2b099803fd87b032179879154",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
