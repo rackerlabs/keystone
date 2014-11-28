@@ -16,6 +16,24 @@
       "revId": "d0beb907a616c02f04c7514d125e1255ee3e26b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_8bfd323e",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-11-28T16:35:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_34c904ad",
+      "revId": "d0beb907a616c02f04c7514d125e1255ee3e26b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
