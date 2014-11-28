@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_2bb51e7e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-11-28T16:33:09Z",
+      "side": 1,
+      "message": "Makes sense.",
+      "parentUuid": "5a890539_94fd583e",
+      "revId": "2ef4d3d8f15cced2b099803fd87b032179879154",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_f4ecdc94",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-28T13:49:36Z",
       "side": 1,
       "message": "Missing bug reference in the commit message: \n Partial-Bug: #\nor\n Related-Bug: #",
+      "revId": "2ef4d3d8f15cced2b099803fd87b032179879154",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_216c5f08",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-11-28T16:33:09Z",
+      "side": 1,
+      "message": "I had no time to file. I\u0027m going to file it today.",
+      "parentUuid": "5a890539_f4ecdc94",
       "revId": "2ef4d3d8f15cced2b099803fd87b032179879154",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
