@@ -16,6 +16,24 @@
       "revId": "dcaa4a2bbf691a6605597437f51e64ed21ba566b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_1fcc2a8a",
+        "filename": "keystone/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 7930
+      },
+      "writtenOn": "2014-11-28T07:32:57Z",
+      "side": 1,
+      "message": "yes, Steve. Sth like that. thx",
+      "parentUuid": "5a890539_7ffe0eb0",
+      "revId": "dcaa4a2bbf691a6605597437f51e64ed21ba566b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
