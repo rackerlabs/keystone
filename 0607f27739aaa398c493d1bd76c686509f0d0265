@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_591089a8",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 72
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2014-11-28T13:25:22Z",
+      "side": 1,
+      "message": "this seems to be unused",
+      "revId": "0607f27739aaa398c493d1bd76c686509f0d0265",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_3911fd5d",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 72
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2014-11-28T13:25:22Z",
+      "side": 1,
+      "message": "nit: can you please use names instead of indexes for readability? For example:\n\n for some, thing in modules_list:\n     module \u003d os.path.relpath(some.path).split(\u0027/\u0027)\n     ...",
+      "revId": "0607f27739aaa398c493d1bd76c686509f0d0265",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_79a1c594",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 72
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2014-11-28T13:25:22Z",
+      "side": 1,
+      "message": "filter() behavior is different in py2 and py3 but it looks safe here",
+      "revId": "0607f27739aaa398c493d1bd76c686509f0d0265",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_943c78c1",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 72
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2014-11-28T13:25:22Z",
+      "side": 1,
+      "message": "should this be a just \n\n :keyword paths:\n\n?",
+      "revId": "0607f27739aaa398c493d1bd76c686509f0d0265",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_d9fe39ae",
+        "filename": "test-requirements-py3.txt",
+        "patchSetId": 72
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2014-11-28T13:25:22Z",
+      "side": 1,
+      "message": "MySQL-python is not py3 compatible, you can try to use PyMySQL instead",
+      "revId": "0607f27739aaa398c493d1bd76c686509f0d0265",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
