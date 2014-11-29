@@ -1462,6 +1462,114 @@ class SqlUpgradeTests(SqlMigrateBase):
         index_data = [(idx.name, idx.columns.keys()) for idx in table.indexes]
         self.assertNotIn(('ix_actor_id', ['actor_id']), index_data)
 
+    def test_service_type_is_unique(self):
+        """Migration 61 should make the service `type` column unique."""
+        session = self.Session()
+
+        def add_service(service_type):
+            service_id = uuid.uuid4().hex
+            service = {
+                'id': service_id,
+                'type': service_type,
+                'enabled': True
+            }
+            self.insert_dict(session, 'service', service)
+            return service_id
+
+        self.upgrade(60)
+
+        first_service_id = add_service('block-storage')
+        second_service_id = add_service('compute')
+
+        self.upgrade(61)
+
+        self.metadata.clear()
+        service_table = sqlalchemy.Table('service', self.metadata,
+                                         autoload=True)
+
+        def get_service(service_id):
+            cols = [service_table.c.id, service_table.c.type]
+            f = service_table.c.id == service_id
+            s = sqlalchemy.select(cols).where(f)
+            ep = session.execute(s).fetchone()
+            return ep
+
+        service = get_service(first_service_id)
+        self.assertEqual(first_service_id, service.id)
+        self.assertEqual('block-storage', service.type)
+
+        service = get_service(second_service_id)
+        self.assertEqual(second_service_id, service.id)
+        self.assertEqual('compute', service.type)
+
+    def test_service_type_after_upgrade_is_unique(self):
+        """After migration 061, service `type` should be unique."""
+        session = self.Session()
+
+        def add_service(service_type):
+            service_id = uuid.uuid4().hex
+            service = {
+                'id': service_id,
+                'type': service_type,
+                'enabled': True
+            }
+            self.insert_dict(session, 'service', service)
+
+        self.upgrade(61)
+        add_service('compute')
+        self.assertRaises(
+            (sqlalchemy.exc.IntegrityError, db_exception.DBError),
+            add_service,
+            'compute')
+
+    def test_service_type_after_downgrade_is_not_unique(self):
+        """Downgrade from migration 061, service `type` shouldn't be unique."""
+        session = self.Session()
+
+        def add_service(service_type):
+            service_id = uuid.uuid4().hex
+            service = {
+                'id': service_id,
+                'type': service_type,
+                'enabled': True
+            }
+            self.insert_dict(session, 'service', service)
+            return service_id
+
+        self.upgrade(61)
+
+        # Create two services with unique types
+        first_service_id = add_service('compute')
+        second_service_id = add_service('block-storage')
+
+        self.downgrade(60)
+
+        # Create another service with a non-unique type
+        third_service_id = add_service('compute')
+
+        self.metadata.clear()
+        service_table = sqlalchemy.Table('service', self.metadata,
+                                         autoload=True)
+
+        def get_service(service_id):
+            cols = [service_table.c.id, service_table.c.type]
+            f = service_table.c.id == service_id
+            s = sqlalchemy.select(cols).where(f)
+            ep = session.execute(s).fetchone()
+            return ep
+
+        service = get_service(first_service_id)
+        self.assertEqual(first_service_id, service.id)
+        self.assertEqual('compute', service.type)
+
+        service = get_service(second_service_id)
+        self.assertEqual(second_service_id, service.id)
+        self.assertEqual('block-storage', service.type)
+
+        service = get_service(third_service_id)
+        self.assertEqual(third_service_id, service.id)
+        self.assertEqual('compute', service.type)
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
