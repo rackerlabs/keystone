@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_2ebd1e03",
+        "filename": "keystone/exception.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-11-30T14:38:56Z",
+      "side": 1,
+      "message": "If we agree that role id with specific actor or target\u0027s assignment is one special case of the assigment with that role id, then role assignment exception message is enough with the role id.\n\nAnother way is append all of the meaningful fields and then pass to here. I believe this will a good approach to do that, agree?",
+      "parentUuid": "5a890539_ce701aa7",
+      "revId": "82446cf94d97e6bf4bed51dca32698ee034953d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_9a82d1c6",
         "filename": "keystone/tests/test_backend_sql.py",
         "patchSetId": 8
