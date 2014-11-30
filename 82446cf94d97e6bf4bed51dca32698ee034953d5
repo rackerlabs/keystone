@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_3a71dd0c",
+        "filename": "keystone/exception.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-30T13:09:29Z",
+      "side": 1,
+      "message": "Regarding Samuel\u0027s comments in the patchset 6, will leave my reply here so we can continue with the discussion.\n\nBy definition a role assignment is a way to associate a role, an actor and a target. That\u0027s why is not accurate for the message to include just the role_id.\n\nIt\u0027s possible to have a role assignment with such role_id, but not for the target or actor you are checking against.",
+      "revId": "82446cf94d97e6bf4bed51dca32698ee034953d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_9a82d1c6",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-30T13:09:29Z",
+      "side": 1,
+      "message": "think this test should be placed in the test_backend,py file and in the test_backend_ldap.py, you would test for its expected behaviour.",
+      "revId": "82446cf94d97e6bf4bed51dca32698ee034953d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
