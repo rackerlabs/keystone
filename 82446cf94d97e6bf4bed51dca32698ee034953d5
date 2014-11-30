@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_31dae317",
+        "filename": "keystone/exception.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-30T16:43:48Z",
+      "side": 1,
+      "message": "actor/target assignment isn\u0027t special case, since role_assignment is a role given to an actor in a target.\n\nAll meaningful fields are role, actor (user or group) and target (project or domain). You can pass these 3 fields.",
+      "parentUuid": "5a890539_2ebd1e03",
+      "revId": "82446cf94d97e6bf4bed51dca32698ee034953d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_9a82d1c6",
         "filename": "keystone/tests/test_backend_sql.py",
         "patchSetId": 8
@@ -138,6 +156,24 @@
       "side": 1,
       "message": "Only SQL driver\u0027s invocation is suitable for thrown such an exception, you can check it in henry\u0027s patch, ldap driver\u0027s invocation is not expected such an exception.",
       "parentUuid": "5a890539_8e39b2a5",
+      "revId": "82446cf94d97e6bf4bed51dca32698ee034953d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_51eccfbb",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-30T16:43:48Z",
+      "side": 1,
+      "message": "I don\u0027t see the SQL driver as the special case here, but the LDAP one.",
+      "parentUuid": "5a890539_4efd0ab1",
       "revId": "82446cf94d97e6bf4bed51dca32698ee034953d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
