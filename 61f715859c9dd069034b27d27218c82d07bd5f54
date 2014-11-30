@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a890539_4445eb41",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 18
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-30T19:01:46Z",
+      "side": 1,
+      "message": "you can\u0027t define these rules using more than one matching like this. You should use the \"matching\" rules only in the needed context.",
+      "revId": "61f715859c9dd069034b27d27218c82d07bd5f54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_0b3b029d",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 18
