@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_cecc9abe",
+        "filename": "keystone/exception.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-30T14:31:40Z",
+      "side": 1,
+      "message": "You should use only role, actor and target, instead of all possibilities from each.\n\nTo check a grant, you need the 3 fields. To list role_assignments, you would query using just the role_id, but it\u0027s a different case, because you would return an empty list instead of raising an exception.",
+      "parentUuid": "5a890539_ce701aa7",
+      "revId": "82446cf94d97e6bf4bed51dca32698ee034953d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_9a82d1c6",
         "filename": "keystone/tests/test_backend_sql.py",
         "patchSetId": 8
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "Rodrigo, would you pls see the comment in patchset4 by henry? we needn\u0027t place the testcase both in test_backend.py and test_backend_**.py.\n\nAnd why I put this testcase here instead of test_backend.py is it\u0027s SQL backend specific in henry\u0027s latest patchset.\nhttps://review.openstack.org/#/c/130954/27",
       "parentUuid": "5a890539_9a82d1c6",
+      "revId": "82446cf94d97e6bf4bed51dca32698ee034953d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_8e39b2a5",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-11-30T14:31:40Z",
+      "side": 1,
+      "message": "that is not the case, delete a grant is a call from the assignment driver layer, not from the SQL driver. So it\u0027s not specific to the SQL backend.",
+      "parentUuid": "5a890539_9a3ad1e5",
       "revId": "82446cf94d97e6bf4bed51dca32698ee034953d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
