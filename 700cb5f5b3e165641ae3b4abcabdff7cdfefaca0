@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_ff6107d5",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-11-30T12:40:02Z",
+      "side": 1,
+      "message": "the same reply in the sql.py.",
+      "parentUuid": "5a890539_b1499c90",
+      "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_315dac49",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-19T12:38:20Z",
       "side": 1,
       "message": "Same as above.",
+      "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_1f6173d3",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-11-30T12:40:02Z",
+      "side": 1,
+      "message": "ditto.",
+      "parentUuid": "5a890539_315dac49",
       "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_3f5c6f19",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-11-30T12:40:02Z",
+      "side": 1,
+      "message": "Samuel, maybe we need think more about this.\n- Is there any case that role_id is None while other field is not None? see the parameter definition in this function.\n- If RoleAssignmentNotFound need other fileds beside role_id, we need pass all of them here which maybe None instead, is that a good behavior? \n\nI think role_id is enough within the scope of role assignment, agree?",
+      "parentUuid": "5a890539_f16c040b",
+      "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_917d80b4",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2014-11-19T12:38:20Z",
       "side": 1,
       "message": "Same as above.",
+      "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_5f9a1bc6",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-11-30T12:40:02Z",
+      "side": 1,
+      "message": "ditto.",
+      "parentUuid": "5a890539_917d80b4",
       "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_ba84ed0b",
+        "filename": "keystone/exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-11-30T12:40:02Z",
+      "side": 1,
+      "message": "Samuel, we need more discussion on this, pls see my reply in the sql.py.",
+      "parentUuid": "5a890539_fd1e9c0c",
+      "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_b4734ab3",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 6
@@ -98,6 +188,24 @@
       "writtenOn": "2014-11-19T12:38:20Z",
       "side": 1,
       "message": "We just need the code on lines 859-863.\nWe don\u0027t need to clean up things, they come from the loaded default fixtures.\n\nJust delete the code above and pass user_id\u003duuid.uuid4() in this call. :-)",
+      "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_9aaf317d",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-11-30T12:40:02Z",
+      "side": 1,
+      "message": "Samuel, I am not sure about clean up stuff, agree with you to remove them in the next patch.\n\nThis testcase intends to test the case when the role is existed while role assignment is not, user_id seems is not important here.",
+      "parentUuid": "5a890539_b4734ab3",
       "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
