@@ -1,0 +1,13 @@
+Verified+2: Jenkins
+Code-Review+1: Lin Hua Cheng <os.lcheng@gmail.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Workflow+1: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Code-Review+1: Alexander Makarov <amakarov@mirantis.com>
+Code-Review+1: Boris Bobrov <bbobrov@mirantis.com>
+Code-Review+1: Chris Cannon <ccannon@hp.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 01 Dec 2014 00:36:40 +0000
+Reviewed-on: https://review.openstack.org/134595
+Project: openstack/keystone
+Branch: refs/heads/master
