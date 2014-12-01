@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_8b28ae34",
+        "filename": "doc/source/extensions/shibboleth.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-01T16:10:58Z",
+      "side": 1,
+      "message": "line break out of place and space in the end",
+      "revId": "d6187d1ed6476416a59cdf35b03ad33bcc4f586d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
