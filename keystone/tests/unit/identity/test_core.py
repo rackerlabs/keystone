@@ -14,6 +14,7 @@
 
 import os
 import uuid
+import itertools
 
 import mock
 
@@ -78,3 +79,37 @@ class TestDomainConfigs(tests.BaseTestCase):
             mock_load_config.assert_called_once_with(fake_assignment_api,
                                                      [domain_config_filename],
                                                      'abc.def.com')
+
+    def test_config_for_multiple_sql_backend(self):
+        domains_config = identity.DomainConfigs()
+
+        drivers = []
+        files = []
+        for idx, is_sql in enumerate((True, False, True)):
+            drv = mock.Mock(is_sql=is_sql)
+            drivers.append(drv)
+            name = 'dummy.{0}'.format(idx)
+            files.append(''.join((
+                identity.DOMAIN_CONF_FHEAD,
+                name,
+                identity.DOMAIN_CONF_FTAIL)))
+
+        walk_fake = lambda *a, **kwa: (
+            ('/fake/keystone/domains/config', [], files), )
+
+        generic_driver = mock.MagicMock(is_sql=False)
+
+        assignment_api = mock.MagicMock()
+        id_factory = itertools.count()
+        assignment_api.get_domain_by_name.side_effect = \
+            lambda name: dict(id=next(id_factory), _='fake_domain')
+
+        with mock.patch.object(os, 'walk', walk_fake), \
+                mock.patch.object(identity.cfg, 'ConfigOpts'), \
+                mock.patch.object(domains_config, '_load_driver',
+                                  mock.MagicMock(side_effect=drivers)):
+
+            self.assertRaises(
+                exception.MultipleSQLDriversInConfig,
+                domains_config.setup_domain_drivers,
+                generic_driver, assignment_api)
