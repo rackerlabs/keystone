@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_3c9aaac5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-12-01T14:11:31Z",
+      "side": 1,
+      "message": "This is more efficient or just a way to refactor the code to simplify it?",
+      "revId": "af4c70d04b6af0132474c21e85a1d81de5b2b6ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
