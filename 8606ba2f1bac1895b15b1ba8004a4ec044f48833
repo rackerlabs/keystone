@@ -16,6 +16,24 @@
       "revId": "8606ba2f1bac1895b15b1ba8004a4ec044f48833",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_67e82917",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-01T00:27:58Z",
+      "side": 1,
+      "message": "It is a fix to the bug 1380477. There is a good explanation why it is not accurate.",
+      "parentUuid": "5a890539_273381f7",
+      "revId": "8606ba2f1bac1895b15b1ba8004a4ec044f48833",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
