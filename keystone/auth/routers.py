@@ -28,7 +28,7 @@ class Routers(wsgi.RoutersBase):
         # call and lets wsgi.render_response remove the body data.
         self._add_resource(
             mapper, auth_controller,
-            path='/auth/tokens',
+            path='/tokens',
             get_action='validate_token',
             head_action='check_token',
             post_action='authenticate_for_token',
@@ -37,25 +37,25 @@ class Routers(wsgi.RoutersBase):
 
         self._add_resource(
             mapper, auth_controller,
-            path='/auth/tokens/OS-PKI/revoked',
+            path='/tokens/OS-PKI/revoked',
             get_action='revocation_list',
             rel=json_home.build_v3_extension_resource_relation(
                 'OS-PKI', '1.0', 'revocations'))
 
         self._add_resource(
             mapper, auth_controller,
-            path='/auth/catalog',
+            path='/catalog',
             get_action='get_auth_catalog',
             rel=json_home.build_v3_resource_relation('auth_catalog'))
 
         self._add_resource(
             mapper, auth_controller,
-            path='/auth/projects',
+            path='/projects',
             get_action='get_auth_projects',
             rel=json_home.build_v3_resource_relation('auth_projects'))
 
         self._add_resource(
             mapper, auth_controller,
-            path='/auth/domains',
+            path='/domains',
             get_action='get_auth_domains',
             rel=json_home.build_v3_resource_relation('auth_domains'))

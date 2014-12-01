@@ -101,7 +101,7 @@ def v3_app_factory(global_conf, **local_conf):
     sub_routers = []
     _routers = []
 
-    router_modules = [assignment, auth, catalog, credential, identity, policy]
+    router_modules = [assignment, catalog, credential, identity, policy]
     if CONF.trust.enabled:
         router_modules.append(trust)
 
@@ -113,4 +113,16 @@ def v3_app_factory(global_conf, **local_conf):
     # Add in the v3 version api
     sub_routers.append(routers.VersionV3('admin', _routers))
     sub_routers.append(routers.VersionV3('public', _routers))
+    return wsgi.ComposingRouter(mapper, sub_routers)
+
+@fail_gracefully
+def v3_auth_factory(global_conf, **local_conf):
+    controllers.register_version('v3')
+    mapper = routes.Mapper()
+    sub_routers = []
+    _routers = []
+    routers_instance = auth.routers.Routers()
+    _routers.append(routers_instance)
+    routers_instance.append_v3_routers(mapper, sub_routers)
+
     return wsgi.ComposingRouter(mapper, sub_routers)
