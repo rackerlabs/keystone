@@ -25,7 +25,7 @@ from keystone.common import sql
 from keystone.common.sql import migration_helpers
 from keystone.common import utils
 from keystone import config
-from keystone.i18n import _
+from keystone.i18n import _, _LW
 from keystone import identity
 from keystone.openstack.common import log
 from keystone import token
@@ -83,9 +83,10 @@ class DbVersion(BaseApp):
     def add_argument_parser(cls, subparsers):
         parser = super(DbVersion, cls).add_argument_parser(subparsers)
         parser.add_argument('--extension', default=None,
-                            help=('Migrate the database for the specified '
-                                  'extension. If not provided, db_sync will '
-                                  'migrate the common repository.'))
+                            help=('Print the migration version of the '
+                                  'database for the specified extension. If '
+                                  'not provided, print it for the common '
+                                  'repository.'))
 
     @staticmethod
     def main():
@@ -141,9 +142,8 @@ class PKISetup(BaseCertificateSetup):
 
     @classmethod
     def main(cls):
-        msg = _('keystone-manage pki_setup is not recommended for production '
-                'use.')
-        LOG.warn(msg)
+        LOG.warn(_LW('keystone-manage pki_setup is not recommended for '
+                     'production use.'))
         keystone_user_id, keystone_group_id = cls.get_user_group()
         conf_pki = openssl.ConfigurePKI(keystone_user_id, keystone_group_id,
                                         rebuild=CONF.command.rebuild)
@@ -161,9 +161,8 @@ class SSLSetup(BaseCertificateSetup):
 
     @classmethod
     def main(cls):
-        msg = _('keystone-manage ssl_setup is not recommended for production '
-                'use.')
-        LOG.warn(msg)
+        LOG.warn(_LW('keystone-manage ssl_setup is not recommended for '
+                     'production use.'))
         keystone_user_id, keystone_group_id = cls.get_user_group()
         conf_ssl = openssl.ConfigureSSL(keystone_user_id, keystone_group_id,
                                         rebuild=CONF.command.rebuild)

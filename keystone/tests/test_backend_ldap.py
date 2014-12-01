@@ -409,6 +409,18 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_get_roles_for_user_and_domain(self):
         self.skipTest('N/A: LDAP does not support multiple domains')
 
+    def test_get_roles_for_groups_on_domain(self):
+        self.skipTest('Blocked by bug: 1390125')
+
+    def test_get_roles_for_groups_on_project(self):
+        self.skipTest('Blocked by bug: 1390125')
+
+    def test_list_domains_for_groups(self):
+        self.skipTest('N/A: LDAP does not support multiple domains')
+
+    def test_list_projects_for_groups(self):
+        self.skipTest('Blocked by bug: 1390125')
+
     def test_list_role_assignments_unfiltered(self):
         new_domain = self._get_domain_fixture()
         new_user = {'name': uuid.uuid4().hex, 'password': uuid.uuid4().hex,
@@ -769,29 +781,6 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                                                  project_id=project_id)
 
         self.assertEqual(role_id, role_ref['id'])
-
-    def test_utf8_conversion(self):
-        value_unicode = u'fäké1'
-        value_utf8 = value_unicode.encode('utf-8')
-
-        result_utf8 = common_ldap_core.utf8_encode(value_unicode)
-        self.assertEqual(value_utf8, result_utf8)
-
-        result_utf8 = common_ldap_core.utf8_encode(value_utf8)
-        self.assertEqual(value_utf8, result_utf8)
-
-        result_unicode = common_ldap_core.utf8_decode(value_utf8)
-        self.assertEqual(value_unicode, result_unicode)
-
-        result_unicode = common_ldap_core.utf8_decode(value_unicode)
-        self.assertEqual(value_unicode, result_unicode)
-
-        self.assertRaises(TypeError,
-                          common_ldap_core.utf8_encode,
-                          100)
-
-        result_unicode = common_ldap_core.utf8_decode(100)
-        self.assertEqual(u'100', result_unicode)
 
 
 class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
@@ -1373,21 +1362,6 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                          user['name'])
         self.assertEqual(mock_ldap_get.return_value[1]['MaIl'][0],
                          user['email'])
-
-    def test_binary_attribute_values(self):
-        result = [(
-            'cn=junk,dc=example,dc=com',
-            {
-                'cn': ['junk'],
-                'sn': [uuid.uuid4().hex],
-                'mail': [uuid.uuid4().hex],
-                'binary_attr': ['\x00\xFF\x00\xFF']
-            }
-        ), ]
-        py_result = common_ldap_core.convert_ldap_result(result)
-        # The attribute containing the binary value should
-        # not be present in the converted result.
-        self.assertNotIn('binary_attr', py_result[0][1])
 
     def test_parse_extra_attribute_mapping(self):
         option_list = ['description:name', 'gecos:password',

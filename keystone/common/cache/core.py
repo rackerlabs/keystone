@@ -21,7 +21,7 @@ from oslo.utils import importutils
 
 from keystone import config
 from keystone import exception
-from keystone.i18n import _
+from keystone.i18n import _, _LE
 from keystone.openstack.common import log
 
 
@@ -87,7 +87,6 @@ class DebugProxy(proxy.ProxyBackend):
 def build_cache_config():
     """Build the cache region dictionary configuration.
 
-    :param conf: configuration object for keystone
     :returns: dict
     """
     prefix = CONF.cache.config_prefix
@@ -98,8 +97,8 @@ def build_cache_config():
         try:
             (argname, argvalue) = argument.split(':', 1)
         except ValueError:
-            msg = _('Unable to build cache config-key. Expected format '
-                    '"<argname>:<value>". Skipping unknown format: %s')
+            msg = _LE('Unable to build cache config-key. Expected format '
+                      '"<argname>:<value>". Skipping unknown format: %s')
             LOG.error(msg, argument)
             continue
 

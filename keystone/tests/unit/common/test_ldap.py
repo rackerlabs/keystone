@@ -11,7 +11,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import ldap
+import uuid
+
+import ldap.dn
 import mock
 from testtools import matchers
 
@@ -349,3 +351,87 @@ class SslTlsTest(tests.TestCase):
 
         # Ensure the cert trust option is set.
         self.assertEqual(certdir, ldap.get_option(ldap.OPT_X_TLS_CACERTDIR))
+
+
+class LDAPPagedResultsTest(tests.TestCase):
+    """Tests the paged results functionality in keystone.common.ldap.core."""
+
+    def setUp(self):
+        super(LDAPPagedResultsTest, self).setUp()
+        self.clear_database()
+
+        ks_ldap.register_handler('fake://', fakeldap.FakeLdap)
+        self.addCleanup(common_ldap_core._HANDLERS.clear)
+
+        self.load_backends()
+        self.load_fixtures(default_fixtures)
+
+    def clear_database(self):
+        for shelf in fakeldap.FakeShelves:
+            fakeldap.FakeShelves[shelf].clear()
+
+    def config_overrides(self):
+        super(LDAPPagedResultsTest, self).config_overrides()
+        self.config_fixture.config(
+            group='identity',
+            driver='keystone.identity.backends.ldap.Identity')
+
+    def config_files(self):
+        config_files = super(LDAPPagedResultsTest, self).config_files()
+        config_files.append(tests.dirs.tests_conf('backend_ldap.conf'))
+        return config_files
+
+    @mock.patch.object(fakeldap.FakeLdap, 'search_ext')
+    @mock.patch.object(fakeldap.FakeLdap, 'result3')
+    def test_paged_results_control_api(self, mock_result3, mock_search_ext):
+        mock_result3.return_value = ('', [], 1, [])
+
+        self.config_fixture.config(group='ldap',
+                                   page_size=1)
+
+        conn = self.identity_api.user.get_connection()
+        conn._paged_search_s('dc=example,dc=test',
+                             ldap.SCOPE_SUBTREE,
+                             'objectclass=*')
+
+
+class CommonLdapTestCase(tests.BaseTestCase):
+    """These test cases call functions in keystone.common.ldap."""
+
+    def test_binary_attribute_values(self):
+        result = [(
+            'cn=junk,dc=example,dc=com',
+            {
+                'cn': ['junk'],
+                'sn': [uuid.uuid4().hex],
+                'mail': [uuid.uuid4().hex],
+                'binary_attr': ['\x00\xFF\x00\xFF']
+            }
+        ), ]
+        py_result = ks_ldap.convert_ldap_result(result)
+        # The attribute containing the binary value should
+        # not be present in the converted result.
+        self.assertNotIn('binary_attr', py_result[0][1])
+
+    def test_utf8_conversion(self):
+        value_unicode = u'fäké1'
+        value_utf8 = value_unicode.encode('utf-8')
+
+        result_utf8 = ks_ldap.utf8_encode(value_unicode)
+        self.assertEqual(value_utf8, result_utf8)
+
+        result_utf8 = ks_ldap.utf8_encode(value_utf8)
+        self.assertEqual(value_utf8, result_utf8)
+
+        result_unicode = ks_ldap.utf8_decode(value_utf8)
+        self.assertEqual(value_unicode, result_unicode)
+
+        result_unicode = ks_ldap.utf8_decode(value_unicode)
+        self.assertEqual(value_unicode, result_unicode)
+
+        self.assertRaises(TypeError,
+                          ks_ldap.utf8_encode,
+                          100)
+
+        result_unicode = ks_ldap.utf8_decode(100)
+        self.assertEqual(u'100', result_unicode)

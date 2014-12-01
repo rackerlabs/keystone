@@ -17,7 +17,76 @@
 Setup Shibboleth
 ================
 
-Federate Keystone (SP) and an external IdP.
+Configure Apache HTTPD for mod_shibboleth
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Follow the steps outlined at: `Running Keystone in HTTPD`_.
+
+.. _`Running Keystone in HTTPD`: apache-httpd.html
+
+You'll also need to install `Shibboleth <https://wiki.shibboleth.net/confluence/display/SHIB2/Home>`_, for
+example:
+
+.. code-block:: bash
+
+    $ apt-get install libapache2-mod-shib2
+
+Configure your Keystone virtual host and adjust the config to properly handle SAML2 workflow:
+
+Add *WSGIScriptAlias* directive to your vhost configuration::
+
+    WSGIScriptAliasMatch ^(/v3/OS-FEDERATION/identity_providers/.*?/protocols/.*?/auth)$ /var/www/keystone/main/$1
+
+Make sure the *wsgi-keystone.conf* contains a *<Location>* directive for the Shibboleth module and
+a *<Location>* directive for each identity provider::
+
+    <Location /Shibboleth.sso>
+        SetHandler shib
+    </Location>
+
+    <Location /v3/OS-FEDERATION/identity_providers/idp_1/protocols/saml2/auth>
+        ShibRequestSetting requireSession 1
+        ShibRequestSetting applicationId idp_1
+        AuthType shibboleth
+        ShibRequireAll On
+        ShibRequireSession On
+        ShibExportAssertion Off
+        Require valid-user
+    </Location>
+
+.. NOTE::
+    * ``saml2`` may be different in your deployment, but do not use a wildcard value.
+      Otherwise *every* federated protocol will be handled by Shibboleth.
+    * ``idp_1`` has to be replaced with the name associated with the idp in Keystone.
+      The same name is used inside the shibboleth2.xml configuration file but they could
+      be different.
+    * The ``ShibRequireSession`` and ``ShibRequireAll`` rules are invalid in
+      Apache 2.4+ and should be dropped in that specific setup.
+    * You are advised to carefully examine `Shibboleth Apache configuration
+      documentation
+      <https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPApacheConfig>`_
+
+Enable the Keystone virtual host, for example:
+
+.. code-block:: bash
+
+    $ a2ensite wsgi-keystone.conf
+
+Enable the ``ssl`` and ``shib2`` modules, for example:
+
+.. code-block:: bash
+
+    $ a2enmod ssl
+    $ a2enmod shib2
+
+Restart Apache, for example:
+
+.. code-block:: bash
+
+    $ service apache2 restart
+
+Configuring shibboleth2.xml
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once you have your Keystone vhost (virtual host) ready, it's then time to
 configure Shibboleth and upload your Metadata to the Identity Provider.
@@ -135,6 +204,43 @@ environment):
             -->
             <CredentialResolver type="File" key="sp-key.pem"
             certificate="sp-cert.pem"/>
+
+            <ApplicationOverride id="idp_1" entityID="https://<yourhosthere>/shibboleth">
+               <Sessions lifetime="28800" timeout="3600" checkAddress="false"
+               relayState="ss:mem" handlerSSL="false">
+
+                <!-- Triggers a login request directly to the TestShib IdP. -->
+                <SSO entityID="https://<idp_1-url>/idp/shibboleth" ECP="true">
+                    SAML2 SAML1
+                </SSO>
+
+                <Logout>SAML2 Local</Logout>
+               </Sessions>
+
+               <MetadataProvider type="XML" uri="<idp_1-metadata-file>"
+                 backingFilePath="<local idp_1 metadata>"
+                 reloadInterval="180000" />
+
+            </ApplicationOverride>
+
+            <ApplicationOverride id="idp_2" entityID="https://<yourhosthere>/shibboleth">
+               <Sessions lifetime="28800" timeout="3600" checkAddress="false"
+               relayState="ss:mem" handlerSSL="false">
+
+                <!-- Triggers a login request directly to the TestShib IdP. -->
+                <SSO entityID="https://<idp_2-url>/idp/shibboleth" ECP="true">
+                    SAML2 SAML1
+                </SSO>
+
+                <Logout>SAML2 Local</Logout>
+               </Sessions>
+
+               <MetadataProvider type="XML" uri="<idp_2-metadata-file>"
+                 backingFilePath="<local idp_2 metadata>"
+                 reloadInterval="180000" />
+
+            </ApplicationOverride>
+
         </ApplicationDefaults>
 
         <!--

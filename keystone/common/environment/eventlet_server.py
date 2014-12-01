@@ -26,9 +26,7 @@ import eventlet
 import eventlet.wsgi
 import greenlet
 
-from keystone.i18n import _
-from keystone.i18n import _LE
-from keystone.i18n import _LI
+from keystone.i18n import _LE, _LI
 from keystone.openstack.common import log
 
 
@@ -174,7 +172,7 @@ class Server(object):
         pass
 
     def _run(self, application, socket):
-        """Start a WSGI server in a new green thread."""
+        """Start a WSGI server with a new green thread pool."""
         logger = log.getLogger('eventlet.wsgi.server')
         try:
             eventlet.wsgi.server(socket, application, custom_pool=self.pool,
@@ -184,5 +182,5 @@ class Server(object):
             # Wait until all servers have completed running
             pass
         except Exception:
-            LOG.exception(_('Server error'))
+            LOG.exception(_LE('Server error'))
             raise

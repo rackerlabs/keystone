@@ -41,8 +41,7 @@ SCOPE_NAMES = {
     ldap.SCOPE_SUBTREE: 'SCOPE_SUBTREE',
 }
 
-# http://msdn.microsoft.com\
-#     /en-us/library/windows/desktop/aa366991(v=vs.85).aspx
+# http://msdn.microsoft.com/en-us/library/windows/desktop/aa366991(v=vs.85).aspx  # noqa
 CONTROL_TREEDELETE = '1.2.840.113556.1.4.805'
 
 LOG = log.getLogger(__name__)
@@ -349,7 +348,7 @@ class FakeLdap(core.LDAPHandler):
                     del self.db[c]
 
             key = self.key(dn)
-            LOG.debug('FakeLdap delete item: dn=%s', dn)
+            LOG.debug('FakeLdap delete item: dn=%s', core.utf8_decode(dn))
             del self.db[key]
         except KeyError:
             LOG.debug('delete item failed: dn=%s not found.',
