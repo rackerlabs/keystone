@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_eb493261",
+        "filename": "doc/source/extensions/shibboleth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2014-12-01T16:06:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_305f2b77",
+      "revId": "7d7f65d946e42a57867d80752f58dfc08a145873",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_50c91724",
         "filename": "doc/source/extensions/shibboleth.rst",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-12-01T15:58:29Z",
       "side": 1,
       "message": "This should be Location if it\u0027s not a regex.",
+      "revId": "7d7f65d946e42a57867d80752f58dfc08a145873",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_cb61d6d5",
+        "filename": "doc/source/extensions/shibboleth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2014-12-01T16:06:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_50c91724",
       "revId": "7d7f65d946e42a57867d80752f58dfc08a145873",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +100,42 @@
       "writtenOn": "2014-12-01T15:58:29Z",
       "side": 1,
       "message": "add a . at the end of the sentence for consistency.",
+      "revId": "7d7f65d946e42a57867d80752f58dfc08a145873",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_0bb3de4d",
+        "filename": "doc/source/extensions/shibboleth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2014-12-01T16:06:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_d066e754",
+      "revId": "7d7f65d946e42a57867d80752f58dfc08a145873",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_cba8f6db",
+        "filename": "doc/source/extensions/shibboleth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2014-12-01T16:06:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_90ea9f72",
       "revId": "7d7f65d946e42a57867d80752f58dfc08a145873",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
