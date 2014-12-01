@@ -34,6 +34,24 @@
       "revId": "8606ba2f1bac1895b15b1ba8004a4ec044f48833",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_076cc59c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-01T00:35:14Z",
+      "side": 1,
+      "message": "The information should be in the commit message. See https://wiki.openstack.org/wiki/GitCommitMessages#Information_in_commit_messages ( Do not assume the reviewer has access to external web services/site. )",
+      "parentUuid": "5a890539_67e82917",
+      "revId": "8606ba2f1bac1895b15b1ba8004a4ec044f48833",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
