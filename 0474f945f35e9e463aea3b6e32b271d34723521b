@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_b3a97227",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-12-01T09:02:19Z",
+      "side": 1,
+      "message": "Yep-yep, I\u0027m going to file the bug in a few minutes.",
+      "parentUuid": "5a890539_fc2e7ef9",
+      "revId": "0474f945f35e9e463aea3b6e32b271d34723521b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_7cf36e9f",
         "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/003_add_endpoint_group_id_primary_key.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-28T16:55:19Z",
       "side": 1,
       "message": "don\u0027t you need a\n pass\nhere?",
+      "revId": "0474f945f35e9e463aea3b6e32b271d34723521b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_73a1ca45",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/003_add_endpoint_group_id_primary_key.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-12-01T09:02:19Z",
+      "side": 1,
+      "message": "Technically — no. But for clarity — yes. I\u0027ll add it.",
+      "parentUuid": "5a890539_7cf36e9f",
       "revId": "0474f945f35e9e463aea3b6e32b271d34723521b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
