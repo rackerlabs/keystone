@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_75bef701",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-01T21:54:43Z",
+      "side": 1,
+      "message": "Password isn\u0027t required for V3 either: \n\nhttps://github.com/openstack/identity-api/blob/master/v3/src/markdown/identity-api-v3.md#users-v3users\n\nwhich means this could be None",
+      "parentUuid": "5a890539_e27d4b1d",
+      "revId": "ff3fd73809351dc4799704191dd56cee76aaeb47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_2274b334",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 5
