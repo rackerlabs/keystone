@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_684e1ac4",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 1313,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-01T22:49:21Z",
+      "side": 1,
+      "message": "This test should either work or it should be changed to show how the backend works now. If the backend doesn\u0027t work the same way as it did before then this change isn\u0027t backwards-compatible and doesn\u0027t meet OpenStack API stability guidelines: https://wiki.openstack.org/wiki/APIChangeGuidelines",
+      "revId": "91fec047fe01ad6af2aa9e5d794535abfa804d23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
