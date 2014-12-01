@@ -177,6 +177,24 @@
       "revId": "82446cf94d97e6bf4bed51dca32698ee034953d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_c804811a",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-12-01T14:14:25Z",
+      "side": 1,
+      "message": "Rodrigo, I cannot catch your idea, let me repeat why I put the testcase here instead of test_backend.py.\n\nFirst, if I put the test case in test_backend.py which will mean the testcase will be executed both in test_backend_sql.py and test_backend_ldap.py.\n\nBut I think the test case is not applicable in test_backend_ldap.py since the changed delete_grant method in henry\u0027s patch intends to remove user_dn from role_dn and the exception thrown there imo is correct (role not found), so this is why I remove the the change in ldap backend as well.\n\nThis is why the testcase is here specific to sql backend. Is that clear?\n\npls let me know if there is any other comments.",
+      "parentUuid": "5a890539_51eccfbb",
+      "revId": "82446cf94d97e6bf4bed51dca32698ee034953d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
