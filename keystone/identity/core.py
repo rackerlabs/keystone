@@ -103,13 +103,12 @@ class DomainConfigs(dict):
             would cause there to now be more than one sql driver.
 
             """
-            if (new_config['driver'].is_sql and
-                    (self.driver.is_sql or self._any_sql)):
+            if (new_config['driver'].is_sql and self._any_sql):
                 # The addition of this driver would cause us to have more than
                 # one sql driver, so raise an exception.
                 raise exception.MultipleSQLDriversInConfig(
                     config_file=config_file)
-            self._any_sql = new_config['driver'].is_sql
+            self._any_sql |= new_config['driver'].is_sql
 
         try:
             domain_ref = assignment_api.get_domain_by_name(domain_name)
@@ -138,6 +137,7 @@ class DomainConfigs(dict):
         # This is called by the api call wrapper
         self.configured = True
         self.driver = standard_driver
+        self._any_sql = self.driver.is_sql
 
         conf_dir = CONF.identity.domain_config_dir
         if not os.path.exists(conf_dir):
