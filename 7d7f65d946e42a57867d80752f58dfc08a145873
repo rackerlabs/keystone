@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_d066e754",
+        "filename": "doc/source/extensions/shibboleth.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-12-01T15:57:02Z",
+      "side": 1,
+      "message": "*different",
+      "revId": "7d7f65d946e42a57867d80752f58dfc08a145873",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
