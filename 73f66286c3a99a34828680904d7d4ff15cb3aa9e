@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_52daf1e9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-01T21:37:43Z",
+      "side": 1,
+      "message": "Now*?",
+      "revId": "73f66286c3a99a34828680904d7d4ff15cb3aa9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_b2df95d5",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-01T21:37:43Z",
+      "side": 1,
+      "message": "Need tests for these, according to the TODO?",
+      "revId": "73f66286c3a99a34828680904d7d4ff15cb3aa9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
