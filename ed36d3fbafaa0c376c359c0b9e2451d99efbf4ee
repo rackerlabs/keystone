@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_32a2c54b",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-01T21:40:16Z",
+      "side": 1,
+      "message": "I would think not, I think the case we would want here would be a ConflictError.",
+      "parentUuid": "5a890539_08d5641b",
+      "revId": "ed36d3fbafaa0c376c359c0b9e2451d99efbf4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_be809747",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 2
