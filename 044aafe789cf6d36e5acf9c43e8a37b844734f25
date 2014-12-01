@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a890539_18d6cd27",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-01T19:55:25Z",
+      "side": 1,
+      "message": "Can this be tied to a feature of blueprint?",
+      "revId": "044aafe789cf6d36e5acf9c43e8a37b844734f25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa201ad_b9e49c0d",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 12
@@ -132,6 +149,40 @@
       "writtenOn": "2014-10-16T00:40:01Z",
       "side": 1,
       "message": "This should be in keystone/tests/unit/common/ldap/",
+      "revId": "044aafe789cf6d36e5acf9c43e8a37b844734f25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_38fe296c",
+        "filename": "keystone/tests/test_expr.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-01T19:55:25Z",
+      "side": 1,
+      "message": "nit: could pull the \u0027\"\" up a line: \n\n    \"\"\"Test instance of result of right adding.\"\"\"",
+      "revId": "044aafe789cf6d36e5acf9c43e8a37b844734f25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_98f2bd99",
+        "filename": "keystone/tests/test_expr.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-01T19:55:25Z",
+      "side": 1,
+      "message": "same comment here and applies throughout file as long as the line doesn\u0027t exceed 80 characters.",
       "revId": "044aafe789cf6d36e5acf9c43e8a37b844734f25",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
