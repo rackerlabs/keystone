@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_076205d9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-01T00:21:37Z",
+      "side": 1,
+      "message": "change \"expriration_time\" to \"expiration_time\" (or fix the name of the variable)",
+      "revId": "602b63b84810f0d8b2304254bf2c70f93069f06e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_c770fda6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-01T00:21:37Z",
+      "side": 1,
+      "message": "remove trailing blanks.",
+      "revId": "602b63b84810f0d8b2304254bf2c70f93069f06e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_475c0d1a",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-01T00:21:37Z",
+      "side": 1,
+      "message": "change \"wil\" to \"will\"",
+      "revId": "602b63b84810f0d8b2304254bf2c70f93069f06e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_679ae9c6",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-01T00:21:37Z",
+      "side": 1,
+      "message": "change \"infrenquently\" to \"infrequently\"",
+      "revId": "602b63b84810f0d8b2304254bf2c70f93069f06e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_879d15be",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-01T00:21:37Z",
+      "side": 1,
+      "message": "should be :rtype:",
+      "revId": "602b63b84810f0d8b2304254bf2c70f93069f06e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_c7a71d0a",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-01T00:21:37Z",
+      "side": 1,
+      "message": "should be :rtype:",
+      "revId": "602b63b84810f0d8b2304254bf2c70f93069f06e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_6781094d",
+        "filename": "keystone/tests/test_cache.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-01T00:21:37Z",
+      "side": 1,
+      "message": "I think that if a class was used (where a property is changed) then this would be easier to understand.",
+      "revId": "602b63b84810f0d8b2304254bf2c70f93069f06e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
