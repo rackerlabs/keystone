@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_67b909ec",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-01T01:13:12Z",
+      "side": 1,
+      "message": "can remove this since it\u0027s the default. Somebody recently went through and removed these so let\u0027s not add a new one.",
+      "revId": "90c6b8094015990906e258ba2bf4bdacca91eb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_47c24d54",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-01T01:13:12Z",
+      "side": 1,
+      "message": "It would be useful to have an example of a typical value, \"HTTP_X_FORWARDED_PROTO\"",
+      "revId": "90c6b8094015990906e258ba2bf4bdacca91eb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_a7b3f108",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-01T01:13:12Z",
+      "side": 1,
+      "message": "this should only be done if CONF.secure_proxy_ssl_header is not None.",
+      "revId": "90c6b8094015990906e258ba2bf4bdacca91eb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_e7cc198d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-01T01:13:12Z",
+      "side": 1,
+      "message": "I don\u0027t know what \"ssh thing\" is? Was this meants to be \"SSL/TLS\"?",
+      "revId": "90c6b8094015990906e258ba2bf4bdacca91eb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_c7b63df9",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-01T01:13:12Z",
+      "side": 1,
+      "message": "change \"schema\" to \"scheme\"",
+      "revId": "90c6b8094015990906e258ba2bf4bdacca91eb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_c7ad5d9d",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 911,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-01T01:13:12Z",
+      "side": 1,
+      "message": "this should be done in an overridden config_overrides()",
+      "revId": "90c6b8094015990906e258ba2bf4bdacca91eb50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
