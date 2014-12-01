@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a890539_7daee3e8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-01T19:12:20Z",
+      "side": 1,
+      "message": "describe a bit more of how you are changing the code to fix the problem.",
+      "revId": "4a0cab97df4dac6be0754b8aa96ecd7725e2fdb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_fd73b3b1",
+        "filename": "keystone/common/sql/migrate_repo/versions/039_grant_to_assignment.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-01T19:12:20Z",
+      "side": 1,
+      "message": "capitalize the S in skip",
+      "revId": "4a0cab97df4dac6be0754b8aa96ecd7725e2fdb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_9d3b8fc7",
+        "filename": "keystone/common/sql/migrate_repo/versions/039_grant_to_assignment.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-01T19:12:20Z",
+      "side": 1,
+      "message": "keystone-manage instead of nova-manage",
+      "revId": "4a0cab97df4dac6be0754b8aa96ecd7725e2fdb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_1d295f89",
+        "filename": "keystone/common/sql/migrate_repo/versions/039_grant_to_assignment.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-01T19:12:20Z",
+      "side": 1,
+      "message": "use _LW() to indicate it\u0027s marked for translation",
+      "revId": "4a0cab97df4dac6be0754b8aa96ecd7725e2fdb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_67fe9bb0",
         "filename": "keystone/common/sql/migrate_repo/versions/039_grant_to_assignment.py",
         "patchSetId": 12
