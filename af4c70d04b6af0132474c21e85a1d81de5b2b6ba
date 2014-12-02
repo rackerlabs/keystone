@@ -52,6 +52,24 @@
       "revId": "af4c70d04b6af0132474c21e85a1d81de5b2b6ba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_8bfdf7b3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-12-02T06:17:24Z",
+      "side": 1,
+      "message": "David, I modify the commit message again and not sure if there is still misleading there, thanks for reviewing it again.",
+      "parentUuid": "5a890539_ddeb4910",
+      "revId": "af4c70d04b6af0132474c21e85a1d81de5b2b6ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
