@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_65db78ed",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-02T22:54:17Z",
+      "side": 1,
+      "message": "maybe a slight better name would be something like:\n\n_assert_all_parents_are_enabled()",
+      "revId": "8c48c7974dbea66bc3f6c1ff7c7668f65c58fbf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_6589b8c9",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-02T22:54:17Z",
+      "side": 1,
+      "message": "..and maybe here:\n\n_assert_whole_subtree_is_disabled()",
+      "revId": "8c48c7974dbea66bc3f6c1ff7c7668f65c58fbf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_e02676b9",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-02T22:54:17Z",
+      "side": 1,
+      "message": "...so a little worried that we have no check to ensure we do not have a corrupted hierarchy...and so would loop forever.  Maybe add the same check as we did before about whether we have seen this project before?",
+      "revId": "8c48c7974dbea66bc3f6c1ff7c7668f65c58fbf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_a0e38e32",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1019,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-02T22:54:17Z",
+      "side": 1,
+      "message": "It seems a bit odd that there is no change to the driver to match this in this patch?  Is this fixing a previous oversight?\n\nAlso, not actually sure what it means \"the projects this user has access to\"?  Do you mean has an assignment on?  If, so, that seems an odd mix of API.",
+      "revId": "8c48c7974dbea66bc3f6c1ff7c7668f65c58fbf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_25adf084",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-02T22:54:17Z",
+      "side": 1,
+      "message": "where is the called from....not the base class?  Should it therefore not start with \u0027_\u0027 ?",
+      "revId": "8c48c7974dbea66bc3f6c1ff7c7668f65c58fbf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
