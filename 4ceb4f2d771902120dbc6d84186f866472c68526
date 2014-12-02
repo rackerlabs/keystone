@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_a68e6a25",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2014-12-02T07:35:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_75c43741",
+      "revId": "4ceb4f2d771902120dbc6d84186f866472c68526",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_3501cf6a",
         "filename": "keystone/common/environment/eventlet_server.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-12-01T22:04:39Z",
       "side": 1,
       "message": "This has a default set in config.py, which should pass through to the implementation if the user doesn\u0027t set it.",
+      "revId": "4ceb4f2d771902120dbc6d84186f866472c68526",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_4bd5cfb5",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2014-12-02T07:35:03Z",
+      "side": 1,
+      "message": "Hi Lance,\n\nI agree if client_socket_timeout is not set, it will take default value from config.py but or None is required here, as if client_socket_timeout is set to 0 (by mistake) then the connection will timeouts instantly. In commit message it is mentioned that 0 means never timeout, in order to achieve it we need to set it to None.\n\nhttp://eventlet.net/doc/modules/wsgi.html#module-eventlet.wsgi",
+      "parentUuid": "5a890539_3501cf6a",
       "revId": "4ceb4f2d771902120dbc6d84186f866472c68526",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
