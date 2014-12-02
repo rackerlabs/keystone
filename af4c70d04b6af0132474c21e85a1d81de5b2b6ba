@@ -34,6 +34,24 @@
       "revId": "af4c70d04b6af0132474c21e85a1d81de5b2b6ba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_ddeb4910",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-12-02T04:18:50Z",
+      "side": 1,
+      "message": "I\u0027ll let some of the other cores weigh in here. I think it\u0027s a little misleading if you are just reading the commit summary. A function call shouldn\u0027t be slow enough to measure unless SQA is doing something funny here.",
+      "parentUuid": "5a890539_bca764a6",
+      "revId": "af4c70d04b6af0132474c21e85a1d81de5b2b6ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
