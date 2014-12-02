@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_806f7291",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2014-12-02T22:58:32Z",
+      "side": 1,
+      "message": "I\u0027ll change the exception. thanks :)",
+      "parentUuid": "5a890539_32a2c54b",
+      "revId": "ed36d3fbafaa0c376c359c0b9e2451d99efbf4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_be809747",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 2
@@ -48,6 +66,24 @@
       "writtenOn": "2014-11-19T01:12:04Z",
       "side": 1,
       "message": "This should be translation: \n\n    msg \u003d _(\u0027Duplicate Endpoint, %s.\u0027) % endpoint_id\n\nYou will need to add an \"import _ from keystone.i18n\" as well in the import block at the top.",
+      "revId": "ed36d3fbafaa0c376c359c0b9e2451d99efbf4ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_000b82d6",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2014-12-02T22:58:32Z",
+      "side": 1,
+      "message": "ok. Thanks!",
+      "parentUuid": "5a890539_be809747",
       "revId": "ed36d3fbafaa0c376c359c0b9e2451d99efbf4ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
