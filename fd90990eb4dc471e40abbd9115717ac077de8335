@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_7a6a371b",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 723,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-02T22:26:45Z",
+      "side": 1,
+      "message": "Maybe I missed something, but isn\u0027t this a formatted ref...so will there ever be \u0027domain\u0027 in ref?",
+      "revId": "fd90990eb4dc471e40abbd9115717ac077de8335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_9affe3aa",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 819,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-02T22:26:45Z",
+      "side": 1,
+      "message": "not sure the comment is still accurate",
+      "revId": "fd90990eb4dc471e40abbd9115717ac077de8335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_7a095730",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-02T22:26:45Z",
+      "side": 1,
+      "message": "maybe reword this - I think what you means is that inherited roles re not currently supported on other backends....and the plan for adding that support is by a future improvement to list_role_assignments?  If so, maybe make that bit a TODO.",
+      "revId": "fd90990eb4dc471e40abbd9115717ac077de8335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_1a413363",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-02T22:26:45Z",
+      "side": 1,
+      "message": "not sure about this...surely an inhered role is not valid on the project itself...only its children? (if we are keeping with the same rules as existing inherited roles on domains)",
+      "revId": "fd90990eb4dc471e40abbd9115717ac077de8335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_256b30ba",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-02T22:26:45Z",
+      "side": 1,
+      "message": "are there no list routes for the new API?",
+      "revId": "fd90990eb4dc471e40abbd9115717ac077de8335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
