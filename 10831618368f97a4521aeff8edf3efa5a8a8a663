@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_d4e06428",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 7
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-02T21:11:50Z",
+      "side": 0,
+      "message": "missing from right hand side",
+      "revId": "10831618368f97a4521aeff8edf3efa5a8a8a663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_94da5c76",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 7
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-02T21:11:50Z",
+      "side": 0,
+      "message": "these are missing from the right hand side.",
+      "revId": "10831618368f97a4521aeff8edf3efa5a8a8a663",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
