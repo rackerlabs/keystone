@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_bc520433",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-12-02T01:30:36Z",
+      "side": 1,
+      "message": "Done, but it\u0027s still being passed into the method as a tenant_id, so it reads a little inconsistently IMO",
+      "parentUuid": "9aa7fdbe_79075b82",
+      "revId": "3c6e93ac5807d650652e6fb601a3cd131520b848",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_10161349",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-11-26T11:42:43Z",
       "side": 1,
       "message": "it didn\u0027t fit in one line?",
+      "revId": "3c6e93ac5807d650652e6fb601a3cd131520b848",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_8b7eee68",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-12-02T01:30:36Z",
+      "side": 1,
+      "message": "Done, but this layout matches the style of the exception raised below",
+      "parentUuid": "5a890539_10161349",
       "revId": "3c6e93ac5807d650652e6fb601a3cd131520b848",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -65,6 +101,24 @@
       "side": 1,
       "message": "++",
       "parentUuid": "9aa7fdbe_0820c499",
+      "revId": "3c6e93ac5807d650652e6fb601a3cd131520b848",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_9c054816",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-12-02T01:30:36Z",
+      "side": 1,
+      "message": "Done in next patchset",
+      "parentUuid": "5a890539_502b3b81",
       "revId": "3c6e93ac5807d650652e6fb601a3cd131520b848",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
