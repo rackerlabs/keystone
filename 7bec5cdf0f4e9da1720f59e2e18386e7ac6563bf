@@ -16,6 +16,23 @@
       "revId": "7bec5cdf0f4e9da1720f59e2e18386e7ac6563bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_f7a3c7ae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-12-02T01:50:16Z",
+      "side": 1,
+      "message": "I think you should give the reason for this patch.",
+      "revId": "7bec5cdf0f4e9da1720f59e2e18386e7ac6563bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
