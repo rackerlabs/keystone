@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_1bcf4b2a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-03T19:36:41Z",
+      "side": 1,
+      "message": "ahh, sorry, yes you are correct.  Is there a reasons you add the parent_ref as well as the parents of parent_ref separately (in lines 103-105)?  My first thought would be to just do:\n\nparent_list \u003dself.list_project_parents(tenant.get(\u0027parent_id\u0027)",
+      "parentUuid": "5a890539_fba51fb5",
+      "revId": "35f386b9285dcb329e6039b5ec19ddefe65e4da3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_f8d44548",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
@@ -100,6 +118,24 @@
       "side": 1,
       "message": "++\n\nwe have a comment (not docstring) in the methods, do you think its enough?",
       "parentUuid": "5a890539_f8d44548",
+      "revId": "35f386b9285dcb329e6039b5ec19ddefe65e4da3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_3bb7a786",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1031,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-03T19:36:41Z",
+      "side": 1,
+      "message": "probably enough...let\u0027s just ditch these two",
+      "parentUuid": "5a890539_1b802bf6",
       "revId": "35f386b9285dcb329e6039b5ec19ddefe65e4da3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
