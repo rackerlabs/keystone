@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_1bb4ab80",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-03T19:53:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_07237305",
+      "revId": "65ad4e90e87a8f6c62192b8c0e348bb9112e645b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_67eef78c",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 18
@@ -30,6 +48,24 @@
       "writtenOn": "2014-12-03T17:54:43Z",
       "side": 1,
       "message": "Remove the deprecated warning since it\u0027s been removed... or change to remove_in\u003d0 ?",
+      "revId": "65ad4e90e87a8f6c62192b8c0e348bb9112e645b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_1b6bcbf1",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-03T19:53:03Z",
+      "side": 1,
+      "message": "Removing, that seems cleaner. Done.",
+      "parentUuid": "5a890539_67eef78c",
       "revId": "65ad4e90e87a8f6c62192b8c0e348bb9112e645b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_fe16eda5",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-03T19:53:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_6760b735",
+      "revId": "65ad4e90e87a8f6c62192b8c0e348bb9112e645b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_a7561f5c",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 18
@@ -64,6 +118,24 @@
       "writtenOn": "2014-12-03T17:54:43Z",
       "side": 1,
       "message": "same.",
+      "revId": "65ad4e90e87a8f6c62192b8c0e348bb9112e645b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_1e0ad978",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-03T19:53:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_a7561f5c",
       "revId": "65ad4e90e87a8f6c62192b8c0e348bb9112e645b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
