@@ -235,7 +235,6 @@ def get_migration_manager(extension=None, prepare_repo=False):
     else:
         package = sql
         init_version = migrate_repo.DB_INIT_VERSION
-
     # sqlalchemy-migrate repo must exist
     migrate_path = find_repo('migrate_repo', package)
     migration_config = {
@@ -251,14 +250,16 @@ def get_migration_manager(extension=None, prepare_repo=False):
     if prepare_repo:
         _prepare_migrate_repo(migrate_path, init_version)
 
-    # Alembic repos might still not exist, so it shouldn't fail if they don't
+    # NOTE(breton): Alembic repos might still not exist, so it should not fail.
+    # Remove this try-except clause when all repos are alembic-enabled.
     try:
         alembic_path = find_repo('alembic', package)
     except exception.MigrationNotProvided:
         alembic_path = None
     if alembic_path:
-        migration_config['alembic_ini_path'] = os.path.join(alembic_path,
-                                                            'alembic.ini')
+        alembic_ini_path = os.path.join(os.path.dirname(alembic_path),
+                                        'alembic.ini')
+        migration_config['alembic_ini_path'] = alembic_ini_path
         migration_config['alembic_repo_path'] = alembic_path
 
     # engine is passed to migration manager so that in-memory sqlite used in
