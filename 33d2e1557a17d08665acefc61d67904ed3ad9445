@@ -16,6 +16,24 @@
       "revId": "33d2e1557a17d08665acefc61d67904ed3ad9445",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_12d100fb",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-12-03T14:39:05Z",
+      "side": 1,
+      "message": "i don\u0027t think we should move this logic to the controller. From the controller perspective there is a request with auth_method \u0027token\u0027. And it\u0027s up to the token.py plugin to correctly handle the request, for instance by distinguishing whether it\u0027s federated or classic token.",
+      "parentUuid": "5a890539_8fcb08a3",
+      "revId": "33d2e1557a17d08665acefc61d67904ed3ad9445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
