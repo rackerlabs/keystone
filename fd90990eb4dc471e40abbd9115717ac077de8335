@@ -142,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_0ed8f0ed",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-03T17:04:29Z",
+      "side": 1,
+      "message": "Oh boy! OK, we need to discuss that.  Not sure how confusing that will be....or how appropriate it will be once we make domains into projects.  This sounds like a change from the original design.",
+      "parentUuid": "5a890539_f29ab460",
+      "revId": "fd90990eb4dc471e40abbd9115717ac077de8335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_256b30ba",
         "filename": "keystone/assignment/routers.py",
         "patchSetId": 2
@@ -171,6 +189,24 @@
       "side": 1,
       "message": "no... it was decided that list_grants() wouldn\u0027t be covered, since the idea was to move this semantic to list_role_assignments()",
       "parentUuid": "5a890539_256b30ba",
+      "revId": "fd90990eb4dc471e40abbd9115717ac077de8335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_4eff5802",
+        "filename": "keystone/assignment/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-03T17:04:29Z",
+      "side": 1,
+      "message": "OK....might seem a bit odd without it (since this does exist for inherited domain roles)",
+      "parentUuid": "5a890539_123f4026",
       "revId": "fd90990eb4dc471e40abbd9115717ac077de8335",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
