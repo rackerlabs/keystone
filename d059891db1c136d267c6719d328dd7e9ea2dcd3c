@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_6eddf413",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-03T17:04:23Z",
+      "side": 1,
+      "message": "I think you need to make this constraint as \"inherited \u003d false()\"....otherwise you will include all the projects that have a group inherited role (which should only apply to their children)",
+      "revId": "d059891db1c136d267c6719d328dd7e9ea2dcd3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
