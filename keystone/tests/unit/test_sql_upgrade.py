@@ -869,7 +869,7 @@ class VersionTests(SqlMigrateBase):
 
     def test_initial_with_extension_version_max(self):
         """When migrating to max version, do not migrate extensions."""
-        migration_helpers.sync_database_to_version(extension=None,
-                                                   version=self.max_version)
+        migration_helpers.sync_database_to_version(
+            extension=None, version=str(self.max_version))
         for table in INITIAL_EXTENSION_TABLE_STRUCTURE:
             self.assertTableDoesNotExist(table)
