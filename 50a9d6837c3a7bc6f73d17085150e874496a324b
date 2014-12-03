@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_55c5248c",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1309,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-03T18:49:44Z",
+      "side": 0,
+      "message": "guess it was never required here",
+      "revId": "50a9d6837c3a7bc6f73d17085150e874496a324b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
