@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_712cf94a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-03T17:10:16Z",
+      "side": 1,
+      "message": "Please specify these checks here.",
+      "revId": "25365b30170f0fcb24e63c76628522755b369838",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_d1592dfe",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-03T17:10:16Z",
+      "side": 1,
+      "message": "There are 3 possible cases:\n1) ref nas no parent_id\n2) ref[\u0027parent_id\u0027] is None\n3) ref[\u0027parent_id\u0027] is not None\n\nIf \u0027parent_id\u0027 if optional then 1 and 2 cases be merged, and if not - you need to check these separately.",
+      "revId": "25365b30170f0fcb24e63c76628522755b369838",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_ceffc864",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-03T17:10:16Z",
+      "side": 1,
+      "message": "If I receive this message I\u0027ll think I passed wrong parent. You use it as an error message in case when None is required.\nI\u0027d create another error for the case.",
+      "revId": "25365b30170f0fcb24e63c76628522755b369838",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_d10a0d1f",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1552,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-03T17:10:16Z",
+      "side": 1,
+      "message": "For now this is both a test and an initializer.\nPlease make a special test for this particular behaviour, for ex. test_create_hierarchy_not_allowed and extract common initialization.\nI doubt that gerrit is about to run out of space :)",
+      "range": {
+        "startLine": 1552,
+        "startChar": 8,
+        "endLine": 1552,
+        "endChar": 44
+      },
+      "revId": "25365b30170f0fcb24e63c76628522755b369838",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
