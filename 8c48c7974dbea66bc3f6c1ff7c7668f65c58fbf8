@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_ef9acc6d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 520,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-03T14:08:02Z",
+      "side": 1,
+      "message": "refactored this method keeping it recursive. Adding the examined set actually fit well.",
+      "parentUuid": "5a890539_633d1d8e",
+      "revId": "8c48c7974dbea66bc3f6c1ff7c7668f65c58fbf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_a0e38e32",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 2
@@ -171,6 +189,24 @@
       "side": 1,
       "message": "++ should remove the \u0027_\u0027",
       "parentUuid": "5a890539_25adf084",
+      "revId": "8c48c7974dbea66bc3f6c1ff7c7668f65c58fbf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_2f2cd449",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-03T14:08:02Z",
+      "side": 1,
+      "message": "but, for this patch since its not required in another controller, will keep it in the assignment controller",
+      "parentUuid": "5a890539_c3ab31d4",
       "revId": "8c48c7974dbea66bc3f6c1ff7c7668f65c58fbf8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
