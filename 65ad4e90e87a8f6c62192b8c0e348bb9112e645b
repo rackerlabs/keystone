@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_07237305",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-03T17:54:43Z",
+      "side": 1,
+      "message": "no need to move things around. put it back where it was.",
+      "revId": "65ad4e90e87a8f6c62192b8c0e348bb9112e645b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_67eef78c",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-03T17:54:43Z",
+      "side": 1,
+      "message": "Remove the deprecated warning since it\u0027s been removed... or change to remove_in\u003d0 ?",
+      "revId": "65ad4e90e87a8f6c62192b8c0e348bb9112e645b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_6760b735",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-03T17:54:43Z",
+      "side": 1,
+      "message": "this is unnecessary, right, since it\u0027s the default behavior.",
+      "revId": "65ad4e90e87a8f6c62192b8c0e348bb9112e645b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_a7561f5c",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-03T17:54:43Z",
+      "side": 1,
+      "message": "same.",
+      "revId": "65ad4e90e87a8f6c62192b8c0e348bb9112e645b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
