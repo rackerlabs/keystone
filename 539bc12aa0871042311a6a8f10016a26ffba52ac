@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_785a1551",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-12-03T19:21:24Z",
+      "side": 1,
+      "message": "why would enabled ever be a utf8 string? looks like it should either be LDAP_VALUES[val] or bool(int(val)) ? so in other words, a boolean no matter what. the ambiguity of the return type in this function baffles me",
+      "revId": "539bc12aa0871042311a6a8f10016a26ffba52ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_bb15573e",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-12-03T19:21:24Z",
+      "side": 1,
+      "message": "although the old function baffles me too, so maybe this isn\u0027t new",
+      "revId": "539bc12aa0871042311a6a8f10016a26ffba52ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
