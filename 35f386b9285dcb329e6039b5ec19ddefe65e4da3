@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_bb2717c6",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-03T19:39:11Z",
+      "side": 1,
+      "message": "yeah, because list_parent_projects returns only the parents, not the project itself. If we use list_project_parents(tenant.get(\u0027parent_id\u0027)), it wouldn\u0027t include the project right above \"tenant\".",
+      "parentUuid": "5a890539_1bcf4b2a",
+      "revId": "35f386b9285dcb329e6039b5ec19ddefe65e4da3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_f8d44548",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
@@ -136,6 +154,24 @@
       "side": 1,
       "message": "probably enough...let\u0027s just ditch these two",
       "parentUuid": "5a890539_1b802bf6",
+      "revId": "35f386b9285dcb329e6039b5ec19ddefe65e4da3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_3b132766",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1031,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-03T19:39:11Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a890539_3bb7a786",
       "revId": "35f386b9285dcb329e6039b5ec19ddefe65e4da3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
