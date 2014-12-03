@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_5eb0e142",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-03T19:43:25Z",
+      "side": 1,
+      "message": "ahh, and you can\u0027t just do:\n\nparent_list \u003dself.list_project_parents(tenant_id)\n\n..becuase you haven\u0027t created that ID in the backend yet!  Got it! Thx",
+      "parentUuid": "5a890539_bb2717c6",
+      "revId": "35f386b9285dcb329e6039b5ec19ddefe65e4da3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_f8d44548",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
