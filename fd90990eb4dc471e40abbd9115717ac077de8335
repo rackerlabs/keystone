@@ -160,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_71c79912",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-03T17:17:10Z",
+      "side": 1,
+      "message": "yeah, this can definely break the initial design and we might expect the same behaviour as for domains.\n\nwill check if there is a use case to not change this.",
+      "parentUuid": "5a890539_0ed8f0ed",
+      "revId": "fd90990eb4dc471e40abbd9115717ac077de8335",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_256b30ba",
         "filename": "keystone/assignment/routers.py",
         "patchSetId": 2
