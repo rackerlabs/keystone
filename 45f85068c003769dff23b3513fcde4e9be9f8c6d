@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_2cc4d45e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-03T17:30:51Z",
+      "side": 1,
+      "message": "I don\u0027t see any changes to keystone.conf.sample in this patch...",
+      "revId": "45f85068c003769dff23b3513fcde4e9be9f8c6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
