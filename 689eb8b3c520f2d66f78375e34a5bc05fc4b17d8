@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_6c05fcc0",
+        "filename": "keystone/policy/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-03T17:28:48Z",
+      "side": 1,
+      "message": "It\u0027s sort of a trend in the community to move validations relevant to operation to it\u0027s manager.\nI think it\u0027ll be better if done in the manager as this validation will make manager itself more consistent.",
+      "revId": "689eb8b3c520f2d66f78375e34a5bc05fc4b17d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
