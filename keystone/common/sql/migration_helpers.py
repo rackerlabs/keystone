@@ -14,6 +14,7 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import functools
 import os
 import sys
 
@@ -31,10 +32,12 @@ from keystone import config
 from keystone import contrib
 from keystone import exception
 from keystone.i18n import _
+from keystone.openstack.common import log as logging
 
 
 CONF = config.CONF
 DEFAULT_EXTENSIONS = ['revoke']
+LOG = logging.getLogger(__name__)
 
 
 def get_default_domain():
@@ -234,3 +237,67 @@ def print_db_version(extension=None):
     except exception.MigrationNotProvided as e:
         print(e)
         sys.exit(1)
+
+
+def only_with_engine(engine_name):
+    """Run migration only with the given database engine (backend)."""
+
+    def dec(f):
+        @functools.wraps(f)
+        def wrap(migrate_engine):
+            if migrate_engine.name == engine_name:
+                f(migrate_engine)
+            else:
+                msg = ("The actual engine is: %s. "
+                       "The only allowed engine is: %s")
+                LOG.debug(msg % (migrate_engine.name, engine_name))
+        return wrap
+    return dec
+
+
+def _get_tables_by_engine(migrate_engine, mysql_engine, tables):
+    """Filter only tables with the given engine.
+
+    :param migrate_engine: Sqlalchemy engine instance used by a migration
+                           script.
+    :type migrate_engine: sqlalchemy.Engine
+    :param mysql_engine: name of MySQL engine to filter.
+    :type mysql_engine: String
+    :param tables: List of table names to check the engine for.
+    :type tables: List
+    :return: list of the tables which use the given engine.
+    :rtype: List
+    """
+
+    check_tmpl = ("SELECT `TABLE_NAME` FROM "
+                  "`information_schema`.`TABLES` WHERE "
+                  "`TABLE_SCHEMA`='%(database)s' AND "
+                  "`TABLE_NAME` IN %(tables)s AND"
+                  "`ENGINE`='%(engine)s';")
+
+    with migrate_engine.begin() as conn:
+        check_req = check_tmpl % {'database': migrate_engine.url.database,
+                                  'tables': six.text_type(tables),
+                                  'engine': mysql_engine}
+        sql_res = conn.execute(check_req)
+        myisam_tables = sql_res.fetchall()
+        return [i[0] for i in myisam_tables]
+
+
+def change_mysql_engine(migrate_engine, tables):
+    """Change table mysql engine.
+
+    :param migrate_engine: Sqlalchemy engine instance used by a migration
+                           script.
+    :type migrate_engine: sqlalchemy.Engine
+    :param tables: List of a table names to change an engine.
+    :type tables: List
+    :return: list of the changed tables.
+    :rtype: List
+    """
+
+    updated = _get_tables_by_engine(migrate_engine, 'MyISAM', tables)
+    alter_tmpl = "ALTER TABLE `%s` ENGINE='InnoDB';"
+    for query in [alter_tmpl % i for i in updated]:
+        migrate_engine.execute(query)
+    return updated
