@@ -27,7 +27,8 @@ def upgrade(migrate_engine):
         sql.Column('id', sql.String(64), nullable=False),
         sql.Column('name', sql.String(255), nullable=False),
         sql.Column('description', sql.Text, nullable=True),
-        sql.Column('filters', sql.Text(), nullable=False))
+        sql.Column('filters', sql.Text(), nullable=False),
+        mysql_engine='InnoDB')
     endpoint_group_table.create(migrate_engine, checkfirst=True)
 
     project_endpoint_group_table = sql.Table(
@@ -37,7 +38,8 @@ def upgrade(migrate_engine):
                    sql.ForeignKey('endpoint_group.id'), nullable=False),
         sql.Column('project_id', sql.String(64), nullable=False),
         sql.PrimaryKeyConstraint('endpoint_group_id',
-                                 'project_id'))
+                                 'project_id'),
+        mysql_engine='InnoDB')
     project_endpoint_group_table.create(migrate_engine, checkfirst=True)
 
 

@@ -27,7 +27,8 @@ def upgrade(migrate_engine):
         sql.Column('id', sql.String(64), primary_key=True, nullable=False),
         sql.Column('description', sql.String(64), nullable=False),
         sql.Column('secret', sql.String(64), nullable=False),
-        sql.Column('extra', sql.Text(), nullable=False))
+        sql.Column('extra', sql.Text(), nullable=False),
+        mysql_engine='InnoDB')
     consumer_table.create(migrate_engine, checkfirst=True)
 
     request_token_table = sql.Table(
@@ -40,7 +41,8 @@ def upgrade(migrate_engine):
         sql.Column('requested_project_id', sql.String(64), nullable=False),
         sql.Column('requested_roles', sql.Text(), nullable=False),
         sql.Column('consumer_id', sql.String(64), nullable=False, index=True),
-        sql.Column('expires_at', sql.String(64), nullable=True))
+        sql.Column('expires_at', sql.String(64), nullable=True),
+        mysql_engine='InnoDB')
     request_token_table.create(migrate_engine, checkfirst=True)
 
     access_token_table = sql.Table(
@@ -53,7 +55,8 @@ def upgrade(migrate_engine):
         sql.Column('project_id', sql.String(64), nullable=False),
         sql.Column('requested_roles', sql.Text(), nullable=False),
         sql.Column('consumer_id', sql.String(64), nullable=False),
-        sql.Column('expires_at', sql.String(64), nullable=True))
+        sql.Column('expires_at', sql.String(64), nullable=True),
+        mysql_engine='InnoDB')
     access_token_table.create(migrate_engine, checkfirst=True)
 
 
