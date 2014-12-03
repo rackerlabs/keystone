@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_8fcb08a3",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-12-03T14:06:29Z",
+      "side": 1,
+      "message": "I can see why you had to call a protected method, but is there a better way? Is it possible to move this check higher in the stack?\n\nThe original didn\u0027t return a value and it doesn\u0027t look like the tests was changed to check for it.",
+      "revId": "33d2e1557a17d08665acefc61d67904ed3ad9445",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
