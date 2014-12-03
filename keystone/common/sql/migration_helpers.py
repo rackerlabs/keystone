@@ -14,6 +14,7 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import functools
 import os
 import sys
 
@@ -234,3 +235,77 @@ def print_db_version(extension=None):
     except exception.MigrationNotProvided as e:
         print(e)
         sys.exit(1)
+
+
+def only_with_engine(engine_name):
+    """Run migration only with the given database engine (backend)."""
+
+    def dec(f):
+        @functools.wraps(f)
+        def wrap(migrate_engine):
+            if migrate_engine.name == engine_name:
+                f(migrate_engine)
+            else:
+                pass
+        return wrap
+    return dec
+
+
+def _get_tables_by_engine(migrate_engine, mysql_engine, tables):
+    """Filter only tables with the given engine.
+
+    :param migrate_engine: Sqlalchemy engine instance used by a migration
+                           script.
+    :type migrate_engine: sqlalchemy.Engine
+    :param mysql_engine: name of MySQL engine to filter.
+    :type mysql_engine: String
+    :param tables: List of a table names to check an engine.
+    :type tables: List
+    :return: list of the tables which use the given engine.
+    :rtype: List
+    """
+
+    check_tmpl = ("SELECT `TABLE_NAME` FROM "
+                  "`information_schema`.`TABLES` WHERE "
+                  "`TABLE_SCHEMA`='%(database)s' AND "
+                  "`TABLE_NAME` IN %(tables)s AND"
+                  "`ENGINE`='%(engine)s';")
+
+    updated = []
+    with migrate_engine.begin() as conn:
+        check_req = check_tmpl % {'database': migrate_engine.url.database,
+                                  'tables': six.text_type(tables),
+                                  'engine': mysql_engine}
+        sql_res = conn.execute(check_req)
+        myisam_tables = sql_res.fetchall()
+        updated = [i[0] for i in myisam_tables]
+
+    return updated
+
+
+def change_mysql_engine(migrate_engine, to_engine, tables):
+    """Change table sdefault mysql engine.
+
+    :param migrate_engine: Sqlalchemy engine instance used by a migration
+                           script.
+    :type migrate_engine: sqlalchemy.Engine
+    :param to_engine: name of a desired MySQL engine.
+    :type to_engine: String
+    :param tables: List of a table names to change an engine.
+    :type tables: List
+    :return: list of the changed tables.
+    :rtype: List
+    """
+
+    if to_engine == 'MyISAM':
+        from_engine = 'InnoDB'
+    elif to_engine == 'InnoDB':
+        from_engine = 'MyISAM'
+    else:
+        raise sql.exc.DatabaseError('Engine %s is not supported.' % to_engine)
+
+    updated = _get_tables_by_engine(migrate_engine, from_engine, tables)
+    alter_tmpl = "ALTER TABLE `%s` ENGINE='%s';"
+    alter_query = ' '.join([alter_tmpl % (i, to_engine) for i in updated])
+    migrate_engine.execute(alter_query)
+    return updated
