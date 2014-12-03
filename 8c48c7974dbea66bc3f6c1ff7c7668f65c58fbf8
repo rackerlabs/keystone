@@ -210,6 +210,24 @@
       "revId": "8c48c7974dbea66bc3f6c1ff7c7668f65c58fbf8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_4f65a043",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-03T14:11:47Z",
+      "side": 1,
+      "message": "now I remember how I put here in the first place, removing \u0027_\u0027 :)",
+      "parentUuid": "5a890539_2f2cd449",
+      "revId": "8c48c7974dbea66bc3f6c1ff7c7668f65c58fbf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
