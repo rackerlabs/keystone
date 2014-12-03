@@ -238,7 +238,6 @@ def get_migration_manager(extension=None, prepare_repo=False):
     else:
         package = sql
         init_version = migrate_repo.DB_INIT_VERSION
-
     # sqlalchemy-migrate repo must exist
     migrate_path = find_repo('migrate_repo', package)
     migration_config = {
@@ -261,11 +260,12 @@ def get_migration_manager(extension=None, prepare_repo=False):
     except exception.MigrationNotProvided:
         alembic_path = None
     if alembic_path:
-        migration_config['alembic_ini_path'] = os.path.join(alembic_path,
-                                                            'alembic.ini')
+        alembic_ini_path = os.path.join(os.path.dirname(alembic_path),
+                                        'alembic.ini')
+        migration_config['alembic_ini_path'] = alembic_ini_path
         migration_config['alembic_repo_path'] = alembic_path
-
-    manager = migration_manager.MigrationManager(migration_config)
+    engine = sql.get_engine()
+    manager = migration_manager.MigrationManager(migration_config, engine)
     return manager
 
 
