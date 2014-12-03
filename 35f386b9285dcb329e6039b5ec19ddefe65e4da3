@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_fba51fb5",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-03T19:30:58Z",
+      "side": 1,
+      "message": "this refs only includes the parents, so I think it won\u0027t fail.",
+      "parentUuid": "5a890539_156b9cf1",
+      "revId": "35f386b9285dcb329e6039b5ec19ddefe65e4da3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_f8d44548",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
@@ -64,6 +82,24 @@
       "writtenOn": "2014-12-03T19:07:21Z",
       "side": 1,
       "message": "While I appreciate the comment, if you are going to place it here you need to be clear that it is the caller of this method that will do the filtering.  Otherwise it sounds like this is describing what the driver call will do.  I actually don\u0027t think the comment belongs here - I\u0027d suggest moving it to the manager method",
+      "revId": "35f386b9285dcb329e6039b5ec19ddefe65e4da3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_1b802bf6",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1031,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-03T19:30:58Z",
+      "side": 1,
+      "message": "++\n\nwe have a comment (not docstring) in the methods, do you think its enough?",
+      "parentUuid": "5a890539_f8d44548",
       "revId": "35f386b9285dcb329e6039b5ec19ddefe65e4da3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
