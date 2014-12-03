@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_c3e408aa",
+        "filename": "keystone/common/sql/migrate_repo/versions/039_grant_to_assignment.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-03T15:29:56Z",
+      "side": 1,
+      "message": "You cannot be sure about the exact integrity error. I\u0027d rather use \u0027if-not-exists\u0027 logic here:\n\n1) select count(1) from assignment table where \u003cyour credentials\u003e\n\n2) if count is 0, perform insert",
+      "revId": "2e39728bef66356b869cb2d729dc5cd190686422",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
