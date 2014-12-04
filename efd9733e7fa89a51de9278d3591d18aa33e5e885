@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_ed20e19b",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2621,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-04T12:02:42Z",
+      "side": 1,
+      "message": "you\u0027re right, will update the test following your suggestion!",
+      "parentUuid": "5a890539_a527dbc5",
+      "revId": "efd9733e7fa89a51de9278d3591d18aa33e5e885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_e078f190",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-12-04T07:40:47Z",
       "side": 1,
       "message": "the functionality of this seems to be entirely covered by the basic crud tests above...so we should either a) make this more comprehensive if there are other test cases, b) only test a basic version in crud, or c) remove this.",
+      "revId": "efd9733e7fa89a51de9278d3591d18aa33e5e885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_ad3b399a",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2729,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-04T12:02:42Z",
+      "side": 1,
+      "message": "will go with b), think it\u0027s important to have this test here because this behaviour can change in the future.",
+      "parentUuid": "5a890539_e078f190",
       "revId": "efd9733e7fa89a51de9278d3591d18aa33e5e885",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2014-12-04T07:40:47Z",
       "side": 1,
       "message": "so this isn\u0027t really just updating project parent, but update_project_with_invalid_parent() ... just like you have a create_project_with_invalid_parent() further up",
+      "revId": "efd9733e7fa89a51de9278d3591d18aa33e5e885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_0d69adbd",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2752,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-04T12:02:42Z",
+      "side": 1,
+      "message": "the main idea is to test the update of the parent_id (which is not allowed even if it exists). will update the test so the parent_id used to update is valid but the action will still be not possible.",
+      "parentUuid": "5a890539_e0ed5126",
       "revId": "efd9733e7fa89a51de9278d3591d18aa33e5e885",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
