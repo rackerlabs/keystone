@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_a527dbc5",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2621,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-04T07:40:47Z",
+      "side": 1,
+      "message": "is there a reason we don\u0027t use _create_projects_hierarchy() for this (and most of the tests below).  You could a domain argument to that method (defaulting of DEFAULT_DOMAIN) - and this would cover most of the examples, I think?",
+      "revId": "efd9733e7fa89a51de9278d3591d18aa33e5e885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_e078f190",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2729,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-04T07:40:47Z",
+      "side": 1,
+      "message": "the functionality of this seems to be entirely covered by the basic crud tests above...so we should either a) make this more comprehensive if there are other test cases, b) only test a basic version in crud, or c) remove this.",
+      "revId": "efd9733e7fa89a51de9278d3591d18aa33e5e885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_403b85d0",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2730,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-04T07:40:47Z",
+      "side": 1,
+      "message": "yep, like this (see previous comment) :-)",
+      "revId": "efd9733e7fa89a51de9278d3591d18aa33e5e885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_e0ed5126",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2752,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-04T07:40:47Z",
+      "side": 1,
+      "message": "so this isn\u0027t really just updating project parent, but update_project_with_invalid_parent() ... just like you have a create_project_with_invalid_parent() further up",
+      "revId": "efd9733e7fa89a51de9278d3591d18aa33e5e885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
