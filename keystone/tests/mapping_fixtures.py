@@ -15,7 +15,12 @@
 EMPLOYEE_GROUP_ID = "0cd5e9"
 CONTRACTOR_GROUP_ID = "85a868"
 TESTER_GROUP_ID = "123"
+TESTER_GROUP_NAME = "tester"
 DEVELOPER_GROUP_ID = "xyz"
+DEVELOPER_GROUP_NAME = "developer"
+DEVELOPER_GROUP_DOMAIN_NAME = "outsourcing"
+DEVELOPER_GROUP_DOMAIN_ID = "6tyu45"
+
 
 # Mapping summary:
 # LastName Smith & Not Contractor or SubContractor -> group 0cd5e9
@@ -447,6 +452,67 @@ MAPPING_TESTER_REGEX = {
                         ".*Tester*"
                     ],
                     "regex": True
+                }
+            ]
+        }
+    ]
+}
+
+
+MAPPING_GROUP_NAMES = {
+
+    "rules": [
+        {
+            "local": [
+                {
+                    "user": {
+                        "name": "{0}",
+                    }
+                }
+            ],
+            "remote": [
+                {
+                    "type": "UserName"
+                }
+            ]
+        },
+        {
+            "local": [
+                {
+                    "group": {
+                        "name": DEVELOPER_GROUP_NAME,
+                        "domain": {
+                            "name": DEVELOPER_GROUP_DOMAIN_NAME
+                        }
+                    }
+                }
+            ],
+            "remote": [
+                {
+                    "type": "orgPersonType",
+                    "any_one_of": [
+                        "Employee"
+                    ],
+                }
+            ]
+        },
+        {
+            "local": [
+                {
+                    "group": {
+                        "name": TESTER_GROUP_NAME,
+                        "domain": {
+                            "id": DEVELOPER_GROUP_DOMAIN_ID
+                        }
+                    }
+                }
+            ],
+            "remote": [
+                {
+                    "type": "orgPersonType",
+                    "any_one_of": [
+                        "BuildingX"
+                    ]
                 }
             ]
         }
