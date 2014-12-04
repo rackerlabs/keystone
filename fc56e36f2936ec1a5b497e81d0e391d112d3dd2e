@@ -16,6 +16,24 @@
       "revId": "fc56e36f2936ec1a5b497e81d0e391d112d3dd2e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_782aec7e",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 970,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-12-04T14:51:32Z",
+      "side": 1,
+      "message": "yeah, but that method could be applied to several other places in this file as well",
+      "parentUuid": "9aa7fdbe_b4798595",
+      "revId": "fc56e36f2936ec1a5b497e81d0e391d112d3dd2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
