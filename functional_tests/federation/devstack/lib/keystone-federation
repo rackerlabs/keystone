@@ -1,0 +1,85 @@
+# Library to support Keystone federation on devstack
+
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+
+# Controls the installation, configuration and operation of
+# **Keystone** federation
+
+# Dependencies:
+#
+# - ``functions`` file
+#
+# Exported functions:
+#
+# - install_keystone_federation
+# - configure_keystone_federation
+# - init_keystone_federation
+# - start_keystone_federation
+# - stop_keystone_federation
+
+
+HERE=$(cd $(dirname "$0") && pwd)
+
+
+function _install_mod_shib {
+    # TODO(dstanek): maybe we should make sure that Apache support was
+    # enabled for Keystone
+    if is_ubuntu; then
+        install_package libapache2-mod-shib2
+        sudo a2enmod shib2
+        sudo a2enmod ssl
+    else
+        exit_distro_not_supported "apache installation"
+    fi
+}
+
+
+#
+# exported functions
+#
+
+function install_keystone_federation {
+    _install_mod_shib
+    #pip_install python-keystoneclient-federation
+}
+
+function configure_keystone_federation {
+    # TODO(dstanek): we should probably make sure that Apache
+    # support has been enabled for Keystone
+    #
+    # TODO(dstanek): fix me!
+    # Configure shibboleth
+    #sed -e "
+    #    s,sp.example.org,localhost:5000,g
+    #    s,idp.example.org,localhost:8088,g
+    #    s,REMOTE_USER="\w*",,g
+    #" -i /etc/shibboleth/shibboleth2.xml
+
+    # TODO(dstanek): have you ever heard of variables?
+    cat $HERE/../files/apache-federation.template >> /etc/apache2/site-available/keystone
+}
+
+function init_keystone_federation {
+    local domain_id=$(get_or_create_domain "domainX" "Domain for federated users")
+    get_or_create_project "projectX" $domain_id
+    get_or_create_role "memberX"
+    # TODO(dstanek): do we need this or should it be a part of test setup
+}
+
+function start_keystone_federation {
+    :
+}
+
+function stop_keystone_federation {
+    :
+}

@@ -1,0 +1,16 @@
+WSGIScriptAliasMatch ^(/v3/OS-FEDERATION/identity_providers/.*?/protocols/.*?/auth)$ /var/www/keystone/main/$1
+
+<Location /Shibboleth.sso>
+    SetHandler shib
+</Location>
+
+# TODO(dstanek): make the IdP name more dynamic using a variable
+<Location /v3/OS-FEDERATION/identity_providers/idp_1/protocols/saml2/auth>
+    ShibRequestSetting requireSession 1
+    ShibRequestSetting applicationId idp_1
+    AuthType shibboleth
+    ShibRequireAll On
+    ShibRequireSession On
+    ShibExportAssertion Off
+    Require valid-user
+</Location>
