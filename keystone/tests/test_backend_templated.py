@@ -15,6 +15,8 @@
 import os
 import uuid
 
+from testtools import matchers
+
 from keystone import tests
 from keystone.tests import default_fixtures
 from keystone.tests.ksfixtures import database
@@ -80,6 +82,30 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
     def test_get_v3_catalog_endpoint_disabled(self):
         self.skipTest("Templated backend doesn't have disabled endpoints")
 
+    def assert_endpoints_equal(self, expected, observed):
+        # Endpoints is a list of dicts, but the order doesn't matter.
+        self.assertThat(observed, matchers.HasLength(len(expected)))
+        for e in expected:
+            # Find the observed endpoint with the same interface...
+            o = [x for x in observed if x['interface'] == e['interface']][0]
+            self.assertEqual(e, o)
+
+    def assert_catalog_entry_equal(self, expected, observed):
+        self.assertThat(observed, matchers.KeysEqual(expected))
+        for e in expected:
+            if e == 'endpoints':
+                self.assert_endpoints_equal(expected[e], observed[e])
+                continue
+
+            self.assertEqual(expected[e], observed[e])
+
+    def assert_catalogs_equal(self, expected, observed):
+        self.assertThat(observed, matchers.HasLength(len(expected)))
+        for e in expected:
+            # Find the element in observed with the same id...
+            o = [x for x in observed if x['id'] == e['id']][0]
+            self.assert_catalog_entry_equal(e, o)
+
     def test_get_v3_catalog(self):
         user_id = uuid.uuid4().hex
         project_id = uuid.uuid4().hex
@@ -111,7 +137,7 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
              'type': 'identity',
              'name': "'Identity Service'",
              'id': '1'}]
-        self.assertEqual(exp_catalog, catalog_ref)
+        self.assert_catalogs_equal(exp_catalog, catalog_ref)
 
     def test_list_regions_filtered_by_parent_region_id(self):
         self.skipTest('Templated backend does not support hints')
