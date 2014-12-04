@@ -48,8 +48,28 @@ class XMLEquals(object):
             if expected_doc.attrib != observed_doc.attrib:
                 return False
 
+            def _compare_elems(el1, el2):
+                if el1.tag < el2.tag:
+                    return -1
+                if el1.tag > el2.tag:
+                    return 1
+                # Tags are the same, compare attrs.
+                for a in set(list(el1.attrib) + list(el2.attrib)):
+                    a1 = el1.attrib.get(a)
+                    a2 = el2.attrib.get(a)
+                    if a1 is None:
+                        return 1
+                    if a2 is None:
+                        return -1
+                    if a1 < a2:
+                        return -1
+                    if a1 > a2:
+                        return 1
+                # They're the same.
+                return 0
+
             def _sorted_children(doc):
-                return sorted(doc.getchildren(), key=lambda el: el.tag)
+                return sorted(doc.getchildren(), cmp=_compare_elems)
 
             expected_children = _sorted_children(expected_doc)
             observed_children = _sorted_children(observed_doc)
