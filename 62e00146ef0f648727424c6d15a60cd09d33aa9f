@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_fbe32d31",
+        "filename": "functional_tests/federation/devstack-gate/post_test_hook.sh",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-12-04T19:40:25Z",
+      "side": 1,
+      "message": "Yeah. I haven\u0027t split up my tox.ini yet to include this. I\u0027ve been working on this and splitting out the v3 tests in the same working copy and now I\u0027ve been trying to split the apart.",
+      "parentUuid": "5a890539_f0cc2c63",
+      "revId": "62e00146ef0f648727424c6d15a60cd09d33aa9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_d03f3023",
         "filename": "functional_tests/federation/devstack/files/apache-federation.template",
         "patchSetId": 1
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_1b4d593b",
+        "filename": "functional_tests/federation/devstack/lib/pysaml2_idp",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-12-04T19:40:25Z",
+      "side": 1,
+      "message": "functions-common is full of really good stuff.",
+      "parentUuid": "5a890539_b08384c9",
+      "revId": "62e00146ef0f648727424c6d15a60cd09d33aa9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_b00c6494",
         "filename": "functional_tests/federation/devstack/local.conf",
         "patchSetId": 1
@@ -64,6 +100,24 @@
       "writtenOn": "2014-12-04T19:22:09Z",
       "side": 1,
       "message": "if you create your own functional gate job in project-config, then you can specify these there instead of here:\n\nhttps://github.com/openstack-infra/project-config/blob/master/jenkins/jobs/osc-functional.yaml#L22\n\nsimilar to what we did for OSC",
+      "revId": "62e00146ef0f648727424c6d15a60cd09d33aa9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_7b0c9dec",
+        "filename": "functional_tests/federation/devstack/local.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-12-04T19:40:25Z",
+      "side": 1,
+      "message": "I have a very similar change to propose for us (actually 2) when we are ready. I did this so I could test locally in an easy way. Is there a better way to do the devstack-gate stuff locally?",
+      "parentUuid": "5a890539_b00c6494",
       "revId": "62e00146ef0f648727424c6d15a60cd09d33aa9f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
