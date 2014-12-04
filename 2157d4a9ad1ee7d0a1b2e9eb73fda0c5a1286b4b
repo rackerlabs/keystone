@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_4cfe6939",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-04T01:31:42Z",
+      "side": 1,
+      "message": "should call this ExtendedV3PasteMixin since it only supports V3.\n\nAlso, this could be a fixture rather than a mixin and it would be more flexible (could use more than one).",
+      "revId": "2157d4a9ad1ee7d0a1b2e9eb73fda0c5a1286b4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_2cb11d8f",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-04T01:31:42Z",
+      "side": 1,
+      "message": "This could be a fixture rather than a mixin.",
+      "revId": "2157d4a9ad1ee7d0a1b2e9eb73fda0c5a1286b4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
