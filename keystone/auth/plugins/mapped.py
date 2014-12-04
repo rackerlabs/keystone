@@ -30,7 +30,8 @@ from keystone.openstack.common import log
 LOG = log.getLogger(__name__)
 
 
-@dependency.requires('federation_api', 'identity_api', 'token_provider_api')
+@dependency.requires('assignment_api', 'federation_api', 'identity_api',
+                     'token_provider_api')
 class Mapped(auth.AuthMethodHandler):
 
     def authenticate(self, context, auth_payload, auth_context):
@@ -150,6 +151,15 @@ class Mapped(auth.AuthMethodHandler):
         mapped_properties = rule_processor.process(assertion)
         utils.validate_groups(mapped_properties['group_ids'],
                               mapping['id'], self.identity_api)
+        # NOTE(marek-denis): We update group_ids only here to avoid fetching
+        # groups identified by name/domain twice.
+
+        group_ids = mapped_properties['group_ids']
+        group_ids.extend(
+            utils.transform_to_group_ids(
+                mapped_properties['group_names'], mapping['id'],
+                self.identity_api, self.assignment_api))
+        mapped_properties['group_ids'] = list(set(group_ids))
         return mapped_properties
 
     def _setup_username(self, context, mapped_properties):
