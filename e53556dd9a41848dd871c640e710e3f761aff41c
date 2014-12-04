@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_8ce931e5",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-04T01:21:56Z",
+      "side": 1,
+      "message": "I\u0027d prefer it if the import wasn\u0027t renamed.",
+      "revId": "e53556dd9a41848dd871c640e710e3f761aff41c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_ec7f1515",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-04T01:21:56Z",
+      "side": 1,
+      "message": "If a part is going to rename one of the imports I\u0027d prefer it was the import that wasn\u0027t in the same module, so change this to \"import utils as common_utils\" and change line 23 to \"import utils\".",
+      "revId": "e53556dd9a41848dd871c640e710e3f761aff41c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_0cb1c1df",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-04T01:21:56Z",
+      "side": 1,
+      "message": "the name was fine before, and fixing the typo is an unrelated change.",
+      "revId": "e53556dd9a41848dd871c640e710e3f761aff41c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
