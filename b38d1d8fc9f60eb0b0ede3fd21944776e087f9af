@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_983878ef",
+        "filename": "keystone/tests/test_backend_templated.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-12-04T15:20:25Z",
+      "side": 1,
+      "message": "this will raise a KeyError if the expected endpoint isn\u0027t there which would lead to poor feedback for other devs; you could fail a bit more gracefully and use better variable names:\n\n  for expected_endpoint in expected:\n      for endpoint in observed:\n          if expected_endpoint[\u0027interface\u0027] \u003d\u003d endpoint[\u0027interface\u0027]:\n              return self.assertEqual(expected_endpoint, endpoint)\n      self.fail(\u0027matching endpoint not found\u0027)",
+      "revId": "b38d1d8fc9f60eb0b0ede3fd21944776e087f9af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_5b752a96",
+        "filename": "keystone/tests/test_backend_templated.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-12-04T15:20:25Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "b38d1d8fc9f60eb0b0ede3fd21944776e087f9af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
