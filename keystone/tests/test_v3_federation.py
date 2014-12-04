@@ -766,6 +766,36 @@ class MappingRuleEngineTests(FederationTests):
         self.assertIsNone(mapped_properties['name'])
         self.assertListEqual(list(), mapped_properties['group_ids'])
 
+    def test_rule_engine_returns_group_names(self):
+        """Check whether RuleProcessor returns group names with their domains.
+
+        RuleProcessor shold return 'group_names' entry with a list of
+        dictionaries with two entries 'name' and 'domain' identyfing group by
+        its name and domain.
+
+        """
+        mapping = mapping_fixtures.MAPPING_GROUP_NAMES
+        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        assertion = mapping_fixtures.EMPLOYEE_ASSERTION
+        mapped_properties = rp.process(assertion)
+        self.assertIsNotNone(mapped_properties)
+        reference = [
+                     {
+                         "name": mapping_fixtures.DEVELOPER_GROUP_NAME,
+                         "domain": {
+                             "name": mapping_fixtures.DEVELOPER_GROUP_DOMAIN_NAME
+                         }
+                     },
+                     {
+                         "name": mapping_fixtures.TESTER_GROUP_NAME,
+                         "domain": {
+                             "id": mapping_fixtures.DEVELOPER_GROUP_DOMAIN_ID
+                         }
+                     }
+                    ]
+        self.assertListEqual(reference, mapped_properties['group_names'])
+
+
 
 class FederatedTokenTests(FederationTests):
 
