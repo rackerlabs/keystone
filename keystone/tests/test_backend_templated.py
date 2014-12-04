@@ -15,6 +15,8 @@
 import os
 import uuid
 
+from testtools import matchers
+
 from keystone import tests
 from keystone.tests import default_fixtures
 from keystone.tests.ksfixtures import database
@@ -80,6 +82,39 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
     def test_get_v3_catalog_endpoint_disabled(self):
         self.skipTest("Templated backend doesn't have disabled endpoints")
 
+    def assert_endpoints_equal(self, expected, observed):
+        # Endpoints is a list of dicts, but the order doesn't matter.
+        self.assertThat(observed, matchers.HasLength(len(expected)))
+        for expected_endpoint in expected:
+            # Find the observed endpoint with the same interface...
+            for endpoint in observed:
+                if expected_endpoint['interface'] == endpoint['interface']:
+                    self.assertEqual(expected_endpoint, endpoint)
+                    break
+            else:
+                self.fail('no matching endpoint found for %s' %
+                          expected_endpoint['interface'])
+
+    def assert_catalog_entry_equal(self, expected, observed):
+        self.assertThat(observed, matchers.KeysEqual(expected))
+        for key in expected:
+            if key == 'endpoints':
+                self.assert_endpoints_equal(expected[key], observed[key])
+                continue
+
+            self.assertEqual(expected[key], observed[key])
+
+    def assert_catalogs_equal(self, expected, observed):
+        self.assertThat(observed, matchers.HasLength(len(expected)))
+        for expected_element in expected:
+            for element in observed:
+                if expected_element['id'] == element['id']:
+                    self.assert_catalog_entry_equal(expected_element, element)
+                    break
+            else:
+                self.fail('no matching element found for %s' %
+                          expected_element['id'])
+
     def test_get_v3_catalog(self):
         user_id = uuid.uuid4().hex
         project_id = uuid.uuid4().hex
@@ -111,7 +146,7 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
              'type': 'identity',
              'name': "'Identity Service'",
              'id': '1'}]
-        self.assertEqual(exp_catalog, catalog_ref)
+        self.assert_catalogs_equal(exp_catalog, catalog_ref)
 
     def test_list_regions_filtered_by_parent_region_id(self):
         self.skipTest('Templated backend does not support hints')
