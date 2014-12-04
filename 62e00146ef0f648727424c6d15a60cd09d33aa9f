@@ -121,6 +121,24 @@
       "revId": "62e00146ef0f648727424c6d15a60cd09d33aa9f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_9bb069dd",
+        "filename": "functional_tests/federation/devstack/local.conf",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-04T19:44:23Z",
+      "side": 1,
+      "message": "I think you can keep these here and in the puppet file for keystone-functional. I think you just might end up commenting these out and if someone wants to run it locally, they would have to uncomment some stuff. Not sure...",
+      "parentUuid": "5a890539_7b0c9dec",
+      "revId": "62e00146ef0f648727424c6d15a60cd09d33aa9f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
