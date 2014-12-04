@@ -52,6 +52,24 @@
       "revId": "fc56e36f2936ec1a5b497e81d0e391d112d3dd2e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_5889b024",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 970,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-04T15:02:50Z",
+      "side": 1,
+      "message": "Sweet, I\u0027m happy with that being done as a follow on patch. Thanks!",
+      "parentUuid": "5a890539_d8e76010",
+      "revId": "fc56e36f2936ec1a5b497e81d0e391d112d3dd2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
