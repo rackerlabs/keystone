@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_d1f3bb06",
+        "filename": "keystone/common/sql/migrate_repo/versions/062_rename_assignment_actor_index.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2014-12-04T16:13:41Z",
+      "side": 1,
+      "message": "I have a big doubts, that this index have the same name on all another backends,",
+      "revId": "cc7fcd8ef1d25a89ade6ff5cfb50aa3ec0b1c75e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
