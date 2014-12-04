@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_d002d03c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 466,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-12-04T19:25:18Z",
+      "side": 1,
+      "message": "I suspect that we will need this to be a list of URLs. I wonder if we could use the service catalog for this.",
+      "revId": "99ee58c8b5eb87d3bdd1a957cc31d22ab0907f93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_5096e0f0",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-12-04T19:25:18Z",
+      "side": 1,
+      "message": "lets try to not hardcode the protocol to saml2",
+      "revId": "99ee58c8b5eb87d3bdd1a957cc31d22ab0907f93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_b0d1c4cd",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-12-04T19:25:18Z",
+      "side": 1,
+      "message": "I have a cleaner version of this somewhere.",
+      "revId": "99ee58c8b5eb87d3bdd1a957cc31d22ab0907f93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_50c8a021",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-12-04T19:25:18Z",
+      "side": 1,
+      "message": "drop",
+      "revId": "99ee58c8b5eb87d3bdd1a957cc31d22ab0907f93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_90576859",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-12-04T19:25:18Z",
+      "side": 1,
+      "message": "remove",
+      "revId": "99ee58c8b5eb87d3bdd1a957cc31d22ab0907f93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_3046b4a7",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-12-04T19:25:18Z",
+      "side": 1,
+      "message": "We just got rid of this logic elsewhere in the provider.",
+      "revId": "99ee58c8b5eb87d3bdd1a957cc31d22ab0907f93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
