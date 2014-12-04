@@ -247,9 +247,14 @@ class RuleProcessor(object):
 
         """
 
+        def extract_groups(groups_by_domain):
+            for groups in groups_by_domain.values():
+                yield {group['name']: group for group in groups}.values()
+
         # initialize the group_ids as a set to eliminate duplicates
         user_name = None
         group_ids = set()
+        group_names = list()
 
         for identity_value in identity_values:
             if 'user' in identity_value:
@@ -261,8 +266,18 @@ class RuleProcessor(object):
                     user_name = identity_value['user']['name']
             if 'group' in identity_value:
                 group_ids.add(identity_value['group']['id'])
+            if 'groups' in identity_value:
+                groups_by_domain = dict()
+                for group in identity_value['groups']:
+                    domain = (group['domain'].get('name') or
+                              group['domain'].get('id'))
+                    groups_by_domain.setdefault(domain, list()).append(group)
 
-        return {'name': user_name, 'group_ids': list(group_ids)}
+                group_names = extract_groups(groups_by_domain)
+
+        return {'name': user_name,
+                'group_ids': list(group_ids),
+                'group_names': list(group_names)}
 
     def _update_local_mapping(self, local, direct_maps):
         """Replace any {0}, {1} ... values with data from the assertion.
