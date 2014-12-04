@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_17e8eee0",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-04T01:53:00Z",
+      "side": 1,
+      "message": "I think we want these to be localhost... revert these changes and we\u0027ll have to figure out why this is getting replaced separately.",
+      "revId": "1a10f84e9549e0946ad11dd334c0be3128e1432e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_57eef6ed",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-04T01:53:00Z",
+      "side": 1,
+      "message": "revert",
+      "revId": "1a10f84e9549e0946ad11dd334c0be3128e1432e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_f7b442f2",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 874,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-04T01:53:00Z",
+      "side": 1,
+      "message": "revert",
+      "revId": "1a10f84e9549e0946ad11dd334c0be3128e1432e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_17cf0e80",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 1501,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-04T01:53:00Z",
+      "side": 1,
+      "message": "revert",
+      "revId": "1a10f84e9549e0946ad11dd334c0be3128e1432e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_7764d2b2",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-04T01:53:00Z",
+      "side": 1,
+      "message": "(nit) could leave the , at the end of the list since then it\u0027s easier to change the code.",
+      "revId": "1a10f84e9549e0946ad11dd334c0be3128e1432e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_f7e7e2e0",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-04T01:53:00Z",
+      "side": 1,
+      "message": "change \"Header that\" to \"wsgi.url_scheme\" since it\u0027s confusing to use \"Header\" to refer to a key in the request environment.",
+      "revId": "1a10f84e9549e0946ad11dd334c0be3128e1432e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_177d4e1c",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-04T01:53:00Z",
+      "side": 1,
+      "message": "Reword this since I have no idea what ssh is doing here... change \"ssh thing\" to \"scheme\"?",
+      "revId": "1a10f84e9549e0946ad11dd334c0be3128e1432e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_37cdea5d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-04T01:53:00Z",
+      "side": 1,
+      "message": "change \"schema\" to \"scheme\"",
+      "revId": "1a10f84e9549e0946ad11dd334c0be3128e1432e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
