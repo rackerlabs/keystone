@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_873571f8",
+        "filename": "keystone/tests/test_sync_migrations.py",
+        "patchSetId": 78
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2014-12-04T17:32:39Z",
+      "side": 1,
+      "message": "Hm... Keystone still supports SQLite in their migrations. What do you think, if we also add test_base.DbTestCase to BACKENDS as an SQLite backend?",
+      "revId": "7ef95b38098016f81cae653f8d84f432069e8501",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
