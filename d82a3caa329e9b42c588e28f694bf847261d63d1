@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_096fca28",
+        "filename": "keystone/openstack/common/README",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-04T23:46:40Z",
+      "side": 0,
+      "message": "don\u0027t remove the readme.",
+      "revId": "d82a3caa329e9b42c588e28f694bf847261d63d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
