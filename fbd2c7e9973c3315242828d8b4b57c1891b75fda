@@ -34,6 +34,23 @@
       "revId": "fbd2c7e9973c3315242828d8b4b57c1891b75fda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_8941fa0b",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-04T23:26:35Z",
+      "side": 1,
+      "message": "we\u0027ve dropped support for python 2.6, so might as well take care of it.",
+      "revId": "fbd2c7e9973c3315242828d8b4b57c1891b75fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
