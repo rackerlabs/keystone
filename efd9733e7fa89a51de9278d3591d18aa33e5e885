@@ -121,6 +121,24 @@
       "revId": "efd9733e7fa89a51de9278d3591d18aa33e5e885",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_2e365fe7",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2752,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-04T13:28:28Z",
+      "side": 1,
+      "message": "oh, right, I see!  Yes, I think using a valid parent ID would make this clearer...",
+      "parentUuid": "5a890539_0d69adbd",
+      "revId": "efd9733e7fa89a51de9278d3591d18aa33e5e885",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
