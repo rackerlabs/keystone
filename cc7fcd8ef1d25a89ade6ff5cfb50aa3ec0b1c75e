@@ -51,6 +51,24 @@
       "revId": "cc7fcd8ef1d25a89ade6ff5cfb50aa3ec0b1c75e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_4cc00e4a",
+        "filename": "keystone/common/sql/migrate_repo/versions/062_rename_assignment_actor_index.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2014-12-04T16:46:25Z",
+      "side": 1,
+      "message": "got it, thanks!",
+      "parentUuid": "5a890539_ecc45a93",
+      "revId": "cc7fcd8ef1d25a89ade6ff5cfb50aa3ec0b1c75e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
