@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a890539_f16d1733",
+        "filename": "keystone/common/sql/migrate_repo/versions/062_rename_assignment_actor_index.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-12-04T16:44:09Z",
+      "side": 1,
+      "message": "I haven\u0027t noticed it twice. Now I kept it here... Will fix.",
+      "revId": "cc7fcd8ef1d25a89ade6ff5cfb50aa3ec0b1c75e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_d1f3bb06",
         "filename": "keystone/common/sql/migrate_repo/versions/062_rename_assignment_actor_index.py",
         "patchSetId": 3
@@ -13,6 +30,24 @@
       "writtenOn": "2014-12-04T16:13:41Z",
       "side": 1,
       "message": "I have a big doubts, that this index have the same name on all another backends,",
+      "revId": "cc7fcd8ef1d25a89ade6ff5cfb50aa3ec0b1c75e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_ecc45a93",
+        "filename": "keystone/common/sql/migrate_repo/versions/062_rename_assignment_actor_index.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-12-04T16:44:09Z",
+      "side": 1,
+      "message": "The name set in the previous migration  https://github.com/openstack/keystone/blob/master/keystone/common/sql/migrate_repo/versions/054_add_actor_id_index.py#L25 . But model uses different naming convention, that is the problem. Btw, I can\u0027t find how models determine index names?",
+      "parentUuid": "5a890539_d1f3bb06",
       "revId": "cc7fcd8ef1d25a89ade6ff5cfb50aa3ec0b1c75e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
