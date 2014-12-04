@@ -791,10 +791,9 @@ class EndpointGroupCRUDTestCase(TestExtensionCase):
         endpoint_group_id = self._create_valid_endpoint_group(
           self.DEFAULT_ENDPOINT_GROUP_URL, self.DEFAULT_ENDPOINT_GROUP_BODY)
 
-        # associate endpoint group with project
         project_id=uuid.uuid4().hex
-        url = self._get_project_endpoint_group_url(
-            endpoint_group_id, project_id)
+        url = self._associate_endpoint_group_with_project(endpoint_group_id,
+                                                          project_id)
         self.put(url, expected_status=404)
 
     def test_get_endpoint_group_in_project(self):
@@ -803,9 +802,8 @@ class EndpointGroupCRUDTestCase(TestExtensionCase):
         endpoint_group_id = self._create_valid_endpoint_group(
           self.DEFAULT_ENDPOINT_GROUP_URL, self.DEFAULT_ENDPOINT_GROUP_BODY)
 
-        # associate endpoint group with project
-        url = self._get_project_endpoint_group_url(
-            endpoint_group_id, self.project_id)
+        url = self._associate_endpoint_group_with_project(endpoint_group_id,
+                                                          self.project_id)
         self.put(url)
         response = self.get(url)
         self.assertEqual(endpoint_group_id,
@@ -1035,6 +1033,12 @@ class EndpointGroupCRUDTestCase(TestExtensionCase):
         url = self._get_project_endpoint_group_url(endpoint_group_id,
                                                    project_id)
         self.put(url)
+
+    def _associate_endpoint_group_with_project(self,
+                                               endpoint_group_id,
+                                               project_id):
+        return self._get_project_endpoint_group_url(endpoint_group_id,
+                                                    project_id)
 
     def _get_project_endpoint_group_url(self,
                                         endpoint_group_id,
