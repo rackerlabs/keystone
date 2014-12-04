@@ -363,7 +363,15 @@ V3_JSON_HOME_RESOURCES_INHERIT_ENABLED.update(
 )
 
 
-class VersionTestCase(tests.TestCase):
+class _CompareVersionMixin(object):
+    def _assert_version_equal(self, expected, observed):
+        self.assertEqual(set(['versions']), set(observed))
+        self.assertEqual(set(['values']), set(observed['versions']))
+        self.assertEqual(sorted(expected['versions']['values']),
+                         sorted(observed['versions']['values']))
+
+
+class VersionTestCase(tests.TestCase, _CompareVersionMixin):
     def setUp(self):
         super(VersionTestCase, self).setUp()
         self.load_backends()
@@ -397,7 +405,7 @@ class VersionTestCase(tests.TestCase):
             elif version['id'] == 'v2.0':
                 self._paste_in_port(
                     version, 'http://localhost:%s/v2.0/' % CONF.public_port)
-        self.assertEqual(data, expected)
+        self._assert_version_equal(expected, data)
 
     def test_admin_versions(self):
         client = self.client(self.admin_app)
@@ -412,7 +420,7 @@ class VersionTestCase(tests.TestCase):
             elif version['id'] == 'v2.0':
                 self._paste_in_port(
                     version, 'http://localhost:%s/v2.0/' % CONF.admin_port)
-        self.assertEqual(data, expected)
+        self._assert_version_equal(expected, data)
 
     def test_use_site_url_if_endpoint_unset(self):
         self.config_fixture.config(public_endpoint=None, admin_endpoint=None)
@@ -431,7 +439,7 @@ class VersionTestCase(tests.TestCase):
                 elif version['id'] == 'v2.0':
                     self._paste_in_port(
                         version, 'http://localhost/v2.0/')
-            self.assertEqual(data, expected)
+            self._assert_version_equal(expected, data)
 
     def test_public_version_v2(self):
         client = self.client(self.public_app)
@@ -630,7 +638,7 @@ class VersionTestCase(tests.TestCase):
         self.assertThat(make_request(self.getUniqueString()), JSON_MATCHER)
 
 
-class VersionSingleAppTestCase(tests.TestCase):
+class VersionSingleAppTestCase(tests.TestCase, _CompareVersionMixin):
     """Tests running with a single application loaded.
 
     These are important because when Keystone is running in Apache httpd
@@ -670,7 +678,7 @@ class VersionSingleAppTestCase(tests.TestCase):
             elif version['id'] == 'v2.0':
                 self._paste_in_port(
                     version, 'http://localhost:%s/v2.0/' % CONF.public_port)
-        self.assertEqual(data, expected)
+        self._assert_version_equal(expected, data)
 
     def test_public(self):
         self._test_version('main')
