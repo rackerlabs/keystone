@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_456e3730",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-12-04T07:44:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_17e8eee0",
+      "revId": "1a10f84e9549e0946ad11dd334c0be3128e1432e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_57eef6ed",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 10
@@ -30,6 +48,41 @@
       "writtenOn": "2014-12-04T01:53:00Z",
       "side": 1,
       "message": "revert",
+      "revId": "1a10f84e9549e0946ad11dd334c0be3128e1432e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_85749ffe",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-12-04T07:44:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_57eef6ed",
+      "revId": "1a10f84e9549e0946ad11dd334c0be3128e1432e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_05cfcf29",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-12-04T07:44:45Z",
+      "side": 1,
+      "message": "I\u0027ll revert this also because this is not related to my changes. And I\u0027m wondering that so many changes in this file",
       "revId": "1a10f84e9549e0946ad11dd334c0be3128e1432e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_a56fdb26",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 874,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-12-04T07:44:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_f7b442f2",
+      "revId": "1a10f84e9549e0946ad11dd334c0be3128e1432e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_17cf0e80",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 10
@@ -70,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_c561473a",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 1501,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-12-04T07:44:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_17cf0e80",
+      "revId": "1a10f84e9549e0946ad11dd334c0be3128e1432e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_7764d2b2",
         "filename": "keystone/common/config.py",
         "patchSetId": 10
@@ -81,6 +170,24 @@
       "writtenOn": "2014-12-04T01:53:00Z",
       "side": 1,
       "message": "(nit) could leave the , at the end of the list since then it\u0027s easier to change the code.",
+      "revId": "1a10f84e9549e0946ad11dd334c0be3128e1432e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_65fed339",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-12-04T07:44:45Z",
+      "side": 1,
+      "message": "Done. formatted like sections below",
+      "parentUuid": "5a890539_7764d2b2",
       "revId": "1a10f84e9549e0946ad11dd334c0be3128e1432e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +228,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_600fa12e",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-12-04T07:44:45Z",
+      "side": 1,
+      "message": "Done. (I taken this phrase from original bug for Heat)",
+      "parentUuid": "5a890539_177d4e1c",
+      "revId": "1a10f84e9549e0946ad11dd334c0be3128e1432e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_37cdea5d",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 10
@@ -132,6 +257,24 @@
       "writtenOn": "2014-12-04T01:53:00Z",
       "side": 1,
       "message": "change \"schema\" to \"scheme\"",
+      "revId": "1a10f84e9549e0946ad11dd334c0be3128e1432e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_c5bdc769",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-12-04T07:44:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_37cdea5d",
       "revId": "1a10f84e9549e0946ad11dd334c0be3128e1432e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
