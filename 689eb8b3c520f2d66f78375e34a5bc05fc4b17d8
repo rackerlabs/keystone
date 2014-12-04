@@ -16,6 +16,24 @@
       "revId": "689eb8b3c520f2d66f78375e34a5bc05fc4b17d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_3b64deb1",
+        "filename": "keystone/policy/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-12-04T15:25:09Z",
+      "side": 1,
+      "message": "++\n\nThe controller layer is the web layer. It should be responsible for checking input parameters against a schema and other web-based responsibilities. The manager layer is the business logic that should know what the parameters mean to the system.",
+      "parentUuid": "5a890539_6c05fcc0",
+      "revId": "689eb8b3c520f2d66f78375e34a5bc05fc4b17d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
