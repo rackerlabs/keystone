@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "5a890539_8b03850f",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-05T23:14:32Z",
+      "side": 1,
+      "message": "what happens if the user id is TRUE or FALSE?\n\nalso, seems like we should have to decode val first.",
+      "revId": "539bc12aa0871042311a6a8f10016a26ffba52ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_bb15573e",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 5
@@ -48,6 +65,57 @@
       "writtenOn": "2014-12-03T19:21:24Z",
       "side": 1,
       "message": "although the old function baffles me too, so maybe this isn\u0027t new",
+      "revId": "539bc12aa0871042311a6a8f10016a26ffba52ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_666210db",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-05T23:14:32Z",
+      "side": 1,
+      "message": "there\u0027s unnecessary copy-paste here:\n\n val2py \u003d enabled2py if kind \u003d\u003d \u0027enabled\u0027 else ldap2py\n ldap_attrs[kind] \u003d [val2py(x) for x in values]",
+      "revId": "539bc12aa0871042311a6a8f10016a26ffba52ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_c67f4468",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-05T23:14:32Z",
+      "side": 1,
+      "message": "change \"TRUE\" to \"True\"",
+      "revId": "539bc12aa0871042311a6a8f10016a26ffba52ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_e684405f",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-05T23:14:32Z",
+      "side": 1,
+      "message": "use assertIs to ensure it\u0027s a boolean:\n\n self.assertIs(py_result[0][1][\u0027enabled\u0027][0], True)",
       "revId": "539bc12aa0871042311a6a8f10016a26ffba52ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
