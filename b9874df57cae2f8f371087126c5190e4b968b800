@@ -16,6 +16,24 @@
       "revId": "b9874df57cae2f8f371087126c5190e4b968b800",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_5b15054b",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1040,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-05T13:08:48Z",
+      "side": 1,
+      "message": "it was a suggestion made here: \n\nhttps://review.openstack.org/#/c/139080/1/keystone/tests/test_associate_project_endpoint_extension.py",
+      "parentUuid": "5a890539_aaf5b6ee",
+      "revId": "b9874df57cae2f8f371087126c5190e4b968b800",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
