@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_9ece7b2c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-05T13:38:41Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "5a890539_7e91cf45",
+      "revId": "9cde2ad5543ad41aa26e1c20ea87facb423b368f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_2f92b8fc",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 1
