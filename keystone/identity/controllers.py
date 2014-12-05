@@ -266,7 +266,7 @@ class UserV3(controller.V3Controller):
                                             attribute='original_password')
 
         password = user.get('password')
-        if password is None:
+        if not password:
             raise exception.ValidationError(target='user',
                                             attribute='password')
         try:

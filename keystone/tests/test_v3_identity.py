@@ -529,7 +529,7 @@ class UserSelfServiceChangingPasswordsTestCase(test_v3.RestfulTestCase):
         # new password works
         self.get_request_token(new_password, expected_status=201)
 
-    def test_changing_blank_password(self):
+    def test_changing_blank_password_fails(self):
         blank_pass = ""
 
         # Blank password is incorrect
@@ -538,10 +538,7 @@ class UserSelfServiceChangingPasswordsTestCase(test_v3.RestfulTestCase):
         # Change password
         self.change_password(password=blank_pass,
                              original_password=self.user_ref['password'],
-                             expected_status=204)
-
-        # Blank password is valid
-        self.get_request_token(blank_pass, expected_status=201)
+                             expected_status=400)
 
     def test_changing_password_with_missing_original_password_fails(self):
         r = self.change_password(password=uuid.uuid4().hex,
