@@ -34,6 +34,24 @@
       "revId": "11cb0d303388b56b5974c74cd2349ebef3bf1d20",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_be433712",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-05T13:19:00Z",
+      "side": 1,
+      "message": "just realized the self.assertValidProjectResponse() does that, since it checks the ref returned from the request. What do you think?",
+      "parentUuid": "5a890539_9b55adc4",
+      "revId": "11cb0d303388b56b5974c74cd2349ebef3bf1d20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
