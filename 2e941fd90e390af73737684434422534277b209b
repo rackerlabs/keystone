@@ -34,6 +34,108 @@
       "revId": "2e941fd90e390af73737684434422534277b209b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_e507dac7",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-05T21:15:12Z",
+      "side": 1,
+      "message": "(nit) It seems a bit strange that you have broken this functionality out as a method, yet left almost exactly the same type of functionality below in the inherited case.",
+      "revId": "2e941fd90e390af73737684434422534277b209b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_65e12afc",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1965,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-05T21:15:12Z",
+      "side": 1,
+      "message": "is there a particular reason to use a human readable string here?  We tend not to do that to avoid any potential clashes with other tests",
+      "revId": "2e941fd90e390af73737684434422534277b209b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_8573764d",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2112,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-05T21:15:12Z",
+      "side": 1,
+      "message": "As per my comment in the actual code, in non-effective mode, you should still see this role",
+      "revId": "2e941fd90e390af73737684434422534277b209b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_05e5c6db",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2116,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-05T21:15:12Z",
+      "side": 1,
+      "message": "It\u0027s kind of hard to work out what *should* be expected here.  I\u0027d suggest we need a paragraph a bit further up as to what we expect to find an why",
+      "revId": "2e941fd90e390af73737684434422534277b209b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_85d8d61f",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2151,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-05T21:15:12Z",
+      "side": 1,
+      "message": "and same here",
+      "revId": "2e941fd90e390af73737684434422534277b209b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_c501fe6e",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2196,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-05T21:15:12Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "2e941fd90e390af73737684434422534277b209b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
