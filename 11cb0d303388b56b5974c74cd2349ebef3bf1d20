@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_42c9a024",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-05T08:08:36Z",
+      "side": 1,
+      "message": "seems a bit odd this test...we create the hierarchy, but don\u0027t test the projects exist....I agree we test the parents/subtree elsewhere...but maybe we should just check that each project returned in the list does now exist?",
+      "revId": "11cb0d303388b56b5974c74cd2349ebef3bf1d20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
