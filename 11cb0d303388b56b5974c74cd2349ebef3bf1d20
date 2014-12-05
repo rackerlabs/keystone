@@ -16,6 +16,24 @@
       "revId": "11cb0d303388b56b5974c74cd2349ebef3bf1d20",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_9b55adc4",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 521,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-05T12:43:47Z",
+      "side": 1,
+      "message": "you\u0027re right, will fix this and ping you on IRC :)",
+      "parentUuid": "5a890539_42c9a024",
+      "revId": "11cb0d303388b56b5974c74cd2349ebef3bf1d20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
