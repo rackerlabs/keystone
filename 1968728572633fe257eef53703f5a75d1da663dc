@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_a0006003",
+        "filename": "keystone/tests/unit/catalog/test_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-12-05T22:26:25Z",
+      "side": 1,
+      "message": "test name is no longer relevant",
+      "revId": "1968728572633fe257eef53703f5a75d1da663dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
