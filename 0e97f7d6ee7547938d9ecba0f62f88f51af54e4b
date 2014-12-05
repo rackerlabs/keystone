@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_d35c7180",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3846,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-12-05T18:19:21Z",
+      "side": 1,
+      "message": "the standard for naming is to use uuids, not magic constants, in tests for ids and names",
+      "revId": "0e97f7d6ee7547938d9ecba0f62f88f51af54e4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_53dfa1d6",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-12-05T18:19:21Z",
+      "side": 1,
+      "message": "there doesn\u0027t look to be anything sql specific about this.  Is it possible to push this to the baseclass?",
+      "revId": "0e97f7d6ee7547938d9ecba0f62f88f51af54e4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
