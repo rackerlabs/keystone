@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_3ac10a30",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/003_fix_mysql_engine.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-12-05T17:02:33Z",
+      "side": 1,
+      "message": "What if it was not MyISAM to begin with?",
+      "revId": "8fdcfaf015bbb8dc99dff35cb33f7f33f76d406f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
