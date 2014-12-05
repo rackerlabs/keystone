@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_1a44451a",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-05T20:21:34Z",
+      "side": 1,
+      "message": "I\u0027m not quite sure why we are removing these.  If we are not in effective mode...don\u0027t we just pass back the actually assignments (and I\u0027d have thought we treat domain and project inheritance exactly the same way)?",
+      "revId": "2e941fd90e390af73737684434422534277b209b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
