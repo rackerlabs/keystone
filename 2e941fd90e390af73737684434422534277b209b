@@ -16,6 +16,24 @@
       "revId": "2e941fd90e390af73737684434422534277b209b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_3a23c107",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-05T20:30:43Z",
+      "side": 1,
+      "message": "thought we would return the inherited assignment only with if user requested with this flag. If we have a role assignment with the inherited to projects flag, what should be return for the following requests?\n\n GET /role_assignments\n GET /role_assignments?scope.OS-INHERIT:inherited_to\u003dprojects",
+      "parentUuid": "5a890539_1a44451a",
+      "revId": "2e941fd90e390af73737684434422534277b209b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
