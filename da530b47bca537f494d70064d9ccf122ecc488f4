@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_2e9c686a",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-05T18:51:54Z",
+      "side": 1,
+      "message": "Ok, so I know what you are trying to say, but it sounds a bit confusing. It looks like you are making this comment for the whole method (where really you mean this first constraints clause).  Maybe something like:\n\n\"First,  we always include projects with non-inherited assignments\"",
+      "revId": "da530b47bca537f494d70064d9ccf122ecc488f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
