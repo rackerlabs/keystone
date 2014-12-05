@@ -718,7 +718,7 @@ Keystone, however you should create your own to reflect your deployment.
 
 Another such example is `available in devstack
 (files/default_catalog.templates)
-<https://github.com/openstack-dev/devstack/blob/master/files/default_catalog.templates>`_.
+<https://git.openstack.org/cgit/openstack-dev/devstack/blob/master/files/default_catalog.templates>`_.
 
 Logging
 -------

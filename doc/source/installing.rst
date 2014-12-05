@@ -87,7 +87,7 @@ but all of the core OpenStack projects.
 The script with the latest examples of initializing data in Keystone is a
 bash script called keystone_data.sh_
 
-.. _keystone_data.sh: https://github.com/openstack-dev/devstack/blob/master/files/keystone_data.sh
+.. _keystone_data.sh: https://git.openstack.org/cgit/openstack-dev/devstack/blob/master/files/keystone_data.sh
 
 Installing from packages: Ubuntu
 --------------------------------
