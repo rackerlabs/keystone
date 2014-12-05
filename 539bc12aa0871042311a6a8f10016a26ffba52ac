@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_711734ef",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-12-05T19:11:34Z",
+      "side": 1,
+      "message": "Its one of the vaguaries of LDAP.  Most places return it a a string, it is only AD that does a bit field.",
+      "parentUuid": "5a890539_785a1551",
+      "revId": "539bc12aa0871042311a6a8f10016a26ffba52ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_bb15573e",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 5
