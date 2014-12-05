@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_7e91cf45",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-05T13:30:36Z",
+      "side": 1,
+      "message": "Agreed",
+      "parentUuid": "5a890539_2f0f188d",
+      "revId": "9cde2ad5543ad41aa26e1c20ea87facb423b368f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_2f92b8fc",
         "filename": "keystone/tests/test_v3_identity.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-12-05T10:19:34Z",
       "side": 1,
       "message": "Why do we need this check?",
+      "revId": "9cde2ad5543ad41aa26e1c20ea87facb423b368f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_5bbee665",
+        "filename": "keystone/tests/test_v3_identity.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-05T13:30:36Z",
+      "side": 1,
+      "message": "In order to make sure the blank_pass wasn\u0027t already valid and the reason of the 400 Bad Request below is that we\u0027re trying to change the current password to something that is already valid.\n\nMaybe just a assertNotEqual(blank_pass, self.user_ref[\u0027password\u0027]) is enough here",
+      "parentUuid": "5a890539_2f92b8fc",
       "revId": "9cde2ad5543ad41aa26e1c20ea87facb423b368f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
