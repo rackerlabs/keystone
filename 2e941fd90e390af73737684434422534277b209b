@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_65392a3f",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-05T21:17:01Z",
+      "side": 1,
+      "message": "no...pretty sure we always return whatever assignments are in place when we are listing in non-effective mode.  The request:\n\nGET /role_assignments?scope.OS-INHERIT:inherited_to\u003dprojects\n\nis a filter to the list to ONLY return those assignments that are inherited to projects",
+      "parentUuid": "5a890539_3a23c107",
+      "revId": "2e941fd90e390af73737684434422534277b209b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_e507dac7",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 9
