@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_aaf5b6ee",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1040,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-12-05T10:25:56Z",
+      "side": 1,
+      "message": "Why can\u0027t we do just\n_associate_endpoint_group_with_project \u003d _get_project_endpoint_group_url?",
+      "revId": "b9874df57cae2f8f371087126c5190e4b968b800",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
