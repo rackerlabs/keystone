@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a890539_0ba31501",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/003_fix_mysql_engine.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-05T22:32:29Z",
+      "side": 1,
+      "message": "if the table is already innodb then no need to do this, so should check first if it\u0027s already innodb.",
+      "revId": "8fdcfaf015bbb8dc99dff35cb33f7f33f76d406f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_3ac10a30",
         "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/003_fix_mysql_engine.py",
         "patchSetId": 3
@@ -31,6 +48,24 @@
       "side": 1,
       "message": "++ is there any reason to offer a downgrade at all?",
       "parentUuid": "5a890539_3ac10a30",
+      "revId": "8fdcfaf015bbb8dc99dff35cb33f7f33f76d406f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_6b3bb9c8",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/003_fix_mysql_engine.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-05T22:32:29Z",
+      "side": 1,
+      "message": "in the earlier fix for this in core tables, the downgrade didn\u0027t revert the changes, see http://git.openstack.org/cgit/openstack/keystone/tree/keystone/common/sql/migrate_repo/versions/027_set_engine_mysql_innodb.py?h\u003dstable/icehouse",
+      "parentUuid": "5a890539_7d4aac5c",
       "revId": "8fdcfaf015bbb8dc99dff35cb33f7f33f76d406f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
