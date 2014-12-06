@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_4e71a6dd",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-06T11:38:42Z",
+      "side": 1,
+      "message": "thanks! will fix this and the respective test.",
+      "parentUuid": "5a890539_65392a3f",
+      "revId": "2e941fd90e390af73737684434422534277b209b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_e507dac7",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 9
@@ -66,6 +84,24 @@
       "writtenOn": "2014-12-05T21:15:12Z",
       "side": 1,
       "message": "(nit) It seems a bit strange that you have broken this functionality out as a method, yet left almost exactly the same type of functionality below in the inherited case.",
+      "revId": "2e941fd90e390af73737684434422534277b209b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_ce4cb6a0",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-06T11:38:42Z",
+      "side": 1,
+      "message": "you are right, we had an additional call to _roles_from_role_dict() because of the past behaviour which was including the project with the inherited_role flag in the effective assignments. Will undo this change.",
+      "parentUuid": "5a890539_e507dac7",
       "revId": "2e941fd90e390af73737684434422534277b209b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -89,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_2e5b7a56",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1965,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-06T11:38:42Z",
+      "side": 1,
+      "message": "yes, it was easier to debug the results with such name since we have not so trivial combinations of filters, etc.",
+      "parentUuid": "5a890539_65e12afc",
+      "revId": "2e941fd90e390af73737684434422534277b209b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_8573764d",
         "filename": "keystone/tests/test_v3_assignment.py",
         "patchSetId": 9
@@ -106,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_4e58c657",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2112,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-06T11:38:42Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "5a890539_8573764d",
+      "revId": "2e941fd90e390af73737684434422534277b209b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_05e5c6db",
         "filename": "keystone/tests/test_v3_assignment.py",
         "patchSetId": 9
@@ -117,6 +189,24 @@
       "writtenOn": "2014-12-05T21:15:12Z",
       "side": 1,
       "message": "It\u0027s kind of hard to work out what *should* be expected here.  I\u0027d suggest we need a paragraph a bit further up as to what we expect to find an why",
+      "revId": "2e941fd90e390af73737684434422534277b209b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_6e55821d",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2116,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-06T11:38:42Z",
+      "side": 1,
+      "message": "docstring explaining the test plan?",
+      "parentUuid": "5a890539_05e5c6db",
       "revId": "2e941fd90e390af73737684434422534277b209b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
