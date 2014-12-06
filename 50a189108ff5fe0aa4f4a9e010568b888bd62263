@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a890539_f3a79f09",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-06T05:02:04Z",
+      "side": 1,
+      "message": "this isn\u0027t linking the bug, try:\n\nCloses-Bug: #1399857",
+      "revId": "50a189108ff5fe0aa4f4a9e010568b888bd62263",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
