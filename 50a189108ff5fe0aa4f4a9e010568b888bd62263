@@ -16,6 +16,24 @@
       "revId": "50a189108ff5fe0aa4f4a9e010568b888bd62263",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_8e1aaec4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-06T10:30:21Z",
+      "side": 1,
+      "message": "it\u0027s the colon that is key!",
+      "parentUuid": "5a890539_f3a79f09",
+      "revId": "50a189108ff5fe0aa4f4a9e010568b888bd62263",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
