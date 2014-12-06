@@ -183,38 +183,13 @@ class Auth(controller.V2Controller):
         user_id = token_model_ref.user_id
         tenant_id = self._get_project_id_from_auth(auth)
 
-        if not CONF.trust.enabled and 'trust_id' in auth:
-            raise exception.Forbidden('Trusts are disabled.')
-        elif CONF.trust.enabled and 'trust_id' in auth:
-            trust_ref = self.trust_api.get_trust(auth['trust_id'])
-            if trust_ref is None:
-                raise exception.Forbidden()
-            if user_id != trust_ref['trustee_user_id']:
-                raise exception.Forbidden()
-            if (trust_ref['project_id'] and
-                    tenant_id != trust_ref['project_id']):
-                raise exception.Forbidden()
-            if ('expires' in trust_ref) and (trust_ref['expires']):
-                expiry = trust_ref['expires']
-                if expiry < timeutils.parse_isotime(timeutils.isotime()):
-                    raise exception.Forbidden()
+        trust_result = self._check_trust(auth, user_id, tenant_id)
+        if trust_result:
+            trust_ref, current_user_ref = trust_result
             user_id = trust_ref['trustor_user_id']
-            trustor_user_ref = self.identity_api.get_user(
-                trust_ref['trustor_user_id'])
-            if not trustor_user_ref['enabled']:
-                raise exception.Forbidden()
-            trustee_user_ref = self.identity_api.get_user(
-                trust_ref['trustee_user_id'])
-            if not trustee_user_ref['enabled']:
-                raise exception.Forbidden()
-
-            if trust_ref['impersonation'] is True:
-                current_user_ref = trustor_user_ref
-            else:
-                current_user_ref = trustee_user_ref
-
         else:
             current_user_ref = self.identity_api.get_user(user_id)
+            trust_ref = None
 
         metadata_ref = {}
         tenant_ref, metadata_ref['roles'] = self._get_project_roles_and_ref(
@@ -244,6 +219,46 @@ class Auth(controller.V2Controller):
 
         return (current_user_ref, tenant_ref, metadata_ref, expiry, bind,
                 audit_id)
+
+    def _check_trust(self, auth, user_id, tenant_id):
+        """Check trust info in the auth.
+
+        :returns: (trust_ref, user_ref) if auth is a trust, otherwise None.
+
+        """
+        if not CONF.trust.enabled and 'trust_id' in auth:
+            raise exception.Forbidden('Trusts are disabled.')
+
+        if not (CONF.trust.enabled and 'trust_id' in auth):
+            # No trust info available, nothing to do.
+            return
+
+        trust_ref = self.trust_api.get_trust(auth['trust_id'])
+        if trust_ref is None:
+            raise exception.Forbidden()
+        if user_id != trust_ref['trustee_user_id']:
+            raise exception.Forbidden()
+        trust_project_id = trust_ref.get('project_id')
+        if trust_project_id and tenant_id != trust_project_id:
+            raise exception.Forbidden()
+        expiry = trust_ref.get('expires')
+        if expiry and expiry < timeutils.parse_isotime(timeutils.isotime()):
+            raise exception.Forbidden()
+        trustor_user_ref = self.identity_api.get_user(
+            trust_ref['trustor_user_id'])
+        if not trustor_user_ref['enabled']:
+            raise exception.Forbidden()
+        trustee_user_ref = self.identity_api.get_user(
+            trust_ref['trustee_user_id'])
+        if not trustee_user_ref['enabled']:
+            raise exception.Forbidden()
+
+        if trust_ref['impersonation'] is True:
+            user_ref = trustor_user_ref
+        else:
+            user_ref = trustee_user_ref
+
+        return trust_ref, user_ref
 
     def _authenticate_local(self, context, auth):
         """Try to authenticate against the identity backend.
