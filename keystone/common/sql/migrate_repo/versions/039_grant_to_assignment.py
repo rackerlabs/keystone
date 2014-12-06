@@ -87,120 +87,125 @@ def migrate_grant_table(meta, session, table_name):
     session.commit()
 
 
+def add_to_dict_list(metadata, assignment_row):
+    """Update a metadata dict list with the role.
+
+    For the assignment row supplied, we need to append the role_id into
+    the metadata list of dicts.  If the row is inherited, then we mark
+    it so in the dict we append.
+
+    """
+    new_entry = {'id': assignment_row.role_id}
+    if assignment_row.inherited and (
+            assignment_row.type ==
+            assignment_sql.AssignmentType.USER_DOMAIN or
+            assignment_row.type ==
+            assignment_sql.AssignmentType.GROUP_DOMAIN):
+        new_entry['inherited_to'] = 'projects'
+
+    if metadata is not None:
+        json_metadata = json.loads(metadata)
+    else:
+        json_metadata = {}
+
+    if json_metadata.get('roles') is None:
+        json_metadata['roles'] = []
+
+    json_metadata['roles'].append(new_entry)
+    return json.dumps(json_metadata)
+
+
+def build_user_project_entry(meta, session, row):
+    update_table = sql.Table(USER_PROJECT_TABLE, meta, autoload=True)
+    q = session.query(update_table)
+    q = q.filter_by(user_id=row.actor_id)
+    q = q.filter_by(project_id=row.target_id)
+    ref = q.first()
+    if ref is not None:
+        values = {'data': add_to_dict_list(ref.data, row)}
+        update = update_table.update().where(
+            update_table.c.user_id == ref.user_id).where(
+                update_table.c.project_id == ref.project_id).values(values)
+    else:
+        values = {'user_id': row.actor_id,
+                  'project_id': row.target_id,
+                  'data': add_to_dict_list(None, row)}
+        update = update_table.insert().values(values)
+    return update
+
+
+def build_group_project_entry(meta, session, row):
+    update_table = sql.Table(GROUP_PROJECT_TABLE, meta, autoload=True)
+    q = session.query(update_table)
+    q = q.filter_by(group_id=row.actor_id)
+    q = q.filter_by(project_id=row.target_id)
+    ref = q.first()
+    if ref is not None:
+        values = {'data': add_to_dict_list(ref.data, row)}
+        update = update_table.update().where(
+            update_table.c.group_id == ref.group_id).where(
+                update_table.c.project_id == ref.project_id).values(values)
+    else:
+        values = {'group_id': row.actor_id,
+                  'project_id': row.target_id,
+                  'data': add_to_dict_list(None, row)}
+        update = update_table.insert().values(values)
+    return update
+
+
+def build_user_domain_entry(meta, session, row):
+    update_table = sql.Table(USER_DOMAIN_TABLE, meta, autoload=True)
+    q = session.query(update_table)
+    q = q.filter_by(user_id=row.actor_id)
+    q = q.filter_by(domain_id=row.target_id)
+    ref = q.first()
+    if ref is not None:
+        values = {'data': add_to_dict_list(ref.data, row)}
+        update = update_table.update().where(
+            update_table.c.user_id == ref.user_id).where(
+                update_table.c.domain_id == ref.domain_id).values(values)
+    else:
+        values = {'user_id': row.actor_id,
+                  'domain_id': row.target_id,
+                  'data': add_to_dict_list(None, row)}
+        update = update_table.insert().values(values)
+    return update
+
+
+def build_group_domain_entry(meta, session, row):
+    update_table = sql.Table(GROUP_DOMAIN_TABLE, meta, autoload=True)
+    q = session.query(update_table)
+    q = q.filter_by(group_id=row.actor_id)
+    q = q.filter_by(domain_id=row.target_id)
+    ref = q.first()
+    if ref is not None:
+        values = {'data': add_to_dict_list(ref.data, row)}
+        update = update_table.update().where(
+            update_table.c.group_id == ref.group_id).where(
+                update_table.c.domain_id == ref.domain_id).values(values)
+    else:
+        values = {'group_id': row.actor_id,
+                  'domain_id': row.target_id,
+                  'data': add_to_dict_list(None, row)}
+        update = update_table.insert().values(values)
+    return update
+
+
+def build_update(meta, session, row):
+    """Build an update or an insert to the correct metadata table."""
+    if row.type == assignment_sql.AssignmentType.USER_PROJECT:
+        return build_user_project_entry(meta, session, row)
+    elif row.type == assignment_sql.AssignmentType.GROUP_PROJECT:
+        return build_group_project_entry(meta, session, row)
+    elif row.type == assignment_sql.AssignmentType.USER_DOMAIN:
+        return build_user_domain_entry(meta, session, row)
+    elif row.type == assignment_sql.AssignmentType.GROUP_DOMAIN:
+        return build_group_domain_entry(meta, session, row)
+    # If the row type doesn't match any that we understand we drop
+    # the data.
+
+
 def downgrade_assignment_table(meta, migrate_engine):
-
-    def add_to_dict_list(metadata, assignment_row):
-        """Update a metadata dict list with the role.
-
-        For the assignment row supplied, we need to append the role_id into
-        the metadata list of dicts.  If the row is inherited, then we mark
-        it so in the dict we append.
-
-        """
-        new_entry = {'id': assignment_row.role_id}
-        if assignment_row.inherited and (
-                assignment_row.type ==
-                assignment_sql.AssignmentType.USER_DOMAIN or
-                assignment_row.type ==
-                assignment_sql.AssignmentType.GROUP_DOMAIN):
-            new_entry['inherited_to'] = 'projects'
-
-        if metadata is not None:
-            json_metadata = json.loads(metadata)
-        else:
-            json_metadata = {}
-
-        if json_metadata.get('roles') is None:
-            json_metadata['roles'] = []
-
-        json_metadata['roles'].append(new_entry)
-        return json.dumps(json_metadata)
-
-    def build_user_project_entry(meta, session, row):
-        update_table = sql.Table(USER_PROJECT_TABLE, meta, autoload=True)
-        q = session.query(update_table)
-        q = q.filter_by(user_id=row.actor_id)
-        q = q.filter_by(project_id=row.target_id)
-        ref = q.first()
-        if ref is not None:
-            values = {'data': add_to_dict_list(ref.data, row)}
-            update = update_table.update().where(
-                update_table.c.user_id == ref.user_id).where(
-                    update_table.c.project_id == ref.project_id).values(values)
-        else:
-            values = {'user_id': row.actor_id,
-                      'project_id': row.target_id,
-                      'data': add_to_dict_list(None, row)}
-            update = update_table.insert().values(values)
-        return update
-
-    def build_group_project_entry(meta, session, row):
-        update_table = sql.Table(GROUP_PROJECT_TABLE, meta, autoload=True)
-        q = session.query(update_table)
-        q = q.filter_by(group_id=row.actor_id)
-        q = q.filter_by(project_id=row.target_id)
-        ref = q.first()
-        if ref is not None:
-            values = {'data': add_to_dict_list(ref.data, row)}
-            update = update_table.update().where(
-                update_table.c.group_id == ref.group_id).where(
-                    update_table.c.project_id == ref.project_id).values(values)
-        else:
-            values = {'group_id': row.actor_id,
-                      'project_id': row.target_id,
-                      'data': add_to_dict_list(None, row)}
-            update = update_table.insert().values(values)
-        return update
-
-    def build_user_domain_entry(meta, session, row):
-        update_table = sql.Table(USER_DOMAIN_TABLE, meta, autoload=True)
-        q = session.query(update_table)
-        q = q.filter_by(user_id=row.actor_id)
-        q = q.filter_by(domain_id=row.target_id)
-        ref = q.first()
-        if ref is not None:
-            values = {'data': add_to_dict_list(ref.data, row)}
-            update = update_table.update().where(
-                update_table.c.user_id == ref.user_id).where(
-                    update_table.c.domain_id == ref.domain_id).values(values)
-        else:
-            values = {'user_id': row.actor_id,
-                      'domain_id': row.target_id,
-                      'data': add_to_dict_list(None, row)}
-            update = update_table.insert().values(values)
-        return update
-
-    def build_group_domain_entry(meta, session, row):
-        update_table = sql.Table(GROUP_DOMAIN_TABLE, meta, autoload=True)
-        q = session.query(update_table)
-        q = q.filter_by(group_id=row.actor_id)
-        q = q.filter_by(domain_id=row.target_id)
-        ref = q.first()
-        if ref is not None:
-            values = {'data': add_to_dict_list(ref.data, row)}
-            update = update_table.update().where(
-                update_table.c.group_id == ref.group_id).where(
-                    update_table.c.domain_id == ref.domain_id).values(values)
-        else:
-            values = {'group_id': row.actor_id,
-                      'domain_id': row.target_id,
-                      'data': add_to_dict_list(None, row)}
-            update = update_table.insert().values(values)
-        return update
-
-    def build_update(meta, session, row):
-        """Build an update or an insert to the correct metadata table."""
-        if row.type == assignment_sql.AssignmentType.USER_PROJECT:
-            return build_user_project_entry(meta, session, row)
-        elif row.type == assignment_sql.AssignmentType.GROUP_PROJECT:
-            return build_group_project_entry(meta, session, row)
-        elif row.type == assignment_sql.AssignmentType.USER_DOMAIN:
-            return build_user_domain_entry(meta, session, row)
-        elif row.type == assignment_sql.AssignmentType.GROUP_DOMAIN:
-            return build_group_domain_entry(meta, session, row)
-        # If the row type doesn't match any that we understand we drop
-        # the data.
-
     session = sql.orm.sessionmaker(bind=migrate_engine)()
     downgrade_table = sql.Table(ASSIGNMENT_TABLE, meta, autoload=True)
     for assignment in session.query(downgrade_table).all():
