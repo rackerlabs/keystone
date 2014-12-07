@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_f6c32d36",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-07T19:46:05Z",
+      "side": 1,
+      "message": "We could put lines 194-196 just before line 186.\n\nAfter that, lines 197-215 could be placed on the method  _check_trust(..) you created. That method should then receive metadata_ref as argument and add \u0027roles\u0027, \u0027trustee_user_id\u0027 and \u0027trust_id\u0027  to it, if the preconditions are satisfied.\n\nNote that the verification at line 199 is the same condition we have after line 234.",
+      "revId": "42873bd804e3745e27056bca63d884b4f0f460d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
