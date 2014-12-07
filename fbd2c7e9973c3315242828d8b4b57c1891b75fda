@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a961159_479b6dc9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-07T23:47:34Z",
+      "side": 1,
+      "message": "how strict? What wasn\u0027t working before?",
+      "revId": "fbd2c7e9973c3315242828d8b4b57c1891b75fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_390a7479",
         "filename": "keystone/hacking/checks.py",
         "patchSetId": 2
