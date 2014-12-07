@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_b53b6237",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-07T03:34:39Z",
+      "side": 1,
+      "message": "I think you should only submit what is related to oslo_concurrency.\n\nI\u0027d prefer you submit a separated bug to fix other doc.",
+      "revId": "e82d5d0a727a09ed4ce0f659d7c8cafc7a5c8a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d548eece",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 3
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-07T03:34:39Z",
+      "side": 1,
+      "message": "Same: not related.",
+      "revId": "e82d5d0a727a09ed4ce0f659d7c8cafc7a5c8a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f545eab3",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 3
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-07T03:34:39Z",
+      "side": 1,
+      "message": "Same: not related.",
+      "revId": "e82d5d0a727a09ed4ce0f659d7c8cafc7a5c8a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_151276b4",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 3
+      },
+      "lineNbr": 1318,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-07T03:34:39Z",
+      "side": 1,
+      "message": "Same: not related.\n\nI\u0027d prefer you to submit another bug to add this section.",
+      "revId": "e82d5d0a727a09ed4ce0f659d7c8cafc7a5c8a14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
