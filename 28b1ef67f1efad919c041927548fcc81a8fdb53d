@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_a75c1127",
+        "filename": "requirements-py3.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-07T23:45:24Z",
+      "side": 1,
+      "message": "doesn\u0027t match global-requirements.",
+      "revId": "28b1ef67f1efad919c041927548fcc81a8fdb53d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
