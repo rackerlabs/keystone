@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a961159_7683bdcc",
+        "filename": "keystone/openstack/common/_i18n.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-07T20:07:10Z",
+      "side": 1,
+      "message": "Should we have a bug for replacing the old _ to those more meaningful abbreviated names?\n\nAn example of where we still use the old _ is assignment/backends/ldap.py",
+      "revId": "9ad629dc28df0f47d95daed01a78b141e2b247a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_49647248",
         "filename": "keystone/openstack/common/_i18n.py",
         "patchSetId": 4
