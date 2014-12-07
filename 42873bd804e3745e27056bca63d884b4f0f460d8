@@ -16,6 +16,24 @@
       "revId": "42873bd804e3745e27056bca63d884b4f0f460d8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ecc36036",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-07T23:05:23Z",
+      "side": 1,
+      "message": "I\u0027m not going to make the suggested change since it\u0027s unrelated to the change that\u0027s proposed, which is just to move some code around. If you want something else done then submit the change.",
+      "parentUuid": "3a961159_f6c32d36",
+      "revId": "42873bd804e3745e27056bca63d884b4f0f460d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
