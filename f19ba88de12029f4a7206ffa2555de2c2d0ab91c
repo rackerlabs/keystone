@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_cd1f7708",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-12-08T09:59:39Z",
+      "side": 1,
+      "message": "I suggest to remove \"can still work\". In https://review.openstack.org/#/c/137270/ I noticed that it doesn\u0027t work with a clean checkout.",
+      "revId": "f19ba88de12029f4a7206ffa2555de2c2d0ab91c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
