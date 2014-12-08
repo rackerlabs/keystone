@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_446267da",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-08T02:25:37Z",
+      "side": 1,
+      "message": "Then the flow is still the same as before.",
+      "parentUuid": "5a890539_8b03850f",
+      "revId": "539bc12aa0871042311a6a8f10016a26ffba52ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_bb15573e",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 5
@@ -88,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_c49d77bd",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-08T02:25:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_666210db",
+      "revId": "539bc12aa0871042311a6a8f10016a26ffba52ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_c67f4468",
         "filename": "keystone/tests/unit/common/test_ldap.py",
         "patchSetId": 5
@@ -105,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "5a890539_a4986bcd",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-08T02:25:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_c67f4468",
+      "revId": "539bc12aa0871042311a6a8f10016a26ffba52ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_e684405f",
         "filename": "keystone/tests/unit/common/test_ldap.py",
         "patchSetId": 5
@@ -116,6 +170,24 @@
       "writtenOn": "2014-12-05T23:14:32Z",
       "side": 1,
       "message": "use assertIs to ensure it\u0027s a boolean:\n\n self.assertIs(py_result[0][1][\u0027enabled\u0027][0], True)",
+      "revId": "539bc12aa0871042311a6a8f10016a26ffba52ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a890539_845c4f1b",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-08T02:25:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_e684405f",
       "revId": "539bc12aa0871042311a6a8f10016a26ffba52ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
