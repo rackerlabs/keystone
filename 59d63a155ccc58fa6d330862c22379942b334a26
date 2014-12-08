@@ -16,6 +16,24 @@
       "revId": "59d63a155ccc58fa6d330862c22379942b334a26",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_34be7b00",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-08T14:24:08Z",
+      "side": 1,
+      "message": "There was a lot of discussion at the summit about restructuring the tests for various projects, including Keystone. @dstanek has started this process by moving the unit tests to keystone/tests/unit/. By doing this for Keystone functional tests, we can start to structure our tests for different functional situations (like running the functional tests for federation, which could live in something like dsvm-functional, etc). Nova did a good job of describing this process at the summit in their functional testing session. \n\nhttps://etherpad.openstack.org/p/kilo-nova-functional-testing\n\nI was just talking to @dstanek about this and I think we are going to work on pushing up a spec to detail this a little more so that it\u0027s more clear to the reviews what the end result of the testing refactor is.\n\nI can update this with a link to the spec review once we have something pushed up.",
+      "parentUuid": "3a961159_27aae170",
+      "revId": "59d63a155ccc58fa6d330862c22379942b334a26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
