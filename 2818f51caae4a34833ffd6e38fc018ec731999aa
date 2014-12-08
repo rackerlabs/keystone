@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_5b909aec",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 1316,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-08T13:12:36Z",
+      "side": 1,
+      "message": "you\u0027re right, I was afraid that if you haven\u0027t added to config.py, this could be overwritten later.",
+      "parentUuid": "3a961159_53608435",
+      "revId": "2818f51caae4a34833ffd6e38fc018ec731999aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_8dcacf9f",
         "filename": "tools/config/oslo.config.generator.rc",
         "patchSetId": 4
