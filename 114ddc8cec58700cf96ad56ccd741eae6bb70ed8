@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_d821fab5",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-12-08T05:24:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_8c49fc8d",
+      "revId": "114ddc8cec58700cf96ad56ccd741eae6bb70ed8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_ac5dd84a",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-12-07T23:35:44Z",
       "side": 1,
       "message": "change \"all of local\" to \"all local\"",
+      "revId": "114ddc8cec58700cf96ad56ccd741eae6bb70ed8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_182c62ab",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-12-08T05:24:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_ac5dd84a",
       "revId": "114ddc8cec58700cf96ad56ccd741eae6bb70ed8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_38183e84",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-12-08T05:24:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_cc5a2450",
+      "revId": "114ddc8cec58700cf96ad56ccd741eae6bb70ed8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_ec57e024",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 2
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_581d0a73",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-12-08T05:24:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_ec57e024",
+      "revId": "114ddc8cec58700cf96ad56ccd741eae6bb70ed8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_2c31e80b",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 2
@@ -81,6 +153,24 @@
       "writtenOn": "2014-12-07T23:35:44Z",
       "side": 1,
       "message": "remove \"(and will not be)\" since we don\u0027t know what will happen in the future.",
+      "revId": "114ddc8cec58700cf96ad56ccd741eae6bb70ed8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7812c663",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-12-08T05:24:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_2c31e80b",
       "revId": "114ddc8cec58700cf96ad56ccd741eae6bb70ed8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
