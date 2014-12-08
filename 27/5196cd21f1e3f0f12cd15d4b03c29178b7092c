@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review-1: Boris Bobrov <bbobrov@mirantis.com>
+Submitted-by: Jenkins
+Submitted-at: Mon, 08 Dec 2014 16:21:39 +0000
+Reviewed-on: https://review.openstack.org/139736
+Project: openstack/keystone
+Branch: refs/heads/master
