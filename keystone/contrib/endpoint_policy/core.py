@@ -43,13 +43,16 @@ class Manager(manager.Manager):
     def _assert_valid_association(self, endpoint_id, service_id, region_id):
         """Assert that the association is supported.
 
-        There are three types of association supported:
-
+        There are four types of association supported:
+        - Default  (all values must be none)
         - Endpoint (in which case service and region must be None)
         - Service and region (in which endpoint must be None)
         - Service (in which case endpoint and region must be None)
 
         """
+        if (endpoint_id is None and
+            service_id is None and region_id is None):
+            return
         if (endpoint_id is not None and
                 service_id is None and region_id is None):
             return
@@ -247,13 +250,22 @@ class Manager(manager.Manager):
         if policy_id is not None:
             return _get_policy(policy_id, endpoint_id)
 
-        # Finally, just check if there is one for the service.
+        # Next, check if there is one for the service.
         try:
             ref = self.driver.get_policy_association(
                 service_id=endpoint['service_id'])
             return _get_policy(ref['policy_id'], endpoint_id)
         except exception.PolicyAssociationNotFound:
             pass
+
+
+        # Default
+        try:
+            ref = self.driver.get_policy_association()
+            return _get_policy(ref['policy_id'], endpoint_id)
+        except exception.PolicyAssociationNotFound:
+            pass
+
 
         msg = _('No policy is associated with endpoint '
                 '%(endpoint_id)s.') % {'endpoint_id': endpoint_id}

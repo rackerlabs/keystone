@@ -83,3 +83,14 @@ class EndpointPolicyExtension(wsgi.V3ExtensionRouter):
                 'service_id': json_home.Parameters.SERVICE_ID,
                 'region_id': json_home.Parameters.REGION_ID,
             })
+        self._add_resource(
+            mapper, endpoint_policy_controller,
+            path=('/policies/{policy_id}' + self.PATH_PREFIX + '/default'),
+            get_head_action='check_default_policy_association',
+            put_action='create_default_policy_association',
+            delete_action='delete_default_policy_association',
+            rel=build_resource_relation(
+                resource_name='default_policy_association'),
+            path_vars={
+                'policy_id': json_home.Parameters.POLICY_ID,
+            })
