@@ -108,9 +108,12 @@ class PolicyAssociationTests(object):
             self.policy[1]['id'], endpoint_id=self.endpoint[0]['id'])
 
     def test_invalid_policy_to_endpoint_association(self):
-        self.assertRaises(exception.InvalidPolicyAssociation,
-                          self.endpoint_policy_api.create_policy_association,
-                          self.policy[0]['id'])
+        # The following check used to be invalid.  It is now valid
+        # as it reflects the call made to set the default policy.
+        # The original check is left here for documentation.
+        # self.assertRaises(exception.InvalidPolicyAssociation,
+        #                  self.endpoint_policy_api.create_policy_association,
+        #                  self.policy[0]['id'])
         self.assertRaises(exception.InvalidPolicyAssociation,
                           self.endpoint_policy_api.create_policy_association,
                           self.policy[0]['id'],
