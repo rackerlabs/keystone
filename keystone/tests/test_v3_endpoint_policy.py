@@ -75,6 +75,32 @@ class EndpointPolicyTestCase(TestExtensionCase):
         self.head(url, expected_status=204)
         self.delete(url, expected_status=204)
 
+    def test_crud_for_default(self):
+        """PUT, HEAD and DELETE for explicit endpoint policy."""
+
+        self.get('/endpoints/%(endpoint_id)s/OS-ENDPOINT-POLICY'
+                 '/policy' % {
+                     'endpoint_id': self.endpoint['id']},
+                 expected_status=404)
+
+        url = ('/policies/%(policy_id)s/OS-ENDPOINT-POLICY'
+               '/default' % {'policy_id': self.policy['id']})
+
+        self.put(url, expected_status=204)
+        self.get(url, expected_status=204)
+        self.head(url, expected_status=204)
+        r = self.get('/endpoints/%(endpoint_id)s/OS-ENDPOINT-POLICY'
+                     '/policy' % {
+                         'endpoint_id': self.endpoint['id']},
+                     expected_status=200)
+        self.assertValidPolicyResponse(r, ref=self.policy)
+
+        self.delete(url, expected_status=204)
+        self.get('/endpoints/%(endpoint_id)s/OS-ENDPOINT-POLICY'
+                 '/policy' % {
+                     'endpoint_id': self.endpoint['id']},
+                 expected_status=404)
+
     def test_crud_for_policy_for_region_and_service(self):
         """PUT, HEAD and DELETE for region and service endpoint policy."""
 
