@@ -52,6 +52,24 @@
       "revId": "b9874df57cae2f8f371087126c5190e4b968b800",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_14cedf5a",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1040,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-08T14:32:44Z",
+      "side": 1,
+      "message": "as in rename _get_project_endpoint_group_url() to _associate_endpoint_group_with_project()?",
+      "parentUuid": "5a890539_67df7bd7",
+      "revId": "b9874df57cae2f8f371087126c5190e4b968b800",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
