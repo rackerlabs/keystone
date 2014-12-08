@@ -17,6 +17,15 @@ from keystone.common import json_home
 from keystone.common import wsgi
 
 
+class AuthRouter(wsgi.RoutersBase):
+    def add_routes(self, mapper):
+        auth_controller = controllers.Auth()
+        mapper.connect('/auth/tokens',
+                       controller=auth_controller,
+                       post_action='authenticate_for_token',
+                       conditions=dict(method=['POST']))
+
+
 class Routers(wsgi.RoutersBase):
 
     def append_v3_routers(self, mapper, routers):
