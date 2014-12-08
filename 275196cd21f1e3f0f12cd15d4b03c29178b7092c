@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_b8126e56",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 1302,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-08T04:10:26Z",
+      "side": 1,
+      "message": "I\u0027m not against this change, but I think you should update the commit message in order to make it clear what you\u0027re doing here.\n\nBesides just fixing max_project_tree_depth, you\u0027re fixing some formatting and adding this AMQP section.",
+      "revId": "275196cd21f1e3f0f12cd15d4b03c29178b7092c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
