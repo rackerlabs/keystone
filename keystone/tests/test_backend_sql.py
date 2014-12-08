@@ -653,6 +653,29 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
                           self.catalog_api.delete_region,
                           region['id'])
 
+    def test_create_endpoint(self):
+        service = {
+            'id': uuid.uuid4().hex,
+            'type': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+        }
+        self.catalog_api.create_service(service['id'], service.copy())
+
+        endpoint = {
+            'id': uuid.uuid4().hex,
+            'region_id': None,
+            'service_id': service['id'],
+            'interface': 'public',
+            'url': uuid.uuid4().hex,
+        }
+        res = self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
+        endpoint['enabled'] = True
+        # when using sql driver endpoint has an extra property:
+        # legacy_endpoint_id
+        endpoint['legacy_endpoint_id'] = None
+        self.assertDictEqual(endpoint, res)
+
 
 class SqlPolicy(SqlTests, test_backend.PolicyTests):
     pass
