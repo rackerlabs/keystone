@@ -4686,7 +4686,11 @@ class CatalogTests(object):
             'interface': 'public',
             'url': uuid.uuid4().hex,
         }
-        self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
+        res = self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
+        endpoint['enabled'] = True
+        if 'legacy_endpoint_id' in res:
+            endpoint['legacy_endpoint_id'] = None
+        self.assertDictEqual(endpoint, res)
 
     def _create_endpoints(self):
         # Creates a service and 2 endpoints for the service in the same region.
