@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a961159_edfef337",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 1316,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-08T10:13:32Z",
+      "side": 1,
+      "message": "As per my previous comment, you need to change config.py file in order to auto generate the conf sample.",
+      "revId": "2818f51caae4a34833ffd6e38fc018ec731999aa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_8dcacf9f",
         "filename": "tools/config/oslo.config.generator.rc",
         "patchSetId": 4
