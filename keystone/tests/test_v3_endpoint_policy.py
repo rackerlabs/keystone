@@ -88,6 +88,7 @@ class EndpointPolicyTestCase(TestExtensionCase):
         self.get(url, expected_status=204)
         self.head(url, expected_status=204)
         self.delete(url, expected_status=204)
+        self.get(url, expected_status=404)
 
     def test_get_policy_for_endpoint(self):
         """GET /endpoints/{endpoint_id}/policy."""
