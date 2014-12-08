@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_e75a994f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-08T01:22:20Z",
+      "side": 1,
+      "message": "Since we already filter groups by domain_id at line 288:\n\nself.list_groups(domain_scope\u003ddomain_id)\n\nI think we don\u0027t need to check the domain again here.\n\nHowever, as you\u0027e just moving the code, this is not related to this patch.",
+      "revId": "a71d0001ac5831412be32e38463bc4848f37e723",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_07588555",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-08T01:22:20Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "a71d0001ac5831412be32e38463bc4848f37e723",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
