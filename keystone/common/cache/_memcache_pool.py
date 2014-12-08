@@ -119,7 +119,12 @@ class ConnectionPool(queue.Queue):
             self.put(conn)
 
     def _qsize(self):
-        return self.maxsize - self._acquired
+        if self.maxsize:
+            return self.maxsize - self._acquired
+        else:
+            # A value indicating there is always a free connection
+            # if maxsize is None or 0
+            return 1
 
     # NOTE(dstanek): stdlib and eventlet Queue implementations
     # have different names for the qsize method. This ensures
@@ -135,7 +140,7 @@ class ConnectionPool(queue.Queue):
         self._acquired += 1
         return conn
 
-    def _drop_expired_connections(self, conn):
+    def _drop_expired_connections(self):
         """Drop all expired connections from the right end of the queue.
 
         :param conn: connection object
@@ -146,13 +151,20 @@ class ConnectionPool(queue.Queue):
             self._debug_logger('Reaping connection %s', id(conn))
             self._destroy_connection(conn)
 
+    def put(self, conn):
+        self._drop_expired_connections()
+        try:
+            super(ConnectionPool, self).put(conn, block=False)
+        except queue.Full:
+            self._debug_logger('Reaping exceeding connection %s', id(conn))
+            self._destroy_connection(conn)
+
     def _put(self, conn):
         self.queue.append(_PoolItem(
             ttl=time.time() + self._unused_timeout,
             connection=conn,
         ))
         self._acquired -= 1
-        self._drop_expired_connections(conn)
 
 
 class MemcacheClientPool(ConnectionPool):
