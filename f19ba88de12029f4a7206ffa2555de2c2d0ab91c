@@ -52,6 +52,24 @@
       "revId": "f19ba88de12029f4a7206ffa2555de2c2d0ab91c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_45c43b40",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-12-08T11:58:08Z",
+      "side": 1,
+      "message": "so, it can really work? I\u0027m not sure how to verify this, just wanted to warn you.",
+      "parentUuid": "3a961159_b81427f6",
+      "revId": "f19ba88de12029f4a7206ffa2555de2c2d0ab91c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
