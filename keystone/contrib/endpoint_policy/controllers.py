@@ -144,6 +144,25 @@ class EndpointPolicyV3Controller(controller.V3Controller):
         self._add_self_referential_link(context, ref)
         return {'policy': ref}
 
+    @controller.protected()
+    def create_default_policy_association(self, context, policy_id):
+        """Create a default  association for a  policy."""
+        self.policy_api.get_policy(policy_id)
+        self.endpoint_policy_api.create_policy_association(policy_id)
+
+#    @controller.protected()
+    def check_default_policy_association(
+            self, context, policy_id):
+        """Check that a policy is in the default association."""
+        self.policy_api.get_policy(policy_id)
+        self.endpoint_policy_api.check_policy_association(policy_id)
+
+    @controller.protected()
+    def delete_default_policy_association(self, context, policy_id):
+        """Delete the default association if a policy is in it policy."""
+        self.policy_api.get_policy(policy_id)
+        self.endpoint_policy_api.delete_policy_association(policy_id)
+
     # NOTE(henry-nash): As in the catalog controller, we must ensure that the
     # legacy_endpoint_id does not escape.
 
