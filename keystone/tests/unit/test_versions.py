@@ -454,6 +454,10 @@ V3_JSON_HOME_RESOURCES_INHERIT_DISABLED = {
         'href-template': BASE_EP_POLICY + '/services/{service_id}',
         'href-vars': {'policy_id': json_home.Parameters.POLICY_ID,
                       'service_id': json_home.Parameters.SERVICE_ID, }},
+    _build_ep_policy_rel(resource_name='default_policy_association'):
+    {
+        'href-template': BASE_EP_POLICY + '/default',
+        'href-vars': {'policy_id': json_home.Parameters.POLICY_ID, }},
     _build_ep_filter_rel(resource_name='endpoint_group'):
     {
         'href-template': '/OS-EP-FILTER/endpoint_groups/{endpoint_group_id}',
