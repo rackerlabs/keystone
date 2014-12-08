@@ -109,10 +109,15 @@ class PolicyAssociationTests(object):
         self.endpoint_policy_api.check_policy_association(
             self.policy[1]['id'], endpoint_id=self.endpoint[0]['id'])
 
+    def test_default_policy_association(self):
+        self.assertRaises(exception.NotFound,
+                          self.endpoint_policy_api.get_policy_for_endpoint,
+                          self.endpoint[0]['id'])
+        self.endpoint_policy_api.create_policy_association(
+            self.policy[0]['id'])
+        self._assert_correct_policy(self.endpoint[0], self.policy[0])
+
     def test_invalid_policy_to_endpoint_association(self):
-        self.assertRaises(exception.InvalidPolicyAssociation,
-                          self.endpoint_policy_api.create_policy_association,
-                          self.policy[0]['id'])
         self.assertRaises(exception.InvalidPolicyAssociation,
                           self.endpoint_policy_api.create_policy_association,
                           self.policy[0]['id'],
