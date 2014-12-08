@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_9a74ae9d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-12-08T19:18:10Z",
+      "side": 1,
+      "message": "**sigh** One of these days I\u0027ll learn to communicate a little more effectively.",
+      "parentUuid": "5a890539_52daf1e9",
+      "revId": "73f66286c3a99a34828680904d7d4ff15cb3aa9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_b2df95d5",
         "filename": "keystone/hacking/checks.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2014-12-01T21:37:43Z",
       "side": 1,
       "message": "Need tests for these, according to the TODO?",
+      "revId": "73f66286c3a99a34828680904d7d4ff15cb3aa9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ba040a16",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-12-08T19:18:10Z",
+      "side": 1,
+      "message": "Yes. The tests are in https://review.openstack.org/#/c/136208/3/keystone/tests/ksfixtures/hacking.py. We had to put them there so that they don\u0027t fail the pep8 test.",
+      "parentUuid": "5a890539_b2df95d5",
       "revId": "73f66286c3a99a34828680904d7d4ff15cb3aa9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
