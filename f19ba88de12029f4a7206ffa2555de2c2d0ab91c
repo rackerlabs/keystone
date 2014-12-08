@@ -34,6 +34,24 @@
       "revId": "f19ba88de12029f4a7206ffa2555de2c2d0ab91c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b81427f6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2014-12-08T10:33:11Z",
+      "side": 1,
+      "message": "Actually, the code can work, just pep8 cannot detect import module redirection",
+      "parentUuid": "3a961159_181d3b67",
+      "revId": "f19ba88de12029f4a7206ffa2555de2c2d0ab91c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
