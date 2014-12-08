@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_e5099896",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/003_fix_mysql_engine.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-12-08T18:40:05Z",
+      "side": 1,
+      "message": "This ain\u0027t gonna workl.\n\nThe migrations are run from different processes.\n\nJust drop the change of the table type on downgrade.  We can take that risk.",
+      "revId": "71f7edb055d783be8ce2467eec31cc4b216b653f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
