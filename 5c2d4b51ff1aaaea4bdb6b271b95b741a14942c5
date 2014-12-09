@@ -16,6 +16,24 @@
       "revId": "5c2d4b51ff1aaaea4bdb6b271b95b741a14942c5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d9b9bd2f",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-09T18:22:05Z",
+      "side": 1,
+      "message": "It\u0027s called by the base class.",
+      "parentUuid": "9aa7fdbe_403fb825",
+      "revId": "5c2d4b51ff1aaaea4bdb6b271b95b741a14942c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
