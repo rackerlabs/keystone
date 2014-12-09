@@ -243,7 +243,7 @@ FILE_OPTIONS = {
         cfg.StrOpt('provider',
                    help='Controls the token construction, validation, and '
                         'revocation operations. Core providers are '
-                        '"keystone.token.providers.[pkiz|pki|uuid].'
+                        '"keystone.token.providers.[ae_tokens|pkiz|pki|uuid].'
                         'Provider". The default provider is uuid.'),
         cfg.StrOpt('driver',
                    default='keystone.token.persistence.backends.sql.Token',
@@ -918,6 +918,13 @@ FILE_OPTIONS = {
                    help='Path to the Identity Provider Metadata file. '
                         'This file should be generated with the '
                         'keystone-manage saml_idp_metadata command.'),
+    ],
+    'ae_tokens': [
+        cfg.BoolOpt('encrypt_token', default=True,
+                    help='When using the ae_tokens.Provider, specify whether '
+                         'the Provider should encrypt the token. If true, the '
+                         'token information is encrypted and is not encrypted '
+                         'otherwise'),
     ],
 }
 

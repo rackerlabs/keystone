@@ -457,6 +457,19 @@
 #external = keystone.auth.plugins.external.DefaultDomain
 
 
+[ae_tokens]
+
+#
+# Options defined in keystone
+#
+
+# When using the ae_tokens.Provider, specify whether the
+# Provider should encrypt the token. If true, the token
+# information is encrypted and is not encrypted otherwise
+# (boolean value)
+#encrypt_token=true
+
+
 [cache]
 
 #
@@ -1452,10 +1465,11 @@
 # Amount of time a token should remain valid (in seconds). (integer value)
 #expiration = 3600
 
-# Controls the token construction, validation, and revocation operations. Core
-# providers are "keystone.token.providers.[pkiz|pki|uuid].Provider". The
-# default provider is uuid. (string value)
-#provider = <None>
+# Controls the token construction, validation, and revocation
+# operations. Core providers are "keystone.token.providers.[ae
+# _tokens|pkiz|pki|uuid].Provider". The default provider is
+# uuid. (string value)
+#provider=<None>
 
 # Token persistence backend driver. (string value)
 #driver = keystone.token.persistence.backends.sql.Token
