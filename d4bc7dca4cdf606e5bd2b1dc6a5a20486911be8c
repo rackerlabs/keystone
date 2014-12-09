@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_7c4b732b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-12-09T03:45:00Z",
+      "side": 1,
+      "message": "Wrong related bug.",
+      "revId": "d4bc7dca4cdf606e5bd2b1dc6a5a20486911be8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
