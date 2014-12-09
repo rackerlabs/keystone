@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_8bcef781",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2088,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-09T21:29:39Z",
+      "side": 1,
+      "message": "(nit)....\"root and one leaf project\" ?",
+      "revId": "fdb257490cced6f4772bc3f4fda19a64a23d202c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ebc3fb54",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2144,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-09T21:29:39Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "fdb257490cced6f4772bc3f4fda19a64a23d202c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0ba207ae",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2201,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-09T21:29:39Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "fdb257490cced6f4772bc3f4fda19a64a23d202c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
