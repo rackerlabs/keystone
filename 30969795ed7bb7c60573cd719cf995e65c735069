@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_767c7221",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-12-09T02:02:18Z",
+      "side": 1,
+      "message": "commit title is too long, you\u0027d better to reduce the length to 50 or less.\n\nerror message: H802  git commit title (\u0027Adding [database] section to the introduction to the structure of keystone\u0027s primary configuration file.\u0027) should be under 50 chars\n\n\nreference: https://wiki.openstack.org/wiki/GitCommitMessages",
+      "revId": "30969795ed7bb7c60573cd719cf995e65c735069",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
