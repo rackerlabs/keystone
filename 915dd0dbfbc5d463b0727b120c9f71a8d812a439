@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_08ea310f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7634
+      },
+      "writtenOn": "2014-12-09T00:10:57Z",
+      "side": 1,
+      "message": "There are two space characters between \u0027for\u0027 and \u0027policy_association_for_region_and_service\u0027.",
+      "revId": "915dd0dbfbc5d463b0727b120c9f71a8d812a439",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
