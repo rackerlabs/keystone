@@ -16,6 +16,23 @@
       "revId": "915dd0dbfbc5d463b0727b120c9f71a8d812a439",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_3ccbaba6",
+        "filename": "keystone/tests/test_v3_endpoint_policy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-12-09T03:42:08Z",
+      "side": 1,
+      "message": "I think we should add a new test which tests 404 error for head method.",
+      "revId": "915dd0dbfbc5d463b0727b120c9f71a8d812a439",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
