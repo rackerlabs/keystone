@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a961159_8b78c690",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 18
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-12-09T14:43:32Z",
+      "side": 1,
+      "message": "This needs to be reverted to the previous revision.   This rolls back to anyone with the admin role one anything has full power, which is not what you want.",
+      "revId": "61f715859c9dd069034b27d27218c82d07bd5f54",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_4445eb41",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 18
