@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_5a5674d3",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 708,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-10T18:24:08Z",
+      "side": 1,
+      "message": "is there a reason for removing these blank lines?  Seems to break the guidelines for docstrings.",
+      "revId": "79c26fa1e533d24191d87cd162d553cb1b73cdaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7a7df0b0",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 5051,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-10T18:24:08Z",
+      "side": 1,
+      "message": "I\u0027d like to suggest a slightly more complicated test which has both inherited and non-inherited roles at each level.  Then you should issue the list command both with and without os_inherit enabled, making sure that the right set of assignments are returned in each case (and do a listing for both the root and the leaf).  This will catch the recent bugs you fixed to do with whether inherited\u003d\u003dfalse() was included or not with os_inherit off.",
+      "revId": "79c26fa1e533d24191d87cd162d553cb1b73cdaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ba4e7894",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 5157,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-10T18:24:08Z",
+      "side": 1,
+      "message": "and probably the same here...",
+      "revId": "79c26fa1e533d24191d87cd162d553cb1b73cdaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_5a7834f2",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 5193,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-10T18:24:08Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "79c26fa1e533d24191d87cd162d553cb1b73cdaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
