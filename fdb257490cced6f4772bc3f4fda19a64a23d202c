@@ -2,6 +2,91 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a961159_b1f236d0",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-10T07:18:15Z",
+      "side": 1,
+      "message": "I think that maybe we need to test to make sure the assignment is non-inherited here....now that projects can have inheritance.\n\nIf so, I also think that maybe we are not testing some of these methods the way we should - since our unit tests are not finding this kind of error (and the ones I found in the previous version of this patch).  We test list_role_assignments well - as well as getting a token, but we should ensure that any of the methods that now are effected by inheritance (due to projects) are testing to make sure the correct roles are returned.",
+      "revId": "fdb257490cced6f4772bc3f4fda19a64a23d202c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d1ffc2a8",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-10T07:18:15Z",
+      "side": 1,
+      "message": "nice comment",
+      "revId": "fdb257490cced6f4772bc3f4fda19a64a23d202c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_71736e80",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-10T07:18:15Z",
+      "side": 1,
+      "message": "I\u0027m not  really sure this comment belongs here....I don\u0027t think knowing this fact helps me understand any of the methods in core.py.  I\u0027d leave it to the methods in the drivers to say whether they support this or not.",
+      "revId": "fdb257490cced6f4772bc3f4fda19a64a23d202c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_5114b2f4",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-10T07:18:15Z",
+      "side": 1,
+      "message": "do we still need this method?",
+      "revId": "fdb257490cced6f4772bc3f4fda19a64a23d202c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_8e5a7b4e",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1951,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-10T07:18:15Z",
+      "side": 1,
+      "message": "I think our guidelines are that the doctoring title should only be one line, followed by a blank line, followed by more details.",
+      "revId": "fdb257490cced6f4772bc3f4fda19a64a23d202c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_8bcef781",
         "filename": "keystone/tests/test_v3_assignment.py",
         "patchSetId": 10
@@ -13,6 +98,23 @@
       "writtenOn": "2014-12-09T21:29:39Z",
       "side": 1,
       "message": "(nit)....\"root and one leaf project\" ?",
+      "revId": "fdb257490cced6f4772bc3f4fda19a64a23d202c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_31a7260e",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2141,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-10T07:18:15Z",
+      "side": 1,
+      "message": "nice!",
       "revId": "fdb257490cced6f4772bc3f4fda19a64a23d202c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
