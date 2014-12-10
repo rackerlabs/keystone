@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_94827d92",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-10T14:06:38Z",
+      "side": 1,
+      "message": "We need a test in test_backend to call this method and verify this case. Will add it.",
+      "parentUuid": "3a961159_d9d1a058",
+      "revId": "fdb257490cced6f4772bc3f4fda19a64a23d202c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_d1ffc2a8",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 10
