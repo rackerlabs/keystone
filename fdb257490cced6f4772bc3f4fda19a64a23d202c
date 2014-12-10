@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_d9d1a058",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-10T13:55:12Z",
+      "side": 1,
+      "message": "I *think* we had this check here, but it was breaking some tests not directly related to this change. Will investigate whats wrong.",
+      "parentUuid": "3a961159_b1f236d0",
+      "revId": "fdb257490cced6f4772bc3f4fda19a64a23d202c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_d1ffc2a8",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 10
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_99c5583e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-10T13:55:12Z",
+      "side": 1,
+      "message": "makes sense, will remove it.",
+      "parentUuid": "3a961159_71736e80",
+      "revId": "fdb257490cced6f4772bc3f4fda19a64a23d202c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_5114b2f4",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 10
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_b9c0542b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-10T13:55:12Z",
+      "side": 1,
+      "message": "nope, will remove it :)",
+      "parentUuid": "3a961159_5114b2f4",
+      "revId": "fdb257490cced6f4772bc3f4fda19a64a23d202c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_8e5a7b4e",
         "filename": "keystone/tests/test_v3_assignment.py",
         "patchSetId": 10
@@ -81,6 +135,24 @@
       "writtenOn": "2014-12-10T07:18:15Z",
       "side": 1,
       "message": "I think our guidelines are that the doctoring title should only be one line, followed by a blank line, followed by more details.",
+      "revId": "fdb257490cced6f4772bc3f4fda19a64a23d202c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_79cd0c5d",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1951,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-10T13:55:12Z",
+      "side": 1,
+      "message": "ok, will fix it.",
+      "parentUuid": "3a961159_8e5a7b4e",
       "revId": "fdb257490cced6f4772bc3f4fda19a64a23d202c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
