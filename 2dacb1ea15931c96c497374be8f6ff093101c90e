@@ -34,6 +34,24 @@
       "revId": "2dacb1ea15931c96c497374be8f6ff093101c90e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_a2656a1f",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-10T22:33:17Z",
+      "side": 0,
+      "message": "I\u0027m fine with consolidating them, but it would be easier to review if it was committed separately.",
+      "parentUuid": "5a890539_93d14059",
+      "revId": "2dacb1ea15931c96c497374be8f6ff093101c90e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
