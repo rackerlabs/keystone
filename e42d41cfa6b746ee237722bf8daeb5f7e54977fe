@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_14592d36",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-10T13:53:20Z",
+      "side": 1,
+      "message": "the presence of \u0027group_ids\u0027 is checked before?",
+      "revId": "e42d41cfa6b746ee237722bf8daeb5f7e54977fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_74ca716f",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-10T13:53:20Z",
+      "side": 1,
+      "message": "group_names sounds strange since it is a dict with domain and name, would use something like \"group_entries\"",
+      "revId": "e42d41cfa6b746ee237722bf8daeb5f7e54977fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
