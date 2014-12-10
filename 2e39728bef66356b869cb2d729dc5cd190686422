@@ -34,6 +34,23 @@
       "revId": "2e39728bef66356b869cb2d729dc5cd190686422",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_3aca886e",
+        "filename": "keystone/common/sql/migrate_repo/versions/039_grant_to_assignment.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-12-10T18:11:17Z",
+      "side": 1,
+      "message": "Needs to use log hint _LW for i18n.",
+      "revId": "2e39728bef66356b869cb2d729dc5cd190686422",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
