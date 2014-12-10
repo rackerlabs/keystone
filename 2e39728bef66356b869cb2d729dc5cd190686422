@@ -16,6 +16,24 @@
       "revId": "2e39728bef66356b869cb2d729dc5cd190686422",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_779b4972",
+        "filename": "keystone/common/sql/migrate_repo/versions/039_grant_to_assignment.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5511
+      },
+      "writtenOn": "2014-12-10T17:43:51Z",
+      "side": 1,
+      "message": "I really dislike that approach - it adds overhead to migrations which are already a source of pain and downtime for deployers.\n\nAfter speaking to Mike Bayer, he seems to suggest the following:\n\n1) Best: Move this migration to using oslo.db\u0027s create_engine - in which case you can be sure that oslo.db.exception.DBDuplicateEntry will catch these.\n\n2) Keep the integrity error and make it future proof with (IntegrityError, oslo.db.exception.DBDuplicateEntry): as IntegrityError should really be fine for this as long as the db driver implements pythons DBAPI correctly.\n\nSeeing what this fixes is about - I\u0027d suggest 2) in this patch with 1) followup",
+      "parentUuid": "5a890539_c3e408aa",
+      "revId": "2e39728bef66356b869cb2d729dc5cd190686422",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
