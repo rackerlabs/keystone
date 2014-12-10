@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_8244eeb7",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 21
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 10765
+      },
+      "writtenOn": "2014-12-10T22:38:34Z",
+      "side": 1,
+      "message": "Actually we don\u0027t need to verify the domain_id anymore.\nOn the grant rule we can restrict that the user who gives cloud_admin role is a cloud_admin. We can do rules like this:\n\u0027cloud_admin\u0027:%(target.role.name)s\nso we can create rules that deny other user except cloud_admin to grant cloud_admin role",
+      "revId": "b032ca49307f32f2c58e8358a0b7a6697f392110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_a233aa12",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 21
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 10765
+      },
+      "writtenOn": "2014-12-10T22:38:34Z",
+      "side": 1,
+      "message": "scope:project",
+      "revId": "b032ca49307f32f2c58e8358a0b7a6697f392110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_85187876",
+        "filename": "keystone/openstack/common/policy.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 10765
+      },
+      "writtenOn": "2014-12-10T22:38:34Z",
+      "side": 1,
+      "message": "delete",
+      "revId": "b032ca49307f32f2c58e8358a0b7a6697f392110",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
