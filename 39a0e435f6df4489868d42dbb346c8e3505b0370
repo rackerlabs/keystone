@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_d00b1c8c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-10T23:37:45Z",
+      "side": 1,
+      "message": "CI shouldn\u0027t be what\u0027s important here. Some deployments default to use of MyISAM.",
+      "revId": "39a0e435f6df4489868d42dbb346c8e3505b0370",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_506c8c35",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-10T23:37:45Z",
+      "side": 1,
+      "message": "Would be nice to have a debug statement here.",
+      "revId": "39a0e435f6df4489868d42dbb346c8e3505b0370",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_50dacce8",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-10T23:37:45Z",
+      "side": 1,
+      "message": "change \"of a table names\" to \"of table names\"\n\nchange \"check an engine\" to \"check the engine for\"",
+      "revId": "39a0e435f6df4489868d42dbb346c8e3505b0370",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d0c31ceb",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-10T23:37:45Z",
+      "side": 1,
+      "message": "why is this called updated? suggest change the name to \"table_names\" or something.",
+      "revId": "39a0e435f6df4489868d42dbb346c8e3505b0370",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_707fc8ab",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 286,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-10T23:37:45Z",
+      "side": 1,
+      "message": "I\u0027d prefer it if mysql-specific functions were in a mysql package.",
+      "revId": "39a0e435f6df4489868d42dbb346c8e3505b0370",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d06a3ced",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-10T23:37:45Z",
+      "side": 1,
+      "message": "remove \"sdefault\"",
+      "revId": "39a0e435f6df4489868d42dbb346c8e3505b0370",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_10484486",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-10T23:37:45Z",
+      "side": 1,
+      "message": "the docs should say what the allowed engines are.",
+      "revId": "39a0e435f6df4489868d42dbb346c8e3505b0370",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7056e82b",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-10T23:37:45Z",
+      "side": 1,
+      "message": "Seems like rather than query for the specific from_engine it would be better to just find all tables that aren\u0027t the correct engine and change them to the correct one.",
+      "revId": "39a0e435f6df4489868d42dbb346c8e3505b0370",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_3079c0c8",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-10T23:37:45Z",
+      "side": 1,
+      "message": "I don\u0027t think Keystone should be raising database errors.",
+      "revId": "39a0e435f6df4489868d42dbb346c8e3505b0370",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_103f64d7",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-10T23:37:45Z",
+      "side": 1,
+      "message": "is there a limit to the size of a statement?",
+      "revId": "39a0e435f6df4489868d42dbb346c8e3505b0370",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_70042818",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/003_fix_mysql_engine.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-10T23:37:45Z",
+      "side": 1,
+      "message": "Using _updated here isn\u0027t going to work since downgrade() isn\u0027t called in the same process as upgrade().",
+      "revId": "39a0e435f6df4489868d42dbb346c8e3505b0370",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
