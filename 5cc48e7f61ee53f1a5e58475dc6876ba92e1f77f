@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_66f8efc3",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-11T02:37:41Z",
+      "side": 1,
+      "message": "I don\u0027t think logging how many tokens expired on each iteration is meaningful, since we don\u0027t have any idea of the state that carried those expirations (expiry_time, etc.)\n\nI think it makes more sense to have logged just the final count, i.e. just put the original log out of this for.",
+      "revId": "5cc48e7f61ee53f1a5e58475dc6876ba92e1f77f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
