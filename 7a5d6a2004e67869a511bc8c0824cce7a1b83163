@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a961159_1ff67a63",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-12-11T15:49:01Z",
+      "side": 1,
+      "message": "Typo: \"used be\" should be \"used by\"",
+      "revId": "7a5d6a2004e67869a511bc8c0824cce7a1b83163",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_59dcb473",
         "filename": "keystone/tests/unit/tests/test_utils.py",
         "patchSetId": 5
@@ -13,6 +30,57 @@
       "writtenOn": "2014-12-11T03:32:49Z",
       "side": 1,
       "message": ":)",
+      "revId": "7a5d6a2004e67869a511bc8c0824cce7a1b83163",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_5aebb0af",
+        "filename": "keystone/tests/unit/tests/test_utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-12-11T15:49:01Z",
+      "side": 1,
+      "message": "Well a literal value you could not put here is \"Brian Hoyer\".  He most certainly can\u0027t pass :-).",
+      "revId": "7a5d6a2004e67869a511bc8c0824cce7a1b83163",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_bab73439",
+        "filename": "keystone/tests/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-12-11T15:49:01Z",
+      "side": 1,
+      "message": "oh great.  So six provides a standard way to to wrap functions.  So once someone new to python finally figures out the function wrapping stuff they now get to learn the new version  :-)",
+      "revId": "7a5d6a2004e67869a511bc8c0824cce7a1b83163",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_dafec0ad",
+        "filename": "keystone/tests/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2014-12-11T15:49:01Z",
+      "side": 1,
+      "message": "Very slick!  Love how it can either take the message on why the test is marked work in progress or the actual test function.  Love the duality. Very cool!!!",
       "revId": "7a5d6a2004e67869a511bc8c0824cce7a1b83163",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
