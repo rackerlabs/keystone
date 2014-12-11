@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_66e62f17",
+        "filename": "keystone/contrib/endpoint_policy/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-11T02:42:01Z",
+      "side": 1,
+      "message": "Copy-paste errors ?",
+      "revId": "f10ff9aed6278eb217b119682761225459e0c674",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
