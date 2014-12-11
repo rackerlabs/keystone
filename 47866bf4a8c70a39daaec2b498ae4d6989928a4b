@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_4f2e8d44",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 888,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-11T18:20:16Z",
+      "side": 1,
+      "message": "(nit) I think really this return statement could be even less indented (since the second line of the if clause has been (correctly) over indented)...but this change isn\u0027t part of this patch...so really should be no change at all here...",
+      "revId": "47866bf4a8c70a39daaec2b498ae4d6989928a4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0f6ac580",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 5054,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-11T18:20:16Z",
+      "side": 1,
+      "message": "nice",
+      "revId": "47866bf4a8c70a39daaec2b498ae4d6989928a4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
