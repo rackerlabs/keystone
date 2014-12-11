@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_971b4372",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-11T05:21:45Z",
+      "side": 1,
+      "message": "Why not \n\nquery \u003d query.filter_by(type\u003dAssignmentType.USER_PROJECT,\n                        target_id\u003dtenant_id)\n\nThis would be follow the same pattern used to define several methodsin this class, e.g _get_metadata, .",
+      "revId": "2945b40e02625652a25a5153033a14c33470dfa1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_1c169a55",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-11T05:21:45Z",
+      "side": 1,
+      "message": "Same as for line 67.\nWhy not\n\nq \u003d q.filter_by(actor_id\u003duser_id,\n                target_id\u003dtenant_id,\n                role_id\u003drole_id)",
+      "revId": "2945b40e02625652a25a5153033a14c33470dfa1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
