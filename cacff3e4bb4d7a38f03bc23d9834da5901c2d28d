@@ -102,6 +102,24 @@
       "revId": "cacff3e4bb4d7a38f03bc23d9834da5901c2d28d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_43391640",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 2929,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-11T12:27:26Z",
+      "side": 1,
+      "message": "This is a problem across the code, so if I do as you ask, I\u0027ll have to do irrelevant changes in other places. A take your point though, thank you for the review!",
+      "parentUuid": "3a961159_7975f0f8",
+      "revId": "cacff3e4bb4d7a38f03bc23d9834da5901c2d28d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
