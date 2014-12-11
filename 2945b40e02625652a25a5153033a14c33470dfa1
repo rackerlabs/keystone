@@ -33,6 +33,24 @@
       "revId": "2945b40e02625652a25a5153033a14c33470dfa1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f751e736",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-12-11T06:11:26Z",
+      "side": 1,
+      "message": "Samuel, thanks for the comments.\n\nIf I am remember correctly,I try to do that way but found cannot pass pep8 verification. Try it again this time, pep8 and py27 passed well, I will submit one new patch to address your comment.",
+      "parentUuid": "3a961159_1c169a55",
+      "revId": "2945b40e02625652a25a5153033a14c33470dfa1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
