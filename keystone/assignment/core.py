@@ -689,8 +689,6 @@ class Manager(manager.Manager):
 
         self.driver.delete_grant(role_id, user_id, group_id, domain_id,
                                  project_id, inherited_to_projects)
-        if user_id is not None:
-            self._emit_invalidate_user_token_persistence(user_id)
 
     def _delete_tokens_for_role(self, role_id):
         assignments = self.list_role_assignments_for_role(role_id=role_id)
