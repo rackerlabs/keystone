@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_48869514",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-11T11:51:45Z",
+      "side": 1,
+      "message": "I\u0027d specify which backend you are refactoring here, since the same refactoring can be done in several SQL backends.\n\nAnother option is to make this refactoring in all SQL backends.",
+      "revId": "defa688df76f7fd5ba89dc6727f0e07cc987fc8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
