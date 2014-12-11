@@ -34,6 +34,24 @@
       "revId": "5cc48e7f61ee53f1a5e58475dc6876ba92e1f77f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_c66eea2e",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-12-11T16:59:59Z",
+      "side": 1,
+      "message": "We are logging 2 things. \n   1) Total tokens deleted during each batch\n   2) Final total count at the end of loop\n\nIf you look at the original code,  in both the places it is logging total count.\n\nPlease have a look at line 276  \u0026 279. Intention of 276 is to log count on that iteration, but it just used wrong value\n\nBTW  it is useful to log tokens removed on each iteration, as it helps us analyse how long each batch took",
+      "parentUuid": "3a961159_e6321f5e",
+      "revId": "5cc48e7f61ee53f1a5e58475dc6876ba92e1f77f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
