@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_b9067884",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 2635,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-11T03:53:52Z",
+      "side": 1,
+      "message": "Do we really need this debug config?",
+      "revId": "cacff3e4bb4d7a38f03bc23d9834da5901c2d28d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_99bffca9",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 2681,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-11T03:53:52Z",
+      "side": 1,
+      "message": "s/depleted/deleted",
+      "revId": "cacff3e4bb4d7a38f03bc23d9834da5901c2d28d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_3928c8e1",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 2752,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-11T03:53:52Z",
+      "side": 1,
+      "message": "I think you should either rename the method to reflect what\u0027s being testes or add a documentation here clarifying what you want to test.",
+      "revId": "cacff3e4bb4d7a38f03bc23d9834da5901c2d28d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b962f83b",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 2918,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-11T03:53:52Z",
+      "side": 1,
+      "message": "Same as line 2635.\nDo we really need this debug config?",
+      "revId": "cacff3e4bb4d7a38f03bc23d9834da5901c2d28d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7975f0f8",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 2929,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-11T03:53:52Z",
+      "side": 1,
+      "message": "Make comments style consistent over your patch.\nPut uppercase letter in the beginning of sentences :)",
+      "revId": "cacff3e4bb4d7a38f03bc23d9834da5901c2d28d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
