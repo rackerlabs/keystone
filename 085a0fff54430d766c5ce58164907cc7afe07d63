@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_f21f356a",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-12-11T07:14:23Z",
+      "side": 1,
+      "message": "we need mapping_id as well as assignment_api and identity_api objects accessible only from here.",
+      "parentUuid": "3a961159_f2f01500",
+      "revId": "085a0fff54430d766c5ce58164907cc7afe07d63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_127be17b",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 8
