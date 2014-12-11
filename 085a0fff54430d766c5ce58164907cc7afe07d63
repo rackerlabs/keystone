@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_f2f01500",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-11T06:35:19Z",
+      "side": 1,
+      "message": "i\u0027m not clear on why this is being done here, instead of in utils.py?",
+      "revId": "085a0fff54430d766c5ce58164907cc7afe07d63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_127be17b",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-11T06:35:19Z",
+      "side": 1,
+      "message": "the docstring isn\u0027t formatted correctly.",
+      "revId": "085a0fff54430d766c5ce58164907cc7afe07d63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
