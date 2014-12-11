@@ -16,6 +16,24 @@
       "revId": "5cc48e7f61ee53f1a5e58475dc6876ba92e1f77f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_e6321f5e",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-12-11T02:56:03Z",
+      "side": 1,
+      "message": "I agree with Samuel de Medeiros Queiroz, but I think the original log is enough...",
+      "parentUuid": "3a961159_66f8efc3",
+      "revId": "5cc48e7f61ee53f1a5e58475dc6876ba92e1f77f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
