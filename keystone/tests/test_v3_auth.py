@@ -1169,6 +1169,72 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
                 password=self.user3['password'],
                 project_id=self.projectA['id']))
 
+    def test_removing_role_assignment_keeps_other_project_token(self):
+        """Revoking a user role from one project should not invalidate
+        all user's tokens.
+        """
+        self.assignment_api.create_grant(self.role1['id'],
+                                         user_id=self.user1['id'],
+                                         project_id=self.projectB['id'])
+
+        project_token = self.get_requested_token(
+            self.build_authentication_request(
+                user_id=self.user1['id'],
+                password=self.user1['password'],
+                project_id=self.projectB['id']))
+
+        other_project_token = self.get_requested_token(
+            self.build_authentication_request(
+                user_id=self.user1['id'],
+                password=self.user1['password'],
+                project_id=self.projectA['id']))
+
+        self.assignment_api.delete_grant(self.role1['id'],
+                                         user_id=self.user1['id'],
+                                         project_id=self.projectB['id'])
+
+        # authorization for the projectA should still succeed
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': other_project_token},
+                  expected_status=200)
+        # while token for the projectB should not
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': project_token},
+                  expected_status=404)
+
+    def test_removing_role_assignment_keeps_other_project_token_groups(self):
+        """Revoking a group role from one project should not invalidate
+        all user's tokens.
+        """
+        self.assignment_api.create_grant(self.role1['id'],
+                                         group_id=self.group1['id'],
+                                         project_id=self.projectB['id'])
+
+        project_token = self.get_requested_token(
+            self.build_authentication_request(
+                user_id=self.user1['id'],
+                password=self.user1['password'],
+                project_id=self.projectB['id']))
+
+        other_project_token = self.get_requested_token(
+            self.build_authentication_request(
+                user_id=self.user1['id'],
+                password=self.user1['password'],
+                project_id=self.projectA['id']))
+
+        self.assignment_api.delete_grant(self.role1['id'],
+                                         group_id=self.group1['id'],
+                                         project_id=self.projectB['id'])
+
+        # authorization for the projectA should still succeed
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': other_project_token},
+                  expected_status=200)
+        # while token for the projectB should not
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': project_token},
+                  expected_status=404)
+
     def test_deleting_project_deletes_grants(self):
         # This is to make it a little bit more pretty with PEP8
         role_path = ('/projects/%(project_id)s/users/%(user_id)s/'

@@ -683,8 +683,6 @@ class Manager(manager.Manager):
                 # for invalidating tokens below, so extract them here.
                 for user in self.identity_api.list_users_in_group(group_id):
                     if user['id'] != user_id:
-                        self._emit_invalidate_user_token_persistence(
-                            user['id'])
                         if self.revoke_api:
                             self.revoke_api.revoke_by_grant(
                                 user_id=user['id'], role_id=role_id,
@@ -695,8 +693,6 @@ class Manager(manager.Manager):
 
         self.driver.delete_grant(role_id, user_id, group_id, domain_id,
                                  project_id, inherited_to_projects)
-        if user_id is not None:
-            self._emit_invalidate_user_token_persistence(user_id)
 
     def _delete_tokens_for_role(self, role_id):
         assignments = self.list_role_assignments_for_role(role_id=role_id)
