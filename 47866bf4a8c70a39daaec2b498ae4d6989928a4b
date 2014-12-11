@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_9556c2cc",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 888,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-11T19:26:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_4f2e8d44",
+      "revId": "47866bf4a8c70a39daaec2b498ae4d6989928a4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_ba5d6d7b",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 13
@@ -64,6 +82,24 @@
       "writtenOn": "2014-12-11T19:06:47Z",
       "side": 1,
       "message": "Again, please look for the actual result (even if this is a NotImplemented) not a skip test - this *needs* to be at least in a followup patch.",
+      "revId": "47866bf4a8c70a39daaec2b498ae4d6989928a4b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f57aa622",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-11T19:26:35Z",
+      "side": 1,
+      "message": "Those tests are not necessary here, seems to be result from an old rebase. Thanks for the feedback.",
+      "parentUuid": "3a961159_3ae09d95",
       "revId": "47866bf4a8c70a39daaec2b498ae4d6989928a4b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
