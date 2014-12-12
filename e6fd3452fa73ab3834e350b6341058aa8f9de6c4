@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_6df09c67",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-12T10:41:39Z",
+      "side": 1,
+      "message": "We need to be reference a defect here",
+      "revId": "e6fd3452fa73ab3834e350b6341058aa8f9de6c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0ddab8e7",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-12T10:41:39Z",
+      "side": 1,
+      "message": "Personally, I\u0027d be tempted to just restructure this block to be:\n\nif new_config[\u0027driver\u0027].is_sql:\n    if self._any_sql:\n        raise exception....\n    else\n        self._any_sql \u003d True",
+      "revId": "e6fd3452fa73ab3834e350b6341058aa8f9de6c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
