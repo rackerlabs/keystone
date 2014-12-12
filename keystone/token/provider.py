@@ -426,7 +426,7 @@ class Manager(manager.Manager):
                     trust_id=trust['id'] if trust else None,
                     token_version=self.V3)
 
-        self._create_token(token_id, data)
+        #self._create_token(token_id, data)
         return token_id, token_data
 
     def invalidate_individual_token_cache(self, token_id):

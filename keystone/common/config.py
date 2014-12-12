@@ -227,6 +227,11 @@ FILE_OPTIONS = {
                     help='role-assignment inheritance to projects from '
                          'owning domain can be optionally enabled.'),
     ],
+    'ae_tokens': [
+        cfg.StrOpt('key_repository',
+                   default='/etc/keystone/keys',
+                   help='Location for AE token signing keys.')
+    ],
     'token': [
         cfg.ListOpt('bind', default=[],
                     help='External auth mechanisms that should add bind '

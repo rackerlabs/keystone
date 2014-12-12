@@ -10,17 +10,28 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
+
+from oslo.utils import timeutils
+
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import log
 from keystone.token.providers import common
-
+from keystone.token.providers.ae import token_formatters
 
 CONF = config.CONF
 LOG = log.getLogger(__name__)
 
 
 class Provider(common.BaseProvider):
+
+    # NOTE(lbragstad): This should consist of a mapping from the
+    # `token_version` to the object that can handle that token. This was, once
+    # we detect what version of the token we're dealing with, we can pass the
+    # information it's respective formatter needs to either create or validate
+    # the token.
+    token_format_map = {'01': token_formatters.StandardTokenFormatter()}
 
     def __init__(self, *args, **kwargs):
         super(Provider, self).__init__(*args, **kwargs)
@@ -36,14 +47,30 @@ class Provider(common.BaseProvider):
         """
         raise exception.NotImplemented()
 
+    def _convert_timestamp_to_int(self, time_string):
+        """Convert a time formatted string to a timestamp integer.
+
+        This is done because integers can be represented smaller than a string
+        that represents a time.
+        :param time_string: string representing the time
+        :returns: an integer timestamp
+
+        """
+        time_object = timeutils.parse_isotime(time_string)
+        return int(time_object.strftime('%s'))
+
     def issue_v3_token(self, user_id, method_names, expires_at=None,
                        project_id=None, domain_id=None, auth_context=None,
                        trust=None, metadata_ref=None, include_catalog=True,
                        parent_audit_id=None):
         """Issue a V3 formatted token.
 
+        Here is where we need to detect what is given to us, and what kind of
+        token the user is expect. Depending on the outcome of that, we can pass
+        all the information to be packed to the proper token format handler.
+
         :param user_id: ID of the user
-        :param method_names:
+        :param method_names: method of authentication
         :param expires_at: token expiration time
         :param project_id: ID of the project being scoped to
         :param domain_id: ID of the domain being scoped to
@@ -56,7 +83,49 @@ class Provider(common.BaseProvider):
         :returns: tuple containing the id of the token and the token data
 
         """
-        raise exception.NotImplemented()
+        if (CONF.trust.enabled and not trust and metadata_ref and
+                'trust_id' in metadata_ref):
+            trust = self.trust_api.get_trust(metadata_ref['trust_id'])
+            # In this case we should pull data out of the trust and create the
+            # token accordingly. This will also be a different token version so
+            # that we know we are dealing with a trust authenticated token when
+            # we go to validate.
+
+        token_ref = None
+        if auth_context and self._is_mapped_token(auth_context):
+            token_ref = self._handle_mapped_tokens(auth_context, project_id,
+                    domain_id)
+
+        token_data = self.v3_token_data_helper.get_token_data(
+            user_id,
+            method_names,
+            auth_context.get('extras') if auth_context else None,
+            domain_id=domain_id,
+            project_id=project_id,
+            expires=expires_at,
+            trust=trust,
+            bind=auth_context.get('bind') if auth_context else None,
+            token=token_ref,
+            include_catalog=include_catalog,
+            audit_info=parent_audit_id)
+
+        created_at_str = token_data['token']['issued_at']
+        issued_at_ts = self._convert_timestamp_to_int(created_at_str)
+
+        expires_at_str = token_data['token']['expires_at']
+        expires_at_ts = self._convert_timestamp_to_int(expires_at_str)
+
+        audit_ids = token_data['token']['audit_ids']
+
+        token_format = '01'
+
+        # We will probably have different token formats, each with their own
+        # create_token method. Here is where we would make the decision to
+        # format the token one way or the other.
+        token_id = self.token_format_map[token_format].create_token(user_id,
+            project_id, issued_at_ts, expires_at_ts, audit_ids)
+
+        return token_id, token_data
 
     def validate_v2_token(self, token_ref):
         """Validate a V2 formatted token.
