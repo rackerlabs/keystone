@@ -69,6 +69,23 @@
       "revId": "ac5a118e1abe1fc0fd9f676f30436959c8cb1847",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_a93423fc",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-12T21:20:06Z",
+      "side": 1,
+      "message": "nit: as well as*?",
+      "revId": "ac5a118e1abe1fc0fd9f676f30436959c8cb1847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
