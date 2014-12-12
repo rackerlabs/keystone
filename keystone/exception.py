@@ -401,6 +401,15 @@ class Gone(Error):
     title = 'Gone'
 
 
+class AssignmentTypeCalculationError(Error):
+    message_format = _(
+        'Unexpected combination of grant attributes - '
+        'User: %(user_id)s, Group: %(group_id)s, Project: %(project_id)s, '
+        'Domain: %(domain_id)s')
+    code = 400
+    title = 'Bad Request'
+
+
 class ConfigFileNotFound(UnexpectedError):
     debug_message_format = _("The Keystone configuration file %(config_file)s "
                              "could not be found.")
