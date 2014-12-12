@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_5ae0ed28",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-12T13:42:08Z",
+      "side": 1,
+      "message": "This matrix reflects that bunch of \u0027if\u0027: it didn\u0027t change. As you can see, if we pass user_id and project_id then other parameters just ignored. If we must validate that project_id and domain_id are mutual exclusive then it\u0027s the new logic - it was not in the old version.",
+      "parentUuid": "3a961159_f7bc52bd",
+      "revId": "65b1b1c598b3424d9300861aceace8b23277e495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_f78e122d",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 2
