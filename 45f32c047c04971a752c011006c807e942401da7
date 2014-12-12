@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_b233bf60",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 803,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-12T10:05:22Z",
+      "side": 0,
+      "message": "I wonder if it is worth leaving this in...is it still not a valid test that we we do not return \u0027enabled\u0027 as part of the ref?",
+      "revId": "45f32c047c04971a752c011006c807e942401da7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
