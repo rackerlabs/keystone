@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_f2d2a7fe",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 804,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-12T10:03:47Z",
+      "side": 1,
+      "message": "It might be worth adding a comment to explain that if \u0027enabled\u0027 is being ignored, it should never be returned as part of the ref.",
+      "revId": "45f32c047c04971a752c011006c807e942401da7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_12c9f358",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 864,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-12T10:03:47Z",
+      "side": 1,
+      "message": "nit: I think you man role",
+      "revId": "45f32c047c04971a752c011006c807e942401da7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
