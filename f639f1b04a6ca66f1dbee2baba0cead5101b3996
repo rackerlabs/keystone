@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_d4c2e951",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 13140
+      },
+      "writtenOn": "2014-12-12T18:06:37Z",
+      "side": 1,
+      "message": "I don\u0027t think group_names is the best naming choice here; it sounds like a list of names, definitely not a list of dictionaries. What about group_dicts or something like that?",
+      "revId": "f639f1b04a6ca66f1dbee2baba0cead5101b3996",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_34996d6e",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 13140
+      },
+      "writtenOn": "2014-12-12T18:06:37Z",
+      "side": 1,
+      "message": "What about the group names?",
+      "revId": "f639f1b04a6ca66f1dbee2baba0cead5101b3996",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
