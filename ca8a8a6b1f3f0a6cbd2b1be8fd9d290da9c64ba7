@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a961159_f70a9288",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-12T13:41:27Z",
+      "side": 0,
+      "message": "Let\u0027s talk about performance.\nLet\u0027s take evaluation of a var as cost 1.\n\nSo in the best case, this type calculation costs 2.",
+      "revId": "ca8a8a6b1f3f0a6cbd2b1be8fd9d290da9c64ba7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b771ea0d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-12T13:41:27Z",
+      "side": 0,
+      "message": "In the worst case that has a valid combination of parameters, it costs 8.",
+      "revId": "ca8a8a6b1f3f0a6cbd2b1be8fd9d290da9c64ba7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_9775ce33",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 2

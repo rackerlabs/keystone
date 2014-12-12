@@ -67,6 +67,40 @@
       "revId": "65b1b1c598b3424d9300861aceace8b23277e495",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_375dfa79",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-12T13:41:27Z",
+      "side": 1,
+      "message": "Here you evaluate each var and it has cost 4.",
+      "revId": "65b1b1c598b3424d9300861aceace8b23277e495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_17b63e8a",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-12T13:41:27Z",
+      "side": 1,
+      "message": "Here you compare each bool var to find the right tuple on the matrix and it has cost 4.\nSo we have the same total complexity: 8.\n\nHowever, the cost of your approach is always 8.",
+      "revId": "65b1b1c598b3424d9300861aceace8b23277e495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
