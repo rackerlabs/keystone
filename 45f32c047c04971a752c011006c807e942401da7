@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_48ae6799",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 804,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-12T14:46:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_f2d2a7fe",
+      "revId": "45f32c047c04971a752c011006c807e942401da7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_adb28403",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_088fff2a",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 852,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-12T14:46:20Z",
+      "side": 1,
+      "message": "You\u0027re right, there\u0027s no enabling or disabling of roles... all they have is a name, so I\u0027m going to remove this test.",
+      "parentUuid": "3a961159_adb28403",
+      "revId": "45f32c047c04971a752c011006c807e942401da7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_12c9f358",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2014-12-12T10:03:47Z",
       "side": 1,
       "message": "nit: I think you man role",
+      "revId": "45f32c047c04971a752c011006c807e942401da7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_68988378",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 864,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-12T14:46:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_12c9f358",
       "revId": "45f32c047c04971a752c011006c807e942401da7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
