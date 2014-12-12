@@ -137,6 +137,24 @@
       "revId": "65b1b1c598b3424d9300861aceace8b23277e495",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_489ca75d",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-12T14:46:23Z",
+      "side": 1,
+      "message": "Yep, makes sense. Anyway your approach will always cost 4+hash(tuple). The other approach is between 2 and 8.\n\nIf this is not about performance, what is your point?\nThe code doesnt look better in terms of readability. :/",
+      "parentUuid": "3a961159_c8b89713",
+      "revId": "65b1b1c598b3424d9300861aceace8b23277e495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
