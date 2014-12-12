@@ -52,6 +52,23 @@
       "revId": "ac5a118e1abe1fc0fd9f676f30436959c8cb1847",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_97614ed5",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-12T13:12:54Z",
+      "side": 1,
+      "message": "Pardon me, didn\u0027t notice it here",
+      "revId": "ac5a118e1abe1fc0fd9f676f30436959c8cb1847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
