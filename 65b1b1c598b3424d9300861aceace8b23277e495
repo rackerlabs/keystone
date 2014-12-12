@@ -119,6 +119,24 @@
       "revId": "65b1b1c598b3424d9300861aceace8b23277e495",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_c8b89713",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-12T14:37:28Z",
+      "side": 1,
+      "message": "I don\u0027t remember exact hash function cost, but my approach costs 4+hash(tulpe)), not 8.\nAnd after all, this is hot about performance :)",
+      "parentUuid": "3a961159_17b63e8a",
+      "revId": "65b1b1c598b3424d9300861aceace8b23277e495",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
