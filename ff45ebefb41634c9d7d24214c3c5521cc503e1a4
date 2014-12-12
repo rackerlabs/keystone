@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_d40834dc",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-12T12:49:59Z",
+      "side": 1,
+      "message": "I assume you would want to remove this?",
+      "revId": "ff45ebefb41634c9d7d24214c3c5521cc503e1a4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
