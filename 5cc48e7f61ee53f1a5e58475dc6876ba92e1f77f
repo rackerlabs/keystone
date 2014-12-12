@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a961159_eda48ca7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-12T10:29:16Z",
+      "side": 1,
+      "message": "This needs to reference a defect or spec",
+      "revId": "5cc48e7f61ee53f1a5e58475dc6876ba92e1f77f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_66f8efc3",
         "filename": "keystone/token/persistence/backends/sql.py",
         "patchSetId": 1
