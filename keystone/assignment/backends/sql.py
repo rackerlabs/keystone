@@ -35,6 +35,33 @@ class AssignmentType:
     USER_DOMAIN = 'UserDomain'
     GROUP_DOMAIN = 'GroupDomain'
 
+    # Key order: user_id, group_id, project_id, domain_id
+    TYPE_MATRIX = {
+        (True, False, True, False): USER_PROJECT,
+        (True, False, True, True): USER_PROJECT,
+        (True, True, True, False): USER_PROJECT,
+        (True, True, True, True): USER_PROJECT,
+
+        (True, False, False, True): USER_DOMAIN,
+        (True, True, False, True): USER_DOMAIN,
+
+        (False, True, True, False): GROUP_PROJECT,
+        (False, True, True, True): GROUP_PROJECT,
+
+        (False, True, False, True): GROUP_DOMAIN
+    }
+
+    @classmethod
+    def calculate_type(cls, *combination):
+        key = tuple(map(bool, combination))
+        try:
+            return cls.TYPE_MATRIX[key]
+        except KeyError:
+            message_data = ', '.join(map(str, combination))
+            raise exception.Error(message=_(
+                'Unexpected combination of grant attributes - '
+                'User, Group, Project, Domain: %s') % message_data)
+
 
 class Assignment(keystone_assignment.Driver):
 
@@ -120,22 +147,6 @@ class Assignment(keystone_assignment.Driver):
                      domain_id=None, project_id=None,
                      inherited_to_projects=False):
 
-        def calculate_type(user_id, group_id, project_id, domain_id):
-            if user_id and project_id:
-                return AssignmentType.USER_PROJECT
-            elif user_id and domain_id:
-                return AssignmentType.USER_DOMAIN
-            elif group_id and project_id:
-                return AssignmentType.GROUP_PROJECT
-            elif group_id and domain_id:
-                return AssignmentType.GROUP_DOMAIN
-            else:
-                message_data = ', '.join(
-                    [user_id, group_id, project_id, domain_id])
-                raise exception.Error(message=_(
-                    'Unexpected combination of grant attributes - '
-                    'User, Group, Project, Domain: %s') % message_data)
-
         with sql.transaction() as session:
             self._get_role(session, role_id)
 
@@ -148,11 +159,12 @@ class Assignment(keystone_assignment.Driver):
                 msg = _('Inherited roles can only be assigned to domains')
                 raise exception.Conflict(type='role grant', details=msg)
 
-        type = calculate_type(user_id, group_id, project_id, domain_id)
+        assignment_type = AssignmentType.calculate_type(
+            user_id, group_id, project_id, domain_id)
         try:
             with sql.transaction() as session:
                 session.add(RoleAssignment(
-                    type=type,
+                    type=assignment_type,
                     actor_id=user_id or group_id,
                     target_id=project_id or domain_id,
                     role_id=role_id,
