@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_9775ce33",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-12T13:19:06Z",
+      "side": 0,
+      "message": "the code as it was, looks much more readable IMHO.",
+      "revId": "ca8a8a6b1f3f0a6cbd2b1be8fd9d290da9c64ba7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
