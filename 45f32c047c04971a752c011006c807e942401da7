@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "3a961159_adb28403",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 852,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-12T10:26:42Z",
+      "side": 1,
+      "message": "is \u0027enabled\u0027 an attribute of a role ref?  I can\u0027t see where we use (or honour) that?",
+      "revId": "45f32c047c04971a752c011006c807e942401da7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_12c9f358",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 4
