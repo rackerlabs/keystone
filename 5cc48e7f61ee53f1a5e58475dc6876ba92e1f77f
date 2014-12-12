@@ -52,6 +52,24 @@
       "revId": "5cc48e7f61ee53f1a5e58475dc6876ba92e1f77f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_9bb8a9c9",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-12-12T03:24:10Z",
+      "side": 1,
+      "message": "I did not notice line 279. I think this makes sense.",
+      "parentUuid": "3a961159_c66eea2e",
+      "revId": "5cc48e7f61ee53f1a5e58475dc6876ba92e1f77f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
