@@ -16,6 +16,24 @@
       "revId": "ac5a118e1abe1fc0fd9f676f30436959c8cb1847",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_68eb2a13",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-12T10:52:25Z",
+      "side": 1,
+      "message": "I don\u0027t think so.....the sqlconstraints will be updated...note that the statements after the if CONF include these initial constants and _or_ the extra constraints to it",
+      "parentUuid": "3a961159_72b877c8",
+      "revId": "ac5a118e1abe1fc0fd9f676f30436959c8cb1847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
