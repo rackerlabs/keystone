@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_72b877c8",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-12T10:05:36Z",
+      "side": 1,
+      "message": "\u0027sql_constraints\u0027 will be rewritten if inherit enabled so it can be moved to \u0027else:\u0027 section for \u0027if CONF.os_inherit.enabled\u0027 below.",
+      "revId": "ac5a118e1abe1fc0fd9f676f30436959c8cb1847",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
