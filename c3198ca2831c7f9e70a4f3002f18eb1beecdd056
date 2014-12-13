@@ -179,6 +179,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_d73d7990",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-13T18:36:23Z",
+      "side": 1,
+      "message": "rebase this review onto that one if you think it\u0027ll be better.",
+      "parentUuid": "3a961159_3c9944c4",
+      "revId": "c3198ca2831c7f9e70a4f3002f18eb1beecdd056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_166530ae",
         "filename": "keystone/trust/core.py",
         "patchSetId": 2
