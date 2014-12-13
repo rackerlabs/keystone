@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_d73739fd",
+        "filename": "keystone/tests/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-12-13T20:44:05Z",
+      "side": 1,
+      "message": "And six.wraps misses the mark in a number of ways, as does functools.wraps... so wrapping functions is ugly no matter what! ;) [ This comment does not imply a change is needed]",
+      "parentUuid": "3a961159_bab73439",
+      "revId": "7a5d6a2004e67869a511bc8c0824cce7a1b83163",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_dafec0ad",
         "filename": "keystone/tests/utils.py",
         "patchSetId": 5
