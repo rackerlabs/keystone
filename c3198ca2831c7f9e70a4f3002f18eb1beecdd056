@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_bcec542b",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2014-12-13T13:30:56Z",
+      "side": 1,
+      "message": "Will rebase it once https://review.openstack.org/#/c/113586/ is merged and revert this whitespace change.",
+      "parentUuid": "5a890539_36a8751f",
+      "revId": "c3198ca2831c7f9e70a4f3002f18eb1beecdd056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_f437f6fc",
         "filename": "keystone/trust/core.py",
         "patchSetId": 2
@@ -143,6 +161,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_3c9944c4",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2014-12-13T13:30:56Z",
+      "side": 1,
+      "message": "This is going to look better once https://review.openstack.org/#/c/113586/ is merged.",
+      "parentUuid": "5a890539_966849f6",
+      "revId": "c3198ca2831c7f9e70a4f3002f18eb1beecdd056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_166530ae",
         "filename": "keystone/trust/core.py",
         "patchSetId": 2
@@ -160,6 +196,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_5c94508a",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2014-12-13T13:30:56Z",
+      "side": 1,
+      "message": "This is going to look better once https://review.openstack.org/#/c/113586/ is merged.",
+      "parentUuid": "5a890539_166530ae",
+      "revId": "c3198ca2831c7f9e70a4f3002f18eb1beecdd056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1abeadc6_ff050f11",
         "filename": "keystone/trust/core.py",
         "patchSetId": 2
@@ -171,6 +225,24 @@
       "writtenOn": "2014-08-22T00:30:00Z",
       "side": 1,
       "message": "suggestion - this could be handled with a decorator.",
+      "revId": "c3198ca2831c7f9e70a4f3002f18eb1beecdd056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7c8f4c75",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 11428
+      },
+      "writtenOn": "2014-12-13T13:30:56Z",
+      "side": 1,
+      "message": "Thanks for the suggestion. Isn\u0027t a decorator overkill for just this one statement?",
+      "parentUuid": "1abeadc6_ff050f11",
       "revId": "c3198ca2831c7f9e70a4f3002f18eb1beecdd056",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
