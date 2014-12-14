@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_7b858f58",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-14T02:07:53Z",
+      "side": 0,
+      "message": "Shouldn\u0027t we also remove  python-lxml here?",
+      "revId": "4fdaab3b975f3c5f9ada7cd8e0621628fee38b70",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
