@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_d25740c8",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-14T19:42:57Z",
+      "side": 1,
+      "message": "What about cls.USER_PROJECT ? It follows the same pattern when we do self.something for an instance method.",
+      "revId": "b28f610de70503cbc07ea5aea922284a4efd2015",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f25a7cf0",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-14T19:42:57Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "b28f610de70503cbc07ea5aea922284a4efd2015",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_12754863",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-14T19:42:57Z",
+      "side": 1,
+      "message": "Idem.",
+      "revId": "b28f610de70503cbc07ea5aea922284a4efd2015",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_32708471",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-14T19:42:57Z",
+      "side": 1,
+      "message": "Idem.",
+      "revId": "b28f610de70503cbc07ea5aea922284a4efd2015",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b20b94d4",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-14T19:42:57Z",
+      "side": 1,
+      "message": "Does this work? I got invalid syntax.\nI think it should be just \u0027locals()\u0027.\nIt returns a dict with what we need, containing user_id, group_id, project_id and domain_id as keys.",
+      "revId": "b28f610de70503cbc07ea5aea922284a4efd2015",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
