@@ -16,6 +16,24 @@
       "revId": "a077a875dd50974b66895f7d1ac39097d208e33a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_a71091a9",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-15T23:28:28Z",
+      "side": 1,
+      "message": "I think we should either i) debug expired tokens per expiry_time, as Haneed said, but adding expiry_time info to debug, otherwise it will be useless, since we don\u0027t know any information about exactly why that amount of expired tokens were removed; or ii) just remove this, since we log total_removed at line 279.",
+      "parentUuid": "3a961159_27a9017c",
+      "revId": "a077a875dd50974b66895f7d1ac39097d208e33a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
