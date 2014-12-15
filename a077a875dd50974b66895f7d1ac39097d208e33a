@@ -52,6 +52,24 @@
       "revId": "a077a875dd50974b66895f7d1ac39097d208e33a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_22e3af34",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2014-12-15T23:46:56Z",
+      "side": 1,
+      "message": "row_count is not always 1000.  \n\nIf you look at the comment at Line 61, it is slightly less than 1000. Also if the number of tokens is less than 1000, then it will be different.\n\nIf you create lot of tokens in same seconds, it will  never be 1000.\ne.g  If we repeat the test given in this bug https://review.openstack.org/#/c/135118/ , it will never be 1000\n\nI still don\u0027t understand why do we need to log total_removed at line 276. It should be row_count.\n\ne.g I have to manually change the code to  log row_count to debug this problem:  https://bugs.launchpad.net/tripleo/+bug/1402795",
+      "parentUuid": "3a961159_07e405ab",
+      "revId": "a077a875dd50974b66895f7d1ac39097d208e33a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
