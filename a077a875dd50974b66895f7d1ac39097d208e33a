@@ -34,6 +34,24 @@
       "revId": "a077a875dd50974b66895f7d1ac39097d208e33a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_07e405ab",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-15T23:33:45Z",
+      "side": 1,
+      "message": "row_count is always the same number so I don\u0027t see the point in logging it. The total removed at the end is logged at info level since that\u0027s when it\u0027s done.",
+      "parentUuid": "3a961159_27a9017c",
+      "revId": "a077a875dd50974b66895f7d1ac39097d208e33a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
