@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_cc1eafbb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-15T16:59:05Z",
+      "side": 1,
+      "message": "change . to ,\n\nchange \"suggesting\" to \"suggested\".\n\nActually, just remove this since it doesn\u0027t belong in a commit message.",
+      "revId": "7406132136a1e0f7dac89f6b6f6f4588f2e3a8ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ec49abb8",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-15T16:59:05Z",
+      "side": 1,
+      "message": "isn\u0027t 200 the default? Why doesn\u0027t post return a 201 Created?",
+      "revId": "7406132136a1e0f7dac89f6b6f6f4588f2e3a8ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
