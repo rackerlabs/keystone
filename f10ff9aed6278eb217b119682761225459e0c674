@@ -33,6 +33,24 @@
       "revId": "f10ff9aed6278eb217b119682761225459e0c674",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_bb37dae1",
+        "filename": "keystone/tests/test_v3_endpoint_policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-15T16:03:35Z",
+      "side": 1,
+      "message": "Nice suggestion!",
+      "parentUuid": "3a961159_258bcb1f",
+      "revId": "f10ff9aed6278eb217b119682761225459e0c674",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
