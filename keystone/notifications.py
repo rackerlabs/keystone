@@ -392,6 +392,10 @@ class CadfRoleAssignmentNotificationWrapper(object):
                                          **audit_kwargs)
                 raise
             else:
+                action, resource_type = self.operation.split('.', 1)
+                service = 'identity'
+                payload = {'resource_info': audit_kwargs}
+                notify_event_callbacks(service, resource_type, action, payload)
                 _send_audit_notification(self.operation, initiator,
                                          taxonomy.OUTCOME_SUCCESS,
                                          **audit_kwargs)
