@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "3a961159_0a489eb1",
+        "filename": "keystone/tests/utils.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-15T15:14:58Z",
+      "side": 1,
+      "message": "This doc string provides some really nice information that might be useful to have in our developing documentation: \n\nhttps://github.com/openstack/keystone/blob/9ee165f19d53febe27d2bbc7df21bc9f074b3535/doc/source/developing.rst#writing-tests",
+      "revId": "7a5d6a2004e67869a511bc8c0824cce7a1b83163",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_bab73439",
         "filename": "keystone/tests/utils.py",
         "patchSetId": 5
