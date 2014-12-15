@@ -947,6 +947,40 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
                   headers={'x-subject-token': token},
                   expected_status=404)
 
+    def test_connot_add_or_remove_role_on_disabled_domain(self):
+        domain = self.new_domain_ref()
+        self.assignment_api.create_domain(domain['id'], domain)
+        self.assignment_api.update_domain(domain['id'], {'enabled': False})
+
+        collection_url = (
+            '/domains/%(domain_id)s/users/%(user_id)s/roles/%(role_id)s' % {
+                'domain_id': domain['id'],
+                'user_id': self.user['id'],
+                'role_id': self.role['id']})
+        self.put(collection_url, expected_status=403)
+
+        self.assignment_api.update_domain(domain['id'], {'enabled': True})
+        self.put(collection_url)
+        self.assignment_api.update_domain(domain['id'], {'enabled': False})
+        self.delete(collection_url, expected_status=403)
+
+    def test_cannot_add_or_remove_role_on_disabled_project(self):
+        project = self.new_project_ref(domain_id=self.domain['id'])
+        self.assignment_api.create_project(project['id'], project)
+        self.assignment_api.update_project(project['id'], {'enabled': False})
+
+        collection_url = (
+            '/projects/%(project_id)s/users/%(user_id)s/roles/%(role_id)s' % {
+                'project_id': project['id'],
+                'user_id': self.user['id'],
+                'role_id': self.role['id']})
+        self.put(collection_url, expected_status=403)
+
+        self.assignment_api.update_project(project['id'], {'enabled': True})
+        self.put(collection_url)
+        self.assignment_api.update_project(project['id'], {'enabled': False})
+        self.delete(collection_url, expected_status=403)
+
     # Role Assignments tests
 
     def test_get_role_assignments(self):
