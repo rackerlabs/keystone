@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_3695bf32",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 27
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-15T16:34:54Z",
+      "side": 1,
+      "message": "additional attributes are also used on query, so this is inaccurate.",
+      "revId": "9a98413858737c5fb63a9dd558df07f2139e877e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
