@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_24e1142a",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-15T12:44:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_d25740c8",
+      "revId": "b28f610de70503cbc07ea5aea922284a4efd2015",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_f25a7cf0",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2014-12-14T19:42:57Z",
       "side": 1,
       "message": "Same here.",
+      "revId": "b28f610de70503cbc07ea5aea922284a4efd2015",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_44d3805f",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-15T12:44:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_f25a7cf0",
       "revId": "b28f610de70503cbc07ea5aea922284a4efd2015",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_64d6bc50",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-15T12:44:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_12754863",
+      "revId": "b28f610de70503cbc07ea5aea922284a4efd2015",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_32708471",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 3
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_84c9e8ad",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-15T12:44:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_32708471",
+      "revId": "b28f610de70503cbc07ea5aea922284a4efd2015",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_b20b94d4",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 3
@@ -81,6 +153,24 @@
       "writtenOn": "2014-12-14T19:42:57Z",
       "side": 1,
       "message": "Does this work? I got invalid syntax.\nI think it should be just \u0027locals()\u0027.\nIt returns a dict with what we need, containing user_id, group_id, project_id and domain_id as keys.",
+      "revId": "b28f610de70503cbc07ea5aea922284a4efd2015",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_e46f0c90",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-15T12:44:30Z",
+      "side": 1,
+      "message": "It appears working different to logging - we have to assemble message through % operator right here, otherwise kwargs are ignored.",
+      "parentUuid": "3a961159_b20b94d4",
       "revId": "b28f610de70503cbc07ea5aea922284a4efd2015",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
