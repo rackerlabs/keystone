@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a961159_aff4f5cf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-15T17:17:22Z",
+      "side": 1,
+      "message": "nit; \u0027This change removes the legacy ...\u0027",
+      "revId": "45c02a86f86c186579c907c5cebe01e46d8bbc00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_4f0e31e7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-15T17:17:22Z",
+      "side": 1,
+      "message": "remove extra whitespace",
+      "revId": "45c02a86f86c186579c907c5cebe01e46d8bbc00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_8ff739d4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-15T17:17:22Z",
+      "side": 1,
+      "message": "nit: suggest linking to the actual patch \n\nhttps://review.openstack.org/#/c/134125",
+      "revId": "45c02a86f86c186579c907c5cebe01e46d8bbc00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_ec45b170",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 4
@@ -31,6 +82,108 @@
       "side": 1,
       "message": "yes, i once submit one patch here (https://review.openstack.org/#/c/121439/) but you can check some comments there, local config seems should never be allowed, so in this patch set i just intent to clean some useless code here.",
       "parentUuid": "5a890539_ec45b170",
+      "revId": "45c02a86f86c186579c907c5cebe01e46d8bbc00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ef9a7d6d",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-15T17:17:22Z",
+      "side": 1,
+      "message": "Does this print the actual configuration file that is the issue?",
+      "revId": "45c02a86f86c186579c907c5cebe01e46d8bbc00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_cf74e138",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-15T17:17:22Z",
+      "side": 1,
+      "message": "This is all being removed: \n\nhttps://review.openstack.org/#/c/125738/ so you might not need it.",
+      "revId": "45c02a86f86c186579c907c5cebe01e46d8bbc00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0f8ee927",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-15T17:17:22Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "45c02a86f86c186579c907c5cebe01e46d8bbc00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_4f98f16a",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-15T17:17:22Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "45c02a86f86c186579c907c5cebe01e46d8bbc00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0fb509d0",
+        "filename": "keystone/tests/test_middleware.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-15T17:17:22Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "45c02a86f86c186579c907c5cebe01e46d8bbc00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_4faf117e",
+        "filename": "keystone/tests/test_middleware.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-15T17:17:22Z",
+      "side": 1,
+      "message": "same comment here",
       "revId": "45c02a86f86c186579c907c5cebe01e46d8bbc00",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
