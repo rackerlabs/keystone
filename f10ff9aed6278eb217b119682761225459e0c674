@@ -16,6 +16,23 @@
       "revId": "f10ff9aed6278eb217b119682761225459e0c674",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_258bcb1f",
+        "filename": "keystone/tests/test_v3_endpoint_policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-15T15:34:18Z",
+      "side": 1,
+      "message": "I think this should be a new test case that is more descriptive of the case we are covering here. Other test cases only go through the PUT, GET, HEAD, and DELETE respectively, but here we do an additional GET and HEAD after the DELETE. I think it would be more descriptive to have a test cases that explicitly points this out.\n\nHere we want to cover a specific case CRUD case.",
+      "revId": "f10ff9aed6278eb217b119682761225459e0c674",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
