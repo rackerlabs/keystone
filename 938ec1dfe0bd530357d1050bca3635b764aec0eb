@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_dbbc9f09",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-15T19:22:52Z",
+      "side": 1,
+      "message": "I can update the region_id to be None?\n\nUp at line 118, for create_endpoint it checks that the service_id exists, not the region... why check region exists and not service here, or why check service on create and not on update?",
+      "revId": "938ec1dfe0bd530357d1050bca3635b764aec0eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_1bd2a734",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 4720,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-15T19:22:52Z",
+      "side": 1,
+      "message": "use a uuid for the region_id.",
+      "revId": "938ec1dfe0bd530357d1050bca3635b764aec0eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_9bc85758",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-15T19:22:52Z",
+      "side": 1,
+      "message": "the same test should work on test_backend_sql as it does on test_backend... if it doesn\u0027t at least add a comment why not.",
+      "revId": "938ec1dfe0bd530357d1050bca3635b764aec0eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
