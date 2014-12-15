@@ -70,6 +70,24 @@
       "revId": "a077a875dd50974b66895f7d1ac39097d208e33a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_42d27b35",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-15T23:56:30Z",
+      "side": 1,
+      "message": "In order to figure out the number of tokens that were removed in the last call, compare the last 2 numbers. You can tell how many have been removed so far by looking at the last number.\n\nIf this was printing out the row_count, in order to figure out out many have been removed so far you have to add up all the debug statements printed so far. This is not as useful.",
+      "parentUuid": "3a961159_22e3af34",
+      "revId": "a077a875dd50974b66895f7d1ac39097d208e33a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
