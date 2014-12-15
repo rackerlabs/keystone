@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_9524a60f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-15T18:14:55Z",
+      "side": 1,
+      "message": "what\u0027s wrong with it? Also, a similar change is proposed in https://review.openstack.org/#/c/131003/",
+      "revId": "aa631f9de442acf32629d15f5a78987c5f15b53a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
