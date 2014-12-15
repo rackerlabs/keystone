@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_92c83c58",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-15T17:40:28Z",
+      "side": 1,
+      "message": "Do we have existing test cases that test this?",
+      "revId": "f0977706e31e53c495122d936a1fed5f953d4905",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
