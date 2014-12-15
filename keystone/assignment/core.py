@@ -660,10 +660,24 @@ class Manager(manager.Manager):
     def _emit_invalidate_user_token_persistence(self, user_id):
         self.identity_api.emit_invalidate_user_token_persistence(user_id)
 
+    def _assert_domain_or_project_enabled(self, domain_id=None,
+                                          project_id=None):
+        if domain_id is not None:
+            domain = self.get_domain(domain_id)
+            if not domain.get('enabled', True):
+                raise exception.ForbiddenAction(
+                    action=_('Cannot add role on disabled domain.'))
+        if project_id is not None:
+            project = self.get_project(project_id)
+            if not project.get('enabled', True):
+                raise exception.ForbiddenAction(
+                    action=_('Cannot add role on disabled project.'))
+
     @notifications.role_assignment('created')
     def create_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,
                      inherited_to_projects=False, context=None):
+        self._assert_domain_or_project_enabled(domain_id, project_id)
         self.driver.create_grant(role_id, user_id, group_id, domain_id,
                                  project_id, inherited_to_projects)
 
