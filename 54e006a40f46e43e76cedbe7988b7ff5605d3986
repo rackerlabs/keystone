@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_2abf1a62",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 674,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-15T15:16:21Z",
+      "side": 1,
+      "message": "Just a small wording suggestion:\n\n  Cannot add or remove role on ...\n\nAlso, use _LE() too.",
+      "revId": "54e006a40f46e43e76cedbe7988b7ff5605d3986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
