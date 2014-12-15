@@ -627,10 +627,10 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
             self.assertEqual(project, event.project)
         if domain:
             self.assertEqual(domain, event.domain)
-        if user:
-            self.assertEqual(user, event.user)
         if group:
             self.assertEqual(group, event.group)
+        elif user:
+            self.assertEqual(user, event.user)
         self.assertEqual(role_id, event.role)
         self.assertEqual(inherit, event.inherited_to_projects)
 
@@ -673,7 +673,7 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
         self.delete(url)
         action = "%s.%s" % (DELETED_OPERATION, self.ROLE_ASSIGNMENT)
         self._assert_last_note(action, self.user_id)
-        self._assert_event(role, project, domain, user, group)
+        self._assert_event(role, project, domain, user, None)
 
     def test_user_project_grant(self):
         url = ('/projects/%s/users/%s/roles/%s' %
@@ -685,10 +685,12 @@ class CadfNotificationsWrapperTestCase(test_v3.RestfulTestCase):
     def test_group_domain_grant(self):
         group_ref = self.new_group_ref(domain_id=self.domain_id)
         group = self.identity_api.create_group(group_ref)
+        self.identity_api.add_user_to_group(self.user_id, group['id'])
         url = ('/domains/%s/groups/%s/roles/%s' %
                (self.domain_id, group['id'], self.role_id))
         self._test_role_assignment(url, self.role_id,
                                    domain=self.domain_id,
+                                   user=self.user_id,
                                    group=group['id'])
 
 
