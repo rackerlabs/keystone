@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_413b3938",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-16T20:27:04Z",
+      "side": 1,
+      "message": "We might want to change this to Related-Bug: #1401926 instead of Closes-Bug since this doesn\u0027t contain the fix for the bug, does it?",
+      "revId": "c3d5398da1d7dc32b18ef4eefa3f1d79ac828e89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
