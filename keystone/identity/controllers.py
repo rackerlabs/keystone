@@ -202,7 +202,7 @@ class UserV3(controller.V3Controller):
         ref['group'] = self.identity_api.get_group(group_id)
         self.check_protection(context, prep_info, ref)
 
-    @controller.protected()
+    @controller.protected(enforce="user")
     def create_user(self, context, user):
         self._require_attribute(user, 'name')
 

@@ -56,10 +56,13 @@ def token_to_auth_context(token):
         raise exception.Unauthorized()
 
     if token.project_scoped:
+        auth_context['scope'] = 'project'
         auth_context['project_id'] = token.project_id
     elif token.domain_scoped:
+        auth_context['scope'] = 'domain'
         auth_context['domain_id'] = token.domain_id
     else:
+        auth_context['scope'] = 'None'
         LOG.debug('RBAC: Proceeding without project or domain scope')
 
     if token.trust_scoped:
