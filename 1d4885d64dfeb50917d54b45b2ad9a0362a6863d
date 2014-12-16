@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_dea3984d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 33
+      },
+      "lineNbr": 1506,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-16T11:48:45Z",
+      "side": 1,
+      "message": "blank space",
+      "revId": "1d4885d64dfeb50917d54b45b2ad9a0362a6863d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b956e604",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-16T11:48:45Z",
+      "side": 1,
+      "message": "this seems to be an error in the rebase, we do not have this comment: https://github.com/openstack/keystone/blob/master/keystone/assignment/core.py#L240",
+      "revId": "1d4885d64dfeb50917d54b45b2ad9a0362a6863d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7981de4c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-16T11:48:45Z",
+      "side": 1,
+      "message": "Nice",
+      "revId": "1d4885d64dfeb50917d54b45b2ad9a0362a6863d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
