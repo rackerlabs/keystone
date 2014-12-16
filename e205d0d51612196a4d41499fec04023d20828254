@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_858ff474",
+        "filename": "keystone/tests/test_v3_endpoint_policy.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-16T17:03:58Z",
+      "side": 1,
+      "message": "What\u0027s the difference between this test and the just above one?",
+      "revId": "e205d0d51612196a4d41499fec04023d20828254",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
