@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_3acada6e",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-16T17:55:57Z",
+      "side": 1,
+      "message": "For some reason role_assignment did not cause inner notifications. To be discussed, I think.",
+      "revId": "3f57ca3f370e1f0890cbabda74c8802f657e066e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_fa869212",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-16T17:55:57Z",
+      "side": 1,
+      "message": "Deleting group role assignment causes a batch of notifications for users in the group.",
+      "revId": "3f57ca3f370e1f0890cbabda74c8802f657e066e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
