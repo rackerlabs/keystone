@@ -33,6 +33,24 @@
       "revId": "0c1f2b4239dd2628eb32822b572bde7da3e2a7b9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_811c41c3",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4717,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-16T20:28:57Z",
+      "side": 1,
+      "message": "yes, let\u0027s fix the bug rather than have a test that\u0027s guessing as to what\u0027s going to happen.",
+      "parentUuid": "3a961159_99084a93",
+      "revId": "0c1f2b4239dd2628eb32822b572bde7da3e2a7b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
