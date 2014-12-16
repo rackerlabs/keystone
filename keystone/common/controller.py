@@ -51,7 +51,7 @@ def v2_deprecated(f):
     return f
 
 
-def protected(callback=None):
+def protected(callback=None, enforce=None):
     """Wraps API calls with role based access controls (RBAC).
 
     This handles both the protection of the API parameters as well as any
@@ -67,6 +67,8 @@ def protected(callback=None):
     def wrapper(f):
         @functools.wraps(f)
         def inner(self, context, *args, **kwargs):
+            if (enforce in kwargs):
+                kwargs.update({'enforce': kwargs[enforce]})
             if 'is_admin' in context and context['is_admin']:
                 LOG.warning(_LW('RBAC: Bypassing authorization'))
             elif callback is not None:
@@ -88,6 +90,7 @@ def protected(callback=None):
                 policy_api = (self.policy_api
                               if hasattr(self, 'policy_api')
                               else None)
+
                 authorization.protect(
                     controller,
                     member_name,
