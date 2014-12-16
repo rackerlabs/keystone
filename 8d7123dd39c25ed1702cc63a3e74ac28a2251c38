@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a961159_ca110bb1",
+        "filename": "keystone/tests/test_v3_endpoint_policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-16T16:50:00Z",
+      "side": 1,
+      "message": "This works",
+      "revId": "8d7123dd39c25ed1702cc63a3e74ac28a2251c38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_ca8e6b27",
         "filename": "keystone/tests/test_v3_endpoint_policy.py",
         "patchSetId": 3
@@ -13,6 +30,40 @@
       "writtenOn": "2014-12-16T16:45:14Z",
       "side": 1,
       "message": "Out of scope for this patch, but i think we can squash these into just \".head\" as head() should be made to also use a .get to compare everything.\n\nAlternatively add a kwarg to .get() to say \"check a head request matches as expected\" rather than needing both explicitly.",
+      "revId": "8d7123dd39c25ed1702cc63a3e74ac28a2251c38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_4a3efb2a",
+        "filename": "keystone/tests/test_v3_endpoint_policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-16T16:50:00Z",
+      "side": 1,
+      "message": "accessible*",
+      "revId": "8d7123dd39c25ed1702cc63a3e74ac28a2251c38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_8a48e3cd",
+        "filename": "keystone/tests/test_v3_endpoint_policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-16T16:50:00Z",
+      "side": 1,
+      "message": "accessible*",
       "revId": "8d7123dd39c25ed1702cc63a3e74ac28a2251c38",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
