@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_bc93224e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 688,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-16T20:52:42Z",
+      "side": 1,
+      "message": "why can\u0027t users delete a role assignment on a disabled project or domain? I don\u0027t think it\u0027s expected that you\u0027d have to enable a project just so you can remove an assignment.",
+      "revId": "1c7b2f9b4ab5160178d9d2ffce7715de2954b386",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
