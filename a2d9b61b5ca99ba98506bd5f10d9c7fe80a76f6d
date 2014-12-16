@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_5916e2f2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-16T11:54:31Z",
+      "side": 1,
+      "message": "why the three dots in the end? Is there any other entity that should have its cache invalidated?",
+      "revId": "a2d9b61b5ca99ba98506bd5f10d9c7fe80a76f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f9706e75",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-16T11:54:31Z",
+      "side": 1,
+      "message": "this sounds like a bug to me, maybe would be better to create one to reference here.",
+      "revId": "a2d9b61b5ca99ba98506bd5f10d9c7fe80a76f6d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
