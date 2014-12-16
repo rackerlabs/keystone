@@ -16,6 +16,24 @@
       "revId": "ba52915d4c1e37d53836beaa87fc45509684919c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f03f91d4",
+        "filename": "keystone/openstack/common/policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2014-12-16T19:22:07Z",
+      "side": 1,
+      "message": "So the logic here is that an Or Rule should still pass.  We can trip exceptions when policy rules reference portions of the request object that are optional, which is what I was seeing here.  I could probably  get this to a more specific exception for my particular case, but that will rule out future cases where something trips a different exception.\n\nI think I can move this try block to the Or rule and have the same effect, which does make more sense.",
+      "parentUuid": "3a961159_da43966a",
+      "revId": "ba52915d4c1e37d53836beaa87fc45509684919c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
