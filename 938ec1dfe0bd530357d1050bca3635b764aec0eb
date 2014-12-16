@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_b8e50e0c",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-12-16T02:06:01Z",
+      "side": 1,
+      "message": "OK... It is a little confused in our current code. Here I just copy from sql driver. Let me answer your questions now:\n1. Yes, we can update the region_id to be None.\n2. For create_endpoint, I think we should check region too, because we have checked service_id in controller layer already:https://github.com/openstack/keystone/blob/master/keystone/catalog/controllers.py#L298 but not check region. And sql driver checks region for create_endpoint too.\n3. The reason that we check region and not service here is we have checked service in controller layer already...https://github.com/openstack/keystone/blob/master/keystone/catalog/controllers.py#L321\n\nI think we should refactor the code... I think we should move the region and service exist checks into core layer. I will do this soon.",
+      "parentUuid": "3a961159_dbbc9f09",
+      "revId": "938ec1dfe0bd530357d1050bca3635b764aec0eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_1bd2a734",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 7
