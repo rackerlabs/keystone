@@ -12,6 +12,7 @@
 
 """Utilities for Federation Extension."""
 
+import ast
 import re
 
 import jsonschema
@@ -51,7 +52,9 @@ MAPPING_SCHEMA = {
                             "oneOf": [
                                 {"$ref": "#/definitions/empty"},
                                 {"$ref": "#/definitions/any_one_of"},
-                                {"$ref": "#/definitions/not_any_of"}
+                                {"$ref": "#/definitions/not_any_of"},
+                                {"$ref": "#/definitions/blacklist"},
+                                {"$ref": "#/definitions/whitelist"}
                             ],
                         }
                     }
@@ -99,6 +102,32 @@ MAPPING_SCHEMA = {
                 },
                 "regex": {
                     "type": "boolean"
+                }
+            }
+        },
+        "blacklist": {
+            "type": "object",
+            "additionalProperties": False,
+            "required": ['type', 'blacklist'],
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "blacklist": {
+                    "type": "array"
+                }
+            }
+        },
+        "whitelist": {
+            "type": "object",
+            "additionalProperties": False,
+            "required": ['type', 'whitelist'],
+            "properties": {
+                "type": {
+                    "type": "string"
+                },
+                "whitelist": {
+                    "type": "array"
                 }
             }
         }
@@ -216,6 +245,8 @@ class RuleProcessor(object):
         """Mapping rule evaluation types."""
         ANY_ONE_OF = 'any_one_of'
         NOT_ANY_OF = 'not_any_of'
+        BLACKLIST = 'blacklist'
+        WHITELIST = 'whitelist'
 
     def __init__(self, rules):
         """Initialize RuleProcessor.
@@ -356,6 +387,16 @@ class RuleProcessor(object):
                               group['domain'].get('id'))
                     groups_by_domain.setdefault(domain, list()).append(group)
                 group_names.extend(extract_groups(groups_by_domain))
+            if 'groups' in identity_value and 'domain' in identity_value:
+                # in this case, identity_value['groups'] is a string
+                # representation of a list, and we want a real list.
+                group_names_list = ast.literal_eval(identity_value['groups'])
+                domain = identity_value['domain']
+                group_dicts = [{'name': name} for name in group_names_list]
+                for group_dict in group_dicts:
+                    group_dict['domain'] = domain
+
+                group_names.extend(group_dicts)
 
         return {'name': user_name,
                 'group_ids': list(group_ids),
@@ -404,8 +445,9 @@ class RuleProcessor(object):
         doesn't apply.
         If an array of zero length is returned, then there are no direct
         mappings to be performed, but the rule is valid.
-        Otherwise, then it will return the values, in order, to be directly
-        mapped, again, the rule is valid.
+        Otherwise, then it will first attempt to filter the values according
+        to blacklist or whitelist rules and finally return the values in
+        order, to be directly mapped.
 
         :param requirements: list of remote requirements from rules
         :type requirements: list
@@ -421,6 +463,12 @@ class RuleProcessor(object):
                     "any_one_of": [
                         "Customer"
                     ]
+                },
+                {
+                    "type": "ADFS_GROUPS",
+                    "whitelist": [
+                        "g1", "g2", "g3", "g4"
+                    ]
                 }
             ]
 
@@ -434,7 +482,8 @@ class RuleProcessor(object):
                 'LastName': ['Account'],
                 'orgPersonType': ['Tester'],
                 'Email': ['testacct@example.com'],
-                'FirstName': ['Test']
+                'FirstName': ['Test'],
+                'ADFS_GROUPS': ['g1', 'g2']
             }
 
         :returns: list of direct mappings or None.
@@ -470,11 +519,27 @@ class RuleProcessor(object):
                     return None
 
             # If 'any_one_of' or 'not_any_of' are not found, then values are
-            # within 'type'. Attempt to find that 'type' within the assertion.
+            # within 'type'. Attempt to find that 'type' within the assertion,
+            # and filter these values if 'whitelist' or 'blacklist' is set.
             direct_map_values = assertion.get(requirement_type)
             if direct_map_values:
+                blacklisted_values = requirement.get(self._EvalType.BLACKLIST)
+                whitelisted_values = requirement.get(self._EvalType.WHITELIST)
+
+                # If a blacklist or whitelist is used, we want to map to the
+                # whole list instead of just its values separately.
+                if blacklisted_values is not None:
+                    direct_map_values = [v for v in direct_map_values
+                                         if v not in blacklisted_values]
+                    direct_maps.append(direct_map_values)
+                elif whitelisted_values is not None:
+                    direct_map_values = [v for v in direct_map_values
+                                         if v in whitelisted_values]
+                    direct_maps.append(direct_map_values)
+                else:
+                    direct_maps += direct_map_values
+
                 LOG.debug('updating a direct mapping: %s', direct_map_values)
-                direct_maps += direct_map_values
 
         return direct_maps
 
