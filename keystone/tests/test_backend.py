@@ -4415,6 +4415,24 @@ class CatalogTests(object):
         self.assertRaises(exception.RegionNotFound,
                           self.catalog_api.get_region, region_id)
 
+    @tests.skip_if_cache_disabled('catalog')
+    def test_invalidate_cache_when_updating_region(self):
+        region_id = uuid.uuid4().hex
+        new_region = {
+            'id': region_id,
+            'description': uuid.uuid4().hex
+        }
+        self.catalog_api.create_region(new_region)
+
+        self.catalog_api.get_region(region_id)
+
+        new_description = {'description': uuid.uuid4().hex}
+        self.catalog_api.update_region(region_id, new_description)
+
+        current_region = self.catalog_api.get_region(region_id)
+        self.assertEqual(new_description['description'],
+                         current_region['description'])
+
     def test_create_region_with_duplicate_id(self):
         region_id = uuid.uuid4().hex
         new_region = {
@@ -4537,7 +4555,7 @@ class CatalogTests(object):
         self.catalog_api.get_service(service_id)
         updated_service = copy.deepcopy(new_service)
         updated_service['description'] = uuid.uuid4().hex
-        self.catalog_api.update_service(service_id, updated_service)
+        self.catalog_api.driver.update_service(service_id, updated_service)
         self.assertDictContainsSubset(new_service,
                                       self.catalog_api.get_service(service_id))
         self.catalog_api.get_service.invalidate(self.catalog_api, service_id)
@@ -4555,6 +4573,27 @@ class CatalogTests(object):
         self.assertRaises(exception.ServiceNotFound,
                           self.catalog_api.get_service,
                           service_id)
+
+    @tests.skip_if_cache_disabled('catalog')
+    def test_invalidate_cache_when_updating_service(self):
+        service_id = uuid.uuid4().hex
+        new_service = {
+            'id': service_id,
+            'type': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+        }
+        self.catalog_api.create_service(
+            service_id,
+            new_service.copy())
+
+        self.catalog_api.get_service(service_id)
+
+        new_type = {'type': uuid.uuid4().hex}
+        self.catalog_api.update_service(service_id, new_type)
+
+        current_service = self.catalog_api.get_service(service_id)
+        self.assertEqual(new_type['type'], current_service['type'])
 
     def test_delete_service_with_endpoint(self):
         # create a service
@@ -4763,6 +4802,35 @@ class CatalogTests(object):
 
         endpoint_ids = [x['id'] for x in catalog[0]['endpoints']]
         self.assertEqual([enabled_endpoint_ref['id']], endpoint_ids)
+
+    @tests.skip_if_cache_disabled('catalog')
+    def test_invalidate_cache_when_updating_endpoint(self):
+        service = {
+            'id': uuid.uuid4().hex,
+            'type': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+        }
+        self.catalog_api.create_service(service['id'], service)
+
+        # create an endpoint attached to the service
+        endpoint_id = uuid.uuid4().hex
+        endpoint = {
+            'id': endpoint_id,
+            'region_id': None,
+            'interface': uuid.uuid4().hex[:8],
+            'url': uuid.uuid4().hex,
+            'service_id': service['id'],
+        }
+        self.catalog_api.create_endpoint(endpoint_id, endpoint)
+
+        self.catalog_api.get_endpoint(endpoint_id)
+
+        new_url = {'url': uuid.uuid4().hex}
+        self.catalog_api.update_endpoint(endpoint_id, new_url)
+
+        current_endpoint = self.catalog_api.get_endpoint(endpoint_id)
+        self.assertEqual(new_url['url'], current_endpoint['url'])
 
 
 class PolicyTests(object):
