@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_f9cf8e55",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4715,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-16T12:02:20Z",
+      "side": 1,
+      "message": "nit: KVS",
+      "revId": "0c1f2b4239dd2628eb32822b572bde7da3e2a7b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_99084a93",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4717,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-16T12:02:20Z",
+      "side": 1,
+      "message": "Prefer to have the other patch as dependency of this one. Or, in the other way around, the other patch removing this message.",
+      "revId": "0c1f2b4239dd2628eb32822b572bde7da3e2a7b9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
