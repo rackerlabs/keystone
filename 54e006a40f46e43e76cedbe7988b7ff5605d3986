@@ -16,6 +16,24 @@
       "revId": "54e006a40f46e43e76cedbe7988b7ff5605d3986",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7d6c7809",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 674,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-12-16T01:26:19Z",
+      "side": 1,
+      "message": "Here should not use _LE(), refer to:http://docs.openstack.org/developer/oslo.i18n/guidelines.html#examples",
+      "parentUuid": "3a961159_2abf1a62",
+      "revId": "54e006a40f46e43e76cedbe7988b7ff5605d3986",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
