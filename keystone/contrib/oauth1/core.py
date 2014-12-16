@@ -29,7 +29,9 @@ from keystone.common import extension
 from keystone.common import manager
 from keystone import config
 from keystone import exception
+from keystone.i18n import _LE
 from keystone import notifications
+from keystone.openstack.common import log
 
 
 RequestValidator = oauth1.RequestValidator
@@ -58,6 +60,7 @@ class Token(object):
 
 
 CONF = config.CONF
+LOG = log.getLogger(__name__)
 
 
 def token_generator(*args, **kwargs):
@@ -129,6 +132,10 @@ def get_oauth_headers(headers):
         params = oauth1.rfc5849.utils.parse_authorization_header(auth_header)
         parameters.update(dict(params))
         return parameters
+    else:
+        msg = _LE('Cannot retrieve Authorization headers')
+        LOG.error(msg)
+        raise exception.OAuthHeadersMissingError()
 
 
 def extract_non_oauth_params(query_string):
