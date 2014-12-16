@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_da43966a",
+        "filename": "keystone/openstack/common/policy.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-12-16T18:11:55Z",
+      "side": 1,
+      "message": "need inline comments explaining why except Exception -- and then completely swallowing the failure -- is appropriate here, instead of catching something more specific.\n\ni imagine this should be reverted, though.",
+      "revId": "ba52915d4c1e37d53836beaa87fc45509684919c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

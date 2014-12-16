@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_7aa62255",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-12-16T18:11:55Z",
+      "side": 0,
+      "message": "double space after imports is convention",
+      "revId": "20fc8152a2ba725484a63e96294b67ad1a89147d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
