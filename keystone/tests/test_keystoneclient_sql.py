@@ -47,8 +47,8 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase):
         endpoint_internalurl = uuid.uuid4().hex
         endpoint_adminurl = uuid.uuid4().hex
 
-        # a non-existent service ID should trigger a 404
-        self.assertRaises(client_exceptions.NotFound,
+        # a non-existent service ID should trigger a 400
+        self.assertRaises(client_exceptions.BadRequest,
                           client.endpoints.create,
                           region=endpoint_region,
                           service_id=invalid_service_id,
@@ -272,10 +272,10 @@ class KcMasterSqlTestCase(test_keystoneclient.KcMasterTestCase):
         self.default_client.ec2.delete(user_id=self.user_foo['id'],
                                        access=cred.access)
 
-    def test_endpoint_create_404(self):
+    def test_endpoint_create_non_exist_service(self):
         from keystoneclient import exceptions as client_exceptions
         client = self.get_client(admin=True)
-        self.assertRaises(client_exceptions.NotFound,
+        self.assertRaises(client_exceptions.BadRequest,
                           client.endpoints.create,
                           region=uuid.uuid4().hex,
                           service_id=uuid.uuid4().hex,

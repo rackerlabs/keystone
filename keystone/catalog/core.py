@@ -175,19 +175,27 @@ class Manager(manager.Manager):
     def list_services(self, hints=None):
         return self.driver.list_services(hints or driver_hints.Hints())
 
-    @notifications.created(_ENDPOINT, public=False)
-    def create_endpoint(self, endpoint_id, endpoint_ref):
+    def _assert_region_and_service_exist(self, endpoint_ref):
         try:
-            return self.driver.create_endpoint(endpoint_id, endpoint_ref)
+            if endpoint_ref.get('region_id') is not None:
+                self.get_region(endpoint_ref['region_id'])
+            if endpoint_ref.get('service_id') is not None:
+                self.get_service(endpoint_ref['service_id'])
         except exception.RegionNotFound:
             raise exception.ValidationError(attribute='endpoint region_id',
                                             target='region table')
-        except exception.NotFound:
-            service_id = endpoint_ref.get('service_id')
-            raise exception.ServiceNotFound(service_id=service_id)
+        except exception.ServiceNotFound:
+            raise exception.ValidationError(attribute='endpoint service_id',
+                                            target='service table')
+
+    @notifications.created(_ENDPOINT, public=False)
+    def create_endpoint(self, endpoint_id, endpoint_ref):
+        self._assert_region_and_service_exist(endpoint_ref)
+        return self.driver.create_endpoint(endpoint_id, endpoint_ref)
 
     @notifications.updated(_ENDPOINT, public=False)
     def update_endpoint(self, endpoint_id, endpoint_ref):
+        self._assert_region_and_service_exist(endpoint_ref)
         return self.driver.update_endpoint(endpoint_id, endpoint_ref)
 
     @notifications.deleted(_ENDPOINT, public=False)
