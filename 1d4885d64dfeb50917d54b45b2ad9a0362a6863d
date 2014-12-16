@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_708f2c76",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 33
+      },
+      "lineNbr": 1506,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-16T14:12:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_dea3984d",
+      "revId": "1d4885d64dfeb50917d54b45b2ad9a0362a6863d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_b956e604",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 33
@@ -30,6 +48,24 @@
       "writtenOn": "2014-12-16T11:48:45Z",
       "side": 1,
       "message": "this seems to be an error in the rebase, we do not have this comment: https://github.com/openstack/keystone/blob/master/keystone/assignment/core.py#L240",
+      "revId": "1d4885d64dfeb50917d54b45b2ad9a0362a6863d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_70b80c2b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-16T14:12:58Z",
+      "side": 1,
+      "message": "yes, my mistake - there used to be this comment in a previous rebase...and I mistakenly left it in there thinking I was \"pulling it up\" from the sql.py file.  Will remove.",
+      "parentUuid": "3a961159_b956e604",
       "revId": "1d4885d64dfeb50917d54b45b2ad9a0362a6863d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
