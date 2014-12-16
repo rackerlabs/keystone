@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_d308ea93",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 538,
+      "author": {
+        "id": 10765
+      },
+      "writtenOn": "2014-12-16T14:48:58Z",
+      "side": 1,
+      "message": "Don\u0027t we need to put this ref[\u0027member\u0027] also for the others members?\nfor domain, user and group?",
+      "revId": "67bfa70515c674197a257e0796d651cf7c0129d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_50feb039",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 10765
+      },
+      "writtenOn": "2014-12-16T14:48:58Z",
+      "side": 1,
+      "message": "Just a minor comment, as this patch is a refactoring one, in my opinion we should replace this second context[\u0027subject_token_id\u0027] for the variable token_id.",
+      "revId": "67bfa70515c674197a257e0796d651cf7c0129d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f38246c7",
+        "filename": "keystone/openstack/common/policy.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 509,
+      "author": {
+        "id": 10765
+      },
+      "writtenOn": "2014-12-16T14:48:58Z",
+      "side": 1,
+      "message": "Another minor comment. Should we use the same pattern as the code above? using the \"try\" or inside the \"for\" in both code or outside it?",
+      "revId": "67bfa70515c674197a257e0796d651cf7c0129d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
