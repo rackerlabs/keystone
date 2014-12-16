@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_9df764f5",
+        "filename": "keystone/contrib/endpoint_policy/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-12-16T00:43:41Z",
+      "side": 1,
+      "message": "Yeah it looks like it was an original copy-paste issue. And we don\u0027t test it :(",
+      "parentUuid": "3a961159_66e62f17",
+      "revId": "f10ff9aed6278eb217b119682761225459e0c674",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_258bcb1f",
         "filename": "keystone/tests/test_v3_endpoint_policy.py",
         "patchSetId": 2
@@ -48,6 +66,24 @@
       "side": 1,
       "message": "Nice suggestion!",
       "parentUuid": "3a961159_258bcb1f",
+      "revId": "f10ff9aed6278eb217b119682761225459e0c674",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_fde5c838",
+        "filename": "keystone/tests/test_v3_endpoint_policy.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-12-16T00:43:41Z",
+      "side": 1,
+      "message": "+1",
+      "parentUuid": "3a961159_bb37dae1",
       "revId": "f10ff9aed6278eb217b119682761225459e0c674",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
