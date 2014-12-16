@@ -1305,6 +1305,46 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
                   headers={'X-Subject-Token': unscoped_token},
                   expected_status=200)
 
+    def test_delete_role_assignment_from_user_revokes_all_tokens(self):
+        # Assign user1 a role on projectA
+        self.assignment_api.create_grant(self.role1['id'],
+                                         user_id=self.user1['id'],
+                                         project_id=self.projectA['id'])
+
+        # Assign user1 a role on projectB
+        self.assignment_api.create_grant(self.role1['id'],
+                                         user_id=self.user1['id'],
+                                         project_id=self.projectB['id'])
+
+        # Get a token scoped to projectA
+        projectA_token = self.get_requested_token(
+            self.build_authentication_request(
+                user_id=self.user1['id'],
+                password=self.user1['password'],
+                project_id=self.projectA['id']))
+
+        # Get a token scoped to projectB
+        projectB_token = self.get_requested_token(
+            self.build_authentication_request(
+                user_id=self.user1['id'],
+                password=self.user1['password'],
+                project_id=self.projectB['id']))
+
+        # Remove user1's role assignment from projectB
+        self.assignment_api.delete_grant(self.role1['id'],
+                                         user_id=self.user1['id'],
+                                         project_id=self.projectB['id'])
+
+        # FIXME(lbragstad): This token shouldn't be revoked, see bug #1401926
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': projectA_token},
+                  expected_status=404)
+
+        # The projectB token should be revoked
+        self.head('/auth/tokens',
+                  headers={'X-Subject-Token': projectB_token},
+                  expected_status=404)
+
 
 @dependency.requires('revoke_api')
 class TestTokenRevokeApi(TestTokenRevokeById):
