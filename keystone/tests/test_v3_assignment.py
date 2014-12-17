@@ -1494,6 +1494,40 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase):
         # Check the user cannot get a domain token anymore
         self.v3_authenticate_token(domain_auth_data, expected_status=401)
 
+    def _test_crud_inherited_and_direct_assignment_on_target(self, target_url):
+        # Create new role to avoid assignments loaded from sample data
+        role = self.new_role_ref()
+        self.assignment_api.create_role(role['id'], role)
+
+        # Define URLs
+        direct_url = '%s/users/%s/roles/%s' % (
+            target_url, self.user_id, role['id'])
+        inherited_url = '/OS-INHERIT/%s/inherited_to_projects' % direct_url
+
+        # Create direct assignment and check grants
+        self.put(direct_url)
+        self.head(direct_url)
+        self.head(inherited_url, expected_status=404)
+
+        # Now add inherited assignment and check grants
+        self.put(inherited_url)
+        self.head(direct_url)
+        self.head(inherited_url)
+
+        # Delete both and check grants
+        self.delete(direct_url)
+        self.delete(inherited_url)
+        self.head(direct_url, expected_status=404)
+        self.head(inherited_url, expected_status=404)
+
+    def test_crud_inherited_and_direct_assignment_on_domains(self):
+        self._test_crud_inherited_and_direct_assignment_on_target(
+            '/domains/%s' % self.domain_id)
+
+    def test_crud_inherited_and_direct_assignment_on_projects(self):
+        self._test_crud_inherited_and_direct_assignment_on_target(
+            '/projects/%s' % self.project_id)
+
     def test_crud_user_inherited_domain_role_grants(self):
         role_list = []
         for _ in range(2):
