@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_4d04397e",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-17T10:14:45Z",
+      "side": 1,
+      "message": "Is there any difference with test_create_endpoint from test_backend.py? I see \u0027legacy_endpoint_id\u0027 only and it irrelevant to the tested behaviour.",
+      "revId": "655ca1e0d021930543bc2cd461a18d1bde395be7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
