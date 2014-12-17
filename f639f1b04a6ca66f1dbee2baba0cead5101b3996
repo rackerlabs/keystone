@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_bc069f1f",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-17T18:45:48Z",
+      "side": 1,
+      "message": "While developing the whitelist/blacklist work item, we got stuck for several minutes because we forgot that group_names is not a list of strings.",
+      "parentUuid": "3a961159_a423faa5",
+      "revId": "f639f1b04a6ca66f1dbee2baba0cead5101b3996",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_34996d6e",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 10
