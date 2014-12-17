@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_a715bc4a",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-12-17T09:24:25Z",
+      "side": 1,
+      "message": "Why can\u0027t we do assertEqual(sorted(expected), sorted(observed))?",
+      "revId": "ec26a27a5c96066c41b9262f8ec6c4e846983aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_2a8b5369",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-12-17T09:24:25Z",
+      "side": 1,
+      "message": "If we keep the for loop, I think assertDictEqual should be used here.",
+      "revId": "ec26a27a5c96066c41b9262f8ec6c4e846983aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d9ce52b4",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-12-17T09:24:25Z",
+      "side": 1,
+      "message": "Please, fix the order to (expected, observed)",
+      "revId": "ec26a27a5c96066c41b9262f8ec6c4e846983aac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
