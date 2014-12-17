@@ -4708,7 +4708,9 @@ class CatalogTests(object):
             'interface': 'public',
             'url': uuid.uuid4().hex,
         }
-        self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
+        res = self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
+        endpoint['enabled'] = True
+        self.assertDictEqual(endpoint, res)
 
     def test_update_endpoint(self):
         dummy_service_ref, endpoint_ref, dummy_disabled_endpoint_ref = (
@@ -4719,8 +4721,6 @@ class CatalogTests(object):
         expected_endpoint['interface'] = 'private'
         if 'legacy_endpoint_id' in res:
             res.pop('legacy_endpoint_id')
-        if 'enabled' in res:
-            expected_endpoint['enabled'] = True
         self.assertDictEqual(expected_endpoint, res)
 
     def test_update_endpoint_non_exist_region_id(self):
