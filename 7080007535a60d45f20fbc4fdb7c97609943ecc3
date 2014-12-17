@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_8be6f714",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-17T21:25:31Z",
+      "side": 1,
+      "message": "Add a reason why users shouldn\u0027t be allowed to add a role assignment on a disabled project or domain.",
+      "revId": "7080007535a60d45f20fbc4fdb7c97609943ecc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0b884721",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 950,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-17T21:25:31Z",
+      "side": 1,
+      "message": "change \"connot\" to \"cannot\"",
+      "revId": "7080007535a60d45f20fbc4fdb7c97609943ecc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_cb755f33",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 955,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-17T21:25:31Z",
+      "side": 1,
+      "message": "the URL here isn\u0027t for a collection, it\u0027s for a role assignment.",
+      "revId": "7080007535a60d45f20fbc4fdb7c97609943ecc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0b8f6724",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 960,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-17T21:25:31Z",
+      "side": 1,
+      "message": "Call the controller method directly rather than going through the roundabout method of a REST call.",
+      "revId": "7080007535a60d45f20fbc4fdb7c97609943ecc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_4bb08fdd",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 967,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-17T21:25:31Z",
+      "side": 1,
+      "message": "the URL here isn\u0027t for a collection, it\u0027s for a role assignment.",
+      "revId": "7080007535a60d45f20fbc4fdb7c97609943ecc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_6bb38be9",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 972,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-17T21:25:31Z",
+      "side": 1,
+      "message": "Call the controller method directly rather than going through the roundabout method of a REST call.",
+      "revId": "7080007535a60d45f20fbc4fdb7c97609943ecc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
