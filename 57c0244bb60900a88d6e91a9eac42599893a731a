@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_041a0e17",
+        "filename": "requirements-py3.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 13900
+      },
+      "writtenOn": "2014-12-17T07:56:58Z",
+      "side": 1,
+      "message": "Better to use 1.1.0 in consistent formatting with other versions.",
+      "revId": "57c0244bb60900a88d6e91a9eac42599893a731a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_24154ae5",
+        "filename": "requirements.txt",
+        "patchSetId": 3
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 13900
+      },
+      "writtenOn": "2014-12-17T07:56:58Z",
+      "side": 1,
+      "message": "Better to use 1.1.0 in consistent formatting with other versions.",
+      "revId": "57c0244bb60900a88d6e91a9eac42599893a731a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
