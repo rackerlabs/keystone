@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_4e18ac75",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-17T13:32:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_cc1eafbb",
+      "revId": "7406132136a1e0f7dac89f6b6f6f4588f2e3a8ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_ec49abb8",
         "filename": "keystone/tests/test_content_types.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-12-15T16:59:05Z",
       "side": 1,
       "message": "isn\u0027t 200 the default? Why doesn\u0027t post return a 201 Created?",
+      "revId": "7406132136a1e0f7dac89f6b6f6f4588f2e3a8ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_6b055ac1",
+        "filename": "keystone/tests/test_content_types.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-17T13:32:16Z",
+      "side": 1,
+      "message": "I\u0027m not sure, but that seems to be the convention in this file for all POST operations to /v2.0/users/. The documentation says 201 http://developer.openstack.org/api-ref-identity-v2.html#admin-users\n\nlooks like it\u0027s been around a while; https://review.openstack.org/#/c/42826/26",
+      "parentUuid": "3a961159_ec49abb8",
       "revId": "7406132136a1e0f7dac89f6b6f6f4588f2e3a8ed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
