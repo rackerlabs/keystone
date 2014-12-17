@@ -128,7 +128,7 @@ class CoreApiTests(object):
                     'tenantId': self.tenant_bar['id'],
                 },
             },
-            expected_status=200)
+            expected_status=201)
         self.assertValidAuthenticationResponse(r, require_service_catalog=True)
 
     def test_authenticate_unscoped(self):
@@ -143,7 +143,7 @@ class CoreApiTests(object):
                     },
                 },
             },
-            expected_status=200)
+            expected_status=201)
         self.assertValidAuthenticationResponse(r)
 
     def test_get_tenants_for_token(self):
@@ -376,7 +376,7 @@ class CoreApiTests(object):
                                },
                            },
                            token=token,
-                           expected_status=200)
+                           expected_status=201)
 
     def test_error_response(self):
         """This triggers assertValidErrorResponse by convention."""
@@ -464,7 +464,7 @@ class CoreApiTests(object):
                 },
             },
             token=token,
-            expected_status=200)
+            expected_status=201)
 
         user_id = self._get_user_id(r.result)
 
@@ -490,7 +490,7 @@ class CoreApiTests(object):
                 },
             },
             token=token,
-            expected_status=200)
+            expected_status=201)
 
         project_id = self._get_project_id(r.result)
 
@@ -544,7 +544,7 @@ class CoreApiTests(object):
                 },
             },
             token=token,
-            expected_status=200)
+            expected_status=201)
         user_id = self._get_user_id(r.result)
 
         # Update user with an invalid tenant
@@ -576,7 +576,7 @@ class CoreApiTests(object):
                 },
             },
             token=token,
-            expected_status=200)
+            expected_status=201)
         user_id = self._get_user_id(r.result)
 
         # Update user with an invalid tenant
@@ -609,7 +609,7 @@ class CoreApiTests(object):
                 },
             },
             token=token,
-            expected_status=200)
+            expected_status=201)
 
         user_id = self._get_user_id(r.result)
 
@@ -662,7 +662,8 @@ class CoreApiTests(object):
                     'enabled': True,
                 },
             },
-            token=token)
+            token=token,
+            expected_status=201)
 
         # fail to authenticate
         r = self.public_request(
@@ -726,7 +727,7 @@ class LegacyV2UsernameTests(object):
             path='/v2.0/users',
             token=token,
             body=body,
-            expected_status=200)
+            expected_status=201)
 
     def test_create_with_extra_username(self):
         """The response for creating a user will contain the extra fields."""
@@ -936,7 +937,7 @@ class LegacyV2UsernameTests(object):
                     'enabled': True,
                 },
             },
-            expected_status=200)
+            expected_status=201)
 
         self.assertValidUserResponse(r)
 
@@ -1324,7 +1325,8 @@ class JsonTestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
                     'enabled': True,
                 },
             },
-            token=token)
+            token=token,
+            expected_status=201)
 
         # successfully authenticate
         self.public_request(
@@ -1338,7 +1340,7 @@ class JsonTestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
                     },
                 },
             },
-            expected_status=200)
+            expected_status=201)
 
         # ensure password doesn't leak
         user_id = r.result['user']['id']
@@ -1379,7 +1381,7 @@ class JsonTestCase(RestfulTestCase, CoreApiTests, LegacyV2UsernameTests):
                     },
                 },
             },
-            expected_status=200)
+            expected_status=201)
 
 
 class RevokeApiJsonTestCase(JsonTestCase):
