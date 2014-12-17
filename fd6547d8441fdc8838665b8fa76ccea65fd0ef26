@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_c412bb08",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2014-12-17T14:44:29Z",
+      "side": 1,
+      "message": "Should we default to \u0027sha1\u0027 instead of \u0027default\u0027? Looking at the help I don\u0027t know what the default algorithm is to know if I need to make it stronger.",
+      "revId": "fd6547d8441fdc8838665b8fa76ccea65fd0ef26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
