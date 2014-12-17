@@ -16,6 +16,24 @@
       "revId": "a62bf7b574a059c059edb9be3c726310ae27f06e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ca7baf27",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4558,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-12-17T09:36:11Z",
+      "side": 1,
+      "message": "Before, update does not invalidate cache, so, line 4559 can get new_service rather than update_service. Now, update would invalidate cache, so, we should call driver directly.",
+      "parentUuid": "3a961159_aa23c3a5",
+      "revId": "a62bf7b574a059c059edb9be3c726310ae27f06e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
