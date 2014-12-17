@@ -430,6 +430,80 @@ class SqlUpgradeTests(SqlMigrateBase):
             # sqlite does not support FK deletions (or enforcement)
             self.assertFalse(self.does_fk_exist('assignment', 'role_id'))
 
+    def test_insert_assignment_inherited_pk(self):
+        self.upgrade(72)
+
+        # Check that the 'inherited' column is not part of the PK
+        self.assertFalse(self.does_pk_exist('assignment', 'inherited'))
+
+        session = self.Session()
+
+        # Create a role
+        role = {'id': uuid.uuid4().hex,
+                'name': uuid.uuid4().hex}
+
+        self.insert_dict(session, 'role', role)
+
+        # Create an inherited role assignment
+        inherited = {'type': 'UserProject',
+                     'actor_id': uuid.uuid4().hex,
+                     'target_id': uuid.uuid4().hex,
+                     'role_id': role['id'],
+                     'inherited': True}
+
+        # Create a non-inherited assignment, for the same actor and target
+        noninherited = inherited.copy()
+        noninherited['inherited'] = False
+
+        # Create another inherited role assignment as a spoiler
+        spoiler = inherited.copy()
+        spoiler['actor_id'] = uuid.uuid4().hex
+
+        # The inherited and spoiler role assignments are successfully inserted
+        self.insert_dict(session, 'assignment', inherited)
+        self.insert_dict(session, 'assignment', spoiler)
+
+        # But the noninherited is not, since 'inherited' is not part of the PK
+        self.assertRaises(db_exception.DBDuplicateEntry,
+                          self.insert_dict,
+                          session,
+                          'assignment',
+                          noninherited)
+
+        session.close()
+
+        self.upgrade(73)
+
+        # Re-instantiate the session and clear the metadata
+        session = self.Session()
+        self.metadata.clear()
+
+        # Check that the 'inherited' column is now part of the PK
+        self.assertTrue(self.does_pk_exist('assignment', 'inherited'))
+
+        # The non-inherited role assignment can now be inserted
+        self.insert_dict(session, 'assignment', noninherited)
+
+        # Check that the assignment table contains all three assignments
+        assignment_table = sqlalchemy.Table('assignment',
+                                            self.metadata,
+                                            autoload=True)
+
+        assignments = session.query(assignment_table).all()
+        for assignment in (inherited, spoiler, noninherited):
+            self.assertIn((assignment['type'], assignment['actor_id'],
+                           assignment['target_id'], assignment['role_id'],
+                           assignment['inherited']),
+                          assignments)
+
+    def does_pk_exist(self, table, pk_column):
+        """Checks whether a column is primary key on a table."""
+
+        inspector = reflection.Inspector.from_engine(self.engine)
+        pk_columns = inspector.get_pk_constraint(table)['constrained_columns']
+
+        return pk_column in pk_columns
+
     def does_fk_exist(self, table, fk_column):
         inspector = reflection.Inspector.from_engine(self.engine)
         for fk in inspector.get_foreign_keys(table):
