@@ -101,7 +101,7 @@ class Endpoint(controller.V2Controller):
 
         if endpoint.get('region') is not None:
             try:
-                self.catalog_api.get_region(endpoint['region'])
+                region_ref = self.catalog_api.get_region(endpoint['region'])
             except exception.RegionNotFound:
                 region = dict(id=endpoint['region'])
                 self.catalog_api.create_region(region)
@@ -127,11 +127,17 @@ class Endpoint(controller.V2Controller):
             endpoint_ref['legacy_endpoint_id'] = legacy_endpoint_id
             endpoint_ref['interface'] = interface
             endpoint_ref['url'] = url
-            endpoint_ref['region_id'] = endpoint_ref.pop('region')
+            # MYSQL defaults to case-insensitive string comparison while SQLite is
+            # case sensitive string comparison. SQLAlchemy cannot provide a unified
+            # approach to handle with different DB, as a work around we substitute
+            # the region id passed in with the actually region id in DB to align the
+            # data in `endpoint` table with the data in `region` table.
+            endpoint_ref['region_id'] = region_ref['id']
 
             self.catalog_api.create_endpoint(endpoint_ref['id'], endpoint_ref)
 
         legacy_endpoint_ref['id'] = legacy_endpoint_id
+        legacy_endpoint_ref['region'] = region_ref['id']
         return {'endpoint': legacy_endpoint_ref}
 
     @controller.v2_deprecated
