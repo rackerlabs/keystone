@@ -1410,6 +1410,11 @@
 # From keystone
 #
 
+# Allow rescoping of scoped token. Setting allow_rescoped_scoped_token to false
+# prevents a user from exchanging a scoped token for any other token. (boolean
+# value)
+#allow_rescope_scoped_token = true
+
 # External auth mechanisms that should add bind information to token, e.g.,
 # kerberos,x509. (list value)
 #bind =
