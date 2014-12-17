@@ -401,6 +401,80 @@ class TokenAPITests(object):
         self.assertValidProjectScopedTokenResponse(r, require_catalog=False)
 
 
+class RescopingScopedDisabledTests(test_v3.RestfulTestCase):
+    def setUp(self):
+        super(RescopingScopedDisabledTests, self).setUp()
+
+    def config_overrides(self):
+        super(RescopingScopedDisabledTests, self).config_overrides()
+        self.config_fixture.config(
+            group='token',
+            rescoped_scoped=False)
+        self.config_fixture.config(
+            group='token',
+            provider='keystone.token.providers.uuid.Provider')
+
+    def _v3_token(self):
+        unscoped_token = self.get_requested_token(
+            self.build_authentication_request(
+                user_id=self.user['id'],
+                password=self.user['password']))
+        scoped_token = self.get_requested_token(
+            self.build_authentication_request(
+                token=unscoped_token,
+                project_id=self.project_id))
+        return scoped_token
+
+    def test_rescoping_v3_to_v3__disabled(self):
+        self.v3_authenticate_token(
+            self.build_authentication_request(
+                token=self._v3_token(),
+                project_id=self.project_id),
+            expected_status=403)
+
+    def _v2_token(self):
+        body = {
+            'auth': {
+                "tenantId": self.project['id'],
+                'passwordCredentials': {
+                    'userId': self.user['id'],
+                    'password': self.user['password']
+                }
+            }}
+        resp = self.admin_request(path='/v2.0/tokens',
+                                  method='POST',
+                                  body=body)
+        v2_token_data = resp.result
+        return v2_token_data
+
+    def _v2_token_from_token(self, token):
+        body = {
+            'auth': {
+                "tenantId": self.project['id'],
+                "token": token
+            }}
+        self.admin_request(path='/v2.0/tokens',
+                           method='POST',
+                           body=body,
+                           expected_status=403)
+
+    def test_rescoping_v2_to_v3__disabled(self):
+        token = self._v2_token()
+        self.v3_authenticate_token(
+            self.build_authentication_request(
+                token=token['access']['token']['id'],
+                project_id=self.project_id),
+            expected_status=403)
+
+    def test_rescoping_v3_to_v2__disabled(self):
+        token = {'id': self._v3_token()}
+        self._v2_token_from_token(token)
+
+    def test_rescoping_v2_to_v2__disabled(self):
+        token = self._v2_token()
+        self._v2_token_from_token(token['access']['token'])
+
+
 class TestPKITokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
     def config_overrides(self):
         super(TestPKITokenAPIs, self).config_overrides()
