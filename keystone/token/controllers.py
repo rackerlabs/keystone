@@ -149,6 +149,16 @@ class Auth(controller.V2Controller):
 
         return token_data
 
+    def _restrict_scope(self, token_model_ref):
+        # A trust token cannot be used to get another token
+        if token_model_ref.trust_scoped:
+            raise exception.Forbidden()
+
+        if not CONF.token.rescoped_scoped:
+            # Do not allow conversion from scoped tokens.
+            if token_model_ref.project_scoped or token_model_ref.domain_scoped:
+                raise exception.Forbidden()
+
     def _authenticate_token(self, context, auth):
         """Try to authenticate using an already existing token.
 
@@ -176,10 +186,7 @@ class Auth(controller.V2Controller):
 
         wsgi.validate_token_bind(context, token_model_ref)
 
-        # A trust token cannot be used to get another token
-        if token_model_ref.trust_scoped:
-            raise exception.Forbidden()
-
+        self._restrict_scope(token_model_ref)
         user_id = token_model_ref.user_id
         tenant_id = self._get_project_id_from_auth(auth)
 
