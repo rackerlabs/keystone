@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_6463c71a",
+        "filename": "keystone/contrib/oauth1/routers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-17T15:05:07Z",
+      "side": 1,
+      "message": "suggest removing this and replacing with: \n\n     from keystone.contrib import oauth1  # noqa\n\nThen we don\u0027t need to have an assignment for the sake of having an assignment",
+      "revId": "16610e0b4bcc113782c3035efbeb1fd5b1d82f7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_64182785",
+        "filename": "keystone/tests/unit/common/test_injection.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-17T15:05:07Z",
+      "side": 1,
+      "message": "this comment doesn\u0027t seem to describe the same behavior as the test name. I don\u0027t think this fails, since the provider is optional?",
+      "revId": "16610e0b4bcc113782c3035efbeb1fd5b1d82f7a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
