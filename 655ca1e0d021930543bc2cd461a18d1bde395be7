@@ -16,6 +16,24 @@
       "revId": "655ca1e0d021930543bc2cd461a18d1bde395be7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ae0cb095",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-17T14:01:26Z",
+      "side": 1,
+      "message": "+1\n\nyou could create a _setup() method in the super class that creates and returns the endpoint, than you could do the assertions. Here you could just call that method and add the legacy_endpoint_id bits, if *necessary*, as pointed out by amakarov.",
+      "parentUuid": "3a961159_4d04397e",
+      "revId": "655ca1e0d021930543bc2cd461a18d1bde395be7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
