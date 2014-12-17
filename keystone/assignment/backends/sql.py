@@ -403,10 +403,9 @@ class RoleAssignment(sql.ModelBase, sql.DictBase):
     target_id = sql.Column(sql.String(64), nullable=False)
     role_id = sql.Column(sql.String(64), nullable=False)
     inherited = sql.Column(sql.Boolean, default=False, nullable=False)
-    __table_args__ = (
-        sql.PrimaryKeyConstraint('type', 'actor_id', 'target_id', 'role_id'),
-        sql.Index('ix_actor_id', 'actor_id'),
-    )
+    __table_args__ = (sql.PrimaryKeyConstraint('type', 'actor_id', 'target_id',
+                                               'role_id', 'inherited'),
+                      sql.Index('ix_actor_id', 'actor_id'))
 
     def to_dict(self):
         """Override parent to_dict() method with a simpler implementation.
