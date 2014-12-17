@@ -1516,6 +1516,26 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.downgrade(61)
         self.assertTrue(self.does_fk_exist('assignment', 'role_id'))
 
+    def test_insert_assignment_inherited_pk(self):
+        self.upgrade(62)
+        self.assertFalse(self.does_pk_exist('assignment', 'inherited'))
+        self.upgrade(63)
+        if self.engine.name != 'sqlite':
+            self.assertTrue(self.does_pk_exist('assignment', 'inherited'))
+        else:
+            # sqlite does not support PK insertions (or enforcement)
+            self.assertFalse(self.does_pk_exist('assignment', 'inherited'))
+        self.downgrade(62)
+        self.assertFalse(self.does_pk_exist('assignment', 'inherited'))
+
+    def does_pk_exist(self, table, pk_column):
+        '''Checks whether a column is primary key on a table.'''
+
+        inspector = reflection.Inspector.from_engine(self.engine)
+        pk_columns = inspector.get_pk_constraint(table)['constrained_columns']
+
+        return pk_column in pk_columns
+
     def does_fk_exist(self, table, fk_column):
         inspector = reflection.Inspector.from_engine(self.engine)
         for fk in inspector.get_foreign_keys(table):
