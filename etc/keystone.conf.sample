@@ -697,6 +697,10 @@
 # (string value)
 #assertion_prefix =
 
+# Value to be used to obtain the entity ID of theIdentity Provider from the
+# environment. (string value)
+#remote_id_attribute =
+
 
 [identity]
 
