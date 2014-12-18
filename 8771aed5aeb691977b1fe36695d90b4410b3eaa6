@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_dfb32f98",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2014-12-18T21:14:51Z",
+      "side": 1,
+      "message": "(NIT): Can this be line-wrapped to 79 columns (applies to all)",
+      "revId": "8771aed5aeb691977b1fe36695d90b4410b3eaa6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
