@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_ef35a746",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-18T16:51:48Z",
+      "side": 1,
+      "message": "I think calling the backend \"resource\" is going to be too confusing, since everything in a REST API is a resource. Maybe add a prefix to differentiate it... \"assignment_resource\"",
+      "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_cf154b9c",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-18T16:51:48Z",
+      "side": 1,
+      "message": "(nit) remove the ,",
+      "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0f1033a7",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-18T16:51:48Z",
+      "side": 1,
+      "message": "(nit) remove `` from Keystone.",
+      "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_cf638b3f",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 1492,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-18T16:51:48Z",
+      "side": 1,
+      "message": "change \"a different\" to \"different\"",
+      "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_4f723be4",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-18T16:51:48Z",
+      "side": 1,
+      "message": "use \u0027 for strings.",
+      "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_cf1b8b7e",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-18T16:51:48Z",
+      "side": 1,
+      "message": "inherited isn\u0027t used.",
+      "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_6162abd9",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-18T16:51:48Z",
+      "side": 1,
+      "message": "why does this need to list(set()) now? Is this fixing another bug?",
+      "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_61038bb8",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-18T16:51:48Z",
+      "side": 1,
+      "message": "why is the name changing?",
+      "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_619f0b60",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-18T16:51:48Z",
+      "side": 1,
+      "message": "add a comment why this isn\u0027t implemented.",
+      "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0102c76e",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-18T16:51:48Z",
+      "side": 1,
+      "message": "I have no idea why this is being removed.",
+      "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
