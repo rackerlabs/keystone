@@ -231,6 +231,26 @@ MAPPING_BAD_VALUE = {
     ]
 }
 
+MAPPING_REMOTE_DIRECT_MAPPING = {
+    "rules": [
+        {
+            "local": [
+                {
+                    "user": {
+                        "name": "{0}"
+                    }
+                }
+            ],
+            "remote": [
+                {
+                    "type": "UserName",
+                    "any_one_of": ["tbo"]
+                }
+            ]
+        }
+    ]
+}
+
 MAPPING_NO_RULES = {
     'rules': []
 }
