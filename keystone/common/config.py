@@ -467,6 +467,9 @@ FILE_OPTIONS = {
         cfg.StrOpt('assertion_prefix', default='',
                    help='Value to be used when filtering assertion parameters '
                         'from the environment.'),
+        cfg.StrOpt('entity_id_attribute', default='None',
+                   help='Value to be used to obtain the entity_id of the'
+                        'Identity Provider from the environment.'),
     ],
     'policy': [
         cfg.StrOpt('driver',

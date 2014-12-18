@@ -142,6 +142,9 @@ class Mapped(auth.AuthMethodHandler):
         return assertion
 
     def _apply_mapping_filter(self, identity_provider, protocol, assertion):
+        idp = self.federation_api.get_idp(identity_provider)
+        if not utils.validate_idp(idp, assertion, protocol):
+            raise exception.Unauthorized(_('Identity provider id mismatch'))
         mapping = self.federation_api.get_mapping_from_idp_and_protocol(
             identity_provider, protocol)
         rules = jsonutils.loads(mapping['rules'])

@@ -755,6 +755,9 @@
 # the environment. (string value)
 #assertion_prefix=
 
+# Value to be used to obtain the entity_id of the
+# Identity Provider from the environment. (string value)
+#entity_id_attribute=None
 
 [identity]
 
