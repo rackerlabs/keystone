@@ -765,6 +765,29 @@ class IdentityTestCase(test_v3.RestfulTestCase):
         self.delete('/roles/%(role_id)s' % {
             'role_id': self.role_id})
 
+    def test_delete_and_recreate_member_role(self):
+        """Call ``POST /roles``."""
+        # you should be able to delete the member role, then
+        # manually re-create it with the correct ID.
+        r = self.delete(
+            '/roles/%(role_id)s' % {'role_id': CONF.member_role_id})
+
+        # specify only the name on creation
+        ref = self.new_role_ref()
+        ref['name'] = CONF.member_role_name
+        r = self.post(
+            '/roles',
+            body={'role': ref})
+        self.assertValidRoleResponse(r, ref)
+
+        # but the ID should be set as defined in CONF
+        self.assertEqual(CONF.member_role_id, r.json['role']['id'])
+
+        # everything is back to normal
+        r = self.get(
+            '/roles/%(role_id)s' % {'role_id': CONF.member_role_id})
+        self.assertValidRoleResponse(r, ref)
+
     def test_crud_user_project_role_grants(self):
         collection_url = (
             '/projects/%(project_id)s/users/%(user_id)s/roles' % {

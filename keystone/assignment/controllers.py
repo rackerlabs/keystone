@@ -221,6 +221,12 @@ class Role(controller.V2Controller):
             raise exception.ValidationError(message=msg)
 
         role_id = uuid.uuid4().hex
+        if role['name'] == CONF.member_role_name:
+            # Instead of using a random role ID, using the
+            # configured role ID. This avoids the potential of
+            # creating a "member" roles with an unexpected ID.
+            role_id = CONF.member_role_id
+
         role['id'] = role_id
         role_ref = self.assignment_api.create_role(role_id, role)
         return {'role': role_ref}
@@ -444,6 +450,12 @@ class RoleV3(controller.V3Controller):
         self._require_attribute(role, 'name')
 
         ref = self._assign_unique_id(self._normalize_dict(role))
+        if ref['name'] == CONF.member_role_name:
+            # Instead of using a random role ID, using the
+            # configured role ID. This avoids the potential of
+            # creating a "member" roles with an unexpected ID.
+            ref['id'] = CONF.member_role_id
+
         ref = self.assignment_api.create_role(ref['id'], ref)
         return RoleV3.wrap_member(context, ref)
 
