@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_b45e92e7",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 4728,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-18T16:02:36Z",
+      "side": 1,
+      "message": "remove \"just\"",
+      "revId": "64c2aab21dd3d59293333ab847c7fa34978905ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d4bdded8",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 4730,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-18T16:02:36Z",
+      "side": 1,
+      "message": "This test is checking that the expected response when doing an update of an endpoint, otherwise the name of the test is incorrect. So I think that some backends are expected to include a legacy_endpoint_id and some aren\u0027t is relevant.\n\nThis could be fixed by having a field in the test class that legacy_endpoint_id is expected and use that:\n\n if not self._legacy_endpoint_id_in_endpoint:\n   del res[\u0027legacy_endpoint_id\u0027]\n\ndefault _legacy_endpoint_id_in_endpoint to False in this class and set it to True in backends that use it.",
+      "revId": "64c2aab21dd3d59293333ab847c7fa34978905ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_9472760f",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 4734,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-18T16:02:36Z",
+      "side": 1,
+      "message": "The following review might not be accepted.\n\nUse a similar technique so that the test knows when enabled is expected to be in the result.",
+      "revId": "64c2aab21dd3d59293333ab847c7fa34978905ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
