@@ -357,7 +357,7 @@ class RuleProcessor(object):
                                               self._EvalType.ANY_ONE_OF,
                                               regex,
                                               assertion):
-                    continue
+                    pass
                 else:
                     return None
 
@@ -368,7 +368,7 @@ class RuleProcessor(object):
                                               self._EvalType.NOT_ANY_OF,
                                               regex,
                                               assertion):
-                    continue
+                    pass
                 else:
                     return None
 

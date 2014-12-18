@@ -765,6 +765,20 @@ class MappingRuleEngineTests(FederationTests):
         self.assertIsNone(mapped_properties['name'])
         self.assertListEqual(list(), mapped_properties['group_ids'])
 
+    def test_rule_engine_directly_map_rules_with_keyword(self):
+        """Make sure direct mapping doesn occur with mapping keywords.
+
+        Remote rule with keyword "any_one_of" or "not_any_of" should not be
+        passed as a rule for direct_mapping.
+
+        """
+        mapping = mapping_fixtures.MAPPING_REMOTE_DIRECT_MAPPING
+        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        assertion = mapping_fixtures.EMPLOYEE_ASSERTION
+        mapped_properties = rp.process(assertion)
+        self.assertEqual(mapping_fixtures.EMPLOYEE_ASSERTION['UserName'],
+                         mapped_properties['name'])
+
 
 class FederatedTokenTests(FederationTests):
 
