@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_590cd042",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-12-18T13:00:52Z",
+      "side": 1,
+      "message": "Mapping was not used here.\nMaybe update the error message to: \"Identity provider id mismatch\" or something like that.",
+      "revId": "7e0e5a21d839337806b62d278033f3c3e4185ffe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_94b99d30",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-12-18T13:00:52Z",
+      "side": 1,
+      "message": "you may want to set default value for remote_id here",
+      "revId": "7e0e5a21d839337806b62d278033f3c3e4185ffe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_79218cfb",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-12-18T13:00:52Z",
+      "side": 1,
+      "message": "trailing whitespace.\nI think running \n# tox -epep8 \n\nshould catch such nits.",
+      "revId": "7e0e5a21d839337806b62d278033f3c3e4185ffe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_595e9046",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-12-18T13:00:52Z",
+      "side": 1,
+      "message": "again, since we gave lots of liberty in naming protocols now making users to use \u0027saml2\u0027 name is not the best idea. I was thinking, that the protocol name should also be specified in the configuation file.",
+      "revId": "7e0e5a21d839337806b62d278033f3c3e4185ffe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_39ec648f",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2014-12-18T13:00:52Z",
+      "side": 1,
+      "message": "I think we cannot assume a Shibboleth will be used as a Service Provider. This is the recommendation, but some people have Keystone running with mod_mellon. \nThat\u0027s why this parameter should be specified in keystone.conf file.",
+      "revId": "7e0e5a21d839337806b62d278033f3c3e4185ffe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
