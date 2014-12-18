@@ -218,12 +218,13 @@ class RuleProcessor(object):
             # directly to the array of saved values. However, if there is
             # a direct mapping, then perform variable replacement.
             if not direct_maps:
-                identity_values += rule['local']
+                for entry in rule['local']:
+                    identity_values += [entry for entry in rule['local']
+                                        if 'group' in entry]
             else:
                 for local in rule['local']:
                     new_local = self._update_local_mapping(local, direct_maps)
                     identity_values.append(new_local)
-
         LOG.debug('identity_values: %s', identity_values)
         mapped_properties = self._transform(identity_values)
         LOG.debug('mapped_properties: %s', mapped_properties)
