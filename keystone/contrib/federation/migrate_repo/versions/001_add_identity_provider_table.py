@@ -21,6 +21,7 @@ def upgrade(migrate_engine):
         'identity_provider',
         meta,
         sql.Column('id', sql.String(64), primary_key=True),
+        sql.Column('remote_id', sql.String(256), nullable=True),
         sql.Column('enabled', sql.Boolean, nullable=False),
         sql.Column('description', sql.Text(), nullable=True))
 

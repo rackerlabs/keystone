@@ -121,6 +121,18 @@ def validate_expiration(token_ref):
     if timeutils.utcnow() > token_ref.expires:
         raise exception.Unauthorized(_('Federation token is expired'))
 
+def validate_idp(idp, assertion, protocol):
+    idp_remote_identifier = None 
+    if protocol=="saml2":
+        idp_remote_identifier = assertion['Shib-Identity-Provider']
+        if not idp_remote_identifier:
+            raise exception.ValidationError("Identity provider identifier not accessible")
+    if idp.remote_id:
+        if re.search(idp_remote_identifier,idp.remote_id):
+            return True
+        else:
+            return False
+    return True
 
 def validate_groups(group_ids, mapping_id, identity_api):
     if not group_ids:
