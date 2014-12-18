@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a961159_6fad3788",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-12-18T16:27:10Z",
+      "side": 1,
+      "message": "Please, describe here what the commit does, not the state before it",
+      "revId": "64c2aab21dd3d59293333ab847c7fa34978905ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_b45e92e7",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 11
