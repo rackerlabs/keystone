@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_d0e7a3e2",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-18T19:05:44Z",
+      "side": 1,
+      "message": "how about just calling utils.validate_idp and handling the exceptions there?",
+      "revId": "c0e47ca64422ee6085f9b81c3dc22c0dc7bffb5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_90b6fbda",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/001_add_identity_provider_table.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-18T19:05:44Z",
+      "side": 1,
+      "message": "this should really be a whole new migration script, 004_add_remote_id_column.py\n\nwe typically don\u0027t change the migration scripts once they have shipped in a release",
+      "revId": "c0e47ca64422ee6085f9b81c3dc22c0dc7bffb5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f0d49fbe",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-18T19:05:44Z",
+      "side": 1,
+      "message": "i think you want:\n\n  if not idp_assertion:",
+      "revId": "c0e47ca64422ee6085f9b81c3dc22c0dc7bffb5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_70a50f46",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-18T19:05:44Z",
+      "side": 1,
+      "message": "the messages could be a bit more helpful, \n\n  msg \u003d \u0027Could not find Identity Provider identifier in environment \u0027\n        \u0027check [federation] entity_id_attribute for details.\u0027",
+      "revId": "c0e47ca64422ee6085f9b81c3dc22c0dc7bffb5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_902b5bea",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-18T19:05:44Z",
+      "side": 1,
+      "message": "this is the only like should have have raised an unauthorizedError, suggest moving it here\n\n  if not re.search(idp_remote_identifier, idp.remote_id):\n    msg \u003d \u0027Identity Provider\u0027s remote identifier $idp.remoteid \u0027\n          \u0027and incoming Identity Provider identifier \u0027\n          \u0027idp_remote_identifer do not match, check [federation] \u0027\n          \u0027entity_id_attribute for details.\"\n    raise UnauthorizedError(msg)",
+      "revId": "c0e47ca64422ee6085f9b81c3dc22c0dc7bffb5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b07cd7ec",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-18T19:05:44Z",
+      "side": 1,
+      "message": "theres no need to return anything, if you are just checking to raise exceptions.",
+      "revId": "c0e47ca64422ee6085f9b81c3dc22c0dc7bffb5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
