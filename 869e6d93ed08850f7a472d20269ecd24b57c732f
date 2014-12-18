@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_89534338",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-18T15:50:38Z",
+      "side": 1,
+      "message": "remove #",
+      "revId": "869e6d93ed08850f7a472d20269ecd24b57c732f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_692ff7a1",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-18T15:50:38Z",
+      "side": 1,
+      "message": "Add new exception classes in keystone/exception.py",
+      "revId": "869e6d93ed08850f7a472d20269ecd24b57c732f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
