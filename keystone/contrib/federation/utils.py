@@ -122,6 +122,22 @@ def validate_expiration(token_ref):
         raise exception.Unauthorized(_('Federation token is expired'))
 
 
+def validate_idp(idp, assertion):
+    remote_id_parameter = CONF.federation.remote_id_attribute
+    if not remote_id_parameter or not idp['remote_id']:
+        return
+    idp_remote_identifier = assertion[remote_id_parameter]
+    if not idp_remote_identifier:
+        msg = _('Could not find Identity Provider identifier in '
+                'environment check [federation] entity_id_attribute '
+                'for details.')
+        raise exception.ValidationError(msg)
+    if not re.search(idp_remote_identifier, idp['remote_id']):
+        msg = _('Incoming identity provider identifier not included '
+                'among the accpeted identifiers.')
+        raise exception.Forbidden(msg)
+
+
 def validate_groups(group_ids, mapping_id, identity_api):
     if not group_ids:
         raise exception.MissingGroups(mapping_id=mapping_id)
