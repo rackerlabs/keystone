@@ -34,6 +34,24 @@
       "revId": "565079677f6aeb780b6c4fcdd3e4758dc21ea309",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_a31aba6c",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-19T13:31:12Z",
+      "side": 1,
+      "message": "There is another issue though: while old-style classes provide some barely seen performance improvement is is clear that Python 2 and Python 3 treat this code differently.\n\n@Marcos, thanks for pointing this, I\u0027ll do something with it.",
+      "parentUuid": "3a961159_4d278e12",
+      "revId": "565079677f6aeb780b6c4fcdd3e4758dc21ea309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
