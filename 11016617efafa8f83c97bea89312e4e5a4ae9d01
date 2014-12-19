@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_7ff93e7f",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-19T17:14:42Z",
+      "side": 1,
+      "message": "suggest using _() to mark it for translation, and place it in a msg variable for consistency :)",
+      "revId": "11016617efafa8f83c97bea89312e4e5a4ae9d01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
