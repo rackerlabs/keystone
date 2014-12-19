@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_b1aa086f",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-12-19T09:52:30Z",
+      "side": 1,
+      "message": "In https://review.openstack.org/#/c/138920/3/keystone/tests/test_backend_templated.py you use self.assertThat(observed, matchers.KeysEqual(expected)). Maybe it should be used here too?",
+      "revId": "8e75dec9fa0f71a21afc6458c8c240959a3332a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
