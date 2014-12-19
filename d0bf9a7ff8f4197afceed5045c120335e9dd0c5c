@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_c3643524",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-19T01:25:26Z",
+      "side": 1,
+      "message": "would change the logic to:\n\n  if not self_evaluate_requirement():\n      return None\n\nInstead of using \"pass\".",
+      "revId": "d0bf9a7ff8f4197afceed5045c120335e9dd0c5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
