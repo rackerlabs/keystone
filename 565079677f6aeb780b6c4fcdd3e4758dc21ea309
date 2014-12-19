@@ -16,6 +16,24 @@
       "revId": "565079677f6aeb780b6c4fcdd3e4758dc21ea309",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_34428668",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-19T10:48:59Z",
+      "side": 1,
+      "message": "In Python 3 this is a new-style class by default, so we ARE Python 3 compatible :) https://docs.python.org/3.3/reference/compound_stmts.html#class\n\nMeanwhile, for Python 2.7, this particular class better be old-style to avoid having unnecessary object\u0027s stuff like __dict__.",
+      "parentUuid": "3a961159_4d278e12",
+      "revId": "565079677f6aeb780b6c4fcdd3e4758dc21ea309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
