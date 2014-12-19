@@ -16,6 +16,24 @@
       "revId": "3d9184b6f5860f0b56091a326ed41d2a4c29fbe4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0d8026f6",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 641,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-12-19T07:32:26Z",
+      "side": 0,
+      "message": "I do not think so. Almost all the keystone objects use _require_matching_id to do this check in controller.",
+      "parentUuid": "5a890539_b0d29ffd",
+      "revId": "3d9184b6f5860f0b56091a326ed41d2a4c29fbe4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
