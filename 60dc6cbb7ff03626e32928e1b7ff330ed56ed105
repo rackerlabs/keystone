@@ -16,6 +16,24 @@
       "revId": "60dc6cbb7ff03626e32928e1b7ff330ed56ed105",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0b62c43d",
+        "filename": "keystone/tests/test_backend_templated.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-19T15:10:09Z",
+      "side": 1,
+      "message": "I don\u0027t know what you\u0027re asking me to change.",
+      "parentUuid": "3a961159_31a9b890",
+      "revId": "60dc6cbb7ff03626e32928e1b7ff330ed56ed105",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
