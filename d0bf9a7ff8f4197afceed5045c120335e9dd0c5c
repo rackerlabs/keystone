@@ -16,6 +16,23 @@
       "revId": "d0bf9a7ff8f4197afceed5045c120335e9dd0c5c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_435f6541",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-19T01:29:13Z",
+      "side": 1,
+      "message": "This change also conflicts (the logic changes) with the blacklist/whitelist implementation. Could you add a dependency to that patch?",
+      "revId": "d0bf9a7ff8f4197afceed5045c120335e9dd0c5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
