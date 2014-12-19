@@ -18,8 +18,7 @@ import os
 import sys
 
 import migrate
-from migrate import exceptions
-from oslo.db.sqlalchemy import migration
+from oslo.db.sqlalchemy.migration_cli import manager as migration_manager
 from oslo.serialization import jsonutils
 from oslo.utils import importutils
 import six
@@ -125,8 +124,7 @@ def rename_tables_with_constraints(renames, constraints, engine):
         add_constraints(constraints)
 
 
-def find_migrate_repo(package=None, repo_name='migrate_repo'):
-    package = package or sql
+def find_repo(repo_name, package):
     path = os.path.abspath(os.path.join(
         os.path.dirname(package.__file__), repo_name))
     if os.path.isdir(path):
@@ -151,13 +149,52 @@ def _fix_migration_37(engine):
         engine.execute('ALTER TABLE region CONVERT TO CHARACTER SET utf8')
 
 
-def _sync_common_repo(version):
-    abs_path = find_migrate_repo()
-    init_version = migrate_repo.DB_INIT_VERSION
-    engine = sql.get_engine()
+def get_migration_manager(extension=None):
+    if extension:
+        try:
+            package_name = '.'.join((contrib.__name__, extension))
+            package = importutils.import_module(package_name)
+        except ImportError:
+            raise ImportError(_("%s extension does not exist.")
+                              % package_name)
+    else:
+        package = sql
+    # Alembic repos might still not exist
     try:
-        migration.db_sync(engine, abs_path, version=version,
-                          init_version=init_version)
+        alembic_path = find_repo('alembic', package)
+    except exception.MigrationNotProvided:
+        alembic_path = None
+    # sqlalchemy-migrate repo should must exist
+    migrate_path = find_repo('migrate_repo', package)
+    migration_config = {
+        'migration_repo_path': migrate_path,
+        'init_version': migrate_repo.DB_INIT_VERSION,
+        'db_url': CONF.database.connection,
+    }
+    if alembic_path:
+        migration_config['alembic_ini_path'] = os.path.join(alembic_path,
+                                                            'alembic.ini')
+        migration_config['alembic_repo_path'] = alembic_path
+    manager = migration_manager.MigrationManager(migration_config)
+    return manager
+
+
+def sync_extension(method, version, extension):
+    manager = get_migration_manager(extension)
+    getattr(manager, method)(version)
+
+
+def sync_common(method, version):
+    # If version is greater than 0, it is for the common
+    # repository only, and only that will be synchronized.
+    if version is None:
+        for default_extension in DEFAULT_EXTENSIONS:
+            manager = get_migration_manager(default_extension)
+            getattr(manager, method)(version)
+    engine = sql.get_engine()
+    manager = get_migration_manager()
+    try:
+        getattr(manager, method)(version)
     except ValueError:
         # NOTE(morganfainberg): ValueError is raised from the sanity check (
         # verifies that tables are utf8 under mysql). The region table was not
@@ -169,68 +206,31 @@ def _sync_common_repo(version):
             _fix_migration_37(engine)
             # Try the migration a second time now that we've done the
             # un-wedge work.
-            migration.db_sync(engine, abs_path, version=version,
-                              init_version=init_version)
+            getattr(manager, method)(version)
         else:
             raise
 
 
-def _sync_extension_repo(extension, version):
-    init_version = 0
-    try:
-        package_name = '.'.join((contrib.__name__, extension))
-        package = importutils.import_module(package_name)
-    except ImportError:
-        raise ImportError(_("%s extension does not exist.")
-                          % package_name)
-    try:
-        abs_path = find_migrate_repo(package)
-        try:
-            migration.db_version_control(sql.get_engine(), abs_path)
-        # Register the repo with the version control API
-        # If it already knows about the repo, it will throw
-        # an exception that we can safely ignore
-        except exceptions.DatabaseAlreadyControlledError:
-            pass
-    except exception.MigrationNotProvided as e:
-        print(e)
-        sys.exit(1)
-    migration.db_sync(sql.get_engine(), abs_path, version=version,
-                      init_version=init_version)
-
-
-def sync_database_to_version(extension=None, version=None):
+def sync_database_to_version(method, version=None, extension=None):
     if not extension:
-        _sync_common_repo(version)
-        # If version is greater than 0, it is for the common
-        # repository only, and only that will be synchronized.
-        if version is None:
-            for default_extension in DEFAULT_EXTENSIONS:
-                _sync_extension_repo(default_extension, version)
+        sync_common(method, version)
     else:
-        _sync_extension_repo(extension, version)
+        sync_extension(method, version, extension)
 
 
 def get_db_version(extension=None):
-    if not extension:
-        return migration.db_version(sql.get_engine(), find_migrate_repo(),
-                                    migrate_repo.DB_INIT_VERSION)
-
-    try:
-        package_name = '.'.join((contrib.__name__, extension))
-        package = importutils.import_module(package_name)
-    except ImportError:
-        raise ImportError(_("%s extension does not exist.")
-                          % package_name)
-
-    return migration.db_version(
-        sql.get_engine(), find_migrate_repo(package), 0)
+    manager = get_migration_manager(extension)
+    return manager.version()
 
 
 def print_db_version(extension=None):
     try:
-        db_version = get_db_version(extension=extension)
-        print(db_version)
+        print(get_db_version(extension))
     except exception.MigrationNotProvided as e:
         print(e)
         sys.exit(1)
+
+
+def stamp(version=None, extension=None):
+    manager = get_migration_manager(extension)
+    manager.stamp(version)

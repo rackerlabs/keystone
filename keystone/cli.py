@@ -48,13 +48,115 @@ class BaseApp(object):
 
 
 class DbSync(BaseApp):
+    @classmethod
+    def add_argument_parser(cls, subparsers):
+        parser = super(DbSync, cls).add_argument_parser(subparsers)
+        parser.add_argument('version', nargs='?', help=cls.help_for_version)
+        return parser
+
+    @classmethod
+    def main(cls):
+        version = CONF.command.version
+        extension = CONF.command.extension
+        migration_helpers.sync_database_to_version(cls.name, version,
+                                                   extension)
+
+
+class DbUpgrade(DbSync):
+
+    name = 'upgrade'
+    help_for_version = ('Upgrade the database up to a specified '
+                        'version. If not provided, upgrade will '
+                        'migrate the database to the latest known '
+                        'version.')
+
+
+class DbDowngrade(DbSync):
+
+    name = 'downgrade'
+    help_for_version = ('Downgrade the database up to a specified '
+                        'version. If not provided, downgrade will '
+                        'migrate the database to the initial version ')
+
+
+class DbVersion(BaseApp):
+
+    name = 'version'
+
+    @staticmethod
+    def main():
+        extension = CONF.command.extension
+        migration_helpers.print_db_version(extension)
+
+
+class DbStamp(BaseApp):
+
+    name = 'stamp'
+
+    @classmethod
+    def add_argument_parser(cls, subparsers):
+        parser = super(DbStamp, cls).add_argument_parser(subparsers)
+        parser.add_argument('version',
+                            help=('Stamp the revision table to a specified '
+                                  'version; don\'t run any migrations.'))
+        return parser
+
+    @staticmethod
+    def main():
+        version = CONF.command.version
+        extension = CONF.command.extension
+        # NOTE(breton): oslo_db.migration_cli throws NotImplementedError if
+        # stamp is called for sqlalchemy-migrate-only repos. It can be safely
+        # ignored.
+        try:
+            migration_helpers.stamp(version, extension)
+        except NotImplementedError:
+            print('Could not run on sqlalchemy-migrate repo, quitting')
+
+
+class DbRevision(BaseApp):
+    """Create a new revision file."""
+
+    name = 'revision'
+
+    @staticmethod
+    def main():
+        extension = CONF.command.extension
+        print('Revision', extension)
+
+
+class DbManager(BaseApp):
+    """Db migration utilities"""
+
+    name = 'db'
+
+    @classmethod
+    def add_argument_parser(cls, subparsers):
+        parser = subparsers.add_parser(cls.name, help=cls.__doc__)
+        subparsers = parser.add_subparsers(title='commands')
+        command_classes = [DbUpgrade,
+                           DbDowngrade,
+                           DbVersion,
+                           DbStamp,
+                           DbRevision]
+        for command_class in command_classes:
+            command_parser = command_class.add_argument_parser(subparsers)
+            command_parser.add_argument(
+                '--extension',
+                help=('Run the command for the specified extension. If not '
+                      'provided, the command will be ran on common '
+                      'repository.'))
+        return parser
+
+
+class _DbSync(BaseApp):
     """Sync the database."""
 
     name = 'db_sync'
 
     @classmethod
     def add_argument_parser(cls, subparsers):
-        parser = super(DbSync, cls).add_argument_parser(subparsers)
+        parser = super(_DbSync, cls).add_argument_parser(subparsers)
         parser.add_argument('version', default=None, nargs='?',
                             help=('Migrate the database up to a specified '
                                   'version. If not provided, db_sync will '
@@ -74,14 +176,14 @@ class DbSync(BaseApp):
         migration_helpers.sync_database_to_version(extension, version)
 
 
-class DbVersion(BaseApp):
+class _DbVersion(BaseApp):
     """Print the current migration version of the database."""
 
     name = 'db_version'
 
     @classmethod
     def add_argument_parser(cls, subparsers):
-        parser = super(DbVersion, cls).add_argument_parser(subparsers)
+        parser = super(_DbVersion, cls).add_argument_parser(subparsers)
         parser.add_argument('--extension', default=None,
                             help=('Print the migration version of the '
                                   'database for the specified extension. If '
@@ -274,8 +376,7 @@ class SamlIdentityProviderMetadata(BaseApp):
 
 
 CMDS = [
-    DbSync,
-    DbVersion,
+    DbManager,
     MappingPurge,
     PKISetup,
     SamlIdentityProviderMetadata,
