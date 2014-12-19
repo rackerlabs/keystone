@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_ab94508b",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-19T20:07:18Z",
+      "side": 1,
+      "message": "so we had a long discussion about that...and agreed on \u0027resource\" as part of the approval of the spec for this.  If people really object, we can discuss again...but that would make it the 3rd time we\u0027ve changed this!",
+      "parentUuid": "3a961159_ef35a746",
+      "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_cf154b9c",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 35
@@ -30,6 +48,24 @@
       "writtenOn": "2014-12-18T16:51:48Z",
       "side": 1,
       "message": "(nit) remove the ,",
+      "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_eb8ad862",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-19T20:07:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_cf154b9c",
       "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_6bf6e8fa",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-19T20:07:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_0f1033a7",
+      "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_cf638b3f",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 35
@@ -64,6 +118,24 @@
       "writtenOn": "2014-12-18T16:51:48Z",
       "side": 1,
       "message": "change \"a different\" to \"different\"",
+      "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ebe1f82a",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 35
+      },
+      "lineNbr": 1492,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-19T20:07:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_cf638b3f",
       "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_abc29082",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-19T20:07:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_4f723be4",
+      "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_cf1b8b7e",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 35
@@ -98,6 +188,24 @@
       "writtenOn": "2014-12-18T16:51:48Z",
       "side": 1,
       "message": "inherited isn\u0027t used.",
+      "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_4b0dace7",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-19T20:07:18Z",
+      "side": 1,
+      "message": "It is in the sql version of this method. The ldap driver doesn\u0027t really differentiate between inherited and non-inheried roles - i.e. it doesn\u0027t really support project-\u003eproject inheritance. It should - I\u0027ve raised a separate bug and added a comment referencing that.",
+      "parentUuid": "3a961159_cf1b8b7e",
       "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_ce31aaee",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-19T20:07:18Z",
+      "side": 1,
+      "message": "So the old code ended up using sets (and hence stripping out duplicates) when it made the call to self.project.get_user_projects().  Since we don\u0027t do that here, to keep the same semantics, we need to do that here.",
+      "parentUuid": "3a961159_6162abd9",
+      "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_61038bb8",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 35
@@ -132,6 +258,24 @@
       "writtenOn": "2014-12-18T16:51:48Z",
       "side": 1,
       "message": "why is the name changing?",
+      "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_6b9c285e",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-19T20:07:18Z",
+      "side": 1,
+      "message": "..because the method no longer returns the ref..",
+      "parentUuid": "3a961159_61038bb8",
       "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_abc8d055",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-19T20:07:18Z",
+      "side": 1,
+      "message": "Done (and in fact changed this to just pass, since we want this to go through silently).",
+      "parentUuid": "3a961159_619f0b60",
+      "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_0102c76e",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 35
@@ -166,6 +328,24 @@
       "writtenOn": "2014-12-18T16:51:48Z",
       "side": 1,
       "message": "I have no idea why this is being removed.",
+      "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_2bbdc0b7",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-19T20:07:18Z",
+      "side": 1,
+      "message": "because the management of roles is part of the role backend, not the assignment backend",
+      "parentUuid": "3a961159_0102c76e",
       "revId": "1ab29a801f386c6db013fc68c4355f5f365d4eb7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
