@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_9170ac73",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-12-19T09:45:30Z",
+      "side": 1,
+      "message": "Why is \u0027headers\u0027 in plural form?",
+      "revId": "65f0b7e755058782d48019b2e3962b2d7c55ee2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7197c090",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-12-19T09:45:30Z",
+      "side": 1,
+      "message": "Why is \u0027headers\u0027 in plural form?",
+      "revId": "65f0b7e755058782d48019b2e3962b2d7c55ee2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d1b3144b",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-12-19T09:45:30Z",
+      "side": 1,
+      "message": "I guess httpd should be here instead of htttd",
+      "revId": "65f0b7e755058782d48019b2e3962b2d7c55ee2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
