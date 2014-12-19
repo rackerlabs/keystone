@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_4d278e12",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2014-12-19T07:43:20Z",
+      "side": 1,
+      "message": "I think this is a good opportunity to modify this class to extend from object.\n\nclass AssignmentType(object):\n\nLet\u0027s try to be python 3 compatible!",
+      "revId": "565079677f6aeb780b6c4fcdd3e4758dc21ea309",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
