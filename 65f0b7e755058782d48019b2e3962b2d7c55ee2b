@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_8e3b22d0",
+        "filename": "keystone/contrib/oauth1/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-19T15:24:21Z",
+      "side": 1,
+      "message": "Typically the Authorization header is just one header, but it usually has multiple sub-headers, in the case of OAuth1.0a, it\u0027s:\n\n  Authorization: \n        OAuth oauth_consumer_key\u003d\"xvz1evFS4wEEPTGEFPHBog\", \n              oauth_nonce\u003d\"kYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg\", \n              oauth_signature\u003d\"tnnArxj06cWHq44gCs1OSKk%2FjLY%3D\", \n              oauth_signature_method\u003d\"HMAC-SHA1\", \n              oauth_timestamp\u003d\"1318622958\", \n              oauth_token\u003d\"370773112-GmHxMAgYyLbNEtIKZeRNFsMKPR9EyMZeS9weJAEb\", \n              oauth_version\u003d\"1.0\"\n\nIf you think it should still be singular, then let me know again, I\u0027m leaning toward headers.",
+      "parentUuid": "3a961159_9170ac73",
+      "revId": "65f0b7e755058782d48019b2e3962b2d7c55ee2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_7197c090",
         "filename": "keystone/exception.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_2e54eefd",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-19T15:24:21Z",
+      "side": 1,
+      "message": "same reasoning as other comment",
+      "parentUuid": "3a961159_7197c090",
+      "revId": "65f0b7e755058782d48019b2e3962b2d7c55ee2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_d1b3144b",
         "filename": "keystone/exception.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2014-12-19T09:45:30Z",
       "side": 1,
       "message": "I guess httpd should be here instead of htttd",
+      "revId": "65f0b7e755058782d48019b2e3962b2d7c55ee2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_6e5a762b",
+        "filename": "keystone/exception.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-19T15:24:21Z",
+      "side": 1,
+      "message": "oops, yes, it should be HTTPd",
+      "parentUuid": "3a961159_d1b3144b",
       "revId": "65f0b7e755058782d48019b2e3962b2d7c55ee2b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
