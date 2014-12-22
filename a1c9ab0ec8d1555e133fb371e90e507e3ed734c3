@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_74cb0072",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-12-22T14:19:29Z",
+      "side": 1,
+      "message": "I think this would lead to a bug. The description would be updated to empty string when updating other properties.",
+      "revId": "a1c9ab0ec8d1555e133fb371e90e507e3ed734c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
