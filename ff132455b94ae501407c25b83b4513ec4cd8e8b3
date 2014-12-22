@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_ef6f125e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-22T22:07:20Z",
+      "side": 1,
+      "message": "So there are 2 types of notifications we use.\n\n1) For callbacks, which is what I think you want here, these are internal notifications to let other managers know whats going on.\n\n2) CADF notifications, which are meant to provide more data, and auditable data.\n\nRather than changing the CADF notification, you can create an additional notification (the simple callback type), by adding:\n\n  @notifications.created(_ROLE_ASSIGNMENT)\n\nand create a new class in notifications.py, rather than changing the existing one.",
+      "revId": "ff132455b94ae501407c25b83b4513ec4cd8e8b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
