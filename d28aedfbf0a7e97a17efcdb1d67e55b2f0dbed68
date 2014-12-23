@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_c2f4cff2",
+        "filename": "keystone/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 7244
+      },
+      "writtenOn": "2014-12-23T21:48:08Z",
+      "side": 1,
+      "message": "is this something everyone wants? if not should it have an option to use it or not?  not going to -1 because i hate that just going to put a 0 and comment for you to answer/look.  I\u0027ll keep an eye out to help +1 later!",
+      "revId": "d28aedfbf0a7e97a17efcdb1d67e55b2f0dbed68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
