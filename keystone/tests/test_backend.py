@@ -1997,10 +1997,11 @@ class IdentityTests(object):
 
     def test_list_projects(self):
         projects = self.assignment_api.list_projects()
-        self.assertEqual(4, len(projects))
+        self.assertEqual(5, len(projects))
         project_ids = []
         for project in projects:
             project_ids.append(project.get('id'))
+        self.assertIn(DEFAULT_DOMAIN_ID, project_ids)
         self.assertIn(self.tenant_bar['id'], project_ids)
         self.assertIn(self.tenant_baz['id'], project_ids)
 
@@ -2008,7 +2009,8 @@ class IdentityTests(object):
         project_ids = ([x['id'] for x in
                        self.assignment_api.list_projects_in_domain(
                            DEFAULT_DOMAIN_ID)])
-        self.assertEqual(4, len(project_ids))
+        self.assertEqual(5, len(project_ids))
+        self.assertIn(DEFAULT_DOMAIN_ID, project_ids)
         self.assertIn(self.tenant_bar['id'], project_ids)
         self.assertIn(self.tenant_baz['id'], project_ids)
         self.assertIn(self.tenant_mtu['id'], project_ids)
@@ -2027,7 +2029,7 @@ class IdentityTests(object):
         project_ids = ([x['id'] for x in
                        self.assignment_api.list_projects_in_domain(
                            domain1['id'])])
-        self.assertEqual(2, len(project_ids))
+        self.assertEqual(3, len(project_ids))
         self.assertIn(project1['id'], project_ids)
         self.assertIn(project2['id'], project_ids)
 
@@ -3086,7 +3088,9 @@ class IdentityTests(object):
         self.assignment_api.driver.update_domain(domain_id,
                                                  domain_ref_disabled)
         # Delete domain, bypassing assignment api manager
+        self.assignment_api.driver.delete_project(domain_id)
         self.assignment_api.driver.delete_domain(domain_id)
+        
         # Verify get_domain still returns the domain
         self.assertDictContainsSubset(
             domain_ref, self.assignment_api.get_domain(domain_id))
@@ -3653,12 +3657,12 @@ class IdentityTests(object):
 
         # With inheritance on, we should also get back the Project3 due to the
         # inherited role from its owning domain.
-
+        # Add one for the domain root_project
         self.config_fixture.config(group='os_inherit', enabled=True)
         project_refs = (
             self.assignment_api.list_projects_for_groups(group_id_list))
 
-        self.assertThat(project_refs, matchers.HasLength(3))
+        self.assertThat(project_refs, matchers.HasLength(4))
         self.assertIn(project1, project_refs)
         self.assertIn(project2, project_refs)
         self.assertIn(project3, project_refs)
@@ -5053,7 +5057,7 @@ class InheritanceTests(object):
         # Should get back all three projects, one by virtue of the direct
         # grant, plus both projects in the domain
         user_projects = self.assignment_api.list_projects_for_user(user1['id'])
-        self.assertEqual(3, len(user_projects))
+        self.assertEqual(4, len(user_projects))
 
     def test_list_projects_for_user_with_inherited_user_project_grants(self):
         """Test inherited role assignments for users on nested projects.
@@ -5174,8 +5178,9 @@ class InheritanceTests(object):
                                          inherited_to_projects=True)
         # Should get back all five projects, but without a duplicate for
         # project3 (since it has both a direct user role and an inherited role)
+        # and one project for the domain root project
         user_projects = self.assignment_api.list_projects_for_user(user1['id'])
-        self.assertEqual(5, len(user_projects))
+        self.assertEqual(7, len(user_projects))
 
     def test_list_projects_for_user_with_inherited_group_project_grants(self):
         """Test inherited role assignments for groups on nested projects.
@@ -5254,7 +5259,11 @@ class FilterTests(filtering.FilterTests):
             hints = driver_hints.Hints()
             hints.add_filter('domain_id', domain1['id'])
             entities = self._list_entities(entity)(hints=hints)
-            self.assertEqual(14, len(entities))
+            ent_count = 14
+            if entity == 'project':
+                ent_count += 1
+                domain1_entity_list.append({'id': domain1['id']})
+            self.assertEqual(ent_count, len(entities))
             self._match_with_list(entities, domain1_entity_list)
             # Check the driver has removed the filter from the list hints
             self.assertFalse(hints.get_exact_filter_by_name('domain_id'))

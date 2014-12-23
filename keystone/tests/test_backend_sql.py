@@ -47,7 +47,7 @@ class SqlTests(tests.SQLDriverOverrides, tests.TestCase):
         self.load_backends()
 
         # populate the engine with tables & fixtures
-        self.load_fixtures(default_fixtures)
+        self.load_fixtures(default_fixtures, True)
         # defaulted by the data load
         self.user_foo['enabled'] = True
 

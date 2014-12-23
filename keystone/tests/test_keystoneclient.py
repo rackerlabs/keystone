@@ -407,7 +407,8 @@ class KeystoneClientTests(object):
         # Admin endpoint should return *all* tenants
         client = self.get_client(admin=True)
         tenants = client.tenants.list()
-        self.assertEqual(len(default_fixtures.TENANTS), len(tenants))
+        # +1 because domain has root project. 
+        self.assertEqual(len(default_fixtures.TENANTS)  + 1, len(tenants))
 
     def test_invalid_password(self):
         from keystoneclient import exceptions as client_exceptions

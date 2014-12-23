@@ -522,7 +522,7 @@ class TestCase(BaseTestCase):
             setattr(self, manager_name, manager)
         self.addCleanup(self.cleanup_instance(*drivers.keys()))
 
-    def load_fixtures(self, fixtures):
+    def load_fixtures(self, fixtures, domain_root_project=False):
         """Hacky basic and naive fixture loading based on a python module.
 
         Expects that the various APIs into the various services are already
@@ -533,6 +533,7 @@ class TestCase(BaseTestCase):
         # from this instance during cleanup
         fixtures_to_cleanup = []
 
+        domain_projects = []
         # TODO(termie): doing something from json, probably based on Django's
         #               loaddata will be much preferred.
         if hasattr(self, 'identity_api') and hasattr(self, 'assignment_api'):
@@ -547,6 +548,8 @@ class TestCase(BaseTestCase):
                 attrname = 'domain_%s' % domain['id']
                 setattr(self, attrname, rv)
                 fixtures_to_cleanup.append(attrname)
+                domain_projects.append(
+                    self.assignment_api.get_project(domain['id']))
 
             for tenant in fixtures.TENANTS:
                 if hasattr(self, 'tenant_%s' % tenant['id']):
@@ -601,6 +604,10 @@ class TestCase(BaseTestCase):
                 setattr(self, attrname, user_copy)
                 fixtures_to_cleanup.append(attrname)
 
+            self.TENANTS = copy.deepcopy(fixtures.TENANTS)
+            if domain_root_project:
+                self.TENANTS.extend(domain_projects)
+                
             self.addCleanup(self.cleanup_instance(*fixtures_to_cleanup))
 
     def _paste_config(self, config):
