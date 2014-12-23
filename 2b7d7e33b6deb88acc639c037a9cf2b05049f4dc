@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_9bbb1bc3",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 453,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-23T17:23:34Z",
+      "side": 1,
+      "message": "ignore this change....(my config must be out of date)",
+      "revId": "2b7d7e33b6deb88acc639c037a9cf2b05049f4dc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
