@@ -111,6 +111,133 @@ class Manager(manager.Manager):
         self.resource_api.get_project(tenant_id)
         return self.driver.list_user_ids_for_project(tenant_id)
 
+    def _get_hierarchy_depth(self, parents_list):
+        return len(parents_list) + 1
+
+    def _assert_max_hierarchy_depth(self, project_id, parents_list=None):
+        if parents_list is None:
+            parents_list = self.list_project_parents(project_id)
+        max_depth = CONF.max_project_tree_depth
+        if self._get_hierarchy_depth(parents_list) > max_depth:
+            raise exception.ForbiddenAction(
+                action=_('max hierarchy depth reached for '
+                         '%s branch.') % project_id)
+
+    @notifications.created(_PROJECT)
+    def create_project(self, tenant_id, tenant):
+        tenant = tenant.copy()
+        tenant.setdefault('enabled', True)
+        tenant['enabled'] = clean.project_enabled(tenant['enabled'])
+        tenant.setdefault('description', '')
+        tenant.setdefault('parent_id', None)
+        tenant.setdefault('is_domain', False)
+
+        if tenant.get('parent_id') is not None:
+            parent_ref = self.get_project(tenant.get('parent_id'))
+            parents_list = self.list_project_parents(parent_ref['id'])
+            parents_list.append(parent_ref)
+            for ref in parents_list:
+                if ref.get('domain_id') != tenant.get('domain_id'):
+                    raise exception.ForbiddenAction(
+                        action=_('cannot create a project within a different '
+                                 'domain than its parents.'))
+                if not ref.get('enabled', True):
+                    raise exception.ForbiddenAction(
+                        action=_('cannot create a project in a '
+                                 'branch containing a disabled '
+                                 'project: %s') % ref['id'])
+            self._assert_max_hierarchy_depth(tenant.get('parent_id'),
+                                             parents_list)
+
+        ret = self.driver.create_project(tenant_id, tenant)
+        if SHOULD_CACHE(ret):
+            self.get_project.set(ret, self, tenant_id)
+            self.get_project_by_name.set(ret, self, ret['name'],
+                                         ret['domain_id'])
+        return ret
+
+    def assert_domain_enabled(self, domain_id, domain=None):
+        """Assert the Domain is enabled.
+
+        :raise AssertionError if domain is disabled.
+        """
+        if domain is None:
+            domain = self.get_domain(domain_id)
+        if not domain.get('enabled', True):
+            raise AssertionError(_('Domain is disabled: %s') % domain_id)
+
+    def assert_project_enabled(self, project_id, project=None):
+        """Assert the project is enabled and its associated domain is enabled.
+
+        :raise AssertionError if the project or domain is disabled.
+        """
+        if project is None:
+            project = self.get_project(project_id)
+        self.assert_domain_enabled(domain_id=project['domain_id'])
+        if not project.get('enabled', True):
+            raise AssertionError(_('Project is disabled: %s') % project_id)
+
+    @notifications.disabled(_PROJECT, public=False)
+    def _disable_project(self, project_id):
+        """Emit a notification to the callback system project is been disabled.
+
+        This method, and associated callback listeners, removes the need for
+        making direct calls to other managers to take action (e.g. revoking
+        project scoped tokens) when a project is disabled.
+
+        :param project_id: project identifier
+        :type project_id: string
+        """
+        pass
+
+    def _assert_all_parents_are_enabled(self, project_id):
+        parents_list = self.list_project_parents(project_id)
+        for project in parents_list:
+            if not project.get('enabled', True):
+                raise exception.ForbiddenAction(
+                    action=_('cannot enable project %s since it has '
+                             'disabled parents') % project_id)
+
+    def _assert_whole_subtree_is_disabled(self, project_id):
+        subtree_list = self.driver.list_projects_in_subtree(project_id)
+        for ref in subtree_list:
+            if ref.get('enabled', True):
+                raise exception.ForbiddenAction(
+                    action=_('cannot disable project %s since '
+                             'its subtree contains enabled '
+                             'projects') % project_id)
+
+    @notifications.updated(_PROJECT)
+    def update_project(self, tenant_id, tenant):
+        original_tenant = self.driver.get_project(tenant_id)
+        tenant = tenant.copy()
+
+        parent_id = original_tenant.get('parent_id')
+        if 'parent_id' in tenant and tenant.get('parent_id') != parent_id:
+            raise exception.ForbiddenAction(
+                action=_('Update of `parent_id` is not allowed.'))
+
+        if 'enabled' in tenant:
+            tenant['enabled'] = clean.project_enabled(tenant['enabled'])
+
+        # NOTE(rodrigods): for the current implementation we only allow to
+        # disable a project if all projects below it in the hierarchy are
+        # already disabled. This also means that we can not enable a
+        # project that has disabled parents.
+        original_tenant_enabled = original_tenant.get('enabled', True)
+        tenant_enabled = tenant.get('enabled', True)
+        if not original_tenant_enabled and tenant_enabled:
+            self._assert_all_parents_are_enabled(tenant_id)
+        if original_tenant_enabled and not tenant_enabled:
+            self._assert_whole_subtree_is_disabled(tenant_id)
+            self._disable_project(tenant_id)
+
+        ret = self.driver.update_project(tenant_id, tenant)
+        self.get_project.invalidate(self, tenant_id)
+        self.get_project_by_name.invalidate(self, original_tenant['name'],
+                                            original_tenant['domain_id'])
+        return ret
+
     def _list_parent_ids_of_project(self, project_id):
         if CONF.os_inherit.enabled:
             return [x['id'] for x in (
@@ -324,6 +451,71 @@ class Manager(manager.Manager):
             self.resource_api.list_project_ids_from_domain_ids(domain_ids))
 
         return self.resource_api.list_projects_from_ids(list(project_ids))
+
+    def _filter_projects_list(self, projects_list, user_id):
+        user_projects = self.list_projects_for_user(user_id)
+        user_projects_ids = set([proj['id'] for proj in user_projects])
+        # Keep only the projects present in user_projects
+        projects_list = [proj for proj in projects_list
+                         if proj['id'] in user_projects_ids]
+
+    def list_project_parents(self, project_id, user_id=None):
+        parents = self.driver.list_project_parents(project_id)
+        # If a user_id was provided, the returned list should be filtered
+        # against the projects this user has access to.
+        if user_id:
+            self._filter_projects_list(parents, user_id)
+        return parents
+
+    def list_projects_in_subtree(self, project_id, user_id=None):
+        subtree = self.driver.list_projects_in_subtree(project_id)
+        # If a user_id was provided, the returned list should be filtered
+        # against the projects this user has access to.
+        if user_id:
+            self._filter_projects_list(subtree, user_id)
+        return subtree
+
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=EXPIRATION_TIME)
+    def get_domain(self, domain_id):
+        return self.driver.get_domain(domain_id)
+
+    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
+                        expiration_time=EXPIRATION_TIME)
+    def get_domain_by_name(self, domain_name):
+        return self.driver.get_domain_by_name(domain_name)
+
+    @notifications.created('domain')
+    def create_domain(self, domain_id, domain):
+        if (not self.identity_api.multiple_domains_supported and
+                domain_id != CONF.identity.default_domain_id):
+            raise exception.Forbidden(_('Multiple domains are not supported'))
+        domain.setdefault('enabled', True)
+        domain['enabled'] = clean.domain_enabled(domain['enabled'])
+        ret = self.driver.create_domain(domain_id, domain)
+        if SHOULD_CACHE(ret):
+            self.get_domain.set(ret, self, domain_id)
+            self.get_domain_by_name.set(ret, self, ret['name'])
+
+        root_project = {
+            'id': domain_id,
+            'name': domain['name'],
+            'description': 'domain root project',
+            'domain_id': domain_id,
+            'enabled': True,
+            'is_domain': True}
+
+        pro = self.driver.create_project(domain_id, root_project)
+        if SHOULD_CACHE(pro):
+            self.get_project.set(pro, self, domain_id)
+            self.get_project_by_name.set(pro, self, ret['name'],
+                                         pro['domain_id'])
+
+        return ret
+
+    @manager.response_truncated
+    def list_domains(self, hints=None):
+        return self.driver.list_domains(hints or driver_hints.Hints())
 
     # TODO(henry-nash): We might want to consider list limiting this at some
     # point in the future.

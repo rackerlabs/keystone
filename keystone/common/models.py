@@ -134,7 +134,7 @@ class Project(Model):
     """
 
     required_keys = ('id', 'name', 'domain_id')
-    optional_keys = ('description', 'enabled')
+    optional_keys = ('description', 'enabled', 'is_domain')
 
 
 class Role(Model):
