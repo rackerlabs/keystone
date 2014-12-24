@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_91276562",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-24T12:28:35Z",
+      "side": 1,
+      "message": "It would be better to put this on an else statement at line 232.",
+      "revId": "f88d2275b43f008a78026616e11f12fc1d16d19f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_51d89d52",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-24T12:28:35Z",
+      "side": 1,
+      "message": "Same as line 226.\n\nThis line could contain only ref \u003d self._normalize_dict(role)\n\nThe expression:\n\nref \u003d self._assign_unique_id(ref)\n\ncould be put on an else statement at line 480.",
+      "revId": "f88d2275b43f008a78026616e11f12fc1d16d19f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
