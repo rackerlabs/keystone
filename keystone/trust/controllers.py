@@ -105,7 +105,7 @@ class TrustV3(controller.V3Controller):
 
     def _clean_role_list(self, context, trust, all_roles):
         trust_roles = []
-        all_role_names = dict((r['name'], r) for r in all_roles)
+        all_role_names = {r['name']: r for r in all_roles}
         for role in trust.get('roles', []):
             if 'id' in role:
                 trust_roles.append({'id': role['id']})
