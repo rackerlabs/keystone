@@ -247,7 +247,7 @@ class IdentityTests(object):
 
     def test_get_role(self):
         role_ref = self.assignment_api.get_role(self.role_admin['id'])
-        role_ref_dict = dict((x, role_ref[x]) for x in role_ref)
+        role_ref_dict = {x: role_ref[x] for x in role_ref}
         self.assertDictEqual(role_ref_dict, self.role_admin)
 
     def test_get_role_404(self):
@@ -1577,13 +1577,13 @@ class IdentityTests(object):
         role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.assignment_api.create_role(role['id'], role)
         role_ref = self.assignment_api.get_role(role['id'])
-        role_ref_dict = dict((x, role_ref[x]) for x in role_ref)
+        role_ref_dict = {x: role_ref[x] for x in role_ref}
         self.assertDictEqual(role_ref_dict, role)
 
         role['name'] = uuid.uuid4().hex
         updated_role_ref = self.assignment_api.update_role(role['id'], role)
         role_ref = self.assignment_api.get_role(role['id'])
-        role_ref_dict = dict((x, role_ref[x]) for x in role_ref)
+        role_ref_dict = {x: role_ref[x] for x in role_ref}
         self.assertDictEqual(role_ref_dict, role)
         self.assertDictEqual(role_ref_dict, updated_role_ref)
 
@@ -3006,14 +3006,14 @@ class IdentityTests(object):
         user = self.identity_api.create_user(user_dict)
         user_ref = self.identity_api.get_user(user['id'])
         del user_dict['password']
-        user_ref_dict = dict((x, user_ref[x]) for x in user_ref)
+        user_ref_dict = {x: user_ref[x] for x in user_ref}
         self.assertDictContainsSubset(user_dict, user_ref_dict)
 
         user_dict['password'] = uuid.uuid4().hex
         self.identity_api.update_user(user['id'], user_dict)
         user_ref = self.identity_api.get_user(user['id'])
         del user_dict['password']
-        user_ref_dict = dict((x, user_ref[x]) for x in user_ref)
+        user_ref_dict = {x: user_ref[x] for x in user_ref}
         self.assertDictContainsSubset(user_dict, user_ref_dict)
 
         self.identity_api.delete_user(user['id'])
