@@ -120,3 +120,14 @@ class TestCheckForNonDebugLoggingIssues(BaseStyleCheck):
         actual_errors = [(e[0] - import_lines, e[1], e[2])
                          for e in actual_errors]
         self.assertEqual(expected_errors or [], actual_errors)
+
+
+class TestDictoryComprehension(BaseStyleCheck):
+
+    def get_checker(self):
+        return checks.dict_constructor_with_sequence_copy
+
+    def test(self):
+        code = self.code_ex.dict_constructor['code']
+        errors = self.code_ex.dict_constructor['expected_errors']
+        self.assert_has_errors(code, expected_errors=errors)
