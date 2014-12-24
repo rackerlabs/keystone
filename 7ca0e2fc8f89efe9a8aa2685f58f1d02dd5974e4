@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_7eb48b81",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2014-12-24T09:09:08Z",
+      "side": 1,
+      "message": "\"Do not import objects, only modules\", says http://docs.openstack.org/developer/hacking/ . Could you please fix it?",
+      "revId": "7ca0e2fc8f89efe9a8aa2685f58f1d02dd5974e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
