@@ -56,15 +56,10 @@ class Ec2ControllerCommon(object):
     def check_signature(self, creds_ref, credentials):
         signer = ec2_utils.Ec2Signer(creds_ref['secret'])
         signature = signer.generate(credentials)
-        if utils.auth_str_equal(credentials['signature'], signature):
-            return
-        # NOTE(vish): Some libraries don't use the port when signing
-        #             requests, so try again without port.
-        elif ':' in credentials['signature']:
-            hostname, _port = credentials['host'].split(':')
-            credentials['host'] = hostname
-            signature = signer.generate(credentials)
-            if not utils.auth_str_equal(credentials.signature, signature):
+        if credentials['signature']:
+            if utils.auth_str_equal(credentials['signature'], signature):
+                return True
+            else:
                 raise exception.Unauthorized(message='Invalid EC2 signature.')
         else:
             raise exception.Unauthorized(message='EC2 signature not supplied.')
