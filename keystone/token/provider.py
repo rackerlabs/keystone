@@ -140,13 +140,20 @@ class Manager(manager.Manager):
             except KeyError:
                 raise exception.UnexpectedError(
                     _('Unrecognized keystone.conf [signing] token_format: '
-                      'expected either \'UUID\' or \'PKI\''))
+                      'expected either \'UUID\', \'PKI\' or \'PKIZ\''))
             return mapped
 
         if CONF.token.provider is None:
             return UUID_PROVIDER
-        else:
-            return CONF.token.provider
+        # Make sure the provider is the supported provider with full-class
+        # path, 'PKI' for example is currently not supported.
+        for (k, v) in _FORMAT_TO_PROVIDER.items():
+            if CONF.token.provider.lower() == v.lower():
+                    return CONF.token.provider
+        raise exception.UnexpectedError(
+            _('Unrecognized keystone.conf [token] provider: '
+              'expected either \'UUID\', \'PKI\' or \'PKIZ\''
+              ' with full-class path'))
 
     def __init__(self):
         super(Manager, self).__init__(self.get_token_provider())

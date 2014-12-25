@@ -767,11 +767,16 @@ class TestTokenProvider(tests.TestCase):
                          token.provider.Manager.get_token_provider())
 
     def test_provider_override_token_format(self):
+        # (Dave Chen) I'd like to prevent unexpected token provider rather
+        # than thrown exception when trying to initialize non-existed
+        # instance during backends loading. The exception thrown in
+        # that way has bad readability for average user.
+        # When new provider is up, these testcases should be updated as well.
         self.config_fixture.config(
             group='token',
             provider='keystone.token.providers.pki.Test')
-        self.assertEqual('keystone.token.providers.pki.Test',
-                         token.provider.Manager.get_token_provider())
+        self.assertRaises(exception.UnexpectedError,
+                          token.provider.Manager.get_token_provider)
 
         self.config_fixture.config(group='signing', token_format='UUID')
         self.config_fixture.config(group='token',
@@ -788,6 +793,10 @@ class TestTokenProvider(tests.TestCase):
         self.config_fixture.config(group='signing', token_format='CUSTOM')
         self.config_fixture.config(group='token',
                                    provider='my.package.MyProvider')
+        self.assertRaises(exception.UnexpectedError,
+                          token.provider.Manager.get_token_provider)
+        self.config_fixture.config(group='token',
+                                   provider='PKI')
         self.assertRaises(exception.UnexpectedError,
                           token.provider.Manager.get_token_provider)
 
