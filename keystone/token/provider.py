@@ -65,6 +65,8 @@ _FORMAT_TO_PROVIDER = {
     'UUID': UUID_PROVIDER
 }
 
+valid_format = ', or '.join(_FORMAT_TO_PROVIDER.keys())
+
 
 def default_expire_time():
     """Determine when a fresh token should expire.
@@ -130,24 +132,29 @@ class Manager(manager.Manager):
         ``provider`` instead.
 
         """
-
         if CONF.signing.token_format:
             LOG.warn(_LW('[signing] token_format is deprecated. '
-                         'Please change to setting the [token] provider '
+                         'Please change to set the [token] provider '
                          'configuration value instead'))
             try:
-
                 mapped = _FORMAT_TO_PROVIDER[CONF.signing.token_format]
             except KeyError:
                 raise exception.UnexpectedError(
                     _('Unrecognized keystone.conf [signing] token_format: '
-                      'expected either \'UUID\' or \'PKI\''))
+                      'expected value is %s with full-class path') %
+                    valid_format)
             return mapped
 
         if CONF.token.provider is None:
             return UUID_PROVIDER
-        else:
-            return CONF.token.provider
+        # Make sure the provider is the supported provider with full-class
+        # path, 'PKI' for example is currently not supported.
+        for (k, v) in _FORMAT_TO_PROVIDER.items():
+            if CONF.token.provider.lower() == v.lower():
+                    return CONF.token.provider
+        raise exception.UnexpectedError(
+            _('Unrecognized keystone.conf [token] provider: '
+              'expected value is %s with full-class path') % valid_format)
 
     def __init__(self):
         super(Manager, self).__init__(self.get_token_provider())
