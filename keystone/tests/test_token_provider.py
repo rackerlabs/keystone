@@ -778,25 +778,44 @@ class TestTokenProvider(tests.TestCase):
         self.assertRaises(exception.UnexpectedError,
                           token.provider.Manager.get_token_provider)
 
-        self.config_fixture.config(group='signing', token_format='UUID')
+        self.config_fixture.config(group='token',
+                                   provider=None)
+        self.assertEqual(token.provider.UUID_PROVIDER,
+                         token.provider.Manager.get_token_provider())
+
         self.config_fixture.config(group='token',
                                    provider=token.provider.UUID_PROVIDER)
         self.assertEqual(token.provider.UUID_PROVIDER,
                          token.provider.Manager.get_token_provider())
 
-        self.config_fixture.config(group='signing', token_format='PKI')
         self.config_fixture.config(group='token',
                                    provider=token.provider.PKI_PROVIDER)
         self.assertEqual(token.provider.PKI_PROVIDER,
                          token.provider.Manager.get_token_provider())
 
-        self.config_fixture.config(group='signing', token_format='CUSTOM')
         self.config_fixture.config(group='token',
-                                   provider='my.package.MyProvider')
-        self.assertRaises(exception.UnexpectedError,
-                          token.provider.Manager.get_token_provider)
+                                   provider=token.provider.PKIZ_PROVIDER)
+        self.assertEqual(token.provider.PKIZ_PROVIDER,
+                         token.provider.Manager.get_token_provider())
+
         self.config_fixture.config(group='token',
                                    provider='PKI')
+        self.assertRaises(exception.UnexpectedError,
+                          token.provider.Manager.get_token_provider)
+
+        self.config_fixture.config(group='signing', token_format='UUID')
+        self.assertEqual(token.provider.UUID_PROVIDER,
+                         token.provider.Manager.get_token_provider())
+
+        self.config_fixture.config(group='signing', token_format='PKI')
+        self.assertEqual(token.provider.PKI_PROVIDER,
+                         token.provider.Manager.get_token_provider())
+
+        self.config_fixture.config(group='signing', token_format='PKIZ')
+        self.assertEqual(token.provider.PKIZ_PROVIDER,
+                         token.provider.Manager.get_token_provider())
+
+        self.config_fixture.config(group='signing', token_format='CUSTOM')
         self.assertRaises(exception.UnexpectedError,
                           token.provider.Manager.get_token_provider)
 
