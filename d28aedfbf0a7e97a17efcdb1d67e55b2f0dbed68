@@ -16,6 +16,24 @@
       "revId": "d28aedfbf0a7e97a17efcdb1d67e55b2f0dbed68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0dc6df68",
+        "filename": "keystone/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T14:00:34Z",
+      "side": 1,
+      "message": "The reason I posted the change for review is to find out if everyone wants it.",
+      "parentUuid": "3a961159_c2f4cff2",
+      "revId": "d28aedfbf0a7e97a17efcdb1d67e55b2f0dbed68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
