@@ -1,0 +1,616 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_385037d4",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2578,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "revoke_api isn\u0027t used by this test so remove this line.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b886e7d9",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2604,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "why are these 2 lines here? They don\u0027t seem to do anything. I tried removing them and the test still passes.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_535c04f1",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2611,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "I removed this setting and the tests still passed. If this isn\u0027t required then remove it, otherwise add a comment why the revoke backend needs to be set to kvs.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_93566ccd",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2615,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "I tried removing this and the test still passed... if this isn\u0027t required then remove it. Otherwise add a comment why this is here.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_986bebf0",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2633,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "As far as I can tell this isn\u0027t actually used anywhere... whereever it\u0027s used it\u0027s copied and modified. So there\u0027s no reason to create this in setUp. Should just have a method to create a redelegated trust ref and call that when the test needs one.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_58c50309",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2640,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "rather than do the update, new_trust_ref should allow you to create the trust ref with these values set as needed.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f8d5cfb7",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2659,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "what makes this expired? It\u0027s the same as chained_trust_ref but the expiration is in 10 mins rather than 1 min.\n\nAlso, this is only used in the one test so could move its creation there.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_18fa9b43",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2665,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "I\u0027d rather these calls were made right to the controller rather than going through the whole HTTP call.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d85bb353",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2683,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "The redelegation_count was 2 already, why does it need to change to 10? I tried changing the code to use self.redelegated_trust_ref and it worked fine.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d310f451",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2765,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "This shoud be calling the assignment API just like at line 2755.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_537244b1",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2769,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "This bit of code is confusing because the previous line creates a shallow copy of self.redelegated_trust_ref, which I assume is done to protect self.redelegated_trust_ref from being modified, but then this line goes and modifies it anyways. A deep copy of self.redelegated_trust_ref needs to be made to actually protect it from modification.\n\nAlternatively, don\u0027t create a copy since it shouldn\u0027t matter.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f36250d8",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2797,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "Testtools provides a matcher for this that should print out a nicer failure message: matchers.GreaterThan ( https://github.com/testing-cabal/testtools/blob/master/testtools/matchers/__init__.py#L62 )",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_13b7dc3b",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2800,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "This doesn\u0027t need to be copied.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_53808449",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2812,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "This is creating a role not a trust.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_937aec75",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2824,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "call the assignment_api to create the grant rather than put, so it\u0027s the same as how the role is created.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f3909098",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2834,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "There\u0027s no need to create a copy.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_93f10c04",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2850,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "use del or pop consistently... del was used earlier and I think it makes more sense.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b3f608f8",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2874,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "use del or pop consistently... del was used earlier and I think it makes more sense.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d86f3392",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2882,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "revoke_api isn\u0027t used by this test so remove this line.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_53cec4b8",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2886,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "I tried removing these and the test still passed. Do these need to be here? If not remove them. If so, add a comment.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_933f4c87",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2892,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "Is this setting required? I tried removing it and the tests still passed.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f3bed0ff",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 2895,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "Is PKI required for this? If so, add a comment. I tried removing this setting and the tests all passed.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_389af76e",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "There\u0027s no test that covers this code. Add a test for it.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_98804bf9",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "The coverage report shows that this isn\u0027t tested. Add a test.\n\nAlso, this looks like it\u0027s fixing a bug since the original code didn\u0027t do this. So this should be in a separate commit.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_13efdcea",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "why was this moved? I tried running the tests with this in its old spot and they all passed, so this seems unnecessary.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_73bd80d7",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "change \"f0\" to \"0\". remove *.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d3cb9471",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "remove *. Also, I don\u0027t know what this comment means so it should be removed.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f3c89077",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "remove *. Also, I don\u0027t know what this comment means so it should be removed.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_93a90c93",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "why replace tzinfo? Add a comment.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_13c6fc68",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "remove *. Also, I don\u0027t know what this comment means so it should be removed.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_98fccb74",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "The coverage report shows that this isn\u0027t tested. Add a test.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_93974c3a",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "This comment is just restating what the next line does and the next line is obvious enough, so remove the comment.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b39c485f",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "The next line doesn\u0027t do what this comment says it does since it\u0027s not populating the trust. Remove the comment since it\u0027s out of date.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d3a0f493",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": ".get() could return None and then this would raise an exception. [] should be used.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b801876c",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "The coverage report shows that this isn\u0027t tested. Add a test.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d8f57385",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-26T17:03:11Z",
+      "side": 1,
+      "message": "The coverage report shows that this isn\u0027t tested. Add a test.",
+      "revId": "2e8593cb80a5e74108bfddd93830aaa345b32d0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
