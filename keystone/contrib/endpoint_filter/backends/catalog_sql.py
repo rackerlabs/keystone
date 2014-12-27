@@ -31,16 +31,17 @@ class EndpointFilterCatalog(sql.Catalog):
 
         services = {}
 
-        refs = self.endpoint_filter_api.list_endpoints_for_project(project_id)
+        refs = self.endpoint_filter_api.list_filtered_endpoints_for_project(
+            project_id)
 
         if (not refs and
                 CONF.endpoint_filter.return_all_endpoints_if_no_filter):
             return super(EndpointFilterCatalog, self).get_v3_catalog(
                 user_id, project_id, metadata=metadata)
 
-        for entry in refs:
+        for endpoint in refs:
             try:
-                endpoint = self.get_endpoint(entry['endpoint_id'])
+                self.get_endpoint(endpoint['endpoint_id'])
                 if not endpoint['enabled']:
                     # Skip disabled endpoints.
                     continue
@@ -60,9 +61,9 @@ class EndpointFilterCatalog(sql.Catalog):
                 else:
                     service['endpoints'] = [endpoint]
             except exception.EndpointNotFound:
-                # remove bad reference from association
+                # remove bad reference from association 
                 self.endpoint_filter_api.remove_endpoint_from_project(
-                    entry['endpoint_id'], project_id)
+                    endpoint['endpoint_id'], project_id)
 
         # format catalog
         catalog = []
