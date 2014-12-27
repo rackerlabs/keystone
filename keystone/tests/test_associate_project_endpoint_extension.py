@@ -1074,3 +1074,75 @@ class EndpointGroupCRUDTestCase(TestExtensionCase):
                      'project_id': self.project['id'],
                      'endpoint_id': endpoint['id']})
         return endpoint
+
+
+class EndpointGroupTokenRequestTestCase(TestExtensionCase):
+    def test_apply_endpoint_group_filter_on_token_catalog(self):
+        # create a project
+        ref = self.new_project_ref(domain_id=self.domain_id)
+        r = self.post('/projects', body={'project': ref})
+        project_id = r.result['project']['id']
+
+        # create a service
+        service_ref = self.new_service_ref()
+        r = self.post('/services', body={'service': service_ref})
+        service_id = r.result['service']['id']
+
+        # create three endpoints: two public and one admin
+        endpoint_ref = self.new_endpoint_ref(service_id=service_id,
+                                             interface='public')
+        self.post('/endpoints', body={'endpoint': endpoint_ref})
+        endpoint_ref = self.new_endpoint_ref(service_id=service_id,
+                                             interface='public')
+        self.post('/endpoints', body={'endpoint': endpoint_ref})
+        endpoint_ref = self.new_endpoint_ref(service_id=service_id,
+                                             interface='admin')
+        self.post('/endpoints', body={'endpoint': endpoint_ref})
+
+        # grant the user a role on the project to ensure catalog is in token
+        self.put(
+            '/projects/%(project_id)s/users/%(user_id)s/roles/%(role_id)s' % {
+                'user_id': self.user['id'],
+                'project_id': project_id,
+                'role_id': self.role['id']})
+
+        # here we can get all the endpoints
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            project_id=project_id)
+        r = self.post('/auth/tokens', body=auth_data)
+        self.assertValidProjectScopedTokenResponse(
+            r,
+            require_catalog=True,
+            endpoint_filter=True,
+            ep_filter_assoc=3)
+        self.assertEqual(r.result['token']['project']['id'], project_id)
+
+        # create a endpoint_group
+        new_endpoint_group = {
+            'endpoint_group': {
+                'filters': {
+                    'interface': 'admin',
+                },
+                'name': 'test_endpoint_group',
+            }
+        }
+        r = self.post('/OS-EP-FILTER/endpoint_groups',
+                      body=new_endpoint_group)
+        endpoint_group_id = r.result['endpoint_group']['id']
+
+        # grant endpoint_group on project
+        self.put('/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s'
+                 '/projects/%(project_id)s' % {
+                     'endpoint_group_id': endpoint_group_id,
+                     'project_id': project_id})
+
+        # here we can only get some of endpoints
+        r = self.post('/auth/tokens', body=auth_data)
+        self.assertValidProjectScopedTokenResponse(
+            r,
+            require_catalog=True,
+            endpoint_filter=True,
+            ep_filter_assoc=1)
+        self.assertEqual(r.result['token']['project']['id'], project_id)
