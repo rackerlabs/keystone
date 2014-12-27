@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_fb6f8691",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-12-27T06:35:29Z",
+      "side": 1,
+      "message": "wanghong, I am not quite understand why a new testcase is needed? the function here is supposed to test the token format and cover my changes well, so why not use it directly?",
+      "parentUuid": "3a961159_4818d21e",
+      "revId": "c606daf651747e5a241a0b7c1a2bdb9e1133cb9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_e8297e38",
         "filename": "keystone/token/provider.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2014-12-27T01:57:04Z",
       "side": 1,
       "message": "I think we should not hard code UUID,PKI,PKIZ, instead, we should get from _FORMAT_TO_PROVIDER.",
+      "revId": "c606daf651747e5a241a0b7c1a2bdb9e1133cb9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_3bef4eeb",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2014-12-27T06:35:29Z",
+      "side": 1,
+      "message": "I agree hard code should be avoided in a sense, it seems is not so meaningful in this case.",
+      "parentUuid": "3a961159_e8297e38",
       "revId": "c606daf651747e5a241a0b7c1a2bdb9e1133cb9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
