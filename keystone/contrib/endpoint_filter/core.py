@@ -48,6 +48,7 @@ extension.register_admin_extension(extension_data['alias'], extension_data)
 
 
 @dependency.provider('endpoint_filter_api')
+@dependency.requires('catalog_api')
 class Manager(manager.Manager):
     """Default pivot point for the Endpoint Filter backend.
 
@@ -58,6 +59,41 @@ class Manager(manager.Manager):
 
     def __init__(self):
         super(Manager, self).__init__(CONF.endpoint_filter.driver)
+
+    def list_filterd_endpoints_for_project(self, project_id):
+        refs = self.driver.list_endpoints_for_project(project_id)
+        filtered_endpoints = dict(
+            (ref['endpoint_id'], self.catalog_api.get_endpoint(
+                ref['endpoint_id'])) for ref in refs)
+
+        all_endpoints = self.catalog_api.list_endpoints()
+        group_project_associations = (
+            self.driver.list_endpoint_groups_for_project(project_id))
+
+        all_filters = []
+        for association in group_project_associations:
+            endpoint_group = self.driver.get_endpoint_group(
+                association['endpoint_group_id'])
+            all_filters.append(endpoint_group['filters'])
+
+        def _apply_filters(filters, endpoint):
+            is_candidate = True
+            for key, value in six.iteritems(filters):
+                    if endpoint[key] != value:
+                        is_candidate = False
+                        break
+            return is_candidate
+
+        # NOTE(wanghong) the final result is the union of the results filtered
+        # by associated endpoint_group
+        for endpoint in all_endpoints:
+            for filters in all_filters:
+                if (_apply_filters(filters, endpoint) and
+                        endpoint['id'] not in filtered_endpoints):
+                    filtered_endpoints[endpoint['id']] = endpoint
+                    break
+
+        return [v for v in six.itervalues(filtered_endpoints)]
 
 
 @six.add_metaclass(abc.ABCMeta)
