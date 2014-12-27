@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_fe3e94b8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-27T08:29:25Z",
+      "side": 1,
+      "message": "Could you add details about what is the specific test and why are you modifying it?\n\n(see https://wiki.openstack.org/wiki/GitCommitMessages#Information_in_commit_messages)",
+      "revId": "97e686bef15fefb1735d76f7cd960efc6ba28298",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
