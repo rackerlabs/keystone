@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_4818d21e",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-12-27T01:57:04Z",
+      "side": 1,
+      "message": "I think we\u0027d better add a new test.",
+      "revId": "c606daf651747e5a241a0b7c1a2bdb9e1133cb9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_e8297e38",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-12-27T01:57:04Z",
+      "side": 1,
+      "message": "I think we should not hard code UUID,PKI,PKIZ, instead, we should get from _FORMAT_TO_PROVIDER.",
+      "revId": "c606daf651747e5a241a0b7c1a2bdb9e1133cb9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_081eca0d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-12-27T01:57:04Z",
+      "side": 1,
+      "message": "This too.",
+      "revId": "c606daf651747e5a241a0b7c1a2bdb9e1133cb9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
