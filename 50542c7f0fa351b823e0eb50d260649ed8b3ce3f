@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_1e3520db",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-27T08:19:31Z",
+      "side": 1,
+      "message": "I\u0027m still not clear on what the bug is, can you add more detail to the bug, like what you are doing (the request), the result, and the expected result. At the moment it\u0027s hard to follow along.",
+      "revId": "50542c7f0fa351b823e0eb50d260649ed8b3ce3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_be07ac17",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-27T08:19:31Z",
+      "side": 1,
+      "message": "filtered*",
+      "revId": "50542c7f0fa351b823e0eb50d260649ed8b3ce3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_de0c783e",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-27T08:19:31Z",
+      "side": 1,
+      "message": "filtered*",
+      "revId": "50542c7f0fa351b823e0eb50d260649ed8b3ce3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_fe105451",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-27T08:19:31Z",
+      "side": 1,
+      "message": "filtered*",
+      "revId": "50542c7f0fa351b823e0eb50d260649ed8b3ce3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
