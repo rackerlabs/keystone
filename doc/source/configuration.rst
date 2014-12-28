@@ -110,6 +110,7 @@ following sections:
 * ``[paste_deploy]`` - Pointer to the PasteDeploy configuration file
 * ``[policy]`` - Policy system driver configuration for RBAC
 * ``[revoke]`` - Revocation system driver configuration
+* ``[role]`` - Role system driver configuration
 * ``[saml]`` - SAML configuration options
 * ``[signing]`` - Cryptographic signatures for PKI based tokens
 * ``[ssl]`` - SSL configuration
@@ -490,7 +491,7 @@ Current Keystone systems that have caching capabilities:
         ``Keystone``.  This option is set in the ``[assignment]`` section of the
         configuration file.
 
-        Currently ``assignment`` has caching for ``project``, ``domain``, and ``role``
+        Currently ``assignment`` has caching for ``project`` and ``domain``
         specific requests (primarily around the CRUD actions).  Caching is currently not
         implemented on grants.  The list (``list_projects``, ``list_domains``, etc)
         methods are not subject to caching.
@@ -504,6 +505,24 @@ Current Keystone systems that have caching capabilities:
             If this type of delay (when using a read-only ``assignment`` backend) is
             an issue, it is recommended that caching be disabled on ``assignment``.
             To disable caching specifically on ``assignment``, in the ``[assignment]``
+            section of the configuration set ``caching`` to ``False``.
+    * ``role``
+        Currently ``role`` has caching for ``get_role``, but not for ``list_roles``.
+        The role system has a separate ``cache_time`` configuration option,
+        that can be set to a value above or below the global ``expiration_time``
+        default, allowing for different caching behavior from the other systems in
+        ``Keystone``.  This option is set in the ``[role]`` section of the
+        configuration file.
+
+        .. WARNING::
+            Be aware that if a read-only ``role`` backend is in use, the cache
+            will not immediately reflect changes on the back end.  Any given change
+            may take up to the ``cache_time`` (if set in the ``[role]``
+            section of the configuration) or the global ``expiration_time`` (set in
+            the ``[cache]`` section of the configuration) before it is reflected.
+            If this type of delay (when using a read-only ``role`` backend) is
+            an issue, it is recommended that caching be disabled on ``role``.
+            To disable caching specifically on ``role``, in the ``[role]``
             section of the configuration set ``caching`` to ``False``.
 
 For more information about the different backends (and configuration options):
@@ -1481,10 +1500,10 @@ directories in conjunction with reading user and group information.
 Keystone now provides an option whereby these read-only
 directories can be easily integrated as it now enables its identity
 entities (which comprises users, groups, and group memberships) to be
-served out of directories while assignments (which comprises projects, roles,
-role assignments, and domains) are to be served from a different Keystone
-backend (i.e. SQL). To enable this option, you must have the following
-``keystone.conf`` options set:
+served out of directories while assignments (which comprises projects,
+role assignments, and domains) and roles are to be served from different
+Keystone backends (i.e. SQL). To enable this option, you must have the
+following ``keystone.conf`` options set:
 
 .. code-block:: ini
 
@@ -1494,11 +1513,14 @@ backend (i.e. SQL). To enable this option, you must have the following
   [assignment]
   driver = keystone.assignment.backends.sql.Assignment
 
+  [role]
+  driver = keystone.assignment.role_backends.sql.Role
+
 With the above configuration, Keystone will only lookup identity related
 information such users, groups, and group membership from the directory,
 while assignment related information will be provided by the SQL backend.
-Also note that if there is an LDAP Identity, and no assignment backend is
-specified, the assignment backend will default to LDAP. Although this may seem
+Also note that if there is an LDAP Identity, and no assignment or role backend
+is specified, they will default to LDAP. Although this may seem
 counterintuitive, it is provided for backwards compatibility. Nonetheless,
 the explicit option will always override the implicit option, so specifying
 the options as shown above will always be correct.  Finally, it is also
