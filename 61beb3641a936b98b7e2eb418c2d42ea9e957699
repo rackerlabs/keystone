@@ -16,6 +16,24 @@
       "revId": "61beb3641a936b98b7e2eb418c2d42ea9e957699",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_70600cd0",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2014-12-28T18:11:48Z",
+      "side": 1,
+      "message": "thanks for point me to this. automatic merge was very strange and incorrect.",
+      "parentUuid": "3a961159_b02434b3",
+      "revId": "61beb3641a936b98b7e2eb418c2d42ea9e957699",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
