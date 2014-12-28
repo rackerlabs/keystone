@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_8a3aaa96",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-28T16:03:59Z",
+      "side": 1,
+      "message": "This should be associated with a bug or a blueprint since it changes how users do federation.",
+      "revId": "3d09184f974edd419d4d65e8ca50204429915c9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
