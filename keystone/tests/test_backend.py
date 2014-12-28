@@ -3193,12 +3193,11 @@ class IdentityTests(object):
         updated_role_ref = copy.deepcopy(role_ref)
         updated_role_ref['name'] = uuid.uuid4().hex
         # Update role, bypassing the assignment api manager
-        self.assignment_api.driver.update_role(role_id, updated_role_ref)
+        self.role_api.driver.update_role(role_id, updated_role_ref)
         # Verify get_role still returns old ref
         self.assertDictEqual(role_ref, self.assignment_api.get_role(role_id))
         # Invalidate Cache
-        self.assignment_api.get_role.invalidate(self.assignment_api,
-                                                role_id)
+        self.role_api.get_role.invalidate(self.assignment_api, role_id)
         # Verify get_role returns the new role_ref
         self.assertDictEqual(updated_role_ref,
                              self.assignment_api.get_role(role_id))
@@ -3207,11 +3206,11 @@ class IdentityTests(object):
         # Verify get_role returns the original role ref
         self.assertDictEqual(role_ref, self.assignment_api.get_role(role_id))
         # Delete role bypassing the assignment api manager
-        self.assignment_api.driver.delete_role(role_id)
+        self.role_api.driver.delete_role(role_id)
         # Verify get_role still returns the role_ref
         self.assertDictEqual(role_ref, self.assignment_api.get_role(role_id))
         # Invalidate cache
-        self.assignment_api.get_role.invalidate(self.assignment_api, role_id)
+        self.role_api.get_role.invalidate(self.assignment_api, role_id)
         # Verify RoleNotFound is now raised
         self.assertRaises(exception.RoleNotFound,
                           self.assignment_api.get_role,
