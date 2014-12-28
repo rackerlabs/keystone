@@ -450,8 +450,11 @@
 # (string value)
 #policy_default_rule=default
 
-# Directories where policy configuration files are stored
-# (multi valued)
+# Directories where policy configuration files are stored.
+# They can be relative to any directory in the search path
+# defined by the config_dir option, or absolute paths. The
+# file defined by policy_file must exist for these directories
+# to be searched. (multi valued)
 #policy_dirs=policy.d
 
 
@@ -1383,6 +1386,28 @@
 # Toggle for revocation event caching. This has no effect
 # unless global caching is enabled. (boolean value)
 #caching=true
+
+
+[role]
+
+#
+# Options defined in keystone
+#
+
+# Role backend driver. (string value)
+#driver=<None>
+
+# Toggle for role caching. This has no effect unless global
+# caching is enabled. (boolean value)
+#caching=true
+
+# TTL (in seconds) to cache role data. This has no effect
+# unless global caching is enabled. (integer value)
+#cache_time=<None>
+
+# Maximum number of entities that will be returned in a role
+# collection. (integer value)
+#list_limit=<None>
 
 
 [saml]
