@@ -594,6 +594,14 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
 
         return entity
 
+    def assertDictContainsSubset(self, expected, actual):
+        for k, v in expected.iteritems():
+            self.assertIn(k, actual)
+            if isinstance(v, dict):
+                self.assertDictContainsSubset(v, actual[k])
+            else:
+                self.assertEqual(v, actual[k])
+
     # auth validation
 
     def assertValidISO8601ExtendedFormatDatetime(self, dt):
@@ -1032,46 +1040,31 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         return entities
 
     def assertValidRoleAssignment(self, entity, ref=None, url=None):
-        self.assertIsNotNone(entity.get('role'))
-        self.assertIsNotNone(entity.get('scope'))
+        # A scope AND a role should be present
+        s, r = entity.get('scope'), entity.get('role')
+        self.assertIsNotNone(s and (r and r.get('id')))
 
-        # Only one of user or group should be present
-        self.assertIsNotNone(entity.get('user') or
-                             entity.get('group'))
-        self.assertIsNone(entity.get('user') and
-                          entity.get('group'))
+        # A user XOR a group should be present
+        u, g = entity.get('user'), entity.get('group')
+        self.assertTrue(bool(u and u.get('id')) ^ bool(g and g.get('id')))
 
-        # Only one of domain or project should be present
-        self.assertIsNotNone(entity['scope'].get('project') or
-                             entity['scope'].get('domain'))
-        self.assertIsNone(entity['scope'].get('project') and
-                          entity['scope'].get('domain'))
+        # A domain XOR a project should be present
+        p, d = s.get('project'), s.get('domain')
+        self.assertTrue(bool(p and p.get('id')) ^ bool(d and d.get('id')))
 
-        if entity['scope'].get('project'):
-            self.assertIsNotNone(entity['scope']['project'].get('id'))
-        else:
-            self.assertIsNotNone(entity['scope']['domain'].get('id'))
-        self.assertIsNotNone(entity.get('links'))
-        self.assertIsNotNone(entity['links'].get('assignment'))
+        # A link to the assignment should be present
+        l = entity.get('links')
+        self.assertIsNotNone(l and l.get('assignment'))
 
         if ref:
-            if ref.get('user'):
-                self.assertEqual(ref['user']['id'], entity['user']['id'])
-            if ref.get('group'):
-                self.assertEqual(ref['group']['id'], entity['group']['id'])
-            if ref.get('role'):
-                self.assertEqual(ref['role']['id'], entity['role']['id'])
-            if ref['scope'].get('project'):
-                self.assertEqual(ref['scope']['project']['id'],
-                                 entity['scope']['project']['id'])
-            if ref['scope'].get('domain'):
-                self.assertEqual(ref['scope']['domain']['id'],
-                                 entity['scope']['domain']['id'])
-            if ref['scope'].get('OS-INHERIT:inherited_to'):
-                self.assertEqual(ref['scope']['OS-INHERIT:inherited_to'],
-                                 entity['scope']['OS-INHERIT:inherited_to'])
-        if url:
-            self.assertIn(url, entity['links']['assignment'])
+            links = ref.pop('links', None)
+            try:
+                self.assertDictContainsSubset(ref, entity)
+            finally:
+                if links:
+                    ref['links'] = links
+            if url:
+                self.assertIn(url, l['assignment'])
 
     def assertRoleAssignmentInListResponse(
             self, resp, ref, link_url=None, expected=1):
