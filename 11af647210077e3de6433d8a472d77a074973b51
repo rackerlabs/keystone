@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_0a6dda99",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 996,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-28T16:28:39Z",
+      "side": 1,
+      "message": "The fix for this bug is released, so the workarounds should be needed anymore. I expect all changes in this file can be removed.",
+      "revId": "11af647210077e3de6433d8a472d77a074973b51",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
