@@ -1,0 +1,259 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_2a47f6bd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-28T17:50:09Z",
+      "side": 1,
+      "message": "The commit title should be shorter -- remove \"simple\" and \"to LDAP backend\"",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_8a7c6aed",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 620,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-28T17:50:09Z",
+      "side": 1,
+      "message": "The name of this should be changed to FilterAttr, otherwise I find it confusing since LDAP uses attributes in other places too where it doesn\u0027t need to be escaped.",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ea6a4e1a",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 650,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-28T17:50:09Z",
+      "side": 1,
+      "message": "objectClass should be in the expr.Attr (or FilterAttr as I suggested) namespace so readers know what it is. So this should be expr.FilterAttr.objectClass.",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0a687a20",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 935,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-28T17:50:09Z",
+      "side": 1,
+      "message": "this shouldn\u0027t be necessary, since the class should be convertable by itself.",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_4a728212",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 963,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-28T17:50:09Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ca5d927b",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1435,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-28T17:50:09Z",
+      "side": 1,
+      "message": "why isn\u0027t self.id_attr an expr.Attr already?",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_cad4b2bf",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1473,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-28T17:50:09Z",
+      "side": 1,
+      "message": "query_params could be query_params or [] then could avoid the if statement.",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_aae686ae",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1491,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-28T17:50:09Z",
+      "side": 1,
+      "message": "the expr module doesn\u0027t do six.text_type like the original code did, so I think name needs to be six.text_type(name).",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_4aa52246",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-28T17:50:09Z",
+      "side": 1,
+      "message": "strings should be marked for translation with _()",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0a84faaf",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-28T17:50:09Z",
+      "side": 1,
+      "message": "Junction should be a subclass of FilterExpr not Equality.",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_6a61fe10",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-28T17:50:09Z",
+      "side": 1,
+      "message": "isn\u0027t this the same as u\u0027\u0027.join(parts) ?",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ca7032df",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-28T17:50:09Z",
+      "side": 1,
+      "message": "Can self.ldap_filter default to expr.EMPTY_ADDEND? Then this could be simpler.",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ea740ed2",
+        "filename": "keystone/tests/test_expr.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-28T17:50:09Z",
+      "side": 1,
+      "message": "it\u0027s not 2012 anymore.",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_2a7ff6ac",
+        "filename": "keystone/tests/test_expr.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-28T17:50:09Z",
+      "side": 1,
+      "message": "seems like these can also be UUIDs.",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_aa420666",
+        "filename": "keystone/tests/test_expr.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-28T17:50:09Z",
+      "side": 1,
+      "message": "change \"filed\" to \"fields\".",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
