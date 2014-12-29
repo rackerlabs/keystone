@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a961159_5384fab0",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 770,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-12-29T01:56:02Z",
+      "side": 1,
+      "message": "NOTE or TODO?",
+      "revId": "c606daf651747e5a241a0b7c1a2bdb9e1133cb9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_4818d21e",
         "filename": "keystone/tests/test_token_provider.py",
         "patchSetId": 1
@@ -37,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_13a35250",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-12-29T01:56:02Z",
+      "side": 1,
+      "message": "I just think that this is test provider should override token_format but you are resolving the bug that we do not check token_format.",
+      "parentUuid": "3a961159_fb6f8691",
+      "revId": "c606daf651747e5a241a0b7c1a2bdb9e1133cb9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_e8297e38",
         "filename": "keystone/token/provider.py",
         "patchSetId": 1
@@ -66,6 +101,24 @@
       "side": 1,
       "message": "I agree hard code should be avoided in a sense, it seems is not so meaningful in this case.",
       "parentUuid": "3a961159_e8297e38",
+      "revId": "c606daf651747e5a241a0b7c1a2bdb9e1133cb9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_336bee20",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2014-12-29T01:56:02Z",
+      "side": 1,
+      "message": "I do not think so. The reason you change line 143 is we do not get from _FORMAT_TO_PROVIDER. But, I think it\u0027s OK that separate to two patches.",
+      "parentUuid": "3a961159_3bef4eeb",
       "revId": "c606daf651747e5a241a0b7c1a2bdb9e1133cb9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
