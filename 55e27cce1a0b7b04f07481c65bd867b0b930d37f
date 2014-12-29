@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_c62f3f3d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-29T17:06:33Z",
+      "side": 1,
+      "message": "this is not needed in this patch, will remove",
+      "revId": "55e27cce1a0b7b04f07481c65bd867b0b930d37f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_861537e7",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 523,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-29T17:06:33Z",
+      "side": 1,
+      "message": "the above attributes should be defined once between here and the role backend",
+      "revId": "55e27cce1a0b7b04f07481c65bd867b0b930d37f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
