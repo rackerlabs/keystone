@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_533a3a35",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-29T01:32:15Z",
+      "side": 1,
+      "message": "This docstring is useless.",
+      "revId": "cc8a9b740828cb282769058a345a8ebee554f467",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
