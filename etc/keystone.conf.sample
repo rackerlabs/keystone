@@ -1415,9 +1415,6 @@
 # From keystone
 #
 
-# Deprecated in favor of provider in the [token] section. (string value)
-#token_format = <None>
-
 # Path of the certfile for token signing. For non-production environments, you
 # may be interested in using `keystone-manage pki_setup` to generate self-
 # signed certificates. (string value)
@@ -1504,7 +1501,7 @@
 # Controls the token construction, validation, and revocation operations. Core
 # providers are "keystone.token.providers.[pkiz|pki|uuid].Provider". The
 # default provider is uuid. (string value)
-#provider = <None>
+#provider = keystone.token.providers.uuid.Provider
 
 # Token persistence backend driver. (string value)
 #driver = keystone.token.persistence.backends.sql.Token
