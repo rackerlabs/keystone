@@ -13,6 +13,7 @@
 # under the License.
 
 import datetime
+import re
 import uuid
 
 from oslo.serialization import jsonutils
@@ -1029,15 +1030,16 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             self.assertEqual(ref['name'], entity['name'])
         return entity
 
+    # role assignment validation
+
     def assertValidRoleAssignmentListResponse(self, resp, expected_length=None,
                                               resource_url=None):
-
         entities = resp.result.get('role_assignments')
 
-        if expected_length is not None:
+        if expected_length:
             self.assertEqual(expected_length, len(entities))
 
-        # collections should have relational links
+        # Collections should have relational links
         self.assertValidListLinks(resp.result.get('links'),
                                   resource_url=resource_url)
 
@@ -1046,7 +1048,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             self.assertValidRoleAssignment(entity)
         return entities
 
-    def assertValidRoleAssignment(self, entity, ref=None, url=None):
+    def assertValidRoleAssignment(self, entity, ref=None):
         # A role should be present
         self.assertIsNotNone(entity.get('role'))
         self.assertIsNotNone(entity['role'].get('id'))
@@ -1074,23 +1076,30 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         self.assertIsNotNone(entity['links'].get('assignment'))
 
         if ref:
-            links = ref.pop('links', None)
+            links = ref.pop('links')
             try:
                 self.assertDictContainsSubset(ref, entity)
+
+                # NOTE(samueldmq): As provided expected refs do not contain
+                # HTTP + v3 API prefixes in their assignment link, we create a
+                # regular expression starting with those prefixes followed by
+                # the expected assignment link itself. Note that ref assignment
+                # link may be a regular expression. For further details, see
+                # _build_role_assignment_link at test_v3_assignment.
+                regex = ('^http://localhost/v3%(assignment_link)s$'
+                         % {'assignment_link': links['assignment']})
+                self.assertIsNotNone(
+                    re.match(regex, entity['links']['assignment']))
             finally:
                 if links:
                     ref['links'] = links
-        if url:
-            self.assertIn(url, entity['links']['assignment'])
 
-    def assertRoleAssignmentInListResponse(
-            self, resp, ref, link_url=None, expected=1):
+    def assertRoleAssignmentInListResponse(self, resp, ref, expected=1):
 
         found_count = 0
         for entity in resp.result.get('role_assignments'):
             try:
-                self.assertValidRoleAssignment(
-                    entity, ref=ref, url=link_url)
+                self.assertValidRoleAssignment(entity, ref=ref)
             except Exception:
                 # It doesn't match, so let's go onto the next one
                 pass
@@ -1098,11 +1107,8 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
                 found_count += 1
         self.assertEqual(expected, found_count)
 
-    def assertRoleAssignmentNotInListResponse(
-            self, resp, ref, link_url=None):
-
-        self.assertRoleAssignmentInListResponse(
-            resp, ref=ref, link_url=link_url, expected=0)
+    def assertRoleAssignmentNotInListResponse(self, resp, ref):
+        self.assertRoleAssignmentInListResponse(resp, ref=ref, expected=0)
 
     # policy validation
 
