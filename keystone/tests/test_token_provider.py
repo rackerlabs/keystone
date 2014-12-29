@@ -733,16 +733,7 @@ class TestTokenProvider(tests.TestCase):
                           self.token_provider_api.get_token_version,
                           'bogus')
 
-    def test_default_token_format(self):
-        self.assertEqual(token.provider.UUID_PROVIDER,
-                         token.provider.Manager.get_token_provider())
-
-    def test_uuid_token_format_and_no_provider(self):
-        self.config_fixture.config(group='signing', token_format='UUID')
-        self.assertEqual(token.provider.UUID_PROVIDER,
-                         token.provider.Manager.get_token_provider())
-
-    def test_default_providers_without_token_format(self):
+    def test_default_providers(self):
         self.config_fixture.config(group='token',
                                    provider=token.provider.UUID_PROVIDER)
         token.provider.Manager()
@@ -754,42 +745,6 @@ class TestTokenProvider(tests.TestCase):
         self.config_fixture.config(group='token',
                                    provider=token.provider.PKIZ_PROVIDER)
         token.provider.Manager()
-
-    def test_unsupported_token_format(self):
-        self.config_fixture.config(group='signing', token_format='CUSTOM')
-        self.assertRaises(exception.UnexpectedError,
-                          token.provider.Manager.get_token_provider)
-
-    def test_uuid_provider(self):
-        self.config_fixture.config(group='token',
-                                   provider=token.provider.UUID_PROVIDER)
-        self.assertEqual(token.provider.UUID_PROVIDER,
-                         token.provider.Manager.get_token_provider())
-
-    def test_provider_override_token_format(self):
-        self.config_fixture.config(
-            group='token',
-            provider='keystone.token.providers.pki.Test')
-        self.assertEqual('keystone.token.providers.pki.Test',
-                         token.provider.Manager.get_token_provider())
-
-        self.config_fixture.config(group='signing', token_format='UUID')
-        self.config_fixture.config(group='token',
-                                   provider=token.provider.UUID_PROVIDER)
-        self.assertEqual(token.provider.UUID_PROVIDER,
-                         token.provider.Manager.get_token_provider())
-
-        self.config_fixture.config(group='signing', token_format='PKI')
-        self.config_fixture.config(group='token',
-                                   provider=token.provider.PKI_PROVIDER)
-        self.assertEqual(token.provider.PKI_PROVIDER,
-                         token.provider.Manager.get_token_provider())
-
-        self.config_fixture.config(group='signing', token_format='CUSTOM')
-        self.config_fixture.config(group='token',
-                                   provider='my.package.MyProvider')
-        self.assertRaises(exception.UnexpectedError,
-                          token.provider.Manager.get_token_provider)
 
     def test_provider_token_expiration_validation(self):
         self.assertRaises(exception.TokenNotFound,

@@ -1195,7 +1195,8 @@ class TokenExpirationTest(AuthTest):
         self.assertEqual(original_expiration, r['access']['token']['expires'])
 
     def test_maintain_uuid_token_expiration(self):
-        self.config_fixture.config(group='signing', token_format='UUID')
+        self.config_fixture.config(group='token',
+                                   provider=provider.UUID_PROVIDER)
         self._maintain_token_expiration()
 
 
