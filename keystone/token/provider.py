@@ -130,6 +130,9 @@ class Manager(manager.Manager):
 
         """
 
+        if CONF.token.provider is not None:
+            return CONF.token.provider
+
         if CONF.signing.token_format:
             LOG.warn(_LW('[signing] token_format is deprecated. '
                          'Please change to setting the [token] provider '
@@ -143,10 +146,7 @@ class Manager(manager.Manager):
                       'expected either \'UUID\' or \'PKI\''))
             return mapped
 
-        if CONF.token.provider is None:
-            return UUID_PROVIDER
-        else:
-            return CONF.token.provider
+        return UUID_PROVIDER
 
     def __init__(self):
         super(Manager, self).__init__(self.get_token_provider())
