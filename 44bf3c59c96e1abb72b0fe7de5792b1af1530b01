@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_c52d72aa",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 3
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-29T21:43:58Z",
+      "side": 1,
+      "message": "looks like master conf.sample is out of sync with master keystone.openstack.common.policy",
+      "revId": "44bf3c59c96e1abb72b0fe7de5792b1af1530b01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
