@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_65875ed8",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-29T21:15:31Z",
+      "side": 1,
+      "message": "looks master conf.sample is current is out of sync with openstack.common.policy",
+      "revId": "93813888f44df302a5e37a9bb882dc15b27001e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
