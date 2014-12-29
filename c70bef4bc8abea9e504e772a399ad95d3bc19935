@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_45afc27d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 2770,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-29T21:02:57Z",
+      "side": 1,
+      "message": "There\u0027s no need to create a copy.",
+      "revId": "c70bef4bc8abea9e504e772a399ad95d3bc19935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_05dcda17",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-29T21:02:57Z",
+      "side": 1,
+      "message": "I changed the code to not raise an exception and  tests.test_v3_auth.TestTrustChain.test_intermediate_user_disabled still passed, so I don\u0027t think that test is verifying this code.",
+      "revId": "c70bef4bc8abea9e504e772a399ad95d3bc19935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_a5cce662",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-29T21:02:57Z",
+      "side": 1,
+      "message": "I changed the code to not raise an exception and  tests.test_v3_auth.TestTrustRedelegation.test_roles_subset still passed, so it\u0027s not verifying that an exception is raised as expected.",
+      "revId": "c70bef4bc8abea9e504e772a399ad95d3bc19935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
