@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_9fe2e32d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 16
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-29T09:30:25Z",
+      "side": 1,
+      "message": "i\u0027m wondering why this is showing up twice? again at line 150, and again at 193/200. that doesn\u0027t seem right",
+      "revId": "84ac5df0a9ec81730a67804bdda90897f3aae519",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_9f8bc367",
+        "filename": "setup.cfg",
+        "patchSetId": 16
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2014-12-29T09:30:25Z",
+      "side": 1,
+      "message": "nice, we should make a note that these need to be updated when we eventually remove the files (when we the oslo libs are released)",
+      "revId": "84ac5df0a9ec81730a67804bdda90897f3aae519",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
