@@ -788,8 +788,8 @@ class TestTokenProvider(tests.TestCase):
         self.config_fixture.config(group='signing', token_format='CUSTOM')
         self.config_fixture.config(group='token',
                                    provider='my.package.MyProvider')
-        self.assertRaises(exception.UnexpectedError,
-                          token.provider.Manager.get_token_provider)
+        self.assertEqual('my.package.MyProvider',
+                         token.provider.Manager.get_token_provider())
 
     def test_provider_token_expiration_validation(self):
         self.assertRaises(exception.TokenNotFound,
