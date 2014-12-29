@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_ebf16602",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 16
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-29T16:02:45Z",
+      "side": 1,
+      "message": "Looks like this is because list_opts returns multiple list entries with the same section...\n\n def list_opts():\n     \"\"\"Entry point for oslo.config-generator.\"\"\"\n     return [(None, copy.deepcopy(common_cli_opts)),\n             (None, copy.deepcopy(logging_cli_opts)),\n             (None, copy.deepcopy(generic_log_opts)),\n             (None, copy.deepcopy(log_opts)),\n             ]",
+      "parentUuid": "3a961159_9fe2e32d",
+      "revId": "84ac5df0a9ec81730a67804bdda90897f3aae519",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_9f8bc367",
         "filename": "setup.cfg",
         "patchSetId": 16
@@ -30,6 +48,24 @@
       "writtenOn": "2014-12-29T09:30:25Z",
       "side": 1,
       "message": "nice, we should make a note that these need to be updated when we eventually remove the files (when we the oslo libs are released)",
+      "revId": "84ac5df0a9ec81730a67804bdda90897f3aae519",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0bf792f6",
+        "filename": "setup.cfg",
+        "patchSetId": 16
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-29T16:02:45Z",
+      "side": 1,
+      "message": "This will be obvious since the config file generation tool prints errors when these don\u0027t exist.",
+      "parentUuid": "3a961159_9f8bc367",
       "revId": "84ac5df0a9ec81730a67804bdda90897f3aae519",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
