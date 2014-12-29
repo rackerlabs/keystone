@@ -378,9 +378,8 @@ class SqlUpgradeTests(SqlMigrateBase):
                                           autoload=True)
         else:
             this_table = table
-        insert = this_table.insert()
-        insert.execute(d)
-        session.commit()
+        insert = this_table.insert().values(**d)
+        session.execute(insert)
 
     def test_region_migration(self):
         self.assertTableDoesNotExist('region')
@@ -1252,6 +1251,7 @@ class SqlUpgradeTests(SqlMigrateBase):
             table=region_unique_table)
 
         # migrate to 43, unique constraint should be dropped
+        session.commit()
         session.close()
         self.upgrade(43)
         session = self.Session()
