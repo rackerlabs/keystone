@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a961159_3324ce0d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-29T01:42:54Z",
+      "side": 1,
+      "message": "why?",
+      "revId": "f88d2275b43f008a78026616e11f12fc1d16d19f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_91276562",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 2
@@ -19,6 +36,58 @@
     },
     {
       "key": {
+        "uuid": "3a961159_931bc2c9",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-29T01:42:54Z",
+      "side": 1,
+      "message": "I agree with this... it\u0027s confusing to set the role_id to something and then set it to something else without using the old value.",
+      "parentUuid": "3a961159_91276562",
+      "revId": "f88d2275b43f008a78026616e11f12fc1d16d19f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_731e56bd",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-29T01:42:54Z",
+      "side": 1,
+      "message": "change \"using\" to \"use\"",
+      "revId": "f88d2275b43f008a78026616e11f12fc1d16d19f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_53687a21",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-29T01:42:54Z",
+      "side": 1,
+      "message": "This isn\u0027t tested according to the coverage report. Add a test.",
+      "revId": "f88d2275b43f008a78026616e11f12fc1d16d19f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_51d89d52",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 2
@@ -30,6 +99,24 @@
       "writtenOn": "2014-12-24T12:28:35Z",
       "side": 1,
       "message": "Same as line 226.\n\nThis line could contain only ref \u003d self._normalize_dict(role)\n\nThe expression:\n\nref \u003d self._assign_unique_id(ref)\n\ncould be put on an else statement at line 480.",
+      "revId": "f88d2275b43f008a78026616e11f12fc1d16d19f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f38166c4",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-29T01:42:54Z",
+      "side": 1,
+      "message": "I agree... it\u0027s confusing as it is.",
+      "parentUuid": "3a961159_51d89d52",
       "revId": "f88d2275b43f008a78026616e11f12fc1d16d19f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
