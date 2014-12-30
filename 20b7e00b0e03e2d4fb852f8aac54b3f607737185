@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_7914539f",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 6
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-30T21:42:41Z",
+      "side": 1,
+      "message": "the sample config file should be generated using tox -e sample_config.",
+      "revId": "20b7e00b0e03e2d4fb852f8aac54b3f607737185",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_3971eb0c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-30T21:42:41Z",
+      "side": 1,
+      "message": "I think this should default to None and use the eventlet.wsgi.server() default if it\u0027s None.",
+      "revId": "20b7e00b0e03e2d4fb852f8aac54b3f607737185",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d952a767",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-30T21:42:41Z",
+      "side": 1,
+      "message": "I don\u0027t think people reading this will understand what it means. Suggest use the text from the wsgi.server docs:\n\n If set to False, disables keepalives on the server; all connections will be closed after serving one request.",
+      "revId": "20b7e00b0e03e2d4fb852f8aac54b3f607737185",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_194d0fc5",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-30T21:42:41Z",
+      "side": 1,
+      "message": "Same comment here... this should default to None and use the eventlet.wsgi.server() default if it\u0027s None.",
+      "revId": "20b7e00b0e03e2d4fb852f8aac54b3f607737185",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
