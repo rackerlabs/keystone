@@ -23,6 +23,23 @@ from keystone.tests import test_v3
 CONF = cfg.CONF
 
 
+def _get_role_assignment_query_url(effective=False, **filters):
+    query_params = '?effective' if effective else ''
+
+    for k, v in filters.iteritems():
+        query_params += '?' if not query_params else '&'
+
+        if k == 'inherited':
+            query_params += 'scope.OS-INHERIT:inherited_to=projects'
+        else:
+            if k in ['domain_id', 'project_id']:
+                query_params += 'scope.'
+
+            query_params += '%s=%s' % (k.replace('_', '.'), v)
+
+    return '/role_assignments%s' % query_params
+
+
 def _get_role_assignment_link(**kwargs):
     url = ''
 
@@ -1378,6 +1395,315 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         # Should have one direct role and one from group membership...
         self.assertRoleAssignmentInListResponse(r, up_entity)
         self.assertRoleAssignmentInListResponse(r, up1_entity)
+
+
+class RoleAssignmentBaseTestCase(test_v3.RestfulTestCase):
+    """Base class for testing /v3/role_assignments API behavior."""
+
+    def load_sample_data(self):
+        """Creates sample data to be used on tests
+
+        Created data are i) a role and ii) a domain containing: a project
+        hierarchy and a user within a group.
+
+        """
+        super(RoleAssignmentBaseTestCase, self).load_sample_data()
+
+        # Create a domain and a project hierarchy
+
+        self.smp_domain = self.new_domain_ref()
+        self.smp_domain_id = self.smp_domain['id']
+        self.assignment_api.create_domain(self.smp_domain_id, self.smp_domain)
+
+        self.smp_project = self.new_project_ref(
+            domain_id=self.smp_domain['id'])
+        self.smp_project_id = self.smp_project['id']
+        self.assignment_api.create_project(self.smp_project_id,
+                                           self.smp_project)
+
+        self.smp_sub_project = self.new_project_ref(
+            domain_id=self.smp_domain['id'], parent_id=self.smp_project_id)
+        self.smp_sub_project_id = self.smp_sub_project['id']
+        self.assignment_api.create_project(self.smp_sub_project_id,
+                                           self.smp_sub_project)
+
+        # Create a user and a group
+
+        self.smp_user = self.new_user_ref(domain_id=self.smp_domain_id)
+        password = self.smp_user['password']
+        self.smp_user = self.identity_api.create_user(self.smp_user)
+        self.smp_user['password'] = password
+        self.smp_user_id = self.smp_user['id']
+
+        self.smp_group = self.new_group_ref(domain_id=self.smp_domain_id)
+        self.smp_group = self.identity_api.create_group(self.smp_group)
+        self.smp_group_id = self.smp_group['id']
+
+        self.identity_api.add_user_to_group(user_id=self.smp_user_id,
+                                            group_id=self.smp_group_id)
+
+        # Create a role
+
+        self.smp_role = self.new_role_ref()
+        self.smp_role_id = self.smp_role['id']
+        self.assignment_api.create_role(self.smp_role_id, self.smp_role)
+
+    def get_role_assignments(self, expected_status=200,
+                             effective=False, **filters):
+        """Returns the result from querying role assingment API + queried URL
+
+        Calls GET /v3/role_assignments?<params> and returns its result, where
+        <params> is the HTTP query parameters form of effective option plus
+        filters, if provided. Queried URL is returned as well.
+
+        """
+
+        query_url = _get_role_assignment_query_url(effective, **filters)
+
+        return self.get(query_url, expected_status=expected_status), query_url
+
+
+class RoleAssignmentFailureTestCase(RoleAssignmentBaseTestCase):
+    """Class for testing invalid query params on /v3/role_assingments API."""
+
+    def test_get_role_assignments_by_domain_and_project(self):
+        self.get_role_assignments(domain_id=self.smp_domain_id,
+                                  project_id=self.smp_project_id,
+                                  expected_status=200)
+        # TODO(samuelms): We need to expect 400 here, but still
+        # have to implement the checks
+
+    def test_get_role_assignments_by_user_and_group(self):
+        self.get_role_assignments(user_id=self.smp_user_id,
+                                  group_id=self.smp_group_id,
+                                  expected_status=200)
+        # TODO(samuelms): We need to expect 400 here, but still
+        # have to implement the checks
+
+    def test_get_role_assignments_by_effective_and_inherited(self):
+        self.get_role_assignments(effective=True, inherited=True,
+                                  expected_status=200)
+        # TODO(samuelms): We need to expect 400 here, but still
+        # have to implement the checks
+
+    def test_get_role_assignments_by_effective_and_group(self):
+        self.get_role_assignments(effective=True, group_id=self.smp_group_id,
+                                  expected_status=200)
+        # TODO(samuelms): We need to expect 400 here, but still
+        # have to implement the checks
+
+
+class RoleAssignmentDirectTestCase(RoleAssignmentBaseTestCase):
+    """Class for testing direct assignments on /v3/role_assignments API."""
+
+    def config_overrides(self):
+        super(RoleAssignmentDirectTestCase, self).config_overrides()
+        self.config_fixture.config(group='os_inherit', enabled=True)
+
+    def list_expected_role_assignments(self, **filters):
+        return [_get_role_assignment_entity(**filters)]
+
+    def _test_get_role_assignments(self, **filters):
+        """Generic test method."""
+
+        # Create role assignment
+        self.configure_assignment(**filters)
+
+        # Get role assignments from API
+        r, query_url = self.get_role_assignments(**filters)
+        self.assertValidRoleAssignmentListResponse(r, resource_url=query_url)
+
+        # Assert expected role assignments are returned by the API call
+        expected_assignments = self.list_expected_role_assignments(**filters)
+        self.assertTrue(len(expected_assignments) > 0)
+        for assignment in expected_assignments:
+            self.assertRoleAssignmentInListResponse(r, assignment)
+
+        # Delete role assignment
+        self.configure_assignment(cleanup=True, **filters)
+
+    # Non-inherited Role Assignment Tests
+
+    def test_get_noninherited_role_assignments_by_domain(self, **filters):
+        self._test_get_role_assignments(domain_id=self.smp_domain_id,
+                                        **filters)
+
+    def test_get_noninherited_role_assignments_by_project(self, **filters):
+        self._test_get_role_assignments(project_id=self.smp_project_id,
+                                        **filters)
+
+    def test_get_noninherited_role_assignments_by_user(self, **filters):
+        self._test_get_role_assignments(user_id=self.smp_user_id, **filters)
+
+    def test_get_noninherited_role_assignments_by_group(self, **filters):
+        self._test_get_role_assignments(group_id=self.smp_group_id, **filters)
+
+    def test_get_noninherited_role_assignments_by_role(self, **filters):
+        self._test_get_role_assignments(role_id=self.smp_role_id, **filters)
+
+    def test_get_noninherited_role_assignments_by_domain_and_user(
+            self, **filters):
+        self.test_get_noninherited_role_assignments_by_domain(
+            user_id=self.smp_user_id, **filters)
+
+    def test_get_noninherited_role_assignments_by_domain_and_group(
+            self, **filters):
+        self.test_get_noninherited_role_assignments_by_domain(
+            group_id=self.smp_group_id, **filters)
+
+    def test_get_noninherited_role_assignments_by_project_and_user(
+            self, **filters):
+        self.test_get_noninherited_role_assignments_by_project(
+            user_id=self.smp_user_id, **filters)
+
+    def test_get_noninherited_role_assignments_by_project_and_group(
+            self, **filters):
+        self.test_get_noninherited_role_assignments_by_project(
+            group_id=self.smp_group_id, **filters)
+
+    def test_get_noninherited_role_assignments_by_domain_user_and_role(
+            self, **filters):
+        self.test_get_noninherited_role_assignments_by_domain_and_user(
+            role_id=self.smp_role_id, **filters)
+
+    def test_get_noninherited_role_assignments_by_domain_group_and_role(
+            self, **filters):
+        self.test_get_noninherited_role_assignments_by_domain_and_group(
+            role_id=self.smp_role_id, **filters)
+
+    def test_get_noninherited_role_assignments_by_project_user_and_role(
+            self, **filters):
+        self.test_get_noninherited_role_assignments_by_project_and_user(
+            role_id=self.smp_role_id, **filters)
+
+    def test_get_noninherited_role_assignments_by_project_group_and_role(
+            self, **filters):
+        self.test_get_noninherited_role_assignments_by_project_and_group(
+            role_id=self.smp_role_id, **filters)
+
+    # Inherited Role Assignment Tests
+
+    def test_get_inherited_role_assignments_by_domain(self):
+        self.test_get_noninherited_role_assignments_by_domain(
+            inherited_to_projects=True)
+
+    def test_get_inherited_role_assignments_by_project(self):
+        self.test_get_noninherited_role_assignments_by_project(
+            inherited_to_projects=True)
+
+    def test_get_inherited_role_assignments_by_user(self):
+        self.test_get_noninherited_role_assignments_by_user(
+            inherited_to_projects=True)
+
+    def test_get_inherited_role_assignments_by_group(self):
+        self.test_get_noninherited_role_assignments_by_group(
+            inherited_to_projects=True)
+
+    def test_get_inherited_role_assignments_by_role(self):
+        self.test_get_noninherited_role_assignments_by_role(
+            inherited_to_projects=True)
+
+    def test_get_inherited_role_assignments_by_inherited(self):
+        self._test_get_role_assignments(inherited_to_projects=True)
+
+    def test_get_inherited_role_assignments_by_domain_and_user(self):
+        self.test_get_noninherited_role_assignments_by_domain_and_user(
+            inherited_to_projects=True)
+
+    def test_get_inherited_role_assignments_by_domain_and_group(self):
+        self.test_get_noninherited_role_assignments_by_domain_and_group(
+            inherited_to_projects=True)
+
+    def test_get_inherited_role_assignments_by_project_and_user(self):
+        self.test_get_noninherited_role_assignments_by_project_and_user(
+            inherited_to_projects=True)
+
+    def test_get_inherited_role_assignments_by_project_and_group(self):
+        self.test_get_noninherited_role_assignments_by_project_and_group(
+            inherited_to_projects=True)
+
+    def test_get_inherited_role_assignments_by_domain_user_and_role(self):
+        self.test_get_noninherited_role_assignments_by_domain_user_and_role(
+            inherited_to_projects=True)
+
+    def test_get_inherited_role_assignments_by_domain_group_and_role(self):
+        self.test_get_noninherited_role_assignments_by_domain_group_and_role(
+            inherited_to_projects=True)
+
+    def test_get_inherited_role_assignments_by_project_user_and_role(self):
+        self.test_get_noninherited_role_assignments_by_project_user_and_role(
+            inherited_to_projects=True)
+
+    def test_get_inherited_role_assignments_by_project_group_and_role(self):
+        self.test_get_noninherited_role_assignments_by_project_group_and_role(
+            inherited_to_projects=True)
+
+    # Helper functions
+
+    def configure_assignment(self, cleanup=False, **kwargs):
+        if not any(target in kwargs
+                   for target in ('domain_id', 'projects_id')):
+            kwargs['project_id'] = self.smp_project_id
+
+        if not any(actor in kwargs for actor in ('user_id', 'group_id')):
+            kwargs['user_id'] = self.smp_user_id
+
+        if 'role_id' not in kwargs:
+            kwargs['role_id'] = self.smp_role_id
+
+        if cleanup:
+            self.assignment_api.delete_grant(**kwargs)
+        else:
+            self.assignment_api.create_grant(**kwargs)
+
+
+class RoleAssignmentEffectiveTestCase(RoleAssignmentDirectTestCase):
+    """Class for testing effective assignments on /v3/role_assignments API."""
+
+    def get_role_assignments(self, expected_status=200,
+                             effective=False, **filters):
+        filters.pop('group_id', None)
+        if filters.pop('inherited_to_projects', None):
+            filters.pop('domain_id', None)
+            filters.pop('project_id', None)
+
+        r = (super(RoleAssignmentEffectiveTestCase, self).get_role_assignments(
+             expected_status=expected_status, effective=True, **filters))
+        return r
+
+    def list_expected_role_assignments(self, **kwargs):
+        assignment_link = _get_role_assignment_link(**kwargs)
+
+        # For effective role assignments, always expand group membership
+        user_ids = [None]
+        if kwargs.get('group_id'):
+            user_ids = [u['id'] for u in
+                        self.identity_api.list_users_in_group(
+                            kwargs['group_id'])]
+            kwargs.pop('group_id')
+        elif kwargs.get('user_id'):
+            user_ids = [kwargs.get('user_id')]
+
+        # For effective inherited role assignments, expand to domain's projects
+        project_ids = [None]
+        if kwargs.get('inherited_to_projects'):
+            if kwargs.get('domain_id'):
+                # FIXME(samuelms): Use resource_api.list_projects_in_domain()
+                project_ids = [self.smp_project_id, self.smp_sub_project_id]
+                kwargs.pop('domain_id')
+            elif kwargs.get('project_id'):
+                # FIXME(samuelms): Use resource_api.list_projects_in_subtree()
+                project_ids = [self.smp_sub_project_id]
+
+        r = []
+        for project_id in project_ids:
+            kwargs['project_id'] = project_id
+            for user_id in user_ids:
+                kwargs['user_id'] = user_id
+                r.append(_get_role_assignment_entity(
+                    assignment_link=assignment_link, **kwargs))
+
+        return r
 
 
 class AssignmentInheritanceTestCase(test_v3.RestfulTestCase):
