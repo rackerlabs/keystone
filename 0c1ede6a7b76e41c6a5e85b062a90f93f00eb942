@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_739712ec",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 10765
+      },
+      "writtenOn": "2014-12-30T19:41:53Z",
+      "side": 1,
+      "message": "Since this is a refactoring patch, should we remove this \"\u0027member\u0027: ref\" here and put into another patch ( https://review.openstack.org/#/c/142162/ )?",
+      "revId": "0c1ede6a7b76e41c6a5e85b062a90f93f00eb942",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
