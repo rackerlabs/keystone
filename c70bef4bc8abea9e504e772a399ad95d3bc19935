@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_42a32d4f",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 2770,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-30T14:01:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_45afc27d",
+      "revId": "c70bef4bc8abea9e504e772a399ad95d3bc19935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_05dcda17",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 25
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_ce72e6af",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-30T14:01:59Z",
+      "side": 1,
+      "message": "This is checked on policy enforcement. I\u0027m not sure about removing this check.",
+      "parentUuid": "3a961159_05dcda17",
+      "revId": "c70bef4bc8abea9e504e772a399ad95d3bc19935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_a5cce662",
         "filename": "keystone/trust/core.py",
         "patchSetId": 25
@@ -47,6 +83,24 @@
       "writtenOn": "2014-12-29T21:02:57Z",
       "side": 1,
       "message": "I changed the code to not raise an exception and  tests.test_v3_auth.TestTrustRedelegation.test_roles_subset still passed, so it\u0027s not verifying that an exception is raised as expected.",
+      "revId": "c70bef4bc8abea9e504e772a399ad95d3bc19935",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ce4bc65d",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2014-12-30T14:01:59Z",
+      "side": 1,
+      "message": "It appears to be filtered by policy enforcement, but I doubt we can rely on it.",
+      "parentUuid": "3a961159_a5cce662",
       "revId": "c70bef4bc8abea9e504e772a399ad95d3bc19935",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
