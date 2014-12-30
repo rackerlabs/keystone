@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_c449e633",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 372,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-30T14:57:31Z",
+      "side": 1,
+      "message": "The test can modify the policy (just like a deployer might) so that this code can be tested. This is why I think the tests should be done directly through the controller rather than the HTTP call.",
+      "revId": "9dc7ba1034f67b2d983709f6cd58803290e1cac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0454cec8",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-30T14:57:31Z",
+      "side": 1,
+      "message": "Modify the policy for the test so that this code can be tested.",
+      "revId": "9dc7ba1034f67b2d983709f6cd58803290e1cac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
