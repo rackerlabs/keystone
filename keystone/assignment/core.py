@@ -840,10 +840,6 @@ class Driver(object):
     def _get_list_limit(self):
         return CONF.assignment.list_limit or CONF.list_limit
 
-    # TODO(henry-nash): A number of the abstract methods incorrectly list
-    # User/GroupNotFound as possible exceptions, even though we no longer
-    # check for these in the driver methods. This is raise as bug #1406393.
-
     @abc.abstractmethod
     def get_project_by_name(self, tenant_name, domain_id):
         """Get a tenant by name.
@@ -868,7 +864,7 @@ class Driver(object):
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
         """Add a role to a user within given tenant.
 
-        :raises: keystone.exception.UserNotFound,
+        :raises: keystone.exception.Conflict,
                  keystone.exception.ProjectNotFound
 
         """
@@ -878,9 +874,7 @@ class Driver(object):
     def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
         """Remove a role from a user within given tenant.
 
-        :raises: keystone.exception.UserNotFound,
-                 keystone.exception.ProjectNotFound,
-                 keystone.exception.RoleNotFound
+        :raises: keystone.exception.RoleNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -909,9 +903,7 @@ class Driver(object):
                             inherited_to_projects=False):
         """Lists assignments/grants.
 
-        :raises: keystone.exception.UserNotFound,
-                 keystone.exception.GroupNotFound,
-                 keystone.exception.ProjectNotFound,
+        :raises: keystone.exception.ProjectNotFound,
                  keystone.exception.DomainNotFound
 
         """
@@ -923,9 +915,7 @@ class Driver(object):
                             inherited_to_projects=False):
         """Checks an assignment/grant role id.
 
-        :raises: keystone.exception.UserNotFound,
-                 keystone.exception.GroupNotFound,
-                 keystone.exception.ProjectNotFound,
+        :raises: keystone.exception.ProjectNotFound,
                  keystone.exception.DomainNotFound,
                  keystone.exception.RoleNotFound
         :returns: None or raises an exception if grant not found
