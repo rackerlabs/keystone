@@ -890,25 +890,25 @@ class RoleAssignmentV3(controller.V3Controller):
         # to pass the filters into the driver call, so that the list size is
         # kept a minimum.
 
-        query_params = context['query_string']
-        effective = ('effective' in query_params and self.query_filter_is_true(
-                     context['query_string']['effective']))
+        params = context['query_string']
+        effective = 'effective' in params and (
+            self.query_filter_is_true(params['effective']))
+        inherited = params.get('scope.OS-INHERIT:inherited_to') == 'projects'
 
         self._require_single_arg(allow_none=True,
-                                 domain=query_params.get('scope.domain.id'),
-                                 project=query_params.get('scope.project.id'))
+                                 domain=params.get('scope.domain.id'),
+                                 project=params.get('scope.project.id'))
         self._require_single_arg(allow_none=True,
-                                 user=query_params.get('user.id'),
-                                 group=query_params.get('group.id'))
-        self._require_single_arg(allow_none=True,
-                                 effective=effective,
-                                 domain=query_params.get('scope.domain.id'))
+                                 user=params.get('user.id'),
+                                 group=params.get('group.id'))
         self._require_single_arg(allow_none=True,
                                  effective=effective,
-                                 group=query_params.get('group.id'))
-        self._require_single_arg(
-            allow_none=True, effective=effective,
-            inherited=query_params.get('scope.OS-INHERIT:inherited_to'))
+                                 domain=params.get('scope.domain.id'))
+        self._require_single_arg(allow_none=True,
+                                 effective=effective,
+                                 group=params.get('group.id'))
+        self._require_single_arg(allow_none=True,
+                                 effective=effective, inherited=inherited)
 
         hints = self.build_driver_hints(context, filters)
         refs = self.assignment_api.list_role_assignments()

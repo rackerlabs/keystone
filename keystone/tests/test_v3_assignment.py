@@ -23,6 +23,23 @@ from keystone.tests import test_v3
 CONF = cfg.CONF
 
 
+def _build_role_assignment_query_url(effective=False, **filters):
+    query_params = '?effective' if effective else ''
+
+    for k, v in filters.iteritems():
+        query_params += '?' if not query_params else '&'
+
+        if k == 'inherited_to_projects':
+            query_params += 'scope.OS-INHERIT:inherited_to=projects'
+        else:
+            if k in ['domain_id', 'project_id']:
+                query_params += 'scope.'
+
+            query_params += '%s=%s' % (k.replace('_', '.'), v)
+
+    return '/role_assignments%s' % query_params
+
+
 def _build_role_assignment_link(**kwargs):
     url = ''
 
@@ -91,6 +108,7 @@ def _build_role_assignment_entity(assignment_link=None, **kwargs):
 
 
 class AssignmentTestCase(test_v3.RestfulTestCase):
+
     """Test domains, projects, roles and role assignments."""
 
     def setUp(self):
@@ -1380,6 +1398,290 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         self.assertRoleAssignmentInListResponse(r, up1_entity)
 
 
+class RoleAssignmentBaseTestCase(test_v3.RestfulTestCase):
+    """Base class for testing /v3/role_assignments API behavior."""
+
+    def load_sample_data(self):
+        """Creates sample data to be used on tests
+
+        Created data are i) a role and ii) a domain containing: a project
+        hierarchy and 3 users within 3 groups.
+
+        """
+        super(RoleAssignmentBaseTestCase, self).load_sample_data()
+
+        def add_subprojects(project_id, n):
+            sub_project_ids = []
+            for i in range(n):
+                subproject = self.new_project_ref(domain_id=self.smp_domain_id,
+                                                  parent_id=project_id)
+                self.assignment_api.create_project(subproject['id'],
+                                                   subproject)
+                sub_project_ids.append(subproject['id'])
+            return sub_project_ids
+
+        # Create a domain
+        self.smp_domain = self.new_domain_ref()
+        self.smp_domain_id = self.smp_domain['id']
+        self.assignment_api.create_domain(self.smp_domain_id, self.smp_domain)
+
+        # Create a project hierarchy
+        self.smp_project = self.new_project_ref(
+            domain_id=self.smp_domain['id'])
+        self.smp_project_id = self.smp_project['id']
+        self.assignment_api.create_project(self.smp_project_id,
+                                           self.smp_project)
+
+        self.smp_subproject_ids = add_subprojects(self.smp_project_id, 2)
+        self.smp_subproject_ids += add_subprojects(self.smp_subproject_ids[0], 3)
+
+        # Create 3 users
+        self.smp_user_ids = []
+        for i in range(3):
+            user = self.new_user_ref(domain_id=self.smp_domain_id)
+            user = self.identity_api.create_user(user)
+            self.smp_user_ids.append(user['id'])
+
+        # Create 3 groups
+        self.smp_group_ids = []
+        for i in range(3):
+            group = self.new_group_ref(domain_id=self.smp_domain_id)
+            group = self.identity_api.create_group(group)
+            self.smp_group_ids.append(group['id'])
+
+            # Put 2 members on each group
+            self.identity_api.add_user_to_group(
+                user_id=self.smp_user_ids[i], group_id=group['id'])
+            self.identity_api.add_user_to_group(
+                user_id=self.smp_user_ids[i % 2], group_id=group['id'])
+
+        # Create a role
+        self.smp_role = self.new_role_ref()
+        self.smp_role_id = self.smp_role['id']
+        self.assignment_api.create_role(self.smp_role_id, self.smp_role)
+
+    def get_role_assignments_query_url(self, effective=False, **filters):
+        return _build_role_assignment_query_url(effective, **filters)
+
+    def get_role_assignments(self, expected_status=200, expected_length=None,
+                             effective=False, **filters):
+        """Returns the result from querying role assingment API + queried URL
+
+        Calls GET /v3/role_assignments?<params> and returns its result, where
+        <params> is the HTTP query parameters form of effective option plus
+        filters, if provided. Queried URL is returned as well.
+
+        """
+
+        query_url = self.get_role_assignments_query_url(effective, **filters)
+        response = self.get(query_url, expected_status=expected_status)
+
+        if expected_length:
+            self.assertEqual(expected_length,
+                             len(response.result.get('role_assignments')))
+
+        return response, query_url
+
+
+class RoleAssignmentFailureTestCase(RoleAssignmentBaseTestCase):
+    """Class for testing invalid query params on /v3/role_assingments API."""
+
+    def test_get_role_assignments_by_domain_and_project(self):
+        self.get_role_assignments(domain_id=self.smp_domain_id,
+                                  project_id=self.smp_project_id,
+                                  expected_status=400)
+
+    def test_get_role_assignments_by_user_and_group(self):
+        self.get_role_assignments(user_id=self.smp_user_ids[0],
+                                  group_id=self.smp_group_ids[0],
+                                  expected_status=400)
+
+    def test_get_role_assignments_by_effective_and_inherited(self):
+        self.get_role_assignments(effective=True, inherited_to_projects=True,
+                                  expected_status=400)
+
+    def test_get_role_assignments_by_effective_and_domain(self):
+        self.get_role_assignments(effective=True, domain_id=self.smp_domain_id,
+                                  expected_status=400)
+
+    def test_get_role_assignments_by_effective_and_group(self):
+        self.get_role_assignments(effective=True, group_id=self.smp_group_ids[0],
+                                  expected_status=400)
+
+
+class RoleAssignmentDirectTestCase(RoleAssignmentBaseTestCase):
+
+    def _test_get_role_assignments(self, **filters):
+        """Generic test method."""
+
+        r, query_url = self.get_role_assignments(**filters)
+        base_length = len(r.result.get('role_assignments'))
+
+        # Create role assignment
+        self.configure_assignment(**filters)
+
+        # Get expected role assignments
+        expected_assignments, expected_counts = self.list_expected_role_assignments(**filters)
+        expected_length = base_length + sum(expected_counts)
+        # TODO(samueldmq): assert not equal
+        self.assertTrue(len(expected_assignments) > 0)
+
+        print expected_assignments
+        print expected_counts
+        print expected_length
+        # Get role assignments from API
+        r, query_url = self.get_role_assignments(
+            expected_length=expected_length, **filters)
+        self.assertValidRoleAssignmentListResponse(r, resource_url=query_url)
+
+        # Assert expected role assignments are returned by the API call
+        for i in range(len(expected_assignments)):
+            self.assertRoleAssignmentInListResponse(r, expected_assignments[i],
+                                                    expected=expected_counts[i])
+
+        # Delete role assignment
+        self.configure_assignment(cleanup=True, **filters)
+
+    def configure_assignment(self, cleanup=False, **kwargs):
+        if not any(target in kwargs
+                   for target in ('domain_id', 'projects_id')):
+            kwargs['project_id'] = self.smp_project_id
+
+        if not any(actor in kwargs for actor in ('user_id', 'group_id')):
+            kwargs['user_id'] = self.smp_user_ids[0]
+
+        if 'role_id' not in kwargs:
+            kwargs['role_id'] = self.smp_role_id
+
+        if cleanup:
+            self.assignment_api.delete_grant(**kwargs)
+        else:
+            self.assignment_api.create_grant(**kwargs)
+
+    def list_existing_role_assignments(self, **filters):
+        return []
+
+    def list_expected_role_assignments(self, **filters):
+        return ([_build_role_assignment_entity(**filters)], [1])
+
+    def test_get_role_assignments_by_domain(self, **filters):
+        self._test_get_role_assignments(domain_id=self.smp_domain_id,
+                                        **filters)
+
+    def test_get_role_assignments_by_project(self, **filters):
+        self._test_get_role_assignments(project_id=self.smp_project_id,
+                                        **filters)
+
+    def test_get_role_assignments_by_user(self, **filters):
+        self._test_get_role_assignments(user_id=self.smp_user_ids[0], **filters)
+
+    def test_get_role_assignments_by_group(self, **filters):
+        self._test_get_role_assignments(group_id=self.smp_group_ids[0], **filters)
+
+    def test_get_role_assignments_by_role(self, **filters):
+        self._test_get_role_assignments(role_id=self.smp_role_id, **filters)
+
+    def test_get_role_assignments_by_domain_and_user(self, **filters):
+        self.test_get_role_assignments_by_domain(user_id=self.smp_user_ids[0],
+                                                 **filters)
+
+    def test_get_role_assignments_by_domain_and_group(self, **filters):
+        self.test_get_role_assignments_by_domain(group_id=self.smp_group_ids[0],
+                                                 **filters)
+
+    def test_get_role_assignments_by_project_and_user(self, **filters):
+        self.test_get_role_assignments_by_project(user_id=self.smp_user_ids[0],
+                                                  **filters)
+
+    def test_get_role_assignments_by_project_and_group(self, **filters):
+        self.test_get_role_assignments_by_project(group_id=self.smp_group_ids[0],
+                                                  **filters)
+
+    def test_get_role_assignments_by_domain_user_and_role(self, **filters):
+        self.test_get_role_assignments_by_domain_and_user(
+            role_id=self.smp_role_id, **filters)
+
+    def test_get_role_assignments_by_domain_group_and_role(self, **filters):
+        self.test_get_role_assignments_by_domain_and_group(
+            role_id=self.smp_role_id, **filters)
+
+    def test_get_role_assignments_by_project_user_and_role(self, **filters):
+        self.test_get_role_assignments_by_project_and_user(
+            role_id=self.smp_role_id, **filters)
+
+    def test_get_role_assignments_by_project_group_and_role(self, **filters):
+        self.test_get_role_assignments_by_project_and_group(
+            role_id=self.smp_role_id, **filters)
+
+
+class RoleAssignmentInheritedTestCase(RoleAssignmentDirectTestCase):
+
+    def config_overrides(self):
+        super(RoleAssignmentInheritedTestCase, self).config_overrides()
+        self.config_fixture.config(group='os_inherit', enabled=True)
+
+    def _test_get_role_assignments(self, **filters):
+        super(RoleAssignmentInheritedTestCase,
+              self)._test_get_role_assignments(inherited_to_projects=True,
+                                               **filters)
+
+
+class RoleAssignmentEffectiveTestCase(RoleAssignmentInheritedTestCase):
+
+    def get_role_assignments_query_url(self, effective=False, **filters):
+        query_filters = filters.copy()
+        query_filters.pop('inherited_to_projects')
+
+        query_filters.pop('group_id', None)
+        query_filters.pop('domain_id', None)
+        query_filters.pop('project_id', None)
+
+        return _build_role_assignment_query_url(effective=True,
+                                                **query_filters)
+
+    def list_expected_role_assignments(self, **kwargs):
+        assignment_link = _build_role_assignment_link(**kwargs)
+
+        # For effective role assignments, always expand group membership
+        user_ids = [None]
+        if kwargs.get('group_id'):
+            user_ids = [u['id'] for u in
+                        self.identity_api.list_users_in_group(
+                            kwargs['group_id'])]
+            kwargs.pop('group_id')
+        elif kwargs.get('user_id'):
+            user_ids = [kwargs.get('user_id')]
+
+        # For effective inherited role assignments, expand to domain's projects
+        project_ids = [None]
+        if kwargs.get('domain_id'):
+            # FIXME(samuelms): Use resource_api.list_projects_in_domain()
+            project_ids = self.smp_subproject_ids
+            project_ids.append(self.smp_project_id)
+            kwargs.pop('domain_id')
+        else:
+            # TODO(samueldmq): default to smp_project_id: explain this
+            # FIXME(samuelms): Use resource_api.list_projects_in_subtree()
+            project_ids = self.smp_subproject_ids
+
+        r = []
+        r_c = []
+        for project_id in project_ids:
+            kwargs['project_id'] = project_id
+            for user_id in user_ids:
+                kwargs['user_id'] = user_id
+                new_assignment = _build_role_assignment_entity(
+                    assignment_link=assignment_link, **kwargs)
+
+                if r and r[-1] == new_assignment:
+                    r_c[-1] += 1
+                else:
+                    r.append(new_assignment)
+                    r_c.append(1)
+
+        return (r, r_c)
+
+
 class AssignmentInheritanceTestCase(test_v3.RestfulTestCase):
     """Test inheritance crud and its effects."""
 
@@ -2223,6 +2525,7 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase):
 
 
 class AssignmentInheritanceDisabledTestCase(test_v3.RestfulTestCase):
+
     """Test inheritance crud and its effects."""
 
     def config_overrides(self):
@@ -2249,6 +2552,7 @@ class AssignmentInheritanceDisabledTestCase(test_v3.RestfulTestCase):
 
 
 class AssignmentV3toV2MethodsTestCase(tests.TestCase):
+
     """Test domain V3 to V2 conversion methods."""
 
     def test_v2controller_filter_domain_id(self):
