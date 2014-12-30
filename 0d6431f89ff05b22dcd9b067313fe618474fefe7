@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_b9b87b76",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4437,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-30T21:49:36Z",
+      "side": 1,
+      "message": "This doesn\u0027t bypass the catalog_api.",
+      "revId": "0d6431f89ff05b22dcd9b067313fe618474fefe7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_398d6bd4",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4568,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-30T21:49:36Z",
+      "side": 1,
+      "message": "should add a comment before this \"# update bypassing catalog api\"",
+      "revId": "0d6431f89ff05b22dcd9b067313fe618474fefe7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d9ae272f",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4603,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-30T21:49:36Z",
+      "side": 1,
+      "message": "This doesn\u0027t bypass the catalog api.",
+      "revId": "0d6431f89ff05b22dcd9b067313fe618474fefe7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_19a98f24",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 4843,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-30T21:49:36Z",
+      "side": 1,
+      "message": "This doesn\u0027t bypass the catalog api.",
+      "revId": "0d6431f89ff05b22dcd9b067313fe618474fefe7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
