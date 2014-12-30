@@ -880,6 +880,17 @@ class RoleAssignmentV3(controller.V3Controller):
         else:
             return True
 
+    def _assert_effective_filters(self, inherited, group, domain):
+        if group:
+            msg = _('Combining effective and group filter will always '
+                    'result in an empty list.')
+            raise exception.ValidationError(msg)
+
+        if inherited and domain:
+            msg = _('Combining effective, domain and inherited filters will '
+                    'always result in an empty list.')
+            raise exception.ValidationError(msg)
+
     @controller.filterprotected('group.id', 'role.id',
                                 'scope.domain.id', 'scope.project.id',
                                 'scope.OS-INHERIT:inherited_to', 'user.id')
@@ -908,10 +919,12 @@ class RoleAssignmentV3(controller.V3Controller):
                                       project=params.get('scope.project.id'))
         self._assert_single_or_no_arg(user=params.get('user.id'),
                                       group=params.get('group.id'))
-        self._assert_single_or_no_arg(effective=effective,
-                                      group=params.get('group.id'))
-        self._assert_single_or_no_arg(domain=params.get('scope.domain.id'),
-                                      effective=effective, inherited=inherited)
+
+        if effective:
+            self._assert_effective_filters(inherited=inherited,
+                                           group=params.get('group.id'),
+                                           domain=params.get(
+                                                'scope.domain.id'))
 
         hints = self.build_driver_hints(context, filters)
         refs = self.assignment_api.list_role_assignments()
