@@ -557,6 +557,17 @@ class V3Controller(wsgi.Application):
         # the hints list.
         return hints
 
+    def _assert_single_arg(self, **kwargs):
+        """Assert that only one pair of (key, value) has a not none value."""
+
+        provided_args = [k for k, v in six.iteritems(kwargs) if v is not None]
+        if not provided_args:
+            msg = _('Specify one of %s') % ' or '.join(provided_args)
+            raise exception.ValidationError(msg)
+        elif len(provided_args) != 1:
+            msg = _('Specify only one of %s') % ' or '.join(provided_args)
+            raise exception.ValidationError(msg)
+
     def _require_matching_id(self, value, ref):
         """Ensures the value matches the reference's ID, if any."""
         if 'id' in ref and ref['id'] != value:
