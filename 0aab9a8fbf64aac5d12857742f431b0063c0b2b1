@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_e5132aff",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-31T20:36:53Z",
+      "side": 1,
+      "message": "looks like master is out of date....",
+      "revId": "0aab9a8fbf64aac5d12857742f431b0063c0b2b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
