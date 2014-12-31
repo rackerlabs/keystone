@@ -1225,6 +1225,51 @@ class IdentityTests(object):
         self.assignment_api.delete_grant(role_id, group_id=group_id,
                                          project_id=self.tenant_bar['id'])
 
+    def test_grant_crud_throws_exception_if_invalid_role(self):
+        """Check RoleNotFound thrown if role does not exist."""
+
+        def assert_exception_raised_user_project(f, user_id, project_id):
+            self.assertRaises(
+                exception.RoleNotFound, f, user_id=user_id,
+                project_id=project_id, role_id=uuid.uuid4().hex)
+
+        def assert_exception_raised_group_project(f, group_id, project_id):
+            self.assertRaises(
+                exception.RoleNotFound, f, group_id=group_id,
+                project_id=project_id, role_id=uuid.uuid4().hex)
+
+        def assert_exception_raised_user_domain(f, user_id, domain_id):
+            self.assertRaises(
+                exception.RoleNotFound, f, user_id=user_id,
+                domain_id=domain_id, role_id=uuid.uuid4().hex)
+
+        def assert_exception_raised_group_domain(f, group_id, domain_id):
+            self.assertRaises(
+                exception.RoleNotFound, f, group_id=group_id,
+                domain_id=domain_id, role_id=uuid.uuid4().hex)
+
+        user = {'name': uuid.uuid4().hex, 'domain_id': DEFAULT_DOMAIN_ID,
+                'password': uuid.uuid4().hex, 'enabled': True}
+        user = self.identity_api.create_user(user)
+        group = {'name': uuid.uuid4().hex, 'domain_id': DEFAULT_DOMAIN_ID,
+                 'enabled': True}
+        group = self.identity_api.create_group(group)
+        project = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                   'domain_id': DEFAULT_DOMAIN_ID}
+        self.assignment_api.create_project(project['id'], project)
+
+        for manager_call in [self.assignment_api.create_grant,
+                             self.assignment_api.get_grant,
+                             self.assignment_api.delete_grant]:
+            assert_exception_raised_user_project(
+                manager_call, user['id'], project['id'])
+            assert_exception_raised_group_project(
+                manager_call, group['id'], project['id'])
+            assert_exception_raised_user_domain(
+                manager_call, user['id'], DEFAULT_DOMAIN_ID)
+            assert_exception_raised_group_domain(
+                manager_call, group['id'], DEFAULT_DOMAIN_ID)
+
     def test_multi_role_grant_by_user_group_on_project_domain(self):
         role_list = []
         for _ in range(10):
