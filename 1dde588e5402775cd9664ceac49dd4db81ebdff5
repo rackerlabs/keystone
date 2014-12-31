@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_bf577126",
+        "filename": "CONTRIBUTING.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-31T16:44:38Z",
+      "side": 1,
+      "message": "We don\u0027t need 2 links to the same thing. This could be http://docs.openstack.org/infra/manual/developers.html",
+      "revId": "1dde588e5402775cd9664ceac49dd4db81ebdff5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
