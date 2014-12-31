@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_8a1ef50b",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-31T17:55:11Z",
+      "side": 1,
+      "message": "an AssignmentType should never be instantiated so this doesn\u0027t do anything.",
+      "revId": "8375694ff1f40aab7464910338f1e9ebc4391dc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ea13f9fe",
+        "filename": "keystone/exception.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-31T17:55:11Z",
+      "side": 1,
+      "message": "This should be an internal server error since the request shouldn\u0027t have gotten to the backend.",
+      "revId": "8375694ff1f40aab7464910338f1e9ebc4391dc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
