@@ -33,6 +33,24 @@
       "revId": "8375694ff1f40aab7464910338f1e9ebc4391dc7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_aa1e5172",
+        "filename": "keystone/exception.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-31T19:33:18Z",
+      "side": 1,
+      "message": "I agree with Brant. This should be 500.\n\nValidation of targets and actors is already dona at Controller level [1].\n\nFurther, I am not completely convinced if we even need to throw an exception in this case, since it should never occur.\n\n[1] https://github.com/openstack/keystone/blob/master/keystone/assignment/controllers.py#L545-L546",
+      "parentUuid": "3a961159_ea13f9fe",
+      "revId": "8375694ff1f40aab7464910338f1e9ebc4391dc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
