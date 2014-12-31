@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_6af549ec",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-31T17:40:15Z",
+      "side": 1,
+      "message": "Since email is stored in the extras column, you can put whatever you want in here. This can\u0027t be limited to email addresses now without breaking backwards compatibility.",
+      "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_4af24d07",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-31T17:40:15Z",
+      "side": 1,
+      "message": "The max length is specific to the SQL backend. LDAP shouldn\u0027t have this same limitation.",
+      "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_6acc69bc",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-31T17:40:15Z",
+      "side": 1,
+      "message": "The server now supports a 0-length password, so having a minLength here breaks backwards-compability.",
+      "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_cae55d39",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-31T17:40:15Z",
+      "side": 1,
+      "message": "it has to be CONF.identity.max_password_length. If someone sets their max_password_length \u003e 4096 now they can\u0027t sets passwords as expected.",
+      "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0acf65b4",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-31T17:40:15Z",
+      "side": 1,
+      "message": "Similar comment here -- it\u0027s only SQL that has this max length.",
+      "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_aa0c913a",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-31T17:40:15Z",
+      "side": 1,
+      "message": "since this worked before it should continue to work otherwise this change isn\u0027t backwards compatible.",
+      "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_4ac96dab",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1271,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-31T17:40:15Z",
+      "side": 1,
+      "message": "who\u0027s jdeveloper? use a random string.",
+      "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_cabc7d09",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1291,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-31T17:40:15Z",
+      "side": 1,
+      "message": "use a random string.",
+      "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
