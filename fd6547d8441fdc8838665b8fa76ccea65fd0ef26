@@ -16,6 +16,24 @@
       "revId": "fd6547d8441fdc8838665b8fa76ccea65fd0ef26",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_3f84615c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 396,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-31T15:29:27Z",
+      "side": 1,
+      "message": "I changed the help text... I like to be able to use the openssl default since openssl might change the default to be more secure.",
+      "parentUuid": "3a961159_c412bb08",
+      "revId": "fd6547d8441fdc8838665b8fa76ccea65fd0ef26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
