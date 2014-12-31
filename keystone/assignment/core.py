@@ -97,6 +97,10 @@ class Manager(manager.Manager):
         return [x['id'] for
                 x in self.identity_api.list_groups_for_user(user_id)]
 
+    def list_user_ids_for_project(self, tenant_id):
+        self.driver.get_project(tenant_id)
+        return self.driver.list_user_ids_for_project(tenant_id)
+
     def _get_hierarchy_depth(self, parents_list):
         return len(parents_list) + 1
 
@@ -235,12 +239,20 @@ class Manager(manager.Manager):
         for user_id in project_user_ids:
             payload = {'user_id': user_id, 'project_id': tenant_id}
             self._emit_invalidate_user_project_tokens_notification(payload)
+        self.driver.delete_project_assignments(tenant_id)
         ret = self.driver.delete_project(tenant_id)
         self.get_project.invalidate(self, tenant_id)
         self.get_project_by_name.invalidate(self, project['name'],
                                             project['domain_id'])
         self.credential_api.delete_credentials_for_project(tenant_id)
         return ret
+
+    def _list_parent_ids_of_project(self, project_id):
+        if CONF.os_inherit.enabled:
+            return [x['id'] for x in (
+                self.driver.list_project_parents(project_id))]
+        else:
+            return []
 
     def get_roles_for_user_and_project(self, user_id, tenant_id):
         """Get the roles associated with a user within given project.
@@ -260,7 +272,8 @@ class Manager(manager.Manager):
             return self.driver.list_role_ids_for_groups_on_project(
                 group_ids,
                 project_ref['id'],
-                project_ref['domain_id'])
+                project_ref['domain_id'],
+                self._list_parent_ids_of_project(project_ref['id']))
 
         def _get_user_project_roles(user_id, project_ref):
             role_list = []
@@ -343,10 +356,17 @@ class Manager(manager.Manager):
     def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
         """Get a list of roles for this group on domain and/or project."""
 
-        # TODO(henry-nash): We should pull up the algorithm for this method
-        # from the drivers to here.
-        role_ids = self.list_role_ids_for_groups(
-            group_ids, project_id, domain_id)
+        if project_id is not None:
+            project = self.driver.get_project(project_id)
+            role_ids = self.driver.list_role_ids_for_groups_on_project(
+                group_ids, project_id, project['domain_id'],
+                self._list_parent_ids_of_project(project_id))
+        elif domain_id is not None:
+            role_ids = self.driver.list_role_ids_for_groups_on_domain(
+                group_ids, domain_id)
+        else:
+            raise AttributeError(_("Must specify either domain or project"))
+
         return self.role_api.list_roles_from_ids(role_ids)
 
     def add_user_to_project(self, tenant_id, user_id):
@@ -356,6 +376,7 @@ class Manager(manager.Manager):
                  keystone.exception.UserNotFound
 
         """
+        self.driver.get_project(tenant_id)
         try:
             self.role_api.get_role(config.CONF.member_role_id)
             self.driver.add_role_to_user_and_project(
@@ -376,6 +397,7 @@ class Manager(manager.Manager):
                 config.CONF.member_role_id)
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
+        self.driver.get_project(tenant_id)
         self.role_api.get_role(role_id)
         self.driver.add_role_to_user_and_project(user_id, tenant_id, role_id)
 
@@ -411,9 +433,33 @@ class Manager(manager.Manager):
         # list here and pass it in. The rest of the detailed logic of listing
         # projects for a user is pushed down into the driver to enable
         # optimization with the various backend technologies (SQL, LDAP etc.).
+
         group_ids = self._get_group_ids_for_user_id(user_id)
-        return self.driver.list_projects_for_user(
+        project_ids = self.driver.list_project_ids_for_user(
             user_id, group_ids, hints or driver_hints.Hints())
+
+        if not CONF.os_inherit.enabled:
+            return self.driver.list_projects_from_ids(project_ids)
+
+        # Inherited roles are enabled, so check to see if this user has any
+        # inherited role (direct or group) on any parent project, in which
+        # case we must add in all the projects in that parent's subtree.
+        project_ids = set(project_ids)
+        project_ids_inherited = self.driver.list_project_ids_for_user(
+            user_id, group_ids, hints or driver_hints.Hints(), inherited=True)
+        for proj_id in project_ids_inherited:
+            project_ids.update(
+                (x['id'] for x in
+                 self.driver.list_projects_in_subtree(proj_id)))
+
+        # Now do the same for any domain inherited roles
+        domain_ids = self.driver.list_domain_ids_for_user(
+            user_id, group_ids, hints or driver_hints.Hints(),
+            inherited=True)
+        project_ids.update(
+            self.driver.list_project_ids_from_domain_ids(domain_ids))
+
+        return self.driver.list_projects_from_ids(list(project_ids))
 
     def _filter_projects_list(self, projects_list, user_id):
         user_projects = self.list_projects_for_user(user_id)
@@ -475,8 +521,13 @@ class Manager(manager.Manager):
         # projects for a user is pushed down into the driver to enable
         # optimization with the various backend technologies (SQL, LDAP etc.).
         group_ids = self._get_group_ids_for_user_id(user_id)
-        return self.driver.list_domains_for_user(
+        domain_ids = self.driver.list_domain_ids_for_user(
             user_id, group_ids, hints or driver_hints.Hints())
+        return self.driver.list_domains_from_ids(domain_ids)
+
+    def list_domains_for_groups(self, group_ids):
+        domain_ids = self.driver.list_domain_ids_for_groups(group_ids)
+        return self.driver.list_domains_from_ids(domain_ids)
 
     @notifications.disabled('domain', public=False)
     def _disable_domain(self, domain_id):
@@ -527,6 +578,7 @@ class Manager(manager.Manager):
                          'please disable it first.'))
 
         self._delete_domain_contents(domain_id)
+        self.driver.delete_domain_assignments(domain_id)
         self.driver.delete_domain(domain_id)
         self.get_domain.invalidate(self, domain_id)
         self.get_domain_by_name.invalidate(self, domain['name'])
@@ -620,6 +672,26 @@ class Manager(manager.Manager):
         return self.driver.list_user_projects(
             user_id, hints or driver_hints.Hints())
 
+    def list_projects_for_groups(self, group_ids):
+        project_ids = (
+            self.driver.list_project_ids_for_groups(group_ids,
+                                                    driver_hints.Hints()))
+        if not CONF.os_inherit.enabled:
+            return self.driver.list_projects_from_ids(project_ids)
+
+        # Inherited roles are enabled, so check to see if these groups have any
+        # roles on any domain, in which case we must add in all the projects
+        # in that domain.
+
+        domain_ids = self.driver.list_domain_ids_for_groups(
+            group_ids, inherited=True)
+
+        project_ids_from_domains = (
+            self.driver.list_project_ids_from_domain_ids(domain_ids))
+
+        return self.driver.list_projects_from_ids(
+            list(set(project_ids + project_ids_from_domains)))
+
     @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
                         expiration_time=EXPIRATION_TIME)
     def get_project(self, project_id):
@@ -657,6 +729,10 @@ class Manager(manager.Manager):
     def create_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,
                      inherited_to_projects=False, context=None):
+        if domain_id:
+            self.driver.get_domain(domain_id)
+        if project_id:
+            self.driver.get_project(project_id)
         self.driver.create_grant(role_id, user_id, group_id, domain_id,
                                  project_id, inherited_to_projects)
 
@@ -664,6 +740,10 @@ class Manager(manager.Manager):
                   domain_id=None, project_id=None,
                   inherited_to_projects=False):
         role_ref = self.role_api.get_role(role_id)
+        if domain_id:
+            self.driver.get_domain(domain_id)
+        if project_id:
+            self.driver.get_project(project_id)
         self.driver.check_grant_role_id(
             role_id, user_id, group_id, domain_id, project_id,
             inherited_to_projects)
@@ -672,6 +752,10 @@ class Manager(manager.Manager):
     def list_grants(self, user_id=None, group_id=None,
                     domain_id=None, project_id=None,
                     inherited_to_projects=False):
+        if domain_id:
+            self.driver.get_domain(domain_id)
+        if project_id:
+            self.driver.get_project(project_id)
         grant_ids = self.driver.list_grant_role_ids(
             user_id, group_id, domain_id, project_id, inherited_to_projects)
         return self.role_api.list_roles_from_ids(grant_ids)
@@ -702,6 +786,10 @@ class Manager(manager.Manager):
                 LOG.debug('Group %s not found, no tokens to invalidate.',
                           group_id)
 
+        if domain_id:
+            self.driver.get_domain(domain_id)
+        if project_id:
+            self.driver.get_project(project_id)
         self.driver.delete_grant(role_id, user_id, group_id, domain_id,
                                  project_id, inherited_to_projects)
         if user_id is not None:
@@ -855,7 +943,6 @@ class Driver(object):
         """Lists all user IDs with a role assignment in the specified project.
 
         :returns: a list of user_ids or an empty set.
-        :raises: keystone.exception.ProjectNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -864,8 +951,8 @@ class Driver(object):
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
         """Add a role to a user within given tenant.
 
-        :raises: keystone.exception.Conflict,
-                 keystone.exception.ProjectNotFound
+        :raises: keystone.exception.Conflict
+
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -891,9 +978,6 @@ class Driver(object):
         specified as inherited to owned projects (this requires
         the OS-INHERIT extension to be enabled).
 
-        :raises: keystone.exception.DomainNotFound,
-                 keystone.exception.ProjectNotFound
-
         """
         raise exception.NotImplemented()  # pragma: no cover
 
@@ -901,12 +985,8 @@ class Driver(object):
     def list_grant_role_ids(self, user_id=None, group_id=None,
                             domain_id=None, project_id=None,
                             inherited_to_projects=False):
-        """Lists assignments/grants.
+        """Lists role ids for assignments/grants."""
 
-        :raises: keystone.exception.ProjectNotFound,
-                 keystone.exception.DomainNotFound
-
-        """
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
@@ -915,9 +995,7 @@ class Driver(object):
                             inherited_to_projects=False):
         """Checks an assignment/grant role id.
 
-        :raises: keystone.exception.ProjectNotFound,
-                 keystone.exception.DomainNotFound,
-                 keystone.exception.RoleNotFound
+        :raises: keystone.exception.RoleNotFound
         :returns: None or raises an exception if grant not found
 
         """
@@ -929,9 +1007,7 @@ class Driver(object):
                      inherited_to_projects=False):
         """Deletes assignments/grants.
 
-        :raises: keystone.exception.ProjectNotFound,
-                 keystone.exception.DomainNotFound,
-                 keystone.exception.RoleNotFound
+        :raises: keystone.exception.RoleNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -959,6 +1035,20 @@ class Driver(object):
                       implement if at all possible.
 
         :returns: a list of domain_refs or an empty list.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def list_domains_from_ids(self, domain_ids):
+        """List domains for the provided list of ids.
+
+        :param domain_ids: list of ids
+
+        :returns: a list of domain_refs.
+
+        This method is used internally by the assignment manager to bulk read
+        a set of domains given their ids.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1025,6 +1115,34 @@ class Driver(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
+    def list_projects_from_ids(self, project_ids):
+        """List projects for the provided list of ids.
+
+        :param project_ids: list of ids
+
+        :returns: a list of project_refs.
+
+        This method is used internally by the assignment manager to bulk read
+        a set of projects given their ids.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def list_project_ids_from_domain_ids(self, domain_ids):
+        """List project ids for the provided list of domain ids.
+
+        :param domain_ids: list of domain ids
+
+        :returns: a list of project ids owned by the specified domain ids.
+
+        This method is used internally by the assignment manager to bulk read
+        a set of project ids given a list of domain ids.
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover     577
+
+    @abc.abstractmethod
     def list_projects_in_domain(self, domain_id):
         """List projects in the domain.
 
@@ -1037,8 +1155,9 @@ class Driver(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def list_projects_for_user(self, user_id, group_ids, hints):
-        """List all projects associated with a given user.
+    def list_project_ids_for_user(self, user_id, group_ids, hints,
+                                  inherited=False):
+        """List all project ids associated with a given user.
 
         :param user_id: the user in question
         :param group_ids: the groups this user is a member of.  This list is
@@ -1046,8 +1165,14 @@ class Driver(object):
                           does not have to call across to identity.
         :param hints: filter hints which the driver should
                       implement if at all possible.
+        :param inherited: whether assignments marked as inherited should
+                          be included.
 
-        :returns: a list of project_refs or an empty list.
+        :returns: a list of project ids or an empty list.
+
+        This method should not try and expand any inherited assignments,
+        just report the projects that have the role for this user. The manager
+        method is responsible for expanding out inherited assignments.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1092,40 +1217,28 @@ class Driver(object):
         raise exception.NotImplemented()
 
     @abc.abstractmethod
-    def list_role_ids_for_groups(
-            self, group_ids, project_id=None, domain_id=None):
-        """List all the role ids assigned to groups on either domain or
-        project.
-
-        If the project_id is not None, this value will be used, no matter what
-        was specified in the domain_id.
-
-        :param group_ids: iterable with group ids
-        :param project_id: id of the project
-        :param domain_id: id of the domain
-
-        :raises: AttributeError: In case both project_id and domain_id are set
-                                 to None
-
-        :returns: a list of Role ids matching groups and
-                  project_id or domain_id
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def list_projects_for_groups(self, group_ids):
-        """List projects accessible to specified groups.
+    def list_project_ids_for_groups(self, group_ids, hints,
+                                    inherited=False):
+        """List project ids accessible to specified groups.
 
         :param group_ids: List of group ids.
-        :returns: List of projects accessible to specified groups.
+        :param hints: filter hints which the driver should
+                      implement if at all possible.
+        :param inherited: whether assignments marked as inherited should
+                          be included.
+        :returns: List of project ids accessible to specified groups.
+
+        This method should not try and expand any inherited assignments,
+        just report the projects that have the role for this group. The manager
+        method is responsible for expanding out inherited assignments.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def list_domains_for_user(self, user_id, group_ids, hints):
-        """List all domains associated with a given user.
+    def list_domain_ids_for_user(self, user_id, group_ids, hints,
+                                 inherited=False):
+        """List all domain ids associated with a given user.
 
         :param user_id: the user in question
         :param group_ids: the groups this user is a member of.  This list is
@@ -1133,18 +1246,22 @@ class Driver(object):
                           does not have to call across to identity.
         :param hints: filter hints which the driver should
                       implement if at all possible.
+        :param inherited: whether to return domain_ids that have inherited
+                          assignments or not.
 
-        :returns: a list of domain_refs or an empty list.
+        :returns: a list of domain ids or an empty list.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def list_domains_for_groups(self, group_ids):
-        """List domains accessible to specified groups.
+    def list_domain_ids_for_groups(self, group_ids, inherited=False):
+        """List domain ids accessible to specified groups.
 
         :param group_ids: List of group ids.
-        :returns: List of domains accessible to specified groups.
+        :param inherited: whether to return domain_ids that have inherited
+                          assignments or not.
+        :returns: List of domain ids accessible to specified groups.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1180,8 +1297,8 @@ class Driver(object):
 
     @abc.abstractmethod
     def list_role_ids_for_groups_on_project(
-            self, groups, project_id, project_domain_id):
-        """List group role ids for a specific project.
+            self, groups, project_id, project_domain_id, project_parents):
+        """List the group role ids for a specific project.
 
         Supports the ``OS-INHERIT`` role inheritance from the project's domain
         if supported by the assignment driver.
@@ -1192,16 +1309,52 @@ class Driver(object):
         :type project_id: str
         :param project_domain_id: project's domain identifier
         :type project_domain_id: str
+        :param project_parents: list of parent ids of this project
+        :type project_parents: list
         :returns: list of role ids for the project
         :rtype: list
         """
         raise exception.NotImplemented()
 
     @abc.abstractmethod
+    def list_role_ids_for_groups_on_domain(self, groups, domain_id):
+        """List the group role ids for a specific domain.
+
+        :param groups: list of group ids
+        :type groups: list
+        :param domain_id: domain identifier
+        :type domain_id: str
+        :returns: list of role ids for the project
+        :rtype: list
+        """
+        raise exception.NotImplemented()
+
+    @abc.abstractmethod
+    def delete_project_assignments(self, project_id):
+        """Deletes all assignments for a project.
+
+        :raises: keystone.exception.ProjectNotFound
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def delete_domain_assignments(self, domain_id):
+        """Deletes all assignments for a domain.
+
+        :raises: keystone.exception.DomainNotFound
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
     def delete_role_assignments(self, role_id):
         """Deletes all assignments for a role."""
 
         raise exception.NotImplemented()  # pragma: no cover
+
+    # TODO(henry-nash): Rename the following two methods to match the more
+    # meaningfully named ones above.
 
 # TODO(ayoung): determine what else these two functions raise
     @abc.abstractmethod
