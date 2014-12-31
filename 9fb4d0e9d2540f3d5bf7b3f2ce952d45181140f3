@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_0aa045a4",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-31T18:07:25Z",
+      "side": 1,
+      "message": "I\u0027m wondering if we could return \"Project ID not found\" even with debug\u003dFalse... if the username and password are validated first, then I don\u0027t see a problem with reporting that the project doesn\u0027t exist. For example, I could authenticate to project A as long as I provide the right password and I\u0027ve got a role on A so I know it exists. Then I try to authenticate to project B and it says 401 Unauthorized... so it either doesn\u0027t exist or I don\u0027t have a role on it... what\u0027s the danger of telling the user that project B doesn\u0027t exist or I don\u0027t have a role on it (as long as my password was validated first)?",
+      "revId": "9fb4d0e9d2540f3d5bf7b3f2ce952d45181140f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_8a93555b",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2014-12-31T18:07:25Z",
+      "side": 1,
+      "message": "why log a warning at 387 and not here?",
+      "revId": "9fb4d0e9d2540f3d5bf7b3f2ce952d45181140f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
