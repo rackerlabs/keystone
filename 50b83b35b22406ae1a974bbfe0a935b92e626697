@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_bf8e9130",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-12-31T17:41:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_442b3633",
+      "revId": "50b83b35b22406ae1a974bbfe0a935b92e626697",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_24be2aaf",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2014-12-30T15:12:59Z",
       "side": 1,
       "message": "There\u0027s a space missing between AND and `ENGINE`... was this tested?",
+      "revId": "50b83b35b22406ae1a974bbfe0a935b92e626697",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_5f25ad5a",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-12-31T17:41:33Z",
+      "side": 1,
+      "message": "Hmmm... yes it used directly in migrations. The gates will fail if this query is broken. So this is strange to me too.",
+      "parentUuid": "3a961159_24be2aaf",
       "revId": "50b83b35b22406ae1a974bbfe0a935b92e626697",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_bf9cd15c",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-12-31T17:41:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_24438ab0",
+      "revId": "50b83b35b22406ae1a974bbfe0a935b92e626697",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_441176ae",
         "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/003_fix_mysql_engine.py",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2014-12-30T15:12:59Z",
       "side": 1,
       "message": "it\u0027s not 2013.",
+      "revId": "50b83b35b22406ae1a974bbfe0a935b92e626697",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_1f2a45e7",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/003_fix_mysql_engine.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-12-31T17:41:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_441176ae",
       "revId": "50b83b35b22406ae1a974bbfe0a935b92e626697",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_ffd499ea",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/003_fix_mysql_engine.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-12-31T17:41:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_2471ca0c",
+      "revId": "50b83b35b22406ae1a974bbfe0a935b92e626697",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_84599e90",
         "filename": "keystone/contrib/federation/migrate_repo/versions/004_fix_mysql_engine.py",
         "patchSetId": 7
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_ffebb9a1",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/004_fix_mysql_engine.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-12-31T17:41:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_84599e90",
+      "revId": "50b83b35b22406ae1a974bbfe0a935b92e626697",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_a45cda7e",
         "filename": "keystone/contrib/oauth1/migrate_repo/versions/006_fix_mysql_engine.py",
         "patchSetId": 7
@@ -115,6 +223,24 @@
       "writtenOn": "2014-12-30T15:12:59Z",
       "side": 1,
       "message": "The downgrade shouldn\u0027t be removing constraints... the only databases that wouldn\u0027t have the constraints are the ones where myisam was the default.",
+      "revId": "50b83b35b22406ae1a974bbfe0a935b92e626697",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_dff0bd93",
+        "filename": "keystone/contrib/oauth1/migrate_repo/versions/006_fix_mysql_engine.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 7536
+      },
+      "writtenOn": "2014-12-31T17:41:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_a45cda7e",
       "revId": "50b83b35b22406ae1a974bbfe0a935b92e626697",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
