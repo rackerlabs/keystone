@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_6a6f09fd",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-31T19:27:32Z",
+      "side": 1,
+      "message": "This makes sense to me except if applications or information about an application is separated at the project layer. Then I could see the case were we wouldn\u0027t want to acknowledge that a project exists.",
+      "parentUuid": "3a961159_0aa045a4",
+      "revId": "9fb4d0e9d2540f3d5bf7b3f2ce952d45181140f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_8a93555b",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2014-12-31T18:07:25Z",
       "side": 1,
       "message": "why log a warning at 387 and not here?",
+      "revId": "9fb4d0e9d2540f3d5bf7b3f2ce952d45181140f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_aa7011db",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2014-12-31T19:27:32Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a961159_8a93555b",
       "revId": "9fb4d0e9d2540f3d5bf7b3f2ce952d45181140f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
