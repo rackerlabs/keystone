@@ -34,6 +34,24 @@
       "revId": "defa688df76f7fd5ba89dc6727f0e07cc987fc8c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_df019db0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2014-12-31T15:51:51Z",
+      "side": 1,
+      "message": "So is this a WIP?",
+      "parentUuid": "3a961159_c690c345",
+      "revId": "defa688df76f7fd5ba89dc6727f0e07cc987fc8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
