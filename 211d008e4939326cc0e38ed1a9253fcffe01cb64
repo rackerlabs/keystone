@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_5c113b5c",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-12-31T15:07:22Z",
+      "side": 1,
+      "message": "does this allow the region I\u0027d to be changed, thus conflicting with the URL?",
+      "revId": "211d008e4939326cc0e38ed1a9253fcffe01cb64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7c14374d",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2014-12-31T15:07:22Z",
+      "side": 1,
+      "message": "same",
+      "revId": "211d008e4939326cc0e38ed1a9253fcffe01cb64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
