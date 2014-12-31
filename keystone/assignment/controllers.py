@@ -494,16 +494,6 @@ class RoleV3(controller.V3Controller):
     def delete_role(self, context, role_id):
         self.role_api.delete_role(role_id)
 
-    def _require_domain_xor_project(self, domain_id, project_id):
-        if (domain_id and project_id) or (not domain_id and not project_id):
-            msg = _('Specify a domain or project, not both')
-            raise exception.ValidationError(msg)
-
-    def _require_user_xor_group(self, user_id, group_id):
-        if (user_id and group_id) or (not user_id and not group_id):
-            msg = _('Specify a user or group, not both')
-            raise exception.ValidationError(msg)
-
     def _check_if_inherited(self, context):
         return (CONF.os_inherit.enabled and
                 context['path'].startswith('/OS-INHERIT') and
@@ -543,8 +533,8 @@ class RoleV3(controller.V3Controller):
     def create_grant(self, context, role_id, user_id=None,
                      group_id=None, domain_id=None, project_id=None):
         """Grants a role to a user or group on either a domain or project."""
-        self._require_domain_xor_project(domain_id, project_id)
-        self._require_user_xor_group(user_id, group_id)
+        self._assert_single_arg(domain=domain_id, project=project_id)
+        self._assert_single_arg(user=user_id, group=group_id)
 
         self.assignment_api.create_grant(
             role_id, user_id, group_id, domain_id, project_id,
@@ -554,8 +544,8 @@ class RoleV3(controller.V3Controller):
     def list_grants(self, context, user_id=None,
                     group_id=None, domain_id=None, project_id=None):
         """Lists roles granted to user/group on either a domain or project."""
-        self._require_domain_xor_project(domain_id, project_id)
-        self._require_user_xor_group(user_id, group_id)
+        self._assert_single_arg(domain=domain_id, project=project_id)
+        self._assert_single_arg(user=user_id, group=group_id)
 
         refs = self.assignment_api.list_grants(
             user_id, group_id, domain_id, project_id,
@@ -566,8 +556,8 @@ class RoleV3(controller.V3Controller):
     def check_grant(self, context, role_id, user_id=None,
                     group_id=None, domain_id=None, project_id=None):
         """Checks if a role has been granted on either a domain or project."""
-        self._require_domain_xor_project(domain_id, project_id)
-        self._require_user_xor_group(user_id, group_id)
+        self._assert_single_arg(domain=domain_id, project=project_id)
+        self._assert_single_arg(user=user_id, group=group_id)
 
         self.assignment_api.get_grant(
             role_id, user_id, group_id, domain_id, project_id,
@@ -581,8 +571,8 @@ class RoleV3(controller.V3Controller):
     def revoke_grant(self, context, role_id, user_id=None,
                      group_id=None, domain_id=None, project_id=None):
         """Revokes a role from user/group on either a domain or project."""
-        self._require_domain_xor_project(domain_id, project_id)
-        self._require_user_xor_group(user_id, group_id)
+        self._assert_single_arg(domain=domain_id, project=project_id)
+        self._assert_single_arg(user=user_id, group=group_id)
 
         self.assignment_api.delete_grant(
             role_id, user_id, group_id, domain_id, project_id,
