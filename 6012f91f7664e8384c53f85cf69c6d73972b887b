@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_ca755dfb",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 877,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2014-12-31T18:52:10Z",
+      "side": 1,
+      "message": "So role here means grant?\nRoleNotFound sounds like the provided role_id does not refers to an existing role entity.\n\nMaybe we could change this in a future patch.",
+      "revId": "6012f91f7664e8384c53f85cf69c6d73972b887b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
