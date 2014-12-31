@@ -16,6 +16,24 @@
       "revId": "6012f91f7664e8384c53f85cf69c6d73972b887b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_2a65011d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 877,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2014-12-31T19:25:31Z",
+      "side": 1,
+      "message": "Agreed...there is a separate patch that is proposing changing this to RoleAssignmentNotFound....(not part of the assignment split)",
+      "parentUuid": "3a961159_ca755dfb",
+      "revId": "6012f91f7664e8384c53f85cf69c6d73972b887b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
