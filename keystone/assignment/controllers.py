@@ -890,16 +890,29 @@ class RoleAssignmentV3(controller.V3Controller):
         # to pass the filters into the driver call, so that the list size is
         # kept a minimum.
 
+        query_params = context['query_string']
+        effective = ('effective' in query_params and self.query_filter_is_true(
+                     context['query_string']['effective']))
+
+        self._require_nand_params(domain=query_params.get('scope.domain.id'),
+                                  project=query_params.get('scope.project.id'))
+        self._require_nand_params(user=query_params.get('user.id'),
+                                  group=query_params.get('group.id'))
+        self._require_nand_params(effective=effective,
+                                  domain=query_params.get('scope.domain.id'))
+        self._require_nand_params(effective=effective,
+                                  group=query_params.get('group.id'))
+        self._require_nand_params(
+            effective=effective,
+            inherited=query_params.get('scope.OS-INHERIT:inherited_to'))
+
         hints = self.build_driver_hints(context, filters)
         refs = self.assignment_api.list_role_assignments()
         formatted_refs = (
             [self._format_entity(context, x) for x in refs
              if self._filter_inherited(x)])
 
-        if ('effective' in context['query_string'] and
-                self.query_filter_is_true(
-                    context['query_string']['effective'])):
-
+        if effective:
             formatted_refs = self._expand_indirect_assignments(context,
                                                                formatted_refs)
 
