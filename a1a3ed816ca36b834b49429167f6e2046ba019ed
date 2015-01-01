@@ -33,6 +33,24 @@
       "revId": "a1a3ed816ca36b834b49429167f6e2046ba019ed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7dd0aec9",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-01T15:49:29Z",
+      "side": 1,
+      "message": "So this text is automatically extracted from the description provided by the config option in openstack.common (i.e. not defined by Keystone) - so we can\u0027t change it here. If you think this description needs to be better, then I\u0027d suggest you raise a bug against oslo",
+      "parentUuid": "3a961159_709b7666",
+      "revId": "a1a3ed816ca36b834b49429167f6e2046ba019ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
