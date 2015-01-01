@@ -557,18 +557,24 @@ class V3Controller(wsgi.Application):
         # the hints list.
         return hints
 
-    def _require_domain_xor_project(self, domain_id, project_id):
+    def _assert_domain_nand_project(self, domain_id, project_id):
         if domain_id and project_id:
             msg = _('Specify a domain or project, not both')
             raise exception.ValidationError(msg)
+
+    def _require_domain_xor_project(self, domain_id, project_id):
+        self._assert_domain_nand_project(domain_id, project_id)
         if not domain_id and not project_id:
             msg = _('Specify one of domain or project')
             raise exception.ValidationError(msg)
 
-    def _require_user_xor_group(self, user_id, group_id):
+    def _assert_user_nand_group(self, user_id, group_id):
         if user_id and group_id:
             msg = _('Specify a user or group, not both')
             raise exception.ValidationError(msg)
+
+    def _require_user_xor_group(self, user_id, group_id):
+        self._assert_user_nand_group(user_id, group_id)
         if not user_id and not group_id:
             msg = _('Specify one of user or group')
             raise exception.ValidationError(msg)
