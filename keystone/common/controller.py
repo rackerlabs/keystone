@@ -558,10 +558,14 @@ class V3Controller(wsgi.Application):
         return hints
 
     def _assert_single_arg(self, **kwargs):
+        self._assert_single_or_no_arg(allow_no_arg=False, **kwargs)
+
+    def _assert_single_or_no_arg(self, allow_no_arg=True, **kwargs):
         provided_args = [name for name, value in kwargs.iteritems() if value]
         if not provided_args:
-            msg = _('Specify one of %s') % ' or '.join(provided_args)
-            raise exception.ValidationError(msg)
+            if not allow_no_arg:
+                msg = _('Specify one of %s') % ' or '.join(provided_args)
+                raise exception.ValidationError(msg)
         elif len(provided_args) != 1:
             msg = _('Specify only one of %s') % ' or '.join(provided_args)
             raise exception.ValidationError(msg)
