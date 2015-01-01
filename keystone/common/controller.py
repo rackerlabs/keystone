@@ -564,6 +564,13 @@ class V3Controller(wsgi.Application):
             msg = _('Specify %s') % ' xor '.join(provided_params)
             raise exception.ValidationError(msg)
 
+    def _require_nand_params(self, **kwargs):
+        provided_params = [name for name, value in kwargs.iteritems() if value]
+
+        if len(provided_params) > 1:
+            msg = _('Specify none or %s') % ' xor '.join(provided_params)
+            raise exception.ValidationError(msg)
+
     def _require_matching_id(self, value, ref):
         """Ensures the value matches the reference's ID, if any."""
         if 'id' in ref and ref['id'] != value:
