@@ -560,10 +560,16 @@ class V3Controller(wsgi.Application):
     def _assert_single_arg(self, **kwargs):
         """Assert that only one pair of (key, value) has a not none value."""
 
+        self._assert_single_or_no_arg(allow_no_arg=False, **kwargs)
+
+    def _assert_single_or_no_arg(self, allow_no_arg=True, **kwargs):
+        """Assert that one or no pair of (key, value) has a not none value."""
+
         provided_args = [k for k, v in six.iteritems(kwargs) if v is not None]
         if not provided_args:
-            msg = _('Specify one of %s') % ' or '.join(provided_args)
-            raise exception.ValidationError(msg)
+            if not allow_no_arg:
+                msg = _('Specify one of %s') % ' or '.join(provided_args)
+                raise exception.ValidationError(msg)
         elif len(provided_args) != 1:
             msg = _('Specify only one of %s') % ' or '.join(provided_args)
             raise exception.ValidationError(msg)
