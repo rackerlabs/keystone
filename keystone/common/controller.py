@@ -557,11 +557,12 @@ class V3Controller(wsgi.Application):
         # the hints list.
         return hints
 
-    def _require_single_arg(self, **kwargs):
+    def _require_single_arg(self, allow_none=False, **kwargs):
         provided_args = [name for name, value in kwargs.iteritems() if value]
         if not provided_args:
-            msg = _('Specify one of %s') % ' or '.join(provided_args)
-            raise exception.ValidationError(msg)
+            if not allow_none:
+                msg = _('Specify one of %s') % ' or '.join(provided_args)
+                raise exception.ValidationError(msg)
         elif len(provided_args) != 1:
             msg = _('Specify only one of %s') % ' or '.join(provided_args)
             raise exception.ValidationError(msg)
