@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_1d8dead3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-01T16:07:13Z",
+      "side": 1,
+      "message": "will do",
+      "parentUuid": "3a961159_f065a6af",
+      "revId": "a1a3ed816ca36b834b49429167f6e2046ba019ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_709b7666",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 1
