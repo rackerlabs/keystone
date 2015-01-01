@@ -16,6 +16,23 @@
       "revId": "a1a3ed816ca36b834b49429167f6e2046ba019ed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_709b7666",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 2874
+      },
+      "writtenOn": "2015-01-01T03:34:26Z",
+      "side": 1,
+      "message": "failed to find config_dir in this file, so can we have it explained?",
+      "revId": "a1a3ed816ca36b834b49429167f6e2046ba019ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
