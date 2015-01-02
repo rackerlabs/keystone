@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_0e63eb41",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-02T21:35:32Z",
+      "side": 1,
+      "message": "what about ensuring that service[\u0027name\u0027] is always set before writing to the database, or passing to the driver? We do this with other things like region[\u0027description\u0027] https://github.com/openstack/keystone/blob/f5c06d619c762d5d39e8ec3bc752215ec02b2756/keystone/catalog/core.py#L112\n\nThen we wouldn\u0027t have to have logic specific to the sql catalog backend if we did something like the following in the Manager layer: \n\n    def create_service(self, service_id, service_ref):\n        service_ref.setdefault(\u0027enabled\u0027, True)\n        service_ref.setdefault(\u0027name\u0027, \u0027\u0027)\n        return self.driver.create_service(service_id, service_ref)\n\nThen in the case that a service name isn\u0027t provided on service create, the default case is that service.extra.name will be \u0027\u0027, and it will be consistent regardless of backends.",
+      "revId": "ca3df19da46e330cd9ce1de77224452177f06071",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
