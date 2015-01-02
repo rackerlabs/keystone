@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_4e5df378",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-02T21:52:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_ae33b7f4",
+      "revId": "b691e2ff3e9a77233eb574f21137425a8b6779df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_8b58ad58",
         "filename": "keystone/tests/test_versions.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-02T19:49:06Z",
       "side": 1,
       "message": "assertItemsEqual can be be used instead of the mixin.",
+      "revId": "b691e2ff3e9a77233eb574f21137425a8b6779df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_8e58bb58",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-02T21:52:24Z",
+      "side": 1,
+      "message": "I tried using assertItemsEqual by itself and it didn\u0027t catch an unexpected endpoint.",
+      "parentUuid": "3a961159_8b58ad58",
       "revId": "b691e2ff3e9a77233eb574f21137425a8b6779df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
