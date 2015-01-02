@@ -69,6 +69,24 @@
       "revId": "a1a3ed816ca36b834b49429167f6e2046ba019ed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_1345d942",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 2874
+      },
+      "writtenOn": "2015-01-02T01:52:01Z",
+      "side": 1,
+      "message": "so it seems this is not related to this patch, but can u tell me how you run command to extract this msg?",
+      "parentUuid": "3a961159_7dd0aec9",
+      "revId": "a1a3ed816ca36b834b49429167f6e2046ba019ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
