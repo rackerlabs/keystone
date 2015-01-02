@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_a802cfb1",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-02T17:36:36Z",
+      "side": 1,
+      "message": "is this a list in a set in a list? Do we usually do this?",
+      "revId": "b2a03c77d1e5e83f8c201e97cd47fef87833b080",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
