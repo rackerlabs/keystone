@@ -40,8 +40,8 @@ class Identity(identity.Driver):
         self.user = UserApi(conf)
         self.group = GroupApi(conf)
 
-    def default_assignment_driver(self):
-        return "keystone.assignment.backends.ldap.Assignment"
+    def default_resource_driver(self):
+        return "keystone.resource.backends.ldap.Resource"
 
     def is_domain_aware(self):
         return False
