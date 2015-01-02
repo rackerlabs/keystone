@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a961159_4e2333a7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-01-02T19:56:59Z",
+      "side": 1,
+      "message": "s/PYTHON_HASHSEED/PYTHONHASHSEED/",
+      "revId": "60dc6cbb7ff03626e32928e1b7ff330ed56ed105",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_31a9b890",
         "filename": "keystone/tests/test_backend_templated.py",
         "patchSetId": 3
