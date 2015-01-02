@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_f61bdb70",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 6
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2015-01-02T08:07:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_7914539f",
+      "revId": "20b7e00b0e03e2d4fb852f8aac54b3f607737185",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_3971eb0c",
         "filename": "keystone/common/config.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-12-30T21:42:41Z",
       "side": 1,
       "message": "I think this should default to None and use the eventlet.wsgi.server() default if it\u0027s None.",
+      "revId": "20b7e00b0e03e2d4fb852f8aac54b3f607737185",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d3ca7145",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2015-01-02T08:07:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_3971eb0c",
       "revId": "20b7e00b0e03e2d4fb852f8aac54b3f607737185",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_f3d92d23",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2015-01-02T08:07:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_d952a767",
+      "revId": "20b7e00b0e03e2d4fb852f8aac54b3f607737185",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_194d0fc5",
         "filename": "keystone/common/config.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2014-12-30T21:42:41Z",
       "side": 1,
       "message": "Same comment here... this should default to None and use the eventlet.wsgi.server() default if it\u0027s None.",
+      "revId": "20b7e00b0e03e2d4fb852f8aac54b3f607737185",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d60c1f3c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2015-01-02T08:07:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_194d0fc5",
       "revId": "20b7e00b0e03e2d4fb852f8aac54b3f607737185",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
