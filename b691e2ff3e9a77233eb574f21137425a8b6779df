@@ -123,6 +123,24 @@
       "revId": "b691e2ff3e9a77233eb574f21137425a8b6779df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d1fd02b3",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-02T23:17:28Z",
+      "side": 1,
+      "message": "Removing those other checks would change the test so that it didn\u0027t verify a problem where extra fields were added to the response.",
+      "parentUuid": "3a961159_d166e2ba",
+      "revId": "b691e2ff3e9a77233eb574f21137425a8b6779df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
