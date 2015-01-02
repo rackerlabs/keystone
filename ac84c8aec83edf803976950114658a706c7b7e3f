@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_c29c595e",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1229,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-02T16:33:21Z",
+      "side": 1,
+      "message": "nit: s/Check/Ensure/",
+      "revId": "ac84c8aec83edf803976950114658a706c7b7e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_02c2e152",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1251,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-02T16:33:21Z",
+      "side": 1,
+      "message": "could change these to: \n\n    user_resp\n\ninstead of: \n\n    user\n\nThen we have the dictionary used as the reference to create the entity and the response.",
+      "revId": "ac84c8aec83edf803976950114658a706c7b7e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_22a0bda4",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1256,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-02T16:33:21Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "ac84c8aec83edf803976950114658a706c7b7e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_c2c7f963",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1259,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-02T16:33:21Z",
+      "side": 1,
+      "message": "why not: \n\n    project_resp \u003d self.assignment_api.create_project(project[\u0027id\u0027], project) \n\nto be consistent with user and group? Then the assertions below will be referencing the response instead of the local reference used to create the project.",
+      "revId": "ac84c8aec83edf803976950114658a706c7b7e3f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
