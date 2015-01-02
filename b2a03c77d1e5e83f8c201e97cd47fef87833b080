@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a961159_a819ef23",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-02T17:38:16Z",
+      "side": 1,
+      "message": "s/defect/bug/\n\nbug seems to be used consistently throughout the rest of the patch",
+      "revId": "b2a03c77d1e5e83f8c201e97cd47fef87833b080",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_a802cfb1",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 5
@@ -13,6 +30,23 @@
       "writtenOn": "2015-01-02T17:36:36Z",
       "side": 1,
       "message": "is this a list in a set in a list? Do we usually do this?",
+      "revId": "b2a03c77d1e5e83f8c201e97cd47fef87833b080",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_681f070a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 584,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-02T17:38:16Z",
+      "side": 1,
+      "message": "whitespace",
       "revId": "b2a03c77d1e5e83f8c201e97cd47fef87833b080",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
