@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_e83697b3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-02T17:33:14Z",
+      "side": 1,
+      "message": "Should this be rolled into the previous commit? I understand the reason for splitting all this out but would it make sense to make everything call the new role_api in one commit?",
+      "revId": "dbace16aede408867547c473bbeb151765434419",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
