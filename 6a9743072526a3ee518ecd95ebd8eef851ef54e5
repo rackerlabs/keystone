@@ -135,6 +135,23 @@
       "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_e8621715",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1296,
+      "author": {
+        "id": 7244
+      },
+      "writtenOn": "2015-01-02T18:21:38Z",
+      "side": 1,
+      "message": "jdeveloper used here also",
+      "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
