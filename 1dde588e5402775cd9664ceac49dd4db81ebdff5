@@ -16,6 +16,23 @@
       "revId": "1dde588e5402775cd9664ceac49dd4db81ebdff5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_483ecbdb",
+        "filename": "CONTRIBUTING.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 7244
+      },
+      "writtenOn": "2015-01-02T18:25:14Z",
+      "side": 1,
+      "message": "Recommend keeping the old link to the gerrit docs as they are still valid\n\nhttp://wiki.openstack.org/GerritWorkflow",
+      "revId": "1dde588e5402775cd9664ceac49dd4db81ebdff5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
