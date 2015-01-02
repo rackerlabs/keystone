@@ -109,6 +109,7 @@ following sections:
 * ``[os_inherit]`` - Inherited role assignment extension
 * ``[paste_deploy]`` - Pointer to the PasteDeploy configuration file
 * ``[policy]`` - Policy system driver configuration for RBAC
+* ``[resource]`` - Resource system driver configuration
 * ``[revoke]`` - Revocation system driver configuration
 * ``[role]`` - Role system driver configuration
 * ``[saml]`` - SAML configuration options
@@ -484,27 +485,27 @@ Current Keystone systems that have caching capabilities:
         ``revocation_cache_time`` in the ``[token]`` section.  The revocation
         list is refreshed whenever a token is revoked. It typically sees significantly
         more requests than specific token retrievals or token validation calls.
-    * ``assignment``
-        The assignment system has a separate ``cache_time`` configuration option,
+    * ``resource``
+        The resource system has a separate ``cache_time`` configuration option,
         that can be set to a value above or below the global ``expiration_time``
         default, allowing for different caching behavior from the other systems in
-        ``Keystone``.  This option is set in the ``[assignment]`` section of the
+        ``Keystone``.  This option is set in the ``[resource]`` section of the
         configuration file.
 
-        Currently ``assignment`` has caching for ``project``, ``domain``, and ``role``
-        specific requests (primarily around the CRUD actions).  Caching is currently not
-        implemented on grants.  The list (``list_projects``, ``list_domains``, etc)
-        methods are not subject to caching.
+        Currently ``resource`` has caching for ``project`` and ``domain``
+        specific requests (primarily around the CRUD actions).  The list 
+        (``list_projects``, ``list_domains``, etc) methods are not subject to
+        caching.
 
         .. WARNING::
-            Be aware that if a read-only ``assignment`` backend is in use, the cache
+            Be aware that if a read-only ``resource`` backend is in use, the cache
             will not immediately reflect changes on the back end.  Any given change
-            may take up to the ``cache_time`` (if set in the ``[assignment]``
+            may take up to the ``cache_time`` (if set in the ``[resource]``
             section of the configuration) or the global ``expiration_time`` (set in
             the ``[cache]`` section of the configuration) before it is reflected.
-            If this type of delay (when using a read-only ``assignment`` backend) is
-            an issue, it is recommended that caching be disabled on ``assignment``.
-            To disable caching specifically on ``assignment``, in the ``[assignment]``
+            If this type of delay (when using a read-only ``resource`` backend) is
+            an issue, it is recommended that caching be disabled on ``resource``.
+            To disable caching specifically on ``resource``, in the ``[resource]``
             section of the configuration set ``caching`` to ``False``.
     * ``role``
         The role system has a separate ``cache_time`` configuration option,
@@ -917,7 +918,7 @@ may override this global value with a specific limit, for example:
 
 .. code-block:: ini
 
-    [assignment]
+    [resource]
     list_limit = 100
 
 If a response to ``list_{entity}`` call has been truncated, then the response
@@ -1488,8 +1489,8 @@ directories in conjunction with reading user and group information.
 Keystone now provides an option whereby these read-only
 directories can be easily integrated as it now enables its identity
 entities (which comprises users, groups, and group memberships) to be
-served out of directories while assignments (which comprises projects,
-role assignments, and domains) and roles are to be served from different
+served out of directories while resource (which comprises projects
+and domains) assignments and roles are to be served from different
 Keystone backends (i.e. SQL). To enable this option, you must have the
 following ``keystone.conf`` options set:
 
@@ -1497,6 +1498,9 @@ following ``keystone.conf`` options set:
 
   [identity]
   driver = keystone.identity.backends.ldap.Identity
+
+  [resource]
+  driver = keystone.resource.backends.sql.Assignment
 
   [assignment]
   driver = keystone.assignment.backends.sql.Assignment
@@ -1506,16 +1510,16 @@ following ``keystone.conf`` options set:
 
 With the above configuration, Keystone will only lookup identity related
 information such users, groups, and group membership from the directory,
-while assignment related information will be provided by the SQL backend.
-Also note that if there is an LDAP Identity, and no assignment or role backend
-is specified, they will default to LDAP. Although this may seem
-counterintuitive, it is provided for backwards compatibility. Nonetheless,
-the explicit option will always override the implicit option, so specifying
-the options as shown above will always be correct.  Finally, it is also
-worth noting that whether or not the LDAP accessible directory is to be
-considered read only is still configured as described in a previous section
-above by setting values such as the following in the ``[ldap]`` configuration
-section:
+while resources, roles and assignment related information will be provided
+by the SQL backend. Also note that if there is an LDAP Identity,
+and no resource, assignment or role backend is specified, they will default
+to LDAP. Although this may seem counterintuitive, it is provided for backwards
+compatibility. Nonetheless, the explicit option will always override the
+implicit option, so specifying the options as shown above will always be
+correct.  Finally, it is also worth noting that whether or not the LDAP
+accessible directory is to be considered read only is still configured as
+described in a previous section above by setting values such as the following
+in the ``[ldap]`` configuration section:
 
 .. code-block:: ini
 
