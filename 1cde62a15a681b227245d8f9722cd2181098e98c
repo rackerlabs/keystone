@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_aedad714",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-02T21:09:50Z",
+      "side": 1,
+      "message": "add: \n\n    partially-implements blueprint removed-as-of-kilo",
+      "revId": "1cde62a15a681b227245d8f9722cd2181098e98c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_4eea53ad",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-02T21:09:50Z",
+      "side": 1,
+      "message": "This should be removed now according to the doc string (line 125). \n\n    if CONF.token.provider is not None:\n         return CONF.token.provider\n    # we no longer need to check for CONF.signing.token_format\n    # since we are past Havana + 2\n    return UUID_PROVIDER",
+      "revId": "1cde62a15a681b227245d8f9722cd2181098e98c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
