@@ -425,18 +425,6 @@
 # Assignment backend driver. (string value)
 #driver = <None>
 
-# Toggle for assignment caching. This has no effect unless global caching is
-# enabled. (boolean value)
-#caching = true
-
-# TTL (in seconds) to cache assignment data. This has no effect unless global
-# caching is enabled. (integer value)
-#cache_time = <None>
-
-# Maximum number of entities that will be returned in an assignment collection.
-# (integer value)
-#list_limit = <None>
-
 
 [auth]
 
@@ -1267,6 +1255,32 @@
 
 # Maximum number of entities that will be returned in a policy collection.
 # (integer value)
+#list_limit = <None>
+
+
+[resource]
+
+#
+# From keystone
+#
+
+# Resource backend driver. If a resource driver is not specified, the
+# assignment driver will chose the backend. (string value)
+#driver = <None>
+
+# Toggle for resource caching. This has no effect unless global caching is
+# enabled. (boolean value)
+# Deprecated group/name - [assignment]/caching
+#caching = true
+
+# TTL (in seconds) to cache resource data. This has no effect unless global
+# caching is enabled. (integer value)
+# Deprecated group/name - [assignment]/cache_time
+#cache_time = <None>
+
+# Maximum number of entities that will be returned in a resource collection.
+# (integer value)
+# Deprecated group/name - [assignment]/list_limit
 #list_limit = <None>
 
 
