@@ -19,9 +19,9 @@ from keystone import exception
 from keystone.i18n import _
 from keystone import identity
 
-# Import assignment sql to ensure that the models defined in there are
+# Import resource sql to ensure that the models defined in there are
 # available for the reference from User and Group to Domain.id.
-from keystone.assignment.backends import sql as assignment_sql  # noqa
+from keystone.resource.backends import sql as resource_sql  # noqa
 
 
 CONF = config.CONF
@@ -81,8 +81,8 @@ class Identity(identity.Driver):
     def __init__(self, conf=None):
         super(Identity, self).__init__()
 
-    def default_assignment_driver(self):
-        return "keystone.assignment.backends.sql.Assignment"
+    def default_resource_driver(self):
+        return "keystone.resource.backends.sql.Resource"
 
     @property
     def is_sql(self):
