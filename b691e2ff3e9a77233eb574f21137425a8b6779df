@@ -69,6 +69,24 @@
       "revId": "b691e2ff3e9a77233eb574f21137425a8b6779df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_316e46ca",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-01-02T22:28:53Z",
+      "side": 1,
+      "message": "That\u0027s strange. If I apply patch http://paste.openstack.org/show/155430/ I get http://paste.openstack.org/show/155429/ (all tests run OK).",
+      "parentUuid": "3a961159_8e58bb58",
+      "revId": "b691e2ff3e9a77233eb574f21137425a8b6779df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
