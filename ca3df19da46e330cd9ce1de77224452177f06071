@@ -16,6 +16,24 @@
       "revId": "ca3df19da46e330cd9ce1de77224452177f06071",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_1d087bd8",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-01-03T19:59:10Z",
+      "side": 1,
+      "message": "That could be doable, but that would only work for new data and  doesn\u0027t guarantee existing data with no \"name\" set would work.",
+      "parentUuid": "3a961159_0e63eb41",
+      "revId": "ca3df19da46e330cd9ce1de77224452177f06071",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
