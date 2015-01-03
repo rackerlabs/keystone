@@ -39,6 +39,7 @@ SHOULD_CACHE = cache.should_cache_fn('assignment')
 EXPIRATION_TIME = lambda: CONF.assignment.cache_time
 
 
+# test
 def calc_default_domain():
     return {'description':
             (u'Owns users and tenants (i.e. projects)'
