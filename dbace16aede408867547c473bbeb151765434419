@@ -16,6 +16,24 @@
       "revId": "dbace16aede408867547c473bbeb151765434419",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7c4a6528",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-03T03:01:24Z",
+      "side": 1,
+      "message": "maybe...although the request was to break up this overall change as much as possible, so I think i might be better as it is.",
+      "parentUuid": "3a961159_e83697b3",
+      "revId": "dbace16aede408867547c473bbeb151765434419",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
