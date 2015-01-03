@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_5c5be9f5",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-03T03:12:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_a819ef23",
+      "revId": "b2a03c77d1e5e83f8c201e97cd47fef87833b080",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_a802cfb1",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_9c6c719f",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-03T03:12:34Z",
+      "side": 1,
+      "message": "we do it to remove duplicates....the old code did this by using a set buried down in the project ldap class...",
+      "parentUuid": "3a961159_a802cfb1",
+      "revId": "b2a03c77d1e5e83f8c201e97cd47fef87833b080",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_681f070a",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2015-01-02T17:38:16Z",
       "side": 1,
       "message": "whitespace",
+      "revId": "b2a03c77d1e5e83f8c201e97cd47fef87833b080",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_dc66f9ba",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 584,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-03T03:12:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_681f070a",
       "revId": "b2a03c77d1e5e83f8c201e97cd47fef87833b080",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
