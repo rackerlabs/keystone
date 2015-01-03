@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_3cf37d0b",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-03T02:50:16Z",
+      "side": 1,
+      "message": "nope, good point! Fixed.",
+      "parentUuid": "3a961159_424ce99d",
+      "revId": "e8fc6d45a828d5c6b06a59246be9eb28fbf23e37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_c257f925",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-02T17:16:29Z",
       "side": 1,
       "message": "should we reference this as: \n\n    class RoleApi(ldap.RoleLdapStructureMixin, common_ldap.BaseLdap):",
+      "revId": "e8fc6d45a828d5c6b06a59246be9eb28fbf23e37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_1cec0129",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-03T02:50:16Z",
+      "side": 1,
+      "message": "you are correct, fixed.",
+      "parentUuid": "3a961159_c257f925",
       "revId": "e8fc6d45a828d5c6b06a59246be9eb28fbf23e37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_bc8f6d74",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-03T02:50:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_62e725ad",
+      "revId": "e8fc6d45a828d5c6b06a59246be9eb28fbf23e37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_42330913",
         "filename": "keystone/assignment/role_backends/ldap.py",
         "patchSetId": 10
@@ -64,6 +118,24 @@
       "writtenOn": "2015-01-02T17:16:29Z",
       "side": 1,
       "message": "Suggest renaming to: \n\n    RoleLdapStructureMixin\n\nto be consistent with how \u0027Ldap\u0027 is used in other class names, like BaseLdap.",
+      "revId": "e8fc6d45a828d5c6b06a59246be9eb28fbf23e37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_fce81518",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-03T02:50:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_42330913",
       "revId": "e8fc6d45a828d5c6b06a59246be9eb28fbf23e37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_7cdc2575",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-03T02:50:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_826fb1fb",
+      "revId": "e8fc6d45a828d5c6b06a59246be9eb28fbf23e37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_c270d9dc",
         "filename": "keystone/assignment/role_backends/sql.py",
         "patchSetId": 10
@@ -98,6 +188,24 @@
       "writtenOn": "2015-01-02T17:16:29Z",
       "side": 1,
       "message": "this is: \n\n    class Role(assignment.RoleDriver): \n\nin keystone/assignment/role_backends/ldap.py",
+      "revId": "e8fc6d45a828d5c6b06a59246be9eb28fbf23e37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_9cd7114f",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-03T02:50:16Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_c270d9dc",
       "revId": "e8fc6d45a828d5c6b06a59246be9eb28fbf23e37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_1cd32160",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-03T02:50:16Z",
+      "side": 1,
+      "message": "So this isn\u0027t the normal use of logging...I need to get at the logging exceptions....can I do that with log.getLogger ?",
+      "parentUuid": "3a961159_a20aed24",
+      "revId": "e8fc6d45a828d5c6b06a59246be9eb28fbf23e37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_e84cd778",
         "filename": "keystone/tests/test_sql_upgrade.py",
         "patchSetId": 10
@@ -132,6 +258,24 @@
       "writtenOn": "2015-01-02T17:16:29Z",
       "side": 1,
       "message": "This is a handy method, would it make sense to move this up to SqlMigrateBase instead of grouping it with the tests?",
+      "revId": "e8fc6d45a828d5c6b06a59246be9eb28fbf23e37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7cc3458a",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1519,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-03T02:50:16Z",
+      "side": 1,
+      "message": "might be a good idea..do you mean in migration_helpers? Or somewhere else?",
+      "parentUuid": "3a961159_e84cd778",
       "revId": "e8fc6d45a828d5c6b06a59246be9eb28fbf23e37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
