@@ -107,10 +107,29 @@ class Catalog(kvs.Catalog):
             raise
 
     def get_catalog(self, user_id, tenant_id):
+        """Retrieve and format the V2 service catalog.
+
+        :param unicode string user_id: The id of user who has been
+            authenticated for creating service catalog.
+        :param unicode string tenant_id: The id of project. 'tenant_id' will
+            be None in the case this being called to create a catalog to go
+            in a domain scoped token, this will lead to invalid URL in the
+            endpoint, we will skip these endpoints or the whole service
+            if there are no valid endpoints.
+
+        :returns: A nested dict representing the service catalog or an
+                  empty dict.
+
+        """
         substitutions = dict(
             itertools.chain(six.iteritems(CONF),
                             six.iteritems(CONF.eventlet_server)))
-        substitutions.update({'tenant_id': tenant_id, 'user_id': user_id})
+        substitutions.update({'user_id': user_id})
+        allow_substitution_keyerror = []
+        if tenant_id:
+            substitutions.update({'tenant_id': tenant_id})
+        else:
+            allow_substitution_keyerror = ['tenant_id']
 
         catalog = {}
         for region, region_ref in six.iteritems(self.templates):
@@ -119,7 +138,9 @@ class Catalog(kvs.Catalog):
                 service_data = {}
                 try:
                     for k, v in six.iteritems(service_ref):
-                        service_data[k] = core.format_url(v, substitutions)
+                        silent_keyerror_failures = allow_substitution_keyerror
+                        service_data[k] = core.format_url(
+                            v, substitutions, silent_keyerror_failures)
                 except exception.MalformedEndpoint:
                     continue  # this failure is already logged in format_url()
                 catalog[region][service] = service_data
