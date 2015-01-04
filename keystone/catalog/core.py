@@ -16,6 +16,7 @@
 """Main entry point into the Catalog service."""
 
 import abc
+import re
 
 from oslo_config import cfg
 from oslo_log import log
@@ -467,12 +468,31 @@ class Driver(object):
                 "type": "volume"
             }]
 
+        :param Unicode string user_id: The id of user who has been
+            authenticated for creating service catalog, user_id will be
+            used to format the 'user_id' placeholder in the template
+            if there is.
+        :param Unicode string tenant_id: The id of project. 'tenant_id' will
+            be None in the case this being called to create a catalog to go
+            in a domain scoped token, and these catalog will be dropped.
         :returns: A list representing the service catalog or an empty list
         :raises: keystone.exception.NotFound
 
         """
         v2_catalog = self.get_catalog(user_id, tenant_id)
         v3_catalog = []
+        # NOTE(davechen): The main task in generating the v3 catalog is to
+        # turn any v2 URL interface attributes into v3 endpoints. As we are
+        # doing this, we should watch out for v2 attributes that were expecting
+        # a tenant_id substitution, but this was not always supplied when the
+        # v2 catalog was built. This can happen, for example, with
+        # client-specific endpoints when the catalog is not being built for a
+        # specific tenant scope. If we find any such non-substituted
+        # attributes, we ignore them and don't create v3 endpoints.
+        # A non-substituted attribute will have 'None' in it's value in place
+        # of the tenant_id, and this could occur in the middle or at the end
+        # of the URL.
+        pattern = re.compile(r"/None('|/|\")|/None$")
 
         for region_name, region in six.iteritems(v2_catalog):
             for service_type, service in six.iteritems(region):
@@ -489,15 +509,17 @@ class Driver(object):
                     # { 'interface': 'public', 'url': '<URL>', 'region':
                     #   'region: '<region_name>' }
                     if attr.endswith('URL'):
-                        v3_interface = attr[:-len('URL')]
-                        service_v3['endpoints'].append({
-                            'interface': v3_interface,
-                            'region': region_name,
-                            'url': value,
-                        })
+                        if not pattern.search(value):
+                            v3_interface = attr[:-len('URL')]
+                            service_v3['endpoints'].append({
+                                'interface': v3_interface,
+                                'region': region_name,
+                                'url': value,
+                            })
                         continue
 
-                    # Other attributes are copied to the service.
+                    # Other non-URL attributes are copied to the service
+                    # whether "tenant_id" is None or not.
                     service_v3[attr] = value
 
                 v3_catalog.append(service_v3)
