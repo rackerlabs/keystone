@@ -16,6 +16,7 @@
 """Main entry point into the Catalog service."""
 
 import abc
+import re
 
 from oslo_config import cfg
 from oslo_log import log
@@ -473,6 +474,12 @@ class Driver(object):
         """
         v2_catalog = self.get_catalog(user_id, tenant_id, metadata=metadata)
         v3_catalog = []
+        # The matched endpoints should fall into two cases,
+        # The invalid project id is presented in the mid of URL,
+        # such as: /None', /None/, /None"
+        # The invalid project id is presented in the end of URL,
+        # such as: /None
+        pattern = re.compile(r"/None('|/|\")|/None$")
 
         for region_name, region in six.iteritems(v2_catalog):
             for service_type, service in six.iteritems(region):
@@ -489,15 +496,18 @@ class Driver(object):
                     # { 'interface': 'public', 'url': '<URL>', 'region':
                     #   'region: '<region_name>' }
                     if attr.endswith('URL'):
-                        v3_interface = attr[:-len('URL')]
-                        service_v3['endpoints'].append({
-                            'interface': v3_interface,
-                            'region': region_name,
-                            'url': value,
-                        })
+                        if not pattern.search(value):
+                            v3_interface = attr[:-len('URL')]
+                            service_v3['endpoints'].append({
+                                'interface': v3_interface,
+                                'region': region_name,
+                                'url': value,
+                            })
                         continue
 
                     # Other attributes are copied to the service.
+                    # If "tenant_id" is None, only those attributes will be
+                    # presented in V3 catalog
                     service_v3[attr] = value
 
                 v3_catalog.append(service_v3)
