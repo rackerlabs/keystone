@@ -120,6 +120,29 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
              'id': '1'}]
         self.assert_catalogs_equal(exp_catalog, catalog_ref)
 
+    def test_get_catalog_ignores_endpoints_with_invalid_urls(self):
+        user_id = uuid.uuid4().hex
+        # project_id is None, so we will get some URL has the 'None'
+        # in it, this kind of endpoints will be skipped, or the whole
+        # service will be skipped if there are no valid endpoints.
+        project_id = None
+        catalog_ref = self.catalog_api.get_v3_catalog(user_id, project_id)
+        exp_catalog = [
+            {'endpoints': [
+                {'interface': 'admin',
+                 'region': 'RegionOne',
+                 'url': 'http://localhost:35357/v2.0'},
+                {'interface': 'public',
+                 'region': 'RegionOne',
+                 'url': 'http://localhost:5000/v2.0'},
+                {'interface': 'internal',
+                 'region': 'RegionOne',
+                 'url': 'http://localhost:35357/v2.0'}],
+             'type': 'identity',
+             'name': "'Identity Service'",
+             'id': '1'}]
+        self.assert_catalogs_equal(exp_catalog, catalog_ref)
+
     def test_list_regions_filtered_by_parent_region_id(self):
         self.skipTest('Templated backend does not support hints')
 
