@@ -327,8 +327,17 @@ class Catalog(catalog.Driver):
                 yield endpoint
 
         def make_v3_service(svc):
-            eps = list(make_v3_endpoints(svc.endpoints))
-            service = {'endpoints': eps, 'id': svc.id, 'type': svc.type}
+            patterns = ['$(tenant_id)s', '%(tenant_id)s']
+            if not tenant_id:
+                for ep in svc.endpoints:
+                    for pattern in patterns:
+                        if pattern in ep.url:
+                            svc.endpoints.remove(ep)
+            if svc.endpoints:
+                eps = list(make_v3_endpoints(svc.endpoints))
+                service = {'endpoints': eps, 'id': svc.id, 'type': svc.type}
+            else:
+                service = {'id': svc.id, 'type': svc.type}
             name = svc.extra.get('name')
             if name:
                 service['name'] = name
