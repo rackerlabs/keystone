@@ -110,7 +110,12 @@ class Catalog(kvs.Catalog):
         substitutions = dict(
             itertools.chain(six.iteritems(CONF),
                             six.iteritems(CONF.eventlet_server)))
-        substitutions.update({'tenant_id': tenant_id, 'user_id': user_id})
+        substitutions.update({'user_id': user_id})
+        allow_substitution_keyerror = []
+        if tenant_id:
+            substitutions.update({'tenant_id': tenant_id})
+        else:
+            allow_substitution_keyerror = ['tenant_id']
 
         catalog = {}
         for region, region_ref in six.iteritems(self.templates):
@@ -119,7 +124,8 @@ class Catalog(kvs.Catalog):
                 service_data = {}
                 try:
                     for k, v in six.iteritems(service_ref):
-                        service_data[k] = core.format_url(v, substitutions)
+                        service_data[k] = core.format_url(
+                            v, substitutions, allow_substitution_keyerror)
                 except exception.MalformedEndpoint:
                     continue  # this failure is already logged in format_url()
                 catalog[region][service] = service_data
