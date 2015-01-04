@@ -304,6 +304,18 @@ class Catalog(catalog.Driver):
         return catalog
 
     def get_v3_catalog(self, user_id, tenant_id, metadata=None):
+        """Retrieve and format the current V3 service catalog.
+
+        :param Unicode string user_id: The id of user who has been
+            authenticated for creating service catalog, user_id will be
+            used to format the 'user_id' placeholder in the template
+            if there is.
+        :param Unicode string tenant_id: The id of project. 'tenant_id' will
+            be None in the case this being called to create a catalog to go
+            in a domain scoped token, and these catalog will be dropped.
+        :returns: A list representing the service catalog or an empty list
+
+        """
         d = dict(
             itertools.chain(six.iteritems(CONF),
                             six.iteritems(CONF.eventlet_server)))
@@ -329,8 +341,23 @@ class Catalog(catalog.Driver):
                 yield endpoint
 
         def make_v3_service(svc):
-            eps = list(make_v3_endpoints(svc.endpoints))
-            service = {'endpoints': eps, 'id': svc.id, 'type': svc.type}
+            # NOTE(davechen): In case we are trying to get the endpoint while
+            # project id is not provided, we should skip these endpoints as
+            # they are meaningless.
+            # This can happen when these are client-specific endpoints, and
+            # there is no project id provided for the replacement of
+            # 'tenant_id'.
+            patterns = ['$(tenant_id)s', '%(tenant_id)s']
+            if not tenant_id:
+                for ep in svc.endpoints:
+                    for pattern in patterns:
+                        if pattern in ep.url:
+                            svc.endpoints.remove(ep)
+            if svc.endpoints:
+                eps = list(make_v3_endpoints(svc.endpoints))
+                service = {'endpoints': eps, 'id': svc.id, 'type': svc.type}
+            else:
+                service = {'id': svc.id, 'type': svc.type}
             service['name'] = svc.extra.get('name', '')
             return service
 
