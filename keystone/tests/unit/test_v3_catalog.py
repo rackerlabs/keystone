@@ -633,6 +633,20 @@ class TestCatalogAPISQL(tests.TestCase):
         # all three appear in the backend
         self.assertEqual(3, len(self.catalog_api.list_endpoints()))
 
+        # create another valid endpoint - tenant_id expect to be replaced
+        ref = self.new_endpoint_ref(self.service_id)
+        ref['url'] = 'http://keystone/%(tenant_id)s'
+        self.catalog_api.create_endpoint(ref['id'], ref)
+
+        # there are two valid endpoints, positive check
+        catalog = self.catalog_api.get_v3_catalog(user_id, tenant_id)
+        self.assertEqual(2, len(catalog[0]['endpoints']))
+
+        # ignore the endpoint without valid tenant id, negative check
+        tenant_id = None
+        catalog = self.catalog_api.get_v3_catalog(user_id, tenant_id)
+        self.assertEqual(1, len(catalog[0]['endpoints']))
+
     def test_get_catalog_always_returns_service_name(self):
         user_id = uuid.uuid4().hex
         tenant_id = uuid.uuid4().hex
