@@ -329,8 +329,24 @@ class Catalog(catalog.Driver):
                 yield endpoint
 
         def make_v3_service(svc):
-            eps = list(make_v3_endpoints(svc.endpoints))
-            service = {'endpoints': eps, 'id': svc.id, 'type': svc.type}
+            # NOTE(davechen): In case we are trying to get the endpoint with
+            # SQL backends while project id is not provided, we should skip
+            # these endpoints as they are meaningless.
+            # This happened when these are client-specific endpoints, there is
+            # no project id provided for the replacement of 'tenant_id'.
+            # So the 'tenant_id' is replaced by 'None' make the endpoint
+            # is invalid.
+            patterns = ['$(tenant_id)s', '%(tenant_id)s']
+            if not tenant_id:
+                for ep in svc.endpoints:
+                    for pattern in patterns:
+                        if pattern in ep.url:
+                            svc.endpoints.remove(ep)
+            if svc.endpoints:
+                eps = list(make_v3_endpoints(svc.endpoints))
+                service = {'endpoints': eps, 'id': svc.id, 'type': svc.type}
+            else:
+                service = {'id': svc.id, 'type': svc.type}
             service['name'] = svc.extra.get('name', '')
             return service
 
