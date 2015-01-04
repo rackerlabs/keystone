@@ -269,10 +269,30 @@ class Catalog(catalog.Driver):
         return ref.to_dict()
 
     def get_catalog(self, user_id, tenant_id):
+        """Retrieve and format the V2 service catalog.
+
+        :param unicode string user_id: The id of user who has been
+            authenticated for creating service catalog.
+        :param unicode string tenant_id: The id of project. 'tenant_id' will
+            be None in the case this being called to create a catalog to go
+            in a domain scoped token, this will lead to invalid URL in the
+            endpoint, we will skip these endpoints or the whole service
+            if there are no valid endpoints.
+
+        :returns: A nested dict representing the service catalog or an
+                  empty dict.
+
+        """
+
         substitutions = dict(
             itertools.chain(six.iteritems(CONF),
                             six.iteritems(CONF.eventlet_server)))
-        substitutions.update({'tenant_id': tenant_id, 'user_id': user_id})
+        substitutions.update({'user_id': user_id})
+        allow_substitution_keyerror = []
+        if tenant_id:
+            substitutions.update({'tenant_id': tenant_id})
+        else:
+            allow_substitution_keyerror = ['tenant_id']
 
         session = sql.get_session()
         endpoints = (session.query(Endpoint).
@@ -285,7 +305,9 @@ class Catalog(catalog.Driver):
             if not endpoint.service['enabled']:
                 continue
             try:
-                url = core.format_url(endpoint['url'], substitutions)
+                url = core.format_url(
+                    endpoint['url'], substitutions,
+                    silent_keyerror_failures=allow_substitution_keyerror)
             except exception.MalformedEndpoint:
                 continue  # this failure is already logged in format_url()
 
@@ -304,11 +326,30 @@ class Catalog(catalog.Driver):
         return catalog
 
     def get_v3_catalog(self, user_id, tenant_id):
+        """Retrieve and format the current V3 service catalog.
+
+        :param unicode string user_id: The id of user who has been
+            authenticated for creating service catalog, user_id will be
+            used to format the 'user_id' placeholder in the template
+            if there is.
+        :param unicode string tenant_id: The id of project. 'tenant_id' will
+            be None in the case this being called to create a catalog to go
+            in a domain scoped token, this will lead to invalid URL in the
+            endpoint, we will skip these endpoints or the whole service
+            if there are no valid endpoints.
+
+        :returns: A list representing the service catalog or an empty list
+
+        """
         d = dict(
             itertools.chain(six.iteritems(CONF),
                             six.iteritems(CONF.eventlet_server)))
-        d.update({'tenant_id': tenant_id,
-                  'user_id': user_id})
+        d.update({'user_id': user_id})
+        allow_substitution_keyerror = []
+        if tenant_id:
+            d.update({'tenant_id': tenant_id})
+        else:
+            allow_substitution_keyerror = ['tenant_id']
 
         session = sql.get_session()
         services = (session.query(Service).filter(Service.enabled == true()).
@@ -322,7 +363,9 @@ class Catalog(catalog.Driver):
                 del endpoint['enabled']
                 endpoint['region'] = endpoint['region_id']
                 try:
-                    endpoint['url'] = core.format_url(endpoint['url'], d)
+                    endpoint['url'] = core.format_url(
+                        endpoint['url'], d,
+                        silent_keyerror_failures=allow_substitution_keyerror)
                 except exception.MalformedEndpoint:
                     continue  # this failure is already logged in format_url()
 
