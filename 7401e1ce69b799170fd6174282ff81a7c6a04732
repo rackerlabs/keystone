@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_1aaeace7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-05T15:12:07Z",
+      "side": 1,
+      "message": "Bug number in Partial-Bug, Related-Bug or Closes-Bug tags should not contain a # in the bug number, according to Gerrit Workflow doc [1].\n\nThis is hapenning in all patches in this chain, starting here.\n\n[1] https://wiki.openstack.org/wiki/Gerrit_Workflow",
+      "revId": "7401e1ce69b799170fd6174282ff81a7c6a04732",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7700a902",
+        "filename": "keystone/tests/matchers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-05T15:12:07Z",
+      "side": 1,
+      "message": "I think declaring inner functions just after outer declaration improves readability. As we are doing with methods match() and xml_element_equals().",
+      "revId": "7401e1ce69b799170fd6174282ff81a7c6a04732",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_175da548",
+        "filename": "keystone/tests/matchers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-05T15:12:07Z",
+      "side": 1,
+      "message": "Unrelated to this patch, but this check could be done before sorting children elements.",
+      "revId": "7401e1ce69b799170fd6174282ff81a7c6a04732",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
