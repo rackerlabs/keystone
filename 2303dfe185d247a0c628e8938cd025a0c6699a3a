@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_3ea28a4b",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-05T01:38:50Z",
+      "side": 1,
+      "message": "there should be a unit test for this.",
+      "revId": "2303dfe185d247a0c628e8938cd025a0c6699a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_1ed14ecd",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 302,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-05T01:38:50Z",
+      "side": 1,
+      "message": "This should be a warning.",
+      "revId": "2303dfe185d247a0c628e8938cd025a0c6699a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_9efb7e46",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/003_fix_mysql_engine.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-05T01:38:50Z",
+      "side": 1,
+      "message": "seems like adding the foreign keys should only be done if \u0027project_endpoint_group\u0027 was in the list returned by change_mysql_engine(), and if the table is in the group then the fk needs to be added (no need to check first).",
+      "revId": "2303dfe185d247a0c628e8938cd025a0c6699a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_3ed44abc",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/003_fix_mysql_engine.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-05T01:38:50Z",
+      "side": 1,
+      "message": "There should be a comment saying why there\u0027s nothing to do here.",
+      "revId": "2303dfe185d247a0c628e8938cd025a0c6699a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_de9426ea",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/004_fix_mysql_engine.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-05T01:38:50Z",
+      "side": 1,
+      "message": "similar comment here, if \u0027federation_protocol\u0027 is in the returned list then add the fks, otherwise nothing to do.",
+      "revId": "2303dfe185d247a0c628e8938cd025a0c6699a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_5edaf6e9",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/004_fix_mysql_engine.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-05T01:38:50Z",
+      "side": 1,
+      "message": "There should be a comment saying why there\u0027s nothing to do in this case.",
+      "revId": "2303dfe185d247a0c628e8938cd025a0c6699a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7ed5f2b5",
+        "filename": "keystone/contrib/oauth1/migrate_repo/versions/006_fix_mysql_engine.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-05T01:38:50Z",
+      "side": 1,
+      "message": "Add a comment why nothing to do.",
+      "revId": "2303dfe185d247a0c628e8938cd025a0c6699a3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
