@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_abee2589",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-05T21:27:06Z",
+      "side": 1,
+      "message": "Nice explanation!",
+      "revId": "23733cceee45da089dd6e34dd35bb137333d8d76",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
