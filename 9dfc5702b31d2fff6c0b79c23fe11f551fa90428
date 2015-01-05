@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_e365b145",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-05T23:16:22Z",
+      "side": 1,
+      "message": "Well, I think it would be clearer if we had separate naming for the two parts of assignment: `engine` and `role`.",
+      "revId": "9dfc5702b31d2fff6c0b79c23fe11f551fa90428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_6351c161",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-05T23:16:22Z",
+      "side": 1,
+      "message": "So this driver would be called `keystone.assignment.engine.core.Driver` or `keystone.assignment.mapper.core.Driver`",
+      "revId": "9dfc5702b31d2fff6c0b79c23fe11f551fa90428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_03ce3d2d",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-05T23:16:22Z",
+      "side": 1,
+      "message": "And this one: `keystone.assignment.role.core.Driver`\n\n---\n\nIn few words, the rationally is: keystone.assignment.engine is something that uses everything in keystone.assignment (except for \u0027role\u0027 and itself) and returns what an actor can do on a resource, i.e, keystone.assignment.role.\n\n---\n\nLike this, it would be easier to the deployer to add a new assignment logic. She only needs to completly drop `keystone.assignment.engine` and plug her own implementation.\nAs we have today, she would need to delete the engine Driver class (that hasn\u0027t an appropriate name and is inside the same file of RoleDriver) and provide her implementation.\n\nNote that `keystone.assignment.role` will never be removed, since it handles what really matters: the roles/capabilities, that goes in the token.\n\nIn addition, it would be easier to:\n\ni) add a new `keystone.assignment.domain_role`, if needed;\n\nii) rename `keystone.assignment.role` to `keystone.assignment.capability` and `keystone.assignment.domain_role` to `keystone.assignment.role`, if needed;\n\niii) add a new `keystone.assignment.\u003cattribute_X\u003e`, if needed.",
+      "revId": "9dfc5702b31d2fff6c0b79c23fe11f551fa90428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_c32b55e9",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 1501,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-05T23:16:22Z",
+      "side": 1,
+      "message": "Again, as I pointed out at doc/source/architecture.rst, it would be clearer if we had something like assignment.engine here, in order to highlight the difference between the two parts of assignment.",
+      "revId": "9dfc5702b31d2fff6c0b79c23fe11f551fa90428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_433f6525",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 13
+      },
+      "lineNbr": 1504,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-05T23:16:22Z",
+      "side": 1,
+      "message": "And this one would be called assignment.role",
+      "revId": "9dfc5702b31d2fff6c0b79c23fe11f551fa90428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_36dd3871",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1326,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-05T23:16:22Z",
+      "side": 1,
+      "message": "This comment is not valid anymore.\nlist_role_assignments_for_role is implemented at manager level and not at drivers.",
+      "revId": "9dfc5702b31d2fff6c0b79c23fe11f551fa90428",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
