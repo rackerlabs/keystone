@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_5533a5f5",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-05T15:45:18Z",
+      "side": 1,
+      "message": "This is breaking in the tests.",
+      "revId": "61fddc75de25e4628f2fd7ea62d86c66baef4696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_15675deb",
+        "filename": "keystone/identity/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-05T15:45:18Z",
+      "side": 1,
+      "message": "Don\u0027t think you can add new kwargs to the signature of the wrapped function.  Need to remove it before passing to to create_user",
+      "revId": "61fddc75de25e4628f2fd7ea62d86c66baef4696",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
