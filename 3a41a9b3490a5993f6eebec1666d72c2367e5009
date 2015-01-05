@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_378f0130",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-05T14:50:13Z",
+      "side": 0,
+      "message": "Why are you removing this logic?",
+      "revId": "3a41a9b3490a5993f6eebec1666d72c2367e5009",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
