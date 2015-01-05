@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_593754e3",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3510,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-05T23:29:22Z",
+      "side": 1,
+      "message": "this test is making sure that __setitem__ is implemented correctly, so we want to test that the attribute can be set to None.",
+      "parentUuid": "3a961159_b514c99f",
+      "revId": "c30c0b9a3c28c600f40bf64c2588b9ca1eb65e63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_35c45940",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-05T16:00:54Z",
       "side": 1,
       "message": "Why not just skip this without setting anything? As we\u0027re doing at line 3499.",
+      "revId": "c30c0b9a3c28c600f40bf64c2588b9ca1eb65e63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_39dd2871",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3512,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-05T23:29:22Z",
+      "side": 1,
+      "message": "expires_at works differently than other attributes in that you can set it after setting it to None. That\u0027s part of what this test is asserting which is different than the previous test.",
+      "parentUuid": "3a961159_35c45940",
       "revId": "c30c0b9a3c28c600f40bf64c2588b9ca1eb65e63",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
