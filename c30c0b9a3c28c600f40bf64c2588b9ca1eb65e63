@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_39e7e813",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3510,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-05T23:34:39Z",
+      "side": 1,
+      "message": "I got it now.\nIn the case of \u0027expires_at\u0027, we can set it to None and after to something else without getting exception.Unauthorized.",
+      "parentUuid": "3a961159_593754e3",
+      "revId": "c30c0b9a3c28c600f40bf64c2588b9ca1eb65e63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_35c45940",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 5
