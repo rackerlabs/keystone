@@ -1222,6 +1222,13 @@ class TrustValidationTestCase(testtools.TestCase):
                                'remaining_uses': 2}
         self.create_trust_validator.validate(request_to_validate)
 
+    def test_validate_trust_with_period_in_user_id_string(self):
+        """Validate trust request with a period in the user id string."""
+        request_to_validate = {'trustor_user_id': 'john.smith',
+                               'trustee_user_id': 'joe.developer',
+                               'impersonation': False}
+        self.create_trust_validator.validate(request_to_validate)
+
     def test_validate_trust_with_invalid_expires_at_fails(self):
         """Validate trust request with invalid `expires_at` fails."""
         request_to_validate = {'trustor_user_id': uuid.uuid4().hex,
