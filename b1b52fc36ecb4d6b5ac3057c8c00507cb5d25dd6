@@ -16,6 +16,24 @@
       "revId": "b1b52fc36ecb4d6b5ac3057c8c00507cb5d25dd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_15c91d5a",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-05T15:58:09Z",
+      "side": 1,
+      "message": "VersionSingleAppTestCase isn\u0027t a subclass of VersionTestCase",
+      "parentUuid": "3a961159_f5a73109",
+      "revId": "b1b52fc36ecb4d6b5ac3057c8c00507cb5d25dd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
