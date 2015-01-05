@@ -34,6 +34,24 @@
       "revId": "b1b52fc36ecb4d6b5ac3057c8c00507cb5d25dd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_79a6d055",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-05T23:49:31Z",
+      "side": 1,
+      "message": "Well, I still don\u0027t think creating a Mixin class to contain only this method and then making both VersionTestCase and VersionSingleAppTestCase subclasses of it is the best approach.\n\nWe could put _assert_version_equal outside of class scope, as we have for _build_role_assignment_url_and_entity at test_v3_assignment.\n\nBut that may be just my personal preference. Feel free to take that or not in this pach. I\u0027m removing  my -1.\n\n[1] https://github.com/openstack/keystone/blob/master/keystone/tests/test_v3_assignment.py#L26-L71",
+      "parentUuid": "3a961159_15c91d5a",
+      "revId": "b1b52fc36ecb4d6b5ac3057c8c00507cb5d25dd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
