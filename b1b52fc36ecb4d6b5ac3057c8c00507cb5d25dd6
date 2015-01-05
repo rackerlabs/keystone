@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_f5a73109",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-05T15:48:03Z",
+      "side": 1,
+      "message": "Why do we need to create this new class instead of just adding the method _assert_version_equal() to the class VersionTestCase?",
+      "revId": "b1b52fc36ecb4d6b5ac3057c8c00507cb5d25dd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
