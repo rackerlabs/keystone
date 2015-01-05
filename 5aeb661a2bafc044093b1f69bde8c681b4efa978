@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_97dc351a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-05T14:55:30Z",
+      "side": 1,
+      "message": "Typos.  Avoid language like \"This code fixes the problem\" and instead describe what the code actually does in concise form.  Do no refer to the bug report to describe it.",
+      "revId": "5aeb661a2bafc044093b1f69bde8c681b4efa978",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_97035575",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-05T14:55:30Z",
+      "side": 1,
+      "message": "idp_id_attribute seems like it would be a more accurate name, or remote_id_attribute if you want it to match the SQL column name.",
+      "revId": "5aeb661a2bafc044093b1f69bde8c681b4efa978",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
