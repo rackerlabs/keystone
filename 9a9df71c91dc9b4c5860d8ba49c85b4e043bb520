@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_907a74b8",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1249,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-05T21:11:28Z",
+      "side": 1,
+      "message": "that\u0027s a nice idea!  Done.",
+      "parentUuid": "3a961159_c531a0a3",
+      "revId": "9a9df71c91dc9b4c5860d8ba49c85b4e043bb520",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_a5d01454",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_70542822",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1253,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-05T21:11:28Z",
+      "side": 1,
+      "message": "I\u0027m not a fan of default fixtures....and think each test should create its own test artefacts",
+      "parentUuid": "3a961159_a5d01454",
+      "revId": "9a9df71c91dc9b4c5860d8ba49c85b4e043bb520",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_25c42491",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2015-01-05T20:10:03Z",
       "side": 1,
       "message": "Same as line 1253. Use one of the existing projects from default fixtures: tenant_bar, etc",
+      "revId": "9a9df71c91dc9b4c5860d8ba49c85b4e043bb520",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_90519432",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1260,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-05T21:11:28Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "3a961159_25c42491",
       "revId": "9a9df71c91dc9b4c5860d8ba49c85b4e043bb520",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
