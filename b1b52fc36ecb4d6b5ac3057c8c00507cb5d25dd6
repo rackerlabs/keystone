@@ -52,6 +52,24 @@
       "revId": "b1b52fc36ecb4d6b5ac3057c8c00507cb5d25dd6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_bc74a69c",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-05T23:55:08Z",
+      "side": 1,
+      "message": "_build_role_assignment_url_and_entity doesn\u0027t use self. I could create a matcher for this since that\u0027s what matchers are for.",
+      "parentUuid": "3a961159_79a6d055",
+      "revId": "b1b52fc36ecb4d6b5ac3057c8c00507cb5d25dd6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
