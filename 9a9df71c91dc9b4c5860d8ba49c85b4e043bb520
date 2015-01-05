@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_c531a0a3",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1249,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-05T20:10:03Z",
+      "side": 1,
+      "message": "We could have only one method instead of 4 here. It would looks like:\n\ndef assert_role_not_found_exception(f, **kwargs):\n    self.assertRaises(exception.RoleNotFound, f, role_id\u003duuid.uuid4().hex, **kwargs)\n\nand would be called as follows at 1265:\n\n    assert_role_not_found_exception(manager_call, user_id\u003d\u003cuser_id\u003e, project_id\u003d\u003cproject_id\u003e)",
+      "revId": "9a9df71c91dc9b4c5860d8ba49c85b4e043bb520",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_a5d01454",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1253,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-05T20:10:03Z",
+      "side": 1,
+      "message": "We don\u0027t need to create a new user here. Just use one from default fixtures: user_foo, etc",
+      "revId": "9a9df71c91dc9b4c5860d8ba49c85b4e043bb520",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_25c42491",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1260,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-05T20:10:03Z",
+      "side": 1,
+      "message": "Same as line 1253. Use one of the existing projects from default fixtures: tenant_bar, etc",
+      "revId": "9a9df71c91dc9b4c5860d8ba49c85b4e043bb520",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
