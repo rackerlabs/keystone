@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_ba2e7840",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-05T17:13:46Z",
+      "side": 1,
+      "message": "Could remove {WIP} and use Workflow -1 in the review.",
+      "revId": "0d5e5d2871ae81051ce5bee580bcea0a241ece45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_9ad29c32",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-05T17:13:46Z",
+      "side": 1,
+      "message": "nit: Skip these endpoints to give a cleaner representation of the catalog. \n\nOr something along those lines.",
+      "revId": "0d5e5d2871ae81051ce5bee580bcea0a241ece45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0b5d8048",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-05T17:13:46Z",
+      "side": 1,
+      "message": "Suggest pull these out of the commit message and just specifying these work items in the Workflow -1 comment.",
+      "revId": "0d5e5d2871ae81051ce5bee580bcea0a241ece45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
