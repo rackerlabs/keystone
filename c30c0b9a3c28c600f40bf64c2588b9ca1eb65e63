@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_b514c99f",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3510,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-05T16:00:54Z",
+      "side": 1,
+      "message": "Why not check this before setting auth_context attribute at line 3508?\nThat assignment is useless if this expression results in True.",
+      "revId": "c30c0b9a3c28c600f40bf64c2588b9ca1eb65e63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_35c45940",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3512,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-05T16:00:54Z",
+      "side": 1,
+      "message": "Why not just skip this without setting anything? As we\u0027re doing at line 3499.",
+      "revId": "c30c0b9a3c28c600f40bf64c2588b9ca1eb65e63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
