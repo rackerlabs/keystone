@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_e459498f",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-01-05T14:34:26Z",
+      "side": 1,
+      "message": "nit: \n\n Get an initial version of a migrate repository",
+      "revId": "7dde336368b4d67e86e4a6ed8ee982bc80b17929",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_64e479ac",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-01-05T14:34:26Z",
+      "side": 1,
+      "message": "I\u0027d prefer to use list comprehensions in these two lines",
+      "revId": "7dde336368b4d67e86e4a6ed8ee982bc80b17929",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_2488b1c5",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-01-05T14:34:26Z",
+      "side": 1,
+      "message": "nit: IMO, these two lines should be outside this try...except block",
+      "revId": "7dde336368b4d67e86e4a6ed8ee982bc80b17929",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
