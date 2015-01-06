@@ -1771,6 +1771,30 @@ class SAMLGenerationTests(FederationTests):
         project_attribute = assertion[4][2]
         self.assertEqual(self.PROJECT, project_attribute[0].text)
 
+    def test_assertion_using_explicit_namespace_prefixes(self):
+        def mocked_subprocess_check_output(*popenargs, **kwargs):
+            # the last option is the assertion file to be signed
+            filename = popenargs[0][-1]
+            f = open(filename, 'r')
+            assertion_content = f.read()
+            f.close()
+            # since we are not testing the signature itself, we can return
+            # the assertion as it without signing it
+            return assertion_content
+
+        with mock.patch('subprocess.check_output',
+                        side_effect=mocked_subprocess_check_output):
+            generator = keystone_idp.SAMLGenerator()
+            response = generator.samlize_token(self.ISSUER, self.RECIPIENT,
+                                               self.SUBJECT, self.ROLES,
+                                               self.PROJECT)
+            assertion_xml = response.assertion.to_string()
+            # make sure we have the proper tag and prefixe for the assertion
+            # namespace
+            self.assertIn('<saml:Assertion', assertion_xml)
+            self.assertIn('xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"',
+                          assertion_xml)
+
     def test_saml_signing(self):
         """Test that the SAML generator produces a SAML object.
 
