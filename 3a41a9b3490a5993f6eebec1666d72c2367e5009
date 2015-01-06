@@ -34,6 +34,24 @@
       "revId": "3a41a9b3490a5993f6eebec1666d72c2367e5009",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ce8c55da",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-01-06T03:38:14Z",
+      "side": 0,
+      "message": "s/credentials[\u0027signature\u0027/credentials[\u0027signature\u0027]\n\nPrevious issues:\n- syntax issue on dictionary, credentials.signature -\u003e credentials[signature]\n- logic issue on the last \"else\" branch. EC signature not supplied should be different with signature is not correct.\n- typo issue,  credentials[signature]-\u003e credentials[\u0027host\u0027]\n- logic issue, should not check colon in the credentials[signature], so decide to remove the branch.\n\nayoung,\nHope this address your question.",
+      "parentUuid": "3a961159_12b12101",
+      "revId": "3a41a9b3490a5993f6eebec1666d72c2367e5009",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
