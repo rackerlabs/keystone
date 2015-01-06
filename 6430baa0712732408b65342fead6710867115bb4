@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_3a098484",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 651,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-06T14:45:29Z",
+      "side": 1,
+      "message": "Maybe this should be addressed in a different patch, but why not \u0027Cannot duplicate role %s\u0027 ?\n+1 since it has not been introduced by this patch.",
+      "revId": "6430baa0712732408b65342fead6710867115bb4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
