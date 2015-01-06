@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_5d0da336",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-06T19:04:32Z",
+      "side": 1,
+      "message": "I\u0027d remove \u0027domain\u0027 in identity_value check and later in line 395 handle case where domain is not present by raising some ValidationError or Unauthorized exception.\nOtherwise you are not handling a case where \u0027groups\u0027 are present but \u0027domain\u0027 not. This may confuse users as they will not see any warning, any error etc.",
+      "revId": "ec7e3b7354b9f44e6d6f3762385a8d1aa3298be0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
