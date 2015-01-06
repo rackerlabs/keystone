@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_df895270",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6802
+      },
+      "writtenOn": "2015-01-06T13:46:36Z",
+      "side": 1,
+      "message": "I disagree with this change because other projects have accepted similar changes where the values are boolean (default True). See\n* https://review.openstack.org/#/c/130843/6/nova/wsgi.py\n* https://review.openstack.org/#/c/130821/3/cinder/wsgi.py\n* https://review.openstack.org/#/c/130834/12/neutron/wsgi.py\n* https://review.openstack.org/#/c/130839/3/glance/common/wsgi.py\n\nIn principle, I think that this comment is the correct approach, but consistency across services seems more important in my opinion.",
+      "parentUuid": "3a961159_3971eb0c",
+      "revId": "20b7e00b0e03e2d4fb852f8aac54b3f607737185",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_d952a767",
         "filename": "keystone/common/config.py",
         "patchSetId": 6
@@ -135,6 +153,24 @@
       "writtenOn": "2015-01-02T08:07:11Z",
       "side": 1,
       "message": "Done",
+      "parentUuid": "3a961159_194d0fc5",
+      "revId": "20b7e00b0e03e2d4fb852f8aac54b3f607737185",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ffe9ae1a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6802
+      },
+      "writtenOn": "2015-01-06T13:46:36Z",
+      "side": 1,
+      "message": "See comment above.",
       "parentUuid": "3a961159_194d0fc5",
       "revId": "20b7e00b0e03e2d4fb852f8aac54b3f607737185",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
