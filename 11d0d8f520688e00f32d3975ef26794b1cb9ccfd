@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_3f3ed68b",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6802
+      },
+      "writtenOn": "2015-01-06T13:47:41Z",
+      "side": 1,
+      "message": "Recommend changing the default back to \"True\" to be consistent with changes to other projects. (See comment on patch set 6.)",
+      "revId": "11d0d8f520688e00f32d3975ef26794b1cb9ccfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_df4eb237",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6802
+      },
+      "writtenOn": "2015-01-06T13:47:41Z",
+      "side": 1,
+      "message": "Ditto as above (default 900).",
+      "revId": "11d0d8f520688e00f32d3975ef26794b1cb9ccfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_3f0c16ec",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6802
+      },
+      "writtenOn": "2015-01-06T13:47:41Z",
+      "side": 1,
+      "message": "None \u003d\u003e True so why not just set the default value to True?",
+      "revId": "11d0d8f520688e00f32d3975ef26794b1cb9ccfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
