@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_473111a1",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-01-06T19:57:17Z",
+      "side": 1,
+      "message": "Is this todo addressed in some other patch?",
+      "revId": "d5cac40422bdac19f687ece6f4da5adfac94ecf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_2705e5c1",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-01-06T19:57:17Z",
+      "side": 1,
+      "message": "s/get_catalog_v3/get_v3_catalog/",
+      "revId": "d5cac40422bdac19f687ece6f4da5adfac94ecf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_a7cd5588",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-01-06T19:57:17Z",
+      "side": 1,
+      "message": "this looks a bit weird. I am not sure though how to do it better though.",
+      "revId": "d5cac40422bdac19f687ece6f4da5adfac94ecf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_a77b9527",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-01-06T19:57:17Z",
+      "side": 1,
+      "message": "Is the TODO in sql applicable here and below?",
+      "revId": "d5cac40422bdac19f687ece6f4da5adfac94ecf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
