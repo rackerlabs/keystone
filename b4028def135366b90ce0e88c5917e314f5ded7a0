@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_17d90c57",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 38
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-06T05:38:42Z",
+      "side": 1,
+      "message": "there should be no changes here with this patch...something has gone awry with the new ordering of the keystone.conf.sample...will re-generate..",
+      "revId": "b4028def135366b90ce0e88c5917e314f5ded7a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
