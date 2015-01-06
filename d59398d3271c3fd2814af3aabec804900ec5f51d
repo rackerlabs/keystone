@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_5d7f20df",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-06T21:10:26Z",
+      "side": 1,
+      "message": "i feel like this is an oxymoron, they are called AE tokens, the E standing for encrypted. Why is there even an option to not encrypt?",
+      "revId": "d59398d3271c3fd2814af3aabec804900ec5f51d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_fd6fec25",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 1470,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-06T21:10:26Z",
+      "side": 1,
+      "message": "could this be just ae instead of ae_tokens?",
+      "revId": "d59398d3271c3fd2814af3aabec804900ec5f51d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
