@@ -85,6 +85,24 @@
       "revId": "5aeb661a2bafc044093b1f69bde8c681b4efa978",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_c97b5d27",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-06T16:47:22Z",
+      "side": 1,
+      "message": "i think you can condense the first two of marek\u0027s suggestion to:\n\n  remote_idp_parameter \u003d CONF.federation.entity_id_attribute\n  if not idp[\u0027remote_id\u0027] or not remote_idp_parameter:\n    return",
+      "parentUuid": "3a961159_c45189da",
+      "revId": "5aeb661a2bafc044093b1f69bde8c681b4efa978",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
