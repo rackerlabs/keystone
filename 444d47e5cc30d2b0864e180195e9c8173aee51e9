@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_bd8564ae",
+        "filename": "keystone/token/providers/ae/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-06T21:13:40Z",
+      "side": 1,
+      "message": "need to add this to global requirements",
+      "revId": "444d47e5cc30d2b0864e180195e9c8173aee51e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7db77c85",
+        "filename": "keystone/token/providers/ae/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-06T21:13:40Z",
+      "side": 1,
+      "message": "that*",
+      "revId": "444d47e5cc30d2b0864e180195e9c8173aee51e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
