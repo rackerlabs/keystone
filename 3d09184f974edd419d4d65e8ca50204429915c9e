@@ -34,6 +34,23 @@
       "revId": "3d09184f974edd419d4d65e8ca50204429915c9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_75307656",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-06T19:17:10Z",
+      "side": 1,
+      "message": "the only issue i see with this is, we are now calling the token_provider_api twice, instead of once. Not sure how this is going to affect performance",
+      "revId": "3d09184f974edd419d4d65e8ca50204429915c9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
