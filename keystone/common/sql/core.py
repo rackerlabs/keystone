@@ -21,11 +21,11 @@ CONF() because it sets up configuration options.
 import contextlib
 import functools
 
-from oslo.config import cfg
 from oslo.db import exception as db_exception
 from oslo.db import options as db_options
 from oslo.db.sqlalchemy import models
 from oslo.db.sqlalchemy import session as db_session
+from oslo_config import cfg
 from oslo_serialization import jsonutils
 import six
 import sqlalchemy as sql
