@@ -12,8 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from oslo.config import cfg
 from oslo import messaging
+from oslo_config import cfg
 
 
 _DEFAULT_AUTH_METHODS = ['external', 'password', 'token']
@@ -966,9 +966,9 @@ def configure(conf=None):
 
 
 def list_opts():
-    """Return a list of oslo.config options available in Keystone.
+    """Return a list of oslo_config options available in Keystone.
 
-    The returned list includes all oslo.config options which are registered as
+    The returned list includes all oslo_config options which are registered as
     the "FILE_OPTIONS" in keystone.common.config. This list will not include
     the options from the oslo-incubator library or any options registered
     dynamically at run time.
@@ -978,7 +978,7 @@ def list_opts():
     second element will be registered. A group name of None corresponds to the
     [DEFAULT] group in config files.
 
-    This function is also discoverable via the 'oslo.config.opts' entry point
+    This function is also discoverable via the 'oslo_config.opts' entry point
     under the 'keystone.config.opts' namespace.
 
     The purpose of this is to allow tools like the Oslo sample config file
