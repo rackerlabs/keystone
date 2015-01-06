@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_abf610d5",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2015-01-06T10:51:18Z",
+      "side": 1,
+      "message": "@Brant, could be a good idea to add __metaclass__ \u003d ABCMeta in this class?",
+      "parentUuid": "3a961159_8a1ef50b",
+      "revId": "8375694ff1f40aab7464910338f1e9ebc4391dc7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_ea13f9fe",
         "filename": "keystone/exception.py",
         "patchSetId": 11
