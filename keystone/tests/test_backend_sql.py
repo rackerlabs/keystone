@@ -160,14 +160,14 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                   'name': None,
                   'domain_id': DEFAULT_DOMAIN_ID}
         self.assertRaises(exception.ValidationError,
-                          self.assignment_api.create_project,
+                          self.resource_api.create_project,
                           tenant['id'],
                           tenant)
         self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.get_project,
+                          self.resource_api.get_project,
                           tenant['id'])
         self.assertRaises(exception.ProjectNotFound,
-                          self.assignment_api.get_project_by_name,
+                          self.resource_api.get_project_by_name,
                           tenant['name'],
                           DEFAULT_DOMAIN_ID)
 
@@ -189,7 +189,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         user = self.identity_api.create_user(user)
         self.assignment_api.add_user_to_project(self.tenant_bar['id'],
                                                 user['id'])
-        self.assignment_api.delete_project(self.tenant_bar['id'])
+        self.resource_api.delete_project(self.tenant_bar['id'])
         tenants = self.assignment_api.list_projects_for_user(user['id'])
         self.assertEqual([], tenants)
 
@@ -230,7 +230,7 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
             user['id'],
             self.tenant_bar['id'],
             role['id'])
-        self.assignment_api.delete_project(self.tenant_bar['id'])
+        self.resource_api.delete_project(self.tenant_bar['id'])
 
         # Now check whether the internal representation of roles
         # has been deleted
@@ -257,12 +257,12 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
             'name': uuid.uuid4().hex,
             'domain_id': DEFAULT_DOMAIN_ID,
             arbitrary_key: arbitrary_value}
-        ref = self.assignment_api.create_project(tenant_id, tenant)
+        ref = self.resource_api.create_project(tenant_id, tenant)
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertIsNone(ref.get('extra'))
 
         tenant['name'] = uuid.uuid4().hex
-        ref = self.assignment_api.update_project(tenant_id, tenant)
+        ref = self.resource_api.update_project(tenant_id, tenant)
         self.assertEqual(arbitrary_value, ref[arbitrary_key])
         self.assertEqual(arbitrary_value, ref['extra'][arbitrary_key])
 
