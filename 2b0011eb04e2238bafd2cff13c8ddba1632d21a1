@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_ae17d3ec",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 702,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-07T17:24:32Z",
+      "side": 1,
+      "message": "use `tox - e sample_config` to regenerate this file, rather than editing it.",
+      "revId": "2b0011eb04e2238bafd2cff13c8ddba1632d21a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_8ee3f703",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-07T17:24:32Z",
+      "side": 1,
+      "message": "s/entity_id/entity ID ?",
+      "revId": "2b0011eb04e2238bafd2cff13c8ddba1632d21a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
