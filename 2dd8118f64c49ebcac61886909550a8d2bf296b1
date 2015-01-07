@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_5442790f",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-07T20:33:12Z",
+      "side": 1,
+      "message": "Yep, you\u0027re correct.  I\u0027ll remove.",
+      "parentUuid": "3a961159_3e394ef2",
+      "revId": "2dd8118f64c49ebcac61886909550a8d2bf296b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_d1b11b45",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-07T20:09:56Z",
       "side": 1,
       "message": "Why not reuse the method list_domain_ids_for_groups(..) here?",
+      "revId": "2dd8118f64c49ebcac61886909550a8d2bf296b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_14bb91c4",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-07T20:33:12Z",
+      "side": 1,
+      "message": "we could, I agree, just trying to minimise changes - sounds like a good idea for a follow on clean up.",
+      "parentUuid": "3a961159_d1b11b45",
       "revId": "2dd8118f64c49ebcac61886909550a8d2bf296b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_14bf11d1",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-07T20:33:12Z",
+      "side": 1,
+      "message": "So I do agree....I think there are LOTS of scope for rationalisation of many of the methods here - that\u0027s one of the reasons to do this split so that we can simplify the true assignment methods.  Passing in a list of project_ids into this methods rather than having a separate list of parent projects would be a good thing.\n\nAs you say, not part of this patch, but a good thing to do.",
+      "parentUuid": "3a961159_51844bd2",
+      "revId": "2dd8118f64c49ebcac61886909550a8d2bf296b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_f138d7a1",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 9
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_34816dc3",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-07T20:33:12Z",
+      "side": 1,
+      "message": "agreed.",
+      "parentUuid": "3a961159_f138d7a1",
+      "revId": "2dd8118f64c49ebcac61886909550a8d2bf296b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_11a643c1",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 9
@@ -81,6 +153,24 @@
       "writtenOn": "2015-01-07T20:09:56Z",
       "side": 1,
       "message": "typo: please remove \u0027     577\u0027",
+      "revId": "2dd8118f64c49ebcac61886909550a8d2bf296b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b4747dfe",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1156,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-07T20:33:12Z",
+      "side": 1,
+      "message": "oops!",
+      "parentUuid": "3a961159_11a643c1",
       "revId": "2dd8118f64c49ebcac61886909550a8d2bf296b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
