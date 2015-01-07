@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_5219bbcf",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-01-07T12:02:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_97035575",
+      "revId": "5aeb661a2bafc044093b1f69bde8c681b4efa978",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_e9a3c040",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 6
@@ -65,6 +83,24 @@
       "writtenOn": "2015-01-06T13:13:09Z",
       "side": 1,
       "message": "Is there any particular reason why you want to use REs here? \nMy understanding is that we should compare and look for identical strings. Also mind that searching for \u0027\u0027 (empty string) will always give you True:\n\n import re\nr \u003d re.search(\u0027\u0027, \u0027https://cern.ch/login\u0027)\nif r:\n    print \"BOOLEAN TRUE\"\n    print \"RESULT: %s\" % r.group()\nelse:\n    print \"BOOLEAN FALSE\"\n\nwill print \nBOOLEAN TRUE\nRESULT:",
+      "revId": "5aeb661a2bafc044093b1f69bde8c681b4efa978",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_edae4ce6",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-01-07T12:02:29Z",
+      "side": 1,
+      "message": "Actually, my idea is that the idp[\u0027remote_id\u0027] could be like \u0027entityId1,entityId2,...,entitiIdn\u0027 therefore it is possible to use one keystone IdP to map multiple IdPs.\n\nAbout the empty string, this is the reason of the previous if. I\u0027ll change the code using your suggestion but I would maintain the map 1 to many, is there better option then re in this case? I was thinking to create a list and search inside but at the end I discard because I did not like too much. Do you prefer that approach?",
+      "parentUuid": "3a961159_e9a3c040",
       "revId": "5aeb661a2bafc044093b1f69bde8c681b4efa978",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -100,6 +136,42 @@
       "side": 1,
       "message": "i think you can condense the first two of marek\u0027s suggestion to:\n\n  remote_idp_parameter \u003d CONF.federation.entity_id_attribute\n  if not idp[\u0027remote_id\u0027] or not remote_idp_parameter:\n    return",
       "parentUuid": "3a961159_c45189da",
+      "revId": "5aeb661a2bafc044093b1f69bde8c681b4efa978",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_8da068f5",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-01-07T12:02:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_c45189da",
+      "revId": "5aeb661a2bafc044093b1f69bde8c681b4efa978",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ada1a4f8",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-01-07T12:02:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_c97b5d27",
       "revId": "5aeb661a2bafc044093b1f69bde8c681b4efa978",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
