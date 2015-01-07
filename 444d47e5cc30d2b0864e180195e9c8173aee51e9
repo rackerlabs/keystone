@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_d2b056ff",
+        "filename": "keystone/token/providers/ae/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-07T00:14:45Z",
+      "side": 1,
+      "message": "correct, thanks!",
+      "parentUuid": "3a961159_bd8564ae",
+      "revId": "444d47e5cc30d2b0864e180195e9c8173aee51e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_7db77c85",
         "filename": "keystone/token/providers/ae/token_formatters.py",
         "patchSetId": 1
