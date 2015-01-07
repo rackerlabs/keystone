@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_a605307b",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6802
+      },
+      "writtenOn": "2015-01-07T23:11:47Z",
+      "side": 1,
+      "message": "That\u0027s a great point. Would like to see the code that\u0027s been contributed to different projects consolidated in oslo-incubator at some point.",
+      "parentUuid": "3a961159_e0f58ecb",
+      "revId": "11d0d8f520688e00f32d3975ef26794b1cb9ccfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_df4eb237",
         "filename": "keystone/common/config.py",
         "patchSetId": 8
