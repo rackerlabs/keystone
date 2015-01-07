@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_11048313",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-01-07T19:31:53Z",
+      "side": 1,
+      "message": "you may need to update the real url here as well",
+      "revId": "28affbab38c7258f6cef8bcd6b5bace21ba40dc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
