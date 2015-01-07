@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_264ce041",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1778,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-01-07T23:01:26Z",
+      "side": 1,
+      "message": "good suggestion!",
+      "parentUuid": "3a961159_6a831003",
+      "revId": "da1ee6e861f2faf3ca2c41dc513d37bc996fc03b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_6510a100",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_864d943d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1794,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-01-07T23:01:26Z",
+      "side": 1,
+      "message": "this will verify that the correct prefix is used",
+      "parentUuid": "3a961159_6510a100",
+      "revId": "da1ee6e861f2faf3ca2c41dc513d37bc996fc03b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_e5fbb1bb",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2015-01-07T21:53:05Z",
       "side": 1,
       "message": "good, but how about we verify the values we used from the library.\n\n  (Pdb) p saml2.NAMESPACE\n  \u0027urn:oasis:names:tc:SAML:2.0:assertion\u0027\n\n  (Pdb) p xmldsig.NAMESPACE\n  \u0027http://www.w3.org/2000/09/xmldsig#\u0027\n\n  (Pdb) p \u0027xmlns:xmldsig\u003d\"\u0027+xmldsig.NAMESPACE+\u0027\"\u0027 in assertion_xml\n  True\n\n  (Pdb) p \u0027xmlns:saml\u003d\"\u0027+saml2.NAMESPACE+\u0027\"\u0027 in assertion_xml\n  True",
+      "revId": "da1ee6e861f2faf3ca2c41dc513d37bc996fc03b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_c6623cac",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1795,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-01-07T23:01:26Z",
+      "side": 1,
+      "message": "good suggestion!",
+      "parentUuid": "3a961159_e5fbb1bb",
       "revId": "da1ee6e861f2faf3ca2c41dc513d37bc996fc03b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
