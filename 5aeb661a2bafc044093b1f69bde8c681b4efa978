@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_7e3120a1",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-07T13:42:45Z",
+      "side": 1,
+      "message": "I personally think multiple remote_id cases should be handled via lists, not a concatened string. And this deserves separate patch if not a separate blueprint.\nIn this patch I would simply consider one remote_id per IdentityProvider object. \n\nOne replacement for the re.search() would be something like:\n\nremote_ids \u003d idp[\u0027remote_id\u0027].split(\u0027,\u0027)\nfor remote_id in remote_ids:\n    if remote_id \u003d\u003d idp_remote_identifier:\n      return\nelse:\n    raise/ return False / indicate there is something wrong. \n\nbut as I said I don\u0027t think this is a good approach in general.",
+      "parentUuid": "3a961159_edae4ce6",
+      "revId": "5aeb661a2bafc044093b1f69bde8c681b4efa978",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_c45189da",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 6
