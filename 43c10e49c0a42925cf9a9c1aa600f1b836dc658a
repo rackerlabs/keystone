@@ -34,6 +34,24 @@
       "revId": "43c10e49c0a42925cf9a9c1aa600f1b836dc658a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b7bc8ab6",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-07T14:38:47Z",
+      "side": 1,
+      "message": "An example:\n\nd \u003d {\u0027a\u0027: 1}\n\nparameter \u003d d[\u0027b\u0027]\nif not parameter:\n    print(\"ERROR\")\n    \n# do sth else\n\nwill produce:\n\nKeyError                                  Traceback (most recent call last)\n\u003cipython-input-16-888cfd765e91\u003e in \u003cmodule\u003e()\n      1 d \u003d {\u0027a\u0027: 1}\n      2 \n----\u003e 3 parameter \u003d d[\u0027b\u0027]\n      4 if not parameter:\n      5     print(\"ERROR\")\n\nKeyError: \u0027b\u0027",
+      "parentUuid": "3a961159_17c8fea6",
+      "revId": "43c10e49c0a42925cf9a9c1aa600f1b836dc658a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
