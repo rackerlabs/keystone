@@ -52,6 +52,24 @@
       "revId": "ca3df19da46e330cd9ce1de77224452177f06071",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_af918a53",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-07T20:45:26Z",
+      "side": 1,
+      "message": "we could keep both so that we cover both cases. new data would assume the default similar to how region[\u0027description\u0027] data does it and existing data would use the path above.",
+      "parentUuid": "3a961159_19b088dc",
+      "revId": "ca3df19da46e330cd9ce1de77224452177f06071",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
