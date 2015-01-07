@@ -70,6 +70,24 @@
       "revId": "ca3df19da46e330cd9ce1de77224452177f06071",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_6f3c02e2",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-01-07T21:01:09Z",
+      "side": 1,
+      "message": "Can we address this as a separate bug/patch then?  I can open the bug and follow-up on the fix.",
+      "parentUuid": "3a961159_af918a53",
+      "revId": "ca3df19da46e330cd9ce1de77224452177f06071",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
