@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_9d008fac",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-07T15:42:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_473111a1",
+      "revId": "d5cac40422bdac19f687ece6f4da5adfac94ecf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_2705e5c1",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-06T19:57:17Z",
       "side": 1,
       "message": "s/get_catalog_v3/get_v3_catalog/",
+      "revId": "d5cac40422bdac19f687ece6f4da5adfac94ecf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_bdfb8bbc",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-07T15:42:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_2705e5c1",
       "revId": "d5cac40422bdac19f687ece6f4da5adfac94ecf3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2015-01-06T19:57:17Z",
       "side": 1,
       "message": "Is the TODO in sql applicable here and below?",
+      "revId": "d5cac40422bdac19f687ece6f4da5adfac94ecf3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_9d17afed",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-07T15:42:51Z",
+      "side": 1,
+      "message": "Done (removed the TODO)",
+      "parentUuid": "3a961159_a77b9527",
       "revId": "d5cac40422bdac19f687ece6f4da5adfac94ecf3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
