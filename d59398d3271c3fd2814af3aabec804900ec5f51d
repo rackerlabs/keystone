@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_92d32e37",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-07T00:13:55Z",
+      "side": 1,
+      "message": "Valid concern. Someone at the summit in Paris wanted the option to not encrypt. Personally I don\u0027t see the use case and I would be fine with removing this. I wanted to put it in the POC to see if people leaned one way or the other.",
+      "parentUuid": "3a961159_5d7f20df",
+      "revId": "d59398d3271c3fd2814af3aabec804900ec5f51d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_fd6fec25",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-06T21:10:26Z",
       "side": 1,
       "message": "could this be just ae instead of ae_tokens?",
+      "revId": "d59398d3271c3fd2814af3aabec804900ec5f51d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d2d93657",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 1470,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-07T00:13:55Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a961159_fd6fec25",
       "revId": "d59398d3271c3fd2814af3aabec804900ec5f51d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
