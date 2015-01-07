@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_63318b0a",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-07T14:33:40Z",
+      "side": 1,
+      "message": "Since roles don\u0027t belong to assignment backend anymore, please remove \", and ``role``\".",
+      "revId": "32ee502084b7b68cffa42ca7836edf5c2b1d893b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_1e8c9c7f",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-07T14:33:40Z",
+      "side": 1,
+      "message": "It could be useful to add information here saying that \"Currently ``role`` only has caching for ``role`` entities.\", since this info has to be removed from line 494.",
+      "revId": "32ee502084b7b68cffa42ca7836edf5c2b1d893b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_9e088c81",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 1510,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-07T14:33:40Z",
+      "side": 1,
+      "message": "Assignment and Role, starting with uppercase letter, if needs to be in accordance with Identity.",
+      "revId": "32ee502084b7b68cffa42ca7836edf5c2b1d893b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_deda14e8",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 14
+      },
+      "lineNbr": 1295,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-07T14:33:40Z",
+      "side": 1,
+      "message": "(nit): Just to be in accordance, why not use \u0027# From keystone\u0027, as all the other sections do.",
+      "revId": "32ee502084b7b68cffa42ca7836edf5c2b1d893b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f408d092",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-07T14:33:40Z",
+      "side": 1,
+      "message": "Nice wrapper!",
+      "revId": "32ee502084b7b68cffa42ca7836edf5c2b1d893b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_34e9787f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1311,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-07T14:33:40Z",
+      "side": 1,
+      "message": "In the case of deletion it makes sense to just invalidate the cache.\n\nBut in the case of updation, shouldn\u0027t we update the cache as well, instead of just invalidating it?",
+      "revId": "32ee502084b7b68cffa42ca7836edf5c2b1d893b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_947eacad",
+        "filename": "keystone/assignment/role_backends/ldap.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-07T14:33:40Z",
+      "side": 1,
+      "message": "I think it needs a blank line here between the copyright note and the first import.",
+      "revId": "32ee502084b7b68cffa42ca7836edf5c2b1d893b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d783d653",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 785,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-07T14:33:40Z",
+      "side": 1,
+      "message": "(nit): s/LOG.depreated/LOG.deprecated",
+      "revId": "32ee502084b7b68cffa42ca7836edf5c2b1d893b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_37f41af0",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 812,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-07T14:33:40Z",
+      "side": 1,
+      "message": "Really nice test! Glad to know about this.",
+      "revId": "32ee502084b7b68cffa42ca7836edf5c2b1d893b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

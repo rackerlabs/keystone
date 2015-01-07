@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_945f8c0e",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-07T14:33:40Z",
+      "side": 0,
+      "message": "So all those checks for the validity of the provided role for grant CRUD are now done by the manager. Nice!",
+      "revId": "31807b4cd69c9ffe08b416505eedb4729aab746f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_949cec6b",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-07T14:33:40Z",
+      "side": 0,
+      "message": "Since the same Role table is declared at `keystone/assignment/role_backends/sql.py`, why not keep this constraint?",
+      "revId": "31807b4cd69c9ffe08b416505eedb4729aab746f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
