@@ -16,6 +16,24 @@
       "revId": "43c10e49c0a42925cf9a9c1aa600f1b836dc658a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_17c8fea6",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-01-07T14:30:47Z",
+      "side": 1,
+      "message": "I do not get what you mean here. In my tests, if I specify a wrong \u0027remote_id_parameter\u0027 and the assertion does not exist there is not exception and I get the ValidationError in the following if. Do I miss something?",
+      "parentUuid": "3a961159_17a39e00",
+      "revId": "43c10e49c0a42925cf9a9c1aa600f1b836dc658a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
