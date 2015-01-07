@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_3e394ef2",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-07T20:09:56Z",
+      "side": 1,
+      "message": "I\u0027m not sure we need distinct() here, since each project only belongs to a single domain.",
+      "revId": "2dd8118f64c49ebcac61886909550a8d2bf296b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d1b11b45",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-07T20:09:56Z",
+      "side": 1,
+      "message": "Why not reuse the method list_domain_ids_for_groups(..) here?",
+      "revId": "2dd8118f64c49ebcac61886909550a8d2bf296b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_51844bd2",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 380,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-07T20:09:56Z",
+      "side": 1,
+      "message": "I don\u0027t agree that drivers need to support OS-INHERIT this way.\nThey shouldn\u0027t know about project parents, etc. They should *only* know what are the *entities* they need to CRUD and their *attributes*.\n\nIn this case, the driver needs to know that if parent_projects are provided, we have to query for inherited role assignments in this context. For me, this is part of business logic, and bussiness logic have to be on the Manager.\n\nI know this is unrelated to this patch, but I need to check if you agree with me on this point. If so, we need to report a bug.",
+      "revId": "2dd8118f64c49ebcac61886909550a8d2bf296b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f138d7a1",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-07T20:09:56Z",
+      "side": 1,
+      "message": "Maybe we need to add something to this sentence to say it also includes roles inherited parent projects.\nHowever, it looks like it is unrelated to this patch.",
+      "revId": "2dd8118f64c49ebcac61886909550a8d2bf296b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_11a643c1",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1156,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-07T20:09:56Z",
+      "side": 1,
+      "message": "typo: please remove \u0027     577\u0027",
+      "revId": "2dd8118f64c49ebcac61886909550a8d2bf296b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
