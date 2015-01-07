@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_fe1c3015",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-07T13:42:51Z",
+      "side": 1,
+      "message": "do we need to have it here?",
+      "revId": "1fd29e40194e520c177aaae847c9d14a64c65b2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_de1f7407",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-07T13:42:51Z",
+      "side": 1,
+      "message": "parameter",
+      "revId": "1fd29e40194e520c177aaae847c9d14a64c65b2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_fe919052",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-07T13:42:51Z",
+      "side": 1,
+      "message": "it\u0027d be worth checking what happens if remote_id_parameter is not present in the assertion. Normally KeyError will be raised, but I don\u0027t know what will happend next - will it transform into some HTTP500 exception? \nBesides, it looks like you want idp_remote_idnetifier.get(remote_id_parmaeter).\nOtherwise next tests (if not idp_remote_identifier) are unnecessary.",
+      "revId": "1fd29e40194e520c177aaae847c9d14a64c65b2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
