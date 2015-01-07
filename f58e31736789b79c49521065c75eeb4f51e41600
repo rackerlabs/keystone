@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_85de6d6b",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-01-07T22:04:14Z",
+      "side": 0,
+      "message": "Nit: unrelated white space change",
+      "revId": "f58e31736789b79c49521065c75eeb4f51e41600",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
