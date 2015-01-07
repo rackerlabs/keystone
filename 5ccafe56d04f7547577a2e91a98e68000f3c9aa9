@@ -1,0 +1,276 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_46f48c86",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 2618,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-07T23:44:18Z",
+      "side": 1,
+      "message": "this code is confusing because it overwrites self.trustee_user in a couple lines, so readers can\u0027t tell easily that this is a created user and not just a ref. The ref should be created in a local variable so that it\u0027s more obvious.\n\n trustee_user_ref \u003d self.new_user_ref(domain_id\u003dself.domain_id)",
+      "revId": "5ccafe56d04f7547577a2e91a98e68000f3c9aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_e6573858",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 2658,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-07T23:44:18Z",
+      "side": 1,
+      "message": "This doesn\u0027t build a trust because it fails. This should be like \"Attempt to create a redelegated trust.\" This applies throughout these tests.",
+      "revId": "5ccafe56d04f7547577a2e91a98e68000f3c9aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_2655c04f",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 2670,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-07T23:44:18Z",
+      "side": 1,
+      "message": "This doesn\u0027t build a trust because it fails.",
+      "revId": "5ccafe56d04f7547577a2e91a98e68000f3c9aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_c664fc4a",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 2671,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-07T23:44:18Z",
+      "side": 1,
+      "message": "why 5? add a comment.",
+      "revId": "5ccafe56d04f7547577a2e91a98e68000f3c9aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_864674a5",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 2679,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-07T23:44:18Z",
+      "side": 1,
+      "message": "use CONF.trust.max_redelegation_count + 1 then no comment is necessary.",
+      "revId": "5ccafe56d04f7547577a2e91a98e68000f3c9aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_c6995c20",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 2696,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-07T23:44:18Z",
+      "side": 1,
+      "message": "where does 10 come from? Add a comment.",
+      "revId": "5ccafe56d04f7547577a2e91a98e68000f3c9aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_6690a8ed",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 2710,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-07T23:44:18Z",
+      "side": 1,
+      "message": "Where does 5 come from? Add a comment.\n\nAlso, there should be an explanation why this test is expected to fail.",
+      "revId": "5ccafe56d04f7547577a2e91a98e68000f3c9aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_46ac8c35",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 2767,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-07T23:44:18Z",
+      "side": 1,
+      "message": "use mock.patch.object decorator or context instead -- http://www.voidspace.org.uk/python/mock/patch.html#patch-object",
+      "revId": "5ccafe56d04f7547577a2e91a98e68000f3c9aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_267860c3",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 2898,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-07T23:44:18Z",
+      "side": 1,
+      "message": "isn\u0027t 200 the default?",
+      "revId": "5ccafe56d04f7547577a2e91a98e68000f3c9aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_c64ebc95",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 2947,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-07T23:44:18Z",
+      "side": 1,
+      "message": "use mock.patch.object instead.",
+      "revId": "5ccafe56d04f7547577a2e91a98e68000f3c9aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0645246e",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 2960,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-07T23:44:18Z",
+      "side": 1,
+      "message": "use mock.patch.object instead.",
+      "revId": "5ccafe56d04f7547577a2e91a98e68000f3c9aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_c9032f0b",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 601,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-07T23:44:18Z",
+      "side": 1,
+      "message": "use token_ref[\u0027trust_id\u0027] since it\u0027s already known to be in the token_ref.\n\nAlso, it would be better to do \n\n trust_id \u003d token_ref.get(\u0027trust_id\u0027)\n if trust_id:\n    self.trust_api.get_trust(trust_id)\n\nbecause then there wouldn\u0027t be 2 fetches of the \u0027trust_id\u0027 item and less code duplication.",
+      "revId": "5ccafe56d04f7547577a2e91a98e68000f3c9aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_2914b342",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-07T23:44:18Z",
+      "side": 1,
+      "message": "Revert the whitespace change on the previous line.",
+      "revId": "5ccafe56d04f7547577a2e91a98e68000f3c9aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_c9edef26",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-07T23:44:18Z",
+      "side": 1,
+      "message": "use trust[\u0027remaining_uses\u0027] since there was already a check already that the item is in the dict.",
+      "revId": "5ccafe56d04f7547577a2e91a98e68000f3c9aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_a906e3cb",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-07T23:44:18Z",
+      "side": 1,
+      "message": "This should have been validated with JSON Schema already.",
+      "revId": "5ccafe56d04f7547577a2e91a98e68000f3c9aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_89976744",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-07T23:44:18Z",
+      "side": 1,
+      "message": "add a comment why all the trusts for the trustor user need to be deleted.",
+      "revId": "5ccafe56d04f7547577a2e91a98e68000f3c9aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
