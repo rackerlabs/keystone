@@ -16,6 +16,24 @@
       "revId": "28affbab38c7258f6cef8bcd6b5bace21ba40dc5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b448fd5c",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 10234
+      },
+      "writtenOn": "2015-01-07T20:12:36Z",
+      "side": 1,
+      "message": "did you see previous comments? I described how it works.",
+      "parentUuid": "3a961159_11048313",
+      "revId": "28affbab38c7258f6cef8bcd6b5bace21ba40dc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
