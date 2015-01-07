@@ -16,6 +16,24 @@
       "revId": "a1c9ab0ec8d1555e133fb371e90e507e3ed734c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_99634eb0",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-07T09:12:52Z",
+      "side": 1,
+      "message": "wanghong++.\nIf authors are sure this will not lead to a bug, can you add relevant note?\nOtherwise, how about changing the if clause to something like:\n\nif \u0027description\u0027 in region_ref and region_ref.get(\u0027description\u0027) is None:\n    region_ref[\u0027description\u0027] \u003d \u0027\u0027",
+      "parentUuid": "3a961159_74cb0072",
+      "revId": "a1c9ab0ec8d1555e133fb371e90e507e3ed734c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
