@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_17a39e00",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-07T14:28:10Z",
+      "side": 1,
+      "message": "it\u0027d be worth checking what happens if remote_id_parameter is not present in the assertion. Normally KeyError will be raised, but I don\u0027t know what will happend next - will it transform into some HTTP500 exception? Besides, it looks like you want idp_remote_idnetifier.get(remote_id_parmaeter). Otherwise next tests (if not idp_remote_identifier) are unnecessary.",
+      "revId": "43c10e49c0a42925cf9a9c1aa600f1b836dc658a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
