@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_306ecb00",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 219,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-08T07:32:56Z",
+      "side": 1,
+      "message": "white space....\n\n...plus maybe rebase this on https://review.openstack.org/#/c/133525/ (once I\u0027ve fixed the merge conflict)....so call the resource_api, rather than the assignment_api",
+      "revId": "e1a3ca89f9268b920d4c8cb52206cbd2389e4f9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
