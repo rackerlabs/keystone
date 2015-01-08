@@ -16,6 +16,24 @@
       "revId": "9e5aa70c365070a7c5484488b2ddb3319937e260",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_739ccbc0",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-08T18:48:22Z",
+      "side": 1,
+      "message": "This remains a requirement until we don\u0027t allow circular dependencies... then we can get rid of the resolve_future_dependencies function and other things in the dependencies module to support circular dependencies.",
+      "parentUuid": "3a961159_381222fd",
+      "revId": "9e5aa70c365070a7c5484488b2ddb3319937e260",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
