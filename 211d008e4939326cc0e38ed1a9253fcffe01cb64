@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_e9028e3c",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-01-08T20:22:01Z",
+      "side": 1,
+      "message": "It would probably be better if the matching Id was checked in the manager, but that is out of scope of the bug fix. \n\nThis looks good here.",
+      "parentUuid": "3a961159_7d6c1f37",
+      "revId": "211d008e4939326cc0e38ed1a9253fcffe01cb64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_7c14374d",
         "filename": "keystone/catalog/backends/kvs.py",
         "patchSetId": 12
@@ -48,6 +66,24 @@
       "writtenOn": "2014-12-31T15:07:22Z",
       "side": 1,
       "message": "same",
+      "revId": "211d008e4939326cc0e38ed1a9253fcffe01cb64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_49f48254",
+        "filename": "keystone/catalog/backends/kvs.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-01-08T20:22:01Z",
+      "side": 1,
+      "message": "Same",
+      "parentUuid": "3a961159_7c14374d",
       "revId": "211d008e4939326cc0e38ed1a9253fcffe01cb64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
