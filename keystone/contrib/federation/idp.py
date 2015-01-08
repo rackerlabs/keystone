@@ -16,12 +16,19 @@ import subprocess
 import uuid
 
 from oslo.utils import timeutils
-import saml2
-from saml2 import md
-from saml2 import saml
-from saml2 import samlp
-from saml2 import sigver
-import xmldsig
+
+try:
+    import saml2
+    from saml2 import md
+    from saml2 import saml
+    from saml2 import samlp
+    from saml2 import sigver
+    import xmldsig
+except ImportError:
+    # NOTE(stevemar): This file is loaded if a user has the fedeartion
+    # extension enabled, however they user may not necessarily want
+    # to use keystone-2-keystone, so requiring pysaml2 is not necessary.
+    pass
 
 from keystone.common import config
 from keystone import exception
