@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_f83a5a32",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-08T18:39:32Z",
+      "side": 1,
+      "message": "Are you going to add a deprecation message when handling a scoped token?",
+      "revId": "dfbc26d83c647a676168f799f48c1374acdaae11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b8353246",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-08T18:39:32Z",
+      "side": 1,
+      "message": "same comment as PS7, i\u0027m not sure what the impact is on calling this twice. maybe morganfainberg knows.",
+      "revId": "dfbc26d83c647a676168f799f48c1374acdaae11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f8fdfa3b",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1666,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-08T18:39:32Z",
+      "side": 1,
+      "message": "for consistency, can you make this code more similar to how brant laid it out here: https://review.openstack.org/#/c/124603/10/keystone/tests/test_v3_oauth1.py\n\ni.e. using auth_plugin_config_override",
+      "revId": "dfbc26d83c647a676168f799f48c1374acdaae11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
