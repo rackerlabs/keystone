@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_0db6033e",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-08T21:53:59Z",
+      "side": 1,
+      "message": "I am not sure if passing such error without any notice is a good idea. How about LOG.debug(\u0027Failed to import saml2 library\u0027) ?",
+      "revId": "8a8d02cbb2db54cfba6fad50739026fe2c6bbc68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
