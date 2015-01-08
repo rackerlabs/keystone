@@ -204,7 +204,8 @@ class AccessTokenRolesV3(controller.V3Controller):
         return formatted_entity
 
 
-@dependency.requires('assignment_api', 'oauth_api', 'token_provider_api')
+@dependency.requires('assignment_api', 'oauth_api',
+                     'resource_api', 'token_provider_api')
 class OAuthControllerV3(controller.V3Controller):
     collection_name = 'not_used'
     member_name = 'not_used'
@@ -214,6 +215,13 @@ class OAuthControllerV3(controller.V3Controller):
         oauth_headers = oauth1.get_oauth_headers(headers)
         consumer_id = oauth_headers.get('oauth_consumer_key')
         requested_project_id = headers.get('Requested-Project-Id')
+
+        # NOTE(stevemar): Ensure requested project exists
+        self.resource_api.get_project(requested_project_id)
+
+        # NOTE(stevemar): Ensure consumer exists
+        self.oauth_api.get_consumer(consumer_id)
+
         if not consumer_id:
             raise exception.ValidationError(
                 attribute='oauth_consumer_key', target='request')
