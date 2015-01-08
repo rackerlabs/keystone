@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_12f9c87f",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/004_add_remote_id_column.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-08T16:05:11Z",
+      "side": 1,
+      "message": "add a new line above here",
+      "revId": "49c2c5fa0f91910aef2166a51f0cd0e92a6b7184",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
