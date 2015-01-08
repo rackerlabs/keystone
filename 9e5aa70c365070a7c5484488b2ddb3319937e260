@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_381222fd",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 519,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-08T18:24:52Z",
+      "side": 1,
+      "message": "could we remove this line now? since we\u0027re loading backends individually now?",
+      "revId": "9e5aa70c365070a7c5484488b2ddb3319937e260",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
