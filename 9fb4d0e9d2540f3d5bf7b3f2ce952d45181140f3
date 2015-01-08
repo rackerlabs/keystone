@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_cf516f0f",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-08T00:59:11Z",
+      "side": 1,
+      "message": "Also, should note that an unscoped token request can be used to validate my username and password, so if I can get an unscoped token I can already tell if the project doens\u0027t exist.\n\nThe server should respond with 403 \"project ID not found or user doesn\u0027t have a role assignment on the project\"",
+      "parentUuid": "3a961159_0aa045a4",
+      "revId": "9fb4d0e9d2540f3d5bf7b3f2ce952d45181140f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_8a93555b",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 4
