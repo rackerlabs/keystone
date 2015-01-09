@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_9547461e",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1805,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-09T15:20:58Z",
+      "side": 0,
+      "message": "instead, the test_backend.IdentityTests.test_update_role_no_name() is being called, right?",
+      "revId": "131e8a80920401e69d851ce4356dcb61a7f6b47e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
