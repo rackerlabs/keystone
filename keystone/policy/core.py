@@ -61,7 +61,7 @@ class Manager(manager.Manager):
             raise exception.PolicyNotFound(policy_id=policy_id)
 
     @manager.response_truncated
-    def list_policies(self, hints=None):
+    def list_policies(self):
         # NOTE(henry-nash): Since the advantage of filtering or list limiting
         # of policies at the driver level is minimal, we leave this to the
         # caller.

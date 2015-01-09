@@ -31,11 +31,10 @@ class PolicyV3(controller.V3Controller):
         ref = self.policy_api.create_policy(ref['id'], ref)
         return PolicyV3.wrap_member(context, ref)
 
-    @controller.filterprotected('type')
-    def list_policies(self, context, filters):
-        hints = PolicyV3.build_driver_hints(context, filters)
-        refs = self.policy_api.list_policies(hints=hints)
-        return PolicyV3.wrap_collection(context, refs, hints=hints)
+    @controller.protected()
+    def list_policies(self, context):
+        refs = self.policy_api.list_policies()
+        return PolicyV3.wrap_collection(context, refs)
 
     @controller.protected()
     def get_policy(self, context, policy_id):
