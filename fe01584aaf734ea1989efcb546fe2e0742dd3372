@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_9643c912",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-09T18:49:22Z",
+      "side": 1,
+      "message": "I don\u0027t think this line is needed, since _required_valid_filter calls .get(), if there are no filters, then it\u0027ll just return.",
+      "revId": "fe01584aaf734ea1989efcb546fe2e0742dd3372",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b61c4516",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 770,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-09T18:49:22Z",
+      "side": 1,
+      "message": "can you add a comment here:\n\n# NOTE(wanghong): Test for bug 123456, perform a GET call to ensure that the content remains the same (as DEFAULT_ENDPOINT_GROUP_BODY) after attempting to update with an invalid filter.",
+      "revId": "fe01584aaf734ea1989efcb546fe2e0742dd3372",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
