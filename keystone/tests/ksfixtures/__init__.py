@@ -12,3 +12,4 @@
 # limitations under the License.
 
 from keystone.tests.ksfixtures.cache import Cache  # noqa
+from keystone.tests.ksfixtures.core import *  # noqa

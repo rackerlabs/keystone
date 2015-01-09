@@ -23,14 +23,12 @@ import shutil
 import socket
 import sys
 import time
-import warnings
 
 import fixtures
 from oslo.config import fixture as config_fixture
 import oslotest.base as oslotest
 from oslotest import mockpatch
 import six
-from sqlalchemy import exc
 from testtools import testcase
 import webob
 
@@ -432,11 +430,7 @@ class TestCase(BaseTestCase):
             else:
                 logger.setLevel(level_name)
 
-        warnings.filterwarnings('error', category=DeprecationWarning,
-                                module='^keystone\\.')
-        warnings.simplefilter('error', exc.SAWarning)
-        self.addCleanup(warnings.resetwarnings)
-
+        self.useFixture(ksfixtures.Warnings())
         self.useFixture(ksfixtures.Cache())
 
         # Clear the registry of providers so that providers from previous
