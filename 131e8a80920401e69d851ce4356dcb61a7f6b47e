@@ -16,6 +16,24 @@
       "revId": "131e8a80920401e69d851ce4356dcb61a7f6b47e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_35f05266",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1805,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-09T15:37:09Z",
+      "side": 0,
+      "message": "the superclass implementation is now being called which verifies that it works on ldap as it does on other backends.",
+      "parentUuid": "3a961159_9547461e",
+      "revId": "131e8a80920401e69d851ce4356dcb61a7f6b47e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
