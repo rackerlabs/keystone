@@ -50,6 +50,24 @@
       "revId": "dfbc26d83c647a676168f799f48c1374acdaae11",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b6fd2f3d",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1666,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-09T12:58:08Z",
+      "side": 1,
+      "message": "it\u0027s now fixed.",
+      "parentUuid": "3a961159_f8fdfa3b",
+      "revId": "dfbc26d83c647a676168f799f48c1374acdaae11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
