@@ -33,6 +33,24 @@
       "revId": "31807b4cd69c9ffe08b416505eedb4729aab746f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ee61db39",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 778,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-09T22:10:28Z",
+      "side": 0,
+      "message": "Well, we *could*, although we then require roles to be stored in SQL and be first class entities if assignments are stored in SQL.  It\u0027s a reasonable question to ask...but in general we try not to let FK relationships transcend backend boundaries.  One glaring example, however, where we currently DO this is that domain_id is still a FK for users and groups.  I actually think we should drop that, and will raise a spec for that.",
+      "parentUuid": "3a961159_949cec6b",
+      "revId": "31807b4cd69c9ffe08b416505eedb4729aab746f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
