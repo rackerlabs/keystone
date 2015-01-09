@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_98ccd2bd",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-09T23:13:30Z",
+      "side": 1,
+      "message": "since the config generator uses \u0027true\u0027 / \u0027false\u0027, suggest change \"False\" to \"false\"",
+      "revId": "685fee36edd9eb29f91465b6f23f61f02fb90c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d8bd7a05",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-09T23:13:30Z",
+      "side": 1,
+      "message": "adding a member variable for this is more complicated than it needs to be. Suggest move it to a regular variable in _run.",
+      "revId": "685fee36edd9eb29f91465b6f23f61f02fb90c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_18b8e210",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-09T23:13:30Z",
+      "side": 1,
+      "message": "use the config fixture: self.config_fixture.config(client_socket_timeout\u003d5)\n\nThe value 5 should be moved to a variable and used below where it\u0027s checked against so that it\u0027s obvious.",
+      "revId": "685fee36edd9eb29f91465b6f23f61f02fb90c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f85156da",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-09T23:13:30Z",
+      "side": 1,
+      "message": "why 1 ? Add a comment. (or use a random value then no comment is needed.)",
+      "revId": "685fee36edd9eb29f91465b6f23f61f02fb90c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_385bdefa",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-09T23:13:30Z",
+      "side": 1,
+      "message": "why 2 ? Add a comment.",
+      "revId": "685fee36edd9eb29f91465b6f23f61f02fb90c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_3834beab",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-09T23:13:30Z",
+      "side": 1,
+      "message": "use the config fixture.\n\n  self.config_fixture.config(wsgi_keep_alive\u003dFalse)\n\nAlso, the value should be put in a variable and used below so that it\u0027s obvious they\u0027re the same value.",
+      "revId": "685fee36edd9eb29f91465b6f23f61f02fb90c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_186622bc",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-09T23:13:30Z",
+      "side": 1,
+      "message": "why 1 ? Add a comment.",
+      "revId": "685fee36edd9eb29f91465b6f23f61f02fb90c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_3802feba",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-09T23:13:30Z",
+      "side": 1,
+      "message": "why 2 ? Add a comment.",
+      "revId": "685fee36edd9eb29f91465b6f23f61f02fb90c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
