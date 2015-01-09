@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_241834cc",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-09T03:47:07Z",
+      "side": 1,
+      "message": "Is it possible to connect a read-only ``resource`` backend?\nIf not, we need to remove this section.\n\nFrom what is said on he second paragraph of section \u0027Read Only LDAP\u0027 (starting at line 1489), it looks like it is only possible to connect a read-only LDAP, and it is for identity.\n\nIf that\u0027s true, this warning can be removed or not in this patch, as it has not been introduced by it.",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_64cb1c1e",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 1494,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-09T03:47:07Z",
+      "side": 1,
+      "message": "As we are now talking about three backends (resource, assignments and roles), I think it needs a comma after \u0027domains)\u0027",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_a4b6e486",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 1504,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-09T03:47:07Z",
+      "side": 1,
+      "message": "typo: keystone.resource.backends.sql.Resource",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_3f5f5de6",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-09T03:47:07Z",
+      "side": 1,
+      "message": "why not: \u0027when identity, resource, role and assignment\u0027 ? (adding role backend as well)",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_9f0f71df",
+        "filename": "keystone/backends.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-09T03:47:07Z",
+      "side": 1,
+      "message": "s/drivers/driver",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_bf950d41",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-09T03:47:07Z",
+      "side": 1,
+      "message": "Toggle for resource *caching*?",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_3f275db7",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-09T03:47:07Z",
+      "side": 1,
+      "message": "I think we need a blank line between copyright info and first import.",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_dfaad9d0",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-09T03:47:07Z",
+      "side": 1,
+      "message": "Duplicated line.",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ff8cf581",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-09T03:47:07Z",
+      "side": 1,
+      "message": "Doesn\u0027t it need a @sql.handle_conflicts(conflict_type\u003d\u0027domain\u0027) annotation?\nAs we have for delete_project at line 165. At least they should be consistent.",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_3f2cbd01",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 815,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-09T03:47:07Z",
+      "side": 1,
+      "message": "s/LOG.depreated/LOG.deprecated",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
