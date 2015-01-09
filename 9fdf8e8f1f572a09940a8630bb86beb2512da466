@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_d8665a55",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-09T23:31:22Z",
+      "side": 1,
+      "message": "as per the commit states, this is a refactor which doesn\u0027t look like a legitimate bug. Think it fits the case of spec-less blueprints, though.",
+      "revId": "9fdf8e8f1f572a09940a8630bb86beb2512da466",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_587b4af4",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-09T23:31:22Z",
+      "side": 1,
+      "message": "this is not a useful message, should be something like the messages in the methods you are removing.\n\nalso, this would print something like \"Specify A xor B xor C xor D ...\" for the cases where you provide more than 2 params.",
+      "revId": "9fdf8e8f1f572a09940a8630bb86beb2512da466",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
