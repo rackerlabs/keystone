@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_478c4d2f",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-01-09T21:12:58Z",
+      "side": 1,
+      "message": "Bit misleading. It is really domain_admin or cloud_admin  Can we make this explicit?",
+      "revId": "9ea405040f201cc11e1f97bb1739a75fdaf813e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_47b36dec",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-01-09T21:12:58Z",
+      "side": 1,
+      "message": "IMO It should be owner or domain_admin or cloud_admin",
+      "revId": "9ea405040f201cc11e1f97bb1739a75fdaf813e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_e7f1b997",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-01-09T21:12:58Z",
+      "side": 1,
+      "message": "By looking at the rule it reads as if cloud_admin can\u0027t do list_role_assignments.   So my earlier comment is valid here, remove cloud_admin rule from domain_admin and create one more rule clodu_admin_or_domain_admin",
+      "revId": "9ea405040f201cc11e1f97bb1739a75fdaf813e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_0746c5c0",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-01-09T21:12:58Z",
+      "side": 1,
+      "message": "Admin should be able to revoke the token",
+      "revId": "9ea405040f201cc11e1f97bb1739a75fdaf813e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_677b09f5",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-01-09T21:12:58Z",
+      "side": 1,
+      "message": "Why do we  use just rule instead of domain_admin or cloud_admin? Is it  to allow both project and domain scoped token?",
+      "revId": "9ea405040f201cc11e1f97bb1739a75fdaf813e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
