@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_44c8e021",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-09T02:51:26Z",
+      "side": 1,
+      "message": "Should add this option in etc/keystone.conf.sample too.",
+      "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_04f9784d",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-09T02:51:26Z",
+      "side": 1,
+      "message": "_v3_token_from_token?",
+      "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_248bd4c0",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-09T02:51:26Z",
+      "side": 1,
+      "message": "\"test_rescoping_v3_to_v3__disabled\" to \"test_rescoping_v3_to_v3_disabled\"",
+      "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_a43b44e8",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-09T02:51:26Z",
+      "side": 1,
+      "message": "I think we should add another test that the scoped_token gotten directly from password can\u0027t be rescoped.",
+      "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_44ef0087",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-09T02:51:26Z",
+      "side": 1,
+      "message": "\"test_rescoping_v2_to_v3__disabled\" to \"test_rescoping_v2_to_v3_disabled\"",
+      "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_84e568a5",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-09T02:51:26Z",
+      "side": 1,
+      "message": "This too.",
+      "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_a4e8a47b",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-09T02:51:26Z",
+      "side": 1,
+      "message": "This too.",
+      "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
