@@ -423,8 +423,7 @@ class TestCase(BaseTestCase):
     def setUp(self):
         super(TestCase, self).setUp()
         self.addCleanup(self.cleanup_instance(
-            '_paths', '_memo', '_overrides', '_group_overrides', 'maxDiff',
-            'config_fixture', 'logger'))
+            '_paths', 'maxDiff', 'config_fixture', 'logger'))
 
         self._paths = []
 
@@ -433,10 +432,6 @@ class TestCase(BaseTestCase):
                 if path in sys.path:
                     sys.path.remove(path)
         self.addCleanup(_cleanup_paths)
-
-        self._memo = {}
-        self._overrides = []
-        self._group_overrides = {}
 
         # show complete diffs on failure
         self.maxDiff = None
