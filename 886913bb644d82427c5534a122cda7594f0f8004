@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_91dda543",
+        "filename": "keystone/policy/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-09T04:44:09Z",
+      "side": 0,
+      "message": "When wrapping the collection, the filtering by \u0027type\u0027, if provided, is also done.\n\nI think this bug/patch is invalid.",
+      "revId": "886913bb644d82427c5534a122cda7594f0f8004",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
