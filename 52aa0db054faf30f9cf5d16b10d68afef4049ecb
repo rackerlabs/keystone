@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_a1cde460",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-09T18:03:35Z",
+      "side": 1,
+      "message": "s/kwagrs/kwargs",
+      "revId": "52aa0db054faf30f9cf5d16b10d68afef4049ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b30ff72e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-09T18:03:35Z",
+      "side": 1,
+      "message": "What is the hacking rule this commit adds?",
+      "revId": "52aa0db054faf30f9cf5d16b10d68afef4049ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_219e546a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-09T18:03:35Z",
+      "side": 1,
+      "message": "Remove \u00271]http://legacy.python.org/dev/peps/pep-0274/\u0027 at the end,",
+      "revId": "52aa0db054faf30f9cf5d16b10d68afef4049ecb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
