@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_9bddbe72",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-09T11:21:31Z",
+      "side": 1,
+      "message": "A depreciation warning should be put here.",
+      "revId": "089ac11d8b0b0331d9cb06b325b51b706460f38e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
