@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "3a961159_b5660254",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-09T15:34:40Z",
+      "side": 1,
+      "message": "From what is said on the section \u0027Configuring the LDAP Identity Provider\u0027, it looks like it is possible to connect a read-only LDAP for role backend.\n\nWe should then add a warning similar to the above here. (in the patch that splits role backend, ofc)",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_64cb1c1e",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 11
