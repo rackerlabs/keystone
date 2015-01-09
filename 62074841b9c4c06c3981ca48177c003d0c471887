@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_408a7e1b",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-09T16:04:18Z",
+      "side": 1,
+      "message": "topol needs to learn about finally statements in python",
+      "revId": "62074841b9c4c06c3981ca48177c003d0c471887",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_20b3b2ed",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-09T16:04:18Z",
+      "side": 1,
+      "message": "should have been a finally block here, too.",
+      "revId": "62074841b9c4c06c3981ca48177c003d0c471887",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
