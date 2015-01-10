@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_e48530af",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-10T05:37:47Z",
+      "side": 1,
+      "message": "i don\u0027t know why the quotes (\") are here in the first place... your change is still valid, if someone else agrees with me, then fix it up in this patch set",
+      "revId": "3e34e4dd5e47b57e7b25030b7c810224ed4f1040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
