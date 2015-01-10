@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_04395c3f",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 872,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-10T04:54:07Z",
+      "side": 1,
+      "message": "maybe rephrase the sentence after the last comma to make clear what type of inheritance is having what effect (project vs domain).",
+      "revId": "120be91ac3af8b0b74f19e3169e856f0e934a4a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
