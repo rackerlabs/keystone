@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_c7ad969d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1046,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-10T07:19:25Z",
+      "side": 1,
+      "message": "would keep the previous comment but add this one to make clear the operation being used.",
+      "revId": "ce4aed99f7b20bc05702c1e2a33cedeb0860a67f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_078f9e2f",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1050,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-10T07:19:25Z",
+      "side": 1,
+      "message": "the same here",
+      "revId": "ce4aed99f7b20bc05702c1e2a33cedeb0860a67f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
