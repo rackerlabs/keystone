@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_bb233e57",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1034,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-11T14:58:41Z",
+      "side": 1,
+      "message": "unrelated change?",
+      "revId": "51cd174f69afcc62378bc1d4f58de14b1f83c477",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_9b2e8241",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1041,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-11T14:58:41Z",
+      "side": 1,
+      "message": "remove this new line",
+      "revId": "51cd174f69afcc62378bc1d4f58de14b1f83c477",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_fb1ce616",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1081,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-11T14:58:41Z",
+      "side": 1,
+      "message": "remove unrelated new line",
+      "revId": "51cd174f69afcc62378bc1d4f58de14b1f83c477",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7bd0f62b",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-11T14:58:41Z",
+      "side": 1,
+      "message": "\"build\" is a better name for this kind of method, since you are not getting any attributes from an object but building (constructing) an object.",
+      "revId": "51cd174f69afcc62378bc1d4f58de14b1f83c477",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_3bee6eee",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-11T14:58:41Z",
+      "side": 1,
+      "message": "nice, splitting in two methods :)",
+      "revId": "51cd174f69afcc62378bc1d4f58de14b1f83c477",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_fbe30604",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-11T14:58:41Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "51cd174f69afcc62378bc1d4f58de14b1f83c477",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
