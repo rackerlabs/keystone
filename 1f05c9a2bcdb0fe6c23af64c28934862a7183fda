@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a961159_b980a6c0",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-01-11T23:57:31Z",
+      "side": 1,
+      "message": "Suggest renaming this to \"allow_token_rescope\".\n\n\"rescoped_token\" is not that descriptive.",
+      "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_44c8e021",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
@@ -13,6 +30,24 @@
       "writtenOn": "2015-01-09T02:51:26Z",
       "side": 1,
       "message": "Should add this option in etc/keystone.conf.sample too.",
+      "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_1967fa52",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-01-11T23:57:31Z",
+      "side": 1,
+      "message": "This can be done outside of this review - sample config is generated via tox as needed.",
+      "parentUuid": "3a961159_44c8e021",
       "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
