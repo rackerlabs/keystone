@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_1b1ff271",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-11T17:04:59Z",
+      "side": 1,
+      "message": "According to the spec[1], the value is supposed to be a list. So change \u0027projects\u0027 to [\u0027projects\u0027].\n\n[1] http://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3-os-inherit-ext.html#list-effective-role-assignments",
+      "revId": "8d1eaf77ce1de9344489e37fc26a91820668900d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
