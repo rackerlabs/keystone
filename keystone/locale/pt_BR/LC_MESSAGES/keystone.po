@@ -1,5 +1,5 @@
 # Portuguese (Brazil) translations for keystone.
-# Copyright (C) 2014 OpenStack Foundation
+# Copyright (C) 2015 OpenStack Foundation
 # This file is distributed under the same license as the keystone project.
 #
 # Translators:
@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2014-12-28 06:03+0000\n"
-"PO-Revision-Date: 2014-12-19 00:04+0000\n"
+"POT-Creation-Date: 2015-01-11 06:03+0000\n"
+"PO-Revision-Date: 2015-01-09 19:01+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Portuguese (Brazil) "
 "(http://www.transifex.com/projects/p/keystone/language/pt_BR/)\n"
@@ -379,12 +379,12 @@ msgid ""
 " %(reason)s"
 msgstr ""
 
-#: keystone/notifications.py:167
+#: keystone/notifications.py:148
 #, python-format
 msgid "%(event)s is not a valid notification event, must be one of: %(actions)s"
 msgstr ""
 
-#: keystone/notifications.py:176
+#: keystone/notifications.py:157
 #, python-format
 msgid "Method not callable: %s"
 msgstr ""
@@ -519,7 +519,7 @@ msgid "Role %s not found"
 msgstr "Role %s não localizada"
 
 #: keystone/assignment/backends/ldap.py:592
-#: keystone/assignment/backends/sql.py:534
+#: keystone/assignment/backends/sql.py:539
 #, python-format
 msgid "Cannot remove role that has not been granted, %s"
 msgstr "Não é possível remover role que não foi concedido, %s"
@@ -540,7 +540,7 @@ msgstr ""
 msgid "Must specify either domain or project"
 msgstr ""
 
-#: keystone/assignment/backends/sql.py:555
+#: keystone/assignment/backends/sql.py:560
 #, python-format
 msgid "Unexpected assignment type encountered, %s"
 msgstr ""
@@ -667,14 +667,14 @@ msgstr ""
 
 #: keystone/common/dependency.py:48
 #, python-format
-msgid "Unregistered dependency: %(name)s"
+msgid "Unregistered dependency: %(name)s for %(targets)s"
 msgstr ""
 
-#: keystone/common/dependency.py:87
+#: keystone/common/dependency.py:88
 msgid "event_callbacks must be a dict"
 msgstr ""
 
-#: keystone/common/dependency.py:92
+#: keystone/common/dependency.py:93
 #, python-format
 msgid "event_callbacks[%s] must be a dict"
 msgstr ""
@@ -719,17 +719,17 @@ msgstr ""
 msgid "Invalid blob in credential"
 msgstr "BLOB inválido na credencial"
 
-#: keystone/common/wsgi.py:316
+#: keystone/common/wsgi.py:315
 #, python-format
 msgid "%s field is required and cannot be empty"
 msgstr ""
 
-#: keystone/common/wsgi.py:328
+#: keystone/common/wsgi.py:327
 #, python-format
 msgid "%s field(s) cannot be empty"
 msgstr ""
 
-#: keystone/common/wsgi.py:545
+#: keystone/common/wsgi.py:544
 msgid "The resource could not be found."
 msgstr "O recurso não pôde ser localizado."
 
@@ -945,20 +945,20 @@ msgstr ""
 msgid "Use a project scoped token when attempting to create a SAML assertion"
 msgstr ""
 
-#: keystone/contrib/federation/idp.py:449
+#: keystone/contrib/federation/idp.py:454
 #, python-format
 msgid "Cannot open certificate %(cert_file)s. Reason: %(reason)s"
 msgstr ""
 
-#: keystone/contrib/federation/idp.py:516
+#: keystone/contrib/federation/idp.py:521
 msgid "Ensure configuration option idp_entity_id is set."
 msgstr ""
 
-#: keystone/contrib/federation/idp.py:519
+#: keystone/contrib/federation/idp.py:524
 msgid "Ensure configuration option idp_sso_endpoint is set."
 msgstr ""
 
-#: keystone/contrib/federation/idp.py:539
+#: keystone/contrib/federation/idp.py:544
 msgid ""
 "idp_contact_type must be one of: [technical, other, support, "
 "administrative or billing."
@@ -1101,18 +1101,6 @@ msgstr "Usuário %(user_id)s já é membro do grupo %(group_id)s"
 #: keystone/models/token_model.py:61
 msgid "Found invalid token: scoped to both project and domain."
 msgstr ""
-
-#: keystone/openstack/common/gettextutils.py:301
-msgid "Message objects do not support addition."
-msgstr "Objetos mensagem não suportam adição."
-
-#: keystone/openstack/common/gettextutils.py:311
-msgid ""
-"Message objects do not support str() because they may contain non-ascii "
-"characters. Please use unicode() or translate() instead."
-msgstr ""
-"Objetos mensagem não suportam str() pois podem conter carácteres "
-"não-ascii. Use unicode() ou translate()."
 
 #: keystone/openstack/common/log.py:298
 #, python-format
