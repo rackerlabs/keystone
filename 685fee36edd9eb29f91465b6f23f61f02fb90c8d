@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_33f5ae84",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2015-01-12T08:08:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_98ccd2bd",
+      "revId": "685fee36edd9eb29f91465b6f23f61f02fb90c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_d8bd7a05",
         "filename": "keystone/common/environment/eventlet_server.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-09T23:13:30Z",
       "side": 1,
       "message": "adding a member variable for this is more complicated than it needs to be. Suggest move it to a regular variable in _run.",
+      "revId": "685fee36edd9eb29f91465b6f23f61f02fb90c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_1301926a",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2015-01-12T08:08:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_d8bd7a05",
       "revId": "685fee36edd9eb29f91465b6f23f61f02fb90c8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_33ce8e5c",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2015-01-12T08:08:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_18b8e210",
+      "revId": "685fee36edd9eb29f91465b6f23f61f02fb90c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_f85156da",
         "filename": "keystone/tests/test_wsgi.py",
         "patchSetId": 10
@@ -64,6 +118,24 @@
       "writtenOn": "2015-01-09T23:13:30Z",
       "side": 1,
       "message": "why 1 ? Add a comment. (or use a random value then no comment is needed.)",
+      "revId": "685fee36edd9eb29f91465b6f23f61f02fb90c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_53cb1a4a",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2015-01-12T08:08:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_f85156da",
       "revId": "685fee36edd9eb29f91465b6f23f61f02fb90c8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_73d8161f",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2015-01-12T08:08:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_385bdefa",
+      "revId": "685fee36edd9eb29f91465b6f23f61f02fb90c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_3834beab",
         "filename": "keystone/tests/test_wsgi.py",
         "patchSetId": 10
@@ -98,6 +188,24 @@
       "writtenOn": "2015-01-09T23:13:30Z",
       "side": 1,
       "message": "use the config fixture.\n\n  self.config_fixture.config(wsgi_keep_alive\u003dFalse)\n\nAlso, the value should be put in a variable and used below so that it\u0027s obvious they\u0027re the same value.",
+      "revId": "685fee36edd9eb29f91465b6f23f61f02fb90c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b3019e6f",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 455,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2015-01-12T08:08:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_3834beab",
       "revId": "685fee36edd9eb29f91465b6f23f61f02fb90c8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_d3062a85",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2015-01-12T08:08:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_186622bc",
+      "revId": "685fee36edd9eb29f91465b6f23f61f02fb90c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_3802feba",
         "filename": "keystone/tests/test_wsgi.py",
         "patchSetId": 10
@@ -132,6 +258,24 @@
       "writtenOn": "2015-01-09T23:13:30Z",
       "side": 1,
       "message": "why 2 ? Add a comment.",
+      "revId": "685fee36edd9eb29f91465b6f23f61f02fb90c8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f3fb2679",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 460,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2015-01-12T08:08:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_3802feba",
       "revId": "685fee36edd9eb29f91465b6f23f61f02fb90c8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
