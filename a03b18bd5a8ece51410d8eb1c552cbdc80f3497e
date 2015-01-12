@@ -34,6 +34,24 @@
       "revId": "a03b18bd5a8ece51410d8eb1c552cbdc80f3497e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_58c79c46",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-12T22:07:09Z",
+      "side": 1,
+      "message": "++\nMy sugestion is to make this patch work with one region_id, and followup (maybe even with a spec) with a solution allowing for specifying multiple remote_id values per one IDP.",
+      "parentUuid": "3a961159_88c70146",
+      "revId": "a03b18bd5a8ece51410d8eb1c552cbdc80f3497e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
