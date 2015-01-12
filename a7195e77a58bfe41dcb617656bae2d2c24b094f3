@@ -16,6 +16,24 @@
       "revId": "a7195e77a58bfe41dcb617656bae2d2c24b094f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_aa54c6fe",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2015-01-12T03:43:04Z",
+      "side": 1,
+      "message": "\u0027dict(({1:2}))\u0027 is not fit the rule,  but strange to have this statement, should raise other K***, or be found by reviewers before it was merged.\n\nI have no experience with Python\u0027s AST , that\u0027s why I use regex :)",
+      "parentUuid": "3a961159_4fc29454",
+      "revId": "a7195e77a58bfe41dcb617656bae2d2c24b094f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
