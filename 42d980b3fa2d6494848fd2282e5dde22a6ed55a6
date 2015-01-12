@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_cfccc4be",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 413,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-12T02:42:43Z",
+      "side": 1,
+      "message": "Nice catch on the colon mark. I haven\u0027t noticed this.",
+      "revId": "42d980b3fa2d6494848fd2282e5dde22a6ed55a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ef92609f",
+        "filename": "keystone/tests/ksfixtures/hacking.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-12T02:42:43Z",
+      "side": 1,
+      "message": "How is it supposed to raise K008 since it has syntax errors?\nShouldn\u0027t the list expression be closed with a ] ?\nAlso, there is a parenthesis that is not closed.",
+      "revId": "42d980b3fa2d6494848fd2282e5dde22a6ed55a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_cff5a4ee",
+        "filename": "keystone/tests/unit/test_hacking_checks.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-12T02:42:43Z",
+      "side": 1,
+      "message": "As the other tests, I\u0027d suggest to put a more meaningful name here. It could simply be:\nTestDictConstructorWithSequenceCopy",
+      "revId": "42d980b3fa2d6494848fd2282e5dde22a6ed55a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
