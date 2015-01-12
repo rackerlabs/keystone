@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_6f2e70ad",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 1251,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-12T03:38:19Z",
+      "side": 1,
+      "message": "[DEFAULT] group of this .conf has no name osapi_max_request_body_size\n\nWhy are we deprecating it?",
+      "revId": "186b7f5c27330d39b563dd865e700e9c95d21648",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
