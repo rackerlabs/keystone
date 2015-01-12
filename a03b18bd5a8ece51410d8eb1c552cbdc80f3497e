@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_88c70146",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-12T16:33:37Z",
+      "side": 1,
+      "message": "I tend to agree with the comment by marekd on the previous version, that search a string for this seems an odd design (and I wonder if it is safe?).  Is there a reason to not use a list, here?",
+      "revId": "a03b18bd5a8ece51410d8eb1c552cbdc80f3497e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
