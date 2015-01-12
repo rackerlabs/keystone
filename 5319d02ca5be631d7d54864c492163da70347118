@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_e528b887",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 736,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-12T12:02:46Z",
+      "side": 0,
+      "message": "Why not just rename this method to test_default_token_provider? And then we keep the default token provider being tested.",
+      "revId": "5319d02ca5be631d7d54864c492163da70347118",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_e506f884",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 792,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-12T12:02:46Z",
+      "side": 0,
+      "message": "L789-792 should still be a valid test, since they are asserting and exception is raised when an invalid token provider is set.\nIt could be:\n\ndef test_unsupported_token_provider(self):\n    self.config_fixture.config(group\u003d\u0027token\u0027,\t\t\n                               provider\u003d\u0027my.package.MyProvider\u0027)\t\t\n    self.assertRaises(exception.UnexpectedError,\t\t\n                      token.provider.Manager.get_token_provider)",
+      "revId": "5319d02ca5be631d7d54864c492163da70347118",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
