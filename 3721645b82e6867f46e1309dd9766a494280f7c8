@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_e8708542",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1174,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-12T16:39:04Z",
+      "side": 1,
+      "message": "We should separate this docstring according to the convention:\n\nhttps://www.python.org/dev/peps/pep-0008/#documentation-strings",
+      "revId": "3721645b82e6867f46e1309dd9766a494280f7c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_488199c2",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-12T16:39:04Z",
+      "side": 1,
+      "message": "so this could potentially pass the group id as the fourth and fifth argument? Is there any reason to figure that out here versus letting the _assert_event() method handle it?",
+      "revId": "3721645b82e6867f46e1309dd9766a494280f7c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
