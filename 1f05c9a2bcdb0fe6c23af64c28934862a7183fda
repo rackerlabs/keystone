@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "3a961159_8f28fc86",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-12T02:24:09Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a961159_b980a6c0",
+      "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_af1db864",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-12T02:24:09Z",
+      "side": 1,
+      "message": "rescoped_scoped -\u003e allow_token_rescope, if you take above suggestion.",
+      "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_44c8e021",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
@@ -54,6 +89,23 @@
     },
     {
       "key": {
+        "uuid": "3a961159_7460030e",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-12T02:24:09Z",
+      "side": 1,
+      "message": "In the case you take Morgan\u0027 suggestion, remeber to rename this class to AllowTokenRescopeDisabledTests.",
+      "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_04f9784d",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 4
@@ -65,6 +117,24 @@
       "writtenOn": "2015-01-09T02:51:26Z",
       "side": 1,
       "message": "_v3_token_from_token?",
+      "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_54006702",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-12T02:24:09Z",
+      "side": 1,
+      "message": "No. This method only returns a valid v3 token, as _v2_token does for v2 token.",
+      "parentUuid": "3a961159_04f9784d",
       "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_14589f56",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 428,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-12T02:24:09Z",
+      "side": 1,
+      "message": "I\u0027d suggest removing __disabled, since the class is already telling us the rescoping is disabled.",
+      "parentUuid": "3a961159_248bd4c0",
+      "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_a43b44e8",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 4
@@ -99,6 +187,24 @@
       "writtenOn": "2015-01-09T02:51:26Z",
       "side": 1,
       "message": "I think we should add another test that the scoped_token gotten directly from password can\u0027t be rescoped.",
+      "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_4f17f445",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-12T02:24:09Z",
+      "side": 1,
+      "message": "Not sure it\u0027s worth, since v3 tokens are treated equally independently if they were scoped from an unscoped token or got from password directly.",
+      "parentUuid": "3a961159_a43b44e8",
       "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -122,6 +228,41 @@
     },
     {
       "key": {
+        "uuid": "3a961159_54522736",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 461,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-12T02:24:09Z",
+      "side": 1,
+      "message": "Same as line 428.\nI\u0027d suggest removing __disabled.",
+      "parentUuid": "3a961159_44ef0087",
+      "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_342cbbac",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 467,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-12T02:24:09Z",
+      "side": 1,
+      "message": "I\u0027d suggest the creation of a method called _v3_token_from_token, as you did for v2 tokens (_v2_token_from_token).\n\nThis method would then be called here and by v3 rescoping tests (L428).",
+      "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_84e568a5",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 4
@@ -139,6 +280,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_9433af12",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-12T02:24:09Z",
+      "side": 1,
+      "message": "Same as line 428.\nI\u0027d suggest removing __disabled.",
+      "parentUuid": "3a961159_84e568a5",
+      "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_a4e8a47b",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 4
@@ -150,6 +309,24 @@
       "writtenOn": "2015-01-09T02:51:26Z",
       "side": 1,
       "message": "This too.",
+      "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b438abef",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-12T02:24:09Z",
+      "side": 1,
+      "message": "Same as line 428.\nI\u0027d suggest removing __disabled.",
+      "parentUuid": "3a961159_a4e8a47b",
       "revId": "1f05c9a2bcdb0fe6c23af64c28934862a7183fda",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
