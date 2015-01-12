@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_5d6f8e93",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 2774,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-12T21:20:32Z",
+      "side": 1,
+      "message": "Put this on the mock.patch.object call -- \n\n with mock.patch.object(rules, \u0027enforce\u0027, return_value\u003dTrue):\n\nIt\u0027s dangerous and confusing to use rules.enforce here since readers aren\u0027t going to expect it... if this needs to be on a separate line then give a name to the mock in the context:\n\n with mock.patch.object(rules, \u0027enforce\u0027) as mock_rules:\n     mock_rules.return_value \u003d True",
+      "revId": "1abb615a4f1e8c8aabea2049589c655980861a48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_5df6aed9",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 2951,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-12T21:20:32Z",
+      "side": 1,
+      "message": "put this on the call -- \n\n with mock.patch.object(rules, \u0027enforce\u0027, return_value\u003dTrue):",
+      "revId": "1abb615a4f1e8c8aabea2049589c655980861a48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_9d0016ad",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 2962,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-12T21:20:32Z",
+      "side": 1,
+      "message": "put this on the call:\n\n with mock.patch.object(rules, \u0027enforce\u0027, return_value\u003dTrue):",
+      "revId": "1abb615a4f1e8c8aabea2049589c655980861a48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_9d1736ee",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-12T21:20:32Z",
+      "side": 1,
+      "message": "This should have been validated with JSON Schema already.",
+      "revId": "1abb615a4f1e8c8aabea2049589c655980861a48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
