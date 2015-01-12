@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_1792484b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-12T21:26:37Z",
+      "side": 1,
+      "message": "Well, I think both bug (marked as wishlist) or bp should work.\nMaybe bp is more appropriated, but this is patch is too simple to change this now.\nI\u0027ll keep this as a bug and maybe create a bp next time.\n\nThanks for pointing this out.",
+      "parentUuid": "3a961159_d8665a55",
+      "revId": "9fdf8e8f1f572a09940a8630bb86beb2512da466",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_587b4af4",
         "filename": "keystone/common/controller.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-09T23:31:22Z",
       "side": 1,
       "message": "this is not a useful message, should be something like the messages in the methods you are removing.\n\nalso, this would print something like \"Specify A xor B xor C xor D ...\" for the cases where you provide more than 2 params.",
+      "revId": "9fdf8e8f1f572a09940a8630bb86beb2512da466",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_dd0ffe89",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-12T21:26:37Z",
+      "side": 1,
+      "message": "Changed this method. Message was also improved.",
+      "parentUuid": "3a961159_587b4af4",
       "revId": "9fdf8e8f1f572a09940a8630bb86beb2512da466",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
