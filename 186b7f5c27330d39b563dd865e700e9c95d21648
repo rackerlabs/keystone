@@ -16,6 +16,24 @@
       "revId": "186b7f5c27330d39b563dd865e700e9c95d21648",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_6c090232",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 5
+      },
+      "lineNbr": 1251,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-12T19:57:03Z",
+      "side": 1,
+      "message": "The oslo.middleware version has to deprecate all the config options that have ever been used for the setting. Some other project must have used \"osapi_max_request_body_size\" rather than \"max_request_body_size\", so the common version in oslo.middleware had to deprecate both of them.",
+      "parentUuid": "3a961159_6f2e70ad",
+      "revId": "186b7f5c27330d39b563dd865e700e9c95d21648",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
