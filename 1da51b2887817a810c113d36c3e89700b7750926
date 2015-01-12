@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_dd5d3e7e",
+        "filename": "requirements-py3.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-12T21:30:41Z",
+      "side": 1,
+      "message": "why does py3 need Babel?",
+      "revId": "1da51b2887817a810c113d36c3e89700b7750926",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
