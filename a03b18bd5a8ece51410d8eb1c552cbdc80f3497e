@@ -16,6 +16,24 @@
       "revId": "a03b18bd5a8ece51410d8eb1c552cbdc80f3497e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b84320ae",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-01-12T21:57:40Z",
+      "side": 1,
+      "message": "++ agree with both marek and henry here. why use a string?",
+      "parentUuid": "3a961159_88c70146",
+      "revId": "a03b18bd5a8ece51410d8eb1c552cbdc80f3497e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
