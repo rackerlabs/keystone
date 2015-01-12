@@ -16,6 +16,24 @@
       "revId": "1da51b2887817a810c113d36c3e89700b7750926",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_53f69dd9",
+        "filename": "requirements-py3.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-01-12T22:20:59Z",
+      "side": 1,
+      "message": "It doesn\u0027t. For some reason the removal from 511dd9c78df4008cd78c48372c262d50e279c00c didn\u0027t take during the merge. Not sure what I did.",
+      "parentUuid": "3a961159_dd5d3e7e",
+      "revId": "1da51b2887817a810c113d36c3e89700b7750926",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
