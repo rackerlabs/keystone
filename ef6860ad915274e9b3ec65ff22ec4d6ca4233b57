@@ -16,6 +16,24 @@
       "revId": "ef6860ad915274e9b3ec65ff22ec4d6ca4233b57",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_5dd86ef0",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 571,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-12T21:31:07Z",
+      "side": 1,
+      "message": "That\u0027s not true. NOT(A) AND NOT(B) OR XOR(A, B) \u003d NAND(A, B)\n\nI\u0027m changing this method in a new patchset. The message is improved as well.",
+      "parentUuid": "3a961159_b83b4e38",
+      "revId": "ef6860ad915274e9b3ec65ff22ec4d6ca4233b57",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
