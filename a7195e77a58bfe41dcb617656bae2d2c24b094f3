@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_4fc29454",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-12T03:02:25Z",
+      "side": 1,
+      "message": "I think this regex is not correct, it searches for \u0027dict([(\u0027, \u0027dict([[\u0027, \u0027dict((\u0027 or \u0027dict([\u0027.\n\nShould \u0027dict(({1:2}))\u0027 raise K008?\n\nNot sure this is a requirement, but why not use AST instead of regex, as the other hacking checks are doing?",
+      "revId": "a7195e77a58bfe41dcb617656bae2d2c24b094f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
