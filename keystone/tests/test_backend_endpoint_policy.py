@@ -245,3 +245,18 @@ class PolicyAssociationTests(object):
                           self.endpoint_policy_api.check_policy_association,
                           self.policy[0]['id'],
                           service_id=self.service[0]['id'])
+
+    def test_delete_association_404(self):
+        self.assertRaises(exception.NotFound,
+                          self.endpoint_policy_api.delete_policy_association,
+                          self.policy[0]['id'],
+                          endpoint_id=self.endpoint[0]['id'])
+        self.assertRaises(exception.NotFound,
+                          self.endpoint_policy_api.delete_policy_association,
+                          self.policy[0]['id'],
+                          service_id=self.service[0]['id'])
+        self.assertRaises(exception.NotFound,
+                          self.endpoint_policy_api.delete_policy_association,
+                          self.policy[0]['id'],
+                          service_id=self.service[0]['id'],
+                          region_id=self.region[0]['id'])

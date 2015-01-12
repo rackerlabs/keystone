@@ -92,7 +92,8 @@ class EndpointPolicy(object):
             query = query.filter_by(endpoint_id=endpoint_id)
             query = query.filter_by(service_id=service_id)
             query = query.filter_by(region_id=region_id)
-            query.delete()
+            if query.delete() == 0:
+                raise exception.PolicyAssociationNotFound()
 
     def get_policy_association(self, endpoint_id=None,
                                service_id=None, region_id=None):
