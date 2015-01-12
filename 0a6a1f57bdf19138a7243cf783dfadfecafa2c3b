@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_5d930ea4",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-12T21:10:31Z",
+      "side": 1,
+      "message": "why 5? Add a comment.",
+      "revId": "0a6a1f57bdf19138a7243cf783dfadfecafa2c3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7dd7ea4f",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 457,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-12T21:10:31Z",
+      "side": 1,
+      "message": "??",
+      "revId": "0a6a1f57bdf19138a7243cf783dfadfecafa2c3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_fdebda0f",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-12T21:10:31Z",
+      "side": 1,
+      "message": "use the config fixture.\n\n self.config_fixture.config(wsgi_keep_alive\u003dFalse)\n\nAlso, the value should be put in a variable and used below so that it\u0027s obvious they\u0027re the same value.",
+      "revId": "0a6a1f57bdf19138a7243cf783dfadfecafa2c3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
