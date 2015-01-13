@@ -177,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_590a2d7a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-13T11:45:13Z",
+      "side": 1,
+      "message": "Agreed",
+      "parentUuid": "3a961159_fe74a938",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_9f0f71df",
         "filename": "keystone/backends.py",
         "patchSetId": 11
@@ -346,6 +364,24 @@
       "side": 1,
       "message": "...so the old code in assignment/backends/sql.py (from where this was moved) did not have this.  I don\u0027t think handle_conflicts does anything for delete (it only checks for duplicates or a db_error)...so in fact this should be removed for projects too..I\u0027ll raise a separate bug for that.",
       "parentUuid": "3a961159_ff8cf581",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_19ec2592",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-13T11:45:13Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a961159_5ec5bd08",
       "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
