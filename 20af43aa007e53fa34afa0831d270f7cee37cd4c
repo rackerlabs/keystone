@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_390641ce",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 738,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-13T11:38:04Z",
+      "side": 1,
+      "message": "Well, I think it would be better to assert the default token provider is UUID_PROVIDER, instead of just asserting a default can be loaded.\nIf we change the default, this test is there to say: \"hey, what\u0027s up? do you really want to do this?\" :-)\n\nIt is just for the non complete removal of the method test_default_token_format that existed before this change. This change should not change how things are tested.\n\nIt should look like the code below, very similar to what we had before, just renaming the method.\n\n    def test_default_token_provider(self):\n        self.assertEqual(token.provider.UUID_PROVIDER,\n                         token.provider.Manager.get_token_provider())",
+      "revId": "20af43aa007e53fa34afa0831d270f7cee37cd4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
