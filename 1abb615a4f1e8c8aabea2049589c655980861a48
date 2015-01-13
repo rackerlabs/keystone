@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_7077fd08",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 2774,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-01-13T11:11:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_5d6f8e93",
+      "revId": "1abb615a4f1e8c8aabea2049589c655980861a48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_5df6aed9",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 28
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-12T21:20:32Z",
       "side": 1,
       "message": "put this on the call -- \n\n with mock.patch.object(rules, \u0027enforce\u0027, return_value\u003dTrue):",
+      "revId": "1abb615a4f1e8c8aabea2049589c655980861a48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f023ed03",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 2951,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-01-13T11:11:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_5df6aed9",
       "revId": "1abb615a4f1e8c8aabea2049589c655980861a48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_101f99b9",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 2962,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-01-13T11:11:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_9d0016ad",
+      "revId": "1abb615a4f1e8c8aabea2049589c655980861a48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_9d1736ee",
         "filename": "keystone/trust/core.py",
         "patchSetId": 28
@@ -64,6 +118,24 @@
       "writtenOn": "2015-01-12T21:20:32Z",
       "side": 1,
       "message": "This should have been validated with JSON Schema already.",
+      "revId": "1abb615a4f1e8c8aabea2049589c655980861a48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_56e59ada",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-01-13T11:11:55Z",
+      "side": 1,
+      "message": "Improved validation schema.",
+      "parentUuid": "3a961159_9d1736ee",
       "revId": "1abb615a4f1e8c8aabea2049589c655980861a48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
