@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_04668355",
+        "filename": "doc/source/extensions.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-13T08:29:18Z",
+      "side": 1,
+      "message": "whitespace",
+      "revId": "ac7547dc96a3db0df635fd6574448a0b3a0c1e20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_244c5fc8",
+        "filename": "doc/source/extensions.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-13T08:29:18Z",
+      "side": 1,
+      "message": "we could add OS-INHERIT, for which I think we are proposing that \n\nv1.0 - stable\nv1.1 - experimental",
+      "revId": "ac7547dc96a3db0df635fd6574448a0b3a0c1e20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
