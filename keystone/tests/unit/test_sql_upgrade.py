@@ -1540,6 +1540,75 @@ class SqlUpgradeTests(SqlMigrateBase):
                                 ['id', 'description', 'parent_region_id',
                                  'extra', 'url'])
 
+    def test_fixup_service_name_value_upgrade(self):
+        """Migration 64 has to update service name data from `extra`
+        to empty string.
+        """
+        def add_service(**extra_data):
+            service_id = uuid.uuid4().hex
+
+            service = {
+                'id': service_id,
+                'type': uuid.uuid4().hex,
+                'extra': json.dumps(extra_data),
+            }
+
+            self.insert_dict(session, 'service', service)
+
+            return service_id
+
+        self.upgrade(43)
+        session = self.Session()
+
+        # Services with extra values having a random attribute and
+        # different combinations of name
+        random_attr_name = uuid.uuid4().hex
+        random_attr_value = uuid.uuid4().hex
+        random_attr_str = "%s='%s'" % (random_attr_name, random_attr_value)
+        random_attr_no_name = {random_attr_name: random_attr_value}
+        random_attr_no_name_str = "%s='%s'" % (random_attr_name,
+                                               random_attr_value)
+        random_attr_name_value = {random_attr_name: random_attr_value,
+                                  'name': 'myname'}
+        random_attr_name_value_str = 'name=myname,%s' % random_attr_str
+        random_attr_name_empty = {random_attr_name: random_attr_value,
+                                  'name': ''}
+        random_attr_name_empty_str = 'name=,%s' % random_attr_str
+        random_attr_name_none = {random_attr_name: random_attr_value,
+                                 'name': None}
+        random_attr_name_none_str = 'name=None,%s' % random_attr_str
+
+        services = [
+            (add_service(**random_attr_no_name),
+             random_attr_name_empty, random_attr_no_name_str),
+            (add_service(**random_attr_name_value),
+             random_attr_name_value, random_attr_name_value_str),
+            (add_service(**random_attr_name_empty),
+             random_attr_name_empty, random_attr_name_empty_str),
+            (add_service(**random_attr_name_none),
+             random_attr_name_empty, random_attr_name_none_str),
+        ]
+
+        session.close()
+        self.upgrade(64)
+        session = self.Session()
+
+        # Verify that the services have the expected values.
+        self.metadata.clear()
+        service_table = sqlalchemy.Table('service', self.metadata,
+                                         autoload=True)
+
+        def fetch_service_extra(service_id):
+            cols = [service_table.c.extra]
+            f = service_table.c.id == service_id
+            s = sqlalchemy.select(cols).where(f)
+            service = session.execute(s).fetchone()
+            return json.loads(service.extra)
+
+        for service_id, exp_extra, msg in services:
+            extra = fetch_service_extra(service_id)
+            self.assertDictEqual(exp_extra, extra, msg)
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
