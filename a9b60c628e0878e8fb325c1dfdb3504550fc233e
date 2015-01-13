@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_5d3da3dc",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-13T21:51:32Z",
+      "side": 1,
+      "message": "why is it important for this to be 5 and not 6 or 7? A random number should be used.",
+      "revId": "a9b60c628e0878e8fb325c1dfdb3504550fc233e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7d233fbe",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-13T21:51:32Z",
+      "side": 1,
+      "message": "why is it important for this to be False and not True?",
+      "revId": "a9b60c628e0878e8fb325c1dfdb3504550fc233e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
