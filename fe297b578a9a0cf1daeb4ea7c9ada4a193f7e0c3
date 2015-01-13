@@ -52,6 +52,24 @@
       "revId": "fe297b578a9a0cf1daeb4ea7c9ada4a193f7e0c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b5423766",
+        "filename": "keystone/common/sql/migrate_repo/versions/044_service_enabled.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-13T10:13:14Z",
+      "side": 1,
+      "message": "OK, great, thanks.",
+      "parentUuid": "3a961159_551913d0",
+      "revId": "fe297b578a9a0cf1daeb4ea7c9ada4a193f7e0c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
