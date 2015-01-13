@@ -146,6 +146,7 @@ class Manager(manager.Manager):
     @notifications.created(_SERVICE, public=False)
     def create_service(self, service_id, service_ref):
         service_ref.setdefault('enabled', True)
+        service_ref.setdefault('name', '')
         return self.driver.create_service(service_id, service_ref)
 
     @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
