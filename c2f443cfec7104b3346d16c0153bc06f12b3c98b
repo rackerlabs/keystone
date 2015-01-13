@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_9a9c8ac1",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-13T09:20:06Z",
+      "side": 1,
+      "message": "perhaps a test without a parent_id to show it is indeed nullable?",
+      "revId": "c2f443cfec7104b3346d16c0153bc06f12b3c98b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
