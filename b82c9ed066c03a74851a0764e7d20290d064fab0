@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_d7897270",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 14303
+      },
+      "writtenOn": "2015-01-13T20:24:49Z",
+      "side": 1,
+      "message": "The location of assignment type currently means that AssignmentTypeCalculationError will be raised to the caller of create_grant if there are invalid parameters. Is that error name seem a little confusing for the caller of create_grant?",
+      "revId": "b82c9ed066c03a74851a0764e7d20290d064fab0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
