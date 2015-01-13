@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_3fc2a834",
+        "filename": "keystone/common/sql/migrate_repo/versions/042_endpoint_enabled.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-13T08:58:15Z",
+      "side": 1,
+      "message": "...that\u0027s a new one on me...didn\u0027t know that call existed!",
+      "revId": "296c08806c7593d9dbe6356a3bf8e37dff25ce91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
