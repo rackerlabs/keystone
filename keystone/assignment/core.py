@@ -30,6 +30,8 @@ from keystone import notifications
 from keystone.openstack.common import log
 from keystone.openstack.common import versionutils
 
+import copy
+
 
 CONF = config.CONF
 LOG = log.getLogger(__name__)
@@ -463,6 +465,396 @@ class Manager(manager.Manager):
         if user_id is not None:
             self._emit_invalidate_user_token_persistence(user_id)
 
+    def _create_group_assignment(self, base_ref, user_id):
+        """Creates a group assignment from the provided ref."""
+
+        ref = copy.deepcopy(base_ref)
+
+        ref['user_id'] = user_id
+
+        indirect = ref.setdefault('indirect', {})
+        indirect['group_id'] = ref.pop('group_id')
+
+        return ref
+
+    def _expand_inherited_assignment(self, ref, user_id, project_id=None):
+        """Expands inherited role assignments.
+
+        For any group role assignment on a target, replaces it by a set of
+        role assignments containing one for each user of that group on that
+        target.
+
+        For any inherited role assignment for an actor on a target,
+        replaces it by a set of role assignments for that actor on every
+        project under that target.
+
+        An example of accepted ref is:
+
+        {
+            'group_id': group_id,
+            'project_id': parent_id,
+            'role_id': role_id,
+            'inherited_to_projects': 'projects'
+        }
+
+        Once expanded, it should be returned as a list of entities like the
+        one below, one for each each user_id in the provided group_id and
+        for each subproject_id in the project_id subtree.
+
+        {
+            'user_id': user_id,
+            'project_id': subproject_id,
+            'role_id': role_id,
+            'indirect' : {
+                'group_id': group_id,
+                'project_id': parent_id
+            }
+        }
+
+        Returned list will be formatted by the Controller, which will
+        deduce a role assignment came from group membership if it has both
+        'user_id' in the main body of the dict and 'group_id' in the
+        'indirect' subdict, as well as it is possible to deduce if it has
+        come from inheritance if it contains both a 'project_id' in the
+        main body of the dict and 'parent_id' in the 'indirect' subdict.
+
+        """
+        def create_inherited_assignment(base_ref, project_id):
+            """Creates a project assignment from the provided ref."""
+
+            ref = copy.deepcopy(base_ref)
+
+            indirect = ref.setdefault('indirect', {})
+            if ref.get('project_id'):
+                indirect['project_id'] = ref.pop('project_id')
+            else:
+                indirect['domain_id'] = ref.pop('domain_id')
+
+            ref['project_id'] = project_id
+            ref.pop('inherited_to_projects')
+
+            return ref
+
+        # Defines expanded project list
+        if project_id:
+            project_ids = [project_id]
+        elif ref.get('domain_id'):
+            project_ids = (
+                [x['id'] for x in
+                    self.list_projects_in_domain(
+                        ref['domain_id'])])
+        else:
+            project_ids = (
+                [x['id'] for x in
+                    self.list_projects_in_subtree(
+                        ref['project_id'])])
+
+        new_refs = []
+        if 'group_id' in ref:
+            if user_id:
+                member_ids = [user_id]
+            else:
+                members = self.identity_api.list_users_in_group(
+                    ref['group_id'])
+                member_ids = [member['id'] for member in members]
+
+            # Expand role assignment for all members
+            members_assignments = [self._create_group_assignment(
+                ref, user_id=member_id) for member_id in member_ids]
+            for ma in members_assignments:
+                new_refs += [create_inherited_assignment(ma, project_id=p)
+                             for p in project_ids]
+        else:
+            # Expand role assignment for all projects
+            new_refs += [create_inherited_assignment(ref, project_id=p)
+                         for p in project_ids]
+
+        return new_refs
+
+    # NOTE(samueldmq): private methods defined from this line until
+    # list_role_assignments function definition belong to that function. They
+    # are not inside its scope as nested functions since it would significantly
+    # increase McCabe complexitiy, that should be kept as it is in order to
+    # detect unnecessarily complex code, which is not this case.
+
+    def _expand_non_inherited_assignment(self, ref, user_id):
+        """Expands non-inherited role assignments.
+
+        For any group role assignment on a target, it is replaced by a set
+        of role assignments containing one for each user of that group on
+        that target.
+
+        An example of accepted ref is:
+
+        {
+            'group_id': group_id,
+            'project_id': project_id,
+            'role_id': role_id
+        }
+
+        Once expanded, it should be returned as a list of entities like the
+        one below, one for each each user_id in the provided group_id.
+
+        {
+            'user_id': user_id,
+            'project_id': project_id,
+            'role_id': role_id,
+            'indirect' : {
+                'group_id': group_id
+            }
+        }
+
+        Returned list will be formatted by the Controller, which will
+        deduce a role assignment came from group membership if it has both
+        'user_id' in the main body of the dict and 'group_id' in indirect
+        subdict.
+
+        """
+        if user_id:
+            return [self._create_group_assignment(ref, user_id=user_id)]
+
+        return [self._create_group_assignment(ref, user_id=m['id'])
+                for m in self.identity_api.list_users_in_group(
+                    ref['group_id'])]
+
+    def _expand_indirect_assignment(self, assignment, user_id=None,
+                                    project_id=None):
+        """Returns a list of expanded role assignment.
+
+        Given the original assignment, it expands grouping and inheritance,
+        applying provided filters.
+
+        """
+
+        if assignment.get('inherited_to_projects') == 'projects':
+            return self._expand_inherited_assignment(assignment, user_id,
+                                                     project_id)
+        elif 'group_id' in assignment:
+            return self._expand_non_inherited_assignment(assignment, user_id)
+        return [assignment]
+
+    def _list_effective_assignments_for_user_and_project(
+            self, role_id, user_id, project_id, inherited):
+        """List user project role assignments in effective mode.
+
+        Returns a list containing the direct role assignments for the specified
+        user on the provided project and the indirect ones that come from
+        grouping or inheritance.
+
+        Attributes of role assignments in the resultant list match the provided
+        filters.
+
+        """
+
+        # List expanded assignments from direct user's assignments
+        direct_assignments = self._list_effective_assignments_for_project(
+            role_id=role_id, project_id=project_id, user_id=user_id,
+            inherited=inherited)
+
+        # And also expanded role assignments from user's groups assignments
+        group_assignments = []
+        group_ids = self._get_group_ids_for_user_id(user_id)
+        if group_ids:
+            group_assignments = self._list_effective_assignments_for_project(
+                role_id=role_id, project_id=project_id, user_id=user_id,
+                group_ids=group_ids, inherited=inherited)
+
+        return direct_assignments + group_assignments
+
+    def _list_effective_assignments_for_user(self, role_id, user_id,
+                                             inherited):
+        """List user role assignments in effective mode.
+
+        Returns a list containing the direct role assignments for the specified
+        user and the indirect ones that come from grouping or inheritance.
+
+        Attributes of role assignments in the resultant list match the provided
+        filters.
+
+        """
+
+        # List user role assignments
+        user_refs = self.driver.list_role_assignments(
+            role_id=role_id, user_id=user_id,
+            inherited_to_projects=inherited)
+
+        # As well as those from the user's groups
+        group_refs = []
+        group_ids = self._get_group_ids_for_user_id(user_id)
+        if group_ids:
+            group_refs = self.driver.list_role_assignments(
+                role_id=role_id, group_ids=group_ids,
+                inherited_to_projects=inherited)
+
+        refs = []
+        for ref in (user_refs + group_refs):
+            refs += self._expand_indirect_assignment(ref, user_id=user_id)
+
+        return refs
+
+    def _list_effective_assignments_for_project(self, role_id, project_id,
+                                                inherited, user_id=None,
+                                                group_ids=None):
+        """List project role assignments in effective mode.
+
+        Returns a list containing the direct role assignments on the specified
+        project and the indirect ones that come from grouping or inheritance.
+
+        Attributes of role assignments in the resultant list match the provided
+        filters.
+
+        """
+
+        # If both user_id and group_ids are provided, it is assumed that it
+        # is requested to get assignments for group_ids and then apply them
+        # to user_id when expanding.
+        user_id_filter = user_id
+        if user_id and group_ids:
+            user_id = None
+
+        # List direct project role assignments
+        project_ids = [project_id] if project_id else None
+
+        project_refs = []
+        # None means to get both non-inherited and inherited assignments
+        if inherited is False or inherited is None:
+            project_refs = self.driver.list_role_assignments(
+                role_id=role_id, project_ids=project_ids, user_id=user_id,
+                group_ids=group_ids, inherited_to_projects=False)
+
+        domain_refs, parent_refs = [], []
+        # None means to get both non-inherited and inherited assignments
+        if inherited is True or inherited is None:
+            # As well as those inherited from the project's domain
+            domain_id = self.get_project(project_id)['domain_id']
+            domain_refs = self.driver.list_role_assignments(
+                role_id=role_id, domain_id=domain_id, user_id=user_id,
+                group_ids=group_ids, inherited_to_projects=True)
+
+            # And those inherited from the project's parents
+            parent_ids = [project['id'] for project in
+                          self.list_project_parents(project_id)]
+            if parent_ids:
+                parent_refs = self.driver.list_role_assignments(
+                    role_id=role_id, project_ids=parent_ids,
+                    user_id=user_id, group_ids=group_ids,
+                    inherited_to_projects=True)
+
+        refs = []
+        for ref in (project_refs + domain_refs + parent_refs):
+            refs += self._expand_indirect_assignment(
+                ref, user_id=user_id_filter, project_id=project_id)
+
+        return refs
+
+    def _list_effective_assignments_for_domain(self, role_id,
+                                               user_id, domain_id):
+        """List domain role assignments in effective mode.
+
+        Returns a list containing the direct role assignments on the specified
+        domain and the indirect ones that come from grouping.
+
+        Attributes of role assignments in the resultant list match the provided
+        filters.
+
+        """
+
+        assignments = self.driver.list_role_assignments(
+            role_id=role_id, user_id=user_id, domain_id=domain_id,
+            inherited_to_projects=False)
+
+        refs = []
+        for ref in assignments:
+            refs += self._expand_indirect_assignment(ref)
+        return refs
+
+    def _list_effective_assignments(self, role_id, user_id, group_id,
+                                    domain_id, project_id, inherited):
+        """List role assignments in effective mode.
+
+        When using effective mode, besides the direct assignments, the indirect
+        ones that come from grouping or inheritance are retrieved.
+
+        Attributes of role assignments in the resultant list match the provided
+        filters.
+
+        """
+
+        # No group nor inherited domain assignment can be in the expanded list
+        if group_id or (domain_id and inherited):
+            return []
+
+        if domain_id:
+            return self._list_effective_assignments_for_domain(
+                role_id=role_id, user_id=user_id, domain_id=domain_id)
+
+        if project_id:
+            if user_id:
+                return self._list_effective_assignments_for_user_and_project(
+                    role_id=role_id, user_id=user_id,
+                    project_id=project_id, inherited=inherited)
+
+            return self._list_effective_assignments_for_project(
+                role_id=role_id, project_id=project_id,
+                inherited=inherited)
+
+        if user_id:
+            return self._list_effective_assignments_for_user(
+                role_id=role_id, user_id=user_id, inherited=inherited)
+
+        # Retrieve role assignments with no filter
+        assignments = self.driver.list_role_assignments(
+            role_id=role_id, domain_id=domain_id,
+            inherited_to_projects=inherited)
+
+        refs = []
+        for ref in assignments:
+            refs += self._expand_indirect_assignment(ref)
+        return refs
+
+    def _list_direct_assignments(self, role_id, user_id, group_id,
+                                 domain_id, project_id, inherited):
+        """List role assignments without applying expansion.
+
+        Returns a list of direct role assignments, where their attributes match
+        the provided filters.
+
+        """
+        group_ids = [group_id] if group_id else None
+        project_ids = [project_id] if project_id else None
+
+        return self.driver.list_role_assignments(
+            role_id=role_id, user_id=user_id, group_ids=group_ids,
+            domain_id=domain_id, project_ids=project_ids,
+            inherited_to_projects=inherited)
+
+    def list_role_assignments(self, role_id=None, user_id=None, group_id=None,
+                              domain_id=None, project_id=None, inherited=None,
+                              effective=None):
+        """List role assignments, honoring effective mode and provided filters.
+
+        Returns a list of role assignments, where their attributes match the
+        provided filters. If effective mode is used, grouping and inheritance
+        will be expanded.
+
+        Inherited filter defaults to None, i.e, get both non-inherited and
+        inherited role assignments.
+
+        If OS-INHERIT extension is disabled or the used driver does not support
+        inherited roles retrieval, inherited role assignments will be ignored.
+
+        """
+
+        if not CONF.os_inherit.enabled:
+            if inherited:
+                return []
+            inherited = False
+
+        f = (self._list_effective_assignments
+             if effective else self._list_direct_assignments)
+
+        return f(role_id, user_id, group_id, domain_id, project_id, inherited)
+
     def delete_tokens_for_role_assignments(self, role_id):
         assignments = self.list_role_assignments_for_role(role_id=role_id)
 
@@ -743,8 +1135,16 @@ class Driver(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def list_role_assignments(self):
+    def list_role_assignments(self, role_id=None,
+                              user_id=None, group_ids=None,
+                              domain_id=None, project_ids=None,
+                              inherited_to_projects=None):
+        """Returns a list of role assignments for actors on targets.
 
+        Available parameters represent values in which the returned role
+        assignments attributes need to be filtered on.
+
+        """
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
