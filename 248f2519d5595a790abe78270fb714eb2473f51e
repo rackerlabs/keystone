@@ -16,6 +16,24 @@
       "revId": "248f2519d5595a790abe78270fb714eb2473f51e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_5cd3e9d4",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-13T20:12:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_1c62413d",
+      "revId": "248f2519d5595a790abe78270fb714eb2473f51e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
