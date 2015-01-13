@@ -50,6 +50,23 @@
       "revId": "62074841b9c4c06c3981ca48177c003d0c471887",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_577022a4",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-13T20:23:00Z",
+      "side": 1,
+      "message": "i\u0027m wondering this putting federation_api here is such a good idea?\n\nwhat will happen if someone tries to token authenticate and doesn\u0027t have federation_api enabled? i assume they won\u0027t hit the code path of line 44-48, just saying",
+      "revId": "62074841b9c4c06c3981ca48177c003d0c471887",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
