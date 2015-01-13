@@ -106,6 +106,24 @@
       "revId": "a077a875dd50974b66895f7d1ac39097d208e33a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_62ae4583",
+        "filename": "keystone/token/persistence/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-13T17:15:27Z",
+      "side": 1,
+      "message": "For debug purposes it\u0027s nice to see that progress is being made and also the pace of the progress. I made use of this to figure out a problem.",
+      "parentUuid": "3a961159_02fca1b4",
+      "revId": "a077a875dd50974b66895f7d1ac39097d208e33a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
