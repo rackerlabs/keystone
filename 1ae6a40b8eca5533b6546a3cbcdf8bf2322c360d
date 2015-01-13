@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_36bbaee5",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-13T11:02:32Z",
+      "side": 1,
+      "message": "I think it\u0027d be easier to read:\n\nif idp_remote_identifier !\u003d idp[\u0027remote_id\u0027]:\n    raise",
+      "revId": "1ae6a40b8eca5533b6546a3cbcdf8bf2322c360d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
