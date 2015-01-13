@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_1c62413d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-01-13T20:08:23Z",
+      "side": 1,
+      "message": "Suggest rephrasing to: \"Since public IDs can be regenerated ...\"\n\nThis helps eliminate bad-word(made up?) or words that are less common with the action itself (adn therefore potentially confusing, especially with the more common definitions of regenerable, meaning to make anew often better, or relating to moral reform)",
+      "revId": "248f2519d5595a790abe78270fb714eb2473f51e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
