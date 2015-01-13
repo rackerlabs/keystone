@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_5eb85de8",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-13T04:35:50Z",
+      "side": 1,
+      "message": "Yes, it is possible to connect a read-only reassure backend.",
+      "parentUuid": "3a961159_241834cc",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_b5660254",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-09T15:34:40Z",
       "side": 1,
       "message": "From what is said on the section \u0027Configuring the LDAP Identity Provider\u0027, it looks like it is possible to connect a read-only LDAP for role backend.\n\nWe should then add a warning similar to the above here. (in the patch that splits role backend, ofc)",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7ebb59e4",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-13T04:35:50Z",
+      "side": 1,
+      "message": "agreed - have added the warning",
+      "parentUuid": "3a961159_b5660254",
       "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_9eb2c504",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 1494,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-13T04:35:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_64cb1c1e",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_a4b6e486",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 11
@@ -64,6 +118,24 @@
       "writtenOn": "2015-01-09T03:47:07Z",
       "side": 1,
       "message": "typo: keystone.resource.backends.sql.Resource",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_5e9f7d65",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 1504,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-13T04:35:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_a4b6e486",
       "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_fe74a938",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-13T04:35:50Z",
+      "side": 1,
+      "message": "well yes, although I don\u0027t think that is relevant in this particular section (since assignment driver doesn\u0027t depend on role driver)",
+      "parentUuid": "3a961159_3f5f5de6",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_9f0f71df",
         "filename": "keystone/backends.py",
         "patchSetId": 11
@@ -98,6 +188,24 @@
       "writtenOn": "2015-01-09T03:47:07Z",
       "side": 1,
       "message": "s/drivers/driver",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_1e741535",
+        "filename": "keystone/backends.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-13T04:35:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_9f0f71df",
       "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_3ea631ac",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 447,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-13T04:35:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_bf950d41",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_3f275db7",
         "filename": "keystone/resource/backends/ldap.py",
         "patchSetId": 11
@@ -132,6 +258,24 @@
       "writtenOn": "2015-01-09T03:47:07Z",
       "side": 1,
       "message": "I think we need a blank line between copyright info and first import.",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_beff8165",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-13T04:35:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_3f275db7",
       "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_3eeb91a5",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-13T04:35:50Z",
+      "side": 1,
+      "message": "oops, thanks!",
+      "parentUuid": "3a961159_dfaad9d0",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_ff8cf581",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 11
@@ -172,6 +334,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_5ec5bd08",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-13T04:35:50Z",
+      "side": 1,
+      "message": "...so the old code in assignment/backends/sql.py (from where this was moved) did not have this.  I don\u0027t think handle_conflicts does anything for delete (it only checks for duplicates or a db_error)...so in fact this should be removed for projects too..I\u0027ll raise a separate bug for that.",
+      "parentUuid": "3a961159_ff8cf581",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_3f2cbd01",
         "filename": "keystone/tests/test_backend_sql.py",
         "patchSetId": 11
@@ -183,6 +363,24 @@
       "writtenOn": "2015-01-09T03:47:07Z",
       "side": 1,
       "message": "s/LOG.depreated/LOG.deprecated",
+      "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_bea06143",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 815,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-13T04:35:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_3f2cbd01",
       "revId": "fe2fc5d736293524441c7afcf219d4eaeb5242ec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
