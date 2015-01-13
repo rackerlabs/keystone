@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_d7b25248",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-13T20:22:56Z",
+      "side": 1,
+      "message": "groups can from various domains, so caching the domain once is not a solution. I am trying to think whether some customized SQL statements would help here (so we don\u0027t query n times, but query once asking for n objects)",
+      "parentUuid": "3a961159_5cf5a9eb",
+      "revId": "407e03a35de0632420da592927f90e604ecdd1e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_7c70a573",
         "filename": "keystone/tests/mapping_fixtures.py",
         "patchSetId": 14
