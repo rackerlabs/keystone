@@ -139,6 +139,24 @@
       "revId": "1abb615a4f1e8c8aabea2049589c655980861a48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_8a1d1513",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-01-13T13:01:56Z",
+      "side": 1,
+      "message": "But the code is still needed for backend test:\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/test_backend.py#L4329-L4340",
+      "parentUuid": "3a961159_56e59ada",
+      "revId": "1abb615a4f1e8c8aabea2049589c655980861a48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
