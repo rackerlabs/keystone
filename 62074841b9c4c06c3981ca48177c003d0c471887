@@ -85,6 +85,24 @@
       "revId": "62074841b9c4c06c3981ca48177c003d0c471887",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_17d5ba1a",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-13T20:31:25Z",
+      "side": 1,
+      "message": "Use @dependency.optional(\u0027federation_api\u0027). If the extension wasn\u0027t enabled in the pipeline then self.federation_api will be None, so check for that before using self.federation_api.",
+      "parentUuid": "3a961159_37c9d6ac",
+      "revId": "62074841b9c4c06c3981ca48177c003d0c471887",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
