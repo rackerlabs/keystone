@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_3caa9d85",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-01-13T20:00:45Z",
+      "side": 1,
+      "message": "Any group that is populated here is *also* being looked up in the validate_groups call. This looks to be doing a lot of duplicated work. I think we should see if we can improve the logic to limit the duplicated \"ask identity for group information\", this could get expensive from a chatty to the backend perspective (Especially if caching is not enabled/available).\n\nSuggest always making either the transform handle all the identity lookups or having a way to avoid doing the identity look ups again for transformed groups in the next call. on line 165",
+      "revId": "407e03a35de0632420da592927f90e604ecdd1e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_5cf5a9eb",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-01-13T20:00:45Z",
+      "side": 1,
+      "message": "As a point, this could get expensive without caching on the assignment api side depending on the size of the group list.\n\nAt a certain point it makes sense to resolve the domain id once. but not sure how wide-spread this is going to be.",
+      "revId": "407e03a35de0632420da592927f90e604ecdd1e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7c70a573",
+        "filename": "keystone/tests/mapping_fixtures.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-01-13T20:00:45Z",
+      "side": 1,
+      "message": "Wouldn\u0027t/shouldn\u0027t domain ids always be hex?",
+      "revId": "407e03a35de0632420da592927f90e604ecdd1e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
