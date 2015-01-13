@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_7f10b0ab",
+        "filename": "keystone/common/sql/migrate_repo/versions/044_service_enabled.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-13T09:11:04Z",
+      "side": 1,
+      "message": "what\u0027s the thinking on when to use checkfirst? I noticed that in the next patch you remove this from the equivalent call.",
+      "revId": "fe297b578a9a0cf1daeb4ea7c9ada4a193f7e0c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
