@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_3dce26b8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-13T14:25:51Z",
+      "side": 1,
+      "message": "Add Marek Denis as Co-Author :)",
+      "revId": "77852b0c8aa4d0e6dedf5220fd13a1381c0e7a63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7d7a6e78",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 406,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-13T14:25:51Z",
+      "side": 1,
+      "message": "Would use a more verbose msg here, something stating that if using \"groups\" key, the \"domain\" one is mandatory.",
+      "revId": "77852b0c8aa4d0e6dedf5220fd13a1381c0e7a63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
