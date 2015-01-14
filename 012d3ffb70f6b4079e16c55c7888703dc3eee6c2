@@ -16,6 +16,24 @@
       "revId": "012d3ffb70f6b4079e16c55c7888703dc3eee6c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d7730bb2",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-01-14T18:36:56Z",
+      "side": 1,
+      "message": "Thanks Dave! rolling it back",
+      "parentUuid": "3a961159_058488d1",
+      "revId": "012d3ffb70f6b4079e16c55c7888703dc3eee6c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
