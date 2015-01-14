@@ -130,9 +130,37 @@ def _paren_groups(source):
 
 def _match(key, value, attrs):
     """Match a given key and value against an attribute list."""
+
+    def match_with_wildcards(check_val, val_list):
+        # Case insensitive checking with wildcards
+        norm_val = check_val.lower()
+        if norm_val.startswith('*'):
+            if norm_val.endswith('*'):
+                # Is the string anywhere in the target?
+                for x in val_list:
+                    if norm_val[1:-1] in x.lower():
+                        return True
+            else:
+                # Is the string at the end of the target?
+                for x in val_list:
+                    if (norm_val[1:] ==
+                            x.lower()[len(x) - len(norm_val) + 1:]):
+                        return True
+        elif norm_val.endswith('*'):
+                # Is the string at the start of the target?
+                for x in val_list:
+                    if norm_val[:-1] == x.lower()[:len(norm_val) - 1]:
+                        return True
+        else:
+            # Is the string an exact match?
+            for x in norm_values:
+                if check_value.lower() == x.lower():
+                    return True
+        return False
+
     if key not in attrs:
         return False
-    # This is a wild card search. Implemented as all or nothing for now.
+    # This is a pure wild card search, so the answer must be yes!
     if value == '*':
         return True
     if key == 'serviceId':
@@ -144,9 +172,7 @@ def _match(key, value, attrs):
     if key != 'objectclass':
         check_value = _internal_attr(key, value)[0]
         norm_values = list(_internal_attr(key, x)[0] for x in attrs[key])
-        for x in norm_values:
-            if check_value.lower() == x.lower():
-                return True
+        return match_with_wildcards(check_value, norm_values)
     # it is an objectclass check, so check subclasses
     values = _subs(value)
     for v in values:
