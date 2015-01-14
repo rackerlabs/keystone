@@ -5277,7 +5277,7 @@ class FilterTests(filtering.FilterTests):
     def test_list_entities_filtered(self):
         for entity in ['user', 'group', 'project']:
             # Create 20 entities
-            entity_list = self._create_test_data(entity, 20)
+            entity_list = self._create_test_data(entity, 200)
 
             # Try filtering to get one an exact item out of the list
             hints = driver_hints.Hints()
