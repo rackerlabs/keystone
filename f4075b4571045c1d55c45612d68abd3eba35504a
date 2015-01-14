@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_9150b62d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-14T16:42:33Z",
+      "side": 1,
+      "message": "double space?",
+      "revId": "f4075b4571045c1d55c45612d68abd3eba35504a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_71a50a47",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-14T16:42:33Z",
+      "side": 1,
+      "message": "double space?",
+      "revId": "f4075b4571045c1d55c45612d68abd3eba35504a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_1145a66e",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-14T16:42:33Z",
+      "side": 1,
+      "message": "not indented enough?",
+      "revId": "f4075b4571045c1d55c45612d68abd3eba35504a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_b1493290",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-14T16:42:33Z",
+      "side": 1,
+      "message": "not indented enough?",
+      "revId": "f4075b4571045c1d55c45612d68abd3eba35504a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
