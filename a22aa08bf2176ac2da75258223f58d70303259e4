@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_f53c91e3",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-01-14T12:03:52Z",
+      "side": 0,
+      "message": "I suggest to leave a note about experimental status in Juno",
+      "revId": "a22aa08bf2176ac2da75258223f58d70303259e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
