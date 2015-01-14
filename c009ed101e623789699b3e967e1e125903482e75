@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "3a961159_14e68de8",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-14T02:31:50Z",
+      "side": 1,
+      "message": "Now, we have four same code block line 95-105. Should we add a base object for FederationProtocolModel, IdentityProviderModel, MappingModel, ServiceProviderModel?",
+      "revId": "c009ed101e623789699b3e967e1e125903482e75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_0bbb66e5",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 5
@@ -48,6 +65,24 @@
       "writtenOn": "2014-07-27T10:23:00Z",
       "side": 1,
       "message": "is there a reasons we can\u0027t just do:\n\nreturn ServiceProvider.wrap_member(context, response) ?",
+      "revId": "c009ed101e623789699b3e967e1e125903482e75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f4c82123",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-14T02:31:50Z",
+      "side": 1,
+      "message": "I think this is because we use PUT method to create service provider? And I have a question here :) Why do we use PUT rather than POST to create service provider?",
+      "parentUuid": "baada198_0bbb66e5",
       "revId": "c009ed101e623789699b3e967e1e125903482e75",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
