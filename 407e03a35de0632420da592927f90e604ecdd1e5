@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_57d9ed20",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-14T11:03:49Z",
+      "side": 1,
+      "message": "I moved utils.validate_groups() to line 161 so only groups specified by their ids are being validated.",
+      "parentUuid": "3a961159_3caa9d85",
+      "revId": "407e03a35de0632420da592927f90e604ecdd1e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_43493a31",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-14T06:00:16Z",
       "side": 1,
       "message": "good point, you could write:\n\n  # NOTE(marekd): group names have already been validated, so no\n  # need to re-validate.\n  if not mapped_properties[\u0027group_names\u0027]:\n    utils.validate_groups(...)",
+      "revId": "407e03a35de0632420da592927f90e604ecdd1e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_77bd09b1",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-14T11:03:49Z",
+      "side": 1,
+      "message": "not sure if I understood your suggestion correctly :(",
+      "parentUuid": "3a961159_43493a31",
       "revId": "407e03a35de0632420da592927f90e604ecdd1e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -89,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_d7fcfd74",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-14T11:03:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_83bc0208",
+      "revId": "407e03a35de0632420da592927f90e604ecdd1e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_63d63655",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 14
@@ -106,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_5791edef",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-14T11:03:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_63d63655",
+      "revId": "407e03a35de0632420da592927f90e604ecdd1e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_7c70a573",
         "filename": "keystone/tests/mapping_fixtures.py",
         "patchSetId": 14
@@ -117,6 +189,24 @@
       "writtenOn": "2015-01-13T20:00:45Z",
       "side": 1,
       "message": "Wouldn\u0027t/shouldn\u0027t domain ids always be hex?",
+      "revId": "407e03a35de0632420da592927f90e604ecdd1e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_371e2175",
+        "filename": "keystone/tests/mapping_fixtures.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-14T11:03:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_7c70a573",
       "revId": "407e03a35de0632420da592927f90e604ecdd1e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
