@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_d44142a7",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-14T21:57:09Z",
+      "side": 1,
+      "message": "I meant something like that: https://github.com/openstack/keystone/blob/master/keystone/assignment/core.py#L90\n\nexception.ForbiddenAction has an \"action\" attribute: https://github.com/openstack/keystone/blob/master/keystone/exception.py#L197",
+      "parentUuid": "3a961159_adeab29d",
+      "revId": "b4bbfd4215c411c1eb57ee2e734deccab6ed01ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_3cdc3674",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 5
