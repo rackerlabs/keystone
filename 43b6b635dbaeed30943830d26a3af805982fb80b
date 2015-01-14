@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_fa0d6090",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6534
+      },
+      "writtenOn": "2015-01-14T11:23:50Z",
+      "side": 1,
+      "message": "an IdP identifier",
+      "revId": "43b6b635dbaeed30943830d26a3af805982fb80b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_1a24ec0c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6534
+      },
+      "writtenOn": "2015-01-14T11:23:50Z",
+      "side": 1,
+      "message": "If it is not",
+      "revId": "43b6b635dbaeed30943830d26a3af805982fb80b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_5a1e74bc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6534
+      },
+      "writtenOn": "2015-01-14T11:23:50Z",
+      "side": 1,
+      "message": "delete, preserving the current behaviour",
+      "revId": "43b6b635dbaeed30943830d26a3af805982fb80b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
