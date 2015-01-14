@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_54f735d4",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-14T01:59:42Z",
+      "side": 1,
+      "message": "Should we ensure we can\u0027t update name to None?",
+      "revId": "2789f25cabc56cf0af8ae5f3464e0a9bca2c2a73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_946a7d7f",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-14T01:59:42Z",
+      "side": 1,
+      "message": "I think we should use self.assertEqual(\u0027\u0027, r.result[\u0027service\u0027][\u0027name\u0027]), because assertValidServiceResponse doesn\u0027t assert name.",
+      "revId": "2789f25cabc56cf0af8ae5f3464e0a9bca2c2a73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
