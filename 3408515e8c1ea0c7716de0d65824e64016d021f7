@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_f762c7ab",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 452,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-01-14T18:50:56Z",
+      "side": 1,
+      "message": "This needs (in a subsequent patch) to include some basic information on default behavior to include in the sample config.",
+      "revId": "3408515e8c1ea0c7716de0d65824e64016d021f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_779fb750",
+        "filename": "keystone/common/sql/migrate_repo/versions/062_drop_assignment_role_fk.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-01-14T18:50:56Z",
+      "side": 1,
+      "message": "Yet another case to drop SQLite support in migration testing. [has nothing to do with this patchset, just a recent conversation on IRC]",
+      "revId": "3408515e8c1ea0c7716de0d65824e64016d021f7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
