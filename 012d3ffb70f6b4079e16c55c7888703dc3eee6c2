@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_058488d1",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-01-14T15:18:06Z",
+      "side": 1,
+      "message": "Hua Cheng \u0026 wanghong, I believe Hua Cheng\u0027s previous patch is already covered the case actually, you needn\u0027t do this duplicated check here.\n\nhttps://github.com/openstack/keystone/blob/master/keystone/tests/test_v3.py#L592\n\n\u0027name\u0027 is included in \u0027keys\u0027 list,so it will be checked in assertValidServiceResponse, I hope you could rollback to your first patch since it seems better.",
+      "revId": "012d3ffb70f6b4079e16c55c7888703dc3eee6c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
