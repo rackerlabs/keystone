@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_adeab29d",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-01-14T19:39:21Z",
+      "side": 1,
+      "message": "I\u0027m not sure about the message. It is a security requirement not to say why it is forbidden in many places.   As an example we can \u0027t say 401 invalid password.\n\nThat doesn\u0027t mean we should not log any log message. I believe we should log at why this is forbidden, so that some one triaging will know the reason",
+      "parentUuid": "3a961159_fc770e8c",
+      "revId": "b4bbfd4215c411c1eb57ee2e734deccab6ed01ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_3cdc3674",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 5
