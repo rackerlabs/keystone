@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_63663657",
+        "filename": "keystone/tests/mapping_fixtures.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-14T06:15:52Z",
+      "side": 1,
+      "message": "can you just add Contractor to this assertion? rather than creating a new one",
+      "revId": "cfcb1076a9a3049bbf13c51d79fc56197114671c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_83d96224",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-14T06:15:52Z",
+      "side": 1,
+      "message": "why is this invalid? \ncause it\u0027s black list and white list? can you add a small comment on line 582 if that\u0027s the case",
+      "revId": "cfcb1076a9a3049bbf13c51d79fc56197114671c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_43005a35",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-14T06:15:52Z",
+      "side": 1,
+      "message": "assert the rest of the mapped_properties too, user_name/id and group_ids",
+      "revId": "cfcb1076a9a3049bbf13c51d79fc56197114671c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_63fb9648",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 864,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-14T06:15:52Z",
+      "side": 1,
+      "message": "same comment as above",
+      "revId": "cfcb1076a9a3049bbf13c51d79fc56197114671c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
