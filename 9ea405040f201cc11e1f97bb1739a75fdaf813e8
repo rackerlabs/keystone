@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_2de882b2",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-14T19:42:19Z",
+      "side": 1,
+      "message": "The idea is that roles are collected upwards.  So cloud_admin is going to get the power to do things over domains.  We can work harder to split these out WRT to the reseller use case as we understand it better.",
+      "parentUuid": "3a961159_478c4d2f",
+      "revId": "9ea405040f201cc11e1f97bb1739a75fdaf813e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_47b36dec",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 29
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-09T21:12:58Z",
       "side": 1,
       "message": "IMO It should be owner or domain_admin or cloud_admin",
+      "revId": "9ea405040f201cc11e1f97bb1739a75fdaf813e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_4d3eae2a",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-14T19:42:19Z",
+      "side": 1,
+      "message": "The idea is that we specify the lowest level, and then let the roles inherit. upwards.  We should not be managing that fine-tuned on individual API calls, but rather working at the role level.\n\nThe explicit names as codifications of the logic is not a good pattern.  Better to make the individual lines simple to maintain, and then work on refining the reusable rules.",
+      "parentUuid": "3a961159_47b36dec",
       "revId": "9ea405040f201cc11e1f97bb1739a75fdaf813e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_4d25ce08",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-14T19:42:19Z",
+      "side": 1,
+      "message": "We don\u0027t wan\u0027t the Or in the rule names.  That makes them 1-to-1 with the logic.  rather to have the rule name site the intention, and then fine tune the intention.",
+      "parentUuid": "3a961159_e7f1b997",
+      "revId": "9ea405040f201cc11e1f97bb1739a75fdaf813e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_0746c5c0",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 29
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_0d7f46e0",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-14T19:42:19Z",
+      "side": 1,
+      "message": "the term \"admin\" is so overloaded as to be useless.  In general, a rule should state the lowest level of who can perform something,  not all of the variations.",
+      "parentUuid": "3a961159_0746c5c0",
+      "revId": "9ea405040f201cc11e1f97bb1739a75fdaf813e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_677b09f5",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 29
@@ -81,6 +153,24 @@
       "writtenOn": "2015-01-09T21:12:58Z",
       "side": 1,
       "message": "Why do we  use just rule instead of domain_admin or cloud_admin? Is it  to allow both project and domain scoped token?",
+      "revId": "9ea405040f201cc11e1f97bb1739a75fdaf813e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ed64ba4a",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-14T19:42:19Z",
+      "side": 1,
+      "message": "preparing for hierarchical roles",
+      "parentUuid": "3a961159_677b09f5",
       "revId": "9ea405040f201cc11e1f97bb1739a75fdaf813e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
