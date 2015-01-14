@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_733e6f8d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 827,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-14T02:15:17Z",
+      "side": 1,
+      "message": "The comment at the init of this test says that when \"enabled attribute is ignored for users and a user is disabled, the *user remains enabled*.\"\n\nHowever, we aren\u0027t ensuring the user remains enabled, since we can\u0027t even access this info.",
+      "revId": "46d75ea5160f00d4ae9f646eb21d7cab89d28df3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f3689f8a",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 855,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-14T02:15:17Z",
+      "side": 1,
+      "message": "Same as for users. Line 827.",
+      "revId": "46d75ea5160f00d4ae9f646eb21d7cab89d28df3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_330227bb",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 879,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-14T02:15:17Z",
+      "side": 1,
+      "message": "Same as for users. Line 827.",
+      "revId": "46d75ea5160f00d4ae9f646eb21d7cab89d28df3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
