@@ -16,16 +16,16 @@
 
 import ldappool
 import mock
+from oslo_config import cfg
 from oslotest import mockpatch
 
 from keystone.common.ldap import core as ldap_core
-from keystone import config
 from keystone.identity.backends import ldap
 from keystone import tests
 from keystone.tests import fakeldap
 from keystone.tests import test_backend_ldap
 
-CONF = config.CONF
+CONF = cfg.CONF
 
 
 class LdapPoolCommonTestMixin(object):

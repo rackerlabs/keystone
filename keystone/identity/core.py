@@ -35,7 +35,7 @@ from keystone import notifications
 from keystone.openstack.common import log
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 
 LOG = log.getLogger(__name__)
 
