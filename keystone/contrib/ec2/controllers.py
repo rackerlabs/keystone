@@ -45,8 +45,12 @@ from keystone.common import dependency
 from keystone.common import utils
 from keystone.common import wsgi
 from keystone import exception
-from keystone.i18n import _
+from keystone.i18n import _, _LE
 from keystone.models import token_model
+from keystone.openstack.common import log
+
+
+LOG = log.getLogger(__name__)
 
 
 @dependency.requires('assignment_api', 'catalog_api', 'credential_api',
@@ -67,6 +71,9 @@ class Ec2ControllerCommon(object):
             if not utils.auth_str_equal(credentials.signature, signature):
                 raise exception.Unauthorized(message='Invalid EC2 signature.')
         else:
+            LOG.error(_LE('signature check failed; creds_ref: %s; '
+                          'credentials: %s; generated signature: %s'),
+                      creds_ref, credentials, signature)
             raise exception.Unauthorized(message='EC2 signature not supplied.')
 
     @abc.abstractmethod
@@ -102,9 +109,12 @@ class Ec2ControllerCommon(object):
 
         # NOTE(termie): backwards compat hack
         if not credentials and ec2credentials:
+            LOG.debug('Setting credentials to ec2credentials')
             credentials = ec2credentials
 
         if 'access' not in credentials:
+            LOGS.error(_LE('"access" key not in "credentials"; %s'),
+                       credentials)
             raise exception.Unauthorized(message='EC2 access not supplied.')
 
         creds_ref = self._get_credentials(credentials['access'])
