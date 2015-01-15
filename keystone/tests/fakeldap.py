@@ -144,7 +144,9 @@ def _match(key, value, attrs):
     if key != 'objectclass':
         check_value = _internal_attr(key, value)[0]
         norm_values = list(_internal_attr(key, x)[0] for x in attrs[key])
-        return check_value in norm_values
+        for x in norm_values:
+            if check_value.lower() == x.lower():
+                return True
     # it is an objectclass check, so check subclasses
     values = _subs(value)
     for v in values:
