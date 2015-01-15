@@ -16,15 +16,15 @@
 import uuid
 
 from oslo.serialization import jsonutils
+from oslo_config import cfg
 
-from keystone import config
 from keystone.policy.backends import rules
 from keystone.tests import filtering
 from keystone.tests.ksfixtures import temporaryfile
 from keystone.tests import test_v3
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 
 
 class IdentityTestFilteredCase(filtering.FilterTests,

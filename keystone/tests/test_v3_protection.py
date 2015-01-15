@@ -16,8 +16,8 @@
 import uuid
 
 from oslo.serialization import jsonutils
+from oslo_config import cfg
 
-from keystone import config
 from keystone import exception
 from keystone.policy.backends import rules
 from keystone import tests
@@ -25,7 +25,7 @@ from keystone.tests.ksfixtures import temporaryfile
 from keystone.tests import test_v3
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 
 

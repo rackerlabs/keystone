@@ -19,15 +19,15 @@ import random
 
 import mock
 from oslo.serialization import jsonutils
+from oslo_config import cfg
 from testtools import matchers as tt_matchers
 
 from keystone.common import json_home
-from keystone import config
 from keystone import controllers
 from keystone import tests
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 
 v2_MEDIA_TYPES = [
     {

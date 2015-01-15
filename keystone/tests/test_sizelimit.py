@@ -12,15 +12,15 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+from oslo_config import cfg
 import webob
 
-from keystone import config
 from keystone import exception
 from keystone import middleware
 from keystone import tests
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 MAX_REQUEST_BODY_SIZE = CONF.max_request_body_size
 
 
