@@ -16,6 +16,24 @@
       "revId": "907426e5e547204cae827fe7fa2e3fa958c99d5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_c85a5e81",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6873
+      },
+      "writtenOn": "2015-01-15T20:12:17Z",
+      "side": 1,
+      "message": "Honestly I just threw this up here, my dev environment got a fresh keystone clone today and I don\u0027t have all of the native deps installed yet to run the existing unit tests, so I\u0027m being a bad citizen and letting Jenkins test it for me.  I figured if nothing failed nothing is already being a nazi about checking this message string already, so it\u0027s not worth the trouble of adding one.",
+      "parentUuid": "3a961159_88ba16be",
+      "revId": "907426e5e547204cae827fe7fa2e3fa958c99d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
