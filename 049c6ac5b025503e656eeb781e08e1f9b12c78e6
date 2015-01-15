@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_a6d1decd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-01-15T08:31:03Z",
+      "side": 1,
+      "message": "s/Closed/Closes/ , because gerrit highlights it incorrectly. The link to the patch works ok btw.",
+      "revId": "049c6ac5b025503e656eeb781e08e1f9b12c78e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
