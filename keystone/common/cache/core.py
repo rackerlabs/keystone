@@ -18,14 +18,14 @@ import dogpile.cache
 from dogpile.cache import proxy
 from dogpile.cache import util
 from oslo.utils import importutils
+from oslo_config import cfg
 
-from keystone import config
 from keystone import exception
 from keystone.i18n import _, _LE
 from keystone.openstack.common import log
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 make_region = dogpile.cache.make_region
