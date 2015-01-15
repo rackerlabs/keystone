@@ -19,20 +19,20 @@ import copy
 import functools
 import uuid
 
+from oslo_config import cfg
 from six.moves import urllib
 
 from keystone.assignment import schema
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import validation
-from keystone import config
 from keystone import exception
 from keystone.i18n import _, _LW
 from keystone.models import token_model
 from keystone.openstack.common import log
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
