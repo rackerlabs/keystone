@@ -15,6 +15,7 @@ import os
 import subprocess
 import uuid
 
+from oslo_config import cfg
 from oslo_utils import timeutils
 import saml2
 from saml2 import md
@@ -23,7 +24,6 @@ from saml2 import samlp
 from saml2 import sigver
 import xmldsig
 
-from keystone.common import config
 from keystone import exception
 from keystone.i18n import _, _LE
 from keystone.openstack.common import fileutils
@@ -31,7 +31,7 @@ from keystone.openstack.common import log
 
 
 LOG = log.getLogger(__name__)
-CONF = config.CONF
+CONF = cfg.CONF
 
 
 class SAMLGenerator(object):

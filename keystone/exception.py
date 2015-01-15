@@ -12,15 +12,15 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_config import cfg
 from oslo_utils import encodeutils
 import six
 
-from keystone.common import config
 from keystone.i18n import _, _LW
 from keystone.openstack.common import log
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 # Tests use this to make exception message format errors fatal

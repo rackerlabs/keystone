@@ -16,20 +16,20 @@ import uuid
 
 import ldap
 import ldap.filter
+from oslo_config import cfg
 import six
 
 from keystone import clean
 from keystone.common import driver_hints
 from keystone.common import ldap as common_ldap
 from keystone.common import models
-from keystone import config
 from keystone import exception
 from keystone.i18n import _
 from keystone import identity
 from keystone.openstack.common import log
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 

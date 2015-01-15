@@ -27,6 +27,7 @@ import warnings
 
 import fixtures
 from oslo.config import fixture as config_fixture
+from oslo_config import cfg
 import oslotest.base as oslotest
 from oslotest import mockpatch
 import six
@@ -83,7 +84,7 @@ def _calc_tmpdir():
 
 TMPDIR = _calc_tmpdir()
 
-CONF = config.CONF
+CONF = cfg.CONF
 
 IN_MEM_DB_CONN_STRING = 'sqlite://'
 

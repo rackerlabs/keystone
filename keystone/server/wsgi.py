@@ -15,6 +15,7 @@
 import logging
 
 from oslo import i18n
+from oslo_config import cfg
 
 
 # NOTE(dstanek): i18n.enable_lazy() must be called before
@@ -30,7 +31,7 @@ from keystone.server import common
 from keystone import service as keystone_service
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 
 
 def initialize_application(name):

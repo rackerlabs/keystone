@@ -19,13 +19,13 @@ import uuid
 
 from keystoneclient.common import cms
 import mock
+from oslo_config import cfg
 from oslo_utils import timeutils
 import six
 from testtools import matchers
 
 from keystone.catalog import core
 from keystone.common import driver_hints
-from keystone import config
 from keystone import exception
 from keystone import tests
 from keystone.tests import default_fixtures
@@ -34,7 +34,7 @@ from keystone.tests import utils as test_utils
 from keystone.token import provider
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 NULL_OBJECT = object()
 
