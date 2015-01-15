@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_40673725",
+        "filename": "keystone/tests/mapping_fixtures.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-15T12:32:27Z",
+      "side": 1,
+      "message": "Marek, he meant to add another value into the \"orgPersonType\" key, instead of creating a new assertion (EMPLOYEE_ASSERTION_MULTIPLE_GROUPS).",
+      "parentUuid": "3a961159_75e156cf",
+      "revId": "cfcb1076a9a3049bbf13c51d79fc56197114671c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_83d96224",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 4
