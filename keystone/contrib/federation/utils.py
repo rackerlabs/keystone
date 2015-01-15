@@ -16,15 +16,15 @@ import re
 
 import jsonschema
 from oslo.utils import timeutils
+from oslo_config import cfg
 import six
 
-from keystone.common import config
 from keystone import exception
 from keystone.i18n import _, _LW
 from keystone.openstack.common import log
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 

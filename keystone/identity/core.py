@@ -35,7 +35,7 @@ from keystone import notifications
 from keystone.openstack.common import log
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 
 LOG = log.getLogger(__name__)
 
@@ -153,7 +153,7 @@ class DomainConfigs(dict):
                         self._load_config(assignment_api,
                                           [os.path.join(r, fname)],
                                           fname[len(DOMAIN_CONF_FHEAD):
-                                                -len(DOMAIN_CONF_FTAIL)])
+                                                - len(DOMAIN_CONF_FTAIL)])
                     else:
                         LOG.debug(('Ignoring file (%s) while scanning domain '
                                    'config directory'),

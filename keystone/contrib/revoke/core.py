@@ -14,13 +14,13 @@ import abc
 import datetime
 
 from oslo.utils import timeutils
+from oslo_config import cfg
 import six
 
 from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import extension
 from keystone.common import manager
-from keystone import config
 from keystone.contrib.revoke import model
 from keystone import exception
 from keystone.i18n import _
@@ -29,7 +29,7 @@ from keystone.openstack.common import log
 from keystone.openstack.common import versionutils
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 

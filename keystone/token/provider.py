@@ -22,12 +22,12 @@ import uuid
 
 from keystoneclient.common import cms
 from oslo.utils import timeutils
+from oslo_config import cfg
 import six
 
 from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import manager
-from keystone import config
 from keystone import exception
 from keystone.i18n import _, _LE, _LW
 from keystone.models import token_model
@@ -37,7 +37,7 @@ from keystone.openstack.common import versionutils
 from keystone.token import persistence
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 SHOULD_CACHE = cache.should_cache_fn('token')
 

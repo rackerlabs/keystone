@@ -15,15 +15,15 @@ import datetime
 import uuid
 
 from oslo.utils import timeutils
+from oslo_config import cfg
 import six
 
-from keystone import config
 from keystone import exception
 from keystone import tests
 from keystone.tests import test_backend
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 
 
 class KvsToken(tests.TestCase, test_backend.TokenTests):

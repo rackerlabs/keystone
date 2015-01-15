@@ -14,16 +14,16 @@ import datetime
 import uuid
 
 from oslo.serialization import jsonutils
+from oslo_config import cfg
 
 from keystone.common import utils as common_utils
-from keystone import config
 from keystone import exception
 from keystone import service
 from keystone import tests
 from keystone.tests import utils
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 
 TZ = utils.TZ
 
