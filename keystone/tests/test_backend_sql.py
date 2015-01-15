@@ -669,6 +669,32 @@ class SqlTokenCacheInvalidation(SqlTests, test_backend.TokenCacheInvalidation):
 
 
 class SqlFilterTests(SqlTests, test_backend.FilterTests):
+
+    def test_list_entities_filtered_by_domain(self):
+        # NOTE(henry-nash): This method is here rather than in test_backend
+        # since any domain filtering with LDAP is handled by the manager
+        # layer (and is already tested elsewhere) not at the LDAP level.
+        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.assignment_api.create_domain(domain1['id'], domain1)
+
+        for entity in ['user', 'group', 'project']:
+            # Create 20 entities, 14 of which are in domain1
+            entity_list = self._create_test_data(entity, 6)
+            domain1_entity_list = self._create_test_data(entity, 14,
+                                                         domain1['id'])
+
+            # Should get back the 14 entities in domain1
+            hints = driver_hints.Hints()
+            hints.add_filter('domain_id', domain1['id'])
+            entities = self._list_entities(entity)(hints=hints)
+            self.assertEqual(14, len(entities))
+            self._match_with_list(entities, domain1_entity_list)
+            # Check the driver has removed the filter from the list hints
+            self.assertFalse(hints.get_exact_filter_by_name('domain_id'))
+
+            self._delete_test_data(entity, entity_list)
+            self._delete_test_data(entity, domain1_entity_list)
+
     def test_filter_sql_injection_attack(self):
         """Test against sql injection attack on filters
 
