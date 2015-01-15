@@ -16,6 +16,24 @@
       "revId": "ea0e55c7c78b9f10c61d6def7b42340dc8ec8ecd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_5a262d17",
+        "filename": "keystone/common/sql/migrate_repo/versions/042_endpoint_enabled.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-01-15T22:46:05Z",
+      "side": 1,
+      "message": "session.close() was removed here in commit 90fd2ee0. It could have been removed in the patch you mentioned, but, frankly, I see it only now and I think it would not have any difference, because we use session only for a single transaction.",
+      "parentUuid": "3a961159_5add4d6f",
+      "revId": "ea0e55c7c78b9f10c61d6def7b42340dc8ec8ecd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
