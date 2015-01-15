@@ -155,6 +155,38 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
                           user['name'],
                           DEFAULT_DOMAIN_ID)
 
+    def test_create_user_case_sensitivity(self):
+        # user name case sensitivity is down to the fact that it is marked as
+        # an SQL UNIQUE column, which may not valid for other backends, like
+        # LDAP.
+
+        # create a ref with a lowercase name
+        ref = {
+            'name': uuid.uuid4().hex.lower(),
+            'domain_id': DEFAULT_DOMAIN_ID}
+        ref = self.identity_api.create_user(ref)
+
+        # assign a new ID with the same name, but this time in uppercase
+        ref['name'] = ref['name'].upper()
+        self.identity_api.create_user(ref)
+
+    def test_create_project_case_sensitivity(self):
+        # project name case sensitivity is down to the fact that it is marked
+        # as an SQL UNIQUE column, which may not valid for other backends, like
+        # LDAP.
+
+        # create a ref with a lowercase name
+        ref = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex.lower(),
+            'domain_id': DEFAULT_DOMAIN_ID}
+        self.resource_api.create_project(ref['id'], ref)
+
+        # assign a new ID with the same name, but this time in uppercase
+        ref['id'] = uuid.uuid4().hex
+        ref['name'] = ref['name'].upper()
+        self.resource_api.create_project(ref['id'], ref)
+
     def test_create_null_project_name(self):
         tenant = {'id': uuid.uuid4().hex,
                   'name': None,
@@ -670,6 +702,32 @@ class SqlTokenCacheInvalidation(SqlTests, test_backend.TokenCacheInvalidation):
 
 
 class SqlFilterTests(SqlTests, test_backend.FilterTests):
+
+    def test_list_entities_filtered_by_domain(self):
+        # NOTE(henry-nash): This method is here rather than in test_backend
+        # since any domain filtering with LDAP is handled by the manager
+        # layer (and is already tested elsewhere) not at the LDAP level.
+        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.resource_api.create_domain(domain1['id'], domain1)
+
+        for entity in ['user', 'group', 'project']:
+            # Create 20 entities, 14 of which are in domain1
+            entity_list = self._create_test_data(entity, 6)
+            domain1_entity_list = self._create_test_data(entity, 14,
+                                                         domain1['id'])
+
+            # Should get back the 14 entities in domain1
+            hints = driver_hints.Hints()
+            hints.add_filter('domain_id', domain1['id'])
+            entities = self._list_entities(entity)(hints=hints)
+            self.assertEqual(14, len(entities))
+            self._match_with_list(entities, domain1_entity_list)
+            # Check the driver has removed the filter from the list hints
+            self.assertFalse(hints.get_exact_filter_by_name('domain_id'))
+
+            self._delete_test_data(entity, entity_list)
+            self._delete_test_data(entity, domain1_entity_list)
+
     def test_filter_sql_injection_attack(self):
         """Test against sql injection attack on filters
 
