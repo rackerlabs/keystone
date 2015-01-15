@@ -16,9 +16,9 @@ import copy
 import uuid
 
 from oslo.serialization import jsonutils
+from oslo_config import cfg
 from six.moves import urllib
 
-from keystone import config
 from keystone.contrib import oauth1
 from keystone.contrib.oauth1 import controllers
 from keystone.contrib.oauth1 import core
@@ -27,7 +27,7 @@ from keystone.tests.ksfixtures import temporaryfile
 from keystone.tests import test_v3
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 
 
 class OAuth1Tests(test_v3.RestfulTestCase):

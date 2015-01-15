@@ -16,6 +16,7 @@ import logging
 import os
 
 from oslo import i18n
+from oslo_config import cfg
 
 
 # NOTE(dstanek): i18n.enable_lazy() must be called before
@@ -34,7 +35,7 @@ from keystone.openstack.common import log
 from keystone import service
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 
 config.configure()
 sql.initialize()
