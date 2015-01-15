@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_f669f0c0",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-15T15:28:38Z",
+      "side": 1,
+      "message": "@Henry: Yes, defalul successful response would be 200 OK.\n@Wanghong: Imagine we \u0027add\u0027 (so PUT) to our store (backend), not send something (POST) to be processed.",
+      "parentUuid": "3a961159_f4c82123",
+      "revId": "c009ed101e623789699b3e967e1e125903482e75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baada198_0b2d2646",
         "filename": "keystone/contrib/federation/migrate_repo/versions/004_add_service_provider_table.py",
         "patchSetId": 5
