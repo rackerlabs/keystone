@@ -105,7 +105,7 @@ class Ec2ControllerCommon(object):
             credentials = ec2credentials
 
         if 'access' not in credentials:
-            raise exception.Unauthorized(message='EC2 signature not supplied.')
+            raise exception.Unauthorized(message='EC2 access not supplied.')
 
         creds_ref = self._get_credentials(credentials['access'])
         self.check_signature(creds_ref, credentials)
