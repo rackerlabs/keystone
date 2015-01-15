@@ -15,6 +15,7 @@
 import functools
 import sys
 
+from oslo_config import cfg
 from paste import deploy
 import routes
 
@@ -22,7 +23,6 @@ from keystone import assignment
 from keystone import auth
 from keystone import catalog
 from keystone.common import wsgi
-from keystone import config
 from keystone import controllers
 from keystone import credential
 from keystone import identity
@@ -34,7 +34,7 @@ from keystone import token
 from keystone import trust
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 

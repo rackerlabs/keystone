@@ -16,12 +16,14 @@
 import logging
 import os
 
+from oslo_config import cfg
+
 from keystone.common import config
 from keystone import exception
 from keystone.openstack.common import log
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 
 setup_authentication = config.setup_authentication
 configure = config.configure

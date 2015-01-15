@@ -14,11 +14,12 @@ from __future__ import absolute_import
 
 import uuid
 
+from oslo_config import cfg
+
 from keystone import clean
 from keystone.common import driver_hints
 from keystone.common import ldap as common_ldap
 from keystone.common import models
-from keystone import config
 from keystone import exception
 from keystone.i18n import _
 from keystone.identity.backends import ldap as ldap_identity
@@ -26,7 +27,7 @@ from keystone.openstack.common import log
 from keystone import resource
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
