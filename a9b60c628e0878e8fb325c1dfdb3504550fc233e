@@ -33,6 +33,23 @@
       "revId": "a9b60c628e0878e8fb325c1dfdb3504550fc233e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_1141ffa5",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 6802
+      },
+      "writtenOn": "2015-01-15T13:44:25Z",
+      "side": 1,
+      "message": "Nit: double space between after and connection",
+      "revId": "a9b60c628e0878e8fb325c1dfdb3504550fc233e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
