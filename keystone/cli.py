@@ -33,7 +33,7 @@ from keystone import token
 
 LOG = log.getLogger(__name__)
 
-CONF = config.CONF
+CONF = cfg.CONF
 
 
 class BaseApp(object):

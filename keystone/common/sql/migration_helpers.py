@@ -21,19 +21,19 @@ import migrate
 from migrate import exceptions
 from oslo.db.sqlalchemy import migration
 from oslo.serialization import jsonutils
+from oslo_config import cfg
 from oslo_utils import importutils
 import six
 import sqlalchemy
 
 from keystone.common import sql
 from keystone.common.sql import migrate_repo
-from keystone import config
 from keystone import contrib
 from keystone import exception
 from keystone.i18n import _
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 DEFAULT_EXTENSIONS = ['revoke']
 
 

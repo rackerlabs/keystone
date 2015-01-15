@@ -16,6 +16,7 @@ import sys
 
 from keystoneclient.common import cms
 from oslo.serialization import jsonutils
+from oslo_config import cfg
 from oslo_utils import importutils
 from oslo_utils import timeutils
 import six
@@ -33,7 +34,7 @@ from keystone.openstack.common import log
 
 LOG = log.getLogger(__name__)
 
-CONF = config.CONF
+CONF = cfg.CONF
 
 # registry of authentication methods
 AUTH_METHODS = {}

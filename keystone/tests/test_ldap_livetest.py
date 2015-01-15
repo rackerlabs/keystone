@@ -17,15 +17,15 @@ import uuid
 
 import ldap
 import ldap.modlist
+from oslo_config import cfg
 
-from keystone import config
 from keystone import exception
 from keystone.identity.backends import ldap as identity_ldap
 from keystone import tests
 from keystone.tests import test_backend_ldap
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 
 
 def create_object(dn, attrs):

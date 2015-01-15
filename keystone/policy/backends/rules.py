@@ -17,15 +17,16 @@
 
 import os.path
 
+from oslo_config import cfg
+
 from keystone.common import utils
-from keystone import config
 from keystone import exception
 from keystone.openstack.common import log
 from keystone.openstack.common import policy as common_policy
 from keystone import policy
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
