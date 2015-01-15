@@ -13,11 +13,11 @@
 # under the License.
 
 from oslo.serialization import jsonutils
+from oslo_config import cfg
 from oslo_middleware import sizelimit
 import six
 
 from keystone.common import authorization
-from keystone.common import config
 from keystone.common import wsgi
 from keystone import exception
 from keystone.i18n import _LW
@@ -25,7 +25,7 @@ from keystone.models import token_model
 from keystone.openstack.common import log
 from keystone.openstack.common import versionutils
 
-CONF = config.CONF
+CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 

@@ -16,6 +16,7 @@
 
 import abc
 
+from oslo_config import cfg
 import six
 
 from keystone import clean
@@ -23,7 +24,6 @@ from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
-from keystone import config
 from keystone import exception
 from keystone.i18n import _
 from keystone.i18n import _LE, _LI
@@ -32,7 +32,7 @@ from keystone.openstack.common import log
 from keystone.openstack.common import versionutils
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 ASSIGNMENT_SHOULD_CACHE = cache.should_cache_fn('assignment')
 ROLE_SHOULD_CACHE = cache.should_cache_fn('role')
@@ -382,23 +382,23 @@ class Manager(manager.Manager):
         """
         self.driver.get_project(tenant_id)
         try:
-            self.role_api.get_role(config.CONF.member_role_id)
+            self.role_api.get_role(CONF.member_role_id)
             self.driver.add_role_to_user_and_project(
                 user_id,
                 tenant_id,
-                config.CONF.member_role_id)
+                CONF.member_role_id)
         except exception.RoleNotFound:
             LOG.info(_LI("Creating the default role %s "
                          "because it does not exist."),
-                     config.CONF.member_role_id)
+                     CONF.member_role_id)
             role = {'id': CONF.member_role_id,
                     'name': CONF.member_role_name}
-            self.role_api.create_role(config.CONF.member_role_id, role)
+            self.role_api.create_role(CONF.member_role_id, role)
             # now that default role exists, the add should succeed
             self.driver.add_role_to_user_and_project(
                 user_id,
                 tenant_id,
-                config.CONF.member_role_id)
+                CONF.member_role_id)
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
         self.driver.get_project(tenant_id)

@@ -16,9 +16,9 @@ import copy
 import functools
 
 from oslo.utils import timeutils
+from oslo_config import cfg
 
 from keystone.common import sql
-from keystone import config
 from keystone import exception
 from keystone.i18n import _LI
 from keystone.openstack.common import log
@@ -26,7 +26,7 @@ from keystone import token
 from keystone.token import provider
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 

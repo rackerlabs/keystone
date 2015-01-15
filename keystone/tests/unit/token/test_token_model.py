@@ -14,15 +14,15 @@ import copy
 import uuid
 
 from oslo.utils import timeutils
+from oslo_config import cfg
 
-from keystone.common import config
 from keystone import exception
 from keystone.models import token_model
 from keystone.tests import core
 from keystone.tests import test_token_provider
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 
 
 class TestKeystoneTokenModel(core.TestCase):

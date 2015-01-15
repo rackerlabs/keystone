@@ -17,10 +17,10 @@ from __future__ import absolute_import
 import copy
 
 from oslo.utils import timeutils
+from oslo_config import cfg
 import six
 
 from keystone.common import kvs
-from keystone import config
 from keystone import exception
 from keystone.i18n import _, _LE, _LW
 from keystone.openstack.common import log
@@ -28,7 +28,7 @@ from keystone import token
 from keystone.token import provider
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 

@@ -14,15 +14,15 @@
 
 from keystoneclient.common import cms
 from oslo.utils import timeutils
+from oslo_config import cfg
 import six
 
-from keystone.common import config
 from keystone.contrib import federation
 from keystone import exception
 from keystone.i18n import _
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 # supported token versions
 V2 = 'v2.0'
 V3 = 'v3.0'
