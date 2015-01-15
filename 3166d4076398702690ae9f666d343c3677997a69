@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_f407f07e",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-15T21:43:06Z",
+      "side": 1,
+      "message": "_require_valid_filter doesn\u0027t require that filters is in endpoint_group, so there\u0027s no need for this check.",
+      "revId": "3166d4076398702690ae9f666d343c3677997a69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f42e10f9",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 770,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-15T21:43:06Z",
+      "side": 1,
+      "message": "Remove the bug reference. I don\u0027t want every line of keystone code to have a bug reference. This info is in the git log already.",
+      "revId": "3166d4076398702690ae9f666d343c3677997a69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
