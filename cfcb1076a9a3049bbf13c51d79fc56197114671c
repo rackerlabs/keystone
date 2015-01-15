@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_38925b9f",
+        "filename": "keystone/tests/mapping_fixtures.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-15T15:05:24Z",
+      "side": 1,
+      "message": "but the difference is not only this one \u0027Contractor\u0027 parameter.",
+      "parentUuid": "3a961159_40673725",
+      "revId": "cfcb1076a9a3049bbf13c51d79fc56197114671c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_83d96224",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 4
