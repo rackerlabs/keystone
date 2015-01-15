@@ -24,12 +24,12 @@ from oslo import i18n
 from oslo.serialization import jsonutils
 from oslo.utils import importutils
 from oslo.utils import strutils
+from oslo_config import cfg
 import routes.middleware
 import six
 import webob.dec
 import webob.exc
 
-from keystone.common import config
 from keystone.common import dependency
 from keystone.common import utils
 from keystone import exception
@@ -40,7 +40,7 @@ from keystone.models import token_model
 from keystone.openstack.common import log
 
 
-CONF = config.CONF
+CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 # Environment variable used to pass the request context
