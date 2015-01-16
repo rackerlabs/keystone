@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_300fabe1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T16:36:34Z",
+      "side": 1,
+      "message": "Agreed",
+      "parentUuid": "3a961159_cdffb4ff",
+      "revId": "f96ee99a795be431b1355f6df2a8c1b5cdade868",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_1b549552",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 7
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_100c6feb",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1066,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T16:36:34Z",
+      "side": 1,
+      "message": "Agreed.",
+      "parentUuid": "3a961159_1b549552",
+      "revId": "f96ee99a795be431b1355f6df2a8c1b5cdade868",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_4d3ae4cd",
         "filename": "keystone/tests/test_v3_assignment.py",
         "patchSetId": 7
@@ -47,6 +83,24 @@
       "writtenOn": "2015-01-16T14:04:47Z",
       "side": 1,
       "message": "I really don\u0027t like this idea of embedding re that we expand later.....is that really necessary?  Test code must be easer to understand than the code it is testing - or we will have more bugs in our test code....Again, original code is clearer imho",
+      "revId": "f96ee99a795be431b1355f6df2a8c1b5cdade868",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_9ca1583c",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T16:36:34Z",
+      "side": 1,
+      "message": "Henry, this will be used on a follow on patch that creates a suite of tests for role assignments filtering.\nIf I want to filter by user id, for example, I would get a ref (method below) with assignment link (this method) like this:\n\n{\n    \u0027user\u0027: {\u0027id\u0027: \u0027ni298n90\u0027},\n    \u0027links\u0027: {\u0027assignment\u0027: \u0027.+/(domains|users)/.+/users/ni298n90/roles/.+\u0027}\n}\n\nand then I would be able to assert that ALL returned assignments match this pattern.\nAs I would be testing user filtering, those are the only attributes that matter.\n\nAlso, it doesn\u0027t break current tests",
+      "parentUuid": "3a961159_4d3ae4cd",
       "revId": "f96ee99a795be431b1355f6df2a8c1b5cdade868",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
