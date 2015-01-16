@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_3e54d520",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1405,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T20:43:57Z",
+      "side": 1,
+      "message": "It is needed by RoleAssignmentFailureTestCase and RoleAssignmentInheritedTestCase.\n\nI will set this config in both, makes more sense. ++",
+      "parentUuid": "3a961159_5b19bd78",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_bb29c18a",
         "filename": "keystone/tests/test_v3_assignment.py",
         "patchSetId": 19
@@ -47,6 +65,24 @@
       "writtenOn": "2015-01-16T14:04:19Z",
       "side": 1,
       "message": "nit: .",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_9e34e9fb",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1408,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T20:43:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_bb29c18a",
       "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_c70ea43c",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1428,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T20:43:57Z",
+      "side": 1,
+      "message": "It should mean sample.\nI will improve naming.",
+      "parentUuid": "3a961159_3b3cf1be",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_1b6815b9",
         "filename": "keystone/tests/test_v3_assignment.py",
         "patchSetId": 19
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_de11115d",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1471,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T20:43:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_1b6815b9",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_fbf26903",
         "filename": "keystone/tests/test_v3_assignment.py",
         "patchSetId": 19
@@ -98,6 +170,24 @@
       "writtenOn": "2015-01-16T14:04:19Z",
       "side": 1,
       "message": "why do you need get_role_assignments_query_url() method since it just pass to _build_role_assignment_query_url() method? Just to have \"effective\" set to False by default?",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_61140041",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1482,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T20:43:57Z",
+      "side": 1,
+      "message": "You got the idea at line 1715.",
+      "parentUuid": "3a961159_fbf26903",
       "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +228,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_a129888a",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1551,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T20:43:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_fb8189fa",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_9bdde516",
         "filename": "keystone/tests/test_v3_assignment.py",
         "patchSetId": 19
@@ -149,6 +257,24 @@
       "writtenOn": "2015-01-16T14:04:19Z",
       "side": 1,
       "message": "response_length?",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_c11cd468",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1562,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T20:43:57Z",
+      "side": 1,
+      "message": "response_length could be confusing, since this var is used only at line 1576, when another response is already got (line 1573)\n\nwill change it to:\n\n    existing_assignments \u003d response.result.get(\u0027role_assignments\u0027)\n\nand use\n\n    len(existing_assignments)\n\nat line 1576",
+      "parentUuid": "3a961159_9bdde516",
       "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -172,6 +298,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_013a5ccc",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1587,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T20:43:57Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a961159_5b1c5dc2",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_5b4a9dad",
         "filename": "keystone/tests/test_v3_assignment.py",
         "patchSetId": 19
@@ -183,6 +327,24 @@
       "writtenOn": "2015-01-16T14:04:19Z",
       "side": 1,
       "message": "would enable the inherited flag just here.",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_213598da",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1686,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T20:43:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_5b4a9dad",
       "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +368,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_e1e630e6",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1690,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T20:43:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_7b459999",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_7bdcb9e1",
         "filename": "keystone/tests/test_v3_assignment.py",
         "patchSetId": 19
@@ -217,6 +397,24 @@
       "writtenOn": "2015-01-16T14:04:19Z",
       "side": 1,
       "message": "ahh, now I get why this method. Seems like the effective argument is redundant, since you can pass True / False directly (see comment below).",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_5efd2108",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1715,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T20:43:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_7bdcb9e1",
       "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -240,6 +438,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_c105b410",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1737,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T20:43:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_fbe7c9a8",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_cd26d4b9",
         "filename": "keystone/tests/test_v3_assignment.py",
         "patchSetId": 19
@@ -251,6 +467,24 @@
       "writtenOn": "2015-01-16T14:04:19Z",
       "side": 1,
       "message": "maybe use \"amount\" or \"quantity\" instead of \"counts\" here and in the other occurrences in the file.",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_922698b8",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1776,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T20:43:57Z",
+      "side": 1,
+      "message": "Count is how it\u0027s called in the method that asserts it. [1]\nLet\u0027s see other people views.\n\n[1] \nhttps://github.com/openstack/keystone/blob/master/keystone/tests/test_v3.py#L1077-L1090",
+      "parentUuid": "3a961159_cd26d4b9",
       "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
