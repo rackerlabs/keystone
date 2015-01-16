@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_d5373cfc",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T12:51:59Z",
+      "side": 1,
+      "message": "As asserted on existing tests, the standard driver may be None.\nIn this case, you should use:\n\nself._any_sql \u003d self.driver and self.driver.is_sql",
+      "revId": "c88ba9fc23fc888d9402498606623f0f10fb1311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_5530ace8",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T12:51:59Z",
+      "side": 1,
+      "message": "Unrelated change. As this test is originally doing, the standard_driver may be None, right?",
+      "revId": "c88ba9fc23fc888d9402498606623f0f10fb1311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_150c6441",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T12:51:59Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "c88ba9fc23fc888d9402498606623f0f10fb1311",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
