@@ -19,8 +19,8 @@ import functools
 import os
 import uuid
 
-from oslo.utils import importutils
 from oslo_config import cfg
+from oslo_utils import importutils
 import six
 
 from keystone import clean
