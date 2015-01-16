@@ -16,6 +16,24 @@
       "revId": "07974f6d5480672699af8f2f9bca64c0e3e761a6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_2d203899",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-01-16T14:03:26Z",
+      "side": 1,
+      "message": "They are the same. Fixed!",
+      "parentUuid": "3a961159_80b5741a",
+      "revId": "07974f6d5480672699af8f2f9bca64c0e3e761a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
