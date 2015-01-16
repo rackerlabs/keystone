@@ -34,6 +34,24 @@
       "revId": "8002584aea3b436118ec3e854fc49d5ee38e26fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_03da6b4a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 637,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-16T15:24:09Z",
+      "side": 1,
+      "message": "aah, right - got you....maybe a slight wording might help to clarify, e.g.:\n\nThis method should be deleted and calls should simply be made to \"list_role_assignments(role_id\u003drole_id) directly.\"",
+      "parentUuid": "3a961159_20412039",
+      "revId": "8002584aea3b436118ec3e854fc49d5ee38e26fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
