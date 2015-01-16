@@ -20,7 +20,7 @@ import os
 import uuid
 
 from oslo.config import cfg
-from oslo.utils import importutils
+from oslo_utils import importutils
 import six
 
 from keystone import clean
@@ -153,7 +153,7 @@ class DomainConfigs(dict):
                         self._load_config(assignment_api,
                                           [os.path.join(r, fname)],
                                           fname[len(DOMAIN_CONF_FHEAD):
-                                                -len(DOMAIN_CONF_FTAIL)])
+                                                - len(DOMAIN_CONF_FTAIL)])
                     else:
                         LOG.debug(('Ignoring file (%s) while scanning domain '
                                    'config directory'),
