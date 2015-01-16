@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_47f8f449",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-16T20:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_2a47f6bd",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_8a7c6aed",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2014-12-28T17:50:09Z",
       "side": 1,
       "message": "The name of this should be changed to FilterAttr, otherwise I find it confusing since LDAP uses attributes in other places too where it doesn\u0027t need to be escaped.",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_674090a2",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 620,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-16T20:40:24Z",
+      "side": 1,
+      "message": "We use expr module only when we need proper escaping, and that\u0027s mostly only filters and DNs. If someone uses Attr where one doesn\u0027t need it, str(attr) would be just attr\u0027s name, no extra escaping. Besides, FilterAttr seems too long...",
+      "parentUuid": "3a961159_8a7c6aed",
       "revId": "e8807e71adf2599154752035c24c197f1cd83348",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_272128fc",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 650,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-16T20:40:24Z",
+      "side": 1,
+      "message": "It\u0027s there to provide ANY and a shortcut for expr.Attr(\u0027objectClass\u0027). If we hide it in Attr (or FilterAttr), it looses purpose.",
+      "parentUuid": "3a961159_ea6a4e1a",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_0a687a20",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 13
@@ -64,6 +118,24 @@
       "writtenOn": "2014-12-28T17:50:09Z",
       "side": 1,
       "message": "this shouldn\u0027t be necessary, since the class should be convertable by itself.",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_cc532b14",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 935,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-16T20:40:24Z",
+      "side": 1,
+      "message": "utf8_encode method won\u0027t work otherwise. search_* methods are considered to be a border between object and string representations for filters.",
+      "parentUuid": "3a961159_0a687a20",
       "revId": "e8807e71adf2599154752035c24c197f1cd83348",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_8c884323",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1435,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-16T20:40:24Z",
+      "side": 1,
+      "message": "There are exactly 50% places (7 out of 14) where id_attr is used as string and would require adding \".name\" or \"six.text_type(..)\" around it to make it work as Attr.\nAnd there are only 2 places where \"expr.Attr(self.id_attr)\" is needed. I think, that makes this choice obvious.",
+      "parentUuid": "3a961159_ca5d927b",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_cad4b2bf",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 13
@@ -115,6 +205,24 @@
       "writtenOn": "2014-12-28T17:50:09Z",
       "side": 1,
       "message": "query_params could be query_params or [] then could avoid the if statement.",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_c795c432",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1473,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-16T20:40:24Z",
+      "side": 1,
+      "message": "Made Junction handle query_params and FilterExpr ignore None\u0027s. That should do it.",
+      "parentUuid": "3a961159_cad4b2bf",
       "revId": "e8807e71adf2599154752035c24c197f1cd83348",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_87881c23",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1491,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-16T20:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_aae686ae",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_ca15924a",
         "filename": "keystone/common/ldap/expr.py",
         "patchSetId": 13
@@ -149,6 +275,24 @@
       "writtenOn": "2014-12-28T17:55:49Z",
       "side": 1,
       "message": "use ldap.dn rather than have to rename to ldap_dn.",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_61dec06b",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-16T20:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_ca15924a",
       "revId": "e8807e71adf2599154752035c24c197f1cd83348",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -172,6 +316,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_81d00c54",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-16T20:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_ea096e33",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_4aa52246",
         "filename": "keystone/common/ldap/expr.py",
         "patchSetId": 13
@@ -183,6 +345,24 @@
       "writtenOn": "2014-12-28T17:50:09Z",
       "side": 1,
       "message": "strings should be marked for translation with _()",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_61fa40bb",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-16T20:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_4aa52246",
       "revId": "e8807e71adf2599154752035c24c197f1cd83348",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -206,6 +386,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_81372caf",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-16T20:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_0a84faaf",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_6a61fe10",
         "filename": "keystone/common/ldap/expr.py",
         "patchSetId": 13
@@ -217,6 +415,24 @@
       "writtenOn": "2014-12-28T17:50:09Z",
       "side": 1,
       "message": "isn\u0027t this the same as u\u0027\u0027.join(parts) ?",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_e140f007",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-16T20:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_6a61fe10",
       "revId": "e8807e71adf2599154752035c24c197f1cd83348",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -240,6 +456,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_4151c4d7",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-16T20:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_4a01a205",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_ca7032df",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 13
@@ -251,6 +485,24 @@
       "writtenOn": "2014-12-28T17:50:09Z",
       "side": 1,
       "message": "Can self.ldap_filter default to expr.EMPTY_ADDEND? Then this could be simpler.",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_01ca5c4e",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-16T20:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_ca7032df",
       "revId": "e8807e71adf2599154752035c24c197f1cd83348",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +543,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_e1a47008",
+        "filename": "keystone/tests/test_expr.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-16T20:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_ea740ed2",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_2a7ff6ac",
         "filename": "keystone/tests/test_expr.py",
         "patchSetId": 13
@@ -319,6 +589,24 @@
       "writtenOn": "2014-12-28T17:50:09Z",
       "side": 1,
       "message": "change \"filed\" to \"fields\".",
+      "revId": "e8807e71adf2599154752035c24c197f1cd83348",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_01ddfc6f",
+        "filename": "keystone/tests/test_expr.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-16T20:40:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_aa420666",
       "revId": "e8807e71adf2599154752035c24c197f1cd83348",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
