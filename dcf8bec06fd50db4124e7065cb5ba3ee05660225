@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_c0293c8a",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1050,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-16T12:57:46Z",
+      "side": 1,
+      "message": "not sure what others think, but to my mind this is trying to be too clever and it makes it hard to work out it is right.  In my view, test code should be written more simply...to make sure there aren\u0027t bugs in the tests. For reference, look up why Nasa\u0027s Polar Explorer crashed on Mars......an error in the test rig meant they missed a s/w bug that doomed the mission",
+      "revId": "dcf8bec06fd50db4124e7065cb5ba3ee05660225",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_40638cdc",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1066,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-16T12:57:46Z",
+      "side": 1,
+      "message": "maybe I\u0027m missing something...but what does this do in terms of testing....",
+      "revId": "dcf8bec06fd50db4124e7065cb5ba3ee05660225",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
