@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_1ba3b59e",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1050,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-16T13:49:12Z",
+      "side": 1,
+      "message": "maybe...I guess I\u0027ll let others comment...I personally just find the fixation with minimum lines of code in tests to be counter productive. I think the original code is much clearer.",
+      "parentUuid": "3a961159_20dda070",
+      "revId": "dcf8bec06fd50db4124e7065cb5ba3ee05660225",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_40638cdc",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 6
@@ -65,6 +83,24 @@
       "side": 1,
       "message": "It adds back to the ref the links extracted at line 1061",
       "parentUuid": "3a961159_40638cdc",
+      "revId": "dcf8bec06fd50db4124e7065cb5ba3ee05660225",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_9ba165ab",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1066,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-16T13:49:12Z",
+      "side": 1,
+      "message": "ahh, right",
+      "parentUuid": "3a961159_a05ef0e6",
       "revId": "dcf8bec06fd50db4124e7065cb5ba3ee05660225",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
