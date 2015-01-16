@@ -33,7 +33,7 @@ import os
 import time
 import uuid
 
-from oslo.serialization import jsonutils
+from oslo_serialization import jsonutils
 
 from keystone.common import utils
 from keystone import config
