@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_d569fcf8",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 637,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-16T12:47:59Z",
+      "side": 1,
+      "message": "is this comment saying that there is more to do in the future....or that we are now calling the right thing? Do we need any comment here at all if it is the later?",
+      "revId": "8002584aea3b436118ec3e854fc49d5ee38e26fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
