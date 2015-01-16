@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3a961159_d1b03b42",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T04:02:58Z",
+      "side": 1,
+      "message": "Why this value cannot be 0? \n\nDocumentation at keystone/common/config.py says:\n\"A value of \u00270\u0027 means wait forever.\", so setting client_socket_timeout to 0 would be a valid config value.\n\nIf not, the documentation needs to be updated.",
+      "revId": "a9b60c628e0878e8fb325c1dfdb3504550fc233e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_5d3da3dc",
         "filename": "keystone/tests/test_wsgi.py",
         "patchSetId": 12
@@ -13,6 +30,24 @@
       "writtenOn": "2015-01-13T21:51:32Z",
       "side": 1,
       "message": "why is it important for this to be 5 and not 6 or 7? A random number should be used.",
+      "revId": "a9b60c628e0878e8fb325c1dfdb3504550fc233e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_11ed6325",
+        "filename": "keystone/tests/test_wsgi.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T04:02:58Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a961159_5d3da3dc",
       "revId": "a9b60c628e0878e8fb325c1dfdb3504550fc233e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
