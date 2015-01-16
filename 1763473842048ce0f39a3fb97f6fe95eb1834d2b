@@ -1,0 +1,259 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_bb9e21b6",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-16T14:04:19Z",
+      "side": 1,
+      "message": "nice",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_5b19bd78",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1405,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-16T14:04:19Z",
+      "side": 1,
+      "message": "should this be active in a base class? Since it is not the default behavior, maybe this need to be inactive for the base class.",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_bb29c18a",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1408,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-16T14:04:19Z",
+      "side": 1,
+      "message": "nit: .",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_3b3cf1be",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1428,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-16T14:04:19Z",
+      "side": 1,
+      "message": "smp?",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_1b6815b9",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1471,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-16T14:04:19Z",
+      "side": 1,
+      "message": "nit: .",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_fbf26903",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1482,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-16T14:04:19Z",
+      "side": 1,
+      "message": "why do you need get_role_assignments_query_url() method since it just pass to _build_role_assignment_query_url() method? Just to have \"effective\" set to False by default?",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_1bf9f5c7",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1501,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-16T14:04:19Z",
+      "side": 1,
+      "message": "nice!",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_fb8189fa",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1551,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-16T14:04:19Z",
+      "side": 1,
+      "message": "nit: s/conrrectly/correctly",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_9bdde516",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1562,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-16T14:04:19Z",
+      "side": 1,
+      "message": "response_length?",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_5b1c5dc2",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1587,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-16T14:04:19Z",
+      "side": 1,
+      "message": "I\u0027d separate this method into 2:\n  delete_assignment\n  create_assignment\n\nAnd would extract the first lines before \"if cleanup:\" to a method.",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_5b4a9dad",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1686,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-16T14:04:19Z",
+      "side": 1,
+      "message": "would enable the inherited flag just here.",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7b459999",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1690,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-16T14:04:19Z",
+      "side": 1,
+      "message": "the last sentence is true for projects, but not for domains.",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_7bdcb9e1",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1715,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-16T14:04:19Z",
+      "side": 1,
+      "message": "ahh, now I get why this method. Seems like the effective argument is redundant, since you can pass True / False directly (see comment below).",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_fbe7c9a8",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1737,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-16T14:04:19Z",
+      "side": 1,
+      "message": "you are not using the argument",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_cd26d4b9",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1776,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-16T14:04:19Z",
+      "side": 1,
+      "message": "maybe use \"amount\" or \"quantity\" instead of \"counts\" here and in the other occurrences in the file.",
+      "revId": "1763473842048ce0f39a3fb97f6fe95eb1834d2b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
