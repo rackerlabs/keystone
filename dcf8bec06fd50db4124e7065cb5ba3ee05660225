@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "3a961159_20dda070",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1050,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T13:10:18Z",
+      "side": 1,
+      "message": "Would this help?\n\n        has_user \u003d bool(u and u.get(\u0027id\u0027))\n        has_group \u003d bool(u and u.get(\u0027id\u0027))\n        self.assertTrue(has_user ^ has_group)",
+      "revId": "dcf8bec06fd50db4124e7065cb5ba3ee05660225",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_40638cdc",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 6
@@ -30,6 +47,24 @@
       "writtenOn": "2015-01-16T12:57:46Z",
       "side": 1,
       "message": "maybe I\u0027m missing something...but what does this do in terms of testing....",
+      "revId": "dcf8bec06fd50db4124e7065cb5ba3ee05660225",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_a05ef0e6",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1066,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T13:10:18Z",
+      "side": 1,
+      "message": "It adds back to the ref the links extracted at line 1061",
+      "parentUuid": "3a961159_40638cdc",
       "revId": "dcf8bec06fd50db4124e7065cb5ba3ee05660225",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
