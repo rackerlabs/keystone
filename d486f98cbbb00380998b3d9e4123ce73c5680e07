@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_d531fc59",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-16T12:47:35Z",
+      "side": 1,
+      "message": "Default shouldn\u0027t be equal to project scope?\n\nIf not, there is an \"else\" statement missing in the _validate_and_normalize_scope_data() method? But I guess it would change the desired behavior since the token scope should be the default_project?\n\nAnother issue is if the default_project from a user is deleted, this user won\u0027t be able to get tokens anymore if don\u0027t specify a scope or it will receive an unscoped token?",
+      "revId": "d486f98cbbb00380998b3d9e4123ce73c5680e07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f598b86a",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-16T12:47:35Z",
+      "side": 1,
+      "message": "nit: single quotes everywhere",
+      "revId": "d486f98cbbb00380998b3d9e4123ce73c5680e07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
