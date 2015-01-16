@@ -16,6 +16,24 @@
       "revId": "8002584aea3b436118ec3e854fc49d5ee38e26fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_20412039",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 637,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T12:56:17Z",
+      "side": 1,
+      "message": "It should be a TODO, I think we have no need to keep a method that just make one call repassing all received params.\n\nWill address in a follow on patch.",
+      "parentUuid": "3a961159_d569fcf8",
+      "revId": "8002584aea3b436118ec3e854fc49d5ee38e26fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
