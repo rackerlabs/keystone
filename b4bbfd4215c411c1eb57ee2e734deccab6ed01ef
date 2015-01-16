@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_bbbab008",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-16T02:40:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_d44142a7",
+      "revId": "b4bbfd4215c411c1eb57ee2e734deccab6ed01ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_3cdc3674",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 5
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_3bc7a099",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-16T02:40:25Z",
+      "side": 1,
+      "message": "This is a pre-existing check.  Just moved",
+      "parentUuid": "3a961159_3cdc3674",
+      "revId": "b4bbfd4215c411c1eb57ee2e734deccab6ed01ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_bccf46b2",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 5
@@ -83,6 +119,24 @@
       "writtenOn": "2015-01-14T18:05:11Z",
       "side": 1,
       "message": "Same as above.",
+      "revId": "b4bbfd4215c411c1eb57ee2e734deccab6ed01ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_5bcaaca0",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-16T02:40:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_bccf46b2",
       "revId": "b4bbfd4215c411c1eb57ee2e734deccab6ed01ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
