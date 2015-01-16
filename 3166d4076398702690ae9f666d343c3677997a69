@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_efdc72e3",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-16T06:39:14Z",
+      "side": 1,
+      "message": "I add a bug: https://bugs.launchpad.net/keystone/+bug/1411517",
+      "parentUuid": "3a961159_0fb7fed8",
+      "revId": "3166d4076398702690ae9f666d343c3677997a69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_f42e10f9",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 3
