@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_80b5741a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-01-16T13:07:33Z",
+      "side": 1,
+      "message": "It\u0027s IdP above and IDP here. They mean the same, right?",
+      "revId": "07974f6d5480672699af8f2f9bca64c0e3e761a6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
