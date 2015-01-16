@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_b7dd4d16",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-16T17:05:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_49c9ff77",
+      "revId": "a74aafaacb89255b2ef1f7eccfaf78a64a9626eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_09dd3741",
         "filename": "keystone/tests/test_v3_auth.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-16T10:49:16Z",
       "side": 1,
       "message": "is it intended to work with uuid-only tokens? I tried removing these 3 lines and the tests passed ok",
+      "revId": "a74aafaacb89255b2ef1f7eccfaf78a64a9626eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_97bbf1bc",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-16T17:05:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_09dd3741",
       "revId": "a74aafaacb89255b2ef1f7eccfaf78a64a9626eb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_775e8514",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-16T17:05:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_ac26f1b7",
+      "revId": "a74aafaacb89255b2ef1f7eccfaf78a64a9626eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_ec955932",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2015-01-16T10:49:16Z",
       "side": 1,
       "message": "domain scoped tokens are not tested",
+      "revId": "a74aafaacb89255b2ef1f7eccfaf78a64a9626eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_725133d8",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-16T17:05:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_ec955932",
       "revId": "a74aafaacb89255b2ef1f7eccfaf78a64a9626eb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
