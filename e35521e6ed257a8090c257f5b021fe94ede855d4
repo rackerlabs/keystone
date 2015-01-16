@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_60eec8b6",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 906,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-16T13:28:14Z",
+      "side": 1,
+      "message": "for me, having a method called \"require_single_arg()\" that can accept no arguments is kind of confusing. Maybe have:\n\nassert_zero_or_one_arg()\nasset_exactly_one_arg()",
+      "revId": "e35521e6ed257a8090c257f5b021fe94ede855d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
