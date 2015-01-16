@@ -16,6 +16,24 @@
       "revId": "31c797bb613124e382755f892e8a9a27db109e83",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_206da032",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 568,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-16T13:26:34Z",
+      "side": 1,
+      "message": "...although perhaps an alternative name might be:\n\nassert_single_arg()",
+      "parentUuid": "3a961159_60e32834",
+      "revId": "31c797bb613124e382755f892e8a9a27db109e83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
