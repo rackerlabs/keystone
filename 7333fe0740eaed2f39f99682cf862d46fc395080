@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_09dd6c14",
+        "filename": "keystone/server/eventlet.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-01-16T17:46:27Z",
+      "side": 1,
+      "message": "Since this isn\u0027t a script do you need the shebang?",
+      "revId": "7333fe0740eaed2f39f99682cf862d46fc395080",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
