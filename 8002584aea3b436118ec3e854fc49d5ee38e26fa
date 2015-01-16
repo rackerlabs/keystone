@@ -52,6 +52,24 @@
       "revId": "8002584aea3b436118ec3e854fc49d5ee38e26fa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_f240c360",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 637,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-16T17:23:28Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a961159_03da6b4a",
+      "revId": "8002584aea3b436118ec3e854fc49d5ee38e26fa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
