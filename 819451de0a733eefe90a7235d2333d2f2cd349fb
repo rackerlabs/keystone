@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_702e7afb",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-17T19:49:49Z",
+      "side": 1,
+      "message": "Because it doesn\u0027t assert subdicts recursively.\n\n{1:{2:{3:4}}} is a subdict of {1:{2:{3,4}, 5:{6:7}}}",
+      "parentUuid": "3a961159_4d180b84",
+      "revId": "819451de0a733eefe90a7235d2333d2f2cd349fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_4d956be2",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 7
