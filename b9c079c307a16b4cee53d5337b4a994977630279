@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_b33713fd",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-17T03:35:52Z",
+      "side": 1,
+      "message": "nit: This line could be removed",
+      "revId": "b9c079c307a16b4cee53d5337b4a994977630279",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_d33adfe4",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-17T03:35:52Z",
+      "side": 1,
+      "message": "A comment here saying what is being asserted could be helpful. Something like:\n\n# Get a project-scoped token from the domain-scoped token",
+      "revId": "b9c079c307a16b4cee53d5337b4a994977630279",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
