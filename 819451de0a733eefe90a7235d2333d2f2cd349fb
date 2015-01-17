@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_ed71b7de",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-17T17:40:01Z",
+      "side": 1,
+      "message": "This method is implemented by unittest as well, but it has been deprecated since version 3.2 [1] I will add doc\n\n[1] https://docs.python.org/2/library/unittest.html#unittest.TestCase.assertDictContainsSubset",
+      "parentUuid": "3a961159_8d9bd315",
+      "revId": "819451de0a733eefe90a7235d2333d2f2cd349fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_4d956be2",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-17T17:30:26Z",
       "side": 1,
       "message": "why do you need to get the id? Isn\u0027t the \"self.assertIsNone(entity.get(\u0027group\u0027))\" enough if you are already in this branch?",
+      "revId": "819451de0a733eefe90a7235d2333d2f2cd349fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_6d66a72a",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1051,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-17T17:40:01Z",
+      "side": 1,
+      "message": "A valid user/group/role has to have an id\nSee this change\u0027 commit",
+      "parentUuid": "3a961159_4d956be2",
       "revId": "819451de0a733eefe90a7235d2333d2f2cd349fb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
