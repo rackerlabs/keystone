@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_8d9bd315",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-17T17:30:26Z",
+      "side": 1,
+      "message": "who is the dict and subset?",
+      "revId": "819451de0a733eefe90a7235d2333d2f2cd349fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_4d956be2",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1051,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-17T17:30:26Z",
+      "side": 1,
+      "message": "why do you need to get the id? Isn\u0027t the \"self.assertIsNone(entity.get(\u0027group\u0027))\" enough if you are already in this branch?",
+      "revId": "819451de0a733eefe90a7235d2333d2f2cd349fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
