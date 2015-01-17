@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_4d180b84",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-17T17:51:00Z",
+      "side": 1,
+      "message": "++\n\nsince it is deprecated, why not do something like what is proposed here: http://stackoverflow.com/questions/20050913/python-unittests-assertdictcontainssubset-recommended-alternative ?",
+      "parentUuid": "3a961159_ed71b7de",
+      "revId": "819451de0a733eefe90a7235d2333d2f2cd349fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_4d956be2",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 7
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "A valid user/group/role has to have an id\nSee this change\u0027 commit",
       "parentUuid": "3a961159_4d956be2",
+      "revId": "819451de0a733eefe90a7235d2333d2f2cd349fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_ed1ff76d",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1051,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-17T17:51:00Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a961159_6d66a72a",
       "revId": "819451de0a733eefe90a7235d2333d2f2cd349fb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
