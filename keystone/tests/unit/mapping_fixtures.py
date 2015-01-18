@@ -869,7 +869,7 @@ EMPLOYEE_ASSERTION = {
     'UserName': 'tbo',
     'FirstName': 'Tim',
     'LastName': 'Bo',
-    'orgPersonType': 'Employee;BuildingX;'
+    'orgPersonType': 'Employee;BuildingX'
 }
 
 EMPLOYEE_ASSERTION_MULTIPLE_GROUPS = {
@@ -885,7 +885,7 @@ EMPLOYEE_ASSERTION_PREFIXED = {
     'PREFIX_UserName': 'tbo',
     'PREFIX_FirstName': 'Tim',
     'PREFIX_LastName': 'Bo',
-    'PREFIX_orgPersonType': 'SuperEmployee;BuildingX;'
+    'PREFIX_orgPersonType': 'SuperEmployee;BuildingX'
 }
 
 CONTRACTOR_ASSERTION = {
@@ -893,7 +893,7 @@ CONTRACTOR_ASSERTION = {
     'UserName': 'jsmith',
     'FirstName': 'Jill',
     'LastName': 'Smith',
-    'orgPersonType': 'Contractor;Non-Dev;'
+    'orgPersonType': 'Contractor;Non-Dev'
 }
 
 ADMIN_ASSERTION = {
@@ -901,7 +901,7 @@ ADMIN_ASSERTION = {
     'UserName': 'bob',
     'FirstName': 'Bob',
     'LastName': 'Thompson',
-    'orgPersonType': 'Admin;Chief;'
+    'orgPersonType': 'Admin;Chief'
 }
 
 CUSTOMER_ASSERTION = {
@@ -909,7 +909,7 @@ CUSTOMER_ASSERTION = {
     'UserName': 'bwilliams',
     'FirstName': 'Beth',
     'LastName': 'Williams',
-    'orgPersonType': 'Customer;'
+    'orgPersonType': 'Customer'
 }
 
 ANOTHER_CUSTOMER_ASSERTION = {
@@ -937,7 +937,7 @@ BAD_TESTER_ASSERTION = {
     'UserName': 'Evil',
     'FirstName': 'Test',
     'LastName': 'Account',
-    'orgPersonType': 'Tester;'
+    'orgPersonType': 'Tester'
 }
 
 BAD_DEVELOPER_ASSERTION = {
@@ -953,7 +953,7 @@ MALFORMED_TESTER_ASSERTION = {
     'UserName': 'testacct',
     'FirstName': 'Test',
     'LastName': 'Account',
-    'orgPersonType': 'Tester;',
+    'orgPersonType': 'Tester',
     'object': object(),
     'dictionary': dict(zip('teststring', xrange(10))),
     'tuple': tuple(xrange(5))
