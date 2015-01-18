@@ -157,6 +157,24 @@
       "revId": "819451de0a733eefe90a7235d2333d2f2cd349fb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_df3499e0",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1077,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-18T15:57:36Z",
+      "side": 1,
+      "message": "Nice catch! In this patch, this should be kept indented as it was.",
+      "parentUuid": "3a961159_5e4d0f98",
+      "revId": "819451de0a733eefe90a7235d2333d2f2cd349fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
