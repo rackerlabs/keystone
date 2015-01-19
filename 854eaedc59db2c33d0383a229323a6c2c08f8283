@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_e5b527ee",
+        "filename": "dsvm/federation/devstack/files/key-federation-setup.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-19T22:30:52Z",
+      "side": 1,
+      "message": "remove commented-out code.",
+      "revId": "854eaedc59db2c33d0383a229323a6c2c08f8283",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_c5a74bbb",
+        "filename": "dsvm/federation/devstack/lib/keystone-federation",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-19T22:30:52Z",
+      "side": 1,
+      "message": "#! /bin/bash",
+      "revId": "854eaedc59db2c33d0383a229323a6c2c08f8283",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_459b5b73",
+        "filename": "dsvm/federation/devstack/lib/keystone-federation",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-19T22:30:52Z",
+      "side": 1,
+      "message": "remove commented-out code.",
+      "revId": "854eaedc59db2c33d0383a229323a6c2c08f8283",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
