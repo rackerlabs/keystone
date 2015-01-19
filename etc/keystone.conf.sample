@@ -66,8 +66,11 @@
 # (keystone.middleware:RequestBodySizeLimiter). (integer value)
 #max_request_body_size = 114688
 
-# Limit the sizes of user & project ID/names. (integer value)
+# Limit the sizes of user ID & project ID/names. (integer value)
 #max_param_size = 64
+
+# Limit the size of username. (integer value)
+# max_username_size=255
 
 # Similar to max_param_size, but provides an exception for token values.
 # (integer value)
