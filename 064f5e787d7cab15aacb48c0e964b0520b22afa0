@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_7928fe36",
+        "filename": "keystone/common/sql/migrate_repo/versions/063_insert_assignment_inherited_pk.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-20T02:03:00Z",
+      "side": 1,
+      "message": "No. The usual would be simpler, thanks.",
+      "parentUuid": "3a961159_a8893627",
+      "revId": "064f5e787d7cab15aacb48c0e964b0520b22afa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_c853e214",
         "filename": "keystone/tests/test_sql_upgrade.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-19T23:14:53Z",
       "side": 1,
       "message": "since you have added the else clause here, I\u0027d suggest this comment goes in the else part",
+      "revId": "064f5e787d7cab15aacb48c0e964b0520b22afa0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_992daa48",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1524,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-20T02:03:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_c853e214",
       "revId": "064f5e787d7cab15aacb48c0e964b0520b22afa0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
