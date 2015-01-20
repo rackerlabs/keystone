@@ -373,6 +373,15 @@ The drivers Keystone provides are:
   specified in the ``[memcache]\servers`` configuration option in the Keystone
   config.
 
+* ``keystone.token.persistence.backends.redis.Token`` - The Redis based
+  token persistence backend. This backend relies on ``dogpile.cache`` and
+  stores the token data in a Redis server. The server URL and other
+  configuration parameters for Redis server are specified in the
+  ``[cache]\backend_argument`` options in the Keystone config:
+
+  * backend_argument=url:redis://[:password]@localhost:6379/0
+  * backend_argument=url:unix://[:password]@/path/to/socket.sock?db=0
+
 
 .. WARNING::
     It is recommended you use the
