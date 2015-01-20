@@ -17,11 +17,12 @@
 
 import os.path
 
+from oslo_policy import policy as common_policy
+
 from keystone.common import utils
 from keystone import config
 from keystone import exception
 from keystone.openstack.common import log
-from keystone.openstack.common import policy as common_policy
 from keystone import policy
 
 
@@ -52,7 +53,7 @@ def init():
         if not os.path.exists(_POLICY_PATH):
             _POLICY_PATH = CONF.find_file(_POLICY_PATH)
     if not _ENFORCER:
-        _ENFORCER = common_policy.Enforcer(policy_file=_POLICY_PATH)
+        _ENFORCER = common_policy.Enforcer(CONF, policy_file=_POLICY_PATH)
     utils.read_cached_file(_POLICY_PATH,
                            _POLICY_CACHE,
                            reload_func=_set_rules)

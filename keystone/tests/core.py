@@ -57,12 +57,6 @@ from keystone.tests import ksfixtures
 from keystone.tests import utils
 
 
-# NOTE(dstanek): Tests inheriting from TestCase depend on having the
-#   policy_file command-line option declared before setUp runs. Importing the
-#   oslo policy module automatically declares the option.
-from keystone.openstack.common import policy as common_policy  # noqa
-
-
 config.configure()
 
 LOG = log.getLogger(__name__)
