@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_8a9c6ac1",
+        "filename": "keystone/common/sql/migrate_repo/versions/063_insert_assignment_inherited_pk.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-20T05:04:46Z",
+      "side": 1,
+      "message": "So is this true for primarykeyconstraint and its uniqueness?  I thought that DID work with sqlite?  If so, then typically what other tests have done is to do a table copy into a new table that has the new PK defined.  Seems like a lot of work, I know!  Maybe want other people\u0027s comments as to whether doing this is worth it.",
+      "revId": "17698b8c0a576a17c337781c51cd1a08a0a62ffe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
