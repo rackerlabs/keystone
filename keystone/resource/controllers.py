@@ -173,6 +173,11 @@ class ProjectV3(controller.V3Controller):
             ref['parents'] = [ProjectV3.wrap_member(context, p)
                               for p in parents]
 
+        if ('parents_ids' in context['query_string'] and
+                self.query_filter_is_true(
+                    context['query_string']['parents_ids'])):
+            ref['parents'] = self.resource_api.get_project_parents_ids(ref)
+
         if ('subtree_as_list' in context['query_string'] and
                 self.query_filter_is_true(
                     context['query_string']['subtree_as_list'])):

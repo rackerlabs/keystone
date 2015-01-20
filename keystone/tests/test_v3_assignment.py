@@ -509,6 +509,36 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
                 'project_id': self.project_id})
         self.assertValidProjectResponse(r, self.project)
 
+    def test_get_project_with_parents_ids(self):
+        """Call ``GET /projects/{project_id}?parents_ids``."""
+        projects = self._create_projects_hierarchy(hierarchy_size=2)
+
+        r = self.get(
+            '/projects/%(project_id)s?parents_ids' % {
+                'project_id': projects[2]['project']['id']})
+
+        self.assertValidProjectResponse(r, projects[2]['project'])
+        parents_ids = r.result['project']['parents']
+
+        # Contains only one key
+        self.assertEqual(1, len(parents_ids))
+
+        # Assert parents_ids is a structured dictionary correctly representing
+        # the hierarchy. The request was made using projects[2] id, hence its
+        # parents should be projects[1] and projects[0]. It should have the
+        # following structure:
+        # {
+        #   projects[1]: {
+        #       projects[0]: None
+        #   }
+        # }
+        expected_dict = {
+            projects[1]['project']['id']: {
+                projects[0]['project']['id']: None
+            }
+        }
+        self.assertDictEqual(expected_dict, parents_ids)
+
     def test_get_project_with_parents_list(self):
         """Call ``GET /projects/{project_id}?parents_as_list``."""
         projects = self._create_projects_hierarchy(hierarchy_size=2)
