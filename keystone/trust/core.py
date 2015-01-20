@@ -32,7 +32,7 @@ CONF = config.CONF
 LOG = log.getLogger(__name__)
 
 
-@dependency.requires('identity_api')
+@dependency.requires('identity_api', 'role_api')
 @dependency.provider('trust_api')
 class Manager(manager.Manager):
     """Default pivot point for the Trust backend.
@@ -47,7 +47,7 @@ class Manager(manager.Manager):
         super(Manager, self).__init__(CONF.trust.driver)
 
     @staticmethod
-    def _validate_redelegation(redelegated_trust, trust):
+    def _validate_redelegation(redelegated_trust, trust, clean_roles=None):
         # Validate against:
         # 0 < redelegation_count <= max_redelegation_count
         max_redelegation_count = CONF.trust.max_redelegation_count
@@ -79,10 +79,10 @@ class Manager(manager.Manager):
         else:
             trust['expires_at'] = redelegated_expiry
 
-        # trust roles is a subset of roles of the redelegated trust
         parent_roles = set(role['id']
                            for role in redelegated_trust['roles'])
-        if not all(role['id'] in parent_roles for role in trust['roles']):
+        roles = clean_roles or trust['roles']
+        if not all(role['id'] in parent_roles for role in roles):
             raise exception.Forbidden(
                 _('Some of requested roles are not in redelegated trust'))
 
@@ -162,7 +162,7 @@ class Manager(manager.Manager):
             # Check entire trust pedigree validity
             pedigree = self.get_trust_pedigree(redelegated_trust['id'])
             for t in pedigree:
-                self._validate_redelegation(t, trust)
+                self._validate_redelegation(t, trust, roles)
 
         trust.setdefault('redelegation_count', max_redelegation_count)
         return self.driver.create_trust(trust_id, trust, roles)
