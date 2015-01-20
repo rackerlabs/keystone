@@ -32,7 +32,7 @@ CONF = config.CONF
 LOG = log.getLogger(__name__)
 
 
-@dependency.requires('identity_api')
+@dependency.requires('identity_api', 'role_api')
 @dependency.provider('trust_api')
 class Manager(manager.Manager):
     """Default pivot point for the Trust backend.
@@ -80,11 +80,12 @@ class Manager(manager.Manager):
             trust['expires_at'] = redelegated_expiry
 
         # trust roles is a subset of roles of the redelegated trust
-        parent_roles = set(role['id']
-                           for role in redelegated_trust['roles'])
-        if not all(role['id'] in parent_roles for role in trust['roles']):
-            raise exception.Forbidden(
-                _('Some of requested roles are not in redelegated trust'))
+        # roles identified by 'id' are expected in both trusts
+        p_roles = set(r['id'] for r in redelegated_trust['roles'])
+        for role in trust['roles']:
+            if role['id'] not in p_roles:
+                raise exception.Forbidden(
+                    _('Some of requested roles are not in redelegated trust'))
 
     def get_trust_pedigree(self, trust_id):
         trust = self.driver.get_trust(trust_id)

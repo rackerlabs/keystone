@@ -154,8 +154,10 @@ class TrustV3(controller.V3Controller):
         self._require_user_is_trustor(context, trust)
         self._require_trustee_exists(trust['trustee_user_id'])
         all_roles = self.role_api.list_roles()
+        # Normalise roles
         clean_roles = self._clean_role_list(context, trust, all_roles)
-        self._require_trustor_has_role_in_project(trust, clean_roles)
+        trust['roles'] = clean_roles
+        self._require_trustor_has_role_in_project(trust)
         trust['expires_at'] = self._parse_expiration_date(
             trust.get('expires_at'))
         trust_id = uuid.uuid4().hex
@@ -185,9 +187,9 @@ class TrustV3(controller.V3Controller):
         else:
             return []
 
-    def _require_trustor_has_role_in_project(self, trust, clean_roles):
+    def _require_trustor_has_role_in_project(self, trust):
         user_roles = self._get_user_role(trust)
-        for trust_role in clean_roles:
+        for trust_role in trust['roles']:
             matching_roles = [x for x in user_roles
                               if x == trust_role['id']]
             if not matching_roles:
