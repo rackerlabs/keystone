@@ -47,7 +47,7 @@ class Manager(manager.Manager):
         super(Manager, self).__init__(CONF.trust.driver)
 
     @staticmethod
-    def _validate_redelegation(redelegated_trust, trust):
+    def _validate_redelegation(redelegated_trust, trust, roles):
         # Validate against:
         # 0 < redelegation_count <= max_redelegation_count
         max_redelegation_count = CONF.trust.max_redelegation_count
@@ -80,11 +80,16 @@ class Manager(manager.Manager):
             trust['expires_at'] = redelegated_expiry
 
         # trust roles is a subset of roles of the redelegated trust
-        parent_roles = set(role['id']
-                           for role in redelegated_trust['roles'])
-        if not all(role['id'] in parent_roles for role in trust['roles']):
-            raise exception.Forbidden(
-                _('Some of requested roles are not in redelegated trust'))
+        p_roles = {'id': set(), 'name': set()}
+        for p_role in redelegated_trust['roles']:
+            'id' in p_role and p_roles['id'].add(p_role['id'])
+            'name' in p_role and p_roles['name'].add(p_role['name'])
+
+        for role in roles:
+            key = 'id' if 'id' in role else 'name'
+            if role[key] not in p_roles[key]:
+                raise exception.Forbidden(
+                    _('Some of requested roles are not in redelegated trust'))
 
     def get_trust_pedigree(self, trust_id):
         trust = self.driver.get_trust(trust_id)
@@ -107,7 +112,7 @@ class Manager(manager.Manager):
             trust_chain = self.get_trust_pedigree(trust_id)
 
             for parent, child in zip(trust_chain[1:], trust_chain):
-                self._validate_redelegation(parent, child)
+                self._validate_redelegation(parent, child, child['roles'])
                 try:
                     self.identity_api.assert_user_enabled(
                         parent['trustee_user_id'])
@@ -162,7 +167,7 @@ class Manager(manager.Manager):
             # Check entire trust pedigree validity
             pedigree = self.get_trust_pedigree(redelegated_trust['id'])
             for t in pedigree:
-                self._validate_redelegation(t, trust)
+                self._validate_redelegation(t, trust, roles)
 
         trust.setdefault('redelegation_count', max_redelegation_count)
         return self.driver.create_trust(trust_id, trust, roles)
