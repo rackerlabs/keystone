@@ -567,7 +567,7 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
                                          domain_id=self.domainA['id'])
 
         # Finally, switch to the v3 sample policy file
-        self.orig_policy_file = CONF.policy_file
+        self.orig_policy_file = CONF.oslo_policy.policy_file
         from keystone.policy.backends import rules
         rules.reset()
 

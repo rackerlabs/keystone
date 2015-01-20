@@ -28,6 +28,7 @@ import warnings
 import fixtures
 from oslo_config import fixture as config_fixture
 from oslo_log import log
+from oslo_policy import policy as common_policy
 import oslotest.base as oslotest
 from oslotest import mockpatch
 import six
@@ -57,12 +58,6 @@ from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import utils
 
 
-# NOTE(dstanek): Tests inheriting from TestCase depend on having the
-#   policy_file command-line option declared before setUp runs. Importing the
-#   oslo policy module automatically declares the option.
-from keystone.openstack.common import policy as common_policy  # noqa
-
-
 config.configure()
 
 LOG = log.getLogger(__name__)
@@ -85,6 +80,9 @@ TMPDIR = _calc_tmpdir()
 
 CONF = config.CONF
 log.register_options(CONF)
+# NOTE(stevemar): We need a dummy enforcer here to setup the options
+# that oslo.policy provides
+_ENFORCER = common_policy.Enforcer(CONF)
 
 IN_MEM_DB_CONN_STRING = 'sqlite://'
 
@@ -306,7 +304,8 @@ class TestCase(BaseTestCase):
     def config_overrides(self):
         signing_certfile = 'examples/pki/certs/signing_cert.pem'
         signing_keyfile = 'examples/pki/private/signing_key.pem'
-        self.config_fixture.config(policy_file=dirs.etc('policy.json'))
+        self.config_fixture.config(group='oslo_policy',
+                                   policy_file=dirs.etc('policy.json'))
         self.config_fixture.config(
             # TODO(morganfainberg): Make Cache Testing a separate test case
             # in tempest, and move it out of the base unit tests.
