@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_b40fe62d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-20T21:14:15Z",
+      "side": 1,
+      "message": "The convention is to use \"keystone\" rather than \"Keystone\". [1]\n\nI think we should start using the right naming, even if we still need to fix it along this document.\n\n[1] https://wiki.openstack.org/wiki/Documentation/Conventions#Service_and_project_names",
+      "revId": "a060e0520be91d251ee4ac378bc693d1d70d3f40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
