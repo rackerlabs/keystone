@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a961159_f407931c",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-20T03:45:15Z",
+      "side": 1,
+      "message": "For performance reasons, we are updating dict constructs to dict comprehensions. Please take a look at [1].\n\nThen it should be:\n\n    lambda name: {id:next(id_factory), _:\u0027fake_domain\u0027}\n\n[1] https://review.openstack.org/#/c/143842",
+      "revId": "3a4063655807c9f19d6321e5f9c2ff357a98e43b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
