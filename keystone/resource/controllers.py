@@ -186,6 +186,12 @@ class ProjectV3(controller.V3Controller):
             ref['subtree'] = [ProjectV3.wrap_member(context, p)
                               for p in subtree]
 
+        if ('subtree_ids' in context['query_string'] and
+                self.query_filter_is_true(
+                    context['query_string']['subtree_ids'])):
+            ref['subtree'] = self.resource_api.get_projects_ids_in_subtree(
+                ref['id'])
+
     @controller.protected()
     def get_project(self, context, project_id):
         ref = self.resource_api.get_project(project_id)
