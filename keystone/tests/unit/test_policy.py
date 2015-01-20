@@ -16,12 +16,13 @@
 import json
 
 import mock
+from oslo_policy import _parser as policy_parser
+from oslo_policy import policy as common_policy
 import six
 from six.moves.urllib import request as urlrequest
 from testtools import matchers
 
 from keystone import exception
-from keystone.openstack.common import policy as common_policy
 from keystone.policy.backends import rules
 from keystone.tests import unit as tests
 from keystone.tests.unit.ksfixtures import temporaryfile
@@ -42,7 +43,8 @@ class PolicyFileTestCase(tests.TestCase):
 
     def config_overrides(self):
         super(PolicyFileTestCase, self).config_overrides()
-        self.config_fixture.config(policy_file=self.tmpfilename)
+        self.config_fixture.config(group='oslo_policy',
+                                   policy_file=self.tmpfilename)
 
     def test_modified_policy_reloads(self):
         action = "example:test"
@@ -94,7 +96,7 @@ class PolicyTestCase(tests.TestCase):
 
     def _set_rules(self):
         these_rules = common_policy.Rules(
-            dict((k, common_policy.parse_rule(v))
+            dict((k, policy_parser.parse_rule(v))
                  for k, v in self.rules.items()))
         rules._ENFORCER.set_rules(these_rules)
 
@@ -189,7 +191,7 @@ class DefaultPolicyTestCase(tests.TestCase):
 
     def _set_rules(self, default_rule):
         these_rules = common_policy.Rules(
-            dict((k, common_policy.parse_rule(v))
+            dict((k, policy_parser.parse_rule(v))
                  for k, v in self.rules.items()), default_rule)
         rules._ENFORCER.set_rules(these_rules)
 
