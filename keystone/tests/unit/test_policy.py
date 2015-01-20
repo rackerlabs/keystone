@@ -16,12 +16,12 @@
 import json
 
 import mock
+from oslo_policy import policy as common_policy
 import six
 from six.moves.urllib import request as urlrequest
 from testtools import matchers
 
 from keystone import exception
-from keystone.openstack.common import policy as common_policy
 from keystone.policy.backends import rules
 from keystone.tests import unit as tests
 from keystone.tests.unit.ksfixtures import temporaryfile
