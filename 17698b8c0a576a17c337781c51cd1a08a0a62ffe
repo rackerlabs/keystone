@@ -34,6 +34,24 @@
       "revId": "17698b8c0a576a17c337781c51cd1a08a0a62ffe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_a69153f9",
+        "filename": "keystone/common/sql/migrate_repo/versions/063_insert_assignment_inherited_pk.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-20T13:34:33Z",
+      "side": 1,
+      "message": "Yes, you will get an error from that.  What I mean is that the alternative is to do it \"the hard way\", where you do a table copy.  See 044_service_enabled.py - difference scenario, but see how it checks for sqlite, and if so actually re-recretes the table with the right column (or in our case PK definition). You would do this for both upgrade/downgrade for our case.",
+      "parentUuid": "3a961159_9ab2eee6",
+      "revId": "17698b8c0a576a17c337781c51cd1a08a0a62ffe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
