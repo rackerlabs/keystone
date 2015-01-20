@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3a961159_66f84b4b",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-20T13:36:49Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a961159_866537b1",
+      "revId": "c6bdb7f3a29356b7e2940d84fb8649d132a50efc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_c6901f45",
         "filename": "keystone/tests/test_v3_assignment.py",
         "patchSetId": 6
@@ -30,6 +48,23 @@
       "writtenOn": "2015-01-20T13:29:35Z",
       "side": 1,
       "message": "Steven, I suggest to assert domain[\u0027name\u0027] instead of domain[\u0027id\u0027] since user cannot create such a domain with domain[\u0027id\u0027] equals \u0027FEDERATED\u0027 which is covered by your previous testcases. And domain[\u0027id\u0027] is PK, update_domain cannot update domain[\u0027id\u0027], however, update domain[\u0027name\u0027] is possible in update_domain.",
+      "revId": "c6bdb7f3a29356b7e2940d84fb8649d132a50efc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_e637dbfc",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 473,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-20T13:36:49Z",
+      "side": 1,
+      "message": "Steve, are you using different combinations of \u0027federated\u0027, \u0027FEDERATED\u0027, \u0027Federated\u0027 on purpose? If so, maybe you should reflect this in docstrings, where \u0027Federated\u0027 is only used.",
       "revId": "c6bdb7f3a29356b7e2940d84fb8649d132a50efc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +99,23 @@
       "writtenOn": "2015-01-20T13:29:35Z",
       "side": 1,
       "message": "Ditto",
+      "revId": "c6bdb7f3a29356b7e2940d84fb8649d132a50efc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_6645abb3",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 481,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-20T13:36:49Z",
+      "side": 1,
+      "message": "use string constant, preferably defined in \u0027federation\u0027 module.",
       "revId": "c6bdb7f3a29356b7e2940d84fb8649d132a50efc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
