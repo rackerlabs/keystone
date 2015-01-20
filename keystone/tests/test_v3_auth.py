@@ -2748,6 +2748,23 @@ class TestTrustRedelegation(test_v3.RestfulTestCase):
         role_id_set2 = set(r['id'] for r in trust2['roles'])
         self.assertThat(role_id_set1, matchers.GreaterThan(role_id_set2))
 
+    def test_redelegate_with_role_by_name(self):
+        # For role by name testing
+        ref = self.redelegated_trust_ref
+        ref['roles'] = [{'name': self.role['name']}]
+        r = self.post('/OS-TRUST/trusts',
+                      body={'trust': ref})
+        trust = self.assertValidTrustResponse(r)
+        trust_token = self._get_trust_token(trust)
+        # Chain second trust with roles subset
+        ref = self.chained_trust_ref
+        ref['roles'] = [{'name': self.role['name']}]
+        r = self.post('/OS-TRUST/trusts',
+                      body={'trust': ref},
+                      token=trust_token)
+        trust = self.assertValidTrustResponse(r)
+        self._get_trust_token(trust)
+
     def test_redelegate_new_role_fails(self):
         r = self.post('/OS-TRUST/trusts',
                       body={'trust': self.redelegated_trust_ref})

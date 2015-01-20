@@ -32,7 +32,7 @@ CONF = config.CONF
 LOG = log.getLogger(__name__)
 
 
-@dependency.requires('identity_api')
+@dependency.requires('identity_api', 'role_api')
 @dependency.provider('trust_api')
 class Manager(manager.Manager):
     """Default pivot point for the Trust backend.
@@ -80,11 +80,15 @@ class Manager(manager.Manager):
             trust['expires_at'] = redelegated_expiry
 
         # trust roles is a subset of roles of the redelegated trust
-        parent_roles = set(role['id']
-                           for role in redelegated_trust['roles'])
-        if not all(role['id'] in parent_roles for role in trust['roles']):
-            raise exception.Forbidden(
-                _('Some of requested roles are not in redelegated trust'))
+        p_roles = {'id': set(), 'name': set()}
+        for p_role in redelegated_trust['roles']:
+            'id' in p_role and p_roles['id'].add(p_role['id'])
+            'name' in p_role and p_roles['name'].add(p_role['name'])
+        for role in trust['roles']:
+            key = 'id' if 'id' in role else 'name'
+            if role[key] not in p_roles[key]:
+                raise exception.Forbidden(
+                    _('Some of requested roles are not in redelegated trust'))
 
     def get_trust_pedigree(self, trust_id):
         trust = self.driver.get_trust(trust_id)
@@ -118,7 +122,7 @@ class Manager(manager.Manager):
         return trust
 
     @notifications.created(_TRUST)
-    def create_trust(self, trust_id, trust, roles, redelegated_trust=None):
+    def create_trust(self, trust_id, trust, redelegated_trust=None):
         """Create a new trust.
 
         :returns: a new trust
@@ -165,7 +169,7 @@ class Manager(manager.Manager):
                 self._validate_redelegation(t, trust)
 
         trust.setdefault('redelegation_count', max_redelegation_count)
-        return self.driver.create_trust(trust_id, trust, roles)
+        return self.driver.create_trust(trust_id, trust, trust['roles'])
 
     @notifications.deleted(_TRUST)
     def delete_trust(self, trust_id):
