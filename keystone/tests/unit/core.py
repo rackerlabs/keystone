@@ -56,12 +56,10 @@ from keystone import service
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import utils
 
-
 # NOTE(dstanek): Tests inheriting from TestCase depend on having the
 #   policy_file command-line option declared before setUp runs. Importing the
 #   oslo policy module automatically declares the option.
-from keystone.openstack.common import policy as common_policy  # noqa
-
+from oslo_policy import policy as common_policy  # noqa
 
 config.configure()
 
@@ -297,6 +295,8 @@ class BaseTestCase(oslotest.BaseTestCase):
 
 @dependency.optional('revoke_api')
 class TestCase(BaseTestCase):
+    def __init__(self):
+        _enforcer = common_policy.Enforcer(CONF)
 
     _config_file_list = []
 
@@ -306,7 +306,8 @@ class TestCase(BaseTestCase):
     def config_overrides(self):
         signing_certfile = 'examples/pki/certs/signing_cert.pem'
         signing_keyfile = 'examples/pki/private/signing_key.pem'
-        self.config_fixture.config(policy_file=dirs.etc('policy.json'))
+        self.config_fixture.config(group='oslo_policy',
+                                   policy_file=dirs.etc('policy.json'))
         self.config_fixture.config(
             # TODO(morganfainberg): Make Cache Testing a separate test case
             # in tempest, and move it out of the base unit tests.
