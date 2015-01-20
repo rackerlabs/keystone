@@ -628,6 +628,10 @@ class Manager(manager.Manager):
         return self.resource_api.list_project_parents(project_id, user_id)
 
     @deprecated_to_resource_api
+    def get_project_parents_as_ids(self, project):
+        return self.resource_api.get_project_parents_as_ids(project)
+
+    @deprecated_to_resource_api
     def list_projects_in_subtree(self, project_id, user_id=None):
         return self.resource_api.list_projects_in_subtree(project_id, user_id)
 
