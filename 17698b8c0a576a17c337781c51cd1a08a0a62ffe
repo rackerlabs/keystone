@@ -16,6 +16,24 @@
       "revId": "17698b8c0a576a17c337781c51cd1a08a0a62ffe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a961159_9ab2eee6",
+        "filename": "keystone/common/sql/migrate_repo/versions/063_insert_assignment_inherited_pk.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-20T11:38:47Z",
+      "side": 1,
+      "message": "I got an error [1] when trying to run this on SQLite.\nAt line 32, when it tries to delete the existing primary key constraint.\n\nRight, let\u0027s see people\u0027s views.\n\n[1] OperationalError: (OperationalError) no such index: assignment_pkey u\u0027DROP INDEX assignment_pkey \u0027 ()",
+      "parentUuid": "3a961159_8a9c6ac1",
+      "revId": "17698b8c0a576a17c337781c51cd1a08a0a62ffe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
