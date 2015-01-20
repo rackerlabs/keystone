@@ -230,6 +230,23 @@ class Manager(manager.Manager):
             self._filter_projects_list(parents, user_id)
         return parents
 
+    def _build_parents_ids_dict(self, project, parents_by_id):
+        def traverse_parents_hierarchy(project):
+            parent_id = project.get('parent_id')
+            if not parent_id:
+                return None
+
+            parent = parents_by_id[parent_id]
+            return {parent_id: traverse_parents_hierarchy(parent)}
+
+        return traverse_parents_hierarchy(project)
+
+    def get_project_parents_ids(self, project):
+        parents_list = self.driver.list_project_parents(project['id'])
+        parents_ids = self._build_parents_ids_dict(
+            project, {proj['id']: proj for proj in parents_list})
+        return parents_ids
+
     def list_projects_in_subtree(self, project_id, user_id=None):
         subtree = self.driver.list_projects_in_subtree(project_id)
         # If a user_id was provided, the returned list should be filtered

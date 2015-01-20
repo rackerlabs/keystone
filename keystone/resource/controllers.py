@@ -164,18 +164,34 @@ class ProjectV3(controller.V3Controller):
         return ProjectV3.wrap_collection(context, refs, hints=hints)
 
     def _expand_project_ref(self, context, ref):
+        params = context['query_string']
+
+        parents_as_list = 'parents_as_list' in params and (
+            self.query_filter_is_true(params['parents_as_list']))
+        parents_ids = 'parents_ids' in params and (
+            self.query_filter_is_true(params['parents_ids']))
+
+        subtree_as_list = 'subtree_as_list' in params and (
+            self.query_filter_is_true(params['subtree_as_list']))
+
+        # parents_as_list and parents_ids are mutually exclusive
+        if parents_as_list and parents_ids:
+            msg = _('cannot use parents_as_list and parents_ids query params '
+                    'at the same time.')
+            raise exception.ValidationError(msg)
+
         user_id = self.get_auth_context(context).get('user_id')
-        if ('parents_as_list' in context['query_string'] and
-                self.query_filter_is_true(
-                    context['query_string']['parents_as_list'])):
+
+        if parents_as_list:
             parents = self.resource_api.list_project_parents(
                 ref['id'], user_id)
             ref['parents'] = [ProjectV3.wrap_member(context, p)
                               for p in parents]
 
-        if ('subtree_as_list' in context['query_string'] and
-                self.query_filter_is_true(
-                    context['query_string']['subtree_as_list'])):
+        if parents_ids:
+            ref['parents'] = self.resource_api.get_project_parents_ids(ref)
+
+        if subtree_as_list:
             subtree = self.resource_api.list_projects_in_subtree(
                 ref['id'], user_id)
             ref['subtree'] = [ProjectV3.wrap_member(context, p)
