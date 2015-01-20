@@ -635,6 +635,10 @@ class Manager(manager.Manager):
     def list_projects_in_subtree(self, project_id, user_id=None):
         return self.resource_api.list_projects_in_subtree(project_id, user_id)
 
+    @deprecated_to_resource_api
+    def get_projects_in_subtree_as_ids(self, project_id):
+        return self.resource_api.get_projects_in_subtree_as_ids(project_id)
+
 
 @six.add_metaclass(abc.ABCMeta)
 class Driver(object):
