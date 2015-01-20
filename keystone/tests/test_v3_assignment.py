@@ -552,6 +552,85 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         self.assertIn(projects[0], r.result['project']['parents'])
         self.assertNotIn(projects[2], r.result['project']['parents'])
 
+    def test_get_project_with_subtree_ids(self):
+        """Call ``GET /projects/{project_id}?subtree_ids``.
+
+        This test creates a more complex hierarchy to test if the structured
+        dictionary returned by using the ``subtree_ids`` query param correctly
+        represents the hierarchy.
+
+        The hierarchy contains 4 projects with the following structure
+
+        ::
+
+          +---------+
+          |    A    |
+          |    |    |
+          |    B    |
+          |  /   \\  |
+          | C     D |
+          +---------+
+
+        """
+        projects = self._create_projects_hierarchy(hierarchy_size=2)
+
+        # Add another child to projects[1]
+        new_ref = self.new_project_ref(
+            domain_id=self.domain_id,
+            parent_id=projects[1]['project']['id'])
+        resp = self.post('/projects',
+                         body={'project': new_ref})
+        self.assertValidProjectResponse(resp, new_ref)
+        projects.append(resp.result)
+
+        # Query for projects[0] subtree_ids
+        r = self.get(
+            '/projects/%(project_id)s?subtree_ids' % {
+                'project_id': projects[0]['project']['id']})
+        subtree_ids = r.result['project']['subtree']
+
+        # projects[0] has only one direct child
+        self.assertEqual(1, len(subtree_ids))
+
+        # The subtree hierarchy from projects[0] should have the following
+        # structure:
+        # {
+        #   projects[1]: {
+        #       projects[2]: None,
+        #       projects[3]: None
+        #   }
+        # }
+        expected_dict = {
+            projects[1]['project']['id']: {
+                projects[2]['project']['id']: None,
+                projects[3]['project']['id']: None
+            }
+        }
+
+        self.assertDictEqual(expected_dict, subtree_ids)
+
+        # Now query for projects[1] subtree_ids
+        r = self.get(
+            '/projects/%(project_id)s?subtree_ids' % {
+                'project_id': projects[1]['project']['id']})
+        subtree_ids = r.result['project']['subtree']
+
+        # projects[1] has two direct childs
+        self.assertEqual(2, len(subtree_ids))
+
+        # The subtree hierarchy from projects[1] should have the following
+        # structure:
+        # {
+        #   projects[2]: None,
+        #   projects[3]: None
+        # }
+        expected_dict = {
+            projects[2]['project']['id']: None,
+            projects[3]['project']['id']: None
+        }
+
+        self.assertDictEqual(expected_dict, subtree_ids)
+
     def test_get_project_with_subtree_list(self):
         """Call ``GET /projects/{project_id}?subtree_as_list``."""
         projects = self._create_projects_hierarchy(hierarchy_size=2)
