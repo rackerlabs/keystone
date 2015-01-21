@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a930d6b_78db911b",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-21T16:49:22Z",
+      "side": 1,
+      "message": "see my main comment on the review for this line...",
+      "revId": "9ea405040f201cc11e1f97bb1739a75fdaf813e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_478c4d2f",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 29
