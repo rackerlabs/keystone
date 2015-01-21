@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_f80ce196",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-21T16:50:56Z",
+      "side": 1,
+      "message": "this was something that I\u0027ve cited several times in previous patchsets (after your comments in some review that were doing the same)",
+      "parentUuid": "1a930d6b_78db911b",
+      "revId": "9ea405040f201cc11e1f97bb1739a75fdaf813e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_478c4d2f",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 29
