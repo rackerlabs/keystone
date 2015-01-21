@@ -16,6 +16,24 @@
       "revId": "80063a07eb101724afdd5d38d90a8bef0941b51b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_6e5f460f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 688,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-01-21T20:00:33Z",
+      "side": 1,
+      "message": "not sure, looks like we need somebody with native English :)",
+      "parentUuid": "1a930d6b_dbab9a87",
+      "revId": "80063a07eb101724afdd5d38d90a8bef0941b51b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
