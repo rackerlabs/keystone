@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_2ac70a14",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T04:22:54Z",
+      "side": 1,
+      "message": "Why not \u0027get_project_subtree_ids\u0027? It matches better the query param name and keep consistency with \u0027get_project_parents_ids\u0027.",
+      "revId": "5b6e0c217eb4df3d45aab3de941f33330fe6afe8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_edb8bc2c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T04:22:54Z",
+      "side": 1,
+      "message": "Since driver.list_projects_in_subtree already returns an ordered list of children (child at index i is at the same level or higher than project i+1), what about:\n\n    def get_projects_ids_in_subtree(self, project_id):\n        def subtree_ids(subtree_list, parent_id):\n            result \u003d {}\n            for i in range(len(subtree_list)):\n                child \u003d subtree_list[i]\n                if child[\u0027parent_id\u0027] \u003d\u003d parent_id:\n                    result[child[\u0027id\u0027]] \u003d subtree_ids(subtree_list[(i + 1)::],\n                                                      child[\u0027id\u0027])\n            return result if result else None\n\n        subtree_list \u003d self.driver.list_projects_in_subtree(project_id)\n        return subtree_ids(subtree_list, project_id)",
+      "revId": "5b6e0c217eb4df3d45aab3de941f33330fe6afe8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_edbd1c04",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T04:22:54Z",
+      "side": 1,
+      "message": "Since we assert the exact dict at line 610, we could remove this assert.",
+      "revId": "5b6e0c217eb4df3d45aab3de941f33330fe6afe8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_8d465822",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 619,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T04:22:54Z",
+      "side": 1,
+      "message": "Same as for line 593.",
+      "revId": "5b6e0c217eb4df3d45aab3de941f33330fe6afe8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_ad4a3425",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 633,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T04:22:54Z",
+      "side": 1,
+      "message": "I think it could be worth it to add a test asserting the response for  a leaf project.",
+      "revId": "5b6e0c217eb4df3d45aab3de941f33330fe6afe8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
