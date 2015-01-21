@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_d76702e9",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-21T11:25:10Z",
+      "side": 1,
+      "message": "Yes, they are, nice catch.",
+      "parentUuid": "1a930d6b_2dd00453",
+      "revId": "7ba5ba3bd4a3bd22b1cf809aa688c03a4b828698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_6a0cb295",
         "filename": "keystone/resource/core.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_f7ab1ed4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-21T11:25:10Z",
+      "side": 1,
+      "message": "We can\u0027t guarantee this will be always true (the implementation may change in the future), that\u0027s why I chose to implement agnostically.",
+      "parentUuid": "1a930d6b_6a0cb295",
+      "revId": "7ba5ba3bd4a3bd22b1cf809aa688c03a4b828698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_8a739eb0",
         "filename": "keystone/tests/test_v3_assignment.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2015-01-21T03:35:29Z",
       "side": 1,
       "message": "As you assert the whole dict at line 540, maybe we could remove this assert.",
+      "revId": "7ba5ba3bd4a3bd22b1cf809aa688c03a4b828698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_77ee4e24",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-21T11:25:10Z",
+      "side": 1,
+      "message": "Makes sense, although maybe we might leave it here to make sure the parents dict *always* contain only one key?",
+      "parentUuid": "1a930d6b_8a739eb0",
       "revId": "7ba5ba3bd4a3bd22b1cf809aa688c03a4b828698",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -82,6 +136,24 @@
       "side": 1,
       "message": "++",
       "parentUuid": "1a930d6b_ea6182d4",
+      "revId": "7ba5ba3bd4a3bd22b1cf809aa688c03a4b828698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_b7f8b6e6",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-21T11:25:10Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1a930d6b_2d2ba4ec",
       "revId": "7ba5ba3bd4a3bd22b1cf809aa688c03a4b828698",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
