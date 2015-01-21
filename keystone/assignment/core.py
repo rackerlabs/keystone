@@ -133,47 +133,11 @@ class Manager(manager.Manager):
                  keystone.exception.ProjectNotFound
 
         """
-        def _get_group_project_roles(user_id, project_ref):
-            group_ids = self._get_group_ids_for_user_id(user_id)
-            return self.driver.list_role_ids_for_groups_on_project(
-                group_ids,
-                project_ref['id'],
-                project_ref['domain_id'],
-                self._list_parent_ids_of_project(project_ref['id']))
-
-        def _get_user_project_roles(user_id, project_ref):
-            role_list = []
-            try:
-                metadata_ref = self._get_metadata(user_id=user_id,
-                                                  tenant_id=project_ref['id'])
-                role_list = self._roles_from_role_dicts(
-                    metadata_ref.get('roles', {}), False)
-            except exception.MetadataNotFound:
-                pass
-
-            if CONF.os_inherit.enabled:
-                # Now get any inherited roles for the owning domain
-                try:
-                    metadata_ref = self._get_metadata(
-                        user_id=user_id, domain_id=project_ref['domain_id'])
-                    role_list += self._roles_from_role_dicts(
-                        metadata_ref.get('roles', {}), True)
-                except (exception.MetadataNotFound, exception.NotImplemented):
-                    pass
-                # As well inherited roles from parent projects
-                for p in self.list_project_parents(project_ref['id']):
-                    p_roles = self.list_grants(
-                        user_id=user_id, project_id=p['id'],
-                        inherited_to_projects=True)
-                    role_list += [x['id'] for x in p_roles]
-
-            return role_list
-
-        project_ref = self.resource_api.get_project(tenant_id)
-        user_role_list = _get_user_project_roles(user_id, project_ref)
-        group_role_list = _get_group_project_roles(user_id, project_ref)
+        self.get_project(tenant_id)
+        assignment_list = self.list_role_assignments(
+            user_id=user_id, project_id=tenant_id, effective=True)
         # Use set() to process the list to remove any duplicates
-        return list(set(user_role_list + group_role_list))
+        return list(set([x['role_id'] for x in assignment_list]))
 
     def get_roles_for_user_and_domain(self, user_id, domain_id):
         """Get the roles associated with a user within given domain.
@@ -183,41 +147,11 @@ class Manager(manager.Manager):
                  keystone.exception.DomainNotFound
 
         """
-
-        def _get_group_domain_roles(user_id, domain_id):
-            role_list = []
-            group_ids = self._get_group_ids_for_user_id(user_id)
-            for group_id in group_ids:
-                try:
-                    metadata_ref = self._get_metadata(group_id=group_id,
-                                                      domain_id=domain_id)
-                    role_list += self._roles_from_role_dicts(
-                        metadata_ref.get('roles', {}), False)
-                except (exception.MetadataNotFound, exception.NotImplemented):
-                    # MetadataNotFound implies no group grant, so skip.
-                    # Ignore NotImplemented since not all backends support
-                    # domains.
-                    pass
-            return role_list
-
-        def _get_user_domain_roles(user_id, domain_id):
-            metadata_ref = {}
-            try:
-                metadata_ref = self._get_metadata(user_id=user_id,
-                                                  domain_id=domain_id)
-            except (exception.MetadataNotFound, exception.NotImplemented):
-                # MetadataNotFound implies no user grants.
-                # Ignore NotImplemented since not all backends support
-                # domains
-                pass
-            return self._roles_from_role_dicts(
-                metadata_ref.get('roles', {}), False)
-
         self.get_domain(domain_id)
-        user_role_list = _get_user_domain_roles(user_id, domain_id)
-        group_role_list = _get_group_domain_roles(user_id, domain_id)
+        assignment_list = self.list_role_assignments(
+            user_id=user_id, domain_id=domain_id, effective=True)
         # Use set() to process the list to remove any duplicates
-        return list(set(user_role_list + group_role_list))
+        return list(set([x['role_id'] for x in assignment_list]))
 
     def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
         """Get a list of roles for this group on domain and/or project."""
@@ -926,40 +860,6 @@ class Manager(manager.Manager):
 
 @six.add_metaclass(abc.ABCMeta)
 class Driver(object):
-
-    def _role_to_dict(self, role_id, inherited):
-        role_dict = {'id': role_id}
-        if inherited:
-            role_dict['inherited_to'] = 'projects'
-        return role_dict
-
-    def _roles_from_role_dicts(self, dict_list, inherited):
-        role_list = []
-        for d in dict_list:
-            if ((not d.get('inherited_to') and not inherited) or
-               (d.get('inherited_to') == 'projects' and inherited)):
-                role_list.append(d['id'])
-        return role_list
-
-    def _add_role_to_role_dicts(self, role_id, inherited, dict_list,
-                                allow_existing=True):
-        # There is a difference in error semantics when trying to
-        # assign a role that already exists between the coded v2 and v3
-        # API calls.  v2 will error if the assignment already exists,
-        # while v3 is silent. Setting the 'allow_existing' parameter
-        # appropriately lets this call be used for both.
-        role_set = set([frozenset(r.items()) for r in dict_list])
-        key = frozenset(self._role_to_dict(role_id, inherited).items())
-        if not allow_existing and key in role_set:
-            raise KeyError
-        role_set.add(key)
-        return [dict(r) for r in role_set]
-
-    def _remove_role_from_role_dicts(self, role_id, inherited, dict_list):
-        role_set = set([frozenset(r.items()) for r in dict_list])
-        role_set.remove(frozenset(self._role_to_dict(role_id,
-                                                     inherited).items()))
-        return [dict(r) for r in role_set]
 
     def _get_list_limit(self):
         return CONF.assignment.list_limit or CONF.list_limit
