@@ -16,6 +16,24 @@
       "revId": "b82c9ed066c03a74851a0764e7d20290d064fab0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_de3c6d96",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-01-21T17:24:41Z",
+      "side": 1,
+      "message": "@Mark, thank you for your question, I had some doubts myself, but this is an internal error so I thought it better be more code-oriented as nobody will ever see it from outside far enough to get confused :)",
+      "parentUuid": "3a961159_d7897270",
+      "revId": "b82c9ed066c03a74851a0764e7d20290d064fab0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
