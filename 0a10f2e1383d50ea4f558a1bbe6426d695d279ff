@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_329054ec",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T14:19:52Z",
+      "side": 1,
+      "message": "(nit) unrelated double space",
+      "revId": "0a10f2e1383d50ea4f558a1bbe6426d695d279ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_b27284e3",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T14:19:52Z",
+      "side": 1,
+      "message": "(nit) I think there is no need to keep \u0027, etc\u0027, since the only two list_\u003centity\u003e we have now are those listed.",
+      "revId": "0a10f2e1383d50ea4f558a1bbe6426d695d279ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_52188084",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 1532,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T14:19:52Z",
+      "side": 1,
+      "message": "Replace the first \u0027assignments\u0027 by \u0027resource\u0027\n\nMaybe the second \u0027assignments\u0027 should be kept as \u0027role assignment\u0027",
+      "revId": "0a10f2e1383d50ea4f558a1bbe6426d695d279ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_1fd8bcee",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 5466,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T14:19:52Z",
+      "side": 1,
+      "message": "Not related to this patch, but don\u0027t we need a test_list_domains_filtered_and_limited as well?\nIf so, line 5440 should be modified and the test added.",
+      "revId": "0a10f2e1383d50ea4f558a1bbe6426d695d279ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_9f7e6ce3",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T14:19:52Z",
+      "side": 1,
+      "message": "Not related to this patch, but don\u0027t we need a test_domains_list_limit as well?",
+      "revId": "0a10f2e1383d50ea4f558a1bbe6426d695d279ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
