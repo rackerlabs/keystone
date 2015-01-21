@@ -66,41 +66,6 @@ class Assignment(assignment.Driver):
         # logic.
         return role_list
 
-    def _get_metadata(self, user_id=None, tenant_id=None,
-                      domain_id=None, group_id=None):
-
-        def _get_roles_for_just_user_and_project(user_id, tenant_id):
-            user_dn = self.user._id_to_dn(user_id)
-            return [self.role._dn_to_id(a.role_dn)
-                    for a in self.role.get_role_assignments
-                    (self.project._id_to_dn(tenant_id))
-                    if common_ldap.is_dn_equal(a.user_dn, user_dn)]
-
-        def _get_roles_for_group_and_project(group_id, project_id):
-            group_dn = self.group._id_to_dn(group_id)
-            return [self.role._dn_to_id(a.role_dn)
-                    for a in self.role.get_role_assignments
-                    (self.project._id_to_dn(project_id))
-                    if common_ldap.is_dn_equal(a.user_dn, group_dn)]
-
-        if domain_id is not None:
-            msg = _('Domain metadata not supported by LDAP')
-            raise exception.NotImplemented(message=msg)
-        if group_id is None and user_id is None:
-            return {}
-
-        if tenant_id is None:
-            return {}
-        if user_id is None:
-            metadata_ref = _get_roles_for_group_and_project(group_id,
-                                                            tenant_id)
-        else:
-            metadata_ref = _get_roles_for_just_user_and_project(user_id,
-                                                                tenant_id)
-        if not metadata_ref:
-            return {}
-        return {'roles': [self._role_to_dict(r, False) for r in metadata_ref]}
-
     def list_project_ids_for_user(self, user_id, group_ids, hints,
                                   inherited=False):
         # TODO(henry-nash): The ldap driver does not support inherited
@@ -199,70 +164,68 @@ class Assignment(assignment.Driver):
             self.role.delete_user(ref.role_dn, ref.group_dn,
                                   self.role._dn_to_id(ref.role_dn))
 
+    def _assert_not_domain_grant(self, domain_id):
+        if domain_id is not None:
+            msg = _('Domain grants not supported by LDAP')
+            raise exception.NotImplemented(message=msg)
+
+    def _construct_group_list(self, group_id):
+        if group_id:
+            return [group_id]
+        else:
+            return []
+
     def create_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,
                      inherited_to_projects=False):
 
-        try:
-            metadata_ref = self._get_metadata(user_id, project_id,
-                                              domain_id, group_id)
-        except exception.MetadataNotFound:
-            metadata_ref = {}
+        self._assert_not_domain_grant(domain_id)
 
         if user_id is None:
-            metadata_ref['roles'] = self._add_role_to_group_and_project(
+            self._add_role_to_group_and_project(
                 group_id, project_id, role_id)
         else:
-            metadata_ref['roles'] = self.add_role_to_user_and_project(
+            self.add_role_to_user_and_project(
                 user_id, project_id, role_id)
 
     def check_grant_role_id(self, role_id, user_id=None, group_id=None,
                             domain_id=None, project_id=None,
                             inherited_to_projects=False):
 
-        try:
-            metadata_ref = self._get_metadata(user_id, project_id,
-                                              domain_id, group_id)
-        except exception.MetadataNotFound:
-            metadata_ref = {}
-        role_ids = set(self._roles_from_role_dicts(
-            metadata_ref.get('roles', []), inherited_to_projects))
-        if role_id not in role_ids:
+        self._assert_not_domain_grant(domain_id)
+        assignment_list = self.list_role_assignments(
+            role_id=role_id, user_id=user_id,
+            group_ids=self._construct_group_list(group_id),
+            project_id=project_id)
+        if not assignment_list:
             raise exception.RoleNotFound(role_id=role_id)
 
     def delete_grant(self, role_id, user_id=None, group_id=None,
                      domain_id=None, project_id=None,
                      inherited_to_projects=False):
 
-        try:
-            metadata_ref = self._get_metadata(user_id, project_id,
-                                              domain_id, group_id)
-        except exception.MetadataNotFound:
-            metadata_ref = {}
+        self.check_grant_role_id(
+            role_id, user_id=user_id, group_id=group_id,
+            domain_id=domain_id, project_id=project_id,
+            inherited_to_projects=inherited_to_projects)
 
-        try:
-            if user_id is None:
-                metadata_ref['roles'] = (
-                    self._remove_role_from_group_and_project(
-                        group_id, project_id, role_id))
-            else:
-                metadata_ref['roles'] = self.remove_role_from_user_and_project(
-                    user_id, project_id, role_id)
-        except KeyError:
-            raise exception.RoleNotFound(role_id=role_id)
+        if user_id is None:
+            self._remove_role_from_group_and_project(
+                group_id, project_id, role_id)
+        else:
+            self.remove_role_from_user_and_project(
+                user_id, project_id, role_id)
 
     def list_grant_role_ids(self, user_id=None, group_id=None,
                             domain_id=None, project_id=None,
                             inherited_to_projects=False):
 
-        try:
-            metadata_ref = self._get_metadata(user_id, project_id,
-                                              domain_id, group_id)
-        except exception.MetadataNotFound:
-            metadata_ref = {}
-
-        return self._roles_from_role_dicts(metadata_ref.get('roles', []),
-                                           inherited_to_projects)
+        self._assert_not_domain_grant(domain_id)
+        assignment_list = self.list_role_assignments(
+            user_id=user_id, group_ids=self._construct_group_list(group_id),
+            project_id=project_id)
+        # Use set() to process the list to remove any duplicates
+        return list(set([x['role_id'] for x in assignment_list]))
 
     def list_role_assignments(self, role_id=None,
                               user_id=None, group_ids=None,
