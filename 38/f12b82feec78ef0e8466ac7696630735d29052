@@ -1,0 +1,14 @@
+Verified+2: Jenkins
+Code-Review+2: ayoung <ayoung@redhat.com>
+Workflow+1: ayoung <ayoung@redhat.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Takashi NATSUME <natsume.takashi@lab.ntt.co.jp>
+Code-Review+1: Marek Denis <marek.denis@cern.ch>
+Code-Review+1: Samuel de Medeiros Queiroz <samuel@lsd.ufcg.edu.br>
+Code-Review+1: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Code-Review+1: Dave Chen <dave.jungler@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Wed, 21 Jan 2015 19:02:06 +0000
+Reviewed-on: https://review.openstack.org/144850
+Project: openstack/keystone
+Branch: refs/heads/master
