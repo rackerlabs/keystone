@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_a3b6ae3b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-21T17:04:02Z",
+      "side": 1,
+      "message": "I don\u0027t think this is right...what about if we are looking for effective roles that are for a user and domain?",
+      "revId": "af49c4ba534ba944b0ed60cee09c18e0be59a57d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
