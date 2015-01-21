@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_2b037ab9",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 507,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-21T15:47:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_329054ec",
+      "revId": "0a10f2e1383d50ea4f558a1bbe6426d695d279ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_b27284e3",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-21T14:19:52Z",
       "side": 1,
       "message": "(nit) I think there is no need to keep \u0027, etc\u0027, since the only two list_\u003centity\u003e we have now are those listed.",
+      "revId": "0a10f2e1383d50ea4f558a1bbe6426d695d279ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_4b17e6ed",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 512,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-21T15:47:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_b27284e3",
       "revId": "0a10f2e1383d50ea4f558a1bbe6426d695d279ff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_4bb6063f",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 15
+      },
+      "lineNbr": 1532,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-21T15:47:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_52188084",
+      "revId": "0a10f2e1383d50ea4f558a1bbe6426d695d279ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_1fd8bcee",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 15
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_abe76ae3",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 5466,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-21T15:47:44Z",
+      "side": 1,
+      "message": "well, we can\u0027t do that (easily) with domains here since the LDAP manager needs a pretty complex setup for that.  We should probably do that in test_backend_ldap.  I\u0027ll raise a bug for that.",
+      "parentUuid": "1a930d6b_1fd8bcee",
+      "revId": "0a10f2e1383d50ea4f558a1bbe6426d695d279ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_9f7e6ce3",
         "filename": "keystone/tests/test_v3_filters.py",
         "patchSetId": 15
@@ -81,6 +153,24 @@
       "writtenOn": "2015-01-21T14:19:52Z",
       "side": 1,
       "message": "Not related to this patch, but don\u0027t we need a test_domains_list_limit as well?",
+      "revId": "0a10f2e1383d50ea4f558a1bbe6426d695d279ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_0f740998",
+        "filename": "keystone/tests/test_v3_filters.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-21T15:47:44Z",
+      "side": 1,
+      "message": "so my response to your other comment....",
+      "parentUuid": "1a930d6b_9f7e6ce3",
       "revId": "0a10f2e1383d50ea4f558a1bbe6426d695d279ff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
