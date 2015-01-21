@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_6374c6cf",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-01-21T17:16:40Z",
+      "side": 1,
+      "message": "I think that we can use the domain[\u0027extra\u0027] collumn and verify if exists some description here.",
+      "revId": "6874e21e0f07db263ff04c8a89994a1c3bcadc6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
