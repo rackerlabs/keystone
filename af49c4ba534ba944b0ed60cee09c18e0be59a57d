@@ -16,6 +16,24 @@
       "revId": "af49c4ba534ba944b0ed60cee09c18e0be59a57d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_c4bca06f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T18:35:58Z",
+      "side": 1,
+      "message": "So, as decided on the channel, this behavior is not allowed taking in account the existing behavior of this method.\n\nA followon patch will make it possible.\nIn this case, direct roles on domain and those that come from group membership on that domain (non inherited as well) will be returned.",
+      "parentUuid": "1a930d6b_a3b6ae3b",
+      "revId": "af49c4ba534ba944b0ed60cee09c18e0be59a57d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
