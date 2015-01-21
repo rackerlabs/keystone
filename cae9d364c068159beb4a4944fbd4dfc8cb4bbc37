@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_58517561",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-21T16:56:12Z",
+      "side": 1,
+      "message": "this this is a private method it should be able to be changed to always return an expr.DN rather than a string. I\u0027m also fine with it as is.",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_52231605",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1177,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-21T16:56:12Z",
+      "side": 1,
+      "message": "does object_class still need to be a member?",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_92a73e4f",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1438,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-21T16:56:12Z",
+      "side": 1,
+      "message": "I think it\u0027s less confusing if we\u0027re explicit about adding the ldap_filter or self.ldap_filter only if they\u0027re set...\n\n ldap_filter \u003d ldap_filter or self.ldap_filter\n query \u003d ((expr.Attr(self.id_attr) \u003d\u003d object_id) \u0026\n                self.object_class_expr)\n if ldap_filter:\n     query \u0026\u003d ldap_filter\n\nOtherwise readers are left wondering what happens when you \u0026 a query with None... there\u0027s two ways it could work and they both make sense, either nothing matches or it\u0027s ignored.\n\nI\u0027m also fine with this as is... other reviewers might want it changed.",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_f2440276",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1456,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-21T16:56:12Z",
+      "side": 1,
+      "message": "same here:\n\n ldap_filter \u003d ldap_filter or self.ldap_filter\n query \u003d self.object_class_expr\n if ldap_filter:\n     query \u0026\u003d ldap_filter",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_951ac86c",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1471,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-21T16:56:12Z",
+      "side": 1,
+      "message": "same here:\n\n query \u003d self.object_class_expr\n if query_params:\n     query \u0026\u003d query_params",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_75555cc5",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-21T16:56:12Z",
+      "side": 1,
+      "message": "It\u0027s not 2012.",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_95bba80d",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-21T16:56:12Z",
+      "side": 1,
+      "message": "The value is properly escaped, so I don\u0027t see why * needs to be rejected. This check is inadequate anyways, since * can appear anywhere in the value and it will need to be escaped. If \"*\" is rejected then \"a*\" should also be rejected.",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_b57984fe",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-21T16:56:12Z",
+      "side": 1,
+      "message": "this should be moved into a static member of class Attr so that it\u0027s obvious what the type is.",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_754e3cc3",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-21T16:56:12Z",
+      "side": 1,
+      "message": "Similar comment here about handling of a None value --\n\n query \u003d (self.object_class_expr \u0026 (expr.Attr(self.member_attribute) \u003d\u003d user_dn))\n if self.ldap_filter:\n     query \u0026\u003d self.ldap_filter",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_d5cc5038",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-21T16:56:12Z",
+      "side": 1,
+      "message": "similar comment here.",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
