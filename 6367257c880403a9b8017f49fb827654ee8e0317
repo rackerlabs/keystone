@@ -16,6 +16,24 @@
       "revId": "6367257c880403a9b8017f49fb827654ee8e0317",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_d8d80556",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-01-21T16:47:14Z",
+      "side": 1,
+      "message": "notifications.role_assignment completely different with notifications.deleted.\n\nPlease see Steve Martinelli\u0027s comment in https://review.openstack.org/#/c/141854/3/keystone/assignment/core.py,cm",
+      "parentUuid": "1a930d6b_f4d7aeeb",
+      "revId": "6367257c880403a9b8017f49fb827654ee8e0317",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
