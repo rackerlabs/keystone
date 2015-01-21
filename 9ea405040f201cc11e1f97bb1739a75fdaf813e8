@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_957e48ad",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-21T16:35:05Z",
+      "side": 1,
+      "message": "is scope:\u003cx\u003e a new capability in our policy engine (or maybe it was always there and I never knew it!)?",
+      "revId": "9ea405040f201cc11e1f97bb1739a75fdaf813e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_47b36dec",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 29
