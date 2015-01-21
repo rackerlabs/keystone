@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_6a0cb295",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T03:35:29Z",
+      "side": 1,
+      "message": "Since driver.list_project_parents already returns an ordered list of parents, what about:\n\n    def get_project_parents_ids(self, project):\n        def parents_ids(parents_list):\n            if parents_list[0][\u0027parent_id\u0027] is None:\n                return {parents_list[0][\u0027id\u0027]: None}\n            return {parents_list[0][\u0027id\u0027]: parents_ids(parents_list[1::])}\n\n        return parents_ids(self.driver.list_project_parents(project[\u0027id\u0027]))",
+      "revId": "7ba5ba3bd4a3bd22b1cf809aa688c03a4b828698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_8a739eb0",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 524,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T03:35:29Z",
+      "side": 1,
+      "message": "As you assert the whole dict at line 540, maybe we could remove this assert.",
+      "revId": "7ba5ba3bd4a3bd22b1cf809aa688c03a4b828698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_ea6182d4",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T03:35:29Z",
+      "side": 1,
+      "message": "Nice test! Clean and well documented. I would just add one more test to assert the response when ?parents_ids is queried for a project with no parents.",
+      "revId": "7ba5ba3bd4a3bd22b1cf809aa688c03a4b828698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
