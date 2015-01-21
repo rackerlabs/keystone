@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_2d74849b",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-21T04:05:57Z",
+      "side": 1,
+      "message": "Should change this comment too.",
+      "revId": "d835a2e7ff1d744d237466ea23bb8d7285f1b49c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_377933fd",
         "filename": "keystone/auth/controllers.py",
         "patchSetId": 8
