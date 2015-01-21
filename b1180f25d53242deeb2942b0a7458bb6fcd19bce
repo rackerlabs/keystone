@@ -1,0 +1,327 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_306cc79c",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 3190,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T17:21:42Z",
+      "side": 1,
+      "message": "s/assignment_api/resource_api",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_7079effb",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 999,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T17:21:42Z",
+      "side": 1,
+      "message": "I know it\u0027s unrelated to this patch, but ...\n\nShoudn\u0027t self.assignment_api be self.role_api ?",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_b08357cb",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 1020,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T17:21:42Z",
+      "side": 1,
+      "message": "Here as well...",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_70600f36",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 1552,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T17:21:42Z",
+      "side": 1,
+      "message": "You missed this one...",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_d0d623c5",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 1582,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T17:21:42Z",
+      "side": 1,
+      "message": "s/assignment_api/resource_api",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_507eb3af",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 2914,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T17:21:42Z",
+      "side": 1,
+      "message": "resource_api should be used here in order to load a 2nd driver for domain2, shouldnt?",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_a3aa2e6e",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T17:21:42Z",
+      "side": 1,
+      "message": "Missed this one ...",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_83c45241",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T17:21:42Z",
+      "side": 1,
+      "message": "Idem",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_a3c14e30",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T17:21:42Z",
+      "side": 1,
+      "message": "Idem",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_23ed5ec4",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T17:21:42Z",
+      "side": 1,
+      "message": "Missed this one ...",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_83db721a",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T17:21:42Z",
+      "side": 1,
+      "message": "Idem",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_e3099696",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T17:21:42Z",
+      "side": 1,
+      "message": "Idem",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_03ff8268",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T17:21:42Z",
+      "side": 1,
+      "message": "Idem",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_233b9e3b",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T17:21:42Z",
+      "side": 1,
+      "message": "Need to be updated here as well..",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_433fca25",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T17:21:42Z",
+      "side": 1,
+      "message": "Idem",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_030dc290",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T17:21:42Z",
+      "side": 1,
+      "message": "Even if not related to this patch, this one should be role_api.",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_2312beb1",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 810,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T17:21:42Z",
+      "side": 1,
+      "message": "Idem",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_6323e605",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 831,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T17:21:42Z",
+      "side": 1,
+      "message": "Needs to be resource_api",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_8320d2f8",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 842,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T17:21:42Z",
+      "side": 1,
+      "message": "Idem",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

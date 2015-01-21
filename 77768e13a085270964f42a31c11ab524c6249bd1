@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_95d80d55",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T17:21:42Z",
+      "side": 0,
+      "message": "We need to add and hasattr(self, \u0027resource_api\u0027) here as well.\n\nIt\u0027s working now because if we have assignment, we have resource, since by default, assignment is loaded by resource. Or simply both driver were specified :)",
+      "revId": "77768e13a085270964f42a31c11ab524c6249bd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
