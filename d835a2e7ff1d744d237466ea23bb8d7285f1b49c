@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_f775eb32",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T02:27:58Z",
+      "side": 1,
+      "message": "Need to add \u0027unscope\u0027 here as well, in order to keep the ValidationError message consistent.",
+      "revId": "d835a2e7ff1d744d237466ea23bb8d7285f1b49c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_377933fd",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-21T02:27:58Z",
+      "side": 1,
+      "message": "(nit)\n\nCould be useful to add a comment here, as in the above case:\n\n    # Skip scoping when explicit unscoped token is being issued",
+      "revId": "d835a2e7ff1d744d237466ea23bb8d7285f1b49c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
