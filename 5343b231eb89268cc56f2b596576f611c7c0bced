@@ -34,6 +34,23 @@
       "revId": "5343b231eb89268cc56f2b596576f611c7c0bced",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_9e74a5fe",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-01-21T17:35:12Z",
+      "side": 1,
+      "message": "Can you please create test with endpoint_id and no body?  I.e endpoint_ref is none.",
+      "revId": "5343b231eb89268cc56f2b596576f611c7c0bced",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
