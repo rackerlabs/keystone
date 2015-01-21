@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_4ba7e64f",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-21T16:03:48Z",
+      "side": 1,
+      "message": "unrelated whitespace change?",
+      "revId": "5b7d65b7a8b0b0e54cd2cdd3d9db7b6f77c8091c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_cff3e171",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-21T16:03:48Z",
+      "side": 1,
+      "message": "nit: We could pull this out into it\u0027s own variable. This could be done in a follow on patch.",
+      "revId": "5b7d65b7a8b0b0e54cd2cdd3d9db7b6f77c8091c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_cf9a0114",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 441,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-21T16:03:48Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "revId": "5b7d65b7a8b0b0e54cd2cdd3d9db7b6f77c8091c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_ef9fbd01",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-21T16:03:48Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "revId": "5b7d65b7a8b0b0e54cd2cdd3d9db7b6f77c8091c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_8f7e39ad",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 740,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-21T16:03:48Z",
+      "side": 1,
+      "message": "do we need to assign these to anything? \n\n    if domain_id:\n        domain_ref \u003d self.driver.get_domain(domain_id)\n\nor are we just ensuring these are actually valid before calling to the driver?",
+      "revId": "5b7d65b7a8b0b0e54cd2cdd3d9db7b6f77c8091c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_af31350d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 753,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-21T16:03:48Z",
+      "side": 1,
+      "message": "same comments apply to domain and project here.",
+      "revId": "5b7d65b7a8b0b0e54cd2cdd3d9db7b6f77c8091c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_2f2545c2",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 765,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-21T16:03:48Z",
+      "side": 1,
+      "message": "same comment here.",
+      "revId": "5b7d65b7a8b0b0e54cd2cdd3d9db7b6f77c8091c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
