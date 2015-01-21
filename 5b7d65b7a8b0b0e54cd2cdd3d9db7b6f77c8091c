@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_32f84a7c",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-21T16:14:04Z",
+      "side": 1,
+      "message": "agreed",
+      "parentUuid": "1a930d6b_4ba7e64f",
+      "revId": "5b7d65b7a8b0b0e54cd2cdd3d9db7b6f77c8091c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_cff3e171",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-21T16:03:48Z",
       "side": 1,
       "message": "nit: We could pull this out into it\u0027s own variable. This could be done in a follow on patch.",
+      "revId": "5b7d65b7a8b0b0e54cd2cdd3d9db7b6f77c8091c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_f2d162ce",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-21T16:14:04Z",
+      "side": 1,
+      "message": "agreed, we could do that - I\u0027m happy to consider that for a follow on patch",
+      "parentUuid": "1a930d6b_cff3e171",
       "revId": "5b7d65b7a8b0b0e54cd2cdd3d9db7b6f77c8091c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_b260ba36",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 740,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-21T16:14:04Z",
+      "side": 1,
+      "message": "we\u0027re just checking they exist - this used to be done in the driver, but since this is in preparation for moving the project/domain methods into their own backend, we don\u0027t want the assignment driver calling the resource driver.",
+      "parentUuid": "1a930d6b_8f7e39ad",
+      "revId": "5b7d65b7a8b0b0e54cd2cdd3d9db7b6f77c8091c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_af31350d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 13
@@ -104,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_1260ae31",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 753,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-21T16:14:04Z",
+      "side": 1,
+      "message": "as above",
+      "parentUuid": "1a930d6b_af31350d",
+      "revId": "5b7d65b7a8b0b0e54cd2cdd3d9db7b6f77c8091c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_2f2545c2",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 13
@@ -115,6 +187,24 @@
       "writtenOn": "2015-01-21T16:03:48Z",
       "side": 1,
       "message": "same comment here.",
+      "revId": "5b7d65b7a8b0b0e54cd2cdd3d9db7b6f77c8091c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_924bbeaf",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 765,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-21T16:14:04Z",
+      "side": 1,
+      "message": "as above",
+      "parentUuid": "1a930d6b_2f2545c2",
       "revId": "5b7d65b7a8b0b0e54cd2cdd3d9db7b6f77c8091c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
