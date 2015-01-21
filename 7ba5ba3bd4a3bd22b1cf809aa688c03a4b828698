@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a930d6b_2dd00453",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-21T04:56:01Z",
+      "side": 1,
+      "message": "Are parents_as_list and parents_ids are mutually exclusive? According to this line parents_ids will cover parents_as_list.",
+      "revId": "7ba5ba3bd4a3bd22b1cf809aa688c03a4b828698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_6a0cb295",
         "filename": "keystone/resource/core.py",
         "patchSetId": 2
@@ -47,6 +64,24 @@
       "writtenOn": "2015-01-21T03:35:29Z",
       "side": 1,
       "message": "Nice test! Clean and well documented. I would just add one more test to assert the response when ?parents_ids is queried for a project with no parents.",
+      "revId": "7ba5ba3bd4a3bd22b1cf809aa688c03a4b828698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_2d2ba4ec",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 541,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-21T04:56:01Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1a930d6b_ea6182d4",
       "revId": "7ba5ba3bd4a3bd22b1cf809aa688c03a4b828698",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
