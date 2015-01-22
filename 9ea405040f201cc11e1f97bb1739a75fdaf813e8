@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_a17113e2",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-22T22:04:54Z",
+      "side": 1,
+      "message": "Had a discussion with Henry.  We are going to do an extension to the policy mechanism that allows for rules of this type:  all of the enumerated values must either match or be Missing in order for the rule to pass.  Will then use that mechanism here.",
+      "parentUuid": "1a930d6b_f80ce196",
+      "revId": "9ea405040f201cc11e1f97bb1739a75fdaf813e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_478c4d2f",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 29
@@ -83,6 +101,24 @@
       "writtenOn": "2015-01-21T16:35:05Z",
       "side": 1,
       "message": "is scope:\u003cx\u003e a new capability in our policy engine (or maybe it was always there and I never knew it!)?",
+      "revId": "9ea405040f201cc11e1f97bb1739a75fdaf813e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_a1483388",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 29
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-22T22:04:54Z",
+      "side": 1,
+      "message": "I think I might have added it in a dropped patch.  Again, I\u0027ll make sure it gets into the policy engine if it is not there yet.",
+      "parentUuid": "1a930d6b_957e48ad",
       "revId": "9ea405040f201cc11e1f97bb1739a75fdaf813e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
