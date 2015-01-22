@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a930d6b_3e061ecf",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-22T21:18:26Z",
+      "side": 1,
+      "message": "So the more I\u0027ve played with calling this API from tests I have been experimenting with, the less I\u0027m sure this is the right structure (as I think you were alluding to me).  Maybe it might be better to just have something like an \u0027indirect\u0027 key which contained details of how this indirect role was obtained (inherited from project, or domain...or from a group membership etc.) e.g.:\n\n{ \u0027user_id\u0027: user_id,\n  \u0027project_id\u0027: project_id,\n  \u0027role_id\u0027: role_id,\n  \u0027indirect\u0027: {\n      \u0027inherited_from_project\u0027: project_id\n  }\n}\n\nalternatives would be:\n\n \u0027inherited_from_domain\u0027: domain_id\n \u0027inherited_from_group\u0027 .....\n etc. etc.\n\nSuch a structure would also allow us, if we wanted to in the future, to indicate multiple places an indirect assignment may have been obtained from.\n\nNothing in the above is suggesting we change the current public API...just the internal manager\u003c-\u003econtroller data structures.",
+      "revId": "af49c4ba534ba944b0ed60cee09c18e0be59a57d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_a3b6ae3b",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 12
@@ -31,6 +48,24 @@
       "side": 1,
       "message": "So, as decided on the channel, this behavior is not allowed taking in account the existing behavior of this method.\n\nA followon patch will make it possible.\nIn this case, direct roles on domain and those that come from group membership on that domain (non inherited as well) will be returned.",
       "parentUuid": "1a930d6b_a3b6ae3b",
+      "revId": "af49c4ba534ba944b0ed60cee09c18e0be59a57d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_1e5ec212",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-22T21:18:26Z",
+      "side": 1,
+      "message": "as we further discussed - I think the current code DOES support this, so we need to fix it here.",
+      "parentUuid": "1a930d6b_c4bca06f",
       "revId": "af49c4ba534ba944b0ed60cee09c18e0be59a57d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
