@@ -38,7 +38,132 @@ DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 NULL_OBJECT = object()
 
 
-class IdentityTests(object):
+class AssignmentTestHelperMixin(object):
+
+    def create_entities(self, entity_pattern):
+
+        def _create_entity_in_domain(entity_type, domain_id):
+
+            def _create_entity_func(entity_type):
+                f = getattr(
+                    self.identity_api, 'create_%s' % entity_type, None)
+                if f is None:
+                    f = getattr(
+                        self.resource_api, 'create_%s' % entity_type)
+                return f
+
+            new_entity = {'name': uuid.uuid4().hex, 'domain_id': domain_id}
+            if entity_type in ['user', 'group']:
+                new_entity = _create_entity_func(entity_type)(new_entity)
+            else:
+                new_entity['id'] = uuid.uuid4().hex
+                new_entity = _create_entity_func(entity_type)(new_entity['id'],
+                                                              new_entity)
+            return new_entity['id']
+
+        def _create_domain(domain_id):
+            if domain['id'] is None:
+                new_domain = {'id': uuid.uuid4().hex,
+                              'name': uuid.uuid4().hex}
+                self.resource_api.create_domain(new_domain['id'],
+                                                new_domain)
+                return new_domain['id']
+            else:
+                return DEFAULT_DOMAIN_ID
+
+        def _create_role():
+            new_role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+            self.role_api.create_role(new_role['id'], new_role)
+            return new_role['id']
+
+        test_data = {}
+        if 'domain' in entity_pattern:
+            test_data['domain'] = []
+            for domain in entity_pattern['domain']:
+                new_domain_id = _create_domain(domain['id'])
+                test_data['domain'].append(new_domain_id)
+
+                if 'contents' not in domain:
+                    continue
+
+                for entity_type in domain['contents']:
+                    test_data[entity_type] = []
+                    for _ in range(domain['contents'][entity_type]):
+                        test_data[entity_type].append(
+                            _create_entity_in_domain(
+                                entity_type, new_domain_id))
+        if 'role' in entity_pattern:
+            test_data['role'] = []
+            for _ in range(entity_pattern['role']):
+                test_data['role'].append(_create_role())
+
+        return test_data
+
+    def execute_assignment_test(self, test_plan):
+
+        def create_assignments(assignment_pattern, test_data):
+            # First just check how many assignments are already in the system,
+            # in case we need that for later.
+            test_data['initial_assignment_count'] = (
+                len(self.assignment_api.list_role_assignments()))
+
+            # Now create our new ones
+            for assignment in assignment_pattern:
+                args = {}
+                for param in assignment:
+                    if param == 'inherited_to_projects':
+                        args[param] = assignment[param]
+                    else:
+                        # Turn 'entity : 0' into 'entity_id = ac6736ba873d'
+                        # where entity in user, group, project or domain
+                        arg_param = '%s_id' % param
+                        args[arg_param] = test_data[param][assignment[param]]
+                self.assignment_api.create_grant(**args)
+            return test_data
+
+        def run_assignment_tests(test_pattern, test_data):
+
+            def check_results(expected, actual, filter_arg_count):
+                if filter_arg_count == 0:
+                    # It was an unfiltered call, so default fixture assignments
+                    # might be polluting our answer
+                    self.assertEqual(
+                        len(actual),
+                        len(expected) + test_data['initial_assignment_count'])
+                else:
+                    self.assertThat(actual, matchers.HasLength(len(expected)))
+
+                for each_expected in expected:
+                    expected_assignment = {}
+                    for param in each_expected:
+                        if param == 'inherited_to_projects':
+                            expected_assignment[param] = each_expected[param]
+                        else:
+                            # Turn 'entity : 0' into 'entity_id = ac6736ba873d'
+                            # where entity in user, group, project or domain
+                            assignment_term = '%s_id' % param
+                            expected_assignment[assignment_term] = (
+                                test_data[param][each_expected[param]])
+                    self.assertIn(expected_assignment, actual)
+
+            for test in test_pattern:
+                args = {}
+                for filter in test['filters']:
+                    if filter == 'effective':
+                        args[filter] = test['filters'][filter]
+                    else:
+                        filter_param = '%s_id' % filter
+                        args[filter_param] = (
+                            test_data[filter][test['filters'][filter]])
+                results = self.assignment_api.list_role_assignments(**args)
+                check_results(test['results'], results, len(args))
+
+        test_data = self.create_entities(test_plan['entities'])
+        test_data = create_assignments(test_plan['assignments'], test_data)
+        run_assignment_tests(test_plan['tests'], test_data)
+
+
+class IdentityTests(AssignmentTestHelperMixin):
     def _get_domain_fixture(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.resource_api.create_domain(domain['id'], domain)
@@ -466,131 +591,43 @@ class IdentityTests(object):
                           self.resource_api.get_project,
                           'fake2')
 
-    def test_list_role_assignments_unfiltered(self):
-        """Test for unfiltered listing role assignments.
-
-        Test Plan:
-
-        - Create a domain, with a user, group & project
-        - Find how many role assignments already exist (from default
-          fixtures)
-        - Create a grant of each type (user/group on project/domain)
-        - Check the number of assignments has gone up by 4 and that
-          the entries we added are in the list returned
-        - Check that if we list assignments by role_id, then we get back
-          assignments that only contain that role.
-
-        """
-        new_domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
-        self.resource_api.create_domain(new_domain['id'], new_domain)
-        new_user = {'name': uuid.uuid4().hex, 'password': uuid.uuid4().hex,
-                    'enabled': True, 'domain_id': new_domain['id']}
-        new_user = self.identity_api.create_user(new_user)
-        new_group = {'domain_id': new_domain['id'], 'name': uuid.uuid4().hex}
-        new_group = self.identity_api.create_group(new_group)
-        new_project = {'id': uuid.uuid4().hex,
-                       'name': uuid.uuid4().hex,
-                       'domain_id': new_domain['id']}
-        self.resource_api.create_project(new_project['id'], new_project)
-
-        # First check how many role grants already exist
-        existing_assignments = len(self.assignment_api.list_role_assignments())
-        existing_assignments_for_role = len(
-            self.assignment_api.list_role_assignments_for_role(
-                role_id='admin'))
-
-        # Now create the grants (roles are defined in default_fixtures)
-        self.assignment_api.create_grant(user_id=new_user['id'],
-                                         domain_id=new_domain['id'],
-                                         role_id='member')
-        self.assignment_api.create_grant(user_id=new_user['id'],
-                                         project_id=new_project['id'],
-                                         role_id='other')
-        self.assignment_api.create_grant(group_id=new_group['id'],
-                                         domain_id=new_domain['id'],
-                                         role_id='admin')
-        self.assignment_api.create_grant(group_id=new_group['id'],
-                                         project_id=new_project['id'],
-                                         role_id='admin')
-
-        # Read back the full list of assignments - check it is gone up by 4
-        assignment_list = self.assignment_api.list_role_assignments()
-        self.assertEqual(existing_assignments + 4, len(assignment_list))
-
-        # Now check that each of our four new entries are in the list
-        self.assertIn(
-            {'user_id': new_user['id'], 'domain_id': new_domain['id'],
-             'role_id': 'member'},
-            assignment_list)
-        self.assertIn(
-            {'user_id': new_user['id'], 'project_id': new_project['id'],
-             'role_id': 'other'},
-            assignment_list)
-        self.assertIn(
-            {'group_id': new_group['id'], 'domain_id': new_domain['id'],
-             'role_id': 'admin'},
-            assignment_list)
-        self.assertIn(
-            {'group_id': new_group['id'], 'project_id': new_project['id'],
-             'role_id': 'admin'},
-            assignment_list)
-
-        # Read back the list of assignments for just the admin role, checking
-        # this only goes up by two.
-        assignment_list = self.assignment_api.list_role_assignments_for_role(
-            role_id='admin')
-        self.assertEqual(existing_assignments_for_role + 2,
-                         len(assignment_list))
-
-        # Now check that each of our two new entries are in the list
-        self.assertIn(
-            {'group_id': new_group['id'], 'domain_id': new_domain['id'],
-             'role_id': 'admin'},
-            assignment_list)
-        self.assertIn(
-            {'group_id': new_group['id'], 'project_id': new_project['id'],
-             'role_id': 'admin'},
-            assignment_list)
+    def test_role_assignments_unfiltered(self):
+        test_plan = {
+            'entities': {'domain': [{'id': None,
+                                     'contents': {'user': 1, 'group': 1,
+                                                  'project': 1}}],
+                         'role': 3},
+            'assignments': [{'user': 0, 'role': 0, 'domain': 0},
+                            {'user': 0, 'role': 1, 'project': 0},
+                            {'group': 0, 'role': 2, 'domain': 0},
+                            {'user': 0, 'role': 2, 'project': 0}],
+            'tests': [
+                {'filters': {},
+                 'results': [{'user': 0, 'role': 0, 'domain': 0},
+                             {'user': 0, 'role': 1, 'project': 0},
+                             {'group': 0, 'role': 2, 'domain': 0},
+                             {'user': 0, 'role': 2, 'project': 0}]},
+                {'filters': {'role': 2},
+                 'results': [{'group': 0, 'role': 2, 'domain': 0},
+                             {'user': 0, 'role': 2, 'project': 0}]}
+            ]
+        }
+        self.execute_assignment_test(test_plan)
 
     def test_list_group_role_assignment(self):
         # When a group role assignment is created and the role assignments are
         # listed then the group role assignment is included in the list.
-
-        MEMBER_ROLE_ID = 'member'
-
-        def get_member_assignments():
-            assignments = self.assignment_api.list_role_assignments()
-            return filter(lambda x: x['role_id'] == MEMBER_ROLE_ID,
-                          assignments)
-
-        orig_member_assignments = get_member_assignments()
-
-        # Create a group.
-        new_group = {
-            'domain_id': DEFAULT_DOMAIN_ID,
-            'name': self.getUniqueString(prefix='tlgra')}
-        new_group = self.identity_api.create_group(new_group)
-
-        # Create a project.
-        new_project = {
-            'id': uuid.uuid4().hex,
-            'name': self.getUniqueString(prefix='tlgra'),
-            'domain_id': DEFAULT_DOMAIN_ID}
-        self.resource_api.create_project(new_project['id'], new_project)
-
-        # Assign a role to the group.
-        self.assignment_api.create_grant(
-            group_id=new_group['id'], project_id=new_project['id'],
-            role_id=MEMBER_ROLE_ID)
-
-        # List role assignments
-        new_member_assignments = get_member_assignments()
-
-        expected_member_assignments = orig_member_assignments + [{
-            'group_id': new_group['id'], 'project_id': new_project['id'],
-            'role_id': MEMBER_ROLE_ID}]
-        self.assertThat(new_member_assignments,
-                        matchers.Equals(expected_member_assignments))
+        test_plan = {
+            'entities': {'domain': [{'id': DEFAULT_DOMAIN_ID,
+                                     'contents': {'group': 1, 'project': 1}}],
+                         'role': 1},
+            'assignments': [{'group': 0, 'role': 0, 'project': 0}],
+            'tests': [
+                {'filters': {},
+                 'results': [{'group': 0, 'role': 0, 'project': 0}]}
+            ]
+        }
+        self.execute_assignment_test(test_plan)
 
     def test_list_role_assignments_bad_role(self):
         assignment_list = self.assignment_api.list_role_assignments_for_role(
@@ -4886,7 +4923,69 @@ class PolicyTests(object):
                           uuid.uuid4().hex)
 
 
-class InheritanceTests(object):
+class InheritanceTests(AssignmentTestHelperMixin):
+
+    def test_role_assignments_user_domain_to_project_inheritance(self):
+        test_plan = {
+            'entities': {'domain': [{'id': None,
+                                     'contents': {'user': 2, 'project': 1}}],
+                         'role': 3},
+            'assignments': [{'user': 0, 'role': 0, 'domain': 0},
+                            {'user': 0, 'role': 1, 'project': 0},
+                            {'user': 0, 'role': 2, 'domain': 0,
+                             'inherited_to_projects': True},
+                            {'user': 1, 'role': 1, 'project': 0}],
+            'tests': [
+                # List all direct assignments for user[0]
+                {'filters': {'user': 0},
+                 'results': [{'user': 0, 'role': 0, 'domain': 0},
+                             {'user': 0, 'role': 1, 'project': 0},
+                             {'user': 0, 'role': 2, 'domain': 0,
+                              'inherited_to_projects': 'projects'}]},
+                # Now the effective ones - so the domain role should turn into
+                # a project role
+                {'filters': {'user': 0, 'effective': True},
+                 'results': [{'user': 0, 'role': 0, 'domain': 0},
+                             {'user': 0, 'role': 1, 'project': 0},
+                             {'user': 0, 'role': 2, 'project': 0, 'domain': 0,
+                              'inherited_to_projects': 'projects'}]},
+                # Narrow down to effective roles for user[0] and project[0]
+                {'filters': {'user': 0, 'project': 0, 'effective': True},
+                 'results': [{'user': 0, 'role': 1, 'project': 0},
+                             {'user': 0, 'role': 2, 'project': 0, 'domain': 0,
+                              'inherited_to_projects': 'projects'}]}
+            ]
+        }
+        self.config_fixture.config(group='os_inherit', enabled=True)
+        self.execute_assignment_test(test_plan)
+
+    def test_inherited_role_assignments_excluded_if_os_inherit_false(self):
+        test_plan = {
+            'entities': {'domain': [{'id': None,
+                                     'contents': {'user': 2, 'project': 1}}],
+                         'role': 3},
+            'assignments': [{'user': 0, 'role': 0, 'domain': 0},
+                            {'user': 0, 'role': 1, 'project': 0},
+                            {'user': 0, 'role': 2, 'domain': 0,
+                             'inherited_to_projects': True},
+                            {'user': 1, 'role': 1, 'project': 0}],
+            'tests': [
+                # List all direct assignments for user[0], since os-inherit is
+                # disabled, we should not see the inherited role
+                {'filters': {'user': 0},
+                 'results': [{'user': 0, 'role': 0, 'domain': 0},
+                             {'user': 0, 'role': 1, 'project': 0}]},
+                # Same in effective mode - inherited roles should not be
+                # included or expanded
+                {'filters': {'user': 0, 'effective': True},
+                 'results': [{'user': 0, 'role': 0, 'domain': 0},
+                             {'user': 0, 'role': 1, 'project': 0}]},
+            ]
+        }
+        self.config_fixture.config(group='os_inherit', enabled=False)
+        # The test currently fails since even with os_inherit disabled, we
+        # still get back inherited assignments
+        self.execute_assignment_test(test_plan)
 
     def test_inherited_role_grants_for_user(self):
         """Test inherited user roles.
