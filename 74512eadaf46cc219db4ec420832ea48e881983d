@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_1566c651",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-22T03:18:40Z",
+      "side": 1,
+      "message": "Sugest add a comment to describe the structure of return data.",
+      "revId": "74512eadaf46cc219db4ec420832ea48e881983d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_f5793afd",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-22T03:18:40Z",
+      "side": 1,
+      "message": "This should be:\n    A\n    |\n    B\n   / \\\n  C   D",
+      "revId": "74512eadaf46cc219db4ec420832ea48e881983d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
