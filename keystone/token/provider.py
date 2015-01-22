@@ -27,6 +27,7 @@ import six
 from keystone.common import cache
 from keystone.common import dependency
 from keystone.common import manager
+from keystone.common import strict_abc
 from keystone import config
 from keystone import exception
 from keystone.i18n import _, _LE, _LW
@@ -533,7 +534,9 @@ class Manager(manager.Manager):
                                             consumer_id=consumer_id)
 
 
-@six.add_metaclass(abc.ABCMeta)
+# NOTE(lbragstad): strict_abc should be replaced with the official library for
+# strict ABC once that is provided as an OpenStack library.
+@six.add_metaclass(strict_abc.StrictABCMeta)
 class Provider(object):
     """Interface description for a Token provider."""
 
