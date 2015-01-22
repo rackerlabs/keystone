@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_96c1dc82",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-22T05:55:57Z",
+      "side": 1,
+      "message": "If we change this to DN instance, we\u0027ll have to take special care of  them on driver level. I think this deserves separate discussion in separate CR.",
+      "parentUuid": "1a930d6b_58517561",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_52231605",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 14
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_9b5bc553",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1177,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-22T05:55:57Z",
+      "side": 1,
+      "message": "It\u0027s still used as is in several places, just like id_attr. We shouldn\u0027t make things more complex by making other things simpler.",
+      "parentUuid": "1a930d6b_52231605",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_92a73e4f",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 14
@@ -47,6 +83,24 @@
       "writtenOn": "2015-01-21T16:56:12Z",
       "side": 1,
       "message": "I think it\u0027s less confusing if we\u0027re explicit about adding the ldap_filter or self.ldap_filter only if they\u0027re set...\n\n ldap_filter \u003d ldap_filter or self.ldap_filter\n query \u003d ((expr.Attr(self.id_attr) \u003d\u003d object_id) \u0026\n                self.object_class_expr)\n if ldap_filter:\n     query \u0026\u003d ldap_filter\n\nOtherwise readers are left wondering what happens when you \u0026 a query with None... there\u0027s two ways it could work and they both make sense, either nothing matches or it\u0027s ignored.\n\nI\u0027m also fine with this as is... other reviewers might want it changed.",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_f6ff80ff",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1438,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-22T05:55:57Z",
+      "side": 1,
+      "message": "In our context None as well as an empty string is a noop. We might want to document it.\n\nOn the other hand making this more explicit is good, I agree.",
+      "parentUuid": "1a930d6b_92a73e4f",
       "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_f626a0b9",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-22T05:55:57Z",
+      "side": 1,
+      "message": "Oh... I thought I\u0027ve fixed that.",
+      "parentUuid": "1a930d6b_75555cc5",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_95bba80d",
         "filename": "keystone/common/ldap/expr.py",
         "patchSetId": 14
@@ -121,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_d648c45d",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-22T05:55:57Z",
+      "side": 1,
+      "message": "I guess I should expand this comment. The problem is that we should escape everything. Because any value can contain user-provided data. So if we allow (Attr(\u0027cn\u0027) \u003d\u003d \u0027*\u0027), we\u0027ll allow user to specify \u0027*\u0027 as a name in authentication and hack this planet.\n\nAnd we just won\u0027t support having \u0027*\u0027 in the middle of value as it\u0027s not currently needed. But we _do_ support users with \u0027*\u0027 in their names.",
+      "parentUuid": "1a930d6b_95bba80d",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_b57984fe",
         "filename": "keystone/common/ldap/expr.py",
         "patchSetId": 14
@@ -132,6 +222,24 @@
       "writtenOn": "2015-01-21T16:56:12Z",
       "side": 1,
       "message": "this should be moved into a static member of class Attr so that it\u0027s obvious what the type is.",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_76963096",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-22T05:55:57Z",
+      "side": 1,
+      "message": "I\u0027ve answered that in the previous patchset. These are here to shortcut common expressions, and moving them to Attr would make think worse. But I\u0027ll see if that\u0027s still an issue.",
+      "parentUuid": "1a930d6b_b57984fe",
       "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
