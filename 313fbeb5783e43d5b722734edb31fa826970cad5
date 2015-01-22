@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_84250ac4",
+        "filename": "keystone/tests/unit/common/test_strict_abc.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-22T21:51:59Z",
+      "side": 1,
+      "message": "nit: name probably doesn\u0027t need to be passed in as a keyword argument since its required and the _class_factory signature doesn\u0027t default it.",
+      "revId": "313fbeb5783e43d5b722734edb31fa826970cad5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_a42046b1",
+        "filename": "keystone/tests/unit/common/test_strict_abc.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-22T21:51:59Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "313fbeb5783e43d5b722734edb31fa826970cad5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_4f0a5b22",
+        "filename": "keystone/tests/unit/common/test_strict_abc.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-22T21:51:59Z",
+      "side": 1,
+      "message": "same comment",
+      "revId": "313fbeb5783e43d5b722734edb31fa826970cad5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_6f0d5737",
+        "filename": "keystone/tests/unit/common/test_strict_abc.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-22T21:51:59Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "313fbeb5783e43d5b722734edb31fa826970cad5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_ef186777",
+        "filename": "keystone/tests/unit/common/test_strict_abc.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-22T21:51:59Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "313fbeb5783e43d5b722734edb31fa826970cad5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
