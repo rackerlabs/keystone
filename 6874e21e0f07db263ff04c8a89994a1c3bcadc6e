@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a930d6b_355902ff",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-22T02:49:49Z",
+      "side": 1,
+      "message": "need the link of bp.",
+      "revId": "6874e21e0f07db263ff04c8a89994a1c3bcadc6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_6374c6cf",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 3
