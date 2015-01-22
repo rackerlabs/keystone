@@ -33,6 +33,24 @@
       "revId": "74512eadaf46cc219db4ec420832ea48e881983d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_958636b8",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 591,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-22T03:23:44Z",
+      "side": 1,
+      "message": "not really, the double \\ is intentional and the extra space before | is because the double \\ turns into one once the doc is built.",
+      "parentUuid": "1a930d6b_f5793afd",
+      "revId": "74512eadaf46cc219db4ec420832ea48e881983d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
