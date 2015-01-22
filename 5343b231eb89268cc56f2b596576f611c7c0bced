@@ -51,6 +51,24 @@
       "revId": "5343b231eb89268cc56f2b596576f611c7c0bced",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_6a2c8948",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-22T02:03:44Z",
+      "side": 1,
+      "message": "I think controller layer will prevent this behavior, so we don\u0027t need this test.",
+      "parentUuid": "1a930d6b_9e74a5fe",
+      "revId": "5343b231eb89268cc56f2b596576f611c7c0bced",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
