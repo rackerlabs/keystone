@@ -4347,6 +4347,37 @@ class TrustTests(object):
         # This was the last use, the trust isn't available anymore
         self.assertIsNone(self.trust_api.get_trust(trust_data['id']))
 
+    def test_create_trust_formatted_message_exception_raise(self):
+        self.config_fixture.config(debug=True)
+        try:
+            wrong_trust = {
+                'allow_redelegation': True,
+                'redelegation_count': CONF.trust.max_redelegation_count + 1}
+            self.trust_api.create_trust(
+                uuid.uuid4().hex,
+                wrong_trust,
+                [])
+        except exception.MaxRedelegationDepthReached as e:
+            self.assertIn(str(CONF.trust.max_redelegation_count),
+                          six.text_type(e))
+
+    def test_validate_redelegation_formatted_message_exception_raise(self):
+        self.config_fixture.config(debug=True)
+        try:
+            self.trust_api._validate_redelegation(
+                {'redelegation_count': CONF.trust.max_redelegation_count + 1},
+                {})
+        except exception.MaxRedelegationDepthReached as e:
+            self.assertIn(str(CONF.trust.max_redelegation_count),
+                          six.text_type(e))
+
+        try:
+            self.trust_api._validate_redelegation(
+                {'redelegation_count': CONF.trust.max_redelegation_count - 1},
+                {'remaining_uses': 1})
+        except exception.Forbidden as e:
+            self.assertIn('1', six.text_type(e))
+
 
 class CatalogTests(object):
     def test_region_crud(self):
