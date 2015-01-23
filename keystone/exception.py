@@ -431,3 +431,8 @@ class SAMLSigningError(UnexpectedError):
                              'installed, or this is the result of '
                              'misconfiguration. Reason %(reason)s')
     title = 'Error signing SAML assertion'
+
+
+class MaxRedelegationDepthReached(Forbidden):
+    message_format = _('Redelegation depth of %(redelegation_depth)d is '
+                       'out of allowed range of [0..%(max_count)d]')
