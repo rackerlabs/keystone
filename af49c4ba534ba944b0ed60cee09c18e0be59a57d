@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_75226f02",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-23T12:35:18Z",
+      "side": 1,
+      "message": "I liked the idea of the indirect key :-)\n\nWhat about:\n\nFor user domain inheritance:\n\n\u0027indirect\u0027: {\n      \u0027domain_id\u0027: domain_id\n}\n\nFor user project inheritance:\n\n\u0027indirect\u0027: {\n      \u0027project_id\u0027: project_id\n}\n\nFor group domain/project inheritance, add group_id in \u0027indirect\u0027 key on the examples above.",
+      "parentUuid": "1a930d6b_3e061ecf",
+      "revId": "af49c4ba534ba944b0ed60cee09c18e0be59a57d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_09b83c75",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 12
