@@ -71,6 +71,8 @@ class DbSync(BaseApp):
 
     @staticmethod
     def main():
+        LOG.warn(_LW("'db_sync' is deprecated and will be removed soon. "
+                     "Please use 'db upgrade' or 'db downgrade' instead."))
         version = CONF.command.version
         extension = CONF.command.extension
         migration_helpers.sync_database_to_version(extension, version)
@@ -92,6 +94,8 @@ class DbVersion(BaseApp):
 
     @staticmethod
     def main():
+        LOG.warn(_LW("'db_version' is deprecated and will be removed soon. "
+                     "Please use 'db version' instead."))
         extension = CONF.command.extension
         migration_helpers.print_db_version(extension)
 
@@ -545,11 +549,11 @@ class SamlIdentityProviderMetadata(BaseApp):
 
 
 CMDS = [
-    DbSync,
-    DbVersion,
     DomainConfigUpload,
     FernetRotate,
     FernetSetup,
+    DbSync,
+    DbVersion,
     MappingPurge,
     PKISetup,
     SamlIdentityProviderMetadata,
