@@ -160,14 +160,14 @@ class SqlMigrateBase(tests.SQLDriverOverrides, tests.TestCase):
         self.Session = db_session.get_maker(self.engine, autocommit=False)
 
         self.initialize_sql()
-        self.repo_path = migration_helpers.find_migrate_repo(
-            self.repo_package())
+        self.repo_path = migration_helpers.find_repo('migrate_repo',
+                                                     self.repo_package())
         self.schema = versioning_api.ControlledSchema.create(
             self.engine,
             self.repo_path, self.initial_db_version)
 
         # auto-detect the highest available schema version in the migrate_repo
-        self.max_version = self.schema.repository.version().version
+        self.max_version = int(self.schema.repository.version().version)
 
     def tearDown(self):
         sqlalchemy.orm.session.Session.close_all()
@@ -781,8 +781,11 @@ class VersionTests(SqlMigrateBase):
     def test_extension_initial(self):
         """When get the initial version of an extension, it's 0."""
         for name, extension in six.iteritems(EXTENSIONS):
-            abs_path = migration_helpers.find_migrate_repo(extension)
+            # get_db_version does not (and should not) initialize the
+            # migration repository. Thus it needs to be done manually.
+            abs_path = migration_helpers.find_repo('migrate_repo', extension)
             migration.db_version_control(sql.get_engine(), abs_path)
+
             version = migration_helpers.get_db_version(extension=name)
             self.assertEqual(0, version,
                              'Migrate version for %s is not 0' % name)
@@ -790,9 +793,7 @@ class VersionTests(SqlMigrateBase):
     def test_extension_migrated(self):
         """When get the version after migrating an extension, it's not 0."""
         for name, extension in six.iteritems(EXTENSIONS):
-            abs_path = migration_helpers.find_migrate_repo(extension)
-            migration.db_version_control(sql.get_engine(), abs_path)
-            migration.db_sync(sql.get_engine(), abs_path)
+            migration_helpers.sync_database_to_version(name)
             version = migration_helpers.get_db_version(extension=name)
             self.assertTrue(
                 version > 0,
@@ -805,7 +806,7 @@ class VersionTests(SqlMigrateBase):
                 version=0)
 
     def test_extension_federation_upgraded_values(self):
-        abs_path = migration_helpers.find_migrate_repo(federation)
+        abs_path = migration_helpers.find_repo('migrate_repo', federation)
         migration.db_version_control(sql.get_engine(), abs_path)
         migration.db_sync(sql.get_engine(), abs_path, version=6)
         idp_table = sqlalchemy.Table("identity_provider",

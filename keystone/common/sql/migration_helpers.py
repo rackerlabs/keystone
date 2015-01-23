@@ -21,6 +21,7 @@ import migrate
 from migrate import exceptions
 from oslo_config import cfg
 from oslo_db.sqlalchemy import migration
+from oslo_db.sqlalchemy.migration_cli import manager as migration_manager
 from oslo_serialization import jsonutils
 from oslo_utils import importutils
 import six
@@ -130,8 +131,7 @@ def rename_tables_with_constraints(renames, constraints, engine):
         add_constraints(constraints)
 
 
-def find_migrate_repo(package=None, repo_name='migrate_repo'):
-    package = package or sql
+def find_repo(repo_name, package):
     path = os.path.abspath(os.path.join(
         os.path.dirname(package.__file__), repo_name))
     if os.path.isdir(path):
@@ -140,12 +140,9 @@ def find_migrate_repo(package=None, repo_name='migrate_repo'):
 
 
 def _sync_common_repo(version):
-    abs_path = find_migrate_repo()
-    init_version = migrate_repo.DB_INIT_VERSION
-    engine = sql.get_engine()
     _assert_not_schema_downgrade(version=version)
-    migration.db_sync(engine, abs_path, version=version,
-                      init_version=init_version)
+    manager = get_migration_manager(prepare_repo=True)
+    manager.upgrade(version)
 
 
 def _fix_federation_tables(engine):
@@ -190,33 +187,10 @@ def _assert_not_schema_downgrade(extension=None, version=None):
 
 
 def _sync_extension_repo(extension, version):
-    init_version = 0
-    engine = sql.get_engine()
-
-    try:
-        package_name = '.'.join((contrib.__name__, extension))
-        package = importutils.import_module(package_name)
-    except ImportError:
-        raise ImportError(_("%s extension does not exist.")
-                          % package_name)
-    try:
-        abs_path = find_migrate_repo(package)
-        try:
-            migration.db_version_control(sql.get_engine(), abs_path)
-        # Register the repo with the version control API
-        # If it already knows about the repo, it will throw
-        # an exception that we can safely ignore
-        except exceptions.DatabaseAlreadyControlledError:
-            pass
-    except exception.MigrationNotProvided as e:
-        print(e)
-        sys.exit(1)
-
     _assert_not_schema_downgrade(extension=extension, version=version)
-
+    manager = get_migration_manager(extension, prepare_repo=True)
     try:
-        migration.db_sync(engine, abs_path, version=version,
-                          init_version=init_version)
+        manager.upgrade(version)
     except ValueError:
         # NOTE(marco-fargetta): ValueError is raised from the sanity check (
         # verifies that tables are utf8 under mysql). The federation_protocol,
@@ -227,14 +201,71 @@ def _sync_extension_repo(extension, version):
         # This is a workaround to "fix" those tables if we're under MySQL and
         # the version is before the 6 because before the tables were introduced
         # before and patched when migration 5 was available
+        engine = sql.get_engine()
         if engine.name == 'mysql' and \
            int(six.text_type(get_db_version(extension))) < 6:
             _fix_federation_tables(engine)
             # The migration is applied again after the fix
-            migration.db_sync(engine, abs_path, version=version,
-                              init_version=init_version)
+            manager.upgrade(version)
         else:
             raise
+
+
+def _prepare_migrate_repo(migrate_path, version=None):
+    engine = sql.get_engine()
+    try:
+        migration.db_version_control(engine, migrate_path, version)
+    # Register the repo with the version control API
+    # If it already knows about the repo, it will throw
+    # an exception that we can safely ignore
+    except exceptions.DatabaseAlreadyControlledError:
+        pass
+
+
+def get_migration_manager(extension=None, prepare_repo=False):
+    engine = sql.get_engine()
+    if extension:
+        try:
+            package_name = '.'.join((contrib.__name__, extension))
+            package = importutils.import_module(package_name)
+        except ImportError:
+            raise ImportError(_("%s extension does not exist.")
+                              % package_name)
+        init_version = 0
+    else:
+        package = sql
+        init_version = migrate_repo.DB_INIT_VERSION
+
+    # sqlalchemy-migrate repo must exist
+    migrate_path = find_repo('migrate_repo', package)
+    migration_config = {
+        'migration_repo_path': migrate_path,
+        'init_version': init_version,
+    }
+
+    # NOTE(breton): sqlalchemy-migrate requires a database to be assigned to a
+    # repository. Migration helpers in oslo_db fail to do it when there are
+    # multiple migrate repositories. This is a workaround for this behaviour.
+    # The check of the flag is required, because the repo should be initialized
+    # only in certain cases, like upgrade and downgrade
+    if prepare_repo:
+        _prepare_migrate_repo(migrate_path, init_version)
+
+    # Alembic repos might still not exist, so it shouldn't fail if they don't
+    try:
+        alembic_path = find_repo('alembic', package)
+    except exception.MigrationNotProvided:
+        alembic_path = None
+    if alembic_path:
+        migration_config['alembic_ini_path'] = os.path.join(alembic_path,
+                                                            'alembic.ini')
+        migration_config['alembic_repo_path'] = alembic_path
+
+    # engine is passed to migration manager so that in-memory sqlite used in
+    # tests work
+    manager = migration_manager.MigrationManager(migration_config,
+                                                 engine=engine)
+    return manager
 
 
 def sync_database_to_version(extension=None, version=None):
@@ -250,25 +281,14 @@ def sync_database_to_version(extension=None, version=None):
 
 
 def get_db_version(extension=None):
-    if not extension:
-        return migration.db_version(sql.get_engine(), find_migrate_repo(),
-                                    migrate_repo.DB_INIT_VERSION)
-
-    try:
-        package_name = '.'.join((contrib.__name__, extension))
-        package = importutils.import_module(package_name)
-    except ImportError:
-        raise ImportError(_("%s extension does not exist.")
-                          % package_name)
-
-    return migration.db_version(
-        sql.get_engine(), find_migrate_repo(package), 0)
+    manager = get_migration_manager(extension)
+    version = manager.version()
+    return version
 
 
 def print_db_version(extension=None):
     try:
-        db_version = get_db_version(extension=extension)
-        print(db_version)
+        print(get_db_version(extension))
     except exception.MigrationNotProvided as e:
         print(e)
         sys.exit(1)
