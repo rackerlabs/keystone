@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_a202da08",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-23T14:29:27Z",
+      "side": 1,
+      "message": "yes, I like that....I think that would work...so:\n\n- if you just had group_id in indirect that would mean it was from a group assignment direct to the project\n- if you had group_id and domain_id it would be from a group assignment on the domain\n- fi you had group_id and project_id it would be from a group assignment for a project in the parent hierarchy\n\ndo you think that\u0027s right?",
+      "parentUuid": "1a930d6b_75226f02",
+      "revId": "af49c4ba534ba944b0ed60cee09c18e0be59a57d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_09b83c75",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 12
