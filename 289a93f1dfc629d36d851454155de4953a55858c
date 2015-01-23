@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_d33b369a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-01-23T15:38:00Z",
+      "side": 1,
+      "message": "(nit) required instead or require\n\nI\u0027d also replace \u0027. And, \u0027 with just \u0027and\u0027",
+      "revId": "289a93f1dfc629d36d851454155de4953a55858c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
