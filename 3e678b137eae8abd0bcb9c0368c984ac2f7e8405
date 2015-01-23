@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_8778a22c",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-23T02:52:21Z",
+      "side": 1,
+      "message": "I am not sure if we should change roles here.",
+      "revId": "3e678b137eae8abd0bcb9c0368c984ac2f7e8405",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_87918254",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-23T02:52:21Z",
+      "side": 1,
+      "message": "Roles in trust are clean_roles in controller layer and clean_roles only contain \u0027id\u0027 attribute. So, we don\u0027t need to check \u0027name\u0027. And I think the reason of this bug is that we didn\u0027t pass clean_roles into this method before and the roles in trust are not cleaned.",
+      "revId": "3e678b137eae8abd0bcb9c0368c984ac2f7e8405",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
