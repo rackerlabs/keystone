@@ -144,6 +144,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_af2e3141",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-23T20:55:56Z",
+      "side": 1,
+      "message": "Maybe this is not true. That case for inherited flag. I need to consider os-inherit config for efffective as well.\nWill add this. thanks for pointing this out,",
+      "parentUuid": "1a930d6b_448854c5",
+      "revId": "af49c4ba534ba944b0ed60cee09c18e0be59a57d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_a3b6ae3b",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 12
