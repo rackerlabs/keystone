@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_848ebcce",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-23T20:40:30Z",
+      "side": 1,
+      "message": "Great!",
+      "parentUuid": "1a930d6b_cd64774b",
+      "revId": "af49c4ba534ba944b0ed60cee09c18e0be59a57d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_09b83c75",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 12
@@ -102,6 +120,24 @@
       "writtenOn": "2015-01-23T10:48:55Z",
       "side": 1,
       "message": "What about the case where effective\u003dTrue but os-inherit\u003dFalse?  I think this causes us to include inherited roles in the resulting output.",
+      "revId": "af49c4ba534ba944b0ed60cee09c18e0be59a57d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_448854c5",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 624,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-23T20:40:30Z",
+      "side": 1,
+      "message": "No on calls from controller, because inherit calculation takes in account os-inherit cofig. Take a look at lines 731-732 of controller.\nIf it\u0027s false, this code won\u0027t be executed, look at line 718 of this file.\n\nHowever, I agree that needs to be evaluated here at manager level. I\u0027ll change this.",
+      "parentUuid": "1a930d6b_09b83c75",
       "revId": "af49c4ba534ba944b0ed60cee09c18e0be59a57d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +191,24 @@
       "side": 1,
       "message": "as we further discussed - I think the current code DOES support this, so we need to fix it here.",
       "parentUuid": "1a930d6b_c4bca06f",
+      "revId": "af49c4ba534ba944b0ed60cee09c18e0be59a57d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_6491d0f0",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 689,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-23T20:40:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_1e5ec212",
       "revId": "af49c4ba534ba944b0ed60cee09c18e0be59a57d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
