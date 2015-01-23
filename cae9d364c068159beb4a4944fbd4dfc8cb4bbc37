@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_d327c3b4",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1438,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-23T11:45:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_f6ff80ff",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_f2440276",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 14
@@ -124,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_f32aff7c",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1456,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-23T11:45:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_f2440276",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_951ac86c",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 14
@@ -135,6 +171,24 @@
       "writtenOn": "2015-01-21T16:56:12Z",
       "side": 1,
       "message": "same here:\n\n query \u003d self.object_class_expr\n if query_params:\n     query \u0026\u003d query_params",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_332567ab",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1471,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-23T11:45:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_951ac86c",
       "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -169,6 +223,24 @@
       "writtenOn": "2015-01-22T05:55:57Z",
       "side": 1,
       "message": "Oh... I thought I\u0027ve fixed that.",
+      "parentUuid": "1a930d6b_75555cc5",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_0c307300",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-23T11:45:35Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "1a930d6b_75555cc5",
       "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -211,6 +283,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_7d9fdfb4",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-23T11:45:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_d648c45d",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_b57984fe",
         "filename": "keystone/common/ldap/expr.py",
         "patchSetId": 14
@@ -246,6 +336,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_9d7d6b71",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-23T11:45:35Z",
+      "side": 1,
+      "message": "Since objectClass is used in only one place, I\u0027ll remove it altogether and move ALL to FilterExpr.",
+      "parentUuid": "1a930d6b_76963096",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_754e3cc3",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 14
@@ -263,6 +371,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_5373d37f",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-23T11:45:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_754e3cc3",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_d5cc5038",
         "filename": "keystone/identity/backends/ldap.py",
         "patchSetId": 14
@@ -274,6 +400,24 @@
       "writtenOn": "2015-01-21T16:56:12Z",
       "side": 1,
       "message": "similar comment here.",
+      "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_736e0f98",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-23T11:45:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_d5cc5038",
       "revId": "cae9d364c068159beb4a4944fbd4dfc8cb4bbc37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
