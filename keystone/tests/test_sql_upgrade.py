@@ -37,6 +37,7 @@ from migrate.versioning import api as versioning_api
 from oslo.db import exception as db_exception
 from oslo.db.sqlalchemy import migration
 from oslo.db.sqlalchemy import session as db_session
+from oslo.db.sqlalchemy.migration_cli import ext_migrate
 import six
 from sqlalchemy.engine import reflection
 import sqlalchemy.exc
@@ -132,6 +133,16 @@ EXTENSIONS = {'federation': federation,
               'revoke': revoke}
 
 
+def _monkey_patch_migrate():
+    _old_init = ext_migrate.MigrateExtension.__init__
+
+    def _fixed_sql_engine_init(self, migration_config):
+        _old_init(self, migration_config)
+        self.engine = sql.get_engine()
+
+    ext_migrate.MigrateExtension.__init__ = _fixed_sql_engine_init
+
+
 class SqlMigrateBase(tests.SQLDriverOverrides, tests.TestCase):
     def initialize_sql(self):
         self.metadata = sqlalchemy.MetaData()
@@ -164,17 +175,25 @@ class SqlMigrateBase(tests.SQLDriverOverrides, tests.TestCase):
 
         # create and share a single sqlalchemy engine for testing
         self.engine = sql.get_engine()
+
+        # FIXME(breton): monkey-patching migrate's __init__ is a workaround for
+        # an issue with migration_cli, which does not reuse existing
+        # connections. This should be fixed by
+        # https://review.openstack.org/#/c/134885/ .
+        if conn_str == tests.IN_MEM_DB_CONN_STRING:
+            _monkey_patch_migrate()
+
         self.Session = db_session.get_maker(self.engine, autocommit=False)
 
         self.initialize_sql()
-        self.repo_path = migration_helpers.find_migrate_repo(
-            self.repo_package())
+        self.repo_path = migration_helpers.find_repo('migrate_repo',
+                                                     self.repo_package())
         self.schema = versioning_api.ControlledSchema.create(
             self.engine,
             self.repo_path, self.initial_db_version)
 
         # auto-detect the highest available schema version in the migrate_repo
-        self.max_version = self.schema.repository.version().version
+        self.max_version = int(self.schema.repository.version().version.value)
 
     def tearDown(self):
         sqlalchemy.orm.session.Session.close_all()
@@ -1669,7 +1688,7 @@ class VersionTests(SqlMigrateBase):
     def test_extension_initial(self):
         """When get the initial version of an extension, it's 0."""
         for name, extension in six.iteritems(EXTENSIONS):
-            abs_path = migration_helpers.find_migrate_repo(extension)
+            abs_path = migration_helpers.find_repo('migrate_repo', extension)
             migration.db_version_control(sql.get_engine(), abs_path)
             version = migration_helpers.get_db_version(extension=name)
             self.assertEqual(0, version,
@@ -1678,9 +1697,8 @@ class VersionTests(SqlMigrateBase):
     def test_extension_migrated(self):
         """When get the version after migrating an extension, it's not 0."""
         for name, extension in six.iteritems(EXTENSIONS):
-            abs_path = migration_helpers.find_migrate_repo(extension)
-            migration.db_version_control(sql.get_engine(), abs_path)
-            migration.db_sync(sql.get_engine(), abs_path)
+            migration_helpers.sync_database_to_version('upgrade',
+                                                       extension=name)
             version = migration_helpers.get_db_version(extension=name)
             self.assertTrue(
                 version > 0,
@@ -1689,7 +1707,7 @@ class VersionTests(SqlMigrateBase):
     def test_extension_downgraded(self):
         """When get the version after downgrading an extension, it is 0."""
         for name, extension in six.iteritems(EXTENSIONS):
-            abs_path = migration_helpers.find_migrate_repo(extension)
+            abs_path = migration_helpers.find_repo('migrate_repo', extension)
             migration.db_version_control(sql.get_engine(), abs_path)
             migration.db_sync(sql.get_engine(), abs_path)
             version = migration_helpers.get_db_version(extension=name)
@@ -1722,7 +1740,7 @@ class VersionTests(SqlMigrateBase):
 
     def test_initial_with_extension_version_None(self):
         """When performing a default migration, also migrate extensions."""
-        migration_helpers.sync_database_to_version(extension=None,
+        migration_helpers.sync_database_to_version('upgrade', extension=None,
                                                    version=None)
         for table in INITIAL_EXTENSION_TABLE_STRUCTURE:
             self.assertTableColumns(table,
@@ -1730,7 +1748,7 @@ class VersionTests(SqlMigrateBase):
 
     def test_initial_with_extension_version_max(self):
         """When migrating to max version, do not migrate extensions."""
-        migration_helpers.sync_database_to_version(extension=None,
+        migration_helpers.sync_database_to_version('upgrade', extension=None,
                                                    version=self.max_version)
         for table in INITIAL_EXTENSION_TABLE_STRUCTURE:
             self.assertTableDoesNotExist(table)
