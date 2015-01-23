@@ -449,3 +449,9 @@ class SAMLSigningError(UnexpectedError):
                              'installed, or this is the result of '
                              'misconfiguration. Reason %(reason)s')
     title = 'Error signing SAML assertion'
+
+
+class MaxRedelegationDepthReached(Forbidden):
+    message_format = _('Unable to redelegate trust because the configured '
+                       'redelegation depth of %(max_count)d has been'
+                       ' exceeded.')
