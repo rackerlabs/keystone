@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_8de34f32",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 518,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-23T14:35:02Z",
+      "side": 1,
+      "message": "Exactly. Just for your first point:\n\n* if you just had group_id in indirect that would mean it was from a group assignment direct to the project **or domain**",
+      "parentUuid": "1a930d6b_a202da08",
+      "revId": "af49c4ba534ba944b0ed60cee09c18e0be59a57d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_09b83c75",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 12
