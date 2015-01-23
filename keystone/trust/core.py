@@ -53,19 +53,15 @@ class Manager(manager.Manager):
         max_redelegation_count = CONF.trust.max_redelegation_count
         redelegation_depth = redelegated_trust.get('redelegation_count', 0)
         if not (0 < redelegation_depth <= max_redelegation_count):
-            raise exception.Forbidden(
-                _('Remaining redelegation depth of %(redelegation_depth)d'
-                  ' out of allowed range of [0..%(max_count)d]'),
-                redelegation_depth=redelegation_depth,
+            raise exception.MaxRedelegationDepthReached(
                 max_count=max_redelegation_count)
 
         # remaining_uses is None
         remaining_uses = trust.get('remaining_uses')
         if remaining_uses is not None:
-            raise exception.Forbidden(
-                _('Field "remaining_uses" is set to %(value)s'
-                  ' while it must not be set in order to redelegate a trust'),
-                value=remaining_uses)
+            msg = _('Remaining_uses is set to %s while it must not be '
+                    'set in order to redelegate a trust')
+            raise exception.Forbidden(msg % remaining_uses)
 
         # expiry times
         trust_expiry = trust.get('expires_at')
@@ -137,10 +133,7 @@ class Manager(manager.Manager):
         else:
             # Validate requested redelegation depth
             if requested_count and requested_count > max_redelegation_count:
-                raise exception.Forbidden(
-                    _('Requested redelegation depth of %(requested_count)d '
-                      'is greater than allowed %(max_count)d'),
-                    requested_count=requested_count,
+                raise exception.MaxRedelegationDepthReached(
                     max_count=max_redelegation_count)
             # Decline remaining_uses
             if 'remaining_uses' in trust:

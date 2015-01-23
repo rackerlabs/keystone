@@ -457,3 +457,9 @@ class OAuthHeadersMissingError(UnexpectedError):
                              'HTTPd or Apache, ensure WSGIPassAuthorization '
                              'is set to On.')
     title = 'Error retrieving OAuth headers'
+
+
+class MaxRedelegationDepthReached(Forbidden):
+    message_format = _('Unable to redelegate trust because the configured '
+                       'redelegation depth of %(max_count)d has been'
+                       ' exceeded.')
