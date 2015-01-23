@@ -48,13 +48,77 @@ class BaseApp(object):
 
 
 class DbSync(BaseApp):
+    @classmethod
+    def add_argument_parser(cls, subparsers):
+        parser = super(DbSync, cls).add_argument_parser(subparsers)
+        parser.add_argument('version', nargs='?', help=cls.help_for_version)
+        return parser
+
+    @classmethod
+    def main(cls):
+        version = CONF.command.version
+        extension = CONF.command.extension
+        migration_helpers.sync_database_to_version(cls.name, version,
+                                                   extension)
+
+
+class DbUpgrade(DbSync):
+
+    name = 'upgrade'
+    help_for_version = ('Upgrade the database up to a specified '
+                        'version. If not provided, upgrade will '
+                        'migrate the database to the latest known '
+                        'version.')
+
+
+class DbDowngrade(DbSync):
+
+    name = 'downgrade'
+    help_for_version = ('Downgrade the database up to a specified '
+                        'version. If not provided, downgrade will '
+                        'migrate the database to the initial version ')
+
+
+class DbVersion(BaseApp):
+
+    name = 'version'
+
+    @staticmethod
+    def main():
+        extension = CONF.command.extension
+        migration_helpers.print_db_version(extension)
+
+
+class DbManager(BaseApp):
+    """Db migration utilities."""
+
+    name = 'db'
+
+    @classmethod
+    def add_argument_parser(cls, subparsers):
+        parser = subparsers.add_parser(cls.name, help=cls.__doc__)
+        subparsers = parser.add_subparsers(title='commands')
+        command_classes = [DbUpgrade,
+                           DbDowngrade,
+                           DbVersion]
+        for command_class in command_classes:
+            command_parser = command_class.add_argument_parser(subparsers)
+            command_parser.add_argument(
+                '--extension',
+                help=('Run the command for the specified extension. If not '
+                      'provided, the command will be ran on common '
+                      'repository.'))
+        return parser
+
+
+class DbSyncDeprecated(BaseApp):
     """Sync the database."""
 
     name = 'db_sync'
 
     @classmethod
     def add_argument_parser(cls, subparsers):
-        parser = super(DbSync, cls).add_argument_parser(subparsers)
+        parser = super(DbSyncDeprecated, cls).add_argument_parser(subparsers)
         parser.add_argument('version', default=None, nargs='?',
                             help=('Migrate the database up to a specified '
                                   'version. If not provided, db_sync will '
@@ -69,19 +133,23 @@ class DbSync(BaseApp):
 
     @staticmethod
     def main():
+        LOG.warn(_LW("'db_sync' is deprecated and will be removed soon. "
+                     "Please use 'db upgrade' or 'db downgrade' instead."))
         version = CONF.command.version
         extension = CONF.command.extension
-        migration_helpers.sync_database_to_version(extension, version)
+        migration_helpers.sync_database_to_version('upgrade', version,
+                                                   extension)
 
 
-class DbVersion(BaseApp):
+class DbVersionDeprecated(BaseApp):
     """Print the current migration version of the database."""
 
     name = 'db_version'
 
     @classmethod
     def add_argument_parser(cls, subparsers):
-        parser = super(DbVersion, cls).add_argument_parser(subparsers)
+        parser = super(DbVersionDeprecated, cls).add_argument_parser(
+            subparsers)
         parser.add_argument('--extension', default=None,
                             help=('Print the migration version of the '
                                   'database for the specified extension. If '
@@ -90,6 +158,8 @@ class DbVersion(BaseApp):
 
     @staticmethod
     def main():
+        LOG.warn(_LW("'db_version' is deprecated and will be removed soon. "
+                     "Please use 'db version' instead."))
         extension = CONF.command.extension
         migration_helpers.print_db_version(extension)
 
@@ -274,8 +344,9 @@ class SamlIdentityProviderMetadata(BaseApp):
 
 
 CMDS = [
-    DbSync,
-    DbVersion,
+    DbManager,
+    DbSyncDeprecated,
+    DbVersionDeprecated,
     MappingPurge,
     PKISetup,
     SamlIdentityProviderMetadata,
