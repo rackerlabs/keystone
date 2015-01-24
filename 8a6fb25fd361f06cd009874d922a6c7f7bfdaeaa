@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_6dd36704",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-24T15:12:12Z",
+      "side": 1,
+      "message": "This code doesn\u0027t know whether a * was passed in because of a programmer error or if the user just pased in a * on the query. This check should be removed.",
+      "revId": "8a6fb25fd361f06cd009874d922a6c7f7bfdaeaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
