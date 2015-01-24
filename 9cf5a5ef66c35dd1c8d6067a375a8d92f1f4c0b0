@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_53facf75",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 8992
+      },
+      "writtenOn": "2015-01-24T05:58:03Z",
+      "side": 1,
+      "message": "Looks like the cherry pick missed the import of the uuid module",
+      "revId": "9cf5a5ef66c35dd1c8d6067a375a8d92f1f4c0b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
