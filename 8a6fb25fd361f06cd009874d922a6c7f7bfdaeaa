@@ -16,6 +16,24 @@
       "revId": "8a6fb25fd361f06cd009874d922a6c7f7bfdaeaa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_1c43ef6c",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-01-25T11:26:36Z",
+      "side": 1,
+      "message": "We have all this code to proper escape filter and DN values to make proper requests to LDAP _and_ to avoid possible \"LDAP injections\". Let me draw an analogy with SQL. No ORM would escape every value except \"\u0027; DROP DATABASE Users--\" because programmer might\u0027ve passed this in by mistake. The same applies here. If we use filter like \"Attr(\u0027cn\u0027) \u003d\u003d username\", we don\u0027t want user to be able to provide username \u0027*\u0027 and get every record we have in LDAP. That\u0027s the very basic injection protection.",
+      "parentUuid": "1a930d6b_6dd36704",
+      "revId": "8a6fb25fd361f06cd009874d922a6c7f7bfdaeaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
