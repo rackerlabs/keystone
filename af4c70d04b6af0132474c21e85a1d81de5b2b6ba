@@ -70,6 +70,24 @@
       "revId": "af4c70d04b6af0132474c21e85a1d81de5b2b6ba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_c915024a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-01-26T20:37:51Z",
+      "side": 1,
+      "message": "I just took a deeper look and found that filter_by is probably less efficient since it\u0027s just a call to filter. While it is only a single call to filter there are two other functions called for each kwarg passed to filter_by that figure out the correct args for filter. I doubt this hurts performance, but I thought it was interesting based on the previous performance claims. https://bitbucket.org/zzzeek/sqlalchemy/src/7b102eeaee12265a2c4f4f5619827178d379d210/lib/sqlalchemy/orm/query.py?at\u003dmaster#cl-1344",
+      "parentUuid": "5a890539_8bfdf7b3",
+      "revId": "af4c70d04b6af0132474c21e85a1d81de5b2b6ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
