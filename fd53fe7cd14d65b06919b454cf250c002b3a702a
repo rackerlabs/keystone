@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_8fb23e92",
+        "filename": "config-generator/keystone.conf",
+        "patchSetId": 8
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-26T04:03:15Z",
+      "side": 1,
+      "message": "can you comment out this line too? in case someone generates a new config file then they will pull these new options in (and they\u0027re not used yet)",
+      "revId": "fd53fe7cd14d65b06919b454cf250c002b3a702a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
