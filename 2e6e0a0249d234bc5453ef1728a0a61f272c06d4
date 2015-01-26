@@ -210,6 +210,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_ceb348e7",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-01-26T19:50:17Z",
+      "side": 1,
+      "message": "If  you look at create_project/domains/ etc , none of them do it. So my question is really do we want to follow LDAP manager or other managers.",
+      "parentUuid": "1a930d6b_d38691da",
+      "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_d35db17a",
         "filename": "keystone/contrib/federation/core.py",
         "patchSetId": 7
