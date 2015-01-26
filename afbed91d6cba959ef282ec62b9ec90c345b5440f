@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_5a18f674",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-01-26T18:07:50Z",
+      "side": 1,
+      "message": "Is there an alternative for this query param?  parent_as_list  this name specifies the type of return which is really the not the REST way of doing things.",
+      "revId": "afbed91d6cba959ef282ec62b9ec90c345b5440f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
