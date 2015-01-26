@@ -16,6 +16,24 @@
       "revId": "8e65d0e43098b56b904bfdfc12a49cd15b171b4a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_2b1f6309",
+        "filename": "keystone/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-26T17:24:22Z",
+      "side": 1,
+      "message": "Renaming of existing imports from oslo.config will be addressed at [1].\n\n[1] https://review.openstack.org/#/c/145250/",
+      "parentUuid": "1a930d6b_abb0c043",
+      "revId": "8e65d0e43098b56b904bfdfc12a49cd15b171b4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
