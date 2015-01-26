@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_133e5928",
+        "filename": "etc/policy.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-26T19:37:47Z",
+      "side": 1,
+      "message": "should probably use \u0027get_service_provider\u0027",
+      "parentUuid": "1a930d6b_3ad96a22",
+      "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_374fcf6c",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 7
@@ -47,6 +65,24 @@
       "writtenOn": "2015-01-26T14:39:46Z",
       "side": 1,
       "message": "shouldn\u0027t be \"rule:cloud_admin\" ?",
+      "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_7314fd9f",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-26T19:37:47Z",
+      "side": 1,
+      "message": "yes, it should be",
+      "parentUuid": "1a930d6b_374fcf6c",
       "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +140,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_331ef5bb",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-26T19:37:47Z",
+      "side": 1,
+      "message": "we can check for disabled/enabled at the controller level",
+      "parentUuid": "1a930d6b_ba39daf3",
+      "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_5789bb73",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 7
@@ -132,6 +186,41 @@
       "writtenOn": "2015-01-26T18:29:25Z",
       "side": 1,
       "message": "Why are we retruning 201 from controller layer?  Don\u0027t we handle this in wsgi.py",
+      "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_d38691da",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-26T19:37:47Z",
+      "side": 1,
+      "message": "this is expected, and consistent with what the idp manager does",
+      "parentUuid": "1a930d6b_7af05267",
+      "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_d35db17a",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-26T19:37:47Z",
+      "side": 1,
+      "message": "s/an/a",
       "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
