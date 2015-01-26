@@ -33,6 +33,24 @@
       "revId": "bb5bcfc09369b55a8a64e674cdcb31a93eb0f19f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_f952a365",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-26T12:09:08Z",
+      "side": 1,
+      "message": "python3-memcached page [1] says it ported and being kept up to date by https://github.com/eguven\n\nWe don\u0027t know how stable, mature and well maintained it is.\nI am not sure if we could use it. Let\u0027s see other people\u0027 views.\n\nIf we go for it, we will then need to update test-requirements-py3.txt [2].\n\n[1] https://pypi.python.org/pypi/python3-memcached/1.51\n[2] https://github.com/openstack/keystone/blob/master/test-requirements-py3.txt#L12-L14",
+      "parentUuid": "1a930d6b_ae50ead4",
+      "revId": "bb5bcfc09369b55a8a64e674cdcb31a93eb0f19f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
