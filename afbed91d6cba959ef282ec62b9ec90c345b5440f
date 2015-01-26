@@ -34,6 +34,57 @@
       "revId": "afbed91d6cba959ef282ec62b9ec90c345b5440f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_49e2f22f",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-26T20:37:08Z",
+      "side": 1,
+      "message": "question: is it usual to start in lower case for these messages?",
+      "revId": "afbed91d6cba959ef282ec62b9ec90c345b5440f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_09c38a89",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-26T20:37:08Z",
+      "side": 1,
+      "message": "elif ?",
+      "revId": "afbed91d6cba959ef282ec62b9ec90c345b5440f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_0971ca75",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-26T20:37:08Z",
+      "side": 1,
+      "message": "nice pic...although is it obvious that A and B here mean just the ID ?",
+      "revId": "afbed91d6cba959ef282ec62b9ec90c345b5440f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
