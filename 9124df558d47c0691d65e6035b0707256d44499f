@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_7d9dacbb",
+        "filename": "keystone/common/strict_abc.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-01-26T18:32:30Z",
+      "side": 1,
+      "message": "This comment could be more clear. _assert_method_signature_match does the lifting on validating the argspecs. This logic doesn\u0027t know that it isn\u0027t abstract on the \"cls\" object.",
+      "revId": "9124df558d47c0691d65e6035b0707256d44499f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
