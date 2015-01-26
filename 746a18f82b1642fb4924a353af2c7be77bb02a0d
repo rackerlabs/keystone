@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_ab7b538a",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-26T17:19:25Z",
+      "side": 1,
+      "message": "Note to other reviews to Diff the result of this portion of the patch file with\n\n\ngit checkout HEAD~1  keystone/assignment/backends/sql.py",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_254a3426",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-26T17:19:25Z",
+      "side": 1,
+      "message": "Note to other reviewers to check this file this way:\n\ngit checkout HEAD~1  keystone/assignment/core.py\ndiff --unified keystone/assignment/core.py keystone/resource/core.py | less",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
