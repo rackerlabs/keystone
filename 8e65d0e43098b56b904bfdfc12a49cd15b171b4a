@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_abb0c043",
+        "filename": "keystone/cli.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 12356
+      },
+      "writtenOn": "2015-01-26T13:12:30Z",
+      "side": 1,
+      "message": "Should be also oslo_config?",
+      "revId": "8e65d0e43098b56b904bfdfc12a49cd15b171b4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
