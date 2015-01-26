@@ -386,7 +386,7 @@ class RuleProcessor(object):
 
         def extract_groups(groups_by_domain):
             for groups in groups_by_domain.values():
-                for group in {g['name']: g for g in groups}.values():
+                for group in groups:
                     yield group
 
         # initialize the group_ids as a set to eliminate duplicates
