@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_e8748eff",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-26T13:02:58Z",
+      "side": 1,
+      "message": "can you improve this commit message to cover what is described in the bug? (where are the duplicate checks)",
+      "revId": "b62ecd6b848b6afc032dc98e453bd892da60141e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
