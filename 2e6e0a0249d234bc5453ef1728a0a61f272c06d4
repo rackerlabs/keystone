@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_374fcf6c",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-26T14:39:46Z",
+      "side": 1,
+      "message": "shouldn\u0027t be \"rule:cloud_admin\" ?",
+      "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_97a883dc",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-26T14:39:46Z",
+      "side": 1,
+      "message": "missing some attributes? (URLs defined in the spec)",
+      "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_5789bb73",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-26T14:39:46Z",
+      "side": 1,
+      "message": "missing parameters? (same comment as last file)",
+      "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
