@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_445d7914",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-01-26T20:40:00Z",
+      "side": 1,
+      "message": "(nit) why are these two not rolled up?",
+      "revId": "c8efb91a5d12251bd9a7114dba327514e9a8c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
