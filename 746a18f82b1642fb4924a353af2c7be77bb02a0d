@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_8a5d6b4b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T18:44:37Z",
+      "side": 1,
+      "message": "So included the list to try and help reviewers understand where this review its on the overall split of assignments.  If the general view is that is isn\u0027t helpful, I\u0027ll cull it. Otherwise, I\u0027ll at the gerrit review links",
+      "parentUuid": "1a930d6b_79a10ef7",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_a0a7c4bb",
         "filename": "/COMMIT_MSG",
         "patchSetId": 16
@@ -101,6 +119,24 @@
       "writtenOn": "2015-01-27T16:16:57Z",
       "side": 1,
       "message": "I don\u0027t see this one is proposed.",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_eaa6e752",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T18:44:37Z",
+      "side": 1,
+      "message": "It\u0027s here: https://review.openstack.org/#/c/132634/",
+      "parentUuid": "1a930d6b_e09b8c63",
       "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -160,6 +196,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_03a17d93",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T18:44:37Z",
+      "side": 1,
+      "message": "yep",
+      "parentUuid": "1a930d6b_00fc18b7",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_60ecfcbb",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 16
@@ -171,6 +225,24 @@
       "writtenOn": "2015-01-27T16:16:57Z",
       "side": 1,
       "message": "remove \"list\"",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_b6a7050a",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T18:44:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_60ecfcbb",
       "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -194,6 +266,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_36b3154e",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T18:44:37Z",
+      "side": 1,
+      "message": "reverted",
+      "parentUuid": "1a930d6b_e000ec67",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_4b02c1b4",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 16
@@ -205,6 +295,24 @@
       "writtenOn": "2015-01-27T16:16:57Z",
       "side": 1,
       "message": "The help text should say what driver is used if none is provided.",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_b95a96ef",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 16
+      },
+      "lineNbr": 1267,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T18:44:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_4b02c1b4",
       "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -228,6 +336,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_39994679",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T18:44:37Z",
+      "side": 1,
+      "message": "Done on the first bit...\n\n...wasn\u0027t sure if common.ldap.module was appropriate since this isn\u0027t really common - just shared between two specific entities....do you still think it should be in common?",
+      "parentUuid": "1a930d6b_0bcd1966",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_ab1885d3",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 16
@@ -239,6 +365,24 @@
       "writtenOn": "2015-01-27T16:16:57Z",
       "side": 1,
       "message": "what does \"no methods are shared\" mean?",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_d9220251",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T18:44:37Z",
+      "side": 1,
+      "message": "I\u0027ll remove that bit :-)",
+      "parentUuid": "1a930d6b_ab1885d3",
       "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -262,6 +406,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_79182ed3",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T18:44:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_ab508532",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_668a5465",
         "filename": "keystone/backends.py",
         "patchSetId": 16
@@ -273,6 +435,24 @@
       "writtenOn": "2015-01-27T16:16:57Z",
       "side": 1,
       "message": "change \"driver of assignment\" to \"assignment driver\"",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_d96f6229",
+        "filename": "keystone/backends.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T18:44:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_668a5465",
       "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -296,6 +476,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_56bfc160",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T18:44:37Z",
+      "side": 1,
+      "message": "Although it seems more logical for the chain to be identity-\u003eresource-\u003eassignment due to domains/projects being the main first class entities that were split from identity, I think you are correct that in practice the more common case is that someone is upgrading from the situation when there is BOTH an identity and assignment driver specified, but (since it is new), they have not specified a resource driver.  So, as you say, it is better that resource takes its lead from assignment.  Good catch.",
+      "parentUuid": "1a930d6b_06751063",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_a60b5cd4",
         "filename": "keystone/common/config.py",
         "patchSetId": 16
@@ -307,6 +505,24 @@
       "writtenOn": "2015-01-27T16:16:57Z",
       "side": 1,
       "message": "change \"an\" to \"a\"",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_76959d31",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T18:44:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_a60b5cd4",
       "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -330,6 +546,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_54fdf9af",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T18:44:37Z",
+      "side": 1,
+      "message": "so this text was copied from the old assignment, which is why I did not change it. I\u0027d be happy to come back in with a separate patch to clean this up (and make it clearer in the configuration.rst as well)",
+      "parentUuid": "1a930d6b_26e5ac08",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_e6b644f8",
         "filename": "keystone/resource/backends/ldap.py",
         "patchSetId": 16
@@ -341,6 +575,24 @@
       "writtenOn": "2015-01-27T16:16:57Z",
       "side": 1,
       "message": "prefer \u0027 for strings.",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_d4280935",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T18:44:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_e6b644f8",
       "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -375,6 +627,24 @@
       "writtenOn": "2015-01-27T16:16:57Z",
       "side": 1,
       "message": "prefer \u0027 for strings.",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_ca4a0355",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T18:44:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_66709440",
       "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
