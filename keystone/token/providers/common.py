@@ -610,3 +610,38 @@ class BaseProvider(provider.Provider):
                 issued_at=issued_at,
                 audit_info=audit)
         return token_data
+
+
+class Token(object):
+    def __init__(self, *args, **kwargs):
+
+        token_id=none
+
+        user_id = kwargs.pop('user_id')
+        method_names = kwargs.pop('method_names')
+        domain_id = kwargs.pop('domain_id')
+        project_id = kwargs.pop('project_id')
+        expires = kwargs.pop('expires_at')
+        trust = kwargs.pop('trust')
+        # TODO(dhu) what about the following?
+        #bind=
+        #token=kwargs.pop('token_ref')
+        #include_catalog=include_catalog,
+        #access_token=access_token,
+        #audit_info=parent_audit_id
+
+    def get_data():
+        # TODO(dhu): Intelligently returns either v3 or v2 token_data
+
+
+class NextGenBaseProvider(provider.Provider):
+    def __init__(self, *args, **kwargs):
+        super(BaseProvider, self).__init__(*args, **kwargs)
+
+    def issue_token(self, **kwargs):
+        token = Token(**kwargs)
+        token.token_id = self._get_token_id(token)
+        return token
+
+    def validate_token(self, token):
+        # TODO(dhu):
