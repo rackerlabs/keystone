@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_4bb6588b",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T06:13:07Z",
+      "side": 1,
+      "message": "I agree it\u0027s not needed, but wonder of that is clearer in terms of then it is obvious that they are mutually exclusive?",
+      "parentUuid": "1a930d6b_9ca97126",
+      "revId": "afbed91d6cba959ef282ec62b9ec90c345b5440f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_0b99b01f",
         "filename": "keystone/resource/core.py",
         "patchSetId": 7
