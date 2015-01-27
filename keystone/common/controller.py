@@ -318,6 +318,7 @@ class V3Controller(wsgi.Application):
 
         return '%s/%s/%s' % (endpoint, 'v3', path.lstrip('/'))
 
+    @classmethod
     def get_auth_context(cls, context):
         # TODO(dolphm): this method of accessing the auth context is terrible,
         # but context needs to be refactored to always have reasonable values.
