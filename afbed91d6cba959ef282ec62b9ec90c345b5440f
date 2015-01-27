@@ -125,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_79f6855e",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 443,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-27T10:01:06Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1a930d6b_4bb6588b",
+      "revId": "afbed91d6cba959ef282ec62b9ec90c345b5440f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_46dd6f41",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 7
@@ -160,6 +178,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_59fb8946",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-27T10:01:06Z",
+      "side": 1,
+      "message": "just commented about adding resource_api as dependency in the other patch :)",
+      "parentUuid": "1a930d6b_86983779",
+      "revId": "afbed91d6cba959ef282ec62b9ec90c345b5440f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_e6fd7bb2",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 7
@@ -177,6 +213,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_5992a9f6",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 631,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-27T10:01:06Z",
+      "side": 1,
+      "message": "now I get it, ignore comments in the subtree_as_ids change.",
+      "parentUuid": "1a930d6b_e6fd7bb2",
+      "revId": "afbed91d6cba959ef282ec62b9ec90c345b5440f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_0b99b01f",
         "filename": "keystone/resource/core.py",
         "patchSetId": 7
@@ -188,6 +242,24 @@
       "writtenOn": "2015-01-27T06:12:00Z",
       "side": 1,
       "message": "clever....although it took me quite a long time to convince myself this is doing the right thing.  I assume you don\u0027t just list the IDs in the order they appear in parents_by_id is because you don\u0027t want to rely on that order being correct?\n\nMaybe a comment of explanation might help, just explaining how parents_by_id is used (as a a project cache of all those projects in the parent chain to obtain the parent_ids)",
+      "revId": "afbed91d6cba959ef282ec62b9ec90c345b5440f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_3975ddca",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-27T10:01:06Z",
+      "side": 1,
+      "message": "true for both points! ok, will add that explanation :)",
+      "parentUuid": "1a930d6b_0b99b01f",
       "revId": "afbed91d6cba959ef282ec62b9ec90c345b5440f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -241,6 +313,24 @@
       "side": 1,
       "message": "maybe \u0027B[\u0027id\u0027]\u0027 and \u0027A[\u0027id\u0027]\u0027 in the pic?",
       "parentUuid": "1a930d6b_7c75a5c9",
+      "revId": "afbed91d6cba959ef282ec62b9ec90c345b5440f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_f9b8b576",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-27T10:01:06Z",
+      "side": 1,
+      "message": "++ nice suggestion",
+      "parentUuid": "1a930d6b_6b5a342b",
       "revId": "afbed91d6cba959ef282ec62b9ec90c345b5440f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
