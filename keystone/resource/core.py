@@ -613,7 +613,7 @@ class Driver(object):
 
     @abc.abstractmethod
     def list_project_parents(self, project_id):
-        """List all parents from a project by its ID.
+        """List the parents from a project by its ID.
 
         :param project_id: the driver will list the parents of this
                            project.
@@ -626,7 +626,7 @@ class Driver(object):
 
     @abc.abstractmethod
     def list_projects_in_subtree(self, project_id):
-        """List all projects in the subtree below the hierarchy of the
+        """List the projects in the subtree below the hierarchy of the
         given project.
 
         :param project_id: the driver will get the subtree under
