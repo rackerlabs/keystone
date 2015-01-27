@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a930d6b_1942e1ad",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-27T09:57:11Z",
+      "side": 1,
+      "message": "only assignment_api is dependency.",
+      "revId": "8e908bf7bab1c1d738f9e098378c4fbbfae9afca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_0b4e1097",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 8
@@ -13,6 +30,24 @@
       "writtenOn": "2015-01-27T06:26:41Z",
       "side": 1,
       "message": "same comment on capitalisation as the previous patch",
+      "revId": "8e908bf7bab1c1d738f9e098378c4fbbfae9afca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_7943e5ae",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-27T09:57:11Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1a930d6b_0b4e1097",
       "revId": "8e908bf7bab1c1d738f9e098378c4fbbfae9afca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -36,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_59f1c993",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-27T09:57:11Z",
+      "side": 1,
+      "message": "see comment comment, resource_api seems to not be dependency for ProjectV3.",
+      "parentUuid": "1a930d6b_a6cc538a",
+      "revId": "8e908bf7bab1c1d738f9e098378c4fbbfae9afca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_0b1c5077",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 8
@@ -47,6 +100,24 @@
       "writtenOn": "2015-01-27T06:26:41Z",
       "side": 1,
       "message": "I don\u0027t think we need this....since this code is new and so nobody should be calling assignment for it.",
+      "revId": "8e908bf7bab1c1d738f9e098378c4fbbfae9afca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_1970210a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-27T09:57:11Z",
+      "side": 1,
+      "message": "see comments in previous file",
+      "parentUuid": "1a930d6b_0b1c5077",
       "revId": "8e908bf7bab1c1d738f9e098378c4fbbfae9afca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_b9cd4d33",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-27T09:57:11Z",
+      "side": 1,
+      "message": "a comment explaining the traversal?",
+      "parentUuid": "1a930d6b_e6665bba",
+      "revId": "8e908bf7bab1c1d738f9e098378c4fbbfae9afca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_46f3af09",
         "filename": "keystone/resource/core.py",
         "patchSetId": 8
@@ -81,6 +170,24 @@
       "writtenOn": "2015-01-27T06:26:41Z",
       "side": 1,
       "message": "see comment in previous patch",
+      "revId": "8e908bf7bab1c1d738f9e098378c4fbbfae9afca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_594d49c3",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-27T09:57:11Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1a930d6b_46f3af09",
       "revId": "8e908bf7bab1c1d738f9e098378c4fbbfae9afca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
