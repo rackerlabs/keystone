@@ -2873,8 +2873,9 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
         r = self._issue_unscoped_token()
         token_id = r.headers.get('X-Subject-Token')
         self.assertRaises(exception.Unauthorized,
-                          self.token_provider_api.validate_v2_token,
-                          token_id=token_id)
+                          self.token_provider_api.validate_token,
+                          token_id=token_id,
+                          version=self.token_provider_api.V2)
 
     def test_unscoped_token_has_user_domain(self):
         r = self._issue_unscoped_token()

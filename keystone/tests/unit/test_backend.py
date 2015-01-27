@@ -4247,13 +4247,15 @@ class TokenCacheInvalidation(object):
         # Create an equivalent of a scoped token
         token_dict = {'user': self.user, 'tenant': self.tenant,
                       'metadata': {}, 'id': 'placeholder'}
-        token_id, data = self.token_provider_api.issue_v2_token(token_dict)
+        token_id, data = self.token_provider_api.issue_token(
+            token_ref=token_dict)
         self.scoped_token_id = token_id
 
         # ..and an un-scoped one
         token_dict = {'user': self.user, 'tenant': None,
                       'metadata': {}, 'id': 'placeholder'}
-        token_id, data = self.token_provider_api.issue_v2_token(token_dict)
+        token_id, data = self.token_provider_api.issue_token(
+            token_ref=token_dict)
         self.unscoped_token_id = token_id
 
         # Validate them, in the various ways possible - this will load the
@@ -4268,8 +4270,9 @@ class TokenCacheInvalidation(object):
             self.unscoped_token_id)
         self.assertRaises(
             exception.TokenNotFound,
-            self.token_provider_api.validate_v2_token,
-            self.unscoped_token_id)
+            self.token_provider_api.validate_token,
+            self.unscoped_token_id,
+            version=self.token_provider_api.V2)
 
     def _check_scoped_tokens_are_invalid(self):
         self.assertRaises(
@@ -4283,25 +4286,32 @@ class TokenCacheInvalidation(object):
             self.tenant['id'])
         self.assertRaises(
             exception.TokenNotFound,
-            self.token_provider_api.validate_v2_token,
-            self.scoped_token_id)
+            self.token_provider_api.validate_token,
+            self.scoped_token_id,
+            version=self.token_provider_api.V2)
         self.assertRaises(
             exception.TokenNotFound,
-            self.token_provider_api.validate_v2_token,
+            self.token_provider_api.validate_token,
             self.scoped_token_id,
-            self.tenant['id'])
+            self.tenant['id'],
+            version=self.token_provider_api.V2)
 
     def _check_scoped_tokens_are_valid(self):
         self.token_provider_api.validate_token(self.scoped_token_id)
         self.token_provider_api.validate_token(
             self.scoped_token_id, belongs_to=self.tenant['id'])
-        self.token_provider_api.validate_v2_token(self.scoped_token_id)
-        self.token_provider_api.validate_v2_token(
-            self.scoped_token_id, belongs_to=self.tenant['id'])
+        self.token_provider_api.validate_token(
+            self.scoped_token_id,
+            version=self.token_provider_api.V2)
+        self.token_provider_api.validate_token(
+            self.scoped_token_id, belongs_to=self.tenant['id'],
+            version=self.token_provider_api.V2)
 
     def _check_unscoped_tokens_are_valid(self):
         self.token_provider_api.validate_token(self.unscoped_token_id)
-        self.token_provider_api.validate_v2_token(self.unscoped_token_id)
+        self.token_provider_api.validate_token(
+            self.unscoped_token_id,
+            version=self.token_provider_api.V2)
 
     def test_delete_unscoped_token(self):
         self.token_provider_api._persistence.delete_token(

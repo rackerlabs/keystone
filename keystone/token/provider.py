@@ -181,11 +181,18 @@ class Manager(manager.Manager):
             except exception.TokenNotFound:
                 six.reraise(*exc_info)
 
-    def validate_token(self, token_id, belongs_to=None):
+    def validate_token(self, token_id, belongs_to=None, version=None):
         unique_id = utils.generate_unique_id(token_id)
         # NOTE(morganfainberg): Ensure we never use the long-form token_id
         # (PKI) as part of the cache_key.
-        token = self._validate_token(unique_id)
+        if version is None:
+            token = self._validate_token(unique_id)
+        elif version == self.V3:
+            return self.validate_v3_token(token_id)
+        elif version == self.V2:
+            return self.validate_v2_token(token_id, belongs_to)
+        else:
+            raise exception.UnsupportedTokenVersionException()
         self._token_belongs_to(token, belongs_to)
         self._is_valid_token(token)
         return token
@@ -305,11 +312,51 @@ class Manager(manager.Manager):
                     token_data['tenant']['id'] != belongs_to):
                 raise exception.Unauthorized()
 
-    def issue_v2_token(self, token_ref, roles_ref=None, catalog_ref=None):
-        token_id, token_data = self.driver.issue_v2_token(
-            token_ref, roles_ref, catalog_ref)
+    def issue_token(self, user_id=None, method_names=None, expires_at=None,
+                    project_id=None, domain_id=None, auth_context=None,
+                    trust=None, metadata_ref=None, include_catalog=True,
+                    parent_audit_id=None, audit_ids=None, token_ref=None,
+                    roles_ref=None, catalog_ref=None):
+        token_id, token_obj = self.driver.issue_token(
+            user_id, method_names, expires_at, project_id, domain_id,
+            auth_context, trust, metadata_ref, include_catalog,
+            parent_audit_id, audit_ids, token_ref, roles_ref, catalog_ref)
 
-        if self._needs_persistence:
+        if token_obj.version == 'v3':
+
+            token_data = {'token': token_obj}
+
+            if metadata_ref is None:
+                metadata_ref = {}
+
+            if 'project' in token_data['token']:
+                # project-scoped token, fill in the v2 token data
+                # all we care are the role IDs
+
+                # FIXME(gyee): is there really a need to store roles in
+                # metadata?
+                role_ids = [r['id'] for r in token_data['token']['roles']]
+                metadata_ref = {'roles': role_ids}
+
+            if trust:
+                metadata_ref.setdefault('trust_id', trust['id'])
+                metadata_ref.setdefault('trustee_user_id',
+                                        trust['trustee_user_id'])
+
+            data = dict(key=token_id,
+                        id=token_id,
+                        expires=token_data['token']['expires_at'],
+                        user=token_data['token']['user'],
+                        tenant=token_data['token'].get('project'),
+                        metadata=metadata_ref,
+                        token_data=token_data,
+                        trust_id=trust['id'] if trust else None,
+                        token_version=self.V3)
+
+        elif token_obj.version == 'v2.0':
+
+            token_data = {'access': token_obj}
+
             data = dict(key=token_id,
                         id=token_id,
                         expires=token_data['access']['token']['expires'],
@@ -320,46 +367,14 @@ class Manager(manager.Manager):
                         bind=token_ref.get('bind'),
                         trust_id=token_ref['metadata'].get('trust_id'),
                         token_version=self.V2)
-            self._create_token(token_id, data)
 
-        return token_id, token_data
+        else:
+            # Bad should throw an exception here
+            raise exception.UnsupportedTokenVersionException()
 
-    def issue_v3_token(self, user_id, method_names, expires_at=None,
-                       project_id=None, domain_id=None, auth_context=None,
-                       trust=None, metadata_ref=None, include_catalog=True,
-                       parent_audit_id=None):
-        token_id, token_data = self.driver.issue_v3_token(
-            user_id, method_names, expires_at, project_id, domain_id,
-            auth_context, trust, metadata_ref, include_catalog,
-            parent_audit_id)
-
-        if metadata_ref is None:
-            metadata_ref = {}
-
-        if 'project' in token_data['token']:
-            # project-scoped token, fill in the v2 token data
-            # all we care are the role IDs
-
-            # FIXME(gyee): is there really a need to store roles in metadata?
-            role_ids = [r['id'] for r in token_data['token']['roles']]
-            metadata_ref = {'roles': role_ids}
-
-        if trust:
-            metadata_ref.setdefault('trust_id', trust['id'])
-            metadata_ref.setdefault('trustee_user_id',
-                                    trust['trustee_user_id'])
-
-        data = dict(key=token_id,
-                    id=token_id,
-                    expires=token_data['token']['expires_at'],
-                    user=token_data['token']['user'],
-                    tenant=token_data['token'].get('project'),
-                    metadata=metadata_ref,
-                    token_data=token_data,
-                    trust_id=trust['id'] if trust else None,
-                    token_version=self.V3)
         if self._needs_persistence:
             self._create_token(token_id, data)
+
         return token_id, token_data
 
     def invalidate_individual_token_cache(self, token_id):
@@ -490,51 +505,6 @@ class Provider(object):
         :type token_data: dict
         :returns: token version string
         :raises: keystone.token.provider.UnsupportedTokenVersionException
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def issue_v2_token(self, token_ref, roles_ref=None, catalog_ref=None):
-        """Issue a V2 token.
-
-        :param token_ref: token data to generate token from
-        :type token_ref: dict
-        :param roles_ref: optional roles list
-        :type roles_ref: dict
-        :param catalog_ref: optional catalog information
-        :type catalog_ref: dict
-        :returns: (token_id, token_data)
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def issue_v3_token(self, user_id, method_names, expires_at=None,
-                       project_id=None, domain_id=None, auth_context=None,
-                       trust=None, metadata_ref=None, include_catalog=True,
-                       parent_audit_id=None):
-        """Issue a V3 Token.
-
-        :param user_id: identity of the user
-        :type user_id: string
-        :param method_names: names of authentication methods
-        :type method_names: list
-        :param expires_at: optional time the token will expire
-        :type expires_at: string
-        :param project_id: optional project identity
-        :type project_id: string
-        :param domain_id: optional domain identity
-        :type domain_id: string
-        :param auth_context: optional context from the authorization plugins
-        :type auth_context: dict
-        :param trust: optional trust reference
-        :type trust: dict
-        :param metadata_ref: optional metadata reference
-        :type metadata_ref: dict
-        :param include_catalog: optional, include the catalog in token data
-        :type include_catalog: boolean
-        :param parent_audit_id: optional, the audit id of the parent token
-        :type parent_audit_id: string
-        :returns: (token_id, token_data)
         """
         raise exception.NotImplemented()  # pragma: no cover
 

@@ -506,11 +506,13 @@ class AuthWithToken(AuthTest):
         self.token_provider_api.revoke_token(token_id, revoke_chain=True)
 
         self.assertRaises(exception.TokenNotFound,
-                          self.token_provider_api.validate_v2_token,
-                          token_id=token_id)
+                          self.token_provider_api.validate_token,
+                          token_id=token_id,
+                          version=self.token_provider_api.V2)
         self.assertRaises(exception.TokenNotFound,
-                          self.token_provider_api.validate_v2_token,
-                          token_id=token_2_id)
+                          self.token_provider_api.validate_token,
+                          token_id=token_2_id,
+                          version=self.token_provider_api.V2)
 
     def test_revoke_by_audit_chain_id_chained_token(self):
         self.config_fixture.config(group='token', revoke_by_id=False)
@@ -531,11 +533,13 @@ class AuthWithToken(AuthTest):
         self.token_provider_api.revoke_token(token_2_id, revoke_chain=True)
 
         self.assertRaises(exception.TokenNotFound,
-                          self.token_provider_api.validate_v2_token,
-                          token_id=token_id)
+                          self.token_provider_api.validate_token,
+                          token_id=token_id,
+                          version=self.token_provider_api.V2)
         self.assertRaises(exception.TokenNotFound,
-                          self.token_provider_api.validate_v2_token,
-                          token_id=token_2_id)
+                          self.token_provider_api.validate_token,
+                          token_id=token_2_id,
+                          version=self.token_provider_api.V2)
 
     def _mock_audit_info(self, parent_audit_id):
         # NOTE(morgainfainberg): The token model and other cases that are
@@ -573,11 +577,13 @@ class AuthWithToken(AuthTest):
                              revoke_event['expires_at'])
 
             self.assertRaises(exception.TokenNotFound,
-                              self.token_provider_api.validate_v2_token,
-                              token_id=token_id)
+                              self.token_provider_api.validate_token,
+                              token_id=token_id,
+                              version=self.token_provider_api.V2)
             self.assertRaises(exception.TokenNotFound,
-                              self.token_provider_api.validate_v2_token,
-                              token_id=token_2_id)
+                              self.token_provider_api.validate_token,
+                              token_id=token_2_id,
+                              version=self.token_provider_api.V2)
 
             # get a new token, with no audit info
             body_dict = _build_user_auth(username='FOO', password='foo2')
@@ -604,11 +610,13 @@ class AuthWithToken(AuthTest):
                              revoke_event['expires_at'])
 
             self.assertRaises(exception.TokenNotFound,
-                              self.token_provider_api.validate_v2_token,
-                              token_id=token_id)
+                              self.token_provider_api.validate_token,
+                              token_id=token_id,
+                              version=self.token_provider_api.V2)
             self.assertRaises(exception.TokenNotFound,
-                              self.token_provider_api.validate_v2_token,
-                              token_id=token_2_id)
+                              self.token_provider_api.validate_token,
+                              token_id=token_2_id,
+                              version=self.token_provider_api.V2)
 
 
 class AuthWithPasswordCredentials(AuthTest):

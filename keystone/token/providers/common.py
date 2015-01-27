@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystoneclient import access
 from oslo_config import cfg
 from oslo_log import log
 from oslo_log import versionutils
@@ -713,3 +714,26 @@ class BaseProvider(provider.Provider):
                 issued_at=issued_at,
                 audit_info=audit)
         return token_data
+
+    def issue_token(self, user_id=None, method_names=None,
+                    expires_at=None, project_id=None, domain_id=None,
+                    auth_context=None, trust=None, metadata_ref=None,
+                    include_catalog=True, parent_audit_id=None, audit_ids=None,
+                    token_ref=None, roles_ref=None, catalog_ref=None):
+        """V2 parameters: token_ref, roles_ref, catalog_ref"""
+        if domain_id or not token_ref:
+            token_id, token_tmp = self.issue_v3_token(user_id, method_names,
+                                                      expires_at, project_id,
+                                                      domain_id, auth_context,
+                                                      trust, metadata_ref,
+                                                      include_catalog,
+                                                      parent_audit_id)
+            token_data = token_tmp['token']
+            token_data['version'] = 'v3'
+        else:
+            token_id, token_tmp = self.issue_v2_token(token_ref, roles_ref,
+                                                      catalog_ref)
+            token_data = token_tmp['access']
+            token_data['version'] = 'v2.0'
+        token = access.AccessInfo.factory(**token_data)
+        return token_id, token

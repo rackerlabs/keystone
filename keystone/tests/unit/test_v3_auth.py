@@ -459,6 +459,9 @@ class TestPKITokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
 
         token_resp_dict = json.loads(resp.body)
 
+        # delete AccessInfo specific version
+        del token_resp_dict['token']['version']
+
         self.assertEqual(decoded_token_dict, token_resp_dict)
         # should be able to validate hash PKI token as well
         hash_token_id = cms.cms_hash_token(token_id)

@@ -142,8 +142,9 @@ class Auth(controller.V2Controller):
             role_ref = self.role_api.get_role(role_id)
             roles_ref.append(dict(name=role_ref['name']))
 
-        (token_id, token_data) = self.token_provider_api.issue_v2_token(
-            auth_token_data, roles_ref=roles_ref, catalog_ref=catalog_ref)
+        (token_id, token_data) = self.token_provider_api.issue_token(
+            token_ref=auth_token_data, roles_ref=roles_ref,
+            catalog_ref=catalog_ref)
 
         # NOTE(wanghong): We consume a trust use only when we are using trusts
         # and have successfully issued a token.
@@ -431,7 +432,10 @@ class Auth(controller.V2Controller):
 
         """
         belongs_to = context['query_string'].get('belongsTo')
-        return self.token_provider_api.validate_v2_token(token_id, belongs_to)
+        return self.token_provider_api.validate_token(
+            token_id,
+            belongs_to,
+            self.token_provider_api.V2)
 
     @controller.v2_deprecated
     @controller.protected()
@@ -445,7 +449,10 @@ class Auth(controller.V2Controller):
         """
         belongs_to = context['query_string'].get('belongsTo')
         # TODO(ayoung) validate against revocation API
-        return self.token_provider_api.validate_v2_token(token_id, belongs_to)
+        return self.token_provider_api.validate_token(
+            token_id,
+            belongs_to,
+            version=self.token_provider_api.V2)
 
     @controller.v2_deprecated
     def delete_token(self, context, token_id):

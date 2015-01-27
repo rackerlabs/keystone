@@ -388,7 +388,7 @@ class Auth(controller.V3Controller):
 
             token_audit_id = auth_context.get('audit_id')
 
-            (token_id, token_data) = self.token_provider_api.issue_v3_token(
+            (token_id, token_data) = self.token_provider_api.issue_token(
                 auth_context['user_id'], method_names, expires_at, project_id,
                 domain_id, auth_context, trust, metadata_ref, include_catalog,
                 parent_audit_id=token_audit_id)
@@ -512,8 +512,8 @@ class Auth(controller.V3Controller):
     @controller.protected()
     def check_token(self, context):
         token_id = context.get('subject_token_id')
-        token_data = self.token_provider_api.validate_v3_token(
-            token_id)
+        token_data = self.token_provider_api.validate_token(
+            token_id, version=self.token_provider_api.V3)
         # NOTE(morganfainberg): The code in
         # ``keystone.common.wsgi.render_response`` will remove the content
         # body.
@@ -528,8 +528,8 @@ class Auth(controller.V3Controller):
     def validate_token(self, context):
         token_id = context.get('subject_token_id')
         include_catalog = 'nocatalog' not in context['query_string']
-        token_data = self.token_provider_api.validate_v3_token(
-            token_id)
+        token_data = self.token_provider_api.validate_token(
+            token_id, version=self.token_provider_api.V3)
         if not include_catalog and 'catalog' in token_data['token']:
             del token_data['token']['catalog']
         return render_token_data_response(token_id, token_data)

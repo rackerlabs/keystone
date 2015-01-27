@@ -279,8 +279,9 @@ class Ec2Controller(Ec2ControllerCommon, controller.V2Controller):
                                tenant=tenant_ref,
                                metadata=metadata_ref,
                                id='placeholder')
-        (token_id, token_data) = self.token_provider_api.issue_v2_token(
-            auth_token_data, roles_ref, catalog_ref)
+        (token_id, token_data) = self.token_provider_api.issue_token(
+            token_ref=auth_token_data, roles_ref=roles_ref,
+            catalog_ref=catalog_ref)
         return token_data
 
     @controller.v2_deprecated
@@ -392,7 +393,7 @@ class Ec2ControllerV3(Ec2ControllerCommon, controller.V3Controller):
 
         method_names = ['ec2credential']
 
-        token_id, token_data = self.token_provider_api.issue_v3_token(
+        token_id, token_data = self.token_provider_api.issue_token(
             user_ref['id'], method_names, project_id=project_ref['id'],
             metadata_ref=metadata_ref)
         return render_token_data_response(token_id, token_data)
