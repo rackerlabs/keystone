@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_0a7ed0ae",
+        "filename": "keystone/contrib/endpoint_filter/schema.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-01-27T23:36:46Z",
+      "side": 1,
+      "message": "\u0027filters\u0027 are required too",
+      "revId": "c2ffbb4ca7d981ee1cd9476a9036a43c4675f080",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
