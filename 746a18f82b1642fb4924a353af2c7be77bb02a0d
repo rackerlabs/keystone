@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_79a10ef7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-27T17:58:36Z",
+      "side": 1,
+      "message": "All of them. It should be easy for reviewers to verify the information in the commit message.\n\nI don\u0027t know why this list is here, but if it\u0027s important for it to be here then reviewers should make sure that it\u0027s correct.",
+      "parentUuid": "1a930d6b_4399c577",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_a0a7c4bb",
         "filename": "/COMMIT_MSG",
         "patchSetId": 16
