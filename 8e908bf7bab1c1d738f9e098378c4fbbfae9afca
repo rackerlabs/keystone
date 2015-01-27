@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_a6cc538a",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 463,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T06:30:32Z",
+      "side": 1,
+      "message": "should call resource directly here, no need to go via assignments",
+      "revId": "8e908bf7bab1c1d738f9e098378c4fbbfae9afca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_0b1c5077",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 8
