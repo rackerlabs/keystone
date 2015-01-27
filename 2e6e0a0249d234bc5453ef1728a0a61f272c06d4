@@ -354,6 +354,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_19d0f752",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-27T20:35:18Z",
+      "side": 1,
+      "message": "right, but it\u0027s actually a PUT call here, which normally returns 200. but since we are creating things, we change it to 201 Created.",
+      "parentUuid": "1a930d6b_ceb348e7",
+      "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_d35db17a",
         "filename": "keystone/contrib/federation/core.py",
         "patchSetId": 7
