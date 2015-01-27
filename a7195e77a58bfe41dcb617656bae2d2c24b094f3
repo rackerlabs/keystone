@@ -34,6 +34,24 @@
       "revId": "a7195e77a58bfe41dcb617656bae2d2c24b094f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_d7e9f8b7",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-27T14:42:48Z",
+      "side": 1,
+      "message": "Well, it\u0027s caught by this regex. Try:\n\n    re.compile(r\".*\\bdict\\((\\[)?(\\(|\\[)\").match(\u0027dict(({1:2}))\u0027)",
+      "parentUuid": "3a961159_aa54c6fe",
+      "revId": "a7195e77a58bfe41dcb617656bae2d2c24b094f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
