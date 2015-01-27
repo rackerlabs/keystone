@@ -37,6 +37,40 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_64b6a68c",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/004_add_service_provider_table.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-01-27T21:18:34Z",
+      "side": 1,
+      "message": "Why do you use checkfirst here?",
+      "revId": "5dedf42d52da8253c93cf852c3de4abaa3a9727e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_648306cd",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2316,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-01-27T21:18:34Z",
+      "side": 1,
+      "message": "I saw a +2 and decided to put a warning -1 because of this FIXME",
+      "revId": "5dedf42d52da8253c93cf852c3de4abaa3a9727e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_f1a1a9f8",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 8
