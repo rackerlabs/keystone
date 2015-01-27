@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_028345cc",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-01-27T13:30:34Z",
+      "side": 1,
+      "message": "wanghong, I believe your fixing is effective and have verified the bugs in my side, but I look forward to a better solution beside this.",
+      "revId": "95c540a735baa7f178bf335aec044a366bc5af0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
