@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_d9bd7f04",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/004_add_service_provider_table.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-27T20:35:59Z",
+      "side": 1,
+      "message": "sounds like a good idea for another easy patch :)",
+      "parentUuid": "1a930d6b_911ce56b",
+      "revId": "5dedf42d52da8253c93cf852c3de4abaa3a9727e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_f1a1a9f8",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 8
