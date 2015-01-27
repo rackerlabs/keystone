@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_161ff9b7",
+        "filename": "test-requirements.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 994
+      },
+      "writtenOn": "2015-01-27T17:49:44Z",
+      "side": 1,
+      "message": "00?",
+      "revId": "85f2de5ed96718caa51d4b8bc07e403ef9545010",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
