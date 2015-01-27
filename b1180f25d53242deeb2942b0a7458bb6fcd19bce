@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_665d0b79",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 3190,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:33:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_306cc79c",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_7079effb",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 43
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-21T17:21:42Z",
       "side": 1,
       "message": "I know it\u0027s unrelated to this patch, but ...\n\nShoudn\u0027t self.assignment_api be self.role_api ?",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_269ce30e",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 999,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:33:40Z",
+      "side": 1,
+      "message": "yes, I think you\u0027re right...since the patch that introduced that is now merged, I\u0027ll raise a new defect for that",
+      "parentUuid": "1a930d6b_7079effb",
       "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_868cb7db",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 1020,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:33:40Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "1a930d6b_b08357cb",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_70600f36",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 43
@@ -64,6 +118,24 @@
       "writtenOn": "2015-01-21T17:21:42Z",
       "side": 1,
       "message": "You missed this one...",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_21892d75",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 1552,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:33:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_70600f36",
       "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_c18f8973",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 1582,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:33:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_d0d623c5",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_507eb3af",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 43
@@ -98,6 +188,24 @@
       "writtenOn": "2015-01-21T17:21:42Z",
       "side": 1,
       "message": "resource_api should be used here in order to load a 2nd driver for domain2, shouldnt?",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_a170bd72",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 2914,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:33:40Z",
+      "side": 1,
+      "message": "nice catch!",
+      "parentUuid": "1a930d6b_507eb3af",
       "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_e1456543",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:33:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_a3aa2e6e",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_83c45241",
         "filename": "keystone/tests/test_backend_sql.py",
         "patchSetId": 43
@@ -132,6 +258,24 @@
       "writtenOn": "2015-01-21T17:21:42Z",
       "side": 1,
       "message": "Idem",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_0178b18e",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:33:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_83c45241",
       "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_217bed8c",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:33:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_a3c14e30",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_23ed5ec4",
         "filename": "keystone/tests/test_backend_sql.py",
         "patchSetId": 43
@@ -166,6 +328,24 @@
       "writtenOn": "2015-01-21T17:21:42Z",
       "side": 1,
       "message": "Missed this one ...",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_617175a7",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 342,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:33:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_23ed5ec4",
       "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_a166fdea",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:33:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_83db721a",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_e3099696",
         "filename": "keystone/tests/test_backend_sql.py",
         "patchSetId": 43
@@ -200,6 +398,24 @@
       "writtenOn": "2015-01-21T17:21:42Z",
       "side": 1,
       "message": "Idem",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_c16149d4",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:33:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_e3099696",
       "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_e15c851b",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:33:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_03ff8268",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_233b9e3b",
         "filename": "keystone/tests/test_backend_sql.py",
         "patchSetId": 43
@@ -234,6 +468,24 @@
       "writtenOn": "2015-01-21T17:21:42Z",
       "side": 1,
       "message": "Need to be updated here as well..",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_019fd1b5",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:33:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_233b9e3b",
       "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_21a20dfd",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:33:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_433fca25",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_030dc290",
         "filename": "keystone/tests/test_backend_sql.py",
         "patchSetId": 43
@@ -268,6 +538,24 @@
       "writtenOn": "2015-01-21T17:21:42Z",
       "side": 1,
       "message": "Even if not related to this patch, this one should be role_api.",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_4109d92a",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:33:40Z",
+      "side": 1,
+      "message": "I\u0027ll include that in the bug report on role calling",
+      "parentUuid": "1a930d6b_030dc290",
       "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_8144a14a",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 810,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:33:40Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "1a930d6b_2312beb1",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_6323e605",
         "filename": "keystone/tests/test_backend_sql.py",
         "patchSetId": 43
@@ -308,6 +614,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_a13fddb2",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 831,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:33:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_6323e605",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_8320d2f8",
         "filename": "keystone/tests/test_backend_sql.py",
         "patchSetId": 43
@@ -319,6 +643,24 @@
       "writtenOn": "2015-01-21T17:21:42Z",
       "side": 1,
       "message": "Idem",
+      "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_c14a2954",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 43
+      },
+      "lineNbr": 842,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:33:40Z",
+      "side": 1,
+      "message": "Actually, no - this is meant to be assignment_api - since it is checking that we raise a deprecated error!",
+      "parentUuid": "1a930d6b_8320d2f8",
       "revId": "b1180f25d53242deeb2942b0a7458bb6fcd19bce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
