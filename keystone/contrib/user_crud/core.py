@@ -115,7 +115,7 @@ class UserController(identity.controllers.User):
         catalog_ref = self.catalog_api.get_catalog(user_id,
                                                    token_ref.project_id)
 
-        new_token_id, new_token_data = self.token_provider_api.issue_v2_token(
+        new_token_id, new_token_data = self.token_provider_api.issue_token(
             token_ref=new_token_ref, roles_ref=roles_ref,
             catalog_ref=catalog_ref)
         LOG.debug('TOKEN_REF %s', new_token_data)
