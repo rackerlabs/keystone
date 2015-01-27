@@ -125,6 +125,40 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_46dd6f41",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T06:29:46Z",
+      "side": 1,
+      "message": "should call resource_api here directly, no need to go via assignment",
+      "revId": "afbed91d6cba959ef282ec62b9ec90c345b5440f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_e6fd7bb2",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 631,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T06:29:46Z",
+      "side": 1,
+      "message": "I don\u0027t think we need this - since this is new code, so nobody should be calling this via assignments.",
+      "revId": "afbed91d6cba959ef282ec62b9ec90c345b5440f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_0b99b01f",
         "filename": "keystone/resource/core.py",
         "patchSetId": 7
