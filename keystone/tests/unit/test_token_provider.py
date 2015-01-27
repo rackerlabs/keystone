@@ -792,7 +792,7 @@ class TestTokenProviderOAuth1(tests.TestCase):
         self.load_fixtures(default_fixtures)
         self.token_provider_api.driver.oauth_api = None
         self.assertRaises(exception.Forbidden,
-                          self.token_provider_api.driver.issue_v3_token,
+                          self.token_provider_api.driver.issue_token,
                           self.user_foo['id'], ['oauth1'])
 
 
