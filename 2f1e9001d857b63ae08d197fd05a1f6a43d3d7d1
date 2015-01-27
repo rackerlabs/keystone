@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_110c7593",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-27T12:04:00Z",
+      "side": 1,
+      "message": "wondering if \u0027OS-FEDERATION\u0027 would be a better choice.",
+      "revId": "2f1e9001d857b63ae08d197fd05a1f6a43d3d7d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
