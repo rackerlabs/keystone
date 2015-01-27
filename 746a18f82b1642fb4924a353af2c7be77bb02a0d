@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_4399c577",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T17:23:28Z",
+      "side": 1,
+      "message": "These are all individual commits/patches - is it just the first one you are interested in, or all of them?  The first one:\n\nGerrit: https://review.openstack.org/#/c/144239/\n\nChangeID: I41fc23a049c26e514222a966c1847e183448be00",
+      "parentUuid": "1a930d6b_60eb1cdc",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_a0a7c4bb",
         "filename": "/COMMIT_MSG",
         "patchSetId": 16
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-27T16:16:57Z",
       "side": 1,
       "message": "Is this \"Make controllers and managers reference new resource manager\"?",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_e060e702",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T17:23:28Z",
+      "side": 1,
+      "message": "Yes, I\u0027ll update the text to match",
+      "parentUuid": "1a930d6b_a0a7c4bb",
       "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
