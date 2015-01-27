@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a930d6b_60eb1cdc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-27T16:16:57Z",
+      "side": 1,
+      "message": "Provide the commit hash so I can verify this is correct.",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_a0a7c4bb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-27T16:16:57Z",
+      "side": 1,
+      "message": "Is this \"Make controllers and managers reference new resource manager\"?",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_e09b8c63",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-27T16:16:57Z",
+      "side": 1,
+      "message": "I don\u0027t see this one is proposed.",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_5aec4dbb",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 16
@@ -55,6 +106,193 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_60ecfcbb",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 511,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-27T16:16:57Z",
+      "side": 1,
+      "message": "remove \"list\"",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_e000ec67",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-27T16:16:57Z",
+      "side": 1,
+      "message": "unrelated whitespace changes should be in a separate commit.",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_4b02c1b4",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 16
+      },
+      "lineNbr": 1267,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-27T16:16:57Z",
+      "side": 1,
+      "message": "The help text should say what driver is used if none is provided.",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_0bcd1966",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-27T16:16:57Z",
+      "side": 1,
+      "message": "change \"resource backend LDAP\" to \"resource LDAP backend\"\n\nIf things need to be shared then move it into the common.ldap module. That\u0027s what common.ldap is for.",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_ab1885d3",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-27T16:16:57Z",
+      "side": 1,
+      "message": "what does \"no methods are shared\" mean?",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_ab508532",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-27T16:16:57Z",
+      "side": 1,
+      "message": "For backwards compatibility the assignment driver should continue to use the identity driver\u0027s configuration.",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_668a5465",
+        "filename": "keystone/backends.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-27T16:16:57Z",
+      "side": 1,
+      "message": "change \"driver of assignment\" to \"assignment driver\"",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_06751063",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-27T16:16:57Z",
+      "side": 1,
+      "message": "since the resource driver was split out from the assignment driver, the resource driver should get its driver from assignment, not identity.",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_a60b5cd4",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-27T16:16:57Z",
+      "side": 1,
+      "message": "change \"an\" to \"a\"",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_26e5ac08",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-27T16:16:57Z",
+      "side": 1,
+      "message": "rather than make an assumption we should make it a requirement.",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_e6b644f8",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-27T16:16:57Z",
+      "side": 1,
+      "message": "prefer \u0027 for strings.",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_ab7b538a",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 16
@@ -66,6 +304,23 @@
       "writtenOn": "2015-01-26T17:19:25Z",
       "side": 1,
       "message": "Note to other reviews to Diff the result of this portion of the patch file with\n\n\ngit checkout HEAD~1  keystone/assignment/backends/sql.py",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_66709440",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-27T16:16:57Z",
+      "side": 1,
+      "message": "prefer \u0027 for strings.",
       "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
