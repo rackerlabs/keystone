@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_a5b9a8cd",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 1084,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:45:22Z",
+      "side": 1,
+      "message": "It really isn\u0027t obvious what this is doing of if it is the correct check.  You need a LOT more comments and explanation if you want to do it this way.  We don\u0027t want to you have to write some test code to test our test code :-)",
+      "revId": "1016654c64f55a2c957cf4944b110f135a1f2d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_05e0bcf8",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:45:22Z",
+      "side": 1,
+      "message": "If you really want to do it this way, then you really need comments to explain what you are doing (i.e. why the way, who will fill in the rest etc.). It just isn\u0027t obvious from looking at it. And test code should be obvious.",
+      "revId": "1016654c64f55a2c957cf4944b110f135a1f2d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_25ea18db",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:45:22Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "1016654c64f55a2c957cf4944b110f135a1f2d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_45e56407",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T07:45:22Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "1016654c64f55a2c957cf4944b110f135a1f2d08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
