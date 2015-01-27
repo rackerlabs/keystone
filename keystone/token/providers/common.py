@@ -622,3 +622,82 @@ class BaseProvider(provider.Provider):
                 issued_at=issued_at,
                 audit_info=audit)
         return token_data
+
+
+class KeystoneToken(object):
+    """An in-memory representation in clear data model."""
+
+    def __init__(self, **kwargs):
+        self.expires = kwargs.pop('expires_at')
+        self.issued = kwargs.pop('issue_at')
+        self.audit_id = kwargs.pop('audit_id')
+        self.audit_chain_id = kwargs.pop('audit_chain_id')
+        self.auth_token = kwargs.pop('auth_token')
+        self.user_id = kwargs.pop('user_id')
+        self.user_name = kwargs.pop('user_name')
+        self.user_domain_name = kwargs.pop('user_domain_name')
+        self.user_domain_id = kwargs.pop('user_domain_id')
+        self.domain_id = kwargs.pop('domain_id')
+        self.domain_name = kwargs.pop('domain_name')
+        # TODO(dhu):  Need to double chk what caller supplied for v2 tenant.
+        # Is caller using project_id already for v2?
+        self.project_id = kwargs.pop('project_id')
+        self.project_name = kwargs.pop('project_name')
+        self.project_domain_id = kwargs.pop('project_domain_id')
+        self.project_domain_name = kwargs.pop('project_domain_name')
+        self.project_scoped = kwargs.pop('project_scoped')
+        self.domain_scoped = kwargs.pop('domain_scoped')
+        self.scoped = kwargs.pop('scoped')
+        self.trust_id = kwargs.pop('trust_id')
+        self.trust_scoped = kwargs.pop('trust_scoped')
+        self.trustee_user_id = kwargs.pop('trustee_user_id')
+        self.trustor_user_id = kwargs.pop('trustor_user_id')
+        self.trust_impersonation = kwargs.pop('trust_impersonation')
+        self.oauth_scoped = kwargs.pop('oauth_scoped')
+        self.oauth_access_token_id = kwargs.pop('oauth_access_token_id')
+        self.oauth_consumer_id = kwargs.pop('oauth_consumer_id')
+        self.role_ids = kwargs.pop('role_ids')
+        self.role_names = kwargs.pop('role_names')
+        self.bind = kwargs.pop('bind')
+        self.is_federated_user = kwargs.pop('is_federated_user')
+        self.federation_group_ids = kwargs.pop('federation_group_ids')
+        self.federation_idp_id = kwargs.pop('federation_idp_id')
+        self.federation_protocol_id = kwargs.pop('federation_protocol_id')
+        self.metadata = kwargs.pop('metadata')
+        self.methods = kwargs.pop('methods')
+        self.token_id = kwargs.pop('token_id')
+        self.short_id = cms.cms_hash_token(token_id,
+                                           mode=CONF.token.hash_algorithm)
+
+        if self.project_scoped and self.domain_scoped:
+            raise exception.UnexpectedError(_('Found invalid token: scoped to '
+                                              'both project and domain.'))
+
+        if self.project_domain_id or self.project_domain_name or self.user_domain_name
+            or self.user_domain_id:
+            self.version = token.provider.V3
+        else:
+            self.version = token.provider.V2
+
+    def get_data(self):
+        if self.version() == 'v3':
+            # TODO(dhu):  Chk if token_data is cached.
+            # else a formatter function will return token_data in v3 format
+        elif self.version() == '2.0':
+            # TODO(dhu):  Chk if token_data is cached.
+            # else a formatter function will return token_data in v2.0 format
+        else:
+            raise exception.UnsupportedTokenVersionException()
+
+    def get_version(self):
+        return self.version
+
+
+class NextGenBaseProvider(provider.Provider):
+    def __init__(self, *args, **kwargs):
+        super(BaseProvider, self).__init__(*args, **kwargs)
+
+    def issue_token(self, **kwargs):
+        token = KeystoneToken(**kwargs)
+        token.token_id = self._get_token_id(token)
+        return token
