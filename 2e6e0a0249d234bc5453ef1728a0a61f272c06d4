@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_0b0feb88",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-27T11:10:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_5a2f1688",
+      "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_3ad96a22",
         "filename": "etc/policy.json",
         "patchSetId": 7
@@ -48,6 +66,24 @@
       "side": 1,
       "message": "should probably use \u0027get_service_provider\u0027",
       "parentUuid": "1a930d6b_3ad96a22",
+      "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_4b6bb31d",
+        "filename": "etc/policy.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-27T11:10:32Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1a930d6b_133e5928",
       "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -89,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_6bfb0f47",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-27T11:10:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_7314fd9f",
+      "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_97a883dc",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 7
@@ -106,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_8e8da9d5",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-27T11:10:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_97a883dc",
+      "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_3a75eaf9",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 7
@@ -117,6 +189,24 @@
       "writtenOn": "2015-01-26T18:29:25Z",
       "side": 1,
       "message": "Can\u0027t we have these two methods as Mixins? We repeat this code  in every model.",
+      "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_9aa4ffba",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-27T11:10:32Z",
+      "side": 1,
+      "message": "will add in the next patches.",
+      "parentUuid": "1a930d6b_3a75eaf9",
       "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -158,6 +248,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_b90aad87",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-27T11:10:32Z",
+      "side": 1,
+      "message": "Haneef, where is this \"delete only if disabled\" check ?",
+      "parentUuid": "1a930d6b_331ef5bb",
+      "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_5789bb73",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 7
@@ -169,6 +277,24 @@
       "writtenOn": "2015-01-26T14:39:46Z",
       "side": 1,
       "message": "missing parameters? (same comment as last file)",
+      "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_d47bc078",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-27T11:10:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_5789bb73",
       "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -239,6 +365,24 @@
       "writtenOn": "2015-01-26T19:37:47Z",
       "side": 1,
       "message": "s/an/a",
+      "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_94ecd82b",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-27T11:10:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_d35db17a",
       "revId": "2e6e0a0249d234bc5453ef1728a0a61f272c06d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
