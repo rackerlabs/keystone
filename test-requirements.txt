@@ -43,8 +43,8 @@ WebTest>=2.0
 #mox>=0.5.3
 
 discover
-python-subunit>=0.0.18
-testrepository>=0.0.18
+python-subunit>=1.0.00
+testrepository>=0.0.20
 testtools>=0.9.36,!=1.2.0
 testscenarios>=0.4
 
