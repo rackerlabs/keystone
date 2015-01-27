@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa81d914_1060cc34",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-27T19:23:46Z",
+      "side": 1,
+      "message": "we could just define this once...\n\n  FEDERATED_DOMAIN_KEYWORD",
+      "revId": "2f1e9001d857b63ae08d197fd05a1f6a43d3d7d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_110c7593",
         "filename": "keystone/contrib/federation/core.py",
         "patchSetId": 7
