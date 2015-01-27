@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a930d6b_401c606a",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 16
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-27T15:14:50Z",
+      "side": 1,
+      "message": "In fact assignment backend has no cache_time anymore, since it has no entity in it. It is now only charged of the assignment mappings.\n\nThe role entities that were in assignment are now in its own backend and has its cache_time. See line 526.",
+      "parentUuid": "1a930d6b_5aec4dbb",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_ab7b538a",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 16
