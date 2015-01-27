@@ -51,8 +51,9 @@ class TenantAssignment(controller.V2Controller):
 
         """
         try:
-            token_data = self.token_provider_api.validate_token(
+            token_obj = self.token_provider_api.validate_token(
                 context['token_id'])
+            token_data = self.token_provider_api.get_token_data(token_obj)
             token_ref = token_model.KeystoneToken(token_id=context['token_id'],
                                                   token_data=token_data)
         except exception.NotFound as e:

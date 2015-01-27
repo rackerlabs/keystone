@@ -67,10 +67,12 @@ def _build_policy_check_credentials(self, action, context, kwargs):
     # in a sane manner as this just mirrors the logic in AuthContextMiddleware
     try:
         LOG.debug('RBAC: building auth context from the incoming auth token')
+        token_obj = self.token_provider_api.validate_token(
+                context['token_id'])
         token_ref = token_model.KeystoneToken(
             token_id=context['token_id'],
-            token_data=self.token_provider_api.validate_token(
-                context['token_id']))
+            token_data=self.token_provider_api.get_token_data(
+                token_obj))
         # NOTE(jamielennox): whilst this maybe shouldn't be within this
         # function it would otherwise need to reload the token_ref from
         # backing store.
@@ -127,10 +129,12 @@ def protected(callback=None):
                 # TODO(henry-nash): Move this entire code to a member
                 # method inside v3 Auth
                 if context.get('subject_token_id') is not None:
+                    token_obj = self.token_provider_api.validate_token(
+                        context['subject_token_id'])
                     token_ref = token_model.KeystoneToken(
                         token_id=context['subject_token_id'],
-                        token_data=self.token_provider_api.validate_token(
-                            context['subject_token_id']))
+                        token_data=self.token_provider_api.get_token_data(
+                            token_obj))
                     policy_dict.setdefault('target', {})
                     policy_dict['target'].setdefault(self.member_name, {})
                     policy_dict['target'][self.member_name]['user_id'] = (
@@ -640,10 +644,12 @@ class V3Controller(wsgi.Application):
             return context['query_string'].get('domain_id')
 
         try:
+            token_obj = self.token_provider_api.validate_token(
+                context['token_id'])
             token_ref = token_model.KeystoneToken(
                 token_id=context['token_id'],
-                token_data=self.token_provider_api.validate_token(
-                    context['token_id']))
+                token_data=self.token_provider_api.get_token_data(
+                    token_obj))
         except KeyError:
             raise exception.ValidationError(
                 _('domain_id is required as part of entity'))
@@ -674,10 +680,12 @@ class V3Controller(wsgi.Application):
         # a v3 protected call).  However, this optimization is probably not
         # worth the duplication of state
         try:
+            token_obj = self.token_provider_api.validate_token(
+                context['token_id'])
             token_ref = token_model.KeystoneToken(
                 token_id=context['token_id'],
-                token_data=self.token_provider_api.validate_token(
-                    context['token_id']))
+                token_data=self.token_provider_api.get_token_data(
+                    token_obj))
         except KeyError:
             # This might happen if we use the Admin token, for instance
             raise exception.ValidationError(

@@ -63,7 +63,8 @@ class TrustV3(controller.V3Controller):
     def _get_user_id(self, context):
         if 'token_id' in context:
             token_id = context['token_id']
-            token_data = self.token_provider_api.validate_token(token_id)
+            token_obj = self.token_provider_api.validate_token(token_id)
+            token_data = self.token_provider_api.get_token_data(token_obj)
             token_ref = token_model.KeystoneToken(token_id=token_id,
                                                   token_data=token_data)
             return token_ref.user_id

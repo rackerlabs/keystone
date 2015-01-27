@@ -36,7 +36,8 @@ class Mapped(auth.AuthMethodHandler):
 
     def _get_token_ref(self, auth_payload):
         token_id = auth_payload['id']
-        response = self.token_provider_api.validate_token(token_id)
+        token_obj = self.token_provider_api.validate_token(token_id)
+        response = self.token_provider_api.get_token_data(token_obj)
         return token_model.KeystoneToken(token_id=token_id,
                                          token_data=response)
 

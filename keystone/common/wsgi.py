@@ -289,10 +289,12 @@ class Application(BaseApplication):
     def assert_admin(self, context):
         if not context['is_admin']:
             try:
+                token_obj = self.token_provider_api.validate_token(
+                        context['token_id'])
                 user_token_ref = token_model.KeystoneToken(
                     token_id=context['token_id'],
-                    token_data=self.token_provider_api.validate_token(
-                        context['token_id']))
+                    token_data=self.token_provider_api.get_token_data(
+                        token_obj))
             except exception.TokenNotFound as e:
                 raise exception.Unauthorized(e)
 
@@ -355,8 +357,10 @@ class Application(BaseApplication):
             return None
 
         try:
-            token_data = self.token_provider_api.validate_token(
+            token_obj = self.token_provider_api.validate_token(
                 context['token_id'])
+            token_data = self.token_provider_api.get_token_data(
+                token_obj)
         except exception.TokenNotFound:
             LOG.warning(_LW('Invalid token in _get_trust_id_for_request'))
             raise exception.Unauthorized()

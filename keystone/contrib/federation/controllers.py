@@ -276,7 +276,8 @@ class Auth(auth_controllers.Auth):
         auth_url = service_provider.get('auth_url')
 
         token_id = auth['identity']['token']['id']
-        token_data = self.token_provider_api.validate_token(token_id)
+        token_obj = self.token_provider_api.validate_token(token_id)
+        token_data = self.token_provider_api.get_token_data(token_obj)
         token_ref = token_model.KeystoneToken(token_id, token_data)
         subject = token_ref.user_name
         roles = token_ref.role_names
