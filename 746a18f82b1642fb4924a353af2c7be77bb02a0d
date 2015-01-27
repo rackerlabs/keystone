@@ -354,6 +354,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_d061d4d4",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-27T19:09:32Z",
+      "side": 1,
+      "message": "I think it should be in common. It\u0027s shared between two entities but there\u0027s no logical reason for it to be in one module or the other (the only reason is historical, which I\u0027d rather forget). Putting it into common will make it easier to make changes in the future since we\u0027ll have fewer links between these 2 modules and so don\u0027t have to worry about circular dependencies.",
+      "parentUuid": "1a930d6b_39994679",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_ab1885d3",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 16
@@ -558,6 +576,24 @@
       "side": 1,
       "message": "so this text was copied from the old assignment, which is why I did not change it. I\u0027d be happy to come back in with a separate patch to clean this up (and make it clearer in the configuration.rst as well)",
       "parentUuid": "1a930d6b_26e5ac08",
+      "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_b0d9c085",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-27T19:09:32Z",
+      "side": 1,
+      "message": "I\u0027m fine with this being a separate bug.",
+      "parentUuid": "1a930d6b_54fdf9af",
       "revId": "746a18f82b1642fb4924a353af2c7be77bb02a0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
