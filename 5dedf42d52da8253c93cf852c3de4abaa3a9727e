@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_911ce56b",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/004_add_service_provider_table.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-27T11:54:22Z",
+      "side": 1,
+      "message": "suggestion: extract the table name to a constant",
+      "revId": "5dedf42d52da8253c93cf852c3de4abaa3a9727e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_f1a1a9f8",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2320,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-27T11:54:22Z",
+      "side": 1,
+      "message": "suggest to perform an update of every \"updatable\" field and check that the update from the id is not allowed.",
+      "revId": "5dedf42d52da8253c93cf852c3de4abaa3a9727e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_11571503",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2337,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-27T11:54:22Z",
+      "side": 1,
+      "message": "suggest to change this method name to something like \"test_update_service_provider_unknown_attribute\"",
+      "revId": "5dedf42d52da8253c93cf852c3de4abaa3a9727e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
