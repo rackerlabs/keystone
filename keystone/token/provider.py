@@ -238,17 +238,6 @@ class Manager(manager.Manager):
                 token_data, CONF.identity.default_domain_id)
             self.revoke_api.check_token(token_values)
 
-    def validate_v2_token(self, token_id, belongs_to=None):
-        unique_id = self.unique_id(token_id)
-        # NOTE(morganfainberg): Ensure we never use the long-form token_id
-        # (PKI) as part of the cache_key.
-        token_ref = self._persistence.get_token(unique_id)
-        token = self._validate_v2_token(token_ref)
-        self.check_revocation_v2(token)
-        self._token_belongs_to(token, belongs_to)
-        self._is_valid_token(token)
-        return token
-
     def check_revocation_v3(self, token):
         try:
             token_data = token['token']
@@ -265,7 +254,7 @@ class Manager(manager.Manager):
         else:
             return self.check_revocation_v3(token)
 
-    def validate_v3_token(self, token_id):
+    def validate_token(self, token_id):
         unique_id = self.unique_id(token_id)
         # NOTE(morganfainberg): Ensure we never use the long-form token_id
         # (PKI) as part of the cache_key.
@@ -273,14 +262,14 @@ class Manager(manager.Manager):
             token_ref = self._persistence.get_token(unique_id)
         except (exception.ValidationError, exception.UserNotFound):
             raise exception.TokenNotFound(token_id=token_id)
-        token = self._validate_v3_token(token_ref)
+        token = self._validate_token(token_ref)
         self._is_valid_token(token)
         return token
 
     @versionutils.deprecated(
         as_of=versionutils.deprecated.JUNO,
         what='token_provider_api.check_v2_token',
-        in_favor_of='token_provider_api.validate_v2_token',
+        in_favor_of='token_provider_api.validate_token',
         remove_in=+1)
     def check_v2_token(self, token_id, belongs_to=None):
         """Check the validity of the given V2 token.
@@ -293,7 +282,7 @@ class Manager(manager.Manager):
         # NOTE(morganfainberg): Ensure we never use the long-form token_id
         # (PKI) as part of the cache_key.
         unique_id = self.unique_id(token_id)
-        self.validate_v2_token(unique_id, belongs_to=belongs_to)
+        self.validate_token(unique_id, belongs_to=belongs_to)
 
     @versionutils.deprecated(
         as_of=versionutils.deprecated.JUNO,
@@ -316,22 +305,12 @@ class Manager(manager.Manager):
                         expiration_time=EXPIRATION_TIME)
     def _validate_token(self, token_id):
         token_ref = self._persistence.get_token(token_id)
-        version = self.driver.get_token_version(token_ref)
-        if version == self.V3:
-            return self.driver.validate_v3_token(token_ref)
-        elif version == self.V2:
-            return self.driver.validate_v2_token(token_ref)
-        raise exception.UnsupportedTokenVersionException()
+        self.driver.validate_token(token_ref)
 
     @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
                         expiration_time=EXPIRATION_TIME)
-    def _validate_v2_token(self, token_id):
-        return self.driver.validate_v2_token(token_id)
-
-    @cache.on_arguments(should_cache_fn=SHOULD_CACHE,
-                        expiration_time=EXPIRATION_TIME)
-    def _validate_v3_token(self, token_id):
-        return self.driver.validate_v3_token(token_id)
+    def _validate_token(self, token_id):
+        return self.driver.validate_token(token_id)
 
     def _is_valid_token(self, token):
         """Verify the token is valid format and has not expired."""
@@ -373,61 +352,10 @@ class Manager(manager.Manager):
                     token_data['tenant']['id'] != belongs_to):
                 raise exception.Unauthorized()
 
-    def issue_v2_token(self, token_ref, roles_ref=None, catalog_ref=None):
-        token_id, token_data = self.driver.issue_v2_token(
-            token_ref, roles_ref, catalog_ref)
-
-        data = dict(key=token_id,
-                    id=token_id,
-                    expires=token_data['access']['token']['expires'],
-                    user=token_ref['user'],
-                    tenant=token_ref['tenant'],
-                    metadata=token_ref['metadata'],
-                    token_data=token_data,
-                    bind=token_ref.get('bind'),
-                    trust_id=token_ref['metadata'].get('trust_id'),
-                    token_version=self.V2)
-        self._create_token(token_id, data)
-
-        return token_id, token_data
-
-    def issue_v3_token(self, user_id, method_names, expires_at=None,
-                       project_id=None, domain_id=None, auth_context=None,
-                       trust=None, metadata_ref=None, include_catalog=True,
-                       parent_audit_id=None):
-        token_id, token_data = self.driver.issue_v3_token(
-            user_id, method_names, expires_at, project_id, domain_id,
-            auth_context, trust, metadata_ref, include_catalog,
-            parent_audit_id)
-
-        if metadata_ref is None:
-            metadata_ref = {}
-
-        if 'project' in token_data['token']:
-            # project-scoped token, fill in the v2 token data
-            # all we care are the role IDs
-
-            # FIXME(gyee): is there really a need to store roles in metadata?
-            role_ids = [r['id'] for r in token_data['token']['roles']]
-            metadata_ref = {'roles': role_ids}
-
-        if trust:
-            metadata_ref.setdefault('trust_id', trust['id'])
-            metadata_ref.setdefault('trustee_user_id',
-                                    trust['trustee_user_id'])
-
-        data = dict(key=token_id,
-                    id=token_id,
-                    expires=token_data['token']['expires_at'],
-                    user=token_data['token']['user'],
-                    tenant=token_data['token'].get('project'),
-                    metadata=metadata_ref,
-                    token_data=token_data,
-                    trust_id=trust['id'] if trust else None,
-                    token_version=self.V3)
-
-        self._create_token(token_id, data)
-        return token_id, token_data
+    def issue_token(self, **kwargs):
+        token = self.driver.issue_token(**kwargs)
+        self._create_token(token_id, token)
+        return token.token_id, token.get_data() 
 
     def invalidate_individual_token_cache(self, token_id):
         # NOTE(morganfainberg): invalidate takes the exact same arguments as
@@ -440,8 +368,6 @@ class Manager(manager.Manager):
         # do the explicit individual token invalidation.
 
         self._validate_token.invalidate(self, token_id)
-        self._validate_v2_token.invalidate(self, token_id)
-        self._validate_v3_token.invalidate(self, token_id)
 
     def revoke_token(self, token_id, revoke_chain=False):
         if self.revoke_api:
@@ -552,52 +478,10 @@ class Provider(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def issue_v2_token(self, token_ref, roles_ref=None, catalog_ref=None):
-        """Issue a V2 token.
-
-        :param token_ref: token data to generate token from
-        :type token_ref: dict
-        :param roles_ref: optional roles list
-        :type roles_ref: dict
-        :param catalog_ref: optional catalog information
-        :type catalog_ref: dict
-        :returns: (token_id, token_data)
-        """
-        raise exception.NotImplemented()  # pragma: no cover
+    def issue_v3_token(self, **kwargs):
 
     @abc.abstractmethod
-    def issue_v3_token(self, user_id, method_names, expires_at=None,
-                       project_id=None, domain_id=None, auth_context=None,
-                       trust=None, metadata_ref=None, include_catalog=True,
-                       parent_audit_id=None):
-        """Issue a V3 Token.
-
-        :param user_id: identity of the user
-        :type user_id: string
-        :param method_names: names of authentication methods
-        :type method_names: list
-        :param expires_at: optional time the token will expire
-        :type expires_at: string
-        :param project_id: optional project identity
-        :type project_id: string
-        :param domain_id: optional domain identity
-        :type domain_id: string
-        :param auth_context: optional context from the authorization plugins
-        :type auth_context: dict
-        :param trust: optional trust reference
-        :type trust: dict
-        :param metadata_ref: optional metadata reference
-        :type metadata_ref: dict
-        :param include_catalog: optional, include the catalog in token data
-        :type include_catalog: boolean
-        :param parent_audit_id: optional, the audit id of the parent token
-        :type parent_audit_id: string
-        :returns: (token_id, token_data)
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def validate_v2_token(self, token_ref):
+    def validate_token(self, token_ref):
         """Validate the given V2 token and return the token data.
 
         Must raise Unauthorized exception if unable to validate token.
@@ -607,17 +491,6 @@ class Provider(object):
         :returns: token data
         :raises: keystone.exception.TokenNotFound
 
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def validate_v3_token(self, token_ref):
-        """Validate the given V3 token and return the token_data.
-
-        :param token_ref: the token reference
-        :type token_ref: dict
-        :returns: token data
-        :raises: keystone.exception.TokenNotFound
         """
         raise exception.NotImplemented()  # pragma: no cover
 
