@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a930d6b_0b4e1097",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T06:26:41Z",
+      "side": 1,
+      "message": "same comment on capitalisation as the previous patch",
+      "revId": "8e908bf7bab1c1d738f9e098378c4fbbfae9afca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_0b1c5077",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T06:26:41Z",
+      "side": 1,
+      "message": "I don\u0027t think we need this....since this code is new and so nobody should be calling assignment for it.",
+      "revId": "8e908bf7bab1c1d738f9e098378c4fbbfae9afca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_e6665bba",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T06:26:41Z",
+      "side": 1,
+      "message": "a bit like the previous patch, I find it quite difficult to convince myself this is doing the right thing...maybe some explanation comments would help.",
+      "revId": "8e908bf7bab1c1d738f9e098378c4fbbfae9afca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_46f3af09",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 311,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-27T06:26:41Z",
+      "side": 1,
+      "message": "see comment in previous patch",
+      "revId": "8e908bf7bab1c1d738f9e098378c4fbbfae9afca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
