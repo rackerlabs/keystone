@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_db02973d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-28T22:14:34Z",
+      "side": 1,
+      "message": "it\u0027s a nit, but can be fixed: \n\ntrusted_dashboards instead of trusted_dashboard",
+      "range": {
+        "startLine": 491,
+        "startChar": 29,
+        "endLine": 491,
+        "endChar": 41
+      },
+      "revId": "42cab769b41261fe8bece45c4677a0581c0648ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
