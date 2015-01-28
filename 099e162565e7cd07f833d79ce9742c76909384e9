@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_cf2bb8e9",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1311,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2015-01-28T19:54:08Z",
+      "side": 1,
+      "message": "It would be nice to mix the case here to test that the call to lower() is working properly.",
+      "revId": "099e162565e7cd07f833d79ce9742c76909384e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
