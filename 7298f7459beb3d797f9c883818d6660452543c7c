@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_e8823d51",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1760,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-01-28T17:29:00Z",
+      "side": 1,
+      "message": "good catch!",
+      "parentUuid": "fa81d914_7a3ff725",
+      "revId": "7298f7459beb3d797f9c883818d6660452543c7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_baaa4f17",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-28T17:05:21Z",
       "side": 1,
       "message": "use subprocess.Popen directly, check_output is just a shortcut",
+      "revId": "7298f7459beb3d797f9c883818d6660452543c7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_c8bbb90c",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1761,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-01-28T17:29:00Z",
+      "side": 1,
+      "message": "I am working off existing code, see\n\nhttps://github.com/openstack/keystone/blob/stable/juno/keystone/contrib/federation/idp.py#L403\n\nI could do another patch to fix the check_output thingy. What do you think?",
+      "parentUuid": "fa81d914_baaa4f17",
       "revId": "7298f7459beb3d797f9c883818d6660452543c7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_c869f98c",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1763,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-01-28T17:29:00Z",
+      "side": 1,
+      "message": "Yeah, we are using subprocess.check_output(), which is not available in Python 2.6.\n\nhttps://github.com/openstack/keystone/blob/stable/juno/keystone/contrib/federation/idp.py#L403",
+      "parentUuid": "fa81d914_3a3c9fe2",
+      "revId": "7298f7459beb3d797f9c883818d6660452543c7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_9d3745e3",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2015-01-28T17:05:21Z",
       "side": 1,
       "message": "you\u0027d probably want to mock communicate() or Popen() instead, as check_output() basically does this:\n \n  \u003e\u003e\u003e subprocess.Popen([\u0027whoami\u0027], stdout\u003dsubprocess.PIPE).communicate()[0]\n  \u0027dolph\\n\u0027",
+      "revId": "7298f7459beb3d797f9c883818d6660452543c7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_083231a7",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1772,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-01-28T17:29:00Z",
+      "side": 1,
+      "message": "I could. But I\u0027ll have to submit another patch to fix the IdP code first.",
+      "parentUuid": "fa81d914_9d3745e3",
       "revId": "7298f7459beb3d797f9c883818d6660452543c7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
