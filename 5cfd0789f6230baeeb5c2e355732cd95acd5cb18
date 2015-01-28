@@ -87,6 +87,23 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_a3c4e640",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-01-28T18:05:10Z",
+      "side": 1,
+      "message": "Make this string translatable",
+      "revId": "5cfd0789f6230baeeb5c2e355732cd95acd5cb18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_0ca5f752",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 10
@@ -98,6 +115,23 @@
       "writtenOn": "2015-01-28T11:36:54Z",
       "side": 1,
       "message": "we shouldn\u0027t hardcode JS  here.",
+      "revId": "5cfd0789f6230baeeb5c2e355732cd95acd5cb18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_a3adc68a",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-01-28T18:05:10Z",
+      "side": 1,
+      "message": "instead of using position argument, it would be more readable to use named argument here",
       "revId": "5cfd0789f6230baeeb5c2e355732cd95acd5cb18",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
