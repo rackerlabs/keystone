@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_4f2281ba",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 354,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-28T12:23:36Z",
+      "side": 1,
+      "message": "this kind of checks shouldn\u0027t be done here in the Controller layer. I saw the other classes in this file and all of them are doing the same kind of checking, suggest to submit a patch to move all these checks to the Manager layer.",
+      "revId": "267ee59090fcd111e900358be8294d31ad9e52d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_da2b9180",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-28T12:23:36Z",
+      "side": 1,
+      "message": "this as well, should be done in the Manager layer.",
+      "revId": "267ee59090fcd111e900358be8294d31ad9e52d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_5a37a1e3",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 377,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-28T12:23:36Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "267ee59090fcd111e900358be8294d31ad9e52d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_fa269567",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-28T12:23:36Z",
+      "side": 1,
+      "message": "extra line?",
+      "revId": "267ee59090fcd111e900358be8294d31ad9e52d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_da1711a2",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2316,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-28T12:23:36Z",
+      "side": 1,
+      "message": "you should either remove this or add more detail",
+      "revId": "267ee59090fcd111e900358be8294d31ad9e52d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
