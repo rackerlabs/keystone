@@ -52,6 +52,24 @@
       "revId": "a7195e77a58bfe41dcb617656bae2d2c24b094f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_8130de57",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 416,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2015-01-28T03:37:52Z",
+      "side": 1,
+      "message": "re.compile(r\".*\\bdict\\((\\[)?(\\(|\\[)(?!\\{)\").match(\u0027dict(({1:2}))\u0027)  can handle the case, \n\nbut what\u0027s the other extra case we have ? and what\u0027s the exact regex can we use .",
+      "parentUuid": "1a930d6b_d7e9f8b7",
+      "revId": "a7195e77a58bfe41dcb617656bae2d2c24b094f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
