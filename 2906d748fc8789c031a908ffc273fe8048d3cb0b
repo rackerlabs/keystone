@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_fd7921fd",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1094,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-01-28T17:28:43Z",
+      "side": 1,
+      "message": "why is this necessary?",
+      "revId": "2906d748fc8789c031a908ffc273fe8048d3cb0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_0805d110",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1340,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-01-28T17:28:43Z",
+      "side": 1,
+      "message": "why doesn\u0027t \u0027mail\u0027 work like in master?",
+      "revId": "2906d748fc8789c031a908ffc273fe8048d3cb0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_5d414d59",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1344,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-01-28T17:28:43Z",
+      "side": 1,
+      "message": "^^",
+      "revId": "2906d748fc8789c031a908ffc273fe8048d3cb0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_1d37d500",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1347,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-01-28T17:28:43Z",
+      "side": 1,
+      "message": "the user ID you\u0027re passing here doesn\u0027t match the one you\u0027re creating above",
+      "revId": "2906d748fc8789c031a908ffc273fe8048d3cb0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_e826bdb9",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1355,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-01-28T17:28:43Z",
+      "side": 1,
+      "message": "same question here",
+      "revId": "2906d748fc8789c031a908ffc273fe8048d3cb0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_4826e9b8",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1366,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-01-28T17:28:43Z",
+      "side": 1,
+      "message": "because it seems to work here",
+      "revId": "2906d748fc8789c031a908ffc273fe8048d3cb0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
