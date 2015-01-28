@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_752a9a7f",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 702,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-28T21:29:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_ccf3df71",
+      "revId": "5cfd0789f6230baeeb5c2e355732cd95acd5cb18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_0ceed788",
         "filename": "keystone/common/config.py",
         "patchSetId": 10
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_9521cea1",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-28T21:29:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_0ceed788",
+      "revId": "5cfd0789f6230baeeb5c2e355732cd95acd5cb18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_ecb6e389",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 10
@@ -47,6 +83,24 @@
       "writtenOn": "2015-01-28T11:36:54Z",
       "side": 1,
       "message": "need to figure out how to read parameter from URL.",
+      "revId": "5cfd0789f6230baeeb5c2e355732cd95acd5cb18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_d526e615",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-28T21:29:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_ecb6e389",
       "revId": "5cfd0789f6230baeeb5c2e355732cd95acd5cb18",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_f5684a23",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-28T21:29:26Z",
+      "side": 1,
+      "message": "coming up in another patch, when I rebase this on marco\u0027s work",
+      "parentUuid": "fa81d914_2c255bc2",
+      "revId": "5cfd0789f6230baeeb5c2e355732cd95acd5cb18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_a3c4e640",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 10
@@ -98,6 +170,24 @@
       "writtenOn": "2015-01-28T18:05:10Z",
       "side": 1,
       "message": "Make this string translatable",
+      "revId": "5cfd0789f6230baeeb5c2e355732cd95acd5cb18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_a555c31e",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-28T21:29:26Z",
+      "side": 1,
+      "message": "i made this a file",
+      "parentUuid": "fa81d914_a3c4e640",
       "revId": "5cfd0789f6230baeeb5c2e355732cd95acd5cb18",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_b19c2d6b",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-28T21:29:26Z",
+      "side": 1,
+      "message": "same as above",
+      "parentUuid": "fa81d914_0ca5f752",
+      "revId": "5cfd0789f6230baeeb5c2e355732cd95acd5cb18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_a3adc68a",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 10
@@ -132,6 +240,24 @@
       "writtenOn": "2015-01-28T18:05:10Z",
       "side": 1,
       "message": "instead of using position argument, it would be more readable to use named argument here",
+      "revId": "5cfd0789f6230baeeb5c2e355732cd95acd5cb18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_053ccfe1",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-28T21:29:26Z",
+      "side": 1,
+      "message": "same as above",
+      "parentUuid": "fa81d914_a3adc68a",
       "revId": "5cfd0789f6230baeeb5c2e355732cd95acd5cb18",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
