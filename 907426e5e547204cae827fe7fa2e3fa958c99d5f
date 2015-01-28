@@ -52,6 +52,23 @@
       "revId": "907426e5e547204cae827fe7fa2e3fa958c99d5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_6c648f22",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-28T23:03:48Z",
+      "side": 1,
+      "message": "why isn\u0027t this marked for translation?",
+      "revId": "907426e5e547204cae827fe7fa2e3fa958c99d5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
