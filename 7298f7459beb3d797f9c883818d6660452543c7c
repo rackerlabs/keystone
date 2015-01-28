@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_7a3ff725",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1760,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-01-28T17:05:21Z",
+      "side": 1,
+      "message": "subprocess*",
+      "revId": "7298f7459beb3d797f9c883818d6660452543c7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_baaa4f17",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1761,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-01-28T17:05:21Z",
+      "side": 1,
+      "message": "use subprocess.Popen directly, check_output is just a shortcut",
+      "revId": "7298f7459beb3d797f9c883818d6660452543c7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_3a3c9fe2",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1763,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-01-28T17:05:21Z",
+      "side": 1,
+      "message": "i don\u0027t think this is true?",
+      "revId": "7298f7459beb3d797f9c883818d6660452543c7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_9d3745e3",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1772,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-01-28T17:05:21Z",
+      "side": 1,
+      "message": "you\u0027d probably want to mock communicate() or Popen() instead, as check_output() basically does this:\n \n  \u003e\u003e\u003e subprocess.Popen([\u0027whoami\u0027], stdout\u003dsubprocess.PIPE).communicate()[0]\n  \u0027dolph\\n\u0027",
+      "revId": "7298f7459beb3d797f9c883818d6660452543c7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
