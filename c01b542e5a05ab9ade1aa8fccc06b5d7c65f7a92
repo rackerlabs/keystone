@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_b030b957",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2340,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-28T14:15:04Z",
+      "side": 1,
+      "message": "you could use assertValidListResponse or something here",
+      "revId": "c01b542e5a05ab9ade1aa8fccc06b5d7c65f7a92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_70e2c1a0",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2349,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-28T14:15:04Z",
+      "side": 1,
+      "message": "provider*",
+      "revId": "c01b542e5a05ab9ade1aa8fccc06b5d7c65f7a92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_709001ed",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2357,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-28T14:15:04Z",
+      "side": 1,
+      "message": "I don\u0027t see the actual self.put() call being made here.",
+      "revId": "c01b542e5a05ab9ade1aa8fccc06b5d7c65f7a92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
