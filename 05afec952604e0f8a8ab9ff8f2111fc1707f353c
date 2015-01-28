@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_2052d3dd",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-28T00:39:11Z",
+      "side": 1,
+      "message": "in reality, we are still also inserting:\n\n\u0027inhertited_to_projects\u0027: \u0027projects\u0027,\n\ninto this dict as well...is that really necessary?",
+      "revId": "05afec952604e0f8a8ab9ff8f2111fc1707f353c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a930d6b_6bec0bf4",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 757,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-28T00:39:11Z",
+      "side": 1,
+      "message": "do we need this line?",
+      "revId": "05afec952604e0f8a8ab9ff8f2111fc1707f353c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
