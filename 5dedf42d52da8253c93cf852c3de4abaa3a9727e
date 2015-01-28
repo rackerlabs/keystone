@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_e9c33888",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-28T10:22:05Z",
+      "side": 1,
+      "message": "that\u0027s a very valid point.",
+      "parentUuid": "fa81d914_cc676de9",
+      "revId": "5dedf42d52da8253c93cf852c3de4abaa3a9727e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_911ce56b",
         "filename": "keystone/contrib/federation/migrate_repo/versions/004_add_service_provider_table.py",
         "patchSetId": 8
@@ -106,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_84046116",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2316,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-28T10:22:05Z",
+      "side": 1,
+      "message": "thanks.",
+      "parentUuid": "fa81d914_648306cd",
+      "revId": "5dedf42d52da8253c93cf852c3de4abaa3a9727e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_f1a1a9f8",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 8
@@ -123,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_a6888a23",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2320,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-28T10:22:05Z",
+      "side": 1,
+      "message": "we do this in batch by creating random values in new_sp_ref. I think it\u0027s enough? :-)",
+      "parentUuid": "1a930d6b_f1a1a9f8",
+      "revId": "5dedf42d52da8253c93cf852c3de4abaa3a9727e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_2c9c8969",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 8
@@ -134,6 +188,24 @@
       "writtenOn": "2015-01-28T04:03:32Z",
       "side": 1,
       "message": "What is this means?",
+      "revId": "5dedf42d52da8253c93cf852c3de4abaa3a9727e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_09096c31",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2330,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-28T10:22:05Z",
+      "side": 1,
+      "message": "that parameters values were not checked. They will be in the next version of the patch :-)",
+      "parentUuid": "fa81d914_2c9c8969",
       "revId": "5dedf42d52da8253c93cf852c3de4abaa3a9727e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -168,6 +240,24 @@
       "writtenOn": "2015-01-28T04:03:32Z",
       "side": 1,
       "message": "++",
+      "parentUuid": "1a930d6b_11571503",
+      "revId": "5dedf42d52da8253c93cf852c3de4abaa3a9727e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_0e233206",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2337,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-28T10:22:05Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "1a930d6b_11571503",
       "revId": "5dedf42d52da8253c93cf852c3de4abaa3a9727e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
