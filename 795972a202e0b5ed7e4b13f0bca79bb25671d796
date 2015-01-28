@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_492281ba",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-01-28T11:08:59Z",
+      "side": 1,
+      "message": "Why python3.4 and not 2.7?",
+      "revId": "795972a202e0b5ed7e4b13f0bca79bb25671d796",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
