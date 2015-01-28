@@ -225,7 +225,7 @@ class UserApi(common_ldap.EnabledEmuMixIn, common_ldap.BaseLdap):
             # we need to convert it so we can invert it properly.
             enabled = obj.get('enabled', self.enabled_default)
             if type(enabled) is str:
-                if enabled.lower == 'true':
+                if enabled.lower() == 'true':
                     enabled = True
                 else:
                     enabled = False
