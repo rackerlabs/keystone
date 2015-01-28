@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_e895dde4",
+        "filename": "keystone/tests/test_backend_kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-01-28T17:36:22Z",
+      "side": 1,
+      "message": "++ looks like a clean backport other than these, which look appropriate",
+      "revId": "5ec73571b7a1698f21c6c7d7ab95d42708d3d9e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
