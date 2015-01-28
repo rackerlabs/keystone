@@ -16,6 +16,24 @@
       "revId": "7e5018a6cd318a12fe2116c24be800a35d75b8c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_c76746e9",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-28T04:26:01Z",
+      "side": 1,
+      "message": "yep, it covers basestring for py2.X and str for py3.X\n\nbasestring covers both str and unicode\n\nsource: https://pythonhosted.org/six/#six.string_types and \nhttps://docs.python.org/2/library/functions.html#basestring",
+      "parentUuid": "fa81d914_5e2b27eb",
+      "revId": "7e5018a6cd318a12fe2116c24be800a35d75b8c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
