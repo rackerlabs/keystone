@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_52276cb6",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2340,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-28T21:07:51Z",
+      "side": 1,
+      "message": "In my opinion assertValidListResponse is screwed so I am going to leave it as is until we fix the testing function. \nFor instance, there is no way to test list of reference objects, and in fact we should test returning list of more than one object.",
+      "parentUuid": "fa81d914_b030b957",
+      "revId": "c01b542e5a05ab9ade1aa8fccc06b5d7c65f7a92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_70e2c1a0",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 10
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_7e3c4430",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2349,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-28T21:07:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_70e2c1a0",
+      "revId": "c01b542e5a05ab9ade1aa8fccc06b5d7c65f7a92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_709001ed",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 10
@@ -47,6 +83,24 @@
       "writtenOn": "2015-01-28T14:15:04Z",
       "side": 1,
       "message": "I don\u0027t see the actual self.put() call being made here.",
+      "revId": "c01b542e5a05ab9ade1aa8fccc06b5d7c65f7a92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_d14d2174",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2357,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-28T21:07:51Z",
+      "side": 1,
+      "message": "it\u0027s in the setUp()",
+      "parentUuid": "fa81d914_709001ed",
       "revId": "c01b542e5a05ab9ade1aa8fccc06b5d7c65f7a92",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
