@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa81d914_cc676de9",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-28T04:03:32Z",
+      "side": 1,
+      "message": "According to the sql backend code, we can only update \u0027description\u0027 and \u0027enabled\u0027, but here we check _mutable_parameters which contains more than description and enabled. I think we should make consistent.",
+      "revId": "5dedf42d52da8253c93cf852c3de4abaa3a9727e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_911ce56b",
         "filename": "keystone/contrib/federation/migrate_repo/versions/004_add_service_provider_table.py",
         "patchSetId": 8
@@ -71,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_4ca1bda8",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2316,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-28T04:03:32Z",
+      "side": 1,
+      "message": "Why you don\u0027t want to implement list test in this patch?",
+      "parentUuid": "fa81d914_648306cd",
+      "revId": "5dedf42d52da8253c93cf852c3de4abaa3a9727e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_f1a1a9f8",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 8
@@ -88,6 +123,23 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_2c9c8969",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2330,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-28T04:03:32Z",
+      "side": 1,
+      "message": "What is this means?",
+      "revId": "5dedf42d52da8253c93cf852c3de4abaa3a9727e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_11571503",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 8
@@ -99,6 +151,24 @@
       "writtenOn": "2015-01-27T11:54:22Z",
       "side": 1,
       "message": "suggest to change this method name to something like \"test_update_service_provider_unknown_attribute\"",
+      "revId": "5dedf42d52da8253c93cf852c3de4abaa3a9727e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_0c5505c6",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2337,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-28T04:03:32Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "1a930d6b_11571503",
       "revId": "5dedf42d52da8253c93cf852c3de4abaa3a9727e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
