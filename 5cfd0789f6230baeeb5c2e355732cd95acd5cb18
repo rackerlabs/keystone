@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_ccf3df71",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 10
+      },
+      "lineNbr": 702,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-28T11:36:54Z",
+      "side": 1,
+      "message": "let\u0027s make this a list.",
+      "revId": "5cfd0789f6230baeeb5c2e355732cd95acd5cb18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_0ceed788",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-28T11:36:54Z",
+      "side": 1,
+      "message": "default should be empty IMO.",
+      "revId": "5cfd0789f6230baeeb5c2e355732cd95acd5cb18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_ecb6e389",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 260,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-28T11:36:54Z",
+      "side": 1,
+      "message": "need to figure out how to read parameter from URL.",
+      "revId": "5cfd0789f6230baeeb5c2e355732cd95acd5cb18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_ec3b43e9",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-28T11:36:54Z",
+      "side": 1,
+      "message": "this should be more configurable.",
+      "revId": "5cfd0789f6230baeeb5c2e355732cd95acd5cb18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_2c255bc2",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-28T11:36:54Z",
+      "side": 1,
+      "message": "this will require DB lookup. identity_provider id (stored in the DB ~\u003d remote_id)",
+      "revId": "5cfd0789f6230baeeb5c2e355732cd95acd5cb18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_0ca5f752",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-28T11:36:54Z",
+      "side": 1,
+      "message": "we shouldn\u0027t hardcode JS  here.",
+      "revId": "5cfd0789f6230baeeb5c2e355732cd95acd5cb18",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
