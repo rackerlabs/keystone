@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_272ca2ab",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-28T04:52:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_db080c30",
+      "revId": "af439ff2cdd98cb6dd657a5fc775ec793e07455f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_161a796e",
         "filename": "keystone/tests/test_v3_assignment.py",
         "patchSetId": 8
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_873b8eea",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1308,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-28T04:52:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_1b2c64ab",
+      "revId": "af439ff2cdd98cb6dd657a5fc775ec793e07455f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_5b1dfc72",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 8
@@ -64,6 +100,24 @@
       "writtenOn": "2015-01-28T01:18:49Z",
       "side": 1,
       "message": "Ditto.",
+      "revId": "af439ff2cdd98cb6dd657a5fc775ec793e07455f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_67369a05",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1313,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-28T04:52:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_5b1dfc72",
       "revId": "af439ff2cdd98cb6dd657a5fc775ec793e07455f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
