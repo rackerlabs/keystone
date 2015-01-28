@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_ddb61d3d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 729,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-28T17:06:44Z",
+      "side": 1,
+      "message": "I\u0027m not sure calling this in the case when you have user_id and domain_id set will give you the right answer. W.g. won\u0027t you end up returning all the project non-inherited assignments?",
+      "revId": "316c31a7b5dd6b819bbe0238c79e6353eb1327d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
