@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_e65d17eb",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 449,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-28T15:14:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_eca50305",
+      "revId": "da9a0a7603c638613b190b487be303cfb42f43bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_2c72bb7c",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 18
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_26cbaf73",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1809,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-28T15:14:29Z",
+      "side": 1,
+      "message": "So I\u0027m not sure of the guidelines here, but it seemed to me that this is clearly a \"helper\" class, that adds additional info into the classes that inherit from it",
+      "parentUuid": "fa81d914_2c72bb7c",
+      "revId": "da9a0a7603c638613b190b487be303cfb42f43bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_ecdd0344",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 18
@@ -47,6 +83,24 @@
       "writtenOn": "2015-01-28T11:22:11Z",
       "side": 1,
       "message": "(nit) Looks like this comment is no more valid, look at next line. This should be raised as a separate bug.",
+      "revId": "da9a0a7603c638613b190b487be303cfb42f43bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_06206b48",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1820,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-28T15:14:29Z",
+      "side": 1,
+      "message": "I\u0027ll raise a separate bug",
+      "parentUuid": "fa81d914_ecdd0344",
       "revId": "da9a0a7603c638613b190b487be303cfb42f43bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
