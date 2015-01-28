@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_77f8f07c",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2130,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-01-28T16:39:15Z",
+      "side": 1,
+      "message": "Does this test have a specific result when run w/ emulation? Please don\u0027t skip tests but check for the expected behavior not a skip.",
+      "revId": "c41734d0826de1db6665fb88e67c524f8fcb2655",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_d7efdcae",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2133,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-01-28T16:39:15Z",
+      "side": 1,
+      "message": "Same as above.",
+      "revId": "c41734d0826de1db6665fb88e67c524f8fcb2655",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
