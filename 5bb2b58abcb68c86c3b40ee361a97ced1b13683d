@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_0c36b3e7",
+        "filename": "keystone/token/persistence/backends/redis.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-01-28T22:48:09Z",
+      "side": 1,
+      "message": "This this right?",
+      "revId": "5bb2b58abcb68c86c3b40ee361a97ced1b13683d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
