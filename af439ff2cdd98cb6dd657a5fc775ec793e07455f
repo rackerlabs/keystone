@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_db080c30",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-01-28T01:18:49Z",
+      "side": 1,
+      "message": "s/create/update",
+      "revId": "af439ff2cdd98cb6dd657a5fc775ec793e07455f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_161a796e",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 470,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-01-28T01:18:49Z",
+      "side": 1,
+      "message": "suggest to assert domain[\u0027name\u0027] instead of domain[\u0027id\u0027], would you pls check my comment in patchset6, thanks!",
+      "revId": "af439ff2cdd98cb6dd657a5fc775ec793e07455f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_1b2c64ab",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1308,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-01-28T01:18:49Z",
+      "side": 1,
+      "message": "input parameter \u0027IDP\u0027 is needn\u0027t since it\u0027s not used in _check_domains_are_valid(...)",
+      "revId": "af439ff2cdd98cb6dd657a5fc775ec793e07455f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_5b1dfc72",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 1313,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-01-28T01:18:49Z",
+      "side": 1,
+      "message": "Ditto.",
+      "revId": "af439ff2cdd98cb6dd657a5fc775ec793e07455f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
