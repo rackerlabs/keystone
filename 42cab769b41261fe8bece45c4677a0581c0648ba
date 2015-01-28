@@ -22,6 +22,24 @@
       "revId": "42cab769b41261fe8bece45c4677a0581c0648ba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_c6eb9aae",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-28T22:25:39Z",
+      "side": 1,
+      "message": "i think just singular is okay here, cause we do the same for notification_driver\n\n  trusted_dashboard\u003dacme.com\n  trusted_dashboard\u003dbeta.com\n  trusted_dashboard\u003dacme.ca\n\nnotification_driver works the same way.",
+      "parentUuid": "fa81d914_db02973d",
+      "revId": "42cab769b41261fe8bece45c4677a0581c0648ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
