@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_5e2b27eb",
+        "filename": "keystone/identity/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 9983
+      },
+      "writtenOn": "2015-01-28T03:08:43Z",
+      "side": 1,
+      "message": "Does this include str and unicode?  If so, then ack",
+      "revId": "7e5018a6cd318a12fe2116c24be800a35d75b8c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
