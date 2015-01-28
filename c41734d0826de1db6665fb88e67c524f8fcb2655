@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_6e7735d5",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2130,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-28T18:14:30Z",
+      "side": 1,
+      "message": "this was is actually fine since the user is expecting the enabled status to be false, which is what it\u0027s defaulted to if emulation is enabled with inversion.",
+      "parentUuid": "fa81d914_77f8f07c",
+      "revId": "c41734d0826de1db6665fb88e67c524f8fcb2655",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_d7efdcae",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-28T16:39:15Z",
       "side": 1,
       "message": "Same as above.",
+      "revId": "c41734d0826de1db6665fb88e67c524f8fcb2655",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_6e0c9543",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2133,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-28T18:14:30Z",
+      "side": 1,
+      "message": "I re-did the test here, and made it check for False",
+      "parentUuid": "fa81d914_d7efdcae",
       "revId": "c41734d0826de1db6665fb88e67c524f8fcb2655",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
