@@ -16,6 +16,24 @@
       "revId": "4d846b29a77f88a8c0221d9a7b9cae2ea673e122",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_6709f7dc",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-29T08:51:08Z",
+      "side": 1,
+      "message": "i am not sure if I understood your intention, but see following patch.",
+      "parentUuid": "fa81d914_6f9d5359",
+      "revId": "4d846b29a77f88a8c0221d9a7b9cae2ea673e122",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
