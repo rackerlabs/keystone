@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_ca20ea4b",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-29T09:29:45Z",
+      "side": 1,
+      "message": "is domain relevant here?  Isn\u0027t it just effective and inherited that you can\u0027t have together?",
+      "revId": "66d252050cf5205a47e3e2c9e8f41f4f97db1b1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_2a47c64c",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 727,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-29T09:29:45Z",
+      "side": 1,
+      "message": "we may want to reword this comment, since the first sentence sounds like we are going to get them all anyway, which isn\u0027t the case.",
+      "revId": "66d252050cf5205a47e3e2c9e8f41f4f97db1b1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_0aba0223",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 738,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-29T09:29:45Z",
+      "side": 1,
+      "message": "remove the domain from this sentence - since we do return (direct assignments on) these in effective mode.",
+      "revId": "66d252050cf5205a47e3e2c9e8f41f4f97db1b1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_277d3fb2",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 722,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-29T09:29:45Z",
+      "side": 1,
+      "message": "we don\u0027t use group_id here - since I think we convinced ourselves that you can\u0027t filter on group in effective mode...so I would suggest we don\u0027t pass it in to make that clear.",
+      "revId": "66d252050cf5205a47e3e2c9e8f41f4f97db1b1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
