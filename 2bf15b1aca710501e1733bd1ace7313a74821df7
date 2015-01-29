@@ -52,6 +52,24 @@
       "revId": "2bf15b1aca710501e1733bd1ace7313a74821df7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_c8272063",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-29T01:34:55Z",
+      "side": 1,
+      "message": "Guang pointed out that the data from the store is already being cleaned up, so I still don\u0027t see why we need this.\n\nI\u0027d be ok with this if it came with a database migration that cleans up the data in the database.\n\nThe work to clean up the results from the templated backend could be done in the templated backend since the SQL results will always be correct already.",
+      "parentUuid": "fa81d914_4d826295",
+      "revId": "2bf15b1aca710501e1733bd1ace7313a74821df7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
