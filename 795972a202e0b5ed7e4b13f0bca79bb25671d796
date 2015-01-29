@@ -16,6 +16,24 @@
       "revId": "795972a202e0b5ed7e4b13f0bca79bb25671d796",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_9f91c09b",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-01-29T16:15:57Z",
+      "side": 1,
+      "message": "We decided at the mid-cycle to make this use Python 3. The tests themselves won\u0027t run the server code so there is no reason to bound it to Python 2.",
+      "parentUuid": "fa81d914_492281ba",
+      "revId": "795972a202e0b5ed7e4b13f0bca79bb25671d796",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
