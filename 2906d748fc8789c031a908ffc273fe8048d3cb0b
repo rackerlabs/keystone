@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_35300c9e",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1340,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-01-29T08:14:48Z",
+      "side": 1,
+      "message": "That\u0027s because the default value for user_mail_attribute has changed from \u0027email\u0027 to \u0027mail\u0027 in master. See\n\nhttps://github.com/openstack/keystone/blob/master/etc/keystone.conf.sample#L862\n\nI could make it look like master by change the default to \u0027mail\u0027. But that\u0027s not what this test is about. This test is about showing the \u0027user_id_attribute\u0027 is created in LDAP and it is being used.",
+      "parentUuid": "fa81d914_0805d110",
+      "revId": "2906d748fc8789c031a908ffc273fe8048d3cb0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_5d414d59",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 2
@@ -47,6 +65,24 @@
       "writtenOn": "2015-01-28T17:28:43Z",
       "side": 1,
       "message": "^^",
+      "revId": "2906d748fc8789c031a908ffc273fe8048d3cb0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_752a842d",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1344,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-01-29T08:14:48Z",
+      "side": 1,
+      "message": "\u0027id\u0027 is required in create. It\u0027ll get mapped to \u0027email\u0027 in LDAP backend.",
+      "parentUuid": "fa81d914_5d414d59",
       "revId": "2906d748fc8789c031a908ffc273fe8048d3cb0b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_f5c3d454",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1347,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-01-29T08:14:48Z",
+      "side": 1,
+      "message": "create_user() takes a user_id, but ldap backend never use it.\n\nhttps://github.com/openstack/keystone/blob/stable/icehouse/keystone/identity/backends/ldap.py#L89\n\nSeems like only kvs backend is using it. I can drop a note there to make it clear that user_id is not used in ldap backend. I have to pass something to make the interface happy.",
+      "parentUuid": "fa81d914_1d37d500",
+      "revId": "2906d748fc8789c031a908ffc273fe8048d3cb0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_e826bdb9",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 2
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_35a56cb5",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1355,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-01-29T08:14:48Z",
+      "side": 1,
+      "message": "same as above",
+      "parentUuid": "fa81d914_e826bdb9",
+      "revId": "2906d748fc8789c031a908ffc273fe8048d3cb0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_4826e9b8",
         "filename": "keystone/tests/test_backend_ldap.py",
         "patchSetId": 2
@@ -98,6 +170,24 @@
       "writtenOn": "2015-01-28T17:28:43Z",
       "side": 1,
       "message": "because it seems to work here",
+      "revId": "2906d748fc8789c031a908ffc273fe8048d3cb0b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_b5907c4f",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1366,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-01-29T08:14:48Z",
+      "side": 1,
+      "message": "that\u0027s because the return values are mocked. See line 1372 below.",
+      "parentUuid": "fa81d914_4826e9b8",
       "revId": "2906d748fc8789c031a908ffc273fe8048d3cb0b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
