@@ -52,13 +52,6 @@ class PersistenceManager(manager.Manager):
     def __init__(self):
         super(PersistenceManager, self).__init__(CONF.token.driver)
 
-    @versionutils.deprecated(as_of=versionutils.deprecated.JUNO,
-                             in_favor_of='token_provider_api.unique_id',
-                             remove_in=+1,
-                             what='token_api.unique_id')
-    def unique_id(self, token_id):
-        return self.token_provider_api.unique_id(token_id)
-
     def _assert_valid(self, token_id, token_ref):
         """Raise TokenNotFound if the token is expired."""
         current_time = timeutils.normalize_time(timeutils.utcnow())
