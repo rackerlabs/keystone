@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_123de9bb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-29T00:44:19Z",
+      "side": 1,
+      "message": "I don\u0027t see the point of doing this. The database schema allows name to not be present, so this is just confusing. New entries will always have an empty string whereas existing ones won\u0027t have it, so now the data is going to be inconsistent and I\u0027m worried that will lead to bugs since developers will assume the name is always set.",
+      "revId": "2bf15b1aca710501e1733bd1ace7313a74821df7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
