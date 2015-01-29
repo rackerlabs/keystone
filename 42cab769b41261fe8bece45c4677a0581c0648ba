@@ -60,6 +60,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_5ee12a99",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-29T02:36:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_9e62c2ab",
+      "revId": "42cab769b41261fe8bece45c4677a0581c0648ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_dea99ae0",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 11
@@ -71,6 +89,24 @@
       "writtenOn": "2015-01-29T02:22:38Z",
       "side": 1,
       "message": "how about making the location configurable? would be easier for user to override the template used",
+      "revId": "42cab769b41261fe8bece45c4677a0581c0648ba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_3ee636b5",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-29T02:36:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_dea99ae0",
       "revId": "42cab769b41261fe8bece45c4677a0581c0648ba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
