@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_683a9b37",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-01-29T14:01:49Z",
+      "side": 1,
+      "message": "Update: self._require_trustor_has_role_in_project needs trust[\u0027roles\u0027] to be with \u0027id\u0027 fields\u0027",
+      "parentUuid": "fa81d914_7140cea5",
+      "revId": "3e678b137eae8abd0bcb9c0368c984ac2f7e8405",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_87918254",
         "filename": "keystone/trust/core.py",
         "patchSetId": 6
