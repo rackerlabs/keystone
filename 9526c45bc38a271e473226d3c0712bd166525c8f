@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_4555b24e",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-01-29T18:36:46Z",
+      "side": 1,
+      "message": "This should use the transaction context manager we have example here:\n\nhttps://github.com/openstack/keystone/blob/master/keystone/assignment/backends/sql.py#L70 \n\nIt helps eliminate get_session, session begin lines.\n\nThis can be a follow-up patch if no other changes are needed [but needs to happen before RC]",
+      "revId": "9526c45bc38a271e473226d3c0712bd166525c8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_c54b6285",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-01-29T18:36:46Z",
+      "side": 1,
+      "message": "(NIT) please add rtype data to the doctstrings (applies to everything here))\n\n(NIT): please add parameter types (applies to everything here).",
+      "revId": "9526c45bc38a271e473226d3c0712bd166525c8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_f06f46c3",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2370,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-01-29T18:36:46Z",
+      "side": 1,
+      "message": "Suggest a test that tries an update of a non-mutable parameter.",
+      "revId": "9526c45bc38a271e473226d3c0712bd166525c8f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
