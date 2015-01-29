@@ -33,6 +33,74 @@
       "revId": "d5a66cf2879ecaa59cded29cb0c1f02072ee6834",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_cd273263",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-29T01:28:50Z",
+      "side": 1,
+      "message": "this method should be moved into resource_api since it only calls methods on resource_api. This change could be done in a separate commit.",
+      "revId": "d5a66cf2879ecaa59cded29cb0c1f02072ee6834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_ad991e21",
+        "filename": "keystone/backends.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-29T01:28:50Z",
+      "side": 1,
+      "message": "remove the .",
+      "revId": "d5a66cf2879ecaa59cded29cb0c1f02072ee6834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_0db14a8f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-29T01:28:50Z",
+      "side": 1,
+      "message": "don\u0027t need this comment since the help text says it all.",
+      "revId": "d5a66cf2879ecaa59cded29cb0c1f02072ee6834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_cd6e5201",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-29T01:28:50Z",
+      "side": 1,
+      "message": "change \"backend\" to \"resource driver\". otherwise it\u0027s confusing since the same thing is referred to in two ways.",
+      "revId": "d5a66cf2879ecaa59cded29cb0c1f02072ee6834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
