@@ -34,6 +34,24 @@
       "revId": "06fd6770dd1598afe06553e29f90ea5a0c5c0fa4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_6bba8724",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2015-01-29T18:49:06Z",
+      "side": 1,
+      "message": "Ok, that makes sense.",
+      "parentUuid": "fa81d914_b006aecc",
+      "revId": "06fd6770dd1598afe06553e29f90ea5a0c5c0fa4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
