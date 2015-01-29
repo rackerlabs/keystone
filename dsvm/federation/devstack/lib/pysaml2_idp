@@ -1,0 +1,63 @@
+# Library to support a pysaml IdP
+
+# Licensed under the Apache License, Version 2.0 (the "License"); you may
+# not use this file except in compliance with the License. You may obtain
+# a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+
+# lib/pysaml_idp
+# Functions to control the installation, configuration and operation of
+# a **pysaml2 IdP**
+
+# Dependencies:
+#
+# - ``functions`` file
+#
+# Exported functions:
+#
+# - install_pysaml2_idp
+# - configure_pysaml2_idp
+# - start_pysaml2_idp
+# - stop_pysaml2_idp
+
+PYSAML2_REPO=${PYSAML2_REPO:-https://github.com/rohe/pysaml2.git}
+PYSAML2_DIR=${PYSAML2_DIR:-$DEST/pysaml2}
+PYSAML2_BRANCH=${PYSAML2_BRANCH:-master}
+
+PYSAML2_IDP_DIR=$PYSAML2_DIR/example/idp2
+PYSAML2_IDP_PORT=${PYSAML2_IDP_PORT:-8088}
+PYSAML2_IDP_HOST=${PYSAML2_IDP_HOST:-localhost}
+
+
+function install_pysaml2_idp {
+    install_package xmlsec1
+    git_clone $PYSAML2_REPO $PYSAML2_DIR $PYSAML2_BRANCH
+    touch $PYSAML2_DIR/setup.cfg
+    setup_install $PYSAML2_DIR
+}
+
+function configure_pysaml2_idp {
+    cp $FILES/idp_conf.py.template $PYSAML2_IDP_DIR/idp_conf.py
+    (cd $PYSAML2_IDP_DIR;
+    make_metadata.py idp_conf.py > idp.xml)
+    sed -e "
+        /^HOST = /s/localhost/$PYSAML2_IDP_HOST/
+        /^PORT = /s/8088/$PYSAML2_IDP_PORT/
+        s/..\/sp-wsgi\/sp.xml/sp-metadata.xml/
+    " -i $PYSAML2_IDP_DIR/idp_conf.py
+}
+
+function start_pysaml2_idp {
+    run_process k-pyidp "$PYSAML2_IDP_DIR/idp.py idp_conf -m $PYSAML2_IDP_DIR/"
+}
+
+function stop_pysaml2_idp {
+    stop_process k-pyidp
+}
