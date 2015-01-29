@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_d2b5dfee",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-29T22:07:43Z",
+      "side": 1,
+      "message": "bp isn\u0027t approved.",
+      "revId": "041d49703d9400ba9aab64a3333b7d61c9a00f43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
