@@ -116,7 +116,7 @@ class Manager(manager.Manager):
                          '%s branch.') % project_id)
 
     @notifications.created(_PROJECT)
-    def create_project(self, tenant_id, tenant):
+    def create_project(self, tenant_id, tenant, context=None):
         tenant = tenant.copy()
         tenant.setdefault('enabled', True)
         tenant['enabled'] = clean.project_enabled(tenant['enabled'])

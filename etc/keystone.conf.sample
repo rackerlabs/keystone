@@ -122,6 +122,10 @@
 # Default publisher_id for outgoing notifications (string value)
 #default_publisher_id = <None>
 
+# Type of notifications to emit for most identity and assignment events. Valid
+# options are: both, cadf, basic. (string value)
+#notification_type = both
+
 #
 # From keystone.openstack.common.eventlet_backdoor
 #

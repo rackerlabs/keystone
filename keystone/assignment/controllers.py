@@ -398,7 +398,7 @@ class ProjectV3(controller.V3Controller):
     def create_project(self, context, project):
         ref = self._assign_unique_id(self._normalize_dict(project))
         ref = self._normalize_domain_id(context, ref)
-        ref = self.assignment_api.create_project(ref['id'], ref)
+        ref = self.assignment_api.create_project(ref['id'], ref, context)
         return ProjectV3.wrap_member(context, ref)
 
     @controller.filterprotected('domain_id', 'enabled', 'name',
