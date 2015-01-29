@@ -1,0 +1,13 @@
+    <Location /Shibboleth.sso>
+        SetHandler shib
+    </Location>
+
+    <Location /v3/OS-FEDERATION/identity_providers/*/protocols/saml2/auth>
+        ShibRequestSetting requireSession 1
+        AuthType shibboleth
+        # TODO(dstanek): This doesn't work in all versions of Apache. Do we care?
+        #ShibRequireAll On
+        ShibRequireSession On
+        ShibExportAssertion Off
+        Require valid-user
+    </Location>
