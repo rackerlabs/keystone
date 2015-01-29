@@ -22,6 +22,7 @@ from keystone.common.validation import parameter_types
 from keystone.common.validation import validators
 from keystone.credential import schema as credential_schema
 from keystone import exception
+from keystone.identity import schema as identity_schema
 from keystone.policy import schema as policy_schema
 from keystone.trust import schema as trust_schema
 
@@ -512,6 +513,246 @@ class DomainValidationTestCase(testtools.TestCase):
         request_to_validate = {'name': ''}
         self.assertRaises(exception.SchemaValidationError,
                           self.update_domain_validator.validate,
+                          request_to_validate)
+
+
+class UserValidationTestCase(testtools.TestCase):
+    """Test for V3 User API validation."""
+
+    def setUp(self):
+        super(UserValidationTestCase, self).setUp()
+
+        self.user_name = 'My User'
+
+        create = identity_schema.user_create
+        update = identity_schema.user_update
+        self.create_user_validator = validators.SchemaValidator(create)
+        self.update_user_validator = validators.SchemaValidator(update)
+
+    def test_validate_user_request(self):
+        """Make sure we successfully validate a create user request."""
+        request_to_validate = {'default_project_id': uuid.uuid4().hex,
+                               'description': 'my user',
+                               'domain_id': uuid.uuid4().hex,
+                               'enabled': True,
+                               'password': 'passwd',
+                               'name': self.user_name}
+        self.create_user_validator.validate(request_to_validate)
+
+    def test_validate_user_request_succeeds_with_required_parameters(self):
+        """Validate user request with only the required parameters."""
+        request_to_validate = {'name': self.user_name}
+        self.create_user_validator.validate(request_to_validate)
+
+    def test_validate_user_request_without_name_fails(self):
+        """Make sure we raise an exception when `name` isn't included."""
+        request_to_validate = {'enabled': True}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_user_validator.validate,
+                          request_to_validate)
+
+    def test_validate_user_request_with_enabled(self):
+        """Validate `enabled` as boolean-like values for user."""
+        for valid_enabled in _VALID_ENABLED_FORMATS:
+            request_to_validate = {'name': self.user_name,
+                                   'enabled': valid_enabled}
+            self.create_user_validator.validate(request_to_validate)
+
+    def test_validate_user_request_with_invalid_enabled_fails(self):
+        """Exception is raised when `enabled` isn't a boolean-like value."""
+        for invalid_enabled in _INVALID_ENABLED_FORMATS:
+            request_to_validate = {'name': self.user_name,
+                                   'enabled': invalid_enabled}
+            self.assertRaises(exception.SchemaValidationError,
+                              self.create_user_validator.validate,
+                              request_to_validate)
+
+    def test_validate_user_request_with_valid_description(self):
+        """Test that we validate `description` in create user requests."""
+        request_to_validate = {'name': self.user_name,
+                               'description': 'My Domain'}
+        self.create_user_validator.validate(request_to_validate)
+
+    def test_validate_user_request_with_invalid_description_fails(self):
+        """Exception is raised when `description` is a non-string value."""
+        request_to_validate = {'name': self.user_name,
+                               'description': False}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_user_validator.validate,
+                          request_to_validate)
+
+    def test_validate_user_request_with_name_too_long(self):
+        """Exception is raised when `name` is too long."""
+        long_user_name = 'a' * 256
+        request_to_validate = {'name': long_user_name}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_user_validator.validate,
+                          request_to_validate)
+
+    def test_validate_user_request_with_name_too_short(self):
+        """Exception raised when `name` is too short."""
+        request_to_validate = {'name': ''}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_user_validator.validate,
+                          request_to_validate)
+
+    def test_validate_user_request_with_password_too_long(self):
+        """Exception is raised when `password` is too long."""
+        long_password = 'a' * 129
+        request_to_validate = {'name': self.user_name,
+                               'password': long_password}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_user_validator.validate,
+                          request_to_validate)
+
+    def test_validate_user_update_request(self):
+        """Test that we validate a user update request."""
+        request_to_validate = {'enabled': False}
+        self.update_user_validator.validate(request_to_validate)
+
+    def test_validate_user_update_request_with_no_parameters_fails(self):
+        """Exception is raised when updating a user without parameters."""
+        request_to_validate = {}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_user_validator.validate,
+                          request_to_validate)
+
+    def test_validate_user_update_request_with_name_too_long_fails(self):
+        """Exception raised when updating a user with `name` too long."""
+        long_user_name = 'a' * 256
+        request_to_validate = {'name': long_user_name}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_user_validator.validate,
+                          request_to_validate)
+
+    def test_validate_user_update_request_with_name_too_short_fails(self):
+        """Exception raised when updating a user with `name` too short."""
+        request_to_validate = {'name': ''}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_user_validator.validate,
+                          request_to_validate)
+
+    def test_validate_user_update_request_with_password_too_long(self):
+        """Exception is raised when `password` is too long."""
+        long_password = 'a' * 129
+        request_to_validate = {'password': long_password}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_user_validator.validate,
+                          request_to_validate)
+
+    def test_validate_user_update_request_with_enabled(self):
+        """Validate `enabled` as boolean-like values for user."""
+        for valid_enabled in _VALID_ENABLED_FORMATS:
+            request_to_validate = {'enabled': valid_enabled}
+            self.update_user_validator.validate(request_to_validate)
+
+    def test_validate_user_update_request_with_invalid_enabled_fails(self):
+        """Exception is raised when `enabled` isn't a boolean-like value."""
+        for invalid_enabled in _INVALID_ENABLED_FORMATS:
+            request_to_validate = {'enabled': invalid_enabled}
+            self.assertRaises(exception.SchemaValidationError,
+                              self.update_user_validator.validate,
+                              request_to_validate)
+
+    def test_validate_user_update_request_with_valid_description(self):
+        """Test that we validate `description` in update user requests."""
+        request_to_validate = {'description': 'My Domain'}
+        self.update_user_validator.validate(request_to_validate)
+
+    def test_validate_user_update_request_with_invalid_description_fails(self):
+        """Exception is raised when `description` is a non-string value."""
+        request_to_validate = {'description': False}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_user_validator.validate,
+                          request_to_validate)
+
+
+class GroupValidationTestCase(testtools.TestCase):
+    """Test for V3 Group API validation."""
+
+    def setUp(self):
+        super(GroupValidationTestCase, self).setUp()
+
+        self.group_name = 'My Group'
+
+        create = identity_schema.group_create
+        update = identity_schema.group_update
+        self.create_group_validator = validators.SchemaValidator(create)
+        self.update_group_validator = validators.SchemaValidator(update)
+
+    def test_validate_group_request(self):
+        """Make sure we successfully validate a create group request."""
+        request_to_validate = {'description': 'Developer group',
+                               'domain_id': uuid.uuid4().hex,
+                               'name': self.group_name}
+        self.create_group_validator.validate(request_to_validate)
+
+    def test_validate_group_request_succeeds_with_required_parameters(self):
+        """Validate group request with only the required parameters."""
+        request_to_validate = {'name': self.group_name}
+        self.create_group_validator.validate(request_to_validate)
+
+    def test_validate_group_request_without_name_fails(self):
+        """Make sure we raise an exception when `name` isn't included."""
+        request_to_validate = {'description': 'Developer group'}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_group_validator.validate,
+                          request_to_validate)
+
+    def test_validate_group_request_with_valid_description(self):
+        """Test that we validate `description` in create group requests."""
+        request_to_validate = {'name': self.group_name,
+                               'description': 'Developer group'}
+        self.create_group_validator.validate(request_to_validate)
+
+    def test_validate_group_request_with_invalid_description_fails(self):
+        """Exception is raised when `description` is a non-string value."""
+        request_to_validate = {'name': self.group_name,
+                               'description': False}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_group_validator.validate,
+                          request_to_validate)
+
+    def test_validate_group_request_with_name_too_long(self):
+        """Exception is raised when `name` is too long."""
+        long_group_name = 'a' * 65
+        request_to_validate = {'name': long_group_name}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_group_validator.validate,
+                          request_to_validate)
+
+    def test_validate_group_request_with_name_too_short(self):
+        """Exception raised when `name` is too short."""
+        request_to_validate = {'name': ''}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_group_validator.validate,
+                          request_to_validate)
+
+    def test_validate_group_update_request(self):
+        """Test that we validate a group update request."""
+        request_to_validate = {'description': 'Developer group'}
+        self.update_group_validator.validate(request_to_validate)
+
+    def test_validate_group_update_request_with_no_parameters_fails(self):
+        """Exception is raised when updating a group without parameters."""
+        request_to_validate = {}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_group_validator.validate,
+                          request_to_validate)
+
+    def test_validate_group_update_request_with_name_too_long_fails(self):
+        """Exception raised when updating a group with `name` too long."""
+        long_group_name = 'a' * 65
+        request_to_validate = {'name': long_group_name}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_group_validator.validate,
+                          request_to_validate)
+
+    def test_validate_group_update_request_with_name_too_short_fails(self):
+        """Exception raised when updating a group with `name` too short."""
+        request_to_validate = {'name': ''}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_group_validator.validate,
                           request_to_validate)
 
 
