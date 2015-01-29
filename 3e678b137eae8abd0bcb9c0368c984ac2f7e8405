@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_7140cea5",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-01-29T12:31:51Z",
+      "side": 1,
+      "message": "Agreed. Considering you comment in Manager all of this role stuff must be there.",
+      "parentUuid": "1a930d6b_8778a22c",
+      "revId": "3e678b137eae8abd0bcb9c0368c984ac2f7e8405",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_87918254",
         "filename": "keystone/trust/core.py",
         "patchSetId": 6
