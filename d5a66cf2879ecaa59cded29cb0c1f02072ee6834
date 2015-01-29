@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_159bf767",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 19
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-29T14:46:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_b2833d03",
+      "revId": "d5a66cf2879ecaa59cded29cb0c1f02072ee6834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_8dea9a0d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 19
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_955607d1",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-29T14:46:08Z",
+      "side": 1,
+      "message": "So yes, I agree that in a previous patch I should have had two sets of SHOULD_CACHE \u0026 EXPIRATION_TIMES - one for projects/domains and one for roles. I\u0027d suggest it isn\u0027t worth fixing that ahead of this patch.",
+      "parentUuid": "fa81d914_88c8c823",
+      "revId": "d5a66cf2879ecaa59cded29cb0c1f02072ee6834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_cd273263",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 19
@@ -65,6 +101,24 @@
       "writtenOn": "2015-01-29T01:28:50Z",
       "side": 1,
       "message": "this method should be moved into resource_api since it only calls methods on resource_api. This change could be done in a separate commit.",
+      "revId": "d5a66cf2879ecaa59cded29cb0c1f02072ee6834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_355d5bea",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-29T14:46:08Z",
+      "side": 1,
+      "message": "So we could do that - although this is an internal method that is only used in this file by two assignment methods (below)...so not sure it is worth it.",
+      "parentUuid": "fa81d914_cd273263",
       "revId": "d5a66cf2879ecaa59cded29cb0c1f02072ee6834",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_15b697fa",
+        "filename": "keystone/backends.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-29T14:46:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_ad991e21",
+      "revId": "d5a66cf2879ecaa59cded29cb0c1f02072ee6834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_0db14a8f",
         "filename": "keystone/common/config.py",
         "patchSetId": 19
@@ -105,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_f5a583b5",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-29T14:46:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_0db14a8f",
+      "revId": "d5a66cf2879ecaa59cded29cb0c1f02072ee6834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_cd6e5201",
         "filename": "keystone/common/config.py",
         "patchSetId": 19
@@ -116,6 +206,24 @@
       "writtenOn": "2015-01-29T01:28:50Z",
       "side": 1,
       "message": "change \"backend\" to \"resource driver\". otherwise it\u0027s confusing since the same thing is referred to in two ways.",
+      "revId": "d5a66cf2879ecaa59cded29cb0c1f02072ee6834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_75919351",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 450,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-29T14:46:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_cd6e5201",
       "revId": "d5a66cf2879ecaa59cded29cb0c1f02072ee6834",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
