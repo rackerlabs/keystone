@@ -34,6 +34,24 @@
       "revId": "2bf15b1aca710501e1733bd1ace7313a74821df7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_4d826295",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-01-29T01:23:19Z",
+      "side": 1,
+      "message": "what Guang said..  and Lance asked for this to be added from a separate patch, you can find the discussion here: https://review.openstack.org/#/c/135808/9/keystone/catalog/backends/sql.py",
+      "parentUuid": "fa81d914_cd59f2ff",
+      "revId": "2bf15b1aca710501e1733bd1ace7313a74821df7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
