@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_72e35333",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1312,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-29T22:05:39Z",
+      "side": 1,
+      "message": "this is an odd value for a cn.",
+      "revId": "ad9ecdbab9ab4243477aeac8a92214cb1ac830c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_d2f4fff3",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1317,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-29T22:05:39Z",
+      "side": 1,
+      "message": "a variable for this would be nice then it would be more obvious it\u0027s the same value all over.",
+      "revId": "ad9ecdbab9ab4243477aeac8a92214cb1ac830c6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
