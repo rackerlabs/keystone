@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_88c8c823",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-01-29T01:47:28Z",
+      "side": 1,
+      "message": "After removing projects and domains to their backend, the only entity on this file that will need to be cached is Role at RoleManager.\n\nThen it needs to be role here after that.\n\nHowever, the fact of RoleManager be currently using the cache and expiration time from assignment is a bug, since it has its own section in the config file, as you have pointed out.",
+      "parentUuid": "fa81d914_8dea9a0d",
+      "revId": "d5a66cf2879ecaa59cded29cb0c1f02072ee6834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_cd273263",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 19
