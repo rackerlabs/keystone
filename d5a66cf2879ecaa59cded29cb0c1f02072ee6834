@@ -16,6 +16,23 @@
       "revId": "d5a66cf2879ecaa59cded29cb0c1f02072ee6834",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_8dea9a0d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-29T01:07:52Z",
+      "side": 1,
+      "message": "Why is this changing? There\u0027s already a role section in the config file... so suddenly the RoleManager caching is switching from the assignment section to the role section... doesn\u0027t this need to be backwards compatible? There\u0027s no mention of this change in the commit message.",
+      "revId": "d5a66cf2879ecaa59cded29cb0c1f02072ee6834",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
