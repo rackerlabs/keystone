@@ -35,6 +35,9 @@ from keystone.openstack.common import log
 notifier_opts = [
     cfg.StrOpt('default_publisher_id',
                help='Default publisher_id for outgoing notifications'),
+    cfg.BoolOpt('enable_cadf_notifications', default=True,
+                help='Also emit CADF notifications for Identity Service '
+                     'events.'),
 ]
 
 config_section = None
@@ -53,6 +56,7 @@ SAML_AUDIT_TYPE = 'http://docs.oasis-open.org/security/saml/v2.0'
 # resource types that can be notified
 _SUBSCRIBERS = {}
 _notifier = None
+SERVICE = 'identity'
 
 
 CONF = cfg.CONF
@@ -103,6 +107,14 @@ class ManagerNotificationWrapper(object):
                     self.resource_type,
                     resource_id,
                     public=self.public)
+
+                # Do not emit CADF notifications for non-public events
+                if (CONF.enable_cadf_notifications and self.public):
+                    context = {}
+                    # call_args = inspect.getcallargs(f, *args, **kwargs)
+                    # context = call_args['context']
+                    _create_cadf_payload(self.operation, self.resource_type,
+                                         resource_id, context)
             return result
 
         return wrapper
@@ -216,6 +228,54 @@ def reset_notifier():
     _notifier = None
 
 
+def _create_cadf_payload(operation, resource_type, resource_id, context):
+    """Create CADF payload for common operations.
+
+    Create a CADF initiator and target that is specific to the resource_type.
+
+    :param operation: operation being performed (created, updated, or deleted)
+    :param resource_type: type of resource being operated on
+    :param resource_id: ID of resource being operated on
+    :param context: WSGI context, so we can get info about the user
+    """
+
+    initiator = _get_request_audit_info(context)
+    if resource_type == 'group':
+        target_uri = taxonomy.SECURITY_GROUP
+    elif resource_type == 'project':
+        target_uri = taxonomy.SECURITY_PROJECT
+    elif resource_type == 'role':
+        target_uri = taxonomy.SECURITY_ROLE
+    elif resource_type == 'user':
+        target_uri = taxonomy.SECURITY_ACCOUNT_USER
+    elif resource_type == 'region':
+        target_uri = taxonomy.SECURITY_REGION
+    elif resource_type == 'endpoint':
+        target_uri = taxonomy.SECURITY_ENDPOINT
+    elif resource_type == 'service':
+        target_uri = taxonomy.SECURITY_SERVICE
+    elif resource_type == 'policy':
+        target_uri = taxonomy.SECURITY_POLICY
+    elif resource_type == 'domain':
+        target_uri = taxonomy.SECURITY_DOMAIN
+    else:
+        target_uri = taxonomy.UNKNOWN
+
+    target = resource.Resource(typeURI=target_uri)
+
+    audit_kwargs = {}
+    audit_kwargs['resource_info'] = resource_id
+    # NOTE(stevemar): As per the CADF specification, the ACTION must start
+    # with create/update/delete/etc... not with the resource type. However
+    # in Ceilometer, and most OpenStack projects that Ceilometer supports,
+    # their event type is project.resource.operation.
+    cadf_action = "%s.%s" % (operation, resource_type)
+    event_type = "%s.%s.%s" % (SERVICE, resource_type, operation)
+
+    _send_audit_notification(cadf_action, initiator, taxonomy.OUTCOME_SUCCESS,
+                             target, event_type, **audit_kwargs)
+
+
 def _send_notification(operation, resource_type, resource_id, public=True):
     """Send notification to inform observers about the affected resource.
 
@@ -230,16 +290,15 @@ def _send_notification(operation, resource_type, resource_id, public=True):
                     notify_event_callbacks to in process listeners.
     """
     payload = {'resource_info': resource_id}
-    service = 'identity'
 
-    notify_event_callbacks(service, resource_type, operation, payload)
+    notify_event_callbacks(SERVICE, resource_type, operation, payload)
 
     if public:
         notifier = _get_notifier()
         if notifier:
             context = {}
             event_type = '%(service)s.%(resource_type)s.%(operation)s' % {
-                'service': service,
+                'service': SERVICE,
                 'resource_type': resource_type,
                 'operation': operation}
             try:
@@ -278,22 +337,26 @@ class CadfNotificationWrapper(object):
 
     def __init__(self, action):
         self.action = action
+        self.event_type = "%s.%s" % (SERVICE, action)
 
     def __call__(self, f):
         def wrapper(wrapped_self, context, user_id, *args, **kwargs):
             """Always send a notification."""
 
             initiator = _get_request_audit_info(context, user_id)
+            target = resource.Resource(typeURI=taxonomy.ACCOUNT_USER)
             try:
                 result = f(wrapped_self, context, user_id, *args, **kwargs)
             except Exception:
                 # For authentication failure send a cadf event as well
                 _send_audit_notification(self.action, initiator,
-                                         taxonomy.OUTCOME_FAILURE)
+                                         taxonomy.OUTCOME_FAILURE,
+                                         target, self.event_type)
                 raise
             else:
                 _send_audit_notification(self.action, initiator,
-                                         taxonomy.OUTCOME_SUCCESS)
+                                         taxonomy.OUTCOME_SUCCESS,
+                                         target, self.event_type)
                 return result
 
         return wrapper
@@ -312,6 +375,8 @@ class CadfRoleAssignmentNotificationWrapper(object):
 
     def __init__(self, operation):
         self.operation = "%s.%s" % (operation, self.ROLE_ASSIGNMENT)
+        self.event_type = "%s.%s.%s" % (SERVICE, self.ROLE_ASSIGNMENT,
+                                        operation)
 
     def __call__(self, f):
         def wrapper(wrapped_self, role_id, *args, **kwargs):
@@ -351,6 +416,7 @@ class CadfRoleAssignmentNotificationWrapper(object):
             context = call_args['context']
 
             initiator = _get_request_audit_info(context)
+            target = resource.Resource(typeURI=taxonomy.ACCOUNT_USER)
 
             audit_kwargs = {}
             if call_args['project_id']:
@@ -371,11 +437,13 @@ class CadfRoleAssignmentNotificationWrapper(object):
             except Exception:
                 _send_audit_notification(self.operation, initiator,
                                          taxonomy.OUTCOME_FAILURE,
+                                         target, self.event_type,
                                          **audit_kwargs)
                 raise
             else:
                 _send_audit_notification(self.operation, initiator,
                                          taxonomy.OUTCOME_SUCCESS,
+                                         target, self.event_type,
                                          **audit_kwargs)
                 return result
 
@@ -386,6 +454,7 @@ def send_saml_audit_notification(action, context, user_id, group_ids,
                                  identity_provider, protocol, token_id,
                                  outcome):
     initiator = _get_request_audit_info(context)
+    target = resource.Resource(typeURI=taxonomy.ACCOUNT_USER)
     audit_type = SAML_AUDIT_TYPE
     user_id = user_id or taxonomy.UNKNOWN
     token_id = token_id or taxonomy.UNKNOWN
@@ -394,10 +463,12 @@ def send_saml_audit_notification(action, context, user_id, group_ids,
                                           identity_provider=identity_provider,
                                           user=user_id, groups=group_ids)
     initiator.credential = cred
-    _send_audit_notification(action, initiator, outcome)
+    event_type = "%s.%s" % (SERVICE, action)
+    _send_audit_notification(action, initiator, outcome, target, event_type)
 
 
-def _send_audit_notification(action, initiator, outcome, **kwargs):
+def _send_audit_notification(action, initiator, outcome, target,
+                             event_type, **kwargs):
     """Send CADF notification to inform observers about the affected resource.
 
     This method logs an exception when sending the notification fails.
@@ -406,6 +477,9 @@ def _send_audit_notification(action, initiator, outcome, **kwargs):
     :param initiator: CADF resource representing the initiator
     :param outcome: The CADF outcome (taxonomy.OUTCOME_PENDING,
         taxonomy.OUTCOME_SUCCESS, taxonomy.OUTCOME_FAILURE)
+    :param target: CADF resource representing the target
+    :param event_type: An OpenStack-ism, typically this is the meter name that
+        Ceilometer uses to poll events.
 
     """
 
@@ -414,7 +488,7 @@ def _send_audit_notification(action, initiator, outcome, **kwargs):
         outcome=outcome,
         action=action,
         initiator=initiator,
-        target=resource.Resource(typeURI=taxonomy.ACCOUNT_USER),
+        target=target,
         observer=resource.Resource(typeURI=taxonomy.SERVICE_SECURITY))
 
     for key, value in kwargs.items():
@@ -422,10 +496,6 @@ def _send_audit_notification(action, initiator, outcome, **kwargs):
 
     context = {}
     payload = event.as_dict()
-    service = 'identity'
-    event_type = '%(service)s.%(action)s' % {'service': service,
-                                             'action': action}
-
     notifier = _get_notifier()
 
     if notifier:
