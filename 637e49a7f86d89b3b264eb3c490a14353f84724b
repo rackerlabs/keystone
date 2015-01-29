@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_82a080a0",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-01-29T17:35:22Z",
+      "side": 1,
+      "message": "remove \u0027/\u0027 from the end of the line 75",
+      "revId": "637e49a7f86d89b3b264eb3c490a14353f84724b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
