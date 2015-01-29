@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_586926bd",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 26
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-01-29T14:50:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_3e0f2c32",
+      "revId": "9ba37672872accbcf8cc53d1cbcc45dcc6d88a25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_1b451a70",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 26
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-28T18:52:09Z",
       "side": 1,
       "message": "add a comma (,) after environment.",
+      "revId": "9ba37672872accbcf8cc53d1cbcc45dcc6d88a25",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_3549db8b",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-01-29T14:50:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_1b451a70",
       "revId": "9ba37672872accbcf8cc53d1cbcc45dcc6d88a25",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
