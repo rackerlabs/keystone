@@ -16,6 +16,24 @@
       "revId": "2bf15b1aca710501e1733bd1ace7313a74821df7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_cd59f2ff",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-01-29T01:09:52Z",
+      "side": 1,
+      "message": "Brant, but we are already setting service name to an empty string when constructing the service catalog. See\n\nhttps://review.openstack.org/#/c/135808/9\n\nThis is just to make sure we are consistently doing it across the board. Like region_name. I don\u0027t care how we do it so as long as it is consistent across the board.",
+      "parentUuid": "fa81d914_123de9bb",
+      "revId": "2bf15b1aca710501e1733bd1ace7313a74821df7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
