@@ -50,6 +50,23 @@
       "revId": "3a59ed9225ca680e7ab0288e5cc1f1e0dcc65f8b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_a34bea29",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-01-29T03:41:34Z",
+      "side": 1,
+      "message": "I think this will throw an error:  no variable to replace",
+      "revId": "3a59ed9225ca680e7ab0288e5cc1f1e0dcc65f8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
