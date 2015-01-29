@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_6f9d5359",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-01-29T06:40:14Z",
+      "side": 1,
+      "message": "nit: suggest formatting to be consistent with pep8 docstring conventions; \n\nhttps://www.python.org/dev/peps/pep-0008/#documentation-strings\n\n    \"Test for adding whitelist and blacklist in the rule.\n\n     Server should response...",
+      "revId": "4d846b29a77f88a8c0221d9a7b9cae2ea673e122",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
