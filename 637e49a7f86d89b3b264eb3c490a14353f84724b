@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa81d914_e2c05ce2",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 493,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-29T17:47:47Z",
+      "side": 1,
+      "message": "Didn\u0027t get the meaning of this config, as per the controllers.py methods, isn\u0027t this a list of trusted \"origins\" ?",
+      "revId": "637e49a7f86d89b3b264eb3c490a14353f84724b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_426e8830",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 495,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-29T17:47:47Z",
+      "side": 1,
+      "message": "suggestion: name of the config to be \u0027sso_callback_template\u0027",
+      "revId": "637e49a7f86d89b3b264eb3c490a14353f84724b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_c296f8ef",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-29T17:47:47Z",
+      "side": 1,
+      "message": "suggestion: \u0027Request must have an origin query parameter\u0027",
+      "revId": "637e49a7f86d89b3b264eb3c490a14353f84724b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_e2f21c6e",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-29T17:47:47Z",
+      "side": 1,
+      "message": "shouldn\u0027t be using oslo_config? (there is a review to change all of the uses of config https://review.openstack.org/#/c/147367/)",
+      "revId": "637e49a7f86d89b3b264eb3c490a14353f84724b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_82a080a0",
         "filename": "keystone/contrib/federation/routers.py",
         "patchSetId": 13
