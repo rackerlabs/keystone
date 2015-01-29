@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_00baec09",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-29T03:08:00Z",
+      "side": 1,
+      "message": "This should be:\n\nhelp\u003d\u0027Value to be used when sending tokens to a \u0027\n     \u0027trusted dashboard host.\u0027),",
+      "revId": "3a59ed9225ca680e7ab0288e5cc1f1e0dcc65f8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_8045fc18",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 497,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-29T03:08:00Z",
+      "side": 1,
+      "message": "This too.",
+      "revId": "3a59ed9225ca680e7ab0288e5cc1f1e0dcc65f8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_60ac88a1",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 279,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-29T03:08:00Z",
+      "side": 1,
+      "message": "This should be\n\nraise exception.Unauthorized(msg)\n\nAnd how about raising exception.ValidationError here?",
+      "revId": "3a59ed9225ca680e7ab0288e5cc1f1e0dcc65f8b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
