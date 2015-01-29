@@ -1,0 +1,15 @@
+Verified+2: Jenkins
+Code-Review+1: Dave Walker <email@daviey.com>
+Code-Review+1: Lin Hua Cheng <os.lcheng@gmail.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+1: Brant Knudson <bknudson@us.ibm.com>
+Code-Review+1: David Stanek <dstanek@dstanek.com>
+Code-Review+1: Marek Denis <marek.denis@cern.ch>
+Code-Review+2: Ihar Hrachyshka <ihrachys@redhat.com>
+Workflow+1: Ihar Hrachyshka <ihrachys@redhat.com>
+Code-Review+1: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Thu, 29 Jan 2015 10:27:50 +0000
+Reviewed-on: https://review.openstack.org/125364
+Project: openstack/keystone
+Branch: refs/heads/stable/icehouse
