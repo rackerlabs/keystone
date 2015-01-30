@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_becd0d60",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-30T23:44:02Z",
+      "side": 1,
+      "message": "So the assignment APIs have evolved over time.  In V3 we initially had the \"grant\" APIs (create_grant, list_grants etc.).  Later on we introduced the more powerful \"assignment\" API (just list_role_assignment for now).  Since these two classes of API return differnent types on entity, I kept the classes separate. So GrantAssignmentV3 implements the \"grant\" APIs, while RoleAssignmentV3 implements the \"assignment\" APIs.",
+      "parentUuid": "fa81d914_21ba5d6e",
+      "revId": "316007601fd96be6563a2c40569ec11f52e91908",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_21717de0",
         "filename": "doc/source/architecture.rst",
         "patchSetId": 24
