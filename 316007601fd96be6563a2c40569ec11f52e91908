@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_21ba5d6e",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-30T05:38:16Z",
+      "side": 1,
+      "message": "whats the difference between a grant and an assignment?\n\nor are these just grants in the assignment backend?",
+      "revId": "316007601fd96be6563a2c40569ec11f52e91908",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_21717de0",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-30T05:38:16Z",
+      "side": 1,
+      "message": "why is anything tenant related in the assignment backend?",
+      "revId": "316007601fd96be6563a2c40569ec11f52e91908",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_814ce9c9",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-30T05:38:16Z",
+      "side": 1,
+      "message": "It\u0027s weird that some are V2 and others are unversioned, but are implied to be V2.",
+      "revId": "316007601fd96be6563a2c40569ec11f52e91908",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
