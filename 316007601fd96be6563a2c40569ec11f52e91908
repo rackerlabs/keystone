@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_be1c2d15",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-30T23:41:06Z",
+      "side": 1,
+      "message": "So before this patch, although v2 \"Tenant\" APIs where in assignment.controllers.Tenant.  One of those APIs (get_projects_for_token()) needs to remain in assigment, since this API is really \"extract the user_id from this token, and then list all the projects on which that user has a role\" (yes, yuk!).  Since the resource controller got the assignment.controllers.Tenant class, I called the one that needs to remain in assignment assignment.controllers.TenantAssignment.",
+      "parentUuid": "fa81d914_21717de0",
+      "revId": "316007601fd96be6563a2c40569ec11f52e91908",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_814ce9c9",
         "filename": "doc/source/architecture.rst",
         "patchSetId": 24
@@ -47,6 +65,24 @@
       "writtenOn": "2015-01-30T05:38:16Z",
       "side": 1,
       "message": "It\u0027s weird that some are V2 and others are unversioned, but are implied to be V2.",
+      "revId": "316007601fd96be6563a2c40569ec11f52e91908",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_9ee68915",
+        "filename": "doc/source/architecture.rst",
+        "patchSetId": 24
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-30T23:41:06Z",
+      "side": 1,
+      "message": "Yes, and they existed before...so I didn\u0027t want to change them unless is was important to distinguish.",
+      "parentUuid": "fa81d914_814ce9c9",
       "revId": "316007601fd96be6563a2c40569ec11f52e91908",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
