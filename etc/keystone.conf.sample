@@ -118,6 +118,9 @@
 # Default publisher_id for outgoing notifications (string value)
 #default_publisher_id = <None>
 
+# Also emit CADF notifications for Identity Service events. (boolean value)
+#enable_cadf_notifications = true
+
 #
 # From keystone.openstack.common.eventlet_backdoor
 #
