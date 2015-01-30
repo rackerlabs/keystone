@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_081ad5cb",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-01-30T11:28:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_adc00ce1",
+      "revId": "525384b61554a5bcf26d6cb00589788c8ddb1bab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_cd3c60e5",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 29
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-29T23:01:32Z",
       "side": 1,
       "message": "add a comment why it\u0027s ok to return here.\n\nAlso, seems like it would be good to log a warning since the server is configured in a way that\u0027s not secure.",
+      "revId": "525384b61554a5bcf26d6cb00589788c8ddb1bab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_6b150b3f",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-01-30T11:28:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_cd3c60e5",
       "revId": "525384b61554a5bcf26d6cb00589788c8ddb1bab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_4b24c7ae",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-01-30T11:28:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_2d217cb4",
+      "revId": "525384b61554a5bcf26d6cb00589788c8ddb1bab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_48a05e9f",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 29
@@ -64,6 +118,24 @@
       "writtenOn": "2015-01-29T23:01:32Z",
       "side": 1,
       "message": "The coverage reports show that this isn\u0027t tested. Add a test.",
+      "revId": "525384b61554a5bcf26d6cb00589788c8ddb1bab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_0ba9ef90",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-01-30T11:28:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_48a05e9f",
       "revId": "525384b61554a5bcf26d6cb00589788c8ddb1bab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_6b98abc0",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-01-30T11:28:41Z",
+      "side": 1,
+      "message": "The attribute is provided by apache plug-in and this cannot be alterated by the attacker, unless there is a security bug in the plug-in",
+      "parentUuid": "fa81d914_e824b2b0",
+      "revId": "525384b61554a5bcf26d6cb00589788c8ddb1bab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_6830c2e8",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 29
@@ -98,6 +188,24 @@
       "writtenOn": "2015-01-29T23:01:32Z",
       "side": 1,
       "message": "change \"accpeted\" to \"accepeted\"",
+      "revId": "525384b61554a5bcf26d6cb00589788c8ddb1bab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_2bf23306",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-01-30T11:28:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_6830c2e8",
       "revId": "525384b61554a5bcf26d6cb00589788c8ddb1bab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,42 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_aee391a2",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-01-30T11:28:41Z",
+      "side": 1,
+      "message": "Added the remote_id to the test: \"test_update_idp_mutable_attributes\"",
+      "parentUuid": "fa81d914_34046049",
+      "revId": "525384b61554a5bcf26d6cb00589788c8ddb1bab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_2eafa17e",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-01-30T11:28:41Z",
+      "side": 1,
+      "message": "Added the remote_id to the test: \"test_update_idp_mutable_attributes\"",
+      "parentUuid": "fa81d914_34046049",
+      "revId": "525384b61554a5bcf26d6cb00589788c8ddb1bab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_48bf7efb",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 29
@@ -138,6 +282,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_2eaa4185",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 998,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-01-30T11:28:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_48bf7efb",
+      "revId": "525384b61554a5bcf26d6cb00589788c8ddb1bab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_a83b9a9a",
         "filename": "keystone/tests/test_v3_federation.py",
         "patchSetId": 29
@@ -149,6 +311,24 @@
       "writtenOn": "2015-01-29T23:01:32Z",
       "side": 1,
       "message": "same here.",
+      "revId": "525384b61554a5bcf26d6cb00589788c8ddb1bab",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_4eaf7594",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1007,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-01-30T11:28:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_a83b9a9a",
       "revId": "525384b61554a5bcf26d6cb00589788c8ddb1bab",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
