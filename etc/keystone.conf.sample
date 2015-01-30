@@ -118,6 +118,10 @@
 # Default publisher_id for outgoing notifications (string value)
 #default_publisher_id = <None>
 
+# Define the notification format for Identity Service events. Valid options
+# are: basic and cadf (string value)
+#notification_format = basic
+
 #
 # From keystone.openstack.common.eventlet_backdoor
 #
