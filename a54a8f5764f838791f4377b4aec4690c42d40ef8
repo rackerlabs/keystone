@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_f2309eea",
+        "filename": "dsvm/federation/devstack-gate/pre_test_hook.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-01-30T21:08:26Z",
+      "side": 1,
+      "message": "is $BASE  sourced from anywhere",
+      "revId": "a54a8f5764f838791f4377b4aec4690c42d40ef8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
