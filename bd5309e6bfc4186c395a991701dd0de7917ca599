@@ -16,6 +16,24 @@
       "revId": "bd5309e6bfc4186c395a991701dd0de7917ca599",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_cc021fb4",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-30T20:09:28Z",
+      "side": 1,
+      "message": "++ same reasoning",
+      "parentUuid": "da86d52c_69b045f5",
+      "revId": "bd5309e6bfc4186c395a991701dd0de7917ca599",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
