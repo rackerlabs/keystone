@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_c94851cf",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 537,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-01-30T19:43:39Z",
+      "side": 1,
+      "message": "Nit: this should probably be something we hook into fixtures long term.",
+      "revId": "4bf7379f30a3513b38d431de706a8dba538b77dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
