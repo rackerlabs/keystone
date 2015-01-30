@@ -171,6 +171,7 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
     def setUp(self):
         super(NotificationsForEntities, self).setUp()
         self._notifications = []
+        self._audits = []
 
         def fake_notify(operation, resource_type, resource_id,
                         public=True):
@@ -185,6 +186,33 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self.useFixture(mockpatch.PatchObject(
             notifications, '_send_notification', fake_notify))
 
+        def fake_audit(action, initiator, outcome, target,
+                       event_type, **kwargs):
+            service_security = cadftaxonomy.SERVICE_SECURITY
+
+            event = eventfactory.EventFactory().new_event(
+                eventType=cadftype.EVENTTYPE_ACTIVITY,
+                outcome=outcome,
+                action=action,
+                initiator=initiator,
+                target=target,
+                observer=cadfresource.Resource(typeURI=service_security))
+
+            for key, value in kwargs.items():
+                setattr(event, key, value)
+
+            audit = {
+                'action': action,
+                'initiator': initiator,
+                'event': event,
+                'target': target,
+                'event_type': event_type,
+                'send_notification_called': True}
+            self._audits.append(audit)
+
+        self.useFixture(mockpatch.PatchObject(
+            notifications, '_send_audit_notification', fake_audit))
+
     def _assert_last_note(self, resource_id, operation, resource_type):
         self.assertTrue(len(self._notifications) > 0)
         note = self._notifications[-1]
@@ -192,6 +220,22 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self.assertEqual(note['resource_id'], resource_id)
         self.assertEqual(note['resource_type'], resource_type)
         self.assertTrue(note['send_notification_called'])
+
+    def _assert_last_audit(self, resource_id, operation, resource_type,
+                           target):
+        self.assertTrue(len(self._audits) > 0)
+        audit = self._audits[-1]
+        self.assertEqual(audit['event'].resource_info, resource_id)
+        action = '%s.%s' % (operation, resource_type)
+        self.assertEqual(audit['action'], action)
+        self.assertEqual(audit['target'].typeURI, target)
+        event_type = '%s.%s.%s' % ('identity', resource_type, operation)
+        self.assertEqual(audit['event_type'], event_type)
+
+        # NOTE(stevemar): enable this once we have the context being sent
+        # initiator = audit['initiator']
+        # self.assertEqual(initiator.name, self.user_id)
+        self.assertTrue(audit['send_notification_called'])
 
     def _assert_notify_not_sent(self, resource_id, operation, resource_type,
                                 public=True):
@@ -222,22 +266,30 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         group_ref = self.new_group_ref(domain_id=self.domain_id)
         group_ref = self.identity_api.create_group(group_ref)
         self._assert_last_note(group_ref['id'], CREATED_OPERATION, 'group')
+        self._assert_last_audit(group_ref['id'], CREATED_OPERATION, 'group',
+                                cadftaxonomy.SECURITY_GROUP)
 
     def test_create_project(self):
         project_ref = self.new_project_ref(domain_id=self.domain_id)
         self.assignment_api.create_project(project_ref['id'], project_ref)
         self._assert_last_note(
             project_ref['id'], CREATED_OPERATION, 'project')
+        self._assert_last_audit(project_ref['id'], CREATED_OPERATION,
+                                'project', cadftaxonomy.SECURITY_PROJECT)
 
     def test_create_role(self):
         role_ref = self.new_role_ref()
         self.role_api.create_role(role_ref['id'], role_ref)
         self._assert_last_note(role_ref['id'], CREATED_OPERATION, 'role')
+        self._assert_last_audit(role_ref['id'], CREATED_OPERATION, 'role',
+                                cadftaxonomy.SECURITY_ROLE)
 
     def test_create_user(self):
         user_ref = self.new_user_ref(domain_id=self.domain_id)
         user_ref = self.identity_api.create_user(user_ref)
         self._assert_last_note(user_ref['id'], CREATED_OPERATION, 'user')
+        self._assert_last_audit(user_ref['id'], CREATED_OPERATION, 'user',
+                                cadftaxonomy.SECURITY_ACCOUNT_USER)
 
     def test_create_trust(self):
         trustor = self.new_user_ref(domain_id=self.domain_id)
@@ -259,6 +311,8 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         group_ref = self.identity_api.create_group(group_ref)
         self.identity_api.delete_group(group_ref['id'])
         self._assert_last_note(group_ref['id'], DELETED_OPERATION, 'group')
+        self._assert_last_audit(group_ref['id'], DELETED_OPERATION, 'group',
+                                cadftaxonomy.SECURITY_GROUP)
 
     def test_delete_project(self):
         project_ref = self.new_project_ref(domain_id=self.domain_id)
@@ -266,18 +320,24 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self.assignment_api.delete_project(project_ref['id'])
         self._assert_last_note(
             project_ref['id'], DELETED_OPERATION, 'project')
+        self._assert_last_audit(project_ref['id'], DELETED_OPERATION,
+                                'project', cadftaxonomy.SECURITY_PROJECT)
 
     def test_delete_role(self):
         role_ref = self.new_role_ref()
         self.role_api.create_role(role_ref['id'], role_ref)
         self.role_api.delete_role(role_ref['id'])
         self._assert_last_note(role_ref['id'], DELETED_OPERATION, 'role')
+        self._assert_last_audit(role_ref['id'], DELETED_OPERATION, 'role',
+                                cadftaxonomy.SECURITY_ROLE)
 
     def test_delete_user(self):
         user_ref = self.new_user_ref(domain_id=self.domain_id)
         user_ref = self.identity_api.create_user(user_ref)
         self.identity_api.delete_user(user_ref['id'])
         self._assert_last_note(user_ref['id'], DELETED_OPERATION, 'user')
+        self._assert_last_audit(user_ref['id'], DELETED_OPERATION, 'user',
+                                cadftaxonomy.SECURITY_ACCOUNT_USER)
 
     def test_update_domain(self):
         domain_ref = self.new_domain_ref()
@@ -411,6 +471,8 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         group_ref = self.identity_api.create_group(group_ref)
         self.identity_api.update_group(group_ref['id'], group_ref)
         self._assert_last_note(group_ref['id'], UPDATED_OPERATION, 'group')
+        self._assert_last_audit(group_ref['id'], UPDATED_OPERATION, 'group',
+                                cadftaxonomy.SECURITY_GROUP)
 
     def test_update_project(self):
         project_ref = self.new_project_ref(domain_id=self.domain_id)
@@ -418,6 +480,8 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self.assignment_api.update_project(project_ref['id'], project_ref)
         self._assert_notify_sent(
             project_ref['id'], UPDATED_OPERATION, 'project', public=True)
+        self._assert_last_audit(project_ref['id'], UPDATED_OPERATION,
+                                'project', cadftaxonomy.SECURITY_PROJECT)
 
     def test_disable_project(self):
         project_ref = self.new_project_ref(domain_id=self.domain_id)
@@ -451,12 +515,16 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self.role_api.create_role(role_ref['id'], role_ref)
         self.role_api.update_role(role_ref['id'], role_ref)
         self._assert_last_note(role_ref['id'], UPDATED_OPERATION, 'role')
+        self._assert_last_audit(role_ref['id'], UPDATED_OPERATION, 'role',
+                                cadftaxonomy.SECURITY_ROLE)
 
     def test_update_user(self):
         user_ref = self.new_user_ref(domain_id=self.domain_id)
         user_ref = self.identity_api.create_user(user_ref)
         self.identity_api.update_user(user_ref['id'], user_ref)
         self._assert_last_note(user_ref['id'], UPDATED_OPERATION, 'user')
+        self._assert_last_audit(user_ref['id'], UPDATED_OPERATION, 'user',
+                                cadftaxonomy.SECURITY_ACCOUNT_USER)
 
 
 class TestEventCallbacks(test_v3.RestfulTestCase):
