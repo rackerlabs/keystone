@@ -1,0 +1,12 @@
+Verified+2: Jenkins
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+1: Raildo Mascena de Sousa Filho <raildo@lsd.ufcg.edu.br>
+Code-Review+1: Samuel de Medeiros Queiroz <samuel@lsd.ufcg.edu.br>
+Code-Review+1: Rodrigo Duarte <rodrigodsousa@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 30 Jan 2015 22:01:57 +0000
+Reviewed-on: https://review.openstack.org/144824
+Project: openstack/keystone
+Branch: refs/heads/master
