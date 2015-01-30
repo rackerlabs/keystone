@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_9d121357",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-01-30T21:42:43Z",
+      "side": 1,
+      "message": "Great comments!",
+      "revId": "0ecafb89f7a29b30d9b873830bd05d691c8642ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_7d255faa",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-01-30T21:42:43Z",
+      "side": 1,
+      "message": "Nit: OpenStack-ism should be perhaps OpenStack artifact",
+      "revId": "0ecafb89f7a29b30d9b873830bd05d691c8642ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_bd3d17be",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-01-30T21:42:43Z",
+      "side": 1,
+      "message": "NIt: but it really bugs me.   i.e. really should be e.g.",
+      "revId": "0ecafb89f7a29b30d9b873830bd05d691c8642ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
