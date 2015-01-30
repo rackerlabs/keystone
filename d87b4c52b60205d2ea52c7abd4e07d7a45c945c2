@@ -33,6 +33,23 @@
       "revId": "d87b4c52b60205d2ea52c7abd4e07d7a45c945c2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_117cc082",
+        "filename": "tox.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-01-30T11:33:43Z",
+      "side": 1,
+      "message": "Agreed with Brant: it\u0027s more explicit to have separate env for functional tests than toy with user input",
+      "revId": "d87b4c52b60205d2ea52c7abd4e07d7a45c945c2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
