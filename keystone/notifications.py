@@ -35,6 +35,9 @@ from keystone.openstack.common import log
 notifier_opts = [
     cfg.StrOpt('default_publisher_id',
                help='Default publisher_id for outgoing notifications'),
+    cfg.StrOpt('notification_format', default='basic',
+               help='Define the notification format for Identity Service '
+                    'events. Valid options are: basic and cadf'),
 ]
 
 config_section = None
@@ -104,6 +107,19 @@ class ManagerNotificationWrapper(object):
                     self.resource_type,
                     resource_id,
                     public=self.public)
+
+                # Do not emit CADF notifications for non-public events
+                if (CONF.notification_format == 'cadf' and self.public):
+                    outcome = taxonomy.OUTCOME_SUCCESS
+                    # TODO(stevemar): In a future patch when we pass the
+                    # context from the controller to the core then the context
+                    # will be available and we can enable the commented out
+                    # code below.
+                    context = {}
+                    # call_args = inspect.getcallargs(f, *args, **kwargs)
+                    # context = call_args['context']
+                    _create_cadf_payload(self.operation, self.resource_type,
+                                         resource_id, outcome, context)
             return result
 
         return wrapper
@@ -217,6 +233,55 @@ def reset_notifier():
     _notifier = None
 
 
+def _create_cadf_payload(operation, resource_type, resource_id,
+                         outcome, context):
+    """Prepare data for CADF audit notifier.
+
+    Transform the arguments into content to be consumed by the function that
+    emits CADF events (_send_audit_notification). Specifically the
+    ``resource_type`` (role, user, etc) must be transformed into a CADF
+    keyword, such as: ``data/security/role``. The ``resource_id`` is added as a
+    top level value for the ``resource_info`` key. Lastly, the ``operation`` is
+    used to create the CADF ``action``, and the ``event_type`` name.
+
+    As per the CADF specification, the ``action`` must start with create,
+    update, delete, etc... i.e.: created.user or deleted.role
+
+    However the ``event_type`` is an OpenStack-ism that is typically of the
+    form project.resource.operation. i.e.: identity.project.updated
+
+    :param operation: operation being performed (created, updated, or deleted)
+    :param resource_type: type of resource being operated on (role, user, etc)
+    :param resource_id: ID of resource being operated on
+    :param outcome: outcomes of the operation (SUCCESS, FAILURE, etc)
+    :param context: WSGI context, contains info about the user
+    """
+
+    initiator = _get_request_audit_info(context)
+    if resource_type == 'group':
+        target_uri = taxonomy.SECURITY_GROUP
+    elif resource_type == 'project':
+        target_uri = taxonomy.SECURITY_PROJECT
+    elif resource_type == 'role':
+        target_uri = taxonomy.SECURITY_ROLE
+    elif resource_type == 'user':
+        target_uri = taxonomy.SECURITY_ACCOUNT_USER
+    elif resource_type == 'domain':
+        target_uri = taxonomy.SECURITY_DOMAIN
+    else:
+        target_uri = taxonomy.UNKNOWN
+
+    target = resource.Resource(typeURI=target_uri)
+
+    audit_kwargs = {}
+    audit_kwargs['resource_info'] = resource_id
+    cadf_action = "%s.%s" % (operation, resource_type)
+    event_type = "%s.%s.%s" % (SERVICE, resource_type, operation)
+
+    _send_audit_notification(cadf_action, initiator, outcome,
+                             target, event_type, **audit_kwargs)
+
+
 def _send_notification(operation, resource_type, resource_id, public=True):
     """Send notification to inform observers about the affected resource.
 
@@ -234,7 +299,7 @@ def _send_notification(operation, resource_type, resource_id, public=True):
 
     notify_event_callbacks(SERVICE, resource_type, operation, payload)
 
-    if public:
+    if public and CONF.notification_format == 'basic':
         notifier = _get_notifier()
         if notifier:
             context = {}
