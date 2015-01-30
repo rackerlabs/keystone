@@ -53,6 +53,23 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_6eb27995",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 631,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-30T11:17:03Z",
+      "side": 1,
+      "message": "I think it might be easier to review if this method (and the other _list_effective_assignments_for_xxxxx) had doc strings that describe the circumstances when they are called and what they need to do to satisfy the requirements.",
+      "revId": "66d252050cf5205a47e3e2c9e8f41f4f97db1b1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_277d3fb2",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 20
