@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_28078e1a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-30T16:34:34Z",
+      "side": 1,
+      "message": "I think brant meant: \n\n  cfg.StrOpt(\u0027remote_id_attribute\u0027, default\u003dNone,",
+      "revId": "2456284a42db06a494221e468c78ca9bf7d53fba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_486da2cb",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-30T16:34:34Z",
+      "side": 1,
+      "message": "IdP*",
+      "revId": "2456284a42db06a494221e468c78ca9bf7d53fba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_08772aa1",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-30T16:34:34Z",
+      "side": 1,
+      "message": "IdP*",
+      "revId": "2456284a42db06a494221e468c78ca9bf7d53fba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_a840de34",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-01-30T16:34:34Z",
+      "side": 1,
+      "message": "use # comments here:\n\n  # If nothing is defined, the administrator may want to\n  # allow the mapping of every IdP.\n\n\u0027current\u0027 is meaningless in code",
+      "revId": "2456284a42db06a494221e468c78ca9bf7d53fba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
