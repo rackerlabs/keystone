@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa81d914_0302ab09",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 491,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-01-30T16:47:58Z",
+      "side": 1,
+      "message": "I think this is correct as-is. The default for the default parameter is None already.",
+      "parentUuid": "fa81d914_28078e1a",
+      "revId": "2456284a42db06a494221e468c78ca9bf7d53fba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_486da2cb",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 31
