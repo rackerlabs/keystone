@@ -104,7 +104,7 @@ class Endpoint(controller.V2Controller):
                 self.catalog_api.get_region(endpoint['region'])
             except exception.RegionNotFound:
                 region = dict(id=endpoint['region'])
-                self.catalog_api.create_region(region)
+                self.catalog_api.create_region(region, context)
 
         legacy_endpoint_ref = endpoint.copy()
 
@@ -129,7 +129,8 @@ class Endpoint(controller.V2Controller):
             endpoint_ref['url'] = url
             endpoint_ref['region_id'] = endpoint_ref.pop('region')
 
-            self.catalog_api.create_endpoint(endpoint_ref['id'], endpoint_ref)
+            self.catalog_api.create_endpoint(endpoint_ref['id'], endpoint_ref,
+                                             context)
 
         legacy_endpoint_ref['id'] = legacy_endpoint_id
         return {'endpoint': legacy_endpoint_ref}
@@ -177,7 +178,7 @@ class RegionV3(controller.V3Controller):
         if not ref.get('id'):
             ref = self._assign_unique_id(ref)
 
-        ref = self.catalog_api.create_region(ref)
+        ref = self.catalog_api.create_region(ref, context)
         return wsgi.render_response(
             RegionV3.wrap_member(context, ref),
             status=(201, 'Created'))
@@ -198,12 +199,12 @@ class RegionV3(controller.V3Controller):
     def update_region(self, context, region_id, region):
         self._require_matching_id(region_id, region)
 
-        ref = self.catalog_api.update_region(region_id, region)
+        ref = self.catalog_api.update_region(region_id, region, context)
         return RegionV3.wrap_member(context, ref)
 
     @controller.protected()
     def delete_region(self, context, region_id):
-        return self.catalog_api.delete_region(region_id)
+        return self.catalog_api.delete_region(region_id, context)
 
 
 @dependency.requires('catalog_api')
@@ -220,7 +221,7 @@ class ServiceV3(controller.V3Controller):
     def create_service(self, context, service):
         ref = self._assign_unique_id(self._normalize_dict(service))
 
-        ref = self.catalog_api.create_service(ref['id'], ref)
+        ref = self.catalog_api.create_service(ref['id'], ref, context)
         return ServiceV3.wrap_member(context, ref)
 
     @controller.filterprotected('type', 'name')
@@ -239,12 +240,12 @@ class ServiceV3(controller.V3Controller):
     def update_service(self, context, service_id, service):
         self._require_matching_id(service_id, service)
 
-        ref = self.catalog_api.update_service(service_id, service)
+        ref = self.catalog_api.update_service(service_id, service, context)
         return ServiceV3.wrap_member(context, ref)
 
     @controller.protected()
     def delete_service(self, context, service_id):
-        return self.catalog_api.delete_service(service_id)
+        return self.catalog_api.delete_service(service_id, context)
 
 
 @dependency.requires('catalog_api')
@@ -268,7 +269,7 @@ class EndpointV3(controller.V3Controller):
         ref = cls.filter_endpoint(ref)
         return super(EndpointV3, cls).wrap_member(context, ref)
 
-    def _validate_endpoint_region(self, endpoint):
+    def _validate_endpoint_region(self, endpoint, context=None):
         """Ensure the region for the endpoint exists.
 
         If 'region_id' is used to specify the region, then we will let the
@@ -287,7 +288,7 @@ class EndpointV3(controller.V3Controller):
                 self.catalog_api.get_region(endpoint['region_id'])
             except exception.RegionNotFound:
                 region = dict(id=endpoint['region_id'])
-                self.catalog_api.create_region(region)
+                self.catalog_api.create_region(region, context)
 
         return endpoint
 
@@ -296,9 +297,9 @@ class EndpointV3(controller.V3Controller):
     def create_endpoint(self, context, endpoint):
         ref = self._assign_unique_id(self._normalize_dict(endpoint))
         self.catalog_api.get_service(ref['service_id'])
-        ref = self._validate_endpoint_region(ref)
+        ref = self._validate_endpoint_region(ref, context)
 
-        ref = self.catalog_api.create_endpoint(ref['id'], ref)
+        ref = self.catalog_api.create_endpoint(ref['id'], ref, context)
         return EndpointV3.wrap_member(context, ref)
 
     @controller.filterprotected('interface', 'service_id')
@@ -319,11 +320,11 @@ class EndpointV3(controller.V3Controller):
 
         if 'service_id' in endpoint:
             self.catalog_api.get_service(endpoint['service_id'])
-        endpoint = self._validate_endpoint_region(endpoint.copy())
+        endpoint = self._validate_endpoint_region(endpoint.copy(), context)
 
-        ref = self.catalog_api.update_endpoint(endpoint_id, endpoint)
+        ref = self.catalog_api.update_endpoint(endpoint_id, endpoint, context)
         return EndpointV3.wrap_member(context, ref)
 
     @controller.protected()
     def delete_endpoint(self, context, endpoint_id):
-        return self.catalog_api.delete_endpoint(endpoint_id)
+        return self.catalog_api.delete_endpoint(endpoint_id, context)

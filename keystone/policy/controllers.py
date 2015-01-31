@@ -28,7 +28,7 @@ class PolicyV3(controller.V3Controller):
     def create_policy(self, context, policy):
         ref = self._assign_unique_id(self._normalize_dict(policy))
 
-        ref = self.policy_api.create_policy(ref['id'], ref)
+        ref = self.policy_api.create_policy(ref['id'], ref, context)
         return PolicyV3.wrap_member(context, ref)
 
     @controller.filterprotected('type')
@@ -45,9 +45,9 @@ class PolicyV3(controller.V3Controller):
     @controller.protected()
     @validation.validated(schema.policy_update, 'policy')
     def update_policy(self, context, policy_id, policy):
-        ref = self.policy_api.update_policy(policy_id, policy)
+        ref = self.policy_api.update_policy(policy_id, policy, context)
         return PolicyV3.wrap_member(context, ref)
 
     @controller.protected()
     def delete_policy(self, context, policy_id):
-        return self.policy_api.delete_policy(policy_id)
+        return self.policy_api.delete_policy(policy_id, context)
