@@ -271,6 +271,8 @@ def _create_cadf_payload(operation, resource_type, resource_id,
         target_uri = taxonomy.SECURITY_SERVICE
     elif resource_type == 'policy':
         target_uri = taxonomy.SECURITY_POLICY
+    elif resource_type == 'trust':
+        target_uri = taxonomy.SECURITY_TRUST
     else:
         target_uri = taxonomy.UNKNOWN
 
