@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_55ccef35",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 32
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-31T01:38:46Z",
+      "side": 1,
+      "message": "unrelated change?",
+      "revId": "bd5309e6bfc4186c395a991701dd0de7917ca599",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_d5d7ffbd",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 32
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-31T01:38:46Z",
+      "side": 1,
+      "message": "this too.",
+      "revId": "bd5309e6bfc4186c395a991701dd0de7917ca599",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_15e2779f",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 32
+      },
+      "lineNbr": 392,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-01-31T01:38:46Z",
+      "side": 1,
+      "message": "this too.",
+      "revId": "bd5309e6bfc4186c395a991701dd0de7917ca599",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_69b045f5",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 32
