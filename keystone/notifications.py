@@ -129,15 +129,10 @@ class ManagerNotificationWrapper(object):
                 # Only emit CADF notifications for public events
                 if (CONF.notification_format == 'cadf' and self.public):
                     outcome = taxonomy.OUTCOME_SUCCESS
-                    # TODO(stevemar): In a future patch when we pass the
-                    # context from the controller to the manager then the
-                    # context will be available and we can enable the commented
-                    # out code below.
-                    context = {}
-                    # call_args = inspect.getcallargs(f, *args, **kwargs)
-                    # context = call_args['context']
+                    call_args = inspect.getcallargs(f, *args, **kwargs)
+                    initiator = call_args.get('initiator')
                     _create_cadf_payload(self.operation, self.resource_type,
-                                         resource_id, outcome, context)
+                                         resource_id, outcome, initiator)
             return result
 
         return wrapper
@@ -253,7 +248,7 @@ def reset_notifier():
 
 
 def _create_cadf_payload(operation, resource_type, resource_id,
-                         outcome, context):
+                         outcome, initiator):
     """Prepare data for CADF audit notifier.
 
     Transform the arguments into content to be consumed by the function that
@@ -273,10 +268,9 @@ def _create_cadf_payload(operation, resource_type, resource_id,
     :param resource_type: type of resource being operated on (role, user, etc)
     :param resource_id: ID of resource being operated on
     :param outcome: outcomes of the operation (SUCCESS, FAILURE, etc)
-    :param context: WSGI context, contains info about the user
+    :param initiator: CADF representation of the user that created the request
     """
 
-    initiator = _get_request_audit_info(context)
     if resource_type not in CADF_TYPE_MAP:
         target_uri = taxonomy.UNKNOWN
     else:

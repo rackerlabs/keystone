@@ -96,7 +96,7 @@ class Manager(manager.Manager):
         super(Manager, self).__init__(CONF.catalog.driver)
 
     @notifications.created(_REGION, result_id_arg_attr='id')
-    def create_region(self, region_ref):
+    def create_region(self, region_ref, initiator=None):
         # Check duplicate ID
         try:
             self.get_region(region_ref['id'])
@@ -125,13 +125,13 @@ class Manager(manager.Manager):
             raise exception.RegionNotFound(region_id=region_id)
 
     @notifications.updated(_REGION)
-    def update_region(self, region_id, region_ref):
+    def update_region(self, region_id, region_ref, initiator=None):
         ref = self.driver.update_region(region_id, region_ref)
         self.get_region.invalidate(self, region_id)
         return ref
 
     @notifications.deleted(_REGION)
-    def delete_region(self, region_id):
+    def delete_region(self, region_id, initiator=None):
         try:
             ret = self.driver.delete_region(region_id)
             self.get_region.invalidate(self, region_id)
@@ -144,7 +144,7 @@ class Manager(manager.Manager):
         return self.driver.list_regions(hints or driver_hints.Hints())
 
     @notifications.created(_SERVICE)
-    def create_service(self, service_id, service_ref):
+    def create_service(self, service_id, service_ref, initiator=None):
         service_ref.setdefault('enabled', True)
         return self.driver.create_service(service_id, service_ref)
 
@@ -157,13 +157,13 @@ class Manager(manager.Manager):
             raise exception.ServiceNotFound(service_id=service_id)
 
     @notifications.updated(_SERVICE)
-    def update_service(self, service_id, service_ref):
+    def update_service(self, service_id, service_ref, initiator=None):
         ref = self.driver.update_service(service_id, service_ref)
         self.get_service.invalidate(self, service_id)
         return ref
 
     @notifications.deleted(_SERVICE)
-    def delete_service(self, service_id):
+    def delete_service(self, service_id, initiator=None):
         try:
             endpoints = self.list_endpoints()
             ret = self.driver.delete_service(service_id)
@@ -180,7 +180,7 @@ class Manager(manager.Manager):
         return self.driver.list_services(hints or driver_hints.Hints())
 
     @notifications.created(_ENDPOINT)
-    def create_endpoint(self, endpoint_id, endpoint_ref):
+    def create_endpoint(self, endpoint_id, endpoint_ref, initiator=None):
         try:
             return self.driver.create_endpoint(endpoint_id, endpoint_ref)
         except exception.RegionNotFound:
@@ -191,13 +191,13 @@ class Manager(manager.Manager):
             raise exception.ServiceNotFound(service_id=service_id)
 
     @notifications.updated(_ENDPOINT)
-    def update_endpoint(self, endpoint_id, endpoint_ref):
+    def update_endpoint(self, endpoint_id, endpoint_ref, initiator=None):
         ref = self.driver.update_endpoint(endpoint_id, endpoint_ref)
         self.get_endpoint.invalidate(self, endpoint_id)
         return ref
 
     @notifications.deleted(_ENDPOINT)
-    def delete_endpoint(self, endpoint_id):
+    def delete_endpoint(self, endpoint_id, initiator=None):
         try:
             ret = self.driver.delete_endpoint(endpoint_id)
             self.get_endpoint.invalidate(self, endpoint_id)

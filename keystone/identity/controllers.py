@@ -19,6 +19,7 @@ from keystone.common import dependency
 from keystone import config
 from keystone import exception
 from keystone.i18n import _, _LW
+from keystone import notifications
 from keystone.openstack.common import log
 
 
@@ -209,7 +210,8 @@ class UserV3(controller.V3Controller):
         # The manager layer will generate the unique ID for users
         ref = self._normalize_dict(user)
         ref = self._normalize_domain_id(context, ref)
-        ref = self.identity_api.create_user(ref)
+        initiator = notifications._get_request_audit_info(context)
+        ref = self.identity_api.create_user(ref, initiator)
         return UserV3.wrap_member(context, ref)
 
     @controller.filterprotected('domain_id', 'enabled', 'name')
@@ -235,7 +237,8 @@ class UserV3(controller.V3Controller):
         self._require_matching_id(user_id, user)
         self._require_matching_domain_id(
             user_id, user, self.identity_api.get_user)
-        ref = self.identity_api.update_user(user_id, user)
+        initiator = notifications._get_request_audit_info(context)
+        ref = self.identity_api.update_user(user_id, user, initiator)
         return UserV3.wrap_member(context, ref)
 
     @controller.protected()
@@ -256,7 +259,8 @@ class UserV3(controller.V3Controller):
 
     @controller.protected()
     def delete_user(self, context, user_id):
-        return self.identity_api.delete_user(user_id)
+        initiator = notifications._get_request_audit_info(context)
+        return self.identity_api.delete_user(user_id, initiator)
 
     @controller.protected()
     def change_password(self, context, user_id, user):
@@ -292,7 +296,8 @@ class GroupV3(controller.V3Controller):
         # The manager layer will generate the unique ID for groups
         ref = self._normalize_dict(group)
         ref = self._normalize_domain_id(context, ref)
-        ref = self.identity_api.create_group(ref)
+        initiator = notifications._get_request_audit_info(context)
+        ref = self.identity_api.create_group(ref, initiator)
         return GroupV3.wrap_member(context, ref)
 
     @controller.filterprotected('domain_id', 'name')
@@ -319,9 +324,11 @@ class GroupV3(controller.V3Controller):
         self._require_matching_id(group_id, group)
         self._require_matching_domain_id(
             group_id, group, self.identity_api.get_group)
-        ref = self.identity_api.update_group(group_id, group)
+        initiator = notifications._get_request_audit_info(context)
+        ref = self.identity_api.update_group(group_id, group, initiator)
         return GroupV3.wrap_member(context, ref)
 
     @controller.protected()
     def delete_group(self, context, group_id):
-        self.identity_api.delete_group(group_id)
+        initiator = notifications._get_request_audit_info(context)
+        self.identity_api.delete_group(group_id, initiator)
