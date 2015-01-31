@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_b75c4a27",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-31T14:09:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_211d79be",
+      "revId": "6bfdac6a51021e6c15ca9a0db1051927b860ae77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_41798dfb",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-31T07:46:29Z",
       "side": 1,
       "message": "not sure why this is being changed to assignment from resource?",
+      "revId": "6bfdac6a51021e6c15ca9a0db1051927b860ae77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_d740de37",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 446,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-01-31T14:09:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_41798dfb",
       "revId": "6bfdac6a51021e6c15ca9a0db1051927b860ae77",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
