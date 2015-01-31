@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_bcc9905c",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-31T09:49:22Z",
+      "side": 1,
+      "message": "Although I know you mention it in the commit comment, I think it is worth adding a TODO here explaining why this is commented out.",
+      "revId": "e3adc7122bdade9a120d19814105095d59afac90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
