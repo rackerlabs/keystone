@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_1c17fcee",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-31T09:19:57Z",
+      "side": 1,
+      "message": "(nit) It might be worth here (or somewhere) to mention that our use of the federated domain name is case insensitive.",
+      "revId": "7ea2e0e110666c6b9b7563e20fad99d11c0e7b7d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
