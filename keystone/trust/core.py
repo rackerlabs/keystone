@@ -118,7 +118,8 @@ class Manager(manager.Manager):
         return trust
 
     @notifications.created(_TRUST)
-    def create_trust(self, trust_id, trust, roles, redelegated_trust=None):
+    def create_trust(self, trust_id, trust, roles, redelegated_trust=None,
+                     initiator=None):
         """Create a new trust.
 
         :returns: a new trust
@@ -168,7 +169,7 @@ class Manager(manager.Manager):
         return self.driver.create_trust(trust_id, trust, roles)
 
     @notifications.deleted(_TRUST)
-    def delete_trust(self, trust_id):
+    def delete_trust(self, trust_id, initiator=None):
         """Remove a trust.
 
         :raises: keystone.exception.TrustNotFound

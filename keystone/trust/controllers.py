@@ -25,6 +25,7 @@ from keystone import config
 from keystone import exception
 from keystone.i18n import _
 from keystone.models import token_model
+from keystone import notifications
 from keystone.openstack.common import log
 from keystone.trust import schema
 
@@ -159,8 +160,9 @@ class TrustV3(controller.V3Controller):
         trust['expires_at'] = self._parse_expiration_date(
             trust.get('expires_at'))
         trust_id = uuid.uuid4().hex
+        initiator = notifications._get_request_audit_info(context)
         new_trust = self.trust_api.create_trust(trust_id, trust, clean_roles,
-                                                redelegated_trust)
+                                                redelegated_trust, initiator)
         self._fill_in_roles(context, new_trust, all_roles)
         return TrustV3.wrap_member(context, new_trust)
 
@@ -243,7 +245,8 @@ class TrustV3(controller.V3Controller):
 
         user_id = self._get_user_id(context)
         _admin_trustor_only(context, trust, user_id)
-        self.trust_api.delete_trust(trust_id)
+        initiator = notifications._get_request_audit_info(context)
+        self.trust_api.delete_trust(trust_id, initiator)
 
     @controller.protected()
     def list_roles_for_trust(self, context, trust_id):
