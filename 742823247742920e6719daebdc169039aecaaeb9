@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_9c14ccf6",
+        "filename": "doc/source/extensions.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-31T09:13:19Z",
+      "side": 1,
+      "message": "so the fact that this first version of the API (and others below) is marked as \"experimental\" and yet two releases have gone by, on the face of it goes against the goal of graduation.  Of course, I realise that, in reality, the graduation is to the stable v1.1. But it seems odd that v1.0 remains experimental.  Maybe it is, in fact, \"stable\" (as of Kilo)? I can\u0027t imagine we would change v1.0 (since we now have v1.1). It even be\" stable, deprecated\"...although I guess that is a separate decision.",
+      "revId": "742823247742920e6719daebdc169039aecaaeb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
