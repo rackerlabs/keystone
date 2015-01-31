@@ -209,7 +209,7 @@ class UserV3(controller.V3Controller):
         # The manager layer will generate the unique ID for users
         ref = self._normalize_dict(user)
         ref = self._normalize_domain_id(context, ref)
-        ref = self.identity_api.create_user(ref)
+        ref = self.identity_api.create_user(ref, context)
         return UserV3.wrap_member(context, ref)
 
     @controller.filterprotected('domain_id', 'enabled', 'name')
@@ -235,7 +235,7 @@ class UserV3(controller.V3Controller):
         self._require_matching_id(user_id, user)
         self._require_matching_domain_id(
             user_id, user, self.identity_api.get_user)
-        ref = self.identity_api.update_user(user_id, user)
+        ref = self.identity_api.update_user(user_id, user, context)
         return UserV3.wrap_member(context, ref)
 
     @controller.protected()
@@ -256,7 +256,7 @@ class UserV3(controller.V3Controller):
 
     @controller.protected()
     def delete_user(self, context, user_id):
-        return self.identity_api.delete_user(user_id)
+        return self.identity_api.delete_user(user_id, context)
 
     @controller.protected()
     def change_password(self, context, user_id, user):
@@ -292,7 +292,7 @@ class GroupV3(controller.V3Controller):
         # The manager layer will generate the unique ID for groups
         ref = self._normalize_dict(group)
         ref = self._normalize_domain_id(context, ref)
-        ref = self.identity_api.create_group(ref)
+        ref = self.identity_api.create_group(ref, context)
         return GroupV3.wrap_member(context, ref)
 
     @controller.filterprotected('domain_id', 'name')
@@ -319,9 +319,9 @@ class GroupV3(controller.V3Controller):
         self._require_matching_id(group_id, group)
         self._require_matching_domain_id(
             group_id, group, self.identity_api.get_group)
-        ref = self.identity_api.update_group(group_id, group)
+        ref = self.identity_api.update_group(group_id, group, context)
         return GroupV3.wrap_member(context, ref)
 
     @controller.protected()
     def delete_group(self, context, group_id):
-        self.identity_api.delete_group(group_id)
+        self.identity_api.delete_group(group_id, context)

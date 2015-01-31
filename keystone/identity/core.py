@@ -549,7 +549,7 @@ class Manager(manager.Manager):
     @notifications.created(_USER, result_id_arg_attr='id')
     @domains_configured
     @exception_translated('user')
-    def create_user(self, user_ref):
+    def create_user(self, user_ref, context=None):
         user = user_ref.copy()
         user['name'] = clean.user_name(user['name'])
         user.setdefault('enabled', True)
@@ -618,7 +618,7 @@ class Manager(manager.Manager):
     @notifications.updated(_USER)
     @domains_configured
     @exception_translated('user')
-    def update_user(self, user_id, user_ref):
+    def update_user(self, user_id, user_ref, context=None):
         old_user_ref = self.get_user(user_id)
         user = user_ref.copy()
         if 'name' in user:
@@ -651,7 +651,7 @@ class Manager(manager.Manager):
     @notifications.deleted(_USER)
     @domains_configured
     @exception_translated('user')
-    def delete_user(self, user_id):
+    def delete_user(self, user_id, context=None):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(user_id))
         driver.delete_user(entity_id)
@@ -662,7 +662,7 @@ class Manager(manager.Manager):
     @notifications.created(_GROUP, result_id_arg_attr='id')
     @domains_configured
     @exception_translated('group')
-    def create_group(self, group_ref):
+    def create_group(self, group_ref, context=None):
         group = group_ref.copy()
         group.setdefault('description', '')
         domain_id = group['domain_id']
@@ -700,7 +700,7 @@ class Manager(manager.Manager):
     @notifications.updated(_GROUP)
     @domains_configured
     @exception_translated('group')
-    def update_group(self, group_id, group):
+    def update_group(self, group_id, group, context=None):
         if 'domain_id' in group:
             self.resource_api.get_domain(group['domain_id'])
         domain_id, driver, entity_id = (
@@ -713,7 +713,7 @@ class Manager(manager.Manager):
     @notifications.deleted(_GROUP)
     @domains_configured
     @exception_translated('group')
-    def delete_group(self, group_id):
+    def delete_group(self, group_id, context=None):
         domain_id, driver, entity_id = (
             self._get_domain_driver_and_entity_id(group_id))
         user_ids = (u['id'] for u in self.list_users_in_group(group_id))
