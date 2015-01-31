@@ -111,13 +111,8 @@ class ManagerNotificationWrapper(object):
                 # Do not emit CADF notifications for non-public events
                 if (CONF.notification_format == 'cadf' and self.public):
                     outcome = taxonomy.OUTCOME_SUCCESS
-                    # TODO(stevemar): In a future patch when we pass the
-                    # context from the controller to the core then the context
-                    # will be available and we can enable the commented out
-                    # code below.
-                    context = {}
-                    # call_args = inspect.getcallargs(f, *args, **kwargs)
-                    # context = call_args['context']
+                    call_args = inspect.getcallargs(f, *args, **kwargs)
+                    context = call_args.get('context')
                     _create_cadf_payload(self.operation, self.resource_type,
                                          resource_id, outcome, context)
             return result
