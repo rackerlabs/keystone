@@ -291,10 +291,19 @@ class ProjectEndpointGroupV3Controller(_ControllerBase):
             endpoint_group_id, project_id)
 
     @classmethod
+    def base_url(cls, context, path=None):
+        if not path:
+            path = ('/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s'
+                    '/projects/%(project_id)s')
+
+        return super(ProjectEndpointGroupV3Controller, cls).base_url(context,
+                                                                     path)
+
+    @classmethod
     def _add_self_referential_link(cls, context, ref):
-        url = ('/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s'
-               '/projects/%(project_id)s' % {
-                   'endpoint_group_id': ref['endpoint_group_id'],
-                   'project_id': ref['project_id']})
+        url = cls.base_url(context)
+        url = url % {
+            'endpoint_group_id': ref['endpoint_group_id'],
+            'project_id': ref['project_id']}
         ref.setdefault('links', {})
         ref['links']['self'] = url

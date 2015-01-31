@@ -841,6 +841,9 @@ class EndpointGroupCRUDTestCase(TestExtensionCase):
         self.assertEqual(
             self.project_id,
             response.result['project_endpoint_group']['project_id'])
+        self.assertEqual(
+            '%s/%s/%s' % (response.request.host_url, 'v3', url.lstrip('/')),
+            response.result['project_endpoint_group']['links']['self'])
 
     def test_get_invalid_endpoint_group_in_project(self):
         """Test retrieving project endpoint group association."""
