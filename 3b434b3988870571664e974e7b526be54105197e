@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_9c876c0f",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-31T09:40:59Z",
+      "side": 1,
+      "message": "I think I\u0027m right in saying that the result of this is that we have swapped the order of terms in the event_type. Previously it would  end up as service.operation.self.ROLE_ASSIGNMENT, but now it is service.self.ROLE_ASSIGNMENT.operation.  Was that intentional...if so, is there a reason for that?",
+      "revId": "3b434b3988870571664e974e7b526be54105197e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_dce3a403",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-31T09:40:59Z",
+      "side": 1,
+      "message": "I know that this was in the original code, but might be a good idea to say what we are expecting in **kwargs.",
+      "revId": "3b434b3988870571664e974e7b526be54105197e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
