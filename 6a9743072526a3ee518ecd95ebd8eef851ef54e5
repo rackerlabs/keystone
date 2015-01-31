@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_e6fe1738",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-01-31T10:47:35Z",
+      "side": 1,
+      "message": "Removing validation on email, this attribute is not even documented as official attribute: http://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3.html#users-v3-users",
+      "parentUuid": "3a961159_6af549ec",
+      "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_4af24d07",
         "filename": "keystone/identity/schema.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2014-12-31T17:40:15Z",
       "side": 1,
       "message": "The max length is specific to the SQL backend. LDAP shouldn\u0027t have this same limitation.",
+      "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_61793193",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-01-31T10:47:35Z",
+      "side": 1,
+      "message": "remove maxLength",
+      "parentUuid": "3a961159_4af24d07",
       "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_c1401d38",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-01-31T10:47:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_6acc69bc",
+      "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_cae55d39",
         "filename": "keystone/identity/schema.py",
         "patchSetId": 6
@@ -64,6 +118,24 @@
       "writtenOn": "2014-12-31T17:40:15Z",
       "side": 1,
       "message": "it has to be CONF.identity.max_password_length. If someone sets their max_password_length \u003e 4096 now they can\u0027t sets passwords as expected.",
+      "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_816e25c8",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-01-31T10:47:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_cae55d39",
       "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_81570502",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-01-31T10:47:35Z",
+      "side": 1,
+      "message": "removing max length here",
+      "parentUuid": "3a961159_0acf65b4",
+      "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_aa0c913a",
         "filename": "keystone/tests/test_v3.py",
         "patchSetId": 6
@@ -98,6 +188,24 @@
       "writtenOn": "2014-12-31T17:40:15Z",
       "side": 1,
       "message": "since this worked before it should continue to work otherwise this change isn\u0027t backwards compatible.",
+      "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_419b4dc9",
+        "filename": "keystone/tests/test_v3.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-01-31T10:47:35Z",
+      "side": 1,
+      "message": "removed email validation in the schema",
+      "parentUuid": "3a961159_aa0c913a",
       "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_21b6593e",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1271,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-01-31T10:47:35Z",
+      "side": 1,
+      "message": "Replaced with \"My User\"",
+      "parentUuid": "3a961159_4ac96dab",
+      "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_cabc7d09",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 6
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_e192819e",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1291,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-01-31T10:47:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_cabc7d09",
+      "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_e8621715",
         "filename": "keystone/tests/test_validation.py",
         "patchSetId": 6
@@ -149,6 +293,24 @@
       "writtenOn": "2015-01-02T18:21:38Z",
       "side": 1,
       "message": "jdeveloper used here also",
+      "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_01907594",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1296,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-01-31T10:47:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3a961159_e8621715",
       "revId": "6a9743072526a3ee518ecd95ebd8eef851ef54e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
