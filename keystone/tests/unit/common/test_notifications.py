@@ -301,6 +301,8 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
                                     [role_ref])
         self._assert_last_note(
             trust_ref['id'], CREATED_OPERATION, 'OS-TRUST:trust')
+        self._assert_last_audit(trust_ref['id'], CREATED_OPERATION, 'trust',
+                                cadftaxonomy.SECURITY_ACCOUNT_TRUST)
 
     def test_create_domain(self):
         domain_ref = self.new_domain_ref()
@@ -364,6 +366,8 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self.trust_api.delete_trust(trust_ref['id'])
         self._assert_last_note(
             trust_ref['id'], DELETED_OPERATION, 'OS-TRUST:trust')
+        self._assert_last_audit(trust_ref['id'], DELETED_OPERATION, 'trust',
+                                cadftaxonomy.SECURITY_ACCOUNT_TRUST)
 
     def test_delete_domain(self):
         domain_ref = self.new_domain_ref()
