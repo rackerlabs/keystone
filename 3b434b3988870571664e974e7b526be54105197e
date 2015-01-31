@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_fa5a274f",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-01-31T18:36:43Z",
+      "side": 1,
+      "message": "Yeah, probably a good idea - since this is the only functional change here...",
+      "parentUuid": "da86d52c_baa42f58",
+      "revId": "3b434b3988870571664e974e7b526be54105197e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_dce3a403",
         "filename": "keystone/notifications.py",
         "patchSetId": 3
