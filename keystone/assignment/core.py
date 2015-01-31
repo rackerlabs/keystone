@@ -921,9 +921,9 @@ class RoleManager(manager.Manager):
     def get_role(self, role_id):
         return self.driver.get_role(role_id)
 
-    @notifications.created(_ROLE)
-    def create_role(self, role_id, role):
+    def create_role(self, role_id, role, initiator=None):
         ret = self.driver.create_role(role_id, role)
+        notifications.Audit.created(self._ROLE, role_id, initiator)
         if SHOULD_CACHE(ret):
             self.get_role.set(ret, self, role_id)
         return ret
@@ -932,14 +932,13 @@ class RoleManager(manager.Manager):
     def list_roles(self, hints=None):
         return self.driver.list_roles(hints or driver_hints.Hints())
 
-    @notifications.updated(_ROLE)
-    def update_role(self, role_id, role):
+    def update_role(self, role_id, role, initiator=None):
         ret = self.driver.update_role(role_id, role)
+        notifications.Audit.updated(self._ROLE, role_id, initiator)
         self.get_role.invalidate(self, role_id)
         return ret
 
-    @notifications.deleted(_ROLE)
-    def delete_role(self, role_id):
+    def delete_role(self, role_id, initiator=None):
         try:
             self.assignment_api.delete_tokens_for_role_assignments(role_id)
         except exception.NotImplemented:
@@ -954,6 +953,7 @@ class RoleManager(manager.Manager):
             pass
         self.assignment_api.delete_role_assignments(role_id)
         self.driver.delete_role(role_id)
+        notifications.Audit.deleted(self._ROLE, role_id, initiator)
         self.get_role.invalidate(self, role_id)
 
 
