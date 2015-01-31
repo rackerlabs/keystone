@@ -17,6 +17,10 @@
 import os
 import sys
 
+from oslo_concurrency import processutils
+import oslo_i18n
+import pbr.version
+
 
 # If ../keystone/__init__.py exists, add ../ to Python search path, so that
 # it will override what happens to be installed in /usr/(local/)lib/python...
