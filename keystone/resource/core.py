@@ -84,7 +84,7 @@ class Manager(manager.Manager):
                          '%s branch.') % project_id)
 
     @notifications.created(_PROJECT)
-    def create_project(self, tenant_id, tenant):
+    def create_project(self, tenant_id, tenant, initiator=None):
         tenant = tenant.copy()
         tenant.setdefault('enabled', True)
         tenant['enabled'] = clean.project_enabled(tenant['enabled'])
@@ -189,7 +189,7 @@ class Manager(manager.Manager):
                              'projects') % project_id)
 
     @notifications.updated(_PROJECT)
-    def update_project(self, tenant_id, tenant):
+    def update_project(self, tenant_id, tenant, initiator=None):
         original_tenant = self.driver.get_project(tenant_id)
         tenant = tenant.copy()
 
@@ -220,7 +220,7 @@ class Manager(manager.Manager):
         return ret
 
     @notifications.deleted(_PROJECT)
-    def delete_project(self, tenant_id):
+    def delete_project(self, tenant_id, initiator=None):
         if not self.driver.is_leaf_project(tenant_id):
             raise exception.ForbiddenAction(
                 action=_('cannot delete the project %s since it is not '
@@ -376,7 +376,7 @@ class Manager(manager.Manager):
         return self.driver.get_domain_by_name(domain_name)
 
     @notifications.created(_DOMAIN)
-    def create_domain(self, domain_id, domain):
+    def create_domain(self, domain_id, domain, initiator=None):
         if (not self.identity_api.multiple_domains_supported and
                 domain_id != CONF.identity.default_domain_id):
             raise exception.Forbidden(_('Multiple domains are not supported'))
@@ -407,7 +407,7 @@ class Manager(manager.Manager):
         pass
 
     @notifications.updated(_DOMAIN)
-    def update_domain(self, domain_id, domain):
+    def update_domain(self, domain_id, domain, initiator=None):
         self.assert_domain_not_federated(domain_id, domain)
         original_domain = self.driver.get_domain(domain_id)
         if 'enabled' in domain:
@@ -423,7 +423,7 @@ class Manager(manager.Manager):
         return ret
 
     @notifications.deleted(_DOMAIN)
-    def delete_domain(self, domain_id):
+    def delete_domain(self, domain_id, initiator=None):
         # explicitly forbid deleting the default domain (this should be a
         # carefully orchestrated manual process involving configuration
         # changes, etc)
