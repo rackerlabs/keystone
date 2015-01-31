@@ -239,10 +239,6 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self.assertEqual(audit['target'].typeURI, target)
         event_type = '%s.%s.%s' % ('identity', resource_type, operation)
         self.assertEqual(audit['event_type'], event_type)
-
-        # NOTE(stevemar): enable this once we have the context being sent
-        # initiator = audit['initiator']
-        # self.assertEqual(initiator.name, self.user_id)
         self.assertTrue(audit['send_notification_called'])
 
     def _assert_notify_not_sent(self, resource_id, operation, resource_type,
@@ -578,6 +574,17 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         self._assert_last_note(role_ref['id'], CREATED_OPERATION, 'role')
         # No audit event should have occurred
         self.assertEqual(0, len(self._audits))
+
+    def test_initiator_data_is_set(self):
+        ref = self.new_domain_ref()
+        resp = self.post('/domains', body={'domain': ref})
+        resource_id = resp.result.get('domain').get('id')
+        self._assert_last_audit(resource_id, CREATED_OPERATION, 'domain',
+                                cadftaxonomy.SECURITY_DOMAIN)
+        self.assertTrue(len(self._audits) > 0)
+        audit = self._audits[-1]
+        initiator = audit['initiator']
+        self.assertEqual(self.user_id, initiator.name)
 
 
 class CADFNotificationsForEntities(NotificationsForEntities):
