@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_c0173250",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-01T01:55:13Z",
+      "side": 1,
+      "message": "I was thinking of making the config option a ternary option, where we can send either basic, cadf, or both notifications.\n\nWe could check the notification option at line 112 to check if it\u0027s either \u0027both or cadf\u0027.\n\nThen at line 303 we could check if it\u0027s either \u0027both or basic\u0027, this way the callbacks are still registered (something I was originally worried about breaking)",
+      "revId": "0ca1dbd6ac467883dc4c717e9236403c2b21de14",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
