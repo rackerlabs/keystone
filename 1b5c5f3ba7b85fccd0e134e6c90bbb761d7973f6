@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_66369e05",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-01T07:18:35Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be a TODO as opposed to a NOTE?  Also the comment doesn\u0027t make sense.  Because by definition, if code is commented out it is already disabled.  I think you are trying to say \"In a future patch when we pass the context from the controller to the core then the context will be available and we can enable the commented out code below.\"",
+      "revId": "1b5c5f3ba7b85fccd0e134e6c90bbb761d7973f6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
