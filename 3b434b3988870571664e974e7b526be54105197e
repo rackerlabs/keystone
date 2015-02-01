@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_80cc5a37",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-01T00:51:29Z",
+      "side": 1,
+      "message": "done, created https://bugs.launchpad.net/keystone/+bug/1416767",
+      "parentUuid": "da86d52c_fa5a274f",
+      "revId": "3b434b3988870571664e974e7b526be54105197e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_dce3a403",
         "filename": "keystone/notifications.py",
         "patchSetId": 3
@@ -66,6 +84,24 @@
       "writtenOn": "2015-01-31T09:40:59Z",
       "side": 1,
       "message": "I know that this was in the original code, but might be a good idea to say what we are expecting in **kwargs.",
+      "revId": "3b434b3988870571664e974e7b526be54105197e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_60c76613",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-01T00:51:29Z",
+      "side": 1,
+      "message": "added some info here",
+      "parentUuid": "da86d52c_dce3a403",
       "revId": "3b434b3988870571664e974e7b526be54105197e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
