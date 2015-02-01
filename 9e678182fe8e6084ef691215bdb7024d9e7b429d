@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_f676bbd7",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-01T15:37:05Z",
+      "side": 1,
+      "message": "Wasn\u0027t this already done at line 475?",
+      "revId": "9e678182fe8e6084ef691215bdb7024d9e7b429d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
