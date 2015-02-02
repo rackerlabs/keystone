@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_f1cce063",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-02T19:34:30Z",
+      "side": 0,
+      "message": "This newline should stay",
+      "revId": "3a41a9b3490a5993f6eebec1666d72c2367e5009",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_51b76cd8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-02T19:34:30Z",
+      "side": 1,
+      "message": "(nit) services",
+      "revId": "2a33e2c1468cac4f8e8ff43a34ef4953910a6fe7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_9442b20e",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-02T19:34:30Z",
+      "side": 1,
+      "message": "What is the case for this hasattr? I don\u0027t see it in the existing code and I think it weakens the interface.",
+      "revId": "2a33e2c1468cac4f8e8ff43a34ef4953910a6fe7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_140402bf",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-02T19:34:30Z",
+      "side": 1,
+      "message": "Same for this hasattr. This one will actually break if it turns out of be None because several attributes are accessed on the object.",
+      "revId": "2a33e2c1468cac4f8e8ff43a34ef4953910a6fe7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_4054f020",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-02T19:34:30Z",
+      "side": 1,
+      "message": "This will also break if the attribute doesn\u0027t exist because `None.enforce()` will be called.",
+      "revId": "2a33e2c1468cac4f8e8ff43a34ef4953910a6fe7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
