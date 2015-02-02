@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_a71dd468",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-02T14:48:06Z",
+      "side": 1,
+      "message": "If it\u0027s required then the server should fail to start with a clear message if you don\u0027t do it.",
+      "revId": "74c50bde079b2f5d46c2c92c5a4632781154cd2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
