@@ -67,7 +67,7 @@ class FederatedSetupMixin(object):
     USER = 'user@ORGANIZATION'
     ASSERTION_PREFIX = 'PREFIX_'
     IDP_WITH_REMOTE = 'ORG_IDP_REMOTE'
-    REMOTE_ID = 'entityID_IDP'
+    REMOTE_IDS = ['entityID_IDP1', 'entityID_IDP2']
     REMOTE_ID_ATTR = uuid.uuid4().hex
 
     UNSCOPED_V3_SAML2_REQ = {
@@ -638,7 +638,7 @@ class FederatedSetupMixin(object):
                                        self.idp)
         # Add IDP with remote
         self.idp_with_remote = self.idp_ref(id=self.IDP_WITH_REMOTE)
-        self.idp_with_remote['remote_id'] = self.REMOTE_ID
+        self.idp_with_remote['remote_ids'] = self.REMOTE_IDS
         self.federation_api.create_idp(self.idp_with_remote['id'],
                                        self.idp_with_remote)
         # Add a mapping
@@ -791,28 +791,84 @@ class FederatedIdentityProviderTests(FederationTests):
         r = self.get(url)
         return r
 
-    def test_create_idp(self):
-        """Creates the IdentityProvider entity."""
-
-        keys_to_check = self.idp_keys
-        body = self._http_idp_input()
-        resp = self._create_default_idp(body=body)
-        self.assertValidResponse(resp, 'identity_provider', dummy_validator,
-                                 keys_to_check=keys_to_check,
-                                 ref=body)
-
     def test_create_idp_remote(self):
-        """Creates the IdentityProvider entity associated to a remote_id."""
+        """Creates the IdentityProvider entity associated to a remote_ids."""
 
         keys_to_check = list(self.idp_keys)
-        keys_to_check.append('remote_id')
+        keys_to_check.append('remote_ids')
         body = self.default_body.copy()
         body['description'] = uuid.uuid4().hex
-        body['remote_id'] = uuid.uuid4().hex
+        body['remote_ids'] = [uuid.uuid4().hex,
+                              uuid.uuid4().hex,
+                              uuid.uuid4().hex]
         resp = self._create_default_idp(body=body)
         self.assertValidResponse(resp, 'identity_provider', dummy_validator,
                                  keys_to_check=keys_to_check,
                                  ref=body)
+
+    def test_create_idp_remote_repeated(self):
+        """Creates two IdentityProvider entities with some remote_ids
+
+        A remote_id is the same for both so the second has not
+        to be accepted because of the uniqueness of the remote_ids
+
+        Expect HTTP 409 code for the latter call.
+
+        """
+
+        body = self.default_body.copy()
+        repeated_remote_id = uuid.uuid4().hex
+        body['remote_ids'] = [uuid.uuid4().hex,
+                              uuid.uuid4().hex,
+                              uuid.uuid4().hex,
+                              repeated_remote_id]
+        self._create_default_idp(body=body)
+
+        url = self.base_url(suffix=uuid.uuid4().hex)
+        body['remote_ids'] = [uuid.uuid4().hex,
+                              repeated_remote_id]
+        self.put(url, body={'identity_provider': body},
+                 expected_status=409)
+
+    def test_create_idp_remote_empty(self):
+        """Creates an IdP with empty remote_ids."""
+
+        keys_to_check = list(self.idp_keys)
+        keys_to_check.append('remote_ids')
+        body = self.default_body.copy()
+        body['description'] = uuid.uuid4().hex
+        body['remote_ids'] = []
+        resp = self._create_default_idp(body=body)
+        self.assertValidResponse(resp, 'identity_provider', dummy_validator,
+                                 keys_to_check=keys_to_check,
+                                 ref=body)
+
+    def test_update_idp_remote_ids(self):
+        """Update IdP's remote_ids parameter."""
+        body = self.default_body.copy()
+        body['remote_ids'] = [uuid.uuid4().hex]
+        default_resp = self._create_default_idp(body=body)
+        default_idp = self._fetch_attribute_from_response(default_resp,
+                                                          'identity_provider')
+        idp_id = default_idp.get('id')
+        url = self.base_url(suffix=idp_id)
+        self.assertIsNotNone(idp_id)
+
+        body['remote_ids'] = [uuid.uuid4().hex, uuid.uuid4().hex]
+
+        body = {'identity_provider': body}
+        resp = self.patch(url, body=body)
+        updated_idp = self._fetch_attribute_from_response(resp,
+                                                          'identity_provider')
+        body = body['identity_provider']
+        self.assertEqual(sorted(body['remote_ids']),
+                         sorted(updated_idp.get('remote_ids')))
+
+        resp = self.get(url)
+        returned_idp = self._fetch_attribute_from_response(resp,
+                                                           'identity_provider')
+        self.assertEqual(sorted(body['remote_ids']),
+                         sorted(returned_idp.get('remote_ids')))
 
     def test_list_idps(self, iterations=5):
         """Lists all available IdentityProviders.
@@ -917,7 +973,7 @@ class FederatedIdentityProviderTests(FederationTests):
         self.assertIsNotNone(idp_id)
 
         _enabled = not default_idp.get('enabled')
-        body = {'remote_id': uuid.uuid4().hex,
+        body = {'remote_ids': [uuid.uuid4().hex, uuid.uuid4().hex],
                 'description': uuid.uuid4().hex,
                 'enabled': _enabled}
 
@@ -927,13 +983,21 @@ class FederatedIdentityProviderTests(FederationTests):
                                                           'identity_provider')
         body = body['identity_provider']
         for key in body.keys():
-            self.assertEqual(body[key], updated_idp.get(key))
+            if isinstance(body[key], list):
+                self.assertEqual(sorted(body[key]),
+                                 sorted(updated_idp.get(key)))
+            else:
+                self.assertEqual(body[key], updated_idp.get(key))
 
         resp = self.get(url)
         updated_idp = self._fetch_attribute_from_response(resp,
                                                           'identity_provider')
         for key in body.keys():
-            self.assertEqual(body[key], updated_idp.get(key))
+            if isinstance(body[key], list):
+                self.assertEqual(sorted(body[key]),
+                                 sorted(updated_idp.get(key)))
+            else:
+                self.assertEqual(body[key], updated_idp.get(key))
 
     def test_update_idp_immutable_attributes(self):
         """Update IdP's immutable parameters.
@@ -1777,7 +1841,8 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
     def test_issue_unscoped_token_with_remote_no_attribute(self):
         r = self._issue_unscoped_token(idp=self.IDP_WITH_REMOTE,
                                        environment={
-                                           self.REMOTE_ID_ATTR: self.REMOTE_ID
+                                           self.REMOTE_ID_ATTR:
+                                               self.REMOTE_IDS[0]
                                        })
         self.assertIsNotNone(r.headers.get('X-Subject-Token'))
 
@@ -1786,7 +1851,18 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
                                    remote_id_attribute=self.REMOTE_ID_ATTR)
         r = self._issue_unscoped_token(idp=self.IDP_WITH_REMOTE,
                                        environment={
-                                           self.REMOTE_ID_ATTR: self.REMOTE_ID
+                                           self.REMOTE_ID_ATTR:
+                                               self.REMOTE_IDS[0]
+                                       })
+        self.assertIsNotNone(r.headers.get('X-Subject-Token'))
+
+    def test_issue_unscoped_token_with_saml2_remote(self):
+        self.config_fixture.config(group='saml2',
+                                   remote_id_attribute=self.REMOTE_ID_ATTR)
+        r = self._issue_unscoped_token(idp=self.IDP_WITH_REMOTE,
+                                       environment={
+                                           self.REMOTE_ID_ATTR:
+                                               self.REMOTE_IDS[0]
                                        })
         self.assertIsNotNone(r.headers.get('X-Subject-Token'))
 
@@ -1797,8 +1873,20 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
                           self._issue_unscoped_token,
                           idp=self.IDP_WITH_REMOTE,
                           environment={
-                              self.REMOTE_ID_ATTR: uuid.uuid4().hex
+                              self.REMOTE_ID_ATTR: [uuid.uuid4().hex]
                           })
+
+    def test_issue_unscoped_token_with_remote_default_wrong(self):
+        self.config_fixture.config(group='saml2',
+                                   remote_id_attribute=self.REMOTE_ID_ATTR)
+        self.config_fixture.config(group='federation',
+                                   remote_id_attribute=uuid.uuid4().hex)
+        r = self._issue_unscoped_token(idp=self.IDP_WITH_REMOTE,
+                                       environment={
+                                           self.REMOTE_ID_ATTR:
+                                               self.REMOTE_IDS[0]
+                                       })
+        self.assertIsNotNone(r.headers.get('X-Subject-Token'))
 
     def test_issue_unscoped_token_with_remote_unavailable(self):
         self.config_fixture.config(group='federation',
@@ -2116,7 +2204,6 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
                 }
             ]
         }
-
         self.federation_api.update_mapping(self.mapping['id'], rules)
 
         r = self._issue_unscoped_token(assertion='TESTER_ASSERTION')
