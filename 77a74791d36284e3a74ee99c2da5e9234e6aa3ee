@@ -16,6 +16,24 @@
       "revId": "77a74791d36284e3a74ee99c2da5e9234e6aa3ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_211547f1",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-02-02T17:25:46Z",
+      "side": 1,
+      "message": "craeted a hierarchy with 5 projects like:\n\n                                  +--A--+                                                                     \n                                  |     |                                                                     \n                               +--B--+  C                                                                     \n                               |     |  |                                                                     \n                               D     E  F",
+      "parentUuid": "da86d52c_352669b8",
+      "revId": "77a74791d36284e3a74ee99c2da5e9234e6aa3ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
