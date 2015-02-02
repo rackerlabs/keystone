@@ -139,6 +139,24 @@
       "revId": "bd5309e6bfc4186c395a991701dd0de7917ca599",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f909432d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-02T08:07:50Z",
+      "side": 1,
+      "message": "addressed in patch  https://review.openstack.org/152016",
+      "parentUuid": "da86d52c_cc021fb4",
+      "revId": "bd5309e6bfc4186c395a991701dd0de7917ca599",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
