@@ -917,10 +917,16 @@ class VersionTests(SqlMigrateBase):
             self.assertTrue(
                 version > 0,
                 "Version for %s didn't change after migrated?" % name)
-            migration.db_sync(sql.get_engine(), abs_path, version=0)
-            version = migration_helpers.get_db_version(extension=name)
-            self.assertEqual(0, version,
-                             'Migrate version for %s is not 0' % name)
+            if extension == federation:
+                self.assertRaises(NotImplementedError,
+                                  migration.db_sync,
+                                  sql.get_engine(),
+                                  abs_path, version=0)
+            else:
+                migration.db_sync(sql.get_engine(), abs_path, version=0)
+                version = migration_helpers.get_db_version(extension=name)
+                self.assertEqual(0, version,
+                                 'Migrate version for %s is not 0' % name)
 
     def test_unexpected_extension(self):
         """The version for an extension that doesn't exist raises ImportError.
