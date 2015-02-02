@@ -42,13 +42,35 @@ class FederationProtocolModel(sql.ModelBase, sql.DictBase):
         return d
 
 
-class IdentityProviderModel(sql.ModelBase, sql.DictBase):
-    __tablename__ = 'identity_provider'
-    attributes = ['id', 'remote_id', 'enabled', 'description']
-    mutable_attributes = frozenset(['description', 'enabled', 'remote_id'])
+class IdPRemoteIdslModel(sql.ModelBase, sql.DictBase):
+    __tablename__ = 'idp_remote_ids'
+    attributes = ['id', 'idp_id', 'remote_id']
+    mutable_attributes = frozenset(['remote_id'])
 
     id = sql.Column(sql.String(64), primary_key=True)
-    remote_id = sql.Column(sql.String(256), nullable=True)
+    idp_id = sql.Column(sql.String(64), sql.ForeignKey('identity_provider.id',
+                        ondelete='CASCADE'), primary_key=True)
+    remote_id = sql.Column(sql.String(256), nullable=False)
+
+    @classmethod
+    def from_dict(cls, dictionary):
+        new_dictionary = dictionary.copy()
+        return cls(**new_dictionary)
+
+    def to_dict(self):
+        """Return a dictionary with model's attributes."""
+        d = dict()
+        for attr in self.__class__.attributes:
+            d[attr] = getattr(self, attr)
+        return d
+
+
+class IdentityProviderModel(sql.ModelBase, sql.DictBase):
+    __tablename__ = 'identity_provider'
+    attributes = ['id', 'enabled', 'description']
+    mutable_attributes = frozenset(['description', 'enabled'])
+
+    id = sql.Column(sql.String(64), primary_key=True)
     enabled = sql.Column(sql.Boolean, nullable=False)
     description = sql.Column(sql.Text(), nullable=True)
 
