@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_3d6d6299",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-02T21:02:03Z",
+      "side": 1,
+      "message": "missing protocol_id after protocol",
+      "revId": "a34f1970070c7ce8b6a873a23d8fcb800e3777e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_7d2d1a46",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-02T21:02:03Z",
+      "side": 1,
+      "message": "instead of \u0027first\u0027 and \u0027second\u0027 i\u0027d prefer to see the actual attribute \u0027sp_url\u0027, and \u0027auth_url\u0027",
+      "revId": "a34f1970070c7ce8b6a873a23d8fcb800e3777e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_fd202a4b",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 328,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-02T21:02:03Z",
+      "side": 1,
+      "message": "X-Auth-URL",
+      "revId": "a34f1970070c7ce8b6a873a23d8fcb800e3777e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
