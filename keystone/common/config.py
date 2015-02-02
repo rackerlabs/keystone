@@ -521,6 +521,20 @@ FILE_OPTIONS = {
                         'to empty string or None will not have any impact and '
                         'default name will be used.'),
     ],
+    'saml2': [
+        cfg.StrOpt('remote_id_attribute', default='Shib-Identity-Provider',
+                   help='Value to be used to obtain the entity ID of the '
+                        'Identity Provider from the environment when saml2 '
+                        'protocol is used (note: default value is '
+                        'valid mod_shib plugin, change it for other '
+                        'plugins).'),
+    ], 
+    'oidc': [
+        cfg.StrOpt('remote_id_attribute', default='Claim-Identity-Provider',
+                   help='Value to be used to obtain the entity ID of the '
+                        'Identity Provider from the environment when oidc '
+                        'protocol is used'),
+    ], 
     'policy': [
         cfg.StrOpt('driver',
                    default='keystone.policy.backends.sql.Policy',

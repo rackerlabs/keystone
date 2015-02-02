@@ -10,7 +10,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from oslo_db.sqlalchemy import utils
 import sqlalchemy as sql
 
 
@@ -18,13 +17,28 @@ def upgrade(migrate_engine):
     meta = sql.MetaData()
     meta.bind = migrate_engine
 
-    idp_table = utils.get_table(migrate_engine, 'identity_provider')
-    remote_id = sql.Column('remote_id', sql.String(256), nullable=True)
-    idp_table.create_column(remote_id)
+    remote_id_table = sql.Table(
+        'idp_remote_ids',
+        meta,
+        sql.Column('idp_id',
+                   sql.String(64),
+                   sql.ForeignKey('identity_provider.id',
+                                  ondelete='CASCADE'),
+                   primary_key=True,
+                   nullable=False),
+        sql.Column('remote_id',
+                   sql.String(256),
+                   primary_key=True,
+                   nullable=False,
+                   unique=True),
+        mysql_engine='InnoDB',
+        mysql_charset='utf8')
+
+    remote_id_table.create(migrate_engine, checkfirst=True)
 
 
 def downgrade(migrate_engine):
     meta = sql.MetaData()
     meta.bind = migrate_engine
-    idp_table = utils.get_table(migrate_engine, 'identity_provider')
-    idp_table.drop_column('remote_id')
+    table = sql.Table('idp_remote_ids', meta, autoload=True)
+    table.drop()
