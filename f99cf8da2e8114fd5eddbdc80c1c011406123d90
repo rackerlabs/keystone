@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_c6048180",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1203,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-02T17:15:24Z",
+      "side": 1,
+      "message": "Since the test is the only thing using the constant, why not move it here?",
+      "revId": "f99cf8da2e8114fd5eddbdc80c1c011406123d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e6bfc5ce",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 737,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-02T17:15:24Z",
+      "side": 1,
+      "message": "It feels the the name here is off. This is actually testing setting the token driver in the config.",
+      "revId": "f99cf8da2e8114fd5eddbdc80c1c011406123d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_46a3319e",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 757,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-02T17:15:24Z",
+      "side": 1,
+      "message": "This is an interface change? What is the impact on the thing making the call here? I assume the user won\u0027t see anything different because this should not happen at runtime, but will the operator see anything different?",
+      "revId": "f99cf8da2e8114fd5eddbdc80c1c011406123d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_c63721af",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-02T17:15:24Z",
+      "side": 1,
+      "message": "These PKI* constants are no longer used. Is there any reason to keep them around? I\u0027m also not completely sold on keeping the UUID constant.",
+      "revId": "f99cf8da2e8114fd5eddbdc80c1c011406123d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_866c499e",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-02T17:15:24Z",
+      "side": 1,
+      "message": "Looks much better!",
+      "revId": "f99cf8da2e8114fd5eddbdc80c1c011406123d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
