@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_1ae8a90f",
+        "filename": "keystone/tests/test_v3_auth.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2766,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-02T18:29:09Z",
+      "side": 1,
+      "message": "There should also be a test that shows what happens when there\u0027s no role with the name.",
+      "revId": "10bc16675b0d287e79f8862eb3be647a4c2ae358",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
