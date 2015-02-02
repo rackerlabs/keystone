@@ -13,7 +13,7 @@
 # under the License.
 
 from oslo.config import cfg
-from oslo import messaging
+import oslo_messaging as messaging
 
 
 _DEFAULT_AUTH_METHODS = ['external', 'password', 'token']
