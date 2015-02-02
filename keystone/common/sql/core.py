@@ -62,6 +62,7 @@ Text = sql.Text
 UniqueConstraint = sql.UniqueConstraint
 PrimaryKeyConstraint = sql.PrimaryKeyConstraint
 joinedload = sql.orm.joinedload
+orm = sql.orm
 # Suppress flake8's unused import warning for flag_modified:
 flag_modified = flag_modified
 
