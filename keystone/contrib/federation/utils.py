@@ -136,12 +136,33 @@ def validate_groups_cardinality(group_ids, mapping_id):
         raise exception.MissingGroups(mapping_id=mapping_id)
 
 
-def validate_idp(idp, assertion):
-    """Check if the IdP providing the assertion is the one registered for
-       the mapping
+def validate_idp(idp, protocol, assertion):
+    """Validate the IdP providing the assertion is registered for the mapping.
     """
-    remote_id_parameter = CONF.federation.remote_id_attribute
-    if not remote_id_parameter or not idp['remote_id']:
+
+    def get_remote_id_param():
+        conf_protocol = getattr(CONF, protocol)
+        return conf_protocol.remote_id_attribute
+
+    # NOTE(marco-fargetta): Since we support any protocol ID, we attempt to
+    # retrieve the remote_id_attribute of the protocol ID. If it's not
+    # registered in the config, then register the option and try again.
+    # This allows the user to register protocols other than oidc and saml2.
+    remote_id_parameter = None
+    try:
+        remote_id_parameter = get_remote_id_param()
+    except AttributeError:
+        CONF.register_opt(cfg.StrOpt('remote_id_attribute'),
+                          group=protocol)
+        try:
+            remote_id_parameter = get_remote_id_param()
+        except AttributeError:
+            LOG.warning(_LW("Cannot find 'remote_id_attibute' in "
+                            "configuration group %s. Trying default location "
+                            "CONF.federation.remote_id_attribute"), protocol)
+    if not remote_id_parameter:
+        remote_id_parameter = CONF.federation.remote_id_attribute
+    if not remote_id_parameter or not idp['remote_ids']:
         LOG.warning(_LW('Impossible to identify the IdP %s '),
                     idp['id'])
         # If nothing is defined, the administrator may want to
@@ -151,10 +172,9 @@ def validate_idp(idp, assertion):
         idp_remote_identifier = assertion[remote_id_parameter]
     except KeyError:
         msg = _('Could not find Identity Provider identifier in '
-                'environment, check [federation] remote_id_attribute '
-                'for details.')
+                'environment')
         raise exception.ValidationError(msg)
-    if idp_remote_identifier != idp['remote_id']:
+    if idp_remote_identifier not in idp['remote_ids']:
         msg = _('Incoming identity provider identifier not included '
                 'among the accepted identifiers.')
         raise exception.Forbidden(msg)
