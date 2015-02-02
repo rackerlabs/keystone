@@ -90,7 +90,9 @@ FILE_OPTIONS = {
                         'WSGI application. Defaults to number of CPUs '
                         '(minimum of 2).'),
         cfg.IntOpt('max_param_size', default=64,
-                   help='Limit the sizes of user & project ID/names.'),
+                   help='Limit the sizes of user ID & project ID/names.'),
+        cfg.IntOpt('max_username_size', default=255,
+                   help='Limit the sizes of username.'),
         # we allow tokens to be a bit larger to accommodate PKI
         cfg.IntOpt('max_token_size', default=8192,
                    help='Similar to max_param_size, but provides an '
