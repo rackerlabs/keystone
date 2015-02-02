@@ -147,10 +147,11 @@ class FederatedIdentityProviderTests(FederationTests):
         """Creates the IdentityProvider entity associated to a remote_id."""
 
         keys_to_check = list(self.idp_keys)
-        keys_to_check.append('remote_id')
+        keys_to_check.append('remote_ids')
         body = self.default_body.copy()
         body['description'] = uuid.uuid4().hex
-        body['remote_id'] = uuid.uuid4().hex
+        body['remote_ids'] = []
+        body['remote_ids'].append(uuid.uuid4().hex)
         resp = self._create_default_idp(body=body)
         self.assertValidResponse(resp, 'identity_provider', dummy_validator,
                                  keys_to_check=keys_to_check,
@@ -259,7 +260,7 @@ class FederatedIdentityProviderTests(FederationTests):
         self.assertIsNotNone(idp_id)
 
         _enabled = not default_idp.get('enabled')
-        body = {'remote_id': uuid.uuid4().hex,
+        body = {'remote_ids': [uuid.uuid4().hex],
                 'description': uuid.uuid4().hex,
                 'enabled': _enabled}
 
@@ -884,8 +885,8 @@ class FederatedTokenTests(FederationTests):
     USER = 'user@ORGANIZATION'
     ASSERTION_PREFIX = 'PREFIX_'
     IDP_WITH_REMOTE = 'ORG_IDP_REMOTE'
-    REMOTE_ID = 'entityID_IDP'
-    REMOTE_ID_ATTR = uuid.uuid4().hex
+    REMOTE_ID = ['entityID_IDP1', 'entityID_IDP2']
+    REMOTE_ID_ATTR = 'Shib-Identity-Provider'
 
     UNSCOPED_V3_SAML2_REQ = {
         "identity": {
@@ -1041,7 +1042,8 @@ class FederatedTokenTests(FederationTests):
     def test_issue_unscoped_token_with_remote_no_attribute(self):
         r = self._issue_unscoped_token(idp=self.IDP_WITH_REMOTE,
                                        environment={
-                                           self.REMOTE_ID_ATTR: self.REMOTE_ID
+                                           self.REMOTE_ID_ATTR:
+                                               self.REMOTE_ID[0]
                                        })
         self.assertIsNotNone(r.headers.get('X-Subject-Token'))
 
@@ -1050,7 +1052,8 @@ class FederatedTokenTests(FederationTests):
                                    remote_id_attribute=self.REMOTE_ID_ATTR)
         r = self._issue_unscoped_token(idp=self.IDP_WITH_REMOTE,
                                        environment={
-                                           self.REMOTE_ID_ATTR: self.REMOTE_ID
+                                           self.REMOTE_ID_ATTR:
+                                               self.REMOTE_ID[0]
                                        })
         self.assertIsNotNone(r.headers.get('X-Subject-Token'))
 
@@ -1865,7 +1868,7 @@ class FederatedTokenTests(FederationTests):
                                        self.idp)
         # Add IDP with remote
         self.idp_with_remote = self.idp_ref(id=self.IDP_WITH_REMOTE)
-        self.idp_with_remote['remote_id'] = self.REMOTE_ID
+        self.idp_with_remote['remote_ids'] = self.REMOTE_ID
         self.federation_api.create_idp(self.idp_with_remote['id'],
                                        self.idp_with_remote)
         # Add a mapping
