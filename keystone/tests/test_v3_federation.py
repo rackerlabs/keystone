@@ -1822,6 +1822,8 @@ def _load_xml(filename):
 
 class SAMLGenerationTests(FederationTests):
 
+    SP_AUTH_URL = ('http://beta.com:5000/v3/OS-FEDERATION/identity_providers'
+                   '/BETA/protocols/saml2/auth')
     ISSUER = 'https://acme.com/FIM/sps/openstack/saml20'
     RECIPIENT = 'http://beta.com/Shibboleth.sso/SAML2/POST'
     SUBJECT = 'test_user'
@@ -1829,11 +1831,24 @@ class SAMLGenerationTests(FederationTests):
     PROJECT = 'development'
     SAML_GENERATION_ROUTE = '/auth/OS-FEDERATION/saml2'
     ASSERTION_VERSION = "2.0"
+    SERVICE_PROVDIER_ID = 'ACME'
+
+    def sp_ref(self):
+        ref = {
+            'auth_url': self.SP_AUTH_URL,
+            'enabled': True,
+            'description': uuid.uuid4().hex,
+            'sp_url': self.RECIPIENT,
+
+        }
+        return ref
 
     def setUp(self):
         super(SAMLGenerationTests, self).setUp()
         self.signed_assertion = saml2.create_class_from_xml_string(
             saml.Assertion, _load_xml('signed_saml2_assertion.xml'))
+        self.sp = self.sp_ref()
+        self.federation_api.create_sp(self.SERVICE_PROVDIER_ID, self.sp)
 
     def test_samlize_token_values(self):
         """Test the SAML generator produces a SAML object.
@@ -1970,7 +1985,7 @@ class SAMLGenerationTests(FederationTests):
         cert_text = cert_text.replace(os.linesep, '')
         self.assertEqual(idp_public_key, cert_text)
 
-    def _create_generate_saml_request(self, token_id, region_id):
+    def _create_generate_saml_request(self, token_id, sp_id):
         return {
             "auth": {
                 "identity": {
@@ -1982,18 +1997,12 @@ class SAMLGenerationTests(FederationTests):
                     }
                 },
                 "scope": {
-                    "region": {
-                        "id": region_id
+                    "service_provider": {
+                        "id": sp_id
                     }
                 }
             }
         }
-
-    def _create_region_with_url(self):
-        ref = self.new_region_ref()
-        ref['url'] = self.RECIPIENT
-        r = self.post('/regions', body={'region': ref})
-        return r.json['region']['id']
 
     def _fetch_valid_token(self):
         auth_data = self.build_authentication_request(
@@ -2021,10 +2030,9 @@ class SAMLGenerationTests(FederationTests):
 
         """
         self.config_fixture.config(group='saml', idp_entity_id=self.ISSUER)
-        region_id = self._create_region_with_url()
         token_id = self._fetch_domain_scoped_token()
-        body = self._create_generate_saml_request(token_id, region_id)
-
+        body = self._create_generate_saml_request(token_id,
+                                                  self.SERVICE_PROVDIER_ID)
         with mock.patch.object(keystone_idp, '_sign_assertion',
                                return_value=self.signed_assertion):
             self.post(self.SAML_GENERATION_ROUTE, body=body,
@@ -2034,17 +2042,17 @@ class SAMLGenerationTests(FederationTests):
         """Test that the SAML generation endpoint produces XML.
 
         The SAML endpoint /v3/auth/OS-FEDERATION/saml2 should take as input,
-        a scoped token ID, and a region ID.
+        a scoped token ID, and a Service Provider ID.
         The controller should fetch details about the user from the token,
-        and details about the service provider from the region.
+        and details about the service provider from its ID.
         This should be enough information to invoke the SAML generator and
         provide a valid SAML (XML) document back.
 
         """
         self.config_fixture.config(group='saml', idp_entity_id=self.ISSUER)
-        region_id = self._create_region_with_url()
         token_id = self._fetch_valid_token()
-        body = self._create_generate_saml_request(token_id, region_id)
+        body = self._create_generate_saml_request(token_id,
+                                                  self.SERVICE_PROVDIER_ID)
 
         with mock.patch.object(keystone_idp, '_sign_assertion',
                                return_value=self.signed_assertion):
@@ -2080,9 +2088,9 @@ class SAMLGenerationTests(FederationTests):
 
         """
 
-        region_id = uuid.uuid4().hex
         token_id = uuid.uuid4().hex
-        body = self._create_generate_saml_request(token_id, region_id)
+        body = self._create_generate_saml_request(token_id,
+                                                  self.SERVICE_PROVDIER_ID)
         del body['auth']['scope']
 
         self.post(self.SAML_GENERATION_ROUTE, body=body, expected_status=400)
@@ -2094,24 +2102,36 @@ class SAMLGenerationTests(FederationTests):
 
         """
 
-        region_id = uuid.uuid4().hex
         token_id = uuid.uuid4().hex
-        body = self._create_generate_saml_request(token_id, region_id)
+        body = self._create_generate_saml_request(token_id,
+                                                  self.SERVICE_PROVDIER_ID)
         del body['auth']['identity']['token']
 
         self.post(self.SAML_GENERATION_ROUTE, body=body, expected_status=400)
 
-    def test_region_not_found(self):
-        """Test that an invalid region in the request body raises an exception.
+    def test_sp_not_found(self):
+        """Test that an invalid service provider in the request body raises an
+        exception.
 
-        Raises exception.RegionNotFound() - error code 404
+        Raises exception.ServiceProviderNotFound() - error code 404
 
         """
-
-        region_id = uuid.uuid4().hex
+        sp_id = uuid.uuid4().hex
         token_id = self._fetch_valid_token()
-        body = self._create_generate_saml_request(token_id, region_id)
+        body = self._create_generate_saml_request(token_id, sp_id)
         self.post(self.SAML_GENERATION_ROUTE, body=body, expected_status=404)
+
+    def test_sp_disabled(self):
+        """Try generating assertion for disabled Service Provider."""
+
+        # Disable Service Provider
+        sp_ref = {'enabled': False}
+        self.federation_api.update_sp(self.SERVICE_PROVDIER_ID, sp_ref)
+
+        token_id = self._fetch_valid_token()
+        body = self._create_generate_saml_request(token_id,
+                                                  self.SERVICE_PROVDIER_ID)
+        self.post(self.SAML_GENERATION_ROUTE, body=body, expected_status=403)
 
     def test_token_not_found(self):
         """Test that an invalid token in the request body raises an exception.
@@ -2120,9 +2140,9 @@ class SAMLGenerationTests(FederationTests):
 
         """
 
-        region_id = self._create_region_with_url()
         token_id = uuid.uuid4().hex
-        body = self._create_generate_saml_request(token_id, region_id)
+        body = self._create_generate_saml_request(token_id,
+                                                  self.SERVICE_PROVDIER_ID)
         self.post(self.SAML_GENERATION_ROUTE, body=body, expected_status=404)
 
 
