@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_3dae4286",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-02T21:07:30Z",
+      "side": 1,
+      "message": "this duplication should be fixed in another patch",
+      "revId": "e6ff4c2e1130f518f5f6cf1f4546049494c495b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
