@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_1820c848",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-02-02T12:56:51Z",
+      "side": 1,
+      "message": "please keep the commit message as in the following structure: https://wiki.openstack.org/wiki/GitCommitMessages#Summary_of_Git_commit_message_structure",
+      "revId": "c9c7dfb006513c5d094e48e7d8dbe1b26f13249a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f8e21402",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-02-02T12:56:51Z",
+      "side": 1,
+      "message": "also, seems that you are changing only oslo.utils to oslo_utils, we have a series of patches that changes this namespaces, would be a nice a idea to follow the pattern and cite the blueprint: https://review.openstack.org/#/c/148025/4",
+      "revId": "c9c7dfb006513c5d094e48e7d8dbe1b26f13249a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
