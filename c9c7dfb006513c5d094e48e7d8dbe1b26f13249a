@@ -33,6 +33,24 @@
       "revId": "c9c7dfb006513c5d094e48e7d8dbe1b26f13249a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_58ade087",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 12088
+      },
+      "writtenOn": "2015-02-02T13:00:11Z",
+      "side": 1,
+      "message": "Was not aware of this, will change accordingly, and upload new patchset",
+      "parentUuid": "da86d52c_f8e21402",
+      "revId": "c9c7dfb006513c5d094e48e7d8dbe1b26f13249a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
