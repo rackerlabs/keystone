@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_41c4fb91",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-02T17:32:52Z",
+      "side": 1,
+      "message": "There needs to be a short summary line. Take a look at http://docs.openstack.org/developer/hacking/#docstrings for info on the correct format.",
+      "revId": "6028bb9af2dc181ce52c69a486287ad86daa3364",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_01b5a3ed",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-02T17:32:52Z",
+      "side": 1,
+      "message": "Should probably add a :param: for callback and a :returns: section.",
+      "revId": "6028bb9af2dc181ce52c69a486287ad86daa3364",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_a1c5b75c",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-02T17:32:52Z",
+      "side": 1,
+      "message": "For bonus points you can add type information like this: https://review.openstack.org/#/c/127856/6/keystoneclient/client.py",
+      "revId": "6028bb9af2dc181ce52c69a486287ad86daa3364",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
