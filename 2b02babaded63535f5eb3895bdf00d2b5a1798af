@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_759381a3",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 16
+      },
+      "lineNbr": 363,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2015-02-02T16:48:09Z",
+      "side": 1,
+      "message": "i\u0027m assuming this was incorrectly changed.",
+      "revId": "2b02babaded63535f5eb3895bdf00d2b5a1798af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_905563c8",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2015-02-02T16:48:09Z",
+      "side": 1,
+      "message": "from ceilometer pov, we\u0027d see two notifications for each action, one cadf and one non-cadf... maybe one or the other might be better, not both...\n\ni\u0027m not sure how the standardise schema work is going but i don\u0027t know if they\u0027ll have issues with two msgs with same event_type having completely different payloads. it could cause confusion in ceilometer side when you query on data and it\u0027s sort of a toss up on what you get back.",
+      "revId": "2b02babaded63535f5eb3895bdf00d2b5a1798af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_75a0e190",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2015-02-02T16:48:09Z",
+      "side": 1,
+      "message": "this switch/if stuff could be a module-level dict mapping... but not a big deal.",
+      "revId": "2b02babaded63535f5eb3895bdf00d2b5a1798af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_15ffa568",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2015-02-02T16:48:09Z",
+      "side": 1,
+      "message": "you could probably just merge the two lines above",
+      "revId": "2b02babaded63535f5eb3895bdf00d2b5a1798af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_7522a1ba",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2015-02-02T16:48:09Z",
+      "side": 1,
+      "message": "this isn\u0027t the same as the real code. from what i can tell, the _send_audit_notification method doesn\u0027t attach to an event attr within the audit event to but to the actual audit event itself.",
+      "revId": "2b02babaded63535f5eb3895bdf00d2b5a1798af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
