@@ -19,9 +19,9 @@ import sys
 
 import migrate
 from migrate import exceptions
-from oslo.db.sqlalchemy import migration
 from oslo.serialization import jsonutils
-from oslo.utils import importutils
+from oslo_db.sqlalchemy import migration
+from oslo_utils import importutils
 import six
 import sqlalchemy
 
