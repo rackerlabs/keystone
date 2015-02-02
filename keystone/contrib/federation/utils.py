@@ -2,7 +2,7 @@
 # not use this file except in compliance with the License. You may obtain
 # a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
@@ -191,12 +191,30 @@ def validate_groups_cardinality(group_ids, mapping_id):
         raise exception.MissingGroups(mapping_id=mapping_id)
 
 
-def validate_idp(idp, assertion):
-    """Check if the IdP providing the assertion is the one registered for
-       the mapping
+def validate_idp(idp, protocol, assertion):
+    """Validate the IdP providing the assertion is registered for the mapping.
     """
-    remote_id_parameter = CONF.federation.remote_id_attribute
-    if not remote_id_parameter or not idp['remote_id']:
+
+    # NOTE(marco-fargetta): Since we support any protocol ID, we attempt to
+    # retrieve the remote_id_attribute of the protocol ID. If it's not
+    # registered in the config, then register the option and try again.
+    # This allows the user to register protocols other than oidc and saml2.
+    remote_id_parameter = None
+    try:
+        remote_id_parameter = CONF[protocol]['remote_id_attribute']
+    except AttributeError:
+        CONF.register_opt(cfg.StrOpt('remote_id_attribute'),
+                          group=protocol)
+        try:
+            remote_id_parameter = CONF[protocol]['remote_id_attribute']
+        except AttributeError:
+            msg = ('Cannot find "remote_id_attibute" in configuration '
+                   'group %(protocol)s. Trying default location in '
+                   'group federation.') % {'protocol': protocol}
+            LOG.debug(msg)
+    if not remote_id_parameter:
+        remote_id_parameter = CONF.federation.remote_id_attribute
+    if not remote_id_parameter or not idp['remote_ids']:
         LOG.warning(_LW('Impossible to identify the IdP %s '),
                     idp['id'])
         # If nothing is defined, the administrator may want to
@@ -206,10 +224,9 @@ def validate_idp(idp, assertion):
         idp_remote_identifier = assertion[remote_id_parameter]
     except KeyError:
         msg = _('Could not find Identity Provider identifier in '
-                'environment, check [federation] remote_id_attribute '
-                'for details.')
+                'environment')
         raise exception.ValidationError(msg)
-    if idp_remote_identifier != idp['remote_id']:
+    if idp_remote_identifier not in idp['remote_ids']:
         msg = _('Incoming identity provider identifier not included '
                 'among the accepted identifiers.')
         raise exception.Forbidden(msg)
@@ -318,7 +335,7 @@ def transform_to_group_ids(group_names, mapping_id,
         """
         domain_id = (domain.get('id') or
                      assignment_api.get_domain_by_name(
-                     domain.get('name')).get('id'))
+                         domain.get('name')).get('id'))
         return domain_id
 
     for group in group_names:
