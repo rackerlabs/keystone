@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_352669b8",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 588,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-02T16:28:10Z",
+      "side": 1,
+      "message": "Because of the complexity of the code under tests that build a list of sub tree hierarchies as a cache, I\u0027d prefer to see there be more than one child of A in this test.",
+      "revId": "77a74791d36284e3a74ee99c2da5e9234e6aa3ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
