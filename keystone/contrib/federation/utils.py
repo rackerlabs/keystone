@@ -140,7 +140,7 @@ def validate_idp(idp, assertion):
        the mapping
     """
     remote_id_parameter = CONF.federation.remote_id_attribute
-    if not remote_id_parameter or not idp['remote_id']:
+    if not remote_id_parameter or not idp['remote_ids']:
         LOG.warning(_LW('Impossible to identify the IdP %s '),
                     idp['id'])
         # If nothing is defined, the administrator may want to
@@ -153,7 +153,7 @@ def validate_idp(idp, assertion):
                 'environment, check [federation] remote_id_attribute '
                 'for details.')
         raise exception.ValidationError(msg)
-    if idp_remote_identifier != idp['remote_id']:
+    if idp_remote_identifier not in idp['remote_ids']:
         msg = _('Incoming identity provider identifier not included '
                 'among the accepeted identifiers.')
         raise exception.Forbidden(msg)
