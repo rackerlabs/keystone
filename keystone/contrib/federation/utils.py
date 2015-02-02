@@ -135,12 +135,24 @@ def validate_groups_cardinality(group_ids, mapping_id):
         raise exception.MissingGroups(mapping_id=mapping_id)
 
 
-def validate_idp(idp, assertion):
+def validate_idp(idp, protocol, assertion):
     """Check if the IdP providing the assertion is the one registered for
        the mapping
     """
-    remote_id_parameter = CONF.federation.remote_id_attribute
-    if not remote_id_parameter or not idp['remote_id']:
+    try:
+        conf_protocol = getattr(CONF, protocol)
+        remote_id_parameter = conf_protocol.remote_id_attribute
+    except AttributeError:
+        CONF.register_opt(cfg.StrOpt('remote_id_attribute'),
+                          group=protocol)
+        try:
+            conf_protocol = getattr(CONF, protocol)
+            remote_id_parameter = conf_protocol.remote_id_attribute
+        except Exception:
+            pass
+    if not remote_id_parameter:
+        remote_id_parameter = CONF.federation.remote_id_attribute
+    if not remote_id_parameter or not idp['remote_ids']:
         LOG.warning(_LW('Impossible to identify the IdP %s '),
                     idp['id'])
         # If nothing is defined, the administrator may want to
@@ -153,7 +165,7 @@ def validate_idp(idp, assertion):
                 'environment, check [federation] remote_id_attribute '
                 'for details.')
         raise exception.ValidationError(msg)
-    if idp_remote_identifier != idp['remote_id']:
+    if idp_remote_identifier not in idp['remote_ids']:
         msg = _('Incoming identity provider identifier not included '
                 'among the accepeted identifiers.')
         raise exception.Forbidden(msg)
