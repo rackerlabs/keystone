@@ -55,16 +55,17 @@ class AssignmentTestHelperMixin(object):
 
     test_plan = {
         entities: details and number of entities,
+        group_memberships: group-user entity memberships,
         assignments: list of assignments to create,
         tests: list of pairs of input params and expected outputs}
 
     An example test plan:
 
     test_plan = {
-        # Create a domain that contains a single user, group and project.
+        # Create a domain that contains two users, one group and project.
         # In addition, create three roles.
 
-        'entities': {'domains': [{'contents': {'users': 1, 'groups': 1,
+        'entities': {'domains': [{'contents': {'users': 2, 'groups': 1,
                                                'projects': 1}}],
 
                      'roles': 3},
@@ -73,6 +74,12 @@ class AssignmentTestHelperMixin(object):
         # entities, then the id of that domain can be included in the
         # domain dict, e.g.:
         # {'id': <domain_id>, 'contents': {'users': 1}}
+
+        # A list of groups and their members. In this case make users with
+        # index 0 and 1 members of group with index 0. Users and Groups are
+        # indexed in the order they appear in the 'entities' key above.
+
+        'group_memberships': [{'group': 0, 'users': [0, 1]}]
 
         # Create assignments between the entities, referencing the
         # entities by index, i.e. 'user': 0 refers to user[0]. Entities are
@@ -190,6 +197,22 @@ class AssignmentTestHelperMixin(object):
             reference_data[reference_index][shorthand_data[key]]['id'])
         return expanded_key, index_value
 
+    def create_group_memberships(self, group_pattern, test_data):
+        """Create the group memberships specified in the test plan."""
+
+        for group_spec in group_pattern:
+            # Each membership specification is a dict of the form:
+            #
+            # {'group': 0, 'users': [list of user indexes]}
+            #
+            # Add all users in the list to the specified group, first
+            # converting from index to full entity ID.
+            group_value = test_data['groups'][group_spec['group']]['id']
+            for user_index in group_spec['users']:
+                user_value = test_data['users'][user_index]['id']
+                self.identity_api.add_user_to_group(user_value, group_value)
+        return test_data
+
     def create_assignments(self, assignment_pattern, test_data):
         """Create the assignments specified in the test plan."""
 
@@ -290,6 +313,9 @@ class AssignmentTestHelperMixin(object):
 
         """
         test_data = self.create_entities(test_plan['entities'])
+        if 'group_memberships' in test_plan:
+            self.create_group_memberships(test_plan['group_memberships'],
+                                          test_data)
         if 'assignments' in test_plan:
             test_data = self.create_assignments(test_plan['assignments'],
                                                 test_data)
@@ -5499,14 +5525,16 @@ class InheritanceTests(AssignmentTestHelperMixin):
 
     def test_inherited_role_assignments_excluded_if_os_inherit_false(self):
         test_plan = {
-            'entities': {'domains': [{'contents': {'users': 2,
-                                                   'projects': 1}}],
-                         'roles': 3},
+            'entities': {'domains': [{'contents': {'users': 2, 'projects': 1,
+                                                  'groups': 1}}],
+                         'roles': 4},
+            'group_memberships': [{'group': 0, 'users': [0]}],
             'assignments': [{'user': 0, 'role': 0, 'domain': 0},
                             {'user': 0, 'role': 1, 'project': 0},
                             {'user': 0, 'role': 2, 'domain': 0,
                              'inherited_to_projects': True},
-                            {'user': 1, 'role': 1, 'project': 0}],
+                            {'user': 1, 'role': 1, 'project': 0},
+                            {'group': 0, 'role': 3, 'project': 0}],
             'tests': [
                 # List all direct assignments for user[0], since os-inherit is
                 # disabled, we should not see the inherited role
@@ -5514,10 +5542,14 @@ class InheritanceTests(AssignmentTestHelperMixin):
                  'results': [{'user': 0, 'role': 0, 'domain': 0},
                              {'user': 0, 'role': 1, 'project': 0}]},
                 # Same in effective mode - inherited roles should not be
-                # included or expanded
+                # included or expanded...but the group role should now
+                # turn up as a user role, since group expansion is not
+                # part of os-inherit.
                 {'params': {'user': 0, 'effective': True},
                  'results': [{'user': 0, 'role': 0, 'domain': 0},
-                             {'user': 0, 'role': 1, 'project': 0}]},
+                             {'user': 0, 'role': 1, 'project': 0},
+                             {'user': 0, 'role': 3, 'project': 0,
+                              'indirect': {'group': 0}}]},
             ]
         }
         self.config_fixture.config(group='os_inherit', enabled=False)
@@ -5788,6 +5820,43 @@ class InheritanceTests(AssignmentTestHelperMixin):
         self.assertIn(role_list[0]['id'], combined_list)
         self.assertIn(role_list[2]['id'], combined_list)
         self.assertIn(role_list[3]['id'], combined_list)
+
+        # TODO(henry-nash): The test above uses get_roles_for_user_and_project
+        # which will, in a subsequent patch, be re-implemeted to simply call
+        # list_role_assignments (see blueprint remove-role-metadata).
+        #
+        # The test plan below therefore mirrors this test, to ensure that
+        # list_role_assignments works the same. Once
+        # get_roles_for_user_and_project has been re-implemented then the
+        # manual tests above can be refactored to simply ensure it gives
+        # the same answers.
+        test_plan = {
+            # A domain with a user and project, 2 groups, plus 4 roles.
+            'entities': {'domains': [{'contents': {'users': 1, 'projects': 1,
+                                                  'groups': 2}}],
+                         'roles': 4},
+            'group_memberships': [{'group': 0, 'users': [0]},
+                                  {'group': 1, 'users': [0]}],
+            'assignments': [{'user': 0, 'role': 0, 'project': 0},
+                            {'group': 0, 'role': 1, 'domain': 0},
+                            {'group': 1, 'role': 2, 'domain': 0,
+                             'inherited_to_projects': True},
+                            {'group': 1, 'role': 3, 'domain': 0,
+                             'inherited_to_projects': True}],
+            'tests': [
+                # List all effective assignments for user[0] on project[0].
+                # Should get one direct role and both inherited roles, but
+                # not the direct one on domain[0], even though user[0] is
+                # in group[0].
+                {'params': {'user': 0, 'project': 0, 'effective': True},
+                 'results': [{'user': 0, 'role': 0, 'project': 0},
+                             {'user': 0, 'role': 2, 'project': 0,
+                              'indirect': {'domain': 0, 'group': 1}},
+                             {'user': 0, 'role': 3, 'project': 0,
+                              'indirect': {'domain': 0, 'group': 1}}]}
+            ]
+        }
+        self.execute_assignment_test_plan(test_plan)
 
     def test_list_projects_for_user_with_inherited_grants(self):
         """Test inherited user roles.
