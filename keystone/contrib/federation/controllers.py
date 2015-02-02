@@ -264,9 +264,10 @@ class Auth(auth_controllers.Auth):
         """
 
         issuer = CONF.saml.idp_entity_id
-        region_id = auth['scope']['region']['id']
-        region = self.catalog_api.get_region(region_id)
-        recipient = region['url']
+        sp_id = auth['scope']['service_provider']['id']
+        service_provider = self.federation_api.get_sp(sp_id)
+        utils.assert_enabled_service_provider_object(service_provider)
+        auth_url = sevice_provider['auth_url']
 
         token_id = auth['identity']['token']['id']
         token_data = self.token_provider_api.validate_token(token_id)
@@ -281,7 +282,7 @@ class Auth(auth_controllers.Auth):
 
         project = token_ref.project_name
         generator = keystone_idp.SAMLGenerator()
-        response = generator.samlize_token(issuer, recipient, subject, roles,
+        response = generator.samlize_token(issuer, auth_url, subject, roles,
                                            project)
 
         return wsgi.render_response(body=response.to_string(),

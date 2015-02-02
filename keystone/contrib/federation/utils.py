@@ -576,3 +576,11 @@ class RuleProcessor(object):
             return True
 
         return False
+
+
+def assert_enabled_service_provider_object(service_provider):
+    if service_provider.get('enabled') is not True:
+        sp_id = service_provider['id']
+        msg = _('Service Provider %(sp)s is disabled') % {'sp': sp_id}
+        LOG.debug(msg)
+        raise exception.Forbidden(msg)
