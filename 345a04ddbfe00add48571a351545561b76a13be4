@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_afb72bd7",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-03T17:04:18Z",
+      "side": 1,
+      "message": "i think it\u0027s because we always fire off the notifier with:\n\n  notifier.info(context, event_type, payload)\n\nbut yes, that bit comes comes oslo.messaging",
+      "parentUuid": "da86d52c_e02cdb04",
+      "revId": "345a04ddbfe00add48571a351545561b76a13be4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_db9c2ac3",
         "filename": "doc/source/event_notifications.rst",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-03T15:51:52Z",
       "side": 1,
       "message": "What about when an authentication call fails? We still send a notification in that case, right?",
+      "revId": "345a04ddbfe00add48571a351545561b76a13be4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_cf08df93",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-03T17:04:18Z",
+      "side": 1,
+      "message": "correct, if *authentication* fails, then we send off a failure notification",
+      "parentUuid": "da86d52c_db9c2ac3",
       "revId": "345a04ddbfe00add48571a351545561b76a13be4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_0f5f5773",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-03T17:04:18Z",
+      "side": 1,
+      "message": "It\u0027s part of the CADF spec, if we\u0027re manipulating something, that\u0027s the target, and the type_uri field should be updated accordingly.",
+      "parentUuid": "da86d52c_a0302302",
+      "revId": "345a04ddbfe00add48571a351545561b76a13be4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_9b5632d1",
         "filename": "doc/source/event_notifications.rst",
         "patchSetId": 10
@@ -64,6 +118,24 @@
       "writtenOn": "2015-02-03T15:51:52Z",
       "side": 1,
       "message": "Do we have any examples of how someone would wire this up?",
+      "revId": "345a04ddbfe00add48571a351545561b76a13be4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_4f85cfab",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-03T17:04:18Z",
+      "side": 1,
+      "message": "not off hand, i just moved this from line 92+ down to here since it applies to both formats",
+      "parentUuid": "da86d52c_9b5632d1",
       "revId": "345a04ddbfe00add48571a351545561b76a13be4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
