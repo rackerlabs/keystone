@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_6f6e1c98",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 18
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-02-03T14:47:38Z",
+      "side": 1,
+      "message": "AFAIK, Mogran Fainberg asked not to update config samples to avoid rebase issues.",
+      "revId": "43e5435ed71b866dfe6e064235e9114fc8daf059",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
