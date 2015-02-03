@@ -25,6 +25,7 @@ from saml2 import sigver
 import xmldsig
 
 from keystone.auth import controllers as auth_controllers
+from keystone import catalog
 from keystone import config
 from keystone.contrib import federation
 from keystone.contrib.federation import controllers as federation_controllers
@@ -1870,6 +1871,19 @@ class FederatedTokenTests(FederationTests):
             self.tokens['ADMIN_ASSERTION'], 'domain',
             self.domainC['id'])
 
+        self.sp = self.sp_ref()
+        self.federation_api.create_sp('ACME', self.sp)
+
+    def sp_ref(self):
+
+        ref = {
+            'auth_url': uuid.uuid4().hex,
+            'enabled': True,
+            'description': uuid.uuid4().hex,
+            'sp_url': uuid.uuid4().hex,
+        }
+        return ref
+
     def _inject_assertion(self, context, variant):
         assertion = getattr(mapping_fixtures, variant)
         context['environment'].update(assertion)
@@ -2523,3 +2537,108 @@ class ServiceProviderTests(FederationTests):
     def test_delete_service_provider_404(self):
         url = self.base_url(suffix=uuid.uuid4().hex)
         self.delete(url, expected_status=404)
+
+
+class K2KServiceCatalogTests(FederationTests):
+
+    SP1 = 'ALPHA'
+    SP2 = 'BETA'
+    SP3 = 'GAMMA'
+
+    def load_extra_backends(self):
+        ref = {'federation_api': federation.Manager(),
+               'catalog_api': catalog.Manager()}
+        return ref
+
+    def setUp(self):
+        super(K2KServiceCatalogTests, self).setUp()
+
+        sp = self.sp_ref()
+        self.federation_api.create_sp(self.SP1, sp)
+        self.sp_alpha = {self.SP1: sp}
+
+        sp = self.sp_ref()
+        self.federation_api.create_sp(self.SP2, sp)
+        self.sp_beta = {self.SP2: sp}
+
+        sp = self.sp_ref()
+        self.federation_api.create_sp(self.SP3, sp)
+        self.sp_gamma = {self.SP3: sp}
+
+    def sp_response(self, id, ref):
+        ref.pop('enabled')
+        ref.pop('description')
+        ref['id'] = id
+        return ref
+
+    def sp_ref(self):
+        ref = {
+            'auth_url': uuid.uuid4().hex,
+            'enabled': True,
+            'description': uuid.uuid4().hex,
+            'sp_url': uuid.uuid4().hex,
+        }
+        return ref
+
+    def _validate_service_providers(self, catalog, ref):
+        service_providers_entity = None
+        for entity in catalog:
+            if 'service_providers' in entity:
+                service_providers_entity = entity
+                break
+        else:
+            raise AssertionError("Cannot find 'service_providers' entity")
+        self.assertEqual(len(ref),
+                         len(service_providers_entity['service_providers']))
+        for entity in service_providers_entity['service_providers']:
+            id = entity.get('id')
+            ref_entity = self.sp_response(id, ref.get(id))
+            self.assertDictEqual(ref_entity, entity)
+
+    def test_service_providers_in_sc(self):
+        """Check if sevice providers are listed in service catalog."""
+
+        catalog = self.catalog_api.get_v3_catalog(self.user['id'],
+                                                  self.project['id'])
+        self.assertValidCatalog(catalog)
+        ref = {}
+        for r in (self.sp_alpha, self.sp_beta, self.sp_gamma):
+            ref.update(r)
+        self._validate_service_providers(catalog, ref)
+
+    def test_service_provides_in_sc_disabled_sp(self):
+        """Test behaviour with disabled service providers.
+
+        They should not be listed in the service catalog.
+
+        """
+        # disable service provider ALPHA
+        sp_ref = {'enabled': False}
+        self.federation_api.update_sp(self.SP1, sp_ref)
+
+        catalog = self.catalog_api.get_v3_catalog(self.user['id'],
+                                                  self.project['id'])
+        self.assertValidCatalog(catalog)
+
+        ref = {}
+        for r in (self.sp_beta, self.sp_gamma):
+            ref.update(r)
+        self._validate_service_providers(catalog, ref)
+
+    def test_no_service_providers_in_sc(self):
+        """Test SC with disabled service providers
+
+        There should be no entry ``service_providers`` in the Catalog.
+        Test passes providing no Attribute was raised.
+
+        """
+        sp_ref = {'enabled': False}
+        for sp in (self.SP1, self.SP2, self.SP3):
+            self.federation_api.update_sp(sp, sp_ref)
+
+        catalog = self.catalog_api.get_v3_catalog(self.user['id'],
+                                                  self.project['id'])
+        for entity in catalog:
+            if 'service_providers' in entity:
+                raise AttributeError(_('Expected Service Catalog not to have'
+                                       'service_providers'))
