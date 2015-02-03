@@ -21,6 +21,7 @@
 import copy
 
 import oslo_i18n
+from oslo_log import log
 from oslo_serialization import jsonutils
 from oslo_utils import importutils
 from oslo_utils import strutils
@@ -38,7 +39,6 @@ from keystone.i18n import _LE
 from keystone.i18n import _LI
 from keystone.i18n import _LW
 from keystone.models import token_model
-from keystone.openstack.common import log
 
 
 CONF = config.CONF
