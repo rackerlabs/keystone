@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_1f75ed97",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-02-03T00:27:16Z",
+      "side": 1,
+      "message": "just curiosity, this audit will just works in the role assignment creation, if I make other action like remove, this will not work, right?",
+      "revId": "298710fcd591eb8b5fbd609088de7c6da672688d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
