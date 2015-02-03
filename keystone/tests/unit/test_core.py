@@ -15,10 +15,10 @@
 import sys
 import warnings
 
+from oslo_log import log
 from sqlalchemy import exc
 from testtools import matchers
 
-from keystone.openstack.common import log
 from keystone import tests
 
 
@@ -30,13 +30,6 @@ class TestTestCase(tests.TestCase):
         # if a test calls sys.exit it raises rather than exiting.
         self.assertThat(lambda: sys.exit(),
                         matchers.raises(tests.UnexpectedExit))
-
-    def test_bad_log(self):
-        # If the arguments are invalid for the string in a log it raises an
-        # exception during testing.
-        self.assertThat(
-            lambda: LOG.warn('String %(p1)s %(p2)s', {'p1': 'something'}),
-            matchers.raises(tests.BadLog))
 
     def test_sa_warning(self):
         self.assertThat(
