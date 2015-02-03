@@ -291,3 +291,15 @@ class Driver(object):
 
         """
         raise exception.NotImplemented()  # pragma: no cover
+
+    def get_sc_service_providers(self):
+        """List enabled service providers for Service Catalog
+
+        Service Provider objects contain three attributes: ``id``,
+        ``auth_url``, ``sp_url``. For example
+
+        returns: list of dictionaries instantiating enabled service providers
+        rtype: list of dicts
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
