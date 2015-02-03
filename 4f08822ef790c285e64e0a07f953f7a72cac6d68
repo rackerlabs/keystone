@@ -16,6 +16,24 @@
       "revId": "4f08822ef790c285e64e0a07f953f7a72cac6d68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_81c5ee8f",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-03T12:06:07Z",
+      "side": 1,
+      "message": "Nice catch! I think replacing \u0027if value\u0027 by \u0027if value is not None\u0027 should be enough.\n\nYes, we do need the keys for formatting the error message.",
+      "parentUuid": "da86d52c_56a49e56",
+      "revId": "4f08822ef790c285e64e0a07f953f7a72cac6d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
