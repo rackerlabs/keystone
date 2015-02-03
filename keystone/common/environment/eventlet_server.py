@@ -25,9 +25,9 @@ import sys
 import eventlet
 import eventlet.wsgi
 import greenlet
+from oslo_log import log
 
 from keystone.i18n import _LE, _LI
-from keystone.openstack.common import log
 
 
 LOG = log.getLogger(__name__)

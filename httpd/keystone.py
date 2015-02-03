@@ -16,6 +16,7 @@ import os
 
 from keystone.server import wsgi as wsgi_server
 
+
 name = os.path.basename(__file__)
 
 # NOTE(ldbragst): 'application' is required in this context by WSGI spec.
