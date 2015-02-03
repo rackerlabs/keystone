@@ -15,9 +15,10 @@
 
 import os
 
+from oslo_log import log
+
 from keystone.common import config
 from keystone import exception
-from keystone.openstack.common import log
 
 
 CONF = config.CONF
@@ -43,18 +44,13 @@ def set_default_for_default_log_levels():
         'keystone.common._memcache_pool=INFO',
     ]
 
-    def find_default_log_levels_opt():
-        for opt in log.log_opts:
-            if opt.dest == 'default_log_levels':
-                return opt
-
-    opt = find_default_log_levels_opt()
-    opt.default.extend(extra_log_level_defaults)
+    log.register_options(CONF)
+    CONF.default_log_levels.extend(extra_log_level_defaults)
 
 
 def setup_logging():
     """Sets up logging for the keystone package."""
-    log.setup('keystone')
+    log.setup(CONF, 'keystone')
 
 
 def find_paste_config():
