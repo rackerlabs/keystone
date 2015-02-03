@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_aa300202",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-03T15:28:22Z",
+      "side": 1,
+      "message": "nit: s/have/has/",
+      "revId": "43e5435ed71b866dfe6e064235e9114fc8daf059",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_6f6e1c98",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 18
@@ -13,6 +30,40 @@
       "writtenOn": "2015-02-03T14:47:38Z",
       "side": 1,
       "message": "AFAIK, Mogran Fainberg asked not to update config samples to avoid rebase issues.",
+      "revId": "43e5435ed71b866dfe6e064235e9114fc8daf059",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_c5c0c92c",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-03T15:28:22Z",
+      "side": 1,
+      "message": "nit: at what point should we make a config group for these?",
+      "revId": "43e5435ed71b866dfe6e064235e9114fc8daf059",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_856ed194",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-03T15:28:22Z",
+      "side": 1,
+      "message": "by core do we mean manager layer?",
       "revId": "43e5435ed71b866dfe6e064235e9114fc8daf059",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
