@@ -12,6 +12,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_log import log
+
 from keystone import auth
 from keystone.auth.plugins import mapped
 from keystone.common import dependency
@@ -20,7 +22,6 @@ from keystone import config
 from keystone import exception
 from keystone.i18n import _, _LE
 from keystone.models import token_model
-from keystone.openstack.common import log
 
 
 LOG = log.getLogger(__name__)
