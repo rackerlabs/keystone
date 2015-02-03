@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_806ebf94",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 315,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-03T15:40:06Z",
+      "side": 1,
+      "message": "Can this be grouped with the test_update_domain() and test_delete_domain() tests?",
+      "revId": "67e37cd48c15d1fb3fc37d4714a5bd5f7d4ec6e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
