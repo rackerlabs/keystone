@@ -694,3 +694,33 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
         url = '/credentials'
         self.get(url, auth=self.auth,
                  expected_status=exception.ForbiddenAction.code)
+
+    def test_get_ec2_credentials(self):
+        another_user = self.new_user_ref(domain_id=self.domainA['id'])
+        password = another_user['password']
+        another_user = self.identity_api.create_user(another_user)
+
+        # Here we use ec2 API rather than credenti_api to create ec2
+        # credential, this is because we don't want to do a lot things that
+        # API already done
+        just_user_auth = self.build_authentication_request(
+            user_id=self.just_a_user['id'],
+            password=self.just_a_user['password'],
+            project_id=self.project['id'])
+        url = '/users/%s/credentials/OS-EC2' % self.just_a_user['id']
+        r = self.post(url, body={'tenant_id': self.project['id']},
+                      auth=just_user_auth)
+
+        # another normal user can't get the credential
+        another_user_auth = self.build_authentication_request(
+            user_id=another_user['id'],
+            password=password)
+        url = '/users/%s/credentials/OS-EC2/%s' % (
+            another_user['id'], r.result['credential']['access'])
+        self.get(url, auth=another_user_auth,
+                 expected_status=exception.ForbiddenAction.code)
+
+        # the owner can get the credential
+        url = '/users/%s/credentials/OS-EC2/%s' % (
+            self.just_a_user['id'], r.result['credential']['access'])
+        self.get(url, auth=just_user_auth)
