@@ -308,3 +308,18 @@ class Federation(core.Driver):
             for attr in ServiceProviderModel.mutable_attributes:
                 setattr(sp_ref, attr, getattr(new_sp, attr))
         return sp_ref.to_dict()
+
+    def get_sc_service_providers(self):
+        def service_catalog(sp):
+            ref = {
+                'auth_url': sp.auth_url,
+                'id': sp.id,
+                'sp_url': sp.sp_url
+            }
+            return ref
+
+        with sql.transaction() as session:
+            sps = session.query(ServiceProviderModel)
+            sps = sps.filter_by(enabled=True)
+        sps_list = [service_catalog(sp) for sp in sps]
+        return sps_list
