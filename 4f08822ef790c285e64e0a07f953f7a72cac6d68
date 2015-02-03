@@ -34,6 +34,24 @@
       "revId": "4f08822ef790c285e64e0a07f953f7a72cac6d68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_21c1a2e4",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-02-03T12:19:33Z",
+      "side": 1,
+      "message": "I\u0027d recommend to use six.iteritems too - python3 will be grateful :)",
+      "parentUuid": "da86d52c_81c5ee8f",
+      "revId": "4f08822ef790c285e64e0a07f953f7a72cac6d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
