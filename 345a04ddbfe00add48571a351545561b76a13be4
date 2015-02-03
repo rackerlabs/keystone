@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_e02cdb04",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-03T15:51:52Z",
+      "side": 1,
+      "message": "this is something that comes with oslo.messaging?",
+      "revId": "345a04ddbfe00add48571a351545561b76a13be4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_db9c2ac3",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-03T15:51:52Z",
+      "side": 1,
+      "message": "What about when an authentication call fails? We still send a notification in that case, right?",
+      "revId": "345a04ddbfe00add48571a351545561b76a13be4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_a0302302",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-03T15:51:52Z",
+      "side": 1,
+      "message": "are there special things that end users can do with this?",
+      "revId": "345a04ddbfe00add48571a351545561b76a13be4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_9b5632d1",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 403,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-03T15:51:52Z",
+      "side": 1,
+      "message": "Do we have any examples of how someone would wire this up?",
+      "revId": "345a04ddbfe00add48571a351545561b76a13be4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
