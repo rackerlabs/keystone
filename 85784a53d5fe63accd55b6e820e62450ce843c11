@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_aa00f901",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 17
+      },
+      "lineNbr": 692,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-03T17:33:36Z",
+      "side": 1,
+      "message": "I\u0027ll add an example in config.py.",
+      "parentUuid": "da86d52c_1e8c067f",
+      "revId": "85784a53d5fe63accd55b6e820e62450ce843c11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_3e38ea9f",
         "filename": "etc/sso_callback_template.html",
         "patchSetId": 17
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-03T07:56:21Z",
       "side": 1,
       "message": "It would be nice if this HTML web page could pass the HTML Validator (http://validator.w3.org/). I think the work to do is not much and the reward is very good. I can do it, if you want.",
+      "revId": "85784a53d5fe63accd55b6e820e62450ce843c11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_6aae0187",
+        "filename": "etc/sso_callback_template.html",
+        "patchSetId": 17
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-03T17:33:36Z",
+      "side": 1,
+      "message": "done, great suggestion, i made the changes, please review again",
+      "parentUuid": "da86d52c_3e38ea9f",
       "revId": "85784a53d5fe63accd55b6e820e62450ce843c11",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_aa05597b",
+        "filename": "etc/sso_callback_template.html",
+        "patchSetId": 17
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-03T17:33:36Z",
+      "side": 1,
+      "message": "Done - used submit_no_javascript as id and name",
+      "parentUuid": "da86d52c_1e5166d8",
+      "revId": "85784a53d5fe63accd55b6e820e62450ce843c11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_3e00ea00",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 17
@@ -64,6 +118,24 @@
       "writtenOn": "2015-02-03T07:56:21Z",
       "side": 1,
       "message": "Maybe better ?:\n\nmsg \u003d _(\u0027Missing entity ID from environment\u0027)\n\nraise exception.Unauthorized(msg)",
+      "revId": "85784a53d5fe63accd55b6e820e62450ce843c11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_ea367151",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-03T17:33:36Z",
+      "side": 1,
+      "message": "Done - fixed all these to be translation compliant",
+      "parentUuid": "da86d52c_3e00ea00",
       "revId": "85784a53d5fe63accd55b6e820e62450ce843c11",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
