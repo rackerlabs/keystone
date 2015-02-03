@@ -763,9 +763,7 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             resp.json['links']['self'])
 
     def assertValidCatalog(self, entity):
-        self.assertIsInstance(entity, list)
-        self.assertTrue(len(entity) > 0)
-        for service in entity:
+        def validate_endpoints(service):
             self.assertIsNotNone(service.get('id'))
             self.assertIsNotNone(service.get('name'))
             self.assertIsNotNone(service.get('type'))
@@ -778,6 +776,24 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
                 self.assertNotIn('enabled', endpoint)
                 self.assertNotIn('legacy_endpoint_id', endpoint)
                 self.assertNotIn('service_id', endpoint)
+
+        def validate_service_providers(service_providers):
+            # make sure the list is not empty
+            self.assertTrue(service_providers)
+            for sp in service_providers.get('service_providers', []):
+                self.assertIn('id', sp)
+                self.assertIn('auth_url', sp)
+                self.assertIn('sp_url', sp)
+                self.assertNotIn('enabled', sp)
+                self.assertNotIn('description', sp)
+
+        self.assertIsInstance(entity, list)
+        self.assertTrue(entity)
+        for service in entity:
+            if 'endpoints' in service:
+                validate_endpoints(service)
+            if 'service_providers' in service:
+                validate_service_providers(service)
 
     # region validation
 
