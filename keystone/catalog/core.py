@@ -80,6 +80,7 @@ def format_url(url, substitutions):
     return result
 
 
+@dependency.optional('federation_api')
 @dependency.provider('catalog_api')
 class Manager(manager.Manager):
     """Default pivot point for the Catalog backend.
@@ -222,6 +223,36 @@ class Manager(manager.Manager):
             return self.driver.get_catalog(user_id, tenant_id, metadata)
         except exception.NotFound:
             raise exception.NotFound('Catalog not found for user and tenant')
+
+    def get_v3_catalog(self, user_id, project_id, metadata=None):
+        v3_catalog = self.driver.get_v3_catalog(user_id, project_id,
+                                                metadata=metadata)
+        self.add_federation_service_providers(v3_catalog)
+        return v3_catalog
+
+    def add_federation_service_providers(self, v3_catalog):
+        """Add service providers to Service Catalog dict
+
+        Modify v3_catalog, and add service_providers entry.
+        Do this only if resulting list is non-empty.
+
+        :param v3_catalog: Service Catalog to be returned
+        :type v3_catalog: list of dictionaries
+
+        """
+        federation_api = getattr(self, 'federation_api', None)
+        if federation_api is None:
+            return
+
+        sps_list = federation_api.get_sc_service_providers()
+
+        if not sps_list:
+            return
+
+        service_providers = {
+            'service_providers': sps_list
+        }
+        v3_catalog.append(service_providers)
 
 
 @six.add_metaclass(abc.ABCMeta)
