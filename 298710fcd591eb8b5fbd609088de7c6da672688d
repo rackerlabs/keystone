@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_aa7802f3",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-03T15:16:40Z",
+      "side": 1,
+      "message": "Will this be referenced by other modules, or can it be named according to private naming conventions?",
+      "revId": "298710fcd591eb8b5fbd609088de7c6da672688d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_1f75ed97",
         "filename": "keystone/notifications.py",
         "patchSetId": 4
