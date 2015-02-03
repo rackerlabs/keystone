@@ -15,9 +15,10 @@
 
 import os
 
+from oslo_log import log
+
 from keystone.common import config
 from keystone import exception
-from keystone.openstack.common import log
 
 
 CONF = config.CONF
