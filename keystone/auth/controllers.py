@@ -15,6 +15,7 @@
 import sys
 
 from keystoneclient.common import cms
+from oslo_log import log
 from oslo_serialization import jsonutils
 from oslo_utils import importutils
 from oslo_utils import timeutils
@@ -27,8 +28,7 @@ from keystone.common import wsgi
 from keystone import config
 from keystone.contrib import federation
 from keystone import exception
-from keystone.i18n import _, _LI, _LW
-from keystone.openstack.common import log
+from keystone.i18n import _, _LI, _LW, _LE
 
 
 LOG = log.getLogger(__name__)
@@ -151,7 +151,8 @@ class AuthInfo(object):
                 project_id=project_ref['id'],
                 project=project_ref)
         except AssertionError as e:
-            LOG.warning(e)
+            msg = _LW('Project is disabled: %s')
+            LOG.warning(msg, e)
             six.reraise(exception.Unauthorized, exception.Unauthorized(e),
                         sys.exc_info()[2])
 
@@ -161,7 +162,8 @@ class AuthInfo(object):
                 domain_id=domain_ref['id'],
                 domain=domain_ref)
         except AssertionError as e:
-            LOG.warning(e)
+            msg = _LW('Domain is disabled: %s')
+            LOG.warning(msg, e)
             six.reraise(exception.Unauthorized, exception.Unauthorized(e),
                         sys.exc_info()[2])
 
@@ -179,7 +181,8 @@ class AuthInfo(object):
             else:
                 domain_ref = self.resource_api.get_domain(domain_id)
         except exception.DomainNotFound as e:
-            LOG.exception(e)
+            msg = _LE('Domain not found: %s')
+            LOG.exception(msg, domain_id)
             raise exception.Unauthorized(e)
         self._assert_domain_is_enabled(domain_ref)
         return domain_ref
@@ -206,7 +209,8 @@ class AuthInfo(object):
                 # disabled.
                 self._lookup_domain({'id': project_ref['domain_id']})
         except exception.ProjectNotFound as e:
-            LOG.exception(e)
+            msg = _LE('Project not found: %s')
+            LOG.exception(msg, project_id)
             raise exception.Unauthorized(e)
         self._assert_project_is_enabled(project_ref)
         return project_ref
@@ -426,7 +430,8 @@ class Auth(controller.V3Controller):
         try:
             user_ref = self.identity_api.get_user(auth_context['user_id'])
         except exception.UserNotFound as e:
-            LOG.exception(e)
+            msg = _LE('User not found: %s')
+            LOG.exception(msg, auth_context['user_id'])
             raise exception.Unauthorized(e)
 
         default_project_id = user_ref.get('default_project_id')
