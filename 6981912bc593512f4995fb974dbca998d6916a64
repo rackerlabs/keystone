@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_a594b5e2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-03T15:32:28Z",
+      "side": 1,
+      "message": "nit: Start publicizing create/update/delete events for regions, endpoints, policy and service resources. \n\nIf another patch isn\u0027t pushed, don\u0027t worry about updating.",
+      "revId": "6981912bc593512f4995fb974dbca998d6916a64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
