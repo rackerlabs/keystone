@@ -27,6 +27,8 @@ import warnings
 
 import fixtures
 from oslo_config import fixture as config_fixture
+from oslo_log.fixture import logging_error
+from oslo_log import log
 import oslotest.base as oslotest
 from oslotest import mockpatch
 import six
@@ -50,7 +52,6 @@ from keystone import controllers
 from keystone import exception
 from keystone.i18n import _LW
 from keystone import notifications
-from keystone.openstack.common import log
 from keystone.server import common
 from keystone import service
 from keystone.tests import ksfixtures
@@ -84,6 +85,7 @@ def _calc_tmpdir():
 TMPDIR = _calc_tmpdir()
 
 CONF = config.CONF
+log.register_options(CONF)
 
 IN_MEM_DB_CONN_STRING = 'sqlite://'
 
@@ -231,11 +233,6 @@ def skip_if_no_multiple_domains_support(f):
 
 
 class UnexpectedExit(Exception):
-    pass
-
-
-class BadLog(Exception):
-    """Raised on invalid call to logging (parameter mismatch)."""
     pass
 
 
@@ -387,8 +384,7 @@ class TestCase(BaseTestCase):
 
         self.useFixture(mockpatch.PatchObject(sys, 'exit',
                                               side_effect=UnexpectedExit))
-        self.useFixture(mockpatch.PatchObject(logging.Handler, 'handleError',
-                                              side_effect=BadLog))
+        self.useFixture(logging_error.get_logging_handle_error_fixture())
         self.config_fixture = self.useFixture(config_fixture.Config(CONF))
         self.config(self.config_files())
 
