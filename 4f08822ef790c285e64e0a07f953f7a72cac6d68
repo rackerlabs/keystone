@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_56a49e56",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 563,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-02-03T11:57:36Z",
+      "side": 1,
+      "message": "_assert_single_arg(a\u003d0, b\u003dNone) will fail while valid single arg is present\n\nkwargs.iteritems -\u003e six.iteritems(kwargs) and as we don\u0027t need keys it\u0027d rather be like this:\n\nnonempty_values_count \u003d len([v for v in six.itervalues(kwargs) if v is not None])",
+      "revId": "4f08822ef790c285e64e0a07f953f7a72cac6d68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
