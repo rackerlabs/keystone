@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_e24b1e57",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-03T01:04:09Z",
+      "side": 1,
+      "message": "all of the validation logic should be in the same place. Change the code so that import order doesn\u0027t matter. Doing things at import-time causes problems like this so the better solution is to not do things at import-time.",
+      "revId": "ec5000468511a5fc4a77ec942846784a8e10bf6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
