@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_9e19bf7b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 18
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-03T16:15:18Z",
+      "side": 1,
+      "message": "fixed in next patch",
+      "parentUuid": "da86d52c_aa300202",
+      "revId": "43e5435ed71b866dfe6e064235e9114fc8daf059",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_6f6e1c98",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 18
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-03T14:47:38Z",
       "side": 1,
       "message": "AFAIK, Mogran Fainberg asked not to update config samples to avoid rebase issues.",
+      "revId": "43e5435ed71b866dfe6e064235e9114fc8daf059",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_7b07bd1c",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 18
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-03T16:15:18Z",
+      "side": 1,
+      "message": "i will undo these changes",
+      "parentUuid": "da86d52c_6f6e1c98",
       "revId": "43e5435ed71b866dfe6e064235e9114fc8daf059",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_3b2625cf",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-03T16:15:18Z",
+      "side": 1,
+      "message": "that\u0027s a good point, fwiw it\u0027s at least made a bit clearer since it\u0027s prefixed with:\n\n  # From keystone.notifications\n\nhttps://github.com/openstack/keystone/blob/master/etc/keystone.conf.sample#L114-L119",
+      "parentUuid": "da86d52c_c5c0c92c",
+      "revId": "43e5435ed71b866dfe6e064235e9114fc8daf059",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_856ed194",
         "filename": "keystone/notifications.py",
         "patchSetId": 18
@@ -64,6 +118,24 @@
       "writtenOn": "2015-02-03T15:28:22Z",
       "side": 1,
       "message": "by core do we mean manager layer?",
+      "revId": "43e5435ed71b866dfe6e064235e9114fc8daf059",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_dbc0a9e2",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-03T16:15:18Z",
+      "side": 1,
+      "message": "yes, i can use that terminology instead",
+      "parentUuid": "da86d52c_856ed194",
       "revId": "43e5435ed71b866dfe6e064235e9114fc8daf059",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
