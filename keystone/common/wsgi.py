@@ -21,6 +21,7 @@
 import copy
 
 import oslo_i18n
+from oslo_log import log
 from oslo_serialization import jsonutils
 from oslo_utils import importutils
 from oslo_utils import strutils
@@ -34,10 +35,10 @@ from keystone.common import dependency
 from keystone.common import utils
 from keystone import exception
 from keystone.i18n import _
+from keystone.i18n import _LE
 from keystone.i18n import _LI
 from keystone.i18n import _LW
 from keystone.models import token_model
-from keystone.openstack.common import log
 
 
 CONF = config.CONF
@@ -239,16 +240,19 @@ class Application(BaseApplication):
             return render_exception(e, context=context,
                                     user_locale=best_match_language(req))
         except exception.Error as e:
-            LOG.warning(e)
+            msg = _LW('Request failed: %s')
+            LOG.warning(msg, e)
             return render_exception(e, context=context,
                                     user_locale=best_match_language(req))
         except TypeError as e:
-            LOG.exception(e)
+            msg = _LE('Validation error occurred: %s')
+            LOG.exception(msg, e)
             return render_exception(exception.ValidationError(e),
                                     context=context,
                                     user_locale=best_match_language(req))
         except Exception as e:
-            LOG.exception(e)
+            msg = _LE('Unexpected error occurred: %s')
+            LOG.exception(msg, e)
             return render_exception(exception.UnexpectedError(exception=e),
                                     context=context,
                                     user_locale=best_match_language(req))
@@ -443,16 +447,19 @@ class Middleware(Application):
             response = request.get_response(self.application)
             return self.process_response(request, response)
         except exception.Error as e:
-            LOG.warning(e)
+            msg = _LW('Unexpected error occurred: %s')
+            LOG.warning(msg, e)
             return render_exception(e, request=request,
                                     user_locale=best_match_language(request))
         except TypeError as e:
-            LOG.exception(e)
+            msg = _LE('Validation error occurred: %s')
+            LOG.exception(msg, e)
             return render_exception(exception.ValidationError(e),
                                     request=request,
                                     user_locale=best_match_language(request))
         except Exception as e:
-            LOG.exception(e)
+            msg = _LE('Unexpected error occurred: %s')
+            LOG.exception(msg, e)
             return render_exception(exception.UnexpectedError(exception=e),
                                     request=request,
                                     user_locale=best_match_language(request))
