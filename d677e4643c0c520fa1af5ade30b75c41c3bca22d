@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_5c1cc677",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 12631
+      },
+      "writtenOn": "2015-02-03T09:17:58Z",
+      "side": 1,
+      "message": "How it can be self.driver.is_sql or self._any_sql ??? At least it must be \"and\", not \"or\". And if it will be \"and\" it don\u0027t work as required.",
+      "parentUuid": "da86d52c_7022afba",
+      "revId": "d677e4643c0c520fa1af5ade30b75c41c3bca22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_5095ab3e",
         "filename": "keystone/identity/core.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-02T16:56:58Z",
       "side": 1,
       "message": "I don\u0027t like this because it weakens the interface. Right now this has to be something that at least has an `is_sql` attribute (maybe more things if I read more of the code) If you want to keep this section I think you can just write \u0027self._any_sql \u003d self.driver.is_sql\u0027 and call it a day.",
+      "revId": "d677e4643c0c520fa1af5ade30b75c41c3bca22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_1cedeeef",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 12631
+      },
+      "writtenOn": "2015-02-03T09:17:58Z",
+      "side": 1,
+      "message": "Actually it was done, as you say (see patchset 4). But self.driver can be None... so we need this check and this section.",
+      "parentUuid": "da86d52c_5095ab3e",
       "revId": "d677e4643c0c520fa1af5ade30b75c41c3bca22d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
