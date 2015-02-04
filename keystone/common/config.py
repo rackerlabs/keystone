@@ -856,6 +856,40 @@ FILE_OPTIONS = {
                    help='Entrypoint for the oAuth1.0 auth plugin module in '
                         'the keystone.auth.oauth1 namespace.'),
     ],
+    'tokenless_auth': [
+        cfg.MultiStrOpt('trusted_issuer', default=[],
+                        help='The list of trusted issuers to further filter '
+                             'the certificates that are allowed to '
+                             'participate in the X.509 tokenless '
+                             'authorization. If the option is absent and '
+                             'check_trusted_issuer is true then no '
+                             'certificates will be allowed. '
+                             'The naming format for the attributes of a '
+                             'Distinguished Name(DN) must be separated by a '
+                             'comma and contain no spaces. This configuration '
+                             'option may be repeated for multiple values. '
+                             'For example: '
+                             'trusted_isser=CN=john,OU=keystone,O=openstack '
+                             'trusted_isser=CN=mary,OU=eng,O=abc'),
+        cfg.StrOpt('protocol', default='x509',
+                   help='The protocol name for the X.509 tokenless '
+                        'authorization along with the IdP name to look up '
+                        'its corresponding mapping.'),
+        cfg.StrOpt('issuer_attribute', default='SSL_CLIENT_I_DN',
+                   help='The issuer attribute that is served as a IdP for '
+                        'the X.509 tokenless authorization along with the '
+                        'protocol to look up its corresponding mapping.'
+                        'It is the attribute name in the WSGI environment '
+                        'that references to the Issuer of the client '
+                        'certificate.'),
+        cfg.BoolOpt('ephemeral_user', default=False,
+                    help='If this option is true, the user referenced'
+                         'from the client certificate CN does not need '
+                         'to exist. A group needs to be defined in the '
+                         'corresponding mapping and this ephemeral user '
+                         'will have the same roles as what are assigned '
+                         'to the group.'),
+    ],
     'paste_deploy': [
         cfg.StrOpt('config_file', default='keystone-paste.ini',
                    help='Name of the paste configuration file that defines '
