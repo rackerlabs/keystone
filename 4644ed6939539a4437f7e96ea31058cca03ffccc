@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_1643d46c",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-02-04T11:32:39Z",
+      "side": 1,
+      "message": "I think exception logging is to be done in a caller, not in the callee. Although I assume it would be good to have more informative exception message.",
+      "parentUuid": "da86d52c_8cd97a24",
+      "revId": "4644ed6939539a4437f7e96ea31058cca03ffccc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_6cd0c6f6",
         "filename": "keystone/middleware/basic_auth.py",
         "patchSetId": 10
