@@ -359,7 +359,7 @@ class V3TokenDataHelper(object):
             for x in ('roles', 'user', 'catalog', 'project', 'domain'):
                 if x in token:
                     token_data[x] = token[x]
-
+                    
         if CONF.trust.enabled and trust:
             if user_id != trust['trustee_user_id']:
                 raise exception.Forbidden(_('User is not a trustee.'))
