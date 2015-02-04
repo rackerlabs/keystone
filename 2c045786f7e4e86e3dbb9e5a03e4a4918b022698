@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_315e2b77",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 740,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-02-04T06:57:30Z",
+      "side": 1,
+      "message": "Meant creating new roles?",
+      "revId": "2c045786f7e4e86e3dbb9e5a03e4a4918b022698",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
