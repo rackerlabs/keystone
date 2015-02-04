@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_fa4c5aa0",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-02-04T14:53:36Z",
+      "side": 1,
+      "message": "Well, what if local_config is specified while global_config is not? Is it premature optimization or I miss something?",
+      "revId": "1980c7f62a625f852b8c41d289e8e66a182445d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
