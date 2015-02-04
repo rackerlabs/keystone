@@ -22,7 +22,6 @@ from keystone import exception
 from keystone.i18n import _, _LW
 from keystone.models import token_model
 
-
 AUTH_CONTEXT_ENV = 'KEYSTONE_AUTH_CONTEXT'
 """Environment variable used to convey the Keystone auth context.
 
