@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_2f8b0969",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-04T17:33:39Z",
+      "side": 1,
+      "message": "What\u0027s this note here for? If current code is incompatible with python3, it should be in the bugtracker with related tag",
+      "revId": "48502ba9d256c212083786bd57c612f8b7e4b96d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_8f3f9586",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-04T17:33:39Z",
+      "side": 1,
+      "message": "AFAIK class cannot be here. It should go to a separate :type \u003ctype\u003e: entry.",
+      "revId": "48502ba9d256c212083786bd57c612f8b7e4b96d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_84393cf4",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-04T17:33:39Z",
+      "side": 1,
+      "message": "s/return/returns/",
+      "revId": "48502ba9d256c212083786bd57c612f8b7e4b96d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
