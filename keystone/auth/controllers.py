@@ -282,7 +282,12 @@ class AuthInfo(object):
             raise exception.ValidationError(attribute='auth',
                                             target='request body')
 
-        self._validate_auth_methods()
+        # NOTE(chioleong): This will be the tokenless auth.
+        # There is no auth method will be provided; therefore
+        # validating the auth method is not necessary in this case.
+        if (not CONF.tokenless_auth.trusted_issuer and
+                not CONF.tokenless_auth.no_check_trusted_issuer):
+            self._validate_auth_methods()
         self._validate_and_normalize_scope_data()
 
     def get_method_names(self):
