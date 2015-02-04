@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_967504fc",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-02-04T11:28:43Z",
+      "side": 1,
+      "message": "Move this if 2 lines lower - inside next if block. paste_deploy_config isn\u0027t used in this scope.",
+      "revId": "edcb1630991fe47b470ef980aa09f1105231e02a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f6ce402d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-02-04T11:28:43Z",
+      "side": 1,
+      "message": "Same here: paste_deploy_config only used for exception raising",
+      "revId": "edcb1630991fe47b470ef980aa09f1105231e02a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_56dd4cdf",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-02-04T11:28:43Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "edcb1630991fe47b470ef980aa09f1105231e02a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
