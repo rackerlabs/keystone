@@ -19,6 +19,7 @@ from keystone.auth.plugins import mapped
 from keystone.common import dependency
 from keystone.common import wsgi
 from keystone import exception
+from keystone.i18n import _
 from keystone.models import token_model
 
 
@@ -86,5 +87,5 @@ def token_authenticate(context, auth_payload, user_context, token_ref):
         user_context['method_names'].extend(token_ref.methods)
 
     except AssertionError as e:
-        LOG.error(e)
+        LOG.error(_('token authentication failed: %s'), e)
         raise exception.Unauthorized(e)
