@@ -54,7 +54,7 @@ class Mapped(auth.AuthMethodHandler):
         ``OS-FEDERATION:protocol``
 
         """
-
+        
         if 'id' in auth_payload:
             token_ref = self._get_token_ref(auth_payload)
             handle_scoped_token(context, auth_payload, auth_context, token_ref,

@@ -34,7 +34,6 @@ class OAuth(auth.AuthMethodHandler):
 
     def authenticate(self, context, auth_info, auth_context):
         """Turn a signed request with an access key into a keystone token."""
-
         if not self.oauth_api:
             raise exception.Unauthorized(_('%s not supported') % self.method)
 

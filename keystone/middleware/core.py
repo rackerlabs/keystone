@@ -16,10 +16,15 @@ from oslo_log import log
 from oslo_middleware import sizelimit
 from oslo_serialization import jsonutils
 import six
+import urllib
 
+from keystone.auth
 from keystone.common import authorization
 from keystone.common import config
 from keystone.common import wsgi
+from keystone.common import dependency
+from keystone.common.ldap import core as ldap_core
+from keystone.token.providers import common
 from keystone import exception
 from keystone.i18n import _LW
 from keystone.models import token_model
@@ -114,7 +119,7 @@ class JsonBodyMiddleware(wsgi.Middleware):
             e = exception.ValidationError(attribute='application/json',
                                           target='Content-Type header')
             return wsgi.render_exception(e, request=request)
-
+        
         params_parsed = {}
         try:
             params_parsed = jsonutils.loads(params_json)
@@ -195,6 +200,7 @@ class RequestBodySizeLimiter(sizelimit.RequestBodySizeLimiter):
         super(RequestBodySizeLimiter, self).__init__(*args, **kwargs)
 
 
+@dependency.requires('identity_api', 'assignment_api')
 class AuthContextMiddleware(wsgi.Middleware):
     """Build the authentication context from the request auth token."""
 
@@ -223,18 +229,81 @@ class AuthContextMiddleware(wsgi.Middleware):
         except exception.TokenNotFound:
             LOG.warning(_LW('RBAC: Invalid token'))
             raise exception.Unauthorized()
+        
+    def _build_auth_context_from_ssl_request(self, env):
+        scope = self._build_scope(env)
+        
+        tokenless_helper = authorization.TokenlessAuthHelper()
 
+        (domain_id, project_id, trust_ref, unscoped) = tokenless_helper.get_scope(env)
+        user_ref = tokenless_helper.get_mapped_user(env)
+
+        token_helper = common.V3TokenDataHelper()
+        token_data = token_helper.get_token_data(
+                        user_id=user_ref['id'], 
+                        method_names=['x509'],
+                        extras={},
+                        domain_id=domain_id,
+                        project_id=project_id
+                        )
+
+        auth_context = {'user_id': user_ref['id']}
+        auth_context['is_delegated_auth'] = False
+        if domain_id:
+            auth_context['domain_id'] = domain_id
+        if project_id:
+            auth_context['project_id'] = project_id
+        auth_context['roles'] = [role['name'] for role in token_data['token']['roles']]
+        return auth_context
+
+    def _validate_truested_issuer(self, client_issuer):
+        """To further filter the certificates that are allowed to participate 
+        in tokenless authorization. If the config option 'trusted_issuers'
+        is absent or not containing any trusted issuer DNs, no certificates
+        will be allowed in tokenless authoriztion.
+        
+        :param client_issuer: The client issuer to be trusted
+        :returns: True is client_issuer is trusted; otherwise False
+        """
+        trusted = False
+        
+        # NOTE(chioleong): The trusted issuers replace the special 
+        # character commas in the string using the url %2C escape quoted
+        for dn in CONF.auth.trusted_issuers:
+            # dn is url quoted and client_issuer is not.
+            if ldap_core.is_dn_equal(urllib.unquote(dn), client_issuer):
+                trusted = True
+                break
+
+        return trusted
+            
+    def _is_ssl_authz_applicable(self, env):
+        issuer_attr_present = 'SSL_CLIENT_I_DN' in env
+        scope_present = ('HTTP_X_PROJECT_ID' in env or
+                         ('HTTP_X_PROJECT_NAME' in env and
+                          ('HTTP_X_PROJECT_DOMAIN_ID' in env or
+                           'HTTP_X_PROJECT_DOMAIN_NAME' in env)))
+        return issuer_attr_present and scope_present
+                        
     def process_request(self, request):
-        if AUTH_TOKEN_HEADER not in request.headers:
-            LOG.debug(('Auth token not in the request header. '
-                       'Will not build auth context.'))
-            return
-
         if authorization.AUTH_CONTEXT_ENV in request.environ:
             msg = _LW('Auth context already exists in the request environment')
             LOG.warning(msg)
             return
+        
+        # NOTE(chioleong): Tokenless authorization is not applicable to
+        # token request API.
+        if (request.environ['PATH_INFO'].startswith('/auth/tokens') and
+            request.environ['REQUEST_METHOD'] == 'POST'):
+            return
 
-        auth_context = self._build_auth_context(request)
+        auth_context = None
+        if AUTH_TOKEN_HEADER in request.headers:
+            auth_context = self._build_auth_context(request)
+        elif (self._is_ssl_authz_applicable(request.environ) and
+            self._validate_truested_issuer(request.environ['SSL_CLIENT_I_DN'])):
+            auth_context = self._build_auth_context_from_ssl_request(
+                request.environ)
         LOG.debug('RBAC: auth_context: %s', auth_context)
-        request.environ[authorization.AUTH_CONTEXT_ENV] = auth_context
+        if auth_context:
+            request.environ[authorization.AUTH_CONTEXT_ENV] = auth_context

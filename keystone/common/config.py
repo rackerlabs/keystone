@@ -836,6 +836,17 @@ FILE_OPTIONS = {
         cfg.StrOpt('external',
                    default='keystone.auth.plugins.external.DefaultDomain',
                    help='The external (REMOTE_USER) auth plugin module.'),
+        cfg.ListOpt('trusted_issuers', default=[],
+                    help='A list of trusted issuers to further filter the '
+                    'certificates that are allowed to participate in the '
+                    'tokenless authorization. If it is absent, '
+                    'no certificates will be allowed in the tokenless '
+                    'authoriztion.'
+                    'The format of each DNs in the list need to use '
+                    'URL escaped characters due to limitation of the parser '
+                    'for the character comma. For example: '
+                    'DN: CN=foo,OU=keystone,O=openstack '
+                    'URL escaped: CN%3Dfoo%2COU%3Dkeystone%2CO%3Dopenstack'),
     ],
     'paste_deploy': [
         cfg.StrOpt('config_file', default='keystone-paste.ini',

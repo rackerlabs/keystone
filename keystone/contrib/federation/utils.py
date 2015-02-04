@@ -384,7 +384,7 @@ class RuleProcessor(object):
                 for local in rule['local']:
                     new_local = self._update_local_mapping(local, direct_maps)
                     identity_values.append(new_local)
-
+                    
         LOG.debug('identity_values: %s', identity_values)
         mapped_properties = self._transform(identity_values)
         LOG.debug('mapped_properties: %s', mapped_properties)
@@ -415,6 +415,7 @@ class RuleProcessor(object):
 
         # initialize the group_ids as a set to eliminate duplicates
         user_name = None
+        domain_name = None
         group_ids = set()
         group_names = list()
         groups_by_domain = dict()
@@ -427,6 +428,12 @@ class RuleProcessor(object):
                                 identity_value['user']['name'])
                 else:
                     user_name = identity_value['user']['name']
+                # if a mapping outputs more than one domain name, log it
+                if domain_name is not None:
+                    LOG.warning(_LW('Ignoring domain name %s'),
+                                identity_value['user']['domain'])
+                else:
+                    domain_name = identity_value['user']['domain']
             if 'group' in identity_value:
                 group = identity_value['group']
                 if 'id' in group:
@@ -436,6 +443,11 @@ class RuleProcessor(object):
                               group['domain'].get('id'))
                     groups_by_domain.setdefault(domain, list()).append(group)
                 group_names.extend(extract_groups(groups_by_domain))
+
+        if domain_name is not None:
+            return {'name': user_name,
+                    'group_ids': list(group_ids),
+                    'domain': domain_name}
 
         return {'name': user_name,
                 'group_ids': list(group_ids),
