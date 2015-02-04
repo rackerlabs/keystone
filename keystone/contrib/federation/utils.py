@@ -415,6 +415,9 @@ class RuleProcessor(object):
 
         # initialize the group_ids as a set to eliminate duplicates
         user_name = None
+        user_id = None
+        domain_id = None
+        domain_name = None
         group_ids = set()
         group_names = list()
         groups_by_domain = dict()
@@ -424,9 +427,31 @@ class RuleProcessor(object):
                 # if a mapping outputs more than one user name, log it
                 if user_name is not None:
                     LOG.warning(_LW('Ignoring user name %s'),
-                                identity_value['user']['name'])
+                                identity_value['user'].get('name'))
                 else:
-                    user_name = identity_value['user']['name']
+                    user_name = identity_value['user'].get('name')
+                # NOTE(chioleong): All the changes here may eventually
+                # go away once's Marek's patch is merged.
+                # Https://review.openstack.org/#/c/154934/13/
+                # keystone/contrib/federation/utils.py
+                # if a mapping outputs more than one user Id, log it
+                if user_id is not None:
+                    LOG.warning(_LW('Ignoring user Id %s'),
+                                identity_value['user'].get('user_id'))
+                else:
+                    user_id = identity_value['user'].get('user_id')
+                # if a mapping outputs more than one domain Id, log it
+                if domain_id is not None:
+                    LOG.warning(_LW('Ignoring domain Id %s'),
+                                identity_value['user'].get('domain_id'))
+                else:
+                    domain_id = identity_value['user'].get('domain_id')
+                # if a mapping outputs more than one domain name, log it
+                if domain_name is not None:
+                    LOG.warning(_LW('Ignoring domain name %s'),
+                                identity_value['user'].get('domain_name'))
+                else:
+                    domain_name = identity_value['user'].get('domain_name')
             if 'group' in identity_value:
                 group = identity_value['group']
                 if 'id' in group:
@@ -436,6 +461,19 @@ class RuleProcessor(object):
                               group['domain'].get('id'))
                     groups_by_domain.setdefault(domain, list()).append(group)
                 group_names.extend(extract_groups(groups_by_domain))
+
+        # NOTE(chioleong): This is mainly used for tokenless authorization
+        # and either domain_id or domain_name is one of the identity values.
+        if domain_id is not None:
+            if user_id is not None:
+                return {'user_id': user_id, 'domain_id': domain_id}
+            else:
+                return {'name': user_name, 'domain_id': domain_id}
+        elif domain_name is not None:
+            if user_id is not None:
+                return {'user_id': user_id, 'domain_name': domain_name}
+            else:
+                return {'name': user_name, 'domain_name': domain_name}
 
         return {'name': user_name,
                 'group_ids': list(group_ids),
