@@ -94,5 +94,5 @@ def token_authenticate(context, auth_payload, user_context, token_ref):
         user_context['method_names'].extend(token_ref.methods)
 
     except AssertionError as e:
-        LOG.error(e)
+        LOG.error(_('token authentication failed: %s'), e)
         raise exception.Unauthorized(e)
