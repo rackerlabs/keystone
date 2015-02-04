@@ -51,6 +51,7 @@ Getting Started
     installing
     configuration
     configure_federation
+    configure_tokenless_x509
     configuringservices
     extensions
     key_terms
