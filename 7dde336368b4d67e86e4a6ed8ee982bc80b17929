@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_c1e5e109",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-04T18:51:38Z",
+      "side": 1,
+      "message": "adding the docstring for path would be useful too, along with the return value, even though it may be self explanatory to us.",
+      "parentUuid": "3a961159_e459498f",
+      "revId": "7dde336368b4d67e86e4a6ed8ee982bc80b17929",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_64e479ac",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-05T14:34:26Z",
       "side": 1,
       "message": "I\u0027d prefer to use list comprehensions in these two lines",
+      "revId": "7dde336368b4d67e86e4a6ed8ee982bc80b17929",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e173c54b",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-04T18:51:38Z",
+      "side": 1,
+      "message": "++\n\n    migration_scripts \u003d []\n    for script in migration_directory:\n        if script.endswith(\u0027py\u0027) and script[:3].isdigit()\n            migration_scripts.append(script)\n    migration_versions \u003d []\n    for script in migration_scripts:\n        migration_versions.append(int(script[:3]))\n\n    init_version \u003d min(migration_versions) - 1",
+      "parentUuid": "3a961159_64e479ac",
       "revId": "7dde336368b4d67e86e4a6ed8ee982bc80b17929",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
