@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_ecbd96b8",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2015-02-04T07:40:45Z",
+      "side": 1,
+      "message": "I would like to see some docstring here explaining this function",
+      "revId": "4644ed6939539a4437f7e96ea31058cca03ffccc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_8cd97a24",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2015-02-04T07:40:45Z",
+      "side": 1,
+      "message": "Could be relevant to raise this exception to LOG file?",
+      "revId": "4644ed6939539a4437f7e96ea31058cca03ffccc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_6cd0c6f6",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2015-02-04T07:40:45Z",
+      "side": 1,
+      "message": "Could be relevant to raise this exception to LOG file?",
+      "revId": "4644ed6939539a4437f7e96ea31058cca03ffccc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_2c024e6f",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2015-02-04T07:40:45Z",
+      "side": 1,
+      "message": "Could be relevant to raise this exception to LOG file?",
+      "revId": "4644ed6939539a4437f7e96ea31058cca03ffccc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_8c75fafb",
+        "filename": "keystone/middleware/basic_auth.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2015-02-04T07:40:45Z",
+      "side": 1,
+      "message": "I don\u0027t know if is possible but just call some function to obtain the default domain_id, instead of access to config file...",
+      "revId": "4644ed6939539a4437f7e96ea31058cca03ffccc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
