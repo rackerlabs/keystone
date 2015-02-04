@@ -19,7 +19,7 @@ import six
 from keystone import auth
 from keystone.common import dependency
 from keystone import exception
-from keystone.i18n import _
+from keystone.i18n import _, _LE, _LW
 from keystone.openstack.common import log
 
 METHOD_NAME = 'password'
@@ -46,7 +46,7 @@ class UserAuthInfo(object):
                 domain_id=domain_ref['id'],
                 domain=domain_ref)
         except AssertionError as e:
-            LOG.warning(e)
+            LOG.warning(_LW('Domain %s is disabled'), domain_ref['id'])
             six.reraise(exception.Unauthorized, exception.Unauthorized(e),
                         sys.exc_info()[2])
 
@@ -56,7 +56,7 @@ class UserAuthInfo(object):
                 user_id=user_ref['id'],
                 user=user_ref)
         except AssertionError as e:
-            LOG.warning(e)
+            LOG.warning(_LW('User %s is disabled'), user_ref['id'])
             six.reraise(exception.Unauthorized, exception.Unauthorized(e),
                         sys.exc_info()[2])
 
@@ -74,7 +74,7 @@ class UserAuthInfo(object):
             else:
                 domain_ref = self.resource_api.get_domain(domain_id)
         except exception.DomainNotFound as e:
-            LOG.exception(e)
+            LOG.exception(_LE('Could not find domain: %s'), domain_id)
             raise exception.Unauthorized(e)
         self._assert_domain_is_enabled(domain_ref)
         return domain_ref
@@ -105,7 +105,7 @@ class UserAuthInfo(object):
                     user_ref['domain_id'])
                 self._assert_domain_is_enabled(domain_ref)
         except exception.UserNotFound as e:
-            LOG.exception(e)
+            LOG.exception(_LE('Could not find user: %s'), user_id)
             raise exception.Unauthorized(e)
         self._assert_user_is_enabled(user_ref)
         self.user_ref = user_ref
