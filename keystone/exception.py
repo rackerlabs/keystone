@@ -467,3 +467,8 @@ class OAuthHeadersMissingError(UnexpectedError):
                              'HTTPd or Apache, ensure WSGIPassAuthorization '
                              'is set to On.')
     title = 'Error retrieving OAuth headers'
+
+
+class ConfigurationError(Error):
+    message_format = _('The configuration option %(attribute)s provided does '
+                       'not seem to be the expected one.')

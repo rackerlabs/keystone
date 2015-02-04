@@ -843,6 +843,42 @@ FILE_OPTIONS = {
                    default='keystone.auth.plugins.oauth1.OAuth',
                    help='The oAuth1.0 auth plugin module.'),
     ],
+    'tokenless_auth': [
+        cfg.MultiStrOpt('trusted_issuer', default=[],
+                        help='The list of trusted issuers is to further '
+                             'filter the certificates that are allowed to '
+                             'participate in the X.509 tokenless '
+                             'authorization. If it is absent, no '
+                             'certificates will be allowed in the X.509 '
+                             'tokenless authorization. '
+                             'The value of an DN must be separated by a '
+                             'comma and contains no spaces. This '
+                             'configuration option may be repeated for '
+                             'multiple values. For example:: '
+                             'trusted_isser=CN=john,OU=keystone,O=openstack '
+                             'trusted_isser=CN=mary,OU=eng,O=abc'),
+        cfg.BoolOpt('no_check_trusted_issuer', default=False,
+                    help='Setting this option to True will disable the '
+                         'validation checking on the trusted issuer from the'
+                         'client certificate. The trust validation will all'
+                         'be replied on the web container configuration. '
+                         'Therefore, this can be risky!'),
+        cfg.StrOpt('protocol', default='x509',
+                   help='The protocol name for the X.509 tokenless '
+                        'authorization along with the IdP name to look up '
+                        'its corresponding mapping.'),
+        cfg.StrOpt('issuer_attribute', default='SSL_CLIENT_I_DN',
+                   help='The issuer attribute that is served as a IdP for '
+                        'the X.509 tokenless authorization along with the '
+                        'protocol to look up its corresponding mapping.'),
+        cfg.BoolOpt('ephemeral_user', default=False,
+                    help='When setting this option to True, the user '
+                         'referenced from the client certificate CN does '
+                         'not need to exist in the system. A group needs '
+                         'to be defined in the corresponding mapping and '
+                         'this ephemeral user will have the same role as '
+                         'what is assigned to the group.'),
+    ],
     'paste_deploy': [
         cfg.StrOpt('config_file', default='keystone-paste.ini',
                    help='Name of the paste configuration file that defines '
