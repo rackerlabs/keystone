@@ -12,12 +12,18 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import base64
+import hashlib
+import uuid
+
 from oslo_config import cfg
 import webob
 
+from keystone.common import authorization
+from keystone import exception
 from keystone import middleware
 from keystone.tests import unit as tests
-
+from keystone.tests.unit import test_backend_sql
 
 CONF = cfg.CONF
 
@@ -117,3 +123,393 @@ class JsonBodyMiddlewareTest(tests.TestCase):
         middleware.JsonBodyMiddleware(None).process_request(req)
         params = req.environ.get(middleware.PARAMS_ENV, {})
         self.assertEqual({}, params)
+
+
+class AuthContextMiddlewareTest(test_backend_sql.SqlTests, tests.TestCase):
+
+    def setUp(self):
+        super(AuthContextMiddlewareTest, self).setUp()
+        self.client_issuer = uuid.uuid4().hex
+        self.untrusted_client_issuer = uuid.uuid4().hex
+        self.trusted_issuer = self.client_issuer
+        CONF.tokenless_auth.trusted_issuer = [self.trusted_issuer]
+
+        # This idp_is is calculated based on
+        # base64(sha256(self.client_issuer))
+        hashed_idp = hashlib.sha256(self.client_issuer)
+        self.idp_id = base64.b64encode(hashed_idp.digest())
+        self.load_sample_data()
+
+    def load_sample_data(self):
+        self.domain_id = uuid.uuid4().hex
+        self.domain_name = uuid.uuid4().hex
+        self.project_id = uuid.uuid4().hex
+        self.project_name = uuid.uuid4().hex
+        self.user_name = uuid.uuid4().hex
+        self.user_password = uuid.uuid4().hex
+        self.user_email = uuid.uuid4().hex
+        self.protocol_id = CONF.tokenless_auth.protocol
+        self.role_id = uuid.uuid4().hex
+        self.role_name = uuid.uuid4().hex
+
+        # 1) Create a domain for the user.
+        self.domain = {
+            'description': uuid.uuid4().hex,
+            'enabled': True,
+            'id': self.domain_id,
+            'name': self.domain_name,
+        }
+
+        self.resource_api.create_domain(self.domain_id, self.domain)
+
+        # 2) Create a project for the user.
+        self.project = {
+            'description': uuid.uuid4().hex,
+            "domain_id": self.domain_id,
+            'enabled': True,
+            'id': self.project_id,
+            'name': self.project_name,
+        }
+
+        self.resource_api.create_project(self.project_id, self.project)
+
+        # 3) Create an user in new domain.
+        self.user = {
+            'name': self.user_name,
+            'domain_id': self.domain_id,
+            'project_id': self.project_id,
+            'password': self.user_password,
+            'email': self.user_email,
+        }
+
+        self.user = self.identity_api.create_user(self.user)
+
+        # Add IDP
+        self.idp = self.idp_ref(id=self.idp_id)
+        self.federation_api.create_idp(self.idp['id'],
+                                       self.idp)
+
+        # Add a role
+        self.role = {
+            'id': self.role_id,
+            'name': self.role_name,
+        }
+        self.role_api.create_role(self.role_id, self.role)
+
+        # Assign a role to the user on a project
+        self.assignment_api.add_role_to_user_and_project(
+            user_id=self.user['id'],
+            tenant_id=self.project_id,
+            role_id=self.role_id)
+
+        self.rules_with_username_and_domain_name = {
+            'rules': [
+                {
+                    'local': [
+                        {
+                            'user': {
+                                'user_name': '{0}',
+                                'domain_name': '{1}'
+                            }
+                        }
+                    ],
+                    'remote': [
+                        {
+                            'type': 'SSL_CLIENT_S_DN_CN'
+                        },
+                        {
+                            'type': 'SSL_CLIENT_I_DN_O'
+                        }
+                    ]
+                }
+            ]
+        }
+
+        self.rules_with_userid_and_domain_name = {
+            'rules': [
+                {
+                    'local': [
+                        {
+                            'user': {
+                                'user_id': '{0}',
+                                'domain_name': '{1}'
+                            }
+                        }
+                    ],
+                    'remote': [
+                        {
+                            'type': 'SSL_CLIENT_USER_ID'
+                        },
+                        {
+                            'type': 'SSL_CLIENT_DOMAIN_NAME'
+                        }
+                    ]
+                }
+            ]
+        }
+
+        self.rules_with_username_and_domain_id = {
+            'rules': [
+                {
+                    'local': [
+                        {
+                            'user': {
+                                'user_name': '{0}',
+                                'domain_id': '{1}'
+                            }
+                        }
+                    ],
+                    'remote': [
+                        {
+                            'type': 'SSL_CLIENT_USER_NAME'
+                        },
+                        {
+                            'type': 'SSL_CLIENT_DOMAIN_ID'
+                        }
+                    ]
+                }
+            ]
+        }
+
+        self.rules_with_userid_and_domain_id = {
+            'rules': [
+                {
+                    'local': [
+                        {
+                            'user': {
+                                'user_id': '{0}',
+                                'domain_id': '{1}'
+                            }
+                        }
+                    ],
+                    'remote': [
+                        {
+                            'type': 'SSL_CLIENT_USER_ID'
+                        },
+                        {
+                            'type': 'SSL_CLIENT_DOMAIN_ID'
+                        }
+                    ]
+                }
+            ]
+        }
+
+    def load_mapping_rules(self, rules):
+        # Add a mapping
+        self.mapping = self.mapping_ref(rules=rules)
+        self.federation_api.create_mapping(self.mapping['id'],
+                                           self.mapping)
+        # Add protocols
+        self.proto_x509 = self.proto_ref(mapping_id=self.mapping['id'])
+        self.proto_x509['id'] = self.protocol_id
+        self.federation_api.create_protocol(self.idp['id'],
+                                            self.proto_x509['id'],
+                                            self.proto_x509)
+
+    def idp_ref(self, id=None):
+        idp = {
+            'id': id or uuid.uuid4().hex,
+            'enabled': True,
+            'description': uuid.uuid4().hex
+        }
+        return idp
+
+    def proto_ref(self, mapping_id=None):
+        proto = {
+            'id': uuid.uuid4().hex,
+            'mapping_id': mapping_id or uuid.uuid4().hex
+        }
+        return proto
+
+    def mapping_ref(self, rules=None):
+        return {
+            'id': uuid.uuid4().hex,
+            'rules': rules['rules']
+        }
+
+    def test_context_already_exists(self):
+        req = make_request()
+        token_id = uuid.uuid4().hex
+        req.environ[authorization.AUTH_CONTEXT_ENV] = {'token_id': token_id}
+        middleware.AuthContextMiddleware(None).process_request(req)
+        context = req.environ[authorization.AUTH_CONTEXT_ENV]
+        self.assertEqual(token_id, context['token_id'])
+
+    def test_not_applicable_to_token_request(self):
+        req = make_request()
+        req.environ['PATH_INFO'] = '/auth/tokens'
+        req.environ['REQUEST_METHOD'] = 'POST'
+        middleware.AuthContextMiddleware(None).process_request(req)
+        context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
+        self.assertIsNone(context)
+
+    def test_no_tokenless_attributes_request(self):
+        req = make_request()
+        middleware.AuthContextMiddleware(None).process_request(req)
+        context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
+        self.assertIsNone(context)
+
+    def test_no_issuer_attribute_request(self):
+        req = make_request()
+        req.environ['HTTP_X_PROJECT_ID'] = uuid.uuid4().hex
+        middleware.AuthContextMiddleware(None).process_request(req)
+        context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
+        self.assertIsNone(context)
+
+    def test_has_only_issuer_and_project_name_request(self):
+        req = make_request()
+        req.environ[CONF.tokenless_auth.issuer_attribute] = uuid.uuid4().hex
+        req.environ['HTTP_X_PROJECT_NAME'] = uuid.uuid4().hex
+        middleware.AuthContextMiddleware(None).process_request(req)
+        context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
+        self.assertIsNone(context)
+
+    def test_has_only_issuer_and_project_domain_name_request(self):
+        req = make_request()
+        req.environ[CONF.tokenless_auth.issuer_attribute] = uuid.uuid4().hex
+        req.environ['HTTP_X_PROJECT_DOMAIN_NAME'] = uuid.uuid4().hex
+        middleware.AuthContextMiddleware(None).process_request(req)
+        context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
+        self.assertIsNone(context)
+
+    def test_has_only_issuer_and_project_domain_id_request(self):
+        req = make_request()
+        req.environ[CONF.tokenless_auth.issuer_attribute] = uuid.uuid4().hex
+        req.environ['HTTP_X_PROJECT_DOMAIN_ID'] = uuid.uuid4().hex
+        middleware.AuthContextMiddleware(None).process_request(req)
+        context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
+        self.assertIsNone(context)
+
+    def test_empty_trusted_issuer_list(self):
+        req = make_request()
+        req.environ[CONF.tokenless_auth.issuer_attribute] = uuid.uuid4().hex
+        req.environ['HTTP_X_PROJECT_ID'] = uuid.uuid4().hex
+        CONF.tokenless_auth.trusted_issuers = []
+        middleware.AuthContextMiddleware(None).process_request(req)
+        context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
+        self.assertIsNone(context)
+
+    def test_client_issuer_not_trusted(self):
+        req = make_request()
+        req.environ[CONF.tokenless_auth.issuer_attribute] = \
+            self.untrusted_client_issuer
+        req.environ['HTTP_X_PROJECT_ID'] = uuid.uuid4().hex
+        middleware.AuthContextMiddleware(None).process_request(req)
+        context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
+        self.assertIsNone(context)
+
+    def test_proj_scope_with_proj_id_and_proj_dom_id_success(self):
+        req = make_request()
+        req.environ[CONF.tokenless_auth.issuer_attribute] = self.client_issuer
+        req.environ['HTTP_X_PROJECT_ID'] = self.project_id
+        req.environ['HTTP_X_PROJECT_DOMAIN_ID'] = self.domain_id
+        req.environ['SSL_CLIENT_S_DN_CN'] = self.user_name
+        req.environ['SSL_CLIENT_I_DN_O'] = self.domain_name
+        self.load_mapping_rules(self.rules_with_username_and_domain_name)
+        middleware.AuthContextMiddleware(None).process_request(req)
+        context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
+        self.assertIsNotNone(context)
+        self.assertEqual(context['project_id'], self.project['id'])
+        self.assertEqual(context['user_id'], self.user['id'])
+        self.assertEqual(context['roles'][0], self.role_name)
+
+    def test_proj_scope_with_proj_id_only_success(self):
+        req = make_request()
+        req.environ[CONF.tokenless_auth.issuer_attribute] = self.client_issuer
+        req.environ['HTTP_X_PROJECT_ID'] = self.project_id
+        req.environ['SSL_CLIENT_S_DN_CN'] = self.user_name
+        req.environ['SSL_CLIENT_I_DN_O'] = self.domain_name
+        self.load_mapping_rules(self.rules_with_username_and_domain_name)
+        middleware.AuthContextMiddleware(None).process_request(req)
+        context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
+        self.assertIsNotNone(context)
+        self.assertEqual(context['project_id'], self.project['id'])
+        self.assertEqual(context['user_id'], self.user['id'])
+        self.assertEqual(context['roles'][0], self.role_name)
+
+    def test_proj_scope_with_proj_name_and_proj_dom_id_success(self):
+        req = make_request()
+        req.environ[CONF.tokenless_auth.issuer_attribute] = self.client_issuer
+        req.environ['HTTP_X_PROJECT_NAME'] = self.project_name
+        req.environ['HTTP_X_PROJECT_DOMAIN_ID'] = self.domain_id
+        req.environ['SSL_CLIENT_S_DN_CN'] = self.user_name
+        req.environ['SSL_CLIENT_I_DN_O'] = self.domain_name
+        self.load_mapping_rules(self.rules_with_username_and_domain_name)
+        middleware.AuthContextMiddleware(None).process_request(req)
+        context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
+        self.assertIsNotNone(context)
+        self.assertEqual(context['project_id'], self.project['id'])
+        self.assertEqual(context['user_id'], self.user['id'])
+        self.assertEqual(context['roles'][0], self.role_name)
+
+    def test_proj_scope_with_proj_name_and_proj_dom_name_success(self):
+        req = make_request()
+        req.environ[CONF.tokenless_auth.issuer_attribute] = self.client_issuer
+        req.environ['HTTP_X_PROJECT_NAME'] = self.project_name
+        req.environ['HTTP_X_PROJECT_DOMAIN_NAME'] = self.domain_name
+        req.environ['SSL_CLIENT_S_DN_CN'] = self.user_name
+        req.environ['SSL_CLIENT_I_DN_O'] = self.domain_name
+        self.load_mapping_rules(self.rules_with_username_and_domain_name)
+        middleware.AuthContextMiddleware(None).process_request(req)
+        context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
+        self.assertIsNotNone(context)
+        self.assertEqual(context['project_id'], self.project['id'])
+        self.assertEqual(context['user_id'], self.user['id'])
+        self.assertEqual(context['roles'][0], self.role_name)
+
+    def test_proj_scope_with_proj_name_only_fail(self):
+        req = make_request()
+        req.environ[CONF.tokenless_auth.issuer_attribute] = self.client_issuer
+        req.environ['HTTP_X_PROJECT_NAME'] = self.project_id
+        req.environ['SSL_CLIENT_S_DN_CN'] = self.user_name
+        req.environ['SSL_CLIENT_I_DN_O'] = self.domain_name
+        self.load_mapping_rules(self.rules_with_username_and_domain_name)
+        context = middleware.AuthContextMiddleware(None)
+        self.assertRaises(exception.ValidationError,
+                          context.process_request,
+                          req)
+
+    def test_mapping_with_userid_and_domainid_success(self):
+        req = make_request()
+        req.environ[CONF.tokenless_auth.issuer_attribute] = self.client_issuer
+        req.environ['HTTP_X_PROJECT_NAME'] = self.project_name
+        req.environ['HTTP_X_PROJECT_DOMAIN_NAME'] = self.domain_name
+        req.environ['SSL_CLIENT_USER_ID'] = self.user['id']
+        req.environ['SSL_CLIENT_DOMAIN_ID'] = self.domain['id']
+        self.load_mapping_rules(self.rules_with_userid_and_domain_id)
+        middleware.AuthContextMiddleware(None).process_request(req)
+        context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
+        self.assertIsNotNone(context)
+        self.assertEqual(context['project_id'], self.project['id'])
+        self.assertEqual(context['user_id'], self.user['id'])
+        self.assertEqual(context['roles'][0], self.role_name)
+
+    def test_mapping_with_userid_and_domainname_success(self):
+        req = make_request()
+        req.environ[CONF.tokenless_auth.issuer_attribute] = self.client_issuer
+        req.environ['HTTP_X_PROJECT_NAME'] = self.project_name
+        req.environ['HTTP_X_PROJECT_DOMAIN_NAME'] = self.domain_name
+        req.environ['SSL_CLIENT_USER_ID'] = self.user['id']
+        req.environ['SSL_CLIENT_DOMAIN_NAME'] = self.domain_name
+        self.load_mapping_rules(self.rules_with_userid_and_domain_name)
+        middleware.AuthContextMiddleware(None).process_request(req)
+        context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
+        self.assertIsNotNone(context)
+        self.assertEqual(context['project_id'], self.project['id'])
+        self.assertEqual(context['user_id'], self.user['id'])
+        self.assertEqual(context['roles'][0], self.role_name)
+
+    def test_mapping_with_username_and_domainid_success(self):
+        req = make_request()
+        req.environ[CONF.tokenless_auth.issuer_attribute] = self.client_issuer
+        req.environ['HTTP_X_PROJECT_NAME'] = self.project_name
+        req.environ['HTTP_X_PROJECT_DOMAIN_NAME'] = self.domain_name
+        req.environ['SSL_CLIENT_USER_NAME'] = self.user_name
+        req.environ['SSL_CLIENT_DOMAIN_ID'] = self.domain['id']
+        self.load_mapping_rules(self.rules_with_username_and_domain_id)
+        middleware.AuthContextMiddleware(None).process_request(req)
+        context = req.environ.get(authorization.AUTH_CONTEXT_ENV)
+        self.assertIsNotNone(context)
+        self.assertEqual(context['project_id'], self.project['id'])
+        self.assertEqual(context['user_id'], self.user['id'])
+        self.assertEqual(context['roles'][0], self.role_name)
