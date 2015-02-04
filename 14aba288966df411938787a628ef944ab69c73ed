@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_185b0c2f",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-04T03:35:45Z",
+      "side": 1,
+      "message": "much better!",
+      "revId": "14aba288966df411938787a628ef944ab69c73ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_1845cc16",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 307,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-04T03:35:45Z",
+      "side": 1,
+      "message": "Great comment. Very helpful!",
+      "revId": "14aba288966df411938787a628ef944ab69c73ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
