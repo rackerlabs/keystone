@@ -16,6 +16,24 @@
       "revId": "4af2d0400c275756da4d24012dd66b9bfc3d28e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_367c2fb5",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 708
+      },
+      "writtenOn": "2015-02-05T08:05:08Z",
+      "side": 1,
+      "message": "It\u0027s here to avoid programmer\u0027s error since one can think that writing\n\n    Attr(\u0027cn\u0027) \u003d\u003d \u0027*\u0027\n\nis the right thing to do to get any cn.\n\nException here can be replaced with a warning though.",
+      "parentUuid": "da86d52c_18ae7fe6",
+      "revId": "4af2d0400c275756da4d24012dd66b9bfc3d28e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
