@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_ae5c281a",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-05T19:12:12Z",
+      "side": 1,
+      "message": "Will need: \n\n    raise exception.NotImplemented()  # pragma: no cover",
+      "revId": "82a137bf167a7cc11451735e6ce1ad98bf444cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
