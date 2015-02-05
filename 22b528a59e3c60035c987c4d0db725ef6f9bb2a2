@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_987b4f8b",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-05T01:51:57Z",
+      "side": 1,
+      "message": "NIT: should probably name this \u0027operation\u0027 too for consistency of naming convention. Similar to the constructor in CadfRoleAssignmentNotificationWrapper",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_fd78bdc5",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-05T01:51:57Z",
+      "side": 1,
+      "message": "The format of the event_type changed here from the original, is that intentional? The original output for event_type was \u0027service.operation.resource_type\u0027\n\nHmm I guess this is a bug fix, since the correct format should be \u0027service.resource_type.operation\u0027?\n\n\nThis seems doing the same thing as line:241, would it make sense to create a separate function for formatting event_type",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
