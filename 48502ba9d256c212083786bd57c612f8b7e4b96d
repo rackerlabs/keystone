@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_b892b749",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 14578
+      },
+      "writtenOn": "2015-02-05T17:19:18Z",
+      "side": 1,
+      "message": "Would you prefer to see the bug created and referenced here, or would you prefer to not have docstrings polluted with this kind of information?",
+      "parentUuid": "da86d52c_2f8b0969",
+      "revId": "48502ba9d256c212083786bd57c612f8b7e4b96d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_8f3f9586",
         "filename": "keystone/notifications.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_5e0283b4",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 14578
+      },
+      "writtenOn": "2015-02-05T17:19:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_8f3f9586",
+      "revId": "48502ba9d256c212083786bd57c612f8b7e4b96d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_84393cf4",
         "filename": "keystone/notifications.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2015-02-04T17:33:39Z",
       "side": 1,
       "message": "s/return/returns/",
+      "revId": "48502ba9d256c212083786bd57c612f8b7e4b96d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_3ef78fd4",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 14578
+      },
+      "writtenOn": "2015-02-05T17:19:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_84393cf4",
       "revId": "48502ba9d256c212083786bd57c612f8b7e4b96d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
