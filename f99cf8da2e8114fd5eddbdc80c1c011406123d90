@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_d142fd3c",
+        "filename": "keystone/tests/test_token_provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 757,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-02-05T08:16:15Z",
+      "side": 1,
+      "message": "I think this isn\u0027t an interface change, this exception would happen in start-up phase and I don\u0027t think operator would catch this exception...",
+      "parentUuid": "da86d52c_46a3319e",
+      "revId": "f99cf8da2e8114fd5eddbdc80c1c011406123d90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_c63721af",
         "filename": "keystone/token/provider.py",
         "patchSetId": 9
