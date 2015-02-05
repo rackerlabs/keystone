@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_51060d87",
+        "filename": "keystone/exception.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-05T08:39:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_3a71dd0c",
+      "revId": "82446cf94d97e6bf4bed51dca32698ee034953d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_9a82d1c6",
         "filename": "keystone/tests/test_backend_sql.py",
         "patchSetId": 8
@@ -210,6 +228,24 @@
       "side": 1,
       "message": "Ok, let\u0027s start again.\n\nThe backend tests should mirror the operations made in the Manager/Driver level, right? The \"delete_grant()\" method is placed in the Manager: https://github.com/openstack/keystone/blob/master/keystone/assignment/core.py#L556\n\nThis means, that we must have all possible testcases placed in \"test_backend.py\", which includes the case where the role_assignment was not found, IMHO.\n\nSince the LDAP backend does not raise the exception, this role_assignment not found test in \"test_backend.py\" should be overwritten in \"test_backend_ldap.py\" to check its particular behaviour.",
       "parentUuid": "5a890539_c804811a",
+      "revId": "82446cf94d97e6bf4bed51dca32698ee034953d5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_51dfed0c",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-05T08:39:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_9a82d1c6",
       "revId": "82446cf94d97e6bf4bed51dca32698ee034953d5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
