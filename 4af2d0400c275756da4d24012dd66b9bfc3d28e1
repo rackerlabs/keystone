@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_18ae7fe6",
+        "filename": "keystone/common/ldap/expr.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-05T01:54:30Z",
+      "side": 1,
+      "message": "The response in patch set 15 said that using cn\u003d* as a filter was a problem since it will return every entry... ok, so is cn\u003da*, since it will also return lots of entries. So why are we being picky about value \u003d\u003d \u0027*\u0027 here? There\u0027s no need for this check. If self.value \u003d \u0027*\u0027 then the filter will wind up cn\u003d\\* so there\u0027s no point to checking for value \u003d\u003d \u0027*\u0027 here.",
+      "revId": "4af2d0400c275756da4d24012dd66b9bfc3d28e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
