@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_60016f69",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-05T13:46:24Z",
+      "side": 1,
+      "message": "worth doing at least one test with a domain...and another with a group?",
+      "revId": "b5fff45ac78ac4c74e0057e532c5e42043a3ff2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_a0c8c755",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-05T13:46:24Z",
+      "side": 1,
+      "message": "I\u0027m unclear what this should be RoleNotFound...and in fact why we need to override this test at all...",
+      "revId": "b5fff45ac78ac4c74e0057e532c5e42043a3ff2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
