@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_90495a33",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-02-05T11:27:17Z",
+      "side": 1,
+      "message": "I\u0027d rather put it this way:\n\nelse:\n    paste_deploy_config \u003d None",
+      "revId": "34b20633a4ee50e6ba1140ed7f9990ad66f6d105",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
