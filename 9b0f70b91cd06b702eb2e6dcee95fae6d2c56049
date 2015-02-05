@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_4c1bd8c9",
+        "filename": "keystone/i18n.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-05T03:05:40Z",
+      "side": 1,
+      "message": "Please update this one.",
+      "revId": "9b0f70b91cd06b702eb2e6dcee95fae6d2c56049",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
