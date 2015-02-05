@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_11c2d533",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-05T08:39:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_b1499c90",
+      "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_315dac49",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 6
@@ -65,6 +83,24 @@
       "writtenOn": "2014-11-30T12:40:02Z",
       "side": 1,
       "message": "ditto.",
+      "parentUuid": "5a890539_315dac49",
+      "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_31bfd9ab",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-05T08:39:24Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "5a890539_315dac49",
       "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -107,6 +143,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_91fc0574",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-05T08:39:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_f16c040b",
+      "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_917d80b4",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 6
@@ -135,6 +189,24 @@
       "writtenOn": "2014-11-30T12:40:02Z",
       "side": 1,
       "message": "ditto.",
+      "parentUuid": "5a890539_917d80b4",
+      "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_d1f91d81",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 170,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-05T08:39:24Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "5a890539_917d80b4",
       "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -177,6 +249,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_31ed19b8",
+        "filename": "keystone/exception.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-05T08:39:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_fd1e9c0c",
+      "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_b4734ab3",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 6
@@ -212,6 +302,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_512d2dfd",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-05T08:39:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_b4734ab3",
+      "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_5464e6e4",
         "filename": "keystone/tests/test_backend.py",
         "patchSetId": 6
@@ -223,6 +331,24 @@
       "writtenOn": "2014-11-19T12:38:20Z",
       "side": 1,
       "message": "Same comment as above.",
+      "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_71323160",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 878,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-05T08:39:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5a890539_5464e6e4",
       "revId": "700cb5f5b3e165641ae3b4abcabdff7cdfefaca0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
