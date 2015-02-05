@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_bdaa9b82",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 11
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-05T22:13:22Z",
+      "side": 1,
+      "message": "mention here too about initiator.id is  \u003cuser_id\u003e",
+      "revId": "af96638e0ade08584bc7e1f2961d6580367c4790",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_9105c915",
         "filename": "doc/source/event_notifications.rst",
         "patchSetId": 11
