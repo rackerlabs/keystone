@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_099c535c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-05T17:41:19Z",
+      "side": 1,
+      "message": "\"fix :return to :returns\" should not be here -- it\u0027s a difference between two patchets, not between what was before the patch and what is now",
+      "revId": "30e951f55a5734cab461815174fae818178a892d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_3e006f33",
         "filename": "keystone/notifications.py",
         "patchSetId": 5
