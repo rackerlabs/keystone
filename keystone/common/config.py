@@ -248,8 +248,8 @@ FILE_OPTIONS = {
                    default='keystone.token.providers.uuid.Provider',
                    help='Controls the token construction, validation, and '
                         'revocation operations. Core providers are '
-                        '"keystone.token.providers.[fernet|pkiz|pki|uuid].'
-                        'Provider".'),
+                        '"keystone.token.providers.[fernet|lotto|pkiz|pki|uuid].'
+                        'Provider". The default provider is uuid.'),
         cfg.StrOpt('driver',
                    default='keystone.token.persistence.backends.sql.Token',
                    help='Token persistence backend driver.'),
