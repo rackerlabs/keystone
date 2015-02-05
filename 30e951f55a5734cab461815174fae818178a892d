@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_3e006f33",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-05T17:26:15Z",
+      "side": 1,
+      "message": "this should be\n\n :raises ValueError: (under what condition?)\n :raises TypeError: (?)\n\nsee http://sphinx-doc.org/domains.html#info-field-lists",
+      "revId": "30e951f55a5734cab461815174fae818178a892d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_9ebf9b60",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-05T17:26:15Z",
+      "side": 1,
+      "message": "I think you need :class:`pycadf.Resource` to make it a ref.",
+      "revId": "30e951f55a5734cab461815174fae818178a892d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_5ea9a322",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-05T17:26:15Z",
+      "side": 1,
+      "message": "what\u0027s the type of all these params?",
+      "revId": "30e951f55a5734cab461815174fae818178a892d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
