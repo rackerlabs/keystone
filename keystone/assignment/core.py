@@ -253,12 +253,21 @@ class Manager(manager.Manager):
                      config.CONF.member_role_id)
             role = {'id': CONF.member_role_id,
                     'name': CONF.member_role_name}
-            self.role_api.create_role(config.CONF.member_role_id, role)
-            # now that default role exists, the add should succeed
-            self.driver.add_role_to_user_and_project(
-                user_id,
-                tenant_id,
-                config.CONF.member_role_id)
+            try:
+                self.role_api.create_role(config.CONF.member_role_id, role)
+            except exception.Conflict:
+                # NOTE(gyee): in a multi-working environment, this role may
+                # have already been created by a separate worker/process.
+                pass
+
+            try:
+                self.driver.add_role_to_user_and_project(
+                    user_id,
+                    tenant_id,
+                    config.CONF.member_role_id)
+            except exception.Conflict:
+                # same as above
+                pass
 
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
         self.resource_api.get_project(tenant_id)
