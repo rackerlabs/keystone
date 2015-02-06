@@ -253,13 +253,17 @@ class Manager(manager.Manager):
                      config.CONF.member_role_id)
             role = {'id': CONF.member_role_id,
                     'name': CONF.member_role_name}
-            self.role_api.create_role(config.CONF.member_role_id, role)
+            try:
+                self.role_api.create_role(config.CONF.member_role_id, role)
+            except exception.Conflict:
+                LOG.info(_LI("Creating the default role %s failed because it"
+                             "was already created"),
+                         config.CONF.member_role_id)
             # now that default role exists, the add should succeed
             self.driver.add_role_to_user_and_project(
                 user_id,
                 tenant_id,
                 config.CONF.member_role_id)
-
     def add_role_to_user_and_project(self, user_id, tenant_id, role_id):
         self.resource_api.get_project(tenant_id)
         self.role_api.get_role(role_id)
