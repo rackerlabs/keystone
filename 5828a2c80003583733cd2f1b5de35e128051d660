@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_983861d6",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-06T19:02:54Z",
+      "side": 1,
+      "message": "revert the whitespace change on the previous line.",
+      "revId": "5828a2c80003583733cd2f1b5de35e128051d660",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
