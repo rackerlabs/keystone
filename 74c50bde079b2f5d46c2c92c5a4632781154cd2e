@@ -16,6 +16,24 @@
       "revId": "74c50bde079b2f5d46c2c92c5a4632781154cd2e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_231106b0",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-06T19:52:44Z",
+      "side": 1,
+      "message": "Agreed - although since this particular defect was to only make the documentation \u0026 code comments clearer, I have raised a separate bug for us to actually detect this condition startup (see: https://bugs.launchpad.net/keystone/+bug/1419128)",
+      "parentUuid": "da86d52c_a71dd468",
+      "revId": "74c50bde079b2f5d46c2c92c5a4632781154cd2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
