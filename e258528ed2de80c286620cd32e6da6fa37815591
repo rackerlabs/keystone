@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_0a48a0b1",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-06T14:37:37Z",
+      "side": 1,
+      "message": "this should be resource_api",
+      "revId": "e258528ed2de80c286620cd32e6da6fa37815591",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_1b6e58c9",
         "filename": "keystone/tests/unit/common/test_notifications.py",
         "patchSetId": 11
