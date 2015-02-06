@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_29ed6d26",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2015-02-06T16:36:42Z",
+      "side": 1,
+      "message": "Making a note to myself.  Thanks Lance.",
+      "parentUuid": "da86d52c_ae5c281a",
+      "revId": "82a137bf167a7cc11451735e6ce1ad98bf444cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_9fe782ab",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-06T06:13:47Z",
       "side": 1,
       "message": "Take a look at what ayoung is working on in keystoneclient on accessinfo, see if some efforts can be combined here.",
+      "revId": "82a137bf167a7cc11451735e6ce1ad98bf444cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_a9aa3dd0",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 11333
+      },
+      "writtenOn": "2015-02-06T16:36:42Z",
+      "side": 1,
+      "message": "Looking.",
+      "parentUuid": "da86d52c_9fe782ab",
       "revId": "82a137bf167a7cc11451735e6ce1ad98bf444cf5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
