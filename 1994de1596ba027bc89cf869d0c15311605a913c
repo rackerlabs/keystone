@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_9824e10f",
+        "filename": "keystone/common/sql/migrate_repo/versions/064_fixup_service_name_value.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-02-06T19:22:17Z",
+      "side": 1,
+      "message": "although is pretty obvious why we don\u0027t have a downgrade, a comment explaining why it is justing \"passing\" would be nice.",
+      "revId": "1994de1596ba027bc89cf869d0c15311605a913c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
