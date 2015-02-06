@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_28664c2a",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2015-02-06T15:23:03Z",
+      "side": 1,
+      "message": "is there an id we can attach to this? maybe an id associated with keystone service?",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_fd78bdc5",
         "filename": "keystone/notifications.py",
         "patchSetId": 5
