@@ -547,6 +547,10 @@ class TestCase(BaseTestCase):
                             tenant_id, user_copy['id'])
                     except exception.Conflict:
                         pass
+                    except exception.NotImplemented:
+                        # Be silent in the case when we are using an assignment
+                        # engine that doesn't support this API.
+                        pass
                 # Use the ID from the fixture as the attribute name, so
                 # that our tests can easily reference each user dict, while
                 # the ID in the dict will be the real public ID.

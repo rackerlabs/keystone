@@ -228,14 +228,19 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         self.role['id'] = self.role_id
         self.role['name'] = 'admin'
         self.role_api.create_role(self.role_id, self.role)
-        self.assignment_api.add_role_to_user_and_project(
-            self.user_id, self.project_id, self.role_id)
-        self.assignment_api.add_role_to_user_and_project(
-            self.default_domain_user_id, self.default_domain_project_id,
-            self.role_id)
-        self.assignment_api.add_role_to_user_and_project(
-            self.default_domain_user_id, self.project_id,
-            self.role_id)
+        try:
+            self.assignment_api.add_role_to_user_and_project(
+                self.user_id, self.project_id, self.role_id)
+            self.assignment_api.add_role_to_user_and_project(
+                self.default_domain_user_id, self.default_domain_project_id,
+                self.role_id)
+            self.assignment_api.add_role_to_user_and_project(
+                self.default_domain_user_id, self.project_id,
+                self.role_id)
+        except exception.NotImplemented:
+            # Be silent in the case when we are using an assignment
+            # engine that doesn't support this API.
+            pass
 
         self.region_id = uuid.uuid4().hex
         self.region = self.new_region_ref()
