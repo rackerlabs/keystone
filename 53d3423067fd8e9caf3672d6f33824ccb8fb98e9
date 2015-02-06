@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_2e2e618c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 719,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-06T22:53:45Z",
+      "side": 1,
+      "message": "this check and the one below on inherited look the opposite of each other....or is there more subtlety involved here I.e. if inherited is None then we do one thing...if it is False do another....\n\nIt would probably better to be explicit and/or combine this tests if appropriate.",
+      "revId": "53d3423067fd8e9caf3672d6f33824ccb8fb98e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e6c9b77a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 782,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-06T22:53:45Z",
+      "side": 1,
+      "message": "I don\u0027t think the second part of this check is correct.  If I call\n\nlist_role_assignments(user_id\u003dx, domain_id\u003dy, effective\u003dTrue) \n\nthen this clause will always return an empty list....since I think inherited will be passed in as None here.....don\u0027t you mean:\n\nif group_id or (domain_id and inherited is True):  ??",
+      "revId": "53d3423067fd8e9caf3672d6f33824ccb8fb98e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_ab3de3de",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 1143,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-06T22:53:45Z",
+      "side": 1,
+      "message": "not sure this comment is relevant for driver calls now - since is this logic now not in the manager?",
+      "revId": "53d3423067fd8e9caf3672d6f33824ccb8fb98e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
