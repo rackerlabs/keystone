@@ -33,6 +33,23 @@
       "revId": "33006bcf8188a440c0685a88679148bfd781d644",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_188e3128",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-02-06T19:13:56Z",
+      "side": 1,
+      "message": "add a space after \"it\"",
+      "revId": "33006bcf8188a440c0685a88679148bfd781d644",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
