@@ -55,6 +55,23 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_6d1f765b",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-06T14:45:19Z",
+      "side": 1,
+      "message": "(nit): every time I read this and the next line of code it jars a bit...since the line of code tests the inverse of the comment...perhaps a better comment would be:\n\n\"Only emit CADF notifications for public events\"",
+      "revId": "14aba288966df411938787a628ef944ab69c73ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_185b0c2f",
         "filename": "keystone/notifications.py",
         "patchSetId": 21
