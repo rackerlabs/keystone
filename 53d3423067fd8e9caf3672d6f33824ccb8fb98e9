@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_c53f37d5",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 782,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-08T22:20:47Z",
+      "side": 1,
+      "message": "See tests in https://review.openstack.org/#/c/151623/ that fail because of this.",
+      "parentUuid": "da86d52c_e6c9b77a",
+      "revId": "53d3423067fd8e9caf3672d6f33824ccb8fb98e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_ab3de3de",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 26
