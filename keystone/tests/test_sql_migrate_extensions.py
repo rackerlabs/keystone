@@ -171,12 +171,17 @@ class EndpointFilterExtension(test_sql_upgrade.SqlMigrateBase):
         self.assertTableColumns('project_endpoint_group',
                                 ['endpoint_group_id', 'project_id'])
 
+    def test_upgrade_0_to_1_and_downgrade(self):
+        self.assertTableDoesNotExist('project_endpoint')
+        self.upgrade(1)
+        self._assert_v1_tables()
+        self.downgrade(0)
+        self.assertTableDoesNotExist('project_endpoint')
+
     def test_upgrade(self):
         self.assertTableDoesNotExist('project_endpoint')
         self.upgrade(1)
         self._assert_v1_tables()
-        self.assertTableColumns('project_endpoint',
-                                ['endpoint_id', 'project_id'])
         self.upgrade(2)
         self._assert_v2_tables()
 
@@ -185,6 +190,8 @@ class EndpointFilterExtension(test_sql_upgrade.SqlMigrateBase):
         self._assert_v2_tables()
         self.downgrade(1)
         self._assert_v1_tables()
+        self.assertTableDoesNotExist('project_endpoint_group')
+        self.assertTableDoesNotExist('endpoint_group')
         self.downgrade(0)
         self.assertTableDoesNotExist('project_endpoint')
 
