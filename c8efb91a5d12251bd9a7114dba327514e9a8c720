@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_96301fa0",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-08T04:40:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_df704642",
+      "revId": "c8efb91a5d12251bd9a7114dba327514e9a8c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a930d6b_445d7914",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-26T20:40:00Z",
       "side": 1,
       "message": "(nit) why are these two not rolled up?",
+      "revId": "c8efb91a5d12251bd9a7114dba327514e9a8c720",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_b625235e",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-08T04:40:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a930d6b_445d7914",
       "revId": "c8efb91a5d12251bd9a7114dba327514e9a8c720",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
