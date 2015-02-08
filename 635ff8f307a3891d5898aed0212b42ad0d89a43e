@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_2f2e32a6",
+        "filename": "keystone/tests/test_backend_id_mapping_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-08T18:14:37Z",
+      "side": 1,
+      "message": "NIT: You could use the new @wip decorator that dstanek implemented.",
+      "revId": "635ff8f307a3891d5898aed0212b42ad0d89a43e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
