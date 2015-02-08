@@ -16,6 +16,23 @@
       "revId": "483f9b2e09c012580f70acc77147ac21fc1a6be4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_65492b8e",
+        "filename": "keystone/tests/test_sql_migrate_extensions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-08T22:11:14Z",
+      "side": 0,
+      "message": "this is pointless, as it\u0027s performed in _assert_v1_tables",
+      "revId": "483f9b2e09c012580f70acc77147ac21fc1a6be4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
