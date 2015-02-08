@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_0a087c2c",
+        "filename": "keystone/contrib/endpoint_filter/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-08T20:06:39Z",
+      "side": 1,
+      "message": "same",
+      "revId": "d609951677a0c9eeb09468e298bacbb2ae65a0bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_8a4e2c95",
         "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/002_add_endpoint_groups.py",
         "patchSetId": 1
@@ -13,6 +30,24 @@
       "writtenOn": "2015-02-08T19:58:42Z",
       "side": 1,
       "message": "this line change is unrelated, isn\u0027t it?",
+      "revId": "d609951677a0c9eeb09468e298bacbb2ae65a0bd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_2a2e20a6",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/002_add_endpoint_groups.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-08T20:06:39Z",
+      "side": 1,
+      "message": "yeah, i suppose I could put this in another patch,",
+      "parentUuid": "da86d52c_8a4e2c95",
       "revId": "d609951677a0c9eeb09468e298bacbb2ae65a0bd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
