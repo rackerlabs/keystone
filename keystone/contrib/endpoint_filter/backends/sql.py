@@ -36,7 +36,7 @@ class EndpointGroup(sql.ModelBase, sql.ModelDictMixin):
     mutable_attributes = frozenset(['name', 'description', 'filters'])
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(255), nullable=False)
-    description = sql.Column(sql.Text, nullable=True)
+    description = sql.Column(sql.Text(), nullable=True)
     filters = sql.Column(sql.JsonBlob(), nullable=False)
 
 
