@@ -35,7 +35,8 @@ def upgrade(migrate_engine):
         'project_endpoint_group',
         meta,
         sql.Column('endpoint_group_id', sql.String(64),
-                   sql.ForeignKey('endpoint_group.id'), nullable=False),
+                   sql.ForeignKey('endpoint_group.id', ondelete='CASCADE'),
+                   nullable=False),
         sql.Column('project_id', sql.String(64), nullable=False),
         sql.PrimaryKeyConstraint('endpoint_group_id',
                                  'project_id'))
@@ -46,7 +47,7 @@ def downgrade(migrate_engine):
     meta = sql.MetaData()
     meta.bind = migrate_engine
     # Operations to reverse the above upgrade go here.
-    for table_name in ['endpoint_group',
-                       'project_endpoint_group']:
+    for table_name in ['project_endpoint_group',
+                       'endpoint_group']:
         table = sql.Table(table_name, meta, autoload=True)
         table.drop()
