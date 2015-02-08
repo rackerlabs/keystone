@@ -33,7 +33,9 @@ def upgrade(migrate_engine):
             'project_id',
             sql.String(64),
             primary_key=True,
-            nullable=False))
+            nullable=False),
+        mysql_engine='InnoDB',
+        mysql_charset='utf8')
 
     endpoint_filtering_table.create(migrate_engine, checkfirst=True)
 
