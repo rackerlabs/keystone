@@ -52,6 +52,24 @@
       "revId": "defa688df76f7fd5ba89dc6727f0e07cc987fc8c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_16e34f06",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-08T04:47:28Z",
+      "side": 1,
+      "message": "Rodrigo, acutally, I\u0027d like to get some reviews and weight on this patch at first and plan to submit another patch to address the same issue in \u0027identity\u0027, \u0027endpoint_policy\u0027, \u0027resource\u0027,\u0027trust\u0027 backends if this patch works.",
+      "parentUuid": "3a961159_df019db0",
+      "revId": "defa688df76f7fd5ba89dc6727f0e07cc987fc8c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
