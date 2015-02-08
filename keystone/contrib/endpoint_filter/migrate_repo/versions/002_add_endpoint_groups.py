@@ -24,7 +24,8 @@ def upgrade(migrate_engine):
     endpoint_group_table = sql.Table(
         'endpoint_group',
         meta,
-        sql.Column('id', sql.String(64), nullable=False),
+        sql.Column('id', sql.String(64),
+                   primary_key=True, nullable=False),
         sql.Column('name', sql.String(255), nullable=False),
         sql.Column('description', sql.Text, nullable=True),
         sql.Column('filters', sql.Text(), nullable=False))
