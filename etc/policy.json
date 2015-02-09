@@ -5,6 +5,7 @@
     "owner" : "user_id:%(user_id)s",
     "admin_or_owner": "rule:admin_required or rule:owner",
 
+
     "default": "rule:admin_required",
 
     "identity:get_region": "",
