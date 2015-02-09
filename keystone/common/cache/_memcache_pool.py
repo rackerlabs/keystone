@@ -118,7 +118,7 @@ class ConnectionPool(queue.Queue):
             self._debug_logger('Releasing connection %s', id(conn))
             self._drop_expired_connections()
             try:
-                super(ConnectionPool, self).put(conn, block=False)
+                queue.Queue.put(self, conn, block=False)
             except queue.Full:
                 self._debug_logger('Reaping exceeding connection %s', id(conn))
                 self._destroy_connection(conn)
