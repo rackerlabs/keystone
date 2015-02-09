@@ -16,6 +16,24 @@
       "revId": "3061d687ded75dad29b4245fd05e19e0375a6271",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_fa4af025",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-09T19:55:51Z",
+      "side": 1,
+      "message": "I think it\u0027s fine, if X-Subject-Token isn\u0027t there then we\u0027re really in trouble :) \n\nAny exceptions that come up during authN should be raised by federated_authentication()",
+      "parentUuid": "da86d52c_a6122460",
+      "revId": "3061d687ded75dad29b4245fd05e19e0375a6271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
