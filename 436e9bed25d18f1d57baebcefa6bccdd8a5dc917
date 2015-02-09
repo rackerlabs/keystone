@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_dfe1bfd1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-09T07:15:21Z",
+      "side": 1,
+      "message": "Actually, I cannot reproduce this bug, maybe we have different working env. as to MYSQL storage engine, the interesting is what storage engine are you using while \"InnoDB\" become a default MYSQL storage engine.\n\nhttp://dev.mysql.com/doc/refman/5.5/en/innodb-default-se.html",
+      "revId": "436e9bed25d18f1d57baebcefa6bccdd8a5dc917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_7fda9318",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/001_add_endpoint_filtering_table.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-09T07:15:21Z",
+      "side": 1,
+      "message": "If this fix works, maybe we still need fix other DB scripts for updating tables, such as \"001_add_identity_provider_table\".",
+      "revId": "436e9bed25d18f1d57baebcefa6bccdd8a5dc917",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_7419da21",
         "filename": "keystone/tests/test_sql_migrate_extensions.py",
         "patchSetId": 3
