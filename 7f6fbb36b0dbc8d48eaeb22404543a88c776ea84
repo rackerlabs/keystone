@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_bc688688",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 580,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-09T18:11:32Z",
+      "side": 1,
+      "message": "maybe this would be better just called:\n\n_expand_group_assignment()\n\nsince otherwise people spend time trying to work out what a non-inherited assignment is....",
+      "revId": "7f6fbb36b0dbc8d48eaeb22404543a88c776ea84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_3cb9f6e9",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-09T18:11:32Z",
+      "side": 1,
+      "message": "we should explain what user_id is as a parameter....I assume that it is the optional user filter?",
+      "revId": "7f6fbb36b0dbc8d48eaeb22404543a88c776ea84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_3a2f2d8a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 764,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-09T18:11:32Z",
+      "side": 1,
+      "message": "I don\u0027t think this is right for the case when we are filtering for a user, but there are group assignments.  This list won\u0027t contain them, and then _expand_indirect_assignment won\u0027t either because the\u0027ll be no group assignments in the refs we pass it...\n\nSee latest version of https://review.openstack.org/#/c/151962/7 that contains a test that exposes this issue.",
+      "revId": "7f6fbb36b0dbc8d48eaeb22404543a88c776ea84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
