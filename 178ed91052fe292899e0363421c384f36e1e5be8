@@ -16,6 +16,24 @@
       "revId": "178ed91052fe292899e0363421c384f36e1e5be8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_963d68be",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/002_add_endpoint_groups.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-09T12:19:30Z",
+      "side": 1,
+      "message": "Boris, this is somehow unrelated with bug but take into the consideration of the change here is make sense and also suggested to be added by other reviewer, so just let it be there unless you or someone else strongly object to this change, thanks.",
+      "parentUuid": "da86d52c_13126b58",
+      "revId": "178ed91052fe292899e0363421c384f36e1e5be8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
