@@ -305,7 +305,12 @@ class RuleProcessor(object):
         The expected return structure is::
 
             {
-                'name': 'foobar',
+                'user': {
+                    'name': 'user_name',
+                    'domain': {
+                        'name': 'example'
+                    }
+                }
                 'group_ids': ['abc123', 'def456'],
                 'group_names': [
                     {
@@ -380,17 +385,34 @@ class RuleProcessor(object):
 
             [{'group': {'id': '0cd5e9'}, 'user': {'email': 'bob@example.com'}}]
 
-        :returns: dictionary with user name, group_ids and group_names.
+        :returns: dictionary with user, group_ids and group_names.
 
         """
+
+        def format_user_id(identity_value):
+            id = identity_value.get['user'].get('id')
+            if id:
+                return "id %s" % id
+            return "name: %s in domain: %s" % (
+                    identity_value['user'].get('name'),
+                    identity_value['user'].get('domain',
+                        federation.FEDERATED_DOMAIN_KEYWORD))
 
         def extract_groups(groups_by_domain):
             for groups in groups_by_domain.values():
                 for group in {g['name']: g for g in groups}.values():
                     yield group
 
+        def is_direct_user_mapping(user):
+            if not user:
+                return False
+            if 'id' in user or ('name' in user and 'domain' in user):
+                return True
+            return False
+
+
         # initialize the group_ids as a set to eliminate duplicates
-        user_name = None
+        user = None
         group_ids = set()
         group_names = list()
         groups_by_domain = dict()
@@ -398,11 +420,11 @@ class RuleProcessor(object):
         for identity_value in identity_values:
             if 'user' in identity_value:
                 # if a mapping outputs more than one user name, log it
-                if user_name is not None:
-                    LOG.warning(_LW('Ignoring user name %s'),
-                                identity_value['user']['name'])
+                if user is not None:
+                    LOG.warning(_LW('Ignoring user %s'),
+                                format_user_id(identity_value))
                 else:
-                    user_name = identity_value['user']['name']
+                    user = identity_value['user']
             if 'group' in identity_value:
                 group = identity_value['group']
                 if 'id' in group:
@@ -413,9 +435,18 @@ class RuleProcessor(object):
                     groups_by_domain.setdefault(domain, list()).append(group)
                 group_names.extend(extract_groups(groups_by_domain))
 
-        return {'name': user_name,
+        if is_direct_user_mapping(user):
+            return {
+                'user': user,
+                'group_ids': list(),
+                'group_names': list()
+            }
+        else:
+            return {
+                'user': user,
                 'group_ids': list(group_ids),
-                'group_names': group_names}
+                'group_names': group_names
+            }
 
     def _update_local_mapping(self, local, direct_maps):
         """Replace any {0}, {1} ... values with data from the assertion.
