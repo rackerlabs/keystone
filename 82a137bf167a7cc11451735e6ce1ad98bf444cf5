@@ -69,6 +69,24 @@
       "revId": "82a137bf167a7cc11451735e6ce1ad98bf444cf5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_86bd2905",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-09T16:35:45Z",
+      "side": 1,
+      "message": "I think this is the review that Morgan\u0027s referencing? \n\nhttps://review.openstack.org/#/c/138519/",
+      "parentUuid": "da86d52c_a9aa3dd0",
+      "revId": "82a137bf167a7cc11451735e6ce1ad98bf444cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
