@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_ee386e3f",
+        "filename": "keystone/tests/unit/token/test_ae_token_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-09T21:43:58Z",
+      "side": 1,
+      "message": "use oslo_utils",
+      "revId": "8fff2ca452c5b6affd3e5d4bdd06e56fb2a39f37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_ce0c8a97",
+        "filename": "keystone/token/providers/ae/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-09T21:43:58Z",
+      "side": 1,
+      "message": "use oslo_utils",
+      "revId": "8fff2ca452c5b6affd3e5d4bdd06e56fb2a39f37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_ee0f8e86",
+        "filename": "keystone/token/providers/ae/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-09T21:43:58Z",
+      "side": 1,
+      "message": "KeystoneTokenFormatter?",
+      "revId": "8fff2ca452c5b6affd3e5d4bdd06e56fb2a39f37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_0e26a216",
+        "filename": "requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-09T21:43:58Z",
+      "side": 1,
+      "message": "are these in global req?",
+      "revId": "8fff2ca452c5b6affd3e5d4bdd06e56fb2a39f37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
