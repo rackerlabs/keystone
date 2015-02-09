@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_48f51bca",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:21:51Z",
+      "side": 1,
+      "message": "This isn\u0027t a refactor if it\u0027s changing behavior, e.g., to fix a bug.",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_c89f4bb3",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:21:51Z",
+      "side": 1,
+      "message": "change \"It\u0027s\" to \"Its\"",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_48ab5bd6",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:21:51Z",
+      "side": 1,
+      "message": "This isn\u0027t rendered correctly, should be\n\n - action: ``authenticate``\n - event_type: ``identity.authenticate``",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_68b81f2b",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:21:51Z",
+      "side": 1,
+      "message": "why have a parameter? Also, what if it\u0027s not \u0027authenticate\u0027?",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_987b4f8b",
         "filename": "keystone/notifications.py",
         "patchSetId": 5
@@ -36,6 +104,40 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_48927ba0",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:21:51Z",
+      "side": 1,
+      "message": "change \"It\u0027s\" to \"Its\"",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_28954788",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:21:51Z",
+      "side": 1,
+      "message": "This isn\u0027t rendered correctly, should be\n\n - action: ``created.role_assignment``\n - event_type: ``identity.role_assignment.created``",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_fd78bdc5",
         "filename": "keystone/notifications.py",
         "patchSetId": 5
@@ -47,6 +149,41 @@
       "writtenOn": "2015-02-05T01:51:57Z",
       "side": 1,
       "message": "The format of the event_type changed here from the original, is that intentional? The original output for event_type was \u0027service.operation.resource_type\u0027\n\nHmm I guess this is a bug fix, since the correct format should be \u0027service.resource_type.operation\u0027?\n\n\nThis seems doing the same thing as line:241, would it make sense to create a separate function for formatting event_type",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e8c96fad",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:21:51Z",
+      "side": 1,
+      "message": "We can\u0027t just change the event_type, it\u0027s not backwards compatible. We could send events with both the old and new names and document that the old name is deprecated, then get rid of it next release.",
+      "parentUuid": "da86d52c_fd78bdc5",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_68bd7f02",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:21:51Z",
+      "side": 1,
+      "message": "prefer \u0027 for strings.",
       "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
