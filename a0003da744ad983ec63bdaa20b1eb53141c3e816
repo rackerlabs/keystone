@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_2eaf0f2d",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/002_add_endpoint_groups.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-09T04:16:33Z",
+      "side": 1,
+      "message": "actually, i think it should be:\n\n  sql.ForeignKey(\u0027endpoint_group.id\u0027, ondelete\u003d\u0027CASCADE\u0027)\n\nso any endpoint_groups that are deleted then they no longer exist in the project-endpoint-group table",
+      "revId": "a0003da744ad983ec63bdaa20b1eb53141c3e816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
