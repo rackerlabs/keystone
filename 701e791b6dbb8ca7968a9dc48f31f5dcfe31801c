@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_283e272a",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-09T02:13:15Z",
+      "side": 1,
+      "message": "Done, I also moved this further up, so we don\u0027t issue a token unnecessarily.",
+      "parentUuid": "da86d52c_7b6b0bf1",
+      "revId": "701e791b6dbb8ca7968a9dc48f31f5dcfe31801c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_b1a724bc",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 19
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_a81137b1",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-09T02:13:15Z",
+      "side": 1,
+      "message": "If I try to use _LE on the others, i get:\n\n./keystone/contrib/federation/controllers.py:274:23: K007 Using hints when _ is necessary\n            LOG.error(msg)\n\nI don\u0027t think it\u0027s necessary if you\u0027re not doing any variable substitution",
+      "parentUuid": "da86d52c_b1a724bc",
+      "revId": "701e791b6dbb8ca7968a9dc48f31f5dcfe31801c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_7b586b8a",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 19
@@ -64,6 +100,24 @@
       "writtenOn": "2015-02-04T16:22:42Z",
       "side": 1,
       "message": "This can be actually even added in a followup patch, but what if we also add a template with HTML code informing user that authentication didn\u0027t work? It\u0027s probably better UX as I am expecting those HTML templates will be changed often.",
+      "revId": "701e791b6dbb8ca7968a9dc48f31f5dcfe31801c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_c8166ba7",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-09T02:13:15Z",
+      "side": 1,
+      "message": "probably, but like you said, another patch",
+      "parentUuid": "da86d52c_7b586b8a",
       "revId": "701e791b6dbb8ca7968a9dc48f31f5dcfe31801c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
