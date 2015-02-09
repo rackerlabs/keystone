@@ -14,6 +14,7 @@
 #
 
 import os
+import socket
 
 from oslo_config import cfg
 from oslo_log import log
@@ -35,6 +36,27 @@ def file_exists(file_path):
     return os.path.exists(file_path)
 
 
+def _format_san(num, san):
+    """Format a "Subject Alt Name" for creation of a Certificate
+
+    :param num: This SAN is the Nth one, counting from 1
+    :type num: integer
+    :param san: the Subject Alt Name
+    :type san: string
+    :rtype: string
+    """
+    _type = None
+
+    try:
+        socket.inet_aton(san)
+        _type = 'IP'
+    except socket.error:
+        # assume san to be fqdn
+        _type = 'DNS'
+
+    return '%s.%d = %s' % (_type, num, san)
+
+
 class BaseCertificateConfigure(object):
     """Create a certificate signing environment.
 
@@ -50,6 +72,11 @@ class BaseCertificateConfigure(object):
         self.rebuild = rebuild
         self.ssl_config_file_name = os.path.join(self.conf_dir, "openssl.conf")
         self.request_file_name = os.path.join(self.conf_dir, "req.pem")
+
+        subject_alt_names = (
+            "\n".join(_format_san(index + 1, s)
+                      for index, s in enumerate(conf_obj.subject_alt_names)))
+
         self.ssl_dictionary = {'conf_dir': self.conf_dir,
                                'ca_cert': server_conf_obj.ca_certs,
                                'default_md': 'default',
@@ -60,7 +87,9 @@ class BaseCertificateConfigure(object):
                                'signing_cert': server_conf_obj.certfile,
                                'key_size': int(conf_obj.key_size),
                                'valid_days': int(conf_obj.valid_days),
-                               'cert_subject': conf_obj.cert_subject}
+                               'cert_subject': conf_obj.cert_subject,
+                               'subject_alt_names': subject_alt_names,
+                               }
 
         try:
             # OpenSSL 1.0 and newer support default_md = default,
@@ -322,6 +351,7 @@ emailAddress_max            = 64
 basicConstraints       = CA:TRUE
 subjectKeyIdentifier   = hash
 authorityKeyIdentifier = keyid:always,issuer
+subjectAltName         = @alt_names
 
 [ v3_req ]
 basicConstraints     = CA:FALSE
@@ -331,4 +361,8 @@ keyUsage = nonRepudiation, digitalSignature, keyEncipherment
 basicConstraints       = CA:FALSE
 subjectKeyIdentifier   = hash
 authorityKeyIdentifier = keyid:always
+subjectAltName         = @alt_names
+
+[ alt_names ]
+%(subject_alt_names)s
 """

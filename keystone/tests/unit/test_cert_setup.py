@@ -16,6 +16,11 @@
 import os
 import shutil
 
+# cryptography is only used for the subject alt names part of the
+# SSL certificate test
+from cryptography.hazmat.backends import default_backend
+from cryptography import x509
+
 import mock
 from six.moves import http_client
 from testtools import matchers
@@ -26,7 +31,6 @@ from keystone import exception
 from keystone.tests import unit
 from keystone.tests.unit import rest
 from keystone import token
-
 
 SSLDIR = unit.dirs.tmp('ssl')
 CONF = unit.CONF
@@ -55,6 +59,8 @@ class CertSetupTestCase(rest.RestfulTestCase):
         ca_certs = os.path.join(CERTDIR, 'ca.pem')
         ca_key = os.path.join(CERTDIR, 'cakey.pem')
 
+        self.subject_alt_names = ['localhost']
+
         self.config_fixture.config(
             group='signing',
             certfile=os.path.join(CERTDIR, 'signing_cert.pem'),
@@ -70,6 +76,10 @@ class CertSetupTestCase(rest.RestfulTestCase):
             certfile=os.path.join(CERTDIR, 'keystone.pem'),
             keyfile=os.path.join(KEYDIR, 'keystonekey.pem'))
         self.config_fixture.config(group='token', provider='pkiz')
+        self.config_fixture.config(
+            group='ssl',
+            subject_alt_names=self.subject_alt_names
+        )
 
     def test_can_handle_missing_certs(self):
         controller = token.controllers.Auth()
@@ -94,11 +104,38 @@ class CertSetupTestCase(rest.RestfulTestCase):
         self.assertTrue(os.path.exists(CONF.signing.keyfile))
 
     def test_create_ssl_certs(self, rebuild=False):
+        # simplify names to fit within pep8 constraints
+        Contains = matchers.Contains
+        FileContains = matchers.FileContains
+
         ssl = openssl.ConfigureSSL(None, None, rebuild=rebuild)
         ssl.run()
+
+        expected_line = "subjectAltName         = @alt_names"
+
+        # First, verify the config file is what we expect
+
+        self.assertThat(ssl.ssl_config_file_name,
+                        FileContains(matcher=Contains(expected_line)))
+        self.assertThat(ssl.ssl_config_file_name,
+                        FileContains(matcher=Contains("DNS.1 = localhost")))
+
+        # Verify the files were created
+
         self.assertTrue(os.path.exists(CONF.eventlet_server_ssl.ca_certs))
         self.assertTrue(os.path.exists(CONF.eventlet_server_ssl.certfile))
         self.assertTrue(os.path.exists(CONF.eventlet_server_ssl.keyfile))
+
+        # Verify their contents
+
+        pem = open(CONF.eventlet_server_ssl.certfile)
+        pem_data = pem.read()
+        cert = x509.load_pem_x509_certificate(pem_data, default_backend())
+        sans = cert.extensions.get_extension_for_class(
+            x509.SubjectAlternativeName)
+        self.assertEqual(len(self.subject_alt_names), len(sans.value))
+        self.assertEqual(self.subject_alt_names,
+                         sans.value.get_values_for_type(x509.DNSName))
 
     def test_fetch_signing_cert(self, rebuild=False):
         pki = openssl.ConfigurePKI(None, None, rebuild=rebuild)
