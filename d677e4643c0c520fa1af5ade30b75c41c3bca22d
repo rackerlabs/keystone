@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_a8b5b7d1",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:55:16Z",
+      "side": 1,
+      "message": "add a comment why we\u0027ve got another place that sets _any_sql to false... it was initialized to False, and then gets set and checked in assert_no_more_than_one_sql_driver ... why do we also reset it here?",
+      "revId": "d677e4643c0c520fa1af5ade30b75c41c3bca22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_5095ab3e",
         "filename": "keystone/identity/core.py",
         "patchSetId": 7
@@ -66,6 +83,40 @@
       "side": 1,
       "message": "Actually it was done, as you say (see patchset 4). But self.driver can be None... so we need this check and this section.",
       "parentUuid": "da86d52c_5095ab3e",
+      "revId": "d677e4643c0c520fa1af5ade30b75c41c3bca22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_08ec03c7",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:55:16Z",
+      "side": 1,
+      "message": "add a comment that describes why this test is here (what is it testing?)",
+      "revId": "d677e4643c0c520fa1af5ade30b75c41c3bca22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_c8e10bd2",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:55:16Z",
+      "side": 1,
+      "message": "use oslotest.mockpatch so that the code isn\u0027t indented so much: http://docs.openstack.org/developer/oslotest/api.html#module-oslotest.mockpatch",
       "revId": "d677e4643c0c520fa1af5ade30b75c41c3bca22d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
