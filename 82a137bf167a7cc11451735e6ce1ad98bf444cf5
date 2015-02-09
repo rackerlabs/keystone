@@ -87,6 +87,23 @@
       "revId": "82a137bf167a7cc11451735e6ce1ad98bf444cf5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_74bd3ed7",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 683,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-09T17:38:16Z",
+      "side": 1,
+      "message": "so here we are getting the version by checking self.version but we also have a get_version() method that does the same thing. I think we should maybe consolidate this to use one or the other.\n\n    if self.version \u003d\u003d \u0027v3\u0027:\n\nor \n\n    if self.get_version() \u003d\u003d \u0027v3\u0027:",
+      "revId": "82a137bf167a7cc11451735e6ce1ad98bf444cf5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
