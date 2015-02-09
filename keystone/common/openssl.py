@@ -14,6 +14,7 @@
 #
 
 import os
+import socket
 
 from oslo_config import cfg
 from oslo_log import log
@@ -33,6 +34,23 @@ PRIVATE_FILE_PERMS = 0o640      # -rw-r-----
 
 def file_exists(file_path):
     return os.path.exists(file_path)
+
+
+def generate_san(subject_alt_names):
+    san_block = ''
+    for san in subject_alt_names:
+        try:
+            socket.inet_aton(san)
+            # san is a valid ip address
+            san_block = ('%s%s = %s\n' %
+                         (san_block,
+                          ('IP.%s' % subject_alt_names.index(san)), san))
+        except socket.error:
+            # assume san to be fqdn
+            san_block = ('%s%s = %s\n' %
+                         (san_block,
+                          ('DNS.%s' % subject_alt_names.index(san)), san))
+    return san_block
 
 
 class BaseCertificateConfigure(object):
@@ -60,7 +78,10 @@ class BaseCertificateConfigure(object):
                                'signing_cert': server_conf_obj.certfile,
                                'key_size': int(conf_obj.key_size),
                                'valid_days': int(conf_obj.valid_days),
-                               'cert_subject': conf_obj.cert_subject}
+                               'cert_subject': conf_obj.cert_subject,
+                               'subject_alt_names':
+                                   generate_san(
+                                       conf_obj.subject_alt_names)}
 
         try:
             # OpenSSL 1.0 and newer support default_md = default, olders do not
@@ -335,6 +356,7 @@ emailAddress_max            = 64
 basicConstraints       = CA:TRUE
 subjectKeyIdentifier   = hash
 authorityKeyIdentifier = keyid:always,issuer
+subjectAltName         = @alt_names
 
 [ v3_req ]
 basicConstraints     = CA:FALSE
@@ -344,4 +366,8 @@ keyUsage = nonRepudiation, digitalSignature, keyEncipherment
 basicConstraints       = CA:FALSE
 subjectKeyIdentifier   = hash
 authorityKeyIdentifier = keyid:always
+subjectAltName         = @alt_names
+
+[ alt_names ]
+%(subject_alt_names)s
 """

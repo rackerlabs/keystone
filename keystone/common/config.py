@@ -385,6 +385,10 @@ FILE_OPTIONS = {
                    default='/C=US/ST=Unset/L=Unset/O=Unset/CN=localhost',
                    help='SSL certificate subject (auto generated '
                         'certificate).'),
+        cfg.MultiStrOpt('subject_alt_names',
+                        default=['localhost'],
+                        help='SSL certificate subject alternative names '
+                        '(auto generated certificate).'),
     ],
     'signing': [
         cfg.StrOpt('certfile',
@@ -413,6 +417,10 @@ FILE_OPTIONS = {
                             'CN=www.example.com'),
                    help='Certificate subject (auto generated certificate) for '
                         'token signing.'),
+        cfg.MultiStrOpt('subject_alt_names',
+                        default=(['localhost']),
+                        help='SSL certificate subject alternative names '
+                        '(auto generated certificate).'),
     ],
     'assignment': [
         # assignment has no default for backward compatibility reasons.

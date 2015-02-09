@@ -69,6 +69,10 @@ class CertSetupTestCase(rest.RestfulTestCase):
             certfile=os.path.join(CERTDIR, 'keystone.pem'),
             keyfile=os.path.join(KEYDIR, 'keystonekey.pem'))
         self.config_fixture.config(group='token', provider='pkiz')
+        self.config_fixture.config(
+            group='ssl',
+            subject_alt_names=['localhost']
+        )
 
     def test_can_handle_missing_certs(self):
         controller = token.controllers.Auth()
