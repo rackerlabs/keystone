@@ -16,6 +16,24 @@
       "revId": "a0003da744ad983ec63bdaa20b1eb53141c3e816",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_9aed95f2",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/002_add_endpoint_groups.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-09T07:49:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_2eaf0f2d",
+      "revId": "a0003da744ad983ec63bdaa20b1eb53141c3e816",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
