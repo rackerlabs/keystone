@@ -70,6 +70,24 @@
       "revId": "b9874df57cae2f8f371087126c5190e4b968b800",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_3a71ed44",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1040,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-09T18:19:26Z",
+      "side": 1,
+      "message": "Hi Lance and Boris. Here we are just bypassing the calls on _associate_endpoint_group_with_project to _get_project_endpoint_group_url, with the same arguments and in the same order.\n\nIf we really want to do it this way, we could just replace this whole method declaration by:\n\n    _associate_endpoint_group_with_project \u003d (\n        _get_project_endpoint_group_url)\n\nthat should be put after _get_project_endpoint_group_url declaration. I think that is what Boris was proposing.\n\nHowever, I think _get_project_endpoint_group_url is more meaningful than _associate_endpoint_group_with_project, since we just return the URL in both methods.\n\nI do not see an advantage on the approach being proposed in this change, but if we really go this way, I would propose this method to look like:\n\n    def _associate_endpoint_group_with_project(self, endpoint_group_id, project_id):\n        url \u003d (\u0027/OS-EP-FILTER/endpoint_groups/%(endpoint_group_id)s\u0027\n               \u0027/projects/%(project_id)s\u0027 %\n               {\u0027endpoint_group_id\u0027: endpoint_group_id,\n                \u0027project_id\u0027: project_id})\n        self.put(url)\n        return url\n\nSo that this could be used everywhere and then the method _get_project_endpoint_group_url could be removed.",
+      "parentUuid": "3a961159_14cedf5a",
+      "revId": "b9874df57cae2f8f371087126c5190e4b968b800",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
