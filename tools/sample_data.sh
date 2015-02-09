@@ -87,9 +87,11 @@ if [[ -z "$OS_SERVICE_TOKEN" ]]; then
 fi
 
 export OS_SERVICE_ENDPOINT=${OS_SERVICE_ENDPOINT:-http://$CONTROLLER_PUBLIC_ADDRESS:${CONFIG_ADMIN_PORT:-35357}/v2.0}
+OS_SERVICE_PROTOCOL=`echo $OS_SERVICE_ENDPOINT | cut -d':' -f1`
 
 function get_id () {
-    echo `"$@" | grep ' id ' | awk '{print $4}'`
+
+    echo `"${@##*SecurityWarning}" | grep ' id ' | awk '{print $4}'`
 }
 
 #
@@ -153,9 +155,9 @@ keystone service-create --name=keystone \
                         --description="Keystone Identity Service")
 if [[ -z "$DISABLE_ENDPOINTS" ]]; then
     keystone endpoint-create --region RegionOne --service-id $KEYSTONE_SERVICE \
-        --publicurl "http://$CONTROLLER_PUBLIC_ADDRESS:\$(public_port)s/v2.0" \
-        --adminurl "http://$CONTROLLER_ADMIN_ADDRESS:\$(admin_port)s/v2.0" \
-        --internalurl "http://$CONTROLLER_INTERNAL_ADDRESS:\$(public_port)s/v2.0"
+        --publicurl "$OS_SERVICE_PROTOCOL://$CONTROLLER_PUBLIC_ADDRESS:\$(public_port)s/v2.0" \
+        --adminurl "$OS_SERVICE_PROTOCOL://$CONTROLLER_ADMIN_ADDRESS:\$(admin_port)s/v2.0" \
+        --internalurl "$OS_SERVICE_PROTOCOL://$CONTROLLER_INTERNAL_ADDRESS:\$(public_port)s/v2.0"
 fi
 
 #
