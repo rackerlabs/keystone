@@ -1618,6 +1618,10 @@
 # value)
 #cert_subject = /C=US/ST=Unset/L=Unset/O=Unset/CN=www.example.com
 
+# SSL certificate subject alternative names (auto generated certificate).
+# (multi valued)
+#subject_alt_names = localhost
+
 
 [ssl]
 
@@ -1637,6 +1641,10 @@
 
 # SSL certificate subject (auto generated certificate). (string value)
 #cert_subject = /C=US/ST=Unset/L=Unset/O=Unset/CN=localhost
+
+# SSL certificate subject alternative names (auto generated certificate).
+# (multi valued)
+#subject_alt_names = localhost
 
 
 [token]
