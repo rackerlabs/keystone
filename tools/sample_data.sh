@@ -89,7 +89,8 @@ fi
 export OS_SERVICE_ENDPOINT=${OS_SERVICE_ENDPOINT:-http://$CONTROLLER_PUBLIC_ADDRESS:${CONFIG_ADMIN_PORT:-35357}/v2.0}
 
 function get_id () {
-    echo `"$@" | grep ' id ' | awk '{print $4}'`
+
+    echo `"${@##*SecurityWarning}" | grep ' id ' | awk '{print $4}'`
 }
 
 #
