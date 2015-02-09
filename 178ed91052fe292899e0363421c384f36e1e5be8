@@ -34,6 +34,24 @@
       "revId": "178ed91052fe292899e0363421c384f36e1e5be8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_3c7c9b72",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/002_add_endpoint_groups.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-09T13:41:18Z",
+      "side": 1,
+      "message": "I agree that this line might be required; but I have the following concerns about it:\n\n1. It is not related to the bug;\n2. We use CASCADE almost nowhere in Keystone;\n3. It is not tested.\n\nThe last concern is the biggest. But if we add tests for this new behaviour, it will bloat the patch.",
+      "parentUuid": "da86d52c_963d68be",
+      "revId": "178ed91052fe292899e0363421c384f36e1e5be8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
