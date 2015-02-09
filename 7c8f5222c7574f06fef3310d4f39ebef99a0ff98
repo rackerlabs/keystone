@@ -52,6 +52,24 @@
       "revId": "7c8f5222c7574f06fef3310d4f39ebef99a0ff98",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f949358f",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-02-09T13:08:10Z",
+      "side": 1,
+      "message": "Well, maybe we need some explanaition somewhere why keystone writes the wery same log twice?\n\nI\u0027m actually happy to have all service related logs in one place but it\u0027s strange to have some of it doubled for unknown reason.",
+      "parentUuid": "da86d52c_d3ee12b4",
+      "revId": "7c8f5222c7574f06fef3310d4f39ebef99a0ff98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
