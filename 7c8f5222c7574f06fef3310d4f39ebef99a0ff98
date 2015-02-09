@@ -34,6 +34,24 @@
       "revId": "7c8f5222c7574f06fef3310d4f39ebef99a0ff98",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_d3ee12b4",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 2750
+      },
+      "writtenOn": "2015-02-09T12:05:59Z",
+      "side": 1,
+      "message": "See commit message.",
+      "parentUuid": "da86d52c_1a2b6531",
+      "revId": "7c8f5222c7574f06fef3310d4f39ebef99a0ff98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
