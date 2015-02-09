@@ -203,7 +203,7 @@ def setup_username(context, mapped_properties):
     :returns: tuple with user_name and user_id values.
 
     """
-    user_name = mapped_properties['name']
+    user_name = mapped_properties['user'].get('name')
     if user_name is None:
         user_name = context['environment'].get('REMOTE_USER')
         if user_name is None:
