@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_ce0913df",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-09T03:46:17Z",
+      "side": 1,
+      "message": "Would really be more helpful to provide more detail in the commit message. Something like the following: \n\nTables were being dropped in the incorrect order, the one with the foreign key should be dropped first. So \u0027project_endpoint_group\u0027 should be dropped before \u0027endpoint_group\u0027.\n\nAlso, when trying to downgrade from 1 to 0, the table \u0027project_endpoint\u0027 cannot be found when mysql is used.",
+      "revId": "0ab48666804cc13ffe1014e9c796c2b362f4ffe3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
