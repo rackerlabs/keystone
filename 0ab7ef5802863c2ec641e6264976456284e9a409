@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_da7fec64",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-09T19:53:25Z",
+      "side": 1,
+      "message": "Maybe I\u0027m being pedantic here, but we\u0027re not fixing anything.\n\nI say change these to be both Related-Bug, we can merge this change and mark both bugs as Won\u0027t Fix.",
+      "revId": "0ab7ef5802863c2ec641e6264976456284e9a409",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
