@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_a6122460",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-02-09T19:54:32Z",
+      "side": 1,
+      "message": "should we prevent from a bug in the response and use res.headers.get(\u0027X-Subject-Token\u0027) instead of accessing it directly?",
+      "revId": "3061d687ded75dad29b4245fd05e19e0375a6271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
