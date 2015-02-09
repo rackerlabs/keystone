@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_aebf565f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-09T21:46:39Z",
+      "side": 1,
+      "message": "could possibly tag this with: \n\n    implements bp removed-as-of-kilo",
+      "revId": "4bd5564e17d663277bef746291bdbd6ba163a872",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
