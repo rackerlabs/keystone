@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_05494e8b",
+        "filename": "keystone/tests/fakeldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:00:00Z",
+      "side": 1,
+      "message": "Call .lower() at line 145, and lower() on the attrs on line 146.",
+      "revId": "7622aab68a4d53e1f6c59e8a19da55c657813af5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_255d7249",
+        "filename": "keystone/tests/filtering.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:00:00Z",
+      "side": 1,
+      "message": "suggest remove \"is not None\"\n\nActually, should normalize the inputs early on, then this code doesn\u0027t have to worry about it:\n\n name_dict \u003d name_dict or {}",
+      "revId": "7622aab68a4d53e1f6c59e8a19da55c657813af5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e53a7ae6",
+        "filename": "keystone/tests/filtering.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:00:00Z",
+      "side": 1,
+      "message": "this loop is going to do uuid.uuid4().hex twice if name_dict is not None and doesn\u0027t contain x. This could be changed to be more efficient.",
+      "revId": "7622aab68a4d53e1f6c59e8a19da55c657813af5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e81faf59",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 5353,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:00:00Z",
+      "side": 1,
+      "message": "The comment \"# ...and one for useful case insensitivity testing\" should be left here so that future developers have some idea why this is here.",
+      "revId": "7622aab68a4d53e1f6c59e8a19da55c657813af5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_8847134b",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:00:00Z",
+      "side": 1,
+      "message": "change \"not valid\" to \"not be valid\"",
+      "revId": "7622aab68a4d53e1f6c59e8a19da55c657813af5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_a873f7b2",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:00:00Z",
+      "side": 1,
+      "message": "change \"not valid\" to \"not be valid\"",
+      "revId": "7622aab68a4d53e1f6c59e8a19da55c657813af5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_2839c7d8",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 709,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:00:00Z",
+      "side": 1,
+      "message": "change \"LDAP\" to \"driver\" or \"LDAP driver\"",
+      "revId": "7622aab68a4d53e1f6c59e8a19da55c657813af5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_6833bff6",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:00:00Z",
+      "side": 1,
+      "message": "what\u0027s important about 20 entities and 14 entities? add a comment.",
+      "revId": "7622aab68a4d53e1f6c59e8a19da55c657813af5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_085c0325",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 723,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:00:00Z",
+      "side": 1,
+      "message": "since this is going to be the same as 14 at line 716, create a constant and use that in both places.",
+      "revId": "7622aab68a4d53e1f6c59e8a19da55c657813af5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_684adf56",
+        "filename": "keystone/tests/test_backend_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 729,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:00:00Z",
+      "side": 1,
+      "message": "cleanup work should be done with addCleanup because it won\u0027t run if an assert fails or other exception is raised.",
+      "revId": "7622aab68a4d53e1f6c59e8a19da55c657813af5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
