@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_e8816ffc",
+        "filename": "keystone/tests/test_ssl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:44:11Z",
+      "side": 1,
+      "message": "change \"certification\" to \"certificate\"\n\nchange \"verficiation\" to \"verification\"",
+      "revId": "02d2cc4f9cc268ad714b99dc77c2513fbd80a5dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_0887a310",
+        "filename": "keystone/tests/test_ssl.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T01:44:11Z",
+      "side": 1,
+      "message": "prefer \u0027 for strings",
+      "revId": "02d2cc4f9cc268ad714b99dc77c2513fbd80a5dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
