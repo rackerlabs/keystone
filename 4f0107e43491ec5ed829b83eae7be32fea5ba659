@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_c599f620",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-09T00:26:33Z",
+      "side": 1,
+      "message": "Change \"Idenitity\" to \"Identity\"",
+      "revId": "4f0107e43491ec5ed829b83eae7be32fea5ba659",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
