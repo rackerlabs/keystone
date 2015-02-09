@@ -335,6 +335,7 @@ emailAddress_max            = 64
 basicConstraints       = CA:TRUE
 subjectKeyIdentifier   = hash
 authorityKeyIdentifier = keyid:always,issuer
+subjectAltName=email:copy
 
 [ v3_req ]
 basicConstraints     = CA:FALSE
@@ -344,4 +345,5 @@ keyUsage = nonRepudiation, digitalSignature, keyEncipherment
 basicConstraints       = CA:FALSE
 subjectKeyIdentifier   = hash
 authorityKeyIdentifier = keyid:always
+subjectAltName=email:move
 """
