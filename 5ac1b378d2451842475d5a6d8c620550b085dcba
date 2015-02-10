@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_2e6df499",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-10T19:21:42Z",
+      "side": 1,
+      "message": "so this is tricky, because we\u0027ve already got somewhat of a validation framework in place. The interesting part would be if we could get a schema for validating this. It\u0027s possible to tell jsonschema that we want to a require a certain property, but I wonder if we could write an extension to our own jsonschema validation layer that would check for this case. \n\nThinking out loud here because it would be nice to have *all* validation done in one place.\n\nWe could do something like the following: http://stackoverflow.com/questions/19436589/how-to-make-json-schema-to-allow-one-but-not-another-field",
+      "revId": "5ac1b378d2451842475d5a6d8c620550b085dcba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
