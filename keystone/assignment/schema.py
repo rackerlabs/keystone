@@ -14,7 +14,9 @@ from keystone.common.validation import parameter_types
 
 
 _role_properties = {
-    'name': parameter_types.name
+    'name': parameter_types.name,
+    'created_at': {'not': {}},
+    'updated_at': {'not': {}}
 }
 
 role_create = {
