@@ -15,6 +15,7 @@
 import functools
 import uuid
 
+from oslo_utils import timeutils
 import six
 
 from keystone.common import authorization
@@ -247,6 +248,16 @@ class V2Controller(wsgi.Application):
         return ref
 
     @staticmethod
+    def timestamp2isotime(ref):
+        if ref.get('created_at') is not None:
+            ref['created_at'] = timeutils.isotime(ref['created_at'],
+                                                  subsecond=True)
+        if ref.get('updated_at') is not None:
+            ref['updated_at'] = timeutils.isotime(ref['updated_at'],
+                                                  subsecond=True)
+        return ref
+
+    @staticmethod
     def v3_to_v2_user(ref):
         """Convert a user_ref from v3 to v2 compatible.
 
@@ -353,6 +364,16 @@ class V3Controller(wsgi.Application):
             val = True
         return val
 
+    @staticmethod
+    def timestamp2isotime(ref):
+        if ref.get('created_at') is not None:
+            ref['created_at'] = timeutils.isotime(ref['created_at'],
+                                                  subsecond=True)
+        if ref.get('updated_at') is not None:
+            ref['updated_at'] = timeutils.isotime(ref['updated_at'],
+                                                  subsecond=True)
+        return ref
+
     @classmethod
     def _add_self_referential_link(cls, context, ref):
         ref.setdefault('links', {})
@@ -361,6 +382,7 @@ class V3Controller(wsgi.Application):
     @classmethod
     def wrap_member(cls, context, ref):
         cls._add_self_referential_link(context, ref)
+        cls.timestamp2isotime(ref)
         return {cls.member_name: ref}
 
     @classmethod
