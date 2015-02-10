@@ -1568,6 +1568,25 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertTableDoesNotExist(whitelisted_table)
         self.assertTableDoesNotExist(sensitive_table)
 
+    def test_add_timestamp_to_project_and_role_upgrade(self):
+        self.upgrade(66)
+        self.assertTableColumns('project',
+                                ['id', 'name', 'domain_id', 'description',
+                                 'enabled', 'parent_id', 'created_at',
+                                 'updated_at', 'extra'])
+        self.assertTableColumns('role',
+                                ['id', 'name', 'created_at', 'updated_at',
+                                 'extra'])
+
+    def test_add_timestamp_to_project_and_role_downgrade(self):
+        self.upgrade(66)
+        self.downgrade(65)
+        self.assertTableColumns('project',
+                                ['id', 'name', 'domain_id', 'description',
+                                 'enabled', 'parent_id', 'extra'])
+        self.assertTableColumns('role',
+                                ['id', 'name', 'extra'])
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
