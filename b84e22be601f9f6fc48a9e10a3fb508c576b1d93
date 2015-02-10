@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_67e71741",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-02-10T17:31:05Z",
+      "side": 1,
+      "message": "IMO, the ideal fix for this should be in keystone-manage. This should be bootstrapped like \"default\" domain",
+      "revId": "b84e22be601f9f6fc48a9e10a3fb508c576b1d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
