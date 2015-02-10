@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_9a5e22e8",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-10T17:52:30Z",
+      "side": 1,
+      "message": "does msg even make sense? \u0027Specify one of %s\u0027 One of what?",
+      "revId": "eee219abf4398f47c577d0beb9cd150dfe693286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
