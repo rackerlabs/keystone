@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_99138bb7",
+        "filename": "bin/keystone-all",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-10T20:19:13Z",
+      "side": 1,
+      "message": "I think it can be inside if __name__ \u003d\u003d \u0027__main__\u0027, because afaik monkey-patching is required not before logging import, but before logging initialization",
+      "revId": "3887aa17f5181d4a8bc05b0512fb78818abf3ed7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
