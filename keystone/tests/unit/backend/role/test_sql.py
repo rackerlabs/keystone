@@ -22,6 +22,8 @@ class SqlRoleModels(core_sql.BaseBackendSqlModels):
 
     def test_role_model(self):
         cols = (('id', sql.String, 64),
+                ('created_at', sql.DateTime, None),
+                ('updated_at', sql.DateTime, None),
                 ('name', sql.String, 255))
         self.assertExpectedSchema('role', cols)
 
