@@ -16,6 +16,24 @@
       "revId": "2d9dda474b1a914421a0d60e63cfb5a85057b3d3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_6f5533c5",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-10T15:52:27Z",
+      "side": 1,
+      "message": "the real check is a few lines lower (line 506), this part is just making sure it it\u0027s a v3 token.",
+      "parentUuid": "da86d52c_81540e55",
+      "revId": "2d9dda474b1a914421a0d60e63cfb5a85057b3d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
