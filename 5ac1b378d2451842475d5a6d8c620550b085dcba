@@ -16,6 +16,24 @@
       "revId": "5ac1b378d2451842475d5a6d8c620550b085dcba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_6eec4cf4",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-10T19:24:34Z",
+      "side": 1,
+      "message": "so the schema might look something like: \n\n    \"oneOf\": [\n        {\"required\": [\"user_id\"]},\n        {\"required\": [\"group_id\"]}\n    ],\n    \"oneOf\": [\n        {\"required\": [\"project_id\"]},\n        {\"required\": [\"domain_id\"]}\n    ]",
+      "parentUuid": "da86d52c_2e6df499",
+      "revId": "5ac1b378d2451842475d5a6d8c620550b085dcba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
