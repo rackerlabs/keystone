@@ -135,6 +135,24 @@
       "revId": "8fff2ca452c5b6affd3e5d4bdd06e56fb2a39f37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_5d62e4d8",
+        "filename": "requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-10T18:12:03Z",
+      "side": 1,
+      "message": "yes, python-keyczar has been proposed https://review.openstack.org/#/c/154590/ and msgpack-python is already included in global-requirements.txt",
+      "parentUuid": "da86d52c_0e26a216",
+      "revId": "8fff2ca452c5b6affd3e5d4bdd06e56fb2a39f37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
