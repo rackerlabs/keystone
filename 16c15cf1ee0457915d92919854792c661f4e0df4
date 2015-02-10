@@ -34,6 +34,24 @@
       "revId": "16c15cf1ee0457915d92919854792c661f4e0df4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f344a91c",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 900,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-10T18:56:59Z",
+      "side": 1,
+      "message": "Ok, ignore the comment - I agree that non-effective, domain+inherited is not guaranteed to be an empty list...",
+      "parentUuid": "da86d52c_21d44246",
+      "revId": "16c15cf1ee0457915d92919854792c661f4e0df4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
