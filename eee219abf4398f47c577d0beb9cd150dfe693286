@@ -16,6 +16,24 @@
       "revId": "eee219abf4398f47c577d0beb9cd150dfe693286",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_9318cd85",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-10T19:13:32Z",
+      "side": 1,
+      "message": "well.... it should be keys from kwargs, thanks!",
+      "parentUuid": "da86d52c_9a5e22e8",
+      "revId": "eee219abf4398f47c577d0beb9cd150dfe693286",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
