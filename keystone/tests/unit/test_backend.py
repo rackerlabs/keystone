@@ -39,7 +39,8 @@ DEFAULT_DOMAIN_ID = CONF.identity.default_domain_id
 NULL_OBJECT = object()
 
 
-class IdentityTests(object):
+class IdentityTests(tests.ModelBase):
+
     def _get_domain_fixture(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.resource_api.create_domain(domain['id'], domain)
@@ -1128,11 +1129,15 @@ class IdentityTests(object):
         roles_ref = self.assignment_api.list_grants(
             group_id=group1['id'],
             domain_id=domain1['id'])
-        self.assertDictEqual(roles_ref[0], group1_domain1_role)
+        self.assertRoleEqual(
+            roles_ref[0],
+            group1_domain1_role)
         roles_ref = self.assignment_api.list_grants(
             group_id=group1['id'],
             domain_id=domain2['id'])
-        self.assertDictEqual(roles_ref[0], group1_domain2_role)
+        self.assertRoleEqual(
+            roles_ref[0],
+            group1_domain2_role)
 
         self.assignment_api.delete_grant(group_id=group1['id'],
                                          domain_id=domain2['id'],
@@ -1178,11 +1183,15 @@ class IdentityTests(object):
         roles_ref = self.assignment_api.list_grants(
             user_id=user1['id'],
             domain_id=domain1['id'])
-        self.assertDictEqual(roles_ref[0], user1_domain1_role)
+        self.assertRoleEqual(
+            roles_ref[0],
+            user1_domain1_role)
         roles_ref = self.assignment_api.list_grants(
             user_id=user1['id'],
             domain_id=domain2['id'])
-        self.assertDictEqual(roles_ref[0], user1_domain2_role)
+        self.assertRoleEqual(
+            roles_ref[0],
+            user1_domain2_role)
 
         self.assignment_api.delete_grant(user_id=user1['id'],
                                          domain_id=domain2['id'],
@@ -1239,7 +1248,7 @@ class IdentityTests(object):
             group_id=group1['id'],
             project_id=project1['id'])
         self.assertEqual(1, len(roles_ref))
-        self.assertDictEqual(roles_ref[0], role2)
+        self.assertRoleEqual(roles_ref[0], role2)
 
     def test_role_grant_by_user_and_cross_domain_project(self):
         role1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
@@ -1283,7 +1292,7 @@ class IdentityTests(object):
             user_id=user1['id'],
             project_id=project1['id'])
         self.assertEqual(1, len(roles_ref))
-        self.assertDictEqual(roles_ref[0], role2)
+        self.assertRoleEqual(roles_ref[0], role2)
 
     def test_delete_user_grant_no_user(self):
         # Can delete a grant where the user doesn't exist.
@@ -1403,23 +1412,23 @@ class IdentityTests(object):
         roles_ref = self.assignment_api.list_grants(user_id=user1['id'],
                                                     domain_id=domain1['id'])
         self.assertEqual(2, len(roles_ref))
-        self.assertIn(role_list[0], roles_ref)
-        self.assertIn(role_list[1], roles_ref)
+        self.assertRoleIn(role_list[0], roles_ref)
+        self.assertRoleIn(role_list[1], roles_ref)
         roles_ref = self.assignment_api.list_grants(group_id=group1['id'],
                                                     domain_id=domain1['id'])
         self.assertEqual(2, len(roles_ref))
-        self.assertIn(role_list[2], roles_ref)
-        self.assertIn(role_list[3], roles_ref)
+        self.assertRoleIn(role_list[2], roles_ref)
+        self.assertRoleIn(role_list[3], roles_ref)
         roles_ref = self.assignment_api.list_grants(user_id=user1['id'],
                                                     project_id=project1['id'])
         self.assertEqual(2, len(roles_ref))
-        self.assertIn(role_list[4], roles_ref)
-        self.assertIn(role_list[5], roles_ref)
+        self.assertRoleIn(role_list[4], roles_ref)
+        self.assertRoleIn(role_list[5], roles_ref)
         roles_ref = self.assignment_api.list_grants(group_id=group1['id'],
                                                     project_id=project1['id'])
         self.assertEqual(2, len(roles_ref))
-        self.assertIn(role_list[6], roles_ref)
-        self.assertIn(role_list[7], roles_ref)
+        self.assertRoleIn(role_list[6], roles_ref)
+        self.assertRoleIn(role_list[7], roles_ref)
 
         # Now test the alternate way of getting back lists of grants,
         # where user and group roles are combined.  These should match
@@ -2196,14 +2205,14 @@ class IdentityTests(object):
 
         subtree = self.resource_api.list_projects_in_subtree(project1['id'])
         self.assertEqual(3, len(subtree))
-        self.assertIn(project2, subtree)
-        self.assertIn(project3, subtree)
-        self.assertIn(project4, subtree)
+        self.assertProjectIn(project2, subtree)
+        self.assertProjectIn(project3, subtree)
+        self.assertProjectIn(project4, subtree)
 
         subtree = self.resource_api.list_projects_in_subtree(project2['id'])
         self.assertEqual(2, len(subtree))
-        self.assertIn(project3, subtree)
-        self.assertIn(project4, subtree)
+        self.assertProjectIn(project3, subtree)
+        self.assertProjectIn(project4, subtree)
 
         subtree = self.resource_api.list_projects_in_subtree(project3['id'])
         self.assertEqual(0, len(subtree))
@@ -2223,8 +2232,8 @@ class IdentityTests(object):
 
         parents1 = self.resource_api.list_project_parents(project3['id'])
         self.assertEqual(2, len(parents1))
-        self.assertIn(project1, parents1)
-        self.assertIn(project2, parents1)
+        self.assertProjectIn(project1, parents1)
+        self.assertProjectIn(project2, parents1)
 
         parents2 = self.resource_api.list_project_parents(project4['id'])
         self.assertEqual(parents1, parents2)
@@ -2786,7 +2795,7 @@ class IdentityTests(object):
         leaf_project['description'] = 'new description'
         self.resource_api.update_project(leaf_project['id'], leaf_project)
         proj_ref = self.resource_api.get_project(leaf_project['id'])
-        self.assertDictEqual(proj_ref, leaf_project)
+        self.assertProjectEqual(proj_ref, leaf_project)
 
         # update the parent_id is not allowed
         leaf_project['parent_id'] = root_project1['id']
@@ -2975,7 +2984,7 @@ class IdentityTests(object):
         self.resource_api.update_project(project['id'], project)
 
         project_ref = self.resource_api.get_project(project['id'])
-        self.assertDictEqual(project_ref, project)
+        self.assertProjectEqual(project_ref, project)
 
     def test_project_update_missing_attrs_with_a_falsey_value(self):
         # Creating a project with no description attribute.
@@ -2991,7 +3000,7 @@ class IdentityTests(object):
         self.resource_api.update_project(project['id'], project)
 
         project_ref = self.resource_api.get_project(project['id'])
-        self.assertDictEqual(project_ref, project)
+        self.assertProjectEqual(project_ref, project)
 
     def test_domain_crud(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
@@ -3504,8 +3513,8 @@ class IdentityTests(object):
             group_id_list, domain_id=domain1['id'])
 
         self.assertThat(role_refs, matchers.HasLength(2))
-        self.assertIn(role_list[0], role_refs)
-        self.assertIn(role_list[1], role_refs)
+        self.assertRoleIn(role_list[0], role_refs)
+        self.assertRoleIn(role_list[1], role_refs)
 
     def test_get_roles_for_groups_on_project(self):
         """Test retrieving group project roles.
@@ -3578,7 +3587,7 @@ class IdentityTests(object):
             group_id_list, project_id=project1['id'])
 
         self.assertThat(role_refs, matchers.HasLength(1))
-        self.assertIn(role_list[2], role_refs)
+        self.assertRoleIn(role_list[2], role_refs)
 
         # With inheritance on, we should also get back the inherited role from
         # its owning domain.
@@ -3588,8 +3597,8 @@ class IdentityTests(object):
             group_id_list, project_id=project1['id'])
 
         self.assertThat(role_refs, matchers.HasLength(2))
-        self.assertIn(role_list[1], role_refs)
-        self.assertIn(role_list[2], role_refs)
+        self.assertRoleIn(role_list[1], role_refs)
+        self.assertRoleIn(role_list[2], role_refs)
 
     def test_list_domains_for_groups(self):
         """Test retrieving domains for a list of groups.
@@ -5155,7 +5164,7 @@ class PolicyTests(object):
                           uuid.uuid4().hex)
 
 
-class InheritanceTests(object):
+class InheritanceTests(tests.ModelBase):
 
     def test_inherited_role_grants_for_user(self):
         """Test inherited user roles.
@@ -5402,15 +5411,15 @@ class InheritanceTests(object):
         # the root project and inherited role assignment for leaf project
         user_projects = self.assignment_api.list_projects_for_user(user['id'])
         self.assertEqual(2, len(user_projects))
-        self.assertIn(root_project, user_projects)
-        self.assertIn(leaf_project, user_projects)
+        self.assertProjectIn(root_project, user_projects)
+        self.assertProjectIn(leaf_project, user_projects)
 
         # Disable OS-INHERIT extension
         self.config_fixture.config(group='os_inherit', enabled=False)
         # Should get back just root project - due the direct role assignment
         user_projects = self.assignment_api.list_projects_for_user(user['id'])
         self.assertEqual(1, len(user_projects))
-        self.assertIn(root_project, user_projects)
+        self.assertProjectIn(root_project, user_projects)
 
     def test_list_projects_for_user_with_inherited_group_grants(self):
         """Test inherited group roles.
@@ -5527,15 +5536,15 @@ class InheritanceTests(object):
         # the root project and inherited role assignment for leaf project
         user_projects = self.assignment_api.list_projects_for_user(user['id'])
         self.assertEqual(2, len(user_projects))
-        self.assertIn(root_project, user_projects)
-        self.assertIn(leaf_project, user_projects)
+        self.assertProjectIn(root_project, user_projects)
+        self.assertProjectIn(leaf_project, user_projects)
 
         # Disable OS-INHERIT extension
         self.config_fixture.config(group='os_inherit', enabled=False)
         # Should get back just root project - due the direct role assignment
         user_projects = self.assignment_api.list_projects_for_user(user['id'])
         self.assertEqual(1, len(user_projects))
-        self.assertIn(root_project, user_projects)
+        self.assertProjectIn(root_project, user_projects)
 
 
 class FilterTests(filtering.FilterTests):

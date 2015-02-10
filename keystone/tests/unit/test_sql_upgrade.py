@@ -38,6 +38,7 @@ from oslo_config import cfg
 from oslo_db import exception as db_exception
 from oslo_db.sqlalchemy import migration
 from oslo_db.sqlalchemy import session as db_session
+from oslo_utils import timeutils
 import six
 from sqlalchemy.engine import reflection
 import sqlalchemy.exc
@@ -676,6 +677,66 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.downgrade(64)
         self.assertTableDoesNotExist(whitelisted_table)
         self.assertTableDoesNotExist(sensitive_table)
+
+    def test_add_timestamp_to_project_and_role_upgrade(self):
+        self.upgrade(66)
+        self.assertTableColumns('project',
+                                ['id', 'name', 'domain_id', 'description',
+                                 'enabled', 'parent_id', 'created_at',
+                                 'updated_at', 'extra'])
+        self.assertTableColumns('role',
+                                ['id', 'name', 'created_at', 'updated_at',
+                                 'extra'])
+
+    def test_add_timestamp_to_project_and_role_downgrade(self):
+        self.upgrade(66)
+        self.downgrade(65)
+        self.assertTableColumns('project',
+                                ['id', 'name', 'domain_id', 'description',
+                                 'enabled', 'parent_id', 'extra'])
+        self.assertTableColumns('role',
+                                ['id', 'name', 'extra'])
+
+    def test_project_and_role_timestamp_cleanup(self):
+        # make sure that the timestamp fields are dropped in the downgrade
+        self.upgrade(66)
+        session = self.Session()
+        project = {
+            'id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'domain_id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'parent_id': None,
+            'created_at': timeutils.utcnow(),
+            'updated_at': timeutils.utcnow()
+        }
+        role = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'created_at': timeutils.utcnow(),
+            'updated_at': timeutils.utcnow()
+        }
+        self.insert_dict(session, 'project', project)
+        self.insert_dict(session, 'role', role)
+        proj_table = sqlalchemy.Table('project', self.metadata, autoload=True)
+        self.assertEqual(1, session.query(proj_table).count())
+        role_table = sqlalchemy.Table('role', self.metadata, autoload=True)
+        self.assertEqual(1, session.query(role_table).count())
+        session.close()
+
+        self.downgrade(65)
+        session = self.Session()
+        self.metadata.clear()
+        proj_table = sqlalchemy.Table('project', self.metadata, autoload=True)
+        self.assertEqual(1, session.query(proj_table).count())
+        project = session.query(proj_table)[0]
+        self.assertRaises(AttributeError, getattr, project, 'created_at')
+        self.assertRaises(AttributeError, getattr, project, 'updated_at')
+        role_table = sqlalchemy.Table('role', self.metadata, autoload=True)
+        self.assertEqual(1, session.query(role_table).count())
+        role = session.query(role_table)[0]
+        self.assertRaises(AttributeError, getattr, role, 'created_at')
+        self.assertRaises(AttributeError, getattr, role, 'updated_at')
 
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):

@@ -14,6 +14,7 @@
 
 from __future__ import absolute_import
 import atexit
+import copy
 import functools
 import logging
 import os
@@ -658,3 +659,33 @@ class SQLDriverOverrides(object):
         self.config_fixture.config(
             group='trust',
             driver='keystone.trust.backends.sql.Trust')
+
+
+class ModelBase(object):
+
+    _timestamp_enabled = True
+
+    def strip_off_timestamp(self, ref):
+        ref_copy = copy.deepcopy(ref)
+        if self._timestamp_enabled:
+            del ref_copy['created_at']
+            del ref_copy['updated_at']
+        return ref_copy
+
+    def assertRoleEqual(self, role_ref, role_details):
+        role_ref = self.strip_off_timestamp(role_ref)
+        self.assertDictEqual(role_details, role_ref)
+
+    def assertRoleIn(self, role_details, role_refs):
+        role_refs = [self.strip_off_timestamp(role_ref)
+                     for role_ref in role_refs]
+        self.assertIn(role_details, role_refs)
+
+    def assertProjectEqual(self, project_ref, project_details):
+        project_ref = self.strip_off_timestamp(project_ref)
+        self.assertDictEqual(project_details, project_ref)
+
+    def assertProjectIn(self, project_details, project_refs):
+        project_refs = [self.strip_off_timestamp(project_ref)
+                        for project_ref in project_refs]
+        self.assertIn(project_details, project_refs)
