@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_5952f3de",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1183,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-10T20:13:48Z",
+      "side": 1,
+      "message": "This doc string will have to be split up, something like the following: \n\n\n    \"\"\"Validate required endpoint group parameters.\n \n        This test ensure that we can validate the required parameters needed\n        for creating an endpoint group.\n\n    \"\"\"",
+      "revId": "314fceaaa101e967f9ca54538b63727c1aec1cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_995f0be5",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1199,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-10T20:13:48Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "314fceaaa101e967f9ca54538b63727c1aec1cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_b90befd4",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1243,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-10T20:13:48Z",
+      "side": 1,
+      "message": "same comment here.",
+      "revId": "314fceaaa101e967f9ca54538b63727c1aec1cb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
