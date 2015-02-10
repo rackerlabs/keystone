@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_2109a2dd",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-10T09:38:47Z",
+      "side": 1,
+      "message": "it might be useful to list what the accepted params are...",
+      "revId": "b0d6016626dd391d332a2792fc2826b32235ac88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e115cae5",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 1488,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-10T09:38:47Z",
+      "side": 1,
+      "message": "not true for domain...you can ask for effective+domain",
+      "revId": "b0d6016626dd391d332a2792fc2826b32235ac88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
