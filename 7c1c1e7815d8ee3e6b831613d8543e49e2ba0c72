@@ -16,6 +16,24 @@
       "revId": "7c1c1e7815d8ee3e6b831613d8543e49e2ba0c72",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_be677ae9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-10T03:10:35Z",
+      "side": 1,
+      "message": "Not sure if it\u0027s a bug, it was only exposed when I was creating this patch: https://review.openstack.org/#/c/153815/3/keystone/tests/test_versions.py\n\nWhen the json-home value is auto-determined it was failing because these href-vars had different names.\n\nif you consider this a bug let me know.",
+      "parentUuid": "da86d52c_6b66222b",
+      "revId": "7c1c1e7815d8ee3e6b831613d8543e49e2ba0c72",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
