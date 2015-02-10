@@ -92,6 +92,7 @@ class Tenant(controller.V2Controller):
         # TODO(termie): this stuff should probably be moved to middleware
         self.assert_admin(context)
         ref = self.resource_api.get_project(tenant_id)
+        ref = self.timestamp2isotime(ref)
         return {'tenant': self.filter_domain_id(ref)}
 
     @controller.v2_deprecated
@@ -99,6 +100,7 @@ class Tenant(controller.V2Controller):
         self.assert_admin(context)
         ref = self.resource_api.get_project_by_name(
             tenant_name, CONF.identity.default_domain_id)
+        ref = self.timestamp2isotime(ref)
         return {'tenant': self.filter_domain_id(ref)}
 
     # CRUD Extension
@@ -115,6 +117,7 @@ class Tenant(controller.V2Controller):
         tenant = self.resource_api.create_project(
             tenant_ref['id'],
             self._normalize_domain_id(context, tenant_ref))
+        tenant = self.timestamp2isotime(tenant)
         return {'tenant': self.filter_domain_id(tenant)}
 
     @controller.v2_deprecated
@@ -127,6 +130,7 @@ class Tenant(controller.V2Controller):
 
         tenant_ref = self.resource_api.update_project(
             tenant_id, clean_tenant)
+        tenant_ref = self.timestamp2isotime(tenant_ref)
         return {'tenant': tenant_ref}
 
     @controller.v2_deprecated
@@ -182,6 +186,7 @@ class Tenant(controller.V2Controller):
         for x in tenant_refs:
             if 'enabled' not in x:
                 x['enabled'] = True
+            x = self.timestamp2isotime(x)
         o = {'tenants': tenant_refs,
              'tenants_links': []}
         return o
@@ -202,14 +207,15 @@ class Role(controller.V2Controller):
         self.assert_admin(context)
         roles = self.assignment_api.get_roles_for_user_and_project(
             user_id, tenant_id)
-        return {'roles': [self.role_api.get_role(x)
-                          for x in roles]}
+        role_refs = [self.role_api.get_role(x) for x in roles]
+        return {'roles': [self.timestamp2isotime(role) for role in role_refs]}
 
     # CRUD extension
     @controller.v2_deprecated
     def get_role(self, context, role_id):
         self.assert_admin(context)
-        return {'role': self.role_api.get_role(role_id)}
+        role_ref = self.role_api.get_role(role_id)
+        return {'role': self.timestamp2isotime(role_ref)}
 
     @controller.v2_deprecated
     def create_role(self, context, role):
@@ -223,6 +229,7 @@ class Role(controller.V2Controller):
         role_id = uuid.uuid4().hex
         role['id'] = role_id
         role_ref = self.role_api.create_role(role_id, role)
+        role_ref = self.timestamp2isotime(role_ref)
         return {'role': role_ref}
 
     @controller.v2_deprecated
@@ -233,7 +240,8 @@ class Role(controller.V2Controller):
     @controller.v2_deprecated
     def get_roles(self, context):
         self.assert_admin(context)
-        return {'roles': self.role_api.list_roles()}
+        role_refs = self.role_api.list_roles()
+        return {'roles': [self.timestamp2isotime(role) for role in role_refs]}
 
     @controller.v2_deprecated
     def add_role_to_user(self, context, user_id, role_id, tenant_id=None):
@@ -252,6 +260,7 @@ class Role(controller.V2Controller):
             user_id, tenant_id, role_id)
 
         role_ref = self.role_api.get_role(role_id)
+        role_ref = self.timestamp2isotime(role_ref)
         return {'role': role_ref}
 
     @controller.v2_deprecated
@@ -318,6 +327,7 @@ class Role(controller.V2Controller):
             user_id, tenant_id, role_id)
 
         role_ref = self.role_api.get_role(role_id)
+        role_ref = self.timestamp2isotime(role_ref)
         return {'role': role_ref}
 
     # COMPAT(diablo): CRUD extension

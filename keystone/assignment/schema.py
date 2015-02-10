@@ -26,7 +26,9 @@ _project_properties = {
         'type': 'string',
         'minLength': 1,
         'maxLength': 64
-    }
+    },
+    'created_at': {'not': {}},
+    'updated_at': {'not': {}},
 }
 
 project_create = {
@@ -75,7 +77,9 @@ domain_update = {
 }
 
 _role_properties = {
-    'name': parameter_types.name
+    'name': parameter_types.name,
+    'created_at': {'not': {}},
+    'updated_at': {'not': {}},
 }
 
 role_create = {
