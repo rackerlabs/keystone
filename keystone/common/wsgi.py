@@ -37,7 +37,7 @@ from keystone.i18n import _
 from keystone.i18n import _LI
 from keystone.i18n import _LW
 from keystone.models import token_model
-from keystone.openstack.common import log
+from oslo_log import log
 
 
 CONF = config.CONF

@@ -29,7 +29,7 @@ from pycadf import eventfactory
 from pycadf import resource
 
 from keystone.i18n import _, _LE
-from keystone.openstack.common import log
+from oslo_log import log
 
 
 notifier_opts = [

@@ -32,7 +32,7 @@ from six import moves
 from keystone.common.ldap import core
 from keystone import config
 from keystone import exception
-from keystone.openstack.common import log
+from oslo_log import log
 
 
 SCOPE_NAMES = {

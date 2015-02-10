@@ -39,7 +39,7 @@ from oslo.config import cfg
 
 from keystone.openstack.common import eventlet_backdoor
 from keystone.openstack.common._i18n import _LE, _LI, _LW
-from keystone.openstack.common import log as logging
+from oslo_log import log as logging
 from keystone.openstack.common import systemd
 from keystone.openstack.common import threadgroup
 

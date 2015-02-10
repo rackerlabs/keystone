@@ -28,7 +28,7 @@ from keystone import config
 from keystone.contrib import federation
 from keystone import exception
 from keystone.i18n import _, _LI, _LW
-from keystone.openstack.common import log
+from oslo_log import log
 
 
 LOG = log.getLogger(__name__)

@@ -21,7 +21,7 @@ import six
 from testtools import testcase
 
 from keystone.common import environment
-from keystone.openstack.common import log
+from oslo_log import log
 
 
 LOG = log.getLogger(__name__)

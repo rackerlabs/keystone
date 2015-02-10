@@ -19,7 +19,7 @@ from keystone.common import environment
 from keystone.common import utils
 from keystone import config
 from keystone.i18n import _LI, _LE
-from keystone.openstack.common import log
+from oslo_log import log
 
 LOG = log.getLogger(__name__)
 CONF = config.CONF

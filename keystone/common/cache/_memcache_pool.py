@@ -30,7 +30,7 @@ from six.moves import queue
 
 from keystone import exception
 from keystone.i18n import _
-from keystone.openstack.common import log
+from oslo_log import log
 
 
 LOG = log.getLogger(__name__)

@@ -32,7 +32,7 @@ from keystone import exception
 from keystone.i18n import _, _LW
 from keystone.identity.mapping_backends import mapping
 from keystone import notifications
-from keystone.openstack.common import log
+from oslo_log import log
 
 
 CONF = config.CONF

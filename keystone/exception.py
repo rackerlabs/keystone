@@ -17,7 +17,7 @@ import six
 
 from keystone.common import config
 from keystone.i18n import _, _LW
-from keystone.openstack.common import log
+from oslo_log import log
 
 
 CONF = config.CONF

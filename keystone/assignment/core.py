@@ -27,7 +27,7 @@ from keystone import exception
 from keystone.i18n import _
 from keystone.i18n import _LI
 from keystone import notifications
-from keystone.openstack.common import log
+from oslo_log import log
 from keystone.openstack.common import versionutils
 
 

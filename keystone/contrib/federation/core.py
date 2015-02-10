@@ -21,7 +21,7 @@ from keystone.common import extension
 from keystone.common import manager
 from keystone import config
 from keystone import exception
-from keystone.openstack.common import log as logging
+from oslo_log import log as logging
 
 
 CONF = config.CONF

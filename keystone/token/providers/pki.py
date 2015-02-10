@@ -22,7 +22,7 @@ from keystone.common import utils
 from keystone import config
 from keystone import exception
 from keystone.i18n import _, _LE
-from keystone.openstack.common import log
+from oslo_log import log
 from keystone.token.providers import common
 
 

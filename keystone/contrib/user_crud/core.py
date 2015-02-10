@@ -21,7 +21,7 @@ from keystone.common import wsgi
 from keystone import exception
 from keystone import identity
 from keystone.models import token_model
-from keystone.openstack.common import log
+from oslo_log import log
 
 
 LOG = log.getLogger(__name__)

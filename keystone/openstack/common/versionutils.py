@@ -24,7 +24,7 @@ import pkg_resources
 import six
 
 from keystone.openstack.common._i18n import _
-from keystone.openstack.common import log as logging
+from oslo_log import log as logging
 
 
 LOG = logging.getLogger(__name__)

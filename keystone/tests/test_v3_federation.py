@@ -32,7 +32,7 @@ from keystone.contrib.federation import idp as keystone_idp
 from keystone.contrib.federation import utils as mapping_utils
 from keystone import exception
 from keystone import notifications
-from keystone.openstack.common import log
+from oslo_log import log
 from keystone.tests import federation_fixtures
 from keystone.tests import mapping_fixtures
 from keystone.tests import test_v3

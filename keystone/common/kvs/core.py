@@ -30,7 +30,7 @@ from keystone import exception
 from keystone.i18n import _
 from keystone.i18n import _LI
 from keystone.i18n import _LW
-from keystone.openstack.common import log
+from oslo_log import log
 
 
 __all__ = ['KeyValueStore', 'KeyValueStoreLock', 'LockTimeout',

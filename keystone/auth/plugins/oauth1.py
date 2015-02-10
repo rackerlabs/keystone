@@ -21,7 +21,7 @@ from keystone.contrib.oauth1 import core as oauth
 from keystone.contrib.oauth1 import validator
 from keystone import exception
 from keystone.i18n import _
-from keystone.openstack.common import log
+from oslo_log import log
 
 
 LOG = log.getLogger(__name__)

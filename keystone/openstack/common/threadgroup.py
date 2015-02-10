@@ -16,7 +16,7 @@ import threading
 import eventlet
 from eventlet import greenpool
 
-from keystone.openstack.common import log as logging
+from oslo_log import log as logging
 from keystone.openstack.common import loopingcall
 
 

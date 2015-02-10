@@ -17,7 +17,7 @@ from sqlalchemy import orm
 from keystone.common import sql as ks_sql
 from keystone.common.sql import migration_helpers
 from keystone import config
-from keystone.openstack.common import log
+from oslo_log import log
 
 
 LOG = log.getLogger(__name__)

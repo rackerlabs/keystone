@@ -25,7 +25,7 @@ from keystone import config
 from keystone import exception
 from keystone.i18n import _
 from keystone.models import token_model
-from keystone.openstack.common import log
+from oslo_log import log
 from keystone.trust import schema
 
 

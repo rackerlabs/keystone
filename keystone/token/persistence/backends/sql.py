@@ -21,7 +21,7 @@ from keystone.common import sql
 from keystone import config
 from keystone import exception
 from keystone.i18n import _LI
-from keystone.openstack.common import log
+from oslo_log import log
 from keystone import token
 from keystone.token import provider
 

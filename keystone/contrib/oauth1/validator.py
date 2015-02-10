@@ -19,7 +19,7 @@ import six
 from keystone.common import dependency
 from keystone.contrib.oauth1 import core as oauth1
 from keystone import exception
-from keystone.openstack.common import log
+from oslo_log import log
 
 
 METHOD_NAME = 'oauth_validator'

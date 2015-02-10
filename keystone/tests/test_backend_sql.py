@@ -28,7 +28,7 @@ from keystone.common import sql
 from keystone import config
 from keystone import exception
 from keystone.identity.backends import sql as identity_sql
-from keystone.openstack.common import log as logging
+from oslo_log import log as logging
 from keystone import tests
 from keystone.tests import default_fixtures
 from keystone.tests.ksfixtures import database

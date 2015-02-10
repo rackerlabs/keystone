@@ -36,7 +36,7 @@ from sqlalchemy import types as sql_types
 from keystone.common import utils
 from keystone import exception
 from keystone.i18n import _
-from keystone.openstack.common import log
+from oslo_log import log
 
 
 CONF = cfg.CONF

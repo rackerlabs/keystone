@@ -19,7 +19,7 @@ from keystone.common import dependency
 from keystone import config
 from keystone import exception
 from keystone.i18n import _, _LW
-from keystone.openstack.common import log
+from oslo_log import log
 
 
 CONF = config.CONF

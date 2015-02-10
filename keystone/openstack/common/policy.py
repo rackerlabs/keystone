@@ -102,7 +102,7 @@ import six.moves.urllib.request as urlrequest
 
 from keystone.openstack.common import fileutils
 from keystone.openstack.common._i18n import _, _LE, _LI
-from keystone.openstack.common import log as logging
+from oslo_log import log as logging
 
 
 policy_opts = [
