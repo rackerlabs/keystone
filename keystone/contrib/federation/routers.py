@@ -191,8 +191,8 @@ class FederationExtension(wsgi.V3ExtensionRouter):
             rel=build_resource_relation(resource_name='projects'))
         self._add_resource(
             mapper, auth_controller,
-            path=self._construct_url('identity_providers/{identity_provider}/'
-                                     'protocols/{protocol}/auth'),
+            path=self._construct_url('identity_providers/{idp_id}/'
+                                     'protocols/{protocol_id}/auth'),
             get_post_action='federated_authentication',
             rel=build_resource_relation(
                 resource_name='identity_provider_protocol_auth'),
