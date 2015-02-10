@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_f44838b5",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-10T17:47:50Z",
+      "side": 1,
+      "message": "may want to keep it consistent\n\ninherited_to_projects \u003d \u0027/inherited_to_projects\u0027 if attribs.get(\u0027inherited_to_projects\u0027) else \u0027\u0027\n\nlink \u003d \u0027/%s/%s/%s/%s/%s/%s%s\u0027 % (target + actor + role + inherited_to_projects)",
+      "revId": "c6fb19bbc0ef1299ca7424418dd1e1d0d61501ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_ba020607",
+        "filename": "keystone/tests/test_v3_assignment.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-10T17:47:50Z",
+      "side": 1,
+      "message": "more description on what this function does would be extremely helpful to reviewers/maintainers",
+      "revId": "c6fb19bbc0ef1299ca7424418dd1e1d0d61501ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
