@@ -16,6 +16,24 @@
       "revId": "3887aa17f5181d4a8bc05b0512fb78818abf3ed7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_39237fbe",
+        "filename": "bin/keystone-all",
+        "patchSetId": 2
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 5638
+      },
+      "writtenOn": "2015-02-10T20:28:23Z",
+      "side": 1,
+      "message": "No Boris, lots of still gets initialized before __main__ begins (see all the imports!). we need to do this before any of them\n\nSee https://review.openstack.org/#/c/154642/",
+      "parentUuid": "da86d52c_99138bb7",
+      "revId": "3887aa17f5181d4a8bc05b0512fb78818abf3ed7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
