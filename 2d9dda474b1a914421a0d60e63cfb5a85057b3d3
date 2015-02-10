@@ -34,6 +34,23 @@
       "revId": "2d9dda474b1a914421a0d60e63cfb5a85057b3d3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_0f483786",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-10T16:07:58Z",
+      "side": 1,
+      "message": "looks like you want to raise exception.Unauthorized() if it is the federated v3 token ?\n\nWasn\u0027t the goal to check v3 tokens?",
+      "revId": "2d9dda474b1a914421a0d60e63cfb5a85057b3d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
