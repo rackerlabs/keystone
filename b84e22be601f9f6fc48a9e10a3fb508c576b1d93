@@ -16,6 +16,24 @@
       "revId": "b84e22be601f9f6fc48a9e10a3fb508c576b1d93",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_8ec7c011",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-10T19:35:04Z",
+      "side": 1,
+      "message": "This is out of scope for the change in a backport.",
+      "parentUuid": "da86d52c_67e71741",
+      "revId": "b84e22be601f9f6fc48a9e10a3fb508c576b1d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
