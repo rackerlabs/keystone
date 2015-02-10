@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_9215474b",
+        "filename": "keystone/tests/test_keystoneclient.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-10T07:05:10Z",
+      "side": 1,
+      "message": "really? I thought member role only assigned when adding users to a tenant without specifying a role. Not all users have this role.",
+      "revId": "24df280987b35e7bf206377c62d4cc2b1a9b7fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
