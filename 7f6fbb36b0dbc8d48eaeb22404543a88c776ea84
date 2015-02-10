@@ -50,6 +50,24 @@
       "revId": "7f6fbb36b0dbc8d48eaeb22404543a88c776ea84",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_88b9a17b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 764,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-10T01:07:15Z",
+      "side": 1,
+      "message": "As an aside, the tests I mentioned have now been moved to: https://review.openstack.org/#/c/154302/",
+      "parentUuid": "da86d52c_3a2f2d8a",
+      "revId": "7f6fbb36b0dbc8d48eaeb22404543a88c776ea84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
