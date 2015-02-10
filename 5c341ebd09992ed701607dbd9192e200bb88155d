@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_c958d2fc",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-10T19:52:11Z",
+      "side": 1,
+      "message": "nit: s/ref_list/refs/  just to keep consistency:\n\nhttps://github.com/openstack/keystone/blob/15fb5d68cd871a9d05f3bc332139e808d47af2a8/keystone/catalog/controllers.py#L308",
+      "revId": "5c341ebd09992ed701607dbd9192e200bb88155d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
