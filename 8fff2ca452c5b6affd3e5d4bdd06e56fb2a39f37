@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_7e826201",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-02-10T17:33:36Z",
+      "side": 1,
+      "message": "authenticated encryption tokens?",
+      "revId": "8fff2ca452c5b6affd3e5d4bdd06e56fb2a39f37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_9e855609",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 2
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-02-10T17:33:36Z",
+      "side": 1,
+      "message": "specify that this is a directory",
+      "revId": "8fff2ca452c5b6affd3e5d4bdd06e56fb2a39f37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_de76ee3e",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-02-10T17:33:36Z",
+      "side": 1,
+      "message": "Directory containing AE token signing keys.",
+      "revId": "8fff2ca452c5b6affd3e5d4bdd06e56fb2a39f37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_ee386e3f",
         "filename": "keystone/tests/unit/token/test_ae_token_provider.py",
         "patchSetId": 2
@@ -13,6 +64,23 @@
       "writtenOn": "2015-02-09T21:43:58Z",
       "side": 1,
       "message": "use oslo_utils",
+      "revId": "8fff2ca452c5b6affd3e5d4bdd06e56fb2a39f37",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_9eb396e8",
+        "filename": "keystone/tests/unit/token/test_ae_token_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-02-10T17:33:36Z",
+      "side": 1,
+      "message": "missing a space before the second +",
       "revId": "8fff2ca452c5b6affd3e5d4bdd06e56fb2a39f37",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
