@@ -22,6 +22,7 @@ class Role(assignment.RoleDriver):
         with sql.transaction() as session:
             ref = RoleTable.from_dict(role)
             session.add(ref)
+            ref = self._get_role(session, role_id)
             return ref.to_dict()
 
     @sql.truncated
@@ -63,6 +64,8 @@ class Role(assignment.RoleDriver):
                 if attr != 'id':
                     setattr(ref, attr, getattr(new_role, attr))
             ref.extra = new_role.extra
+        with sql.transaction() as session:
+            ref = self._get_role(session, role_id)
             return ref.to_dict()
 
     def delete_role(self, role_id):
@@ -71,9 +74,9 @@ class Role(assignment.RoleDriver):
             session.delete(ref)
 
 
-class RoleTable(sql.ModelBase, sql.DictBase):
+class RoleTable(sql.ModelBase, sql.DictBase, sql.models.TimestampMixin):
     __tablename__ = 'role'
-    attributes = ['id', 'name']
+    attributes = ['id', 'name', 'created_at', 'updated_at']
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(255), unique=True, nullable=False)
     extra = sql.Column(sql.JsonBlob())

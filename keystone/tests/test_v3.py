@@ -915,6 +915,8 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
 
     def assertValidProject(self, entity, ref=None):
         self.assertIsNotNone(entity.get('domain_id'))
+        self.assertIsNotNone(entity.get('created_at'))
+        self.assertIn('updated_at', entity)
         if ref:
             self.assertEqual(ref['domain_id'], entity['domain_id'])
         return entity
@@ -1028,6 +1030,8 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
 
     def assertValidRole(self, entity, ref=None):
         self.assertIsNotNone(entity.get('name'))
+        self.assertIsNotNone(entity.get('created_at'))
+        self.assertIn('updated_at', entity)
         if ref:
             self.assertEqual(ref['name'], entity['name'])
         return entity
