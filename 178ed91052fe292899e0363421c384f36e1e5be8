@@ -52,6 +52,24 @@
       "revId": "178ed91052fe292899e0363421c384f36e1e5be8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e505e814",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/002_add_endpoint_groups.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-10T00:38:34Z",
+      "side": 1,
+      "message": "I agree with Boris, this should be a separate review. Lets keep it focus.",
+      "parentUuid": "da86d52c_3c7c9b72",
+      "revId": "178ed91052fe292899e0363421c384f36e1e5be8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
