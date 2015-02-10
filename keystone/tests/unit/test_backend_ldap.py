@@ -52,6 +52,8 @@ def create_group_container(identity_api):
 
 class BaseLDAPIdentity(test_backend.IdentityTests):
 
+    _timestamp_enabled = False
+
     def setUp(self):
         super(BaseLDAPIdentity, self).setUp()
         self.clear_database()
@@ -2175,6 +2177,8 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
 class LdapIdentitySqlAssignment(BaseLDAPIdentity, tests.SQLDriverOverrides,
                                 tests.TestCase):
 
+    _timestamp_enabled = True
+
     def config_files(self):
         config_files = super(LdapIdentitySqlAssignment, self).config_files()
         config_files.append(tests.dirs.tests_conf('backend_ldap_sql.conf'))
@@ -2460,6 +2464,9 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
     domain.
 
     """
+
+    _timestamp_enabled = True
+
     def setUp(self):
         self.useFixture(database.Database())
         super(MultiLDAPandSQLIdentity, self).setUp()
@@ -2685,7 +2692,7 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
         self.resource_api.create_domain(domain['id'], domain)
         self.resource_api.create_project(project['id'], project)
         project_ref = self.resource_api.get_project(project['id'])
-        self.assertDictEqual(project_ref, project)
+        self.assertProjectEqual(project_ref, project)
 
         self.assignment_api.create_grant(user_id=self.user_foo['id'],
                                          project_id=project['id'],
@@ -2729,6 +2736,9 @@ class DomainSpecificLDAPandSQLIdentity(
     Although the default driver still exists, we don't use it.
 
     """
+
+    _timestamp_enabled = True
+
     def setUp(self):
         self.useFixture(database.Database())
         super(DomainSpecificLDAPandSQLIdentity, self).setUp()
@@ -2892,6 +2902,9 @@ class DomainSpecificSQLIdentity(DomainSpecificLDAPandSQLIdentity):
     - A separate SQL backend for domain1
 
     """
+
+    _timestamp_enabled = True
+
     def initial_setup(self):
         # We aren't setting up any initial data ahead of switching to
         # domain-specific operation, so make the switch straight away.
