@@ -391,6 +391,22 @@ class ProjectValidationTestCase(testtools.TestCase):
                           self.create_project_validator.validate,
                           request_to_validate)
 
+    def test_validate_project_request_with_created_at_fails(self):
+        """Exception is raised when `created_at` specified."""
+        request_to_validate = {'name': self.project_name,
+                               'created_at': uuid.uuid4().hex}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_project_validator.validate,
+                          request_to_validate)
+
+    def test_validate_project_request_with_updated_at_fails(self):
+        """Exception is raised when `updated_at` specified."""
+        request_to_validate = {'name': self.project_name,
+                               'updated_at': uuid.uuid4().hex}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_project_validator.validate,
+                          request_to_validate)
+
     def test_validate_project_update_request(self):
         """Test that we validate a project update request."""
         request_to_validate = {'domain_id': uuid.uuid4().hex}
@@ -420,6 +436,20 @@ class ProjectValidationTestCase(testtools.TestCase):
 
     def test_validate_project_update_request_with_null_domain_id_fails(self):
         request_to_validate = {'domain_id': None}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_project_validator.validate,
+                          request_to_validate)
+
+    def test_validate_project_update_request_with_created_at_fails(self):
+        """Exception is raised when `created_at` specified."""
+        request_to_validate = {'created_at': uuid.uuid4().hex}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_project_validator.validate,
+                          request_to_validate)
+
+    def test_validate_project_update_request_with_updated_at_fails(self):
+        """Exception is raised when `updated_at` specified."""
+        request_to_validate = {'updated_at': uuid.uuid4().hex}
         self.assertRaises(exception.SchemaValidationError,
                           self.update_project_validator.validate,
                           request_to_validate)
@@ -559,6 +589,22 @@ class RoleValidationTestCase(testtools.TestCase):
                           self.create_role_validator.validate,
                           request_to_validate)
 
+    def test_validate_role_create_with_created_at_fails(self):
+        """Exception is raised when `created_at` specified."""
+        request_to_validate = {'name': self.role_name,
+                               'created_at': uuid.uuid4().hex}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_role_validator.validate,
+                          request_to_validate)
+
+    def test_validate_role_create_with_updated_at_fails(self):
+        """Exception is raised when `updated_at` specified."""
+        request_to_validate = {'name': self.role_name,
+                               'updated_at': uuid.uuid4().hex}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_role_validator.validate,
+                          request_to_validate)
+
     def test_validate_role_update_request(self):
         """Test that we validate a role update request."""
         request_to_validate = {'name': 'My New Role'}
@@ -572,6 +618,20 @@ class RoleValidationTestCase(testtools.TestCase):
                           request_to_validate)
 
         request_to_validate = {'name': 24}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_role_validator.validate,
+                          request_to_validate)
+
+    def test_validate_role_update_with_created_at_fails(self):
+        """Exception is raised when `created_at` specified."""
+        request_to_validate = {'created_at': uuid.uuid4().hex}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.update_role_validator.validate,
+                          request_to_validate)
+
+    def test_validate_role_update_with_updated_at_fails(self):
+        """Exception is raised when `updated_at` specified."""
+        request_to_validate = {'updated_at': uuid.uuid4().hex}
         self.assertRaises(exception.SchemaValidationError,
                           self.update_role_validator.validate,
                           request_to_validate)

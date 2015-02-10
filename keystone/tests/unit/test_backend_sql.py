@@ -103,11 +103,15 @@ class SqlModels(SqlTests):
                 ('description', sql.Text, None),
                 ('domain_id', sql.String, 64),
                 ('enabled', sql.Boolean, None),
+                ('created_at', sql.DateTime, None),
+                ('updated_at', sql.DateTime, None),
                 ('extra', sql.JsonBlob, None))
         self.assertExpectedSchema('project', cols)
 
     def test_role_model(self):
         cols = (('id', sql.String, 64),
+                ('created_at', sql.DateTime, None),
+                ('updated_at', sql.DateTime, None),
                 ('name', sql.String, 255))
         self.assertExpectedSchema('role', cols)
 
@@ -126,6 +130,9 @@ class SqlModels(SqlTests):
 
 
 class SqlIdentity(SqlTests, test_backend.IdentityTests):
+
+    _timestamp_enabled = True
+
     def test_password_hashed(self):
         session = sql.get_session()
         user_ref = self.identity_api._get_user(session, self.user_foo['id'])
