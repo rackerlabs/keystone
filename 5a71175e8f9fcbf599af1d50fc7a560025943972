@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_39c8df54",
+        "filename": "doc/source/key_terms.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-10T20:23:14Z",
+      "side": 1,
+      "message": "(once known as Tenants  in v2.0)",
+      "revId": "5a71175e8f9fcbf599af1d50fc7a560025943972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_848fa9cb",
         "filename": "doc/source/key_terms.rst",
         "patchSetId": 2
@@ -13,6 +30,23 @@
       "writtenOn": "2015-02-03T18:15:52Z",
       "side": 1,
       "message": "This implies that domains are used for namespacing. My first impression was that a user/group/project is really a domain+user/domain+group/domain+project to maintain uniqueness. I have been told that domains actually represent delegated management of \"sub-cloud units\" as mordred puts it.\n\nCan we expand a bit more on the utility of domains for management of resources? I don\u0027t know all the details so won\u0027t offer any edits of my own but I do think having a bit more info here will cut down on confusion around why domains exist.",
+      "revId": "5a71175e8f9fcbf599af1d50fc7a560025943972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f95c877f",
+        "filename": "doc/source/key_terms.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-10T20:23:14Z",
+      "side": 1,
+      "message": "might be helpful to add why we do this? Because usernames must be unique within a given domain, but user ids are suppose to be unique across the deployment.",
       "revId": "5a71175e8f9fcbf599af1d50fc7a560025943972",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
