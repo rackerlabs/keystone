@@ -16,6 +16,24 @@
       "revId": "1cd0f31c30d11929fd21105b2b8aabca257870ef",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_6eb395e9",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-10T02:09:54Z",
+      "side": 1,
+      "message": "bah, it was the only way to get the json_home tests to pass, want to bring this into a new patch?",
+      "parentUuid": "da86d52c_8e4a8925",
+      "revId": "1cd0f31c30d11929fd21105b2b8aabca257870ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
