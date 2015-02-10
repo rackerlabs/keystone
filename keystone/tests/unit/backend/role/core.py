@@ -20,7 +20,7 @@ from keystone.tests import unit as tests
 from keystone.tests.unit import default_fixtures
 
 
-class RoleTests(object):
+class RoleTests(tests.ModelBase):
 
     def test_get_role_404(self):
         self.assertRaises(exception.RoleNotFound,
@@ -59,14 +59,14 @@ class RoleTests(object):
         self.role_api.create_role(role['id'], role)
         role_ref = self.role_api.get_role(role['id'])
         role_ref_dict = {x: role_ref[x] for x in role_ref}
-        self.assertDictEqual(role_ref_dict, role)
+        self.assertRoleEqual(role_ref_dict, role)
 
         role['name'] = uuid.uuid4().hex
         updated_role_ref = self.role_api.update_role(role['id'], role)
         role_ref = self.role_api.get_role(role['id'])
         role_ref_dict = {x: role_ref[x] for x in role_ref}
-        self.assertDictEqual(role_ref_dict, role)
-        self.assertDictEqual(role_ref_dict, updated_role_ref)
+        self.assertRoleEqual(role_ref_dict, role)
+        self.assertDictEqual(updated_role_ref, role_ref_dict)
 
         self.role_api.delete_role(role['id'])
         self.assertRaises(exception.RoleNotFound,
@@ -94,25 +94,26 @@ class RoleTests(object):
         # Create role
         self.role_api.create_role(role_id, role)
         role_ref = self.role_api.get_role(role_id)
+        role_ref = self.strip_off_timestamp(role_ref)
         updated_role_ref = copy.deepcopy(role_ref)
         updated_role_ref['name'] = uuid.uuid4().hex
         # Update role, bypassing the role api manager
         self.role_api.driver.update_role(role_id, updated_role_ref)
         # Verify get_role still returns old ref
-        self.assertDictEqual(role_ref, self.role_api.get_role(role_id))
+        self.assertRoleEqual(self.role_api.get_role(role_id), role_ref)
         # Invalidate Cache
         self.role_api.get_role.invalidate(self.role_api, role_id)
         # Verify get_role returns the new role_ref
-        self.assertDictEqual(updated_role_ref,
-                             self.role_api.get_role(role_id))
+        self.assertRoleEqual(self.role_api.get_role(role_id),
+                             updated_role_ref)
         # Update role back to original via the assignment api manager
         self.role_api.update_role(role_id, role_ref)
         # Verify get_role returns the original role ref
-        self.assertDictEqual(role_ref, self.role_api.get_role(role_id))
+        self.assertRoleEqual(self.role_api.get_role(role_id), role_ref)
         # Delete role bypassing the role api manager
         self.role_api.driver.delete_role(role_id)
         # Verify get_role still returns the role_ref
-        self.assertDictEqual(role_ref, self.role_api.get_role(role_id))
+        self.assertRoleEqual(self.role_api.get_role(role_id), role_ref)
         # Invalidate cache
         self.role_api.get_role.invalidate(self.role_api, role_id)
         # Verify RoleNotFound is now raised

@@ -919,6 +919,12 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
 
     def assertValidProject(self, entity, ref=None):
         self.assertIsNotNone(entity.get('domain_id'))
+        # Here we don't need assert because parse_isotime will raise exception
+        # if created_at is not isotime
+        timeutils.parse_isotime(entity['created_at'])
+        self.assertIn('updated_at', entity)
+        if entity['updated_at'] is not None:
+            timeutils.parse_isotime(entity['updated_at'])
         if ref:
             self.assertEqual(ref['domain_id'], entity['domain_id'])
         return entity
@@ -1032,6 +1038,12 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
 
     def assertValidRole(self, entity, ref=None):
         self.assertIsNotNone(entity.get('name'))
+        # Here we don't need assert because parse_isotime will raise exception
+        # if created_at is not isotime
+        timeutils.parse_isotime(entity['created_at'])
+        self.assertIn('updated_at', entity)
+        if entity['updated_at'] is not None:
+            timeutils.parse_isotime(entity['updated_at'])
         if ref:
             self.assertEqual(ref['name'], entity['name'])
         return entity
