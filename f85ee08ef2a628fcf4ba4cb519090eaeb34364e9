@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_332e6afb",
+        "filename": "requirements-py3.txt",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-10T01:33:21Z",
+      "side": 1,
+      "message": "this should be 0.16.1 now",
+      "revId": "f85ee08ef2a628fcf4ba4cb519090eaeb34364e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f343f2ac",
+        "filename": "requirements-py3.txt",
+        "patchSetId": 8
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-10T01:33:21Z",
+      "side": 1,
+      "message": "this should be \u003e1.4.1",
+      "revId": "f85ee08ef2a628fcf4ba4cb519090eaeb34364e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_131246b4",
+        "filename": "requirements-py3.txt",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-10T01:33:21Z",
+      "side": 1,
+      "message": "\u003e1.6.0",
+      "revId": "f85ee08ef2a628fcf4ba4cb519090eaeb34364e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
