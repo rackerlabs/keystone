@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_81540e55",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-10T09:46:09Z",
+      "side": 1,
+      "message": "so it\u0027s not obvious from the check below as to why this determins it is a federated token....looks like we are just checking for v3....",
+      "revId": "2d9dda474b1a914421a0d60e63cfb5a85057b3d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
