@@ -26,7 +26,9 @@ _project_properties = {
         'type': 'string',
         'minLength': 1,
         'maxLength': 64
-    }
+    },
+    'created_at': {'not': {}},
+    'updated_at': {'not': {}}
 }
 
 project_create = {

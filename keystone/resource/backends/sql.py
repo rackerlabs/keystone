@@ -142,6 +142,8 @@ class Resource(keystone_resource.Driver):
         with sql.transaction() as session:
             tenant_ref = Project.from_dict(tenant)
             session.add(tenant_ref)
+        with sql.transaction() as session:
+            tenant_ref = self._get_project(session, tenant_id)
             return tenant_ref.to_dict()
 
     @sql.handle_conflicts(conflict_type='project')
@@ -151,7 +153,7 @@ class Resource(keystone_resource.Driver):
 
         with sql.transaction() as session:
             tenant_ref = self._get_project(session, tenant_id)
-            old_project_dict = tenant_ref.to_dict()
+            old_project_dict = tenant_ref.to_dict(convert_timestamp=False)
             for k in tenant:
                 old_project_dict[k] = tenant[k]
             new_project = Project.from_dict(old_project_dict)
@@ -159,6 +161,8 @@ class Resource(keystone_resource.Driver):
                 if attr != 'id':
                     setattr(tenant_ref, attr, getattr(new_project, attr))
             tenant_ref.extra = new_project.extra
+        with sql.transaction() as session:
+            tenant_ref = self._get_project(session, tenant_id)
             return tenant_ref.to_dict(include_extra_dict=True)
 
     @sql.handle_conflicts(conflict_type='project')
@@ -242,10 +246,11 @@ class Domain(sql.ModelBase, sql.DictBase):
     __table_args__ = (sql.UniqueConstraint('name'), {})
 
 
-class Project(sql.ModelBase, sql.DictBase):
+class Project(sql.ModelBase, sql.TimestampModelDictMixin,
+              sql.models.TimestampMixin):
     __tablename__ = 'project'
     attributes = ['id', 'name', 'domain_id', 'description', 'enabled',
-                  'parent_id']
+                  'parent_id', 'created_at', 'updated_at']
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(64), nullable=False)
     domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
