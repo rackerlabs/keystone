@@ -16,6 +16,24 @@
       "revId": "4bd5564e17d663277bef746291bdbd6ba163a872",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_08b93115",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-10T00:47:37Z",
+      "side": 1,
+      "message": "we track removing tests as well? only features right?",
+      "parentUuid": "da86d52c_aebf565f",
+      "revId": "4bd5564e17d663277bef746291bdbd6ba163a872",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
