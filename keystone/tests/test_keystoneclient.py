@@ -1070,22 +1070,3 @@ class KeystoneClientTests(object):
         self.assertRaises(client_exceptions.Unauthorized, client.tenants.list)
         client.auth_token = new_token_id
         client.tenants.list()
-
-
-class KcMasterTestCase(CompatTestCase, KeystoneClientTests):
-    checkout_info = (KEYSTONECLIENT_REPO, 'master')
-
-
-class KcOptTestCase(KcMasterTestCase):
-    # Set KSCTEST_PATH to the keystoneclient directory, then run this test.
-    #
-    # For example, to test your local keystoneclient,
-    #
-    # KSCTEST_PATH=/opt/stack/python-keystoneclient \
-    #  tox -e py27 test_keystoneclient.KcOptTestCase
-
-    def setUp(self):
-        self.checkout_info = os.environ.get('KSCTEST_PATH')
-        if not self.checkout_info:
-            self.skip('Set KSCTEST_PATH env to test with local client')
-        super(KcOptTestCase, self).setUp()
