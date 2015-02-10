@@ -1971,6 +1971,19 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         self.assertEqual('crap', user_ref['id'])
         self.assertEqual('Foo Bar', user_ref['name'])
 
+    def test_list_role_assignment_by_domain(self):
+        """Multiple domain assignments are not supported."""
+        self.assertRaises(
+            exception.Forbidden,
+            super(BaseLDAPIdentity, self).test_list_role_assignment_by_domain)
+
+    def test_list_role_assignment_by_user_with_domain_group_roles(self):
+        """Multiple domain assignments are not supported."""
+        self.assertRaises(
+            exception.Forbidden,
+            super(BaseLDAPIdentity, self).
+            test_list_role_assignment_by_user_with_domain_group_roles)
+
 
 class LDAPIdentityEnabledEmulation(LDAPIdentity):
     def setUp(self):
