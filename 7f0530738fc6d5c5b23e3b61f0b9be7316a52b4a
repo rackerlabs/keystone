@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_6e444cb7",
+        "filename": "keystone/tests/test_validation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1282,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-10T19:36:14Z",
+      "side": 1,
+      "message": "nit: test_validate_user_create_with_all_valid_parameters_succeeds *",
+      "revId": "7f0530738fc6d5c5b23e3b61f0b9be7316a52b4a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
