@@ -14,6 +14,19 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 
+import sys
+
+# NOTE(dims): keystone-all only works under eventlet, so there is no need to
+# check the CONF.standard_threads, we need to do this before any of the
+# standard python logging is initialized so that the locks used for python
+# logging use the monkey patched eventlet's Semaphore rather than the
+# thread RLock which will cause severe problems at scale.
+if ('--pydev-debug-host' in sys.argv and
+    '--pydev-debug-port' in sys.argv):
+    environment.use_eventlet(monkeypatch_thread=False)
+else:
+    environment.use_eventlet(monkeypatch_thread=True)
+
 import logging
 import os
 import socket
@@ -134,15 +147,7 @@ if __name__ == '__main__':
 
     paste_config = config.find_paste_config()
 
-    monkeypatch_thread = not CONF.standard_threads
-    pydev_debug_url = utils.setup_remote_pydev_debug()
-    if pydev_debug_url:
-        # in order to work around errors caused by monkey patching we have to
-        # set the thread to False.  An explanation is here:
-        # http://lists.openstack.org/pipermail/openstack-dev/2012-August/
-        # 000794.html
-        monkeypatch_thread = False
-    environment.use_eventlet(monkeypatch_thread)
+    utils.setup_remote_pydev_debug()
 
     backends.load_backends()
 

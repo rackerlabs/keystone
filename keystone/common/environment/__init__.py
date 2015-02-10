@@ -15,11 +15,6 @@
 import functools
 import os
 
-from keystone.openstack.common import log
-
-LOG = log.getLogger(__name__)
-
-
 __all__ = ['Server', 'httplib', 'subprocess']
 
 _configured = False
@@ -46,9 +41,16 @@ def configure_once(name):
                     raise SystemError("Environment has already been "
                                       "configured as %s" % _configured)
 
-            LOG.debug("Environment configured as: %s", name)
             _configured = name
-            return func(*args, **kwargs)
+            ret_val =  func(*args, **kwargs)
+
+            # NOTE(dims): Initialize the logging only after the
+            # methods like use_eventlet are called to avoid initializing
+            # the python logging module before eventlet is patched
+            from keystone.openstack.common import log
+            LOG = log.getLogger(__name__)
+            LOG.debug("Environment configured as: %s", _configured)
+            return ret_val
 
         return wrapper
     return decorator
