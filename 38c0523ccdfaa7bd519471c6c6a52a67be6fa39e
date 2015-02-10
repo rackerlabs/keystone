@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_3021f29f",
+        "filename": "keystone/common/sql/migrate_repo/versions/064_fixup_service_name_value.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-10T08:08:41Z",
+      "side": 1,
+      "message": "I expect \"oslo.serialization\" should be changed to \"oslo_serialization\" since the namespace change in oslo [1].\nAlthough this can still work, but the action will be sooner or later [2].\n\nRef:\n[1] https://github.com/openstack/oslo.serialization/tree/master/oslo_serialization \n\n[2] https://review.openstack.org/#/c/151880\n\nI will continue to review other part of the patch.",
+      "revId": "38c0523ccdfaa7bd519471c6c6a52a67be6fa39e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
