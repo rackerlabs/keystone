@@ -40,6 +40,9 @@ NULL_OBJECT = object()
 
 
 class IdentityTests(object):
+
+    _timestamp_enabled = True
+
     def _get_domain_fixture(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.resource_api.create_domain(domain['id'], domain)
@@ -49,6 +52,12 @@ class IdentityTests(object):
         # We only provide a domain scope if we have multiple drivers
         if CONF.identity.domain_specific_drivers_enabled:
             return domain_id
+
+    def _clean_up_timestamp(self, ref):
+        if self._timestamp_enabled:
+            del ref['created_at']
+            del ref['updated_at']
+        return ref
 
     def test_project_add_and_remove_user_role(self):
         user_ids = self.assignment_api.list_user_ids_for_project(
@@ -1039,11 +1048,15 @@ class IdentityTests(object):
         roles_ref = self.assignment_api.list_grants(
             group_id=group1['id'],
             domain_id=domain1['id'])
-        self.assertDictEqual(roles_ref[0], group1_domain1_role)
+        self.assertDictEqual(
+            self._clean_up_timestamp(roles_ref[0]),
+            group1_domain1_role)
         roles_ref = self.assignment_api.list_grants(
             group_id=group1['id'],
             domain_id=domain2['id'])
-        self.assertDictEqual(roles_ref[0], group1_domain2_role)
+        self.assertDictEqual(
+            self._clean_up_timestamp(roles_ref[0]),
+            group1_domain2_role)
 
         self.assignment_api.delete_grant(group_id=group1['id'],
                                          domain_id=domain2['id'],
@@ -1089,11 +1102,15 @@ class IdentityTests(object):
         roles_ref = self.assignment_api.list_grants(
             user_id=user1['id'],
             domain_id=domain1['id'])
-        self.assertDictEqual(roles_ref[0], user1_domain1_role)
+        self.assertDictEqual(
+            self._clean_up_timestamp(roles_ref[0]),
+            user1_domain1_role)
         roles_ref = self.assignment_api.list_grants(
             user_id=user1['id'],
             domain_id=domain2['id'])
-        self.assertDictEqual(roles_ref[0], user1_domain2_role)
+        self.assertDictEqual(
+            self._clean_up_timestamp(roles_ref[0]),
+            user1_domain2_role)
 
         self.assignment_api.delete_grant(user_id=user1['id'],
                                          domain_id=domain2['id'],
@@ -1150,7 +1167,7 @@ class IdentityTests(object):
             group_id=group1['id'],
             project_id=project1['id'])
         self.assertEqual(1, len(roles_ref))
-        self.assertDictEqual(roles_ref[0], role2)
+        self.assertDictEqual(self._clean_up_timestamp(roles_ref[0]), role2)
 
     def test_role_grant_by_user_and_cross_domain_project(self):
         role1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
@@ -1194,7 +1211,7 @@ class IdentityTests(object):
             user_id=user1['id'],
             project_id=project1['id'])
         self.assertEqual(1, len(roles_ref))
-        self.assertDictEqual(roles_ref[0], role2)
+        self.assertDictEqual(self._clean_up_timestamp(roles_ref[0]), role2)
 
     def test_delete_user_grant_no_user(self):
         # Can delete a grant where the user doesn't exist.
@@ -1313,21 +1330,29 @@ class IdentityTests(object):
                                          role_id=role_list[7]['id'])
         roles_ref = self.assignment_api.list_grants(user_id=user1['id'],
                                                     domain_id=domain1['id'])
+        roles_ref = [self._clean_up_timestamp(role_ref)
+                     for role_ref in roles_ref]
         self.assertEqual(2, len(roles_ref))
         self.assertIn(role_list[0], roles_ref)
         self.assertIn(role_list[1], roles_ref)
         roles_ref = self.assignment_api.list_grants(group_id=group1['id'],
                                                     domain_id=domain1['id'])
+        roles_ref = [self._clean_up_timestamp(role_ref)
+                     for role_ref in roles_ref]
         self.assertEqual(2, len(roles_ref))
         self.assertIn(role_list[2], roles_ref)
         self.assertIn(role_list[3], roles_ref)
         roles_ref = self.assignment_api.list_grants(user_id=user1['id'],
                                                     project_id=project1['id'])
+        roles_ref = [self._clean_up_timestamp(role_ref)
+                     for role_ref in roles_ref]
         self.assertEqual(2, len(roles_ref))
         self.assertIn(role_list[4], roles_ref)
         self.assertIn(role_list[5], roles_ref)
         roles_ref = self.assignment_api.list_grants(group_id=group1['id'],
                                                     project_id=project1['id'])
+        roles_ref = [self._clean_up_timestamp(role_ref)
+                     for role_ref in roles_ref]
         self.assertEqual(2, len(roles_ref))
         self.assertIn(role_list[6], roles_ref)
         self.assertIn(role_list[7], roles_ref)
@@ -1575,12 +1600,15 @@ class IdentityTests(object):
         role = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.role_api.create_role(role['id'], role)
         role_ref = self.role_api.get_role(role['id'])
+        self._clean_up_timestamp(role_ref)
         role_ref_dict = dict((x, role_ref[x]) for x in role_ref)
         self.assertDictEqual(role_ref_dict, role)
 
         role['name'] = uuid.uuid4().hex
         updated_role_ref = self.role_api.update_role(role['id'], role)
         role_ref = self.role_api.get_role(role['id'])
+        self._clean_up_timestamp(role_ref)
+        self._clean_up_timestamp(updated_role_ref)
         role_ref_dict = dict((x, role_ref[x]) for x in role_ref)
         self.assertDictEqual(role_ref_dict, role)
         self.assertDictEqual(role_ref_dict, updated_role_ref)
@@ -2128,12 +2156,14 @@ class IdentityTests(object):
         self.resource_api.create_project(project4['id'], project4)
 
         subtree = self.resource_api.list_projects_in_subtree(project1['id'])
+        subtree = [self._clean_up_timestamp(sub) for sub in subtree]
         self.assertEqual(3, len(subtree))
         self.assertIn(project2, subtree)
         self.assertIn(project3, subtree)
         self.assertIn(project4, subtree)
 
         subtree = self.resource_api.list_projects_in_subtree(project2['id'])
+        subtree = [self._clean_up_timestamp(sub) for sub in subtree]
         self.assertEqual(2, len(subtree))
         self.assertIn(project3, subtree)
         self.assertIn(project4, subtree)
@@ -2155,11 +2185,13 @@ class IdentityTests(object):
         self.resource_api.create_project(project4['id'], project4)
 
         parents1 = self.resource_api.list_project_parents(project3['id'])
+        parents1 = [self._clean_up_timestamp(parent) for parent in parents1]
         self.assertEqual(2, len(parents1))
         self.assertIn(project1, parents1)
         self.assertIn(project2, parents1)
 
         parents2 = self.resource_api.list_project_parents(project4['id'])
+        parents2 = [self._clean_up_timestamp(parent) for parent in parents2]
         self.assertEqual(parents1, parents2)
 
         parents = self.resource_api.list_project_parents(project1['id'])
@@ -2167,6 +2199,7 @@ class IdentityTests(object):
 
     def test_list_roles(self):
         roles = self.role_api.list_roles()
+        roles = [self._clean_up_timestamp(role) for role in roles]
         self.assertEqual(len(default_fixtures.ROLES), len(roles))
         role_ids = set(role['id'] for role in roles)
         expected_role_ids = set(role['id'] for role in default_fixtures.ROLES)
@@ -2700,6 +2733,7 @@ class IdentityTests(object):
         leaf_project['description'] = 'new description'
         self.resource_api.update_project(leaf_project['id'], leaf_project)
         proj_ref = self.resource_api.get_project(leaf_project['id'])
+        self._clean_up_timestamp(proj_ref)
         self.assertDictEqual(proj_ref, leaf_project)
 
         # update the parent_id is not allowed
@@ -2889,6 +2923,7 @@ class IdentityTests(object):
         self.resource_api.update_project(project['id'], project)
 
         project_ref = self.resource_api.get_project(project['id'])
+        self._clean_up_timestamp(project_ref)
         self.assertDictEqual(project_ref, project)
 
     def test_project_update_missing_attrs_with_a_falsey_value(self):
@@ -2905,6 +2940,7 @@ class IdentityTests(object):
         self.resource_api.update_project(project['id'], project)
 
         project_ref = self.resource_api.get_project(project['id'])
+        self._clean_up_timestamp(project_ref)
         self.assertDictEqual(project_ref, project)
 
     def test_domain_crud(self):
@@ -3222,25 +3258,33 @@ class IdentityTests(object):
         # Create role
         self.role_api.create_role(role_id, role)
         role_ref = self.role_api.get_role(role_id)
+        self._clean_up_timestamp(role_ref)
         updated_role_ref = copy.deepcopy(role_ref)
         updated_role_ref['name'] = uuid.uuid4().hex
         # Update role, bypassing the role api manager
         self.role_api.driver.update_role(role_id, updated_role_ref)
         # Verify get_role still returns old ref
-        self.assertDictEqual(role_ref, self.role_api.get_role(role_id))
+        self.assertDictEqual(
+            role_ref,
+            self._clean_up_timestamp(self.role_api.get_role(role_id)))
         # Invalidate Cache
         self.role_api.get_role.invalidate(self.role_api, role_id)
         # Verify get_role returns the new role_ref
-        self.assertDictEqual(updated_role_ref,
-                             self.role_api.get_role(role_id))
+        self.assertDictEqual(
+            updated_role_ref,
+            self._clean_up_timestamp(self.role_api.get_role(role_id)))
         # Update role back to original via the assignment api manager
         self.role_api.update_role(role_id, role_ref)
         # Verify get_role returns the original role ref
-        self.assertDictEqual(role_ref, self.role_api.get_role(role_id))
+        self.assertDictEqual(
+            role_ref,
+            self._clean_up_timestamp(self.role_api.get_role(role_id)))
         # Delete role bypassing the role api manager
         self.role_api.driver.delete_role(role_id)
         # Verify get_role still returns the role_ref
-        self.assertDictEqual(role_ref, self.role_api.get_role(role_id))
+        self.assertDictEqual(
+            role_ref,
+            self._clean_up_timestamp(self.role_api.get_role(role_id)))
         # Invalidate cache
         self.role_api.get_role.invalidate(self.role_api, role_id)
         # Verify RoleNotFound is now raised
@@ -3346,12 +3390,14 @@ class IdentityTests(object):
         updated_project_ref = self.resource_api.update_project(
             project['id'], updated_project)
 
+        self._clean_up_timestamp(updated_project_ref)
         # SQL backend adds 'extra' field
         updated_project_ref.pop('extra', None)
 
         self.assertIs(False, updated_project_ref['enabled'])
 
         project_ref = self.resource_api.get_project(project['id'])
+        self._clean_up_timestamp(project_ref)
         self.assertDictEqual(project_ref, updated_project_ref)
 
     def test_user_update_and_user_get_return_same_response(self):
@@ -3458,6 +3504,8 @@ class IdentityTests(object):
 
         role_refs = self.assignment_api.get_roles_for_groups(
             group_id_list, domain_id=domain1['id'])
+        role_refs = [self._clean_up_timestamp(role_ref)
+                     for role_ref in role_refs]
 
         self.assertThat(role_refs, matchers.HasLength(2))
         self.assertIn(role_list[0], role_refs)
@@ -3532,6 +3580,8 @@ class IdentityTests(object):
         self.config_fixture.config(group='os_inherit', enabled=False)
         role_refs = self.assignment_api.get_roles_for_groups(
             group_id_list, project_id=project1['id'])
+        role_refs = [self._clean_up_timestamp(role_ref)
+                     for role_ref in role_refs]
 
         self.assertThat(role_refs, matchers.HasLength(1))
         self.assertIn(role_list[2], role_refs)
@@ -3542,6 +3592,8 @@ class IdentityTests(object):
         self.config_fixture.config(group='os_inherit', enabled=True)
         role_refs = self.assignment_api.get_roles_for_groups(
             group_id_list, project_id=project1['id'])
+        role_refs = [self._clean_up_timestamp(role_ref)
+                     for role_ref in role_refs]
 
         self.assertThat(role_refs, matchers.HasLength(2))
         self.assertIn(role_list[1], role_refs)
@@ -5077,6 +5129,11 @@ class PolicyTests(object):
 
 class InheritanceTests(object):
 
+    def _clean_up_timestamp(self, ref):
+        del ref['created_at']
+        del ref['updated_at']
+        return ref
+
     def test_inherited_role_grants_for_user(self):
         """Test inherited user roles.
 
@@ -5321,6 +5378,8 @@ class InheritanceTests(object):
         # Should get back both projects: because the direct role assignment for
         # the root project and inherited role assignment for leaf project
         user_projects = self.assignment_api.list_projects_for_user(user['id'])
+        user_projects = [self._clean_up_timestamp(user_project)
+                         for user_project in user_projects]
         self.assertEqual(2, len(user_projects))
         self.assertIn(root_project, user_projects)
         self.assertIn(leaf_project, user_projects)
@@ -5329,6 +5388,8 @@ class InheritanceTests(object):
         self.config_fixture.config(group='os_inherit', enabled=False)
         # Should get back just root project - due the direct role assignment
         user_projects = self.assignment_api.list_projects_for_user(user['id'])
+        user_projects = [self._clean_up_timestamp(user_project)
+                         for user_project in user_projects]
         self.assertEqual(1, len(user_projects))
         self.assertIn(root_project, user_projects)
 
@@ -5446,6 +5507,8 @@ class InheritanceTests(object):
         # Should get back both projects: because the direct role assignment for
         # the root project and inherited role assignment for leaf project
         user_projects = self.assignment_api.list_projects_for_user(user['id'])
+        user_projects = [self._clean_up_timestamp(user_project)
+                         for user_project in user_projects]
         self.assertEqual(2, len(user_projects))
         self.assertIn(root_project, user_projects)
         self.assertIn(leaf_project, user_projects)
@@ -5454,6 +5517,8 @@ class InheritanceTests(object):
         self.config_fixture.config(group='os_inherit', enabled=False)
         # Should get back just root project - due the direct role assignment
         user_projects = self.assignment_api.list_projects_for_user(user['id'])
+        user_projects = [self._clean_up_timestamp(user_project)
+                         for user_project in user_projects]
         self.assertEqual(1, len(user_projects))
         self.assertIn(root_project, user_projects)
 

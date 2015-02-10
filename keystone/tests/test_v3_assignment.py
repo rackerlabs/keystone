@@ -302,6 +302,8 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         r = self.resource_api.get_domain(self.domain['id'])
         self.assertDictEqual(r, self.domain)
         r = self.resource_api.get_project(self.project['id'])
+        del r['created_at']
+        del r['updated_at']
         self.assertDictEqual(r, self.project)
         r = self.identity_api.get_group(self.group['id'])
         self.assertDictEqual(r, self.group)
@@ -696,6 +698,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
                 'project_id': self.project_id},
             body={'project': ref})
         self.assertValidProjectResponse(r, ref)
+        self.assertIsNotNone(r.result['project']['updated_at'])
 
     def test_update_project_domain_id(self):
         """Call ``PATCH /projects/{project_id}`` with domain_id."""
@@ -717,11 +720,10 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         """Call ``PATCH /projects/{project_id}``."""
         projects = self._create_projects_hierarchy()
         leaf_project = projects[1]['project']
-        leaf_project['parent_id'] = None
         self.patch(
             '/projects/%(project_id)s' % {
                 'project_id': leaf_project['id']},
-            body={'project': leaf_project},
+            body={'project': {'parent_id': None}},
             expected_status=403)
 
     def test_disable_leaf_project(self):
@@ -732,7 +734,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         r = self.patch(
             '/projects/%(project_id)s' % {
                 'project_id': leaf_project['id']},
-            body={'project': leaf_project})
+            body={'project': {'enabled': False}})
         self.assertEqual(
             leaf_project['enabled'], r.result['project']['enabled'])
 
@@ -740,11 +742,10 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         """Call ``PATCH /projects/{project_id}``."""
         projects = self._create_projects_hierarchy()
         root_project = projects[0]['project']
-        root_project['enabled'] = False
         self.patch(
             '/projects/%(project_id)s' % {
                 'project_id': root_project['id']},
-            body={'project': root_project},
+            body={'project': {'enabled': False}},
             expected_status=403)
 
     def test_delete_project(self):
@@ -826,6 +827,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
             'role_id': self.role_id},
             body={'role': ref})
         self.assertValidRoleResponse(r, ref)
+        self.assertIsNotNone(r.result['role']['updated_at'])
 
     def test_delete_role(self):
         """Call ``DELETE /roles/{role_id}``."""

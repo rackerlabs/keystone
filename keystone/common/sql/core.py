@@ -27,6 +27,7 @@ from oslo_db import options as db_options
 from oslo_db.sqlalchemy import models
 from oslo_db.sqlalchemy import session as db_session
 from oslo_serialization import jsonutils
+from oslo_utils import timeutils
 import six
 import sqlalchemy as sql
 from sqlalchemy.ext import declarative
@@ -151,6 +152,17 @@ class DictBase(models.ModelBase):
         if key in self.extra:
             return self.extra[key]
         return getattr(self, key)
+
+
+class TimestampModelDictMixin(DictBase):
+
+    def to_dict(self, include_extra_dict=False):
+        d = super(TimestampModelDictMixin, self).to_dict()
+        if d.get('created_at') is not None:
+            d['created_at'] = timeutils.iso8601_from_timestamp(d['created_at'])
+        if d.get('updated_at') is not None:
+            d['updated_at'] = timeutils.iso8601_from_timestamp(d['updated_at'])
+        return d
 
 
 class ModelDictMixin(object):

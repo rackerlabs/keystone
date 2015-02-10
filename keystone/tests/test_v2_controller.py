@@ -88,6 +88,13 @@ class TenantTestCase(tests.TestCase):
         # back those in the default features, since only those are in the
         # default domain.
         refs = self.tenant_controller.get_all_projects(_ADMIN_CONTEXT)
+
+        def _clean_up_timestamp(ref):
+            del ref['created_at']
+            del ref['updated_at']
+            return ref
+
+        refs['tenants'] = [_clean_up_timestamp(ref) for ref in refs['tenants']]
         self.assertEqual(len(default_fixtures.TENANTS), len(refs['tenants']))
         for tenant in default_fixtures.TENANTS:
             tenant_copy = tenant.copy()
