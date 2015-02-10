@@ -16,6 +16,24 @@
       "revId": "16c15cf1ee0457915d92919854792c661f4e0df4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_3391e19a",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 900,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-10T18:55:33Z",
+      "side": 1,
+      "message": "No, it should return inherited assignments (to be inherited) that were assigned on that domain.",
+      "parentUuid": "da86d52c_21d44246",
+      "revId": "16c15cf1ee0457915d92919854792c661f4e0df4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
