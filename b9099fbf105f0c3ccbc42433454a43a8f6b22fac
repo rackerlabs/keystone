@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_16f11d01",
+        "filename": ".testr.conf",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-11T03:03:10Z",
+      "side": 1,
+      "message": "This looks like it only covers functional tests?  What about unit tests? I assume those are in a different directory?",
+      "revId": "b9099fbf105f0c3ccbc42433454a43a8f6b22fac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
