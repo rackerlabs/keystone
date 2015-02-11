@@ -596,6 +596,18 @@ class MappingCRUDTests(FederationTests):
 class MappingRuleEngineTests(FederationTests):
     """A class for testing the mapping rule engine."""
 
+    def assertValidUserObject(self, mapped_properties):
+        self.assertIn('user', mapped_properties,
+                      message='Missing user object in mapped properties')
+        user = mapped_properties['user']
+        self.assertIn('type', user)
+        self.assertEqual('ephemeral', user['type'])
+        self.assertIn('domain', user)
+        domain = user['domain']
+        domain_name_or_id = domain.get('id') or domain.get('name')
+        self.assertEqual(federation.FEDERATED_DOMAIN_KEYWORD,
+                         domain_name_or_id)
+
     def test_rule_engine_any_one_of_and_direct_mapping(self):
         """Should return user's name and group id EMPLOYEE_GROUP_ID.
 
@@ -613,12 +625,11 @@ class MappingRuleEngineTests(FederationTests):
         fn = assertion.get('FirstName')
         ln = assertion.get('LastName')
         full_name = '%s %s' % (fn, ln)
-
         group_ids = values.get('group_ids')
-        name = values.get('name')
+        user_name = values.get('user', {}).get('name')
 
         self.assertIn(mapping_fixtures.EMPLOYEE_GROUP_ID, group_ids)
-        self.assertEqual(name, full_name)
+        self.assertEqual(user_name, full_name)
 
     def test_rule_engine_no_regex_match(self):
         """Should deny authorization, the email of the tester won't match.
@@ -634,7 +645,9 @@ class MappingRuleEngineTests(FederationTests):
         assertion = mapping_fixtures.BAD_TESTER_ASSERTION
         rp = mapping_utils.RuleProcessor(mapping['rules'])
         mapped_properties = rp.process(assertion)
-        self.assertIsNone(mapped_properties['name'])
+
+        self.assertValidUserObject(mapped_properties)
+        self.assertIsNone(mapped_properties['user'].get('name'))
         self.assertListEqual(list(), mapped_properties['group_ids'])
 
     def test_rule_engine_regex_many_groups(self):
@@ -652,9 +665,10 @@ class MappingRuleEngineTests(FederationTests):
         rp = mapping_utils.RuleProcessor(mapping['rules'])
         values = rp.process(assertion)
 
+        self.assertValidUserObject(values)
         user_name = assertion.get('UserName')
         group_ids = values.get('group_ids')
-        name = values.get('name')
+        name = values.get('user', {}).get('name')
 
         self.assertEqual(user_name, name)
         self.assertIn(mapping_fixtures.TESTER_GROUP_ID, group_ids)
@@ -674,9 +688,10 @@ class MappingRuleEngineTests(FederationTests):
         rp = mapping_utils.RuleProcessor(mapping['rules'])
         values = rp.process(assertion)
 
+        self.assertValidUserObject(values)
         user_name = assertion.get('UserName')
         group_ids = values.get('group_ids')
-        name = values.get('name')
+        name = values.get('user', {}).get('name')
 
         self.assertEqual(user_name, name)
         self.assertIn(mapping_fixtures.CONTRACTOR_GROUP_ID, group_ids)
@@ -695,9 +710,10 @@ class MappingRuleEngineTests(FederationTests):
         rp = mapping_utils.RuleProcessor(mapping['rules'])
         values = rp.process(assertion)
 
+        self.assertValidUserObject(values)
         user_name = assertion.get('UserName')
         group_ids = values.get('group_ids')
-        name = values.get('name')
+        name = values.get('user', {}).get('name')
 
         self.assertEqual(name, user_name)
         self.assertEqual(group_ids, [])
@@ -715,9 +731,11 @@ class MappingRuleEngineTests(FederationTests):
         assertion = mapping_fixtures.EMPLOYEE_ASSERTION
         rp = mapping_utils.RuleProcessor(mapping['rules'])
         values = rp.process(assertion)
+
+        self.assertValidUserObject(values)
         user_name = assertion.get('UserName')
         group_ids = values.get('group_ids')
-        name = values.get('name')
+        name = values.get('user', {}).get('name')
 
         self.assertEqual(name, user_name)
         self.assertIn(mapping_fixtures.EMPLOYEE_GROUP_ID, group_ids)
@@ -737,9 +755,10 @@ class MappingRuleEngineTests(FederationTests):
         rp = mapping_utils.RuleProcessor(mapping['rules'])
         values = rp.process(assertion)
 
+        self.assertValidUserObject(values)
         user_name = assertion.get('UserName')
         group_ids = values.get('group_ids')
-        name = values.get('name')
+        name = values.get('user', {}).get('name')
 
         self.assertEqual(user_name, name)
         self.assertIn(mapping_fixtures.DEVELOPER_GROUP_ID, group_ids)
@@ -758,7 +777,9 @@ class MappingRuleEngineTests(FederationTests):
         assertion = mapping_fixtures.BAD_DEVELOPER_ASSERTION
         rp = mapping_utils.RuleProcessor(mapping['rules'])
         mapped_properties = rp.process(assertion)
-        self.assertIsNone(mapped_properties['name'])
+
+        self.assertValidUserObject(mapped_properties)
+        self.assertIsNone(mapped_properties['user'].get('name'))
         self.assertListEqual(list(), mapped_properties['group_ids'])
 
     def _rule_engine_regex_match_and_many_groups(self, assertion):
@@ -772,10 +793,12 @@ class MappingRuleEngineTests(FederationTests):
         mapping = mapping_fixtures.MAPPING_LARGE
         rp = mapping_utils.RuleProcessor(mapping['rules'])
         values = rp.process(assertion)
+
         user_name = assertion.get('UserName')
         group_ids = values.get('group_ids')
-        name = values.get('name')
+        name = values.get('user', {}).get('name')
 
+        self.assertValidUserObject(values)
         self.assertEqual(user_name, name)
         self.assertIn(mapping_fixtures.DEVELOPER_GROUP_ID, group_ids)
         self.assertIn(mapping_fixtures.TESTER_GROUP_ID, group_ids)
@@ -815,7 +838,8 @@ class MappingRuleEngineTests(FederationTests):
         rp = mapping_utils.RuleProcessor(mapping['rules'])
         assertion = mapping_fixtures.CONTRACTOR_MALFORMED_ASSERTION
         mapped_properties = rp.process(assertion)
-        self.assertIsNone(mapped_properties['name'])
+        self.assertValidUserObject(mapped_properties)
+        self.assertIsNone(mapped_properties['user'].get('name'))
         self.assertListEqual(list(), mapped_properties['group_ids'])
 
     def test_rule_engine_returns_group_names(self):
@@ -831,6 +855,7 @@ class MappingRuleEngineTests(FederationTests):
         assertion = mapping_fixtures.EMPLOYEE_ASSERTION
         mapped_properties = rp.process(assertion)
         self.assertIsNotNone(mapped_properties)
+        self.assertValidUserObject(mapped_properties)
         reference = {
             mapping_fixtures.DEVELOPER_GROUP_NAME:
             {

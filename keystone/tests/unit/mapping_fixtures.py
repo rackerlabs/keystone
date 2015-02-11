@@ -20,6 +20,8 @@ DEVELOPER_GROUP_ID = "xyz"
 DEVELOPER_GROUP_NAME = "developer"
 DEVELOPER_GROUP_DOMAIN_NAME = "outsourcing"
 DEVELOPER_GROUP_DOMAIN_ID = "5abc43"
+FEDERATED_DOMAIN = "Federated"
+LOCAL_DOMAIN = "Local"
 
 
 # Mapping summary:
@@ -550,6 +552,64 @@ MAPPING_GROUP_NAMES = {
                 }
             ]
         },
+    ]
+}
+
+MAPPING_EPHEMERAL_USER = {
+    "rules": [
+        {
+            "local": [
+                {
+                    "user": {
+                        "name": "{0}",
+                        "domain": {
+                            "id": FEDERATED_DOMAIN
+                        },
+                        "type": "ephemeral"
+                    }
+                }
+            ],
+            "remote": [
+                {
+                    "type": "UserName"
+                },
+                {
+                    "type": "UserName",
+                    "any_one_of": [
+                        "tbo"
+                    ]
+                }
+            ]
+        }
+    ]
+}
+
+MAPPING_LOCAL_USER = {
+    "rules": [
+        {
+            "local": [
+                {
+                    "user": {
+                        "name": "{0}",
+                        "domain": {
+                            "id": LOCAL_DOMAIN
+                        },
+                        "type": "ephemeral"
+                    }
+                }
+            ],
+            "remote": [
+                {
+                    "type": "UserName"
+                },
+                {
+                    "type": "UserName",
+                    "any_one_of": [
+                        "jsmith"
+                    ]
+                }
+            ]
+        }
     ]
 }
 
