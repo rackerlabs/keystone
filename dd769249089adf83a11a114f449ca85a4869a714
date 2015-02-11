@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_9e142d4e",
+        "filename": "keystone/token/providers/ae/token_formatters.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-11T15:21:47Z",
+      "side": 1,
+      "message": "we can make this configurable so we can either sign or encrypt the data. I have an idea for this, pushing for review soon.",
+      "revId": "dd769249089adf83a11a114f449ca85a4869a714",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
