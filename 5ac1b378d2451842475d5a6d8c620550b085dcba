@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_da14f6ea",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-11T13:26:31Z",
+      "side": 1,
+      "message": "Agreed.",
+      "parentUuid": "da86d52c_7b5242df",
+      "revId": "5ac1b378d2451842475d5a6d8c620550b085dcba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_2e6df499",
         "filename": "keystone/common/controller.py",
         "patchSetId": 17
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "Lance, so more more dependency?!!! :)\nHow about lets get this chain merged and then enhance schema validation?",
       "parentUuid": "da86d52c_6eec4cf4",
+      "revId": "5ac1b378d2451842475d5a6d8c620550b085dcba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_fad45a21",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-11T13:26:31Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "da86d52c_fbc71296",
       "revId": "5ac1b378d2451842475d5a6d8c620550b085dcba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
