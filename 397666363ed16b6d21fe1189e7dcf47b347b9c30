@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_6cf6e15e",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-11T20:05:42Z",
+      "side": 1,
+      "message": "thanks boris, this move was not needed, but i appreciate the info.",
+      "parentUuid": "da86d52c_a331cc5b",
+      "revId": "397666363ed16b6d21fe1189e7dcf47b347b9c30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_434650c1",
         "filename": "keystone/tests/core.py",
         "patchSetId": 13
