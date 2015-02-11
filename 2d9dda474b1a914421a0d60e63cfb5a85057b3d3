@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_4da21b4c",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-11T08:01:38Z",
+      "side": 1,
+      "message": "probably some refactorization could be helpful:\n\nhow about:\n\n[...]\ntoken_data \u003d token_ref.get(\u0027token_data\u0027)\n\n\nif not token_data:\n    raise exception.Unauthorized(\"Malformed token(?)\")\n\ntoken_v3 \u003d self.get_token_version(token_data) \u003d\u003d     token.provider.V3\nif token_v3:\n    federated_token \u003d \u0027OS-FEDERATION\u0027 in token_data[\u0027token\u0027][\u0027user\u0027]\n    if federated_token:\n        msg \u003d _(\"bla bla\")\n        raise exception.Unauthorized(msg)",
+      "parentUuid": "da86d52c_fd12b807",
+      "revId": "2d9dda474b1a914421a0d60e63cfb5a85057b3d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_0f483786",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 1
