@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_ad69d78d",
+        "filename": "bin/keystone-all",
+        "patchSetId": 4
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-02-11T07:46:40Z",
+      "side": 1,
+      "message": "This is incorrect: keystone-all can be run in generic threading mode for debugging purpose for example.",
+      "revId": "44989eb11ff50bf0e1cc961d4f3342252020e989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_cdfd2bb3",
+        "filename": "bin/keystone-all",
+        "patchSetId": 4
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-02-11T07:46:40Z",
+      "side": 1,
+      "message": "We use oslo.config to parse parameters.",
+      "revId": "44989eb11ff50bf0e1cc961d4f3342252020e989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_0d8f432b",
+        "filename": "keystone/common/environment/__init__.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-02-11T07:46:40Z",
+      "side": 1,
+      "message": "It\u0027s wierd :) It begs for refactoring :)",
+      "revId": "44989eb11ff50bf0e1cc961d4f3342252020e989",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
