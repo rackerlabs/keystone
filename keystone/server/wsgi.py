@@ -26,27 +26,31 @@ oslo_i18n.enable_lazy()
 
 
 from keystone.common import environment
-from keystone import config
 from keystone.server import common
-from keystone import service as keystone_service
 
 
 CONF = cfg.CONF
 
 
+class WSGIApplication(common.AbstractApplication):
+
+    def __init__(self, name, *args, **kwargs):
+        super(WSGIApplication, self).__init__(*args, **kwargs)
+        self.app_name = name
+        self.wsgi_app = None
+
+    def setup(self):
+        # Log the options used when starting if we're in debug mode...
+        if CONF.debug:
+            CONF.log_opt_values(logging.getLogger(CONF.prog), logging.DEBUG)
+
+        environment.use_stdlib()
+
+    def startup_application(self):
+        self.wsgi_app = self.get_wsgi_app(self.app_name)
+
+
 def initialize_application(name):
-    common.configure()
 
-    # Log the options used when starting if we're in debug mode...
-    if CONF.debug:
-        CONF.log_opt_values(logging.getLogger(CONF.prog), logging.DEBUG)
-
-    environment.use_stdlib()
-
-    def loadapp():
-        return keystone_service.loadapp(
-            'config:%s' % config.find_paste_config(), name)
-
-    _unused, application = common.setup_backends(
-        startup_application_fn=loadapp)
-    return application
+    application = WSGIApplication(name)
+    return application.wsgi_app
