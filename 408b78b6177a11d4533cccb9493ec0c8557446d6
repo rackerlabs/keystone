@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_55d9b855",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-11T14:09:22Z",
+      "side": 1,
+      "message": "Why is this OK if the argument for enforcing this is about speed?",
+      "revId": "408b78b6177a11d4533cccb9493ec0c8557446d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
