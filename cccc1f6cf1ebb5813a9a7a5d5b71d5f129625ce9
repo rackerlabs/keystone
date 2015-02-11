@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_58cd6d30",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-11T14:42:22Z",
+      "side": 1,
+      "message": "Here you use_eventlet() after importing stuff from logging. Logging depends on evetlet patching, so you might want to move it before log imports. I\u0027m not sure about that though.",
+      "revId": "cccc1f6cf1ebb5813a9a7a5d5b71d5f129625ce9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_18521535",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-11T14:42:22Z",
+      "side": 1,
+      "message": "I saw the tests are failing and I hope you won\u0027t mind a hint ;)\n\nYou need to insert ``log.register_options(CONF)`` here.",
+      "revId": "cccc1f6cf1ebb5813a9a7a5d5b71d5f129625ce9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
