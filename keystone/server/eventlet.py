@@ -124,6 +124,12 @@ def run(possible_topdir):
         monkeypatch_thread = False
     environment.use_eventlet(monkeypatch_thread)
 
+    # NOTE(amakarov): logging must be set up after eventlet patching, otherwise
+    # logging handlers will be left with generic locks instead of using patched
+    # eventlet semaphores.
+    if monkeypatch_thread:
+        config.setup_logging()
+
     def create_servers():
         admin_worker_count = _get_workers('admin_workers')
         public_worker_count = _get_workers('public_workers')
