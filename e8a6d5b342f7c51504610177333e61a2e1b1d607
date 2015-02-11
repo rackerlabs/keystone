@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_b0384bd4",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2015-02-11T10:38:09Z",
+      "side": 1,
+      "message": "Why we can not change the timestamp in get_project function?",
+      "revId": "e8a6d5b342f7c51504610177333e61a2e1b1d607",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_1cfcd371",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2015-02-11T10:38:09Z",
+      "side": 1,
+      "message": "I don\u0027t like this code duplicated here. I suggest create a new parent class (i.e. ControllerTimestamp) for V2Controller and V3Controller classes.\n\nclass ControllerTimestamp(wsgi.Application):\n# Here put timestamp2isotime function\n\nand change:\n\nclass V3Controller(wsgi.Application): -\u003e class V3Controller(ControllerTimestamp):\n\nclass V2Controller(wsgi.Application): -\u003e class V2Controller(ControllerTimestamp):\n\nI admit that \"ControllerTimestamp\" is not the best name for this proposal.",
+      "revId": "e8a6d5b342f7c51504610177333e61a2e1b1d607",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_bc43c7ad",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2015-02-11T10:38:09Z",
+      "side": 1,
+      "message": "Could we get that \u0027True\u0027 from default_fixtures file?. I don\u0027t know if my point is a good idea...",
+      "revId": "e8a6d5b342f7c51504610177333e61a2e1b1d607",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
