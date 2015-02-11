@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_a331cc5b",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-11T18:55:42Z",
+      "side": 1,
+      "message": "The comment is not 100% correct. Not oslo_log depends on eventlet patching, but Python logging does. We have bug 1420788 for it.\n\nIn fact, I am not sure now that the move is required, sorry for my previous comment. I mean, it will definitely not make things worse and might make things better, but I am not sure that it\u0027s 100% required. So OK, let it be.\n\nThe reason I worry about it that much is that the issue is very nasty and we spent a lot of time debugging it. Alexander Makarov has sent a patch to review about eventlet initialization and it was not yet merged.",
+      "revId": "397666363ed16b6d21fe1189e7dcf47b347b9c30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_434650c1",
+        "filename": "keystone/tests/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-11T18:55:42Z",
+      "side": 1,
+      "message": "pep8 will not be happy here ;)",
+      "revId": "397666363ed16b6d21fe1189e7dcf47b347b9c30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
