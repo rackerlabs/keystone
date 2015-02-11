@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_d7859acf",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 503,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-11T20:31:39Z",
+      "side": 1,
+      "message": "i don\u0027t think we have an ID yet, so we can\u0027t use the model approach, i refactored the code to make it a bit cleaner",
+      "parentUuid": "da86d52c_303f0089",
+      "revId": "2d9dda474b1a914421a0d60e63cfb5a85057b3d3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_0f483786",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 1
