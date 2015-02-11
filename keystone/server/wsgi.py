@@ -35,6 +35,7 @@ CONF = config.CONF
 
 def initialize_application(name):
     common.configure()
+    config.setup_logging()
 
     # Log the options used when starting if we're in debug mode...
     if CONF.debug:
