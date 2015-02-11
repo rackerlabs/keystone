@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_98b8dc12",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-11T01:32:03Z",
+      "side": 1,
+      "message": "i suppose this could just be \"OpenStack prefers values which are unicode friendly\"",
+      "revId": "77b02ba2860f476d2de5497fa45efee3af8fe125",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_58702472",
+        "filename": "keystone/tests/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 668,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-11T01:32:03Z",
+      "side": 1,
+      "message": "i wouldn\u0027t mind adding \u0027true\u0027, \u0027false\u0027, \u0027True\u0027, \u0027False\u0027, \u0027FaLse\u0027 into the mix either",
+      "revId": "77b02ba2860f476d2de5497fa45efee3af8fe125",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
