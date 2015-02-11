@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_b861203b",
+        "filename": "keystone/tests/unit/common/test_ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 501,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-11T01:56:18Z",
+      "side": 1,
+      "message": "this comment is not related to this test case :)",
+      "revId": "33b10732c1f73916bdc5b9e84e5843da81e51609",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
