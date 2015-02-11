@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_2c7ea4af",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-11T22:10:43Z",
+      "side": 1,
+      "message": "Are you sure that you want to do basically \"msg % e\"? Without launching the code I think that it produces \"Project is disabled: Project is disabled: some-id\" (don\u0027t know what really happens)",
+      "revId": "216d78d3771a667b5931805828d683a12b3a924f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f8544b55",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-11T22:10:43Z",
+      "side": 1,
+      "message": "The message should be supplied in DomainNotFound exception",
+      "revId": "216d78d3771a667b5931805828d683a12b3a924f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_1852ff66",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-11T22:10:43Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "216d78d3771a667b5931805828d683a12b3a924f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_5848f7b2",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-11T22:10:43Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "216d78d3771a667b5931805828d683a12b3a924f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_18875fb6",
+        "filename": "keystone/auth/plugins/password.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-11T22:10:43Z",
+      "side": 1,
+      "message": "Same here and below. We should extract message from the exception.",
+      "revId": "216d78d3771a667b5931805828d683a12b3a924f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_2c1a246f",
+        "filename": "keystone/cli.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-11T22:10:43Z",
+      "side": 1,
+      "message": "Why was it moved here?",
+      "revId": "216d78d3771a667b5931805828d683a12b3a924f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_2c5f8410",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-11T22:10:43Z",
+      "side": 1,
+      "message": "And here",
+      "revId": "216d78d3771a667b5931805828d683a12b3a924f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_ecf9ecc8",
+        "filename": "requirements.txt",
+        "patchSetId": 14
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-11T22:10:43Z",
+      "side": 1,
+      "message": "Why 0.1.0, when there is 0.2.0?",
+      "revId": "216d78d3771a667b5931805828d683a12b3a924f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

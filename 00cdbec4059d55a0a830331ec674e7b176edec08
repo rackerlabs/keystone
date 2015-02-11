@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_ec72cc7a",
+        "filename": "keystone/tests/unit/test_core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-11T22:10:43Z",
+      "side": 0,
+      "message": "Interesting. Was it ever used? Maybe it should be removed in a separate patch?",
+      "revId": "00cdbec4059d55a0a830331ec674e7b176edec08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
