@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_9600adac",
+        "filename": "dsvm/federation/devstack/extras.d/20-k-pyidp.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-11T03:11:45Z",
+      "side": 1,
+      "message": "Is it because its only run for tests and the whole thing is blown away anyway when its done?  If so a comment stating that would be helpful.",
+      "parentUuid": "da86d52c_7b8de27b",
+      "revId": "a940332268eab04406de554b03ab5263dbf20313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_9bfd36b4",
         "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
         "patchSetId": 2
@@ -98,6 +116,24 @@
       "writtenOn": "2015-02-11T02:46:40Z",
       "side": 1,
       "message": "Why wouldn\u0027t you want a clean hook to cleanup what this git clone pulls down?  So if for example the pysaml directory gets corrupted the clean would allow a user to easily wipe it out and start fresh.",
+      "revId": "a940332268eab04406de554b03ab5263dbf20313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_3629c137",
+        "filename": "dsvm/federation/devstack/lib/pysaml2_idp",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-11T03:11:45Z",
+      "side": 1,
+      "message": "Is it because its only run for tests and the whole thing is blown away anyway when its done?",
+      "parentUuid": "da86d52c_fbb1d201",
       "revId": "a940332268eab04406de554b03ab5263dbf20313",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
