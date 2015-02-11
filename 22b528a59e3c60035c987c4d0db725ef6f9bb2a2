@@ -87,6 +87,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_f0d48821",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-11T08:30:53Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "da86d52c_987b4f8b",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_28664c2a",
         "filename": "keystone/notifications.py",
         "patchSetId": 5
@@ -98,6 +116,23 @@
       "writtenOn": "2015-02-06T15:23:03Z",
       "side": 1,
       "message": "is there an id we can attach to this? maybe an id associated with keystone service?",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_30a9c090",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-11T08:30:53Z",
+      "side": 1,
+      "message": "Why do we need multiple wrapper classes anyway? We can\u0027t we just have a generic one?",
       "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +173,23 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_b073f04c",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-11T08:30:53Z",
+      "side": 1,
+      "message": "Also, shouldn\u0027t the event_type match the APIs in policy.json?\n\ni.e.\n\nidentity.create_grant\nidentity.revoke_grant\n\nThat would make it easier to correlate event_type with actual API call.",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_fd78bdc5",
         "filename": "keystone/notifications.py",
         "patchSetId": 5
@@ -167,6 +219,24 @@
       "side": 1,
       "message": "We can\u0027t just change the event_type, it\u0027s not backwards compatible. We could send events with both the old and new names and document that the old name is deprecated, then get rid of it next release.",
       "parentUuid": "da86d52c_fd78bdc5",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_50b714f5",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-11T08:30:53Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "da86d52c_e8c96fad",
       "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
