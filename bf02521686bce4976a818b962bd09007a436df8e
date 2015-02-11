@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_bbaf43e2",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1570,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-11T14:58:03Z",
+      "side": 1,
+      "message": "Any difference with \"random_attr_str\"? can be removed?",
+      "revId": "bf02521686bce4976a818b962bd09007a436df8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_b8f8297d",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1576,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-11T14:58:03Z",
+      "side": 1,
+      "message": "Not sure if \u0027name\u003d\"\",%s\u0027 % random_attr_str is better",
+      "revId": "bf02521686bce4976a818b962bd09007a436df8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_bbf903ca",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1583,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-11T14:58:03Z",
+      "side": 1,
+      "message": "Misuse \"msg\" in \"assertDictEqual\" method?  Here \"random_attr_no_name_str\" is the exception message/incorrect result you want to show,right? but in the following \"msg\" has different meanings.",
+      "revId": "bf02521686bce4976a818b962bd09007a436df8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_bbce6381",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1585,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-11T14:58:03Z",
+      "side": 1,
+      "message": "But... here \"msg\" is the correct result you want to show?",
+      "revId": "bf02521686bce4976a818b962bd09007a436df8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_3b899326",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1587,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-11T14:58:03Z",
+      "side": 1,
+      "message": "Again, here you want to show the correct result.",
+      "revId": "bf02521686bce4976a818b962bd09007a436df8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_bb3f4324",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 1589,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-11T14:58:03Z",
+      "side": 1,
+      "message": "what \"random_attr_name_none_str\" want to show?",
+      "revId": "bf02521686bce4976a818b962bd09007a436df8e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
