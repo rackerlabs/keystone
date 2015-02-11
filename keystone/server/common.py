@@ -29,8 +29,6 @@ def configure(version=None, config_files=None):
     CONF(project='keystone', version=version,
          default_config_files=config_files)
 
-    config.setup_logging()
-
 
 def setup_backends(load_extra_backends_fn=lambda: {},
                    startup_application_fn=lambda: None):
