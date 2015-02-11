@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_16567dce",
+        "filename": "dsvm/federation/devstack/extras.d/20-keystone-federation.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-11T03:19:26Z",
+      "side": 1,
+      "message": "So why isn\u0027t this needed? Is it because its only run for tests and the whole thing is blown away anyway when its done?  If so a comment stating that would be helpful.",
+      "revId": "10ebf206e02c0b049ee426c4cfe5869a1d36d8d8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
