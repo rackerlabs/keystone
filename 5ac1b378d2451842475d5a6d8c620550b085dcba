@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_7b5242df",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 565,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-11T02:22:55Z",
+      "side": 1,
+      "message": "this won\u0027t work right? unless you provide default keyword args like\n\ndef _assert_single_arg(self, domain_id\u003dNone, project_id\u003dNone)",
+      "revId": "5ac1b378d2451842475d5a6d8c620550b085dcba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_2e6df499",
         "filename": "keystone/common/controller.py",
         "patchSetId": 17
@@ -31,6 +48,24 @@
       "side": 1,
       "message": "so the schema might look something like: \n\n    \"oneOf\": [\n        {\"required\": [\"user_id\"]},\n        {\"required\": [\"group_id\"]}\n    ],\n    \"oneOf\": [\n        {\"required\": [\"project_id\"]},\n        {\"required\": [\"domain_id\"]}\n    ]",
       "parentUuid": "da86d52c_2e6df499",
+      "revId": "5ac1b378d2451842475d5a6d8c620550b085dcba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_fbc71296",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 566,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-11T02:22:55Z",
+      "side": 1,
+      "message": "Lance, so more more dependency?!!! :)\nHow about lets get this chain merged and then enhance schema validation?",
+      "parentUuid": "da86d52c_6eec4cf4",
       "revId": "5ac1b378d2451842475d5a6d8c620550b085dcba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
