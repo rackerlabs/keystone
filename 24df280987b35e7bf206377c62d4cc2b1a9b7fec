@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_4d5dbb78",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-11T07:56:49Z",
+      "side": 1,
+      "message": "Not a big deal: this change the code from \"calling _normalize_dict() then _assign_unique_id()\" to \"calling _assign_unique_id() first then _normalize_dict()\"\n\nI looked at the internal code, seems there is no difference since we are not modifying any attributes that may be affected by normalizing the key argument.",
+      "revId": "24df280987b35e7bf206377c62d4cc2b1a9b7fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_9215474b",
         "filename": "keystone/tests/test_keystoneclient.py",
         "patchSetId": 5
