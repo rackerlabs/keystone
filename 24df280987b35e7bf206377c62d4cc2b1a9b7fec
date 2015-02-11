@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_51b0ff42",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-11T03:46:08Z",
+      "side": 1,
+      "message": "I remember when _member_ was introduced and it gave me fits. It\u0027s nice to see it is the gift that keeps on giving :-)",
+      "revId": "24df280987b35e7bf206377c62d4cc2b1a9b7fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_9215474b",
         "filename": "keystone/tests/test_keystoneclient.py",
         "patchSetId": 5
