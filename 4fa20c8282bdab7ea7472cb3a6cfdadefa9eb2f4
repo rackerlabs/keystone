@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_b7102f4f",
+        "filename": "keystone/server/eventlet.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-02-11T16:46:59Z",
+      "side": 1,
+      "message": "Think this is supposed to be in the common code after this function returns, and without the check for monkeypoath thread, so it is always called.",
+      "revId": "4fa20c8282bdab7ea7472cb3a6cfdadefa9eb2f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
