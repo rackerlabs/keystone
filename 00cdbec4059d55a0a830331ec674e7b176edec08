@@ -16,6 +16,24 @@
       "revId": "00cdbec4059d55a0a830331ec674e7b176edec08",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_2f7e96af",
+        "filename": "keystone/tests/unit/test_core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-11T22:30:56Z",
+      "side": 0,
+      "message": "this was a unit test for the function that was removed here: https://review.openstack.org/#/c/152699/14/keystone/tests/core.py which is now a fixture from oslo.log.logging.",
+      "parentUuid": "da86d52c_ec72cc7a",
+      "revId": "00cdbec4059d55a0a830331ec674e7b176edec08",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
