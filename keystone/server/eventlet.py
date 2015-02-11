@@ -108,21 +108,20 @@ def run(possible_topdir):
     if os.path.exists(dev_conf):
         config_files = [dev_conf]
 
-    common.configure(
-        version=pbr.version.VersionInfo('keystone').version_string(),
-        config_files=config_files)
+    with common.ConfigWrapper(
+            version=pbr.version.VersionInfo('keystone').version_string(),
+            config_files=config_files):
+        monkeypatch_thread = not CONF.standard_threads
+        pydev_debug_url = utils.setup_remote_pydev_debug()
+        if pydev_debug_url:
+            # in order to work around errors caused by monkey patching we have to
+            # set the thread to False.  An explanation is here:
+            # http://lists.openstack.org/pipermail/openstack-dev/2012-August/
+            # 000794.html
+            monkeypatch_thread = False
+        environment.use_eventlet(monkeypatch_thread)
 
     paste_config = config.find_paste_config()
-
-    monkeypatch_thread = not CONF.standard_threads
-    pydev_debug_url = utils.setup_remote_pydev_debug()
-    if pydev_debug_url:
-        # in order to work around errors caused by monkey patching we have to
-        # set the thread to False.  An explanation is here:
-        # http://lists.openstack.org/pipermail/openstack-dev/2012-August/
-        # 000794.html
-        monkeypatch_thread = False
-    environment.use_eventlet(monkeypatch_thread)
 
     def create_servers():
         admin_worker_count = _get_workers('admin_workers')

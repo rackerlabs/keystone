@@ -21,15 +21,34 @@ from keystone import config
 CONF = config.CONF
 
 
+class ConfigWrapper(object):
+
+    _configured = False
+
+    def __init__(self, version=None, config_files=None):
+        self.version = version
+        self.config_files = config_files
+
+    def __enter__(self):
+        if not self.__class__._configured:
+            config.configure()
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        if not self.__class__._configured:
+            config.setup_logging()
+            sql.initialize()
+            config.set_default_for_default_log_levels()
+
+            CONF(project='keystone', version=self.version,
+                 default_config_files=self.config_files)
+            self.__class__._configured = True
+
+            config.setup_logging()
+
+
 def configure(version=None, config_files=None):
-    config.configure()
-    sql.initialize()
-    config.set_default_for_default_log_levels()
-
-    CONF(project='keystone', version=version,
-         default_config_files=config_files)
-
-    config.setup_logging()
+    with ConfigWrapper(version, config_files):
+        pass
 
 
 def setup_backends(load_extra_backends_fn=lambda: {},
