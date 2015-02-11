@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_1b2306a8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-11T02:46:40Z",
+      "side": 1,
+      "message": "interactiving should be interracting",
+      "revId": "a940332268eab04406de554b03ab5263dbf20313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_9bb3764c",
+        "filename": "dsvm/federation/devstack/extras.d/20-k-pyidp.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-11T02:46:40Z",
+      "side": 1,
+      "message": "Wow. Devstack\u0027s extension model is much improved from when I added OpenLDAP support way back when. Of course back then we had to carry the shell scripts uphill both ways in the snow :-)",
+      "revId": "a940332268eab04406de554b03ab5263dbf20313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_db888e73",
+        "filename": "dsvm/federation/devstack/extras.d/20-k-pyidp.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-11T02:46:40Z",
+      "side": 1,
+      "message": "No pre-install step necessary? LUCKY!!!",
+      "revId": "a940332268eab04406de554b03ab5263dbf20313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_7b8de27b",
+        "filename": "dsvm/federation/devstack/extras.d/20-k-pyidp.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-11T02:46:40Z",
+      "side": 1,
+      "message": "How come you don\u0027t need a clean extension?",
+      "revId": "a940332268eab04406de554b03ab5263dbf20313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_9bfd36b4",
+        "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-11T02:46:40Z",
+      "side": 1,
+      "message": "Would be nice to have comment describing the authorization methods supported. I assume CAS is Central Authentication Service",
+      "revId": "a940332268eab04406de554b03ab5263dbf20313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_fbb1d201",
+        "filename": "dsvm/federation/devstack/lib/pysaml2_idp",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-11T02:46:40Z",
+      "side": 1,
+      "message": "Why wouldn\u0027t you want a clean hook to cleanup what this git clone pulls down?  So if for example the pysaml directory gets corrupted the clean would allow a user to easily wipe it out and start fresh.",
+      "revId": "a940332268eab04406de554b03ab5263dbf20313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
