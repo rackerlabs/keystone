@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_72984a75",
+        "filename": "keystone/common/strict_abc.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2015-02-12T19:02:32Z",
+      "side": 1,
+      "message": "I\u0027m generally not in favor of importing bits of another API as though they come from this module. It\u0027s not clear as a user of strict_abc that abstractmethod comes from the abc module, which means you end up having to document and support it. \n\nIf you ever end up wanting a different abstractmethod implementation later, you would be locked in to this version\u0027s API anyway.",
+      "revId": "f43f378e1729e67169cef43bb9580345a7fa7005",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_32a0928f",
+        "filename": "keystone/tests/unit/common/test_strict_abc.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2015-02-12T19:02:32Z",
+      "side": 1,
+      "message": "If the decorator or meta-class ever raise an exception this module won\u0027t be importable, which will break test discovery rather than reporting a test failure. It would be better to define the classes under test at runtime inside a function (setUp would be a good choice).",
+      "revId": "f43f378e1729e67169cef43bb9580345a7fa7005",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_b2e2c2d2",
+        "filename": "keystone/tests/unit/common/test_strict_abc.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2015-02-12T19:02:32Z",
+      "side": 1,
+      "message": "You could use testscenarios instead of separate classes with a single attribute.",
+      "revId": "f43f378e1729e67169cef43bb9580345a7fa7005",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
