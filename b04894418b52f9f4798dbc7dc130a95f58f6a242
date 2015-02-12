@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_54598d8c",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 909,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-12T11:23:45Z",
+      "side": 1,
+      "message": "No. In effective mode, all the group assignments are expanded, so filtering by group, independently of inherited filter being provided or not, would result in an empty list.\n\nSo what makes this different from the next check (line 914)?\nAsking for effective + domain_id is valid, since it would return non-inherited assignments on the specified domain. That said, effective + domain_id + inherited is invalid, as we are checking.",
+      "parentUuid": "da86d52c_b5049018",
+      "revId": "b04894418b52f9f4798dbc7dc130a95f58f6a242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_95222cb7",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 21
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-12T06:14:59Z",
       "side": 1,
       "message": "what happen to _require_domain_xor_project?",
+      "revId": "b04894418b52f9f4798dbc7dc130a95f58f6a242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_2f53e017",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 919,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-12T11:23:45Z",
+      "side": 1,
+      "message": "Ok, so ....\n_required_domain_xor_project and _assert_domain_nand_project were just sharing a little piece of code at common/controller.py (see https://review.openstack.org/#/c/144703/20/keystone/common/controller.py).\n\nAs discussed with dstanek, they shouldn\u0027t be there since they aren\u0027t used by other controllers than those in assigment/controllers.py.\n\nSo they should be turned into validation methods in this file. I didn\u0027t adopt this approach since there is just a little piece of code to be shared, and they will probably be removed in favor of json schema validations, as Lance pointed out in a previous review.\n\nSo the idea is: let\u0027s make them simple and working, instead of doing some (maybe not worth it) little code sharing that will be changed soon.",
+      "parentUuid": "da86d52c_95222cb7",
       "revId": "b04894418b52f9f4798dbc7dc130a95f58f6a242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +100,24 @@
       "writtenOn": "2015-02-12T06:14:59Z",
       "side": 1,
       "message": "I thought we are getting rid of extension namespaces, no? Morgan?",
+      "revId": "b04894418b52f9f4798dbc7dc130a95f58f6a242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_af9350a1",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 944,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-12T11:23:45Z",
+      "side": 1,
+      "message": "Yes, I think we are :)\n\nI talked to Henry Nash specifically about this one and he told me that getting rid of OS-INHERIT as extension is in his TODO list  :-)",
+      "parentUuid": "da86d52c_55a19444",
       "revId": "b04894418b52f9f4798dbc7dc130a95f58f6a242",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
