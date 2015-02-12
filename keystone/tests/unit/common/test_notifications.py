@@ -26,7 +26,7 @@ import testtools
 
 from keystone.common import dependency
 from keystone import notifications
-from keystone.tests import test_v3
+from keystone.tests.unit import test_v3
 
 
 CONF = cfg.CONF
@@ -706,6 +706,7 @@ class TestCallbackRegistration(testtools.TestCase):
         TODO(dstanek): remove the need for this in a future refactoring
 
         """
+
         log_fn = self.mock_log.debug
         self.assertEqual(len(data), log_fn.call_count)
         for datum in data:
