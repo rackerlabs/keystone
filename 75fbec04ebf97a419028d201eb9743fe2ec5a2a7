@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_07537217",
+        "filename": "doc/source/key_terms.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-12T03:52:06Z",
+      "side": 1,
+      "message": "I love this document.  Where were you circa 2013 when I was trying to learn this??? :-)",
+      "revId": "75fbec04ebf97a419028d201eb9743fe2ec5a2a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_873e82b6",
+        "filename": "doc/source/key_terms.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-12T03:52:06Z",
+      "side": 1,
+      "message": "AWESOME!",
+      "revId": "75fbec04ebf97a419028d201eb9743fe2ec5a2a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_a749c661",
+        "filename": "doc/source/key_terms.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-12T03:52:06Z",
+      "side": 1,
+      "message": "need an \"are\" between \"names\" and \"**not**\"",
+      "revId": "75fbec04ebf97a419028d201eb9743fe2ec5a2a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_077a9287",
+        "filename": "doc/source/key_terms.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-12T03:52:06Z",
+      "side": 1,
+      "message": "AWESOME!",
+      "revId": "75fbec04ebf97a419028d201eb9743fe2ec5a2a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_a78e2677",
+        "filename": "doc/source/key_terms.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-12T03:52:06Z",
+      "side": 1,
+      "message": "I think we need to be careful on the phrasing here. Projects may be backed by SQL or LDAP.  Domains may also be backed in SQL or a Domain may be mapped to a specific LDAP. If you say Domain may be backed by LDAP to me that implies that somehow the Domain can be stored as part of the LDAP schema which I believe is not true.  That was where the LDAP mapping would break down I believe.",
+      "revId": "75fbec04ebf97a419028d201eb9743fe2ec5a2a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_87c12282",
+        "filename": "doc/source/key_terms.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-12T03:52:06Z",
+      "side": 1,
+      "message": "Perhaps mention that if the domain for a project is not specified it is added to a default domain.  That way folks understand even if they typically just use projects there really is a domain implicitly.",
+      "revId": "75fbec04ebf97a419028d201eb9743fe2ec5a2a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e739fea4",
+        "filename": "doc/source/key_terms.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-12T03:52:06Z",
+      "side": 1,
+      "message": "Roles should be Role",
+      "revId": "75fbec04ebf97a419028d201eb9743fe2ec5a2a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_275796cb",
+        "filename": "doc/source/key_terms.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-12T03:52:06Z",
+      "side": 1,
+      "message": "Great example.  You are like the evil masked magician that goes on TV and shows the world how all the magic tricks are done!",
+      "revId": "75fbec04ebf97a419028d201eb9743fe2ec5a2a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_87f682d5",
+        "filename": "doc/source/key_terms.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-12T03:52:06Z",
+      "side": 1,
+      "message": "Run on sentence. Recommend you replace \"domain, this\"  with \"domain. This\"",
+      "revId": "75fbec04ebf97a419028d201eb9743fe2ec5a2a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
