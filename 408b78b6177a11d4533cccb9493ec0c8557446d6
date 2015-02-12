@@ -16,6 +16,24 @@
       "revId": "408b78b6177a11d4533cccb9493ec0c8557446d6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_710a318b",
+        "filename": "keystone/hacking/checks.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 9796
+      },
+      "writtenOn": "2015-02-12T01:29:56Z",
+      "side": 1,
+      "message": "As commit message said : This commit doesn\u0027t handle dict constructor with kwargs.  see the line 429",
+      "parentUuid": "da86d52c_55d9b855",
+      "revId": "408b78b6177a11d4533cccb9493ec0c8557446d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
