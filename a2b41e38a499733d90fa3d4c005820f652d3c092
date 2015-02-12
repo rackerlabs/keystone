@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_b0c2de31",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1009,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-12T06:54:42Z",
+      "side": 1,
+      "message": "shouldn\u0027t it be\n\nrole:admin and domain_id:%(user.domain_id)s\n\naccording to the paragraph below",
+      "revId": "a2b41e38a499733d90fa3d4c005820f652d3c092",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_30342e49",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 1035,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-12T06:54:42Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "a2b41e38a499733d90fa3d4c005820f652d3c092",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
