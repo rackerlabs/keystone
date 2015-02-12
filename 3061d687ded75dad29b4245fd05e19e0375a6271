@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_4443a812",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-12T03:26:37Z",
+      "side": 1,
+      "message": "The phrasing here seems a little strange.  You say that the option may be repeated for multiple values.  My question is,  you may repeat it for multiple values of what???  Are you just trying to say that you can have multiple values of hosts in the list?  Also you end with a sentence that says multiple values. You then say, for example and then give a single value example.",
+      "revId": "3061d687ded75dad29b4245fd05e19e0375a6271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e44c9ca0",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-12T03:26:37Z",
+      "side": 1,
+      "message": "This function is very easy to read! nice job!",
+      "revId": "3061d687ded75dad29b4245fd05e19e0375a6271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_a6122460",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 20
@@ -31,6 +65,40 @@
       "side": 1,
       "message": "I think it\u0027s fine, if X-Subject-Token isn\u0027t there then we\u0027re really in trouble :) \n\nAny exceptions that come up during authN should be raised by federated_authentication()",
       "parentUuid": "da86d52c_a6122460",
+      "revId": "3061d687ded75dad29b4245fd05e19e0375a6271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_c47a38b9",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-12T03:26:37Z",
+      "side": 1,
+      "message": "template substitution approach is very slick!",
+      "revId": "3061d687ded75dad29b4245fd05e19e0375a6271",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_0437f0ff",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-12T03:26:37Z",
+      "side": 1,
+      "message": "Why did you combine your GET/POST into one statement?  If you look at all the other examples you broke the consistency of how these are documented. Would be best to stick with convention",
       "revId": "3061d687ded75dad29b4245fd05e19e0375a6271",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
