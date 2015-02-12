@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_3d75cbf9",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-12T17:00:11Z",
+      "side": 1,
+      "message": "Can\u0027t this be removed since we\u0027re using issue_token()?",
+      "revId": "ee9e9dc01a7217681b8f8a301f0536c6401649e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_1d6ac719",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 426,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-12T17:00:11Z",
+      "side": 1,
+      "message": "Can\u0027t this be removed since we\u0027re using issue_token()?",
+      "revId": "ee9e9dc01a7217681b8f8a301f0536c6401649e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
