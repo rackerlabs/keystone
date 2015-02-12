@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_21b3060b",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-02-12T01:57:44Z",
+      "side": 1,
+      "message": "Maybe in driver is better? I will move this into driver.",
+      "parentUuid": "da86d52c_b0384bd4",
+      "revId": "e8a6d5b342f7c51504610177333e61a2e1b1d607",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_1cfcd371",
         "filename": "keystone/common/controller.py",
         "patchSetId": 5
@@ -47,6 +65,24 @@
       "writtenOn": "2015-02-11T10:38:09Z",
       "side": 1,
       "message": "Could we get that \u0027True\u0027 from default_fixtures file?. I don\u0027t know if my point is a good idea...",
+      "revId": "e8a6d5b342f7c51504610177333e61a2e1b1d607",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f109c131",
+        "filename": "keystone/tests/test_backend.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-02-12T01:57:44Z",
+      "side": 1,
+      "message": "I don\u0027t think this is a good idea too:) I just want to treat this parameter as a class member variable.",
+      "parentUuid": "da86d52c_bc43c7ad",
       "revId": "e8a6d5b342f7c51504610177333e61a2e1b1d607",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
