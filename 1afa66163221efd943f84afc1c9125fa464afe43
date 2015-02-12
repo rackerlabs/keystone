@@ -69,6 +69,23 @@
       "revId": "1afa66163221efd943f84afc1c9125fa464afe43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_1dac87ec",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-12T16:48:40Z",
+      "side": 1,
+      "message": "There should at least be a different message logged in each case, rather than the same message... e.g., this could be \u0027Unexpected error\u0027, change line 247 to be \u0027Unexpected validation error\u0027, and then \u0027Unexpected exception\u0027 at line 252.\n\nAlso, I wonder if all of these can\u0027t be changed to LOG.warning(_(\u0027%s\u0027), e) ... that should be the same as it was before, and %s must work since that\u0027s what it\u0027s doing here.",
+      "revId": "1afa66163221efd943f84afc1c9125fa464afe43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
