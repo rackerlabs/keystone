@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_fdb1738f",
+        "filename": "doc/source/key_terms.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-12T17:05:08Z",
+      "side": 1,
+      "message": "typo: remove \"may\"",
+      "revId": "61d506c6d7a5ff7505c854815765e72acf8087ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_d56584af",
         "filename": "doc/source/key_terms.rst",
         "patchSetId": 4
