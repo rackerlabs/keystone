@@ -86,6 +86,24 @@
       "revId": "1afa66163221efd943f84afc1c9125fa464afe43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_06b27493",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-12T17:51:59Z",
+      "side": 1,
+      "message": "The old code was actually doing : six.text_type(msg)\n\nhttp://git.openstack.org/cgit/openstack/keystone/tree/keystone/openstack/common/log.py#n318\n\nHow this works now: http://paste.openstack.org/show/172225/",
+      "parentUuid": "da86d52c_1dac87ec",
+      "revId": "1afa66163221efd943f84afc1c9125fa464afe43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
