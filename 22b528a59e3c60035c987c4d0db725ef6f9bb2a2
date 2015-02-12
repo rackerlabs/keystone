@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_d6bd8ab2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-12T08:00:14Z",
+      "side": 1,
+      "message": "i\u0027ll split the bug fix out, i can fix that independently",
+      "parentUuid": "da86d52c_48f51bca",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_c89f4bb3",
         "filename": "keystone/notifications.py",
         "patchSetId": 5
@@ -64,6 +82,24 @@
       "writtenOn": "2015-02-09T01:21:51Z",
       "side": 1,
       "message": "why have a parameter? Also, what if it\u0027s not \u0027authenticate\u0027?",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_b6d9f623",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-12T08:00:14Z",
+      "side": 1,
+      "message": "the comment is mis-leading, currently the only action used is \u0027authenticate\u0027 but there could be others.",
+      "parentUuid": "da86d52c_68b81f2b",
       "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -133,6 +169,24 @@
       "writtenOn": "2015-02-11T08:30:53Z",
       "side": 1,
       "message": "Why do we need multiple wrapper classes anyway? We can\u0027t we just have a generic one?",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f62d2eff",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-12T08:00:14Z",
+      "side": 1,
+      "message": "they wrappers each create very different payloads, i\u0027ll look into possibly refactoring/condensing the wrappers when the CADF work is completed.",
+      "parentUuid": "da86d52c_30a9c090",
       "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -237,6 +291,24 @@
       "side": 1,
       "message": "++",
       "parentUuid": "da86d52c_e8c96fad",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_36342649",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 334,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-12T08:00:14Z",
+      "side": 1,
+      "message": "Right, I\u0027ll keep this unchanged for now, as I would really like to get the CADF notifications done, then address the bug in another patch.",
+      "parentUuid": "da86d52c_50b714f5",
       "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
