@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_b5049018",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 909,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-12T06:14:59Z",
+      "side": 1,
+      "message": "inherited and group?",
+      "revId": "b04894418b52f9f4798dbc7dc130a95f58f6a242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_95222cb7",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 919,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-12T06:14:59Z",
+      "side": 1,
+      "message": "what happen to _require_domain_xor_project?",
+      "revId": "b04894418b52f9f4798dbc7dc130a95f58f6a242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f51a887b",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 924,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-12T06:14:59Z",
+      "side": 1,
+      "message": "what happen to _require_user_xor_group?",
+      "revId": "b04894418b52f9f4798dbc7dc130a95f58f6a242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_55a19444",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 944,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-12T06:14:59Z",
+      "side": 1,
+      "message": "I thought we are getting rid of extension namespaces, no? Morgan?",
+      "revId": "b04894418b52f9f4798dbc7dc130a95f58f6a242",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
