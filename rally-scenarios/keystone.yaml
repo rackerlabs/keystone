@@ -1,9 +1,14 @@
 ---
-  KeystoneBasic.create_delete_user:
+  Authenticate.keystone:
     -
-      args:
-        name_length: 10
       runner:
-        type: "constant"
-        times: 2500
-        concurrency: 60
+        type: "rps"
+        times: 6000
+        rps: 50
+      context:
+        users:
+          tenants: 5
+          users_per_tenant: 20
+      sla:
+        failure_rate:
+          max: 0
