@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_cedf9c0b",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-12T15:28:04Z",
+      "side": 1,
+      "message": "i don\u0027t understand why you are adding another transaction here, and why actually reading data from the db since you seem to have it available in memory.",
+      "revId": "2e9f4fe8f52c4ff2de2a38ffd5d770fbddccf708",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
