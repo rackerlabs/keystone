@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_8a8687b7",
+        "filename": "doc/source/key_terms.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-12T05:21:34Z",
+      "side": 1,
+      "message": "i was trying to learn it with you! you were there!",
+      "parentUuid": "da86d52c_07537217",
+      "revId": "75fbec04ebf97a419028d201eb9743fe2ec5a2a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_873e82b6",
         "filename": "doc/source/key_terms.rst",
         "patchSetId": 3
@@ -47,6 +65,24 @@
       "writtenOn": "2015-02-12T03:52:06Z",
       "side": 1,
       "message": "need an \"are\" between \"names\" and \"**not**\"",
+      "revId": "75fbec04ebf97a419028d201eb9743fe2ec5a2a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_aa018bb0",
+        "filename": "doc/source/key_terms.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-12T05:21:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_a749c661",
       "revId": "75fbec04ebf97a419028d201eb9743fe2ec5a2a7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_4ab80f75",
+        "filename": "doc/source/key_terms.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-12T05:21:34Z",
+      "side": 1,
+      "message": "given our plan to deprecate the ldap assignment backend, i think i\u0027ll just remove that portion.",
+      "parentUuid": "da86d52c_a78e2677",
+      "revId": "75fbec04ebf97a419028d201eb9743fe2ec5a2a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_87c12282",
         "filename": "doc/source/key_terms.rst",
         "patchSetId": 3
@@ -104,6 +158,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_4a6f2ffc",
+        "filename": "doc/source/key_terms.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-12T05:21:34Z",
+      "side": 1,
+      "message": "oh i like that, good call",
+      "parentUuid": "da86d52c_87c12282",
+      "revId": "75fbec04ebf97a419028d201eb9743fe2ec5a2a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_e739fea4",
         "filename": "doc/source/key_terms.rst",
         "patchSetId": 3
@@ -115,6 +187,24 @@
       "writtenOn": "2015-02-12T03:52:06Z",
       "side": 1,
       "message": "Roles should be Role",
+      "revId": "75fbec04ebf97a419028d201eb9743fe2ec5a2a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_6a607301",
+        "filename": "doc/source/key_terms.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-12T05:21:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_e739fea4",
       "revId": "75fbec04ebf97a419028d201eb9743fe2ec5a2a7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -149,6 +239,24 @@
       "writtenOn": "2015-02-12T03:52:06Z",
       "side": 1,
       "message": "Run on sentence. Recommend you replace \"domain, this\"  with \"domain. This\"",
+      "revId": "75fbec04ebf97a419028d201eb9743fe2ec5a2a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_ea338311",
+        "filename": "doc/source/key_terms.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-12T05:21:34Z",
+      "side": 1,
+      "message": "thank you mr. grammar.",
+      "parentUuid": "da86d52c_87f682d5",
       "revId": "75fbec04ebf97a419028d201eb9743fe2ec5a2a7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
