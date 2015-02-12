@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_c66e97ff",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 4
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-12T19:42:36Z",
+      "side": 1,
+      "message": "shouldn\u0027t these be in the [token] section? Why do we need another section as it is really a property of token provider?",
+      "revId": "6fb2816ce2734fb89bed66b0680ceb5800d99cd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_c921489f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 238,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-12T19:42:36Z",
+      "side": 1,
+      "message": "Nice. May want to document that fact that multiple keys are allowed to make it easier to deployer to implement key rotation in their production environment.",
+      "revId": "6fb2816ce2734fb89bed66b0680ceb5800d99cd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_4628e796",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-12T19:42:36Z",
+      "side": 1,
+      "message": "did you regenerate the config?",
+      "revId": "6fb2816ce2734fb89bed66b0680ceb5800d99cd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_69d21c5d",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-12T19:42:36Z",
+      "side": 1,
+      "message": "yeah, may want to wait for this one\n\nhttps://review.openstack.org/#/c/150629/\n\nDavid\u0027s in the process of refactoring token provider interface I think.",
+      "revId": "6fb2816ce2734fb89bed66b0680ceb5800d99cd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_49b71821",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 327,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-12T19:42:36Z",
+      "side": 1,
+      "message": "need refactor, same as above",
+      "revId": "6fb2816ce2734fb89bed66b0680ceb5800d99cd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_69393ca3",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 442,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-12T19:42:36Z",
+      "side": 1,
+      "message": "^^^",
+      "revId": "6fb2816ce2734fb89bed66b0680ceb5800d99cd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_2953c4e2",
+        "filename": "keystone/token/providers/ae/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-12T19:42:36Z",
+      "side": 1,
+      "message": "whaah, we don\u0027t support V2?!!!",
+      "revId": "6fb2816ce2734fb89bed66b0680ceb5800d99cd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_890af0cf",
+        "filename": "keystone/token/providers/ae/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-12T19:42:36Z",
+      "side": 1,
+      "message": "why are we hardcoding the methods here? shouldn\u0027t they be baked into the AE token_id?",
+      "revId": "6fb2816ce2734fb89bed66b0680ceb5800d99cd5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
