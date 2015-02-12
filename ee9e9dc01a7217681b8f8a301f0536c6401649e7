@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_4cef2be9",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 409,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-12T18:15:55Z",
+      "side": 1,
+      "message": "Yes. Though I would probably not remove it in 1 patch. Add new issue_token, subsequent patch cleanup issue_VX_token. This is to ensure we don\u0027t have massive changes in a single patch.",
+      "parentUuid": "da86d52c_3d75cbf9",
+      "revId": "ee9e9dc01a7217681b8f8a301f0536c6401649e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_1d6ac719",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 4
