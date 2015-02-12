@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_36dc2646",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-12T08:01:53Z",
+      "side": 1,
+      "message": "Why can\u0027t we make that coercion in the new KeywordsAdapter?",
+      "revId": "1afa66163221efd943f84afc1c9125fa464afe43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_56f51aeb",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-12T08:01:53Z",
+      "side": 1,
+      "message": "I think that \"Unexpected error\" is not a good message for the situation. The exception caught here can be `exceptions.DomainNotFound(\u0027Domain not found: {domain_id}\u0027)`. I think that a message from exception should be somehow reused.",
+      "revId": "1afa66163221efd943f84afc1c9125fa464afe43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
