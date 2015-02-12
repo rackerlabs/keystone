@@ -34,6 +34,24 @@
       "revId": "66c41530a7d0e1984b84d5c34235254164a06931",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_56227aa3",
+        "filename": "keystone/common/sql/migrate_repo/versions/064_add_timestamp_to_project_and_role.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-02-12T07:46:49Z",
+      "side": 1,
+      "message": "I have found one... https://bugs.launchpad.net/keystone/+bug/1421092",
+      "parentUuid": "da86d52c_76ce0285",
+      "revId": "66c41530a7d0e1984b84d5c34235254164a06931",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
