@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_f6060e85",
+        "filename": "keystone/tests/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-12T07:59:09Z",
+      "side": 1,
+      "message": "I think you should use assertItemsEqual here instead of sorting stuff",
+      "revId": "ed46d8945f49d186c045728d3b05b00df3a776c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
