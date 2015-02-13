@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_f446d7be",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-02-13T03:47:53Z",
+      "side": 1,
+      "message": "Why do you want updated time stamp is role table?  Any usecase you can think of?",
+      "revId": "ac19cb85759dc411c38c65612da5aece486129c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
