@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_c0ae5298",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-13T16:18:15Z",
+      "side": 1,
+      "message": "nit: \n\n    Remove duplicate token revocation check.",
+      "revId": "1b4cbb03d1b29dfe4ac3dc727e196838c75b224b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
