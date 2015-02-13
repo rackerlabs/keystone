@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_486d1b99",
+        "filename": "etc/keystone-paste.ini",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-02-13T22:31:56Z",
+      "side": 1,
+      "message": "put this after all the other middleware pieces that might fail, as to minimize the waste of processing time...put it after json_body I think",
+      "revId": "984a82cbc2a463118b430bec0a96e8c8dd86fd31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
