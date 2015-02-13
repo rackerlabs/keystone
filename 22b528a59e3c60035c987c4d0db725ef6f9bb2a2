@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_3f2dadfe",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-13T01:22:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_c89f4bb3",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_48ab5bd6",
         "filename": "keystone/notifications.py",
         "patchSetId": 5
@@ -65,6 +83,24 @@
       "writtenOn": "2015-02-09T01:21:51Z",
       "side": 1,
       "message": "This isn\u0027t rendered correctly, should be\n\n - action: ``authenticate``\n - event_type: ``identity.authenticate``",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_1feb89a4",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-13T01:22:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_48ab5bd6",
       "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -99,6 +135,24 @@
       "writtenOn": "2015-02-12T08:00:14Z",
       "side": 1,
       "message": "the comment is mis-leading, currently the only action used is \u0027authenticate\u0027 but there could be others.",
+      "parentUuid": "da86d52c_68b81f2b",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_ffef95ae",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-13T01:22:00Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "da86d52c_68b81f2b",
       "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -141,6 +195,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_5f30a155",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-13T01:22:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_987b4f8b",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_28664c2a",
         "filename": "keystone/notifications.py",
         "patchSetId": 5
@@ -152,6 +224,24 @@
       "writtenOn": "2015-02-06T15:23:03Z",
       "side": 1,
       "message": "is there an id we can attach to this? maybe an id associated with keystone service?",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_7f81e5c1",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 296,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-13T01:22:00Z",
+      "side": 1,
+      "message": "let me address that in another patch, i may be able to attach the service id",
+      "parentUuid": "da86d52c_28664c2a",
       "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -210,6 +300,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_7fe645b1",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-13T01:22:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_48927ba0",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_28954788",
         "filename": "keystone/notifications.py",
         "patchSetId": 5
@@ -227,6 +335,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_9fe93981",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-13T01:22:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_28954788",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_b073f04c",
         "filename": "keystone/notifications.py",
         "patchSetId": 5
@@ -238,6 +364,24 @@
       "writtenOn": "2015-02-11T08:30:53Z",
       "side": 1,
       "message": "Also, shouldn\u0027t the event_type match the APIs in policy.json?\n\ni.e.\n\nidentity.create_grant\nidentity.revoke_grant\n\nThat would make it easier to correlate event_type with actual API call.",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_7f9d6509",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-13T01:22:00Z",
+      "side": 1,
+      "message": "I\u0027m not familiar with any requirement that it match the API call. usually it\u0027s identity.\u003cresource\u003e.\u003caction\u003e.",
+      "parentUuid": "da86d52c_b073f04c",
       "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -326,6 +470,24 @@
       "writtenOn": "2015-02-09T01:21:51Z",
       "side": 1,
       "message": "prefer \u0027 for strings.",
+      "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_1f8c69d6",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 421,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-13T01:22:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_68bd7f02",
       "revId": "22b528a59e3c60035c987c4d0db725ef6f9bb2a2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
