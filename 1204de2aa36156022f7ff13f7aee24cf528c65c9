@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_77f1f269",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-02-13T15:27:39Z",
+      "side": 1,
+      "message": "an inline comment explaining why you\u0027re doing this would be beneficial for future reference, otherwise this is just going to be rewritten and the bug re-introduced",
+      "revId": "1204de2aa36156022f7ff13f7aee24cf528c65c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
