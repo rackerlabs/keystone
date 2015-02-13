@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_c0cd72b9",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-02-13T16:09:35Z",
+      "side": 1,
+      "message": "it\u0027d be nice if this described what the difference was (or at least what \"basic\" means)",
+      "revId": "d058a55601a261a09a07cce56a834dcfe13f6b6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_6035a6a7",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-02-13T16:09:35Z",
+      "side": 1,
+      "message": "nit: outer parens aren\u0027t necessary",
+      "revId": "d058a55601a261a09a07cce56a834dcfe13f6b6f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
