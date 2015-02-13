@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_0656c22a",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-13T17:03:21Z",
+      "side": 1,
+      "message": "suggest using either capitalizing the first letter of each docstring or leaving them lower-cased. Some are one way and some are another.",
+      "revId": "30e951f55a5734cab461815174fae818178a892d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_3e006f33",
         "filename": "keystone/notifications.py",
         "patchSetId": 5
@@ -36,6 +53,40 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_8610f25a",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-13T17:03:21Z",
+      "side": 1,
+      "message": "Split this up into multiple lines where the first is under 80 characters. \n\nhttps://www.python.org/dev/peps/pep-0257/#multi-line-docstrings\n\nalso add period.",
+      "revId": "30e951f55a5734cab461815174fae818178a892d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_3146a250",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-13T17:03:21Z",
+      "side": 1,
+      "message": "add period.",
+      "revId": "30e951f55a5734cab461815174fae818178a892d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_9ebf9b60",
         "filename": "keystone/notifications.py",
         "patchSetId": 5
@@ -47,6 +98,23 @@
       "writtenOn": "2015-02-05T17:26:15Z",
       "side": 1,
       "message": "I think you need :class:`pycadf.Resource` to make it a ref.",
+      "revId": "30e951f55a5734cab461815174fae818178a892d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f1624ad8",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-13T17:03:21Z",
+      "side": 1,
+      "message": "add period.",
       "revId": "30e951f55a5734cab461815174fae818178a892d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
