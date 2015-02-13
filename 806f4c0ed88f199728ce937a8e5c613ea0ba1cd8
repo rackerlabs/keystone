@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_fe978e42",
+        "filename": "test-requirements.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-13T07:33:11Z",
+      "side": 1,
+      "message": "don\u0027t we need to match the version in openstack-requirements? \n\ntempest-lib\u003e\u003d0.2.0\n\nto avoid accidentally picking up the wrong version",
+      "revId": "806f4c0ed88f199728ce937a8e5c613ea0ba1cd8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
