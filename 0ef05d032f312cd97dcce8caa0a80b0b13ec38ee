@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_46299af1",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-13T16:56:37Z",
+      "side": 1,
+      "message": "I think this should still be None since the commit message says this refactors out a deprecated config option. It doesn\u0027t say that we are changing default values.",
+      "revId": "0ef05d032f312cd97dcce8caa0a80b0b13ec38ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
