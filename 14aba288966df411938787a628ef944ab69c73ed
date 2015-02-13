@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_17ea8dd7",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-13T04:24:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_6d1f765b",
+      "revId": "14aba288966df411938787a628ef944ab69c73ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_185b0c2f",
         "filename": "keystone/notifications.py",
         "patchSetId": 21
@@ -100,6 +118,24 @@
       "writtenOn": "2015-02-05T02:00:30Z",
       "side": 1,
       "message": "NIT: third time this formatting is done in this file, maybe move to a function?",
+      "revId": "14aba288966df411938787a628ef944ab69c73ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f79099ee",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 284,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-13T04:24:50Z",
+      "side": 1,
+      "message": "so, I agree, but I\u0027ll defer this to after the CADF work is done, so i can have a separate patch just for this refactoring, apparently this whole file needs to be refactored :)",
+      "parentUuid": "da86d52c_184aff25",
       "revId": "14aba288966df411938787a628ef944ab69c73ed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
