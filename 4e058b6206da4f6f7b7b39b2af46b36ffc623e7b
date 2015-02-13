@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_2594928b",
+        "filename": "bin/keystone-all",
+        "patchSetId": 2
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-02-13T21:59:36Z",
+      "side": 1,
+      "message": "why not use amakarov\u0027s comment instead of trying to re-author it and leaving out the *why*\n\n  https://review.openstack.org/#/c/154915/4/keystone/server/eventlet.py",
+      "revId": "4e058b6206da4f6f7b7b39b2af46b36ffc623e7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
