@@ -3,10 +3,14 @@
     "cloud_admin": "rule:admin_required and domain_id:admin_domain_id",
     "service_role": "role:service",
     "service_or_admin": "rule:admin_required or rule:service_role",
-    "owner" : "user_id:%(user_id)s or user_id:%(target.token.user_id)s",
-    "admin_or_owner": "(rule:admin_required and domain_id:%(target.token.user.domain.id)s) or rule:owner",
+    "owner" : "user_id:%(user_id)s",
+    "admin_and_token_domain": "rule:admin_required and domain_id:%(target.token.user.domain.id)s",
+    "admin_or_owner": "rule:admin_and_token_domain or rule:owner",
     "admin_or_cloud_admin": "rule:admin_required or rule:cloud_admin",
     "admin_and_matching_domain_id": "rule:admin_required and domain_id:%(domain_id)s",
+    "token_subject": "user_id:%(target.token.user_id)s",
+    "admin_or_token_subject": "rule:admin_and_token_domain or rule:token_subject",
+    "service_admin_or_token_subject": "rule:service_or_admin or rule:token_subject",
 
     "default": "rule:admin_required",
 
@@ -99,11 +103,11 @@
     "identity:delete_policy": "rule:cloud_admin",
 
     "identity:change_password": "rule:owner",
-    "identity:check_token": "rule:admin_or_owner",
-    "identity:validate_token": "rule:service_or_admin",
+    "identity:check_token": "rule:admin_or_token_subject",
+    "identity:validate_token": "rule:service_admin_or_token_subject",
     "identity:validate_token_head": "rule:service_or_admin",
     "identity:revocation_list": "rule:service_or_admin",
-    "identity:revoke_token": "rule:admin_or_owner",
+    "identity:revoke_token": "rule:admin_or_token_subject",
 
     "identity:create_trust": "user_id:%(trust.trustor_user_id)s",
     "identity:get_trust": "rule:admin_or_owner",
