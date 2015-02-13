@@ -16,6 +16,24 @@
       "revId": "a07f9627b94a07c2fb1d3a9eea8436245f47554f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_59a89877",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 802,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-13T19:10:20Z",
+      "side": 1,
+      "message": "no, it\u0027s all the options in the SSL section of this document.",
+      "parentUuid": "da86d52c_66021e0b",
+      "revId": "a07f9627b94a07c2fb1d3a9eea8436245f47554f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
