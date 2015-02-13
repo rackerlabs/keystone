@@ -611,24 +611,41 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         self.new_project_ref(domain_id=uuid.uuid4().hex)
         self.post('/projects', body={'project': {}}, expected_status=400)
 
-    def _create_projects_hierarchy(self, hierarchy_size=1):
+        self.new_project_ref(domain_id=None)
+        self.post('/projects', body={'project': {}}, expected_status=400)
+
+    def test_create_is_domain_project_with_domain_id_fails(self):
+        ref = self.new_project_ref(
+            domain_id=self.domain_id,
+            is_domain=True)
+        self.post('/projects',
+                  body={'project': ref},
+                  expected_status=400)
+
+    def _create_projects_hierarchy(self, hierarchy_size=1, is_domain=False):
         """Creates a project hierarchy with specified size.
 
         :param hierarchy_size: the desired hierarchy size, default is 1 -
                                a project with one child.
+        :param is_domain: if the hierarchy will have the is_domain flag active
+                          or not.
 
         :returns projects: a list of the projects in the created hierarchy.
 
         """
-        resp = self.get(
-            '/projects/%(project_id)s' % {
-                'project_id': self.project_id})
+        ref = self.new_project_ref(
+            domain_id=self.domain_id if not is_domain else None,
+            is_domain=is_domain)
+        resp = self.post('/projects',
+                         body={'project': ref})
+        self.assertValidProjectResponse(resp, ref)
 
         projects = [resp.result]
 
         for i in range(hierarchy_size):
             new_ref = self.new_project_ref(
-                domain_id=self.domain_id,
+                domain_id=self.domain_id if not is_domain else None,
+                is_domain=is_domain,
                 parent_id=projects[i]['project']['id'])
             resp = self.post('/projects',
                              body={'project': new_ref})
@@ -925,10 +942,10 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
 
     def test_delete_not_leaf_project(self):
         """Call ``DELETE /projects/{project_id}``."""
-        self._create_projects_hierarchy()
+        projects = self._create_projects_hierarchy()
         self.delete(
             '/projects/%(project_id)s' % {
-                'project_id': self.project_id},
+                'project_id': projects[0]['project']['id']},
             expected_status=403)
 
     # Role CRUD tests
