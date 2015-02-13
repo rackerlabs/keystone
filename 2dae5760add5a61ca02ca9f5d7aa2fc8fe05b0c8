@@ -16,6 +16,24 @@
       "revId": "2dae5760add5a61ca02ca9f5d7aa2fc8fe05b0c8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e53c3b33",
+        "filename": "keystone/tests/unit/test_core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-02-13T21:41:28Z",
+      "side": 1,
+      "message": "just need to change the exception type?",
+      "parentUuid": "da86d52c_85e0dfcd",
+      "revId": "2dae5760add5a61ca02ca9f5d7aa2fc8fe05b0c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
