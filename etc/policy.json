@@ -7,16 +7,26 @@
 
     "default": "rule:admin_required",
 
+    "#": "GET /v3/regions/{region_id}",
     "identity:get_region": "",
+    "#": "GET /v3/regions",
     "identity:list_regions": "",
+    "#": "POST /v3/regions",
     "identity:create_region": "rule:admin_required",
+    "#": "PATCH /v3/regions/{region_id}",
     "identity:update_region": "rule:admin_required",
+    "#": "DELETE /v3/regions/{region_id}",
     "identity:delete_region": "rule:admin_required",
 
+    "#": "GET /v3/services/{service_id}",
     "identity:get_service": "rule:admin_required",
+    "#": "GET /v3/services",
     "identity:list_services": "rule:admin_required",
+    "#": "POST /v3/services",
     "identity:create_service": "rule:admin_required",
+    "#": "PATCH /v3/services/{service__id}",
     "identity:update_service": "rule:admin_required",
+    "#": "DELETE /v3/services/{service__id}",
     "identity:delete_service": "rule:admin_required",
 
     "identity:get_endpoint": "rule:admin_required",
