@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_231026ab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-13T11:15:25Z",
+      "side": 1,
+      "message": "(nit) s/beteen/between",
+      "revId": "4fdcd6f7a3d1bb96deb93615d2ff649c0d915ba0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_a36a5619",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-13T11:15:25Z",
+      "side": 1,
+      "message": "(nit) According Gerrit doc [1], it should be:\n\nImplements: blueprint remove-role-metadata\n\n[1] https://wiki.openstack.org/wiki/Gerrit_Workflow",
+      "revId": "4fdcd6f7a3d1bb96deb93615d2ff649c0d915ba0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
