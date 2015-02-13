@@ -16,6 +16,24 @@
       "revId": "1204de2aa36156022f7ff13f7aee24cf528c65c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_9adbeb4e",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-13T15:36:06Z",
+      "side": 1,
+      "message": "It is used multiple times like this, on lines 70, 181, 221. Do you think that a comment should be added for each usage?",
+      "parentUuid": "da86d52c_77f1f269",
+      "revId": "1204de2aa36156022f7ff13f7aee24cf528c65c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
