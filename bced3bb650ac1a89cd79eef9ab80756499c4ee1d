@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_f11a4a17",
+        "filename": "requirements.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-13T17:35:37Z",
+      "side": 1,
+      "message": "so for K2K, we don\u0027t have a pip package for xmlsec1 CLI?",
+      "revId": "bced3bb650ac1a89cd79eef9ab80756499c4ee1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
