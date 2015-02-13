@@ -10,6 +10,7 @@
 
     "default": "rule:admin_required",
 
+    "#": "GET /v3/regions/{region_id}",
     "identity:get_region": "",
     "identity:list_regions": "",
     "identity:create_region": "rule:cloud_admin",
