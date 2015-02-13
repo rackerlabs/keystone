@@ -34,6 +34,24 @@
       "revId": "ac19cb85759dc411c38c65612da5aece486129c5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_686be4f0",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-02-13T06:28:59Z",
+      "side": 1,
+      "message": "This provides a way to track and audit resources. And the reason that convert timestamp to isotime is making them consistent with other timestamps.",
+      "parentUuid": "da86d52c_e8c1942f",
+      "revId": "ac19cb85759dc411c38c65612da5aece486129c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
