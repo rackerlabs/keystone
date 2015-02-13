@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_e5b27a05",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-13T22:10:39Z",
+      "side": 1,
+      "message": "these should be in alphabetical order.",
+      "revId": "a75cf4b78f7d13d3733e7dbee78b1e2bb393c861",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_a58de22c",
+        "filename": "keystone/tests/test_versions.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-13T22:10:39Z",
+      "side": 1,
+      "message": "this should be CONSUMER_ID_PARAMETER_RELATION , same with the rest.",
+      "revId": "a75cf4b78f7d13d3733e7dbee78b1e2bb393c861",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
