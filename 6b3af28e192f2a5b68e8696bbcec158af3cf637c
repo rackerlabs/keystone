@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_71bd7ad7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-13T17:21:48Z",
+      "side": 1,
+      "message": "nit: \n\n    remove assignments when deleting a domain",
+      "revId": "6b3af28e192f2a5b68e8696bbcec158af3cf637c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
