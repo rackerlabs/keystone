@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_9fe859b4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-13T01:12:17Z",
+      "side": 1,
+      "message": "This should be the commit hash instead of Change-Id",
+      "revId": "f172b66e5068ffc743d3287f4d9008a9f5693f50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_1fd469e7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-13T01:12:17Z",
+      "side": 1,
+      "message": "Change-Id should match the original Change-Id: https://wiki.openstack.org/wiki/StableBranch#Change-Ids",
+      "revId": "f172b66e5068ffc743d3287f4d9008a9f5693f50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
