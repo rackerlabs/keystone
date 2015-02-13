@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_d45d2f7b",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-13T19:51:46Z",
+      "side": 1,
+      "message": "According to the eventlet docs None is treated as forever.(http://eventlet.net/doc/modules/wsgi.html) Does that mean this \u0027or\u0027 is protecting against something else?",
+      "parentUuid": "3a961159_d1b03b42",
+      "revId": "a9b60c628e0878e8fb325c1dfdb3504550fc233e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_5d3da3dc",
         "filename": "keystone/tests/test_wsgi.py",
         "patchSetId": 12
