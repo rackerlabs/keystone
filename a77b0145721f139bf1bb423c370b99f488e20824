@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_b2062620",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-13T10:09:23Z",
+      "side": 1,
+      "message": "I still don\u0027t quite understand why passing an exception shouldn\u0027t work. It works great with standard exceptions: http://paste.openstack.org/show/172788/ . I\u0027d say it\u0027s a bug in either oslo_i18n or oslo_log.\n\nI will not -1 it, but I will probably send a follow-up with fix to this explicit coercion.",
+      "revId": "a77b0145721f139bf1bb423c370b99f488e20824",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
