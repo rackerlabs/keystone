@@ -89,6 +89,7 @@ class Manager(manager.Manager):
         tenant['enabled'] = clean.project_enabled(tenant['enabled'])
         tenant.setdefault('description', '')
         tenant.setdefault('parent_id', None)
+        tenant.setdefault('is_domain', False)
 
         if tenant.get('parent_id') is not None:
             parent_ref = self.get_project(tenant.get('parent_id'))
@@ -104,6 +105,10 @@ class Manager(manager.Manager):
                         action=_('cannot create a project in a '
                                  'branch containing a disabled '
                                  'project: %s') % ref['id'])
+                if ref.get('is_domain') != tenant.get('is_domain'):
+                    raise exception.ForbiddenAction(
+                        action=_('cannot create a project with the domain '
+                                 'feature different from its parents.'))
                 # NOTE(rodrigods): We need to assert that a project is not
                 # being inserted in a hierarchy that already contains another
                 # project with a forward slash in the name.
@@ -201,6 +206,11 @@ class Manager(manager.Manager):
         if 'parent_id' in tenant and tenant.get('parent_id') != parent_id:
             raise exception.ForbiddenAction(
                 action=_('Update of `parent_id` is not allowed.'))
+
+        if ('is_domain' in tenant and
+                tenant.get('is_domain') != original_tenant.get('is_domain')):
+            raise exception.ForbiddenAction(
+                action=_('Update of `is_domain` is not allowed.'))
 
         if 'enabled' in tenant:
             tenant['enabled'] = clean.project_enabled(tenant['enabled'])
