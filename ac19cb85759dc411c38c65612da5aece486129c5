@@ -16,6 +16,24 @@
       "revId": "ac19cb85759dc411c38c65612da5aece486129c5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e8c1942f",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-02-13T06:17:47Z",
+      "side": 1,
+      "message": "I am not sure what updated time stamp means: add timestamp to Role or convert timestamp to isotime?",
+      "parentUuid": "da86d52c_f446d7be",
+      "revId": "ac19cb85759dc411c38c65612da5aece486129c5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
