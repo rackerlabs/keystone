@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_abea1faa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-13T16:34:10Z",
+      "side": 1,
+      "message": "nit: \n\n    Make credential policy check ownership of credential",
+      "revId": "ce7f030fb5973a323c94a2213bfe734bc536a01e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_4b5c43f1",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 702,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-13T16:34:10Z",
+      "side": 1,
+      "message": "credential_api",
+      "revId": "ce7f030fb5973a323c94a2213bfe734bc536a01e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
