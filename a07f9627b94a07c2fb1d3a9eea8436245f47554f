@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_66021e0b",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 18
+      },
+      "lineNbr": 802,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-13T16:46:09Z",
+      "side": 1,
+      "message": "by this section we are talking about eventlet_server_ssl, correct?",
+      "revId": "a07f9627b94a07c2fb1d3a9eea8436245f47554f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
