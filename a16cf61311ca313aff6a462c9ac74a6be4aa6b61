@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_dd51dd64",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-13T16:00:40Z",
+      "side": 1,
+      "message": "rather*",
+      "revId": "a16cf61311ca313aff6a462c9ac74a6be4aa6b61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_1d6a9581",
+        "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 554,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-13T16:00:40Z",
+      "side": 1,
+      "message": "a method could be used here for the duplicate logic.",
+      "revId": "a16cf61311ca313aff6a462c9ac74a6be4aa6b61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
