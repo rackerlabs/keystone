@@ -153,6 +153,8 @@ class Manager(manager.Manager):
         # Use set() to process the list to remove any duplicates
         return list(set([x['role_id'] for x in assignment_list]))
 
+    # NOTE(samueldmq): If we decide to re-use list_role_assignments here, we
+    # have to support only inheritance expansion there.
     def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
         """Get a list of roles for this group on domain and/or project."""
 
@@ -227,58 +229,31 @@ class Manager(manager.Manager):
     # TODO(henry-nash): We might want to consider list limiting this at some
     # point in the future.
     def list_projects_for_user(self, user_id, hints=None):
-        # NOTE(henry-nash): In order to get a complete list of user projects,
-        # the driver will need to look at group assignments.  To avoid cross
-        # calling between the assignment and identity driver we get the group
-        # list here and pass it in. The rest of the detailed logic of listing
-        # projects for a user is pushed down into the driver to enable
-        # optimization with the various backend technologies (SQL, LDAP etc.).
-
-        group_ids = self._get_group_ids_for_user_id(user_id)
-        project_ids = self.driver.list_project_ids_for_user(
-            user_id, group_ids, hints or driver_hints.Hints())
-
-        if not CONF.os_inherit.enabled:
-            return self.resource_api.list_projects_from_ids(project_ids)
-
-        # Inherited roles are enabled, so check to see if this user has any
-        # inherited role (direct or group) on any parent project, in which
-        # case we must add in all the projects in that parent's subtree.
-        project_ids = set(project_ids)
-        project_ids_inherited = self.driver.list_project_ids_for_user(
-            user_id, group_ids, hints or driver_hints.Hints(), inherited=True)
-        for proj_id in project_ids_inherited:
-            project_ids.update(
-                (x['id'] for x in
-                 self.resource_api.list_projects_in_subtree(proj_id)))
-
-        # Now do the same for any domain inherited roles
-        domain_ids = self.driver.list_domain_ids_for_user(
-            user_id, group_ids, hints or driver_hints.Hints(),
-            inherited=True)
-        project_ids.update(
-            self.resource_api.list_project_ids_from_domain_ids(domain_ids))
+        assignment_list = self.list_role_assignments(user_id=user_id,
+                                                     effective=True)
+        project_ids = [ref['project_id'] for ref in assignment_list
+                       if ref.get('project_id')]
 
         return self.resource_api.list_projects_from_ids(list(project_ids))
 
     # TODO(henry-nash): We might want to consider list limiting this at some
     # point in the future.
     def list_domains_for_user(self, user_id, hints=None):
-        # NOTE(henry-nash): In order to get a complete list of user domains,
-        # the driver will need to look at group assignments.  To avoid cross
-        # calling between the assignment and identity driver we get the group
-        # list here and pass it in. The rest of the detailed logic of listing
-        # projects for a user is pushed down into the driver to enable
-        # optimization with the various backend technologies (SQL, LDAP etc.).
-        group_ids = self._get_group_ids_for_user_id(user_id)
-        domain_ids = self.driver.list_domain_ids_for_user(
-            user_id, group_ids, hints or driver_hints.Hints())
+        assignment_list = self.list_role_assignments(user_id=user_id,
+                                                     effective=True)
+        domain_ids = [ref['domain_id'] for ref in assignment_list
+                      if ref.get('domain_id')]
+
         return self.resource_api.list_domains_from_ids(domain_ids)
 
     def list_domains_for_groups(self, group_ids):
         domain_ids = self.driver.list_domain_ids_for_groups(group_ids)
         return self.resource_api.list_domains_from_ids(domain_ids)
 
+    # NOTE(samueldmq): If we decide to re-use list_role_assignments here, we
+    # have to support only inheritance expansion there.
+    # TODO(samueldmq): This method is not honoring inherited group assignments,
+    # this is actually a bug! This need to be rpeorted and fixed!
     def list_projects_for_groups(self, group_ids):
         project_ids = (
             self.driver.list_project_ids_for_groups(group_ids,
@@ -299,16 +274,10 @@ class Manager(manager.Manager):
         return self.resource_api.list_projects_from_ids(
             list(set(project_ids + project_ids_from_domains)))
 
+    # TODO(samueldmq): Calls to this method should be replaced to direct calls
+    # to list_role_assignments
     def list_role_assignments_for_role(self, role_id=None):
-        # NOTE(henry-nash): Currently the efficiency of the key driver
-        # implementation (SQL) of list_role_assignments is severely hampered by
-        # the existence of the multiple grant tables - hence there is little
-        # advantage in pushing the logic of this method down into the driver.
-        # Once the single assignment table is implemented, then this situation
-        # will be different, and this method should have its own driver
-        # implementation.
-        return [r for r in self.driver.list_role_assignments()
-                if r['role_id'] == role_id]
+        return self.list_role_assignments(role_id=role_id, effective=True)
 
     def remove_role_from_user_and_project(self, user_id, tenant_id, role_id):
         self.driver.remove_role_from_user_and_project(user_id, tenant_id,
@@ -952,29 +921,6 @@ class Driver(object):
         raise exception.NotImplemented()  # pragma: no cover
 
     @abc.abstractmethod
-    def list_project_ids_for_user(self, user_id, group_ids, hints,
-                                  inherited=False):
-        """List all project ids associated with a given user.
-
-        :param user_id: the user in question
-        :param group_ids: the groups this user is a member of.  This list is
-                          built in the Manager, so that the driver itself
-                          does not have to call across to identity.
-        :param hints: filter hints which the driver should
-                      implement if at all possible.
-        :param inherited: whether assignments marked as inherited should
-                          be included.
-
-        :returns: a list of project ids or an empty list.
-
-        This method should not try and expand any inherited assignments,
-        just report the projects that have the role for this user. The manager
-        method is responsible for expanding out inherited assignments.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
     def list_project_ids_for_groups(self, group_ids, hints,
                                     inherited=False):
         """List project ids accessible to specified groups.
@@ -989,25 +935,6 @@ class Driver(object):
         This method should not try and expand any inherited assignments,
         just report the projects that have the role for this group. The manager
         method is responsible for expanding out inherited assignments.
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def list_domain_ids_for_user(self, user_id, group_ids, hints,
-                                 inherited=False):
-        """List all domain ids associated with a given user.
-
-        :param user_id: the user in question
-        :param group_ids: the groups this user is a member of.  This list is
-                          built in the Manager, so that the driver itself
-                          does not have to call across to identity.
-        :param hints: filter hints which the driver should
-                      implement if at all possible.
-        :param inherited: whether to return domain_ids that have inherited
-                          assignments or not.
-
-        :returns: a list of domain ids or an empty list.
 
         """
         raise exception.NotImplemented()  # pragma: no cover
@@ -1136,18 +1063,7 @@ class RoleManager(manager.Manager):
 
     @notifications.deleted('role')
     def delete_role(self, role_id):
-        try:
-            self.assignment_api.delete_tokens_for_role_assignments(role_id)
-        except exception.NotImplemented:
-            # FIXME(morganfainberg): Not all backends (ldap) implement
-            # `list_role_assignments_for_role` which would have previously
-            # caused a NotImplmented error to be raised when called through
-            # the controller. Now error or proper action will always come from
-            # the `delete_role` method logic. Work needs to be done to make
-            # the behavior between drivers consistent (capable of revoking
-            # tokens for the same circumstances).  This is related to the bug
-            # https://bugs.launchpad.net/keystone/+bug/1221805
-            pass
+        self.assignment_api.delete_tokens_for_role_assignments(role_id)
         self.assignment_api.delete_role_assignments(role_id)
         self.driver.delete_role(role_id)
         self.get_role.invalidate(self, role_id)
