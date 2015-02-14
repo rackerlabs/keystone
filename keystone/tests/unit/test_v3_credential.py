@@ -132,7 +132,8 @@ class CredentialTestCase(CredentialBaseTestCase):
 
     def test_create_ec2_credential(self):
         """Call ``POST /credentials`` for creating ec2 credential."""
-        ref = self.new_credential_ref(user_id=self.user['id'])
+        ref = self.new_credential_ref(user_id=self.user['id'],
+                                      project_id=self.project_id)
         blob = {"access": uuid.uuid4().hex,
                 "secret": uuid.uuid4().hex}
         ref['blob'] = json.dumps(blob)
@@ -191,7 +192,8 @@ class CredentialTestCase(CredentialBaseTestCase):
         """Call ``POST /credentials`` for creating ec2
            credential with invalid blob.
         """
-        ref = self.new_credential_ref(user_id=self.user['id'])
+        ref = self.new_credential_ref(user_id=self.user['id'],
+                                      project_id=self.project_id)
         ref['blob'] = '{"abc":"def"d}'
         ref['type'] = 'ec2'
         # Assert 400 status for bad request containing invalid
@@ -251,7 +253,8 @@ class TestCredentialTrustScoped(test_v3.RestfulTestCase):
         token_id = r.headers.get('X-Subject-Token')
 
         # Create the credential with the trust scoped token
-        ref = self.new_credential_ref(user_id=self.user['id'])
+        ref = self.new_credential_ref(user_id=self.user['id'],
+                                      project_id=self.project_id)
         blob = {"access": uuid.uuid4().hex,
                 "secret": uuid.uuid4().hex}
         ref['blob'] = json.dumps(blob)
