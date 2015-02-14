@@ -33,6 +33,23 @@
       "revId": "ce7f030fb5973a323c94a2213bfe734bc536a01e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_459a676f",
+        "filename": "keystone/tests/test_v3_protection.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-14T03:19:08Z",
+      "side": 1,
+      "message": "Instead of this comment block here I would personally find it more useful with a docstring like: \"Tests getting ec2 credentials through the ec2 API.\"",
+      "revId": "ce7f030fb5973a323c94a2213bfe734bc536a01e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
