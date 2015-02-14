@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_ce390ef4",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 622,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-14T06:04:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_d696a5ef",
+      "revId": "729cb732381fb5a574020e75e632888e06a5f102",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_9690adee",
         "filename": "keystone/tests/test_v3_oauth1.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-11T03:35:31Z",
       "side": 1,
       "message": "Nit: Instead of using a special magic bogus value (abc123), I believe it is preferred to use uuid.uuid4().hex in this situation in test cases.",
+      "revId": "729cb732381fb5a574020e75e632888e06a5f102",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_ee3ed2d9",
+        "filename": "keystone/tests/test_v3_oauth1.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 633,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-14T06:04:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_9690adee",
       "revId": "729cb732381fb5a574020e75e632888e06a5f102",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
