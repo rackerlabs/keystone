@@ -34,6 +34,24 @@
       "revId": "2dae5760add5a61ca02ca9f5d7aa2fc8fe05b0c8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_2ec54a3d",
+        "filename": "keystone/tests/unit/test_core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-14T05:30:21Z",
+      "side": 1,
+      "message": "this is working now, i will revert the changes to this test and the BadLog mocking, I probably didn\u0027t have oslo_log setup properly the first time around",
+      "parentUuid": "da86d52c_e53c3b33",
+      "revId": "2dae5760add5a61ca02ca9f5d7aa2fc8fe05b0c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
