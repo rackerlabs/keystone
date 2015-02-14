@@ -33,6 +33,23 @@
       "revId": "d5db279eda350b1c894e6cd3d2b28abe4d121783",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_fa5691cd",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-14T03:18:08Z",
+      "side": 1,
+      "message": "Is there any reason you made this a classmethod instead of just renaming cls to self? Nothing uses this as a classmethod at this point.",
+      "revId": "d5db279eda350b1c894e6cd3d2b28abe4d121783",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
