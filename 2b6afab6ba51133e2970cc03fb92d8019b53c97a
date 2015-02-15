@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_bc324bf0",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 887,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-15T11:45:03Z",
+      "side": 1,
+      "message": "rather than skip test, better to expect an exception to be raised (which will be to do with multiple domains).. You will probably find that such a test WILL work in one of the Multi iDomain scenarios further down this file...See https://review.openstack.org/#/c/154302/9/keystone/tests/unit/test_backend_ldap.py as an example",
+      "revId": "2b6afab6ba51133e2970cc03fb92d8019b53c97a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
