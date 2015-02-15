@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_a2ab0274",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-15T18:31:15Z",
+      "side": 1,
+      "message": "\"r \u003d\" can be removed, pep8 not happy with unused variable.",
+      "revId": "31e31cac8b2cf135915c70148ed9a95f59457028",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_829efe52",
+        "filename": "keystone/tests/test_v3_catalog.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 539,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-15T18:31:15Z",
+      "side": 1,
+      "message": "\"r \u003d\" can be removed, pep8 not happy with unused variable.",
+      "revId": "31e31cac8b2cf135915c70148ed9a95f59457028",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
