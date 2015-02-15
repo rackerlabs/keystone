@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_96cc8863",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-02-15T06:49:08Z",
+      "side": 1,
+      "message": "Now we let Project and Role inherited from TimestampMixin: https://github.com/openstack/oslo.db/blob/master/oslo_db/sqlalchemy/models.py#L115 So, created_at and updated_at would auto added when creating or updating.",
+      "parentUuid": "da86d52c_73ae4631",
+      "revId": "e6a7abb1d79e879f52f1fff4e93c41b9c8de1570",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_33e76eae",
         "filename": "keystone/tests/unit/test_v2_controller.py",
         "patchSetId": 9
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_36af5c7f",
+        "filename": "keystone/tests/unit/test_v2_controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-02-15T06:49:08Z",
+      "side": 1,
+      "message": "We can\u0027t know the value of created_at and updated_at. Because they are auto added when creating or updating.",
+      "parentUuid": "da86d52c_33e76eae",
+      "revId": "e6a7abb1d79e879f52f1fff4e93c41b9c8de1570",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_33820ec9",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 9
@@ -47,6 +83,24 @@
       "writtenOn": "2015-02-15T04:28:50Z",
       "side": 1,
       "message": "Why did this need to change?",
+      "revId": "e6a7abb1d79e879f52f1fff4e93c41b9c8de1570",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f68dc42b",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1932,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-02-15T06:49:08Z",
+      "side": 1,
+      "message": "It seems this is an unrelated change... But, I think this code does need be improved: the project_id wouldn\u0027t be used when creating project. I will give a new patch.",
+      "parentUuid": "da86d52c_33820ec9",
       "revId": "e6a7abb1d79e879f52f1fff4e93c41b9c8de1570",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
