@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_a29dc268",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-15T18:15:29Z",
+      "side": 1,
+      "message": "typo: \"multiple\"",
+      "revId": "8b4741a1fc7551df44755c6c57daf3288c48a681",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_8290be4f",
+        "filename": "keystone/common/sql/migrate_repo/versions/061_make_service_type_unique.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-15T18:15:29Z",
+      "side": 1,
+      "message": "sqlalchemy-migrate support adding unique constraint via alter table, can we just use that to simplify the upgrade/downgrade process?",
+      "revId": "8b4741a1fc7551df44755c6c57daf3288c48a681",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
