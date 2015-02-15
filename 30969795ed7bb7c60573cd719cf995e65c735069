@@ -16,6 +16,24 @@
       "revId": "30969795ed7bb7c60573cd719cf995e65c735069",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_4286c614",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-15T18:24:31Z",
+      "side": 1,
+      "message": "++ this caused the pep8 error",
+      "parentUuid": "3a961159_767c7221",
+      "revId": "30969795ed7bb7c60573cd719cf995e65c735069",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
