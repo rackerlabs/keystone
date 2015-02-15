@@ -16,6 +16,24 @@
       "revId": "ce05c7699fc59a1d89354b1c2d281ef596337731",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_47b418d1",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-15T15:39:30Z",
+      "side": 1,
+      "message": "GET implies HEAD and vice-versa, based on the HTTP RFC and the fact that Apache converts HEAD requests to GET, so I don\u0027t think we need to list both, since they\u0027d both always be there.",
+      "parentUuid": "da86d52c_fc80434b",
+      "revId": "ce05c7699fc59a1d89354b1c2d281ef596337731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
