@@ -14,9 +14,10 @@
 
 import functools
 
+from keystone.common import dependency
 from keystone.common import json_home
 from keystone.common import wsgi
-from keystone.contrib import oauth1
+from keystone.contrib import oauth1  # noqa -- provider registered on import
 from keystone.contrib.oauth1 import controllers
 
 
@@ -65,9 +66,8 @@ class OAuth1Extension(wsgi.V3ExtensionRouter):
     """
 
     def add_routes(self, mapper):
-        # This is needed for dependency injection,
-        # it loads the OAuth driver which registers it as a dependency.
-        oauth1.Manager()
+        dependency.create('oauth_api')
+
         consumer_controller = controllers.ConsumerCrudV3()
         access_token_controller = controllers.AccessTokenCrudV3()
         access_token_roles_controller = controllers.AccessTokenRolesV3()
