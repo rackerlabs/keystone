@@ -34,6 +34,24 @@
       "revId": "0ef05d032f312cd97dcce8caa0a80b0b13ec38ee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_d31e135f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-02-15T01:01:59Z",
+      "side": 1,
+      "message": "I don\u0027t think I am changing default values. From the test test_default_token_format in test_token_provider.py and the original code of token/provider.py we can know that UUID provider is set as default.",
+      "parentUuid": "da86d52c_8f2f1e3e",
+      "revId": "0ef05d032f312cd97dcce8caa0a80b0b13ec38ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
