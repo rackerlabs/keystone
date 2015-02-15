@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_3cb57b7e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-15T14:49:48Z",
+      "side": 1,
+      "message": "(nit) A comma at the end of the line?\nWell, it won\u0027t be interpreted by Python anyway, it is just to keep consisten with just above line.",
+      "revId": "977727c16e20c819627a93919b30821eb667ab40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_7cae1331",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-15T14:49:48Z",
+      "side": 1,
+      "message": "(nit) s/by/be ?",
+      "revId": "977727c16e20c819627a93919b30821eb667ab40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_fc2f63a5",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-15T14:49:48Z",
+      "side": 1,
+      "message": "(nit) s/entities requested/requested entities ?\n\n(nit) s/entity created/created entity?\n\n(nit) s/will added/will be added ?",
+      "revId": "977727c16e20c819627a93919b30821eb667ab40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_0751400e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-15T14:49:48Z",
+      "side": 1,
+      "message": "What about\n\n    f \u003d getattr(self.identity_api, \u0027create_%s\u0027 % entity_type)\n    new_entity \u003d f(new_entity)",
+      "revId": "977727c16e20c819627a93919b30821eb667ab40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e74b4c5d",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-15T14:49:48Z",
+      "side": 1,
+      "message": "Why not \n\n    f \u003d getattr(self.resource_api, \u0027create_%s\u0027 % entity_type)\n    new_entity \u003d f(new_entity[\u0027id\u0027], new_entity)\n\ninstead of having an additional _create_entity_func method that tries identity and then resource API every time?\n\nIf you take these two last suggestions; so that method could be removed.",
+      "revId": "977727c16e20c819627a93919b30821eb667ab40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_0778608e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-15T14:49:48Z",
+      "side": 1,
+      "message": "Missing a single quote after user_id.\n\n\u0027user_id should be \u0027user_id\u0027",
+      "revId": "977727c16e20c819627a93919b30821eb667ab40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_27f2c406",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 726,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-15T14:49:48Z",
+      "side": 1,
+      "message": "Well, looking here at this as an example...\n\nWhat about the following representation:\n\n    entities \u003d {}\n    assignments \u003d {}\n    tests \u003d {}\n\nand then we would do:\n\n    test_data \u003d self.execute_assignment_test_plan(entities, assignments, tests)\n\n*Maybe* this would improve test readability since we wouldn\u0027t have everything in a single and BIG test_plan dict for complex test plans.",
+      "revId": "977727c16e20c819627a93919b30821eb667ab40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
