@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_73ae4631",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-15T04:28:50Z",
+      "side": 1,
+      "message": "Where are these values set or updated? Or will that be in a follow on patch?",
+      "revId": "e6a7abb1d79e879f52f1fff4e93c41b9c8de1570",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_33e76eae",
+        "filename": "keystone/tests/unit/test_v2_controller.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-15T04:28:50Z",
+      "side": 1,
+      "message": "why is this extra cleanup necesary?",
+      "revId": "e6a7abb1d79e879f52f1fff4e93c41b9c8de1570",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_33820ec9",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1932,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-15T04:28:50Z",
+      "side": 1,
+      "message": "Why did this need to change?",
+      "revId": "e6a7abb1d79e879f52f1fff4e93c41b9c8de1570",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
