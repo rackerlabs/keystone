@@ -291,3 +291,28 @@ class TestDependencyInjection(tests.BaseTestCase):
         provider_name = uuid.uuid4().hex
         self.assertIsNone(dependency.get_provider(provider_name,
                                                   dependency.GET_OPTIONAL))
+
+    def test_create(self):
+        # dependency.create() only creates one instance.
+
+        provider_name = uuid.uuid4().hex
+
+        @dependency.provider(provider_name)
+        class P(object):
+            pass
+
+        dependency.create(provider_name)
+
+        current_instance = dependency.get_provider(provider_name)
+
+        dependency.create(provider_name)
+
+        new_instance = dependency.get_provider(provider_name)
+
+        self.assertIs(current_instance, new_instance)
+
+    def test_create_no_provider_exc(self):
+        # dependency.create raises exception if the provider wasn't registered.
+        provider_name = uuid.uuid4().hex
+        self.assertRaisesRegexp(Exception, provider_name, dependency.create,
+                                provider_name)
