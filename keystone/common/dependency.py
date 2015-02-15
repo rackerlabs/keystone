@@ -136,6 +136,18 @@ def provider(name):
     return wrapper
 
 
+def create(name):
+    if name in _REGISTRY:
+        # We've already got one.
+        return
+
+    if name not in _factories:
+        raise Exception('A %s provider was never registered.' % name)
+
+    # There's no instance currently. Create it.
+    _factories[name]()
+
+
 def _process_dependencies(obj):
     # Any dependencies that can be resolved immediately are resolved.
     # Dependencies that cannot be resolved immediately are stored for
