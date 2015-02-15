@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_fc80434b",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 5
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-15T12:20:26Z",
+      "side": 1,
+      "message": "So do you think we should indicated that HEAD will also have this same effect?  There are quite a few like this obviously...",
+      "revId": "ce05c7699fc59a1d89354b1c2d281ef596337731",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
