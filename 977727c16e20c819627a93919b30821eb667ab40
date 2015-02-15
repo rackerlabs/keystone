@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_82219efe",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-15T19:33:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_3cb57b7e",
+      "revId": "977727c16e20c819627a93919b30821eb667ab40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_7cae1331",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 23
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-15T14:49:48Z",
       "side": 1,
       "message": "(nit) s/by/be ?",
+      "revId": "977727c16e20c819627a93919b30821eb667ab40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_a21ea2b9",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-15T19:33:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_7cae1331",
       "revId": "977727c16e20c819627a93919b30821eb667ab40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_027daee7",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-15T19:33:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_fc2f63a5",
+      "revId": "977727c16e20c819627a93919b30821eb667ab40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_0751400e",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 23
@@ -64,6 +118,24 @@
       "writtenOn": "2015-02-15T14:49:48Z",
       "side": 1,
       "message": "What about\n\n    f \u003d getattr(self.identity_api, \u0027create_%s\u0027 % entity_type)\n    new_entity \u003d f(new_entity)",
+      "revId": "977727c16e20c819627a93919b30821eb667ab40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e25eda78",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-15T19:33:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_0751400e",
       "revId": "977727c16e20c819627a93919b30821eb667ab40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_c272b610",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-15T19:33:52Z",
+      "side": 1,
+      "message": "..and actually, this else; will ONLY create projects....so it can be even simpler (and in fact this clause goes away in a subsequent patch...)",
+      "parentUuid": "da86d52c_e74b4c5d",
+      "revId": "977727c16e20c819627a93919b30821eb667ab40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_0778608e",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 23
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_425ec677",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-15T19:33:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_0778608e",
+      "revId": "977727c16e20c819627a93919b30821eb667ab40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_27f2c406",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 23
@@ -115,6 +223,24 @@
       "writtenOn": "2015-02-15T14:49:48Z",
       "side": 1,
       "message": "Well, looking here at this as an example...\n\nWhat about the following representation:\n\n    entities \u003d {}\n    assignments \u003d {}\n    tests \u003d {}\n\nand then we would do:\n\n    test_data \u003d self.execute_assignment_test_plan(entities, assignments, tests)\n\n*Maybe* this would improve test readability since we wouldn\u0027t have everything in a single and BIG test_plan dict for complex test plans.",
+      "revId": "977727c16e20c819627a93919b30821eb667ab40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_02cbee1e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 726,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-15T19:33:52Z",
+      "side": 1,
+      "message": "Maybe...in fact, we already allow you to call execute_assignment_tests (this is used in some of the follow on patches). I\u0027ll tweak it slightly so that you can pass a test_plan without any tests into execute_assignment_test_plan, so that you can then do multiple separate subsequent tests..",
+      "parentUuid": "da86d52c_27f2c406",
       "revId": "977727c16e20c819627a93919b30821eb667ab40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
