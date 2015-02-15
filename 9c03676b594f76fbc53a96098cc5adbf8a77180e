@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_2225525c",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-15T17:55:02Z",
+      "side": 1,
+      "message": "Seems UnexpectedError would be more accurate for this error\n\nIs it also possible that add a test?",
+      "revId": "9c03676b594f76fbc53a96098cc5adbf8a77180e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
