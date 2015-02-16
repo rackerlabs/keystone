@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_a1f77758",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-16T09:55:58Z",
+      "side": 1,
+      "message": "this seems an unrelated change",
+      "revId": "b5c95e491c808848aff52f6c511e436bc2bd9040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_c1938bfe",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-16T09:55:58Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "b5c95e491c808848aff52f6c511e436bc2bd9040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_54259aac",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-16T09:55:58Z",
+      "side": 1,
+      "message": "so at first glance it seems odd that these do not appear in the attributes below....it might be worth a comment (I assume there in sql.models.TimeStampMixin)",
+      "revId": "b5c95e491c808848aff52f6c511e436bc2bd9040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_b146e879",
+        "filename": "keystone/common/sql/migrate_repo/versions/064_add_timestamp_to_project_and_role.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-16T09:55:58Z",
+      "side": 1,
+      "message": "will this really work with sqlite?  I don\u0027t think it supports drop column...(at least not really...it appears to work but hasn\u0027t really dropped the column).  Earlier migrations had to use the \"create a new table without the columns you want to drop, copy the data and then rename the table\" approach.",
+      "revId": "b5c95e491c808848aff52f6c511e436bc2bd9040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_c148eb8c",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-16T09:55:58Z",
+      "side": 1,
+      "message": "unrelated?",
+      "revId": "b5c95e491c808848aff52f6c511e436bc2bd9040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_0143e36c",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-16T09:55:58Z",
+      "side": 1,
+      "message": "unrelated?",
+      "revId": "b5c95e491c808848aff52f6c511e436bc2bd9040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_b100a867",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-16T09:55:58Z",
+      "side": 1,
+      "message": "I don\u0027t think we ever unset this, do we?  Looks a bit like old test code....",
+      "revId": "b5c95e491c808848aff52f6c511e436bc2bd9040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f138603d",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-16T09:55:58Z",
+      "side": 1,
+      "message": "strip_off?",
+      "revId": "b5c95e491c808848aff52f6c511e436bc2bd9040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_11f17495",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-16T09:55:58Z",
+      "side": 1,
+      "message": "will this ever be false?  You could del these fields only if they exist?",
+      "revId": "b5c95e491c808848aff52f6c511e436bc2bd9040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_31f6785e",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 741,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-16T09:55:58Z",
+      "side": 1,
+      "message": "are these changes related to this patch?",
+      "revId": "b5c95e491c808848aff52f6c511e436bc2bd9040",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
