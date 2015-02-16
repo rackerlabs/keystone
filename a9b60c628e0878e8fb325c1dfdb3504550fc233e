@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_20753c32",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2015-02-16T12:04:24Z",
+      "side": 1,
+      "message": "Hi David, Samuel,\n\nIn help message it is mentioned that 0 means wait forever. If service provider configures client_socket_timeout as 0, the connection will time out immediately and we get run time error while sending the request. In order to configure eventlet wsgi socket to wait forever, it should be set to None. So, I have added CONF.client_socket_timeout or None.\n\nPlease refer:\n\nhttp://eventlet.net/doc/modules/wsgi.html",
+      "parentUuid": "da86d52c_d45d2f7b",
+      "revId": "a9b60c628e0878e8fb325c1dfdb3504550fc233e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_5d3da3dc",
         "filename": "keystone/tests/test_wsgi.py",
         "patchSetId": 12
