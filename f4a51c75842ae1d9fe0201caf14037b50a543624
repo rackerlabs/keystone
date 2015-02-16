@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_4124fb0d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-16T09:04:54Z",
+      "side": 1,
+      "message": "added in a followup patch.",
+      "parentUuid": "da86d52c_3f72c8ad",
+      "revId": "f4a51c75842ae1d9fe0201caf14037b50a543624",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_bf5dd817",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-16T03:24:01Z",
       "side": 1,
       "message": "(NIT): You could use a testscenario to test each of these with variations on capitalization.",
+      "revId": "f4a51c75842ae1d9fe0201caf14037b50a543624",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_41c87b56",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-16T09:04:54Z",
+      "side": 1,
+      "message": "Added in a followup patch.",
+      "parentUuid": "da86d52c_bf5dd817",
       "revId": "f4a51c75842ae1d9fe0201caf14037b50a543624",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
