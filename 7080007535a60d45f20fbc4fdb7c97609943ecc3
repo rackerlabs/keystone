@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_c871f545",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 669,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-16T01:03:28Z",
+      "side": 1,
+      "message": "nit: instead of \"add\", \"assign\" might be more accurate",
+      "revId": "7080007535a60d45f20fbc4fdb7c97609943ecc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e88dd92b",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 674,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-16T01:03:28Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "7080007535a60d45f20fbc4fdb7c97609943ecc3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_0b884721",
         "filename": "keystone/tests/test_v3_assignment.py",
         "patchSetId": 3
