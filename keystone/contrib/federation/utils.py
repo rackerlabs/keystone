@@ -284,6 +284,12 @@ def get_assertion_params_from_env(context):
             yield (k, v)
 
 
+class UserType(object):
+    """User mapping type."""
+    EPHEMERAL = 'ephemeral'
+    LOCAL = 'local'
+
+
 class RuleProcessor(object):
     """A class to process assertions and mapping rules."""
 
@@ -291,11 +297,6 @@ class RuleProcessor(object):
         """Mapping rule evaluation types."""
         ANY_ONE_OF = 'any_one_of'
         NOT_ANY_OF = 'not_any_of'
-
-    class _UserType(object):
-        """User mapping type."""
-        EPHEMERAL = 'ephemeral'
-        LOCAL = 'local'
 
     def __init__(self, rules):
         """Initialize RuleProcessor.
@@ -425,9 +426,9 @@ class RuleProcessor(object):
             user_type = user.get('type')
 
             if user_type is None:
-                user_type = user['type'] = self._UserType.EPHEMERAL
+                user_type = user['type'] = UserType.EPHEMERAL
 
-            if user_type == self._UserType.EPHEMERAL:
+            if user_type == UserType.EPHEMERAL:
                 user['domain'] = {
                     'id': federation.FEDERATED_DOMAIN_KEYWORD
                 }
