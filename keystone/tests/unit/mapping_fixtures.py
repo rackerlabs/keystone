@@ -742,3 +742,13 @@ CONTRACTOR_MALFORMED_ASSERTION = {
     'FirstName': object(),
     'orgPersonType': 'Contractor'
 }
+
+LOCAL_USER_ASSERTION = {
+    'UserName': 'marek',
+    'UserType': 'random'
+}
+
+ANOTHER_LOCAL_USER_ASSERTION = {
+    'UserName': 'marek',
+    'Position': 'DirectorGeneral'
+}
