@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_53575eca",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 67
+      },
+      "writtenOn": "2015-02-16T17:38:32Z",
+      "side": 0,
+      "message": "The point of this check is that aws itself omits the port number (it is on port 80). The behavior on another port is not defined by amazon, so some client implementations of the signature algorithm include the port number whereas others omit it. This allows us to be compatible with both versions. In other words first we try generating the signature with the port included, then we try without the port and we accept a match on either.",
+      "revId": "115d9660de21f5520e5c5f6a92364607b368281b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
