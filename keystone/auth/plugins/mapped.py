@@ -17,6 +17,7 @@ from pycadf import cadftaxonomy as taxonomy
 from six.moves.urllib import parse
 
 from keystone import auth
+from keystone.auth import plugins as auth_plugins
 from keystone.common import dependency
 from keystone.contrib import federation
 from keystone.contrib.federation import utils
@@ -28,6 +29,8 @@ from keystone.openstack.common import log
 
 
 LOG = log.getLogger(__name__)
+
+METHOD_NAME = 'mapped'
 
 
 @dependency.requires('assignment_api', 'federation_api', 'identity_api',
@@ -118,14 +121,25 @@ def handle_unscoped_token(context, auth_payload, auth_context,
     # possibility that it will be used in the CADF notification. This means
     # operation will not be mapped to any user (even ephemeral).
     user_id = None
+    user_type = utils.UserType.EPHEMERAL
 
     try:
         mapped_properties = apply_mapping_filter(identity_provider, protocol,
                                                  assertion, assignment_api,
                                                  federation_api, identity_api)
-        user = setup_username(context, mapped_properties)
-        user_id = user.get('id')
-        group_ids = mapped_properties['group_ids']
+
+        user_type = get_mapped_user_type(mapped_properties)
+
+        if user_type == utils.UserType.EPHEMERAL:
+            user = setup_username(context, mapped_properties)
+            user_id = user.get('id')
+            group_ids = mapped_properties['group_ids']
+            build_ephemeral_mapping_context(auth_context, user,
+                                            mapped_properties,
+                                            identity_provider,
+                                            protocol)
+        else:
+            build_local_user_context(auth_context, mapped_properties)
 
     except Exception:
         # NOTE(topol): Diaper defense to catch any exception, so we can
@@ -145,10 +159,24 @@ def handle_unscoped_token(context, auth_payload, auth_context,
                                                    identity_provider,
                                                    protocol, token_id,
                                                    outcome)
-    auth_context['user_id'] = user_id
-    auth_context['group_ids'] = group_ids
+
+
+def get_mapped_user_type(mapped_properties):
+    return mapped_properties['user']['type']
+
+
+def build_ephemeral_mapping_context(auth_context, user, mapped_properties,
+                                    identity_provider, protocol):
+    auth_context['user_id'] = user['id']
+    auth_context['group_ids'] = mapped_properties['group_ids']
     auth_context[federation.IDENTITY_PROVIDER] = identity_provider
     auth_context[federation.PROTOCOL] = protocol
+
+
+def build_local_user_context(auth_context, mapped_properties):
+    user_info = auth_plugins.UserAuthInfo.create(mapped_properties['user'],
+                                                 METHOD_NAME)
+    auth_context['user_id'] = user_info.user_id
 
 
 def extract_assertion_data(context):
