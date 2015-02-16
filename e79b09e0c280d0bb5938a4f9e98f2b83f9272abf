@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_c89ad56d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-16T00:54:56Z",
+      "side": 1,
+      "message": "Should this handle for v3 too by checking region_id?",
+      "revId": "e79b09e0c280d0bb5938a4f9e98f2b83f9272abf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_088ced34",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-16T00:54:56Z",
+      "side": 1,
+      "message": "if we already have the validation above, this exception won\u0027t occur anymore.",
+      "revId": "e79b09e0c280d0bb5938a4f9e98f2b83f9272abf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
