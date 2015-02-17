@@ -10,18 +10,19 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import base64
 import datetime
 import uuid
 
-from keyczar import keyczar
+from cryptography import fernet
 import msgpack
 from oslo_log import log
 from oslo_utils import timeutils
+import six
 
 from keystone import config
 from keystone import exception
-from keystone.i18n import _LI
+from keystone.i18n import _
+from keystone.token.providers.klwt import utils
 
 
 CONF = config.CONF
@@ -37,31 +38,18 @@ class BaseTokenFormatter(object):
     token_format = None
     token_version = None
 
-    def __init__(self):
-        """Establish a connection with Keyczar and store it."""
-        self.key_repository = CONF.klw_tokens.key_repository
+    @property
+    def crypto(self):
+        """Return a cryptography instance."""
+        keys = utils.load_keys()
 
-        msg = (_LI('Initializing keyczar using key repository: %s') %
-               self.key_repository)
-        LOG.info(msg)
+        if not keys:
+            raise Exception(_(
+                'No encryption keys found; run keystone-manage klwt_setup to '
+                'bootstrap one.'))
 
-        self.crypter = None
-        try:
-            self.crypter = keyczar.Crypter.Read(self.key_repository)
-            # FIXME(dolph): this is only here to satisfy tests
-            self.purpose = 'crypt'
-        except keyczar.errors.KeyczarError:
-            msg = (_LI('%s isn\'t used for encryption keys, looking for '
-                       'signing keys') % self.key_repository)
-            LOG.info(msg)
-
-        if self.crypter is None:
-            try:
-                self.crypter = keyczar.Signer.Read(self.key_repository)
-                # FIXME(dolph): this is only here to satisfy tests
-                self.purpose = 'sign'
-            except keyczar.errors.KeyczarError as e:
-                raise exception.KeyczarReadError(details=e)
+        fernet_instances = [fernet.Fernet(key) for key in utils.load_keys()]
+        return fernet.MultiFernet(fernet_instances)
 
     def _convert_uuid_hex_to_bytes(self, uuid_string):
         """Compress UUID formatted strings to bytes.
@@ -126,48 +114,6 @@ class BaseTokenFormatter(object):
             audit_ids = audit_ids.pop()
         return (issued_at_int, expires_at_int, audit_ids)
 
-    def _encrypt_or_sign(self, message):
-        """Determine whether to encrypt or sign the token and return it.
-        :param message: message to encrypt or sign
-        :returns: an encrypted or signed message
-        """
-        if self.purpose == 'crypt':
-            return self.crypter.Encrypt(message)
-        else:
-            encoded = base64.b64encode(message)
-            encoded = encoded.replace('+', '-')
-            encoded = encoded.replace('/', '_')
-            encoded = encoded.replace('=', '.')
-            digest = self.crypter.Sign(message)
-            return digest + encoded
-
-    def _decrypt_or_verify(self, message):
-        """Determine whether to decrypt or verify the message.
-
-        :param message: message to decrypt or verify
-        :returns: a message packed list or values
-
-        """
-        if self.purpose == 'crypt':
-            try:
-                return self.crypter.Decrypt(message)
-            except keyczar.errors.InvalidSignatureError:
-                msg = 'Token cannot be verified'
-                raise exception.Unauthorized(msg)
-        else:
-            digest = message[:34]
-            encoded = message[34:]
-            encoded = encoded.replace('-', '+')
-            encoded = encoded.replace('_', '/')
-            encoded = encoded.replace('.', '=')
-            message = base64.b64decode(encoded)
-            verified = self.crypter.Verify(message, digest)
-            if verified:
-                return message
-            else:
-                msg = 'Token cannot be verified'
-                raise exception.Unauthorized(msg)
-
 
 # FIXME(lbragstad): WTF is a "standard token". Come up with a better naming
 # convention for these!
@@ -201,13 +147,11 @@ class StandardTokenFormatter(BaseTokenFormatter):
 
         msgpacked_token = msgpack.packb(token)
 
-        # NOTE(lbragstad): Now we're ready to pass our compressed token
-        # information to Keyczar since Keyczar will handle the encryption and
-        # digest stuff.
-        encrypted_token = self._encrypt_or_sign(msgpacked_token)
+        encrypted_token = self.crypto.encrypt(msgpacked_token)
 
         # Tack the token format on to the encrypted_token
         token_id = self.token_format + encrypted_token
+
         return token_id
 
     def validate_token(self, token_string):
@@ -217,7 +161,10 @@ class StandardTokenFormatter(BaseTokenFormatter):
         :return: a dictionary of token data
 
         """
-        decrypted_token = self._decrypt_or_verify(token_string)
+        try:
+            decrypted_token = self.crypto.decrypt(token_string)
+        except fernet.InvalidToken as e:
+            raise exception.Unauthorized(six.text_type(e))
 
         # TODO(lbragstad): catch msgpack errors here
         unpacked_token = msgpack.unpackb(decrypted_token)
@@ -281,7 +228,7 @@ class TrustTokenFormatter(BaseTokenFormatter):
                  expires_at_int, audit_ids)
         msgpacked_token = msgpack.packb(token)
 
-        encrypted_token = self._encrypt_or_sign(msgpacked_token)
+        encrypted_token = self.crypto.encrypt(msgpacked_token)
 
         # Tack the token format on to the encrypted_token
         token_id = self.token_format + encrypted_token
@@ -294,7 +241,10 @@ class TrustTokenFormatter(BaseTokenFormatter):
         :return: a dictionary of token data
 
         """
-        decrypted_token = self._decrypt_or_verify(token_string)
+        try:
+            decrypted_token = self.crypto.decrypt(token_string)
+        except fernet.InvalidToken as e:
+            raise exception.Unauthorized(six.text_type(e))
 
         # TODO(lbragstad): catch msgpack errors here
         unpacked_token = msgpack.unpackb(decrypted_token)
