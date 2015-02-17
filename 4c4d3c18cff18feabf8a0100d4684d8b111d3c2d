@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_f35f6473",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 5906,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-17T02:53:05Z",
+      "side": 1,
+      "message": "Well, this one (as other in the tests added so far) will not \u0027simply\u0027 call list_role_assignments, they will need to filter only the info they need to return.\n\nIn this case, it will extract the projects and then return the distinct ones.",
+      "revId": "4c4d3c18cff18feabf8a0100d4684d8b111d3c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_73da94ea",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 5910,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-17T02:53:05Z",
+      "side": 1,
+      "message": "We need to ensure it mirrors the above test once we ensure (with another test) that list_projects_for_user does use list_role_assignments.\n\nOtherwise, we were just replacing a test of list_projects_for_user by a similar test for list_role_assignments, without ensuring they have consistent returns.\n\nPlease add a not saying we need to add such test once list_projects_for_user is refactored.",
+      "revId": "4c4d3c18cff18feabf8a0100d4684d8b111d3c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_3383bccd",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 5922,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-17T02:53:05Z",
+      "side": 1,
+      "message": "(nit) I think these two first assignments are in the reverse order in the original test, i.e\n\n    {\u0027user\u0027: 0, \u0027role\u0027: 0, \u0027project\u0027: 3},\n    {\u0027user\u0027: 0, \u0027role\u0027: 0, \u0027project\u0027: 0},\n\nI just think this should make it easier for other reviewers to compare the tests equivalence.",
+      "revId": "4c4d3c18cff18feabf8a0100d4684d8b111d3c2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
