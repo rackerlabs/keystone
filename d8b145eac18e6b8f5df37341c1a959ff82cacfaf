@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_87708b41",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/002_add_endpoint_groups.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-02-17T16:15:59Z",
+      "side": 1,
+      "message": "I\u0027d rather use tuple here :)",
+      "revId": "d8b145eac18e6b8f5df37341c1a959ff82cacfaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_6402b5b5",
         "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/002_add_endpoint_groups.py",
         "patchSetId": 1
