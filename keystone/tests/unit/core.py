@@ -43,7 +43,6 @@ environment.use_eventlet()
 from keystone import auth
 from keystone.common import config as common_cfg
 from keystone.common import dependency
-from keystone.common import kvs
 from keystone.common.kvs import core as kvs_core
 from keystone import config
 from keystone import controllers
@@ -285,10 +284,7 @@ class TestCase(BaseTestCase):
             backend='dogpile.cache.memory',
             enabled=True,
             proxies=['keystone.tests.unit.test_cache.CacheIsolatingProxy'])
-        self.config_fixture.config(
-            group='catalog',
-            driver='templated',
-            template_file=dirs.tests('default_catalog.templates'))
+        self.config_fixture.config(group='catalog', driver='sql')
         self.config_fixture.config(
             group='kvs',
             backends=[
@@ -366,8 +362,6 @@ class TestCase(BaseTestCase):
         # Clear the registry of providers so that providers from previous
         # tests aren't used.
         self.addCleanup(dependency.reset)
-
-        self.addCleanup(kvs.INMEMDB.clear)
 
         # Ensure Notification subscriptions and resource types are empty
         self.addCleanup(notifications.clear_subscribers)

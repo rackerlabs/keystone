@@ -19,7 +19,6 @@ from oslo_config import cfg
 from oslo_log import log
 import six
 
-from keystone.catalog.backends import kvs
 from keystone.catalog import core
 from keystone import exception
 from keystone.i18n import _LC
@@ -57,7 +56,7 @@ def parse_templates(template_lines):
     return o
 
 
-class Catalog(kvs.Catalog):
+class Catalog(core.Driver):
     """A backend that generates endpoints for the Catalog based on templates.
 
     It is usually configured via config entries that look like:
@@ -150,3 +149,92 @@ class Catalog(kvs.Catalog):
                 catalog[region][service] = service_data
 
         return catalog
+
+    # region crud
+
+    def create_region(self, region):
+        raise exception.NotImplemented()
+
+    def list_regions(self, hints):
+        return [{'id': region_id, 'description': '', 'parent_region_id': ''}
+                for region_id in self.templates]
+
+    def get_region(self, region_id):
+        if region_id in self.templates:
+            return {'id': region_id, 'description': '', 'parent_region_id': ''}
+        raise exception.RegionNotFound(region_id=region_id)
+
+    def update_region(self, region_id, region):
+        raise exception.NotImplemented()
+
+    def delete_region(self, region_id):
+        raise exception.NotImplemented()
+
+    # service crud
+
+    def create_service(self, service_id, service):
+        raise exception.NotImplemented()
+
+    def list_services(self, hints):
+        services = []
+        for region in six.itervalues(self.templates):
+            for service_type, service in six.iteritems(region):
+                services.append({
+                    'id': service['id'],
+                    'enabled': True,
+                    'name': service.get('name', ''),
+                    'description': service.get('description', ''),
+                    'type': service_type,
+                })
+
+        return services
+
+    def get_service(self, service_id):
+        for region in six.itervalues(self.templates):
+            for service_type, service in six.iteritems(region):
+                if service['id'] == service_id:
+                    return {
+                        'id': service['id'],
+                        'enabled': True,
+                        'name': service.get('name', ''),
+                        'description': service.get('description', ''),
+                        'type': service_type,
+                    }
+                    return service
+
+        raise exception.ServiceNotFound(service_id=service_id)
+
+    def update_service(self, service_id, service):
+        raise exception.NotImplemented()
+
+    def delete_service(self, service_id):
+        raise exception.NotImplemented()
+
+    # endpoint crud
+
+    def create_endpoint(self, endpoint_id, endpoint):
+        raise exception.NotImplemented()
+
+    def _list_endpoints(self):
+        for region_id, region in six.iteritems(self.templates):
+            for service in six.itervalues(region):
+                for key in service:
+                    if key.endswith('URL'):
+                        yield {'service_id': service['id'],
+                               'interface': key[:-3],
+                               'url': service[key],
+                               'legacy_endpoint_id': None,
+                               'region_id': region_id,
+                               'enabled': True}
+
+    def list_endpoints(self, hints):
+        return list(self._list_endpoints())
+
+    def get_endpoint(self, endpoint_id):
+        raise exception.NotImplemented()
+
+    def update_endpoint(self, endpoint_id, endpoint):
+        raise exception.NotImplemented()
+
+    def delete_endpoint(self, endpoint_id):
+        raise exception.NotImplemented()
