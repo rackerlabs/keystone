@@ -15,9 +15,8 @@
 import os
 import stat
 
-from keyczar import keyczart
+from cryptography import fernet
 from oslo_log import log
-from oslo_serialization import jsonutils
 
 from keystone import config
 from keystone.i18n import _, _LE, _LW, _LI
@@ -42,35 +41,18 @@ def validate_key_repository():
             os.access(CONF.klw_tokens.key_repository, os.W_OK) or not
             os.access(CONF.klw_tokens.key_repository, os.X_OK)):
         LOG.error(
-            _('Insufficient permissions on [klw_tokens] key_repository: %s') %
-            (CONF.klw_tokens.key_repository))
+            _('Either [klw_tokens] key_repository does not exist or Keystone '
+              'does not have sufficient permission to access it: %s'),
+            CONF.klw_tokens.key_repository)
         return False
 
     # ensure the directory cannot be read by anyone
     stat_info = os.stat(CONF.klw_tokens.key_repository)
     if stat_info.st_mode & stat.S_IROTH or stat_info.st_mode & stat.S_IXOTH:
-        LOG.warning(_LW('[klw_tokens] key_repository is world readable: %s') %
-                    (CONF.klw_tokens.key_repository))
+        LOG.warning(_LW('[klw_tokens] key_repository is world readable: %s'),
+                    CONF.klw_tokens.key_repository)
 
     return True
-
-
-def _chown_files(keystone_user_id, keystone_group_id):
-    """If we're running as root, ensure everything is owned by keystone."""
-    if not (keystone_user_id or keystone_group_id):
-        # we only need to chown files if we're creating them as root for
-        # a keystone user
-        return
-
-    os.chown(
-        CONF.klw_tokens.key_repository, keystone_user_id, keystone_group_id)
-
-    # FIXME(dolph): race condition where a primary key is added but not
-    # readable by the running keystone user
-    for dirpath, dirnames, fnames in os.walk(CONF.klw_tokens.key_repository):
-        for f in fnames:
-            os.chown(
-                os.path.join(dirpath, f), keystone_user_id, keystone_group_id)
 
 
 def create_key_directory(keystone_user_id=None, keystone_group_id=None):
@@ -81,82 +63,138 @@ def create_key_directory(keystone_user_id=None, keystone_group_id=None):
             'to create it'))
 
         try:
-            os.mkdir(CONF.klw_tokens.key_repository, 0o700)
+            os.makedirs(CONF.klw_tokens.key_repository, 0o700)
         except OSError:
             LOG.error(_LE(
                 'Failed to create [klw_tokens] key_repository: either it '
                 'already exists or you don\'t have sufficient permissions to '
                 'create it'))
 
-    _chown_files(keystone_user_id, keystone_group_id)
+        if keystone_user_id or keystone_group_id:
+            os.chown(
+                CONF.klw_tokens.key_repository,
+                keystone_user_id,
+                keystone_group_id)
 
 
-def initialize_key_repository(purpose='crypt', keystone_user_id=None,
-                              keystone_group_id=None):
-    """Create a key repository, and bootstrap it with a primary key."""
-    meta_file = os.path.join(CONF.klw_tokens.key_repository, 'meta')
+def _create_new_key(keystone_user_id, keystone_group_id):
+    """Securely create a new encryption key."""
+    key = fernet.Fernet.generate_key()
 
-    # keyczart does not create files with a secure mode, so force 0600
-    # see: https://code.google.com/p/keyczar/issues/detail?id=157
     old_umask = os.umask(0o177)
+    if keystone_user_id or keystone_group_id:
+        old_egid = os.getegid()
+        old_euid = os.geteuid()
+        os.setegid(keystone_group_id)
+        os.seteuid(keystone_user_id)
+    key_file = os.path.join(CONF.klw_tokens.key_repository, '0')
     try:
-        if not os.access(meta_file, os.F_OK):
-            keyczart.main([
-                'create',
-                '--location=%s' % CONF.klw_tokens.key_repository,
-                '--purpose=%s' % purpose,
-                '--name=AE'])
-
-        keyczart.main([
-            'addkey',
-            '--location=%s' % CONF.klw_tokens.key_repository,
-            '--status=primary'])
+        with open(key_file, 'w') as f:
+            f.write(key)
     finally:
         os.umask(old_umask)
+        if keystone_user_id or keystone_group_id:
+            os.seteuid(old_euid)
+            os.setegid(old_egid)
 
-    _chown_files(keystone_user_id, keystone_group_id)
+    LOG.info(_LI('Created a new key: %s'), key_file)
+
+
+def initialize_key_repository(keystone_user_id=None, keystone_group_id=None):
+    """Create a key repository and bootstrap it with a key."""
+    # make sure we have work to do before proceeding
+    if os.access(os.path.join(CONF.klw_tokens.key_repository, '0'), os.F_OK):
+        LOG.info(_LI('Key repository is already initialized; aborting.'))
+        return
+
+    # bootstrap an existing key
+    _create_new_key(keystone_user_id, keystone_group_id)
 
 
 def rotate_keys(keystone_user_id=None, keystone_group_id=None):
-    """Create a new primary key and demote excess active keys."""
-    meta_file = os.path.join(CONF.klw_tokens.key_repository, 'meta')
-    with open(meta_file, 'r') as f:
-        metadata = jsonutils.loads(f.read())
+    """Create a new primary key and revoke excess active keys.
 
-    active_keys = []
-    inactive_keys = []
-    for version in metadata['versions']:
-        if version['status'] == 'ACTIVE':
-            active_keys.append(version['versionNumber'])
-        elif version['status'] == 'INACTIVE':
-            inactive_keys.append(version['versionNumber'])
+    Key rotation utilizes the following behaviors:
 
-    # keyczart does not create files with a secure mode, so force 0600
-    # see: https://code.google.com/p/keyczar/issues/detail?id=157
-    old_umask = os.umask(0o177)
-    try:
-        # create a new primary key, demoting the primary key
-        keyczart.main([
-            'addkey',
-            '--status=primary',
-            '--location=%s' % CONF.klw_tokens.key_repository])
-    finally:
-        os.umask(old_umask)
+    - The highest key number is used as the primary key (used for encryption).
+    - All keys can be used for decryption.
+    - New keys are always created as key "0," which serves as a placeholder
+      before promoting it to be the primary key.
 
-    # demote excess active keys
-    active_keys.sort()
-    while len(active_keys) >= CONF.klw_tokens.max_active_keys:
-        version = active_keys.pop(0)
-        keyczart.main([
-            'demote',
-            '--location=%s' % CONF.klw_tokens.key_repository,
-            '--version=%d' % version])
+    This strategy allows you to safely perform rotation on one node in a
+    cluster, before syncing the results of the rotation to all other nodes
+    (during both key rotation and synchronization, all nodes must recognize all
+    primary keys).
 
-    # purge inactive keys
-    for version in inactive_keys:
-        keyczart.main([
-            'revoke',
-            '--location=%s' % CONF.klw_tokens.key_repository,
-            '--version=%d' % version])
+    """
+    # read the list of key files
+    key_files = dict()
+    # TODO(dolph): use os.listdir and then os.path.isfile (courtesy dstanek)
+    for dirpath, dirnames, fnames in os.walk(CONF.klw_tokens.key_repository):
+        for filename in fnames:
+            key_files[int(filename)] = os.path.join(dirpath, str(filename))
 
-    _chown_files(keystone_user_id, keystone_group_id)
+    LOG.info(_LI('Discovered %(count)s key files: %(list)s'), {
+        'count': len(key_files),
+        'list': key_files.values()})
+
+    # determine the number of the new primary key
+    current_primary_key = max(key_files.keys())
+    LOG.info(_LI('Current primary key is: %s'), current_primary_key)
+    new_primary_key = current_primary_key + 1
+    LOG.info(_LI('Next primary key will be: %s'), new_primary_key)
+
+    # promote the next primary key to be the primary
+    os.rename(
+        os.path.join(CONF.klw_tokens.key_repository, '0'),
+        os.path.join(CONF.klw_tokens.key_repository, str(new_primary_key)))
+    key_files.pop(0)
+    key_files[new_primary_key] = os.path.join(
+        CONF.klw_tokens.key_repository,
+        str(new_primary_key))
+    LOG.info(_LI('Promoted key 0 to be the primary: %s'), new_primary_key)
+
+    # add a new key to the rotation, which will be the *next* primary
+    _create_new_key(keystone_user_id, keystone_group_id)
+
+    # check for bad configuration
+    if CONF.klw_tokens.max_active_keys < 1:
+        LOG.warning(_LW(
+            '[klw_tokens] max_active_keys must be at least 1 to maintain a '
+            'primary key.'))
+        CONF.klw_tokens.max_active_keys = 1
+
+    # purge excess keys
+    keys = sorted(key_files.keys())
+    excess_keys = keys[:len(key_files) - CONF.klw_tokens.max_active_keys + 1]
+    LOG.info(_LI('Excess keys to purge: %s'), excess_keys)
+    for i in excess_keys:
+        os.remove(key_files[i])
+
+
+def load_keys():
+    """Load keys from disk into a list.
+
+    The first key in the list is the primary key used for encryption. All
+    other keys are active secondary keys that can be used for decrypting
+    tokens.
+
+    """
+    if not validate_key_repository():
+        return []
+
+    # build a dictionary of key_number:encryption_key pairs
+    keys = dict()
+    # TODO(dolph): use os.listdir and then os.path.isfile (courtesy dstanek)
+    for dirpath, dirnames, fnames in os.walk(CONF.klw_tokens.key_repository):
+        for filename in fnames:
+            with open(os.path.join(dirpath, filename), 'r') as key_file:
+                keys[int(filename)] = key_file.read()
+
+    LOG.info(_LI(
+        'Loaded %(count)s encryption keys from: %(dir)s'), {
+            'count': len(keys),
+            'dir': CONF.klw_tokens.key_repository})
+
+    # return the encryption_keys, sorted by key number, descending
+    return [keys[x] for x in sorted(keys.keys(), reverse=True)]

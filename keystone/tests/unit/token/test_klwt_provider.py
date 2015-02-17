@@ -11,6 +11,7 @@
 # under the License.
 
 import base64
+import hashlib
 import shutil
 import tempfile
 import uuid
@@ -29,14 +30,14 @@ CONF = config.CONF
 
 
 class KeyRepositoryTestMixin(object):
-    def setUpKeyRepository(self, purpose='crypt'):
+    def setUpKeyRepository(self):
         directory = tempfile.mkdtemp()
         self.addCleanup(shutil.rmtree, directory)
         self.config_fixture.config(group='klw_tokens',
                                    key_repository=directory)
 
         utils.create_key_directory()
-        utils.initialize_key_repository(purpose)
+        utils.initialize_key_repository()
 
 
 class TestKLWTokenProvider(tests.TestCase, KeyRepositoryTestMixin):
@@ -102,19 +103,10 @@ class TestBaseTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
             actual_time_int)
         self.assertEqual(expected_time_str, actual_time_str)
 
-    def test_token_formatter_purpose_uses_encryption(self):
-        self.assertEqual('crypt', self.formatter.purpose)
 
-    def test_token_formatter_purpose_uses_signing(self):
-        self.setUpKeyRepository(purpose='sign')
-        formatter = token_formatters.BaseTokenFormatter()
-        self.assertEqual('sign', formatter.purpose)
-
-
-class TestStandardTokenFormatterWithEncryption(tests.TestCase,
-                                               KeyRepositoryTestMixin):
+class TestStandardTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
     def setUp(self):
-        super(TestStandardTokenFormatterWithEncryption, self).setUp()
+        super(TestStandardTokenFormatter, self).setUp()
         self.setUpKeyRepository()
         self.formatter = token_formatters.StandardTokenFormatter()
 
@@ -186,93 +178,43 @@ class TestStandardTokenFormatterWithEncryption(tests.TestCase,
 
         self.assertRaises(exception.Unauthorized,
                           self.formatter.validate_token,
-                          tampered_token[6:])
+                          tampered_token[4:])
 
 
-class TestStandardTokenFormatterWithSigning(tests.TestCase,
-                                            KeyRepositoryTestMixin):
+class TestCustomTokenFormatter(TestStandardTokenFormatter):
     def setUp(self):
-        super(TestStandardTokenFormatterWithSigning, self).setUp()
-        self.config_fixture.config(group='klw_tokens')
-        self.setUpKeyRepository(purpose='sign')
-        self.formatter = token_formatters.StandardTokenFormatter()
+        super(TestStandardTokenFormatter, self).setUp()
 
-    def test_token_signing(self):
-        exp_user_id = uuid.uuid4().hex
-        exp_project_id = uuid.uuid4().hex
-        # All we are validating here is that the token is encrypted and
-        # decrypted properly, not the actual validity of token data.
-        exp_token_data = {
-            'token': {
-                'issued_at': timeutils.isotime(timeutils.utcnow()),
-                'expires_at': timeutils.isotime(timeutils.utcnow()),
-                'audit_ids': base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2],
-            }
-        }
+        class HandRolledCrypto(object):
+            """Hold my beer and watch this."""
+            def encrypt(self, plaintext):
+                """Adds security by obscurity."""
+                checksum = hashlib.md5(plaintext).hexdigest()
+                return '%s-%s' % (plaintext[::-1], checksum)
 
-        token = self.formatter.create_token(
-            exp_user_id, exp_project_id, exp_token_data)
+            def decrypt(self, ciphertext):
+                """Removes obscurity to validate security."""
+                try:
+                    ciphertext, checksum = ciphertext.rsplit('-', 1)
+                except ValueError:
+                    raise exception.Unauthorized()
+                plaintext = ciphertext[::-1]
+                if checksum != hashlib.md5(plaintext).hexdigest():
+                    raise exception.Unauthorized()
+                return plaintext
 
-        user_id, project_id, token_data = self.formatter.validate_token(
-            token[6:])
+        class CustomTokenFormatter(token_formatters.StandardTokenFormatter):
+            @property
+            def crypto(self):
+                """Customize the cryptography implementation."""
+                return HandRolledCrypto()
 
-        self.assertEqual(exp_user_id, user_id)
-        self.assertEqual(exp_project_id, project_id)
-        self.assertEqual(
-            exp_token_data['token']['issued_at'],
-            token_data['token']['issued_at'])
-        self.assertEqual(
-            exp_token_data['token']['expires_at'],
-            token_data['token']['expires_at'])
-        self.assertEqual(
-            exp_token_data['token']['audit_ids'],
-            token_data['token']['audit_ids'])
-
-    def test_signed_token_is_under_255_characters(self):
-        user_id = uuid.uuid4().hex
-        project_id = uuid.uuid4().hex
-        # All we are validating here is that the token is encrypted and
-        # decrypted properly, not the actual validity of token data.
-        token_data = {
-            'token': {
-                'issued_at': timeutils.isotime(timeutils.utcnow()),
-                'expires_at': timeutils.isotime(timeutils.utcnow()),
-                'audit_ids': base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2],
-            }
-        }
-
-        signed_token = self.formatter.create_token(
-            user_id, project_id, token_data)
-        self.assertLess(len(signed_token), 255)
-
-    def test_tampered_signed_token_throws_exception(self):
-        self.formatter = token_formatters.StandardTokenFormatter()
-        user_id = uuid.uuid4().hex
-        project_id = uuid.uuid4().hex
-        # All we are validating here is that the token is encrypted and
-        # decrypted properly, not the actual validity of token data.
-        token_data = {
-            'token': {
-                'issued_at': timeutils.isotime(timeutils.utcnow()),
-                'expires_at': timeutils.isotime(timeutils.utcnow()),
-                'audit_ids': base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2],
-            }
-        }
-
-        # Grab a signed token
-        st = self.formatter.create_token(user_id, project_id, token_data)
-        some_id = uuid.uuid4().hex
-        tampered_token = st[:50] + some_id + st[50 + len(some_id):]
-
-        self.assertRaises(exception.Unauthorized,
-                          self.formatter.validate_token,
-                          tampered_token[6:])
+        self.formatter = CustomTokenFormatter()
 
 
-class TestTrustTokenFormatterWithEncryption(tests.TestCase,
-                                            KeyRepositoryTestMixin):
+class TestTrustTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
     def setUp(self):
-        super(TestTrustTokenFormatterWithEncryption, self).setUp()
+        super(TestTrustTokenFormatter, self).setUp()
         self.setUpKeyRepository()
         self.formatter = token_formatters.TrustTokenFormatter()
 
@@ -341,84 +283,6 @@ class TestTrustTokenFormatterWithEncryption(tests.TestCase,
         et = self.formatter.create_token(user_id, project_id, token_data)
         some_id = uuid.uuid4().hex
         tampered_token = et[:50] + some_id + et[50 + len(some_id):]
-
-        self.assertRaises(exception.Unauthorized,
-                          self.formatter.validate_token,
-                          tampered_token[6:])
-
-
-class TestTrustTokenFormatterWithSigning(tests.TestCase,
-                                         KeyRepositoryTestMixin):
-    def setUp(self):
-        super(TestTrustTokenFormatterWithSigning, self).setUp()
-        self.setUpKeyRepository(purpose='sign')
-        self.formatter = token_formatters.TrustTokenFormatter()
-
-    def test_trust_token_signing(self):
-        exp_user_id = uuid.uuid4().hex
-        exp_project_id = uuid.uuid4().hex
-        exp_trust_id = uuid.uuid4().hex
-        exp_token_data = {
-            'token': {
-                'OS-TRUST:trust': {'id': exp_trust_id},
-                'issued_at': timeutils.isotime(timeutils.utcnow()),
-                'expires_at': timeutils.isotime(timeutils.utcnow()),
-                'audit_ids': base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2],
-            }
-        }
-
-        token = self.formatter.create_token(
-            exp_user_id, exp_project_id, exp_token_data)
-
-        user_id, project_id, token_data = self.formatter.validate_token(
-            token[6:])
-
-        self.assertEqual(exp_user_id, user_id)
-        self.assertEqual(exp_project_id, project_id)
-        self.assertEqual(exp_trust_id,
-                         exp_token_data['token']['OS-TRUST:trust']['id'])
-        self.assertEqual(
-            exp_token_data['token']['issued_at'],
-            token_data['token']['issued_at'])
-        self.assertEqual(
-            exp_token_data['token']['expires_at'],
-            token_data['token']['expires_at'])
-        self.assertEqual(
-            exp_token_data['token']['audit_ids'],
-            token_data['token']['audit_ids'])
-
-    def test_signing_trust_token_is_under_255_characters(self):
-        user_id = uuid.uuid4().hex
-        project_id = uuid.uuid4().hex
-        token_data = {
-            'token': {
-                'OS-TRUST:trust': {'id': uuid.uuid4().hex},
-                'issued_at': timeutils.isotime(timeutils.utcnow()),
-                'expires_at': timeutils.isotime(timeutils.utcnow()),
-                'audit_ids': base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2],
-            }
-        }
-
-        signed_token = self.formatter.create_token(
-            user_id, project_id, token_data)
-        self.assertLess(len(signed_token), 255)
-
-    def test_tampered_signed_trust_token_throws_exception(self):
-        user_id = uuid.uuid4().hex
-        project_id = uuid.uuid4().hex
-        token_data = {
-            'token': {
-                'OS-TRUST:trust': {'id': uuid.uuid4().hex},
-                'issued_at': timeutils.isotime(timeutils.utcnow()),
-                'expires_at': timeutils.isotime(timeutils.utcnow()),
-                'audit_ids': base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2],
-            }
-        }
-
-        # Grab signed token
-        st = self.formatter.create_token(user_id, project_id, token_data)
-        some_id = uuid.uuid4().hex
-        tampered_token = st[:50] + some_id + st[50 + len(some_id):]
 
         self.assertRaises(exception.Unauthorized,
                           self.formatter.validate_token,

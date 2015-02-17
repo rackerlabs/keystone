@@ -542,6 +542,7 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
     """Test token revoke using v3 Identity API by token owner and admin."""
     def load_sample_data(self):
         """Load Sample Data for Test Cases.
+
         Two domains, domainA and domainB
         Two users in domainA, userNormalA and userAdminA
         One user in domainB, userAdminB
