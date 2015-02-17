@@ -18,7 +18,7 @@ from oslo_config import cfg
 from oslo_log import log
 import six
 
-from keystone.catalog.backends import kvs
+from keystone.catalog.backends import _legacy_kvs
 from keystone.catalog import core
 from keystone import exception
 from keystone.i18n import _LC
@@ -56,7 +56,7 @@ def parse_templates(template_lines):
     return o
 
 
-class Catalog(kvs.Catalog):
+class Catalog(_legacy_kvs.Catalog):
     """A backend that generates endpoints for the Catalog based on templates.
 
     It is usually configured via config entries that look like:
