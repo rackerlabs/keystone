@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_a1859bd0",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-17T01:39:51Z",
+      "side": 1,
+      "message": "(nit) Looking at line 211, the parameter name is \u0027inherited_to_projects\u0027, instead of just \u0027inherited\u0027. Please fix the \u0027inherited\u0027 occurrence in this line.",
+      "revId": "dfd3c9175a045c6cc582f246819af0df4044c6b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f28e8378",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 5344,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-17T01:39:51Z",
+      "side": 1,
+      "message": "As the test class is called InheritanceTests, I suggest you to enable this config at class level; i.e for all methods.\n\nThis should be the default here in, and any specific method that needs it disabled, do it by itself :)\n(Like the one just below)",
+      "revId": "dfd3c9175a045c6cc582f246819af0df4044c6b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_507026dc",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 5475,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-17T01:39:51Z",
+      "side": 1,
+      "message": "(nit) s/non-inherted/non-inherited",
+      "revId": "dfd3c9175a045c6cc582f246819af0df4044c6b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
