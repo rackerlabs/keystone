@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_133a3898",
+        "filename": "keystone/tests/unit/backend/core_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-17T02:32:39Z",
+      "side": 1,
+      "message": "we should stop renaming this import... it made the initial move easier but new parts shouldn\u0027t do it.",
+      "revId": "57c1c82a52d18ce324327dc6f6aa7f73c0bd9bb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_936c689f",
+        "filename": "keystone/tests/unit/backend/role/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-17T02:32:39Z",
+      "side": 1,
+      "message": "don\u0027t rename the import.",
+      "revId": "57c1c82a52d18ce324327dc6f6aa7f73c0bd9bb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_33265c69",
+        "filename": "keystone/tests/unit/backend/role/test_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-17T02:32:39Z",
+      "side": 1,
+      "message": "If an error is expected then how can it be UnexpectedError?",
+      "revId": "57c1c82a52d18ce324327dc6f6aa7f73c0bd9bb7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
