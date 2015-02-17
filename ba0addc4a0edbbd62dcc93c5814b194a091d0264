@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_f6f02d68",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-17T08:44:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_87cdfe88",
+      "revId": "ba0addc4a0edbbd62dcc93c5814b194a091d0264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_67ae4a9a",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-17T06:49:39Z",
       "side": 1,
       "message": "It seams that this method returns None.",
+      "revId": "ba0addc4a0edbbd62dcc93c5814b194a091d0264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_5601f937",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-17T08:44:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_67ae4a9a",
       "revId": "ba0addc4a0edbbd62dcc93c5814b194a091d0264",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_d69409ea",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-17T08:44:01Z",
+      "side": 1,
+      "message": "hah, good catch! :-)",
+      "parentUuid": "da86d52c_4799466d",
+      "revId": "ba0addc4a0edbbd62dcc93c5814b194a091d0264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_2715329b",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 8
@@ -64,6 +118,24 @@
       "writtenOn": "2015-02-17T06:49:39Z",
       "side": 1,
       "message": "How about:\nif \u0027endpoints\u0027 in service:\n    validate_endpoints(service)\nif \u0027service_providers\u0027 in service:\n    validate_service_providers(service)\nI think it would be clearer?",
+      "revId": "ba0addc4a0edbbd62dcc93c5814b194a091d0264",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f6be6d63",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 797,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-17T08:44:01Z",
+      "side": 1,
+      "message": "Readibility \u003e hackerness.\n(as much as i don\u0027t like \"if elif elif else\" chains)",
+      "parentUuid": "da86d52c_2715329b",
       "revId": "ba0addc4a0edbbd62dcc93c5814b194a091d0264",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
