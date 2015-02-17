@@ -1,0 +1,9 @@
+---
+other:
+  - >
+    [`bug 1367113 <https://bugs.launchpad.net/keystone/+bug/1367113>`_]
+    The "get entity" and "list entities" functionality has been
+    reimplemented to use the data from the catalog template. Previously
+    this would only act on temporary data that was created at runtime. The
+    "update entity" and "delete entity" functionality now raises an
+    exception.
