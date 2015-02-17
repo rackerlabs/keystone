@@ -16,6 +16,24 @@
       "revId": "115d9660de21f5520e5c5f6a92364607b368281b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f35da4ed",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-17T02:11:24Z",
+      "side": 0,
+      "message": "So, key point is port number is included in credentials[\u0027host\u0027] or included in credentials[\u0027signature\u0027]? that should be a big difference.\n\nIf included in credentials[\u0027host\u0027] it\u0027s easier to understand whereas in credentials[\u0027signature\u0027] it\u0027s difficult for me to provide a testcase to verfiy it.\n\nWould you please share the *signature algorithm* here, maybe I can try to draft the testcase to prove the fix? thx.",
+      "parentUuid": "da86d52c_53575eca",
+      "revId": "115d9660de21f5520e5c5f6a92364607b368281b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
