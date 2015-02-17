@@ -15,6 +15,7 @@
 import uuid
 
 import mock
+from testtools import matchers
 
 from keystone.catalog import core
 from keystone.tests import unit as tests
@@ -220,7 +221,8 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
         self.skipTest("Templated backend doesn't support write operations")
 
     def test_list_endpoints(self):
-        self.skipTest("Templated backend doesn't support write operations")
+        endpoints = self.catalog_api.list_endpoints()
+        self.assertThat(endpoints, matchers.HasLength(6))
 
     @tests.skip_if_cache_disabled('catalog')
     def test_invalidate_cache_when_updating_endpoint(self):
