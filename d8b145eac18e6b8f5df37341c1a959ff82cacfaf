@@ -16,6 +16,24 @@
       "revId": "d8b145eac18e6b8f5df37341c1a959ff82cacfaf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_27127f58",
+        "filename": "keystone/contrib/endpoint_filter/migrate_repo/versions/002_add_endpoint_groups.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-17T16:06:45Z",
+      "side": 1,
+      "message": "precisely why, the table with the FK must be dropped first.",
+      "parentUuid": "da86d52c_6402b5b5",
+      "revId": "d8b145eac18e6b8f5df37341c1a959ff82cacfaf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
