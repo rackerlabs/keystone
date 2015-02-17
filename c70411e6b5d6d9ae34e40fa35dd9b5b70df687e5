@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_988e2a26",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-17T17:21:17Z",
+      "side": 1,
+      "message": "remove token_version, it\u0027s not being used.",
+      "revId": "c70411e6b5d6d9ae34e40fa35dd9b5b70df687e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_78bed6af",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-17T17:21:17Z",
+      "side": 1,
+      "message": "make sure trust info gets populated here, or ensure it\u0027s done in the provider when the rest of the token context is built.",
+      "revId": "c70411e6b5d6d9ae34e40fa35dd9b5b70df687e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_b8068e83",
+        "filename": "requirements.txt",
+        "patchSetId": 11
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-17T17:21:17Z",
+      "side": 1,
+      "message": "remove this if we are going to build on cryptography.fernet \n\nsee https://review.openstack.org/#/c/156657/",
+      "revId": "c70411e6b5d6d9ae34e40fa35dd9b5b70df687e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
