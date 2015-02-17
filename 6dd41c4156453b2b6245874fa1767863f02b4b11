@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_581f52b7",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-17T17:32:08Z",
+      "side": 1,
+      "message": "I removed it here.\nIn fact there are some other places (line 222ish) where this occurs, so another patch could be tossed.",
+      "parentUuid": "da86d52c_5e39073e",
+      "revId": "6dd41c4156453b2b6245874fa1767863f02b4b11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_dec97726",
         "filename": "keystone/contrib/federation/core.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-17T13:43:23Z",
       "side": 1,
       "message": "should not it be :returns: and :rtype:?",
+      "revId": "6dd41c4156453b2b6245874fa1767863f02b4b11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_58e4b2ab",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-17T17:32:08Z",
+      "side": 1,
+      "message": "very likely.",
+      "parentUuid": "da86d52c_dec97726",
       "revId": "6dd41c4156453b2b6245874fa1767863f02b4b11",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_f8b80677",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 781,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-17T17:32:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_bebbe373",
+      "revId": "6dd41c4156453b2b6245874fa1767863f02b4b11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_1e706fdb",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 9
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_18af9a2c",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 788,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-17T17:32:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_1e706fdb",
+      "revId": "6dd41c4156453b2b6245874fa1767863f02b4b11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_c19a78c4",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 9
@@ -81,6 +153,24 @@
       "writtenOn": "2015-02-17T13:43:23Z",
       "side": 1,
       "message": "assertNotIn should be used here",
+      "revId": "6dd41c4156453b2b6245874fa1767863f02b4b11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_7829769a",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2701,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-17T17:32:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_c19a78c4",
       "revId": "6dd41c4156453b2b6245874fa1767863f02b4b11",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
