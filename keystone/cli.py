@@ -192,24 +192,11 @@ class KLWTSetup(BasePermissionsSetup):
     name = 'klwt_setup'
 
     @classmethod
-    def add_argument_parser(cls, subparsers):
-        parser = super(KLWTSetup, cls).add_argument_parser(subparsers)
-        parser.add_argument('--purpose', default='crypt',
-                            choices=['crypt', 'sign'],
-                            help=('Purpose of the key repository. Using '
-                                  'crypt will set up an encrypting key '
-                                  'repository. Using sign will set up a '
-                                  'signing repository'))
-        return parser
-
-    @classmethod
     def main(cls):
-        purpose = CONF.command.purpose
         keystone_user_id, keystone_group_id = cls.get_user_group()
         klwt.create_key_directory(keystone_user_id, keystone_group_id)
         if klwt.validate_key_repository():
-            klwt.initialize_key_repository(purpose, keystone_user_id,
-                                           keystone_group_id)
+            klwt.initialize_key_repository(keystone_user_id, keystone_group_id)
 
 
 class KLWTRotate(BasePermissionsSetup):

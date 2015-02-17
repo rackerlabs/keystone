@@ -241,10 +241,9 @@ FILE_OPTIONS = {
                         'keys.'),
         cfg.IntOpt('max_active_keys',
                    default=1,
-                   help='If you use keystone-manage klwt_rotate to rotate your'
-                        'KLW token keys, this controls how many active keys '
-                        'are held in the rotation before they are made '
-                        'inactive.')
+                   help='This controls how many non-primary active keys are '
+                        'held in rotation by keystone-manage klw_rotate '
+                        'before they are deleted.')
     ],
     'token': [
         cfg.ListOpt('bind', default=[],
