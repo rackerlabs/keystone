@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_5e39073e",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-17T13:43:23Z",
+      "side": 1,
+      "message": "Why do you raise the same exception here? You could re-raise or just remove the try-except block.",
+      "revId": "6dd41c4156453b2b6245874fa1767863f02b4b11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_dec97726",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-17T13:43:23Z",
+      "side": 1,
+      "message": "should not it be :returns: and :rtype:?",
+      "revId": "6dd41c4156453b2b6245874fa1767863f02b4b11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_bebbe373",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 781,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-17T13:43:23Z",
+      "side": 1,
+      "message": "Why not assertTrue(service_providers) or even \"assert service_providers\"?",
+      "revId": "6dd41c4156453b2b6245874fa1767863f02b4b11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_1e706fdb",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 788,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-17T13:43:23Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "6dd41c4156453b2b6245874fa1767863f02b4b11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_c19a78c4",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2701,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-17T13:43:23Z",
+      "side": 1,
+      "message": "assertNotIn should be used here",
+      "revId": "6dd41c4156453b2b6245874fa1767863f02b4b11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
