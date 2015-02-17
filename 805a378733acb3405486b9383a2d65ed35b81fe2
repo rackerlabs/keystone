@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_fe3abbe5",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-02-17T13:32:30Z",
+      "side": 1,
+      "message": "(nit) If name is not in _factories KeyError will be thrown without any sensible explanation. I think such cases will be covered by unit-testing but for developnemt purpose it would be nice to catch KeyError here and raise something with message in it.",
+      "revId": "805a378733acb3405486b9383a2d65ed35b81fe2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
