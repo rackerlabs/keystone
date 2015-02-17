@@ -16,6 +16,24 @@
       "revId": "6c597ea22cb6ea4e9296b9466bed33afa2c5f713",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f3c6609b",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-17T21:08:11Z",
+      "side": 1,
+      "message": "Thought of hiding methods we don\u0027t expose in external routers.\n\nAdding this back in the next patch",
+      "parentUuid": "da86d52c_28e7a313",
+      "revId": "6c597ea22cb6ea4e9296b9466bed33afa2c5f713",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
