@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_24a27d9a",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1552,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-17T15:55:08Z",
+      "side": 1,
+      "message": "is there a reason this is 61, rather than 63 ?",
+      "revId": "80dc0ed2bbd02fe1c9ccebf42a4942bb09af5def",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
