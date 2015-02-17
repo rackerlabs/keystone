@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_27f7df8d",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-02-17T16:18:07Z",
+      "side": 1,
+      "message": "Why not to make it a @staticmethod?",
+      "revId": "0401f56964cf28754d76a52b26f6b1eb117c8972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
