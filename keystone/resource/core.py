@@ -22,7 +22,6 @@ from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
 from keystone import config
-from keystone.contrib import federation
 from keystone import exception
 from keystone.i18n import _, _LE
 from keystone import notifications
@@ -66,9 +65,6 @@ class Manager(manager.Manager):
         if resource_driver is None:
             assignment_driver = dependency.REGISTRY['assignment_api'].driver
             resource_driver = assignment_driver.default_resource_driver()
-
-        self.federated_domain_reserved = (
-            federation.FEDERATED_DOMAIN_KEYWORD.lower())
 
         super(Manager, self).__init__(resource_driver)
 
@@ -127,20 +123,22 @@ class Manager(manager.Manager):
             raise AssertionError(_('Domain is disabled: %s') % domain_id)
 
     def assert_domain_not_federated(self, domain_id, domain):
-        """Assert the Domain's name and id are not "Federated".
+        """Assert the Domain's name and id do not match the resevered keyword.
 
-        Note that the reserved keyword 'Federated' is case insensitive
+        Note that the reserved keyword is defined in the configuration file,
+        by default, it is 'Federated', it is also case insensitive
 
-        :raise AssertionError if domain named "Federated".
+        :raise AssertionError if domain named match the value in the config.
         """
 
+        reserved_name = CONF.federation.federated_domain_name.lower()
         if domain.get('name') is not None:
-            if domain['name'].lower() == self.federated_domain_reserved:
-                raise AssertionError(_('Domain cannot be named Federated: %s')
-                                     % domain_id)
-        if domain_id.lower() == self.federated_domain_reserved:
-            raise AssertionError(_('Domain cannot have ID Federated: %s')
-                                 % domain_id)
+            if (domain['name'].lower() == reserved_name):
+                raise AssertionError(_('Domain cannot be named %s')
+                                     % reserved_name)
+        if (domain_id.lower() == reserved_name:
+            raise AssertionError(_('Domain cannot have ID %s')
+                                 % reserved_name)
 
     def assert_project_enabled(self, project_id, project=None):
         """Assert the project is enabled and its associated domain is enabled.
