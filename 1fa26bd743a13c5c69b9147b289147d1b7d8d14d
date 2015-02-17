@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_425e7346",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-17T22:13:20Z",
+      "side": 1,
+      "message": "we shouldn\u0027t have a protected function that doesn\u0027t have a line in the policy.json files, so this should also be removed.",
+      "revId": "1fa26bd743a13c5c69b9147b289147d1b7d8d14d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
