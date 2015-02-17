@@ -16,6 +16,24 @@
       "revId": "d5f880d6532253dbcf603a40350034fadf1b6daf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_75da6618",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-17T15:17:35Z",
+      "side": 1,
+      "message": "Good catch, will update. If the spec is accepted for SPFE the blueprint will be created in Launchpad.",
+      "parentUuid": "da86d52c_816df7ce",
+      "revId": "d5f880d6532253dbcf603a40350034fadf1b6daf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
