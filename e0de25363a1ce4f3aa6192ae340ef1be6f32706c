@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_feaabb83",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-17T13:20:17Z",
+      "side": 1,
+      "message": "IMO \"assert not where_registered, msg\" would look better here.",
+      "revId": "e0de25363a1ce4f3aa6192ae340ef1be6f32706c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
