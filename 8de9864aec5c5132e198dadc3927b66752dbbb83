@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_533e70db",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 5603,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-17T03:04:58Z",
+      "side": 1,
+      "message": "Same comment as on the previous patch... we need to ensure get_roles_for_user_and_project/domain are equivalent to list_role_assignments.\n\nPlease add TODO in these comments saying we need to ensure the behavior equivalency before removing the above tests... for each tests we intend to replace.",
+      "revId": "8de9864aec5c5132e198dadc3927b66752dbbb83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_134dd899",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 5884,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-17T03:04:58Z",
+      "side": 1,
+      "message": "Same here ... We need to ensure list_projects_for_user  is equivalent to list_role_assignments before replacing the above test by the below one.",
+      "revId": "8de9864aec5c5132e198dadc3927b66752dbbb83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
