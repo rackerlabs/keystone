@@ -22,7 +22,6 @@ from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
 from keystone import config
-from keystone.contrib import federation
 from keystone import exception
 from keystone.i18n import _, _LE
 from keystone import notifications
@@ -66,9 +65,6 @@ class Manager(manager.Manager):
         if resource_driver is None:
             assignment_driver = dependency.REGISTRY['assignment_api'].driver
             resource_driver = assignment_driver.default_resource_driver()
-
-        self.federated_domain_reserved = (
-            federation.FEDERATED_DOMAIN_KEYWORD.lower())
 
         super(Manager, self).__init__(resource_driver)
 
@@ -135,12 +131,16 @@ class Manager(manager.Manager):
         """
 
         if domain.get('name') is not None:
-            if domain['name'].lower() == self.federated_domain_reserved:
-                raise AssertionError(_('Domain cannot be named Federated: %s')
-                                     % domain_id)
-        if domain_id.lower() == self.federated_domain_reserved:
-            raise AssertionError(_('Domain cannot have ID Federated: %s')
-                                 % domain_id)
+            if (domain['name'].lower() ==
+                (CONF.federation.federated_domain_name).lower()):
+                raise AssertionError(_('Domain cannot be named %s: %s')
+                                     % (CONF.federation.federated_domain_name,
+                                     domain_id))
+        if (domain_id.lower() ==
+            (CONF.federation.federated_domain_name).lower()):
+            raise AssertionError(_('Domain cannot have ID %s: %s')
+                                 % (CONF.federation.federated_domain_name,
+                                 domain_id))
 
     def assert_project_enabled(self, project_id, project=None):
         """Assert the project is enabled and its associated domain is enabled.

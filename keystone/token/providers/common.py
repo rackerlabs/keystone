@@ -476,8 +476,8 @@ class BaseProvider(provider.Provider):
                     'protocol': {'id': protocol}
                 },
                 'domain': {
-                    'id': federation.FEDERATED_DOMAIN_KEYWORD,
-                    'name': federation.FEDERATED_DOMAIN_KEYWORD
+                    'id': CONF.federation.federated_domain_name,
+                    'name': CONF.federation.federated_domain_name
                 }
             }
         }
