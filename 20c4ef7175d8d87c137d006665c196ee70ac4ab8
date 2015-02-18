@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_02928956",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 5493,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2015-02-18T21:30:17Z",
+      "side": 1,
+      "message": "Very nice cleanup!",
+      "revId": "20c4ef7175d8d87c137d006665c196ee70ac4ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_8294b937",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 5508,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2015-02-18T21:30:17Z",
+      "side": 1,
+      "message": "(nit) It would be more appropriate to say that the LDAP driver doesn\u0027t support name updates (LDAP itself as a protocol does).",
+      "revId": "20c4ef7175d8d87c137d006665c196ee70ac4ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_a231bd5a",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 5558,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2015-02-18T21:30:17Z",
+      "side": 1,
+      "message": "(nit) Maybe add to this saying it\u0027s dependent on the LDAP schema that is being used.",
+      "revId": "20c4ef7175d8d87c137d006665c196ee70ac4ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_827e79e2",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2015-02-18T21:30:17Z",
+      "side": 1,
+      "message": "The delete here is fine/harmless, but would we even have a clash since we\u0027re searching for the user by \u0027id\u0027 and not \u0027name\u0027?",
+      "revId": "20c4ef7175d8d87c137d006665c196ee70ac4ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
