@@ -1,0 +1,259 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_926890f6",
+        "filename": "keystone/exception.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T21:05:28Z",
+      "side": 1,
+      "message": "(nit) this is not a string that has to be translated",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_3dffb5ac",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 4134,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T21:05:28Z",
+      "side": 1,
+      "message": "Is this something that has to be fixed before merge? If it\u0027s a bug we should get a bug reference in here.",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_5d16294a",
+        "filename": "keystone/tests/unit/token/test_klwt_provider.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T21:05:28Z",
+      "side": 1,
+      "message": "I was going to ask why this wasn\u0027t just a setUp method so that it didn\u0027t need to be explicitly called, but it\u0027s likely the \u0027purpose\u0027 kwarg. Is that used yet?",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_9868aff6",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T21:05:28Z",
+      "side": 1,
+      "message": "(nit) needs a newline",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_387d03b3",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T21:05:28Z",
+      "side": 1,
+      "message": "Is there any reason this isn\u0027t set up near line 70 to make it more clear?",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_ec12cc56",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T21:05:28Z",
+      "side": 1,
+      "message": "Assuming that \u0027e\u0027 here is turned into a string for the user facing message...would you want to provide a message that can be translated? Or is Keyczar using translation for its messages?",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_cccb48a2",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T21:05:28Z",
+      "side": 1,
+      "message": "Do you need this here?",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_8f6302b0",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T21:05:28Z",
+      "side": 1,
+      "message": "Is there tests that show both behaviors?",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_2cba240b",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T21:05:28Z",
+      "side": 1,
+      "message": "Or this",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_4ffcaab5",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T21:05:28Z",
+      "side": 1,
+      "message": "Was this from an existing file?",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_4f13ca00",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T21:05:28Z",
+      "side": 1,
+      "message": "don\u0027t use the % operator in log statements",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_cfdeda3d",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T21:05:28Z",
+      "side": 1,
+      "message": "here too",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_8fbf82cf",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T21:05:28Z",
+      "side": 1,
+      "message": "Do you have to do this recursively or just at the first level?",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_8f306257",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T21:05:28Z",
+      "side": 1,
+      "message": "Why do the active keys have to be sorted?",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_0fd8f2ed",
+        "filename": "requirements.txt",
+        "patchSetId": 16
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T21:05:28Z",
+      "side": 1,
+      "message": "is there a review to submit this to the global requirements or is this really an optional dep?",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
