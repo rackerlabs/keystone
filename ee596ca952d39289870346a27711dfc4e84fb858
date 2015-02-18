@@ -16,6 +16,24 @@
       "revId": "ee596ca952d39289870346a27711dfc4e84fb858",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_16ce742d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-18T06:38:48Z",
+      "side": 1,
+      "message": "on second thought, my suggestion sounds weird. Either way is fine :)",
+      "parentUuid": "da86d52c_368538cf",
+      "revId": "ee596ca952d39289870346a27711dfc4e84fb858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
