@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_c242310e",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-18T21:17:43Z",
+      "side": 1,
+      "message": "so, how do you imagine proper Service Catalog should look like?",
+      "parentUuid": "da86d52c_ef01de39",
+      "revId": "06347c6bd855e90a5d43c48efd07fc7f30539432",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_2c730417",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 11
