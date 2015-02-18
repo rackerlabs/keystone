@@ -70,6 +70,24 @@
       "revId": "290a1f3793990115582ac67dff12d4eb4e27adf8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_6713805c",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T02:05:12Z",
+      "side": 1,
+      "message": "I guess since it was a public function, someone, somewhere could be leveraging it. I think having it publicly available is enough, but not wrapped with a policy decorator",
+      "parentUuid": "da86d52c_677461cf",
+      "revId": "290a1f3793990115582ac67dff12d4eb4e27adf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
