@@ -82,6 +82,21 @@ class Manager(manager.Manager):
                 action=_('max hierarchy depth reached for '
                          '%s branch.') % project_id)
 
+    def _exist_slash_name(self, name):
+        if '/' in name:
+            return True
+        return False
+
+    def _assert_hierarchy_name_without_slash(self, project_id):
+        project = self.get_project(project_id)
+        if _exist_slash_name(project.get('name')):
+            raise exception.ForbiddenAction(
+                    action=_('the project %s contains the reserved '
+                             'character / in the name') % ref['id'])
+
+        if project.get('parent_id') is not None:
+            self._assert_hierarchy_name_without_slash(project.get('parent_id'))
+
     @notifications.created(_PROJECT)
     def create_project(self, tenant_id, tenant):
         tenant = tenant.copy()
@@ -90,7 +105,13 @@ class Manager(manager.Manager):
         tenant.setdefault('description', '')
         tenant.setdefault('parent_id', None)
 
+        if self._exist_slash_name(tenant.get('name')):
+                raise exception.ForbiddenAction(
+                    action=_('the project contains the reserved '
+                             'character / in the name'))
+
         if tenant.get('parent_id') is not None:
+            self._assert_hierarchy_name_without_slash(tenant.get('parent_id'))
             parent_ref = self.get_project(tenant.get('parent_id'))
             parents_list = self.list_project_parents(parent_ref['id'])
             parents_list.append(parent_ref)
