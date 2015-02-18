@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_14b659dc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T15:44:55Z",
+      "side": 1,
+      "message": "this isn\u0027t getting picked up by launchpad, use: \n\n  implements bp keystone-tokenless-authz-with-x509-ssl-client-cert",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_2a386ded",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 1
