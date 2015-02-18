@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_368538cf",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-18T06:36:45Z",
+      "side": 1,
+      "message": "nit: created, updated, deleted",
+      "revId": "ee596ca952d39289870346a27711dfc4e84fb858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
