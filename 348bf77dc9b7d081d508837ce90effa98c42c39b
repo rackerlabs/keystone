@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_01d62c4f",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-18T07:13:57Z",
+      "side": 1,
+      "message": "(nit): We could close file descriptor as soon as we no longer need it, (this should also make sure buffers are flushed. The code would look like:\nwith open(CONF.federation.sso_callback_template) as template:\n    src \u003d string.Template(template.read())\n\nsubs \u003d {\u0027host\u0027: host, \u0027token\u0027: token_id}\nbody \u003d src.substitute(subs)\nreturn webob.Response(body\u003dbody, status\u003d\u0027200\u0027,\n                      headerlist\u003dheaders)",
+      "revId": "348bf77dc9b7d081d508837ce90effa98c42c39b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
