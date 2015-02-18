@@ -121,6 +121,24 @@
       "revId": "20c4ef7175d8d87c137d006665c196ee70ac4ab8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e5949f45",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2015-02-18T21:47:38Z",
+      "side": 1,
+      "message": "Ok, that makes sense.  It\u0027s a Keystone uniqueness limitation, not necessarily an LDAP limitation now that Keystone no longer cares that the name or id attributes are part of the DN.",
+      "parentUuid": "da86d52c_22a6ad54",
+      "revId": "20c4ef7175d8d87c137d006665c196ee70ac4ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
