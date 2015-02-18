@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_1d3cb12e",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-18T19:51:52Z",
+      "side": 1,
+      "message": "As mentioned in the API spec, I think these are unnecessary. Why treat federated service providers differently from any other \"services\", whether they are IaaS or services running on top of the cloud? They are all \"services\".",
+      "revId": "06347c6bd855e90a5d43c48efd07fc7f30539432",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
