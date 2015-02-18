@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_d6313c0c",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-18T06:51:31Z",
+      "side": 1,
+      "message": "should we also describe the event type format here: project.resource.operation",
+      "revId": "b72768c29ffd0a0e0d2eb244649f7232bf1a2e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
