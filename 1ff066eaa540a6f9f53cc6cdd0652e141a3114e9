@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_cc0b4dd3",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T18:37:41Z",
+      "side": 1,
+      "message": "remove these options?",
+      "revId": "1ff066eaa540a6f9f53cc6cdd0652e141a3114e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_4c167df3",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 924,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T18:37:41Z",
+      "side": 1,
+      "message": "remove WSGI reference\n\n\"The number of worker processes to serve the public eventlet application\"",
+      "revId": "1ff066eaa540a6f9f53cc6cdd0652e141a3114e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_6c134101",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 927,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T18:37:41Z",
+      "side": 1,
+      "message": "same",
+      "revId": "1ff066eaa540a6f9f53cc6cdd0652e141a3114e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
