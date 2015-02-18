@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_d4e04199",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-18T15:56:54Z",
+      "side": 1,
+      "message": "I changed the code so maybe it\u0027s more self-explanatory.",
+      "parentUuid": "da86d52c_b6a688a9",
+      "revId": "e0de25363a1ce4f3aa6192ae340ef1be6f32706c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_feaabb83",
         "filename": "keystone/common/dependency.py",
         "patchSetId": 20
@@ -66,6 +84,24 @@
       "side": 1,
       "message": "Asserts should be used to test conditions that should never happen. The purpose is to crash early in the case of a corrupt program state -- http://stackoverflow.com/questions/944592/best-practice-for-python-assert . There is also UsingAssertionsEffectively in Python wiki that suggests this usage.",
       "parentUuid": "da86d52c_01265068",
+      "revId": "e0de25363a1ce4f3aa6192ae340ef1be6f32706c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f450e52d",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-18T15:56:54Z",
+      "side": 1,
+      "message": "The stackoverflow page is full of conflicting advice. I prefer to not use assertions because they can be disabled.",
+      "parentUuid": "da86d52c_646c7a9e",
       "revId": "e0de25363a1ce4f3aa6192ae340ef1be6f32706c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
