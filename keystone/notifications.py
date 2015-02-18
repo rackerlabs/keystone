@@ -173,6 +173,17 @@ class ManagerNotificationWrapper(object):
             try:
                 result = f(*args, **kwargs)
             except Exception:
+                if CONF.notification_format == 'cadf' and self.public:
+                    if self.result_id_arg_attr is not None:
+                        resource_id = taxonomy.UNKNOWN
+                    else:
+                        resource_id = args[self.resource_id_arg_index]
+
+                    outcome = taxonomy.OUTCOME_FAILURE
+                    call_args = inspect.getcallargs(f, *args, **kwargs)
+                    initiator = call_args.get('initiator')
+                    _create_cadf_payload(self.operation, self.resource_type,
+                                         resource_id, outcome, initiator)
                 raise
             else:
                 if self.result_id_arg_attr is not None:
