@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_686a52b6",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T17:02:11Z",
+      "side": 1,
+      "message": "I thought this sentence would never end :-)",
+      "revId": "b72768c29ffd0a0e0d2eb244649f7232bf1a2e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_c8ca5e6d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T17:02:11Z",
+      "side": 1,
+      "message": "There is more to it than just this right? Maybe just say if add more context data around the resource, the action and the initiator?",
+      "revId": "b72768c29ffd0a0e0d2eb244649f7232bf1a2e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_c81c1e16",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T17:02:11Z",
+      "side": 1,
+      "message": "CADF notifications may be emitted...",
+      "revId": "b72768c29ffd0a0e0d2eb244649f7232bf1a2e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_d6313c0c",
         "filename": "doc/source/event_notifications.rst",
         "patchSetId": 14
@@ -13,6 +64,24 @@
       "writtenOn": "2015-02-18T06:51:31Z",
       "side": 1,
       "message": "should we also describe the event type format here: project.resource.operation",
+      "revId": "b72768c29ffd0a0e0d2eb244649f7232bf1a2e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_a86c4a37",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T17:02:11Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "da86d52c_d6313c0c",
       "revId": "b72768c29ffd0a0e0d2eb244649f7232bf1a2e91",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
