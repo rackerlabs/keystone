@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_61b09e43",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-18T23:55:58Z",
+      "side": 1,
+      "message": "This assert statement got removed, should we retain this one?\n\nself.assertEqual(r.result[\u0027token\u0027][\u0027project\u0027][\u0027id\u0027],\t self.project[\u0027id\u0027])",
+      "revId": "87fb8072cf563eb4b84f991a4fe8fffc1f701bb2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
