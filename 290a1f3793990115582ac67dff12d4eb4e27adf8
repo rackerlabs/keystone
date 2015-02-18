@@ -106,6 +106,24 @@
       "revId": "290a1f3793990115582ac67dff12d4eb4e27adf8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_d0b7841f",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-18T04:30:36Z",
+      "side": 1,
+      "message": "Heh Brant don\u0027t have any love for this method. :) \n\nI think that\u0027s a reasonable compromise, I\u0027ll mark it deprecated for Kilo then.",
+      "parentUuid": "da86d52c_a7f8184b",
+      "revId": "290a1f3793990115582ac67dff12d4eb4e27adf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
