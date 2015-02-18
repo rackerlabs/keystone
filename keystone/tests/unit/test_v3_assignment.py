@@ -574,6 +574,12 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
             body={'project': ref})
         self.assertValidProjectResponse(r, ref)
 
+    def test_create_project_with_slash_in_the_name(self):
+        """Call ``POST /projects``."""
+        ref = self.new_project_ref(domain_id=self.domain_id)
+        ref['name'] = 'a/b'
+        self.post('/projects', body={'project': ref}, expected_status=400)
+
     def test_create_project_400(self):
         """Call ``POST /projects``."""
         self.post('/projects', body={'project': {}}, expected_status=400)
