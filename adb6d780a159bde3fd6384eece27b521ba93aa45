@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_82a679bf",
+        "filename": "keystone/exception.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-18T21:32:20Z",
+      "side": 1,
+      "message": "so I could just remove this?",
+      "parentUuid": "da86d52c_926890f6",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_3dffb5ac",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 16
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-18T21:05:28Z",
       "side": 1,
       "message": "Is this something that has to be fixed before merge? If it\u0027s a bug we should get a bug reference in here.",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_6288a522",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 4134,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-18T21:32:20Z",
+      "side": 1,
+      "message": "fixed in the latest patch set, it was something with how the trust/scoping context was being built on validate, so I don\u0027t think it was an issue with our testing structure.",
+      "parentUuid": "da86d52c_3dffb5ac",
       "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_22a94d7c",
+        "filename": "keystone/tests/unit/token/test_klwt_provider.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-18T21:32:20Z",
+      "side": 1,
+      "message": "yeah, we have to use the purpose kwarg each time we set up a new test class.",
+      "parentUuid": "da86d52c_5d16294a",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_9868aff6",
         "filename": "keystone/token/providers/klwt/core.py",
         "patchSetId": 16
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_02ce095a",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-18T21:32:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_9868aff6",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_387d03b3",
         "filename": "keystone/token/providers/klwt/core.py",
         "patchSetId": 16
@@ -81,6 +153,24 @@
       "writtenOn": "2015-02-18T21:05:28Z",
       "side": 1,
       "message": "Is there any reason this isn\u0027t set up near line 70 to make it more clear?",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_42d481e8",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-18T21:32:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_387d03b3",
       "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_4242c1ab",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-18T21:32:20Z",
+      "side": 1,
+      "message": "In the latest patchset we use the V3TokenDataHelper class which is init\u0027d in the BaseTokenFormatter, if that helps?",
+      "parentUuid": "da86d52c_cccb48a2",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_8f6302b0",
         "filename": "keystone/token/providers/klwt/token_formatters.py",
         "patchSetId": 16
@@ -132,6 +240,24 @@
       "writtenOn": "2015-02-18T21:05:28Z",
       "side": 1,
       "message": "Is there tests that show both behaviors?",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_821759a2",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-18T21:32:20Z",
+      "side": 1,
+      "message": "Yep, when we test any sort of scoped token we hit the first case and when we test the unscoped case we hit the second case.",
+      "parentUuid": "da86d52c_8f6302b0",
       "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +281,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_a208dd80",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-18T21:32:20Z",
+      "side": 1,
+      "message": "same comment as above.",
+      "parentUuid": "da86d52c_2cba240b",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_4ffcaab5",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 16
@@ -166,6 +310,24 @@
       "writtenOn": "2015-02-18T21:05:28Z",
       "side": 1,
       "message": "Was this from an existing file?",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_c20dd190",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-18T21:32:20Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_4ffcaab5",
       "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -251,6 +413,24 @@
       "writtenOn": "2015-02-18T21:05:28Z",
       "side": 1,
       "message": "is there a review to submit this to the global requirements or is this really an optional dep?",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_228f8dce",
+        "filename": "requirements.txt",
+        "patchSetId": 16
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-18T21:32:20Z",
+      "side": 1,
+      "message": "https://review.openstack.org/#/c/154590/",
+      "parentUuid": "da86d52c_0fd8f2ed",
       "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
