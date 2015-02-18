@@ -26,6 +26,7 @@ from pycadf import resource as cadfresource
 import testtools
 
 from keystone.common import dependency
+from keystone import exception
 from keystone import notifications
 from keystone.tests.unit import test_v3
 
@@ -629,6 +630,36 @@ class NotificationsForEntities(test_v3.RestfulTestCase):
         audit = self._audits[-1]
         payload = audit['payload']
         self.assertEqual(self.user_id, payload['initiator']['id'])
+
+    def test_audit_failure_known_id(self):
+        self.config_fixture.config(notification_format='cadf')
+        resource_id = uuid.uuid4().hex
+        self.assertRaises(exception.DomainNotFound,
+                          self.resource_api.delete_domain,
+                          resource_id)
+        self._assert_last_audit(resource_id, DELETED_OPERATION, 'domain',
+                                cadftaxonomy.SECURITY_DOMAIN)
+        self.assertTrue(len(self._audits) > 0)
+        audit = self._audits[-1]
+        payload = audit['payload']
+        self.assertEqual(cadftaxonomy.OUTCOME_FAILURE,
+                         payload['outcome'])
+
+    def test_audit_failure_unknown_id(self):
+        self.config_fixture.config(notification_format='cadf')
+        resource_id = cadftaxonomy.UNKNOWN
+        bad_domain_id = uuid.uuid4().hex
+        group_ref = self.new_group_ref(domain_id=bad_domain_id)
+        self.assertRaises(exception.DomainNotFound,
+                          self.identity_api.create_group,
+                          group_ref)
+        self._assert_last_audit(resource_id, CREATED_OPERATION, 'group',
+                                cadftaxonomy.SECURITY_GROUP)
+        self.assertTrue(len(self._audits) > 0)
+        audit = self._audits[-1]
+        payload = audit['payload']
+        self.assertEqual(cadftaxonomy.OUTCOME_FAILURE,
+                         payload['outcome'])
 
 
 class CADFNotificationsForEntities(NotificationsForEntities):
