@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_b77e6619",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 770,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-18T19:05:53Z",
+      "side": 1,
+      "message": "remove the ; in here too?",
+      "revId": "6515f7a7c8a021df19c20dd8ce66ff79e1c646f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
