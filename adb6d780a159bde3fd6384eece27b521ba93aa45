@@ -405,6 +405,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_20d785ef",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-18T23:03:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_4589eb6d",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_cfdeda3d",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 16
@@ -416,6 +434,24 @@
       "writtenOn": "2015-02-18T21:05:28Z",
       "side": 1,
       "message": "here too",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_40d479e8",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-18T23:03:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_cfdeda3d",
       "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
