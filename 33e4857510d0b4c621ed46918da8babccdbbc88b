@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_6d9b4417",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-18T16:46:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_bc982776",
+      "revId": "33e4857510d0b4c621ed46918da8babccdbbc88b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_3c84370a",
         "filename": "keystone/contrib/federation/core.py",
         "patchSetId": 10
@@ -47,6 +65,24 @@
       "writtenOn": "2015-02-18T08:03:47Z",
       "side": 1,
       "message": "nit: list of dictionaries *with* enabled service providers?",
+      "revId": "33e4857510d0b4c621ed46918da8babccdbbc88b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_8da07843",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-18T16:46:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_3c84370a",
       "revId": "33e4857510d0b4c621ed46918da8babccdbbc88b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_0de00825",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 781,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-18T16:46:18Z",
+      "side": 1,
+      "message": "I think both will have same effect: \n\nl1 \u003d []\nl2 \u003d [1,2,3,4]\n\nassert bool(l1) \u003d\u003d bool(len(l1) \u003e 0)\nassert bool(l2) \u003d\u003d bool(len(l2) \u003e 0)",
+      "parentUuid": "da86d52c_d0c05f2d",
+      "revId": "33e4857510d0b4c621ed46918da8babccdbbc88b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_b0c12b82",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 10
@@ -99,6 +153,24 @@
       "writtenOn": "2015-02-18T08:16:41Z",
       "side": 1,
       "message": "also assert auth_url and sp_url",
+      "revId": "33e4857510d0b4c621ed46918da8babccdbbc88b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_0d4e4838",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 783,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-18T16:46:18Z",
+      "side": 1,
+      "message": "I am not sure we should requre that since both sp_url not auth_url are nullable.",
+      "parentUuid": "da86d52c_b0c12b82",
       "revId": "33e4857510d0b4c621ed46918da8babccdbbc88b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -139,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_925b3985",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 792,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-18T16:46:18Z",
+      "side": 1,
+      "message": "my bad!",
+      "parentUuid": "da86d52c_f089e36f",
+      "revId": "33e4857510d0b4c621ed46918da8babccdbbc88b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_105f57e6",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 10
@@ -150,6 +240,24 @@
       "writtenOn": "2015-02-18T08:16:41Z",
       "side": 1,
       "message": "you defined this up top already",
+      "revId": "33e4857510d0b4c621ed46918da8babccdbbc88b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_b2259d0b",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 2632,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-18T16:46:18Z",
+      "side": 1,
+      "message": "yep, but (multi)inheriting the classes, adding someprivate classes to share one method makes me thing it will not increase code readibility or so.",
+      "parentUuid": "da86d52c_105f57e6",
       "revId": "33e4857510d0b4c621ed46918da8babccdbbc88b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
