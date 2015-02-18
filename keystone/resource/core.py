@@ -104,6 +104,11 @@ class Manager(manager.Manager):
                         action=_('cannot create a project in a '
                                  'branch containing a disabled '
                                  'project: %s') % ref['id'])
+                # NOTE(rodrigods): We need to assert that a project is not
+                # being inserted in a hierarchy that already contains another
+                # project with a forward slash in the name.
+                clean.project_name(ref.get('name'))
+
             self._assert_max_hierarchy_depth(tenant.get('parent_id'),
                                              parents_list)
 
