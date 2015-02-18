@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_40ff1902",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T22:22:59Z",
+      "side": 1,
+      "message": "Maybe call this, \"Rename _get_project_endpoint_group\" \n\nThe code that is proposed doesn\u0027t \u0027re-use\u0027 _get_project...blah. \nif you are going to rename it, rename them all?",
+      "revId": "b9874df57cae2f8f371087126c5190e4b968b800",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a890539_aaf5b6ee",
         "filename": "keystone/tests/test_associate_project_endpoint_extension.py",
         "patchSetId": 1
