@@ -34,6 +34,24 @@
       "revId": "290a1f3793990115582ac67dff12d4eb4e27adf8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_878f95cc",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-18T01:53:20Z",
+      "side": 1,
+      "message": "compatilibity with what?",
+      "parentUuid": "da86d52c_e77e91e3",
+      "revId": "290a1f3793990115582ac67dff12d4eb4e27adf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
