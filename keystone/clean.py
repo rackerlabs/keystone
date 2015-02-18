@@ -68,7 +68,15 @@ def domain_enabled(enabled):
 
 
 def project_name(name):
-    return check_name('Project', name)
+    name = check_name('Project', name)
+    # NOTE(rodrigods): A project name can't contain a forward slash '/'
+    # since this special character is used to represent the project path
+    # in the hierarchy when requesting a token using the project name.
+    if '/' in name:
+        msg = _("project name cannot contain the reserved character '/' "
+                "(forward slash)")
+        raise exception.ValidationError(msg)
+    return name
 
 
 def project_enabled(enabled):
