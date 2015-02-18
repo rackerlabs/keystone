@@ -25,7 +25,11 @@ _project_properties = {
     'name': {
         'type': 'string',
         'minLength': 1,
-        'maxLength': 64
+        'maxLength': 64,
+        # NOTE(rodrigods): A project name can't contain a forward slash '/'
+        # since this special character is used to represent the project path
+        # in the hierarchy when requesting a token using the project name.
+        'pattern': '^[^\/]*$'
     }
 }
 

@@ -323,6 +323,13 @@ class ProjectValidationTestCase(testtools.TestCase):
                           self.create_project_validator.validate,
                           request_to_validate)
 
+    def test_validate_project_request_slash_in_name_fails(self):
+        """Validate project request fails with slash in name."""
+        request_to_validate = {'name': 'a/b'}
+        self.assertRaises(exception.SchemaValidationError,
+                          self.create_project_validator.validate,
+                          request_to_validate)
+
     def test_validate_project_request_with_enabled(self):
         """Validate `enabled` as boolean-like values for projects."""
         for valid_enabled in _VALID_ENABLED_FORMATS:

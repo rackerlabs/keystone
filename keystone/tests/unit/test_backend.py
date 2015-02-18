@@ -1788,6 +1788,12 @@ class IdentityTests(object):
                           self.resource_api.create_project,
                           tenant['id'],
                           tenant)
+        tenant = {'id': 'fake1', 'name': 'a/b',
+                  'domain_id': DEFAULT_DOMAIN_ID}
+        self.assertRaises(exception.ValidationError,
+                          self.resource_api.create_project,
+                          tenant['id'],
+                          tenant)
 
     def test_update_project_blank_name_fails(self):
         tenant = {'id': 'fake1', 'name': 'fake1',
