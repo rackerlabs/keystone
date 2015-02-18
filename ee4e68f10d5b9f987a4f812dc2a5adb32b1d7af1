@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_db37a5ae",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-02-18T05:16:06Z",
+      "side": 1,
+      "message": "Do we want to use AE or KLWT?",
+      "revId": "ee4e68f10d5b9f987a4f812dc2a5adb32b1d7af1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_a751f931",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 13
@@ -13,6 +30,40 @@
       "writtenOn": "2015-02-18T02:02:01Z",
       "side": 1,
       "message": "(pep8) missing a space",
+      "revId": "ee4e68f10d5b9f987a4f812dc2a5adb32b1d7af1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_3ba7e10c",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-02-18T05:16:06Z",
+      "side": 1,
+      "message": "Why can\u0027t this check be part of line 70 check?",
+      "revId": "ee4e68f10d5b9f987a4f812dc2a5adb32b1d7af1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_fb79c993",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-02-18T05:16:06Z",
+      "side": 1,
+      "message": "Do we really need these checks?  I think these are deployer\u0027s job.  If some one has access to this system, they can do much more harm.",
       "revId": "ee4e68f10d5b9f987a4f812dc2a5adb32b1d7af1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
