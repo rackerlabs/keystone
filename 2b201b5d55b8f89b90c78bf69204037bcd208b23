@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_1e9bd8c9",
+        "filename": "keystone/common/kvs/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 371,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T15:05:31Z",
+      "side": 1,
+      "message": "Can this really be None? It seems like if it is None then other parts of this code will break, specifically line 395. Should this be a required parameter?",
+      "revId": "2b201b5d55b8f89b90c78bf69204037bcd208b23",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
