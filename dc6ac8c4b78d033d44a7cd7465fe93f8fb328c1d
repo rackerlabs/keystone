@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_710a31d3",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 291,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-18T23:22:15Z",
+      "side": 1,
+      "message": "NIT: This probably need to change to _() instead of _LE() because we are also returning the error msg to the user.\n\nhttp://docs.openstack.org/developer/oslo.i18n/guidelines.html#examples",
+      "revId": "dc6ac8c4b78d033d44a7cd7465fe93f8fb328c1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
