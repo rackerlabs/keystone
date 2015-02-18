@@ -2086,6 +2086,23 @@ class IdentityTests(object):
 
         return projects
 
+    def test_not_allow_create_project_with_slash(self,
+                                                 domain_id=DEFAULT_DOMAIN_ID):
+
+        project_id = uuid.uuid4().hex
+        project = {'id': project_id,
+                   'description': '',
+                   'domain_id': domain_id,
+                   'enabled': True,
+                   'name': 'A/B',
+                   'parent_id': None,
+                   'is_domain': False}
+
+        self.assertRaises(exception.ForbiddenAction,
+                          self.resource_api.create_project,
+                          project_id,
+                          project)
+
     def test_check_leaf_projects(self):
         projects_hierarchy = self._create_projects_hierarchy()
         root_project = projects_hierarchy[0]
