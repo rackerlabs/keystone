@@ -387,6 +387,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_4589eb6d",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T21:49:06Z",
+      "side": 1,
+      "message": "If you use the % it will always be rendered to a string. Using a comma instead makes it lazy. It usually results is better performance in some situations, but if we always do it as logging documents then we\u0027ll never have to care.",
+      "parentUuid": "da86d52c_82f3d971",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_cfdeda3d",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 16
@@ -439,6 +457,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_a50b87d3",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T21:49:06Z",
+      "side": 1,
+      "message": "you can os.listdir and then os.path.isfile. I don\u0027t know if that is any more efficient, but it may be clearer.",
+      "parentUuid": "da86d52c_c2a07144",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_8f306257",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 16
@@ -468,6 +504,24 @@
       "side": 1,
       "message": "to demote the oldest active keys. the code based on cryptography.fernet might make this a tiny bit more clear since it uses slicing instead of a while loop to achieve the same behavior:\n\n  https://review.openstack.org/#/c/156657/8/keystone/token/providers/klwt/utils.py",
       "parentUuid": "da86d52c_8f306257",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_05e4530b",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-18T21:49:06Z",
+      "side": 1,
+      "message": "Ah, I see what you are doing there. The \u0027while\u0027 short circuits based on being under the max. I read that as always looping over all of the keys.",
+      "parentUuid": "da86d52c_6263451a",
       "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
