@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_9453296b",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-18T15:49:34Z",
+      "side": 1,
+      "message": "The spec details Keystone Lightweight Tokens. I think there were a few people in -keystone who didn\u0027t want to use AE so maybe we can catch up with them in -keystone.",
+      "parentUuid": "da86d52c_db37a5ae",
+      "revId": "ee4e68f10d5b9f987a4f812dc2a5adb32b1d7af1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_a751f931",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 13
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-18T02:02:01Z",
       "side": 1,
       "message": "(pep8) missing a space",
+      "revId": "ee4e68f10d5b9f987a4f812dc2a5adb32b1d7af1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_94716979",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 4105,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-18T15:49:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_a751f931",
       "revId": "ee4e68f10d5b9f987a4f812dc2a5adb32b1d7af1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_d4a8417a",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-18T15:49:34Z",
+      "side": 1,
+      "message": "I can combine them",
+      "parentUuid": "da86d52c_3ba7e10c",
+      "revId": "ee4e68f10d5b9f987a4f812dc2a5adb32b1d7af1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_fb79c993",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 13
@@ -64,6 +118,24 @@
       "writtenOn": "2015-02-18T05:16:06Z",
       "side": 1,
       "message": "Do we really need these checks?  I think these are deployer\u0027s job.  If some one has access to this system, they can do much more harm.",
+      "revId": "ee4e68f10d5b9f987a4f812dc2a5adb32b1d7af1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_b4f4ad87",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-18T15:49:34Z",
+      "side": 1,
+      "message": "Yes, we do need these because we use them for setting up key repositories for testing. Deployers don\u0027t have to use these tools if they don\u0027t want to but they are nice to have from a developer/tester perspective.",
+      "parentUuid": "da86d52c_fb79c993",
       "revId": "ee4e68f10d5b9f987a4f812dc2a5adb32b1d7af1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
