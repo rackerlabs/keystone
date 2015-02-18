@@ -2928,3 +2928,49 @@ class AssignmentV3toV2MethodsTestCase(tests.TestCase):
         updated_ref = controller.V3Controller.filter_domain_id(ref)
         self.assertIs(ref, updated_ref)
         self.assertDictEqual(ref, expected_ref)
+
+    def test_v2controller_filter_parent_id(self):
+        # V2.0 is not project hierarchy aware, ensure parent_id is popped off.
+        other_data = uuid.uuid4().hex
+        parent_id = uuid.uuid4().hex
+        ref = {'parent_id': parent_id,
+               'other_data': other_data}
+
+        ref_no_parent = {'other_data': other_data}
+        expected_ref = ref_no_parent.copy()
+
+        updated_ref = controller.V2Controller.filter_parent_id(ref)
+        self.assertIs(ref, updated_ref)
+        self.assertDictEqual(ref, expected_ref)
+        # Make sure we don't error/muck up data if parent_id isn't present
+        updated_ref = controller.V2Controller.filter_domain_id(ref_no_parent)
+        self.assertIs(ref_no_parent, updated_ref)
+        self.assertDictEqual(ref_no_parent, expected_ref)
+
+    def test_v3controller_filter_parent_id(self):
+        # No data should be filtered out in this case.
+        other_data = uuid.uuid4().hex
+        parent_id = uuid.uuid4().hex
+        ref = {'parent_id': parent_id,
+               'other_data': other_data}
+
+        expected_ref = ref.copy()
+        updated_ref = controller.V3Controller.filter_parent_id(ref)
+        self.assertIs(ref, updated_ref)
+        self.assertDictEqual(ref, expected_ref)
+
+    def test_v3controller_v3_to_v2_project(self):
+        # V2.0 is not domain and project hierarchy aware,
+        # ensure domain_id and parent_id are popped off.
+        other_data = uuid.uuid4().hex
+        domain_id = uuid.uuid4().hex
+        parent_id = uuid.uuid4().hex
+        ref = {'domain_id': domain_id,
+               'parent_id': parent_id,
+               'other_data': other_data}
+
+        expected_ref = {'other_data': other_data}
+
+        updated_ref = controller.V2Controller.v3_to_v2_project(ref)
+        self.assertIs(ref, updated_ref)
+        self.assertDictEqual(ref, expected_ref)
