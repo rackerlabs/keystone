@@ -82,6 +82,16 @@ class Manager(manager.Manager):
                 action=_('max hierarchy depth reached for '
                          '%s branch.') % project_id)
 
+    def _assert_valid_project_name(self, project):
+        project_name = project.get('name')
+        if (project_name and type(project_name) is str and
+                '/' in project_name):
+            raise exception.ForbiddenAction(
+                action=_('A project cannot have the '
+                         'reserverd character "/" '
+                         '(forward slash) in its '
+                         'name: %s') % project_name)
+
     @notifications.created(_PROJECT)
     def create_project(self, tenant_id, tenant):
         tenant = tenant.copy()
@@ -90,6 +100,7 @@ class Manager(manager.Manager):
         tenant.setdefault('description', '')
         tenant.setdefault('parent_id', None)
 
+        self._assert_valid_project_name(tenant)
         if tenant.get('parent_id') is not None:
             parent_ref = self.get_project(tenant.get('parent_id'))
             parents_list = self.list_project_parents(parent_ref['id'])
@@ -104,6 +115,11 @@ class Manager(manager.Manager):
                         action=_('cannot create a project in a '
                                  'branch containing a disabled '
                                  'project: %s') % ref['id'])
+                # NOTE(rodrigods): We need to assert that a project is not
+                # being inserted in a hierarchy that already contains another
+                # project with a forward slash in the name.
+                self._assert_valid_project_name(ref)
+
             self._assert_max_hierarchy_depth(tenant.get('parent_id'),
                                              parents_list)
 
