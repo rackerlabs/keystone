@@ -16,6 +16,24 @@
       "revId": "290a1f3793990115582ac67dff12d4eb4e27adf8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e77e91e3",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-18T01:43:35Z",
+      "side": 1,
+      "message": "I actually removed this on PS1, but then ayoung asked the public method to be added back for compatibility reason (including the protected - from IRC).",
+      "parentUuid": "da86d52c_6792a158",
+      "revId": "290a1f3793990115582ac67dff12d4eb4e27adf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
