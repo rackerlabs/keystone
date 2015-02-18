@@ -334,6 +334,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_a2e45da8",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-02-18T21:34:16Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "da86d52c_4ffcaab5",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_4f13ca00",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 16
@@ -345,6 +363,24 @@
       "writtenOn": "2015-02-18T21:05:28Z",
       "side": 1,
       "message": "don\u0027t use the % operator in log statements",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_82f3d971",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-02-18T21:34:16Z",
+      "side": 1,
+      "message": "i thought that was only if you have more than one formatted string (when they become ambiguous post-translation). is there another reason to avoid them?",
+      "parentUuid": "da86d52c_4f13ca00",
       "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -385,6 +421,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_c2a07144",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-02-18T21:34:16Z",
+      "side": 1,
+      "message": "just at the first level - i could have sworn there was a more efficient way to do it, but couldn\u0027t recall it?",
+      "parentUuid": "da86d52c_8fbf82cf",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_8f306257",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 16
@@ -396,6 +450,24 @@
       "writtenOn": "2015-02-18T21:05:28Z",
       "side": 1,
       "message": "Why do the active keys have to be sorted?",
+      "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_6263451a",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-02-18T21:34:16Z",
+      "side": 1,
+      "message": "to demote the oldest active keys. the code based on cryptography.fernet might make this a tiny bit more clear since it uses slicing instead of a while loop to achieve the same behavior:\n\n  https://review.openstack.org/#/c/156657/8/keystone/token/providers/klwt/utils.py",
+      "parentUuid": "da86d52c_8f306257",
       "revId": "adb6d780a159bde3fd6384eece27b521ba93aa45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
