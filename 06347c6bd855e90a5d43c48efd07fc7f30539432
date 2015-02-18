@@ -16,6 +16,58 @@
       "revId": "06347c6bd855e90a5d43c48efd07fc7f30539432",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_18659fe0",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T20:40:44Z",
+      "side": 1,
+      "message": "the \u0027services\u0027 in the endpoint are specific to that openstack deployment, and follow a fairly rigid endpoint based structure. the \u0027service providers\u0027 we are listing here are not specific to the openstack deployment that the user has authenticated against. so I think adding them to the usual list of endpoints/services would muddle things, these are different, and as such should be treated differently.",
+      "parentUuid": "da86d52c_1d3cb12e",
+      "revId": "06347c6bd855e90a5d43c48efd07fc7f30539432",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_2c730417",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T20:40:44Z",
+      "side": 1,
+      "message": "still wondering if theres a better way to do this",
+      "revId": "06347c6bd855e90a5d43c48efd07fc7f30539432",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_ec6c8c38",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 2632,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T20:40:44Z",
+      "side": 1,
+      "message": "i\u0027m not happy about this, but we can clean it up another time",
+      "revId": "06347c6bd855e90a5d43c48efd07fc7f30539432",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
