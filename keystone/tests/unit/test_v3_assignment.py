@@ -16,9 +16,7 @@ import uuid
 
 from oslo_config import cfg
 
-from keystone.common import controller
 from keystone import exception
-from keystone.tests import unit as tests
 from keystone.tests.unit import test_v3
 
 
@@ -2894,50 +2892,3 @@ class AssignmentInheritanceDisabledTestCase(test_v3.RestfulTestCase):
         self.head(member_url, expected_status=404)
         self.get(collection_url, expected_status=404)
         self.delete(member_url, expected_status=404)
-
-
-class AssignmentV3toV2MethodsTestCase(tests.TestCase):
-    """Test domain V3 to V2 conversion methods."""
-
-    def test_v2controller_filter_domain_id(self):
-        # V2.0 is not domain aware, ensure domain_id is popped off the ref.
-        other_data = uuid.uuid4().hex
-        domain_id = uuid.uuid4().hex
-        ref = {'domain_id': domain_id,
-               'other_data': other_data}
-
-        ref_no_domain = {'other_data': other_data}
-        expected_ref = ref_no_domain.copy()
-
-        updated_ref = controller.V2Controller.filter_domain_id(ref)
-        self.assertIs(ref, updated_ref)
-        self.assertDictEqual(ref, expected_ref)
-        # Make sure we don't error/muck up data if domain_id isn't present
-        updated_ref = controller.V2Controller.filter_domain_id(ref_no_domain)
-        self.assertIs(ref_no_domain, updated_ref)
-        self.assertDictEqual(ref_no_domain, expected_ref)
-
-    def test_v3controller_filter_domain_id(self):
-        # No data should be filtered out in this case.
-        other_data = uuid.uuid4().hex
-        domain_id = uuid.uuid4().hex
-        ref = {'domain_id': domain_id,
-               'other_data': other_data}
-
-        expected_ref = ref.copy()
-        updated_ref = controller.V3Controller.filter_domain_id(ref)
-        self.assertIs(ref, updated_ref)
-        self.assertDictEqual(ref, expected_ref)
-
-    def test_v2controller_filter_domain(self):
-        other_data = uuid.uuid4().hex
-        domain_id = uuid.uuid4().hex
-        non_default_domain_ref = {'domain': {'id': domain_id},
-                                  'other_data': other_data}
-        default_domain_ref = {'domain': {'id': 'default'},
-                              'other_data': other_data}
-        updated_ref = controller.V2Controller.filter_domain(default_domain_ref)
-        self.assertNotIn('domain', updated_ref)
-        self.assertRaises(exception.Unauthorized,
-                          controller.V2Controller.filter_domain,
-                          non_default_domain_ref)
