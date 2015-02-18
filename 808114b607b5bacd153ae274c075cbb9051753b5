@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_d1af5d29",
+        "filename": "keystone/token/persistence/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-18T23:42:11Z",
+      "side": 1,
+      "message": "This changes the definition of delete_tokens() as described in https://github.com/openstack/keystone/blob/master/keystone/token/persistence/core.py#L300",
+      "revId": "808114b607b5bacd153ae274c075cbb9051753b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_11a65554",
+        "filename": "keystone/token/persistence/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-18T23:42:11Z",
+      "side": 1,
+      "message": "Can\u0027t we just add the self.delete_token(token_id) call here?",
+      "revId": "808114b607b5bacd153ae274c075cbb9051753b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
