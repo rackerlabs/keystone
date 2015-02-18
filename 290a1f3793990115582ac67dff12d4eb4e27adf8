@@ -88,6 +88,24 @@
       "revId": "290a1f3793990115582ac67dff12d4eb4e27adf8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_a7f8184b",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-18T02:43:41Z",
+      "side": 1,
+      "message": "How about we add a versionutils.deprecated(), then we can get rid of it next release.",
+      "parentUuid": "da86d52c_6713805c",
+      "revId": "290a1f3793990115582ac67dff12d4eb4e27adf8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
