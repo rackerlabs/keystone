@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_9630a4ea",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-02-18T05:59:34Z",
+      "side": 1,
+      "message": "Just a minor suggestion, we can define the BASE_ACCESS_TOKEN as \u0027/users/{user_id}/OS-OAUTH1/access_tokens\u0027, so we can use this constant also when build reference url \"for user_access_tokens\", feel free to ignore.",
+      "revId": "a923ba88fb33e0d34202d14980725d9e4eaeb78a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
