@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_ca28b199",
+        "filename": "keystone/auth/plugins/oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 0,
+      "message": "another unrelated white space change, please revert",
+      "revId": "687e4d2c81d348bcb9a487ee272983f75cb5141d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_6a0c2543",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 0,
+      "message": "unrelated white space change",
+      "revId": "687e4d2c81d348bcb9a487ee272983f75cb5141d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_ed63cf17",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 362,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 0,
+      "message": "undo this change",
+      "revId": "687e4d2c81d348bcb9a487ee272983f75cb5141d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

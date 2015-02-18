@@ -1,0 +1,446 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_2a386ded",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "undo these changes, we can sync the sample_config at another time",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_8a5b1953",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "undo this whitespace change?",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_0a1e4970",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "use:\n\n  from oslo_serialization import jsonutils",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_aa029d09",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "do not import classes, import the module",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_edff4fff",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "run `tox - e pep8` to catch these errors before submitting",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_cd89ab70",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "why do we want this to be a singleton?",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_8dda5376",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "if this isn\u0027t doing anything, then remove it",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_0d882370",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": ":rtype: dict",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_ed058fc2",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "what if neither project_domain_id or project_domain_name are specified.",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_cdb28b48",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": ":rtype: dict",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_4d0bfb23",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "using single quotes instead of double",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_ad47174b",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "we can\u0027t have x509 like that on it\u0027s own, we should either make this a class variable or maybe even consider having it as a config option.",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_0d3d838f",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "unnecessary brackets wrapping everything",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_4d221ba4",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "indent this over a bit, and the line below",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_cd160b49",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": ":rtype: str",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_0dd6634f",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "will this ever change? should this be a config option?",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_6dafdfe3",
+        "filename": "keystone/common/authorization.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "provide a meaningful error message here, not just a stack trace. \"Could not determine Identity Provider Id based on SSL_CLIENT_I_DN value %s\"",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_ad4557b5",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 387,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "undo this change",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_2d096784",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "undo this change",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_cd19abd2",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "this is once again making me uncomfortable, we should have the protocol name as a config option, just for the tokenless auth case",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_edc74f10",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "s/truested/trusted",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_cda36b41",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "no need for this variable",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_4db85b75",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "return True here",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_8dadf333",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "return False here",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_0d9bc318",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 303,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "brackets are unnecessary here",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_8d86d3b7",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-18T04:09:12Z",
+      "side": 1,
+      "message": "we should either document that SSL_CLIENT_I_DN is always needed or make it a config option",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
