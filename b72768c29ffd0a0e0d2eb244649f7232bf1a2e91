@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_0adff20d",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T06:33:36Z",
+      "side": 1,
+      "message": "good call",
+      "parentUuid": "da86d52c_c8ca5e6d",
+      "revId": "b72768c29ffd0a0e0d2eb244649f7232bf1a2e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_c81c1e16",
         "filename": "doc/source/event_notifications.rst",
         "patchSetId": 14
@@ -81,6 +99,24 @@
       "writtenOn": "2015-02-18T17:02:11Z",
       "side": 1,
       "message": "++",
+      "parentUuid": "da86d52c_d6313c0c",
+      "revId": "b72768c29ffd0a0e0d2eb244649f7232bf1a2e91",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_0ab8d2c6",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 14
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T06:33:36Z",
+      "side": 1,
+      "message": "so unfortunately, there are 2 event types\n\n1) event_type, which is an openstack-ism, that\u0027s the project.resource.operation, which is surfaced at the top level of the dictionary (along with message_id, payload, timestamp, etc)\n\n2) eventType, the CADF keyword, which designates the type of event that is being measures, this can be \u0027activity\u0027, \u0027monitor\u0027 or \u0027control\u0027",
       "parentUuid": "da86d52c_d6313c0c",
       "revId": "b72768c29ffd0a0e0d2eb244649f7232bf1a2e91",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
