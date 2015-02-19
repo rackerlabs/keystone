@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_e02c7f95",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T08:05:18Z",
+      "side": 1,
+      "message": "aren\u0027t we making it a dictionary?",
+      "revId": "52cede19039df5932773f59e11103d7faddb86e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_a0ca876b",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T08:05:18Z",
+      "side": 1,
+      "message": "one of the issues i\u0027m having trouble grasping is that before we basically required {user:{name}} to be present. now we are just attaching the entire {user} object.\n\nwe should probably have a check that makes sure that id or name exists, and bring up an error if both are missing.\n\ni think once we do that the code will probably read a bit better too.",
+      "revId": "52cede19039df5932773f59e11103d7faddb86e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e0c0ff4b",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T08:05:18Z",
+      "side": 1,
+      "message": "you can use user_id here",
+      "revId": "52cede19039df5932773f59e11103d7faddb86e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_807d831e",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T08:05:18Z",
+      "side": 1,
+      "message": "assertValidMappedUserObject?",
+      "revId": "52cede19039df5932773f59e11103d7faddb86e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_2004d713",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T08:05:18Z",
+      "side": 1,
+      "message": "typo on \u0027users\u0027\nand do you mean \u0027federated\u0027 domain?",
+      "revId": "52cede19039df5932773f59e11103d7faddb86e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_c0aa1b70",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 635,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T08:05:18Z",
+      "side": 1,
+      "message": "why defaulting to empty {}, calling .get(\u0027name\u0027) will result in None, and the test case must pass by matching full_name",
+      "revId": "52cede19039df5932773f59e11103d7faddb86e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_40ae2b82",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 677,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T08:05:18Z",
+      "side": 1,
+      "message": "same comment as above",
+      "revId": "52cede19039df5932773f59e11103d7faddb86e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
