@@ -123,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_6bb03df5",
+        "filename": "keystone/server/eventlet.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-02-19T22:39:04Z",
+      "side": 1,
+      "message": "... maybe the container thing is fine as-is. at some point you need a server, though, so i could go either way on that. curious what others think?",
+      "parentUuid": "ba7be1f8_cb6be983",
+      "revId": "2aab92c8004e993de73a1d6c77f8fbd441f2cf84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_0b0501c2",
         "filename": "keystone/server/eventlet.py",
         "patchSetId": 1
