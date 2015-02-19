@@ -20,7 +20,6 @@ from keystone.common import controller
 from keystone import exception
 from keystone.tests import unit as tests
 from keystone.tests.unit import test_v3
-from keystone.tests.unit import utils
 
 
 CONF = cfg.CONF
@@ -79,7 +78,6 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         """Call ``POST /domains``."""
         self.post('/domains', body={'domain': {}}, expected_status=400)
 
-    @utils.wip("Waiting domain operations be replicated at project table")
     def test_create_domain_creates_is_domain_project(self):
         """Call ``POST /domains`` and check an is_domain project is created."""
 
@@ -100,7 +98,6 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.assertEqual(r.result['project']['parent_id'],
                          r.result['project']['domain_id'])
 
-    @utils.wip("Waiting domain operations be replicated at project table")
     def test_create_is_domain_project_creates_domain(self):
         """Call ``POST /projects`` is_domain and check a domain is created."""
 
@@ -137,7 +134,6 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
             body={'domain': ref})
         self.assertValidDomainResponse(r, ref)
 
-    @utils.wip("Waiting domain operations be replicated at project table")
     def test_update_domain_updates_is_domain_project(self):
         """Call ``PATCH /domains`` and check is_domain project is updated."""
 
@@ -154,6 +150,9 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         r = self.get('/projects/%(project_id)s' % {
             'project_id': r.result['domain']['id']})
         self.assertValidProjectResponse(r)
+
+        # The created project is disabled as well
+        self.assertFalse(r.result['project']['enabled'])
 
     def test_disable_domain(self):
         """Call ``PATCH /domains/{domain_id}`` (set enabled=False)."""
@@ -264,6 +263,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.resource_api.create_domain(self.domain2['id'], self.domain2)
 
         self.project2 = self.new_project_ref(
+            parent_id=self.domain2['id'],
             domain_id=self.domain2['id'])
         self.resource_api.create_project(self.project2['id'], self.project2)
 
@@ -322,7 +322,6 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         r = self.credential_api.get_credential(self.credential['id'])
         self.assertDictEqual(r, self.credential)
 
-    @utils.wip("Waiting domain operations be replicated at project table")
     def test_delete_domain_deletes_is_domain_project(self):
         """Call ``DELETE /domains`` and check is_domain project is deleted."""
 
@@ -454,6 +453,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.resource_api.create_domain(domain['id'], domain)
 
         root_project = self.new_project_ref(
+            parent_id=domain['id'],
             domain_id=domain['id'])
         self.resource_api.create_project(root_project['id'], root_project)
 
@@ -604,18 +604,6 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         ref = self.new_project_ref(domain_id=uuid.uuid4().hex)
         self.post('/projects', body={'project': ref}, expected_status=400)
 
-    def test_create_project_is_domain_not_allowed(self):
-        """Call ``POST /projects``.
-
-        Setting is_domain=True is not supported yet and should raise
-        NotImplemented.
-
-        """
-        ref = self.new_project_ref(domain_id=self.domain_id, is_domain=True)
-        self.post('/projects',
-                  body={'project': ref},
-                  expected_status=501)
-
     def test_create_project_without_parent_id_and_without_domain_id(self):
         """Call ``POST /projects``."""
 
@@ -660,7 +648,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         ref_child['domain_id'] = self.domain['id']
         self.assertValidProjectResponse(r, ref_child)
 
-    def _create_projects_hierarchy(self, hierarchy_size=1):
+    def _create_projects_hierarchy(self, hierarchy_size=1, is_domain=False):
         """Creates a single-branched project hierarchy with the specified size.
 
         :param hierarchy_size: the desired hierarchy size, default is 1 -
@@ -669,7 +657,9 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         :returns projects: a list of the projects in the created hierarchy.
 
         """
-        new_ref = self.new_project_ref(domain_id=self.domain_id)
+        new_ref = self.new_project_ref(
+            domain_id=(self.domain_id if not is_domain else None),
+            is_domain=is_domain)
         resp = self.post('/projects', body={'project': new_ref})
 
         projects = [resp.result]
@@ -779,16 +769,20 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
 
         # Assert parents_as_ids is a structured dictionary correctly
         # representing the hierarchy. The request was made using projects[2]
-        # id, hence its parents should be projects[1] and projects[0]. It
-        # should have the following structure:
+        # id, hence its parents should be projects[1], projects[0] and the
+        # is_domain_project, which is the root of the hierarchy. It should
+        # have the following structure:
         # {
         #   projects[1]: {
-        #       projects[0]: None
+        #       projects[0]: {
+        #           is_domain_project: None
+        #       }
         #   }
         # }
+        is_domain_project_id = projects[0]['project']['domain_id']
         expected_dict = {
             projects[1]['project']['id']: {
-                projects[0]['project']['id']: None
+                projects[0]['project']['id']: {is_domain_project_id: None}
             }
         }
         self.assertDictEqual(expected_dict, parents_as_ids)
@@ -801,7 +795,20 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         self.assertValidProjectResponse(r, projects[0]['project'])
         parents_as_ids = r.result['project']['parents']
 
-        # projects[0] has no parents, parents_as_ids must be None
+        # projects[0] has only the project that acts as a domain as parent
+        expected_dict = {
+            is_domain_project_id: None
+        }
+        self.assertDictEqual(expected_dict, parents_as_ids)
+
+        # Query for is_domain_project parents_as_ids
+        r = self.get(
+            '/projects/%(project_id)s?parents_as_ids' % {
+                'project_id': is_domain_project_id})
+
+        parents_as_ids = r.result['project']['parents']
+
+        # is_domain_project has no parents, parents_as_ids must be None
         self.assertIsNone(parents_as_ids)
 
     def test_get_project_with_parents_as_list_with_full_access(self):
