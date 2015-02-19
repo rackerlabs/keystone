@@ -72,6 +72,10 @@ def create_server(conf, name, host, port, workers):
 
 
 def serve(*servers):
+    logging.critical(_('Running Keystone via Eventlet is deprecated as of '
+                       'Kilo in favor of deploying in a wsgi container '
+                       '(e.g. mod_wsgi). Eventlet support for Keystone will '
+                       'be removed in the M-development cycle.'))
     if max([server[1].workers for server in servers]) > 1:
         launcher = service.ProcessLauncher()
     else:

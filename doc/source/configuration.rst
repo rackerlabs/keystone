@@ -48,6 +48,13 @@ To make the above change persistent,
 Starting and Stopping Keystone under Eventlet
 =============================================
 
+.. WARNING::
+
+    Running Keystone under eventlet has been deprecated as of the Kilo release.
+    Support for utilizing eventlet will be removed as of the M-development
+    cycle. Running Keystone in a wsgi container (e.g. ``mod_wsgi`` under
+    ``HTTPD``). 
+
 Keystone can be run using either its built-in eventlet server or it can be run
 embedded in a web server. While the eventlet server is convenient and easy to
 use, it's lacking in security features that have been developed into Internet-
