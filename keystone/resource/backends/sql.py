@@ -39,13 +39,16 @@ class Resource(keystone_resource.Driver):
         with sql.transaction() as session:
             return self._get_project(session, tenant_id).to_dict()
 
-    def get_project_by_name(self, tenant_name, domain_id, is_domain):
+    def get_project_by_name(self, tenant_name, domain_id=None,
+                            is_domain=False):
+        # NOTE(htruta): Even if domain_is is not specified, the name of a
+        # project acting as a domain is globally unique. Hence, only one
+        # item is returned
         with sql.transaction() as session:
             query = session.query(Project)
-            query = query.filter_by(name=tenant_name)
-            if domain_id is not None:
+            query = query.filter_by(name=tenant_name, is_domain=is_domain)
+            if domain_id:
                 query = query.filter_by(domain_id=domain_id)
-            query = query.filter_by(is_domain=is_domain)
             try:
                 project_ref = query.one()
             except sql.NotFound:
@@ -59,12 +62,13 @@ class Resource(keystone_resource.Driver):
             project_refs = sql.filter_limit_query(Project, query, hints)
             return [project_ref.to_dict() for project_ref in project_refs]
 
-    def list_projects_from_ids(self, ids):
+    def list_projects_from_ids(self, ids, is_domain=False):
         if not ids:
             return []
         else:
             with sql.transaction() as session:
                 query = session.query(Project)
+                query = query.filter_by(is_domain=is_domain)
                 query = query.filter(Project.id.in_(ids))
                 return [project_ref.to_dict() for project_ref in query.all()]
 
@@ -82,10 +86,15 @@ class Resource(keystone_resource.Driver):
         with sql.transaction() as session:
             self._get_domain(session, domain_id)
             query = session.query(Project)
-            project_refs = query.filter_by(domain_id=domain_id)
+            project_refs = query.filter(Project.domain_id == domain_id,
+                                        Project.id != domain_id)
             return [project_ref.to_dict() for project_ref in project_refs]
 
-    def _get_children(self, session, project_ids):
+    def list_projects_acting_as_domain(self, hints):
+        hints.add_filter('is_domain', True)
+        return self.list_projects(hints)
+
+    def _get_children(self, session, project_ids, domain_id=None):
         query = session.query(Project)
         query = query.filter(Project.parent_id.in_(project_ids))
         project_refs = query.all()
@@ -178,41 +187,11 @@ class Resource(keystone_resource.Driver):
             session.add(ref)
         return ref.to_dict()
 
-    @sql.truncated
-    def list_domains(self, hints):
-        with sql.transaction() as session:
-            query = session.query(Domain)
-            refs = sql.filter_limit_query(Domain, query, hints)
-            return [ref.to_dict() for ref in refs]
-
-    def list_domains_from_ids(self, ids):
-        if not ids:
-            return []
-        else:
-            with sql.transaction() as session:
-                query = session.query(Domain)
-                query = query.filter(Domain.id.in_(ids))
-                domain_refs = query.all()
-                return [domain_ref.to_dict() for domain_ref in domain_refs]
-
     def _get_domain(self, session, domain_id):
         ref = session.query(Domain).get(domain_id)
         if ref is None:
             raise exception.DomainNotFound(domain_id=domain_id)
         return ref
-
-    def get_domain(self, domain_id):
-        with sql.transaction() as session:
-            return self._get_domain(session, domain_id).to_dict()
-
-    def get_domain_by_name(self, domain_name):
-        with sql.transaction() as session:
-            try:
-                ref = (session.query(Domain).
-                       filter_by(name=domain_name).one())
-            except sql.NotFound:
-                raise exception.DomainNotFound(domain_id=domain_name)
-            return ref.to_dict()
 
     @sql.handle_conflicts(conflict_type='domain')
     def update_domain(self, domain_id, domain):
