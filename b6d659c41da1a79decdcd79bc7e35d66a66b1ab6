@@ -34,6 +34,23 @@
       "revId": "b6d659c41da1a79decdcd79bc7e35d66a66b1ab6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_b141eda7",
+        "filename": "requirements.txt",
+        "patchSetId": 17
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-02-19T15:52:06Z",
+      "side": 1,
+      "message": "you need to specify the exact requirements as they appear in global requirements\n\n  https://review.openstack.org/#/c/156657/9/requirements.txt",
+      "revId": "b6d659c41da1a79decdcd79bc7e35d66a66b1ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
