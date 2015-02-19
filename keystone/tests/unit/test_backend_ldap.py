@@ -1867,6 +1867,21 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
             self.assertNotIn('dn', group_ref)
         self.assertEqual(set(expected_group_ids), group_ids)
 
+    def test_list_domains_for_groups(self):
+        domain = self._get_domain_fixture()
+
+        group1 = {'name': uuid.uuid4().hex, 'domain_id': domain['id']}
+        group1 = self.identity_api.create_group(group1)
+
+        group2 = {'name': uuid.uuid4().hex, 'domain_id': domain['id']}
+        group2 = self.identity_api.create_group(group2)
+
+        list_group_ids = [group1['id'], group2['id']]
+        domains = self.assignment_api.list_domains_for_groups(list_group_ids)
+
+        self.assertThat(domains, matchers.HasLength(1))
+        self.assertEqual(domain['id'], domains[0]['id'])
+
     def test_list_groups_for_user_no_dn(self):
         # Create a test user.
         user = {'name': uuid.uuid4().hex,
@@ -1990,6 +2005,24 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         user_ref = self.identity_api.get_user('crap')
         self.assertEqual('crap', user_ref['id'])
         self.assertEqual('Foo Bar', user_ref['name'])
+
+    def test_list_projects_for_groups(self):
+        domain = self._get_domain_fixture()
+
+        # Create new group
+        new_group = {'name': uuid.uuid4().hex, 'domain_id': domain['id']}
+        new_group = self.identity_api.create_group(new_group)
+
+        # Now, add grant to new_group in tenant_bar
+        self.assignment_api.create_grant(group_id=new_group['id'],
+                                         project_id=self.tenant_bar['id'],
+                                         role_id=self.role_member['id'])
+
+        # The result is group has only one project granted
+        group_projects = self.assignment_api.list_projects_for_groups(
+            [new_group['id']])
+        self.assertThat(group_projects, matchers.HasLength(1))
+        self.assertEqual(self.tenant_bar['id'], group_projects[0]['id'])
 
 
 class LDAPIdentityEnabledEmulation(LDAPIdentity):
