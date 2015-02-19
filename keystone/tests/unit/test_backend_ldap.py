@@ -36,6 +36,7 @@ from keystone.tests.unit import fakeldap
 from keystone.tests.unit import identity_mapping as mapping_sql
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import test_backend
+from keystone.tests.unit import utils
 
 
 CONF = cfg.CONF
@@ -59,6 +60,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         common_ldap.register_handler('fake://', fakeldap.FakeLdap)
         self.load_backends()
         self.load_fixtures(default_fixtures)
+        self.domain_count = 1
 
         self.addCleanup(common_ldap_core._HANDLERS.clear)
 
@@ -100,6 +102,16 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
             return res[0][1][enabled_attr_name]
         else:
             return None
+
+    def test_list_projects(self):
+        projects = self.resource_api.list_projects()
+        # Sum expected projects with is_domain = True projects
+        self.assertEqual(4 + self.domain_count, len(projects))
+        project_ids = []
+        for project in projects:
+            project_ids.append(project.get('id'))
+        self.assertIn(self.tenant_bar['id'], project_ids)
+        self.assertIn(self.tenant_baz['id'], project_ids)
 
     def test_build_tree(self):
         """Regression test for building the tree names
@@ -393,6 +405,10 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
             new_user['id'])
         self.assertEqual(3, len(user_projects))
 
+    def test_create_duplicate_is_domain_project_name_fails(self):
+        self.skipTest(
+            'N/A: LDAP does not support multiple domains')
+
     def test_create_duplicate_user_name_in_different_domains(self):
         self.skipTest('Domains are read-only against LDAP')
 
@@ -438,6 +454,9 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.skipTest('Blocked by bug: 1390125')
 
     def test_domain_delete_hierarchy(self):
+        self.skipTest('Domains are read-only against LDAP')
+
+    def test_delete_domain_with_project_api(self):
         self.skipTest('Domains are read-only against LDAP')
 
     def test_list_role_assignments_unfiltered(self):
@@ -1460,7 +1479,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
     def test_domain_crud(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True, 'description': uuid.uuid4().hex}
-        self.assertRaises(exception.Forbidden,
+        self.assertRaises(exception.ValidationError,
                           self.resource_api.create_domain,
                           domain['id'],
                           domain)
@@ -1532,7 +1551,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                    'domain_id': CONF.identity.default_domain_id,
                    'description': uuid.uuid4().hex,
                    'enabled': True,
-                   'parent_id': None,
+                   'parent_id': CONF.identity.default_domain_id,
                    'is_domain': False}
         self.resource_api.create_project(project['id'], project)
         project_ref = self.resource_api.get_project(project['id'])
@@ -1611,7 +1630,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                     'description': '',
                     'domain_id': domain['id'],
                     'enabled': True,
-                    'parent_id': None,
+                    'parent_id': domain['id'],
                     'is_domain': False}
         self.resource_api.create_project(project1['id'], project1)
 
@@ -1650,24 +1669,54 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                    'parent_id': None,
                    'is_domain': True}
 
-        self.assertRaises(exception.ValidationError,
+        self.assertRaises(exception.Forbidden,
                           self.resource_api.create_project,
                           project['id'], project)
 
-    def test_delete_is_domain_project(self):
+    def _assert_delete_is_domain_project_not_allowed(self):
+        self.assertRaises(exception.Forbidden,
+                          self.resource_api.delete_domain,
+                          CONF.identity.default_domain_id)
+
+        self.assertRaises(exception.Forbidden,
+                          self.resource_api.delete_project,
+                          CONF.identity.default_domain_id)
+
+    def test_delete_domain(self):
+        self._assert_delete_is_domain_project_not_allowed()
+
+    def test_delete_domain_with_project_api(self):
+        self._assert_delete_is_domain_project_not_allowed()
+
+    def test_not_create_domain_under_project_hierarchy(self):
+        self._assert_create_hierarchy_not_allowed()
+
+    def test_create_project_under_domain_hierarchy(self):
         self._assert_create_is_domain_project_not_allowed()
 
-    def test_create_is_domain_project_under_project_hierarchy(self):
-        self._assert_create_hierarchy_not_allowed()
-
     def test_create_not_is_domain_project_under_is_domain_hierarchy(self):
-        self._assert_create_hierarchy_not_allowed()
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'domain_id': CONF.identity.default_domain_id,
+                   'enabled': True,
+                   'parent_id': CONF.identity.default_domain_id,
+                   'is_domain': False}
 
-    def test_create_is_domain_project(self):
+        ref = self.resource_api.create_project(project['id'], project)
+        self.assertEqual(project, ref)
+
+    def test_create_domain(self):
         self._assert_create_is_domain_project_not_allowed()
 
     def test_create_project_with_parent_id_and_without_domain_id(self):
-        self._assert_create_hierarchy_not_allowed()
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'enabled': True,
+                   'parent_id': CONF.identity.default_domain_id,
+                   'is_domain': False}
+
+        ref = self.resource_api.create_project(project['id'], project)
+        self.assertEqual(CONF.identity.default_domain_id, ref['domain_id'])
 
     def test_update_is_domain_project_name(self):
         # Projects that act as domains are read-only in LDAP, keeping the
@@ -1675,7 +1724,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         default_domain = self._get_domain_fixture()
         default_domain['name'] = uuid.uuid4().hex
         self.assertRaises(exception.Forbidden,
-                          self.resource_api.update_domain,
+                          self.resource_api.update_project,
                           CONF.identity.default_domain_id,
                           default_domain)
 
@@ -1687,9 +1736,18 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
     def test_list_projects_in_subtree(self):
         projects = self._assert_create_hierarchy_not_allowed()
         for project in projects:
+            # Regular projects don't have projects in its subtree
             subtree_list = self.resource_api.list_projects_in_subtree(
                 project['id'])
             self.assertEqual(0, len(subtree_list))
+
+        # The subtree of the project that represents the default domain
+        # is the whole list of projects
+        subtree_list = self.resource_api.list_projects_in_subtree(
+            CONF.identity.default_domain_id)
+        subtree_ids = [p['id'] for p in subtree_list]
+        self.assertIn(projects[0]['id'], subtree_ids)
+        self.assertIn(projects[1]['id'], subtree_ids)
 
     def test_list_projects_in_subtree_with_circular_reference(self):
         self._assert_create_hierarchy_not_allowed()
@@ -1697,9 +1755,13 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
     def test_list_project_parents(self):
         projects = self._assert_create_hierarchy_not_allowed()
         for project in projects:
+            # Have only one parent: the project that represents
+            # the default domain
             parents_list = self.resource_api.list_project_parents(
                 project['id'])
-            self.assertEqual(0, len(parents_list))
+            self.assertEqual(1, len(parents_list))
+            self.assertEqual(CONF.identity.default_domain_id,
+                             parents_list[0]['id'])
 
     def test_hierarchical_projects_crud(self):
         self._assert_create_hierarchy_not_allowed()
@@ -1735,7 +1797,10 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         projects = self._assert_create_hierarchy_not_allowed()
         for project in projects:
             depth = self._get_hierarchy_depth(project['id'])
-            self.assertEqual(1, depth)
+            self.assertEqual(2, depth)
+
+        depth = self._get_hierarchy_depth(CONF.identity.default_domain_id)
+        self.assertEqual(1, depth)
 
     def test_multi_role_grant_by_user_group_on_project_domain(self):
         # This is a partial implementation of the standard test that
@@ -2011,7 +2076,7 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
             'name': uuid.uuid4().hex,
             'domain_id': CONF.identity.default_domain_id,
             'description': uuid.uuid4().hex,
-            'parent_id': None,
+            'parent_id': CONF.identity.default_domain_id,
             'is_domain': False}
 
         self.resource_api.create_project(project['id'], project)
@@ -2204,7 +2269,7 @@ class LdapIdentitySqlAssignment(BaseLDAPIdentity, tests.SQLDriverOverrides,
     def test_create_domain(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True}
-        self.assertRaises(exception.Forbidden,
+        self.assertRaises(exception.ValidationError,
                           self.resource_api.create_domain,
                           domain['id'],
                           domain)
@@ -2867,6 +2932,16 @@ class DomainSpecificLDAPandSQLIdentity(
     def test_domain_crud(self):
         self.skipTest(
             'N/A: Not relevant for multi ldap testing')
+
+    # NOTE(samueldmq): Tests in this class have LDAP as the default identity
+    # driver mapping the default domain. Thus, new created domains cannot be
+    # mapped in a identity driver and then fail on any identity action. This
+    # test fails because, when deleting a domain, the list of users for that
+    # domain needs to be retrieved, in order to execute token revocations.
+    @utils.wip('Waiting on bug #1425895')
+    def test_delete_domain(self):
+        super(DomainSpecificLDAPandSQLIdentity,
+              self).test_delete_domain()
 
     def test_list_users(self):
         # Override the standard list users, since we have added an extra user
