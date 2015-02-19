@@ -16,6 +16,24 @@
       "revId": "eeb0c225164a5557ff2af1deedf394ce652909e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_2e63b3b2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-19T23:02:15Z",
+      "side": 1,
+      "message": "because there are 3 patches for the same bug, but for different releases. Will it be ok if all the patches will be with \"Closes-Bug\"?",
+      "parentUuid": "da86d52c_3192549f",
+      "revId": "eeb0c225164a5557ff2af1deedf394ce652909e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
