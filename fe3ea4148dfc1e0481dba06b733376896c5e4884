@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_71f4cc54",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 12000
+      },
+      "writtenOn": "2015-02-19T18:40:24Z",
+      "side": 1,
+      "message": "So is this to avoid having to write a file and have it read?\n\nI wonder if we should add a class method to oslo_policy.policy.Rules to create an instance from a dictionary of strings so that keystone (and other services) don\u0027t have to load a private module for this purpose.",
+      "revId": "fe3ea4148dfc1e0481dba06b733376896c5e4884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
