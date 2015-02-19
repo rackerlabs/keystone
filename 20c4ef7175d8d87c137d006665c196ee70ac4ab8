@@ -139,6 +139,24 @@
       "revId": "20c4ef7175d8d87c137d006665c196ee70ac4ab8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_d07912c6",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 684,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-19T04:25:52Z",
+      "side": 1,
+      "message": "Agreed - I\u0027ll make that clearer in the comment.",
+      "parentUuid": "da86d52c_e5949f45",
+      "revId": "20c4ef7175d8d87c137d006665c196ee70ac4ab8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
