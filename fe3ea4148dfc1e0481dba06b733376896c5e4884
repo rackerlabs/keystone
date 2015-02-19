@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_d741e863",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2015-02-19T19:49:55Z",
+      "side": 1,
+      "message": "You only need to do this if you\u0027re actually changing one of the defaults.",
+      "revId": "fe3ea4148dfc1e0481dba06b733376896c5e4884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_3236d2e7",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2015-02-19T19:49:55Z",
+      "side": 1,
+      "message": "The Enforcer class already does a lot of this lookup logic before it tries to use the filename passed to it. If you\u0027re not getting the policy file from somewhere other than the config setting, it doesn\u0027t look like you need this block and don\u0027t need to pass an explicit policy_file argument to the Enforcer. If the application needs to know the policy file that was loaded, we should expose that through the Enforcer. It is tracking the actual full paths already.",
+      "revId": "fe3ea4148dfc1e0481dba06b733376896c5e4884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_d223b655",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2015-02-19T19:49:55Z",
+      "side": 1,
+      "message": "We shouldn\u0027t need the application to set the default rule, especially if that is already in a configuration setting. If we have to do it from the outside, we should expose the default rule value somehow other than through the configuration variable.",
+      "revId": "fe3ea4148dfc1e0481dba06b733376896c5e4884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_d2b1f601",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2015-02-19T19:49:55Z",
+      "side": 1,
+      "message": "We should provide a test fixture for doing this instead of relying on a side-effect of instantiating the Enforcer.",
+      "revId": "fe3ea4148dfc1e0481dba06b733376896c5e4884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_71f4cc54",
         "filename": "keystone/tests/unit/test_policy.py",
         "patchSetId": 9
@@ -13,6 +81,57 @@
       "writtenOn": "2015-02-19T18:40:24Z",
       "side": 1,
       "message": "So is this to avoid having to write a file and have it read?\n\nI wonder if we should add a class method to oslo_policy.policy.Rules to create an instance from a dictionary of strings so that keystone (and other services) don\u0027t have to load a private module for this purpose.",
+      "revId": "fe3ea4148dfc1e0481dba06b733376896c5e4884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_b28c8236",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 570,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2015-02-19T19:49:55Z",
+      "side": 1,
+      "message": "There\u0027s a fixture in oslo.config that knows how to set and reset configuration options. This test code should use that instead of relying on the name of a configuration option defined in the library.",
+      "revId": "fe3ea4148dfc1e0481dba06b733376896c5e4884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_72a5aa9d",
+        "filename": "requirements-py3.txt",
+        "patchSetId": 9
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2015-02-19T19:49:55Z",
+      "side": 1,
+      "message": "It should be possible to just use the release now.",
+      "revId": "fe3ea4148dfc1e0481dba06b733376896c5e4884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_b2bac2bd",
+        "filename": "requirements.txt",
+        "patchSetId": 9
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2015-02-19T19:49:55Z",
+      "side": 1,
+      "message": "It should be possible to just use the release now.",
       "revId": "fe3ea4148dfc1e0481dba06b733376896c5e4884",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
