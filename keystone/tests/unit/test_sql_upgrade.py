@@ -685,6 +685,75 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.insert_dict(session, 'domain', domain2)
         self.insert_dict(session, 'project', project2)
 
+    def _populate_domain_and_project_tables(self, session):
+        domain1 = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'enabled': True}
+        domain2 = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'enabled': True}
+        acme = {
+            'id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'domain_id': domain1['id'],
+            'name': uuid.uuid4().hex,
+            'parent_id': None
+        }
+        acme_son = {
+            'id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'domain_id': domain1['id'],
+            'name': uuid.uuid4().hex,
+            'parent_id': acme['id']
+        }
+        beta = {
+            'id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'domain_id': domain2['id'],
+            'name': uuid.uuid4().hex,
+            'parent_id': None
+        }
+        beta_son = {
+            'id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'domain_id': domain2['id'],
+            'name': uuid.uuid4().hex,
+            'parent_id': beta['id']
+        }
+        self.insert_dict(session, 'domain', domain1)
+        self.insert_dict(session, 'domain', domain2)
+        self.insert_dict(session, 'project', acme)
+        self.insert_dict(session, 'project', beta)
+        self.insert_dict(session, 'project', acme_son)
+        self.insert_dict(session, 'project', beta_son)
+
+    def test_domain_as_project_upgrade(self):
+        self.upgrade(75)
+
+        session = self.Session()
+
+        self._populate_domain_and_project_tables(session)
+
+        self.upgrade(76)
+        domain_table = sqlalchemy.Table('domain', self.metadata, autoload=True)
+        proj_table = sqlalchemy.Table('project', self.metadata, autoload=True)
+
+        projects = session.query(proj_table)
+        domains = session.query(domain_table)
+
+        for project in projects:
+            if project.id == project.domain_id:
+                self.assertIsNone(project.parent_id)
+                self.assertTrue(project.is_domain)
+            elif project.parent_id == project.domain_id:
+                self.assertFalse(project.is_domain)
+
+        # There are 3 domains, counting the already existing default domain
+        self.assertEqual(3, domains.count())
+
+        # Therefore, 7 projects (4 original projects, 3 from the domains)
+        self.assertEqual(7, projects.count())
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
