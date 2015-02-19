@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_84c68047",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-19T00:58:45Z",
+      "side": 1,
+      "message": "we should probably move the check here, since we want to check first if the values are not empty before validating if they exist",
+      "revId": "113b2f46e634178cb497190c97bc84f5780fd4ef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
