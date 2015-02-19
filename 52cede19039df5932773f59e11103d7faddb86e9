@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_f94d1a3c",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-19T09:43:40Z",
+      "side": 1,
+      "message": "I refactored the method, however it\u0027s still very liberal due to to backwards compatibility requirements :(",
+      "parentUuid": "da86d52c_a0ca876b",
+      "revId": "52cede19039df5932773f59e11103d7faddb86e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_e0c0ff4b",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 9
@@ -47,6 +65,24 @@
       "writtenOn": "2015-02-19T08:05:18Z",
       "side": 1,
       "message": "you can use user_id here",
+      "revId": "52cede19039df5932773f59e11103d7faddb86e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_c37ea5ae",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-19T09:43:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_e0c0ff4b",
       "revId": "52cede19039df5932773f59e11103d7faddb86e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_03143d9e",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 598,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-19T09:43:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_807d831e",
+      "revId": "52cede19039df5932773f59e11103d7faddb86e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_2004d713",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 9
@@ -81,6 +135,24 @@
       "writtenOn": "2015-02-19T08:05:18Z",
       "side": 1,
       "message": "typo on \u0027users\u0027\nand do you mean \u0027federated\u0027 domain?",
+      "revId": "52cede19039df5932773f59e11103d7faddb86e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e3f48956",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 604,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-19T09:43:40Z",
+      "side": 1,
+      "message": "i meant service domain that is by default called \u0027Federated\u0027 :-)",
+      "parentUuid": "da86d52c_2004d713",
       "revId": "52cede19039df5932773f59e11103d7faddb86e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_c3aa2570",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 635,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-19T09:43:40Z",
+      "side": 1,
+      "message": "If there was no \u0027user\u0027 in values .get() would return None and .get(\u0027name\u0027) would fail. I decided to let it endup with user_name set to None so it fails later in self.assertEqla(user_name, full_name). In fact arguments ordering should be swapped.",
+      "parentUuid": "da86d52c_c0aa1b70",
+      "revId": "52cede19039df5932773f59e11103d7faddb86e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_40ae2b82",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 9
@@ -115,6 +205,24 @@
       "writtenOn": "2015-02-19T08:05:18Z",
       "side": 1,
       "message": "same comment as above",
+      "revId": "52cede19039df5932773f59e11103d7faddb86e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e3a5699f",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 677,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-19T09:43:40Z",
+      "side": 1,
+      "message": "If there was no \u0027user\u0027 in values .get() would return None and .get(\u0027name\u0027) would fail. I decided to let it endup with user_name set to None so it fails later in self.assertEqla(user_name, full_name). In fact arguments ordering should be swapped.",
+      "parentUuid": "da86d52c_40ae2b82",
       "revId": "52cede19039df5932773f59e11103d7faddb86e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
