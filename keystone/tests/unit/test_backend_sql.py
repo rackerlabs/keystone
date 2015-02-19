@@ -751,6 +751,10 @@ class SqlFilterTests(SqlTests, test_backend.FilterTests):
     def clean_up_entities(self):
         """Clean up entity test data from Filter Test Cases."""
 
+        # Remove the is_domain project from the list of projects, since it will
+        # be deleted when deleting the domain itself.
+        self.domain1_entity_list['project'].remove(self.domain_project)
+
         for entity in ['user', 'group', 'project']:
             self._delete_test_data(entity, self.entity_list[entity])
             self._delete_test_data(entity, self.domain1_entity_list[entity])
@@ -777,6 +781,14 @@ class SqlFilterTests(SqlTests, test_backend.FilterTests):
             self.entity_list[entity] = self._create_test_data(entity, 2)
             self.domain1_entity_list[entity] = self._create_test_data(
                 entity, DOMAIN1_ENTITIES, self.domain1['id'])
+
+            if entity == 'project':
+                # Domains are projects, then retrieve the is_domain project and
+                # add it to the list of projects.
+                self.domain_project = self.resource_api.get_project(
+                    self.domain1['id'])
+                self.domain1_entity_list[entity].append(self.domain_project)
+                DOMAIN1_ENTITIES += 1
 
             # Should get back the DOMAIN1_ENTITIES in domain1
             hints = driver_hints.Hints()

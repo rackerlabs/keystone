@@ -1448,13 +1448,20 @@ class TestTokenRevokeApi(TestTokenRevokeById):
 
     def assertDomainInList(self, events_response, domain_id):
         events = events_response['events']
-        self.assertEqual(1, len(events))
-        self.assertEqual(domain_id, events[0]['domain_id'])
-        self.assertIsNotNone(events[0]['issued_before'])
-        self.assertIsNotNone(events_response['links'])
-        del (events_response['events'][0]['issued_before'])
+        # Two events are expected: one for the action on the domain itself and
+        # other for the action on its correspondent is_domain project.
+        self.assertEqual(2, len(events))
+
+        ids_str = ('project_id', 'domain_id')
+        for i in range(2):
+            self.assertEqual(domain_id, events[i][ids_str[i]])
+            self.assertIsNotNone(events[i]['issued_before'])
+            self.assertIsNotNone(events_response['links'])
+            del (events_response['events'][i]['issued_before'])
+
         del (events_response['links'])
-        expected_response = {'events': [{'domain_id': domain_id}]}
+        expected_response = {'events': [{'project_id': domain_id},
+                                        {'domain_id': domain_id}]}
         self.assertEqual(expected_response, events_response)
 
     def assertValidRevokedTokenResponse(self, events_response, **kwargs):
@@ -2203,14 +2210,21 @@ class TestAuth(test_v3.RestfulTestCase):
         self.assertValidDomainScopedTokenResponse(r)
 
     def _create_projects_with_same_name(self, name):
-        # TODO(rodrigods): do not pass a domain_id
-        project1 = self.new_project_ref(self.domain['id'], is_domain=True)
+        project1 = self.new_project_ref(self.domain['id'],
+                                        parent_id=self.domain['id'],
+                                        is_domain=True)
         project1['name'] = name
         self.resource_api.create_project(project1['id'], project1)
 
-        # TODO(rodrigods): use project1['id'] as domain_id
+        another_project = self.new_project_ref(self.domain['id'],
+                                               parent_id=self.domain['id'],
+                                               is_domain=False)
+        another_project['name'] = uuid.uuid4().hex
+        self.resource_api.create_project(self.domain['id'],
+                                         another_project)
+
         project2 = self.new_project_ref(self.domain['id'],
-                                        parent_id=project1['id'],
+                                        parent_id=another_project['id'],
                                         is_domain=False)
         project2['name'] = name
         self.resource_api.create_project(project2['id'], project2)

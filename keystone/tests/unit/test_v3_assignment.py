@@ -164,6 +164,40 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         """Call ``POST /domains``."""
         self.post('/domains', body={'domain': {}}, expected_status=400)
 
+    def test_create_domain_creates_is_domain_project(self):
+        """Call ``POST /domains`` and check an is_domain project is created."""
+
+        # Create a new domain
+        domain_ref = self.new_domain_ref()
+        r = self.post('/domains', body={'domain': domain_ref})
+        self.assertValidDomainResponse(r, domain_ref)
+
+        # Retrieve its correspondent project
+        r = self.get('/projects/%(project_id)s' % {
+            'project_id': r.result['domain']['id']})
+        self.assertValidProjectResponse(r)
+
+        # The created project has is_domain flag as True
+        self.assertTrue(r.result['project']['is_domain'])
+
+        # And its id and domain_id attributes are equal
+        self.assertEqual(r.result['project']['id'],
+                         r.result['project']['domain_id'])
+
+    def test_create_is_domain_project_creates_domain(self):
+        """Call ``POST /projects`` is_domain and check a domain is created."""
+
+        # Create a new is_domain project
+        project_ref = self.new_project_ref(domain_id=None, is_domain=True)
+        r = self.post('/projects', body={'project': project_ref})
+        self.assertValidProjectResponse(r)
+
+        # Retrieve its correspondent domain
+        r = self.get('/domains/%(domain_id)s' % {
+            'domain_id': r.result['project']['id']})
+        self.assertValidDomainResponse(r)
+        self.assertIsNotNone(r.result['domain'])
+
     def test_list_domains(self):
         """Call ``GET /domains``."""
         resource_url = '/domains'
@@ -185,6 +219,26 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
             'domain_id': self.domain_id},
             body={'domain': ref})
         self.assertValidDomainResponse(r, ref)
+
+    def test_update_domain_updates_is_domain_project(self):
+        """Call ``PATCH /domains`` and check is_domain project is updated."""
+
+        # Create a new domain
+        domain_ref = self.new_domain_ref()
+        r = self.post('/domains', body={'domain': domain_ref})
+        self.assertValidDomainResponse(r, domain_ref)
+
+        # Disable it
+        self.patch('/domains/%s' % r.result['domain']['id'],
+                   body={'domain': {'enabled': False}})
+
+        # Retrieve its correspondent project
+        r = self.get('/projects/%(project_id)s' % {
+            'project_id': r.result['domain']['id']})
+        self.assertValidProjectResponse(r)
+
+        # The created project is disabled as well
+        self.assertFalse(r.result['project']['enabled'])
 
     def test_disable_domain(self):
         """Call ``PATCH /domains/{domain_id}`` (set enabled=False)."""
@@ -351,6 +405,27 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         self.assertDictEqual(r, self.user)
         r = self.credential_api.get_credential(self.credential['id'])
         self.assertDictEqual(r, self.credential)
+
+    def test_delete_domain_deletes_is_domain_project(self):
+        """Call ``DELETE /domains`` and check is_domain project is deleted."""
+
+        # Create a new domain
+        domain_ref = self.new_domain_ref()
+        r = self.post('/domains', body={'domain': domain_ref})
+        self.assertValidDomainResponse(r, domain_ref)
+
+        # Retrieve its correspondent project
+        self.get('/projects/%(project_id)s' % {
+            'project_id': r.result['domain']['id']})
+
+        # Delete the domain
+        self.patch('/domains/%s' % r.result['domain']['id'],
+                   body={'domain': {'enabled': False}})
+        self.delete('/domains/%s' % r.result['domain']['id'])
+
+        # The created project is deleted as well
+        self.get('/projects/%(project_id)s' % {
+            'project_id': r.result['domain']['id']}, expected_status=404)
 
     def test_delete_default_domain_fails(self):
         # Attempting to delete the default domain results in 403 Forbidden.
@@ -623,7 +698,9 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         :returns projects: a list of the projects in the created hierarchy.
 
         """
-        new_ref = self.new_project_ref(domain_id=self.domain_id)
+        new_ref = self.new_project_ref(
+            domain_id=self.domain_id if not is_domain else None,
+            is_domain=is_domain)
         resp = self.post('/projects', body={'project': new_ref})
 
         projects = [resp.result]
@@ -692,6 +769,19 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
 
         # projects[2] has no child, projects_result must be an empty list
         self.assertEqual(expected_list, projects_result)
+
+    def _assert_add_project_to_hierarchy(self, parent_id, domain_id=None,
+                                         is_domain=False):
+        new_ref = self.new_project_ref(
+            None if is_domain else domain_id,
+            parent_id=parent_id,
+            is_domain=is_domain)
+
+        resp = self.post('/projects',
+                         body={'project': new_ref})
+
+        self.assertValidProjectResponse(resp, new_ref)
+        return resp
 
     def test_create_hierarchical_project(self):
         """Call ``POST /projects``."""
