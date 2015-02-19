@@ -67,6 +67,40 @@
       "revId": "1f80311d112c94111fb5ab5a937ab27cc6122087",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_b81397b6",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-19T13:02:13Z",
+      "side": 1,
+      "message": "I am missing tests that show that remote_ids are unique.\nProposed test plan:\n\na) add IdP_1 with remote_ids \u003d [\u0027a\u0027, \u0027b\u0027]\nb) add IdP_2 with remote_ids \u003d [\u0027a\u0027, \u0027c\u0027]\n\nexpect server to compain about adding \u0027a\u0027 again.\nI think this is a must-have test as we must be sure this works and remote_ids are unique (as for websso where we get identity_provider object basing on remote_id value).",
+      "revId": "1f80311d112c94111fb5ab5a937ab27cc6122087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_18b103e0",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-19T13:02:13Z",
+      "side": 1,
+      "message": "Since the main change is that we now support multiple remote_ids tied to one Identity PRovider I\u0027d advise to add multiple remote_ids. Everywhere.",
+      "revId": "1f80311d112c94111fb5ab5a937ab27cc6122087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
