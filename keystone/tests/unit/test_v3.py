@@ -947,7 +947,6 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
             **kwargs)
 
     def assertValidProject(self, entity, ref=None):
-        self.assertIsNotNone(entity.get('domain_id'))
         if ref:
             if ref['is_domain']:
                 self.assertEqual(ref['domain_id'], entity['parent_id'])

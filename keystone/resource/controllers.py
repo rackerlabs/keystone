@@ -216,16 +216,19 @@ class ProjectV3(controller.V3Controller):
     @validation.validated(schema.project_create, 'project')
     def create_project(self, context, project):
         ref = self._assign_unique_id(self._normalize_dict(project))
-        ref = self._normalize_domain_id(context, ref)
-        # TODO(htruta): When operations are replicated to project table, handle
-        # case where no parent was set for is_domain=false projects and also
-        # the case where only a domain_id was set
+        if not ref.get('parent_id') and ref.get('domain_id'):
+            ref['parent_id'] = ref.get('domain_id')
+
+        if not ref.get('is_domain') and not ref.get('parent_id'):
+            msg = _('parent_id field is mandatory for is_domain=False '
+                    'projects.')
+            raise exception.ValidationError(msg)
 
         initiator = notifications._get_request_audit_info(context)
         try:
             ref = self.resource_api.create_project(ref['id'], ref,
                                                    initiator=initiator)
-        except exception.DomainNotFound as e:
+        except (exception.DomainNotFound, exception.ProjectNotFound) as e:
             raise exception.ValidationError(e)
         return ProjectV3.wrap_member(context, ref)
 
