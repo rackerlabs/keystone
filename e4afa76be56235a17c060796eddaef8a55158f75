@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_0ccff37f",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T18:53:34Z",
+      "side": 1,
+      "message": "make this dependency.requires(\u0027federation_api\u0027)",
+      "revId": "e4afa76be56235a17c060796eddaef8a55158f75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_ccb15b02",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T18:53:34Z",
+      "side": 1,
+      "message": "you should be able to just federation_api now, it should always be loaded",
+      "revId": "e4afa76be56235a17c060796eddaef8a55158f75",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
