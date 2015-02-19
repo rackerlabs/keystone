@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_6db5e8eb",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-19T07:13:18Z",
+      "side": 1,
+      "message": "Shouldn\u0027t it be 400 instead of 500? I would think missing Authorization header constitutes a bad request.",
+      "revId": "4f7d17b4bd94cc4c2e9beef49eb823aab8c3a234",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
