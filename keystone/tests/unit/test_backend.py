@@ -445,6 +445,17 @@ class IdentityTests(object):
                           'fake1',
                           tenant)
 
+    def test_create_duplicate_is_domain_project_name_fails(self):
+        tenant = {'id': 'fake1', 'name': 'fake',
+                  'domain_id': DEFAULT_DOMAIN_ID,
+                  'is_domain': True}
+        self.resource_api.create_project('fake1', tenant)
+        tenant['id'] = 'fake2'
+        self.assertRaises(exception.Conflict,
+                          self.resource_api.create_project,
+                          'fake1',
+                          tenant)
+
     def test_create_duplicate_project_name_in_different_domains(self):
         new_domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.resource_api.create_domain(new_domain['id'], new_domain)
@@ -2089,7 +2100,9 @@ class IdentityTests(object):
 
     def test_list_projects(self):
         projects = self.resource_api.list_projects()
-        self.assertEqual(4, len(projects))
+        # 5 projects are expected: 4 projects from default fixtures plus the
+        # is_domain project for the default domain.
+        self.assertEqual(5, len(projects))
         project_ids = []
         for project in projects:
             project_ids.append(project.get('id'))
@@ -2100,7 +2113,8 @@ class IdentityTests(object):
         # Create a project
         project = {'id': uuid.uuid4().hex, 'domain_id': DEFAULT_DOMAIN_ID,
                    'name': uuid.uuid4().hex, 'description': uuid.uuid4().hex,
-                   'enabled': True, 'parent_id': None, 'is_domain': False}
+                   'enabled': True, 'parent_id': DEFAULT_DOMAIN_ID,
+                   'is_domain': False}
         self.resource_api.create_project(project['id'], project)
 
         # Build driver hints with the project's name and inexistent description
@@ -2128,6 +2142,8 @@ class IdentityTests(object):
         project_ids = ([x['id'] for x in
                        self.resource_api.list_projects_in_domain(
                            DEFAULT_DOMAIN_ID)])
+        # Only the 4 projects from the default fixtures are expected, since
+        # filtering by domain does not include any is_domain project.
         self.assertEqual(4, len(project_ids))
         self.assertIn(self.tenant_bar['id'], project_ids)
         self.assertIn(self.tenant_baz['id'], project_ids)
@@ -2147,6 +2163,8 @@ class IdentityTests(object):
         project_ids = ([x['id'] for x in
                        self.resource_api.list_projects_in_domain(
                            domain1['id'])])
+        # Only the 2 created projects are expected, since filtering by domain
+        # does not include any is_domain project.
         self.assertEqual(2, len(project_ids))
         self.assertIn(project1['id'], project_ids)
         self.assertIn(project2['id'], project_ids)
@@ -2171,22 +2189,15 @@ class IdentityTests(object):
                    'description': '',
                    'enabled': True,
                    'name': uuid.uuid4().hex,
-                   'parent_id': None,
                    'domain_id': domain_id,
                    'is_domain': is_domain}
 
-        # TODO(rodrigods): Root projects will have the following invariants:
-        # if is_domain is True, then its parent_id and its domain_id will
-        # be None - the domain_id argument will be ignored. If is_domain is
-        # False, the parent_id and domain_id will point to the same project
-        # that acts as domain:
-        #
-        # if is_domain:
-        #     project['parent_id'] = None
-        #     project['domain_id'] = None
-        # else:
-        #     project['parent_id'] = domain_id
-        #     project['domain_id'] = domain_id
+        if is_domain:
+            project['parent_id'] = None
+            project['domain_id'] = None
+        else:
+            project['parent_id'] = domain_id
+            project['domain_id'] = domain_id
 
         self.resource_api.create_project(project_id, project)
 
@@ -2199,14 +2210,9 @@ class IdentityTests(object):
                            'parent_id': project_id,
                            'is_domain': is_domain}
 
-            # TODO(rodrigods): For non root projects, we will have the
-            # following invariants: if is_domain is True, its domain_id
-            # will be its parent's id. If is_domain is False, the domain_id
-            # will be its parent's domain_id:
-            #
-            # new_project['domain_id'] = project_id if is_domain else domain_id
+            new_project['domain_id'] = project_id if is_domain else domain_id
 
-            new_project['domain_id'] = domain_id
+            # new_project['domain_id'] = domain_id
 
             self.resource_api.create_project(new_project['id'], new_project)
             projects.append(new_project)
@@ -2219,23 +2225,20 @@ class IdentityTests(object):
         project_id = uuid.uuid4().hex
         project = {'id': project_id,
                    'description': '',
-                   # TODO(rodrigods): pass None
-                   'domain_id': DEFAULT_DOMAIN_ID,
+                   'domain_id': None,
                    'enabled': True,
                    'name': uuid.uuid4().hex,
                    'parent_id': None,
                    'is_domain': True}
         ref = self.resource_api.create_project(project['id'], project)
         self.assertTrue(ref.get('is_domain'))
-        # TODO(rodrigods): self.assertIsNone(ref.get('domain_id'))
-        self.assertEqual(DEFAULT_DOMAIN_ID, ref.get('domain_id'))
+        self.assertIsNone(ref.get('domain_id'))
 
     @tests.skip_if_no_multiple_domains_support
     def test_project_name_domain_constraint(self):
         # Check the uniqueness constraint of (name, domain_id, is_domain).
         project = {'id': uuid.uuid4().hex,
-                   # TODO(rodrigods): pass None
-                   'domain_id': DEFAULT_DOMAIN_ID,
+                   'domain_id': None,
                    'name': uuid.uuid4().hex,
                    'is_domain': True}
         self.resource_api.create_project(project['id'], project)
@@ -2250,10 +2253,8 @@ class IdentityTests(object):
                           new_project)
 
         # Creating a sub is_domain project
-        # TODO(htruta): pass project_id as domain_id when operations are off
-        # domain table
         sub_project = {'id': uuid.uuid4().hex,
-                       'domain_id': DEFAULT_DOMAIN_ID,
+                       'domain_id': project['id'],
                        'name': uuid.uuid4().hex,
                        'parent_id': project['id'],
                        'is_domain': True}
@@ -2269,29 +2270,69 @@ class IdentityTests(object):
 
         # Create another root project with the is_domain flag enabled
         project = {'id': uuid.uuid4().hex,
-                   # TODO(rodrigods): pass None
-                   'domain_id': DEFAULT_DOMAIN_ID,
+                   'domain_id': None,
                    'name': uuid.uuid4().hex,
                    'is_domain': True}
         self.resource_api.create_project(project['id'], project)
 
         # Creating another sub is_domain project
-        # TODO(htruta): pass project_id as domain_id when operations are off
         # domain table
         sub_project = {'id': uuid.uuid4().hex,
-                       'domain_id': DEFAULT_DOMAIN_ID,
+                       'domain_id': project['id'],
                        'name': uuid.uuid4().hex,
                        'parent_id': project['id'],
                        'is_domain': True}
         self.resource_api.create_project(sub_project['id'], sub_project)
 
     @tests.skip_if_no_multiple_domains_support
+    def test_empty_domain_id_is_set_as_parent_id(self):
+        root_project_id = uuid.uuid4().hex
+        root_project = {'id': root_project_id,
+                        'description': '',
+                        'domain_id': None,
+                        'enabled': True,
+                        'name': uuid.uuid4().hex,
+                        'parent_id': None,
+                        'is_domain': True}
+        self.resource_api.create_project(root_project['id'], root_project)
+
+        # Creating a sub-project
+        sub_project_id = uuid.uuid4().hex
+        sub_project = {'id': sub_project_id,
+                       'description': '',
+                       'domain_id': None,
+                       'enabled': True,
+                       'name': uuid.uuid4().hex,
+                       'parent_id': root_project_id,
+                       'is_domain': False}
+        ref = self.resource_api.create_project(sub_project['id'], sub_project)
+
+        # Its domain_id must match the parent_id, since it is the closest
+        # project that behaves as a domain
+        self.assertEqual(root_project['id'], ref['domain_id'])
+        self.assertEqual(root_project['id'], ref['parent_id'])
+
+        sub_project_2_id = uuid.uuid4().hex
+        sub_project_2 = {'id': sub_project_2_id,
+                         'description': '',
+                         'domain_id': None,
+                         'enabled': True,
+                         'name': uuid.uuid4().hex,
+                         'parent_id': sub_project_id,
+                         'is_domain': False}
+        ref = self.resource_api.create_project(sub_project_2['id'],
+                                               sub_project_2)
+
+        # A regular project under sub_project must be in the same domain as it
+        # is
+        self.assertEqual(root_project['id'], ref['domain_id'])
+        self.assertEqual(sub_project['id'], ref['parent_id'])
+
+    @tests.skip_if_no_multiple_domains_support
     def test_is_domain_sub_project_has_parent_domain_id(self):
-        project_id = uuid.uuid4().hex
-        project = {'id': project_id,
+        project = {'id': uuid.uuid4().hex,
                    'description': '',
-                   # TODO(rodrigods): pass None
-                   'domain_id': DEFAULT_DOMAIN_ID,
+                   'domain_id': None,
                    'enabled': True,
                    'name': uuid.uuid4().hex,
                    'parent_id': None,
@@ -2301,17 +2342,15 @@ class IdentityTests(object):
         sub_project_id = uuid.uuid4().hex
         sub_project = {'id': sub_project_id,
                        'description': '',
-                       # TODO(rodrigods): pass parent's id (project_id)
-                       'domain_id': DEFAULT_DOMAIN_ID,
+                       'domain_id': project['id'],
                        'enabled': True,
                        'name': uuid.uuid4().hex,
-                       'parent_id': project_id,
+                       'parent_id': project['id'],
                        'is_domain': True}
         ref = self.resource_api.create_project(sub_project['id'], sub_project)
         self.assertTrue(ref.get('is_domain'))
-        self.assertEqual(project_id, ref.get('parent_id'))
-        # TODO(rodrigods): self.assertEqual(project_id, ref.get('domain_id'))
-        self.assertEqual(DEFAULT_DOMAIN_ID, ref.get('domain_id'))
+        self.assertEqual(project['id'], ref.get('parent_id'))
+        self.assertEqual(project['id'], ref.get('domain_id'))
 
     @tests.skip_if_no_multiple_domains_support
     def test_update_name_of_project_acting_as_a_domain(self):
@@ -2320,7 +2359,7 @@ class IdentityTests(object):
                     'domain_id': DEFAULT_DOMAIN_ID,
                     'enabled': True,
                     'name': uuid.uuid4().hex,
-                    'parent_id': None,
+                    'parent_id': DEFAULT_DOMAIN_ID,
                     'is_domain': True}
         self.resource_api.create_project(project1['id'], project1)
 
@@ -2329,7 +2368,7 @@ class IdentityTests(object):
                     'domain_id': DEFAULT_DOMAIN_ID,
                     'enabled': True,
                     'name': uuid.uuid4().hex,
-                    'parent_id': None,
+                    'parent_id': DEFAULT_DOMAIN_ID,
                     'is_domain': True}
         self.resource_api.create_project(project2['id'], project2)
 
@@ -2346,11 +2385,9 @@ class IdentityTests(object):
 
     @tests.skip_if_no_multiple_domains_support
     def test_delete_domain_with_project_api(self):
-        project_id = uuid.uuid4().hex
-        project = {'id': project_id,
+        project = {'id': uuid.uuid4().hex,
                    'description': '',
-                   # TODO(rodrigods): pass None
-                   'domain_id': DEFAULT_DOMAIN_ID,
+                   'domain_id': None,
                    'enabled': True,
                    'name': uuid.uuid4().hex,
                    'parent_id': None,
@@ -2358,7 +2395,7 @@ class IdentityTests(object):
         self.resource_api.create_project(project['id'], project)
 
         # Try to delete is_domain project that is enabled
-        self.assertRaises(exception.ValidationError,
+        self.assertRaises(exception.Forbidden,
                           self.resource_api.delete_project,
                           project['id'])
 
@@ -2392,8 +2429,7 @@ class IdentityTests(object):
         parent = projects_hierarchy[1]
         project = {'id': uuid.uuid4().hex,
                    'description': '',
-                   # TODO(rodrigods): pass parent's id
-                   'domain_id': DEFAULT_DOMAIN_ID,
+                   'domain_id': parent['id'],
                    'enabled': True,
                    'name': uuid.uuid4().hex,
                    'parent_id': parent['id'],
@@ -2402,8 +2438,7 @@ class IdentityTests(object):
         ref = self.resource_api.create_project(project['id'], project)
         self.assertFalse(ref.get('is_domain'))
         self.assertEqual(parent['id'], ref.get('parent_id'))
-        # TODO(rodrigods): self.assertEqual(parent['id'], ref.get('domain_id'))
-        self.assertEqual(DEFAULT_DOMAIN_ID, ref.get('domain_id'))
+        self.assertEqual(parent['id'], ref.get('domain_id'))
 
     def test_create_project_without_is_domain_flag(self):
         project = {'id': uuid.uuid4().hex,
@@ -2538,15 +2573,16 @@ class IdentityTests(object):
         self.resource_api.create_project(project4['id'], project4)
 
         parents1 = self.resource_api.list_project_parents(project3['id'])
-        self.assertEqual(2, len(parents1))
+        self.assertEqual(3, len(parents1))
         self.assertIn(project1, parents1)
         self.assertIn(project2, parents1)
 
         parents2 = self.resource_api.list_project_parents(project4['id'])
         self.assertEqual(parents1, parents2)
 
+        # It is has the default domain as parent
         parents = self.resource_api.list_project_parents(project1['id'])
-        self.assertEqual(0, len(parents))
+        self.assertEqual(1, len(parents))
 
     def test_list_project_parents_invalid_project_id(self):
         self.assertRaises(exception.ValidationError,
@@ -3073,7 +3109,7 @@ class IdentityTests(object):
         projects_hierarchy = self._create_projects_hierarchy(
             domain_id=domain['id'])
         root_project = projects_hierarchy[0]
-        leaf_project = projects_hierarchy[0]
+        leaf_project = projects_hierarchy[1]
 
         # Disable the domain
         domain['enabled'] = False
@@ -3149,7 +3185,7 @@ class IdentityTests(object):
         root_project = {'id': uuid.uuid4().hex,
                         'name': uuid.uuid4().hex,
                         'description': '',
-                        'domain_id': DEFAULT_DOMAIN_ID,
+                        'domain_id': None,
                         'enabled': True,
                         'parent_id': None,
                         'is_domain': False}
@@ -3275,10 +3311,11 @@ class IdentityTests(object):
         return len(self.resource_api.list_project_parents(project_id)) + 1
 
     def test_check_hierarchy_depth(self):
-        # First create a hierarchy with the max allowed depth
+        # First create a hierarchy with the max allowed depth minus 1, since
+        # the root project is the default project that acts as a domain
         projects_hierarchy = self._create_projects_hierarchy(
-            CONF.max_project_tree_depth)
-        leaf_project = projects_hierarchy[CONF.max_project_tree_depth - 1]
+            CONF.max_project_tree_depth - 1)
+        leaf_project = projects_hierarchy[CONF.max_project_tree_depth - 2]
 
         depth = self._get_hierarchy_depth(leaf_project['id'])
         self.assertEqual(CONF.max_project_tree_depth, depth)
@@ -3302,7 +3339,7 @@ class IdentityTests(object):
                    'name': uuid.uuid4().hex,
                    'domain_id': DEFAULT_DOMAIN_ID,
                    'enabled': True,
-                   'parent_id': None,
+                   'parent_id': DEFAULT_DOMAIN_ID,
                    'is_domain': False}
         self.resource_api.create_project(project['id'], project)
 
@@ -3319,7 +3356,7 @@ class IdentityTests(object):
                    'name': uuid.uuid4().hex,
                    'domain_id': DEFAULT_DOMAIN_ID,
                    'enabled': True,
-                   'parent_id': None,
+                   'parent_id': DEFAULT_DOMAIN_ID,
                    'is_domain': False}
         self.resource_api.create_project(project['id'], project)
 
@@ -3332,7 +3369,7 @@ class IdentityTests(object):
 
     def test_domain_crud(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                  'enabled': True}
+                  'enabled': True, 'description': uuid.uuid4().hex}
         self.resource_api.create_domain(domain['id'], domain)
         domain_ref = self.resource_api.get_domain(domain['id'])
         self.assertDictEqual(domain_ref, domain)
@@ -3520,7 +3557,7 @@ class IdentityTests(object):
         updated_domain_ref = copy.deepcopy(domain_ref)
         updated_domain_ref['name'] = uuid.uuid4().hex
         # Update domain, bypassing resource api manager
-        self.resource_api.driver.update_domain(domain_id, updated_domain_ref)
+        self.resource_api.driver.update_project(domain_id, updated_domain_ref)
         # Verify get_domain still returns the domain
         self.assertDictContainsSubset(
             domain_ref, self.resource_api.get_domain(domain_id))
@@ -3540,14 +3577,20 @@ class IdentityTests(object):
         domain_ref_disabled['enabled'] = False
         self.resource_api.driver.update_domain(domain_id,
                                                domain_ref_disabled)
+        self.resource_api.driver.update_project(domain_id, {'enabled': False})
         # Delete domain, bypassing resource api manager
         self.resource_api.driver.delete_domain(domain_id)
+        self.resource_api.driver.delete_project(domain_id)
         # Verify get_domain still returns the domain
         self.assertDictContainsSubset(
             domain_ref, self.resource_api.get_domain(domain_id))
         # Invalidate cache
         self.resource_api.get_domain.invalidate(self.resource_api,
                                                 domain_id)
+        self.resource_api.get_project_by_name.invalidate(self.resource_api,
+                                                         domain['name'],
+                                                         None,
+                                                         True)
         # Verify get_domain now raises DomainNotFound
         self.assertRaises(exception.DomainNotFound,
                           self.resource_api.get_domain, domain_id)
@@ -3557,6 +3600,13 @@ class IdentityTests(object):
         # Make sure domain is 'disabled', bypass resource api manager
         domain['enabled'] = False
         self.resource_api.driver.update_domain(domain_id, domain)
+        self.resource_api.driver.update_project(domain_id, {'enabled': False})
+        # Try to delete the domain, but it is still enabled
+        self.assertRaises(exception.ForbiddenAction,
+                          self.resource_api.delete_domain, domain_id)
+        # Invalidate cache
+        self.resource_api.get_domain.invalidate(self.resource_api,
+                                                domain_id)
         # Delete domain
         self.resource_api.delete_domain(domain_id)
         # verify DomainNotFound raised
@@ -3944,7 +3994,8 @@ class IdentityTests(object):
         group_list = []
         group_id_list = []
         for _ in range(3):
-            domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+            domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                      'description': uuid.uuid4().hex}
             self.resource_api.create_domain(domain['id'], domain)
             domain_list.append(domain)
 
@@ -5913,7 +5964,7 @@ class InheritanceTests(object):
                         'domain_id': DEFAULT_DOMAIN_ID,
                         'enabled': True,
                         'name': uuid.uuid4().hex,
-                        'parent_id': None,
+                        'parent_id': DEFAULT_DOMAIN_ID,
                         'is_domain': False}
         self.resource_api.create_project(root_project['id'], root_project)
         leaf_project = {'id': uuid.uuid4().hex,
@@ -6150,7 +6201,6 @@ class LimitTests(filtering.FilterTests):
 
         self.domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.resource_api.create_domain(self.domain1['id'], self.domain1)
-        self.addCleanup(self.clean_up_domain)
 
         self.entity_lists = {}
         self.domain1_entity_lists = {}
@@ -6160,18 +6210,20 @@ class LimitTests(filtering.FilterTests):
             self.entity_lists[entity] = self._create_test_data(entity, 6)
             self.domain1_entity_lists[entity] = self._create_test_data(
                 entity, 14, self.domain1['id'])
+
+        # As domains are projects, add the is_domain project to the list
+        self.domain_project = self.resource_api.get_project(self.domain1['id'])
+        self.domain1_entity_lists['project'].append(self.domain_project)
+
         self.addCleanup(self.clean_up_entities)
-
-    def clean_up_domain(self):
-        """Clean up domain test data from Limit Test Cases."""
-
-        self.domain1['enabled'] = False
-        self.resource_api.update_domain(self.domain1['id'], self.domain1)
-        self.resource_api.delete_domain(self.domain1['id'])
-        del self.domain1
 
     def clean_up_entities(self):
         """Clean up entity test data from Limit Test Cases."""
+
+        # Disable the is_domain project, in order to be able to delete it
+        self.resource_api.update_project(self.domain_project['id'],
+                                         {'enabled': False})
+
         for entity in self.ENTITIES:
             self._delete_test_data(entity, self.entity_lists[entity])
             self._delete_test_data(entity, self.domain1_entity_lists[entity])
