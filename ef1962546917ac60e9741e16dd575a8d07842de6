@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_f46fe125",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 508,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-02-19T10:46:33Z",
+      "side": 1,
+      "message": "This is used in case of different protocols from saml2 and oid. Additionally, during the spec there were comment about enabling two different plugin for the same protocol, like mod_shibboleth and mod_mellon, so you could use this attribute for one and the saml2 attribute for the other (however, I have many concern about a configuration like that)",
+      "parentUuid": "da86d52c_4acbafa3",
+      "revId": "ef1962546917ac60e9741e16dd575a8d07842de6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_4a7d6f6c",
         "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
         "patchSetId": 8
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_6fb5d8eb",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-02-19T10:46:33Z",
+      "side": 1,
+      "message": "Yes, the key was too long!\nFixed",
+      "parentUuid": "da86d52c_4a7d6f6c",
+      "revId": "ef1962546917ac60e9741e16dd575a8d07842de6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_ea38e3a1",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 8
@@ -47,6 +83,24 @@
       "writtenOn": "2015-02-19T02:24:19Z",
       "side": 1,
       "message": "CONF.oidc?",
+      "revId": "ef1962546917ac60e9741e16dd575a8d07842de6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_5458ad89",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-02-19T10:46:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_ea38e3a1",
       "revId": "ef1962546917ac60e9741e16dd575a8d07842de6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
