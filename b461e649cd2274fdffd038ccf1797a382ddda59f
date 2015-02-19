@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_ef38e7ef",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-19T11:41:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_1b9bd473",
+      "revId": "b461e649cd2274fdffd038ccf1797a382ddda59f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_3ba6d8ab",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 32
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-18T23:58:27Z",
       "side": 1,
       "message": "use six for compatibility\n\nfor k, v in six.iteritems(filters):",
+      "revId": "b461e649cd2274fdffd038ccf1797a382ddda59f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_4fa9f48e",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-19T11:41:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_3ba6d8ab",
       "revId": "b461e649cd2274fdffd038ccf1797a382ddda59f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_6f0077ab",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-19T11:41:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_db3e9c28",
+      "revId": "b461e649cd2274fdffd038ccf1797a382ddda59f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_36c18f4e",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 32
@@ -64,6 +118,24 @@
       "writtenOn": "2015-02-18T23:58:27Z",
       "side": 1,
       "message": "put the constants at the top, line 1553",
+      "revId": "b461e649cd2274fdffd038ccf1797a382ddda59f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_2f7d9f1c",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 1574,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-19T11:41:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_36c18f4e",
       "revId": "b461e649cd2274fdffd038ccf1797a382ddda59f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_2f03df42",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 1577,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-19T11:41:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_7694e736",
+      "revId": "b461e649cd2274fdffd038ccf1797a382ddda59f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_11c0152a",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 32
@@ -98,6 +188,24 @@
       "writtenOn": "2015-02-18T23:58:27Z",
       "side": 1,
       "message": "this is weird, why do we need a wrapper around _build_role_assignment_query_url()? Why can\u0027t we call it directly?",
+      "revId": "b461e649cd2274fdffd038ccf1797a382ddda59f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_6f031710",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 1650,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-19T11:41:18Z",
+      "side": 1,
+      "message": "Yes, this is weird in this case.\nBut this method is override by RoleAssignmentEffectiveTestCase, which has some additional logic to be put in it.",
+      "parentUuid": "da86d52c_11c0152a",
       "revId": "b461e649cd2274fdffd038ccf1797a382ddda59f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -139,6 +247,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_cf1c037a",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 1675,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-19T11:41:18Z",
+      "side": 1,
+      "message": "Right!",
+      "parentUuid": "da86d52c_d4a73d4e",
+      "revId": "b461e649cd2274fdffd038ccf1797a382ddda59f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_c1886a6d",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 32
@@ -150,6 +276,24 @@
       "writtenOn": "2015-02-18T23:58:27Z",
       "side": 1,
       "message": "same as above, why a separate wrapper?",
+      "revId": "b461e649cd2274fdffd038ccf1797a382ddda59f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_32142843",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 1760,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-19T11:41:18Z",
+      "side": 1,
+      "message": "Same logic as for the previous \u0027wrapper\u0027: RoleAssignmentEffectiveTestCase has a different list of expected role assignments to be returned, because it takes into account inherited roles and grouping expansion logic.",
+      "parentUuid": "da86d52c_c1886a6d",
       "revId": "b461e649cd2274fdffd038ccf1797a382ddda59f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
