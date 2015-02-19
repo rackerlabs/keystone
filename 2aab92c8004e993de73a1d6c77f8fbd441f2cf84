@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_572c18ac",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T19:36:32Z",
+      "side": 1,
+      "message": "HTTPd?\n\nalso white space issue",
+      "revId": "2aab92c8004e993de73a1d6c77f8fbd441f2cf84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_92005e02",
         "filename": "keystone/server/eventlet.py",
         "patchSetId": 1
