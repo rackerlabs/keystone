@@ -170,9 +170,11 @@ class ProjectV3(controller.V3Controller):
             ref = _normalize_is_domain_project_domain_id(context, ref)
         else:
             ref = self._normalize_domain_id(context, ref)
-            # TODO(rodrigods): The parent_id must be present in this point, if
-            # not provided by the user, we set it to the same value as the
-            # domain_id
+            # If no parent is specified to project with the is_domain property
+            # disabled, set it to the default domain
+            if 'parent_id' not in ref or not ref['parent_id']:
+                ref['parent_id'] = ref['domain_id']
+
         initiator = notifications._get_request_audit_info(context)
         try:
             ref = self.resource_api.create_project(ref['id'], ref,
