@@ -227,6 +227,8 @@ class ProjectV3(controller.V3Controller):
                                 'parent_id', 'is_domain')
     def list_projects(self, context, filters):
         hints = ProjectV3.build_driver_hints(context, filters)
+        if not context['query_string'].get('is_domain'):
+            hints.add_filter('is_domain', False)
         refs = self.resource_api.list_projects(hints=hints)
         return ProjectV3.wrap_collection(context, refs, hints=hints)
 
