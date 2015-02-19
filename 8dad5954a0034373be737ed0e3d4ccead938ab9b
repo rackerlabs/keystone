@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_895a031c",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-19T14:01:08Z",
+      "side": 1,
+      "message": "ok... I\u0027m wondering why this is still here since the creating federation_api is already in load backends... and https://review.openstack.org/#/c/153842/ doesn\u0027t remove the creation of oauth_api either...",
+      "parentUuid": "da86d52c_8dc5bc8f",
+      "revId": "8dad5954a0034373be737ed0e3d4ccead938ab9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_6dcb28a4",
         "filename": "keystone/contrib/oauth1/routers.py",
         "patchSetId": 3
