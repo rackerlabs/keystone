@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_41de3a3f",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-19T00:08:19Z",
+      "side": 1,
+      "message": "Check both region and region_id for backward compatibility.\n\nThe region would have already been created by the Controller if the region does not exists\n- V2 https://github.com/openstack/keystone/blob/master/keystone/catalog/controllers.py#L104\n- V3 \nhttps://github.com/openstack/keystone/blob/master/keystone/catalog/controllers.py#L299\n\nthis check is not required. \n\nShould that region auto-creation logic move to the manager too?",
+      "revId": "0976817c489be5973683c169d71de2dfcb6cb1f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
