@@ -16,6 +16,24 @@
       "revId": "a923ba88fb33e0d34202d14980725d9e4eaeb78a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_3607c619",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T05:11:24Z",
+      "side": 1,
+      "message": "so, tried to do this, but ended up with more non-variables strings for lines 403 to 423.",
+      "parentUuid": "da86d52c_9630a4ea",
+      "revId": "a923ba88fb33e0d34202d14980725d9e4eaeb78a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
