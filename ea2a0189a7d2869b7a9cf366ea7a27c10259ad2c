@@ -16,6 +16,24 @@
       "revId": "ea2a0189a7d2869b7a9cf366ea7a27c10259ad2c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_6c8b0fc0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-02-19T19:06:08Z",
+      "side": 1,
+      "message": "This is for the cases where we already have such type of names in the db (previously this patch). So we avoid having situations where project with name \"a/b/c/\" is part from a hierarchy:\n\n    a/b/c\n   /     \\\n  x       y\n\nWe would never be able to retrieve scoped tokens for projects X and Y using their names.",
+      "parentUuid": "da86d52c_cca87b8e",
+      "revId": "ea2a0189a7d2869b7a9cf366ea7a27c10259ad2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
