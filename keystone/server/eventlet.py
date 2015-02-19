@@ -17,6 +17,7 @@ import logging
 import os
 import socket
 
+from debtcollector import removals
 from oslo_concurrency import processutils
 from oslo_config import cfg
 import oslo_i18n
@@ -73,6 +74,10 @@ def create_server(conf, name, host, port, workers):
     return name, ServerWrapper(server, workers)
 
 
+@removals.remove(removal_version='"M"-Release',
+                 message=_('Running Keystone via eventlet is deprecated as of '
+                           'Kilo in favor of deploying in a WSGI server '
+                           '(e.g. mod_wsgi).'))
 def serve(*servers):
     if max([server[1].workers for server in servers]) > 1:
         launcher = service.ProcessLauncher()
