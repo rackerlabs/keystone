@@ -21,7 +21,6 @@ from keystone.common import controller
 from keystone import exception
 from keystone.tests import unit as tests
 from keystone.tests.unit import test_v3
-from keystone.tests.unit import utils as test_utils
 
 
 CONF = cfg.CONF
@@ -165,6 +164,40 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         """Call ``POST /domains``."""
         self.post('/domains', body={'domain': {}}, expected_status=400)
 
+    def test_create_domain_creates_is_domain_project(self):
+        """Call ``POST /domains`` and check an is_domain project is created."""
+
+        # Create a new domain
+        domain_ref = self.new_domain_ref()
+        r = self.post('/domains', body={'domain': domain_ref})
+        self.assertValidDomainResponse(r, domain_ref)
+
+        # Retrieve its correspondent project
+        r = self.get('/projects/%(project_id)s' % {
+            'project_id': r.result['domain']['id']})
+        self.assertValidProjectResponse(r)
+
+        # The created project has is_domain flag as True
+        self.assertTrue(r.result['project']['is_domain'])
+
+        # And its id and domain_id attributes are equal
+        self.assertEqual(r.result['project']['id'],
+                         r.result['project']['domain_id'])
+
+    def test_create_is_domain_project_creates_domain(self):
+        """Call ``POST /projects`` is_domain and check a domain is created."""
+
+        # Create a new is_domain project
+        project_ref = self.new_project_ref(domain_id=None, is_domain=True)
+        r = self.post('/projects', body={'project': project_ref})
+        self.assertValidProjectResponse(r)
+
+        # Retrieve its correspondent domain
+        r = self.get('/domains/%(domain_id)s' % {
+            'domain_id': r.result['project']['id']})
+        self.assertValidDomainResponse(r)
+        self.assertIsNotNone(r.result['domain'])
+
     def test_list_domains(self):
         """Call ``GET /domains``."""
         resource_url = '/domains'
@@ -186,6 +219,26 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
             'domain_id': self.domain_id},
             body={'domain': ref})
         self.assertValidDomainResponse(r, ref)
+
+    def test_update_domain_updates_is_domain_project(self):
+        """Call ``PATCH /domains`` and check is_domain project is updated."""
+
+        # Create a new domain
+        domain_ref = self.new_domain_ref()
+        r = self.post('/domains', body={'domain': domain_ref})
+        self.assertValidDomainResponse(r, domain_ref)
+
+        # Disable it
+        self.patch('/domains/%s' % r.result['domain']['id'],
+                   body={'domain': {'enabled': False}})
+
+        # Retrieve its correspondent project
+        r = self.get('/projects/%(project_id)s' % {
+            'project_id': r.result['domain']['id']})
+        self.assertValidProjectResponse(r)
+
+        # The created project is disabled as well
+        self.assertFalse(r.result['project']['enabled'])
 
     def test_disable_domain(self):
         """Call ``PATCH /domains/{domain_id}`` (set enabled=False)."""
@@ -352,6 +405,27 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         self.assertDictEqual(r, self.user)
         r = self.credential_api.get_credential(self.credential['id'])
         self.assertDictEqual(r, self.credential)
+
+    def test_delete_domain_deletes_is_domain_project(self):
+        """Call ``DELETE /domains`` and check is_domain project is deleted."""
+
+        # Create a new domain
+        domain_ref = self.new_domain_ref()
+        r = self.post('/domains', body={'domain': domain_ref})
+        self.assertValidDomainResponse(r, domain_ref)
+
+        # Retrieve its correspondent project
+        self.get('/projects/%(project_id)s' % {
+            'project_id': r.result['domain']['id']})
+
+        # Delete the domain
+        self.patch('/domains/%s' % r.result['domain']['id'],
+                   body={'domain': {'enabled': False}})
+        self.delete('/domains/%s' % r.result['domain']['id'])
+
+        # The created project is deleted as well
+        self.get('/projects/%(project_id)s' % {
+            'project_id': r.result['domain']['id']}, expected_status=404)
 
     def test_delete_default_domain_fails(self):
         # Attempting to delete the default domain results in 403 Forbidden.
@@ -624,7 +698,9 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         :returns projects: a list of the projects in the created hierarchy.
 
         """
-        new_ref = self.new_project_ref(domain_id=self.domain_id)
+        new_ref = self.new_project_ref(
+            domain_id=self.domain_id if not is_domain else None,
+            is_domain=is_domain)
         resp = self.post('/projects', body={'project': new_ref})
 
         projects = [resp.result]
@@ -705,6 +781,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
                          body={'project': new_ref})
 
         self.assertValidProjectResponse(resp, new_ref)
+        return resp
 
     def test_create_hierarchical_project(self):
         """Call ``POST /projects``."""
@@ -828,53 +905,71 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
                 'project_id': projects[1]['project']['id']},
             expected_status=400)
 
-    @test_utils.wip('domain operations still look at domain table')
     def test_list_project_is_domain(self):
         """Call ``GET /projects?is_domain=True/False``. """
-        pre_existing_projects_len = 2
+        # Getting the initial amount or is_domain=True and is_domain=False
+        # projects.
+        r = self.get('/projects?is_domain=True', expected_status=200)
+        is_domain_true_len = len(r.result['projects'])
+        r = self.get('/projects?is_domain=False', expected_status=200)
+        is_domain_false_len = len(r.result['projects'])
+
         projects = self._create_projects_hierarchy(
-            hierarchy_size=pre_existing_projects_len,
+            hierarchy_size=2,
             is_domain=True)
 
-        # The method above is supposed to create two projects for the
-        # beggining
-        self.assertEqual(len(projects), pre_existing_projects_len)
+        # The method above is supposed to create four is_domain=True projects
+        # for the beggining, resulting in the hierarchy A->B->C:
+        # We now have 3 more is_domain projects the is_domain default project.
+        is_domain_true_len = is_domain_true_len + 3
+        r = self.get('/projects?is_domain=True', expected_status=200)
+        self.assertEqual(len(r.result['projects']), is_domain_true_len)
 
+        # Creating now 4 is_domain=False projects
         project1_id = projects[1]['project']['id']
         project2_id = projects[2]['project']['id']
-        self._assert_add_project_to_hierarchy(parent_id=project1_id,
-                                              domain_id=project1_id)
-        self._assert_add_project_to_hierarchy(parent_id=project1_id,
-                                              domain_id=project1_id)
-        self._assert_add_project_to_hierarchy(parent_id=project2_id,
-                                              domain_id=project2_id)
-        self._assert_add_project_to_hierarchy(parent_id=project2_id,
-                                              domain_id=project2_id)
+        sub_proj_1 = self._assert_add_project_to_hierarchy(
+            parent_id=project1_id,
+            domain_id=project1_id)
+        sub_proj_2 = self._assert_add_project_to_hierarchy(
+            parent_id=project1_id,
+            domain_id=project1_id)
+        sub_proj_3 = self._assert_add_project_to_hierarchy(
+            parent_id=project2_id,
+            domain_id=project2_id)
+        sub_proj_4 = self._assert_add_project_to_hierarchy(
+            parent_id=project2_id,
+            domain_id=project2_id)
 
-        r = self.get('/projects?is_domain=True',
-                     expected_status=200)
+        # We still have the same amount of is_domain projects
+        r = self.get('/projects?is_domain=True', expected_status=200)
+        self.assertEqual(len(r.result['projects']), is_domain_true_len)
 
-        self.assertEqual(len(r.result['projects']), 3)
-        expected = [projects[0]['project'],
-                    projects[1]['project'],
-                    projects[2]['project']]
+        # The amount of is_domain=False projects must have been incremented
+        # by 4
+        is_domain_false_len = is_domain_false_len + 4
+        r_is_domain_false = self.get('/projects?is_domain=False',
+                                     expected_status=200)
+        self.assertEqual(len(r_is_domain_false.result['projects']),
+                         is_domain_false_len)
 
-        self.assertEqual(r.result['projects'], expected)
-
-        r = self.get('/projects?is_domain=False',
-                     expected_status=200)
-
-        # The number of projects where is_domain=False is the amount created
-        # in this test (4) plus 2 pre-existing ones.
-        self.assertEqual(len(r.result['projects']),
-                         pre_existing_projects_len + 4)
+        self.assertIn(sub_proj_1.result['project'],
+                      r_is_domain_false.result['projects'])
+        self.assertIn(sub_proj_2.result['project'],
+                      r_is_domain_false.result['projects'])
+        self.assertIn(sub_proj_3.result['project'],
+                      r_is_domain_false.result['projects'])
+        self.assertIn(sub_proj_4.result['project'],
+                      r_is_domain_false.result['projects'])
 
         # If is_domain information is not provided, only the is_domain=False
         # projects are returned
         r = self.get('/projects', expected_status=200)
 
         self.assertEqual(len(r.result['projects']),
-                         pre_existing_projects_len + 4)
+                         len(r_is_domain_false.result['projects']))
+        for project in r.result['projects']:
+            self.assertIn(project, r_is_domain_false.result['projects'])
 
     def test_get_project_with_subtree_as_ids(self):
         """Call ``GET /projects/{project_id}?subtree_as_ids``.
