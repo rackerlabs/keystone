@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_4da9048f",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T07:15:54Z",
+      "side": 1,
+      "message": "i believe this is done so the import \u0027from keystone.contrib import federation\u0027 is actually used.\n\nI think it would be better to maybe have something like this after all the imports:\n\n  # NOTE(xyz): Import federation code to register the provider\n  # but the core itself is not needed for any additional functionality.\n  from keystone.contrib import federation  # noqa",
+      "parentUuid": "da86d52c_eae9bee3",
+      "revId": "8dad5954a0034373be737ed0e3d4ccead938ab9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_8dc5bc8f",
         "filename": "keystone/contrib/federation/routers.py",
         "patchSetId": 3
@@ -47,6 +65,24 @@
       "writtenOn": "2015-02-19T07:08:21Z",
       "side": 1,
       "message": "Why do we need to do this here? Why can\u0027t we just add it to load_backends like the others since all extensions are going to be enabled by default?\n\nhttps://github.com/openstack/keystone/blob/master/keystone/backends.py",
+      "revId": "8dad5954a0034373be737ed0e3d4ccead938ab9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_ede9d8e3",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T07:15:54Z",
+      "side": 1,
+      "message": "i think guang has a point here, seems unnecessary",
+      "parentUuid": "da86d52c_8dc5bc8f",
       "revId": "8dad5954a0034373be737ed0e3d4ccead938ab9b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
