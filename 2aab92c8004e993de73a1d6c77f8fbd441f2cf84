@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_462c6793",
+        "filename": "keystone/server/eventlet.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5196
+      },
+      "writtenOn": "2015-02-19T20:05:59Z",
+      "side": 1,
+      "message": "So I was told to plug debtcollector for doing deprecation warnings. You can use the remove decorator here to mark this as deprecated:\n\nhttp://docs.openstack.org/developer/debtcollector/api.html#module-debtcollector.removals\n\nSo something like:\n\n    @removals.remove(removal_version\u003d\u0027Miyazaki\u0027, \n                                 message\u003d\"Running Keystone via Eventlet is \"\n                                                 \"deprecated as of in favor of deploying \"\n                                                 \"in a wsgi container (e.g. mod_wsgi).\")\n    def serve(*servers):\n\nwould emit a python DeprecationWarning when this is used.",
+      "revId": "2aab92c8004e993de73a1d6c77f8fbd441f2cf84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_92005e02",
         "filename": "keystone/server/eventlet.py",
         "patchSetId": 1
