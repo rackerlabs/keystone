@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_bb171fed",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-19T04:36:45Z",
+      "side": 1,
+      "message": "not sure if you meant this extra line....but it is more readable because of it!",
+      "revId": "ee2f991923d40154a0e7ec2e324af8de6cd1ba40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
