@@ -61,7 +61,7 @@ class Assignment(assignment.Driver):
 
     def list_role_ids_for_groups_on_project(
             self, groups, project_id, project_domain_id, project_parents):
-        group_dns = [self.group._id_to_dn(group_id) for group_id in groups]
+        group_dns = [self.group._id_to_dn(group_id).upper() for group_id in groups]
         role_list = [self.role._dn_to_id(role_assignment.role_dn)
                      for role_assignment in self.role.get_role_assignments
                      (self.project._id_to_dn(project_id))
@@ -125,17 +125,37 @@ class Assignment(assignment.Driver):
             [self.project._dn_to_id(x.project_dn) for x in associations]))
 
     def list_role_ids_for_groups_on_domain(self, group_ids, domain_id):
-        raise exception.NotImplemented()
+        role_ids = []
+        project_subtree_dn = self.project.tree_dn
+        for group_id in group_ids:
+            group_dn = self.group._id_to_dn(group_id)
+            for group_role in self.role.list_project_roles_for_group(
+                    group_dn, project_subtree_dn):
+                role_ids.append(self.role._dn_to_id(group_role.role_dn))
+        return role_ids
 
     def list_project_ids_for_groups(self, group_ids, hints,
                                     inherited=False):
-        raise exception.NotImplemented()
+        project_ids = []
+        for group_id in group_ids:
+            group_dn = self.group._id_to_dn(group_id)
+            for group_role in self.role.list_project_roles_for_group(
+                    group_dn, self.project.tree_dn):
+                project_ids.append(self.project._dn_to_id(
+                                   group_role.project_dn))
+        return project_ids
 
     def list_domain_ids_for_user(self, user_id, group_ids, hints):
-        raise exception.NotImplemented()
+        """Returns a list with the default domain id only, because in LDAP
+        only exists default domain.
+        """
+        return [CONF.identity.default_domain_id]
 
     def list_domain_ids_for_groups(self, group_ids, inherited=False):
-        raise exception.NotImplemented()
+        """Returns a list with the default domain id only, because in LDAP
+        only exists default domain.
+        """
+        return [CONF.identity.default_domain_id]
 
     def list_user_ids_for_project(self, tenant_id):
         tenant_dn = self.project._id_to_dn(tenant_id)
