@@ -121,6 +121,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_d4a73d4e",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 1675,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-19T10:31:34Z",
+      "side": 1,
+      "message": "so we\u0027ll load the extensions in the pipeline by default...but it might still be disabled if that \"extension\" has a config switch..",
+      "parentUuid": "da86d52c_91e405a9",
+      "revId": "b461e649cd2274fdffd038ccf1797a382ddda59f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_c1886a6d",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 32
