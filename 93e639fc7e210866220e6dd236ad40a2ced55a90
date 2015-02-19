@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_86ef4486",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T18:30:35Z",
+      "side": 1,
+      "message": "covers *the* following...",
+      "revId": "93e639fc7e210866220e6dd236ad40a2ced55a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_e6d1e0cc",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T18:30:35Z",
+      "side": 1,
+      "message": "unnecessary brackets here",
+      "revId": "93e639fc7e210866220e6dd236ad40a2ced55a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_a667e823",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T18:30:35Z",
+      "side": 1,
+      "message": "this could technically be one line:\n\n  if user_id and not user_name:\n    user[\u0027name\u0027] \u003d user_id",
+      "revId": "93e639fc7e210866220e6dd236ad40a2ced55a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_c6385cf0",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T18:30:35Z",
+      "side": 1,
+      "message": "and this could be the inverse:\n\n  elif user_name and not user_id\n    user[\u0027id\u0027] \u003d parse.quote(user_name)",
+      "revId": "93e639fc7e210866220e6dd236ad40a2ced55a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_71b68c26",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T18:30:35Z",
+      "side": 1,
+      "message": "this should be:\n\n  CONF.federation.federated_domain_name or federation.FEDERATED_DOMAIN_KEYWORD",
+      "revId": "93e639fc7e210866220e6dd236ad40a2ced55a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_714dac3a",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T18:30:35Z",
+      "side": 1,
+      "message": "this could also be: CONF.federation.federated_domain_name or\n+                    federation.FEDERATED_DOMAIN_KEYWORD",
+      "revId": "93e639fc7e210866220e6dd236ad40a2ced55a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
