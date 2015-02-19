@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_121004ff",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-19T11:53:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_afc0b07c",
+      "revId": "0354721e69164cc986993c53e152ff27ee08553d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_cf5fa40d",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 30
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-19T10:42:20Z",
       "side": 1,
       "message": "This is much easier to understand than previous versions of this patch. Nice.",
+      "revId": "0354721e69164cc986993c53e152ff27ee08553d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_52f51cc9",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-19T11:53:02Z",
+      "side": 1,
+      "message": "Thanks :)",
+      "parentUuid": "da86d52c_cf5fa40d",
       "revId": "0354721e69164cc986993c53e152ff27ee08553d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_3221884d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 669,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-19T11:53:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_8f73ec7e",
+      "revId": "0354721e69164cc986993c53e152ff27ee08553d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_4f1e5460",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 30
@@ -64,6 +118,24 @@
       "writtenOn": "2015-02-19T10:42:20Z",
       "side": 1,
       "message": "well, that comment isn\u0027t necessarily correct...it depends on the state on \"inherited\"",
+      "revId": "0354721e69164cc986993c53e152ff27ee08553d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_52ca7c6e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-19T11:53:02Z",
+      "side": 1,
+      "message": "I agree, \u0027inherited and non-inherited\u0027 is the bad part of this sentence. It was from previous versions.\n\nI will replace it by:\n\n# List direct assignments",
+      "parentUuid": "da86d52c_4f1e5460",
       "revId": "0354721e69164cc986993c53e152ff27ee08553d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
