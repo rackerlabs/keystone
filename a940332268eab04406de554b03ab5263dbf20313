@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_dc72e87a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-19T21:51:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_1b2306a8",
+      "revId": "a940332268eab04406de554b03ab5263dbf20313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_9bb3764c",
         "filename": "dsvm/federation/devstack/extras.d/20-k-pyidp.sh",
         "patchSetId": 2
@@ -88,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_7fa56eb3",
+        "filename": "dsvm/federation/devstack/extras.d/20-k-pyidp.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-19T21:51:39Z",
+      "side": 1,
+      "message": "This is a really good point. I chose not to clean anything because, as you stated, this is designed for testing. On the other hand, may I should make this more complete. This I could possibly clean: the cloned repo for pysaml2, the generated config file. Should either of these be cleaned up?",
+      "parentUuid": "da86d52c_9600adac",
+      "revId": "a940332268eab04406de554b03ab5263dbf20313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_9bfd36b4",
         "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
         "patchSetId": 2
@@ -99,6 +135,24 @@
       "writtenOn": "2015-02-11T02:46:40Z",
       "side": 1,
       "message": "Would be nice to have comment describing the authorization methods supported. I assume CAS is Central Authentication Service",
+      "revId": "a940332268eab04406de554b03ab5263dbf20313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_bf8286fc",
+        "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
+        "patchSetId": 2
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-19T21:51:39Z",
+      "side": 1,
+      "message": "I could probably do that, but I\u0027ll have to figure it out first. The config is actually just their sample that I stole and now use as a template. They provide it in their source tree (https://github.com/rohe/pysaml2/blob/master/example/idp2/idp_conf.py.example), but I didn\u0027t want to rely on it in case it changed. So I keep it local.",
+      "parentUuid": "da86d52c_9bfd36b4",
       "revId": "a940332268eab04406de554b03ab5263dbf20313",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
