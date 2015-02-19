@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_9e4ebb6d",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 1560,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-19T13:37:48Z",
+      "side": 1,
+      "message": "Yes, we have something similar there.\n\nSample data in test_v3 is intended to be generic (as test_v3 is), being used everywhere (on test_v3_*).\n\nThe reasons we create different entities here are i) they are specific and not generic enough to be placed on test_v3, as stated above; ii) when we recreate, we don\u0027t get existing assignments and then this fact ease assertions on this class when we do list_role_assignment(filters).",
+      "parentUuid": "da86d52c_0342740e",
+      "revId": "748c1ed9a5e0a34ffb15a35dfa892539fbcb6b43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_63efb0b1",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 33
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-19T13:30:11Z",
       "side": 1,
       "message": "This is the same call as test_get_role_assignments_by_user(). Does getting roles by user assume a domain?",
+      "revId": "748c1ed9a5e0a34ffb15a35dfa892539fbcb6b43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_8350242d",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 1806,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-19T13:37:48Z",
+      "side": 1,
+      "message": "They call different methods: test_get_role_assignments_by_user calls _test_get_role_assignments, this one calls test_get_role_assignments_by_domain, which already add filtering by domain.\n\nSo yes, this one tests filtering by both domain and user.",
+      "parentUuid": "da86d52c_63efb0b1",
       "revId": "748c1ed9a5e0a34ffb15a35dfa892539fbcb6b43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_232698ce",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 1815,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-19T13:37:48Z",
+      "side": 1,
+      "message": "Similar response to above. :)",
+      "parentUuid": "da86d52c_a31368b6",
+      "revId": "748c1ed9a5e0a34ffb15a35dfa892539fbcb6b43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_038434d1",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 33
@@ -64,6 +118,24 @@
       "writtenOn": "2015-02-19T13:30:11Z",
       "side": 1,
       "message": "These last three tests all use the same call. How are we sure there is different behavior between them?",
+      "revId": "748c1ed9a5e0a34ffb15a35dfa892539fbcb6b43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_832744c6",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 1836,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-19T13:37:48Z",
+      "side": 1,
+      "message": "Similar response to above :)\n\nThey call different methods.",
+      "parentUuid": "da86d52c_038434d1",
       "revId": "748c1ed9a5e0a34ffb15a35dfa892539fbcb6b43",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
