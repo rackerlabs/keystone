@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_afc0b07c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-19T10:42:20Z",
+      "side": 1,
+      "message": "The way this sentence is written sounds a bit odd...maybe:\n\n\"The resulting list of assignments will be filtered by the parameters provided.\"",
+      "revId": "0354721e69164cc986993c53e152ff27ee08553d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_cf5fa40d",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 642,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-19T10:42:20Z",
+      "side": 1,
+      "message": "This is much easier to understand than previous versions of this patch. Nice.",
+      "revId": "0354721e69164cc986993c53e152ff27ee08553d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_8f73ec7e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 669,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-19T10:42:20Z",
+      "side": 1,
+      "message": "maybe say \"If inherited is None, then this means....\"",
+      "revId": "0354721e69164cc986993c53e152ff27ee08553d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_4f1e5460",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-19T10:42:20Z",
+      "side": 1,
+      "message": "well, that comment isn\u0027t necessarily correct...it depends on the state on \"inherited\"",
+      "revId": "0354721e69164cc986993c53e152ff27ee08553d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
