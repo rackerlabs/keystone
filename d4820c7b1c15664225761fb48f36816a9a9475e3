@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_ae50a82c",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-02-19T15:39:00Z",
+      "side": 1,
+      "message": "What do you mean with \"register the group\". It is not clear to me!",
+      "parentUuid": "da86d52c_385962fd",
+      "revId": "d4820c7b1c15664225761fb48f36816a9a9475e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_f8f26a6d",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 11
