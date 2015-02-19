@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da86d52c_e73003a0",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-19T16:28:10Z",
+      "side": 1,
+      "message": "oh, we should remove this as we cannot limit ourselves to saml2 and oidc protocols only.",
+      "revId": "d4820c7b1c15664225761fb48f36816a9a9475e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_385962fd",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 11
