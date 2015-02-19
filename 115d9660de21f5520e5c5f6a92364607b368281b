@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_c4c0784c",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-19T00:55:46Z",
+      "side": 0,
+      "message": "why are we removing this? It is actually nice to keep the constants, so we can re-use them in the test.",
+      "revId": "115d9660de21f5520e5c5f6a92364607b368281b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
