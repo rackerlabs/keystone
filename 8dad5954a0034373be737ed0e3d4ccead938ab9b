@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_ed4d583c",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-19T07:08:21Z",
+      "side": 1,
+      "message": "Do we still need this if we load all the drivers in load_backends?\n\nhttps://github.com/openstack/keystone/blob/master/keystone/backends.py",
+      "revId": "8dad5954a0034373be737ed0e3d4ccead938ab9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_eae9bee3",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-19T07:08:21Z",
+      "side": 1,
+      "message": "Why do we need to do this dance for federation but not oauth1? A more descriptive comment here would be helpful.",
+      "revId": "8dad5954a0034373be737ed0e3d4ccead938ab9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_8dc5bc8f",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-19T07:08:21Z",
+      "side": 1,
+      "message": "Why do we need to do this here? Why can\u0027t we just add it to load_backends like the others since all extensions are going to be enabled by default?\n\nhttps://github.com/openstack/keystone/blob/master/keystone/backends.py",
+      "revId": "8dad5954a0034373be737ed0e3d4ccead938ab9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_6dcb28a4",
+        "filename": "keystone/contrib/oauth1/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-19T07:08:21Z",
+      "side": 1,
+      "message": "Why do we need to do this here? Why can\u0027t we just add it to load_backends like the others since all extensions are going to be enabled by default?\n\nhttps://github.com/openstack/keystone/blob/master/keystone/backends.py",
+      "revId": "8dad5954a0034373be737ed0e3d4ccead938ab9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
