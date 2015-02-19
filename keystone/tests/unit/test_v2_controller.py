@@ -80,9 +80,10 @@ class TenantTestCase(tests.TestCase):
                     'domain_id': domain['id']}
         self.resource_api.create_project(project1['id'], project1)
         # Check the real total number of projects, we should have the above
-        # plus those in the default features
+        # plus: i) those in the default fixtures; ii) two is_domain projects,
+        # since we have two domains.
         refs = self.resource_api.list_projects()
-        self.assertEqual(len(default_fixtures.TENANTS) + 1, len(refs))
+        self.assertEqual(len(default_fixtures.TENANTS) + 3, len(refs))
 
         # Now list all projects using the v2 API - we should only get
         # back those in the default features, since only those are in the
