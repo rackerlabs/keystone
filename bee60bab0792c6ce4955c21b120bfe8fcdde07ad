@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_09c0c07a",
+        "filename": "tox.ini",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-19T20:31:56Z",
+      "side": 1,
+      "message": "still would like to see these moved into a test-requirements-functional.txt or something",
+      "revId": "bee60bab0792c6ce4955c21b120bfe8fcdde07ad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
