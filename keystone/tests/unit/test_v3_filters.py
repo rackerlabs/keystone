@@ -22,6 +22,7 @@ from keystone.policy.backends import rules
 from keystone.tests.unit import filtering
 from keystone.tests.unit.ksfixtures import temporaryfile
 from keystone.tests.unit import test_v3
+from keystone.tests.unit import utils
 
 
 CONF = cfg.CONF
@@ -128,6 +129,11 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         self.assertIn(self.user2['id'], id_list)
         self.assertIn(self.user3['id'], id_list)
 
+    # NOTE(samueldmq): Since requesting for domains makes the resource manager
+    # to query the project table by adding the is_domain filter to driver_hints
+    # and the SQL backend cannot honor multiple valued filters, this is waiting
+    # on that bug to be resolved.
+    @utils.wip('Waiting on bug #1424745')
     def test_list_filtered_domains(self):
         """GET /domains?enabled=0
 
@@ -171,6 +177,11 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         self.assertIn(self.domainB['id'], id_list)
         self.assertIn(CONF.identity.default_domain_id, id_list)
 
+    # NOTE(samueldmq): Since requesting for domains makes the resource manager
+    # to query the project table by adding the is_domain filter to driver_hints
+    # and the SQL backend cannot honor multiple valued filters, this is waiting
+    # on that bug to be resolved.
+    @utils.wip('Waiting on bug #1424745')
     def test_multiple_filters(self):
         """GET /domains?enabled&name=myname
 
