@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_357df21c",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-02-19T14:32:34Z",
+      "side": 1,
+      "message": "The table has primary_key the couple (idp_id, remote_id) so is the couple unique. MySql should accept (idp1, remote1) and idp2,remote1) as unique. You are right for the nullable",
+      "parentUuid": "da86d52c_efe547a4",
+      "revId": "1f80311d112c94111fb5ab5a937ab27cc6122087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_52219cb2",
         "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-19T12:12:49Z",
       "side": 1,
       "message": "this should work if you add something like \n\nidp_table \u003d sql.Table(\u0027identity_provider\u0027, meta, autoload\u003dTrue) somewhere above, say line 19.",
+      "revId": "1f80311d112c94111fb5ab5a937ab27cc6122087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f557da57",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-02-19T14:32:34Z",
+      "side": 1,
+      "message": "It sound like a bad implementation of sqlalchemy but it works :)",
+      "parentUuid": "da86d52c_52219cb2",
       "revId": "1f80311d112c94111fb5ab5a937ab27cc6122087",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_e9fb7f78",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-02-19T14:32:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_b25f38e4",
+      "revId": "1f80311d112c94111fb5ab5a937ab27cc6122087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_b81397b6",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 10
@@ -81,6 +135,24 @@
       "writtenOn": "2015-02-19T13:02:13Z",
       "side": 1,
       "message": "I am missing tests that show that remote_ids are unique.\nProposed test plan:\n\na) add IdP_1 with remote_ids \u003d [\u0027a\u0027, \u0027b\u0027]\nb) add IdP_2 with remote_ids \u003d [\u0027a\u0027, \u0027c\u0027]\n\nexpect server to compain about adding \u0027a\u0027 again.\nI think this is a must-have test as we must be sure this works and remote_ids are unique (as for websso where we get identity_provider object basing on remote_id value).",
+      "revId": "1f80311d112c94111fb5ab5a937ab27cc6122087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_04ffda66",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-02-19T14:32:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_b81397b6",
       "revId": "1f80311d112c94111fb5ab5a937ab27cc6122087",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -115,6 +187,42 @@
       "writtenOn": "2015-02-19T13:44:48Z",
       "side": 1,
       "message": "Also, you can squeeze those two lines to:\n\nbody[\u0027remote_ids\u0027] \u003d [uuid.uuid4().hex]",
+      "parentUuid": "da86d52c_18b103e0",
+      "revId": "1f80311d112c94111fb5ab5a937ab27cc6122087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_296e772f",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-02-19T14:32:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_bea53fb6",
+      "revId": "1f80311d112c94111fb5ab5a937ab27cc6122087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_694b0fb1",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-02-19T14:32:34Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "da86d52c_18b103e0",
       "revId": "1f80311d112c94111fb5ab5a937ab27cc6122087",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
