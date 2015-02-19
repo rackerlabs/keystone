@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_985a531c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-19T12:49:40Z",
+      "side": 1,
+      "message": "should probably be bp backends-tests-restructuration\n\nP.S. Is there even an english word restructuration ? ;-)",
+      "revId": "e987a0139da3fcb9591c2bbcbde7e1a15142f6e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
