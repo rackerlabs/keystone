@@ -16,6 +16,24 @@
       "revId": "4f7d17b4bd94cc4c2e9beef49eb823aab8c3a234",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_4dae6482",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 743,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T07:19:40Z",
+      "side": 1,
+      "message": "not really in this case, the bug in question happens when a mod_wsgi setting isn\u0027t set properly and then proceeds to eat up the authorization header. so the initial request was fine, something in the middle happened.",
+      "parentUuid": "da86d52c_6db5e8eb",
+      "revId": "4f7d17b4bd94cc4c2e9beef49eb823aab8c3a234",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
