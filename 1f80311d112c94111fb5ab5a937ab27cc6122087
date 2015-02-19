@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_987ecead",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-19T14:58:15Z",
+      "side": 1,
+      "message": "it might be migrations system, not sqlalchemy.",
+      "parentUuid": "da86d52c_f557da57",
+      "revId": "1f80311d112c94111fb5ab5a937ab27cc6122087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_d23bcc99",
         "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
         "patchSetId": 10
