@@ -211,10 +211,12 @@ class AuthInfo(object):
                         project_name, domain_ref['id'], True)
             else:
                 project_ref = self.resource_api.get_project(project_id)
-                # NOTE(morganfainberg): The _lookup_domain method will raise
-                # exception.Unauthorized if the domain isn't found or is
-                # disabled.
-                self._lookup_domain({'id': project_ref['domain_id']})
+                # The domain_id is None for root projects acting as domains
+                if project_ref['domain_id']:
+                    # NOTE(morganfainberg): The _lookup_domain method will
+                    # raise exception.Unauthorized if the domain isn't found or
+                    # is disabled.
+                    self._lookup_domain({'id': project_ref['domain_id']})
         except exception.ProjectNotFound as e:
             raise exception.Unauthorized(e)
         self._assert_project_is_enabled(project_ref)
