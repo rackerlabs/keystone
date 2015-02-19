@@ -18,6 +18,7 @@ from oslo_config import cfg
 from oslo_log import log
 
 from keystone.common import clean
+from keystone.common import controller
 from keystone.common import driver_hints
 from keystone.common import ldap as common_ldap
 from keystone.common import models
@@ -50,10 +51,13 @@ class Resource(resource.Driver):
         return 'ldap'
 
     def _set_default_parent_project(self, ref):
-        """If the parent project ID has not been set, set it to None."""
+        # If the parent project ID has not been set, set it to domain
+        # default.
+        default_domain = resource.calc_default_domain_project()
+
         if isinstance(ref, dict):
             if 'parent_id' not in ref:
-                ref = dict(ref, parent_id=None)
+                ref = dict(ref, parent_id=default_domain.get('id'))
             return ref
         elif isinstance(ref, list):
             return [self._set_default_parent_project(x) for x in ref]
@@ -68,13 +72,14 @@ class Resource(resource.Driver):
         else:
             raise ValueError(_('Expected dict or list: %s') % type(ref))
 
-    def _validate_parent_project_is_none(self, ref):
-        """If a parent_id different from None was given,
+    def _validate_parent_project(self, ref):
+        """If a parent_id different from Domain Default or None was given,
            raises InvalidProjectException.
 
         """
         parent_id = ref.get('parent_id')
-        if parent_id is not None:
+        domain_default = resource.calc_default_domain()
+        if parent_id and parent_id != domain_default['id']:
             raise exception.InvalidParentProject(parent_id)
 
     def _validate_is_domain_project_is_false(self, ref):
@@ -88,18 +93,47 @@ class Resource(resource.Driver):
         project_ref = self._set_default_is_domain_project(project_ref)
         return self._set_default_parent_project(project_ref)
 
-    def get_project(self, tenant_id):
-        return self._set_default_attributes(
-            self.project.get(tenant_id))
+    def get_project(self, tenant_id, is_domain=False):
+        # is_domain is passed as True in get_domain calls
+        if is_domain:
+            return self.get_domain(tenant_id)
+        # Otherwise, manager does not specify if the required project acts as
+        # a domain
+        try:
+            return self._set_default_attributes(self.project.get(tenant_id))
+        except exception.ProjectNotFound:
+            try:
+                return self._set_default_attributes(self.get_domain(tenant_id))
+            except exception.DomainNotFound:
+                raise exception.ProjectNotFound(project_id=tenant_id)
 
     def list_projects(self, hints):
-        return self._set_default_attributes(
+        projects = []
+
+        is_domain_project = resource.calc_default_domain_project()
+        if hints is not None:
+            for f in hints.filters:
+                if f['name'] == 'is_domain' and f['value']:
+                    return [resource.calc_default_domain()]
+
+            if (controller.V3Controller.filter_by_attributes(
+               [is_domain_project], hints)):
+                projects.append(is_domain_project)
+        else:
+            projects.append(is_domain_project)
+
+        projects += self._set_default_attributes(
             self.project.get_all_filtered(hints))
+
+        return projects
 
     def list_projects_in_domain(self, domain_id):
         # We don't support multiple domains within this driver, so ignore
         # any domain specified
-        return self.list_projects(driver_hints.Hints())
+        projects = self.list_projects(driver_hints.Hints())
+        # TODO(samueldmq): Change this by supporting notEquals filter in
+        # driver hints and then create driver hints at manager level
+        return [project for project in projects if project['id'] != domain_id]
 
     def list_projects_in_subtree(self, project_id):
         # We don't support projects hierarchy within this driver, so a
@@ -116,7 +150,11 @@ class Resource(resource.Driver):
         # project will always be a root and a leaf at the same time
         return True
 
-    def list_projects_from_ids(self, ids):
+    def list_projects_from_ids(self, ids, is_domain=False):
+        # If querying for is_domain projects, return the default domain
+        if is_domain:
+            return [resource.calc_default_domain()]
+
         return [self.get_project(id) for id in ids]
 
     def list_project_ids_from_domain_ids(self, domain_ids):
@@ -125,13 +163,23 @@ class Resource(resource.Driver):
         return [x.id for x in self.list_projects(driver_hints.Hints())]
 
     def get_project_by_name(self, tenant_name, domain_id, is_domain):
+        if is_domain:
+            # Check if the provided name matches the default domain project one
+            domain_project = resource.calc_default_domain_project()
+            if tenant_name != domain_project['name']:
+                raise exception.ProjectNotFound(project_id=tenant_name)
+            return domain_project
+
         self._validate_default_domain_id(domain_id)
         return self._set_default_attributes(
             self.project.get_by_name(tenant_name))
 
     def create_project(self, tenant_id, tenant):
+        if tenant.get('is_domain'):
+            self.create_domain(tenant_id, tenant)
+
         self.project.check_allow_create()
-        self._validate_parent_project_is_none(tenant)
+        self._validate_parent_project(tenant)
         self._validate_is_domain_project_is_false(tenant)
         tenant['name'] = clean.project_name(tenant['name'])
         data = tenant.copy()
@@ -152,6 +200,8 @@ class Resource(resource.Driver):
             tenant['name'] = clean.project_name(tenant['name'])
         if 'is_domain' in tenant:
             tenant.pop('is_domain')
+        if 'parent_id' in tenant:
+            tenant.pop('parent_id')
         return self._set_default_attributes(
             self.project.update(tenant_id, tenant))
 
