@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_b130049f",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T18:31:57Z",
+      "side": 1,
+      "message": "if you do end up doing an if/elif structure, this could be an else block",
+      "revId": "93e639fc7e210866220e6dd236ad40a2ced55a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_a667e823",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 10
