@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_efe547a4",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-19T12:12:49Z",
+      "side": 1,
+      "message": "nothing serious, but i think primary_key\u003dTrue implies nullable\u003dFalse and unique\u003dTrue.",
+      "revId": "1f80311d112c94111fb5ab5a937ab27cc6122087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_52219cb2",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-19T12:12:49Z",
+      "side": 1,
+      "message": "this should work if you add something like \n\nidp_table \u003d sql.Table(\u0027identity_provider\u0027, meta, autoload\u003dTrue) somewhere above, say line 19.",
+      "revId": "1f80311d112c94111fb5ab5a937ab27cc6122087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_d23bcc99",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-19T12:12:49Z",
+      "side": 1,
+      "message": "niiice!",
+      "revId": "1f80311d112c94111fb5ab5a937ab27cc6122087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_b25f38e4",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-19T12:12:49Z",
+      "side": 1,
+      "message": "i super dislike it. There should be another way to do this more generically.",
+      "revId": "1f80311d112c94111fb5ab5a937ab27cc6122087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
