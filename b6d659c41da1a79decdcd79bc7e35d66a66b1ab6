@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_8f15ab3e",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-19T11:22:22Z",
+      "side": 1,
+      "message": "(nit): s/the/that/ ?",
+      "revId": "b6d659c41da1a79decdcd79bc7e35d66a66b1ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
