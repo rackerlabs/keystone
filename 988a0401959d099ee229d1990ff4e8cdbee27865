@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_5e73634d",
+        "filename": "doc/source/extensions.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-19T13:46:52Z",
+      "side": 1,
+      "message": "Henry brings up a good point about this in the previous patch set. Should we do something with Endpoint Filtering v1.0 API? In this case, because it was marked as experimental, couldn\u0027t the changes that made up v1.1 be rolled into v1.0 and we just have one *stable* version of the Endpoint Filtering extension? I could see where this might be difficult to maintain if this is the norm. \n\nWould it make sense to say that an extension API can\u0027t be versioned until it is stable?",
+      "revId": "988a0401959d099ee229d1990ff4e8cdbee27865",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
