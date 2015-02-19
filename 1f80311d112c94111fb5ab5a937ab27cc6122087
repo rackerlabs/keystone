@@ -101,6 +101,24 @@
       "revId": "1f80311d112c94111fb5ab5a937ab27cc6122087",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_bea53fb6",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-19T13:44:48Z",
+      "side": 1,
+      "message": "Also, you can squeeze those two lines to:\n\nbody[\u0027remote_ids\u0027] \u003d [uuid.uuid4().hex]",
+      "parentUuid": "da86d52c_18b103e0",
+      "revId": "1f80311d112c94111fb5ab5a937ab27cc6122087",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
