@@ -60,6 +60,8 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         self.load_backends()
         self.load_fixtures(default_fixtures)
 
+        self.domain_count = 1
+
         self.addCleanup(common_ldap_core._HANDLERS.clear)
 
     def _get_domain_fixture(self):
@@ -102,6 +104,16 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
                 return res[0][1][enabled_attr_name]
             else:
                 return None
+
+    def test_list_projects(self):
+        projects = self.resource_api.list_projects()
+        # Sum expected projects with is_domain = True projects
+        self.assertEqual(4 + self.domain_count, len(projects))
+        project_ids = []
+        for project in projects:
+            project_ids.append(project.get('id'))
+        self.assertIn(self.tenant_bar['id'], project_ids)
+        self.assertIn(self.tenant_baz['id'], project_ids)
 
     def test_build_tree(self):
         """Regression test for building the tree names
@@ -1707,35 +1719,6 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # Returning projects to be used across the tests
         return [project1, project2]
 
-    def _assert_create_is_domain_project_not_allowed(self):
-        domain = self._get_domain_fixture()
-        project = {'id': uuid.uuid4().hex,
-                   'name': uuid.uuid4().hex,
-                   'description': '',
-                   'domain_id': domain['id'],
-                   'enabled': True,
-                   'parent_id': None,
-                   'is_domain': True}
-
-        self.assertRaises(exception.Forbidden,
-                          self.resource_api.create_project,
-                          project['id'], project)
-
-    def test_delete_is_domain_project(self):
-        self._assert_create_is_domain_project_not_allowed()
-
-    def test_create_is_domain_project_under_project_hierarchy(self):
-        self._assert_create_hierarchy_not_allowed()
-
-    def test_create_not_is_domain_project_under_is_domain_hierarchy(self):
-        self._assert_create_hierarchy_not_allowed()
-
-    def test_create_is_domain_project(self):
-        self._assert_create_is_domain_project_not_allowed()
-
-    def test_create_two_projects_same_name_and_parent(self):
-        self._assert_create_hierarchy_not_allowed()
-
     def test_check_leaf_projects(self):
         projects = self._assert_create_hierarchy_not_allowed()
         for project in projects:
@@ -2380,6 +2363,10 @@ class LdapIdentitySqlAssignmentWithMapping(LdapIdentitySqlAssignment):
 
 class BaseMultiLDAPandSQLIdentity(object):
     """Mixin class with support methods for domain-specific config testing."""
+
+    def setUp(self):
+        self.domain_count = 1
+        self.domain_specific_count = 0
 
     def create_user(self, domain_id):
         user = {'name': uuid.uuid4().hex,
