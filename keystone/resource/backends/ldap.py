@@ -18,6 +18,7 @@ from oslo_config import cfg
 from oslo_log import log
 
 from keystone import clean
+from keystone.common import controller
 from keystone.common import driver_hints
 from keystone.common import ldap as common_ldap
 from keystone.common import models
@@ -89,18 +90,42 @@ class Resource(resource.Driver):
         project_ref = self._set_default_is_domain_project(project_ref)
         return self._set_default_parent_project(project_ref)
 
-    def get_project(self, tenant_id):
+    def get_project(self, tenant_id, is_domain=False):
+        # If querying for a domain, check and return the default one
+        if is_domain:
+            self._validate_default_domain_id(tenant_id)
+            return resource.calc_default_domain()
+
         return self._set_default_attributes(
             self.project.get(tenant_id))
 
     def list_projects(self, hints):
-        return self._set_default_attributes(
+        projects = []
+
+        is_domain_project = resource.calc_default_domain_project()
+        if hints is not None:
+            for f in hints.filters:
+                if f['name'] == 'is_domain' and f['value']:
+                    return [resource.calc_default_domain()]
+
+            if (controller.V3Controller.filter_by_attributes(
+               [is_domain_project], hints)):
+                projects.append(is_domain_project)
+        else:
+            projects.append(is_domain_project)
+
+        projects += self._set_default_attributes(
             self.project.get_all_filtered(hints))
+
+        return projects
 
     def list_projects_in_domain(self, domain_id):
         # We don't support multiple domains within this driver, so ignore
         # any domain specified
-        return self.list_projects(driver_hints.Hints())
+        projects = self.list_projects(driver_hints.Hints())
+        # TODO(samueldmq): Change this by supporting notEquals filter in
+        # driver hints and then create driver hints at manager level
+        return [project for project in projects if project['id'] != domain_id]
 
     def list_projects_in_subtree(self, project_id):
         # We don't support projects hierarchy within this driver, so a
@@ -117,7 +142,11 @@ class Resource(resource.Driver):
         # project will always be a root and a leaf at the same time
         return True
 
-    def list_projects_from_ids(self, ids):
+    def list_projects_from_ids(self, ids, is_domain=False):
+        # If querying for is_domain projects, return the default domain
+        if is_domain:
+            return [resource.calc_default_domain()]
+
         return [self.get_project(id) for id in ids]
 
     def list_project_ids_from_domain_ids(self, domain_ids):
@@ -125,12 +154,26 @@ class Resource(resource.Driver):
         # any domain specified
         return [x.id for x in self.list_projects(driver_hints.Hints())]
 
-    def get_project_by_name(self, tenant_name, domain_id):
+    def get_project_by_name(self, tenant_name, domain_id=None,
+                            is_domain=False):
+        if is_domain:
+            # Check if the provided name matches the default domain project one
+            domain_project = resource.calc_default_domain_project()
+            if tenant_name != domain_project['name']:
+                raise exception.ProjectNotFound(project_id=tenant_name)
+            return domain_project
+
         self._validate_default_domain_id(domain_id)
         return self._set_default_attributes(
             self.project.get_by_name(tenant_name))
 
     def create_project(self, tenant_id, tenant):
+        if tenant.get('is_domain'):
+            if tenant_id == CONF.identity.default_domain_id:
+                msg = _('Duplicate ID, %s.') % tenant_id
+                raise exception.Conflict(type='domain', details=msg)
+            raise exception.Forbidden(_('Domains are read-only against LDAP'))
+
         self.project.check_allow_create()
         self._validate_parent_project_is_none(tenant)
         self._validate_is_domain_project_is_false(tenant)
@@ -168,10 +211,6 @@ class Resource(resource.Driver):
             raise exception.Conflict(type='domain', details=msg)
         raise exception.Forbidden(_('Domains are read-only against LDAP'))
 
-    def get_domain(self, domain_id):
-        self._validate_default_domain_id(domain_id)
-        return resource.calc_default_domain()
-
     def update_domain(self, domain_id, domain):
         self._validate_default_domain_id(domain_id)
         raise exception.Forbidden(_('Domains are read-only against LDAP'))
@@ -179,18 +218,6 @@ class Resource(resource.Driver):
     def delete_domain(self, domain_id):
         self._validate_default_domain_id(domain_id)
         raise exception.Forbidden(_('Domains are read-only against LDAP'))
-
-    def list_domains(self, hints):
-        return [resource.calc_default_domain()]
-
-    def list_domains_from_ids(self, ids):
-        return [resource.calc_default_domain()]
-
-    def get_domain_by_name(self, domain_name):
-        default_domain = resource.calc_default_domain()
-        if domain_name != default_domain['name']:
-            raise exception.DomainNotFound(domain_id=domain_name)
-        return default_domain
 
 
 # TODO(termie): turn this into a data object and move logic to driver

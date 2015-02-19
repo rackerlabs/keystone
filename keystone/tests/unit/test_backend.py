@@ -2087,7 +2087,9 @@ class IdentityTests(object):
 
     def test_list_projects(self):
         projects = self.resource_api.list_projects()
-        self.assertEqual(4, len(projects))
+        # 5 projects are expected: 4 projects from default fixtures plus the
+        # is_domain project for the default domain.
+        self.assertEqual(5, len(projects))
         project_ids = []
         for project in projects:
             project_ids.append(project.get('id'))
@@ -2127,6 +2129,8 @@ class IdentityTests(object):
         project_ids = ([x['id'] for x in
                        self.resource_api.list_projects_in_domain(
                            DEFAULT_DOMAIN_ID)])
+        # Only the 4 projects from the default fixtures are expected, since
+        # filtering by domain does not include any is_domain project.
         self.assertEqual(4, len(project_ids))
         self.assertIn(self.tenant_bar['id'], project_ids)
         self.assertIn(self.tenant_baz['id'], project_ids)
@@ -2146,6 +2150,8 @@ class IdentityTests(object):
         project_ids = ([x['id'] for x in
                        self.resource_api.list_projects_in_domain(
                            domain1['id'])])
+        # Only the 2 created projects are expected, since filtering by domain
+        # does not include any is_domain project.
         self.assertEqual(2, len(project_ids))
         self.assertIn(project1['id'], project_ids)
         self.assertIn(project2['id'], project_ids)
@@ -2291,7 +2297,6 @@ class IdentityTests(object):
                           self.resource_api.create_project,
                           project['id'], project)
 
-    @test_utils.wip('domain operations still look at domain table')
     def test_create_not_is_domain_project_under_is_domain_hierarchy(self):
         projects_hierarchy = self._create_projects_hierarchy(is_domain=True)
         parent = projects_hierarchy[1]
@@ -3353,7 +3358,7 @@ class IdentityTests(object):
         updated_domain_ref = copy.deepcopy(domain_ref)
         updated_domain_ref['name'] = uuid.uuid4().hex
         # Update domain, bypassing resource api manager
-        self.resource_api.driver.update_domain(domain_id, updated_domain_ref)
+        self.resource_api.driver.update_project(domain_id, updated_domain_ref)
         # Verify get_domain still returns the domain
         self.assertDictContainsSubset(
             domain_ref, self.resource_api.get_domain(domain_id))
@@ -3373,8 +3378,10 @@ class IdentityTests(object):
         domain_ref_disabled['enabled'] = False
         self.resource_api.driver.update_domain(domain_id,
                                                domain_ref_disabled)
+        self.resource_api.driver.update_project(domain_id, {'enabled': False})
         # Delete domain, bypassing resource api manager
         self.resource_api.driver.delete_domain(domain_id)
+        self.resource_api.driver.delete_project(domain_id)
         # Verify get_domain still returns the domain
         self.assertDictContainsSubset(
             domain_ref, self.resource_api.get_domain(domain_id))
@@ -3390,6 +3397,13 @@ class IdentityTests(object):
         # Make sure domain is 'disabled', bypass resource api manager
         domain['enabled'] = False
         self.resource_api.driver.update_domain(domain_id, domain)
+        self.resource_api.driver.update_project(domain_id, {'enabled': False})
+        # Try to delete the domain, but it is still enabled
+        self.assertRaises(exception.ForbiddenAction,
+                          self.resource_api.delete_domain, domain_id)
+        # Invalidate cache
+        self.resource_api.get_domain.invalidate(self.resource_api,
+                                                domain_id)
         # Delete domain
         self.resource_api.delete_domain(domain_id)
         # verify DomainNotFound raised
@@ -5810,7 +5824,6 @@ class LimitTests(filtering.FilterTests):
 
         self.domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
         self.resource_api.create_domain(self.domain1['id'], self.domain1)
-        self.addCleanup(self.clean_up_domain)
 
         self.entity_lists = {}
         self.domain1_entity_lists = {}
@@ -5820,18 +5833,20 @@ class LimitTests(filtering.FilterTests):
             self.entity_lists[entity] = self._create_test_data(entity, 6)
             self.domain1_entity_lists[entity] = self._create_test_data(
                 entity, 14, self.domain1['id'])
+
+        # As domains are projects, add the is_domain project to the list
+        self.domain_project = self.resource_api.get_project(self.domain1['id'])
+        self.domain1_entity_lists['project'].append(self.domain_project)
+
         self.addCleanup(self.clean_up_entities)
-
-    def clean_up_domain(self):
-        """Clean up domain test data from Limit Test Cases."""
-
-        self.domain1['enabled'] = False
-        self.resource_api.update_domain(self.domain1['id'], self.domain1)
-        self.resource_api.delete_domain(self.domain1['id'])
-        del self.domain1
 
     def clean_up_entities(self):
         """Clean up entity test data from Limit Test Cases."""
+
+        # Disable the is_domain project, in order to be able to delete it
+        self.resource_api.update_project(self.domain_project['id'],
+                                         {'enabled': False})
+
         for entity in self.ENTITIES:
             self._delete_test_data(entity, self.entity_lists[entity])
             self._delete_test_data(entity, self.domain1_entity_lists[entity])
