@@ -35,6 +35,7 @@ from keystone.tests.unit import fakeldap
 from keystone.tests.unit import identity_mapping as mapping_sql
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import test_backend
+from keystone.tests.unit import utils
 
 
 CONF = cfg.CONF
@@ -58,6 +59,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         common_ldap.register_handler('fake://', fakeldap.FakeLdap)
         self.load_backends()
         self.load_fixtures(default_fixtures)
+        self.domain_count = 1
 
         self.addCleanup(common_ldap_core._HANDLERS.clear)
 
@@ -99,6 +101,16 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
             return res[0][1][enabled_attr_name]
         else:
             return None
+
+    def test_list_projects(self):
+        projects = self.resource_api.list_projects()
+        # Sum expected projects with is_domain = True projects
+        self.assertEqual(4 + self.domain_count, len(projects))
+        project_ids = []
+        for project in projects:
+            project_ids.append(project.get('id'))
+        self.assertIn(self.tenant_bar['id'], project_ids)
+        self.assertIn(self.tenant_baz['id'], project_ids)
 
     def test_build_tree(self):
         """Regression test for building the tree names
@@ -391,6 +403,10 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
         user_projects = self.assignment_api.list_projects_for_user(
             new_user['id'])
         self.assertEqual(3, len(user_projects))
+
+    def test_create_duplicate_is_domain_project_name_fails(self):
+        self.skipTest(
+            'N/A: LDAP does not support multiple domains')
 
     def test_create_duplicate_user_name_in_different_domains(self):
         self.skipTest('Domains are read-only against LDAP')
@@ -2858,6 +2874,16 @@ class DomainSpecificLDAPandSQLIdentity(
     def test_domain_crud(self):
         self.skipTest(
             'N/A: Not relevant for multi ldap testing')
+
+    # NOTE(samueldmq): Tests in this class have LDAP as the default identity
+    # driver mapping the default domain. Thus, new created domains cannot be
+    # mapped in a identity driver and then fail on any identity action. This
+    # test fails because, when deleting a domain, the list of users for that
+    # domain needs to be retrieved, in order to execute token revocations.
+    @utils.wip('Waiting on bug #1425895')
+    def test_delete_is_domain_project(self):
+        super(DomainSpecificLDAPandSQLIdentity,
+              self).test_delete_is_domain_project()
 
     def test_list_users(self):
         # Override the standard list users, since we have added an extra user
