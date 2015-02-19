@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_0342740e",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 1560,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-19T13:30:11Z",
+      "side": 1,
+      "message": "I believe we have something similar to this workflow in test_v3.py that populates a bunch of sample data for us. It would be nice to have this all in one place so when we go to look for how the data is wired, we only have to look in one spot.",
+      "revId": "748c1ed9a5e0a34ffb15a35dfa892539fbcb6b43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_63efb0b1",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 1806,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-19T13:30:11Z",
+      "side": 1,
+      "message": "This is the same call as test_get_role_assignments_by_user(). Does getting roles by user assume a domain?",
+      "revId": "748c1ed9a5e0a34ffb15a35dfa892539fbcb6b43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_a31368b6",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 1815,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-19T13:30:11Z",
+      "side": 1,
+      "message": "Same comment here as above.",
+      "revId": "748c1ed9a5e0a34ffb15a35dfa892539fbcb6b43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_038434d1",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 1836,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-19T13:30:11Z",
+      "side": 1,
+      "message": "These last three tests all use the same call. How are we sure there is different behavior between them?",
+      "revId": "748c1ed9a5e0a34ffb15a35dfa892539fbcb6b43",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
