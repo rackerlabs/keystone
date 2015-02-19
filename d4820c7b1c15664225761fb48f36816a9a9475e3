@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da86d52c_385962fd",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-19T15:00:37Z",
+      "side": 1,
+      "message": "this is much better. Now, AFAIR we need to first register the group that\u0027s name is equal to protocol\u0027s name so the values from keystone.conf will be really accessible. Probably worth checking on a real keystone deployment....",
+      "revId": "d4820c7b1c15664225761fb48f36816a9a9475e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_f8f26a6d",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-19T15:00:37Z",
+      "side": 1,
+      "message": "(nit) remote_ids are rather associated to identity_providers.",
+      "revId": "d4820c7b1c15664225761fb48f36816a9a9475e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
