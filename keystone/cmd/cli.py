@@ -22,7 +22,6 @@ from oslo_log import log
 from oslo_serialization import jsonutils
 import pbr.version
 
-from keystone.common import driver_hints
 from keystone.common import openssl
 from keystone.common import sql
 from keystone.common.sql import migration_helpers
@@ -295,7 +294,8 @@ class MappingPurge(BaseApp):
 
         def get_domain_id(name):
             try:
-                return resource_manager.get_domain_by_name(name)['id']
+                return resource_manager.get_project_by_name(
+                    name, None, True)['id']
             except KeyError:
                 raise ValueError(_("Unknown domain '%(name)s' specified by "
                                    "--domain-name") % {'name': name})
@@ -382,8 +382,9 @@ class DomainConfigUploadFiles(object):
         """
         try:
             domain_ref = (
-                self.resource_manager.get_domain_by_name(domain_name))
-        except exception.DomainNotFound:
+                self.resource_manager.get_project_by_name(
+                    domain_name, None, True))
+        except exception.ProjectNotFound:
             print(_('Invalid domain name: %(domain)s found in config file '
                     'name: %(file)s - ignoring this file.') % {
                         'domain': domain_name,
@@ -484,9 +485,9 @@ class DomainConfigUploadFiles(object):
                                      'domain config directory'), fname)
 
     def run(self):
-        # First off, let's just check we can talk to the domain database
+        # First off, let's just check we can talk to the project database
         try:
-            self.resource_manager.list_domains(driver_hints.Hints())
+            self.resource_manager.list_projects_acting_as_domain()
         except Exception:
             # It is likely that there is some SQL or other backend error
             # related to set up
