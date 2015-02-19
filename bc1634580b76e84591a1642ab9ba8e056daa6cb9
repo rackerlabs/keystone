@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_71ca156f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-02-19T15:47:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_18a3be00",
+      "revId": "bc1634580b76e84591a1642ab9ba8e056daa6cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_78abdad5",
         "filename": "/COMMIT_MSG",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "da86d52c_b1c00d4b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-02-19T15:47:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_78abdad5",
+      "revId": "bc1634580b76e84591a1642ab9ba8e056daa6cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_38832204",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2015-02-19T14:48:26Z",
       "side": 1,
       "message": "You added a regex constaint to the schema and you are checking this here, but you also added a check in create_project() method. This should be also checked - something like self.resource_api.create_project() and expect exception.ForbiddenAction to be raised.",
+      "revId": "bc1634580b76e84591a1642ab9ba8e056daa6cb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_d1a2e1ac",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-02-19T15:47:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_38832204",
       "revId": "bc1634580b76e84591a1642ab9ba8e056daa6cb9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
