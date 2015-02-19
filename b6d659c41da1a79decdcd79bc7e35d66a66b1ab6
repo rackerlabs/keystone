@@ -51,6 +51,24 @@
       "revId": "b6d659c41da1a79decdcd79bc7e35d66a66b1ab6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_a0bef0d1",
+        "filename": "requirements.txt",
+        "patchSetId": 17
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-19T17:48:10Z",
+      "side": 1,
+      "message": "With this commit are we going to switch to cryptography?",
+      "parentUuid": "da86d52c_b141eda7",
+      "revId": "b6d659c41da1a79decdcd79bc7e35d66a66b1ab6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
