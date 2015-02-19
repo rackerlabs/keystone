@@ -16,6 +16,24 @@
       "revId": "115d9660de21f5520e5c5f6a92364607b368281b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_4d0d84e7",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-19T07:09:35Z",
+      "side": 0,
+      "message": "keeping code in our code base for the purpose of a test doesn\u0027t make sense to me. if anything we should move these to a test. but i\u0027m also okay with this as is",
+      "parentUuid": "da86d52c_c4c0784c",
+      "revId": "115d9660de21f5520e5c5f6a92364607b368281b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
