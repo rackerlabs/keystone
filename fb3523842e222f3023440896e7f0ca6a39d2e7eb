@@ -16,6 +16,24 @@
       "revId": "fb3523842e222f3023440896e7f0ca6a39d2e7eb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_ce44b076",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-20T19:50:25Z",
+      "side": 1,
+      "message": "agreed... I sat and stared trying to figure what to put here but couldn\u0027t think of anything useful, which is probably why the help text wasn\u0027t helpful before.",
+      "parentUuid": "ba7be1f8_4bdb521b",
+      "revId": "fb3523842e222f3023440896e7f0ca6a39d2e7eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
