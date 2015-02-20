@@ -778,3 +778,134 @@ class Driver(object):
         """
         if domain_id != CONF.identity.default_domain_id:
             raise exception.DomainNotFound(domain_id=domain_id)
+
+
+@dependency.provider('domain_config_api')
+class DomainConfigManager(manager.Manager):
+    """Default pivot point for the Domain Config backend."""
+
+    def __init__(self):
+        super(DomainConfigManager, self).__init__(CONF.domain_config.driver)
+
+    # TODO(henry-nash): The manager layer will handle all the whitelist
+    # checking of the config options, using the appropriate driver methods for
+    # the whitelisted and sensitive data.
+
+
+@six.add_metaclass(abc.ABCMeta)
+class DomainConfigDriver(object):
+    """Interface description for an Domain Config driver."""
+
+    @abc.abstractmethod
+    def create_config(self, domain_id, config):
+        """Creates a new config for a domain.
+
+        This is used to store only the whitelisted options for a domain.
+
+        :param domain_id: the domain for this option
+        :param config: the config dict for this domain
+
+        :returns: the config dict for this domain
+        :raises: keystone.exception.Conflict
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def get_config(self, domain_id):
+        """Get the config for a domain.
+
+        This is used to retrieve only the whitelisted options for a domain.
+
+        :param domain_id: the domain for this option
+
+        :returns: the config dict for this domain
+        :raises: keystone.exception.DomainConfigNotFound
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def update_config(self, domain_id, config):
+        """Updates the config for a domain.
+
+        This is used to update only the whitelisted options for a domain.
+
+        :param domain_id: the domain for this option
+        :param config: the config dict for this domain
+
+        :returns: the config dict for this domain
+        :raises: keystone.exception.DomainConfigNotFound
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def delete_config(self, domain_id):
+        """Deletes the config, or partial config, for a domain.
+
+        This is used to delete only the whitelisted options for a domain.
+
+        :param domain_id: the domain for this option
+
+        :raises: keystone.exception.DomainConfigNotFound
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def create_sensitive_config_option(self, domain_id, group, option, value):
+        """Creates a sensitive config option for a domain.
+
+        :param domain_id: the domain for this option
+        :param group: the group option name
+        :param option: the option name
+        :param value: the value to assign to this option
+
+        :returns: dict containing group, option and value
+        :raises: keystone.exception.Conflict
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def get_sensitive_config_option(self, domain_id, group, option):
+        """Gets a sensitive config option for a domain.
+
+        :param domain_id: the domain for this option
+        :param group: the group option name
+        :param option: the option name
+
+        :returns: dict containing group, option and value
+        :raises: keystone.exception.DomainConfigNotFound
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def update_sensitive_config_option(self, domain_id, group, option, value):
+        """Updates a sensitive config option for a domain.
+
+        :param domain_id: the domain for this option
+        :param group: the group option name
+        :param option: the option name
+        :param value: the value to assign to this option
+
+        :returns: dict containing group, option and value
+        :raises: keystone.exception.DomainConfigNotFound
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
+
+    @abc.abstractmethod
+    def delete_sensitive_config_option(self, domain_id, group, option):
+        """Deletes a sensitive config option for a domain.
+
+        :param domain_id: the domain for this option
+        :param group: the group option name
+        :param option: the option name
+
+        :raises: keystone.exception.DomainConfigNotFound
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
