@@ -106,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_daaf232a",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-20T09:19:55Z",
+      "side": 1,
+      "message": "In fact there is a test already for this case - test_multiple_sql_specific_drivers_fails in test_backend_ldap.py.  Since this test failed to pick up this bug, I\u0027d suggest we improve that before we add something different here.",
+      "parentUuid": "da86d52c_08ec03c7",
+      "revId": "d677e4643c0c520fa1af5ade30b75c41c3bca22d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_c8e10bd2",
         "filename": "keystone/tests/unit/identity/test_core.py",
         "patchSetId": 7
