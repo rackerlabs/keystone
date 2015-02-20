@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_fef05ecb",
+        "filename": "keystone/common/dependency.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-20T06:59:57Z",
+      "side": 1,
+      "message": "clever!",
+      "revId": "91f43f30ecb1f62218004d632daba246c9003eca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3e883622",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 741,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-20T06:59:57Z",
+      "side": 1,
+      "message": "this test is screaming out for refactor :)\n\nPerhaps a clever for loop, in a follow-on patch?",
+      "revId": "91f43f30ecb1f62218004d632daba246c9003eca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
