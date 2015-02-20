@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_ddae3de7",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-20T09:50:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_86ef4486",
+      "revId": "93e639fc7e210866220e6dd236ad40a2ced55a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_e6d1e0cc",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 10
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-19T18:30:35Z",
       "side": 1,
       "message": "unnecessary brackets here",
+      "revId": "93e639fc7e210866220e6dd236ad40a2ced55a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da86d52c_4950f82b",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-20T09:50:22Z",
+      "side": 1,
+      "message": "they are necessary as any() accepts single iterable.",
+      "parentUuid": "da86d52c_e6d1e0cc",
       "revId": "93e639fc7e210866220e6dd236ad40a2ced55a90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_9d7cc574",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-20T09:50:22Z",
+      "side": 1,
+      "message": "i wanted to make it a distinct check, indicating that if neither id nor name are set something somewhere went terribly wrond, but one if/elif/else clause will work me as well.",
+      "parentUuid": "da86d52c_b130049f",
+      "revId": "93e639fc7e210866220e6dd236ad40a2ced55a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_a667e823",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 10
@@ -64,6 +118,24 @@
       "writtenOn": "2015-02-19T18:30:35Z",
       "side": 1,
       "message": "this could technically be one line:\n\n  if user_id and not user_name:\n    user[\u0027name\u0027] \u003d user_id",
+      "revId": "93e639fc7e210866220e6dd236ad40a2ced55a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_bdcfc9af",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-20T09:50:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_a667e823",
       "revId": "93e639fc7e210866220e6dd236ad40a2ced55a90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_3dbbd90f",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 221,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-20T09:50:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da86d52c_c6385cf0",
+      "revId": "93e639fc7e210866220e6dd236ad40a2ced55a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_71b68c26",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 10
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_5d5ecdea",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-20T09:50:22Z",
+      "side": 1,
+      "message": "oh shit. It\u0027s fixed now.",
+      "parentUuid": "da86d52c_71b68c26",
+      "revId": "93e639fc7e210866220e6dd236ad40a2ced55a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_714dac3a",
         "filename": "keystone/tests/unit/mapping_fixtures.py",
         "patchSetId": 10
@@ -115,6 +223,24 @@
       "writtenOn": "2015-02-19T18:30:35Z",
       "side": 1,
       "message": "this could also be: CONF.federation.federated_domain_name or\n+                    federation.FEDERATED_DOMAIN_KEYWORD",
+      "revId": "93e639fc7e210866220e6dd236ad40a2ced55a90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_9db045df",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-20T09:50:22Z",
+      "side": 1,
+      "message": "these are all fixtures....",
+      "parentUuid": "da86d52c_714dac3a",
       "revId": "93e639fc7e210866220e6dd236ad40a2ced55a90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
