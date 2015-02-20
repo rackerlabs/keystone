@@ -16,6 +16,24 @@
       "revId": "b3111d17cf7815a8f1c8a1071cbc371575d7804f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_af407a36",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T02:32:02Z",
+      "side": 1,
+      "message": "done, thanks. this also reminded me that i could basically eliminate _POLICY_PATH too, since that is also available through the enforcer.",
+      "parentUuid": "ba7be1f8_7c5f2173",
+      "revId": "b3111d17cf7815a8f1c8a1071cbc371575d7804f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
