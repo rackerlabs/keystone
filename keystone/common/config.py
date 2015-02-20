@@ -213,6 +213,9 @@ FILE_OPTIONS = {
                         '(in seconds).'),
         cfg.StrOpt('provider',
                    default='keystone.token.providers.uuid.Provider',
+                   choices=['keystone.token.providers.uuid.Provider',
+                            'keystone.token.providers.pki.Provider',
+                            'keystone.token.providers.pkiz.Provider'],
                    help='Controls the token construction, validation, and '
                         'revocation operations. Core providers are '
                         '"keystone.token.providers.[pkiz|pki|uuid].'
@@ -517,6 +520,8 @@ FILE_OPTIONS = {
                    help='Maximum results per page; a value of zero ("0") '
                         'disables paging.'),
         cfg.StrOpt('alias_dereferencing', default='default',
+                   choices=['never', 'searching', 'always', 'finding',
+                            'default'],
                    help='The LDAP dereferencing option for queries. This '
                         'can be either "never", "searching", "always", '
                         '"finding" or "default". The "default" option falls '
@@ -743,6 +748,7 @@ FILE_OPTIONS = {
         cfg.BoolOpt('use_tls', default=False,
                     help='Enable TLS for communicating with LDAP servers.'),
         cfg.StrOpt('tls_req_cert', default='demand',
+                   choices=['demand', 'never', 'allow'],
                    help='Valid options for tls_req_cert are demand, never, '
                         'and allow.'),
         cfg.BoolOpt('use_pool', default=False,
