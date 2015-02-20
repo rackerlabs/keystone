@@ -1567,6 +1567,69 @@ class SqlUpgradeTests(SqlMigrateBase):
                                 ['id', 'name', 'extra', 'description',
                                  'enabled', 'domain_id', 'parent_id'])
 
+    def test_project_name_constraint_upgrade(self):
+        self.upgrade(66)
+        session = self.Session()
+        domain = {'id': uuid.uuid4().hex,
+                  'name': uuid.uuid4().hex,
+                  'enabled': True}
+        project1 = {
+            'id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'domain_id': domain['id'],
+            'name': uuid.uuid4().hex,
+            'parent_id': None,
+            'is_domain': False
+        }
+        project2 = {
+            'id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'domain_id': domain['id'],
+            'name': project1['name'],
+            'parent_id': None,
+            'is_domain': False
+        }
+        self.insert_dict(session, 'domain', domain)
+        self.insert_dict(session, 'project', project1)
+        self.insert_dict(session, 'project', project2)
+
+        proj_table = sqlalchemy.Table('project', self.metadata, autoload=True)
+        projects = session.query(proj_table)
+        self.assertEqual(2, projects.count())
+        self.assertEqual(projects[0].name, projects[1].name)
+
+    def test_project_name_constraint_downgrade(self):
+        self.upgrade(66)
+        self.downgrade(65)
+        session = self.Session()
+        domain = {'id': uuid.uuid4().hex,
+                  'name': uuid.uuid4().hex,
+                  'enabled': True}
+        project1 = {
+            'id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'domain_id': domain['id'],
+            'name': uuid.uuid4().hex,
+            'parent_id': None,
+            'is_domain': False
+        }
+        project2 = {
+            'id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'domain_id': domain['id'],
+            'name': project1['name'],
+            'parent_id': None,
+            'is_domain': False
+        }
+        self.insert_dict(session, 'domain', domain)
+        self.insert_dict(session, 'project', project1)
+        self.assertRaises(db_exception.DBDuplicateEntry,
+                          self.insert_dict, session,
+                          'project',
+                          project2)
+        proj_table = sqlalchemy.Table('project', self.metadata, autoload=True)
+        self.assertEqual(1, session.query(proj_table).count())
+
     def test_project_is_domain_cleanup(self):
         # make sure that the is_domain field is dropped in the downgrade
         self.upgrade(65)
