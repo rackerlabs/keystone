@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_08525cdd",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T05:11:33Z",
+      "side": 1,
+      "message": "looks like policy.json handled a lot of the caching bits too, so this also seems unnecessary",
+      "revId": "4f3173f674c59598027d484561298a18cac25e19",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
