@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_ae7e9ce2",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T19:41:34Z",
+      "side": 1,
+      "message": "i made this it\u0027s own patch",
+      "parentUuid": "ba7be1f8_8e3718b0",
+      "revId": "91f43f30ecb1f62218004d632daba246c9003eca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_8e5e38e8",
         "filename": "keystone/contrib/oauth1/routers.py",
         "patchSetId": 25
@@ -81,6 +99,24 @@
       "writtenOn": "2015-02-20T19:32:07Z",
       "side": 1,
       "message": "How does removing this even work? load_backends doesn\u0027t load oauth_api does it?",
+      "revId": "91f43f30ecb1f62218004d632daba246c9003eca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_eeb094f6",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 242,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T19:41:34Z",
+      "side": 1,
+      "message": "the dependency mechanisms are smart enough to pick it up",
+      "parentUuid": "ba7be1f8_2e6f0c94",
       "revId": "91f43f30ecb1f62218004d632daba246c9003eca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
