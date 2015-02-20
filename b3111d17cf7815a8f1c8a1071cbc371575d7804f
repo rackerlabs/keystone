@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_7c5f2173",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 12000
+      },
+      "writtenOn": "2015-02-20T00:16:28Z",
+      "side": 1,
+      "message": "Why not do:\n\n    utils.read_cached_file(_ENFORCER.policy_file,\n\n?",
+      "revId": "b3111d17cf7815a8f1c8a1071cbc371575d7804f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
