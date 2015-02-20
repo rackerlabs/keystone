@@ -423,6 +423,22 @@ FILE_OPTIONS = {
                    help='Maximum number of entities that will be returned '
                         'in a resource collection.'),
     ],
+    'domain_config': [
+        cfg.StrOpt('driver',
+                   default='keystone.resource.config_backends.sql.'
+                           'DomainConfig',
+                   help='Domain config backend driver.'),
+        cfg.BoolOpt('caching', default=True,
+                    deprecated_opts=[cfg.DeprecatedOpt('caching',
+                                                       group='domain_config')],
+                    help='Toggle for domain config caching. This has no '
+                         'effect unless global caching is enabled.'),
+        cfg.IntOpt('cache_time',
+                   deprecated_opts=[cfg.DeprecatedOpt('cache_time',
+                                                      group='domain_config')],
+                   help='TTL (in seconds) to cache domain config data. This '
+                        'has  no effect unless global caching is enabled.'),
+    ],
     'role': [
         # The role driver has no default for backward compatibility reasons.
         # If role driver is not specified, the assignment driver chooses
