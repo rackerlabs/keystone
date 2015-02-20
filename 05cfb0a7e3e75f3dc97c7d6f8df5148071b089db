@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_bd36f3e5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-02-20T01:48:33Z",
+      "side": 1,
+      "message": "in which file?",
+      "revId": "05cfb0a7e3e75f3dc97c7d6f8df5148071b089db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_dd33a7f4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-02-20T01:48:33Z",
+      "side": 1,
+      "message": "same as above.",
+      "revId": "05cfb0a7e3e75f3dc97c7d6f8df5148071b089db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_fd8ceb81",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-02-20T01:48:33Z",
+      "side": 1,
+      "message": "nit: add a dot \".\" in the end",
+      "revId": "05cfb0a7e3e75f3dc97c7d6f8df5148071b089db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
