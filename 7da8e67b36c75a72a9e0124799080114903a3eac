@@ -16,6 +16,24 @@
       "revId": "7da8e67b36c75a72a9e0124799080114903a3eac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a026c066",
+        "filename": "keystone/tests/unit/fakeldap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-20T10:20:33Z",
+      "side": 1,
+      "message": "I hadn\u0027t intended that....I don\u0027t think this line does that...unless I am misunderstanding the way this works...",
+      "parentUuid": "ba7be1f8_63bf79d1",
+      "revId": "7da8e67b36c75a72a9e0124799080114903a3eac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
