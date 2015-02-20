@@ -89,6 +89,9 @@ class Resource(resource.Driver):
         project_ref = self._set_default_is_domain_project(project_ref)
         return self._set_default_parent_project(project_ref)
 
+    def get_children(self, project_id):
+        return self.list_projects(None) if project_id is None else []
+
     def get_project(self, tenant_id):
         return self._set_default_attributes(
             self.project.get(tenant_id))

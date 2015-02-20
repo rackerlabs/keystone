@@ -83,6 +83,21 @@ class Manager(manager.Manager):
                 action=_('max hierarchy depth reached for '
                          '%s branch.') % project_id)
 
+    def _assert_project_name_constraint(
+            self, project_name, domain_id, parent_id):
+        children = self.driver.get_children(parent_id)
+        for child in children:
+            if child.get('name') == project_name:
+                # If parent_id is None we may list projects from
+                # different domains
+                if child.get('domain_id') != domain_id:
+                    continue
+                msg = _('There is another project using the name '
+                        '%s in the same level of the hierarchy '
+                        '(same parent_id)') % project_name
+                raise exception.Conflict(type='project',
+                                         details=msg)
+
     @notifications.created(_PROJECT)
     def create_project(self, tenant_id, tenant):
         tenant = tenant.copy()
@@ -98,10 +113,14 @@ class Manager(manager.Manager):
                 raise exception.Forbidden(_('Multiple domains are not '
                                             'supported'))
 
-        if tenant.get('parent_id') is not None:
-            parent_ref = self.get_project(tenant.get('parent_id'))
-            parents_list = self.list_project_parents(parent_ref['id'])
-            parents_list.append(parent_ref)
+        parent_id = tenant.get('parent_id')
+        tenant['name'] = clean.project_name(tenant['name'])
+        self._assert_project_name_constraint(tenant['name'],
+                                             tenant.get('domain_id'),
+                                             parent_id)
+        if parent_id is not None:
+            parents_list = self.list_project_parents(parent_id)
+            parents_list.append(self.get_project(parent_id))
             for ref in parents_list:
                 if ref.get('domain_id') != tenant.get('domain_id'):
                     raise exception.ForbiddenAction(
@@ -121,7 +140,7 @@ class Manager(manager.Manager):
                 # project with a forward slash in the name.
                 clean.project_name(ref.get('name'))
 
-            self._assert_max_hierarchy_depth(tenant.get('parent_id'),
+            self._assert_max_hierarchy_depth(parent_id,
                                              parents_list)
 
         ret = self.driver.create_project(tenant_id, tenant)
@@ -218,6 +237,15 @@ class Manager(manager.Manager):
                 tenant.get('is_domain') != original_tenant.get('is_domain')):
             raise exception.ForbiddenAction(
                 action=_('Update of `is_domain` is not allowed.'))
+
+        if 'name' in tenant:
+            tenant['name'] = clean.project_name(tenant['name'])
+        name = tenant.get('name', original_tenant['name'])
+        domain_id = tenant.get('domain_id', original_tenant['domain_id'])
+        if (name != original_tenant['name'] or
+                domain_id != original_tenant['domain_id']):
+            self._assert_project_name_constraint(name, domain_id,
+                                                 original_tenant['parent_id'])
 
         if 'enabled' in tenant:
             tenant['enabled'] = clean.project_enabled(tenant['enabled'])
