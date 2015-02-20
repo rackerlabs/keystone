@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_c073b4af",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-02-20T10:25:42Z",
+      "side": 1,
+      "message": "I found a saml section which is mainly oriented to the IdP feature of keystone but I am not able to find the oidc section. If the sections are already there we could use these to define the remote_id_attribute and leave the one in federation for the other protocols.",
+      "parentUuid": "ba7be1f8_434d1572",
+      "revId": "d4820c7b1c15664225761fb48f36816a9a9475e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_385962fd",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 11
@@ -83,6 +101,24 @@
       "writtenOn": "2015-02-20T06:12:11Z",
       "side": 1,
       "message": "this needs more test cases in general\n\n  - updating remote_ids should be a separate test\n  - creating remote_ids with non-array entry\n  - i don\u0027t think the changes to the controller and plugin are actually being tested.\n  - the changes in how we handle the config are not being tested either.\n\nshouldn\u0027t the schema be updated, too?",
+      "revId": "d4820c7b1c15664225761fb48f36816a9a9475e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a0996070",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-02-20T10:25:42Z",
+      "side": 1,
+      "message": "There is not API to update the remote_ids but it has to be performed with the IdP update and actually during the update test remote_ids are modified. Is there a reason for a separate test?\n\nOK for the non-array test\n\nThe controller is tested when a token with remote, wrong remote, and so is requested. During the test the config take the saml2 section so the config is almost tested. I\u0027ll check if I am missing some combinations.\n\nWhich/where is the schema to update?",
+      "parentUuid": "ba7be1f8_e347e91b",
       "revId": "d4820c7b1c15664225761fb48f36816a9a9475e3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
