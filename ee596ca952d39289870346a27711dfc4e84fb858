@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_ab9f7802",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-20T15:35:51Z",
+      "side": 1,
+      "message": "Actually, not sure if this is supported by oslo_config. Removing my -1.",
+      "parentUuid": "ba7be1f8_10c18f80",
+      "revId": "ee596ca952d39289870346a27711dfc4e84fb858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_368538cf",
         "filename": "keystone/notifications.py",
         "patchSetId": 24
