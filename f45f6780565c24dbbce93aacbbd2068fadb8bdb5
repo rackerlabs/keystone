@@ -16,6 +16,24 @@
       "revId": "f45f6780565c24dbbce93aacbbd2068fadb8bdb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_ab1dae75",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-02-20T19:23:56Z",
+      "side": 0,
+      "message": "It was necessary to resolve a test failure and was another change cherry picked basically.",
+      "parentUuid": "da86d52c_e5db5a4d",
+      "revId": "f45f6780565c24dbbce93aacbbd2068fadb8bdb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
