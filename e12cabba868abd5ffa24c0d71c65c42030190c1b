@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_83262d67",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1749,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T06:15:35Z",
+      "side": 1,
+      "message": "yes, i meant more in terms of lines 1701 and 1710, if I knowingly supplies name \u003d\u003d enabled or case_sensitive as filters and they were ignored, i\u0027d have no idea why",
+      "parentUuid": "ba7be1f8_c3dca577",
+      "revId": "e12cabba868abd5ffa24c0d71c65c42030190c1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_68d118cd",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 14
