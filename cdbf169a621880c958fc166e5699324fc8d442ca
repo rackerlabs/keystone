@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_7983a8cc",
+        "filename": "keystone/clean.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-20T07:59:43Z",
+      "side": 1,
+      "message": "(nit): one can capitalize \u0027p\u0027.",
+      "revId": "cdbf169a621880c958fc166e5699324fc8d442ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
