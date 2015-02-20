@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_73200ef8",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 915,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T18:02:27Z",
+      "side": 1,
+      "message": "you can update this one too, or i\u0027ll do it with another patch, whatever works.",
+      "revId": "cbc42081a4b54456383870f852ff1d5e70ce7ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
