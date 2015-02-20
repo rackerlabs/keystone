@@ -1722,6 +1722,9 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                           self.resource_api.create_project,
                           project['id'], project)
 
+    def test_create_two_projects_same_name_and_parent(self):
+        self._assert_create_hierarchy_not_allowed()
+
     def test_check_leaf_projects(self):
         projects = self._assert_create_hierarchy_not_allowed()
         for project in projects:

@@ -13,7 +13,6 @@
 from oslo_config import cfg
 from oslo_log import log
 
-from keystone import clean
 from keystone.common import sql
 from keystone import exception
 from keystone.i18n import _LE
@@ -86,15 +85,28 @@ class Resource(keystone_resource.Driver):
     def _get_children(self, session, project_ids):
         query = session.query(Project)
         query = query.filter(Project.parent_id.in_(project_ids))
+        projects = [project_ref.to_dict() for project_ref in query.all()]
+        # Also return projects without parent
+        if None in project_ids:
+            projects += self._get_root_projects(session)
+        return projects
+
+    def _get_root_projects(self, session):
+        query = session.query(Project)
+        query = query.filter(Project.parent_id.is_(None))
         project_refs = query.all()
         return [project_ref.to_dict() for project_ref in project_refs]
 
+    def get_children(self, project_id):
+        with sql.transaction() as session:
+            children = self._get_children(session, [project_id])
+        return children
+
     def list_projects_in_subtree(self, project_id):
         with sql.transaction() as session:
-            project = self._get_project(session, project_id).to_dict()
-            children = self._get_children(session, [project['id']])
+            children = self._get_children(session, [project_id])
             subtree = []
-            examined = set(project['id'])
+            examined = set(project_id)
             while children:
                 children_ids = set()
                 for ref in children:
@@ -139,7 +151,6 @@ class Resource(keystone_resource.Driver):
     # CRUD
     @sql.handle_conflicts(conflict_type='project')
     def create_project(self, tenant_id, tenant):
-        tenant['name'] = clean.project_name(tenant['name'])
         with sql.transaction() as session:
             tenant_ref = Project.from_dict(tenant)
             session.add(tenant_ref)
@@ -147,9 +158,6 @@ class Resource(keystone_resource.Driver):
 
     @sql.handle_conflicts(conflict_type='project')
     def update_project(self, tenant_id, tenant):
-        if 'name' in tenant:
-            tenant['name'] = clean.project_name(tenant['name'])
-
         with sql.transaction() as session:
             tenant_ref = self._get_project(session, tenant_id)
             old_project_dict = tenant_ref.to_dict()
@@ -256,6 +264,3 @@ class Project(sql.ModelBase, sql.DictBase):
     extra = sql.Column(sql.JsonBlob())
     parent_id = sql.Column(sql.String(64), sql.ForeignKey('project.id'))
     is_domain = sql.Column(sql.Boolean, default=False, nullable=True)
-    # Unique constraint across two columns to create the separation
-    # rather than just only 'name' being unique
-    __table_args__ = (sql.UniqueConstraint('domain_id', 'name'), {})

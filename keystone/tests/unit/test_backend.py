@@ -2151,6 +2151,23 @@ class IdentityTests(object):
         # The is_domain flag should be False by default
         self.assertFalse(ref.get('is_domain'))
 
+    def test_create_two_projects_same_name_and_parent(self):
+        projects = self._create_projects_hierarchy()
+        project1 = projects[0]
+        project2 = projects[1]
+
+        project3 = {'id': uuid.uuid4().hex,
+                    'description': '',
+                    'domain_id': DEFAULT_DOMAIN_ID,
+                    'enabled': True,
+                    'name': project2['name'],
+                    'parent_id': project1['id']}
+
+        self.assertRaises(exception.Conflict,
+                          self.resource_api.create_project,
+                          project3['id'],
+                          project3)
+
     def test_check_leaf_projects(self):
         projects_hierarchy = self._create_projects_hierarchy()
         root_project = projects_hierarchy[0]
