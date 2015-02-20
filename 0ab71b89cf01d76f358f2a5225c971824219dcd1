@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_dd539d6a",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-20T10:25:26Z",
+      "side": 1,
+      "message": "ok, to be honest i was not sure about the copyright.\nAlso, I will split the patch.",
+      "parentUuid": "ba7be1f8_88148cf6",
+      "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_48bff4d0",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-20T05:26:59Z",
       "side": 1,
       "message": "see my comment below, just use the function we already created instead of changing the return type of apply_mapping_filter.",
+      "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_bd49898d",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-20T10:25:26Z",
+      "side": 1,
+      "message": "I simply didn\u0027t want to call db twice.",
+      "parentUuid": "ba7be1f8_48bff4d0",
       "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_c05d74eb",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-20T10:25:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_e89ee862",
+      "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_08c5fc5a",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 9
@@ -64,6 +118,24 @@
       "writtenOn": "2015-02-20T05:26:59Z",
       "side": 1,
       "message": "this function seems unnecessary since it\u0027s only called once and has one line.",
+      "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_9d120561",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-20T10:25:26Z",
+      "side": 1,
+      "message": "made it subfunction, as imho it increases the readibility (the check itself is super ugly).\nCan change if you insist.",
+      "parentUuid": "ba7be1f8_08c5fc5a",
       "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_1d061521",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-20T10:25:26Z",
+      "side": 1,
+      "message": "tempted to put it inside handle_unscoped_token :-)",
+      "parentUuid": "ba7be1f8_c8ca046e",
+      "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_a8cdd088",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 9
@@ -98,6 +188,24 @@
       "writtenOn": "2015-02-20T05:26:59Z",
       "side": 1,
       "message": "mark this as a private function by prefixing with _",
+      "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_60ff6802",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-20T10:25:26Z",
+      "side": 1,
+      "message": "tempted to put it inside handle_unscoped_token :-)",
+      "parentUuid": "ba7be1f8_a8cdd088",
       "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_800a9cd0",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-20T10:25:26Z",
+      "side": 1,
+      "message": "i hope sqlalchemy has some kickass caching layer built-in :-)",
+      "parentUuid": "ba7be1f8_c8e3e403",
+      "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_a8a23098",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 9
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_40aa6471",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-20T10:25:26Z",
+      "side": 1,
+      "message": "ugh, ok.",
+      "parentUuid": "ba7be1f8_a8a23098",
+      "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_e8ac288f",
         "filename": "keystone/tests/unit/mapping_fixtures.py",
         "patchSetId": 9
@@ -149,6 +293,24 @@
       "writtenOn": "2015-02-20T05:26:59Z",
       "side": 1,
       "message": "nice title!",
+      "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c01494f7",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 753,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-20T10:25:26Z",
+      "side": 1,
+      "message": ":D",
+      "parentUuid": "ba7be1f8_e8ac288f",
       "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
