@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba7be1f8_10c18f80",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-20T15:12:44Z",
+      "side": 1,
+      "message": "Could we use the choices keyword here: \n\nhttps://docs.python.org/3/library/argparse.html#choices",
+      "revId": "ee596ca952d39289870346a27711dfc4e84fb858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_368538cf",
         "filename": "keystone/notifications.py",
         "patchSetId": 24
@@ -31,6 +48,23 @@
       "side": 1,
       "message": "on second thought, my suggestion sounds weird. Either way is fine :)",
       "parentUuid": "da86d52c_368538cf",
+      "revId": "ee596ca952d39289870346a27711dfc4e84fb858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_50aa2771",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 536,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-20T15:12:44Z",
+      "side": 1,
+      "message": "real nit picky, but we could have \u0027basic\u0027 in the test name.  \n\n    def test_basic_notification_config_does_not_emit_events(self):",
       "revId": "ee596ca952d39289870346a27711dfc4e84fb858",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
