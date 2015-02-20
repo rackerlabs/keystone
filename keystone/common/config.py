@@ -517,11 +517,11 @@ FILE_OPTIONS = {
                    help='Maximum results per page; a value of zero ("0") '
                         'disables paging.'),
         cfg.StrOpt('alias_dereferencing', default='default',
-                   help='The LDAP dereferencing option for queries. This '
-                        'can be either "never", "searching", "always", '
-                        '"finding" or "default". The "default" option falls '
-                        'back to using default dereferencing configured by '
-                        'your ldap.conf.'),
+                   choices=['never', 'searching', 'always', 'finding',
+                            'default'],
+                   help='The LDAP dereferencing option for queries. The '
+                        '"default" option falls back to using default '
+                        'dereferencing configured by your ldap.conf.'),
         cfg.IntOpt('debug_level',
                    help='Sets the LDAP debugging level for LDAP calls. '
                         'A value of 0 means that debugging is not enabled. '
@@ -743,8 +743,7 @@ FILE_OPTIONS = {
         cfg.BoolOpt('use_tls', default=False,
                     help='Enable TLS for communicating with LDAP servers.'),
         cfg.StrOpt('tls_req_cert', default='demand',
-                   help='Valid options for tls_req_cert are demand, never, '
-                        'and allow.'),
+                   choices=['demand', 'never', 'allow']),
         cfg.BoolOpt('use_pool', default=False,
                     help='Enable LDAP connection pooling.'),
         cfg.IntOpt('pool_size', default=10,
@@ -908,9 +907,9 @@ FILE_OPTIONS = {
         cfg.StrOpt('idp_contact_telephone',
                    help='Telephone number of contact person.'),
         cfg.StrOpt('idp_contact_type', default='other',
-                   help='Contact type. Allowed values are: '
-                        'technical, support, administrative '
-                        'billing, and other'),
+                   choices=['technical', 'support', 'administrative',
+                            'billing', 'other'],
+                   help='Contact type.'),
         cfg.StrOpt('idp_metadata_path',
                    default='/etc/keystone/saml2_idp_metadata.xml',
                    help='Path to the Identity Provider Metadata file. '
