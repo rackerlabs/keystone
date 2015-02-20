@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_fe20459d",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-02-20T18:08:39Z",
+      "side": 1,
+      "message": "got it. It should be after merged to avoid rebase.",
+      "parentUuid": "ba7be1f8_0fc5065b",
+      "revId": "6d7830537383921a50603adc6197712e54b1fd29",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_8a5b1953",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 1
