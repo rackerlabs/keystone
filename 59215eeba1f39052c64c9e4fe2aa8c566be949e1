@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_4e8ff523",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 13161
+      },
+      "writtenOn": "2015-02-20T11:46:10Z",
+      "side": 1,
+      "message": "In both elif statements you can skip the positive checks, because you have already checked situation where user_id and user_name is empty. The same effect can be achieved with simply:\n\nelif not user_name:\n  user[\u0027name\u0027] \u003d user_id\nelif not user_id:\n  user[\u0027id\u0027] \u003d parse.quote(user_name)",
+      "revId": "59215eeba1f39052c64c9e4fe2aa8c566be949e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
