@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_434d1572",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T06:12:11Z",
+      "side": 1,
+      "message": "also we already have sections for oidc and saml2",
+      "parentUuid": "da86d52c_e73003a0",
+      "revId": "d4820c7b1c15664225761fb48f36816a9a9475e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_385962fd",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 11
@@ -48,6 +66,23 @@
       "side": 1,
       "message": "What do you mean with \"register the group\". It is not clear to me!",
       "parentUuid": "da86d52c_385962fd",
+      "revId": "d4820c7b1c15664225761fb48f36816a9a9475e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_e347e91b",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T06:12:11Z",
+      "side": 1,
+      "message": "this needs more test cases in general\n\n  - updating remote_ids should be a separate test\n  - creating remote_ids with non-array entry\n  - i don\u0027t think the changes to the controller and plugin are actually being tested.\n  - the changes in how we handle the config are not being tested either.\n\nshouldn\u0027t the schema be updated, too?",
       "revId": "d4820c7b1c15664225761fb48f36816a9a9475e3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
