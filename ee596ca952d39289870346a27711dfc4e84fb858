@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_e640c537",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-20T15:40:08Z",
+      "side": 1,
+      "message": "Looks like it is supported! https://github.com/openstack/oslo.config/blob/578f9f4e60f58c210a9e1cb455925b9f310fe10e/oslo_config/cfg.py#L929\n\nI won\u0027t hold this up for that change though.",
+      "parentUuid": "ba7be1f8_ab9f7802",
+      "revId": "ee596ca952d39289870346a27711dfc4e84fb858",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_368538cf",
         "filename": "keystone/notifications.py",
         "patchSetId": 24
