@@ -240,7 +240,7 @@ class MappingController(_ControllerBase):
 @dependency.requires('federation_api')
 class Auth(auth_controllers.Auth):
 
-    def federated_authentication(self, context, identity_provider, protocol):
+    def federated_authentication(self, context, idp_id, protocol_id):
         """Authenticate from dedicated url endpoint.
 
         Build HTTP request body for federated authentication and inject
@@ -249,10 +249,10 @@ class Auth(auth_controllers.Auth):
         """
         auth = {
             'identity': {
-                'methods': [protocol],
-                protocol: {
-                    'identity_provider': identity_provider,
-                    'protocol': protocol
+                'methods': [protocol_id],
+                protocol_id: {
+                    'identity_provider': idp_id,
+                    'protocol': protocol_id
                 }
             }
         }

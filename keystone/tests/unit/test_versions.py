@@ -134,8 +134,8 @@ SP_ID_PARAMETER_RELATION = json_home.build_v3_extension_parameter_relation(
 BASE_IDP_PROTOCOL = '/OS-FEDERATION/identity_providers/{idp_id}/protocols'
 
 # TODO(stevemar): Use BASE_IDP_PROTOCOL when bug 1420125 is resolved.
-FEDERATED_AUTH_URL = ('/OS-FEDERATION/identity_providers/{identity_provider}'
-                      '/protocols/{protocol}/auth')
+FEDERATED_AUTH_URL = ('/OS-FEDERATION/identity_providers/{idp_id}'
+                      '/protocols/{protocol_id}/auth')
 
 V3_JSON_HOME_RESOURCES_INHERIT_DISABLED = {
     json_home.build_v3_resource_relation('auth_tokens'): {
@@ -349,8 +349,8 @@ V3_JSON_HOME_RESOURCES_INHERIT_DISABLED = {
     _build_federation_rel(resource_name='identity_provider_protocol_auth'): {
         'href-template': FEDERATED_AUTH_URL,
         'href-vars': {
-            'identity_provider': IDP_ID_PARAMETER_RELATION,
-            'protocol': PROTOCOL_ID_PARAM_RELATION, }},
+            'idp_id': IDP_ID_PARAMETER_RELATION,
+            'protocol_id': PROTOCOL_ID_PARAM_RELATION, }},
 }
 
 
