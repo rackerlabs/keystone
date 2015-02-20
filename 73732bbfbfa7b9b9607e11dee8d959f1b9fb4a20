@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_032f9da2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-20T06:41:58Z",
+      "side": 1,
+      "message": "DocImpact? We are supporting the new [olso_policy] group right?",
+      "revId": "73732bbfbfa7b9b9607e11dee8d959f1b9fb4a20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_0306bd20",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-20T06:41:58Z",
+      "side": 1,
+      "message": "we need to add DocImpact in the commit if \u0027oslo_policy\u0027 is something new",
+      "revId": "73732bbfbfa7b9b9607e11dee8d959f1b9fb4a20",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
