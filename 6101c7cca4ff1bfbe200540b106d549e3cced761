@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_0348762c",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-20T10:48:03Z",
+      "side": 1,
+      "message": "(nit) this doesn\u0027t enable us to create any hierarchy, but only project -\u003e project -\u003e ... -\u003e project -\u003e n projects",
+      "revId": "6101c7cca4ff1bfbe200540b106d549e3cced761",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
