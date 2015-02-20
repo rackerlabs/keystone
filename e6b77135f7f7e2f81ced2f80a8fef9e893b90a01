@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_ee1174ad",
+        "filename": "keystone/tests/unit/token/test_klwt_provider.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-20T19:41:17Z",
+      "side": 1,
+      "message": "So this should run all the tests that are listed above in TestStandardTokenFormatter, correct? Similar to how we use to do XML testing right.",
+      "revId": "e6b77135f7f7e2f81ced2f80a8fef9e893b90a01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_2e238c06",
+        "filename": "keystone/tests/unit/token/test_klwt_provider.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-20T19:41:17Z",
+      "side": 1,
+      "message": "Nice, don\u0027t remove this.",
+      "revId": "e6b77135f7f7e2f81ced2f80a8fef9e893b90a01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
