@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_3eee768c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-20T07:27:05Z",
+      "side": 1,
+      "message": "DocImpact",
+      "revId": "5381a514364c8eb2b748f35527a6237c89920b22",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
