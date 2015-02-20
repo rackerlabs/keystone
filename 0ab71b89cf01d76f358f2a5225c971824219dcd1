@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_88148cf6",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T05:26:59Z",
+      "side": 1,
+      "message": "two issues with this - 1) the move from password.py to core.py should be done in a separate commit, and 2) since it\u0027s a move, don\u0027t change the copyright :)",
+      "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_48bff4d0",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T05:26:59Z",
+      "side": 1,
+      "message": "see my comment below, just use the function we already created instead of changing the return type of apply_mapping_filter.",
+      "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_e89ee862",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T05:26:59Z",
+      "side": 1,
+      "message": "what about changing this to:\n\n  build_ephemeral_user_context\n\ns/mapping/user",
+      "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_08c5fc5a",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T05:26:59Z",
+      "side": 1,
+      "message": "this function seems unnecessary since it\u0027s only called once and has one line.",
+      "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c8ca046e",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T05:26:59Z",
+      "side": 1,
+      "message": "mark this as a private function by prefixing with _",
+      "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a8cdd088",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T05:26:59Z",
+      "side": 1,
+      "message": "mark this as a private function by prefixing with _",
+      "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c8e3e403",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T05:26:59Z",
+      "side": 1,
+      "message": "i\u0027d rather you just keep this function to just returning mapped_properties, if you need the mapping again (or ID) just call \n\n  mapping \u003d federation_api.get_mapping_from_idp_and_protocol(identity_provider, protocol)\n\nagain",
+      "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a8a23098",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T05:26:59Z",
+      "side": 1,
+      "message": "why move this now? do it in the dependent patch.",
+      "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_e8ac288f",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 753,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T05:26:59Z",
+      "side": 1,
+      "message": "nice title!",
+      "revId": "0ab71b89cf01d76f358f2a5225c971824219dcd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
