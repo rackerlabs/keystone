@@ -16,6 +16,24 @@
       "revId": "dda64d3ca7a6dd420278463f4a5fce96022f98b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3e2bd6ec",
+        "filename": "keystone/contrib/oauth1/routers.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T07:09:02Z",
+      "side": 0,
+      "message": "it\u0027s actually done in the follow up patch",
+      "parentUuid": "ba7be1f8_be7b4628",
+      "revId": "dda64d3ca7a6dd420278463f4a5fce96022f98b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
