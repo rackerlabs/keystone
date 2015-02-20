@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba7be1f8_33269617",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-20T18:02:47Z",
+      "side": 1,
+      "message": "we need to allow other options here, since deployments might have plugins.",
+      "revId": "cbc42081a4b54456383870f852ff1d5e70ce7ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_b379a6fe",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 527,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-20T18:02:47Z",
+      "side": 1,
+      "message": "Can we remove the choices from the help text?",
+      "revId": "cbc42081a4b54456383870f852ff1d5e70ce7ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_b360c636",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 753,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-20T18:02:47Z",
+      "side": 1,
+      "message": "update the help text?",
+      "revId": "cbc42081a4b54456383870f852ff1d5e70ce7ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_73200ef8",
         "filename": "keystone/common/config.py",
         "patchSetId": 1
