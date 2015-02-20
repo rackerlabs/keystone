@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_284ac083",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1688,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T05:55:42Z",
+      "side": 1,
+      "message": "nit: the underscore at the end of filter is strange, and not really a convention that we use.",
+      "revId": "e12cabba868abd5ffa24c0d71c65c42030190c1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c85a0450",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1749,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T05:55:42Z",
+      "side": 1,
+      "message": "i think adding a few debug statements about the filtering that were seen, used, and ignored would go a long way for some deployers",
+      "revId": "e12cabba868abd5ffa24c0d71c65c42030190c1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_68d118cd",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 3018,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T05:55:42Z",
+      "side": 1,
+      "message": "are the sql bits needed? nothing here seems to indicate the need for a mixed backend of sql and ldap",
+      "revId": "e12cabba868abd5ffa24c0d71c65c42030190c1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
