@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_63bf79d1",
+        "filename": "keystone/tests/unit/fakeldap.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-20T06:33:12Z",
+      "side": 1,
+      "message": "so we are also assuming attributes are case insensitive? May want to drop a note here explaining why we are doing this.",
+      "revId": "7da8e67b36c75a72a9e0124799080114903a3eac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
