@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_e8c34836",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T05:31:17Z",
+      "side": 1,
+      "message": "can you explain why this is an appropriate response, it\u0027s not immediately obvious. add comments to the code.\n\nsame for the function above it.",
+      "revId": "4c31a09170edaad04ed5306549babe0fe6c1d651",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
