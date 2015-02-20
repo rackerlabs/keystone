@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_b26c5d38",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T03:53:38Z",
+      "side": 1,
+      "message": "removed this, thanks doug",
+      "parentUuid": "da86d52c_d741e863",
+      "revId": "fe3ea4148dfc1e0481dba06b733376896c5e4884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_3236d2e7",
         "filename": "keystone/policy/backends/rules.py",
         "patchSetId": 9
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_32606d35",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T03:53:38Z",
+      "side": 1,
+      "message": "the policy file in use can be accessed by just calling Enforcer.policy_file. that that solved this issue",
+      "parentUuid": "da86d52c_3236d2e7",
+      "revId": "fe3ea4148dfc1e0481dba06b733376896c5e4884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_d223b655",
         "filename": "keystone/policy/backends/rules.py",
         "patchSetId": 9
@@ -47,6 +83,24 @@
       "writtenOn": "2015-02-19T19:49:55Z",
       "side": 1,
       "message": "We shouldn\u0027t need the application to set the default rule, especially if that is already in a configuration setting. If we have to do it from the outside, we should expose the default rule value somehow other than through the configuration variable.",
+      "revId": "fe3ea4148dfc1e0481dba06b733376896c5e4884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_5265e143",
+        "filename": "keystone/policy/backends/rules.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-20T03:53:38Z",
+      "side": 1,
+      "message": "same as above, we can just call enforcer.default_rule",
+      "parentUuid": "da86d52c_d223b655",
       "revId": "fe3ea4148dfc1e0481dba06b733376896c5e4884",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
