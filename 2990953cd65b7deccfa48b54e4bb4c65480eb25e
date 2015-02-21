@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_2a58cd31",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 14692
+      },
+      "writtenOn": "2015-02-21T01:15:03Z",
+      "side": 1,
+      "message": "how about:\n\n from random import SystemRandom as random\n\nThen get rid of the reassignment below.",
+      "revId": "2990953cd65b7deccfa48b54e4bb4c65480eb25e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
