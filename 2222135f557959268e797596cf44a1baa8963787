@@ -1,0 +1,259 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_d0bb5e0c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 785,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T05:04:37Z",
+      "side": 1,
+      "message": "I\u0027m confused here, are we adding issuers to the list or DNs?\n\n  trusted_issuer\u003d\u0027keystone.openstack.com\u0027\nor \n  trusted_issuer\u003d\u0027CN%3Dfoo%2COU%3Dkeystone%2CO%3Dopenstack\u0027\n\nThe text says issuer but the example says DN",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_9093a6a2",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 786,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T05:04:37Z",
+      "side": 1,
+      "message": "use up at 79 characters per line, and bump the lines over a bit so they align better.\n\n  help\u003d\u0027A list of trusted ...\n       \u0027certifications ...",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_f0d06255",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 791,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T05:04:37Z",
+      "side": 1,
+      "message": "i think saying \u0027due to the limitation of the parser for the character comma.\u0027 is unnecessary to write out in help text, that\u0027s an implementation detail. Just say that the value must be URL escaped, and give an example.",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_f0e9421b",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T05:04:37Z",
+      "side": 1,
+      "message": "you *could* make a new section called [tokenless_auth].",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d08d1e7d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 796,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T05:04:37Z",
+      "side": 1,
+      "message": "could place default on the same line as the option",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_50f92ee8",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 798,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T05:04:37Z",
+      "side": 1,
+      "message": "IdP*",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_10efb61f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T05:04:37Z",
+      "side": 1,
+      "message": "call it attribute instead of attri?",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_30f4baf1",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 802,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T05:04:37Z",
+      "side": 1,
+      "message": "an* IdP*",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_f0ba22e0",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T05:04:37Z",
+      "side": 1,
+      "message": "i think with marek\u0027s patch you might have to do some processing on mapped_properties here, but it should result in less code in the rule processor",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_70ce3285",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T05:04:37Z",
+      "side": 1,
+      "message": "will this result in a KeyError? .get(blah) will result in None, not an error\n\n  \u003e\u003e\u003e dict1 \u003d {}\n  \u003e\u003e\u003e idp \u003d dict1.get(\u0027some_prop\u0027)\n  \u003e\u003e\u003e print idp\n  None\n  \u003e\u003e\u003e idp \u003d dict1[\u0027some_prop\u0027]\n  Traceback (most recent call last):\n    File \"\u003cstdin\u003e\", line 1, in \u003cmodule\u003e\n  KeyError: \u0027some_prop\u0027\n\nso either access env directly, or check `if not idp:`",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d0eefeeb",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T05:04:37Z",
+      "side": 1,
+      "message": "general FYI here, might want to review marek\u0027s patch here: https://review.openstack.org/#/c/154934/13/keystone/contrib/federation/utils.py as it\u0027s close to merging and will affect this function.\n\ni think it might easier since it\u0027ll just grab the entire \u0027user\u0027 value",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_30de7a40",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T05:04:37Z",
+      "side": 1,
+      "message": "add a docstring",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_10d97657",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T05:04:37Z",
+      "side": 1,
+      "message": "add some logging here, debugging ldap values can be incredibly frustrating",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_b06c2a9e",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T05:04:37Z",
+      "side": 1,
+      "message": "this logic won\u0027t work, in the case of just project_domain_name being available it\u0027ll be evaluated as True, when it shouldn\u0027t be\n\n  \u003e\u003e\u003e proj_id \u003d False\n  \u003e\u003e\u003e proj_name \u003d False\n  \u003e\u003e\u003e proj_dom_id \u003d False\n  \u003e\u003e\u003e proj_dom_name \u003d True \n  \u003e\u003e\u003e print (proj_id or proj_name and proj_dom_id or proj_dom_name)\n  True\n\nthe parentheses are missing, and everything is being evaluated as a whole, a clear distinction between the scopes is required.\n\n  \u003e\u003e\u003e print (proj_id or (proj_name and (proj_dom_id or proj_dom_name)))\n  False\n\nit might be easier to break things down a bit",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_100b36d7",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T05:04:37Z",
+      "side": 1,
+      "message": "you should probably log something here\n\nLike when the issuer is missing. or if scope is False.\n\n\"hey the issuer is missing, check CONF.blah\" \n\nor \"hey we couldn\u0027t find a scope, but here\u0027s what we saw\" -\n\nI say this because presently if any of these fail the user will only know when the auth context is returned.",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
