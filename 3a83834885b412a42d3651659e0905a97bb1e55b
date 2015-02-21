@@ -16,6 +16,23 @@
       "revId": "3a83834885b412a42d3651659e0905a97bb1e55b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_504a0e81",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 198,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-02-21T06:31:27Z",
+      "side": 1,
+      "message": "So while I agree this comment describes what the code does below, it does not explain why this fancy decision making is appropriate. In 2 months, will anyone remember why this logic was necessary? Could you please for choice 2 and 3 explain the motivation for why you are doing these esoteric things :-)",
+      "revId": "3a83834885b412a42d3651659e0905a97bb1e55b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
