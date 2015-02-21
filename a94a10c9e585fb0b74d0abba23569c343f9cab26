@@ -16,6 +16,24 @@
       "revId": "a94a10c9e585fb0b74d0abba23569c343f9cab26",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d017deeb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-21T04:57:08Z",
+      "side": 1,
+      "message": "Will fix the commit message to say the reason why it is invalid.\nThanks",
+      "parentUuid": "ba7be1f8_f03782ae",
+      "revId": "a94a10c9e585fb0b74d0abba23569c343f9cab26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
