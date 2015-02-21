@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_1095f632",
+        "filename": "keystone/tests/unit/test_keystoneclient.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 878,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T05:18:39Z",
+      "side": 1,
+      "message": "this is already imported at the top, line 18",
+      "revId": "e8be866ef9a128f773d9441080e35ee7cf91374f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
