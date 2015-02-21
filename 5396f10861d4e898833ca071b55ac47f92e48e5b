@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_abc83f75",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T08:15:52Z",
+      "side": 1,
+      "message": "nit: revert this white space change",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_eba157aa",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 4043,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T08:15:52Z",
+      "side": 1,
+      "message": "note: the provider here is keystone.token.providers.klwt.Provider but in config.py it\u0027s still keystone.token.providers.ae.Provider\n\njust a heads up",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_2bac4fa0",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T08:15:52Z",
+      "side": 1,
+      "message": "this comment should probably stay in the else block",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_ab9f5f5e",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T08:15:52Z",
+      "side": 1,
+      "message": "this is the second time i\u0027m seeing roughly the same code to determine if it\u0027s using KWLT, consider creating a helper function?",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_cb9c936c",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T08:15:52Z",
+      "side": 1,
+      "message": "3rd time now",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_0b8eab2e",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T08:15:52Z",
+      "side": 1,
+      "message": "you are not returning anything here, you are raising a notimplemented exception",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_6b7c8721",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T08:15:52Z",
+      "side": 1,
+      "message": "I feel like KLWT01 and the other formats should be defined as class variables, or stored in a map somehow? rather than always using the string",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_cb73b34b",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T08:15:52Z",
+      "side": 1,
+      "message": "it doesn\u0027t raise this exception",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_0b95cb32",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T08:15:52Z",
+      "side": 1,
+      "message": "wrong raises text",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_8ba0db91",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T08:15:52Z",
+      "side": 1,
+      "message": "would you be against grabbing the first 6 characters and performing a .get() on the token_format_map (instead of looping)? seems unnecessary right?",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_eb8f9721",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T08:15:52Z",
+      "side": 1,
+      "message": "it raises a not implemented exception, doesn\u0027t return anything",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_0bbcebba",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T08:15:52Z",
+      "side": 1,
+      "message": "this is an odd way to layout a message, you had all that space on the line above!",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
