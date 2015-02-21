@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_f03782ae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-21T04:35:08Z",
+      "side": 1,
+      "message": "why are we removing it? why is unnecessary now?\n\ndid the bug get fixed? did it get marked as invalid?\n\nAdd -\u003e Related-Bug: #123456",
+      "revId": "a94a10c9e585fb0b74d0abba23569c343f9cab26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
