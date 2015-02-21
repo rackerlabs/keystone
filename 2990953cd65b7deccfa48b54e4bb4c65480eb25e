@@ -16,6 +16,24 @@
       "revId": "2990953cd65b7deccfa48b54e4bb4c65480eb25e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_6bce4785",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-02-21T07:58:59Z",
+      "side": 1,
+      "message": "That doesn\u0027t really work since SystemRandom is a class and random is a module.  So you need to create an instance of SystemRandom.",
+      "parentUuid": "ba7be1f8_2a58cd31",
+      "revId": "2990953cd65b7deccfa48b54e4bb4c65480eb25e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
