@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_27747b98",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-22T05:53:22Z",
+      "side": 1,
+      "message": "why not use \"result[self.result_id_arg_attr]\" as the resource_id?",
+      "revId": "e74d27becc8e16bd913f683a0dc09219a69c2b21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
