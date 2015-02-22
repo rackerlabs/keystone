@@ -224,6 +224,11 @@ class InvalidPolicyAssociation(Forbidden):
                        "Service: %(service_id)s, Region: %(region_id)s")
 
 
+class InvalidDomainConfig(Forbidden):
+    message_format = _("Option %(option)s in Group %(group)s not supported by "
+                       "Domain specific configuration database storage.")
+
+
 class NotFound(Error):
     message_format = _("Could not find: %(target)s")
     code = 404
