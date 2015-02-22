@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import copy
 import uuid
 
 from testtools import matchers
@@ -135,3 +136,130 @@ class DomainConfigTests(object):
 
     def test_delete_sensitive_domain_configs(self):
         self._delete_domain_configs(True)
+
+    def test_create_domain_config_including_sensitive_option(self):
+        config = {'ldap': {'url': uuid.uuid4().hex,
+                           'user_tree_dn': uuid.uuid4().hex,
+                           'password': uuid.uuid4().hex}}
+        self.domain_config_api.create_config(self.domain['id'], config)
+
+        # password is sensitive, so check that the whitelisted portion and
+        # the sensitive piece have been stored in the appropriate locations.
+        res = self.domain_config_api.get_config(self.domain['id'])
+        config_whitelisted = copy.deepcopy(config)
+        config_whitelisted['ldap'].pop('password')
+        self.assertEqual(config_whitelisted, res)
+        res = self.domain_config_api.get_config_option(
+            self.domain['id'], 'ldap', 'password', sensitive=True)
+        self.assertEqual(config['ldap']['password'], res['value'])
+
+        # Finally, use the non-public API to get back the whole config
+        res = self.domain_config_api.get_config_with_sensitive_info(
+            self.domain['id'])
+        self.assertEqual(config, res)
+
+    def test_get_partial_domain_config(self):
+        config = {'ldap': {'url': uuid.uuid4().hex,
+                           'user_tree_dn': uuid.uuid4().hex,
+                           'password': uuid.uuid4().hex},
+                  'identity': {'driver': uuid.uuid4().hex}}
+        self.domain_config_api.create_config(self.domain['id'], config)
+
+        res = self.domain_config_api.get_config(self.domain['id'],
+                                                group='identity')
+        config_partial = copy.deepcopy(config)
+        config_partial.pop('ldap')
+        self.assertEqual(config_partial, res)
+        res = self.domain_config_api.get_config(
+            self.domain['id'], group='ldap', option='user_tree_dn')
+        config_partial = copy.deepcopy(config)
+        config_partial.pop('identity')
+        config_partial['ldap'].pop('url')
+        config_partial['ldap'].pop('password')
+        self.assertEqual(config_partial, res)
+        # ...but we should fail to get a sensitive option
+        self.assertRaises(exception.DomainConfigNotFound,
+                          self.domain_config_api.get_config, self.domain['id'],
+                          group='ldap', option='password')
+
+    def test_update_partial_domain_config(self):
+        config = {'ldap': {'url': uuid.uuid4().hex,
+                           'user_tree_dn': uuid.uuid4().hex,
+                           'password': uuid.uuid4().hex},
+                  'identity': {'driver': uuid.uuid4().hex}}
+        self.domain_config_api.create_config(self.domain['id'], config)
+
+        # Try updating a whole group
+        new_config = {'ldap': {'url': uuid.uuid4().hex}}
+        self.domain_config_api.update_config(
+            self.domain['id'], new_config, group='ldap')
+        expected_config = {'ldap': new_config['ldap'],
+                           'identity': config['identity']}
+        res = self.domain_config_api.get_config(self.domain['id'])
+        self.assertEqual(expected_config, res)
+        res = self.domain_config_api.get_config_with_sensitive_info(
+            self.domain['id'])
+        self.assertEqual(expected_config, res)
+
+        # Try updating a single whitelisted option
+        self.domain_config_api.delete_config(self.domain['id'])
+        self.domain_config_api.create_config(self.domain['id'], config)
+        new_config = {'url': uuid.uuid4().hex}
+        self.domain_config_api.update_config(
+            self.domain['id'], new_config, group='ldap', option='url')
+
+        # Make sure whitelisted and full config is updated
+        expected_whitelisted_config = copy.deepcopy(config)
+        expected_whitelisted_config['ldap']['url'] = new_config['url']
+        expected_full_config = copy.deepcopy(expected_whitelisted_config)
+        expected_whitelisted_config['ldap'].pop('password')
+        res = self.domain_config_api.get_config(self.domain['id'])
+        self.assertEqual(expected_whitelisted_config, res)
+        res = self.domain_config_api.get_config_with_sensitive_info(
+            self.domain['id'])
+        self.assertEqual(expected_full_config, res)
+
+        # Try updating a single sensitive option
+        self.domain_config_api.delete_config(self.domain['id'])
+        self.domain_config_api.create_config(self.domain['id'], config)
+        new_config = {'password': uuid.uuid4().hex}
+        self.domain_config_api.update_config(
+            self.domain['id'], new_config, group='ldap', option='password')
+        res = self.domain_config_api.get_config(self.domain['id'])
+        # The whitelisted config should not have changed...
+        expected_whitelisted_config = copy.deepcopy(config)
+        expected_full_config = copy.deepcopy(config)
+        expected_whitelisted_config['ldap'].pop('password')
+        self.assertEqual(expected_whitelisted_config, res)
+        expected_full_config['ldap']['password'] = new_config['password']
+        res = self.domain_config_api.get_config_with_sensitive_info(
+            self.domain['id'])
+        # ...but the sensitive piece should have.
+        self.assertEqual(expected_full_config, res)
+
+    def test_update_invalid_partial_domain_config(self):
+        config = {'ldap': {'url': uuid.uuid4().hex,
+                           'user_tree_dn': uuid.uuid4().hex,
+                           'password': uuid.uuid4().hex},
+                  'identity': {'driver': uuid.uuid4().hex}}
+        # An extra group, when specifying one group should fail
+        self.assertRaises(exception.InvalidDomainConfig,
+                          self.domain_config_api.update_config,
+                          self.domain['id'], config, group='ldap')
+        # An extra option, when specifying one option should fail
+        self.assertRaises(exception.InvalidDomainConfig,
+                          self.domain_config_api.update_config,
+                          self.domain['id'], config['ldap'],
+                          group='ldap', option='url')
+
+        # Now try and update options that aren't there already
+        config.pop('identity')
+        self.domain_config_api.create_config(self.domain['id'], config)
+        self.assertRaises(exception.DomainConfigNotFound,
+                          self.domain_config_api.update_config,
+                          self.domain['id'], config, group='identity')
+        config = {'ldap': {'user': uuid.uuid4().hex}}
+        self.assertRaises(exception.DomainConfigNotFound,
+                          self.domain_config_api.update_config,
+                          self.domain['id'], config, group='ldap',
+                          option='user')

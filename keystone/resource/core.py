@@ -13,6 +13,7 @@
 """Main entry point into the resource service."""
 
 import abc
+import copy
 
 from oslo_config import cfg
 from oslo_log import log
@@ -784,12 +785,271 @@ class Driver(object):
 class DomainConfigManager(manager.Manager):
     """Default pivot point for the Domain Config backend."""
 
+    # NOTE(henry-nash): In order for a config option to be stored in the
+    # standard table, it must be explicitly whitelisted. Any other options
+    # within the config groups not listed are considered sensitive and will be
+    # stored separately and not returned via the general API. Accessing any
+    # options outside of the groups supported will raise an exception.
+
+    groups_supported = ['identity', 'ldap']
+    whitelisted = {
+        'identity': ['driver'],
+        'ldap': [
+            'url', 'user', 'suffix', 'use_dumb_member', 'dumb_member',
+            'allow_subtree_delete', 'query_scope', 'page_size',
+            'alias_dereferencing', 'debug_level', 'chase_referrals',
+            'user_tree_dn', 'user_filter', 'user_objectclass',
+            'user_id_attribute', 'user_name_attribute', 'user_mail_attribute',
+            'user_pass_attribute', 'user_enabled_attribute',
+            'user_enabled_invert', 'user_enabled_mask', 'user_enabled_default',
+            'user_attribute_ignore', 'user_default_project_id_attribute',
+            'user_allow_create', 'user_allow_update', 'user_allow_delete',
+            'user_enabled_emulation', 'user_enabled_emulation_dn',
+            'user_additional_attribute_mapping', 'group_tree_dn',
+            'group_filter', 'group_objectclass', 'group_id_attribute',
+            'group_name_attribute', 'group_member_attribute',
+            'group_desc_attribute', 'group_attribute_ignore',
+            'group_allow_create', 'group_allow_update', 'group_allow_delete',
+            'group_additional_attribute_mapping', 'tls_cacertfile',
+            'tls_cacertdir', 'use_tls', 'tls_req_cert', 'use_pool',
+            'pool_size', 'pool_retry_max', 'pool_retry_delay',
+            'pool_connection_timeout', 'pool_connection_lifetime',
+            'use_auth_pool', 'auth_pool_size', 'auth_pool_connection_lifetime'
+        ]
+    }
+
     def __init__(self):
         super(DomainConfigManager, self).__init__(CONF.domain_config.driver)
 
-    # TODO(henry-nash): The manager layer will handle all the whitelist
-    # checking of the config options, using the appropriate driver methods for
-    # the whitelisted and sensitive data.
+    def _assert_valid_config(self, domain_id, config, group=None, option=None,
+                             current_config=None):
+        """Ensure the combination of config, group and option is valid."""
+        if not config and not group and not option:
+            raise exception.InvalidDomainConfig(group=None, option=None)
+
+        self._assert_valid_group_and_option(group, option)
+        if (group or option) and len(config) != 1:
+            raise exception.InvalidDomainConfig(group=group, option=option)
+
+        if group and not option:
+            for group_opt in config:
+                if not config[group_opt]:
+                    raise exception.InvalidDomainConfig(group=group_opt,
+                                                        option=None)
+                for option_opt in config[group_opt]:
+                    self._assert_valid_group_and_option(
+                        group_opt, option_opt)
+
+        if current_config and group:
+            # Raise an exception if the items in the new config don't exist in
+            # the current config so that update and delete methods provide the
+            # correct error semantics.
+            current_group = current_config.get(group)
+            if not current_group:
+                # Trying to update/delete a  group that is not part of the
+                # original config
+                raise exception.DomainConfigNotFound(domain_id=domain_id)
+            if (group and option and not current_group.get(option)):
+                # Trying to update/delete an option that is not part of the
+                # original config
+                raise exception.DomainConfigNotFound(domain_id=domain_id)
+
+    def _assert_valid_group_and_option(self, group, option):
+        """Ensure the combination of group and option is valid."""
+
+        if not group and not option:
+            return
+
+        if group not in self.groups_supported:
+            raise exception.InvalidDomainConfig(group=group, option=option)
+
+        if option:
+            try:
+                # Make sure this is a valid config option
+                CONF.__getattr__(group).__getattr__(option)
+            except KeyError:
+                raise exception.InvalidDomainConfig(group=group, option=option)
+
+    def is_sensitive(self, group, option):
+        return option not in self.whitelisted[group]
+
+    def _config_to_list(self, config, group=None, option=None):
+        """Build config and sensitive lists for use by backend drivers.
+
+        :param config: supplied config structure
+        :param group: optional group option name
+        :param option: optional option name
+
+        :returns: both a whitelisted and sensitive list containing a dicts of
+                  the individual options
+
+        """
+        if group and option:
+            # The config will just be a dict containing the option and
+            # its value
+            full_config = {group: config}
+        else:
+            full_config = config
+
+        whitelisted = []
+        sensitive = []
+        for group in full_config:
+            for option in full_config[group]:
+                if self.is_sensitive(group, option):
+                    sensitive.append({'group': group, 'option': option,
+                                      'value': full_config[group][option]})
+                else:
+                    whitelisted.append({'group': group, 'option': option,
+                                        'value': full_config[group][option]})
+
+        return whitelisted, sensitive
+
+    def _list_to_config(self, whitelisted, sensitive=None):
+        """Build config dict from a list of option dicts.
+
+        :param whitelisted: list of dicts containing options and their groups
+        :param sensitive: list of dicts containing sensitive options and their
+                          groups
+
+        :returns: a config dict, including sensitive if specified
+
+        """
+        config = {}
+        the_list = copy.copy(whitelisted)
+        if sensitive:
+            the_list += sensitive
+        for option in the_list:
+            if option['group'] not in config:
+                config[option['group']] = {}
+            config[option['group']][option['option']] = option['value']
+        return config
+
+    def create_config(self, domain_id, config):
+        """Create config for a domain
+
+        :param domain_id: the domain in question
+        :param config: the dict of config groups/options to assign to the
+                       domain
+
+        :returns: a dict of group dicts containing the options, with any that
+                  are sensitive removed
+        :raises: keystone.exception.Conflict
+        :raises: keystone.exception.InvalidDomainConfig
+
+        """
+        self._assert_valid_config(domain_id, config)
+        whitelisted, sensitive = self._config_to_list(config)
+        for option in whitelisted:
+            self.driver.create_config_option(
+                domain_id, option['group'], option['option'], option['value'])
+        for option in sensitive:
+            self.driver.create_config_option(
+                domain_id, option['group'], option['option'], option['value'],
+                sensitive=True)
+        return self._list_to_config(whitelisted)
+
+    def get_config(self, domain_id, group=None, option=None):
+        """Get config, or partial config, for a domain
+
+        :param domain_id: the domain in question
+        :param group: an optional specific group of options
+        :param option: an optional specific option with the group
+
+        :returns: a dict of group dicts containing the whitelisted options
+        :raises: keystone.exception.DomainConfigNotFound
+
+        An example response:
+
+        {
+            'ldap': {
+                'url': 'myurl'
+                'user_tree_dn': 'OU=myou'}
+            'identity': {
+                'driver': 'keystone.identity.backends.ldap.Identity' }
+        }
+
+        """
+        self._assert_valid_group_and_option(group, option)
+        whitelisted = self.driver.list_config_options(domain_id, group, option)
+        if whitelisted:
+            return self._list_to_config(whitelisted)
+        raise exception.DomainConfigNotFound(domain_id=domain_id)
+
+    def update_config(self, domain_id, config, group=None, option=None):
+        """Update config, or partial config, for a domain
+
+        :param domain_id: the domain in question
+        :param config: the config dict containing and groups/options being
+                       updated
+        :param group: an optional specific group of options
+        :param option: an optional specific option with the group
+
+        If group and option are None, then the entire config for the domain
+        is replaced with the supplied config. If group is not none, then
+        just that group of options will be replaced. If group and option are
+        both specified, then just that option is updated.
+
+        :returns: a dict of group dicts containing the whitelisted options
+        :raises: keystone.exception.DomainConfigNotFound
+        :raises: keystone.exception.InvalidDomainConfig
+
+        """
+        full_config = self.get_config_with_sensitive_info(domain_id)
+        self._assert_valid_config(domain_id, config, group, option,
+                                  current_config=full_config)
+        whitelisted, sensitive = self._config_to_list(config, group, option)
+
+        # As far as the driver is concerned, this is not an update operation,
+        # but a series of deletes and creates.
+        self.delete_config(domain_id, group, option)
+        for new_option in whitelisted:
+            self.driver.create_config_option(
+                domain_id, new_option['group'], new_option['option'],
+                new_option['value'])
+        for new_option in sensitive:
+            self.driver.create_config_option(
+                domain_id, new_option['group'], new_option['option'],
+                new_option['value'], sensitive=True)
+        return self._list_to_config(whitelisted)
+
+    def delete_config(self, domain_id, group=None, option=None):
+        """Delete config, or partial config, for the domain."""
+
+        if group or option:
+            # If this is a partial delete, then make sure the items requested
+            # are valid and exist in the current config
+            self._assert_valid_group_and_option(group, option)
+            current_config = self.get_config_with_sensitive_info(domain_id)
+            # Raise an exception if the items in the new config don't exist in
+            # the current config so that update and delete methods provide the
+            # correct error semantics.
+            current_group = current_config.get(group)
+            if not current_group:
+                # Trying to delete a group that is not part of the original
+                # config
+                raise exception.DomainConfigNotFound(domain_id=domain_id)
+            if (group and option and not current_group.get(option)):
+                # Trying to delete an option that is not part of the original
+                # config
+                raise exception.DomainConfigNotFound(domain_id=domain_id)
+
+        self.driver.delete_config_option(domain_id, group, option)
+        self.driver.delete_config_option(domain_id, group, option,
+                                         sensitive=True)
+
+    def get_config_with_sensitive_info(self, domain_id, group=None,
+                                       option=None):
+        """Get config for a domain with sensitive info included.
+
+        This method is not exposed via the public API, but is used by the
+        identity manager to initialize a domain with the fully formed config
+        options.
+
+        """
+        whitelisted = self.driver.list_config_options(domain_id, group, option)
+        sensitive = self.driver.list_config_options(domain_id, group, option,
+                                                    sensitive=True)
+        return self._list_to_config(whitelisted, sensitive)
 
 
 @six.add_metaclass(abc.ABCMeta)
