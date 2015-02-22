@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_02d205d2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-22T10:46:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_e7650346",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_47540f54",
         "filename": "keystone/common/config.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-22T07:59:28Z",
       "side": 1,
       "message": "why add a deprecated group? this is a new option.",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_22d709c3",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-22T10:46:39Z",
+      "side": 1,
+      "message": "oops, copy \u0026 paste! In fact, I\u0027ll add caching in a subsequent patch",
+      "parentUuid": "ba7be1f8_47540f54",
       "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_42db1ded",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-22T10:46:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_874e07c0",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_27d71bc3",
         "filename": "keystone/common/sql/migrate_repo/versions/065_add_domain_config.py",
         "patchSetId": 2
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_82e515aa",
+        "filename": "keystone/common/sql/migrate_repo/versions/065_add_domain_config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-22T10:46:39Z",
+      "side": 1,
+      "message": "I did think about that....but with our plans for domains, not sure it is worth it...",
+      "parentUuid": "ba7be1f8_27d71bc3",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_e7f34371",
         "filename": "keystone/common/sql/migrate_repo/versions/065_add_domain_config.py",
         "patchSetId": 2
@@ -81,6 +153,24 @@
       "writtenOn": "2015-02-22T07:59:28Z",
       "side": 1,
       "message": "nit: apparently this is just sql.Text, so you could use that and drop the ks_sql import",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a2e2199d",
+        "filename": "keystone/common/sql/migrate_repo/versions/065_add_domain_config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-22T10:46:39Z",
+      "side": 1,
+      "message": "just keeping with convention...",
+      "parentUuid": "ba7be1f8_e7f34371",
       "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_2241c95a",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-22T10:46:39Z",
+      "side": 1,
+      "message": "I didn\u0027t put one in the API spec, since I was concerned about whether from a UX perspective, it made send...and the filtering you might want to do on it becomes a bit yukky.  Maybe we\u0027ll add this next release if we see the need...",
+      "parentUuid": "ba7be1f8_27739bea",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_07a05742",
         "filename": "keystone/resource/config_backends/sql.py",
         "patchSetId": 2
@@ -132,6 +240,24 @@
       "writtenOn": "2015-02-22T07:59:28Z",
       "side": 1,
       "message": "place the return outside of the with statement",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_42b07d8b",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-22T10:46:39Z",
+      "side": 1,
+      "message": "Damn...I\u0027ve made that mistake before...",
+      "parentUuid": "ba7be1f8_07a05742",
       "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +281,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_22bc6969",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-22T10:46:39Z",
+      "side": 1,
+      "message": "so had not intended to return the domain_id....I could make  specific to_dict() I suppose that did this...",
+      "parentUuid": "ba7be1f8_27bc7b69",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_47b08f8b",
         "filename": "keystone/resource/config_backends/sql.py",
         "patchSetId": 2
@@ -166,6 +310,24 @@
       "writtenOn": "2015-02-22T07:59:28Z",
       "side": 1,
       "message": "return outside of the with statement\n\nalso i\u0027d use to_dict as you do in the code later on",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_62ad8131",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-22T10:46:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_47b08f8b",
       "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +351,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_82aa7517",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-22T10:46:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_87aa8717",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_475ecf46",
         "filename": "keystone/resource/config_backends/sql.py",
         "patchSetId": 2
@@ -200,6 +380,24 @@
       "writtenOn": "2015-02-22T07:59:28Z",
       "side": 1,
       "message": "nice job here",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a2a7794e",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-22T10:46:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_475ecf46",
       "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +421,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_c2638d18",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-22T10:46:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_a7a78b4e",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_c7639f18",
         "filename": "keystone/resource/config_backends/sql.py",
         "patchSetId": 2
@@ -234,6 +450,24 @@
       "writtenOn": "2015-02-22T07:59:28Z",
       "side": 1,
       "message": "return outside of the with statement",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_e26891f7",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-22T10:46:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_c7639f18",
       "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +491,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_822fd5a0",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-22T10:46:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_e71d0375",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_02584531",
         "filename": "keystone/tests/unit/backend/domain_config/test_sql.py",
         "patchSetId": 2
@@ -268,6 +520,24 @@
       "writtenOn": "2015-02-22T07:59:28Z",
       "side": 1,
       "message": "whats the point of this?",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_8206f51e",
+        "filename": "keystone/tests/unit/backend/domain_config/test_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-22T10:46:39Z",
+      "side": 1,
+      "message": "doesn\u0027t that cause the tests in core,DomainConfigTests to be run.? (the structure of the unit/backend is to put your tests in core and the specific sql/ldap files that cause the tests to run....)",
+      "parentUuid": "ba7be1f8_02584531",
       "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
