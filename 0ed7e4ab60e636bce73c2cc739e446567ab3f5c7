@@ -1,0 +1,276 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_e7650346",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-22T07:59:28Z",
+      "side": 1,
+      "message": "patch*",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_47540f54",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-22T07:59:28Z",
+      "side": 1,
+      "message": "why add a deprecated group? this is a new option.",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_874e07c0",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-22T07:59:28Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_27d71bc3",
+        "filename": "keystone/common/sql/migrate_repo/versions/065_add_domain_config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-22T07:59:28Z",
+      "side": 1,
+      "message": "this could be a foreign key to the domain table, but not really essential if it\u0027s not",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_e7f34371",
+        "filename": "keystone/common/sql/migrate_repo/versions/065_add_domain_config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-22T07:59:28Z",
+      "side": 1,
+      "message": "nit: apparently this is just sql.Text, so you could use that and drop the ks_sql import",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_47db2fed",
+        "filename": "keystone/common/sql/migrate_repo/versions/065_add_domain_config.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-22T07:59:28Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_27739bea",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-22T07:59:28Z",
+      "side": 1,
+      "message": "why no list function?",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_07a05742",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-22T07:59:28Z",
+      "side": 1,
+      "message": "place the return outside of the with statement",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_27bc7b69",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-22T07:59:28Z",
+      "side": 1,
+      "message": "1. return outside of the with statement.\n2. why use .config? \n\n  with sql.transaction() as session:\n    config_ref \u003d self._get_config(session, domain_id)\n  return config_ref.config\n\nor \n\n  return config_ref.to_dict()",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_47b08f8b",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-22T07:59:28Z",
+      "side": 1,
+      "message": "return outside of the with statement\n\nalso i\u0027d use to_dict as you do in the code later on",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_87aa8717",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-22T07:59:28Z",
+      "side": 1,
+      "message": "return outside of the with statement",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_475ecf46",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-22T07:59:28Z",
+      "side": 1,
+      "message": "nice job here",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a7a78b4e",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-22T07:59:28Z",
+      "side": 1,
+      "message": "return outside of the with statement",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c7639f18",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-22T07:59:28Z",
+      "side": 1,
+      "message": "return outside of the with statement",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_e71d0375",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-22T07:59:28Z",
+      "side": 1,
+      "message": "either list the company you work for or none, or if it\u0027s similar enough keep the current header",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_02584531",
+        "filename": "keystone/tests/unit/backend/domain_config/test_sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-22T07:59:28Z",
+      "side": 1,
+      "message": "whats the point of this?",
+      "revId": "0ed7e4ab60e636bce73c2cc739e446567ab3f5c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
