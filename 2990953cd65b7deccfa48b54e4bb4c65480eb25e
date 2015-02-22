@@ -34,6 +34,24 @@
       "revId": "2990953cd65b7deccfa48b54e4bb4c65480eb25e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_79645349",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-22T22:34:06Z",
+      "side": 1,
+      "message": "OpenStack guidelines are to import only modules, see https://github.com/openstack-dev/hacking/blame/master/HACKING.rst#L44 . Also, I like the ranaming to _random because it will be an indicator that something \"different\" is happening and will hopefully convince others from using functions in _random.",
+      "parentUuid": "ba7be1f8_2a58cd31",
+      "revId": "2990953cd65b7deccfa48b54e4bb4c65480eb25e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
