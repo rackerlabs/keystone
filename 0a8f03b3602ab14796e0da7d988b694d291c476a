@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_71ad5131",
+        "filename": "keystone/catalog/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-22T02:24:44Z",
+      "side": 1,
+      "message": "stylistically these should be named kwargs for \"context\"\n\ninitiator\u003dcontext - this can be done as a follow up patch. This applies to all new passing of context down...\n\nHowever, we worked hard to aoid passing the context down to the drivers in the past. Ideally we should extract what we need from the context at the controller level. Passing context down has other ramifications (such as, the driver could opt to modify the context).",
+      "revId": "0a8f03b3602ab14796e0da7d988b694d291c476a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
