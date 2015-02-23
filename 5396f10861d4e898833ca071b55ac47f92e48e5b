@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_a2ecbd90",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 4034,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-02-23T17:00:08Z",
+      "side": 1,
+      "message": "Some negative test cases would be helpful to verify that an error is returned when  a token has been tampered with.",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_eba157aa",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 20
@@ -416,6 +433,40 @@
       "side": 1,
       "message": "Done",
       "parentUuid": "ba7be1f8_0bbcebba",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_0cf222d2",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-02-23T17:00:08Z",
+      "side": 1,
+      "message": "nit: Should this comment be something more like: \"Retrieve token information\".",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_5fa59ab3",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-02-23T17:00:08Z",
+      "side": 1,
+      "message": "Same here.",
       "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
