@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba7be1f8_d2eed8b3",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-23T20:34:01Z",
+      "side": 1,
+      "message": "should this be unique?\n\nif we have many IdPs, then can\u0027t they share a remote_id value?",
+      "revId": "da82e15868904d0b11d660c266838ff75f9f2d01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_32b81476",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-23T20:34:01Z",
+      "side": 1,
+      "message": "why are we registering them now? is there a reason we don\u0027t just add them to:\n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/config.py#L859\n\nand \n\nwe could make a new group and option for \u0027oidc\u0027.",
+      "revId": "da82e15868904d0b11d660c266838ff75f9f2d01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_15369a03",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-23T20:34:01Z",
+      "side": 1,
+      "message": "make this one line",
+      "revId": "da82e15868904d0b11d660c266838ff75f9f2d01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_400bf224",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-23T20:34:01Z",
+      "side": 1,
+      "message": "does it make sense to make 2 idps with the same remote_ids?\nto try out the unique constraint?",
+      "revId": "da82e15868904d0b11d660c266838ff75f9f2d01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_77860815",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 14
