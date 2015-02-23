@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_5f276fb6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-23T01:43:38Z",
+      "side": 1,
+      "message": "Add DocImpact. Also, why is this in developer docs and not external documentation?",
+      "revId": "bf2e63d1367587472c357bfc8db7f228a9c99d0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_ff3583db",
+        "filename": "doc/source/key_terms.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-23T01:43:38Z",
+      "side": 1,
+      "message": "change \"will describe\" to \"describes\"",
+      "revId": "bf2e63d1367587472c357bfc8db7f228a9c99d0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_bf5b0b2d",
+        "filename": "doc/source/key_terms.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-23T01:43:38Z",
+      "side": 1,
+      "message": "this is already in the v3 API spec: http://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3.html#users-v3-users",
+      "revId": "bf2e63d1367587472c357bfc8db7f228a9c99d0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
