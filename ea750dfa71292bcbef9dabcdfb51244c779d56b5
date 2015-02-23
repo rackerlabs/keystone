@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_3fc47b5e",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2834,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-23T02:03:50Z",
+      "side": 1,
+      "message": "new_trust_ref already understands how to create a trust_ref with role_names, so the code should be changed so that the trust ref is created correctly to begin with rather than overriding it here.",
+      "revId": "ea750dfa71292bcbef9dabcdfb51244c779d56b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_df951f41",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2841,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-23T02:03:50Z",
+      "side": 1,
+      "message": "similar comment here - create the chained trust ref correctly to begin with rather than fixing it up.",
+      "revId": "ea750dfa71292bcbef9dabcdfb51244c779d56b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_9fb1e7e3",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-23T02:03:50Z",
+      "side": 1,
+      "message": "role_api isn\u0027t used.",
+      "revId": "ea750dfa71292bcbef9dabcdfb51244c779d56b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_1faed785",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-23T02:03:50Z",
+      "side": 1,
+      "message": "revert the change to this line since it\u0027s unnecessary.",
+      "revId": "ea750dfa71292bcbef9dabcdfb51244c779d56b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
