@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_29543820",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-23T16:26:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_abc83f75",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_eba157aa",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 20
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-21T08:15:52Z",
       "side": 1,
       "message": "note: the provider here is keystone.token.providers.klwt.Provider but in config.py it\u0027s still keystone.token.providers.ae.Provider\n\njust a heads up",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a9166853",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 4043,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-23T16:26:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_eba157aa",
       "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_8c0a921f",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-23T16:26:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_2bac4fa0",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_ab9f5f5e",
         "filename": "keystone/token/provider.py",
         "patchSetId": 20
@@ -64,6 +118,24 @@
       "writtenOn": "2015-02-21T08:15:52Z",
       "side": 1,
       "message": "this is the second time i\u0027m seeing roughly the same code to determine if it\u0027s using KWLT, consider creating a helper function?",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_6ca55eb4",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-23T16:26:51Z",
+      "side": 1,
+      "message": "Agreed, I tried throwing this in __init__() but ended up hitting import races. I\u0027ll see if I can get something better up.",
+      "parentUuid": "ba7be1f8_ab9f5f5e",
       "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_cc956a41",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 439,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-23T16:26:51Z",
+      "side": 1,
+      "message": "same as above.",
+      "parentUuid": "ba7be1f8_cb9c936c",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_0b8eab2e",
         "filename": "keystone/token/providers/klwt/core.py",
         "patchSetId": 20
@@ -98,6 +188,24 @@
       "writtenOn": "2015-02-21T08:15:52Z",
       "side": 1,
       "message": "you are not returning anything here, you are raising a notimplemented exception",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_6ce1decf",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-23T16:26:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_0b8eab2e",
       "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_0cf3029f",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-23T16:26:51Z",
+      "side": 1,
+      "message": "The format map is stored in the __init__() of this class. Here we just need a way to determine what we are dealing with so we can look up the right formatter in the map.",
+      "parentUuid": "ba7be1f8_6b7c8721",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_cb73b34b",
         "filename": "keystone/token/providers/klwt/core.py",
         "patchSetId": 20
@@ -132,6 +258,24 @@
       "writtenOn": "2015-02-21T08:15:52Z",
       "side": 1,
       "message": "it doesn\u0027t raise this exception",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_2cee06b5",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-23T16:26:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_cb73b34b",
       "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_ac1036a9",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-23T16:26:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_0b95cb32",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_8ba0db91",
         "filename": "keystone/token/providers/klwt/core.py",
         "patchSetId": 20
@@ -166,6 +328,24 @@
       "writtenOn": "2015-02-21T08:15:52Z",
       "side": 1,
       "message": "would you be against grabbing the first 6 characters and performing a .get() on the token_format_map (instead of looping)? seems unnecessary right?",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_8c6e1200",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-23T16:26:51Z",
+      "side": 1,
+      "message": "Oh, that would work well. One thing to keep in mind moving forward would be that it would require us to have token_format all the same length, versus the current implementation where we determine the token format length depending on the token_format being used. \n\nI think you raise a good point though, we can worry about solving that once we have multiple token_format strings of different length.",
+      "parentUuid": "ba7be1f8_8ba0db91",
       "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_3fd4661f",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-23T16:26:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_eb8f9721",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_0bbcebba",
         "filename": "keystone/token/providers/klwt/token_formatters.py",
         "patchSetId": 20
@@ -200,6 +398,24 @@
       "writtenOn": "2015-02-21T08:15:52Z",
       "side": 1,
       "message": "this is an odd way to layout a message, you had all that space on the line above!",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_df9eea53",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-23T16:26:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_0bbcebba",
       "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
