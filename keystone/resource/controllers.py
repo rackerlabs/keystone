@@ -233,7 +233,7 @@ class ProjectV3(controller.V3Controller):
         return ProjectV3.wrap_member(context, ref)
 
     @controller.filterprotected('domain_id', 'enabled', 'name',
-                                'parent_id')
+                                'parent_id', 'is_domain')
     def list_projects(self, context, filters):
         hints = ProjectV3.build_driver_hints(context, filters)
         refs = self.resource_api.list_projects(hints=hints)
