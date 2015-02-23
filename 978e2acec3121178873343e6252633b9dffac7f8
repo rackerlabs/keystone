@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_0c63fbb1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-02-23T18:48:11Z",
+      "side": 1,
+      "message": "Partially-Implements: bp reseller",
+      "revId": "978e2acec3121178873343e6252633b9dffac7f8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
