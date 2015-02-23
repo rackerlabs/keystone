@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_29f8b848",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1749,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-23T15:46:34Z",
+      "side": 1,
+      "message": "Happy to consider some additional logging in a follow on patch",
+      "parentUuid": "ba7be1f8_2374a1fc",
+      "revId": "e12cabba868abd5ffa24c0d71c65c42030190c1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_68d118cd",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 14
