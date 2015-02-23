@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_77860815",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-23T15:19:38Z",
+      "side": 1,
+      "message": "we could  explicitly check those 3 keys manually.",
+      "revId": "da82e15868904d0b11d660c266838ff75f9f2d01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_b777a03a",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-23T15:19:38Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "da82e15868904d0b11d660c266838ff75f9f2d01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
