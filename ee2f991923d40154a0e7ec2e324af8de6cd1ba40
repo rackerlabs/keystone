@@ -16,6 +16,23 @@
       "revId": "ee2f991923d40154a0e7ec2e324af8de6cd1ba40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_bc59475d",
+        "filename": "keystone/contrib/oauth1/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-23T15:05:45Z",
+      "side": 1,
+      "message": "some logging, CADF event emission could be useful here.",
+      "revId": "ee2f991923d40154a0e7ec2e324af8de6cd1ba40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
