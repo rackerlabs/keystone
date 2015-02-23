@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_8ea3624e",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 785,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-02-23T19:11:13Z",
+      "side": 1,
+      "message": "The value of the Issuer attribute in a certificate is a DN, like \u0027CN\u003dfoo,OU\u003dkeystone,O\u003dopenstack\u0027, and that\u0027s the Issuer\u0027s DN we are adding in the list.",
+      "parentUuid": "ba7be1f8_d0bb5e0c",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_9093a6a2",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-21T05:04:37Z",
       "side": 1,
       "message": "use up at 79 characters per line, and bump the lines over a bit so they align better.\n\n  help\u003d\u0027A list of trusted ...\n       \u0027certifications ...",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_ce847ab3",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 786,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-02-23T19:11:13Z",
+      "side": 1,
+      "message": "will do.",
+      "parentUuid": "ba7be1f8_9093a6a2",
       "revId": "2222135f557959268e797596cf44a1baa8963787",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_8eba826c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 791,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-02-23T19:11:13Z",
+      "side": 1,
+      "message": "agree on that.",
+      "parentUuid": "ba7be1f8_f0d06255",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_f0e9421b",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_6e6e2e03",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-02-23T19:11:13Z",
+      "side": 1,
+      "message": "sure, I could do that too.",
+      "parentUuid": "ba7be1f8_f0e9421b",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_d08d1e7d",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
@@ -81,6 +153,24 @@
       "writtenOn": "2015-02-21T05:04:37Z",
       "side": 1,
       "message": "could place default on the same line as the option",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_0e7db2b1",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 796,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-02-23T19:11:13Z",
+      "side": 1,
+      "message": "will do.",
+      "parentUuid": "ba7be1f8_d08d1e7d",
       "revId": "2222135f557959268e797596cf44a1baa8963787",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_0e54d21f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-02-23T19:11:13Z",
+      "side": 1,
+      "message": "sure.",
+      "parentUuid": "ba7be1f8_10efb61f",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_30f4baf1",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
@@ -149,6 +257,24 @@
       "writtenOn": "2015-02-21T05:04:37Z",
       "side": 1,
       "message": "i think with marek\u0027s patch you might have to do some processing on mapped_properties here, but it should result in less code in the rule processor",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_ee2f7e9f",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-02-23T19:11:13Z",
+      "side": 1,
+      "message": "will look at his patch.",
+      "parentUuid": "ba7be1f8_f0ba22e0",
       "revId": "2222135f557959268e797596cf44a1baa8963787",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +315,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_ae0ca643",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-02-23T19:11:13Z",
+      "side": 1,
+      "message": "thx, will look at that.",
+      "parentUuid": "ba7be1f8_d0eefeeb",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_30de7a40",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 4
@@ -223,6 +367,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_8c0feb2d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-02-23T19:11:13Z",
+      "side": 1,
+      "message": "agree.",
+      "parentUuid": "ba7be1f8_10d97657",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_b06c2a9e",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 4
@@ -240,6 +402,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_2c143f4d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-02-23T19:11:13Z",
+      "side": 1,
+      "message": "the parentheses are actually there and it will return False in this case, but it may be a good idea to break it down a bit.",
+      "parentUuid": "ba7be1f8_b06c2a9e",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_100b36d7",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 4
@@ -251,6 +431,24 @@
       "writtenOn": "2015-02-21T05:04:37Z",
       "side": 1,
       "message": "you should probably log something here\n\nLike when the issuer is missing. or if scope is False.\n\n\"hey the issuer is missing, check CONF.blah\" \n\nor \"hey we couldn\u0027t find a scope, but here\u0027s what we saw\" -\n\nI say this because presently if any of these fail the user will only know when the auth context is returned.",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_4c17b351",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-02-23T19:11:13Z",
+      "side": 1,
+      "message": "yeah, agree on that.",
+      "parentUuid": "ba7be1f8_100b36d7",
       "revId": "2222135f557959268e797596cf44a1baa8963787",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
