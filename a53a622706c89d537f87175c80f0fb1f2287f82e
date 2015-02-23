@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_d83a8033",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-02-23T17:32:24Z",
+      "side": 1,
+      "message": "Can you please elaborate in the doc string on how the key is created? Ex: \nHow umask is set to with 0o177  to set permissions for writing the new key to the key file.",
+      "revId": "a53a622706c89d537f87175c80f0fb1f2287f82e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
