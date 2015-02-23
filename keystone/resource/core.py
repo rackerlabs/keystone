@@ -105,7 +105,7 @@ class Manager(manager.Manager):
 
         if tenant.get('parent_id') is not None:
             parent_ref = self.get_project(tenant.get('parent_id'))
-            parents_list = self.list_project_parents(parent_ref['id'])
+                parents_list = self.list_project_parents(parent_ref['id'])
             parents_list.append(parent_ref)
             for ref in parents_list:
                 if (not tenant['is_domain'] and
