@@ -21,6 +21,7 @@ from keystone.common import controller
 from keystone import exception
 from keystone.tests import unit as tests
 from keystone.tests.unit import test_v3
+from keystone.tests.unit import utils as test_utils
 
 
 CONF = cfg.CONF
@@ -693,6 +694,18 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         # projects[2] has no child, projects_result must be an empty list
         self.assertEqual(expected_list, projects_result)
 
+    def _assert_add_project_to_hierarchy(self, parent_id, domain_id=None,
+                                         is_domain=False):
+        new_ref = self.new_project_ref(
+            None if is_domain else domain_id,
+            parent_id=parent_id,
+            is_domain=is_domain)
+
+        resp = self.post('/projects',
+                         body={'project': new_ref})
+
+        self.assertValidProjectResponse(resp, new_ref)
+
     def test_create_hierarchical_project(self):
         """Call ``POST /projects``."""
         self._create_projects_hierarchy()
@@ -831,6 +844,40 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
                 'project_id': projects[1]['project']['id']},
             expected_status=400)
 
+    @test_utils.wip('domain operations still look at domain table')
+    def test_list_project_is_domain(self):
+        """Call ``GET /projects/{project_id}?is_domain=True/False``. """
+        projects = self._create_projects_hierarchy(hierarchy_size=2,
+                                                   is_domain=True)
+
+        project1_id = projects[1]['project']['id']
+        project2_id = projects[2]['project']['id']
+        self._assert_add_project_to_hierarchy(parent_id=project1_id,
+                                              domain_id=project1_id)
+        self._assert_add_project_to_hierarchy(parent_id=project1_id,
+                                              domain_id=project1_id)
+        self._assert_add_project_to_hierarchy(parent_id=project2_id,
+                                              domain_id=project2_id)
+        self._assert_add_project_to_hierarchy(parent_id=project2_id,
+                                              domain_id=project2_id)
+
+        r = self.get('/projects?is_domain=True',
+                     expected_status=200)
+
+        self.assertEqual(len(r.result['projects']), 3)
+        expected = [projects[0]['project'],
+                    projects[1]['project'],
+                    projects[2]['project']]
+
+        self.assertEqual(r.result['projects'], expected)
+
+        r = self.get('/projects?is_domain=False',
+                     expected_status=200)
+
+        # The number of projects where is_domain=False is the amount created
+        # in this test plus 2 pre-existing ones.
+        self.assertEqual(len(r.result['projects']), 6)
+
     def test_get_project_with_subtree_as_ids(self):
         """Call ``GET /projects/{project_id}?subtree_as_ids``.
 
@@ -848,7 +895,8 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
 
 
         """
-        projects = self._create_projects_hierarchy(hierarchy_size=2)
+        projects = self._create_projects_hierarchy(hierarchy_size=2,
+                                                   is_domain=False)
 
         # Add another child to projects[0] - it will be projects[3]
         new_ref = self.new_project_ref(
