@@ -41,6 +41,7 @@ from keystone.tests.unit import federation_fixtures
 from keystone.tests.unit import ksfixtures
 from keystone.tests.unit import mapping_fixtures
 from keystone.tests.unit import test_v3
+from keystone.tests.unit import utils
 from keystone.token.providers import common as token_common
 
 
@@ -221,6 +222,12 @@ class FederatedSetupMixin(object):
             domain_id=self.domainD['id'])
         self.resource_api.create_project(self.project_inherited['id'],
                                          self.project_inherited)
+
+        self.subproject_inherited = self.new_project_ref(
+            domain_id=self.domainD['id'],
+            parent_id=self.project_inherited['id'])
+        self.resource_api.create_project(self.subproject_inherited['id'],
+                                         self.subproject_inherited)
 
         # Create and add groups
         self.group_employees = self.new_group_ref(
@@ -2274,13 +2281,15 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
 
         self.config_fixture.config(group='os_inherit', enabled=True)
         projects_refs = (set([self.proj_customers['id'],
-                              self.project_inherited['id']]),
+                              self.project_inherited['id'],
+                              self.subproject_inherited['id']]),
                          set([self.proj_employees['id'],
                               self.project_all['id']]),
                          set([self.proj_employees['id'],
                               self.project_all['id'],
                               self.proj_customers['id'],
-                              self.project_inherited['id']]))
+                              self.project_inherited['id'],
+                              self.subproject_inherited['id']]))
 
         for token, projects_ref in zip(token, projects_refs):
             for url in urls:
@@ -2289,6 +2298,36 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
                 projects = set(p['id'] for p in projects_resp)
                 self.assertEqual(projects_ref, projects,
                                  'match failed for url %s' % url)
+
+    @utils.wip('waiting on bug #1424500')
+    def test_list_projects_for_inherited_project_assignment(self):
+        # Enable OS-INHERIT config switch
+        self.config_fixture.config(group='os_inherit', enabled=True)
+
+        # Replace the existing domain inherited assignment by a project one
+        self.assignment_api.delete_grant(
+            role_id=self.role_customer['id'],
+            group_id=self.group_customers['id'],
+            domain_id=self.domainD['id'],
+            inherited_to_projects=True)
+        self.assignment_api.create_grant(
+            role_id=self.role_customer['id'],
+            group_id=self.group_customers['id'],
+            project_id=self.project_inherited['id'],
+            inherited_to_projects=True)
+
+        # Define expected projects from customer assertion, which contain
+        # the subproject of the project with the inherited assignment above
+        expected_project_ids = [self.proj_customers['id'],
+                                self.subproject_inherited['id']]
+
+        # Assert expected projects for both available URLs
+        for url in ('/OS-FEDERATION/projects', '/auth/projects'):
+            r = self.get(url, token=self.tokens['CUSTOMER_ASSERTION'])
+            project_ids = [project['id'] for project in r.result['projects']]
+            for expected_project_id in expected_project_ids:
+                self.assertIn(expected_project_id, project_ids,
+                              'Projects match failed for url %s' % url)
 
     def test_list_domains(self):
         urls = ('/OS-FEDERATION/domains', '/auth/domains')
