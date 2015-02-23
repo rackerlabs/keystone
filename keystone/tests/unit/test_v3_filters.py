@@ -22,6 +22,7 @@ from keystone.policy.backends import rules
 from keystone.tests.unit import filtering
 from keystone.tests.unit.ksfixtures import temporaryfile
 from keystone.tests.unit import test_v3
+from keystone.tests.unit import utils
 
 
 CONF = cfg.CONF
@@ -213,6 +214,26 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         self.assertEqual(len(id_list), 1)
         self.assertIn(self.domainA['id'], id_list)
         self.assertTrue(r.result.get('domains')[0]['enabled'])
+
+    @utils.wip('Exposes bug #1424745')
+    def test_multiple_valued_filters(self):
+        """GET /domains?enabled=0&id=<domainA.id>
+
+        Test Plan:
+
+        - Update policy for no protection on api
+        - Filter by the 'enabled=0' boolean and name - this should
+          return no domain, since domainA is enabled
+
+        """
+        new_policy = {"identity:list_domains": []}
+        self._set_policy(new_policy)
+
+        url = '/domains?enabled=0&id=%s' % self.domainA['id']
+        r = self.get(url, auth=self.auth)
+
+        # Since domainA is enabled, the response should be an empty list
+        self.assertEqual([], r.result.get('domains'))
 
     def test_list_users_filtered_by_funny_name(self):
         """GET /users?name=%myname%
