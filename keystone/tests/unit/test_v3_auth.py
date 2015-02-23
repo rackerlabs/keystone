@@ -4072,6 +4072,36 @@ class TestKLWTokenProvider(test_v3.RestfulTestCase,
         headers = {'X-Subject-Token': tampered_token}
         self.get('/auth/tokens', headers=headers, expected_status=401)
 
+    def test_revoke_unscoped_token(self):
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])
+        resp = self.post('/auth/tokens', body=auth_data)
+        unscoped_token = resp.headers.get('X-Subject-Token')
+        self.assertTrue(unscoped_token.startswith('KLWT00'))
+        headers = {'X-Subject-Token': unscoped_token}
+        self.get('/auth/tokens', headers=headers, expected_status=200)
+        self.delete('/auth/tokens', headers=headers, expected_status=204)
+        self.get('/auth/tokens', headers=headers, expected_status=404)
+
+    def test_unscoped_token_is_invalid_after_disabling_user(self):
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'])
+        resp = self.post('/auth/tokens', body=auth_data, expected_status=201)
+        unscoped_token = resp.headers.get('X-Subject-Token')
+        self.assertTrue(unscoped_token.startswith('KLWT00'))
+        headers = {'X-Subject-Token': unscoped_token}
+        # Make sure the token is valid
+        self.get('/auth/tokens', headers=headers, expected_status=200)
+        # Disable the user
+        self.user['enabled'] = False
+        self.identity_api.update_user(self.user['id'], self.user)
+        # Ensure validating a token for a disabled user fails
+        self.assertRaises(exception.TokenNotFound,
+                          self.token_provider_api.validate_token,
+                          unscoped_token)
+
     def test_authenticate_for_project_scoped_token(self):
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
@@ -4105,6 +4135,38 @@ class TestKLWTokenProvider(test_v3.RestfulTestCase,
                           project_scoped_token[50 + 32:])
         headers = {'X-Subject-Token': tampered_token}
         self.get('/auth/tokens', headers=headers, expected_status=401)
+
+    def test_revoke_project_scoped_token(self):
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            project_id=self.project_id)
+        resp = self.post('/auth/tokens', body=auth_data, expected_status=201)
+        project_scoped_token = resp.headers.get('X-Subject-Token')
+        self.assertTrue(project_scoped_token.startswith('KLWT00'))
+        headers = {'X-Subject-Token': project_scoped_token}
+        self.get('/auth/tokens', headers=headers, expected_status=200)
+        self.delete('/auth/tokens', headers=headers, expected_status=204)
+        self.get('/auth/tokens', headers=headers, expected_status=404)
+
+    def test_project_scoped_token_is_invalid_after_disabling_user(self):
+        auth_data = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            project_id=self.project_id)
+        resp = self.post('/auth/tokens', body=auth_data, expected_status=201)
+        project_scoped_token = resp.headers.get('X-Subject-Token')
+        self.assertTrue(project_scoped_token.startswith('KLWT00'))
+        headers = {'X-Subject-Token': project_scoped_token}
+        # Make sure the token is valid
+        self.get('/auth/tokens', headers=headers, expected_status=200)
+        # Disable the user
+        self.user['enabled'] = False
+        self.identity_api.update_user(self.user['id'], self.user)
+        # Ensure validating a token for a disabled user fails
+        self.assertRaises(exception.TokenNotFound,
+                          self.token_provider_api.validate_token,
+                          project_scoped_token)
 
     def test_rescope_unscoped_token_with_trust(self):
         # Create a trustee user
@@ -4187,3 +4249,105 @@ class TestKLWTokenProvider(test_v3.RestfulTestCase,
                           trust_scoped_token[50 + 32:])
         headers = {'X-Subject-Token': tampered_token}
         self.get('/auth/tokens', headers=headers, expected_status=401)
+
+    def test_revoke_trust_scoped_token(self):
+        # Create a trustee user
+        trustee_user_ref = self.new_user_ref(domain_id=self.domain_id)
+        trustee_user = self.identity_api.create_user(trustee_user_ref)
+        trustee_user['password'] = trustee_user_ref['password']
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=trustee_user['id'],
+            project_id=self.project_id,
+            impersonation=True,
+            role_ids=[self.role_id])
+
+        # Create a trust
+        r = self.post('/OS-TRUST/trusts', body={'trust': ref})
+        trust = self.assertValidTrustResponse(r)
+
+        auth_data = self.build_authentication_request(
+            user_id=trustee_user['id'],
+            password=trustee_user['password'],
+            trust_id=trust['id'])
+        resp = self.post('/auth/tokens', body=auth_data, expected_status=201)
+        # Get a trust scoped token
+        trust_scoped_token = resp.headers.get('X-Subject-Token')
+        self.assertTrue(trust_scoped_token.startswith('KLWT01'))
+        headers = {'X-Subject-Token': trust_scoped_token}
+        # Validate a trust scoped token
+        self.get('/auth/tokens', headers=headers, expected_status=200)
+        self.delete('/auth/tokens', headers=headers, expected_status=204)
+        self.get('/auth/tokens', headers=headers, expected_status=404)
+
+    def test_trust_scoped_token_is_invalid_after_disabling_trustee(self):
+        # Create a trustee user
+        trustee_user_ref = self.new_user_ref(domain_id=self.domain_id)
+        trustee_user = self.identity_api.create_user(trustee_user_ref)
+        trustee_user['password'] = trustee_user_ref['password']
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=trustee_user['id'],
+            project_id=self.project_id,
+            impersonation=True,
+            role_ids=[self.role_id])
+
+        # Create a trust
+        r = self.post('/OS-TRUST/trusts', body={'trust': ref})
+        trust = self.assertValidTrustResponse(r)
+
+        auth_data = self.build_authentication_request(
+            user_id=trustee_user['id'],
+            password=trustee_user['password'],
+            trust_id=trust['id'])
+        resp = self.post('/auth/tokens', body=auth_data, expected_status=201)
+        # Get a trust scoped token
+        trust_scoped_token = resp.headers.get('X-Subject-Token')
+        self.assertTrue(trust_scoped_token.startswith('KLWT01'))
+        headers = {'X-Subject-Token': trust_scoped_token}
+        # Validate a trust scoped token
+        self.get('/auth/tokens', headers=headers, expected_status=200)
+
+        # Disable the trustee
+        trustee_update_ref = dict(enabled=False)
+        self.identity_api.update_user(trustee_user['id'], trustee_update_ref)
+        # Ensure validating a token for a disabled user fails
+        self.assertRaises(exception.TokenNotFound,
+                          self.token_provider_api.validate_token,
+                          trust_scoped_token)
+
+    def test_trust_scoped_token_is_invalid_after_disabling_trustor(self):
+        # Create a trustee user
+        trustee_user_ref = self.new_user_ref(domain_id=self.domain_id)
+        trustee_user = self.identity_api.create_user(trustee_user_ref)
+        trustee_user['password'] = trustee_user_ref['password']
+        ref = self.new_trust_ref(
+            trustor_user_id=self.user_id,
+            trustee_user_id=trustee_user['id'],
+            project_id=self.project_id,
+            impersonation=True,
+            role_ids=[self.role_id])
+
+        # Create a trust
+        r = self.post('/OS-TRUST/trusts', body={'trust': ref})
+        trust = self.assertValidTrustResponse(r)
+
+        auth_data = self.build_authentication_request(
+            user_id=trustee_user['id'],
+            password=trustee_user['password'],
+            trust_id=trust['id'])
+        resp = self.post('/auth/tokens', body=auth_data, expected_status=201)
+        # Get a trust scoped token
+        trust_scoped_token = resp.headers.get('X-Subject-Token')
+        self.assertTrue(trust_scoped_token.startswith('KLWT01'))
+        headers = {'X-Subject-Token': trust_scoped_token}
+        # Validate a trust scoped token
+        self.get('/auth/tokens', headers=headers, expected_status=200)
+
+        # Disable the trustor
+        trustor_update_ref = dict(enabled=False)
+        self.identity_api.update_user(self.user['id'], trustor_update_ref)
+        # Ensure validating a token for a disabled user fails
+        self.assertRaises(exception.TokenNotFound,
+                          self.token_provider_api.validate_token,
+                          trust_scoped_token)
