@@ -159,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_4296a1f1",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-23T17:01:30Z",
+      "side": 1,
+      "message": "attempted to do this with a new property method.",
+      "parentUuid": "ba7be1f8_6ca55eb4",
+      "revId": "5396f10861d4e898833ca071b55ac47f92e48e5b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_cb9c936c",
         "filename": "keystone/token/provider.py",
         "patchSetId": 20
