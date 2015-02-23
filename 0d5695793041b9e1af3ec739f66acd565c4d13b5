@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_8467de24",
+        "filename": "keystone/server/eventlet.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-23T01:34:04Z",
+      "side": 1,
+      "message": "rather than move this code out of common.configure() and require the callers to call it, change common.configure() to take a function ref, like pre_setup_logging and then have common.configure() call it just before it calls config.setup_logging...\n\n\n # need to monkeypatch eventlet before setting up logging to ensure logging gets the correct _get_ident()\n def do_eventlet_monkeypatching():\n     monkeypatch_thread \u003d not CONF.standard_threads\n     ...\n\n common.configure(\n      version\u003dpbr.version.VersionInfo(\u0027keystone\u0027).version_string(),\n      config_files\u003dconfig_files,\n      pre_setup_logging\u003ddo_eventlet_monkeypatching\n )\n\nSince this is getting kind of complicated it would be best to create a class for the eventlet and wsgi servers, but that can wait for later.",
+      "revId": "0d5695793041b9e1af3ec739f66acd565c4d13b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a445c271",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-23T01:34:04Z",
+      "side": 1,
+      "message": "don\u0027t need to do this if change common.configure to take a function ref as described in eventlet.py.",
+      "revId": "0d5695793041b9e1af3ec739f66acd565c4d13b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
