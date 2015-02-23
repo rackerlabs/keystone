@@ -56,7 +56,7 @@ def parse_templates(template_lines):
     return o
 
 
-class Catalog(_legacy_kvs.Catalog):
+class Catalog(core.Driver):
     """A backend that generates endpoints for the Catalog based on templates.
 
     It is usually configured via config entries that look like:
@@ -122,3 +122,68 @@ class Catalog(_legacy_kvs.Catalog):
                 catalog[region][service] = service_data
 
         return catalog
+
+    # region crud
+
+    def create_region(self, region):
+        raise exception.NotImplemented()
+
+    def list_regions(self, hints):
+        return [six.iteritems(self.templates)]
+
+    def get_region(self, region_id):
+        if region_id in self.templates:
+            return self.templates[region_id]
+        raise exception.RegionNotFound(region_id=region_id)
+
+    def update_region(self, region_id, region):
+        raise exception.NotImplemented()
+
+    def delete_region(self, region_id):
+        raise exception.NotImplemented()
+
+    # service crud
+
+    def create_service(self, service_id, service):
+        raise exception.NotImplemented()
+
+    def _list_services(self, hints):
+        services = []
+        for region in six.itervalues(self.templates):
+            for region in six.itervalues()
+            services.extend(region.values())
+        return services
+    def list_services(self, hints):
+        services = []
+        for region in six.itervalues(self.templates):
+            services.extend(region.values())
+        return services
+
+    def get_service(self, service_id):
+        for region in six.itervalues(self.templates):
+            if service_id in region:
+                return region[service_id]
+        raise exception.ServiceNotFound(service_id=service_id)
+
+    def update_service(self, service_id, service):
+        raise exception.NotImplemented()
+
+    def delete_service(self, service_id):
+        raise exception.NotImplemented()
+
+    # endpoint crud
+
+    def create_endpoint(self, endpoint_id, endpoint):
+        raise exception.NotImplemented()
+
+    def list_endpoints(self, hints):
+        return []
+
+    def get_endpoint(self, endpoint_id):
+        raise self.EndpointNotFound(endpoint_id=endpoint_id)
+
+    def update_endpoint(self, endpoint_id, endpoint):
+        raise exception.NotImplemented()
+
+    def delete_endpoint(self, endpoint_id):
+        raise exception.NotImplemented()
