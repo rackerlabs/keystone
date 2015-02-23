@@ -706,10 +706,11 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         projects = [resp.result]
 
         for i in range(hierarchy_size):
+            parent_id = projects[i]['project']['id']
             new_ref = self.new_project_ref(
-                domain_id=self.domain_id if not is_domain else None,
+                domain_id=self.domain_id if not is_domain else parent_id,
                 is_domain=is_domain,
-                parent_id=projects[i]['project']['id'])
+                parent_id=parent_id)
             resp = self.post('/projects',
                              body={'project': new_ref})
             self.assertValidProjectResponse(resp, new_ref)
@@ -905,6 +906,72 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
                 'project_id': projects[1]['project']['id']},
             expected_status=400)
 
+    def test_list_project_is_domain(self):
+        """Call ``GET /projects?is_domain=True/False``. """
+        # Getting the initial amount or is_domain=True and is_domain=False
+        # projects.
+        r = self.get('/projects?is_domain=True', expected_status=200)
+        is_domain_true_len = len(r.result['projects'])
+        r = self.get('/projects?is_domain=False', expected_status=200)
+        is_domain_false_len = len(r.result['projects'])
+
+        projects = self._create_projects_hierarchy(
+            hierarchy_size=2,
+            is_domain=True)
+
+        # The method above is supposed to create four is_domain=True projects
+        # for the beggining, resulting in the hierarchy A->B->C:
+        # We now have 3 more is_domain projects the is_domain default project.
+        is_domain_true_len = is_domain_true_len + 3
+        r = self.get('/projects?is_domain=True', expected_status=200)
+        self.assertEqual(len(r.result['projects']), is_domain_true_len)
+
+        # Creating now 4 is_domain=False projects
+        project1_id = projects[1]['project']['id']
+        project2_id = projects[2]['project']['id']
+        sub_proj_1 = self._assert_add_project_to_hierarchy(
+            parent_id=project1_id,
+            domain_id=project1_id)
+        sub_proj_2 = self._assert_add_project_to_hierarchy(
+            parent_id=project1_id,
+            domain_id=project1_id)
+        sub_proj_3 = self._assert_add_project_to_hierarchy(
+            parent_id=project2_id,
+            domain_id=project2_id)
+        sub_proj_4 = self._assert_add_project_to_hierarchy(
+            parent_id=project2_id,
+            domain_id=project2_id)
+
+        # We still have the same amount of is_domain projects
+        r = self.get('/projects?is_domain=True', expected_status=200)
+        self.assertEqual(len(r.result['projects']), is_domain_true_len)
+
+        # The amount of is_domain=False projects must have been incremented
+        # by 4
+        is_domain_false_len = is_domain_false_len + 4
+        r_is_domain_false = self.get('/projects?is_domain=False',
+                                     expected_status=200)
+        self.assertEqual(len(r_is_domain_false.result['projects']),
+                         is_domain_false_len)
+
+        self.assertIn(sub_proj_1.result['project'],
+                      r_is_domain_false.result['projects'])
+        self.assertIn(sub_proj_2.result['project'],
+                      r_is_domain_false.result['projects'])
+        self.assertIn(sub_proj_3.result['project'],
+                      r_is_domain_false.result['projects'])
+        self.assertIn(sub_proj_4.result['project'],
+                      r_is_domain_false.result['projects'])
+
+        # If is_domain information is not provided, only the is_domain=False
+        # projects are returned
+        r = self.get('/projects', expected_status=200)
+
+        self.assertEqual(len(r.result['projects']),
+                         len(r_is_domain_false.result['projects']))
+        for project in r.result['projects']:
+            self.assertIn(project, r_is_domain_false.result['projects'])
+
     def test_get_project_with_subtree_as_ids(self):
         """Call ``GET /projects/{project_id}?subtree_as_ids``.
 
@@ -922,7 +989,8 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
 
 
         """
-        projects = self._create_projects_hierarchy(hierarchy_size=2)
+        projects = self._create_projects_hierarchy(hierarchy_size=2,
+                                                   is_domain=False)
 
         # Add another child to projects[0] - it will be projects[3]
         new_ref = self.new_project_ref(
