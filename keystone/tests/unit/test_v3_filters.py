@@ -22,6 +22,7 @@ from keystone.policy.backends import rules
 from keystone.tests.unit import filtering
 from keystone.tests.unit.ksfixtures import temporaryfile
 from keystone.tests.unit import test_v3
+from keystone.tests.unit import utils
 
 
 CONF = cfg.CONF

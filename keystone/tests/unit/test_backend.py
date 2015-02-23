@@ -1992,6 +1992,40 @@ class IdentityTests(object):
         self.assertIn(domain1['id'], domain_ids)
         self.assertIn(domain2['id'], domain_ids)
 
+    @test_utils.wip('Exposes bug #1424745')
+    def test_list_domains_with_multiple_filters(self):
+        # Create a domain
+        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.resource_api.create_domain(domain['id'], domain)
+
+        # Build driver hints
+        hints = driver_hints.Hints()
+        hints.add_filter('name', domain['name'])
+        hints.add_filter('enabled', False)
+
+        # Retrieve domains based on hints
+        domains = self.resource_api.list_domains(hints)
+
+        # Check that an empty is returned, since the created domain is enabled
+        self.assertEquals([], domains)
+
+        # Now create another domain
+        other_domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.resource_api.create_domain(other_domain['id'], other_domain)
+
+        # Build correct hints for the first domain
+        hints = driver_hints.Hints()
+        hints.add_filter('enabled', True)
+        hints.add_filter('name', domain['name'])
+
+        # Retrieve domains based on hints
+        domains = self.resource_api.list_domains(hints)
+
+        # Check that the returned list contains only the first domain
+        self.assertEquals(1, len(domains))
+        self.assertEquals(domain['id'], domains[0]['id'])
+        self.assertEquals(domain['name'], domains[0]['name'])
+
     def test_list_projects(self):
         projects = self.resource_api.list_projects()
         self.assertEqual(4, len(projects))
