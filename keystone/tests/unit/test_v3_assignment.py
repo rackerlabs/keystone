@@ -644,6 +644,56 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
                 'project_id': self.project_id})
         self.assertValidProjectResponse(r, self.project)
 
+    def test_get_projects_with_parent_id(self):
+
+        projects = self._create_projects_hierarchy(hierarchy_size=2)
+
+        # Add another child to projects[1] - it will be projects[3]
+        new_ref = self.new_project_ref(
+            domain_id=self.domain_id,
+            parent_id=projects[1]['project']['id'])
+        resp = self.post('/projects',
+                         body={'project': new_ref})
+        self.assertValidProjectResponse(resp, new_ref)
+
+        projects.append(resp.result)
+
+        # Query for projects[0] parent_id
+        r = self.get(
+            '/projects?parent_id=%(project_id)s' % {
+                'project_id': projects[0]['project']['id']})
+        self.assertValidProjectListResponse(r)
+
+        projects_result = r.result['projects']
+        expected_list = [projects[1]['project']]
+
+        # projects[0] has projects[1] as child
+        self.assertEqual(projects_result, expected_list)
+
+        # Query for projects[1] parent_id
+        r = self.get(
+            '/projects?parent_id=%(project_id)s' % {
+                'project_id': projects[1]['project']['id']})
+        self.assertValidProjectListResponse(r)
+
+        projects_result = r.result['projects']
+        expected_list = [projects[2]['project'], projects[3]['project']]
+
+        # projects[1] has projects[2] and projects[3] as children
+        self.assertEqual(projects_result, expected_list)
+
+        # Query for projects[2] parent_id
+        r = self.get(
+            '/projects?parent_id=%(project_id)s' % {
+                'project_id': projects[2]['project']['id']})
+        self.assertValidProjectListResponse(r)
+
+        projects_result = r.result['projects']
+        expected_list = []
+
+        # projects[2] has no child, projects_result must be []
+        self.assertEqual(projects_result, expected_list)
+
     def test_get_project_with_parents_as_ids(self):
         """Call ``GET /projects/{project_id}?parents_as_ids``."""
         projects = self._create_projects_hierarchy(hierarchy_size=2)
