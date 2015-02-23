@@ -2157,9 +2157,8 @@ class IdentityTests(object):
                    'parent_id': parent['id'],
                    'is_domain': False}
 
-        self.assertRaises(exception.Forbidden,
-                          self.resource_api.create_project,
-                          project['id'], project)
+        result = self.resource_api.create_project(project['id'], project)
+        self.assertEqual(project, result)
 
     def test_create_project_without_is_domain_flag(self):
         project = {'id': uuid.uuid4().hex,
