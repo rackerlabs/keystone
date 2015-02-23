@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_28327910",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-02-23T13:22:27Z",
+      "side": 1,
+      "message": "will remove the last sentence in the following patch?",
+      "revId": "c5524ee2942048484d0fa3b51a3c0d46c2bc6a1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_054afeab",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 430,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-02-23T13:22:27Z",
+      "side": 1,
+      "message": "is the \"file\" backend a driver to be specified here?",
+      "revId": "c5524ee2942048484d0fa3b51a3c0d46c2bc6a1c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
