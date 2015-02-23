@@ -105,7 +105,7 @@ class Manager(manager.Manager):
                         action=_('cannot create a project in a '
                                  'branch containing a disabled '
                                  'project: %s') % ref['id'])
-                if ref.get('is_domain') != tenant.get('is_domain'):
+                if not ref.get('is_domain') and tenant.get('is_domain'):
                     raise exception.ForbiddenAction(
                         action=_('cannot create a project with the domain '
                                  'feature different from its parents.'))

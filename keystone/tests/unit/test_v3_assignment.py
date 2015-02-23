@@ -584,7 +584,7 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         """Call ``POST /projects``."""
         self.post('/projects', body={'project': {}}, expected_status=400)
 
-    def _create_projects_hierarchy(self, hierarchy_size=1):
+    def _create_projects_hierarchy(self, hierarchy_size=1, is_domain=True):
         """Creates a project hierarchy with specified size.
 
         :param hierarchy_size: the desired hierarchy size, default is 1 -
@@ -593,16 +593,21 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         :returns projects: a list of the projects in the created hierarchy.
 
         """
-        resp = self.get(
-            '/projects/%(project_id)s' % {
-                'project_id': self.project_id})
+        ref = self.new_project_ref(domain_id=self.domain_id,
+                                   is_domain=is_domain)
 
-        projects = [resp.result]
+        r = self.post(
+            '/projects',
+            body={'project': ref})
+        self.assertValidProjectResponse(r, ref)
+
+        projects = [r.result]
 
         for i in range(hierarchy_size):
             new_ref = self.new_project_ref(
                 domain_id=self.domain_id,
-                parent_id=projects[i]['project']['id'])
+                parent_id=projects[i]['project']['id'],
+                is_domain=is_domain)
             resp = self.post('/projects',
                              body={'project': new_ref})
             self.assertValidProjectResponse(resp, new_ref)
@@ -610,6 +615,14 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
             projects.append(resp.result)
 
         return projects
+
+    def _add_project_to_hierarchy(self, parent_id, is_domain=False):
+        new_ref = self.new_project_ref(domain_id=self.domain_id,
+                                       parent_id=parent_id,
+                                       is_domain=is_domain)
+        resp = self.post('/projects',
+                         body={'project': new_ref})
+        self.assertValidProjectResponse(resp, new_ref)
 
     def test_create_hierarchical_project(self):
         """Call ``POST /projects``."""
@@ -685,6 +698,37 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
                 'project_id': projects[1]['project']['id']},
             expected_status=400)
 
+    def test_list_project_is_domain(self):
+        """Call ``GET /projects/{project_id}?is_domain=True/False``.
+
+        """
+        projects = self._create_projects_hierarchy(hierarchy_size=2,
+                                                   is_domain=True)
+
+        self._add_project_to_hierarchy(parent_id=projects[1]['project']['id'])
+        self._add_project_to_hierarchy(parent_id=projects[1]['project']['id'])
+        self._add_project_to_hierarchy(parent_id=projects[2]['project']['id'])
+        self._add_project_to_hierarchy(parent_id=projects[2]['project']['id'])
+
+        r = self.get(
+                '/projects?is_domain=True',
+                expected_status=200)
+
+        self.assertEqual(len(r.result['projects']), 3)
+        expected = [projects[0]['project'],
+                    projects[1]['project'],
+                    projects[2]['project']]
+
+        self.assertEqual(r.result['projects'], expected)
+
+        r = self.get(
+                '/projects?is_domain=False',
+                expected_status=200)
+
+        #The number of projects where is_domain=False is the amount created
+        #in this test plus 2 pre-existing ones.
+        self.assertEquals(len(r.result['projects']), 6)
+
     def test_get_project_with_subtree_as_ids(self):
         """Call ``GET /projects/{project_id}?subtree_as_ids``.
 
@@ -702,7 +746,8 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
 
 
         """
-        projects = self._create_projects_hierarchy(hierarchy_size=2)
+        projects = self._create_projects_hierarchy(hierarchy_size=2,
+                                                   is_domain=False)
 
         # Add another child to projects[0] - it will be projects[3]
         new_ref = self.new_project_ref(
@@ -898,10 +943,10 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
 
     def test_delete_not_leaf_project(self):
         """Call ``DELETE /projects/{project_id}``."""
-        self._create_projects_hierarchy()
+        projects = self._create_projects_hierarchy(is_domain=False)
         self.delete(
             '/projects/%(project_id)s' % {
-                'project_id': self.project_id},
+                    'project_id': projects[0]['project']['id']},
             expected_status=403)
 
     # Role CRUD tests
