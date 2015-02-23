@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_fb0657cd",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2015-02-23T21:17:02Z",
+      "side": 1,
+      "message": "It would be good to move the reset code in the tests to a fixture so the cleanup is always run. If rules.enforce() throws an error, the file will end up with bad data in it and the enforcer won\u0027t be reset for the next test.",
+      "revId": "8520b448f81d2db46ea7d4a4b9d7dc3f11fe6d95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
