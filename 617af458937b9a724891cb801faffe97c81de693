@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_24dc7212",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-23T00:55:11Z",
+      "side": 1,
+      "message": "the comment about \"I am just checking that eventlet.wsgi.server method is called with configured wsgi_keepalive option.\" should be in the code here... having it as a comment in gerrit isn\u0027t very useful.",
+      "revId": "617af458937b9a724891cb801faffe97c81de693",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
