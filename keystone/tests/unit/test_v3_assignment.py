@@ -722,7 +722,6 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
                                |     |
                                D     E
 
-
         """
         projects = self._create_projects_hierarchy(hierarchy_size=2)
 
