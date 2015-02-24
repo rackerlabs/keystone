@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_68560ad4",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-24T09:15:19Z",
+      "side": 1,
+      "message": "sadly, yes. In websso patch we get identity_provider object by querying remote_id brought to us in an assertion/claim.",
+      "parentUuid": "ba7be1f8_d2eed8b3",
+      "revId": "da82e15868904d0b11d660c266838ff75f9f2d01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_32b81476",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-23T20:34:01Z",
       "side": 1,
       "message": "why are we registering them now? is there a reason we don\u0027t just add them to:\n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/config.py#L859\n\nand \n\nwe could make a new group and option for \u0027oidc\u0027.",
+      "revId": "da82e15868904d0b11d660c266838ff75f9f2d01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_889b3e71",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-24T09:15:19Z",
+      "side": 1,
+      "message": "If you preregister groups like \u0027saml2\u0027, \u0027oidc\u0027 you will also constrain yourself to protocol objects called \u0027saml2\u0027 and \u0027oidc\u0027. As we decided the naming is free we need to keep supporting this freedom. The whole idea behind:\n\n- add a protocol \u0027myawesomeprotocol\u0027\n\nedit keystone.conf and add\n[auth]\nmethods \u003d password,myawesomeprotocol\nmyawesomeprotocol \u003d driver.backend.sql.Protocol\n\nnow, user adds still in the keystone.conf:\n\n[myawesomeprotocol]\nremote_id_attribute \u003d \u0027ParameterNameInClaim\u0027\n\nNow, to be able to to read this value in line 146 we first need to register it.",
+      "parentUuid": "ba7be1f8_32b81476",
       "revId": "da82e15868904d0b11d660c266838ff75f9f2d01",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_08874e10",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-24T09:15:19Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba7be1f8_15369a03",
+      "revId": "da82e15868904d0b11d660c266838ff75f9f2d01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_400bf224",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 14
@@ -64,6 +118,24 @@
       "writtenOn": "2015-02-23T20:34:01Z",
       "side": 1,
       "message": "does it make sense to make 2 idps with the same remote_ids?\nto try out the unique constraint?",
+      "revId": "da82e15868904d0b11d660c266838ff75f9f2d01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_88a97e7d",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-24T09:15:19Z",
+      "side": 1,
+      "message": "he adds this only one.",
+      "parentUuid": "ba7be1f8_400bf224",
       "revId": "da82e15868904d0b11d660c266838ff75f9f2d01",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
