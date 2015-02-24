@@ -21,6 +21,7 @@ from oslo_config import cfg
 from keystone import exception
 from keystone import identity
 from keystone.tests import unit as tests
+from keystone.tests.unit.ksfixtures import database
 
 
 CONF = cfg.CONF
@@ -79,14 +80,36 @@ class TestDomainConfigs(tests.BaseTestCase):
                                                      [domain_config_filename],
                                                      'abc.def.com')
 
+     
+class TestDatabaseDomainConfigs(tests.TestCase):
+
+    def setUp(self):
+        super(TestDatabaseDomainConfigs, self).setUp()
+        self.useFixture(database.Database())
+        self.load_backends()
+
     def test_loading_config_from_database(self):
-        # This is currently not implemented
+
+        class mydriver(object):
+            def is_sql(self):
+                print 'returning false'
+                return False
+
         CONF.set_override('domain_configurations_from_database', True,
                           'identity')
-        domain_config = identity.DomainConfigs()
-        fake_assignment_api = None
+        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.resource_api.create_domain(domain['id'], domain)
+        # Override two config options for our domain
+        conf = {'ldap': {'url': uuid.uuid4().hex,
+                         'suffix': uuid.uuid4().hex},
+                'identity': {'driver': 'keystone.identity.backends.ldap.Identity'}}
+        self.domain_config_api.create_config(domain['id'], conf)
         fake_standard_driver = None
-        self.assertRaises(exception.NotImplemented,
-                          domain_config.setup_domain_drivers,
-                          fake_standard_driver,
-                          fake_assignment_api)
+        domain_config = identity.DomainConfigs()
+        domain_config.setup_domain_drivers(fake_standard_driver,
+                                           self.resource_api)
+        # Make sure our two overrides are in place, and others are not affected
+        res = domain_config.get_domain_conf(domain['id'])
+        self.assertEqual(conf['ldap']['url'], res.ldap.url)
+        self.assertEqual(conf['ldap']['suffix'], res.ldap.suffix)
+        self.assertEqual(CONF.ldap.query_scope, res.ldap.query_scope)
