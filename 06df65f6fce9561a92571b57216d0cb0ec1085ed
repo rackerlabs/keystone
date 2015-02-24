@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_2781a64a",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-24T04:54:36Z",
+      "side": 1,
+      "message": "this changes the definition of the admin..  admin that have cross domain role assignment would be broken by this",
+      "revId": "06df65f6fce9561a92571b57216d0cb0ec1085ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_275c4625",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-24T04:54:36Z",
+      "side": 1,
+      "message": "Not related to your change, but do you know why is check_token more restrictive than validate_token? \n\nvalidate_token returns the catalog in the response, so I would thought this should be more restrictive. I wonder if we got the policy defined the other way around?",
+      "revId": "06df65f6fce9561a92571b57216d0cb0ec1085ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
