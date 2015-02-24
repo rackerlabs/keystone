@@ -539,6 +539,16 @@ class TestUUIDTokenAPIs(test_v3.RestfulTestCase, TokenAPITests):
 
 class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
     """Test token revoke using v3 Identity API by token owner and admin."""
+
+    def setUp(self):
+        super(TestTokenRevokeSelfAndAdmin, self).setUp()
+        # Initialize the policy engine and allow us to write to a temp
+        # file in each test to create the policies
+        rules.reset()
+
+        # drop the policy rules
+        self.addCleanup(rules.reset)
+
     def load_sample_data(self):
         """Load Sample Data for Test Cases.
         Two domains, domainA and domainB
@@ -565,11 +575,6 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
         self.assignment_api.create_grant(self.role['id'],
                                          user_id=self.userAdminA['id'],
                                          domain_id=self.domainA['id'])
-
-        # Finally, switch to the v3 sample policy file
-        self.orig_policy_file = CONF.oslo_policy.policy_file
-        from keystone.policy.backends import rules
-        rules.reset()
 
     def config_overrides(self):
         super(TestTokenRevokeSelfAndAdmin, self).config_overrides()
