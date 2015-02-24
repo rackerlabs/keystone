@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_543378aa",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 969,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-24T23:35:38Z",
+      "side": 1,
+      "message": "Why is the default 15 minutes? Seems like that would be no better than where we are today.",
+      "revId": "7a32d694aba272e65a47aa9d394b607e48b2f240",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_34d5241c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 970,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-24T23:35:38Z",
+      "side": 1,
+      "message": "\"Timeout for socket operations on a client connection.\" read a little better. Or add the apostrophe like in the eventlet docs.",
+      "revId": "7a32d694aba272e65a47aa9d394b607e48b2f240",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_74a95c8f",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-24T23:35:38Z",
+      "side": 1,
+      "message": "I think this should be \u0027from oslo_config import cfg\u0027. See  I60c8d2c577d37b9b8a367b46596154ce6c49fff4",
+      "revId": "7a32d694aba272e65a47aa9d394b607e48b2f240",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
