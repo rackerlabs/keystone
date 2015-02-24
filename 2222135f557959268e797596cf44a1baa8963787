@@ -280,6 +280,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_e7930e4d",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-24T05:08:21Z",
+      "side": 1,
+      "message": "# Copyright 2015 \u003cyour company name\u003e\n\ndelete the rest up until `All Right Reserved`\n\nKeep them if you actually used code that\u0027s been copyrighted, but AFAICT most of this is new\n\ntbh, i mostly just start it at \"All Rights Reserved\"",
+      "parentUuid": "ba7be1f8_a4f8344a",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_f0ba22e0",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 4
