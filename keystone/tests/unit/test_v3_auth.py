@@ -547,6 +547,8 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
 
         """
         super(TestTokenRevokeSelfAndAdmin, self).load_sample_data()
+        rules.reset()
+
         # DomainA setup
         self.domainA = self.new_domain_ref()
         self.resource_api.create_domain(self.domainA['id'], self.domainA)
@@ -566,10 +568,7 @@ class TestTokenRevokeSelfAndAdmin(test_v3.RestfulTestCase):
                                          user_id=self.userAdminA['id'],
                                          domain_id=self.domainA['id'])
 
-        # Finally, switch to the v3 sample policy file
-        self.orig_policy_file = CONF.oslo_policy.policy_file
-        from keystone.policy.backends import rules
-        rules.reset()
+        self.addCleanup(rules.reset)
 
     def config_overrides(self):
         super(TestTokenRevokeSelfAndAdmin, self).config_overrides()
