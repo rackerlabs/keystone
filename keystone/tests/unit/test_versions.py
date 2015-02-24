@@ -355,6 +355,24 @@ V3_JSON_HOME_RESOURCES_INHERIT_DISABLED = {
         'href-vars': {
             'identity_provider': IDP_ID_PARAMETER_RELATION,
             'protocol': PROTOCOL_ID_PARAM_RELATION, }},
+    json_home.build_v3_resource_relation('domain_config'): {
+        'href-template':
+        '/domains/{domain_id}/config',
+        'href-vars': {
+            'domain_id': json_home.Parameters.DOMAIN_ID}},
+    json_home.build_v3_resource_relation('domain_config_group'): {
+        'href-template':
+        '/domains/{domain_id}/config/{group}',
+        'href-vars': {
+            'domain_id': json_home.Parameters.DOMAIN_ID,
+            'group': json_home.build_v3_parameter_relation('config_group')}},
+    json_home.build_v3_resource_relation('domain_config_option'): {
+        'href-template':
+        '/domains/{domain_id}/config/{group}/{option}',
+        'href-vars': {
+            'domain_id': json_home.Parameters.DOMAIN_ID,
+            'group': json_home.build_v3_parameter_relation('config_group'),
+            'option': json_home.build_v3_parameter_relation('config_option')}},
 }
 
 
@@ -446,6 +464,27 @@ V3_JSON_HOME_RESOURCES_INHERIT_ENABLED.update(
         ),
     )
 )
+
+V3_JSON_HOME_RESOURCES_DOMAIN_CONFIG = {
+    json_home.build_v3_resource_relation('domain_config'): {
+        'href-template':
+        '/domains/{domain_id}/config',
+        'href-vars': {
+            'domain_id': json_home.Parameters.DOMAIN_ID}},
+    json_home.build_v3_resource_relation('domain_config'): {
+        'href-template':
+        '/domains/{domain_id}/groups/{group_id}/roles/{role_id}',
+        'href-vars': {
+            'domain_id': json_home.Parameters.DOMAIN_ID,
+            'group': json_home.build_v3_parameter_relation('config-group')}},
+    json_home.build_v3_resource_relation('domain_config'): {
+        'href-template':
+        '/domains/{domain_id}/groups/{group_id}/roles/{role_id}',
+        'href-vars': {
+            'domain_id': json_home.Parameters.DOMAIN_ID,
+            'group': json_home.build_v3_parameter_relation('config-group'),
+            'option': json_home.build_v3_parameter_relation('config-group')}},
+}
 
 
 class _VersionsEqual(tt_matchers.MatchesListwise):
