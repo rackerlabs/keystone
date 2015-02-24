@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_1633c763",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-24T23:04:28Z",
+      "side": 1,
+      "message": "The client tests don\u0027t actually tests multiple releases.",
+      "revId": "c0d56ecdf4964549299fb26ed4e52ada3bd783be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_360b6b7e",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-24T23:04:28Z",
+      "side": 1,
+      "message": "doesn\u0027t exist.",
+      "revId": "c0d56ecdf4964549299fb26ed4e52ada3bd783be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
