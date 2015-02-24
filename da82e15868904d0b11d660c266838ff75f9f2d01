@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_3e228801",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-02-24T10:20:59Z",
+      "side": 1,
+      "message": "Additionally, keystone IdP identifies a mapping for users coming from a remote IdP. If you associate the same remote IdP with multiple keystone IdP the mapping become ambiguous. The same user could have different policies depending on the log-in link.\n\nThe other way, multiple remote IdPs in a single keystone IdP, makes sense because in this case the mapping is shared and there are not ambiguities.",
+      "parentUuid": "ba7be1f8_68560ad4",
+      "revId": "da82e15868904d0b11d660c266838ff75f9f2d01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_32b81476",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 14
@@ -135,6 +153,24 @@
       "writtenOn": "2015-02-24T09:15:19Z",
       "side": 1,
       "message": "he adds this only one.",
+      "parentUuid": "ba7be1f8_400bf224",
+      "revId": "da82e15868904d0b11d660c266838ff75f9f2d01",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_99754e9a",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-02-24T10:20:59Z",
+      "side": 1,
+      "message": "But the unique test is the previous \"test_create_idp_remote_repeated\" where I add two IdPs where one remote_id is the same and I get the error because the second is not unique. This test aims at verify the empty list does not generate error. Do I have to merge them? How?",
       "parentUuid": "ba7be1f8_400bf224",
       "revId": "da82e15868904d0b11d660c266838ff75f9f2d01",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
