@@ -86,6 +86,15 @@ class Resource(keystone_resource.Driver):
     def _get_children(self, session, project_ids):
         query = session.query(Project)
         query = query.filter(Project.parent_id.in_(project_ids))
+        projects = [project_ref.to_dict() for project_ref in query.all()]
+        # Also return projects without parent
+        if None in project_ids:
+            projects += self._get_root_projects(session)
+        return projects
+
+    def _get_root_projects(self, session):
+        query = session.query(Project)
+        query = query.filter(Project.parent_id.is_(None))
         project_refs = query.all()
         return [project_ref.to_dict() for project_ref in project_refs]
 
