@@ -16,6 +16,23 @@
       "revId": "8520b448f81d2db46ea7d4a4b9d7dc3f11fe6d95",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_4c886fc5",
+        "filename": "keystone/tests/unit/test_policy.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-24T14:01:26Z",
+      "side": 1,
+      "message": "use self.addCleanup(rules._ENFORCER.clear)",
+      "revId": "8520b448f81d2db46ea7d4a4b9d7dc3f11fe6d95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
