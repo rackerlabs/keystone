@@ -2716,6 +2716,69 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
                       "SQL assignment backend.")
 
 
+class MultiLDAPandSQLIdentityDomainConfigsInSQL(MultiLDAPandSQLIdentity):
+    """Class to test the use of domain configs stored in the database.
+
+    Repeat the same tests as the super class, but instead of using the domain
+    specific config files, store the domain specific values in the database.
+
+    """
+    def setUp(self):
+        self.useFixture(database.Database())
+        super(MultiLDAPandSQLIdentityDomainConfigsInSQL, self).setUp()
+
+        # The above values are the same as in
+        # config_files/domain_configs_multi_ldap
+        default_config = {
+            'ldap': {'url': 'fake://memory',
+                     'user': 'cn=Admin',
+                     'password': 'password',
+                     'suffix': 'cn=example,cn=com'},
+            'identity': {'driver': 'keystone.identity.backends.ldap.Identity'}
+        }
+        domain1_config = {
+            'ldap': {'url': 'fake://memory1',
+                     'user': 'cn=Admin',
+                     'password': 'password',
+                     'suffix': 'cn=example,cn=com'},
+            'identity': {'driver': 'keystone.identity.backends.ldap.Identity'}
+        }
+        domain2_config = {
+            'ldap': {'url': 'fake://memory',
+                     'user': 'cn=Admin',
+                     'password': 'password',
+                     'suffix': 'cn=example,cn=com',
+                     'group_tree_dn': 'ou=UserGroups,dc=myroot,dc=org',
+                     'user_tree_dn': 'ou=Users,dc=myroot,dc=or'},
+            'identity': {'driver': 'keystone.identity.backends.ldap.Identity'}
+        }
+
+        self.domain_config_api.create_config(CONF.identity.default_domain_id,
+                                             default_config)
+        self.domain_config_api.create_config(self.domains['domain1']['id'],
+                                             domain1_config)
+        self.domain_config_api.create_config(self.domains['domain2']['id'],
+                                             domain2_config)
+
+        print "In test: ", self.domain_config_api.get_config_with_sensitive_info(CONF.identity.default_domain_id)
+
+        self.config_fixture.config(
+            group='identity', domain_specific_drivers_enabled=True,
+            domain_configurations_from_database=True)
+        self.config_fixture.config(group='identity_mapping',
+                                   backward_compatible_ids=False)
+        self.identity_api.domain_configs.reload_domain_driver(
+            CONF.identity.default_domain_id)
+        self.identity_api.domain_configs.reload_domain_driver(
+            self.domains['domain1']['id'])
+        self.identity_api.domain_configs.reload_domain_driver(
+            self.domains['domain2']['id'])
+
+        self.clear_database()
+        self.load_fixtures(default_fixtures)
+        self.create_users_across_domains()
+
+
 class DomainSpecificLDAPandSQLIdentity(
     BaseLDAPIdentity, tests.SQLDriverOverrides, tests.TestCase,
         BaseMultiLDAPandSQLIdentity):

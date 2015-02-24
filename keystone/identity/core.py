@@ -66,6 +66,54 @@ def filter_user(user_ref):
     return user_ref
 
 
+def modify_groupattr_class(cls, group, domain_config_opts):
+    """Patch in our own method to the GroupAttr class."""
+    def wrapper(fn):
+        original_method = getattr(cls, fn.__name__)
+        # Pass the old method into our new one, so it can choose to forward
+        # the call on if required.
+        new_method = fn(original_method, group, domain_config_opts)
+        setattr(cls, fn.__name__, new_method)
+        return fn
+    return wrapper
+
+
+class DomainConfigOpts(cfg.ConfigOpts):
+    """A wrapper class to oslo cfg.ConfigOpts.
+
+    The only purpose of this class is to allow the interception of the
+    reading of attributes, so that we can see if there is a value in the
+    database domain config that should trump that of the underlying config.
+
+    It is complicated by the fact that in order to evaluate, say
+    conf.group_name.option_name, there will be an initial __getattr__ to this
+    object to the obtain the group object (cfg.ConfigOpts.GroupAttr), which is
+    returned to the caller - and then the actual __getattr__ for the option
+    value itself will be issued on THAT object, not this one. Hence we
+    effectively monkeypatch the cfg.ConfigOpts.GroupAttr class to be able
+    to intercept that second __getattr__ method call.
+
+    """
+    def __init__(self, override_options):
+        super(DomainConfigOpts, self).__init__()
+        self.override_options = override_options
+
+    def __getattr__(self, name):
+        r = super(DomainConfigOpts, self).__getattr__(name)
+        if isinstance(r, cfg.ConfigOpts.GroupAttr):
+            @modify_groupattr_class(cfg.ConfigOpts.GroupAttr, name, self)
+            def __getattr__(parent, group, domain_config_opts):
+                def __getattr__(self, option):
+                    if (group in domain_config_opts.override_options and
+                            option in domain_config_opts.override_options[group]):
+                        return domain_config_opts.override_options[group][option]
+                    else:
+                        return parent(self, option)
+                return __getattr__
+        return r
+
+
+@dependency.requires('domain_config_api')
 class DomainConfigs(dict):
     """Discover, store and provide access to domain specific configs.
 
@@ -168,10 +216,23 @@ class DomainConfigs(dict):
                                    'config directory'),
                                   fname)
 
+    def _load_config_from_database(self, domain_id):
+
+            domain_config_options = (
+                self.domain_config_api.
+                get_config_with_sensitive_info(domain_id))
+            domain_config = {}
+            domain_config['cfg'] = DomainConfigOpts(domain_config_options)
+            config.configure(conf=domain_config['cfg'])
+            domain_config['cfg'](args=[], project='keystone')
+            domain_config['driver'] = self._load_driver(domain_config)
+            #self._assert_no_more_than_one_sql_driver(domain_config, file_list)
+            self[domain_id] = domain_config
+
     def _setup_domain_drivers_from_database(self, standard_driver,
                                             resource_api):
-
-        raise exception.NotImplemented()
+        for domain in resource_api.list_domains():
+            self._load_config_from_database(domain['id'])
 
     def setup_domain_drivers(self, standard_driver, resource_api):
         # This is called by the api call wrapper
@@ -201,6 +262,8 @@ class DomainConfigs(dict):
         # read.
         if self.configured:
             if domain_id in self:
+                if CONF.identity.domain_configurations_from_database:
+                    self._load_config_from_database(domain_id)              
                 self[domain_id]['driver'] = (
                     self._load_driver(self[domain_id]))
             else:
