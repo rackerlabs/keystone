@@ -177,7 +177,7 @@ class Manager(manager.Manager):
                              'disabled parents') % project_id)
 
     def _assert_whole_subtree_is_disabled(self, project_id):
-        subtree_list = self.driver.list_projects_in_subtree(project_id)
+        subtree_list = self.list_projects_in_subtree(project_id)
         for ref in subtree_list:
             if ref.get('enabled', True):
                 raise exception.ForbiddenAction(
@@ -245,6 +245,13 @@ class Manager(manager.Manager):
                 if proj['id'] in user_projects_ids]
 
     def list_project_parents(self, project_id, user_id=None):
+        if project_id is None:
+            msg = _('Cannot list project parents from invalid '
+                    'project_id: %s. Please use a valid '
+                    'project_id.') % project_id
+            raise exception.ValidationError(message=msg)
+        # Check if project_id exists
+        self.get_project(project_id)
         parents = self.driver.list_project_parents(project_id)
         # If a user_id was provided, the returned list should be filtered
         # against the projects this user has access to.
@@ -296,6 +303,13 @@ class Manager(manager.Manager):
         return parents_as_ids
 
     def list_projects_in_subtree(self, project_id, user_id=None):
+        if project_id is None:
+            msg = _('Cannot list projects in subtree from invalid '
+                    'project_id: %s. Please use a valid '
+                    'project_id.') % project_id
+            raise exception.ValidationError(message=msg)
+        # Check if project_id exists
+        self.get_project(project_id)
         subtree = self.driver.list_projects_in_subtree(project_id)
         # If a user_id was provided, the returned list should be filtered
         # against the projects this user has access to.
