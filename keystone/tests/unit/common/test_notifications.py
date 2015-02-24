@@ -51,6 +51,32 @@ def register_callback(operation, resource_type=EXP_RESOURCE_TYPE):
     return callback
 
 
+class AuditNotificationsTestCase(testtools.TestCase):
+    def test_resource_created_notification(self):
+        exp_resource_id = uuid.uuid4().hex
+        callback = register_callback(CREATED_OPERATION)
+        notifications.Audit.created(EXP_RESOURCE_TYPE, exp_resource_id)
+        callback.assert_called_with('identity', EXP_RESOURCE_TYPE,
+                                    CREATED_OPERATION,
+                                    {'resource_info': exp_resource_id})
+
+    def test_resource_updated_notification(self):
+        exp_resource_id = uuid.uuid4().hex
+        callback = register_callback(UPDATED_OPERATION)
+        notifications.Audit.updated(EXP_RESOURCE_TYPE, exp_resource_id)
+        callback.assert_called_with('identity', EXP_RESOURCE_TYPE,
+                                    UPDATED_OPERATION,
+                                    {'resource_info': exp_resource_id})
+
+    def test_resource_deleted_notification(self):
+        exp_resource_id = uuid.uuid4().hex
+        callback = register_callback(DELETED_OPERATION)
+        notifications.Audit.deleted(EXP_RESOURCE_TYPE, exp_resource_id)
+        callback.assert_called_with('identity', EXP_RESOURCE_TYPE,
+                                    DELETED_OPERATION,
+                                    {'resource_info': exp_resource_id})
+
+
 class NotificationsWrapperTestCase(testtools.TestCase):
     def create_fake_ref(self):
         resource_id = uuid.uuid4().hex
