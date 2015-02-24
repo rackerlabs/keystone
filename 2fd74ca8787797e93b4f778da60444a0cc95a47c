@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_589f5750",
+        "filename": "keystone/token/persistence/backends/redis.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-24T07:26:46Z",
+      "side": 1,
+      "message": "Maybe put the docs in the class namespace?",
+      "revId": "2fd74ca8787797e93b4f778da60444a0cc95a47c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
