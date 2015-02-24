@@ -140,6 +140,58 @@ class DomainV3(controller.V3Controller):
         return self.resource_api.delete_domain(domain_id)
 
 
+@dependency.requires('domain_config_api')
+class DomainConfigV3(controller.V3Controller):
+    member_name = 'config'
+
+    @controller.protected()
+    def create_domain_config(
+            self, context, domain_id, group, option, config):
+
+        ref = self.domain_config_api.create_config(
+            domain_id, config, group, option)
+        return DomainConfigV3.wrap_member(context, ref)
+
+    def create_domain_config_group(self, context, domain_id, group, config):
+        option = None
+        return self.create_domain_config(
+            context, domain_id, group, option, config)
+
+    def create_domain_config_only(self, context, domain_id, config):
+        option = None
+        group = None
+        return self.create_domain_config(
+            context, domain_id, group, option, config)
+
+    @controller.protected()
+    def get_domain_config(self, context, domain_id, group=None, option=None):
+        ref = self.domain_config_api.get_config(domain_id, group, option)
+        return DomainConfigV3.wrap_member(context, ref)
+
+    @controller.protected()
+    def update_domain_config(
+            self, context, domain_id, group, option, config):
+        ref = self.domain_config_api.update_config(
+            domain_id, config, group, option)
+        return DomainConfigV3.wrap_member(context, ref)
+
+    def update_domain_config_group(self, context, domain_id, group, config):
+        option = None
+        return self.update_domain_config(
+            context, domain_id, group, option, config)
+
+    def update_domain_config_only(self, context, domain_id, config):
+        option = None
+        group = None
+        return self.update_domain_config(
+            context, domain_id, group, option, config)
+
+    @controller.protected()
+    def delete_domain_config(
+            self, context, domain_id, group=None, option=None):
+        return self.domain_config_api.delete_config(domain_id, group, option)
+
+
 @dependency.requires('resource_api')
 class ProjectV3(controller.V3Controller):
     collection_name = 'projects'
