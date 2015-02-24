@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_988c6f81",
+        "filename": "doc/source/extensions.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-24T07:19:29Z",
+      "side": 1,
+      "message": "``out-of-tree`` extensions wouldn\u0027t be here right?",
+      "revId": "5264f6f7e36df93164057c1531ea9dd5221b23eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
