@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_5f6c8c35",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-24T15:12:10Z",
+      "side": 1,
+      "message": "Please, use active voice here: s/Fixes/Fix/.\nIt applies to the whole commit message.",
+      "revId": "4d0ea43e015fe471982f01f11546e5ec11a68345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3f4198a9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-24T15:12:10Z",
+      "side": 1,
+      "message": "I think \"Also, a cleanup is done in the ...\" will sound better.",
+      "revId": "4d0ea43e015fe471982f01f11546e5ec11a68345",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
