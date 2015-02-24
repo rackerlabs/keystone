@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_c97606a4",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-02-24T16:35:35Z",
+      "side": 1,
+      "message": "IMO, it\u0027s better to use a single DB query here",
+      "revId": "b45b3316b30cbb86d826d0ad38c92d1a0a9fb8a7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
