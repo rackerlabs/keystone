@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba7be1f8_f1b48536",
+        "filename": "keystone/tests/functional/shared/test_running.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-24T20:10:16Z",
+      "side": 1,
+      "message": "curious, do we usually do this?",
+      "revId": "7fe15a7698b35afbde07389afc0ca4cbd1f19f46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_32d2c200",
         "filename": "keystone/tests/functional/shared/test_running.py",
         "patchSetId": 1
@@ -13,6 +30,24 @@
       "writtenOn": "2015-02-24T06:00:43Z",
       "side": 1,
       "message": "isn\u0027t public_url supposed to be port 5000?",
+      "revId": "7fe15a7698b35afbde07389afc0ca4cbd1f19f46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_b1392dd9",
+        "filename": "keystone/tests/functional/shared/test_running.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-24T20:10:16Z",
+      "side": 1,
+      "message": "++ I believe so",
+      "parentUuid": "ba7be1f8_32d2c200",
       "revId": "7fe15a7698b35afbde07389afc0ca4cbd1f19f46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
