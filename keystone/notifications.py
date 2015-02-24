@@ -237,9 +237,10 @@ def internal(*args, **kwargs):
 
 
 def _get_callback_info(callback):
-    if getattr(callback, 'im_class', None):
+    if inspect.ismethod(callback):
+        im_class = callback.__self__.__class__.__name__
         return [getattr(callback, '__module__', None),
-                callback.im_class.__name__,
+                im_class,
                 callback.__name__]
     else:
         return [getattr(callback, '__module__', None), callback.__name__]
