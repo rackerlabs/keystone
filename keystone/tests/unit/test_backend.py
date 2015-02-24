@@ -3725,6 +3725,8 @@ class IdentityTests(object):
                                   {'name': self.role_member['name']})
         # If the previous line didn't raise an exception then the test passes.
 
+    def test_domain_config_in_database_disabled_by_default(self):
+        self.assertFalse(CONF.identity.domain_configurations_from_database)
 
 class TokenTests(object):
     def _create_token_id(self):
