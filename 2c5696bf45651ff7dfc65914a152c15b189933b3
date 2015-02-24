@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_159d9359",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-02-24T15:40:19Z",
+      "side": 1,
+      "message": "Note to other reviewers:  the clean_roles have been checked against the trust, so this is safe.",
+      "revId": "2c5696bf45651ff7dfc65914a152c15b189933b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
