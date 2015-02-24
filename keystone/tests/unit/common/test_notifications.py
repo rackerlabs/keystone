@@ -51,20 +51,48 @@ def register_callback(operation, resource_type=EXP_RESOURCE_TYPE):
     return callback
 
 
+def _create_fake_ref():
+    resource_id = uuid.uuid4().hex
+    return resource_id, {
+        'id': resource_id,
+        'key': uuid.uuid4().hex
+    }
+
+
+class AuditNotificationsTestCase(testtools.TestCase):
+    def test_resource_created_notification(self):
+        exp_resource_id, fake_ref = _create_fake_ref()
+        callback = register_callback(CREATED_OPERATION)
+        notifications.Audit.created(EXP_RESOURCE_TYPE, exp_resource_id)
+        callback.assert_called_with('identity', EXP_RESOURCE_TYPE,
+                                    CREATED_OPERATION,
+                                    {'resource_info': exp_resource_id})
+
+    def test_resource_updated_notification(self):
+        exp_resource_id, fake_ref = _create_fake_ref()
+        callback = register_callback(UPDATED_OPERATION)
+        notifications.Audit.updated(EXP_RESOURCE_TYPE, exp_resource_id)
+        callback.assert_called_with('identity', EXP_RESOURCE_TYPE,
+                                    UPDATED_OPERATION,
+                                    {'resource_info': exp_resource_id})
+
+    def test_resource_deleted_notification(self):
+        exp_resource_id, fake_ref = _create_fake_ref()
+        callback = register_callback(DELETED_OPERATION)
+        notifications.Audit.deleted(EXP_RESOURCE_TYPE, exp_resource_id)
+        callback.assert_called_with('identity', EXP_RESOURCE_TYPE,
+                                    DELETED_OPERATION,
+                                    {'resource_info': exp_resource_id})
+
+
 class NotificationsWrapperTestCase(testtools.TestCase):
-    def create_fake_ref(self):
-        resource_id = uuid.uuid4().hex
-        return resource_id, {
-            'id': resource_id,
-            'key': uuid.uuid4().hex
-        }
 
     @notifications.created(EXP_RESOURCE_TYPE)
     def create_resource(self, resource_id, data):
         return data
 
     def test_resource_created_notification(self):
-        exp_resource_id, data = self.create_fake_ref()
+        exp_resource_id, data = _create_fake_ref()
         callback = register_callback(CREATED_OPERATION)
 
         self.create_resource(exp_resource_id, data)
@@ -77,7 +105,7 @@ class NotificationsWrapperTestCase(testtools.TestCase):
         return data
 
     def test_resource_updated_notification(self):
-        exp_resource_id, data = self.create_fake_ref()
+        exp_resource_id, data = _create_fake_ref()
         callback = register_callback(UPDATED_OPERATION)
 
         self.update_resource(exp_resource_id, data)
