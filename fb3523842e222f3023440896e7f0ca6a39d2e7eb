@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba7be1f8_c789aa27",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-02-24T05:08:59Z",
+      "side": 1,
+      "message": "Couldn\u0027t choices be used here also?  Choice of \u0027one\u0027 or \u0027sub\u0027",
+      "revId": "fb3523842e222f3023440896e7f0ca6a39d2e7eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_4bdb521b",
         "filename": "keystone/common/config.py",
         "patchSetId": 3
