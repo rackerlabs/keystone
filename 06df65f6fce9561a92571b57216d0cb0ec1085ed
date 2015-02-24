@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba7be1f8_d84ee795",
+        "filename": "etc/policy.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-24T07:45:19Z",
+      "side": 1,
+      "message": "don\u0027t think this is going to work, see\n\nhttps://github.com/openstack/keystone/blob/master/keystone/token/controllers.py#L450",
+      "revId": "06df65f6fce9561a92571b57216d0cb0ec1085ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_2781a64a",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 2
@@ -19,6 +36,41 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_78c5fb3a",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-24T07:45:19Z",
+      "side": 1,
+      "message": "its the changing the definition of \u0027owner\u0027 that worries me",
+      "parentUuid": "ba7be1f8_2781a64a",
+      "revId": "06df65f6fce9561a92571b57216d0cb0ec1085ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_38dc63e4",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-24T07:45:19Z",
+      "side": 1,
+      "message": "the original admin_or_owner should work fine. No need for this change.",
+      "revId": "06df65f6fce9561a92571b57216d0cb0ec1085ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_275c4625",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 2
@@ -30,6 +82,40 @@
       "writtenOn": "2015-02-24T04:54:36Z",
       "side": 1,
       "message": "Not related to your change, but do you know why is check_token more restrictive than validate_token? \n\nvalidate_token returns the catalog in the response, so I would thought this should be more restrictive. I wonder if we got the policy defined the other way around?",
+      "revId": "06df65f6fce9561a92571b57216d0cb0ec1085ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_f8e9eb80",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-24T07:45:19Z",
+      "side": 1,
+      "message": "service_or_admin or owner",
+      "revId": "06df65f6fce9561a92571b57216d0cb0ec1085ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_78e6dbb5",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-24T07:45:19Z",
+      "side": 1,
+      "message": "same as above",
       "revId": "06df65f6fce9561a92571b57216d0cb0ec1085ed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

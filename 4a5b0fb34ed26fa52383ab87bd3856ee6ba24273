@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_f89acb61",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-24T07:45:19Z",
+      "side": 0,
+      "message": "why are you changing the definition of owner?",
+      "revId": "4a5b0fb34ed26fa52383ab87bd3856ee6ba24273",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
