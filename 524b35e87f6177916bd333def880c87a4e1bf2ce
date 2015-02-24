@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_7bc4125f",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1313,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-24T09:44:33Z",
+      "side": 1,
+      "message": "what\u0027s the purpose of the following changes? To revert the initial role/domain/groups/project configuration?",
+      "revId": "524b35e87f6177916bd333def880c87a4e1bf2ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
