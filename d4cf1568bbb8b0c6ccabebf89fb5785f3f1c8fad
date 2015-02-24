@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_f83f1685",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-02-24T15:52:23Z",
+      "side": 1,
+      "message": "why don\u0027t you use something like this ?\n\n query \u003d query.filter(\n     sql.sql.or_(\n         Project.parent_id.in_(project_ids),\n         Project.parent_id.is_(None))\n)\n\nor can you just append None to the `project_ids` list?",
+      "revId": "d4cf1568bbb8b0c6ccabebf89fb5785f3f1c8fad",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
