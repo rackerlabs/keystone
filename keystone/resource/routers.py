@@ -81,7 +81,8 @@ class Routers(wsgi.RoutersBase):
             path_vars={
                 'domain_id': json_home.Parameters.DOMAIN_ID,
                 'group': json_home.build_v3_parameter_relation('config_group'),
-                'option': json_home.build_v3_parameter_relation('config_option')
+                'option': json_home.build_v3_parameter_relation(
+                    'config_option')
             })
 
         routers.append(
