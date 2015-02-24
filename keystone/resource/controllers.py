@@ -23,6 +23,7 @@ from oslo_log import log
 from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import validation
+from keystone.common import wsgi
 from keystone import exception
 from keystone.i18n import _
 from keystone.resource import schema
@@ -138,6 +139,46 @@ class DomainV3(controller.V3Controller):
     @controller.protected()
     def delete_domain(self, context, domain_id):
         return self.resource_api.delete_domain(domain_id)
+
+
+@dependency.requires('domain_config_api')
+class DomainConfigV3(controller.V3Controller):
+    member_name = 'config'
+
+    @controller.protected()
+    def create_domain_config(self, context, domain_id, config):
+        ref = self.domain_config_api.create_config(domain_id, config)
+        return wsgi.render_response(body={self.member_name: ref},
+                                    status=('201', 'Created'))
+
+    @controller.protected()
+    def get_domain_config(self, context, domain_id, group=None, option=None):
+        ref = self.domain_config_api.get_config(domain_id, group, option)
+        return {self.member_name: ref}
+
+    @controller.protected()
+    def update_domain_config(
+            self, context, domain_id, config, group, option):
+        ref = self.domain_config_api.update_config(
+            domain_id, config, group, option)
+        return wsgi.render_response(body={self.member_name: ref},
+                                    status=('201', 'Created'))
+
+    def update_domain_config_group(self, context, domain_id, group, config):
+        option = None
+        return self.update_domain_config(
+            context, domain_id, config, group, option)
+
+    def update_domain_config_only(self, context, domain_id, config):
+        option = None
+        group = None
+        return self.update_domain_config(
+            context, domain_id, config, group, option)
+
+    @controller.protected()
+    def delete_domain_config(
+            self, context, domain_id, group=None, option=None):
+        return self.domain_config_api.delete_config(domain_id, group, option)
 
 
 @dependency.requires('resource_api')
