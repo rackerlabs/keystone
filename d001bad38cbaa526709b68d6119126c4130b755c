@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_14a58046",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-24T23:44:36Z",
+      "side": 1,
+      "message": "I think __self__ existed on methods as far back as Python2.6. Are you finding that this is not the same and you still need Python2.3 style access?",
+      "revId": "d001bad38cbaa526709b68d6119126c4130b755c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
