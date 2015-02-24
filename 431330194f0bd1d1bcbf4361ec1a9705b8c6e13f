@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_98e1cf9c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 22
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-24T07:40:42Z",
+      "side": 1,
+      "message": "register a blueprint and target it to k3",
+      "revId": "431330194f0bd1d1bcbf4361ec1a9705b8c6e13f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
