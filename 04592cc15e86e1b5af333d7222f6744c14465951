@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_f4b48fd2",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-24T10:52:59Z",
+      "side": 1,
+      "message": "we could make 2 a constant at the beginning of the test function.",
+      "revId": "04592cc15e86e1b5af333d7222f6744c14465951",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
