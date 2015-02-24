@@ -16,6 +16,24 @@
       "revId": "524b35e87f6177916bd333def880c87a4e1bf2ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_9ec9ad28",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1313,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-02-24T13:13:05Z",
+      "side": 1,
+      "message": "Yes... I don\u0027t think it loads sample data for each test, does it?\n\nWe then need to keep the previous state in order to not affect next tests.",
+      "parentUuid": "ba7be1f8_7bc4125f",
+      "revId": "524b35e87f6177916bd333def880c87a4e1bf2ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
