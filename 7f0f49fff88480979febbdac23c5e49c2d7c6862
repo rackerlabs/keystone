@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_089e6e56",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 759,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-24T09:14:40Z",
+      "side": 1,
+      "message": "typo here: notifications.Audit.deleted",
+      "revId": "7f0f49fff88480979febbdac23c5e49c2d7c6862",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
