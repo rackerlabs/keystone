@@ -16,6 +16,24 @@
       "revId": "2fd74ca8787797e93b4f778da60444a0cc95a47c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_de06b385",
+        "filename": "keystone/token/persistence/backends/redis.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-02-24T18:44:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_589f5750",
+      "revId": "2fd74ca8787797e93b4f778da60444a0cc95a47c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
