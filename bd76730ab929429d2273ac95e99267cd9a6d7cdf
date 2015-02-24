@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_edb12fe2",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 494,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-24T06:57:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_885c8c27",
+      "revId": "bd76730ab929429d2273ac95e99267cd9a6d7cdf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_88aaccd2",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-20T05:03:59Z",
       "side": 1,
       "message": "maybe do an append too for consistency?",
+      "revId": "bd76730ab929429d2273ac95e99267cd9a6d7cdf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_4dc6bb4a",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 639,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-24T06:57:52Z",
+      "side": 1,
+      "message": "append() will not here, but for consistency i changed to extend()",
+      "parentUuid": "ba7be1f8_88aaccd2",
       "revId": "bd76730ab929429d2273ac95e99267cd9a6d7cdf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_6dc53f3b",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-24T06:57:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_a52419c7",
+      "revId": "bd76730ab929429d2273ac95e99267cd9a6d7cdf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_25182984",
         "filename": "keystone/tests/unit/mapping_fixtures.py",
         "patchSetId": 8
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_8dc0b32b",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 587,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-24T06:57:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_25182984",
+      "revId": "bd76730ab929429d2273ac95e99267cd9a6d7cdf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_451d1d73",
         "filename": "keystone/tests/unit/mapping_fixtures.py",
         "patchSetId": 8
@@ -81,6 +153,24 @@
       "writtenOn": "2015-02-20T05:03:59Z",
       "side": 1,
       "message": "and the rest :)",
+      "revId": "bd76730ab929429d2273ac95e99267cd9a6d7cdf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_adde570f",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 607,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-24T06:57:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_451d1d73",
       "revId": "bd76730ab929429d2273ac95e99267cd9a6d7cdf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
