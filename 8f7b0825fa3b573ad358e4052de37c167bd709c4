@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_a198c21c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2015-02-25T23:41:05Z",
+      "side": 1,
+      "message": "Why do we call it out as Keystone Lightweight token and not stick to the common abbreviation of KLWT? For consistency I would vote for KLWT",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a1ca8218",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2015-02-25T23:41:05Z",
+      "side": 1,
+      "message": "Should be klwt_rotate",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_812e5e8a",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2015-02-25T23:41:05Z",
+      "side": 1,
+      "message": "s/presisted/persisted",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_7b059912",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2015-02-25T23:41:05Z",
+      "side": 1,
+      "message": "Instead of the code names: \u0027KLWT00\u0027 and \u0027KLWT01\u0027. Could we use something: \u0027KLWT\u0027 for standard and \u0027KLWT_Trust\u0027 for trust token formats?",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_21fcd2b7",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2015-02-25T23:41:05Z",
+      "side": 1,
+      "message": "The if-else statement surrounding the token_format assignment is verbose. Why not the following:\n\ntoken_format \u003d KLWT01 if trust else KLWT00 (*)\n\n(*) Assuming you don\u0027t accept the naming change recommended above i.e.  KLWT01\u003dKLWT_TOKEN and KLWT00\u003dKLWT",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_862e748a",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2015-02-25T23:41:05Z",
+      "side": 1,
+      "message": "Can we define a variable for the magic number 6?",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_86e1142c",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2015-02-25T23:41:05Z",
+      "side": 1,
+      "message": "s/KLW/KLWT",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a115229d",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2015-02-25T23:41:05Z",
+      "side": 1,
+      "message": "Returns a tuple",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c1e3f6d6",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2015-02-25T23:41:05Z",
+      "side": 1,
+      "message": "This method returns a tuple",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_8643d4ad",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2015-02-25T23:41:05Z",
+      "side": 1,
+      "message": "Are we calling it KLWT or klw_tokens or are these terms referring to completing different things?",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a6637840",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2015-02-25T23:41:05Z",
+      "side": 1,
+      "message": "doc string for parameters?",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_4652bc67",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 11045
+      },
+      "writtenOn": "2015-02-25T23:41:05Z",
+      "side": 1,
+      "message": "doc string",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
