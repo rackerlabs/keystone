@@ -43,6 +43,7 @@ class BaseTokenFormatter(object):
     def __init__(self):
         """Establish a connection with Keyczar and store it."""
         self.v3_token_data_helper = common.V3TokenDataHelper()
+        self.v2_token_data_helper = common.V2TokenDataHelper()
 
     @property
     def crypto(self):
@@ -77,7 +78,10 @@ class BaseTokenFormatter(object):
         # TODO(lbragstad): Wrap this in an exception. Not sure what the case
         # would be where we couldn't handle what we've been given but incase
         # the integrity of the token has been compromised.
-        uuid_obj = uuid.UUID('{' + uuid_string + '}')
+        try:
+            uuid_obj = uuid.UUID('{' + uuid_string + '}')
+        except ValueError as e:
+            raise exception.Unauthorized(six.text_type(e))
         return uuid_obj.bytes
 
     def _convert_uuid_bytes_to_hex(self, uuid_byte_string):
@@ -121,14 +125,38 @@ class BaseTokenFormatter(object):
                   ids.
 
         """
-        created_at = token_data['token']['issued_at']
+        if 'access' in token_data:
+            # Pull data out of the V2 format
+            created_at = token_data['access']['token']['issued_at']
+            expires_at = token_data['access']['token']['expires']
+            audit_ids = token_data['access']['token']['audit_ids']
+        else:
+            # Pull data out of the V3 format
+            created_at = token_data['token']['issued_at']
+            expires_at = token_data['token']['expires_at']
+            audit_ids = token_data['token']['audit_ids']
+
         issued_at_int = self._convert_time_string_to_int(created_at)
-        expires_at = token_data['token']['expires_at']
         expires_at_int = self._convert_time_string_to_int(expires_at)
-        audit_ids = token_data['token']['audit_ids']
         if isinstance(audit_ids, list) and len(audit_ids) == 1:
             audit_ids = audit_ids.pop()
         return (issued_at_int, expires_at_int, audit_ids)
+
+    def _is_v2_token(self, token_string):
+        """Determine if the token is a V2 or V3 token.
+
+        :param token_string: Lightweight token string
+        :returns: True if the token is a V2 token and False otherwise
+
+        """
+        # V2 token strings come in as unicode where as V3 tokens come in as
+        # strings. Fernet expects bytes when decrypting and will fail if the
+        # token_string is unicode. If we are dealing with unicode, cast it to a
+        # string.
+        if isinstance(token_string, unicode):
+            return True
+        else:
+            return False
 
 
 class StandardTokenFormatter(BaseTokenFormatter):
@@ -175,6 +203,14 @@ class StandardTokenFormatter(BaseTokenFormatter):
         :return: a tuple contains the user_id, project_id and token_data
 
         """
+        # V2 token strings come in as unicode where as V3 tokens come in as
+        # strings. Fernet expects bytes when decrypting and will fail if the
+        # token_string is unicode. If we are dealing with unicode, cast it to a
+        # string.
+        is_v2_token = self._is_v2_token(token_string)
+        if is_v2_token:
+            token_string = str(token_string)
+
         try:
             decrypted_token = self.crypto.decrypt(token_string)
         except fernet.InvalidToken as e:
@@ -213,6 +249,29 @@ class StandardTokenFormatter(BaseTokenFormatter):
             expires=expires_at_str,
             issued_at=issued_at_str,
             audit_info=audit_ids)
+        if is_v2_token:
+            # The difference between V3 token validate and V2 token validation
+            # is that V3 makes it relatively easy to rebuild the token data on
+            # the way out. V2 token validation relies on the data as it was on
+            # token creation and doesn't rebuild anything. This uses the
+            # v3_token_data_helper to rebuild the token data and the make it
+            # look like a V2 token response.
+            token_ref = {}
+            token_ref = dict(access=dict(token=dict(audit_ids=dict)))
+            token_ref['access']['token']['audit_ids'] = audit_ids
+            token_ref['user'] = token_data['token']['user']
+            token_ref['expires'] = unicode(token_data['token']['expires_at'])
+            token_ref['metadata'] = {}
+            token_ref['id'] = self.token_format + token_string
+            audit_ids = token_data['token']['audit_ids']
+            token_ref['tenant'] = token_data['token'].get('project', {})
+            roles_ref = token_data['token'].get('roles', [])
+            catalog = token_data['token'].get('catalog')
+            token_data = self.v2_token_data_helper.format_token(token_ref,
+                                                                roles_ref)
+            # Add in the catalog
+            if catalog:
+                token_data['access']['serviceCatalog'] = catalog
 
         return (user_id, project_id, token_data)
 
@@ -257,6 +316,14 @@ class TrustTokenFormatter(BaseTokenFormatter):
         :return: a tuple contains the user_id, project_id and token_data
 
         """
+        # V2 token strings come in as unicode where as V3 tokens come in as
+        # strings. Fernet expects bytes when decrypting and will fail if the
+        # token_string is unicode. If we are dealing with unicode, cast it to a
+        # string.
+        is_v2_token = self._is_v2_token(token_string)
+        if is_v2_token:
+            token_string = str(token_string)
+
         try:
             decrypted_token = self.crypto.decrypt(token_string)
         except fernet.InvalidToken as e:
