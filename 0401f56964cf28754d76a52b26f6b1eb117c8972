@@ -16,6 +16,24 @@
       "revId": "0401f56964cf28754d76a52b26f6b1eb117c8972",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_2e8eafd0",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-02-25T03:53:27Z",
+      "side": 1,
+      "message": "Currently, nothing uses this as a classmethod and I don\u0027t see the use case that we need use this as a classmethod.",
+      "parentUuid": "da86d52c_27f7df8d",
+      "revId": "0401f56964cf28754d76a52b26f6b1eb117c8972",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
