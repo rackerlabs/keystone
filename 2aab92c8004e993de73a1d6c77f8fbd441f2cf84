@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_600c0f3c",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-25T19:37:31Z",
+      "side": 1,
+      "message": "HTTPD is consistent with the rest of our docs",
+      "parentUuid": "da86d52c_572c18ac",
+      "revId": "2aab92c8004e993de73a1d6c77f8fbd441f2cf84",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_462c6793",
         "filename": "keystone/server/eventlet.py",
         "patchSetId": 1
