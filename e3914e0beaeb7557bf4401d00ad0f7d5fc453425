@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_35c7b097",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-25T22:36:32Z",
+      "side": 1,
+      "message": "So if only \u0027user_name\u0027 is set, we assume user is in the \"Federated\" domain? Are we checking for domain as well?",
+      "parentUuid": "ba7be1f8_ecbe38ad",
+      "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_0ced4c26",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 15
@@ -70,6 +88,41 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_95e13c2c",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-25T22:36:32Z",
+      "side": 1,
+      "message": "We should error out in that case. Identity should be unambiguous.",
+      "parentUuid": "ba7be1f8_0ced4c26",
+      "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_95993c7b",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-25T22:36:32Z",
+      "side": 1,
+      "message": "why double parenthesis?",
+      "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_cc9ed462",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 15
@@ -81,6 +134,58 @@
       "writtenOn": "2015-02-25T20:48:23Z",
       "side": 1,
       "message": "I\u0027m not fond of this name since nothing is actually parsed, but I could live with it for now.",
+      "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_5bc8d554",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-25T22:36:32Z",
+      "side": 1,
+      "message": "more like normalize_user()",
+      "parentUuid": "ba7be1f8_cc9ed462",
+      "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d5f4945c",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-25T22:36:32Z",
+      "side": 1,
+      "message": "if user_type and user_type not in (self._USERTYPE.EPHEMERAL, self.USERTYPE.LOCAL):\n    raise some error (i.e. User type is not supported)",
+      "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_5bf61590",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-25T22:36:32Z",
+      "side": 1,
+      "message": "log it? shouldn\u0027t we be erroring out?\n\nambiguity \u003d potential security problem\n\njust saying :)",
       "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
