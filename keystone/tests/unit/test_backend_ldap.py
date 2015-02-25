@@ -2947,6 +2947,12 @@ class DomainSpecificSQLIdentity(DomainSpecificLDAPandSQLIdentity):
             # any updated cfg
             self.identity_api.domain_configs.reload_domain_driver(domain_id)
 
+    def test_round_2(self):
+        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                  'enabled': True}
+        self.resource_api.create_domain(domain['id'], domain)
+        self.identity_api.list_users(domain['id'])
+
     def test_default_sql_plus_sql_specific_driver_fails(self):
         # First confirm that if ldap is default driver, domain1 can be
         # loaded as sql
