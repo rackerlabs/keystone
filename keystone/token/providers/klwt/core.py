@@ -44,7 +44,30 @@ class Provider(common.BaseProvider):
         :raises: keystone.exception.NotImplemented
 
         """
-        raise exception.NotImplemented()
+        token_format = None
+
+        metadata_ref = token_ref['metadata']
+        trust_ref = None
+        if CONF.trust.enabled and metadata_ref and 'trust_id' in metadata_ref:
+            trust_ref = self.trust_api.get_trust(metadata_ref['trust_id'])
+            token_format = 'KLWT01'
+        else:
+            token_format = 'KLWT00'
+
+        user_id = token_ref['user']['id']
+        project_id = None
+        tenant_ref = token_ref.get('tenant')
+        if tenant_ref is not None:
+            project_id = token_ref.get('tenant').get('id')
+
+        token_data = self.v2_token_data_helper.format_token(
+            token_ref, roles_ref, catalog_ref, trust_ref)
+
+        token_id = self.token_format_map[token_format].create_token(
+            user_id, project_id, token_data)
+        token_data['access']['token']['id'] = token_id
+
+        return token_id, token_data
 
     def issue_v3_token(self, user_id, method_names, expires_at=None,
                        project_id=None, domain_id=None, auth_context=None,
@@ -108,7 +131,20 @@ class Provider(common.BaseProvider):
         :raises: keystone.exception.NotImplemented
 
         """
-        raise exception.NotImplemented()
+        # NOTE(lbragstad): This method should be consolidated with
+        # validate_v3_token once the Token Provider Cleanup spec has been
+        # completed.
+        token_format = token_ref[:6]
+        token_formatter = self.token_format_map.get(token_format)
+        if token_formatter:
+            # If we recognize the token format pass the rest of the token
+            # string to the correct token_formatter class.
+            token_str = token_ref[6:]
+            (user_id, project_id, token_data) = (
+                token_formatter.validate_token(token_str))
+            return token_data
+        # If the token_format is not recognized, raise Unauthorized.
+        raise exception.Unauthorized(_('This is not a recognized KLW token.'))
 
     def validate_v3_token(self, token_ref):
         """Validate a V3 formatted token.
