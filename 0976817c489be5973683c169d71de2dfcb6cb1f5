@@ -16,6 +16,24 @@
       "revId": "0976817c489be5973683c169d71de2dfcb6cb1f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_6351a035",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-02-25T03:10:09Z",
+      "side": 1,
+      "message": "1. It seams that we do region auto-creation logic only when we specify \u0027region\u0027 parameter. But, we can specify \u0027region_id\u0027 parameter too.\n\n2. I can\u0027t find the review but there is an another patch to do this.",
+      "parentUuid": "da86d52c_41de3a3f",
+      "revId": "0976817c489be5973683c169d71de2dfcb6cb1f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
