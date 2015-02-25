@@ -215,9 +215,12 @@ class Manager(manager.Manager):
 
     def validate_v2_token(self, token_id, belongs_to=None):
         unique_id = self.unique_id(token_id)
-        # NOTE(morganfainberg): Ensure we never use the long-form token_id
-        # (PKI) as part of the cache_key.
-        token_ref = self._persistence.get_token(unique_id)
+        if self._needs_persistence:
+            # NOTE(morganfainberg): Ensure we never use the long-form token_id
+            # (PKI) as part of the cache_key.
+            token_ref = self._persistence.get_token(unique_id)
+        else:
+            token_ref = token_id
         token = self._validate_v2_token(token_ref)
         self._token_belongs_to(token, belongs_to)
         self._is_valid_token(token)
@@ -332,7 +335,8 @@ class Manager(manager.Manager):
                     bind=token_ref.get('bind'),
                     trust_id=token_ref['metadata'].get('trust_id'),
                     token_version=self.V2)
-        self._create_token(token_id, data)
+        if self._needs_persistence:
+            self._create_token(token_id, data)
 
         return token_id, token_data
 
