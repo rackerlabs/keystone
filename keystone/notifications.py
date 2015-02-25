@@ -66,7 +66,10 @@ CADF_TYPE_MAP = {
     'endpoint': taxonomy.SECURITY_ENDPOINT,
     'service': taxonomy.SECURITY_SERVICE,
     'policy': taxonomy.SECURITY_POLICY,
-    'OS-TRUST:trust': taxonomy.SECURITY_TRUST
+    'OS-TRUST:trust': taxonomy.SECURITY_TRUST,
+    'OS-OAUTH1:access_token': taxonomy.SECURITY_CREDENTIAL,
+    'OS-OAUTH1:request_token': taxonomy.SECURITY_CREDENTIAL,
+    'OS-OAUTH1:consumer': taxonomy.SECURITY_ACCOUNT,
 }
 
 SAML_AUDIT_TYPE = 'http://docs.oasis-open.org/security/saml/v2.0'
@@ -407,7 +410,7 @@ def _get_request_audit_info(context, user_id=None):
         project_id = environment.get('KEYSTONE_AUTH_CONTEXT',
                                      {}).get('project_id')
         domain_id = environment.get('KEYSTONE_AUTH_CONTEXT',
-                                     {}).get('domain_id')
+                                    {}).get('domain_id')
 
     host = pycadf.host.Host(address=remote_addr, agent=http_user_agent)
     initiator = resource.Resource(typeURI=taxonomy.ACCOUNT_USER,
