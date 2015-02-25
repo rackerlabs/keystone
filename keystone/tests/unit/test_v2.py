@@ -22,6 +22,7 @@ import six
 from testtools import matchers
 
 from keystone.common import extension as keystone_extension
+from keystone.tests.unit.fernet import utils as fernet_utils
 from keystone.tests.unit import rest
 
 
@@ -1388,3 +1389,137 @@ class RevokeApiTestCase(V2TestCase):
 
     def test_fetch_revocation_list_sha256(self):
         self.skipTest('Revoke API disables revocation_list.')
+
+
+class TestFernetTokenProviderV2(RestfulTestCase,
+                                fernet_utils.KeyRepositoryTestMixin):
+
+    def setUp(self):
+        super(TestFernetTokenProviderV2, self).setUp()
+        self.setUpKeyRepository()
+
+    def _get_token_id(self, r):
+        return r.result['access']['token']['id']
+
+    def config_overrides(self):
+        super(TestFernetTokenProviderV2, self).config_overrides()
+        self.config_fixture.config(
+            group='token',
+            provider='keystone.token.providers.fernet.Provider')
+
+    def test_authenticate_for_v2_unscoped_token(self):
+        unscoped_token = self.get_unscoped_token()
+        self.assertLess(len(unscoped_token), 255)
+
+    def test_validate_v2_unscoped_token(self):
+        # Grab an admin token to validate with
+        project_id = uuid.uuid4().hex
+        project_ref = {'id': project_id,
+                       'name': uuid.uuid4().hex,
+                       'description': uuid.uuid4().hex,
+                       'domain_id': 'default',
+                       'enabled': True}
+        self.resource_api.create_project(project_id, project_ref)
+        self.assignment_api.add_role_to_user_and_project(self.user_foo['id'],
+                                                         project_id,
+                                                         self.role_admin['id'])
+        admin_token = self.get_scoped_token(tenant_id=project_id)
+        unscoped_token = self.get_unscoped_token()
+        path = ('/v2.0/tokens/%s' % unscoped_token)
+        self.admin_request(
+            method='GET',
+            path=path,
+            token=admin_token,
+            expected_status=200)
+
+    def test_authenticate_for_v2_scoped_token(self):
+        project_id = uuid.uuid4().hex
+        project_ref = {'id': project_id,
+                       'name': uuid.uuid4().hex,
+                       'description': uuid.uuid4().hex,
+                       'domain_id': 'default',
+                       'enabled': True}
+        self.resource_api.create_project(project_id, project_ref)
+        self.assignment_api.add_role_to_user_and_project(
+            self.user_foo['id'], project_id, self.role_service['id'])
+        token = self.get_scoped_token(tenant_id=project_id)
+        self.assertLess(len(token), 255)
+
+    def test_authenticate_for_v2_no_project_access_return_401(self):
+        project_id = uuid.uuid4().hex
+        project_ref = {'id': project_id,
+                       'name': uuid.uuid4().hex,
+                       'description': uuid.uuid4().hex,
+                       'domain_id': 'default',
+                       'enabled': True}
+
+        self.resource_api.create_project(project_id, project_ref)
+        body = {
+            'auth': {
+                'passwordCredentials': {
+                    'username': self.user_foo['name'],
+                    'password': self.user_foo['password']
+                },
+                'tenantId': project_id
+            }
+        }
+        self.request(
+            self.public_app,
+            '/v2.0/tokens',
+            method='POST',
+            body=json.dumps(body),
+            expected_status=401)
+
+    def test_validate_v2_scoped_token(self):
+        project1_id = uuid.uuid4().hex
+        project1_ref = {'id': project1_id,
+                        'name': uuid.uuid4().hex,
+                        'description': uuid.uuid4().hex,
+                        'domain_id': 'default',
+                        'enabled': True}
+        self.resource_api.create_project(project1_id, project1_ref)
+        self.assignment_api.add_role_to_user_and_project(self.user_foo['id'],
+                                                         project1_id,
+                                                         self.role_admin['id'])
+        project2_id = uuid.uuid4().hex
+        project2_ref = {'id': project2_id,
+                        'name': uuid.uuid4().hex,
+                        'description': uuid.uuid4().hex,
+                        'domain_id': 'default',
+                        'enabled': True}
+        self.resource_api.create_project(project2_id, project2_ref)
+        self.assignment_api.add_role_to_user_and_project(
+            self.user_foo['id'], project2_id, self.role_member['id'])
+        admin_token = self.get_scoped_token(tenant_id=project1_id)
+        member_token = self.get_scoped_token(tenant_id=project2_id)
+        path = ('/v2.0/tokens/%s' % member_token)
+        self.admin_request(
+            method='GET',
+            path=path,
+            token=admin_token,
+            expected_status=200)
+
+    def test_v2_token_authentication(self):
+        project_id = uuid.uuid4().hex
+        project_ref = {'id': project_id,
+                       'name': uuid.uuid4().hex,
+                       'description': uuid.uuid4().hex,
+                       'domain_id': 'default',
+                       'enabled': True}
+        self.resource_api.create_project(project_id, project_ref)
+        unscoped_token = self.get_unscoped_token()
+        self.assignment_api.add_role_to_user_and_project(self.user_foo['id'],
+                                                         project_id,
+                                                         self.role_admin['id'])
+        self.public_request(
+            method='POST',
+            path='/v2.0/tokens',
+            body={
+                'auth': {
+                    'tenantName': project_ref['name'],
+                    'token': {
+                        'id': unscoped_token.encode('utf-8')
+                    }
+                }
+            },
+            expected_status=200)

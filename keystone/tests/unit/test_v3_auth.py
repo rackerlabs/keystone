@@ -30,8 +30,8 @@ from keystone import auth
 from keystone import exception
 from keystone.policy.backends import rules
 from keystone.tests import unit as tests
+from keystone.tests.unit.fernet import utils as fernet_utils
 from keystone.tests.unit import test_v3
-from keystone.tests.unit.token import test_fernet_provider as fernet
 
 
 CONF = cfg.CONF
@@ -4051,7 +4051,7 @@ class TestAuthSpecificData(test_v3.RestfulTestCase):
 
 
 class TestFernetTokenProvider(test_v3.RestfulTestCase,
-                              fernet.KeyRepositoryTestMixin):
+                              fernet_utils.KeyRepositoryTestMixin):
     def setUp(self):
         super(TestFernetTokenProvider, self).setUp()
         self.setUpKeyRepository()

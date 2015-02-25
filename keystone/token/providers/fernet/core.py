@@ -16,6 +16,7 @@ from oslo_log import log
 from keystone.common import dependency
 from keystone.contrib import federation
 from keystone import exception
+from keystone.token import provider
 from keystone.token.providers import common
 from keystone.token.providers.fernet import token_formatters as tf
 
@@ -41,10 +42,34 @@ class Provider(common.BaseProvider):
         :param token_ref: reference describing the token
         :param roles_ref: reference describing the roles for the token
         :param catalog_ref: reference describing the token's catalog
-        :raises keystone.exception.NotImplemented: when called
+        :returns: tuple containing the ID of the token and the token data
 
         """
-        raise exception.NotImplemented()
+        user_id = token_ref['user']['id']
+        method_names = ['password']
+        project_id = None
+        if token_ref.get('tenant'):
+            project_id = token_ref.get('tenant').get('id')
+        audit_ids = provider.audit_info(token_ref.get('parent_audit_id'))
+
+        v3_token_data = self.v3_token_data_helper.get_token_data(
+            user_id,
+            method_names,
+            project_id=project_id,
+            token=token_ref,
+            include_catalog=False,
+            audit_info=audit_ids)
+
+        expires_at = v3_token_data['token']['expires_at']
+        methods = v3_token_data['token']['methods']
+        token_id = self.token_formatter.create_token(user_id, expires_at,
+                                                     audit_ids,
+                                                     methods=methods,
+                                                     project_id=project_id)
+        token_data = self.v2_token_data_helper.v3_to_v2_token(token_id,
+                                                              v3_token_data)
+
+        return token_id, token_data
 
     def _build_federated_info(self, token_data):
         """Extract everything needed for federated tokens.
@@ -150,10 +175,29 @@ class Provider(common.BaseProvider):
 
         :param token_ref: reference describing the token to validate
         :returns: the token data
-        :raises keystone.exception.NotImplemented: when called
+        :raises: keystone.exception.Unauthorized
 
         """
-        raise exception.NotImplemented()
+        (user_id, methods,
+         audit_ids, domain_id,
+         project_id, trust_id,
+         federated_info, created_at,
+         expires_at) = self.token_formatter.validate_token(token_ref)
+
+        if trust_id or domain_id or federated_info:
+            raise exception.Unauthorized('This is not a v2 Fernet token.')
+
+        v3_token_data = self.v3_token_data_helper.get_token_data(
+            user_id,
+            methods,
+            project_id=project_id,
+            expires=expires_at,
+            issued_at=created_at,
+            token=token_ref,
+            include_catalog=False,
+            audit_info=audit_ids)
+        return self.v2_token_data_helper.v3_to_v2_token(token_ref,
+                                                        v3_token_data)
 
     def validate_v3_token(self, token):
         """Validate a V3 formatted token.
