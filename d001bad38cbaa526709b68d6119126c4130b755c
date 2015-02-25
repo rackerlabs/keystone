@@ -16,6 +16,24 @@
       "revId": "d001bad38cbaa526709b68d6119126c4130b755c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_66b9a414",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2015-02-25T09:57:20Z",
+      "side": 1,
+      "message": "It does, but __self__ seems to return an instance in python \u003c 3. I\u0027ve tested this in python 2.7.6:\n\nIn [1]: class C(object):\n   ...:    def callback(self, *args, **kwargs):\n   ...:        pass\n   ...: \nIn [2]: C.callback\nOut[2]: \u003cunbound method C.callback\u003e\nIn [3]: C.callback.im_class.__name__\nOut[3]: \u0027C\u0027\nIn [4]: C.callback.__self__\nIn [5]: C.callback.__self__.__class__.__name__\nOut[5]: \u0027NoneType\u0027\nIn [6]: C().callback.__self__.__class__.__name__\nOut[6]: \u0027C\u0027",
+      "parentUuid": "ba7be1f8_14a58046",
+      "revId": "d001bad38cbaa526709b68d6119126c4130b755c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
