@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_81173e44",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-25T23:17:38Z",
+      "side": 1,
+      "message": "DocImpact\n\nlooks like there are changes in the mapping. We need to document those.",
+      "revId": "c34f7fa6317ae3e9c31cebd609ae605c942ff4a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_e608102a",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-25T23:17:38Z",
+      "side": 1,
+      "message": "I would imagine this information is also helpful for local user as well as \u0027mapped\u0027 could mean a number of things.",
+      "revId": "c34f7fa6317ae3e9c31cebd609ae605c942ff4a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_463d5c2a",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 748,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-25T23:17:38Z",
+      "side": 1,
+      "message": "do we need a negative test for invalid UserType? Also, the remote user now have to explicitly specify the \"UserType\" if they want to map to a local user instead of ephemera?",
+      "revId": "c34f7fa6317ae3e9c31cebd609ae605c942ff4a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a61b787f",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 751,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-25T23:17:38Z",
+      "side": 1,
+      "message": "not sure if the name is appropriate. These assertions are coming from a remote user right?",
+      "revId": "c34f7fa6317ae3e9c31cebd609ae605c942ff4a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c17a1687",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1988,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-25T23:17:38Z",
+      "side": 1,
+      "message": "so now IdPs will need to specify \"UserType\"? Also, for local user, why do we care about group? (line 1980)",
+      "revId": "c34f7fa6317ae3e9c31cebd609ae605c942ff4a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
