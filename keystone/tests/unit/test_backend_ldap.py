@@ -36,6 +36,7 @@ from keystone.tests.unit import fakeldap
 from keystone.tests.unit import identity_mapping as mapping_sql
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import test_backend
+from keystone.tests.unit import utils
 
 
 CONF = cfg.CONF
@@ -2781,6 +2782,13 @@ class DomainSpecificLDAPandSQLIdentity(
         # Get the config for this domain, will return CONF
         # if no specific config defined for this domain
         return self.identity_api.domain_configs.get_domain_conf(domain_id)
+
+    @utils.wip('Exposing bug #1425895')
+    def test_identity_operations_on_new_domain_fails(self):
+        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                  'enabled': True}
+        self.resource_api.create_domain(domain['id'], domain)
+        self.identity_api.list_users(domain['id'])
 
     def test_list_domains(self):
         self.skipTest(
