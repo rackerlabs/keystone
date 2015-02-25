@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_cacfb854",
+        "filename": "keystone/token/persistence/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-02-25T08:49:34Z",
+      "side": 1,
+      "message": "I already make this method return the deleted tokens, so the delete_tokens method in kvs driver https://github.com/openstack/keystone/blob/master/keystone/token/persistence/backends/kvs.py#L260 would return it too.",
+      "revId": "f4964529bba0f10df03cb4bc956a6b5cbbf6efd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
