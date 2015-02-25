@@ -28,17 +28,18 @@ from keystone.server import common
 
 class WSGIApplication(common.AbstractApplication):
 
+    def __init__(self, app_name, *args, **kwargs):
+        self.app_name = app_name
+        super(WSGIApplication, self).__init__(*args, **kwargs)
+
     def setup(self):
         environment.use_stdlib()
 
     def startup_application(self):
-        pass
-
-    def loadapp(self):
         return self.get_wsgi_app(self.app_name)
 
 
 def initialize_application(name):
 
-    application = WSGIApplication()
-    return application.self.get_wsgi_app(name)
+    application = WSGIApplication(name)
+    return application.resource

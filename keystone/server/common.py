@@ -13,9 +13,9 @@
 
 import abc
 import logging
-import six
 
 from oslo_config import cfg
+import six
 
 from keystone import backends
 from keystone.common import dependency
@@ -57,7 +57,7 @@ class AbstractApplication(object):
         # Setup backends
         self.drivers = backends.load_backends()
         self.drivers.update(self.load_extra_backends())
-        self.startup_application()
+        self.resource = self.startup_application()
         self.drivers.update(dependency.resolve_future_dependencies())
 
     @abc.abstractmethod

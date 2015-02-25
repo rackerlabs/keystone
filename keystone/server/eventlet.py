@@ -96,24 +96,26 @@ class EventletApplication(common.AbstractApplication):
         admin_worker_count = self._get_workers('admin_workers')
         public_worker_count = self._get_workers('public_workers')
 
-        self.servers.append(
-            self._create_server('admin',
-                                CONF.eventlet_server.admin_bind_host,
-                                int(CONF.eventlet_server.admin_port),
-                                admin_worker_count))
-        self.servers.append(
-            self._create_server('main',
-                                CONF.eventlet_server.public_bind_host,
-                                int(CONF.eventlet_server.public_port),
-                                public_worker_count))
-
-    def run(self):
-        if max([server[1].workers for server in self.servers]) > 1:
+        if max(admin_worker_count, public_worker_count) > 1:
             launcher = service.ProcessLauncher()
         else:
             launcher = service.ServiceLauncher()
 
-        for name, server in self.servers:
+        servers = (
+            self._create_server('admin',
+                                CONF.eventlet_server.admin_bind_host,
+                                int(CONF.eventlet_server.admin_port),
+                                admin_worker_count),
+            self._create_server('main',
+                                CONF.eventlet_server.public_bind_host,
+                                int(CONF.eventlet_server.public_port),
+                                public_worker_count))
+        return servers, launcher
+
+    def run(self):
+        servers, launcher = self.resource
+
+        for name, server in servers:
             try:
                 server.launch_with(launcher)
             except socket.error:
@@ -124,7 +126,7 @@ class EventletApplication(common.AbstractApplication):
         # notify calling process we are ready to serve
         systemd.notify_once()
 
-        for name, server in self.servers:
+        for name, server in servers:
             launcher.wait()
 
 
