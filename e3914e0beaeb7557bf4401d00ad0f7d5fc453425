@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_2ca210fd",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-25T20:48:23Z",
+      "side": 1,
+      "message": "This function what?",
+      "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_ccb8942c",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-25T20:48:23Z",
+      "side": 1,
+      "message": "(nit) The following",
+      "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_ecbe38ad",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-25T20:48:23Z",
+      "side": 1,
+      "message": "These doesn\u0027t appear to be test for these new scenarios. Did I miss them?",
+      "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_0ced4c26",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-25T20:48:23Z",
+      "side": 1,
+      "message": "What about if both are set?",
+      "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_cc9ed462",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-25T20:48:23Z",
+      "side": 1,
+      "message": "I\u0027m not fond of this name since nothing is actually parsed, but I could live with it for now.",
+      "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_ac70c072",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 923,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-25T20:48:23Z",
+      "side": 1,
+      "message": "Bad docstring format. The first line should be a short summary.",
+      "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
