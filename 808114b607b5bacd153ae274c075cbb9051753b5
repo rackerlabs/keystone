@@ -69,6 +69,24 @@
       "revId": "808114b607b5bacd153ae274c075cbb9051753b5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_34f0b9fd",
+        "filename": "keystone/token/persistence/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-25T07:17:37Z",
+      "side": 1,
+      "message": "ah right, we\u0027ll lose the performance benefit of the SQL implementation.",
+      "parentUuid": "ba7be1f8_8e423b66",
+      "revId": "808114b607b5bacd153ae274c075cbb9051753b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
