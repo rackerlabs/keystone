@@ -28,6 +28,7 @@ import testtools
 from keystone.common import dependency
 from keystone import notifications
 from keystone.tests.unit import test_v3
+from keystone.tests.unit import test_v3_oauth1
 
 
 CONF = cfg.CONF
@@ -640,6 +641,37 @@ class CADFNotificationsForEntities(NotificationsForEntities):
     def setUp(self):
         super(CADFNotificationsForEntities, self).setUp()
         self.config_fixture.config(notification_format='cadf')
+
+
+class OAuthNotificationTests(CADFNotificationsForEntities,
+                             test_v3_oauth1.OAuth1Tests):
+
+    def test_create_consumer(self):
+        consumer_ref = self._create_single_consumer()
+        self._assert_notify_sent(consumer_ref['id'], CREATED_OPERATION,
+                                 'OS-OAUTH1:consumer')
+        self._assert_last_audit(consumer_ref['id'], CREATED_OPERATION,
+                                'OS-OAUTH1:consumer',
+                                cadftaxonomy.SECURITY_ACCOUNT)
+
+    def test_update_consumer(self):
+        consumer_ref = self._create_single_consumer()
+        update_ref = {'consumer': {'description': uuid.uuid4().hex}}
+        self.oauth_api.update_consumer(consumer_ref['id'], update_ref)
+        self._assert_notify_sent(consumer_ref['id'], UPDATED_OPERATION,
+                                 'OS-OAUTH1:consumer')
+        self._assert_last_audit(consumer_ref['id'], UPDATED_OPERATION,
+                                'OS-OAUTH1:consumer',
+                                cadftaxonomy.SECURITY_ACCOUNT)
+
+    def test_delete_consumer(self):
+        consumer_ref = self._create_single_consumer()
+        self.oauth_api.delete_consumer(consumer_ref['id'])
+        self._assert_notify_sent(consumer_ref['id'], DELETED_OPERATION,
+                                 'OS-OAUTH1:consumer')
+        self._assert_last_audit(consumer_ref['id'], DELETED_OPERATION,
+                                'OS-OAUTH1:consumer',
+                                cadftaxonomy.SECURITY_ACCOUNT)
 
 
 class TestEventCallbacks(test_v3.RestfulTestCase):
