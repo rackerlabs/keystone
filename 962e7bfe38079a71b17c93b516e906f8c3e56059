@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_174c85c7",
+        "filename": "keystone/server/common.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-25T15:06:19Z",
+      "side": 1,
+      "message": "six is thirdparty and should be in the next section.",
+      "revId": "962e7bfe38079a71b17c93b516e906f8c3e56059",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_776a21ef",
+        "filename": "keystone/server/eventlet.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-25T15:06:19Z",
+      "side": 1,
+      "message": "How does this work? I don\u0027t see where self.servers is defined.",
+      "revId": "962e7bfe38079a71b17c93b516e906f8c3e56059",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_524feb6a",
+        "filename": "keystone/server/wsgi.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-25T15:06:19Z",
+      "side": 1,
+      "message": "Where is self.app_name defined?",
+      "revId": "962e7bfe38079a71b17c93b516e906f8c3e56059",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
