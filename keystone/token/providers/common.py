@@ -19,6 +19,7 @@ from oslo_utils import timeutils
 import six
 from six.moves.urllib import parse
 
+from keystone.common.controller import V2Controller
 from keystone.common import dependency
 from keystone.contrib import federation
 from keystone import exception
@@ -32,8 +33,67 @@ LOG = log.getLogger(__name__)
 CONF = cfg.CONF
 
 
+@dependency.requires('catalog_api', 'resource_api')
 class V2TokenDataHelper(object):
     """Creates V2 token data."""
+    def __init__(self):
+        super(V2TokenDataHelper, self).__init__()
+
+    def v3_to_v2_token(self, token_id, v3_token_data):
+        token_data = {}
+        # Build v2 token
+        v3_token = v3_token_data['token']
+
+        token = {}
+        token['id'] = token_id
+        token['expires'] = v3_token.get('expires_at')
+        token['issued_at'] = v3_token.get('issued_at')
+        token['audit_ids'] = v3_token.get('audit_ids')
+        if 'bind' in v3_token:
+            token['bind'] = v3_token.get('bind')
+        if 'project' in v3_token:
+            # v3 token_data does not contain all tenant attributes
+            tenant = self.resource_api.get_project(
+                v3_token['project'].get('id'))
+            token['tenant'] = V2Controller.filter_domain_id(tenant)
+        token_data['token'] = token
+
+        # Build v2 user
+        v3_user = v3_token.get('user')
+        user = V2Controller.v3_to_v2_user(v3_user)
+        # Filter user domain
+        user.pop('domain', None)
+
+        # Set user roles
+        user['roles'] = []
+        role_ids = []
+        for role in v3_token.get('roles', []):
+            role_ids.append(role['id'])
+            # Filter role id
+            role.pop('id', None)
+            user['roles'].append(role)
+        user['roles_links'] = []
+
+        token_data['user'] = user
+
+        # Get and build v2 service catalog
+        token_data['serviceCatalog'] = []
+        if 'tenant' in token:
+            catalog_ref = self.catalog_api.get_catalog(
+                user['id'], token.get('tenant').get('id'))
+            if catalog_ref is not None:
+                token_data['serviceCatalog'] = (V2TokenDataHelper.
+                                                format_catalog(catalog_ref))
+
+        # Build v2 metadata
+        metadata = {}
+        metadata['roles'] = role_ids
+        # TODO(jorge_munoz) Determine if user is an admin
+        metadata['is_admin'] = 0
+        token_data['metadata'] = metadata
+
+        return {'access': token_data}
+
     @classmethod
     def format_token(cls, token_ref, roles_ref=None, catalog_ref=None,
                      trust_ref=None):
