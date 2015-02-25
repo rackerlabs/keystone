@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_0ffe42ae",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-25T08:10:50Z",
+      "side": 1,
+      "message": "i don\u0027t think so, this is just called when authenticating a local user.",
+      "parentUuid": "ba7be1f8_37f0c666",
+      "revId": "4b4cf69c051ccd7ef2de6b46f75f28abfcef919c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_d68e8fcf",
         "filename": "keystone/tests/unit/common/test_notifications.py",
         "patchSetId": 5
