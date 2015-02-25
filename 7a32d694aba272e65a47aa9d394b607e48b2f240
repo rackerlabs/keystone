@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_7ea2124c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 969,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2015-02-25T06:41:56Z",
+      "side": 1,
+      "message": "Hi David,\n\nI have kept default value as 900 for consistency with other projects like nova, cinder, neutron etc. If you have any suggestion please let me know. I will make the changes accordingly.",
+      "parentUuid": "ba7be1f8_543378aa",
+      "revId": "7a32d694aba272e65a47aa9d394b607e48b2f240",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_34d5241c",
         "filename": "keystone/common/config.py",
         "patchSetId": 15
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_9e27c611",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 970,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2015-02-25T06:41:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_34d5241c",
+      "revId": "7a32d694aba272e65a47aa9d394b607e48b2f240",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_74a95c8f",
         "filename": "keystone/common/environment/eventlet_server.py",
         "patchSetId": 15
@@ -47,6 +83,24 @@
       "writtenOn": "2015-02-24T23:35:38Z",
       "side": 1,
       "message": "I think this should be \u0027from oslo_config import cfg\u0027. See  I60c8d2c577d37b9b8a367b46596154ce6c49fff4",
+      "revId": "7a32d694aba272e65a47aa9d394b607e48b2f240",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_5e0aae79",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 9303
+      },
+      "writtenOn": "2015-02-25T06:41:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_74a95c8f",
       "revId": "7a32d694aba272e65a47aa9d394b607e48b2f240",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
