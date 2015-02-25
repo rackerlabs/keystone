@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_34d180cd",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-25T21:25:53Z",
+      "side": 0,
+      "message": "By not checking if the endpoint exists and removing here are we changing the behavior in an incompatible way?",
+      "revId": "c0d56ecdf4964549299fb26ed4e52ada3bd783be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
