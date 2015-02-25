@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_e93f31b2",
+        "filename": "keystone/token/persistence/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-02-25T04:05:05Z",
+      "side": 1,
+      "message": "I will change the docstring.",
+      "parentUuid": "da86d52c_d1af5d29",
+      "revId": "808114b607b5bacd153ae274c075cbb9051753b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_11a65554",
         "filename": "keystone/token/persistence/core.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-18T23:42:11Z",
       "side": 1,
       "message": "Can\u0027t we just add the self.delete_token(token_id) call here?",
+      "revId": "808114b607b5bacd153ae274c075cbb9051753b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_8e423b66",
+        "filename": "keystone/token/persistence/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-02-25T04:05:05Z",
+      "side": 1,
+      "message": "This would reduce the performance of sql. And actually, this is how kvs implements delete_tokens.",
+      "parentUuid": "da86d52c_11a65554",
       "revId": "808114b607b5bacd153ae274c075cbb9051753b5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
