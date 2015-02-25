@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_d853eb14",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-25T21:55:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_f42c6cae",
+      "revId": "01fbe46d8ae3840de3578aa0a61be587be8b11fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_175022d3",
         "filename": "doc/source/event_notifications.rst",
         "patchSetId": 17
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-24T23:59:26Z",
       "side": 1,
       "message": "s/action/operation/ since an operation is \u0027create\u0027 and an action is \u0027create.user\u0027?",
+      "revId": "01fbe46d8ae3840de3578aa0a61be587be8b11fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_b877179f",
+        "filename": "doc/source/event_notifications.rst",
+        "patchSetId": 17
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-25T21:55:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_175022d3",
       "revId": "01fbe46d8ae3840de3578aa0a61be587be8b11fb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
