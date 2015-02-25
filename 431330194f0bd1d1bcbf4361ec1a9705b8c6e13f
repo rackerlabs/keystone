@@ -34,6 +34,23 @@
       "revId": "431330194f0bd1d1bcbf4361ec1a9705b8c6e13f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a7938159",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-25T17:52:52Z",
+      "side": 1,
+      "message": "Don\u0027t do explicit string checks. This is not making this any more correct than the previous one. make the klwt provider aware of if it needs persistence then ask:\n\nself.driver.needs_persistence [\u003c-- this should return true/false]\n\nAs it stands you\u0027re still locking klwt as the only non-persistent provider.",
+      "revId": "431330194f0bd1d1bcbf4361ec1a9705b8c6e13f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
