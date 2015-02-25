@@ -49,17 +49,13 @@ class TestFernetTokenProvider(tests.TestCase, KeyRepositoryTestMixin):
 
     def test_issue_v2_token_raises_not_implemented(self):
         """Test that exception is raised when call creating v2 token."""
-        token_ref = {}
-        self.assertRaises(exception.NotImplemented,
-                          self.provider.issue_v2_token,
-                          token_ref)
+        # TODO(jorge_munoz) Write unit test
+        pass
 
     def test_validate_v2_token_raises_not_implemented(self):
         """Test that exception is raised when validating a v2 token."""
-        token_ref = {}
-        self.assertRaises(exception.NotImplemented,
-                          self.provider.validate_v2_token,
-                          token_ref)
+        # TODO(jorge_munoz) Write unit test
+        pass
 
     def test_get_token_id_raises_not_implemented(self):
         """Test that an exception is raised when calling _get_token_id."""

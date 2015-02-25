@@ -46,7 +46,27 @@ class Provider(common.BaseProvider):
         :raises keystone.exception.NotImplemented: when called
 
         """
-        raise exception.NotImplemented()
+        metadata_ref = token_ref.get('metadata', {})
+        user_id = token_ref['user']['id']
+        method_names = ('password',)
+        project_id = None
+        tenant_ref = token_ref.get('tenant')
+        if tenant_ref is not None:
+            project_id = token_ref.get('tenant').get('id')
+
+        # TODO(jorge_munoz) Verify scope to default domain
+        # domain_id = 'default'
+
+        parent_audit_id = token_ref.get('parent_audit_id')
+
+        (token_id, token_data_raw) = self.issue_v3_token(
+            user_id=user_id, method_names=method_names, project_id=project_id,
+            metadata_ref=metadata_ref,
+            include_catalog=False, parent_audit_id=parent_audit_id)
+        token_data = self.v2_token_data_helper.v3_to_v2_token(token_id,
+                                                              token_data_raw)
+
+        return token_id, token_data
 
     def issue_v3_token(self, user_id, method_names, expires_at=None,
                        project_id=None, domain_id=None, auth_context=None,
@@ -110,7 +130,20 @@ class Provider(common.BaseProvider):
         :raises keystone.exception.NotImplemented: when called
 
         """
-        raise exception.NotImplemented()
+        # NOTE(lbragstad): This method should be consolidated with
+        # validate_v3_token once the Token Provider Cleanup spec has been
+        # completed.
+        token_format = token_ref[:3]
+        token_formatter = self.token_format_map.get(token_format)
+        if token_formatter:
+            # If we recognize the token format pass the rest of the token
+            # string to the correct token_formatter class.
+            token_str = token_ref[3:]
+            (user_id, project_id, token_data) = (
+                token_formatter.validate_token(token_str))
+            return token_data
+        # If the token_format is not recognized, raise Unauthorized.
+        raise exception.Unauthorized('This is not a recognized KLW token.')
 
     def validate_v3_token(self, token_ref):
         """Validate a V3 formatted token.

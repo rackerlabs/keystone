@@ -244,9 +244,6 @@ class RestfulTestCase(tests.TestCase):
         })
 
     def _get_token_id(self, r):
-        """Helper method to return a token ID from a response.
-
-        This needs to be overridden by child classes for on their content type.
-
-        """
-        raise NotImplementedError()
+        """Helper method to return a token ID from a response."""
+        response_body = jsonutils.loads(r.body)
+        return response_body['access']['token']['id']
