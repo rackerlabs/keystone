@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_77cf9e29",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-25T00:16:04Z",
+      "side": 1,
+      "message": "You can use it, just you don\u0027t get any initiator (user) information today. It doesn\u0027t work unless we store the context somewhere (thread.local like pecan) or pass it through for inspection via the decorator.",
+      "parentUuid": "ba7be1f8_162027ab",
+      "revId": "4b4cf69c051ccd7ef2de6b46f75f28abfcef919c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_542d3894",
         "filename": "keystone/notifications.py",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_37f0c666",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-25T00:16:04Z",
+      "side": 1,
+      "message": "Perhaps. (Likely)",
+      "parentUuid": "ba7be1f8_542d3894",
+      "revId": "4b4cf69c051ccd7ef2de6b46f75f28abfcef919c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_d68e8fcf",
         "filename": "keystone/tests/unit/common/test_notifications.py",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2015-02-24T23:14:58Z",
       "side": 1,
       "message": "Is there any reason you don\u0027t just use uuid.uuid4().hex since you don\u0027t use the returned dict?",
+      "revId": "4b4cf69c051ccd7ef2de6b46f75f28abfcef919c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_171bc2ca",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-25T00:16:04Z",
+      "side": 1,
+      "message": "Mostly just using the previous pattern of tests. easy to change.",
+      "parentUuid": "ba7be1f8_d68e8fcf",
       "revId": "4b4cf69c051ccd7ef2de6b46f75f28abfcef919c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
