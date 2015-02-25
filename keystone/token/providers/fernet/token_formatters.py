@@ -200,10 +200,10 @@ class BasePayload(object):
         :returns: a byte representation of the uuid
 
         """
-        # TODO(lbragstad): Wrap this in an exception. Not sure what the case
-        # would be where we couldn't handle what we've been given but incase
-        # the integrity of the token has been compromised.
-        uuid_obj = uuid.UUID(uuid_string)
+        try:
+            uuid_obj = uuid.UUID(uuid_string)
+        except ValueError as e:
+            raise exception.Unauthorized(six.text_type(e))
         return uuid_obj.bytes
 
     @classmethod

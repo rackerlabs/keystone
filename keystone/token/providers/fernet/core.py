@@ -15,6 +15,7 @@ from oslo_log import log
 
 from keystone.common import dependency
 from keystone import exception
+from keystone.token import provider
 from keystone.token.providers import common
 from keystone.token.providers.fernet import token_formatters as tf
 
@@ -40,10 +41,35 @@ class Provider(common.BaseProvider):
         :param token_ref: reference describing the token
         :param roles_ref: reference describing the roles for the token
         :param catalog_ref: reference describing the token's catalog
-        :raises keystone.exception.NotImplemented: when called
+        :returns: tuple containing the id of the token and the token data
 
         """
-        raise exception.NotImplemented()
+        user_id = token_ref['user']['id']
+        method_names = ('password',)
+        project_id = None
+        tenant_ref = token_ref.get('tenant')
+        if tenant_ref is not None:
+            project_id = token_ref.get('tenant').get('id')
+
+        parent_audit_id = token_ref.get('parent_audit_id')
+        if parent_audit_id is None:
+            parent_audit_id = provider.audit_info(
+                token_ref.get('parent_audit_id'))
+
+        v3_token_data = self.v3_token_data_helper.get_token_data(
+            user_id,
+            method_names,
+            project_id=project_id,
+            token=token_ref,
+            include_catalog=False,
+            audit_info=parent_audit_id)
+
+        token_id = self.token_formatter.create_token(user_id, parent_audit_id,
+                                                     project_id=project_id)
+        token_data = self.v2_token_data_helper.v3_to_v2_token(token_id,
+                                                              v3_token_data)
+
+        return token_id, token_data
 
     def issue_v3_token(self, user_id, method_names, expires_at=None,
                        project_id=None, domain_id=None, auth_context=None,
@@ -109,10 +135,29 @@ class Provider(common.BaseProvider):
 
         :param token_ref: reference describing the token to validate
         :returns: the token data
-        :raises keystone.exception.NotImplemented: when called
+        :raises keystone.exception.Unauthorized
 
         """
-        raise exception.NotImplemented()
+        if isinstance(token_ref, unicode):
+            token_str = str(token_ref)
+
+        (user_id, audit_ids, domain_id, project_id, trust_id, created_at,
+            expires_at) = self.token_formatter.validate_token(token_str)
+
+        if None in (trust_id, domain_id):
+            v3_token_data = self.v3_token_data_helper.get_token_data(
+                user_id,
+                ['password', 'token'],
+                project_id=project_id,
+                expires=expires_at,
+                issued_at=created_at,
+                token=token_ref,
+                include_catalog=False,
+                audit_info=audit_ids)
+            return self.v2_token_data_helper.v3_to_v2_token(token_str,
+                                                            v3_token_data)
+        # If the token_str is not a v2 token, raise Unauthorized.
+        raise exception.Unauthorized('This is not a v2 fernet token.')
 
     def validate_v3_token(self, token):
         """Validate a V3 formatted token.
