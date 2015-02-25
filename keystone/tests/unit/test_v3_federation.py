@@ -37,9 +37,9 @@ from keystone import exception
 from keystone import notifications
 from keystone.tests.unit import core
 from keystone.tests.unit import federation_fixtures
+from keystone.tests.unit.fernet import utils as fernet_utils
 from keystone.tests.unit import mapping_fixtures
 from keystone.tests.unit import test_v3
-from keystone.tests.unit.token import test_fernet_provider as fernet
 from keystone.token.providers import common as token_common
 
 
@@ -2321,7 +2321,7 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
 
 
 class FernetFederatedTokenTests(FederationTests, FederatedSetupMixin,
-                                fernet.KeyRepositoryTestMixin):
+                                fernet_utils.KeyRepositoryTestMixin):
     AUTH_METHOD = 'token'
 
     def load_fixtures(self, fixtures):

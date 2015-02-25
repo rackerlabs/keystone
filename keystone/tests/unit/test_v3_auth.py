@@ -30,8 +30,8 @@ from keystone import auth
 from keystone import exception
 from keystone.policy.backends import rules
 from keystone.tests import unit as tests
+from keystone.tests.unit.fernet import utils as fernet_utils
 from keystone.tests.unit import test_v3
-from keystone.tests.unit.token import test_fernet_provider as fernet
 
 
 CONF = cfg.CONF
@@ -4051,7 +4051,7 @@ class TestAuthSpecificData(test_v3.RestfulTestCase):
 
 
 class TestFernetTokenProvider(test_v3.RestfulTestCase,
-                              fernet.KeyRepositoryTestMixin):
+                              fernet_utils.KeyRepositoryTestMixin):
     def setUp(self):
         super(TestFernetTokenProvider, self).setUp()
         self.setUpKeyRepository()
@@ -4065,6 +4065,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
     def _get_unscoped_token(self):
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
+            user_domain_id=self.user['domain_id'],
             password=self.user['password'])
         return self._make_auth_request(auth_data)
 
@@ -4404,4 +4405,39 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         # Ensure updating trustor's password revokes existing user's tokens
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_token,
+                          trust_scoped_token)
+
+    def test_v2_validate_v3_unscoped_token_returns_401(self):
+        unscoped_token = self._get_unscoped_token()
+        self.assertRaises(exception.Unauthorized,
+                          self.token_provider_api.validate_v2_token,
+                          unscoped_token)
+
+    def test_v2_validate_v3_project_scoped_token_returns_401(self):
+        # Grant user access to project
+        self.assignment_api.create_grant(self.role['id'],
+                                         user_id=self.user['id'],
+                                         project_id=self.project['id'])
+
+        scoped_token = self._get_project_scoped_token()
+        self.assertRaises(exception.Unauthorized,
+                          self.token_provider_api.validate_v2_token,
+                          scoped_token)
+
+    def test_v2_validate_v3_domain_scoped_token_returns_401(self):
+        # Grant user access to domain
+        self.assignment_api.create_grant(self.role['id'],
+                                         user_id=self.user['id'],
+                                         domain_id=self.domain['id'])
+
+        scoped_token = self._get_domain_scoped_token()
+        self.assertRaises(exception.Unauthorized,
+                          self.token_provider_api.validate_v2_token,
+                          scoped_token)
+
+    def test_v2_validate_v3_trust_scoped_token(self):
+        trustee_user, trust = self._create_trust()
+        trust_scoped_token = self._get_trust_scoped_token(trustee_user, trust)
+        self.assertRaises(exception.Unauthorized,
+                          self.token_provider_api.validate_v2_token,
                           trust_scoped_token)

@@ -223,6 +223,17 @@ class V2Controller(wsgi.Application):
         return ref
 
     @staticmethod
+    def filter_domain(ref):
+        """Remove domain since v2 calls are not domain-aware."""
+        if 'domain' in ref:
+            if ref['domain'].get('id') != CONF.identity.default_domain_id:
+                raise exception.Unauthorized(
+                    _('Non-default domain is not supported'))
+            else:
+                ref.pop('domain', None)
+        return ref
+
+    @staticmethod
     def normalize_username_in_response(ref):
         """Adds username to outgoing user refs to match the v2 spec.
 
@@ -276,6 +287,7 @@ class V2Controller(wsgi.Application):
         def _normalize_and_filter_user_properties(ref):
             """Run through the various filter/normalization methods."""
             _format_default_project_id(ref)
+            V2Controller.filter_domain(ref)
             V2Controller.filter_domain_id(ref)
             V2Controller.normalize_username_in_response(ref)
             return ref
