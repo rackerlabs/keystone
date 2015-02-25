@@ -16,6 +16,24 @@
       "revId": "f4964529bba0f10df03cb4bc956a6b5cbbf6efd1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_54aef498",
+        "filename": "keystone/token/persistence/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-02-25T16:36:21Z",
+      "side": 1,
+      "message": "You\u0027re right, this covers the case I was thinking.",
+      "parentUuid": "ba7be1f8_cacfb854",
+      "revId": "f4964529bba0f10df03cb4bc956a6b5cbbf6efd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
