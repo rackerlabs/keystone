@@ -350,6 +350,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_f259ae8e",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-25T21:18:26Z",
+      "side": 1,
+      "message": "good point!",
+      "parentUuid": "ba7be1f8_70ce3285",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_d0eefeeb",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 4
@@ -379,6 +397,24 @@
       "side": 1,
       "message": "thx, will look at that.",
       "parentUuid": "ba7be1f8_d0eefeeb",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d2bcaabd",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-25T21:18:26Z",
+      "side": 1,
+      "message": "We can consolidate the two later. This patch is explicitly checking for either user_id or username \u0026 domain.",
+      "parentUuid": "ba7be1f8_ae0ca643",
       "revId": "2222135f557959268e797596cf44a1baa8963787",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -466,6 +502,24 @@
       "side": 1,
       "message": "the parentheses are actually there and it will return False in this case, but it may be a good idea to break it down a bit.",
       "parentUuid": "ba7be1f8_b06c2a9e",
+      "revId": "2222135f557959268e797596cf44a1baa8963787",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d2182ad5",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-25T21:18:26Z",
+      "side": 1,
+      "message": "the parentheses look correct to me",
+      "parentUuid": "ba7be1f8_2c143f4d",
       "revId": "2222135f557959268e797596cf44a1baa8963787",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
