@@ -170,7 +170,8 @@ class Manager(manager.Manager):
         if MEMOIZE.should_cache(ret):
             self.get_project.set(ret, self, tenant_id)
             self.get_project_by_name.set(ret, self, ret['name'],
-                                         ret['domain_id'])
+                                         ret['domain_id'],
+                                         ret['is_domain'])
         return ret
 
     def assert_domain_enabled(self, domain_id, domain=None):
@@ -282,7 +283,8 @@ class Manager(manager.Manager):
         notifications.Audit.updated(self._PROJECT, tenant_id, initiator)
         self.get_project.invalidate(self, tenant_id)
         self.get_project_by_name.invalidate(self, original_tenant['name'],
-                                            original_tenant['domain_id'])
+                                            original_tenant['domain_id'],
+                                            original_tenant['is_domain'])
         return ret
 
     def delete_project(self, tenant_id, initiator=None):
@@ -308,7 +310,8 @@ class Manager(manager.Manager):
         self.assignment_api.delete_project_assignments(tenant_id)
         self.get_project.invalidate(self, tenant_id)
         self.get_project_by_name.invalidate(self, project['name'],
-                                            project['domain_id'])
+                                            project['domain_id'],
+                                            project['is_domain'])
         self.credential_api.delete_credentials_for_project(tenant_id)
         notifications.Audit.deleted(self._PROJECT, tenant_id, initiator)
         return ret
@@ -597,8 +600,10 @@ class Manager(manager.Manager):
         return self.driver.get_project(project_id)
 
     @MEMOIZE
-    def get_project_by_name(self, tenant_name, domain_id):
-        return self.driver.get_project_by_name(tenant_name, domain_id)
+    def get_project_by_name(self, tenant_name, domain_id, is_domain):
+        return self.driver.get_project_by_name(tenant_name,
+                                               domain_id,
+                                               is_domain)
 
     @notifications.internal(
         notifications.INVALIDATE_USER_PROJECT_TOKEN_PERSISTENCE)
@@ -616,7 +621,7 @@ class Driver(object):
         return CONF.resource.list_limit or CONF.list_limit
 
     @abc.abstractmethod
-    def get_project_by_name(self, tenant_name, domain_id):
+    def get_project_by_name(self, tenant_name, domain_id, is_domain):
         """Get a tenant by name.
 
         :returns: tenant_ref
