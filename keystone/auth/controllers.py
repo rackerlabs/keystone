@@ -170,6 +170,7 @@ class AuthInfo(object):
     def _lookup_project(self, project_info):
         project_id = project_info.get('id')
         project_name = project_info.get('name')
+        is_domain = project_info.get('is_domain')
         project_ref = None
         if not project_id and not project_name:
             raise exception.ValidationError(attribute='id or name',
@@ -181,7 +182,7 @@ class AuthInfo(object):
                                                     target='project')
                 domain_ref = self._lookup_domain(project_info['domain'])
                 project_ref = self.resource_api.get_project_by_name(
-                    project_name, domain_ref['id'])
+                    project_name, domain_ref['id'], is_domain)
             else:
                 project_ref = self.resource_api.get_project(project_id)
                 # NOTE(morganfainberg): The _lookup_domain method will raise

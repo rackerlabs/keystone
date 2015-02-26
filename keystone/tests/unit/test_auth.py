@@ -45,7 +45,7 @@ HOST_URL = 'http://keystone:5001'
 
 def _build_user_auth(token=None, user_id=None, username=None,
                      password=None, tenant_id=None, tenant_name=None,
-                     trust_id=None):
+                     trust_id=None, is_domain=None):
     """Build auth dictionary.
 
     It will create an auth dictionary based on all the arguments
@@ -68,6 +68,8 @@ def _build_user_auth(token=None, user_id=None, username=None,
         auth_json['tenantId'] = tenant_id
     if trust_id is not None:
         auth_json['trust_id'] = trust_id
+    if is_domain is not None:
+        auth_json['is_domain'] = is_domain
     return auth_json
 
 

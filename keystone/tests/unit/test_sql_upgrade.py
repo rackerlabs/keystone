@@ -634,6 +634,56 @@ class SqlUpgradeTests(SqlMigrateBase):
                                  'enabled', 'domain_id', 'parent_id',
                                  'is_domain'])
 
+    def test_project_name_constraint_upgrade(self):
+        self.upgrade(75)
+        session = self.Session()
+        domain1 = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'enabled': True}
+        project1 = {
+            'id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'domain_id': domain1['id'],
+            'is_domain': False,
+            'name': uuid.uuid4().hex,
+            'parent_id': None
+        }
+        self.insert_dict(session, 'domain', domain1)
+        self.insert_dict(session, 'project', project1)
+        project2 = {
+            'id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'domain_id': domain1['id'],
+            'is_domain': project1['is_domain'],
+            'name': project1['name'],
+            'parent_id': None
+        }
+        # Can not create another project with the same name and is_domain flag
+        # in the same domain
+        self.assertRaises(db_exception.DBDuplicateEntry,
+                          self.insert_dict,
+                          session,
+                          'project',
+                          project2)
+        # Re-instantiate the session and clear the metadata
+        session.close()
+        session = self.Session()
+        self.metadata.clear()
+
+        # It is possible with a different value in the is_domain flag
+        project2['is_domain'] = True
+        project2['domain_id'] = project2['id']
+        self.insert_dict(session, 'project', project2)
+
+        domain2 = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'enabled': True}
+        project2['id'] = uuid.uuid4().hex
+        project2['domain_id'] = domain2['id']
+        # It is also possible to create in a different domain
+        self.insert_dict(session, 'domain', domain2)
+        self.insert_dict(session, 'project', project2)
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
