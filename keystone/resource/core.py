@@ -174,6 +174,23 @@ class Manager(manager.Manager):
         parent_ref = self.get_project(project_ref['parent_id'])
         return parent_ref['domain_id']
 
+    def _enforce_project_name_constraint(self, project_ref):
+        """Enforce project name constraint.
+
+        The domain_id is nullable, so this check must be enforced in
+        the code, instead of the backend. There can not be two projects with
+        the same values of 'name', 'domain_id' and 'is_domain'.
+        """
+        try:
+            self.driver.get_project_by_name(
+                project_ref.get('name'),
+                project_ref.get('domain_id'),
+                project_ref.get('is_domain', False))
+            msg = _('Duplicated Entry.')
+            raise exception.Conflict(type='project', details=msg)
+        except exception.ProjectNotFound:
+            pass
+
     def create_project(self, tenant_id, tenant, initiator=None):
         tenant = tenant.copy()
         tenant.setdefault('enabled', True)
@@ -189,6 +206,7 @@ class Manager(manager.Manager):
         tenant.setdefault('is_domain', False)
 
         self._enforce_project_hierarchy_constraints(tenant)
+        self._enforce_project_name_constraint(tenant)
 
         if not tenant.get('domain_id') and tenant.get('parent_id'):
             tenant['domain_id'] = self._find_domain_id(tenant)
@@ -198,7 +216,8 @@ class Manager(manager.Manager):
         if MEMOIZE.should_cache(ret):
             self.get_project.set(ret, self, tenant_id)
             self.get_project_by_name.set(ret, self, ret['name'],
-                                         ret['domain_id'])
+                                         ret['domain_id'],
+                                         ret['is_domain'])
         return ret
 
     def assert_domain_enabled(self, domain_id, domain=None):
@@ -289,6 +308,26 @@ class Manager(manager.Manager):
             raise exception.ValidationError(
                 message=_('Update of `is_domain` is not allowed.'))
 
+        # TODO(htruta): Update domain_id checking when 'immutable' property is
+        # deprecated. If the 'immutable' property is disabled, the update of
+        # domain_id will only be allowed if the project is immediately under
+        # the root and has no children of its own.
+
+        # When updating name and/or domain_id, it is necessary to check wheter
+        # a project with this configuration already exists
+        update_name = ('name' in tenant and
+                       tenant['name'] != original_tenant['name'])
+        update_domain = ('domain_id' in tenant and
+                         tenant['domain_id'] != original_tenant['domain_id'])
+
+        if update_name or update_domain:
+            tenant_to_check = original_tenant.copy()
+            if update_name:
+                tenant_to_check['name'] = tenant['name']
+            if update_domain:
+                tenant_to_check['domain_id'] = tenant['domain_id']
+            self._enforce_project_name_constraint(tenant_to_check)
+
         if 'enabled' in tenant:
             tenant['enabled'] = clean.project_enabled(tenant['enabled'])
 
@@ -315,7 +354,8 @@ class Manager(manager.Manager):
         notifications.Audit.updated(self._PROJECT, tenant_id, initiator)
         self.get_project.invalidate(self, tenant_id)
         self.get_project_by_name.invalidate(self, original_tenant['name'],
-                                            original_tenant['domain_id'])
+                                            original_tenant['domain_id'],
+                                            original_tenant['is_domain'])
         return ret
 
     def delete_project(self, tenant_id, initiator=None):
@@ -341,7 +381,8 @@ class Manager(manager.Manager):
         self.assignment_api.delete_project_assignments(tenant_id)
         self.get_project.invalidate(self, tenant_id)
         self.get_project_by_name.invalidate(self, project['name'],
-                                            project['domain_id'])
+                                            project['domain_id'],
+                                            project['is_domain'])
         self.credential_api.delete_credentials_for_project(tenant_id)
         notifications.Audit.deleted(self._PROJECT, tenant_id, initiator)
         return ret
@@ -630,8 +671,10 @@ class Manager(manager.Manager):
         return self.driver.get_project(project_id)
 
     @MEMOIZE
-    def get_project_by_name(self, tenant_name, domain_id):
-        return self.driver.get_project_by_name(tenant_name, domain_id)
+    def get_project_by_name(self, tenant_name, domain_id, is_domain):
+        return self.driver.get_project_by_name(tenant_name,
+                                               domain_id,
+                                               is_domain)
 
     @notifications.internal(
         notifications.INVALIDATE_USER_PROJECT_TOKEN_PERSISTENCE)
@@ -649,7 +692,7 @@ class Driver(object):
         return CONF.resource.list_limit or CONF.list_limit
 
     @abc.abstractmethod
-    def get_project_by_name(self, tenant_name, domain_id):
+    def get_project_by_name(self, tenant_name, domain_id, is_domain):
         """Get a tenant by name.
 
         :returns: tenant_ref
