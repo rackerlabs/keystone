@@ -106,6 +106,7 @@ class Tenant(controller.V2Controller):
         clean_tenant = tenant.copy()
         clean_tenant.pop('domain_id', None)
         clean_tenant.pop('is_domain', None)
+
         tenant_ref = self.resource_api.update_project(
             tenant_id, clean_tenant)
         return {'tenant': self.v3_to_v2_project(tenant_ref)}

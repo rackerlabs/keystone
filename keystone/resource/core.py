@@ -155,6 +155,23 @@ class Manager(manager.Manager):
         parent_ref = self.get_project(project_ref['parent_id'])
         return parent_ref['domain_id']
 
+    def _enforce_project_name_constraint(self, project_ref):
+        """Enforce project name constraint.
+
+        The domain_id is nullable, so this check must be enforced in
+        the code, instead of the backend. There can not be two projects with
+        the same values of 'name', 'domain_id' and 'is_domain'.
+        """
+        try:
+            self.driver.get_project_by_name(
+                project_ref.get('name'),
+                project_ref.get('domain_id'),
+                project_ref.get('is_domain', False))
+            msg = _('Duplicated Entry.')
+            raise exception.Conflict(type='project', details=msg)
+        except exception.ProjectNotFound:
+            pass
+
     def create_project(self, tenant_id, tenant, initiator=None):
         tenant = tenant.copy()
         tenant.setdefault('enabled', True)
@@ -170,6 +187,7 @@ class Manager(manager.Manager):
         tenant.setdefault('is_domain', False)
 
         self._enforce_project_hierarchy_constraints(tenant)
+        self._enforce_project_name_constraint(tenant)
 
         if not tenant.get('domain_id') and tenant.get('parent_id'):
             tenant['domain_id'] = self._find_domain_id(tenant)
@@ -269,6 +287,26 @@ class Manager(manager.Manager):
                 tenant.get('is_domain') != original_tenant.get('is_domain')):
             raise exception.ValidationError(
                 message=_('Update of `is_domain` is not allowed.'))
+
+        # TODO(htruta): Update domain_id checking when 'immutable' property is
+        # deprecated. If the 'immutable' property is disabled, the update of
+        # domain_id will only be allowed if the project is immediately under
+        # the root and has no children of its own.
+
+        # When updating name and/or domain_id, it is necessary to check wheter
+        # a project with this configuration already exists
+        update_name = ('name' in tenant and
+                       tenant['name'] != original_tenant['name'])
+        update_domain = ('domain_id' in tenant and
+                         tenant['domain_id'] != original_tenant['domain_id'])
+
+        if update_name or update_domain:
+            tenant_to_check = original_tenant.copy()
+            if update_name:
+                tenant_to_check['name'] = tenant['name']
+            if update_domain:
+                tenant_to_check['domain_id'] = tenant['domain_id']
+            self._enforce_project_name_constraint(tenant_to_check)
 
         if 'enabled' in tenant:
             tenant['enabled'] = clean.project_enabled(tenant['enabled'])
