@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_6fa15093",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T02:09:49Z",
+      "side": 1,
+      "message": "it would be great if we could give a reason why this is deprecated, but I guess it\u0027ll be in the git history.",
+      "revId": "6ecf99c779c3373acaa6650f15116abade1207f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
