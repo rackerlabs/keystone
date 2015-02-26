@@ -2195,6 +2195,76 @@ class IdentityTests(object):
         self.assertEqual(project_id, ref.get('domain_id'))
 
     @tests.skip_if_no_multiple_domains_support
+    def test_cannot_create_projects_same_name_and_domain_id(self):
+        parent_project_id = uuid.uuid4().hex
+        parent_project = {'id': parent_project_id,
+                          'description': '',
+                          'domain_id': self.domain_default['id'],
+                          'enabled': True,
+                          'name': uuid.uuid4().hex,
+                          'parent_id': None,
+                          'is_domain': False}
+        self.resource_api.create_project(parent_project['id'], parent_project)
+
+        child_project_1_id = uuid.uuid4().hex
+        child_project_1 = {'id': child_project_1_id,
+                           'description': '',
+                           'domain_id': self.domain_default['id'],
+                           'enabled': True,
+                           'name': uuid.uuid4().hex,
+                           'parent_id': parent_project_id,
+                           'is_domain': False}
+        self.resource_api.create_project(child_project_1['id'],
+                                         child_project_1)
+
+        # Can not create a project with the same name, domain_id and is_domain
+        # of an existing project.
+        child_project_2_id = uuid.uuid4().hex
+        child_project_2 = {'id': child_project_2_id,
+                           'description': '',
+                           'domain_id': self.domain_default['id'],
+                           'enabled': True,
+                           'name': child_project_1['name'],
+                           'parent_id': parent_project_id,
+                           'is_domain': False}
+
+        self.assertRaises(exception.Conflict,
+                          self.resource_api.create_project,
+                          child_project_2['id'],
+                          child_project_2)
+
+    @tests.skip_if_no_multiple_domains_support
+    def test_update_is_domain_project_name(self):
+        project1 = {'id': uuid.uuid4().hex,
+                    'description': '',
+                    'domain_id': DEFAULT_DOMAIN_ID,
+                    'enabled': True,
+                    'name': uuid.uuid4().hex,
+                    'parent_id': None,
+                    'is_domain': True}
+        self.resource_api.create_project(project1['id'], project1)
+
+        project2 = {'id': uuid.uuid4().hex,
+                    'description': '',
+                    'domain_id': DEFAULT_DOMAIN_ID,
+                    'enabled': True,
+                    'name': uuid.uuid4().hex,
+                    'parent_id': None,
+                    'is_domain': True}
+        self.resource_api.create_project(project2['id'], project2)
+
+        # Update project2 name to a non existent name
+        project2['name'] = uuid.uuid4().hex
+        self.resource_api.update_project(project2['id'], project2)
+
+        # Now try to update to the same name as project1
+        project2['name'] = project1['name']
+        self.assertRaises(exception.Conflict,
+                          self.resource_api.update_project,
+                          project2['id'],
+                          project2)
+
+    @tests.skip_if_no_multiple_domains_support
     def test_delete_is_domain_project(self):
         project_id = uuid.uuid4().hex
         project = {'id': project_id,
