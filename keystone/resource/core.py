@@ -203,7 +203,23 @@ class Manager(manager.Manager):
 
         self._enforce_project_constraints(tenant, parent_id)
 
-        ret = self.driver.create_project(tenant_id, tenant)
+        # We leave enforcing name uniqueness to the underlying driver (instead
+        # of doing it in code in the project_constraints above), so as to allow
+        # this check to be done at the storage level, avoiding race conditions
+        # in multi-process keystone configurations.
+        try:
+            ret = self.driver.create_project(tenant_id, tenant)
+        except exception.Conflict:
+            if tenant['is_domain']:
+                msg = _('cannot create two or more projects '
+                        'acting as domains with the same '
+                        'name: %s') % tenant['name']
+            else:
+                msg = _('cannot create two or more projects '
+                        'within a domain with the same name : %s'
+                        ) % tenant['name']
+            raise exception.Conflict(type='project', details=msg)
+
         notifications.Audit.created(self._PROJECT, tenant_id, initiator)
         if MEMOIZE.should_cache(ret):
             self.get_project.set(ret, self, tenant_id)
