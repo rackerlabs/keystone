@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_67fb3a47",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-02-26T00:36:51Z",
+      "side": 1,
+      "message": "++ nice suggestion",
+      "parentUuid": "ba7be1f8_e02e4afa",
+      "revId": "9f7e751ff34a9c8a9ce257c2a59378aeb013f810",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_80874eb4",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-25T15:41:32Z",
       "side": 1,
       "message": "Can you move this test up by the  test_create_endpoint_nonexistent_service test so that they are grouped together?",
+      "revId": "9f7e751ff34a9c8a9ce257c2a59378aeb013f810",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c7c226e8",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 4782,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-02-26T00:36:51Z",
+      "side": 1,
+      "message": "I\u0027d prefer to have separate tests, since we can\u0027t guarantee the behavior will remain the same...",
+      "parentUuid": "ba7be1f8_80874eb4",
       "revId": "9f7e751ff34a9c8a9ce257c2a59378aeb013f810",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
