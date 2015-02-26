@@ -1492,6 +1492,9 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
     def test_create_project_with_parent_id_and_without_domain_id(self):
         self.skipTest('Resource LDAP has been removed')
 
+    def test_update_is_domain_project_name(self):
+        self.skipTest('Resource LDAP has been removed')
+
     def test_check_leaf_projects(self):
         self.skipTest('Resource LDAP has been removed')
 
