@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_dc92f84a",
+        "filename": "keystone/tests/functional/shared/test_running.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T01:34:41Z",
+      "side": 1,
+      "message": "shouldn\u0027t need this import since the next line picks it up.",
+      "revId": "d780b00280c5a3eb8a3939a0c2d9c0e1d4e3c027",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_dc8bd81c",
+        "filename": "keystone/tests/functional/shared/test_running.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T01:34:41Z",
+      "side": 1,
+      "message": "what\u0027s broken? This could use a comment.",
+      "revId": "d780b00280c5a3eb8a3939a0c2d9c0e1d4e3c027",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_5ccd2865",
+        "filename": "keystone/tests/functional/shared/test_running.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T01:34:41Z",
+      "side": 1,
+      "message": "rather than do \"http_status_codes \u003d requests.status_codes.codes\" above, could do\n\n is_multiple_choices \u003d M.Equals(http_status_codes.multiple_choices)",
+      "revId": "d780b00280c5a3eb8a3939a0c2d9c0e1d4e3c027",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
