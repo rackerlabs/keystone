@@ -371,7 +371,7 @@ class Auth(controller.V2Controller):
         if tenant_name:
             try:
                 tenant_ref = self.resource_api.get_project_by_name(
-                    tenant_name, CONF.identity.default_domain_id)
+                    tenant_name, CONF.identity.default_domain_id, False)
                 tenant_id = tenant_ref['id']
             except exception.ProjectNotFound as e:
                 raise exception.Unauthorized(e)

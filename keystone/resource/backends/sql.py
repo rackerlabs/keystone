@@ -39,11 +39,12 @@ class Resource(keystone_resource.Driver):
         with sql.transaction() as session:
             return self._get_project(session, tenant_id).to_dict()
 
-    def get_project_by_name(self, tenant_name, domain_id):
+    def get_project_by_name(self, tenant_name, domain_id, is_domain):
         with sql.transaction() as session:
             query = session.query(Project)
             query = query.filter_by(name=tenant_name)
             query = query.filter_by(domain_id=domain_id)
+            query = query.filter_by(is_domain=is_domain)
             try:
                 project_ref = query.one()
             except sql.NotFound:
@@ -249,7 +250,7 @@ class Project(sql.ModelBase, sql.DictBase):
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(64), nullable=False)
     domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
-                           nullable=False)
+                           nullable=True)
     description = sql.Column(sql.Text())
     enabled = sql.Column(sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
@@ -257,4 +258,5 @@ class Project(sql.ModelBase, sql.DictBase):
     is_domain = sql.Column(sql.Boolean, default=False, nullable=False)
     # Unique constraint across two columns to create the separation
     # rather than just only 'name' being unique
-    __table_args__ = (sql.UniqueConstraint('domain_id', 'name'), {})
+    __table_args__ = (
+        sql.UniqueConstraint('domain_id', 'name', 'is_domain'), {})
