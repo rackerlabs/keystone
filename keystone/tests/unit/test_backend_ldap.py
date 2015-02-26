@@ -1663,6 +1663,14 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
     def test_create_is_domain_project(self):
         self._assert_create_is_domain_project_not_allowed()
 
+    def test_update_is_domain_project_name(self):
+        default_domain = self._get_domain_fixture()
+        default_domain['name'] = uuid.uuid4().hex
+        self.assertRaises(exception.Forbidden,
+                          self.resource_api.update_domain,
+                          CONF.identity.default_domain_id,
+                          default_domain)
+
     def test_check_leaf_projects(self):
         projects = self._assert_create_hierarchy_not_allowed()
         for project in projects:
