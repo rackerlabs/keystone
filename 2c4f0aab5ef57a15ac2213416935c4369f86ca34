@@ -16,6 +16,24 @@
       "revId": "2c4f0aab5ef57a15ac2213416935c4369f86ca34",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a4a509a3",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-26T18:01:37Z",
+      "side": 1,
+      "message": "+1 for \u0027have been\u0027\n\nwe\u0027re trying to make a clear distinction between keystone acting as an SP vs IdP, that\u0027s why there are two release notes.",
+      "parentUuid": "ba7be1f8_55e31dd8",
+      "revId": "2c4f0aab5ef57a15ac2213416935c4369f86ca34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
