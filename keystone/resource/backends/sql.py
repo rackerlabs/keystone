@@ -261,4 +261,4 @@ class Project(sql.ModelBase, sql.DictBase):
     # projects with the same name in the same domain, but a project
     # can have the same name as its domain.
     __table_args__ = (
-        sql.UniqueConstraint('domain_id', 'name'), {})
+        sql.UniqueConstraint('domain_id', 'name', 'is_domain'), {})
