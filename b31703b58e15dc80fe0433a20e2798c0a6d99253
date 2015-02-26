@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_922ea7a3",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-26T03:17:38Z",
+      "side": 1,
+      "message": "IIRC setattr is needed here otherwise you run into issues with the way things fall through the method/decorator (memoize is not just a plain defined object, it\u0027s a callable which has other issues)",
+      "parentUuid": "ba7be1f8_3947a678",
+      "revId": "b31703b58e15dc80fe0433a20e2798c0a6d99253",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_9c3320f5",
         "filename": "keystone/common/config.py",
         "patchSetId": 14
@@ -132,6 +150,24 @@
       "writtenOn": "2015-02-26T01:20:31Z",
       "side": 1,
       "message": "doesn\u0027t this return a function? seems like this should be \"should_cache\" rather than \"should_cache_fn\"",
+      "revId": "b31703b58e15dc80fe0433a20e2798c0a6d99253",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_720a1327",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-26T03:17:38Z",
+      "side": 1,
+      "message": "should_cache_fn is actually the rerturned function. the get_memoization_decorator builds it.",
+      "parentUuid": "ba7be1f8_dc77589e",
       "revId": "b31703b58e15dc80fe0433a20e2798c0a6d99253",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
