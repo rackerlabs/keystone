@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_9db221e3",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-26T15:43:55Z",
+      "side": 1,
+      "message": "(nit) This could be moved in front of the dict creation too.",
+      "revId": "fac46ddef92650cad01d91f4326d8dd46bd7a688",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_fda87d21",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-26T15:43:55Z",
+      "side": 1,
+      "message": "this is interesting....find out why",
+      "revId": "fac46ddef92650cad01d91f4326d8dd46bd7a688",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3d66952a",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-26T15:43:55Z",
+      "side": 1,
+      "message": "Not python 3 friendly",
+      "revId": "fac46ddef92650cad01d91f4326d8dd46bd7a688",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_dd7499d0",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-26T15:43:55Z",
+      "side": 1,
+      "message": "not Python 3 friendly",
+      "revId": "fac46ddef92650cad01d91f4326d8dd46bd7a688",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
