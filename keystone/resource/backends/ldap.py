@@ -124,7 +124,7 @@ class Resource(resource.Driver):
         # any domain specified
         return [x.id for x in self.list_projects(driver_hints.Hints())]
 
-    def get_project_by_name(self, tenant_name, domain_id):
+    def get_project_by_name(self, tenant_name, domain_id, is_domain):
         self._validate_default_domain_id(domain_id)
         return self._set_default_attributes(
             self.project.get_by_name(tenant_name))

@@ -197,8 +197,18 @@ class AuthInfo(object):
                     raise exception.ValidationError(attribute='domain',
                                                     target='project')
                 domain_ref = self._lookup_domain(project_info['domain'])
+                # NOTE(htruta): It is now possible to have two projects with
+                # the same name, inside a domain, where one acts as a domain
+                # (is_domain=True) and the other does not (is_domain=False).
+                # In case there is a name clashing, Keystone will always
+                # scope the token to the project which is not acting as a
+                # domain.
                 project_ref = self.resource_api.get_project_by_name(
-                    project_name, domain_ref['id'])
+                    project_name, domain_ref['id'], False)
+
+                if not project_ref:
+                    project_ref = self.resource_api.get_project_by_name(
+                        project_name, domain_ref['id'], True)
             else:
                 project_ref = self.resource_api.get_project(project_id)
                 # NOTE(morganfainberg): The _lookup_domain method will raise
