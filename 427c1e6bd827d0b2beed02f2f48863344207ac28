@@ -1,0 +1,242 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_27b2224c",
+        "filename": "keystone/identity/schema.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T00:25:02Z",
+      "side": 1,
+      "message": "the name dict is copy-pasted around a lot, seems like it could be DRYed.",
+      "revId": "427c1e6bd827d0b2beed02f2f48863344207ac28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_27e06228",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T00:25:02Z",
+      "side": 1,
+      "message": "use\n\n from oslo_config import cfg",
+      "revId": "427c1e6bd827d0b2beed02f2f48863344207ac28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_47c2b685",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T00:25:02Z",
+      "side": 1,
+      "message": "this is unused.",
+      "revId": "427c1e6bd827d0b2beed02f2f48863344207ac28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_874f4e33",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1383,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T00:25:02Z",
+      "side": 1,
+      "message": "what\u0027s special about \u0027My User\u0027? why not use a random string?",
+      "revId": "427c1e6bd827d0b2beed02f2f48863344207ac28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a708d2da",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1400,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T00:25:02Z",
+      "side": 1,
+      "message": "this should be a random string.",
+      "revId": "427c1e6bd827d0b2beed02f2f48863344207ac28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c70b06d4",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1402,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T00:25:02Z",
+      "side": 1,
+      "message": "this should be a random string.",
+      "revId": "427c1e6bd827d0b2beed02f2f48863344207ac28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_e70e4ae4",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1408,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T00:25:02Z",
+      "side": 1,
+      "message": "this should be a random string.",
+      "revId": "427c1e6bd827d0b2beed02f2f48863344207ac28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_07aefe97",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1489,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T00:25:02Z",
+      "side": 1,
+      "message": "these should be random strings.",
+      "revId": "427c1e6bd827d0b2beed02f2f48863344207ac28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_27986277",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1499,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T00:25:02Z",
+      "side": 1,
+      "message": "this should be a random name.",
+      "revId": "427c1e6bd827d0b2beed02f2f48863344207ac28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_87990e7b",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1514,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T00:25:02Z",
+      "side": 1,
+      "message": "this should be a random string.",
+      "revId": "427c1e6bd827d0b2beed02f2f48863344207ac28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a78b721d",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1520,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T00:25:02Z",
+      "side": 1,
+      "message": "this should be a random string.",
+      "revId": "427c1e6bd827d0b2beed02f2f48863344207ac28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_e781eafb",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1535,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T00:25:02Z",
+      "side": 1,
+      "message": "these should be random strings.",
+      "revId": "427c1e6bd827d0b2beed02f2f48863344207ac28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_07851e06",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1540,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T00:25:02Z",
+      "side": 1,
+      "message": "this should be a random string.",
+      "revId": "427c1e6bd827d0b2beed02f2f48863344207ac28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_6775fa30",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1552,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T00:25:02Z",
+      "side": 1,
+      "message": "these should be random strings.",
+      "revId": "427c1e6bd827d0b2beed02f2f48863344207ac28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
