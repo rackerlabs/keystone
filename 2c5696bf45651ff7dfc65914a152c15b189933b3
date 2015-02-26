@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba7be1f8_c71ea66f",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2857,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T01:01:32Z",
+      "side": 1,
+      "message": "what is this line doing here? Add a comment.",
+      "revId": "2c5696bf45651ff7dfc65914a152c15b189933b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_99c7b263",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T01:01:32Z",
+      "side": 1,
+      "message": "suggest change the name to \"_normalize_trust_roles\" or just \"_normalize_roles\"\n\nAlso, remove context argument since it\u0027s not used.",
+      "revId": "2c5696bf45651ff7dfc65914a152c15b189933b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_395a462a",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T01:01:32Z",
+      "side": 1,
+      "message": "(nit) change \"Normalise\" to \"Normalize\"",
+      "revId": "2c5696bf45651ff7dfc65914a152c15b189933b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_159d9359",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 9
@@ -13,6 +64,23 @@
       "writtenOn": "2015-02-24T15:40:19Z",
       "side": 1,
       "message": "Note to other reviewers:  the clean_roles have been checked against the trust, so this is safe.",
+      "revId": "2c5696bf45651ff7dfc65914a152c15b189933b3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d9d68a27",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T01:01:32Z",
+      "side": 1,
+      "message": "suggest change _clean_role_list to mutate trust rather than having it return a value which is then just stuck into trust.",
       "revId": "2c5696bf45651ff7dfc65914a152c15b189933b3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
