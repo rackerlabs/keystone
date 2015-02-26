@@ -67,16 +67,6 @@ class TestAuthInfo(test_v3.AuthTestMixin, testcase.TestCase):
                           None,
                           auth_data)
 
-    def test_project_name_no_domain(self):
-        auth_data = self.build_authentication_request(
-            username='test',
-            password='test',
-            project_name='abc')['auth']
-        self.assertRaises(exception.ValidationError,
-                          auth.controllers.AuthInfo.create,
-                          None,
-                          auth_data)
-
     def test_both_project_and_domain_in_scope(self):
         auth_data = self.build_authentication_request(
             user_id='test',
@@ -2280,6 +2270,69 @@ class TestAuth(test_v3.RestfulTestCase):
             domain_name=self.domain['name'])
         r = self.v3_authenticate_token(auth_data)
         self.assertValidDomainScopedTokenResponse(r)
+
+    def _create_projects_with_same_name(self, name):
+        root_project = self.new_project_ref(self.domain['id'], is_domain=True)
+        self.resource_api.create_project(root_project['id'], root_project)
+
+        # TODO(rodrigods): do not pass a domain_id
+        project1 = self.new_project_ref(self.domain['id'], is_domain=True)
+
+        project1['name'] = name
+        self.resource_api.create_project(project1['id'], project1)
+
+        # TODO(rodrigods): use project1['id'] as domain_id
+        project2 = self.new_project_ref(self.domain['id'], is_domain=False)
+        project2['name'] = name
+        self.resource_api.create_project(project2['id'], project2)
+
+        return project1, project2
+
+    def test_project_name_scoped_token_with_name_clash(self):
+        name = uuid.uuid4().hex
+        project1, project2 = self._create_projects_with_same_name(name)
+
+        path = '/projects/%s/users/%s/roles/%s' % (
+            project1['id'], self.user['id'], self.role['id'])
+        self.put(path=path)
+        path = '/projects/%s/users/%s/roles/%s' % (
+            project2['id'], self.user['id'], self.role['id'])
+        self.put(path=path)
+
+        auth_data = self.build_authentication_request(
+            username=self.user['name'],
+            user_domain_id=self.domain['id'],
+            password=self.user['password'],
+            project_domain_id=self.domain['id'],
+            project_name=name)
+        r = self.v3_authenticate_token(auth_data)
+        token = self.assertValidProjectScopedTokenResponse(r)
+
+        # The token must be scoped to the project with the is_domain
+        # flag disabled
+        self.assertEqual(project2['id'], token['project']['id'])
+
+    def test_project_id_scoped_token_with_name_clash(self):
+        name = uuid.uuid4().hex
+        project1, project2 = self._create_projects_with_same_name(name)
+
+        path = '/projects/%s/users/%s/roles/%s' % (
+            project1['id'], self.user['id'], self.role['id'])
+        self.put(path=path)
+        path = '/projects/%s/users/%s/roles/%s' % (
+            project2['id'], self.user['id'], self.role['id'])
+        self.put(path=path)
+
+        for project_id in project1['id'], project2['id']:
+            auth_data = self.build_authentication_request(
+                username=self.user['name'],
+                user_domain_id=self.domain['id'],
+                password=self.user['password'],
+                project_domain_id=self.domain['id'],
+                project_id=project_id)
+            r = self.v3_authenticate_token(auth_data)
+            token = self.assertValidProjectScopedTokenResponse(r)
+            self.assertEqual(project_id, token['project']['id'])
 
     def test_domain_name_scoped_token_with_user_domain_id(self):
         path = '/domains/%s/users/%s/roles/%s' % (
