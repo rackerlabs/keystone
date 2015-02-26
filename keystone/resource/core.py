@@ -103,6 +103,15 @@ class Manager(manager.Manager):
                 action=_('cannot create a project within a '
                          'different domain than its parent.'))
 
+    def _assert_project_name_constraint(self, project):
+        project_refs = self.list_projects()
+        for ref in project_refs:
+            if ref['is_domain'] and project['name'] == ref['name']:
+                msg = _('Cannot create is_domain project with name %s. '
+                        'Domain names are unique.') % project['name']
+                raise exception.Conflict(type='project',
+                                         details=msg)
+
     def _enforce_project_hierarchy_constraints(self, project_ref):
         parent_id = project_ref.get('parent_id')
         parent_ref = self.get_project(parent_id) if parent_id else None
@@ -114,7 +123,7 @@ class Manager(manager.Manager):
 
         # The whole hierarchy must be enabled
         if parent_id:
-            parents_list = self.list_project_parents(parent_id)
+            parents_list = self.list_project_parents(parent_ref['id'])
             parents_list.append(parent_ref)
             for ref in parents_list:
                 if not ref.get('enabled', True):
@@ -134,6 +143,7 @@ class Manager(manager.Manager):
         tenant.setdefault('parent_id', None)
         tenant.setdefault('is_domain', False)
 
+        self._assert_project_name_constraint(tenant)
         self._enforce_project_hierarchy_constraints(tenant)
 
         ret = self.driver.create_project(tenant_id, tenant)
@@ -226,10 +236,14 @@ class Manager(manager.Manager):
             raise exception.ForbiddenAction(
                 action=_('Update of `parent_id` is not allowed.'))
 
-        if ('is_domain' in tenant and
-                tenant.get('is_domain') != original_tenant.get('is_domain')):
-            raise exception.ForbiddenAction(
-                action=_('Update of `is_domain` is not allowed.'))
+        if 'is_domain' in tenant:
+            if tenant['is_domain'] != original_tenant['is_domain']:
+                raise exception.ForbiddenAction(
+                    action=_('Update of `is_domain` is not allowed.'))
+
+            if (tenant['is_domain'] and 'name' in tenant and
+                    tenant['name'] != original_tenant['name']):
+                self._assert_project_name_constraint(tenant)
 
         if 'enabled' in tenant:
             tenant['enabled'] = clean.project_enabled(tenant['enabled'])
