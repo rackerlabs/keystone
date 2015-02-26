@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_57f16869",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T15:04:45Z",
+      "side": 1,
+      "message": "Should this be set to \u0027ref\u0027 to be consistent with the rest?",
+      "revId": "f8d12d4e3daedeeafbdecf14a272d0629fc19497",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_17fb7047",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T15:04:45Z",
+      "side": 1,
+      "message": "weird, this one is \u0027ret\u0027 too, \u0027ref\u0027 seems to make more sense though.",
+      "revId": "f8d12d4e3daedeeafbdecf14a272d0629fc19497",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_b7a1c447",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T15:04:45Z",
+      "side": 1,
+      "message": "and here.",
+      "revId": "f8d12d4e3daedeeafbdecf14a272d0629fc19497",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_1757f026",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 599,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T15:04:45Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "f8d12d4e3daedeeafbdecf14a272d0629fc19497",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d760f802",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 692,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T15:04:45Z",
+      "side": 1,
+      "message": "add a space above this line to be consistent",
+      "revId": "f8d12d4e3daedeeafbdecf14a272d0629fc19497",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
