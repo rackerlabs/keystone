@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_190ca293",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T01:20:31Z",
+      "side": 1,
+      "message": "should be \"section\u003d\u0027role\u0027\" for consistency.",
+      "revId": "b31703b58e15dc80fe0433a20e2798c0a6d99253",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_b9f6365b",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T01:20:31Z",
+      "side": 1,
+      "message": "suggest change the name to \"MEMOIZE\" since this is what\u0027s actually used.",
+      "revId": "b31703b58e15dc80fe0433a20e2798c0a6d99253",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_59b37a97",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T01:20:31Z",
+      "side": 1,
+      "message": "I like that get_expiration_time_fn starts with get_, unlike should_cache_fn\n\nSuggest change name to expiration_time_fn",
+      "revId": "b31703b58e15dc80fe0433a20e2798c0a6d99253",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3947a678",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T01:20:31Z",
+      "side": 1,
+      "message": "use\n\n memoize.should_cache_fn \u003d should_cache\n memoize.expiration_time_fn \u003d expiration_time\n\notherwise we should consistently use setattr everywhere.\n\nAlso, I think these should be called memoize.should_cache and memoize.get_expiration_time",
+      "revId": "b31703b58e15dc80fe0433a20e2798c0a6d99253",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_9c3320f5",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T01:20:31Z",
+      "side": 1,
+      "message": "I believe the revoke extension is required to be enabled now?",
+      "revId": "b31703b58e15dc80fe0433a20e2798c0a6d99253",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3c5a342a",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T01:20:31Z",
+      "side": 1,
+      "message": "suggest \"section\u003d\u0027revoke\u0027\"",
+      "revId": "b31703b58e15dc80fe0433a20e2798c0a6d99253",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_9c4a4053",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T01:20:31Z",
+      "side": 1,
+      "message": "nice!",
+      "revId": "b31703b58e15dc80fe0433a20e2798c0a6d99253",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_dc77589e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T01:20:31Z",
+      "side": 1,
+      "message": "doesn\u0027t this return a function? seems like this should be \"should_cache\" rather than \"should_cache_fn\"",
+      "revId": "b31703b58e15dc80fe0433a20e2798c0a6d99253",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3938863c",
+        "filename": "keystone/tests/unit/test_cache.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T01:20:31Z",
+      "side": 1,
+      "message": "I think that if a class was used (where a property is changed) then this would be easier to understand.",
+      "revId": "b31703b58e15dc80fe0433a20e2798c0a6d99253",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
