@@ -83,6 +83,15 @@ class Manager(manager.Manager):
                 action=_('max hierarchy depth reached for '
                          '%s branch.') % project_id)
 
+    def _assert_project_name_constraint(self, project):
+        project_refs = self.list_projects()
+        for ref in project_refs:
+            if ref['is_domain'] and project['name'] == ref['name']:
+                msg = _('Cannot create is_domain project with name %s. '
+                        'Domain names are unique.') % project['name']
+                raise exception.Conflict(type='project',
+                                         details=msg)
+
     def create_project(self, tenant_id, tenant, initiator=None):
         tenant = tenant.copy()
         tenant.setdefault('enabled', True)
@@ -101,6 +110,7 @@ class Manager(manager.Manager):
             # project
             self.get_domain(tenant.get('domain_id'))
 
+        self._assert_project_name_constraint(tenant)
         if tenant.get('parent_id') is not None:
             parent_ref = self.get_project(tenant.get('parent_id'))
             parents_list = self.list_project_parents(parent_ref['id'])
@@ -213,10 +223,14 @@ class Manager(manager.Manager):
             raise exception.ForbiddenAction(
                 action=_('Update of `parent_id` is not allowed.'))
 
-        if ('is_domain' in tenant and
-                tenant.get('is_domain') != original_tenant.get('is_domain')):
-            raise exception.ForbiddenAction(
-                action=_('Update of `is_domain` is not allowed.'))
+        if 'is_domain' in tenant:
+            if tenant['is_domain'] != original_tenant['is_domain']:
+                raise exception.ForbiddenAction(
+                    action=_('Update of `is_domain` is not allowed.'))
+
+            if (tenant['is_domain'] and 'name' in tenant and
+                    tenant['name'] != original_tenant['name']):
+                self._assert_project_name_constraint(tenant)
 
         if 'enabled' in tenant:
             tenant['enabled'] = clean.project_enabled(tenant['enabled'])
