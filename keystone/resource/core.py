@@ -90,6 +90,25 @@ class Manager(manager.Manager):
                 action=_('max hierarchy depth reached for '
                          '%s branch.') % project_id)
 
+    def _assert_unique_is_domain_project_name(self, project_name):
+        """Assert names of projects acting as domains are unique in the cloud.
+
+        :raises keystone.exception.Conflict: If one project acting as a domain
+            with the same name already exists.
+        """
+        try:
+            # NOTE(rodrigods): calling the driver directly, we don't
+            # want to hit the cache here
+            self.driver.get_project_by_name(project_name, None, True)
+
+        except exception.ProjectNotFound:
+            return
+
+        msg = _('cannot create two or more projects '
+                'acting as domains with the same '
+                'name: %s') % project_name
+        raise exception.Conflict(type='project', details=msg)
+
     def _assert_is_domain_project_constraints(self, project_ref, parent_ref):
         """Enforces specific constraints of projects that act as domains
 
@@ -113,6 +132,8 @@ class Manager(manager.Manager):
             raise exception.ValidationError(
                 message=_('only root projects are allowed to act as '
                           'domains.'))
+
+        self._assert_unique_is_domain_project_name(project_ref['name'])
 
     def _assert_regular_project_constraints(self, project_ref, parent_ref):
         """Enforces regular project hierarchy constraints
