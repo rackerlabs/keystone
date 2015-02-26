@@ -1492,6 +1492,16 @@ class LDAPIdentity(BaseLDAPIdentity, unit.TestCase):
     def test_create_project_with_parent_id_and_without_domain_id(self):
         self.skipTest('Resource LDAP has been removed')
 
+    def test_update_is_domain_project_name(self):
+        # Projects that act as domains are read-only in LDAP, keeping the
+        # domains behavior
+        default_domain = self._get_domain_fixture()
+        default_domain['name'] = uuid.uuid4().hex
+        self.assertRaises(exception.Forbidden,
+                          self.resource_api.update_domain,
+                          CONF.identity.default_domain_id,
+                          default_domain)
+
     def test_check_leaf_projects(self):
         self.skipTest('Resource LDAP has been removed')
 
