@@ -264,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_a4cc296b",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-26T18:02:53Z",
+      "side": 1,
+      "message": "Hmm... So we are pre-generating the next primary key instead of doing it at rotation time? Doesn\u0027t that make the first rotation useless?",
+      "parentUuid": "ba7be1f8_bd28c5e2",
+      "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_74374aff",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 25
