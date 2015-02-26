@@ -114,7 +114,7 @@ class Manager(manager.Manager):
 
         # The whole hierarchy must be enabled
         if parent_id:
-            parents_list = self.list_project_parents(parent_id)
+            parents_list = self.list_project_parents(parent_ref['id'])
             parents_list.append(parent_ref)
             for ref in parents_list:
                 if not ref.get('enabled', True):
