@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_7cccac89",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T01:30:40Z",
+      "side": 1,
+      "message": "use\n\n from oslo_config import cfg",
+      "revId": "c4fd584ec928db9fc8c72e594cae1d5d98eee795",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_9cc7a063",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T01:30:40Z",
+      "side": 1,
+      "message": "this is unused.",
+      "revId": "c4fd584ec928db9fc8c72e594cae1d5d98eee795",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
