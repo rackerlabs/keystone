@@ -416,10 +416,7 @@ class BaseLDAPIdentity(test_backend.IdentityTests):
     def test_move_group_between_domains_with_clashing_names_fails(self):
         self.skipTest('Domains are read-only against LDAP')
 
-    def test_move_project_between_domains(self):
-        self.skipTest('Domains are read-only against LDAP')
-
-    def test_move_project_between_domains_with_clashing_names_fails(self):
+    def test_move_project_between_domains_fails(self):
         self.skipTest('Domains are read-only against LDAP')
 
     def test_get_roles_for_user_and_domain(self):
@@ -1662,6 +1659,15 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
 
     def test_create_is_domain_project(self):
         self._assert_create_is_domain_project_not_allowed()
+
+    def test_update_is_domain_project_name(self):
+        # As domains were, is_domain projects are read-only in LDAP
+        default_domain = self._get_domain_fixture()
+        default_domain['name'] = uuid.uuid4().hex
+        self.assertRaises(exception.Forbidden,
+                          self.resource_api.update_domain,
+                          CONF.identity.default_domain_id,
+                          default_domain)
 
     def test_check_leaf_projects(self):
         projects = self._assert_create_hierarchy_not_allowed()
