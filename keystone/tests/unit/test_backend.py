@@ -2194,6 +2194,51 @@ class IdentityTests(object):
         self.assertTrue(ref.get('is_domain'))
         self.assertEqual(project_id, ref.get('domain_id'))
 
+        # Can not create another is_domain project with the same name
+        domain = self._get_domain_fixture()
+        project = {'id': uuid.uuid4().hex,
+                   'description': '',
+                   'domain_id': domain['id'],
+                   'enabled': True,
+                   'name': project['name'],
+                   'parent_id': None,
+                   'is_domain': True}
+        self.assertRaises(exception.Conflict,
+                          self.resource_api.create_project,
+                          project['id'],
+                          project)
+
+    @tests.skip_if_no_multiple_domains_support
+    def test_update_is_domain_project_name(self):
+        project1 = {'id': uuid.uuid4().hex,
+                    'description': '',
+                    'domain_id': DEFAULT_DOMAIN_ID,
+                    'enabled': True,
+                    'name': uuid.uuid4().hex,
+                    'parent_id': None,
+                    'is_domain': True}
+        self.resource_api.create_project(project1['id'], project1)
+
+        project2 = {'id': uuid.uuid4().hex,
+                    'description': '',
+                    'domain_id': DEFAULT_DOMAIN_ID,
+                    'enabled': True,
+                    'name': uuid.uuid4().hex,
+                    'parent_id': None,
+                    'is_domain': True}
+        self.resource_api.create_project(project2['id'], project2)
+
+        # Update project2 name to a non existent name
+        project2['name'] = uuid.uuid4().hex
+        self.resource_api.update_project(project2['id'], project2)
+
+        # Now try to update to the same name as project1
+        project2['name'] = project1['name']
+        self.assertRaises(exception.Conflict,
+                          self.resource_api.update_project,
+                          project2['id'],
+                          project2)
+
     @tests.skip_if_no_multiple_domains_support
     def test_delete_is_domain_project(self):
         project_id = uuid.uuid4().hex

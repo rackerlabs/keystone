@@ -1664,6 +1664,9 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
     def test_create_is_domain_project(self):
         self._assert_create_is_domain_project_not_allowed()
 
+    def test_update_is_domain_project_name(self):
+        self._assert_create_is_domain_project_not_allowed()
+
     def test_check_leaf_projects(self):
         projects = self._assert_create_hierarchy_not_allowed()
         for project in projects:
