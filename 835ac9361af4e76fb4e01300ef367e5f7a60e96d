@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_23e1162a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-26T16:05:41Z",
+      "side": 1,
+      "message": "Please, tie it to a bug",
+      "revId": "835ac9361af4e76fb4e01300ef367e5f7a60e96d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_837ba279",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-26T16:05:41Z",
+      "side": 1,
+      "message": "Could you please make a docsting or a comment describing what\u0027s in the tuple?",
+      "revId": "835ac9361af4e76fb4e01300ef367e5f7a60e96d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c343da3f",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-26T16:05:41Z",
+      "side": 1,
+      "message": "assertItemsEqual should be used here instead of sorting",
+      "revId": "835ac9361af4e76fb4e01300ef367e5f7a60e96d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
