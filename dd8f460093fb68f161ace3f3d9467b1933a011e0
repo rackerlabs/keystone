@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_3cc30d39",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4092,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-26T07:13:12Z",
+      "side": 1,
+      "message": "line 4092-4100 could use some refactoring as that logic are shared among three tests",
+      "revId": "dd8f460093fb68f161ace3f3d9467b1933a011e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_9cbcf9bc",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4111,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-26T07:13:12Z",
+      "side": 1,
+      "message": "don\u0027t need to specify user_domain_id as user_id is already unique",
+      "revId": "dd8f460093fb68f161ace3f3d9467b1933a011e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_bce61de6",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4194,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-26T07:13:12Z",
+      "side": 1,
+      "message": "same as above, this code could use some refactoring",
+      "revId": "dd8f460093fb68f161ace3f3d9467b1933a011e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
