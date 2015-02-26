@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_36db247d",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-26T10:23:20Z",
+      "side": 1,
+      "message": "I don\u0027t follow what do you want me to do here? \nAdd user type, or method name?",
+      "parentUuid": "ba7be1f8_e608102a",
+      "revId": "c34f7fa6317ae3e9c31cebd609ae605c942ff4a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_0c5d4579",
         "filename": "keystone/tests/unit/mapping_fixtures.py",
         "patchSetId": 13
@@ -65,6 +83,24 @@
       "writtenOn": "2015-02-26T00:06:26Z",
       "side": 1,
       "message": "just a general comment, not related to this change. I believe we must be careful while adding new fixtures. They have an impact in the tests and here in my local machine federation tests are the most slow ones.",
+      "revId": "c34f7fa6317ae3e9c31cebd609ae605c942ff4a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_16d1c022",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-26T10:23:20Z",
+      "side": 1,
+      "message": "it increases readibility, we have small assertion, and small mapping rule and we are sure we test what we want to test.",
+      "parentUuid": "ba7be1f8_0c5d4579",
       "revId": "c34f7fa6317ae3e9c31cebd609ae605c942ff4a5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_d17bb278",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 748,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-26T10:23:20Z",
+      "side": 1,
+      "message": "Whether it\u0027s local or ephemeral user it is decided in the mapping rule, not the assertion.\n\nNot at all, that is just a coincidence.\nChanged to other value, so I don\u0027t confuse others.",
+      "parentUuid": "ba7be1f8_463d5c2a",
+      "revId": "c34f7fa6317ae3e9c31cebd609ae605c942ff4a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_a61b787f",
         "filename": "keystone/tests/unit/mapping_fixtures.py",
         "patchSetId": 13
@@ -105,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_7614bce8",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 751,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-26T10:23:20Z",
+      "side": 1,
+      "message": "From remote IdP. The name indicates the purpose, so we will use it for direct mapping.",
+      "parentUuid": "ba7be1f8_a61b787f",
+      "revId": "c34f7fa6317ae3e9c31cebd609ae605c942ff4a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_c17a1687",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 13
@@ -116,6 +188,24 @@
       "writtenOn": "2015-02-25T23:17:38Z",
       "side": 1,
       "message": "so now IdPs will need to specify \"UserType\"? Also, for local user, why do we care about group? (line 1980)",
+      "revId": "c34f7fa6317ae3e9c31cebd609ae605c942ff4a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_91d3fa5e",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1988,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-26T10:23:20Z",
+      "side": 1,
+      "message": "Nope, this is just one parameter with the same meaning and prioriy like others.\nWhether user will be ephemeral or local is decided in the mapping rules (see line 1972 in this file).",
+      "parentUuid": "ba7be1f8_c17a1687",
       "revId": "c34f7fa6317ae3e9c31cebd609ae605c942ff4a5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
