@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_b77b8b79",
+        "filename": "tox.ini",
+        "patchSetId": 7
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-26T12:14:07Z",
+      "side": 1,
+      "message": "Why was this version chosen? 1.5.0 has released 3 days ago.",
+      "revId": "a34deb8bb43e686e299b334177bcdc9559e14738",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
