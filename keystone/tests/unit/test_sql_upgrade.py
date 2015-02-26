@@ -845,6 +845,45 @@ class SqlUpgradeTests(SqlMigrateBase):
 
         session.close()
 
+    def test_project_name_constraint_upgrade(self):
+        self.upgrade(88)
+        session = self.Session()
+        project = {
+            'id': uuid.uuid4().hex,
+            'domain_id': None,
+            'is_domain': True,
+            'domain_id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'parent_id': None
+        }
+        self.insert_dict(session, 'project', project)
+
+        # It is now possible to insert 2 projects with the same name, inside
+        # the same domain, if their is_domain attribute differ.
+        other_project = {
+            'id': uuid.uuid4().hex,
+            'domain_id': project['domain_id'],
+            'is_domain': False,
+            'name': project['name'],
+            'parent_id': None
+        }
+        self.insert_dict(session, 'project', other_project)
+
+        # If none of the 3 attributes are changed, it does not work
+        new_project = {
+            'id': uuid.uuid4().hex,
+            'domain_id': project['domain_id'],
+            'is_domain': False,
+            'name': project['name'],
+            'parent_id': None
+        }
+        self.assertRaises(
+            db_exception.DBDuplicateEntry,
+            self.insert_dict,
+            session,
+            'project',
+            new_project)
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
