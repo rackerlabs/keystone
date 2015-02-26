@@ -808,6 +808,35 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertTableDoesNotExist('endpoint_group')
         self.assertTableDoesNotExist('project_endpoint_group')
 
+    def test_project_name_constraint_upgrade(self):
+        self.upgrade(86)
+        session = self.Session()
+        project = {
+            'id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'domain_id': None,
+            'is_domain': True,
+            'name': uuid.uuid4().hex,
+            'parent_id': None
+        }
+
+        # It is possible to insert a project with no domain_id
+        self.insert_dict(session, 'project', project)
+
+        # At database level, it is possible to insert two projects with
+        # the same (name, domain_id, is_domain) values
+        other_project = {
+            'id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'domain_id': uuid.uuid4().hex,
+            'is_domain': True,
+            'name': uuid.uuid4().hex,
+            'parent_id': None
+        }
+        self.insert_dict(session, 'project', other_project)
+        other_project['id'] = uuid.uuid4().hex
+        self.insert_dict(session, 'project', other_project)
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
