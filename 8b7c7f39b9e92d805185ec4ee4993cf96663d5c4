@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_2f5d9879",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T02:18:57Z",
+      "side": 1,
+      "message": "I think this should have (v3 and v2.0).",
+      "revId": "8b7c7f39b9e92d805185ec4ee4993cf96663d5c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_0f5a9482",
+        "filename": "doc/source/cli_examples.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T02:18:57Z",
+      "side": 1,
+      "message": "why was \"(v2.0)\" removed? This is one of the most common questions we get is users trying to do v3 with keystone CLI. I think it should be changed to \"(v2.0-only)\" rather than removed.",
+      "revId": "8b7c7f39b9e92d805185ec4ee4993cf96663d5c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
