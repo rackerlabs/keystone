@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_685be32e",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T19:00:54Z",
+      "side": 1,
+      "message": "This catch is already done in keystone/cli.py get_user_group()",
+      "parentUuid": "ba7be1f8_1f9e1eb9",
+      "revId": "86c0053b08dafb3cbd66a2cf6f4850b2909e4aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_3f7a0288",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 27
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-26T18:17:15Z",
       "side": 1,
       "message": "Is there any reason these are optional still? Same comment for all the functions here...",
+      "revId": "86c0053b08dafb3cbd66a2cf6f4850b2909e4aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_9a6f7c2a",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T19:00:54Z",
+      "side": 1,
+      "message": "I\u0027m pretty sure this was because they weren\u0027t originally required. I\u0027d have to double check with Dolph.",
+      "parentUuid": "ba7be1f8_3f7a0288",
       "revId": "86c0053b08dafb3cbd66a2cf6f4850b2909e4aa9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
