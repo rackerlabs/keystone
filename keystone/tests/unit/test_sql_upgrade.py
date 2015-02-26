@@ -1615,15 +1615,15 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.insert_dict(session, 'project', project1)
         project2 = {
             'id': uuid.uuid4().hex,
-            'description': project1['name'],
+            'description': uuid.uuid4().hex,
             'domain_id': domain1['id'],
-            'is_domain': True,
-            'name': uuid.uuid4().hex,
+            'is_domain': project1['is_domain'],
+            'name': project1['name'],
             'parent_id': None
         }
-        # Can not create another project with the same is_domain flag in the
-        # same domain
-        self.assertRaises(exception.Conflict,
+        # Can not create another project with the same name and is_domain flag
+        # in the same domain
+        self.assertRaises(db_exception.DBDuplicateEntry,
                           self.insert_dict,
                           session,
                           'project',
@@ -1632,10 +1632,11 @@ class SqlUpgradeTests(SqlMigrateBase):
         project2['is_domain'] = False
         self.insert_dict(session, 'project', project2)
 
-        project2['is_domain'] = True
         domain2 = {'id': uuid.uuid4().hex,
                    'name': uuid.uuid4().hex,
                    'enabled': True}
+        project2['id'] = uuid.uuid4().hex
+        project2['domain_id'] = domain2['id']
         # It is also possible to create in a different domain
         self.insert_dict(session, 'domain', domain2)
         self.insert_dict(session, 'project', project2)
@@ -1662,11 +1663,11 @@ class SqlUpgradeTests(SqlMigrateBase):
             'description': uuid.uuid4().hex,
             'domain_id': domain1['id'],
             'is_domain': False,
-            'name': uuid.uuid4().hex,
+            'name': project1['name'],
             'parent_id': None
         }
-        # The constraint should consider only name and domain_id, not is_domain
-        self.assertRaises(exception.Conflict,
+        # The constraint should consider just name and domain_id, not is_domain
+        self.assertRaises(db_exception.DBDuplicateEntry,
                           self.insert_dict,
                           session,
                           'project',
