@@ -48,7 +48,8 @@ class Tenant(controller.V2Controller):
         tenant_refs = self.resource_api.list_projects_in_domain(
             CONF.identity.default_domain_id)
         for tenant_ref in tenant_refs:
-            tenant_ref = self.v3_to_v2_project(tenant_ref)
+            if not tenant_ref.get('is_domain'):
+                tenant_ref = self.v3_to_v2_project(tenant_ref)
         params = {
             'limit': context['query_string'].get('limit'),
             'marker': context['query_string'].get('marker'),
@@ -60,13 +61,19 @@ class Tenant(controller.V2Controller):
         # TODO(termie): this stuff should probably be moved to middleware
         self.assert_admin(context)
         ref = self.resource_api.get_project(tenant_id)
+        # Checking whether the project has the is_domain property set True. If
+        # so, it cannot be shown in v2
+        if ref.get('is_domain'):
+            raise exception.ProjectNotFound(tenant_id)
         return {'tenant': self.v3_to_v2_project(ref)}
 
     @controller.v2_deprecated
     def get_project_by_name(self, context, tenant_name):
         self.assert_admin(context)
+        # In Identity API v2.0, every project has the is_domain flag
+        # set to False
         ref = self.resource_api.get_project_by_name(
-            tenant_name, CONF.identity.default_domain_id)
+            tenant_name, CONF.identity.default_domain_id, False)
         return {'tenant': self.v3_to_v2_project(ref)}
 
     # CRUD Extension
@@ -93,6 +100,12 @@ class Tenant(controller.V2Controller):
         clean_tenant = tenant.copy()
         clean_tenant.pop('domain_id', None)
 
+        # Checking whether the project has the is_domain property set True. If
+        # so, it cannot be updated from v2
+        ref = self.resource_api.get_project(tenant_id)
+        if ref.get('is_domain'):
+            raise exception.ProjectNotFound(tenant_id)
+
         tenant_ref = self.resource_api.update_project(
             tenant_id, clean_tenant)
         return {'tenant': self.v3_to_v2_project(tenant_ref)}
@@ -100,6 +113,14 @@ class Tenant(controller.V2Controller):
     @controller.v2_deprecated
     def delete_project(self, context, tenant_id):
         self.assert_admin(context)
+        # Checking whether the project has the is_domain property set True. If
+        # so, it cannot be deleted from v2
+        ref = self.resource_api.get_project(tenant_id)
+        if ref.get('is_domain'):
+            raise exception.ProjectNotFound(tenant_id)
+        ref = self.resource_api.get_project(tenant_id)
+        if ref.get('is_domain'):
+            raise exception.ProjectNotFound(tenant_id)
         self.resource_api.delete_project(tenant_id)
 
 
