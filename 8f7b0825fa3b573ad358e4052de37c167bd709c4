@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_9cd06eca",
+        "filename": "keystone/cli.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_bc1464e9",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_3c85d406",
         "filename": "keystone/cli.py",
         "patchSetId": 24
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_5c4d1699",
+        "filename": "keystone/cli.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "Active keys are allows to decrypt, or verify things. Primary keys are allows to encrypt and sign stuff. Depending on how often your keys rotate you can run into cases where you\u0027ll have multiple active keys that are only there because we need to keep them around for decrypting things. So the key lifecycle might look something like: \n\n    Add new key to the repo as \"active\" -\u003e promote key to \"primary\" -\u003e\n    promote new key to \"primary\" -\u003e demote old primary to active -\u003e\n    remove old primary after it\u0027s older than the token expiration time",
+      "parentUuid": "ba7be1f8_3c85d406",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_bcc2a450",
         "filename": "keystone/cli.py",
         "patchSetId": 24
@@ -47,6 +83,24 @@
       "writtenOn": "2015-02-26T06:47:58Z",
       "side": 1,
       "message": "that doesn\u0027t sound right. Why would key rotation invalidate the tokens?",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_575c0f19",
+        "filename": "keystone/cli.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "This is saying that there needs to be a happy balance between how many keys you allow in your key repo and how often you rotate your keys. So let\u0027s say that you want to rotate keys every 30 minutes and use a new primary. At the same time your token lifespan is something like 6 hours, but your max_active_keys is only 4. This would break because we would have at least 12 active keys at any given point in time.",
+      "parentUuid": "ba7be1f8_bcc2a450",
       "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_b740eb07",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_1e7000db",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_7e8f3c75",
         "filename": "keystone/common/config.py",
         "patchSetId": 24
@@ -99,6 +171,24 @@
       "writtenOn": "2015-02-26T06:47:58Z",
       "side": 1,
       "message": "This option is probably not necessary as key rotation should only involve two keys at any given time. Anyway, not a deal breaker.",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_b7f2ab03",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "See previous comment in cli.py.",
+      "parentUuid": "ba7be1f8_7e8f3c75",
       "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -140,6 +230,42 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_17e53708",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "I\u0027d have to check with Dolph on this, but I think this lives here because it needs to be the same each time?",
+      "parentUuid": "ba7be1f8_be4d349c",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_f7226350",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_a1ca8218",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_de1e686f",
         "filename": "keystone/exception.py",
         "patchSetId": 24
@@ -151,6 +277,24 @@
       "writtenOn": "2015-02-26T06:59:03Z",
       "side": 1,
       "message": "This is unused afaict, remove it please.",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_f7d0a320",
+        "filename": "keystone/exception.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_de1e686f",
       "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -208,6 +352,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_379ebb63",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "I can push a patch.",
+      "parentUuid": "ba7be1f8_1c3809d2",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_812e5e8a",
         "filename": "keystone/token/provider.py",
         "patchSetId": 24
@@ -219,6 +381,24 @@
       "writtenOn": "2015-02-25T23:41:05Z",
       "side": 1,
       "message": "s/presisted/persisted",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_f77ee317",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_812e5e8a",
       "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -254,6 +434,24 @@
       "side": 1,
       "message": "We can. But that is not the typical pattern we\u0027ve used for ABCMeta. In this case we could and remove the ABCMethod decorator. This shouldn\u0027t hold up the change [easy to modify later]",
       "parentUuid": "ba7be1f8_1e5ba0f6",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_57a7afa6",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "I do like the fact this is consistent with the rest of the methods here.",
+      "parentUuid": "ba7be1f8_3c4a2d55",
       "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -313,6 +511,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_d7e9dfb7",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "Are we still planning on possibly doing a rename? Maybe that is something to consider before this lands.",
+      "parentUuid": "ba7be1f8_de9bc815",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_21fcd2b7",
         "filename": "keystone/token/providers/klwt/core.py",
         "patchSetId": 24
@@ -365,6 +581,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_d70e3f8b",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_de8e682d",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_862e748a",
         "filename": "keystone/token/providers/klwt/core.py",
         "patchSetId": 24
@@ -394,6 +628,42 @@
       "side": 1,
       "message": "Is actually more important that this lets on. we should be looking for an explicit delimiter not a magic number of characters. e.g. token_ref.split(\u0027_\u0027,1)[0]",
       "parentUuid": "ba7be1f8_862e748a",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d7855fcf",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_862e748a",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_b759cb8f",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "Would you suggest appending another character to the token format? \n\n    TOKEN_FORMAT  \u003d \"KLWT00-\"\n\nSo we always know we\u0027ll hit \"-\" at some point? Then again, we\u0027re adding stuff to the token.",
+      "parentUuid": "ba7be1f8_9edf90d5",
       "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -435,6 +705,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_57f6cf5d",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_feb5ec7d",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_9ed5d0e6",
         "filename": "keystone/token/providers/klwt/token_formatters.py",
         "patchSetId": 24
@@ -446,6 +734,24 @@
       "writtenOn": "2015-02-26T06:47:58Z",
       "side": 1,
       "message": "this should be a global as it is shared in a few places",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_1787f7b5",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "These are specific to the class since only the class really needs to know about them.",
+      "parentUuid": "ba7be1f8_9ed5d0e6",
       "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -487,6 +793,42 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_7766732b",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "Hmm good question. Opinions?",
+      "parentUuid": "ba7be1f8_dc7e7169",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d7b8ff76",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "Dolph has a way that deals with this using fernet that I need to incorporate into this.",
+      "parentUuid": "ba7be1f8_decd8832",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_a115229d",
         "filename": "keystone/token/providers/klwt/token_formatters.py",
         "patchSetId": 24
@@ -498,6 +840,24 @@
       "writtenOn": "2015-02-25T23:41:05Z",
       "side": 1,
       "message": "Returns a tuple",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_774d9399",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_a115229d",
       "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -539,6 +899,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_d7463f7a",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "Correct, that is done in the provider. There is a follow on patch where jorge_munoz adds a bunch of test cases exercising that logic. \n\nhttps://github.com/lbragstad/keystone/blob/e0a87595ba72f7c5d340f016ba7d2815e0d89483/keystone/token/provider.py#L354",
+      "parentUuid": "ba7be1f8_3c8f8d76",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_5ed998f1",
         "filename": "keystone/token/providers/klwt/token_formatters.py",
         "patchSetId": 24
@@ -550,6 +928,24 @@
       "writtenOn": "2015-02-26T06:47:58Z",
       "side": 1,
       "message": "global?",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_b7438b6a",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "see above.",
+      "parentUuid": "ba7be1f8_5ed998f1",
       "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -573,6 +969,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_321c096a",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 257,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_c1e3f6d6",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_8643d4ad",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 24
@@ -584,6 +998,24 @@
       "writtenOn": "2015-02-25T23:41:05Z",
       "side": 1,
       "message": "Are we calling it KLWT or klw_tokens or are these terms referring to completing different things?",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d27e4d69",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "No, they are referring to the same time. I\u0027d like to wait to figure out what we\u0027re going to officially call this. I\u0027d be happy to rename though once we do.",
+      "parentUuid": "ba7be1f8_8643d4ad",
       "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -642,6 +1074,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_923db591",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_a6637840",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_4652bc67",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 24
@@ -653,6 +1103,24 @@
       "writtenOn": "2015-02-25T23:41:05Z",
       "side": 1,
       "message": "doc string",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_b240f907",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:41:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_4652bc67",
       "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
