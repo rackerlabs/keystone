@@ -560,8 +560,14 @@ class Manager(manager.Manager):
         return self.driver.get_project(project_id)
 
     @MEMOIZE
-    def get_project_by_name(self, tenant_name, domain_id):
-        return self.driver.get_project_by_name(tenant_name, domain_id)
+    def get_project_by_name(self, tenant_name, domain_id, is_domain=None):
+        # If the user does not specify the is_domain attribute, we set the
+        # default value to false.
+        if is_domain is None:
+            is_domain = False
+        return self.driver.get_project_by_name(tenant_name,
+                                               domain_id,
+                                               is_domain)
 
     @notifications.internal(
         notifications.INVALIDATE_USER_PROJECT_TOKEN_PERSISTENCE)
@@ -579,7 +585,7 @@ class Driver(object):
         return CONF.resource.list_limit or CONF.list_limit
 
     @abc.abstractmethod
-    def get_project_by_name(self, tenant_name, domain_id):
+    def get_project_by_name(self, tenant_name, domain_id, is_domain=None):
         """Get a tenant by name.
 
         :returns: tenant_ref
