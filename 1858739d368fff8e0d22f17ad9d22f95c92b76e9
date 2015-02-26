@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_02b89028",
+        "filename": "keystone/cli.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T15:49:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_e898c4c1",
+      "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_28ac9c8b",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 25
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-26T15:04:02Z",
       "side": 1,
       "message": "Should be \"from oslo_config import cfg\". See I60c8d2c577d37b9b8a367b46596154ce6c49fff4",
+      "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_e2da9c76",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T15:49:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_28ac9c8b",
       "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_82c9e0ad",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T15:49:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_88e3c8d7",
+      "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_51f17869",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 25
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_fd7f9da8",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T15:49:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_51f17869",
+      "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_b16f14fb",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 25
@@ -81,6 +153,24 @@
       "writtenOn": "2015-02-26T15:04:02Z",
       "side": 1,
       "message": "setegid() and seteuid() will raise a TypeError if an integer is not provided.",
+      "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_083351f6",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T15:49:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_b16f14fb",
       "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_82400008",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T15:49:44Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba7be1f8_34995279",
+      "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_f45b3a51",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 25
@@ -132,6 +240,24 @@
       "writtenOn": "2015-02-26T15:04:02Z",
       "side": 1,
       "message": "the current_primary_key and new_primary_key names don\u0027t make sense to me because as i understand the primary key is always 0",
+      "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_bd28c5e2",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T15:49:44Z",
+      "side": 1,
+      "message": "David, I was wrong when I explained this to you the first time. In fact, it\u0027s the opposite of what I initially explained. The primary key is always the highest index and 0 is reserved as a placeholder (see docstring).",
+      "parentUuid": "ba7be1f8_f45b3a51",
       "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -166,6 +292,24 @@
       "writtenOn": "2015-02-26T15:04:02Z",
       "side": 1,
       "message": "I think you can replace lines 200 - 206 with something like:\n\n    keys \u003d list(sorted(f for f in os.listdir(CONF.klw_tokens.key_repository) if os.path.isfile(f), reverse\u003dTrue))\n\nand then you can just return keys.",
+      "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_e2861cb8",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T15:49:44Z",
+      "side": 1,
+      "message": "I think we\u0027ll still need to have the part that reads and stores the value of the key.",
+      "parentUuid": "ba7be1f8_d76ab8b1",
       "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
