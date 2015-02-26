@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_126e37c9",
+        "filename": "keystone/tests/unit/test_v3_filters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T02:32:32Z",
+      "side": 1,
+      "message": "this could be assertIs(True, r.result.get(\u0027domains\u0027)[0][\u0027enabled\u0027]) then it\u0027ll also required that the returned value is a boolean.",
+      "revId": "cb4d16fa7a45642f686f466537e3eaeb056e820f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
