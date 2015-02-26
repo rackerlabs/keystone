@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_3187aeb6",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-26T11:00:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_ccb8942c",
+      "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_ecbe38ad",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 15
@@ -65,6 +83,24 @@
       "side": 1,
       "message": "So if only \u0027user_name\u0027 is set, we assume user is in the \"Federated\" domain? Are we checking for domain as well?",
       "parentUuid": "ba7be1f8_ecbe38ad",
+      "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d1b5727e",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-26T11:00:06Z",
+      "side": 1,
+      "message": "This is a service domain and even though it\u0027s not in the backend, user/admin cannot manipulate that domain (cannot add, update, delete, list).",
+      "parentUuid": "ba7be1f8_35c7b097",
       "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -106,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_9134dafc",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-26T11:00:06Z",
+      "side": 1,
+      "message": "the initial idea wouuld be that id has always higher priority over name/domain. \nSo, answering David\u0027s  question, if both name and id are set we would simply pass through and do nothing here, being happy that \u0027id\u0027 is set. \nI think this is the case if I set id, name, domain while authenticating with password today, right?\nI think we should become as compliant as possible.\nHowever, if there is a string desire to raise exception i will happily do this.",
+      "parentUuid": "ba7be1f8_95e13c2c",
+      "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_95993c7b",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 15
@@ -117,6 +171,24 @@
       "writtenOn": "2015-02-25T22:36:32Z",
       "side": 1,
       "message": "why double parenthesis?",
+      "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_7143e6ae",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 220,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-26T11:00:06Z",
+      "side": 1,
+      "message": "any() accepts an iterable only.\n\nany(\u0027a\u0027, \u0027b\u0027)\n\n---------------------------------------------------------------------------\nTypeError                                 Traceback (most recent call last)\n\u003cipython-input-3-d8d997429345\u003e in \u003cmodule\u003e()\n----\u003e 1 any(\u0027a\u0027,\u0027b\u0027)\n\nTypeError: any() takes exactly one argument (2 given)",
+      "parentUuid": "ba7be1f8_95993c7b",
       "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -158,6 +230,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_e3b1cd47",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-26T11:00:06Z",
+      "side": 1,
+      "message": "Done.\nIn the future i\u0027d expect this function to grow in power a little bit.",
+      "parentUuid": "ba7be1f8_5bc8d554",
+      "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_d5f4945c",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 15
@@ -169,6 +259,24 @@
       "writtenOn": "2015-02-25T22:36:32Z",
       "side": 1,
       "message": "if user_type and user_type not in (self._USERTYPE.EPHEMERAL, self.USERTYPE.LOCAL):\n    raise some error (i.e. User type is not supported)",
+      "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a340b507",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 425,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-26T11:00:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_d5f4945c",
       "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -192,6 +300,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_a3a43508",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-26T11:00:06Z",
+      "side": 1,
+      "message": "it is being logged 2 lines down",
+      "parentUuid": "ba7be1f8_5bf61590",
+      "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_ac70c072",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 15
@@ -203,6 +329,24 @@
       "writtenOn": "2015-02-25T20:48:23Z",
       "side": 1,
       "message": "Bad docstring format. The first line should be a short summary.",
+      "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c384c90c",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 923,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-26T11:00:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_ac70c072",
       "revId": "e3914e0beaeb7557bf4401d00ad0f7d5fc453425",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
