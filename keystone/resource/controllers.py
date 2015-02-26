@@ -60,13 +60,17 @@ class Tenant(controller.V2Controller):
         # TODO(termie): this stuff should probably be moved to middleware
         self.assert_admin(context)
         ref = self.resource_api.get_project(tenant_id)
+        if ref.get('is_domain', False):
+            raise exception.ProjectNotFound(tenant_id)
         return {'tenant': self.v3_to_v2_project(ref)}
 
     @controller.v2_deprecated
     def get_project_by_name(self, context, tenant_name):
         self.assert_admin(context)
+        # In Identity API v2.0, every project has the is_domain flag
+        # set to False
         ref = self.resource_api.get_project_by_name(
-            tenant_name, CONF.identity.default_domain_id)
+            tenant_name, CONF.identity.default_domain_id, False)
         return {'tenant': self.v3_to_v2_project(ref)}
 
     # CRUD Extension
