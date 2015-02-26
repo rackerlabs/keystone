@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_e898c4c1",
+        "filename": "keystone/cli.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-26T15:04:02Z",
+      "side": 1,
+      "message": "(nit) s/an/a/",
+      "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_28ac9c8b",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-26T15:04:02Z",
+      "side": 1,
+      "message": "Should be \"from oslo_config import cfg\". See I60c8d2c577d37b9b8a367b46596154ce6c49fff4",
+      "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_88e3c8d7",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-26T15:04:02Z",
+      "side": 1,
+      "message": "Why not _LE here?",
+      "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_51f17869",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-26T15:04:02Z",
+      "side": 1,
+      "message": "The problem here is that the user_id and group_id must both have integer values or chown() will raise a TypeError.",
+      "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_b16f14fb",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-26T15:04:02Z",
+      "side": 1,
+      "message": "setegid() and seteuid() will raise a TypeError if an integer is not provided.",
+      "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_572ec8fb",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-26T15:04:02Z",
+      "side": 1,
+      "message": "I realize it\u0027s a long way out, but what happens when a deployer gets to sys.maxint?",
+      "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_34995279",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-26T15:04:02Z",
+      "side": 1,
+      "message": "Look ma, I\u0027m OpenStack famous!",
+      "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_f45b3a51",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-26T15:04:02Z",
+      "side": 1,
+      "message": "the current_primary_key and new_primary_key names don\u0027t make sense to me because as i understand the primary key is always 0",
+      "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_74374aff",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-26T15:04:02Z",
+      "side": 1,
+      "message": "I missed this hidden gem the first time through this function. I got to the end and wondered how you were not deleting the key that you just created.",
+      "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d76ab8b1",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-26T15:04:02Z",
+      "side": 1,
+      "message": "I think you can replace lines 200 - 206 with something like:\n\n    keys \u003d list(sorted(f for f in os.listdir(CONF.klw_tokens.key_repository) if os.path.isfile(f), reverse\u003dTrue))\n\nand then you can just return keys.",
+      "revId": "1858739d368fff8e0d22f17ad9d22f95c92b76e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
