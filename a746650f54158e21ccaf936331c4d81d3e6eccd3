@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_fc3c15ca",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 629,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-26T06:58:47Z",
+      "side": 1,
+      "message": "nit, use:\n\n  if not blacklisted_value:",
+      "revId": "a746650f54158e21ccaf936331c4d81d3e6eccd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3c330df7",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 633,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-26T06:58:47Z",
+      "side": 1,
+      "message": "nit, use:\n\n  elif not whitelisted_value:",
+      "revId": "a746650f54158e21ccaf936331c4d81d3e6eccd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_fc6a55b1",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 241,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-26T06:58:47Z",
+      "side": 1,
+      "message": "seems like an unnecessary change",
+      "revId": "a746650f54158e21ccaf936331c4d81d3e6eccd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_7cd3c55f",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-26T06:58:47Z",
+      "side": 1,
+      "message": "I think a more \"real\" rule would be the following, and i\u0027m not seeing it be tested yet. I don\u0027t think we would map to an individual user + I want to make sure the \u0027direct mapping\u0027 function still works for both cases.\n\n  {\n      \"rules\": [\n          {\t\n              \"remote\": [\t\n                  {\t\n                      \"type\": \"orgPersonType\",\t\n                      \"whitelist\": [\t\n                          \"Developer\", \"Contractor\"\n                      ]\t\n                  },\n                  {\t\n                      \"type\": \"userName\",\n                  },\n              ],\t\n              \"local\": [\n                  {\n                      \"groups\": \"{0}\",\t\n                      \"domain\": {\n                          \"id\": DEVELOPER_GROUP_DOMAIN_ID\t\n                      }\n                  },\n                  {\n                      \"user\": {\n                          \"name\": {1}\n                      }\t\n                  }\n              ]\n          }\n      ]\n  }",
+      "revId": "a746650f54158e21ccaf936331c4d81d3e6eccd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
