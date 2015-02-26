@@ -87,6 +87,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_e3ef171c",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-26T05:29:21Z",
+      "side": 1,
+      "message": "I would prefer to see this be explicit like this, as we add more tokens it\u0027ll become more and more complex to read.  That being said, I\u0027m not a huge fan of the magic string use here.\n\nThis is something that can be fixed/cleaned up down the road.",
+      "parentUuid": "ba7be1f8_21fcd2b7",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_862e748a",
         "filename": "keystone/token/providers/klwt/core.py",
         "patchSetId": 24
