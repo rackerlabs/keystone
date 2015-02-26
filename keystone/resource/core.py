@@ -176,6 +176,16 @@ class Manager(manager.Manager):
                 'chars': utils.list_url_unsafe_chars(name)
             })
 
+    def _generate_project_name_conflict_msg(self, project):
+        if project['is_domain']:
+            return _('it is not permitted to have two or more projects '
+                     'acting as domains with the same name: %s'
+                     ) % project['name']
+        else:
+            return _('it is not permitted to have two or more projects '
+                     'within a domain with the same name : %s'
+                     ) % project['name']
+
     def create_project(self, tenant_id, tenant, initiator=None):
         tenant = tenant.copy()
 
@@ -203,7 +213,17 @@ class Manager(manager.Manager):
 
         self._enforce_project_constraints(tenant, parent_id)
 
-        ret = self.driver.create_project(tenant_id, tenant)
+        # We leave enforcing name uniqueness to the underlying driver (instead
+        # of doing it in code in the project_constraints above), so as to allow
+        # this check to be done at the storage level, avoiding race conditions
+        # in multi-process keystone configurations.
+        try:
+            ret = self.driver.create_project(tenant_id, tenant)
+        except exception.Conflict:
+            raise exception.Conflict(
+                type='project',
+                details=self._generate_project_name_conflict_msg(tenant))
+
         notifications.Audit.created(self._PROJECT, tenant_id, initiator)
         if MEMOIZE.should_cache(ret):
             self.get_project.set(ret, self, tenant_id)
@@ -326,7 +346,13 @@ class Manager(manager.Manager):
                 self._assert_whole_subtree_is_disabled(tenant_id)
             self._disable_project(tenant_id)
 
-        ret = self.driver.update_project(tenant_id, tenant)
+        try:
+            ret = self.driver.update_project(tenant_id, tenant)
+        except exception.Conflict:
+            raise exception.Conflict(
+                type='project',
+                details=self._generate_project_name_conflict_msg(tenant))
+
         notifications.Audit.updated(self._PROJECT, tenant_id, initiator)
         self.get_project.invalidate(self, tenant_id)
         self.get_project_by_name.invalidate(self, original_tenant['name'],
