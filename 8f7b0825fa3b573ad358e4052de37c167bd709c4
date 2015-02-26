@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_1e7000db",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-26T06:59:03Z",
+      "side": 1,
+      "message": "Adding a \u0027(KLWT)\u0027 would also be sufficient.\n\nI am torn if this belongs in the [token] section or in it\u0027s own section...",
+      "parentUuid": "ba7be1f8_a198c21c",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_7e8f3c75",
         "filename": "keystone/common/config.py",
         "patchSetId": 24
@@ -98,6 +116,92 @@
       "writtenOn": "2015-02-25T23:41:05Z",
       "side": 1,
       "message": "Should be klwt_rotate",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_be4d349c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-26T06:59:03Z",
+      "side": 1,
+      "message": "This should probably be defined in the CLI options for rotate not in the config file unless it is referenced by the running service.",
+      "parentUuid": "ba7be1f8_a1ca8218",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_de1e686f",
+        "filename": "keystone/exception.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-26T06:59:03Z",
+      "side": 1,
+      "message": "This is unused afaict, remove it please.",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3c1ced69",
+        "filename": "keystone/tests/unit/token/test_klwt_provider.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-26T06:59:03Z",
+      "side": 1,
+      "message": "I..",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_7c290589",
+        "filename": "keystone/tests/unit/token/test_klwt_provider.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-26T06:59:03Z",
+      "side": 1,
+      "message": "ROT 26 it!",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_1c3809d2",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-26T06:59:03Z",
+      "side": 1,
+      "message": "This could have been a change unto itself to aid in reviewability.",
       "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +242,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_3c4a2d55",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-26T06:59:03Z",
+      "side": 1,
+      "message": "We can. But that is not the typical pattern we\u0027ve used for ABCMeta. In this case we could and remove the ABCMethod decorator. This shouldn\u0027t hold up the change [easy to modify later]",
+      "parentUuid": "ba7be1f8_1e5ba0f6",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_7b059912",
         "filename": "keystone/token/providers/klwt/core.py",
         "patchSetId": 24
@@ -166,6 +288,24 @@
       "writtenOn": "2015-02-26T06:47:58Z",
       "side": 1,
       "message": "saving chars as keep it under the 255 limit",
+      "parentUuid": "ba7be1f8_7b059912",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_de9bc815",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-26T06:59:03Z",
+      "side": 1,
+      "message": "I like the code names being opaque. However, we should not be re-defining magic strings here and down the code (as you highlighted with the refeence to this comment). We also want to keep the token values as small as possible. This prevents us from having KLWT_federated_trust_thing_with_stuff_and_junk, at a certain point we\u0027ve significantly increased the size of the token id.\n\nThis is *mostly* a cosmetic change however (where we define the KLWT\u003cXX\u003e references)",
       "parentUuid": "ba7be1f8_7b059912",
       "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -242,6 +382,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_9edf90d5",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-26T06:59:03Z",
+      "side": 1,
+      "message": "Is actually more important that this lets on. we should be looking for an explicit delimiter not a magic number of characters. e.g. token_ref.split(\u0027_\u0027,1)[0]",
+      "parentUuid": "ba7be1f8_862e748a",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_86e1142c",
         "filename": "keystone/token/providers/klwt/core.py",
         "patchSetId": 24
@@ -253,6 +411,24 @@
       "writtenOn": "2015-02-25T23:41:05Z",
       "side": 1,
       "message": "s/KLW/KLWT",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_feb5ec7d",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-26T06:59:03Z",
+      "side": 1,
+      "message": "This should be:\n\nThis is not a recognized KLWT formatted token.",
+      "parentUuid": "ba7be1f8_86e1142c",
       "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -293,6 +469,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_dc7e7169",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-26T06:59:03Z",
+      "side": 1,
+      "message": "You would need to encode CONF.token.expiration in the token since you don\u0027t want changes to CONF to affect token longevity (or do you?), in either case encoding less data [but not by much]",
+      "parentUuid": "ba7be1f8_decd8832",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_a115229d",
         "filename": "keystone/token/providers/klwt/token_formatters.py",
         "patchSetId": 24
@@ -321,6 +515,24 @@
       "writtenOn": "2015-02-26T06:47:58Z",
       "side": 1,
       "message": "where are we checking for revocation events?",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3c8f8d76",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-26T06:59:03Z",
+      "side": 1,
+      "message": "At the provider manager level. the driver shouldn\u0027t need to know how to do some of that scary logic.",
+      "parentUuid": "ba7be1f8_3edea4dd",
       "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -389,6 +601,24 @@
       "writtenOn": "2015-02-26T06:47:58Z",
       "side": 1,
       "message": "why X_OK? Are we executing anything in that dir?",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_dcccb1bd",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-26T06:59:03Z",
+      "side": 1,
+      "message": "It depends on how you access the dir:\n\n    nullptr:keystone morgan$ cd test\n    nullptr:test morgan$ touch a\n    nullptr:test morgan$ cd ..\n    nullptr:keystone morgan$ chmod -x test\n    nullptr:keystone morgan$ ls test\n    a\n    nullptr:keystone morgan$ \n    nullptr:keystone morgan$ ls test/*\n    ls: test/a: Permission denied\n    nullptr:keystone morgan$ ls -al test/\n    ls: .: Permission denied\n    ls: ..: Permission denied\n    ls: a: Permission denied\n    nullptr:keystone morgan$ ls -l test\n    ls: a: Permission denied\n\n\nLets just make it easy to work with in the various modes here.",
+      "parentUuid": "ba7be1f8_9ef6b05b",
       "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
