@@ -82,6 +82,23 @@ class Manager(manager.Manager):
                 action=_('max hierarchy depth reached for '
                          '%s branch.') % project_id)
 
+    def _enforce_project_name_constraint(self, project_ref):
+        """Enforce project name constraint.
+
+        The domain_id is nullable, so this check must be enforced in
+        the code, instead of the backend. There can not be two projects with
+        the same values of 'name', 'domain_id' and 'is_domain'.
+        """
+        try:
+            self.driver.get_project_by_name(
+                project_ref.get('name'),
+                project_ref.get('domain_id'),
+                project_ref.get('is_domain', False))
+            msg = _('Duplicated Entry.')
+            raise exception.Conflict(type='project', details=msg)
+        except exception.ProjectNotFound:
+            pass
+
     def _assert_is_domain_project_constraints(self, project_ref, parent_ref):
         if (not self.identity_api.multiple_domains_supported and
                 project_ref['id'] != CONF.identity.default_domain_id):
@@ -89,26 +106,26 @@ class Manager(manager.Manager):
                 message=_('Multiple domains are not supported'))
 
         self.assert_domain_not_federated(project_ref['id'], project_ref)
-        if parent_ref and not parent_ref.get('is_domain'):
+        if parent_ref and not parent_ref['is_domain']:
             raise exception.ValidationError(
                 message=_('cannot create a project acting as a domain under '
                           '%s, which is a regular project.')
                 % project_ref['id'])
 
-    def _assert_project_constraints(self, project_ref, parent_ref):
+    def _assert_regular_project_constraints(self, project_ref, parent_ref):
         # NOTE(htruta): Called when is_domain is false, hence the project
         # must contain a valid parent_id or domain_id. If the parent is an
         # is_domain=false project, this project must be in the same domain of
         # its parent. If the parent is an is_domain=true project, this
         # project's domain_id must match the parent_id
 
-        if project_ref.get('domain_id'):
-            self.get_domain(project_ref['domain_id'])
+        domain_id = project_ref.get('domain_id')
+        if domain_id:
+            self.get_domain(domain_id)
 
         if parent_ref:
             is_domain_parent = parent_ref.get('is_domain')
             parent_domain_id = parent_ref.get('domain_id')
-            domain_id = project_ref.get('domain_id')
 
             if not is_domain_parent:
                 if domain_id and domain_id != parent_domain_id:
@@ -120,14 +137,16 @@ class Manager(manager.Manager):
                         % {'domain_id': project_ref['domain_id'],
                            'parent_domain_id': parent_ref.get('domain_id')})
 
-    def _enforce_project_hierarchy_constraints(self, project_ref):
+    def _enforce_project_constraints(self, project_ref):
         parent_id = project_ref.get('parent_id')
         parent_ref = self.get_project(parent_id) if parent_id else None
 
         if project_ref.get('is_domain'):
             self._assert_is_domain_project_constraints(project_ref, parent_ref)
         else:
-            self._assert_project_constraints(project_ref, parent_ref)
+            self._assert_regular_project_constraints(project_ref, parent_ref)
+
+        self._enforce_project_name_constraint(project_ref)
 
         # The whole hierarchy must be enabled
         if parent_id:
@@ -161,7 +180,7 @@ class Manager(manager.Manager):
         tenant.setdefault('domain_id', None)
         tenant.setdefault('is_domain', False)
 
-        self._enforce_project_hierarchy_constraints(tenant)
+        self._enforce_project_constraints(tenant)
 
         if not tenant.get('domain_id') and tenant.get('parent_id'):
             tenant['domain_id'] = self._find_domain_id(tenant)
@@ -261,6 +280,26 @@ class Manager(manager.Manager):
                 tenant.get('is_domain') != original_tenant.get('is_domain')):
             raise exception.ValidationError(
                 message=_('Update of `is_domain` is not allowed.'))
+
+        # TODO(htruta): Update domain_id checking when 'immutable' property is
+        # deprecated. If the 'immutable' property is disabled, the update of
+        # domain_id will only be allowed if the project is immediately under
+        # the root and has no children of its own.
+
+        # When updating name and/or domain_id, it is necessary to check wheter
+        # a project with this configuration already exists
+        update_name = ('name' in tenant and
+                       tenant['name'] != original_tenant['name'])
+        update_domain = ('domain_id' in tenant and
+                         tenant['domain_id'] != original_tenant['domain_id'])
+
+        if update_name or update_domain:
+            tenant_to_check = original_tenant.copy()
+            if update_name:
+                tenant_to_check['name'] = tenant['name']
+            if update_domain:
+                tenant_to_check['domain_id'] = tenant['domain_id']
+            self._enforce_project_name_constraint(tenant_to_check)
 
         if 'enabled' in tenant:
             tenant['enabled'] = clean.project_enabled(tenant['enabled'])
