@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_6845a316",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-26T19:05:21Z",
+      "side": 1,
+      "message": "That doesn\u0027t seem to be true. get_user_group() can return None for user_id or group_id and then this function would break. It seem to only be checking if the value is int-able if it exists.",
+      "parentUuid": "ba7be1f8_685be32e",
+      "revId": "86c0053b08dafb3cbd66a2cf6f4850b2909e4aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_3f7a0288",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 27
