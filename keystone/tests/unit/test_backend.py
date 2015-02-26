@@ -167,14 +167,25 @@ class IdentityTests(object):
     def test_get_project_by_name(self):
         tenant_ref = self.resource_api.get_project_by_name(
             self.tenant_bar['name'],
-            DEFAULT_DOMAIN_ID)
+            DEFAULT_DOMAIN_ID,
+            False)
+        self.assertDictEqual(tenant_ref, self.tenant_bar)
+
+    # TODO(raildo): Include the test for is_domain true when the
+    # domain operations are replicated to Project Table.
+    def test_get_project_by_name_with_is_domain_flag_disable(self):
+        tenant_ref = self.resource_api.get_project_by_name(
+            self.tenant_bar['name'],
+            DEFAULT_DOMAIN_ID,
+            False)
         self.assertDictEqual(tenant_ref, self.tenant_bar)
 
     def test_get_project_by_name_404(self):
         self.assertRaises(exception.ProjectNotFound,
                           self.resource_api.get_project_by_name,
                           uuid.uuid4().hex,
-                          DEFAULT_DOMAIN_ID)
+                          DEFAULT_DOMAIN_ID,
+                          False)
 
     def test_list_user_ids_for_project(self):
         user_ids = self.assignment_api.list_user_ids_for_project(
@@ -2196,7 +2207,38 @@ class IdentityTests(object):
         self.assertEqual(project_id, ref.get('domain_id'))
 
     @tests.skip_if_no_multiple_domains_support
-    def test_delete_domain(self):
+    def test_update_domain_name(self):
+        project1 = {'id': uuid.uuid4().hex,
+                    'description': '',
+                    'domain_id': DEFAULT_DOMAIN_ID,
+                    'enabled': True,
+                    'name': uuid.uuid4().hex,
+                    'parent_id': None,
+                    'is_domain': True}
+        self.resource_api.create_project(project1['id'], project1)
+
+        project2 = {'id': uuid.uuid4().hex,
+                    'description': '',
+                    'domain_id': DEFAULT_DOMAIN_ID,
+                    'enabled': True,
+                    'name': uuid.uuid4().hex,
+                    'parent_id': None,
+                    'is_domain': True}
+        self.resource_api.create_project(project2['id'], project2)
+
+        # Update project2 name to a non existent name
+        project2['name'] = uuid.uuid4().hex
+        self.resource_api.update_project(project2['id'], project2)
+
+        # Now try to update to the same name as project1
+        project2['name'] = project1['name']
+        self.assertRaises(exception.Conflict,
+                          self.resource_api.update_project,
+                          project2['id'],
+                          project2)
+
+    @tests.skip_if_no_multiple_domains_support
+    def test_delete_domaint(self):
         project_id = uuid.uuid4().hex
         project = {'id': project_id,
                    'description': '',
@@ -3406,13 +3448,15 @@ class IdentityTests(object):
         self.resource_api.create_domain(domain['id'], domain)
         # Create a project
         self.resource_api.create_project(project_id, project)
-        self.resource_api.get_project_by_name(project_name, domain['id'])
+        self.resource_api.get_project_by_name(project_name, domain['id'],
+                                              False)
         project['name'] = uuid.uuid4().hex
         self.resource_api.update_project(project_id, project)
         self.assertRaises(exception.ProjectNotFound,
                           self.resource_api.get_project_by_name,
                           project_name,
-                          domain['id'])
+                          domain['id'],
+                          False)
 
     @tests.skip_if_cache_disabled('resource')
     @tests.skip_if_no_multiple_domains_support
