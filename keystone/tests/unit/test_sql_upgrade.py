@@ -635,6 +635,21 @@ class SqlUpgradeTests(SqlMigrateBase):
                                  'enabled', 'domain_id', 'parent_id',
                                  'is_domain'])
 
+    def test_project_name_constraint_upgrade(self):
+        self.upgrade(75)
+        session = self.Session()
+        project = {
+            'id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'domain_id': None,
+            'is_domain': True,
+            'name': uuid.uuid4().hex,
+            'parent_id': None
+        }
+
+        # It is now possible to insert an is_domain project with no domain_id
+        self.insert_dict(session, 'project', project)
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
