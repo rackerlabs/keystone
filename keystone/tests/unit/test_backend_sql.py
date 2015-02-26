@@ -67,18 +67,34 @@ class SqlModels(SqlTests):
         s = sqlalchemy.select([table])
         return s
 
-    def assertExpectedSchema(self, table, cols):
+    def assertExpectedSchema(self, table, expected_schema):
         table = self.select_table(table)
-        for col, type_, length in cols:
-            self.assertIsInstance(table.c[col].type, type_)
-            if length:
-                self.assertEqual(length, table.c[col].type.length)
+
+        actual_schema = []
+        for column in table.c:
+            if isinstance(column.type, sql.Enum):
+                actual_schema.append((column.name, type(column.type), None))
+            elif isinstance(column.type, sql.Boolean):
+                default = None
+                if column._proxies[0].default:
+                    default = column._proxies[0].default.arg
+                actual_schema.append((column.name, type(column.type), default))
+            elif hasattr(column.type, 'length'):
+                actual_schema.append((column.name,
+                                      type(column.type),
+                                      column.type.length))
+            else:
+                actual_schema.append((column.name, type(column.type), None))
+
+        self.assertEqual(list(sorted(expected_schema)),
+                         list(sorted(actual_schema)))
 
     def test_user_model(self):
         cols = (('id', sql.String, 64),
                 ('name', sql.String, 255),
                 ('password', sql.String, 128),
                 ('domain_id', sql.String, 64),
+                ('default_project_id', sql.String, 64),
                 ('enabled', sql.Boolean, None),
                 ('extra', sql.JsonBlob, None))
         self.assertExpectedSchema('user', cols)
@@ -94,7 +110,8 @@ class SqlModels(SqlTests):
     def test_domain_model(self):
         cols = (('id', sql.String, 64),
                 ('name', sql.String, 64),
-                ('enabled', sql.Boolean, None))
+                ('enabled', sql.Boolean, True),
+                ('extra', sql.JsonBlob, None))
         self.assertExpectedSchema('domain', cols)
 
     def test_project_model(self):
