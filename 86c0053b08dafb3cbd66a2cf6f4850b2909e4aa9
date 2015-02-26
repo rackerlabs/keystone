@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_cb6049d2",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T19:31:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_6845a316",
+      "revId": "86c0053b08dafb3cbd66a2cf6f4850b2909e4aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_3f7a0288",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 27
