@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_c8f04f94",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T19:18:04Z",
+      "side": 1,
+      "message": "I can\u0027t seem to get this to come through as None: \n\nhttp://cdn.pasteraw.com/lkyhe8ad696pudnmy73mx1sjcjp10tf\n\nI could be doing something wrong with how cli.py works too through.",
+      "parentUuid": "ba7be1f8_6845a316",
+      "revId": "86c0053b08dafb3cbd66a2cf6f4850b2909e4aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_3f7a0288",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 27
