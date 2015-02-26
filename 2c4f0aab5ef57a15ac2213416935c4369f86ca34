@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_55e31dd8",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-02-26T16:31:34Z",
+      "side": 1,
+      "message": "\u0027will be\u0027 or \u0027have been\u0027? If they\u0027ve been fixed what release are then in and should have be the release in the note above?",
+      "revId": "2c4f0aab5ef57a15ac2213416935c4369f86ca34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
