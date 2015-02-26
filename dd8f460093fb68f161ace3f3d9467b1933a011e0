@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_12cc6588",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4092,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-26T12:46:08Z",
+      "side": 1,
+      "message": "I believe Jorge has some refactoring done locally, but we\u0027re coordinating as to not overwrite each others work.",
+      "parentUuid": "ba7be1f8_3cc30d39",
+      "revId": "dd8f460093fb68f161ace3f3d9467b1933a011e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_9cbcf9bc",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 6
