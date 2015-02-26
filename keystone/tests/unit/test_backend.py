@@ -171,6 +171,28 @@ class IdentityTests(object):
             False)
         self.assertDictEqual(tenant_ref, self.tenant_bar)
 
+    def test_get_project_by_name_with_is_domain_flag_disabled(self):
+        tenant_ref = self.resource_api.get_project_by_name(
+            self.tenant_bar['name'],
+            DEFAULT_DOMAIN_ID,
+            False)
+        self.assertDictEqual(tenant_ref, self.tenant_bar)
+
+    @tests.skip_if_no_multiple_domains_support
+    def test_get_project_by_name_with_is_domain_flag_enabled(self):
+        projects_hierarchy = self._create_projects_hierarchy(is_domain=True)
+        parent_ref = self.resource_api.get_project_by_name(
+            projects_hierarchy[0]['name'],
+            projects_hierarchy[0]['domain_id'],
+            True)
+        subproject_ref = self.resource_api.get_project_by_name(
+            projects_hierarchy[1]['name'],
+            projects_hierarchy[1]['domain_id'],
+            True)
+
+        self.assertDictEqual(projects_hierarchy[0], parent_ref)
+        self.assertDictEqual(projects_hierarchy[1], subproject_ref)
+
     def test_get_project_by_name_404(self):
         self.assertRaises(exception.ProjectNotFound,
                           self.resource_api.get_project_by_name,
@@ -2195,6 +2217,50 @@ class IdentityTests(object):
         ref = self.resource_api.create_project(project['id'], project)
         self.assertTrue(ref.get('is_domain'))
         self.assertEqual(DEFAULT_DOMAIN_ID, ref.get('domain_id'))
+
+    @tests.skip_if_no_multiple_domains_support
+    def test_project_name_domain_constraint(self):
+        """Tests project name constraints.
+
+        Check the project name constraints: if its a regular project, we
+        can't create another project with the same combination of name,
+        is_domain and domain_id values. If its a project acting a domain,
+        we can't have two or more with the same name.
+        """
+
+        # Create a project acting as a domain
+        project = {'id': uuid.uuid4().hex,
+                   'domain_id': DEFAULT_DOMAIN_ID,
+                   'name': uuid.uuid4().hex,
+                   'is_domain': True}
+        self.resource_api.create_project(project['id'], project)
+
+        # Cannot create two projects acting as a domain with the same name
+        new_project = project.copy()
+        new_project['id'] = uuid.uuid4().hex
+
+        self.assertRaises(exception.Conflict,
+                          self.resource_api.create_project,
+                          new_project['id'],
+                          new_project)
+
+        # Creating a sub project that acts as a domain with a different name
+        sub_project = {'id': uuid.uuid4().hex,
+                       'domain_id': DEFAULT_DOMAIN_ID,
+                       'name': uuid.uuid4().hex,
+                       'parent_id': project['id'],
+                       'is_domain': True}
+        sub_project_name = sub_project['name']
+        self.resource_api.create_project(sub_project['id'], sub_project)
+
+        # Creating a regular project with the same name of sub_project
+        regular_project = {'id': uuid.uuid4().hex,
+                           'domain_id': DEFAULT_DOMAIN_ID,
+                           'name': sub_project_name,
+                           'parent_id': project['id'],
+                           'is_domain': False}
+        self.resource_api.create_project(regular_project['id'],
+                                         regular_project)
 
     @tests.skip_if_no_multiple_domains_support
     def test_is_domain_sub_project_has_parent_domain_id(self):
