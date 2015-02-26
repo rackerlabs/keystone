@@ -117,7 +117,7 @@ class Manager(manager.Manager):
 
         # The whole hierarchy must be enabled
         if parent_id:
-            parents_list = self.list_project_parents(parent_id)
+            parents_list = self.list_project_parents(parent_ref['id'])
             parents_list.append(parent_ref)
             for ref in parents_list:
                 if not ref.get('enabled', True):
@@ -560,8 +560,10 @@ class Manager(manager.Manager):
         return self.driver.get_project(project_id)
 
     @MEMOIZE
-    def get_project_by_name(self, tenant_name, domain_id):
-        return self.driver.get_project_by_name(tenant_name, domain_id)
+    def get_project_by_name(self, tenant_name, domain_id, is_domain=None):
+        return self.driver.get_project_by_name(tenant_name,
+                                               domain_id,
+                                               is_domain)
 
     @notifications.internal(
         notifications.INVALIDATE_USER_PROJECT_TOKEN_PERSISTENCE)
