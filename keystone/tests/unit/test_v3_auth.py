@@ -2180,6 +2180,23 @@ class TestAuth(test_v3.RestfulTestCase):
         r = self.v3_authenticate_token(auth_data)
         self.assertValidDomainScopedTokenResponse(r)
 
+    # TODO(raildo): Include the test for is_domain true when the
+    # domain operations are replicated to Project Table.
+    def test_project_name_scoped_token_with_is_domain_false(self):
+        path = '/projects/%s/users/%s/roles/%s' % (
+            self.project['id'], self.user['id'], self.role['id'])
+        self.put(path=path)
+
+        auth_data = self.build_authentication_request(
+            username=self.user['name'],
+            user_domain_id=self.domain['id'],
+            password=self.user['password'],
+            project_domain_id=self.domain['id'],
+            project_name=self.project['name'],
+            is_domain=False)
+        r = self.v3_authenticate_token(auth_data)
+        self.assertValidProjectScopedTokenResponse(r)
+
     def test_domain_name_scoped_token_with_user_domain_id(self):
         path = '/domains/%s/users/%s/roles/%s' % (
             self.domain['id'], self.user['id'], self.role['id'])
