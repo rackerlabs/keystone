@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_3e4ea43b",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 542,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-02-26T07:18:11Z",
+      "side": 1,
+      "message": "Whitespace change.",
+      "revId": "79f98ff8500108903616ba78650fc4771098c595",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
