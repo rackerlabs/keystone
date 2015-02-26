@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba7be1f8_2f3e78da",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T02:27:21Z",
+      "side": 1,
+      "message": "suggest remove \"an\", it just makes the name longer.",
+      "revId": "04592cc15e86e1b5af333d7222f6744c14465951",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_f4b48fd2",
         "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
         "patchSetId": 2
@@ -13,6 +30,75 @@
       "writtenOn": "2015-02-24T10:52:59Z",
       "side": 1,
       "message": "we could make 2 a constant at the beginning of the test function.",
+      "revId": "04592cc15e86e1b5af333d7222f6744c14465951",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_4fb3ac97",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 577,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T02:27:21Z",
+      "side": 1,
+      "message": "y, it is confusing since you wonder where the 2 came from.",
+      "parentUuid": "ba7be1f8_f4b48fd2",
+      "revId": "04592cc15e86e1b5af333d7222f6744c14465951",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_cf66bc29",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T02:27:21Z",
+      "side": 1,
+      "message": "this should be \"total_endpoint_count\", otherwise I think it\u0027s referring to the number of an endpoint.",
+      "revId": "04592cc15e86e1b5af333d7222f6744c14465951",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_8f80448c",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 670,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T02:27:21Z",
+      "side": 1,
+      "message": "why wouldn\u0027t catalog be a list?",
+      "revId": "04592cc15e86e1b5af333d7222f6744c14465951",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_0f445472",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 677,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-26T02:27:21Z",
+      "side": 1,
+      "message": "suggest use\n\n endpoint_num +\u003d len(service[\u0027endpoints\u0027])\n\nafter line 672",
       "revId": "04592cc15e86e1b5af333d7222f6744c14465951",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
