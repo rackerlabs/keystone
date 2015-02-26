@@ -16,6 +16,7 @@
 import uuid
 
 from keystone.assignment import controllers as assignment_controllers
+from keystone import exception
 from keystone.resource import controllers as resource_controllers
 from keystone.tests import unit as tests
 from keystone.tests.unit import default_fixtures
@@ -94,3 +95,26 @@ class TenantTestCase(tests.TestCase):
             tenant_copy.pop('domain_id')
             tenant_copy.pop('parent_id')
             self.assertIn(tenant_copy, refs['tenants'])
+
+    def test_get_project_is_domain_not_found(self):
+        """Test that get project does not return is_domain projects."""
+
+        domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                  'enabled': True}
+        self.resource_api.create_domain(domain['id'], domain)
+        project1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
+                    'domain_id': domain['id'], 'is_domain': True}
+        self.resource_api.create_project(project1['id'], project1)
+        self.assertRaises(
+            exception.ProjectNotFound,
+            self.tenant_controller.get_project_by_name,
+            _ADMIN_CONTEXT,
+            project1['name']
+        )
+
+        self.assertRaises(
+            exception.ProjectNotFound,
+            self.tenant_controller.get_project,
+            _ADMIN_CONTEXT,
+            project1['id']
+        )

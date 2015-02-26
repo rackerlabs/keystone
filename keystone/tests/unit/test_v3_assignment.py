@@ -717,22 +717,6 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
                 'project_id': self.project_id})
         self.assertValidProjectResponse(r, self.project)
 
-    def test_get_project_with_parents_as_list_with_invalid_id(self):
-        """Call ``GET /projects/{project_id}?parents_as_list``."""
-        self.get('/projects/%(project_id)s?parents_as_list' % {
-                 'project_id': None}, expected_status=404)
-
-        self.get('/projects/%(project_id)s?parents_as_list' % {
-                 'project_id': uuid.uuid4().hex}, expected_status=404)
-
-    def test_get_project_with_subtree_as_list_with_invalid_id(self):
-        """Call ``GET /projects/{project_id}?subtree_as_list``."""
-        self.get('/projects/%(project_id)s?subtree_as_list' % {
-                 'project_id': None}, expected_status=404)
-
-        self.get('/projects/%(project_id)s?subtree_as_list' % {
-                 'project_id': uuid.uuid4().hex}, expected_status=404)
-
     def test_get_project_with_parents_as_ids(self):
         """Call ``GET /projects/{project_id}?parents_as_ids``."""
         projects = self._create_projects_hierarchy(hierarchy_size=2)
@@ -846,9 +830,15 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
 
     @test_utils.wip('domain operations still look at domain table')
     def test_list_project_is_domain(self):
-        """Call ``GET /projects/{project_id}?is_domain=True/False``. """
-        projects = self._create_projects_hierarchy(hierarchy_size=2,
-                                                   is_domain=True)
+        """Call ``GET /projects?is_domain=True/False``. """
+        pre_existing_projects_len = 2
+        projects = self._create_projects_hierarchy(
+            hierarchy_size=pre_existing_projects_len,
+            is_domain=True)
+
+        # The method above is supposed to create two projects for the
+        # beggining
+        self.assertEqual(len(projects), pre_existing_projects_len)
 
         project1_id = projects[1]['project']['id']
         project2_id = projects[2]['project']['id']
@@ -875,8 +865,16 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
                      expected_status=200)
 
         # The number of projects where is_domain=False is the amount created
-        # in this test plus 2 pre-existing ones.
-        self.assertEqual(len(r.result['projects']), 6)
+        # in this test (4) plus 2 pre-existing ones.
+        self.assertEqual(len(r.result['projects']),
+                         pre_existing_projects_len + 4)
+
+        # If is_domain information is not provided, only the is_domain=False
+        # projects are returned
+        r = self.get('/projects', expected_status=200)
+
+        self.assertEqual(len(r.result['projects']),
+                         pre_existing_projects_len + 4)
 
     def test_get_project_with_subtree_as_ids(self):
         """Call ``GET /projects/{project_id}?subtree_as_ids``.
