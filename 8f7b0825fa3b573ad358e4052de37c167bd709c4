@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba7be1f8_bc1464e9",
+        "filename": "keystone/cli.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-26T06:47:58Z",
+      "side": 1,
+      "message": "may want to remove \u0027AES\u0027 from the description as algorithm and method are subject to change. For example, they would be just HMAC secrets of encryption is not used.",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3c85d406",
+        "filename": "keystone/cli.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-26T06:47:58Z",
+      "side": 1,
+      "message": "\"demoted to action\"? Keystone rotation should only involve two keys at any given time. What\u0027s the use case for \u0027max_active_keys\u0027?",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_bcc2a450",
+        "filename": "keystone/cli.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-26T06:47:58Z",
+      "side": 1,
+      "message": "that doesn\u0027t sound right. Why would key rotation invalidate the tokens?",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_a198c21c",
         "filename": "keystone/common/config.py",
         "patchSetId": 24
@@ -13,6 +64,23 @@
       "writtenOn": "2015-02-25T23:41:05Z",
       "side": 1,
       "message": "Why do we call it out as Keystone Lightweight token and not stick to the common abbreviation of KLWT? For consistency I would vote for KLWT",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_7e8f3c75",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-26T06:47:58Z",
+      "side": 1,
+      "message": "This option is probably not necessary as key rotation should only involve two keys at any given time. Anyway, not a deal breaker.",
       "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +121,23 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_1e5ba0f6",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 514,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-26T06:47:58Z",
+      "side": 1,
+      "message": "why can\u0027t we default it to True?",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_7b059912",
         "filename": "keystone/token/providers/klwt/core.py",
         "patchSetId": 24
@@ -64,6 +149,24 @@
       "writtenOn": "2015-02-25T23:41:05Z",
       "side": 1,
       "message": "Instead of the code names: \u0027KLWT00\u0027 and \u0027KLWT01\u0027. Could we use something: \u0027KLWT\u0027 for standard and \u0027KLWT_Trust\u0027 for trust token formats?",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3efce4b7",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-26T06:47:58Z",
+      "side": 1,
+      "message": "saving chars as keep it under the 255 limit",
+      "parentUuid": "ba7be1f8_7b059912",
       "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +208,23 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_de8e682d",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-26T06:47:58Z",
+      "side": 1,
+      "message": "consider making these global constants, like\n\n TOKEN_PREFIX \u003d \u0027KLWT00\u0027\n TRUST_TOKEN_PREFIX \u003d \u0027KLWT01\u0027",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_862e748a",
         "filename": "keystone/token/providers/klwt/core.py",
         "patchSetId": 24
@@ -139,6 +259,40 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_9ed5d0e6",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-26T06:47:58Z",
+      "side": 1,
+      "message": "this should be a global as it is shared in a few places",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_decd8832",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-26T06:47:58Z",
+      "side": 1,
+      "message": "we really don\u0027t need both issued_at and expires_at as we can derive one from the other. For example,\n\nissued_at \u003d expires_at - CONF.token.expiration\n\nor\n\nexpired_at \u003d issued_at + CONF.token.expiration\n\nNot a deal break right now, but in the future we may need to include the auth methods in there whenever we need to solve the unbound group problem.",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_a115229d",
         "filename": "keystone/token/providers/klwt/token_formatters.py",
         "patchSetId": 24
@@ -150,6 +304,40 @@
       "writtenOn": "2015-02-25T23:41:05Z",
       "side": 1,
       "message": "Returns a tuple",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3edea4dd",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-26T06:47:58Z",
+      "side": 1,
+      "message": "where are we checking for revocation events?",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_5ed998f1",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-26T06:47:58Z",
+      "side": 1,
+      "message": "global?",
       "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -184,6 +372,23 @@
       "writtenOn": "2015-02-25T23:41:05Z",
       "side": 1,
       "message": "Are we calling it KLWT or klw_tokens or are these terms referring to completing different things?",
+      "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_9ef6b05b",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-26T06:47:58Z",
+      "side": 1,
+      "message": "why X_OK? Are we executing anything in that dir?",
       "revId": "8f7b0825fa3b573ad358e4052de37c167bd709c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
