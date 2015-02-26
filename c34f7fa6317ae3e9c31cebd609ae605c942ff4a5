@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_cc188dd5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-02-26T00:06:26Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba7be1f8_81173e44",
+      "revId": "c34f7fa6317ae3e9c31cebd609ae605c942ff4a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_e608102a",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 13
@@ -30,6 +48,23 @@
       "writtenOn": "2015-02-25T23:17:38Z",
       "side": 1,
       "message": "I would imagine this information is also helpful for local user as well as \u0027mapped\u0027 could mean a number of things.",
+      "revId": "c34f7fa6317ae3e9c31cebd609ae605c942ff4a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_0c5d4579",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 746,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-02-26T00:06:26Z",
+      "side": 1,
+      "message": "just a general comment, not related to this change. I believe we must be careful while adding new fixtures. They have an impact in the tests and here in my local machine federation tests are the most slow ones.",
       "revId": "c34f7fa6317ae3e9c31cebd609ae605c942ff4a5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
