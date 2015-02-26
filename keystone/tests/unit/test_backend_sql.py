@@ -22,6 +22,7 @@ from oslo_db import exception as db_exception
 from oslo_db import options
 import sqlalchemy
 from sqlalchemy import exc
+import testtools
 from testtools import matchers
 
 from keystone.common import driver_hints
@@ -58,7 +59,11 @@ class SqlTests(tests.SQLDriverOverrides, tests.TestCase):
         return config_files
 
 
-class SqlModels(SqlTests):
+class SqlModels(testtools.TestCase):
+
+    def setUp(self):
+        super(SqlModels, self).setUp()
+        self.useFixture(database.Database())
 
     def select_table(self, name):
         table = sqlalchemy.Table(name,
