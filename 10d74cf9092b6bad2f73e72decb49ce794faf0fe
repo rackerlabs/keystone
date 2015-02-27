@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_47d7ccbf",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-27T11:32:17Z",
+      "side": 1,
+      "message": "I think we would then have to change token format...... ?",
+      "parentUuid": "ba7be1f8_542f89f6",
+      "revId": "10d74cf9092b6bad2f73e72decb49ce794faf0fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_b4cfe556",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-27T02:15:24Z",
       "side": 1,
       "message": "Is group still \"required\" for local user? It should be optional right?",
+      "revId": "10d74cf9092b6bad2f73e72decb49ce794faf0fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c799fc20",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1983,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-27T11:32:17Z",
+      "side": 1,
+      "message": "it\u0027s is discarded. If you map to a local user you get what user has, not user groups/roles + what you specify in the mapping.  AFAIR i was testing if that is really discarded.",
+      "parentUuid": "ba7be1f8_b4cfe556",
       "revId": "10d74cf9092b6bad2f73e72decb49ce794faf0fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
