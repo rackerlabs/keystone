@@ -657,7 +657,7 @@ class RoutersBase(object):
                       get_action=None, head_action=None, get_head_action=None,
                       put_action=None, post_action=None, patch_action=None,
                       delete_action=None, get_post_action=None,
-                      path_vars=None):
+                      path_vars=None, status=None):
         if get_head_action:
             getattr(controller, get_head_action)  # ensure the attribute exists
             mapper.connect(path, controller=controller, action=get_head_action,
@@ -698,6 +698,11 @@ class RoutersBase(object):
             resource_data['href-vars'] = path_vars
         else:
             resource_data['href'] = path
+
+        if status:
+            if 'hints' not in resource_data:
+                resource_data['hints'] = {}
+            resource_data['hints']['status'] = status
 
         self.v3_resources.append((rel, resource_data))
 
