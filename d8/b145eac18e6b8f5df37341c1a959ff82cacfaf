@@ -1,0 +1,13 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Dave Walker <email@daviey.com>
+Workflow+1: Dave Walker <email@daviey.com>
+Code-Review+1: Lin Hua Cheng <os.lcheng@gmail.com>
+Code-Review+1: Marek Denis <marek.denis@cern.ch>
+Code-Review+1: Alexander Makarov <amakarov@mirantis.com>
+Code-Review+1: Dave Chen <dave.jungler@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Fri, 27 Feb 2015 08:13:42 +0000
+Reviewed-on: https://review.openstack.org/155512
+Project: openstack/keystone
+Branch: refs/heads/stable/juno
