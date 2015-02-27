@@ -13,9 +13,11 @@
 import copy
 import uuid
 
+import mock
 from testtools import matchers
 
 from keystone import exception
+from keystone import resource
 
 
 class DomainConfigTests(object):
@@ -457,3 +459,44 @@ class DomainConfigTests(object):
                           self.domain_config_api.delete_config,
                           self.domain['id'],
                           group='ldap', option='user_tree_dn')
+
+    def test_sensitive_substitution_in_domain_config(self):
+        # Create a config that contains a whitelisted option that requires
+        # substitution of a sensitive option.
+        config = {'ldap': {'url': 'my_url/%(password)s',
+                           'user_tree_dn': uuid.uuid4().hex,
+                           'password': uuid.uuid4().hex},
+                  'identity': {'driver': uuid.uuid4().hex}}
+        self.domain_config_api.create_config(self.domain['id'], config)
+
+        # Read back the config with the internal method and ensure that the
+        # substitution has taken place.
+        res = self.domain_config_api.get_config_with_sensitive_info(
+            self.domain['id'])
+        expected_url = (
+            config['ldap']['url'] % {'password': config['ldap']['password']})
+        self.assertEqual(expected_url, res['ldap']['url'])
+
+    def test_invalid_sensitive_substitution_in_domain_config(self):
+        """Check that invalid substitutions raise warnings."""
+
+        mock_log = mock.Mock()
+
+        invalid_option_config = {
+            'ldap': {'url': 'my_url/%(passssword)s',
+                     'user_tree_dn': uuid.uuid4().hex,
+                     'password': uuid.uuid4().hex},
+            'identity': {'driver': uuid.uuid4().hex}}
+
+        with mock.patch('keystone.resource.core.LOG', mock_log):
+            self.domain_config_api.create_config(
+                self.domain['id'], invalid_option_config)
+
+        mock_log.warn.assert_any_call(mock.ANY)
+        res = self.domain_config_api.get_config_with_sensitive_info(
+            self.domain['id'])
+        self.assertEqual(
+            invalid_option_config['ldap']['url'],res['ldap']['url'])
+
+        # TODO(henry-nash): Add additional tests for badly constructed
+        # substitution references, including wrong data type.
