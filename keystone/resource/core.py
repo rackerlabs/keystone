@@ -13,6 +13,7 @@
 """Main entry point into the resource service."""
 
 import abc
+import copy
 
 from oslo_config import cfg
 from oslo_log import log
@@ -25,7 +26,7 @@ from keystone.common import driver_hints
 from keystone.common import manager
 from keystone.contrib import federation
 from keystone import exception
-from keystone.i18n import _, _LE
+from keystone.i18n import _, _LE, _LW
 from keystone import notifications
 
 
@@ -1191,6 +1192,48 @@ class DomainConfigManager(manager.Manager):
         whitelisted = self.list_config_options(domain_id, group, option)
         sensitive = self.list_config_options(domain_id, group, option,
                                              sensitive=True)
+
+        # Check if there are any sensitive substitutions needed. We first try
+        # and simply ensure any sensitive otpions that have valid substitution
+        # references in the whitelisted otpions are substittuted. We then check
+        # the resulting whitelitsed option and raise a warning if there
+        # appears to be an unmatched or incorrectly constructed substitution
+        # reference. To avoid the risk of logging any sensitive options that
+        # have already been substituted, we first take a copy of the
+        # whitelisted option.
+
+        # Build a dict of the sensitive options ready to try substitution
+        sensitive_dict = {}
+        for each_sensitive in sensitive:
+            sensitive_dict[each_sensitive['option']] = each_sensitive['value']
+
+        for each_whitelisted in whitelisted:
+            if not isinstance(each_whitelisted['value'], six.string_types):
+                continue
+
+            # Store away the original value incase we need to raise a warning
+            # after substitution - since we know it's a string (and hence
+            # immutable), just doing an assignment will do the trick.
+            original_value = each_whitelisted['value']
+            try:
+                each_whitelisted['value'] = (
+                    each_whitelisted['value'] % sensitive_dict)
+            except KeyError:
+                pass
+            
+            if each_whitelisted['value'].find('%(') != -1:
+                # We keep this at a warning in case perhaps not all the config
+                # options have yet been defined.
+                LOG.warn(_LW(
+                    'Found what looks like an unmatched or incorrectly '
+                    'constructucted config option substitution reference - '
+                    'domain: %(domain)s, group: %(group)s, option: '
+                    '%(option)s, value: %(value)s') % {
+                        'domain': domain_id,
+                        'group': each_whitelisted['group'],
+                        'option': each_whitelisted['option'],
+                        'value': original_value})
+
         return self._list_to_config(whitelisted, sensitive)
 
 
