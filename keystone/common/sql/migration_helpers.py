@@ -180,6 +180,89 @@ def _sync_common_repo(version):
             raise
 
 
+def _fix_federation_tables(fix_engine):
+    meta = sql.MetaData()
+    meta.bind = fix_engine
+
+    idp_table_temp = sql.Table(
+        'identity_provider',
+        meta,
+        autoload=True)
+    idp_table_temp.rename("identity_provider_temp")
+    federation_protocol_table_temp = sql.Table(
+        'federation_protocol',
+        meta,
+        autoload=True)
+    federation_protocol_table_temp.rename("federation_protocol_temp")
+    mapping_table_temp = sql.Table(
+        'mapping',
+        meta,
+        autoload=True)
+    mapping_table_temp.rename("mapping_temp")
+    meta.clear()
+
+    idp_table_temp = sql.Table(
+        'identity_provider_temp',
+        meta,
+        autoload=True)
+    idp_table_temp.rename("identity_provider_temp")
+    federation_protocol_table_temp = sql.Table(
+        'federation_protocol_temp',
+        meta,
+        autoload=True)
+    federation_protocol_table_temp.rename("federation_protocol_temp")
+    mapping_table_temp = sql.Table(
+        'mapping_temp',
+        meta,
+        autoload=True)
+    mapping_table_temp.rename("mapping_temp")
+    idp_table = sql.Table(
+        'identity_provider',
+        meta,
+        sql.Column('id', sql.String(64), primary_key=True),
+        sql.Column('enabled', sql.Boolean, nullable=False),
+        sql.Column('description', sql.Text(), nullable=True),
+        mysql_engine='InnoDB',
+        mysql_charset='utf8')
+    idp_table.create(fix_engine, checkfirst=True)
+    federation_protocol_table = sql.Table(
+        'federation_protocol',
+        meta,
+        sql.Column('id', sql.String(64), primary_key=True),
+        sql.Column('idp_id', sql.String(64),
+                   sql.ForeignKey('identity_provider.id', ondelete='CASCADE'),
+                   primary_key=True),
+        sql.Column('mapping_id', sql.String(64), nullable=True),
+        mysql_engine='InnoDB',
+        mysql_charset='utf8')
+    federation_protocol_table.create(fix_engine, checkfirst=True)
+    mapping_table = sql.Table(
+        'mapping',
+        meta,
+        sql.Column('id', sql.String(64), primary_key=True),
+        sql.Column('rules', sql.Text(), nullable=False),
+        mysql_engine='InnoDB',
+        mysql_charset='utf8')
+    mapping_table.create(fix_engine, checkfirst=True)
+
+    idps_list = fix_engine.execute(sql.select([idp_table_temp]))
+    for idp in idps_list:
+        fix_engine.execute(idp_table.insert(idp))
+
+    mappings_list = fix_engine.execute(sql.select([mapping_table_temp]))
+    for map in mappings_list:
+        fix_engine.execute(mapping_table.insert(map))
+
+    fed_proto_list = fix_engine.execute(
+        sql.select([federation_protocol_table_temp]))
+    for protocol in fed_proto_list:
+        fix_engine.execute(federation_protocol_table.insert(protocol))
+
+    federation_protocol_table_temp.drop(fix_engine, checkfirst=True)
+    idp_table_temp.drop(fix_engine, checkfirst=True)
+    mapping_table_temp.drop(fix_engine, checkfirst=True)
+
+
 def _sync_extension_repo(extension, version):
     init_version = 0
     try:
@@ -200,8 +283,13 @@ def _sync_extension_repo(extension, version):
     except exception.MigrationNotProvided as e:
         print(e)
         sys.exit(1)
-    migration.db_sync(sql.get_engine(), abs_path, version=version,
-                      init_version=init_version)
+    try:
+        migration.db_sync(sql.get_engine(), abs_path, version=version,
+                          init_version=init_version)
+    except ValueError:
+        _fix_federation_tables(sql.get_engine())
+        migration.db_sync(sql.get_engine(), abs_path, version=version,
+                          init_version=init_version)
 
 
 def sync_database_to_version(extension=None, version=None):
