@@ -1902,6 +1902,17 @@ class IdentityTests(object):
                           project['id'],
                           project)
 
+    def test_create_project_invalid_domain_id(self):
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   # Random domain_id
+                   'domain_id': uuid.uuid4().hex,
+                   'enabled': True}
+        self.assertRaises(exception.DomainNotFound,
+                          self.resource_api.create_project,
+                          project['id'],
+                          project)
+
     def test_create_user_invalid_enabled_type_string(self):
         user = {'name': uuid.uuid4().hex,
                 'domain_id': DEFAULT_DOMAIN_ID,
