@@ -1,0 +1,412 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_7943a86c",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 4066,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "there should be a key repository fixture instead.",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_19546c20",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 4080,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "use StartsWith matcher instead: https://github.com/testing-cabal/testtools/blob/master/testtools/matchers/__init__.py#L54\n\nThis applies throughout these changes (see line 4089)\n\nAlso, could create the matcher once and use it multiple times.",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d907341c",
+        "filename": "keystone/tests/unit/token/test_klwt_provider.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "Change this to a fixture.",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3425b5ae",
+        "filename": "keystone/tests/unit/token/test_klwt_provider.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "fixtures provides a TempDir fixture which should be able to be used here.",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_b46605ed",
+        "filename": "keystone/tests/unit/token/test_klwt_provider.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "this should say why this is being done rather than what is being done.",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_94a901e2",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "needs_persistence shouldn\u0027t need to be a method in the driver.",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d491b99b",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "change this to\n\n from oslo_config import cfg",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_54d4e946",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "add param before catalog_ref.",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_94ce61b3",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "this should be\n\n :raises keystone.exception.NotImplemented: when called\n\nsame comment applies throughout this file.",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_14ba710a",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "change \"expect\" to \"expecting\"",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_b470c574",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "this could just as well be\n\n token_formatter \u003d self.token_format_map[TRUST_TOKEN_PREFIX]",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_74fd6d6e",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "coverage report shows this isn\u0027t tested.",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_74256d5b",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "should at least log what format was provided.",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_b4e5250c",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "change this to\n\n from oslo_config import cfg",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_f4f07d93",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "coverage report shows this isn\u0027t tested.",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_34a055a5",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "remove this since it\u0027s the default.",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_34877514",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "remove this method since this is the default.",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d43a9933",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "coverage report shows that pretty much this whole file is untested.",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_7481edfa",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "nice!",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_94b4a1d2",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "There\u0027s no way this can be None.",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_14a9917b",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "why does this need to be checked? isn\u0027t it just going to fail if the user doesn\u0027t have access?",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_14c0b129",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "why?",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_74e64dea",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "change \"integer\" to \"integers\"... why would a user or group id not be an integer?",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3403f577",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T02:16:18Z",
+      "side": 1,
+      "message": "why not just raise?",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
