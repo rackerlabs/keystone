@@ -79,6 +79,15 @@ class Manager(manager.Manager):
                 action=_('max hierarchy depth reached for '
                          '%s branch.') % project_id)
 
+    def _assert_domain(self, domain_id):
+        if domain_id is None:
+            msg = _('Domain field is required and cannot be empty.')
+            raise exception.ValidationError(message=msg)
+        try:
+            self.get_domain(domain_id)
+        except exception.DomainNotFound as e:
+            raise exception.ValidationError(e)
+
     def create_project(self, tenant_id, tenant, initiator=None):
         tenant = tenant.copy()
         tenant.setdefault('enabled', True)
@@ -86,6 +95,7 @@ class Manager(manager.Manager):
         tenant.setdefault('description', '')
         tenant.setdefault('parent_id', None)
 
+        self._assert_domain(tenant.get('domain_id'))
         if tenant.get('parent_id') is not None:
             parent_ref = self.get_project(tenant.get('parent_id'))
             parents_list = self.list_project_parents(parent_ref['id'])
