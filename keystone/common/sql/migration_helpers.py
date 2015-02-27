@@ -200,8 +200,17 @@ def _sync_extension_repo(extension, version):
     except exception.MigrationNotProvided as e:
         print(e)
         sys.exit(1)
-    migration.db_sync(sql.get_engine(), abs_path, version=version,
-                      init_version=init_version)
+    # NOTE(marco-fargetta): the workaround adopted for the common repo (see
+    # code above) does not work if the table has a foreign key, like for the
+    # tables in the federation contrib module. This is a limit of MySql.
+    # Therefore, in case of problem a sync without sanity check is executed
+    # hoping the following update/downgrade will fix the problem
+    try:
+        migration.db_sync(sql.get_engine(), abs_path, version=version,
+                          init_version=init_version)
+    except ValueError:
+        migration.db_sync(sql.get_engine(), abs_path, version=version,
+                          init_version=init_version, sanity_check=False)
 
 
 def sync_database_to_version(extension=None, version=None):
