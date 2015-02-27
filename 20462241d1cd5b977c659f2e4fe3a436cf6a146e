@@ -523,6 +523,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_10cdfd86",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-27T16:29:27Z",
+      "side": 1,
+      "message": "\\o/",
+      "parentUuid": "ba7be1f8_7481edfa",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_94b4a1d2",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 29
@@ -534,6 +552,24 @@
       "writtenOn": "2015-02-27T02:16:18Z",
       "side": 1,
       "message": "There\u0027s no way this can be None.",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d69b5e70",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-27T16:29:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_94b4a1d2",
       "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -557,6 +593,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_b030b19f",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-27T16:29:27Z",
+      "side": 1,
+      "message": "Yes, that\u0027s the idea because since these keys are used to sign/encrypt the tokens, we don\u0027t want any to just change them whenever.",
+      "parentUuid": "ba7be1f8_14a9917b",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_14c0b129",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 29
@@ -568,6 +622,24 @@
       "writtenOn": "2015-02-27T02:16:18Z",
       "side": 1,
       "message": "why?",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_50bdb501",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-27T16:29:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_14c0b129",
       "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -591,6 +663,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_70e39933",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-27T16:29:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_74e64dea",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_3403f577",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 29
@@ -602,6 +692,24 @@
       "writtenOn": "2015-02-27T02:16:18Z",
       "side": 1,
       "message": "why not just raise?",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_90872d12",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-27T16:29:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_3403f577",
       "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
