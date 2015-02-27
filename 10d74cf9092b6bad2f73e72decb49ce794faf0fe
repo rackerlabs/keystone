@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_0aecfbc6",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-27T11:47:40Z",
+      "side": 1,
+      "message": "also....token with IDENTITY_PROVIDER and PROTOCOL attributes inside is treated as federated token.",
+      "parentUuid": "ba7be1f8_47d7ccbf",
+      "revId": "10d74cf9092b6bad2f73e72decb49ce794faf0fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_b4cfe556",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 15
