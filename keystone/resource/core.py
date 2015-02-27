@@ -91,6 +91,9 @@ class Manager(manager.Manager):
         tenant.setdefault('description', '')
         tenant.setdefault('parent_id', None)
 
+        if tenant.get('domain_id') != CONF.identity.default_domain_id:
+            self.get_domain(tenant.get('domain_id'))
+
         if tenant.get('parent_id') is not None:
             parent_ref = self.get_project(tenant.get('parent_id'))
             parents_list = self.list_project_parents(parent_ref['id'])
