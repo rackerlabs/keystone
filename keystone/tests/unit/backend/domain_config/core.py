@@ -442,3 +442,27 @@ class DomainConfigTests(object):
                           self.domain_config_api.delete_config,
                           self.domain['id'],
                           group='ldap', option='user_tree_dn')
+
+    def test_sensitive_substitution_in_domain_config(self):
+        config = {'ldap': {'url': 'my_url/%(password)s',
+                           'user_tree_dn': uuid.uuid4().hex,
+                           'password': uuid.uuid4().hex},
+                  'identity': {'driver': uuid.uuid4().hex}}
+        self.domain_config_api.create_config(self.domain['id'], config)
+
+        res = self.domain_config_api.get_config_with_sensitive_info(
+            self.domain['id'])
+        expected_url = (
+            config['ldap']['url'] % {'password': config['ldap']['password']})
+        self.assertEqual(expected_url, res['ldap']['url'])
+
+        # Check that bad substitution is benign
+        config = {'ldap': {'url': 'my_url/%(passssword)s',
+                           'user_tree_dn': uuid.uuid4().hex,
+                           'password': uuid.uuid4().hex},
+                  'identity': {'driver': uuid.uuid4().hex}}
+        self.domain_config_api.create_config(self.domain['id'], config)
+
+        res = self.domain_config_api.get_config_with_sensitive_info(
+            self.domain['id'])
+        self.assertEqual(config['ldap']['url'], res['ldap']['url'])
