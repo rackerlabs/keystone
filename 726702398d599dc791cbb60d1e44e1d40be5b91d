@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_aac68f14",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-02-27T11:51:47Z",
+      "side": 1,
+      "message": "What actions? Will there be a follow-up for them?",
+      "revId": "726702398d599dc791cbb60d1e44e1d40be5b91d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
