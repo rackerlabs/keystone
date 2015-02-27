@@ -1093,6 +1093,16 @@ class DomainConfigManager(manager.Manager):
         whitelisted = self.driver.list_config_options(domain_id, group, option)
         sensitive = self.driver.list_config_options(domain_id, group, option,
                                                     sensitive=True)
+
+        # Check if there are any sensitive substitutions needed
+        for each_sensitive in sensitive:
+            for each_whitelisted in whitelisted:
+                try:
+                    each_whitelisted['value'] = (
+                        each_whitelisted['value'] %
+                        {each_sensitive['option']: each_sensitive['value']})
+                except KeyError:
+                    pass
         return self._list_to_config(whitelisted, sensitive)
 
 
