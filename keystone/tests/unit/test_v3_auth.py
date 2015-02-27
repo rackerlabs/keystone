@@ -32,7 +32,7 @@ from keystone import exception
 from keystone.policy.backends import rules
 from keystone.tests import unit as tests
 from keystone.tests.unit import test_v3
-from keystone.tests.unit.token import test_klwt_provider as klwt
+from keystone.tests.unit.token import test_fernet_provider as fernet
 
 
 CONF = cfg.CONF
@@ -4059,19 +4059,19 @@ class TestAuthSpecificData(test_v3.RestfulTestCase):
         self.assertValidDomainListResponse(r)
 
 
-class TestKLWTokenProvider(test_v3.RestfulTestCase,
-                           klwt.KeyRepositoryTestMixin):
+class TestFernetTokenProvider(test_v3.RestfulTestCase,
+                              fernet.KeyRepositoryTestMixin):
     def setUp(self):
-        super(TestKLWTokenProvider, self).setUp()
+        super(TestFernetTokenProvider, self).setUp()
         self.setUpKeyRepository()
-        self.standard_matcher = matchers.StartsWith('KLWT00')
-        self.trust_matcher = matchers.StartsWith('KLWT01')
+        self.standard_matcher = matchers.StartsWith('F00')
+        self.trust_matcher = matchers.StartsWith('F01')
 
     def config_overrides(self):
-        super(TestKLWTokenProvider, self).config_overrides()
+        super(TestFernetTokenProvider, self).config_overrides()
         self.config_fixture.config(
             group='token',
-            provider='keystone.token.providers.klwt.Provider')
+            provider='keystone.token.providers.fernet.Provider')
 
     def test_authenticate_for_unscoped_token(self):
         auth_data = self.build_authentication_request(

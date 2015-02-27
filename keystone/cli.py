@@ -29,7 +29,7 @@ from keystone import config
 from keystone.i18n import _, _LW
 from keystone import identity
 from keystone import token
-from keystone.token.providers.klwt import utils as klwt
+from keystone.token.providers.fernet import utils as fernet
 
 
 CONF = cfg.CONF
@@ -179,47 +179,48 @@ class SSLSetup(BaseCertificateSetup):
         conf_ssl.run()
 
 
-class KLWTSetup(BasePermissionsSetup):
-    """Setup a key repository for KLW tokens.
+class FernetSetup(BasePermissionsSetup):
+    """Setup a key repository for Fernet tokens.
 
     This also creates a primary key used for both creating and validating
     Keystone Lightweight tokens. To improve security, you should rotate your
-    keys (using keystone-manage klwt_rotate, for example).
+    keys (using keystone-manage fernet_rotate, for example).
 
     """
 
-    name = 'klwt_setup'
+    name = 'fernet_setup'
 
     @classmethod
     def main(cls):
         keystone_user_id, keystone_group_id = cls.get_user_group()
-        klwt.create_key_directory(keystone_user_id, keystone_group_id)
-        if klwt.validate_key_repository():
-            klwt.initialize_key_repository(keystone_user_id, keystone_group_id)
+        fernet.create_key_directory(keystone_user_id, keystone_group_id)
+        if fernet.validate_key_repository():
+            fernet.initialize_key_repository(
+                keystone_user_id, keystone_group_id)
 
 
-class KLWTRotate(BasePermissionsSetup):
-    """Rotate keys.
+class FernetRotate(BasePermissionsSetup):
+    """Rotate Fernet encryption keys.
 
-    This assumes you have already run keystone-manage klwt_setup.
+    This assumes you have already run keystone-manage fernet_setup.
 
     A new primary key is created, which is used for new tokens. The old primary
     key is demoted to active, which can then still be used for validating
-    tokens. Excess active keys (beyond [klw_tokens] max_active_keys) are
+    tokens. Excess active keys (beyond [fernet_tokens] max_active_keys) are
     revoked. Revoked keys are permanently deleted.
 
-    Rotating keys too frequently, or with [klw_tokens] max_active_keys set too
-    low, will cause tokens to become invalid prior to their expiration.
+    Rotating keys too frequently, or with [fernet_tokens] max_active_keys set
+    too low, will cause tokens to become invalid prior to their expiration.
 
     """
 
-    name = 'klwt_rotate'
+    name = 'fernet_rotate'
 
     @classmethod
     def main(cls):
         keystone_user_id, keystone_group_id = cls.get_user_group()
-        if klwt.validate_key_repository():
-            klwt.rotate_keys(keystone_user_id, keystone_group_id)
+        if fernet.validate_key_repository():
+            fernet.rotate_keys(keystone_user_id, keystone_group_id)
 
 
 class TokenFlush(BaseApp):
@@ -327,8 +328,8 @@ class SamlIdentityProviderMetadata(BaseApp):
 
 
 CMDS = [
-    KLWTRotate,
-    KLWTSetup,
+    FernetRotate,
+    FernetSetup,
     DbSync,
     DbVersion,
     MappingPurge,
