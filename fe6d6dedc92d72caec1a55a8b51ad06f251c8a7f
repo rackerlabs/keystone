@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_d9f494d1",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T01:39:50Z",
+      "side": 1,
+      "message": "the \"public\" parameter is missing from the doc.",
+      "revId": "fe6d6dedc92d72caec1a55a8b51ad06f251c8a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_191c6cc1",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T01:39:50Z",
+      "side": 1,
+      "message": "coverage report shows this is untested.",
+      "revId": "fe6d6dedc92d72caec1a55a8b51ad06f251c8a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_397850f8",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T01:39:50Z",
+      "side": 1,
+      "message": "coverage repor shows this is untested.",
+      "revId": "fe6d6dedc92d72caec1a55a8b51ad06f251c8a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_f9495861",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T01:39:50Z",
+      "side": 1,
+      "message": "these tests should be cleaning up after themselves by calling notifications.clear_subscribers().",
+      "revId": "fe6d6dedc92d72caec1a55a8b51ad06f251c8a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_796d68cc",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T01:39:50Z",
+      "side": 1,
+      "message": "suggest use assert_called_once_with since that will be a more stringent test.",
+      "revId": "fe6d6dedc92d72caec1a55a8b51ad06f251c8a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_39d21035",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T01:39:50Z",
+      "side": 1,
+      "message": "there should also be a test for disabled.\n\nAlso, these tests are all the same so could make a parameterized test function and call that.\n\nAlso, there could be a test for emit, too, since it\u0027s \"public\".\n\nAlso, there should be a test where CONF.notification_format is set to different values (\u0027cadf\u0027 or not).\n\nAlso, there should be tests using public\u003dFalse.",
+      "revId": "fe6d6dedc92d72caec1a55a8b51ad06f251c8a7f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
