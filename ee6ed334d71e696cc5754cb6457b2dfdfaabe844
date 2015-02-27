@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_39c69017",
+        "filename": "keystone/token/persistence/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-02-27T01:41:34Z",
+      "side": 1,
+      "message": "was this function supposed to be removed?",
+      "revId": "ee6ed334d71e696cc5754cb6457b2dfdfaabe844",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
