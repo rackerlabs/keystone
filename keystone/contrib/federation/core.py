@@ -292,3 +292,15 @@ class Driver(object):
 
         """
         raise exception.NotImplemented()  # pragma: no cover
+
+    def get_enabled_service_providers(self):
+        """List enabled service providers for Service Catalog297
+
+        Service Provider in a catalog contains three attributes: ``id``,
+        ``auth_url``, ``sp_url``.
+
+        :returns: list of dictionaries with enabled service providers
+        :rtype: list of dicts
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
