@@ -16,6 +16,24 @@
       "revId": "726702398d599dc791cbb60d1e44e1d40be5b91d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_2d71d977",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-02-27T12:03:27Z",
+      "side": 1,
+      "message": "Changes in the migration script will fix the table for new installation. If the db already exist this will not work and since the error arise before any other migration script I do not know if it is possible to fix with code or some advice in the documentation or other.",
+      "parentUuid": "ba7be1f8_aac68f14",
+      "revId": "726702398d599dc791cbb60d1e44e1d40be5b91d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
