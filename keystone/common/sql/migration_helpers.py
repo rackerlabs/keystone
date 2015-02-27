@@ -139,24 +139,15 @@ def find_migrate_repo(package=None, repo_name='migrate_repo'):
     raise exception.MigrationNotProvided(package.__name__, path)
 
 
-def _fix_migration_37(engine):
-    """Fix the region table to be InnoDB and Charset UTF8.
-
-    This function is to work around bug #1334779. This has occurred because
-    the original migration 37 did not specify InnoDB and charset utf8. Due
-    to the sanity_check, a deployer can get wedged here and require manual
-    database changes to fix.
-    """
-    # NOTE(morganfainberg): Extra defensive here, check to make sure we really
-    # are mysql before trying to perform the alters.
-    if engine.name == 'mysql':
-        # * Make sure the engine is InnoDB
-        engine.execute('ALTER TABLE region Engine=InnoDB')
-        # * Make sure the character set is utf8
-        engine.execute('ALTER TABLE region CONVERT TO CHARACTER SET utf8')
+def _get_fix_sanity_check_fn(version, repo, engine):
+    sanity_check_fixes = getattr(repo, 'sanity_check_migration_fixes', {})
+    if engine.name in sanity_check_fixes:
+        if version in sanity_check_fixes[engine.name]:
+            return sanity_check_fixes[engine.name][version]
+    return None
 
 
-def _sync_common_repo(version):
+def _sync_common_repo(version, version_at=None):
     abs_path = find_migrate_repo()
     init_version = migrate_repo.DB_INIT_VERSION
     engine = sql.get_engine()
@@ -165,23 +156,27 @@ def _sync_common_repo(version):
                           init_version=init_version)
     except ValueError:
         # NOTE(morganfainberg): ValueError is raised from the sanity check (
-        # verifies that tables are utf8 under mysql). The region table was not
-        # initially built with InnoDB and utf8 as part of the table arguments
-        # when the migration was initially created. Bug #1334779 is a scenario
-        # where the deployer can get wedged, unable to upgrade or downgrade.
-        # This is a workaround to "fix" that table if we're under MySQL.
-        if engine.name == 'mysql' and six.text_type(get_db_version()) == '37':
-            _fix_migration_37(engine)
-            # Try the migration a second time now that we've done the
-            # un-wedge work.
-            migration.db_sync(engine, abs_path, version=version,
-                              init_version=init_version)
+        # performs verification that tables are in a known state such as
+        # utf8 under mysql). If the ValueError is hit and a fix function has
+        # been defined in the repository for the version and the engine, run
+        # the fix function. Once the fix fn is run, re-run the migration.
+        curr_version = six.text_type(get_db_version())
+        fix_fn = _get_fix_sanity_check_fn(curr_version, migrate_repo, engine)
+        # NOTE(morganfainberg): if `version_at` is not None, it signals that
+        # a fix_fn has already been run. Do not continue to try and fix things
+        # if the previous fix + running a sync did not result in a new schema
+        # version.
+        if curr_version != version_at and fix_fn:
+            fix_fn(engine)
+            _sync_common_repo(version, version_at=curr_version)
         else:
             raise
 
 
-def _sync_extension_repo(extension, version):
+def _sync_extension_repo(extension, version, version_at=None):
     init_version = 0
+    engine = sql.get_engine()
+
     try:
         package_name = '.'.join((contrib.__name__, extension))
         package = importutils.import_module(package_name)
@@ -200,8 +195,27 @@ def _sync_extension_repo(extension, version):
     except exception.MigrationNotProvided as e:
         print(e)
         sys.exit(1)
-    migration.db_sync(sql.get_engine(), abs_path, version=version,
-                      init_version=init_version)
+
+    try:
+        migration.db_sync(engine, abs_path, version=version,
+                          init_version=init_version)
+    except ValueError:
+        # NOTE(morganfainberg): ValueError is raised from the sanity check (
+        # performs verification that tables are in a known state such as
+        # utf8 under mysql). If the ValueError is hit and a fix function has
+        # been defined in the repository for the version and the engine, run
+        # the fix function. Once the fix fn is run, re-run the migration.
+        curr_version = six.text_type(get_db_version(extension))
+        fix_fn = _get_fix_sanity_check_fn(curr_version, migrate_repo, engine)
+        # NOTE(morganfainberg): if `version_at` is not None, it signals that
+        # a fix_fn has already been run. Do not continue to try and fix things
+        # if the previous fix + running a sync did not result in a new schema
+        # version.
+        if curr_version != version_at and fix_fn :
+            fix_fn(engine)
+            _sync_extension_repo(extension, version, version_at=curr_version)
+        else:
+            raise
 
 
 def sync_database_to_version(extension=None, version=None):
