@@ -15,3 +15,24 @@
 
 
 DB_INIT_VERSION = 33
+
+
+def _fix_migration_37(engine):
+    """Fix the region table to be InnoDB and Charset UTF8.
+
+    This function is to work around bug #1334779. This has occurred because
+    the original migration 37 did not specify InnoDB and charset utf8. Due
+    to the sanity_check, a deployer can get wedged here and require manual
+    database changes to fix.
+    """
+    # * Make sure the engine is InnoDB
+    engine.execute('ALTER TABLE region Engine=InnoDB')
+    # * Make sure the character set is utf8
+    engine.execute('ALTER TABLE region CONVERT TO CHARACTER SET utf8')
+
+
+sanity_check_migration_fixes = {
+    'mysql': {
+        '37': _fix_migration_37,
+    }
+}
