@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_55e68745",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 4080,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-27T16:08:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_19546c20",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_d907341c",
         "filename": "keystone/tests/unit/token/test_klwt_provider.py",
         "patchSetId": 29
@@ -87,6 +105,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_b56263ab",
+        "filename": "keystone/tests/unit/token/test_klwt_provider.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-27T16:08:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_b46605ed",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_94a901e2",
         "filename": "keystone/token/provider.py",
         "patchSetId": 29
@@ -98,6 +134,24 @@
       "writtenOn": "2015-02-27T02:16:18Z",
       "side": 1,
       "message": "needs_persistence shouldn\u0027t need to be a method in the driver.",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_35f593cb",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-27T16:08:51Z",
+      "side": 1,
+      "message": "this was added per Morgan\u0027s request, maybe we can catch him in IRC.",
+      "parentUuid": "ba7be1f8_94a901e2",
       "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +175,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_75162bf3",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-27T16:08:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_d491b99b",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_54d4e946",
         "filename": "keystone/token/providers/klwt/core.py",
         "patchSetId": 29
@@ -132,6 +204,24 @@
       "writtenOn": "2015-02-27T02:16:18Z",
       "side": 1,
       "message": "add param before catalog_ref.",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_f5e13bff",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-27T16:08:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_54d4e946",
       "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +245,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_15940f43",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-27T16:08:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_94ce61b3",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_14ba710a",
         "filename": "keystone/token/providers/klwt/core.py",
         "patchSetId": 29
@@ -166,6 +274,24 @@
       "writtenOn": "2015-02-27T02:16:18Z",
       "side": 1,
       "message": "change \"expect\" to \"expecting\"",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_157b2f2a",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-27T16:08:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_14ba710a",
       "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +349,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_95c63f15",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-27T16:08:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_74256d5b",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_b4e5250c",
         "filename": "keystone/token/providers/klwt/token_formatters.py",
         "patchSetId": 29
@@ -234,6 +378,24 @@
       "writtenOn": "2015-02-27T02:16:18Z",
       "side": 1,
       "message": "change this to\n\n from oslo_config import cfg",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_f5ecdb91",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-27T16:08:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_b4e5250c",
       "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -274,6 +436,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_758f0bcd",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-27T16:08:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_34a055a5",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_34877514",
         "filename": "keystone/token/providers/klwt/token_formatters.py",
         "patchSetId": 29
@@ -285,6 +465,24 @@
       "writtenOn": "2015-02-27T02:16:18Z",
       "side": 1,
       "message": "remove this method since this is the default.",
+      "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d5b5177f",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-02-27T16:08:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_34877514",
       "revId": "20462241d1cd5b977c659f2e4fe3a436cf6a146e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
