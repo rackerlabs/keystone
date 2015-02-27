@@ -53,6 +53,7 @@ class Routers(wsgi.RoutersBase):
             patch_action='update_domain_config_only',
             delete_action='delete_domain_config',
             rel=json_home.build_v3_resource_relation('domain_config'),
+            status='experimental',
             path_vars={
                 'domain_id': json_home.Parameters.DOMAIN_ID
             })
@@ -65,7 +66,12 @@ class Routers(wsgi.RoutersBase):
             get_head_action='get_domain_config',
             patch_action='update_domain_config_group',
             delete_action='delete_domain_config',
+<<<<<<< HEAD
             rel=json_home.build_v3_resource_relation('domain_config'),
+=======
+            rel=json_home.build_v3_resource_relation('domain_config_group'),
+            status='experimental',
+>>>>>>> 7e7ce81... Mark the domain config API as experimental
             path_vars={
                 'domain_id': json_home.Parameters.DOMAIN_ID,
                 'group': confg_group_param
@@ -77,7 +83,12 @@ class Routers(wsgi.RoutersBase):
             get_head_action='get_domain_config',
             patch_action='update_domain_config',
             delete_action='delete_domain_config',
+<<<<<<< HEAD
             rel=json_home.build_v3_resource_relation('domain_config'),
+=======
+            rel=json_home.build_v3_resource_relation('domain_config_option'),
+            status='experimental',
+>>>>>>> 7e7ce81... Mark the domain config API as experimental
             path_vars={
                 'domain_id': json_home.Parameters.DOMAIN_ID,
                 'group': confg_group_param,
