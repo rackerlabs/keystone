@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_542f89f6",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-27T02:15:24Z",
+      "side": 1,
+      "message": "shouldn\u0027t line 118-119 be added after line 124 as well? I would image even for local user mapping, we still need to know the identity provider as the method are exactly the same. Only difference is in the mapping. The information need to be consistent.",
+      "revId": "10d74cf9092b6bad2f73e72decb49ce794faf0fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_b4cfe556",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1983,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-02-27T02:15:24Z",
+      "side": 1,
+      "message": "Is group still \"required\" for local user? It should be optional right?",
+      "revId": "10d74cf9092b6bad2f73e72decb49ce794faf0fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
