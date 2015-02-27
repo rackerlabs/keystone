@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_c51bcd1a",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-27T00:18:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_b270dd74",
+      "revId": "09091893c28eac366cdab31166f3b0b34eff6f74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_32814d4e",
         "filename": "keystone/auth/plugins/mapped.py",
         "patchSetId": 16
@@ -30,6 +48,24 @@
       "writtenOn": "2015-02-26T23:04:54Z",
       "side": 1,
       "message": "The following",
+      "revId": "09091893c28eac366cdab31166f3b0b34eff6f74",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_e518d120",
+        "filename": "keystone/auth/plugins/mapped.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-02-27T00:18:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_32814d4e",
       "revId": "09091893c28eac366cdab31166f3b0b34eff6f74",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
