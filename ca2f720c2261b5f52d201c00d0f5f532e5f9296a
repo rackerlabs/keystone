@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_1f81778f",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-28T03:53:48Z",
+      "side": 1,
+      "message": "maybe we should change list_service_providers to have an optional filter by attribute? and from the controller call that with \u0027enabled\u0027...\n\nthen maybe do the \u0027normalization\u0027 of the SPs in the controller, as rodrigo suggests",
+      "parentUuid": "ba7be1f8_8a3619e6",
+      "revId": "ca2f720c2261b5f52d201c00d0f5f532e5f9296a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_eae87518",
         "filename": "keystone/contrib/federation/core.py",
         "patchSetId": 3
@@ -64,6 +82,23 @@
       "writtenOn": "2015-02-27T17:39:30Z",
       "side": 1,
       "message": "suggestion: give a brief explanation about these attributes",
+      "revId": "ca2f720c2261b5f52d201c00d0f5f532e5f9296a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_5f184f84",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-28T03:53:48Z",
+      "side": 1,
+      "message": "this will always make \u0027service_providers\u0027 in the token right? i don\u0027t think we want that, it\u0027s a dict so the user can easily check with .get()",
       "revId": "ca2f720c2261b5f52d201c00d0f5f532e5f9296a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
