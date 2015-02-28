@@ -16,6 +16,24 @@
       "revId": "bfec05e6555e149b66149a461d6289902da68bbc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_5cfe92af",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-02-28T20:41:29Z",
+      "side": 1,
+      "message": "Agreed...although I wanted a test for it....and this seemed pretty ideal!",
+      "parentUuid": "ba7be1f8_8b37e6af",
+      "revId": "bfec05e6555e149b66149a461d6289902da68bbc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
