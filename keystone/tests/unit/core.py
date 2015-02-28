@@ -329,9 +329,6 @@ class TestCase(BaseTestCase):
                  'KVSBackendForcedKeyMangleFixture'),
                 'keystone.tests.unit.test_kvs.KVSBackendFixture'])
         self.config_fixture.config(
-            group='revoke',
-            driver='keystone.contrib.revoke.backends.kvs.Revoke')
-        self.config_fixture.config(
             group='signing', certfile=signing_certfile,
             keyfile=signing_keyfile,
             ca_certs='examples/pki/certs/cacert.pem')
