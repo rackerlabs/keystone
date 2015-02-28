@@ -194,25 +194,6 @@ class SqlRevokeTests(test_backend_sql.SqlTests, RevokeTests):
             revoke_by_id=False)
 
 
-class KvsRevokeTests(tests.TestCase, RevokeTests):
-    def load_extra_backends(self):
-        return {'revoke_api': revoke.Manager()}
-
-    def config_overrides(self):
-        super(KvsRevokeTests, self).config_overrides()
-        self.config_fixture.config(
-            group='revoke',
-            driver='keystone.contrib.revoke.backends.kvs.Revoke')
-        self.config_fixture.config(
-            group='token',
-            provider='keystone.token.providers.pki.Provider',
-            revoke_by_id=False)
-
-    def setUp(self):
-        super(KvsRevokeTests, self).setUp()
-        self.load_backends()
-
-
 class RevokeTreeTests(tests.TestCase):
     def setUp(self):
         super(RevokeTreeTests, self).setUp()

@@ -681,9 +681,6 @@ class TestTokenRevokeById(test_v3.RestfulTestCase):
     def config_overrides(self):
         super(TestTokenRevokeById, self).config_overrides()
         self.config_fixture.config(
-            group='revoke',
-            driver='keystone.contrib.revoke.backends.kvs.Revoke')
-        self.config_fixture.config(
             group='token',
             provider='keystone.token.providers.pki.Provider',
             revoke_by_id=False)
@@ -1396,9 +1393,6 @@ class TestTokenRevokeApi(TestTokenRevokeById):
     """Test token revocation on the v3 Identity API."""
     def config_overrides(self):
         super(TestTokenRevokeApi, self).config_overrides()
-        self.config_fixture.config(
-            group='revoke',
-            driver='keystone.contrib.revoke.backends.kvs.Revoke')
         self.config_fixture.config(
             group='token',
             provider='keystone.token.providers.pki.Provider',
@@ -3075,9 +3069,6 @@ class TestTrustAuth(test_v3.RestfulTestCase):
 
     def config_overrides(self):
         super(TestTrustAuth, self).config_overrides()
-        self.config_fixture.config(
-            group='revoke',
-            driver='keystone.contrib.revoke.backends.kvs.Revoke')
         self.config_fixture.config(
             group='token',
             provider='keystone.token.providers.pki.Provider',

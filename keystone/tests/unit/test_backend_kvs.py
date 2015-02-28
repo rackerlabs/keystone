@@ -162,11 +162,4 @@ class KvsTokenCacheInvalidation(tests.TestCase,
                                 test_backend.TokenCacheInvalidation):
     def setUp(self):
         super(KvsTokenCacheInvalidation, self).setUp()
-        self.load_backends()
-        self._create_test_data()
-
-    def config_overrides(self):
-        super(KvsTokenCacheInvalidation, self).config_overrides()
-        self.config_fixture.config(
-            group='token',
-            driver='keystone.token.persistence.backends.kvs.Token')
+        self.skipTest('KVS backend does not support cache invalidation')

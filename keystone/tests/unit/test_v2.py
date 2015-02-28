@@ -1378,9 +1378,6 @@ class RevokeApiTestCase(V2TestCase):
     def config_overrides(self):
         super(RevokeApiTestCase, self).config_overrides()
         self.config_fixture.config(
-            group='revoke',
-            driver='keystone.contrib.revoke.backends.kvs.Revoke')
-        self.config_fixture.config(
             group='token',
             provider='keystone.token.providers.pki.Provider',
             revoke_by_id=False)
