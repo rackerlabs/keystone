@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_bfea2baa",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1005,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-02-28T03:23:18Z",
+      "side": 1,
+      "message": "nit: explicitly* and i think it should be tabbed over a bit for proper formatting",
+      "revId": "7a7b79673b43de4b081700709c2bc657866b51ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
