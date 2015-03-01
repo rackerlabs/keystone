@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_6bab8b89",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-01T10:53:32Z",
+      "side": 1,
+      "message": "(nit): not quite sure if the extra blank line is adding much here",
+      "revId": "65ef926018ee3f6d7bee1c455ffb83a762205a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_8baeff96",
+        "filename": "keystone/policy/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-01T10:53:32Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "65ef926018ee3f6d7bee1c455ffb83a762205a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_8b851f09",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-01T10:53:32Z",
+      "side": 1,
+      "message": "did you mean to leave this is the full context?",
+      "revId": "65ef926018ee3f6d7bee1c455ffb83a762205a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_cb76373f",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-01T10:53:32Z",
+      "side": 1,
+      "message": "did you mean to leave this is the full context?",
+      "revId": "65ef926018ee3f6d7bee1c455ffb83a762205a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_eb75bb32",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-01T10:53:32Z",
+      "side": 1,
+      "message": "did you mean to leave this is the full context?",
+      "revId": "65ef926018ee3f6d7bee1c455ffb83a762205a4c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
