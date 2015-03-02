@@ -33,6 +33,24 @@
       "revId": "94d1c05b3cc9c4a4c0270d78cc84b80cb6180d46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_ceaaba19",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T09:12:36Z",
+      "side": 1,
+      "message": "Hm, at a first glance yes. But as local rule \"groups\" may be subject for direct mapping (\"{0}\", \"{1}\" is used) it will always be evaluated as string, so we may end up with \n\nidentity_value[\u0027groups\u0027] \u003d\u003d \"[\u0027group1, \u0027group2\u0027]\"\n\nThis is essentially due to logic handled in  _update_local_mapping.\n(In principle not a big fan of string substitution as a way of doing direct mapping).\nSo, ast stays for now and I will add a note.",
+      "parentUuid": "ba7be1f8_b36c0d38",
+      "revId": "94d1c05b3cc9c4a4c0270d78cc84b80cb6180d46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
