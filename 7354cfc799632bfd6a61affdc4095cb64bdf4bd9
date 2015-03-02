@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_78e7d4e4",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-02T07:35:58Z",
+      "side": 1,
+      "message": "in the upgrade flow of the 006 migration script, the \u0027remote_id\u0027 column is never dropped or renamed. should it be dropped? should it be renamed to \u0027remote_ids\u0027? And this should relationship be shown there as well?",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_98e008fc",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-02T07:35:58Z",
+      "side": 1,
+      "message": "change this to:\n\n  # NOTE(launchpad-id): The table ...",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_38babce1",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-02T07:35:58Z",
+      "side": 1,
+      "message": "Remove \"Both should be fixed\", since it seems incomplete. File a bug for it",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_189a586e",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-02T07:35:58Z",
+      "side": 1,
+      "message": "Write a note explaining why it\u0027s unique.",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_f802e4b2",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-02T07:35:58Z",
+      "side": 1,
+      "message": "this seems weird to me, maybe add a note explaining it?\n\n  NOTE (marco): Since we support any protocol ID, we attempt to\n  retrieve the remote_id_attribute of the protocol ID. If it\u0027s not\n  registered in the config, then register the option and try again.\n  This allows the user to register protocols other than oidc and\n  saml2.",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_586130a7",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-02T07:35:58Z",
+      "side": 1,
+      "message": "this is repeated logic from line 142-143, this may be optimized on a later patch",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d8452016",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-02T07:35:58Z",
+      "side": 1,
+      "message": "we could probably remove this option now, if we are going to support this on a per-protocol level. this may be done at a later patch",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d8f2809a",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-02T07:35:58Z",
+      "side": 1,
+      "message": "these two lines are unused",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_582e90fb",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-02T07:35:58Z",
+      "side": 1,
+      "message": "this line is unnecessary",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_5863f040",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-02T07:35:58Z",
+      "side": 1,
+      "message": "call this returned_idp, nothing was updated",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d8d520b8",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 968,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-02T07:35:58Z",
+      "side": 1,
+      "message": "looks like REMOTE_ID[1] is never used, maybe drop it?",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
