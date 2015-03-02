@@ -86,6 +86,24 @@
       "revId": "daf2d584437e75e0655f4eb9e05f76fbfc3ae4c7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_4835c6d9",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 744,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-02T17:16:53Z",
+      "side": 1,
+      "message": "I think this is fine....we have definitely updated/created the group at this point.  If for some reason setting the domain_id/mapping blows up....it would get recreated next time anyone read this user/group",
+      "parentUuid": "ba7be1f8_60e1d6fd",
+      "revId": "daf2d584437e75e0655f4eb9e05f76fbfc3ae4c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
