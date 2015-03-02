@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_81024c3c",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T11:45:19Z",
+      "side": 1,
+      "message": "cover says it\u0027s not tested and it\u0027s unclear to me what is designed behaviour with KLWT and mapped tokens.",
+      "revId": "a605e2e4c41636bbd02f75db061b31e6d8177f73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_a6ccc662",
         "filename": "keystone/token/providers/klwt/token_formatters.py",
         "patchSetId": 31
