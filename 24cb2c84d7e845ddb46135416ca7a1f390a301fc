@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_bd769ed6",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-02T06:51:57Z",
+      "side": 1,
+      "message": "NIT: would probably be nice to group this with test_create_trust()",
+      "revId": "24cb2c84d7e845ddb46135416ca7a1f390a301fc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
