@@ -124,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_d37181df",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T08:42:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_189a586e",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_f802e4b2",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 16
@@ -159,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_cef2ba9a",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T08:42:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_f802e4b2",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_586130a7",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 16
@@ -176,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_2e37d6b1",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T08:42:36Z",
+      "side": 1,
+      "message": "moved to separate sub-fun.",
+      "parentUuid": "ba7be1f8_586130a7",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_d8452016",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 16
@@ -187,6 +241,24 @@
       "writtenOn": "2015-03-02T07:35:58Z",
       "side": 1,
       "message": "we could probably remove this option now, if we are going to support this on a per-protocol level. this may be done at a later patch",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_eebdbe03",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T08:42:36Z",
+      "side": 1,
+      "message": "I will talk with Morgan about it.",
+      "parentUuid": "ba7be1f8_d8452016",
       "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -274,6 +346,24 @@
       "writtenOn": "2015-03-02T07:35:58Z",
       "side": 1,
       "message": "call this returned_idp, nothing was updated",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_8e0fe287",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T08:42:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_5863f040",
       "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
