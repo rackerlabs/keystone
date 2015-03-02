@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_8c70a741",
+        "filename": "keystone/common/sql/migrate_repo/versions/065_add_domain_config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-02T21:14:00Z",
+      "side": 1,
+      "message": "who\u0027s converting JSON back to something oslo config can understand?",
+      "revId": "6c3792b866223099ee728ac079d04675ad48d443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_8c99877b",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-02T21:14:00Z",
+      "side": 1,
+      "message": "I don\u0027t understand this comment. Are we not doing bulk delete at line 111?",
+      "revId": "6c3792b866223099ee728ac079d04675ad48d443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_acb72bd7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 810,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-02T21:14:00Z",
+      "side": 1,
+      "message": "may want to emphasize that value is JSON string",
+      "revId": "6c3792b866223099ee728ac079d04675ad48d443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
