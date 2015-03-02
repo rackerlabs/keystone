@@ -16,6 +16,24 @@
       "revId": "671b0689b7d71c220a49a3bd38caab3353680dea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_19cebe83",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-02T18:08:42Z",
+      "side": 1,
+      "message": "Correct. We already called cadf notify once, we make sure we\u0027ve still only called it once here. If cadf notify had been called a second time when public was false, this would explode.",
+      "parentUuid": "ba7be1f8_73e7f5e4",
+      "revId": "671b0689b7d71c220a49a3bd38caab3353680dea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
