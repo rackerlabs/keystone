@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_dc9c4260",
+        "filename": "etc/policy.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-02T00:43:35Z",
+      "side": 1,
+      "message": "gyee - this is a link to a v2 controller, so policy doesn\u0027t apply there.",
+      "parentUuid": "ba7be1f8_d84ee795",
+      "revId": "06df65f6fce9561a92571b57216d0cb0ec1085ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_2781a64a",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 2
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_494dec71",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-02T00:43:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_2781a64a",
+      "revId": "06df65f6fce9561a92571b57216d0cb0ec1085ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_38dc63e4",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 2
@@ -65,6 +101,24 @@
       "writtenOn": "2015-02-24T07:45:19Z",
       "side": 1,
       "message": "the original admin_or_owner should work fine. No need for this change.",
+      "revId": "06df65f6fce9561a92571b57216d0cb0ec1085ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_6950f00a",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-02T00:43:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_38dc63e4",
       "revId": "06df65f6fce9561a92571b57216d0cb0ec1085ed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -105,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_8957e401",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-02T00:43:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_f8e9eb80",
+      "revId": "06df65f6fce9561a92571b57216d0cb0ec1085ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_78e6dbb5",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 2
@@ -116,6 +188,24 @@
       "writtenOn": "2015-02-24T07:45:19Z",
       "side": 1,
       "message": "same as above",
+      "revId": "06df65f6fce9561a92571b57216d0cb0ec1085ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a95ae827",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-02T00:43:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_78e6dbb5",
       "revId": "06df65f6fce9561a92571b57216d0cb0ec1085ed",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
