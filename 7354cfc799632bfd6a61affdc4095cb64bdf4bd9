@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_53e031cc",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T08:07:51Z",
+      "side": 1,
+      "message": "There is a line 38 in https://review.openstack.org/#/c/152156/16/keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py ....\n\nIn the DB there is a PK-FK relationship between identity_provider and idp_remote_ids tables, but in the SQLalchemy abstraction it is more like object with a list being an object\u0027s attribute.",
+      "parentUuid": "ba7be1f8_78e7d4e4",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_98e008fc",
         "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
         "patchSetId": 16
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_18017806",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T08:07:51Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba7be1f8_98e008fc",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_38babce1",
         "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
         "patchSetId": 16
@@ -47,6 +83,24 @@
       "writtenOn": "2015-03-02T07:35:58Z",
       "side": 1,
       "message": "Remove \"Both should be fixed\", since it seems incomplete. File a bug for it",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_f31cc56c",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T08:07:51Z",
+      "side": 1,
+      "message": "There is a bug https://bugs.launchpad.net/keystone/+bug/1426334 already filed.\nProbably the link or bug-id could be added in the NOTE.",
+      "parentUuid": "ba7be1f8_38babce1",
       "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +135,24 @@
       "writtenOn": "2015-03-02T07:35:58Z",
       "side": 1,
       "message": "this seems weird to me, maybe add a note explaining it?\n\n  NOTE (marco): Since we support any protocol ID, we attempt to\n  retrieve the remote_id_attribute of the protocol ID. If it\u0027s not\n  registered in the config, then register the option and try again.\n  This allows the user to register protocols other than oidc and\n  saml2.",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_932389a6",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T08:07:51Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba7be1f8_f802e4b2",
       "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +210,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_f34da5c5",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T08:07:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_d8f2809a",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_582e90fb",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 16
@@ -149,6 +239,24 @@
       "writtenOn": "2015-03-02T07:35:58Z",
       "side": 1,
       "message": "this line is unnecessary",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_134959b7",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T08:07:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_582e90fb",
       "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -183,6 +291,24 @@
       "writtenOn": "2015-03-02T07:35:58Z",
       "side": 1,
       "message": "looks like REMOTE_ID[1] is never used, maybe drop it?",
+      "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_138b1969",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 968,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T08:07:51Z",
+      "side": 1,
+      "message": "We are adding \u003e1 remote_id in line 1973 and it\u0027s better by default add more than one rmeote_id since this is the main goal of this patch.",
+      "parentUuid": "ba7be1f8_d8d520b8",
       "revId": "7354cfc799632bfd6a61affdc4095cb64bdf4bd9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
