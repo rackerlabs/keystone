@@ -13,6 +13,7 @@
 # under the License.
 
 from __future__ import absolute_import
+from __future__ import print_function
 
 import os
 
@@ -26,6 +27,7 @@ from keystone.common import sql
 from keystone.common.sql import migration_helpers
 from keystone.common import utils
 from keystone import config
+from keystone import exception
 from keystone.i18n import _, _LW
 from keystone import identity
 from keystone import resource
@@ -319,6 +321,138 @@ class MappingPurge(BaseApp):
         mapping_manager.driver.purge_mappings(mapping)
 
 
+DOMAIN_CONF_FHEAD = 'keystone.'
+DOMAIN_CONF_FTAIL = '.conf'
+
+
+class DomainConfigUpload(BaseApp):
+    """Upload the domain specific configuration files to the database."""
+
+    name = 'domain_config_upload'
+
+    @classmethod
+    def add_argument_parser(cls, subparsers):
+        parser = super(DomainConfigUpload, cls).add_argument_parser(subparsers)
+        parser.add_argument('--all', default=False, action='store_true',
+                            help='Upload contents of all domain specific '
+                                 'configuration files.')
+        parser.add_argument('--domain-name', default=None,
+                            help='Upload contents of the specific '
+                                 'configuration file for the given domain.')
+        return parser
+
+    @staticmethod
+    def main():
+        def valid_options():
+            """Validate the options, returning True if they are indeed valid.
+
+            It would be nice to use the argparse automated checking for this
+            validation, but the only way I can see doing that is to make the
+            default (i.e. if no optional parameters are specified) to upload
+            all configuration files - and that sounds too dangerous as a
+            default. So we use it in a slightly unconventional way, where all
+            parameters are optional, but you must specify at least one.
+
+            """
+            if (CONF.command.all is False and
+                    CONF.command.domain_name is None):
+                print(_('At least one option must be provided'))
+                return False
+
+            if (CONF.command.all is True and
+                    CONF.command.domain_name is not None):
+                print(_('--all option cannot be mixed with '
+                        'the domain-name option'))
+                return False
+            return True
+
+        def upload_config_to_database(resource_manager, domain_config_manager,
+                                      file_name, domain_name):
+            try:
+                domain_ref = (
+                    resource_manager.driver.get_domain_by_name(domain_name))
+            except exception.DomainNotFound:
+                LOG.warning(
+                    _LW('Invalid domain name (%s) found in config file name'),
+                    domain_name)
+                return
+
+            if domain_config_manager.get_config_with_sensitive_info(
+                    domain_ref['id']):
+                LOG.warn(_LW('Domain: %(domain)s already has a configuration '
+                             'defined - ignoring file: %(file)s.') % {
+                                 'domain': domain_name,
+                                 'file': file_name})
+                return
+
+            sections = {}
+            normalized = {}
+            parser = cfg.ConfigParser(file_name, sections)
+            parser._add_normalized(normalized)
+            parser.parse()
+            for group in sections:
+                for option in sections[group]:
+                        sections[group][option] = sections[group][option][0]
+            domain_config_manager.create_config(domain_ref['id'], sections)
+
+        def load_backends():
+            """Load the backends needed for uploading domain configs.
+
+            We only need the resource and domain_cnfig managers, but there are
+            some dependencies which mean we have to load the assignment and
+            identity managers as well.
+
+            The order of loading the backends is important, since the resource
+            manager depends on the assignment manager, which in turn depends on
+            the identity manager.
+
+            """
+            identity.Manager()
+            assignment.Manager()
+            resource_manager = resource.Manager()
+            domain_config_manager = resource.DomainConfigManager()
+            return (resource_manager, domain_config_manager)
+
+        def read_domain_configs_from_files(domain_name):
+            conf_dir = CONF.identity.domain_config_dir
+            if not os.path.exists(conf_dir):
+                raise ValueError(_('Unable to locate domain config '
+                                   'directory: %s'), conf_dir)
+
+            resource_manager, domain_config_manager = load_backends()
+
+            if domain_name:
+                # Request is to upload the configs for just one domain
+                fname = DOMAIN_CONF_FHEAD + domain_name + DOMAIN_CONF_FTAIL
+                upload_config_to_database(
+                    resource_manager, domain_config_manager,
+                    os.path.join(conf_dir, fname), domain_name)
+                return
+
+            # Request is to transfer all config files, so let's read all the
+            # files in the config directory, and transfer those that match the
+            # filename pattern of 'keystone.<domain_name>.conf'
+            for r, d, f in os.walk(conf_dir):
+                for fname in f:
+                    if (fname.startswith(DOMAIN_CONF_FHEAD) and
+                            fname.endswith(DOMAIN_CONF_FTAIL)):
+                        if fname.count('.') >= 2:
+                            upload_config_to_database(
+                                resource_manager, domain_config_manager,
+                                os.path.join(r, fname),
+                                fname[len(DOMAIN_CONF_FHEAD):
+                                      -len(DOMAIN_CONF_FTAIL)])
+                        else:
+                            LOG.warn(_LW('Ignoring file (%s) while scanning '
+                                         'domain config directory'), fname)
+
+        if valid_options():
+            # Once validation has occurred, either CONF.command.domain_name is
+            # set to the name of an explicit domain, or it's None to indicate
+            # that we want all domain config files.
+            read_domain_configs_from_files(CONF.command.domain_name)
+
+
 class SamlIdentityProviderMetadata(BaseApp):
     """Generate Identity Provider metadata."""
 
@@ -336,6 +470,7 @@ class SamlIdentityProviderMetadata(BaseApp):
 CMDS = [
     DbSync,
     DbVersion,
+    DomainConfigUpload,
     FernetRotate,
     FernetSetup,
     MappingPurge,
