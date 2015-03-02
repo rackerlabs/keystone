@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_8e7fe265",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-02T08:23:50Z",
+      "side": 1,
+      "message": "nit, cases are different here for no reason",
+      "revId": "fd2ee0ff2cfc1da4a0c7455b58ab6e2799c93355",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
