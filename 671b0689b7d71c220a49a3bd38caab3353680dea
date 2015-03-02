@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_73e7f5e4",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-02T08:00:57Z",
+      "side": 1,
+      "message": "if we are setting public to false, then cadf_notify shouldn\u0027t be called right?",
+      "revId": "671b0689b7d71c220a49a3bd38caab3353680dea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
