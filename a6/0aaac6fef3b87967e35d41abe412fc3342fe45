@@ -1,0 +1,8 @@
+Verified+2: Jenkins
+Workflow+1: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Marek Denis <marek.denis@cern.ch>
+Submitted-by: Jenkins
+Submitted-at: Mon, 02 Mar 2015 17:26:53 +0000
+Reviewed-on: https://review.openstack.org/110575
+Project: openstack/keystone
+Branch: refs/heads/master
