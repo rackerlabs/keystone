@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_55d572b7",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T10:28:42Z",
+      "side": 1,
+      "message": "wondering if it\u0027s okay here to emit notification right after the endpoint was updated but before calling get_endpoint.invalidate() which i assume might blow in some rare cases....",
+      "revId": "daf2d584437e75e0655f4eb9e05f76fbfc3ae4c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_75db56ed",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 207,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T10:28:42Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "daf2d584437e75e0655f4eb9e05f76fbfc3ae4c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_60e1d6fd",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 744,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T10:28:42Z",
+      "side": 1,
+      "message": "we good iting that group was updated and _set_domain_id_and_mapping may blow for instance by raising ValueError ? \nThis applies to all functions that emit notifications and are not the last operation in the function.",
+      "revId": "daf2d584437e75e0655f4eb9e05f76fbfc3ae4c7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
