@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_2cb09b42",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 33
+      },
+      "lineNbr": 742,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T21:26:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_5b48275c",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_fb5c7b7f",
         "filename": "keystone/cli.py",
         "patchSetId": 33
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_cc329fa6",
+        "filename": "keystone/cli.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T21:26:56Z",
+      "side": 1,
+      "message": "Correct, it will start by creating a key named \u00270\u0027 and then promote that key to the primary key \u00271\u0027. It then creates the next primary key and names it 0. So you should have two keys on setup.",
+      "parentUuid": "ba7be1f8_fb5c7b7f",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_5bf9074d",
         "filename": "keystone/cli.py",
         "patchSetId": 33
@@ -64,6 +100,24 @@
       "writtenOn": "2015-03-02T20:28:05Z",
       "side": 1,
       "message": "A new staged key is created ...? And the old staged key will get promoted to primary.",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_8ca7c7a6",
+        "filename": "keystone/cli.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T21:26:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_5bf9074d",
       "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -281,6 +335,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_2cb17b8f",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 4067,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T21:26:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_f80ba121",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_f859e135",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 33
@@ -316,6 +388,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_4caeaf2f",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 4082,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T21:26:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_1ef93d80",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_de32455d",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 33
@@ -333,6 +423,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_6ca7f350",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 4091,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T21:26:56Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_de32455d",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_de6b25b7",
         "filename": "keystone/token/providers/klwt/token_formatters.py",
         "patchSetId": 33
@@ -344,6 +452,24 @@
       "writtenOn": "2015-03-02T20:28:05Z",
       "side": 1,
       "message": "do we need a more specific exception here?",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_6c037310",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T21:26:56Z",
+      "side": 1,
+      "message": "Strange, I did this in a previous patch set but I think it must have been overwritten in a rebase. Done.",
+      "parentUuid": "ba7be1f8_de6b25b7",
       "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -378,6 +504,24 @@
       "writtenOn": "2015-03-02T20:28:05Z",
       "side": 1,
       "message": "no domain-scoped token?",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a74e646d",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T21:26:56Z",
+      "side": 1,
+      "message": "Done, see testing in next patch set.",
+      "parentUuid": "ba7be1f8_defb2579",
       "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
