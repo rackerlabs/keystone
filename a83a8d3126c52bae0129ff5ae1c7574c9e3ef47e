@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_fe70e9a5",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 4074,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-02T20:16:16Z",
+      "side": 1,
+      "message": "These have the same problem as the parent review. assertTrue asserts that the expression token is true and will only use the matcher, as an error message, if the assertion is False.",
+      "revId": "a83a8d3126c52bae0129ff5ae1c7574c9e3ef47e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
