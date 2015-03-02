@@ -87,6 +87,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_c1d6e84e",
+        "filename": "keystone/cli.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T20:40:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_1e213d4d",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_eacd8ab8",
         "filename": "keystone/cli.py",
         "patchSetId": 33
@@ -115,6 +133,24 @@
       "writtenOn": "2015-03-02T20:22:53Z",
       "side": 1,
       "message": "++ this was my first pass at writing docs... but i thought these docstrs were rendered to --help (they\u0027re not, afaik). all this should be moved to docs/",
+      "parentUuid": "ba7be1f8_eacd8ab8",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_01cd60b7",
+        "filename": "keystone/cli.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T20:40:29Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "ba7be1f8_eacd8ab8",
       "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -157,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_c13d0891",
+        "filename": "keystone/cli.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T20:40:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_6f9a8c6f",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_8a05eec3",
         "filename": "keystone/common/config.py",
         "patchSetId": 33
@@ -186,6 +240,24 @@
       "side": 1,
       "message": "probably, so fernet_keys/ ?",
       "parentUuid": "ba7be1f8_8a05eec3",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_41703872",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T20:40:29Z",
+      "side": 1,
+      "message": "Should this be renamed in the fernet renaming patch that dolph has?",
+      "parentUuid": "ba7be1f8_deade585",
       "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
