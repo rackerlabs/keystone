@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_eacd8ab8",
+        "filename": "keystone/cli.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-02T19:24:45Z",
+      "side": 1,
+      "message": "This like would actually be a great addition to the docs.",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_6f9a8c6f",
+        "filename": "keystone/cli.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-02T19:24:45Z",
+      "side": 1,
+      "message": "Any reason these are not alphabetical like the others?",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_8a05eec3",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-02T19:24:45Z",
+      "side": 1,
+      "message": "Will we ever run in to a situation where we have to manage multiple types ?of keys?",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_f80ba121",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 4067,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-02T19:24:45Z",
+      "side": 1,
+      "message": "This is sorta funny. The point of using the matchers is that the test reads more like natural language.\n\n    self.assertThat(unscoped_token, matchers.StartsWith(something))",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_f859e135",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 4082,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-02T19:24:45Z",
+      "side": 1,
+      "message": "assertTrue is defined as taking an expression as the first arg and a message as the second.",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
