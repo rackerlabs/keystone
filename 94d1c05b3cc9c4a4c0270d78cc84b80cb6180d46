@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_d34ee1c1",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-02T08:07:03Z",
+      "side": 1,
+      "message": "we probably don\u0027t need to use this, the schema should validate things. maybe make a malicious test to have a malformed group mapping?",
+      "revId": "94d1c05b3cc9c4a4c0270d78cc84b80cb6180d46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_b36c0d38",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 517,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-02T08:07:03Z",
+      "side": 1,
+      "message": "i think it\u0027s fine to just do:\n\n  identity_value[\u0027groups\u0027]\n\nwe already checked that it was there in line 509, and the schema should make sure it\u0027s a list",
+      "revId": "94d1c05b3cc9c4a4c0270d78cc84b80cb6180d46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
