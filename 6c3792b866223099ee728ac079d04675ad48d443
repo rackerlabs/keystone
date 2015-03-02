@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_ac89eb27",
+        "filename": "keystone/common/sql/migrate_repo/versions/065_add_domain_config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-02T21:39:51Z",
+      "side": 1,
+      "message": "Please add nullable\u003dFalse, as defined in keystone/resource/config_backends/sql.py",
+      "revId": "6c3792b866223099ee728ac079d04675ad48d443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_ec7f6315",
+        "filename": "keystone/common/sql/migrate_repo/versions/065_add_domain_config.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-02T21:39:51Z",
+      "side": 1,
+      "message": "Please add nullable\u003dFalse, as defined in keystone/resource/config_backends/sql.py",
+      "revId": "6c3792b866223099ee728ac079d04675ad48d443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_8c99877b",
         "filename": "keystone/resource/config_backends/sql.py",
         "patchSetId": 11
@@ -36,6 +70,23 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_4c878fb5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-02T21:39:51Z",
+      "side": 1,
+      "message": "(nit) s/an/a",
+      "revId": "6c3792b866223099ee728ac079d04675ad48d443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_acb72bd7",
         "filename": "keystone/resource/core.py",
         "patchSetId": 11
@@ -47,6 +98,91 @@
       "writtenOn": "2015-03-02T21:14:00Z",
       "side": 1,
       "message": "may want to emphasize that value is JSON string",
+      "revId": "6c3792b866223099ee728ac079d04675ad48d443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_8c00a703",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-02T21:39:51Z",
+      "side": 1,
+      "message": "Maybe \u0027containing updated group, option and value\u0027.\n\nAdding \"updated\", just to make it clearer.",
+      "revId": "6c3792b866223099ee728ac079d04675ad48d443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a7d4a420",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-02T21:39:51Z",
+      "side": 1,
+      "message": "It would make more sense to have config1 as sensitive, as it is the password.",
+      "revId": "6c3792b866223099ee728ac079d04675ad48d443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_8799607b",
+        "filename": "keystone/tests/unit/backend/domain_config/test_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-02T21:39:51Z",
+      "side": 1,
+      "message": "Should we assert contraints as well?",
+      "revId": "6c3792b866223099ee728ac079d04675ad48d443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_e77f7c15",
+        "filename": "keystone/tests/unit/backend/domain_config/test_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-02T21:39:51Z",
+      "side": 1,
+      "message": "Same here, should we assert contraints?",
+      "revId": "6c3792b866223099ee728ac079d04675ad48d443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_277d141d",
+        "filename": "keystone/tests/unit/backend/domain_config/test_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-02T21:39:51Z",
+      "side": 1,
+      "message": "(nit) s/it\u0027s/its",
       "revId": "6c3792b866223099ee728ac079d04675ad48d443",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
