@@ -1737,6 +1737,18 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
         # Returning projects to be used across the tests
         return [project1, project2]
 
+    def _assert_multiple_domains_not_supported(self):
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'domain_id': uuid.uuid4().hex}
+        self.assertRaises(exception.DomainNotFound,
+                          self.resource_api.create_project,
+                          project['id'],
+                          project)
+
+    def test_create_project_invalid_domain_id(self):
+        self._assert_multiple_domains_not_supported()
+
     def test_check_leaf_projects(self):
         projects = self._assert_create_hierarchy_not_allowed()
         for project in projects:
