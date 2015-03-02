@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba7be1f8_dbed13b9",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 31
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T11:27:39Z",
+      "side": 1,
+      "message": "(nit) \u0027a\u0027 or \u0027an\u0027 ?",
+      "revId": "a605e2e4c41636bbd02f75db061b31e6d8177f73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_4e088ad9",
         "filename": "keystone/cli.py",
         "patchSetId": 31
@@ -19,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_a6ccc662",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T11:27:39Z",
+      "side": 1,
+      "message": "How about raising something more specific? (not Exception class)",
+      "revId": "a605e2e4c41636bbd02f75db061b31e6d8177f73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_4ed6ca28",
         "filename": "keystone/token/providers/klwt/utils.py",
         "patchSetId": 31
@@ -30,6 +64,40 @@
       "writtenOn": "2015-03-02T08:31:14Z",
       "side": 1,
       "message": "you could check that it exists first, and split this into 2 checks/messages. not that big of a deal",
+      "revId": "a605e2e4c41636bbd02f75db061b31e6d8177f73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_01757c97",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T11:27:39Z",
+      "side": 1,
+      "message": "(hint) handle OSError exception, just in case, , or at least log there was a problem with permissions/reading the file.",
+      "revId": "a605e2e4c41636bbd02f75db061b31e6d8177f73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c190c497",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T11:27:39Z",
+      "side": 1,
+      "message": "(hint) handle OSError exception, just in case, or at least log there was a problem with permissions/reading the file.",
       "revId": "a605e2e4c41636bbd02f75db061b31e6d8177f73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
