@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_bb2f6a3d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T17:52:11Z",
+      "side": 1,
+      "message": "How come this doesn\u0027t have \n\n    assignment.get(\u0027role_id\u0027) \n\nlike the other calls?",
+      "revId": "b20b00b5f9f46345c0f5a6aae3662d5b7942959f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_7b15f2e3",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T17:52:11Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "b20b00b5f9f46345c0f5a6aae3662d5b7942959f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_dbb41ef4",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T17:52:11Z",
+      "side": 1,
+      "message": "Should this raise any exceptions if certain values don\u0027t get populated in the assignment dictionary?",
+      "revId": "b20b00b5f9f46345c0f5a6aae3662d5b7942959f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_bb2e8af8",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T17:52:11Z",
+      "side": 1,
+      "message": "is there another assignment type we can have here, or will it always be either user or group? Do we need an elif here or could it just be else?",
+      "revId": "b20b00b5f9f46345c0f5a6aae3662d5b7942959f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3b3a9a34",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T17:52:11Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "b20b00b5f9f46345c0f5a6aae3662d5b7942959f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_fbd482be",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T17:52:11Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "b20b00b5f9f46345c0f5a6aae3662d5b7942959f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_dbd17ece",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T17:52:11Z",
+      "side": 1,
+      "message": "same comment here",
+      "revId": "b20b00b5f9f46345c0f5a6aae3662d5b7942959f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_7e188075",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T17:52:11Z",
+      "side": 1,
+      "message": "nit: not that it really matters much, but should this be private?",
+      "revId": "b20b00b5f9f46345c0f5a6aae3662d5b7942959f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
