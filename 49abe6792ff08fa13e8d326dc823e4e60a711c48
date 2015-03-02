@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_4c5ed377",
+        "filename": "keystone/tests/unit/test_backend_kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-02T09:05:05Z",
+      "side": 1,
+      "message": "do we need this class at all?",
+      "revId": "49abe6792ff08fa13e8d326dc823e4e60a711c48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
