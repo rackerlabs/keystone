@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_ef859c07",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-02T18:49:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_fbcd62b8",
+      "revId": "2c4edf068cdc4fe7ba9ba305d439d486a3e767fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_5b9f4e5f",
         "filename": "keystone/common/config.py",
         "patchSetId": 5
@@ -47,6 +65,24 @@
       "writtenOn": "2015-03-02T17:49:28Z",
       "side": 1,
       "message": "resource backend ?",
+      "revId": "2c4edf068cdc4fe7ba9ba305d439d486a3e767fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_cfca98a0",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-02T18:49:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_5b9f4e5f",
       "revId": "2c4edf068cdc4fe7ba9ba305d439d486a3e767fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_cf41b80c",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-02T18:49:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_9b04667f",
+      "revId": "2c4edf068cdc4fe7ba9ba305d439d486a3e767fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_bb668a27",
         "filename": "keystone/identity/core.py",
         "patchSetId": 5
@@ -81,6 +135,24 @@
       "writtenOn": "2015-03-02T17:49:26Z",
       "side": 1,
       "message": "Do we need to explain how the sensitive data such as passwords are protected?",
+      "revId": "2c4edf068cdc4fe7ba9ba305d439d486a3e767fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_6f50ccd4",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-02T18:49:04Z",
+      "side": 1,
+      "message": "That comes is later patches, so I would say we don\u0027t need to describe it here....look at the next two patches up the chain...",
+      "parentUuid": "ba7be1f8_bb668a27",
       "revId": "2c4edf068cdc4fe7ba9ba305d439d486a3e767fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_8f5ee0e7",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-02T18:49:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_bbbf6a5f",
+      "revId": "2c4edf068cdc4fe7ba9ba305d439d486a3e767fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_3eaa88d2",
         "filename": "keystone/identity/core.py",
         "patchSetId": 5
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_cfdd3844",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-02T18:49:04Z",
+      "side": 1,
+      "message": "Correct....yes, further up the chain of patches you will see a patch for keystone-manage that provides exactly that capability",
+      "parentUuid": "ba7be1f8_3eaa88d2",
+      "revId": "2c4edf068cdc4fe7ba9ba305d439d486a3e767fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_3e0e0833",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 5
@@ -132,6 +240,24 @@
       "writtenOn": "2015-03-02T17:49:28Z",
       "side": 1,
       "message": "It think it would be better to call the non-private  domain_config.setup_domain_drivers, with domain_configurations_from_database as False.\n\nInstead of calling internal private methods. However, this is not being introduced by this patch.",
+      "revId": "2c4edf068cdc4fe7ba9ba305d439d486a3e767fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_8fa180ab",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3001,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-02T18:49:04Z",
+      "side": 1,
+      "message": "Agreed...In fact, once all this is in, we\u0027l likely to another refactor to try and stop the delayed loading of configs...and I\u0027ll include this suggestion in that clean up",
+      "parentUuid": "ba7be1f8_3e0e0833",
       "revId": "2c4edf068cdc4fe7ba9ba305d439d486a3e767fe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
