@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_4e088ad9",
+        "filename": "keystone/cli.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-02T08:31:14Z",
+      "side": 1,
+      "message": "this split should have probably been done separately, but it\u0027s cool",
+      "revId": "a605e2e4c41636bbd02f75db061b31e6d8177f73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_4ed6ca28",
+        "filename": "keystone/token/providers/klwt/utils.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-02T08:31:14Z",
+      "side": 1,
+      "message": "you could check that it exists first, and split this into 2 checks/messages. not that big of a deal",
+      "revId": "a605e2e4c41636bbd02f75db061b31e6d8177f73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_ae4ae624",
+        "filename": "requirements.txt",
+        "patchSetId": 31
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-02T08:31:14Z",
+      "side": 1,
+      "message": "alphabetize these\n\ndo they need to be added to req-v3?",
+      "revId": "a605e2e4c41636bbd02f75db061b31e6d8177f73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
