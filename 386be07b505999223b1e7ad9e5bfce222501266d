@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba7be1f8_1ff694f9",
+        "filename": "keystone/cli.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 332,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T22:46:06Z",
+      "side": 1,
+      "message": "this should be rebased after the dependent patch merges, moving these into alphabetical order.",
+      "revId": "386be07b505999223b1e7ad9e5bfce222501266d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_d83edd8a",
         "filename": "keystone/token/provider.py",
         "patchSetId": 2
