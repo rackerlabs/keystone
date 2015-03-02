@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba7be1f8_1e213d4d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-02T20:22:53Z",
+      "side": 1,
+      "message": "this needs to be revised with:\n\n  s/active/secondary/\n\nto match the terminology used in docs/",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_eacd8ab8",
         "filename": "keystone/cli.py",
         "patchSetId": 33
@@ -13,6 +30,24 @@
       "writtenOn": "2015-03-02T19:24:45Z",
       "side": 1,
       "message": "This like would actually be a great addition to the docs.",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_1efa1dbd",
+        "filename": "keystone/cli.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-02T20:22:53Z",
+      "side": 1,
+      "message": "++ this was my first pass at writing docs... but i thought these docstrs were rendered to --help (they\u0027re not, afaik). all this should be moved to docs/",
+      "parentUuid": "ba7be1f8_eacd8ab8",
       "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -36,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_1ea4dda4",
+        "filename": "keystone/cli.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-02T20:22:53Z",
+      "side": 1,
+      "message": "they were in alphabetical order when they were called AERotate \u0026 AESetup :)",
+      "parentUuid": "ba7be1f8_6f9a8c6f",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_8a05eec3",
         "filename": "keystone/common/config.py",
         "patchSetId": 33
@@ -47,6 +100,24 @@
       "writtenOn": "2015-03-02T19:24:45Z",
       "side": 1,
       "message": "Will we ever run in to a situation where we have to manage multiple types ?of keys?",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_deade585",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-02T20:22:53Z",
+      "side": 1,
+      "message": "probably, so fernet_keys/ ?",
+      "parentUuid": "ba7be1f8_8a05eec3",
       "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -81,6 +152,41 @@
       "writtenOn": "2015-03-02T19:24:45Z",
       "side": 1,
       "message": "assertTrue is defined as taking an expression as the first arg and a message as the second.",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_1ef93d80",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 4082,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-02T20:22:53Z",
+      "side": 1,
+      "message": "s/assertTrue/assertThat/",
+      "parentUuid": "ba7be1f8_f859e135",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_de32455d",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 4091,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-02T20:22:53Z",
+      "side": 1,
+      "message": "several instances of that",
       "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
