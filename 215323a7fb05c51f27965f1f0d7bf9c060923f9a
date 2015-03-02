@@ -16,6 +16,24 @@
       "revId": "215323a7fb05c51f27965f1f0d7bf9c060923f9a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_cd88d973",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 34
+      },
+      "lineNbr": 744,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T22:15:55Z",
+      "side": 1,
+      "message": "Done, I\u0027m on the struggle bus today",
+      "parentUuid": "ba7be1f8_520ac426",
+      "revId": "215323a7fb05c51f27965f1f0d7bf9c060923f9a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
