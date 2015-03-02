@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_9ba1c6ab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-02T17:49:26Z",
+      "side": 1,
+      "message": "s/whiih/which/",
+      "revId": "2c4edf068cdc4fe7ba9ba305d439d486a3e767fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_bb668a27",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-02T17:49:26Z",
+      "side": 1,
+      "message": "Do we need to explain how the sensitive data such as passwords are protected?",
+      "revId": "2c4edf068cdc4fe7ba9ba305d439d486a3e767fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3eaa88d2",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-02T17:49:26Z",
+      "side": 1,
+      "message": "This means we either going to load domain config from database or file, but not both. How do we address backward compatibility? Explicit one-time migration via keystone-manage?",
+      "revId": "2c4edf068cdc4fe7ba9ba305d439d486a3e767fe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
