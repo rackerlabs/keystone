@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_679e3e56",
+        "filename": "keystone/token/providers/klwt/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T15:46:52Z",
+      "side": 1,
+      "message": "Actually, it this statement is True, it should be set to another token_format like we do above with TOKEN_PREFIX and TRUST_TOKEN_PREFIX. \n\nThis should come in another patch set that introduces the federated token formatter.",
+      "parentUuid": "ba7be1f8_81024c3c",
+      "revId": "a605e2e4c41636bbd02f75db061b31e6d8177f73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_a6ccc662",
         "filename": "keystone/token/providers/klwt/token_formatters.py",
         "patchSetId": 31
@@ -132,6 +150,24 @@
       "writtenOn": "2015-03-02T08:31:14Z",
       "side": 1,
       "message": "alphabetize these\n\ndo they need to be added to req-v3?",
+      "revId": "a605e2e4c41636bbd02f75db061b31e6d8177f73",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_673abe35",
+        "filename": "requirements.txt",
+        "patchSetId": 31
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-02T15:46:52Z",
+      "side": 1,
+      "message": "I thought we weren\u0027t suppose to alphabetize dependencies? See note at the top of this file.",
+      "parentUuid": "ba7be1f8_ae4ae624",
       "revId": "a605e2e4c41636bbd02f75db061b31e6d8177f73",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
