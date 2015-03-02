@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba7be1f8_feb2a9e3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-02T20:21:02Z",
+      "side": 1,
+      "message": "It would be nice, although not necessary, to say something about the bug here. This feels like a new feature, but in reality it\u0027s a broken \u0027if\u0027 statement from the previous review.",
+      "revId": "a83a8d3126c52bae0129ff5ae1c7574c9e3ef47e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_fe70e9a5",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 16
