@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_d83edd8a",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-02T19:34:52Z",
+      "side": 1,
+      "message": "Fernet?",
+      "revId": "386be07b505999223b1e7ad9e5bfce222501266d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
