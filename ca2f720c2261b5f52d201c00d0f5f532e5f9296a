@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_780ee233",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T14:27:33Z",
+      "side": 1,
+      "message": "what if we leave attribute free method now, and change it whenever we introduce some endpoint/user filtering? \nAlso, I moved inner function to the Manager class and renamed to \u0027normalize()\u0027",
+      "parentUuid": "ba7be1f8_1f81778f",
+      "revId": "ca2f720c2261b5f52d201c00d0f5f532e5f9296a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_eae87518",
         "filename": "keystone/contrib/federation/core.py",
         "patchSetId": 3
@@ -65,6 +83,24 @@
       "writtenOn": "2015-02-27T17:39:30Z",
       "side": 1,
       "message": "nit: 297",
+      "revId": "ca2f720c2261b5f52d201c00d0f5f532e5f9296a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c250bfd6",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T14:27:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_eae87518",
       "revId": "ca2f720c2261b5f52d201c00d0f5f532e5f9296a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_62db93ed",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T14:27:33Z",
+      "side": 1,
+      "message": "done.",
+      "parentUuid": "ba7be1f8_8ad9b985",
+      "revId": "ca2f720c2261b5f52d201c00d0f5f532e5f9296a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_5f184f84",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 3
@@ -99,6 +153,24 @@
       "writtenOn": "2015-02-28T03:53:48Z",
       "side": 1,
       "message": "this will always make \u0027service_providers\u0027 in the token right? i don\u0027t think we want that, it\u0027s a dict so the user can easily check with .get()",
+      "revId": "ca2f720c2261b5f52d201c00d0f5f532e5f9296a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_02d49745",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-02T14:27:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_5f184f84",
       "revId": "ca2f720c2261b5f52d201c00d0f5f532e5f9296a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
