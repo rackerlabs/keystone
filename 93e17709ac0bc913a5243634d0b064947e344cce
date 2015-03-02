@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba7be1f8_58466dc1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 33
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-02T20:28:05Z",
+      "side": 1,
+      "message": "SecurityImpact? Do we need the OSS dudes to chime in? Especially on fernet.\nDocImpact as well since we are adding stuff to configuration?",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_5b48275c",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 33
+      },
+      "lineNbr": 742,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-02T20:28:05Z",
+      "side": 1,
+      "message": "The description still not quite clear. Are we saying for a multi-node deployment, some nodes may have already promoted the stage key while the others are in the process of promoting. In that case, the secondary keys only need to stick around till the last token issued by the last promoted staged key had expired.\n\nAlso, it would be nice to know whether if we are in the middle of a key rotation so we can lock down any new staged key generation, in case someone fat-fingered the thing and ended up generating staged keys multiple times at a node. Unleashing the chaos monkey.",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_fb5c7b7f",
+        "filename": "keystone/cli.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-02T20:28:05Z",
+      "side": 1,
+      "message": "For the initial setup, it will create both the \u0027staged\u0027 and \u0027primary\u0027 key right?",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_5bf9074d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-02T20:28:05Z",
+      "side": 1,
+      "message": "A new staged key is created ...? And the old staged key will get promoted to primary.",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_1e213d4d",
         "filename": "keystone/cli.py",
         "patchSetId": 33
@@ -187,6 +255,57 @@
       "writtenOn": "2015-03-02T20:22:53Z",
       "side": 1,
       "message": "several instances of that",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_de6b25b7",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-02T20:28:05Z",
+      "side": 1,
+      "message": "do we need a more specific exception here?",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_bec03151",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-02T20:28:05Z",
+      "side": 1,
+      "message": "would be awesome if timeutils provide this functionality",
+      "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_defb2579",
+        "filename": "keystone/token/providers/klwt/token_formatters.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-02T20:28:05Z",
+      "side": 1,
+      "message": "no domain-scoped token?",
       "revId": "93e17709ac0bc913a5243634d0b064947e344cce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
