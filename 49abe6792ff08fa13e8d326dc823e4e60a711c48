@@ -16,6 +16,24 @@
       "revId": "49abe6792ff08fa13e8d326dc823e4e60a711c48",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_6558f356",
+        "filename": "keystone/tests/unit/test_backend_kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-02T17:14:36Z",
+      "side": 1,
+      "message": "AFAICT, it was running tests from test_backend.TokenCacheInvalidation and those were failing due to the revoke_api being unavailable. I need to make sure that this is a legitimate, i\u0027ll bug ayoung",
+      "parentUuid": "ba7be1f8_4c5ed377",
+      "revId": "49abe6792ff08fa13e8d326dc823e4e60a711c48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
