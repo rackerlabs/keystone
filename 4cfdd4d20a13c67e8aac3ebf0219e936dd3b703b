@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_bea49f4b",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-03T06:34:46Z",
+      "side": 1,
+      "message": "Any reason to emphasize sql.Enum here? I think it\u0027s the same with sql.Text for example, i.e. this code branch is needn\u0027t.",
+      "revId": "4cfdd4d20a13c67e8aac3ebf0219e936dd3b703b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_fe37f7fc",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-03T06:34:46Z",
+      "side": 1,
+      "message": "I found some other tests also miss to check \u0027extra\u0027 field, \u0027test_create_null_role_name\u0027 for example, but it may not related with this topic since it\u0027s belong to other \u0027Class\u0027 and py file. I am fine with it and maybe propose another patch based on this.",
+      "revId": "4cfdd4d20a13c67e8aac3ebf0219e936dd3b703b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
