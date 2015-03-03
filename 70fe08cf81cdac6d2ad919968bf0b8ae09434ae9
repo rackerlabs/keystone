@@ -1,0 +1,412 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_a3b38398",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "these are just the keys in whitelisted_options and sensitive_options, so could just use `group in self.whitelisted_options` rather than have another field.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_43b80711",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 824,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "The reasoning for what options are in the list and which aren\u0027t needs to be explained in a comment in the code.\n\nI\u0027d prefer that this split was done in config.py (e.g., define different lists of options that can be pulled in here), but I think that refactoring can go in a separate commit.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_83667f4f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "this docstring should be expanded to explain the parameters. I can\u0027t figure out what they\u0027re for.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_637a6bf2",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 842,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "this should mention the domain_id.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_6306ebcf",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 851,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "I don\u0027t know what this means or what I\u0027m supposed to do about it and I doubt that a user would know. Should at least mention what group or option are involved.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_031e0f0c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "mention the group in the message... this is another one I don\u0027t think I\u0027ve have any idea what I was supposed to do about it.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_03936f5b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 866,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "the docstring for the method should mention that if current_config and group then this is an update.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a396233c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 871,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "the message explains why the code is here, so no need for a comment.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_e3a3bb9b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 877,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "the message explains why the code is here, so no need for a comment.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c36f97fa",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 888,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "add a comment why it\u0027s ok to just return here.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c6432511",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 890,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "seems like the code should check for a group of None before this and raise a better error than  \"Group None is not supported\"",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_66bb59e5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 897,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "could use \"not self.is_sensitive(group, option)\" rather than duplicating the logic.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_260081aa",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 898,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "remove the ,\n\nThis should be like \"Option %(option)s in group \u0027%(group)s\u0027 is not supported...\"",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_264b21b2",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 910,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "remove \"option\"",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_013fe7b4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 911,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "why pass in this value? it\u0027s not used.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_26a7a151",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 920,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "it\u0027s really confusing when functions act so different based on the inputs... option isn\u0027t even used other than to check if it\u0027s truey.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_26032111",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 926,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "it\u0027s even more confusing when variables are redefined.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_06245d0b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 992,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "remove the : after \":raises\"",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_26d8811d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1020,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "remove the : after \":raises\"",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_e6d109fc",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1022,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "remove the : after \":raises\"",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_66051979",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1060,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "remove the : after \":raises\"",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_860a0d88",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "remove the : after \":raises\"",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_06ad3de9",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1110,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "this comment is just a copy of the message. Remove it.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_265fa110",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1118,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:52:42Z",
+      "side": 1,
+      "message": "The message says \"update\" but the comment says \"delete\". They should be consistent (or remove the comment since it\u0027s already explained).",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
