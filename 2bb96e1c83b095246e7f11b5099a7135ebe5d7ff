@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_342c4402",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-03T11:23:45Z",
+      "side": 1,
+      "message": "Yes, I agree we should have an automated way to do this for whitelisted options, which would be [all_options] - \nsentitive_options].\n\nsensitive_options, in turn, would be defined manually.\n\nThis would be easier to maintain, once we add or deprecated options.",
+      "parentUuid": "ba7be1f8_e4d12858",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_a4e2d09d",
         "filename": "keystone/resource/core.py",
         "patchSetId": 12
@@ -271,6 +289,40 @@
       "writtenOn": "2015-03-03T02:03:18Z",
       "side": 1,
       "message": "this should be\n\n :raises keystone.exception.DomainConfigNotFound: \u003cwhen this is raised\u003e",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3639abf2",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1008,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-03T11:23:45Z",
+      "side": 1,
+      "message": "(nit) Needs a comma at the end of this line.",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3400c400",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1031,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-03T11:23:45Z",
+      "side": 1,
+      "message": "(nit) s/none/None\n\nJust to keep it consistent...",
       "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
