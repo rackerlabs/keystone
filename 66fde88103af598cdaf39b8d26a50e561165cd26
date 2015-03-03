@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba7be1f8_f9c2b1e7",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-03T07:14:19Z",
+      "side": 1,
+      "message": "i feel having three primary keys will lead to trouble",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_b97bd9bc",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-03T07:14:19Z",
+      "side": 1,
+      "message": "nit: these are the same arguments as the whitelist table, could make a common base class",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_b314dfe9",
         "filename": "keystone/resource/config_backends/sql.py",
         "patchSetId": 12
@@ -64,6 +98,24 @@
       "writtenOn": "2015-03-03T01:43:25Z",
       "side": 1,
       "message": "this doesn\u0027t raise exception.DomainConfigNotFound as the docstring says. This needs a unit test.",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d9196d89",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-03T07:14:19Z",
+      "side": 1,
+      "message": "@brant, i think it does, from the _get_config_option call",
+      "parentUuid": "ba7be1f8_0ef10401",
       "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
