@@ -67,6 +67,23 @@
       "revId": "50c0c7945e97fc5996a8cc6674c0a85fd16e097d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_54e994b5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 953,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T22:59:21Z",
+      "side": 1,
+      "message": "I think this function would be easier to understand if the caller passed in the full_config rather than having this function figure it out. It\u0027s only called from 2 places.",
+      "revId": "50c0c7945e97fc5996a8cc6674c0a85fd16e097d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
