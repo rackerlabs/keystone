@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_f8dab649",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-03T00:32:21Z",
+      "side": 1,
+      "message": "we won\u0027t run into confusion with \u0027sp_url\u0027 meaning \u0027service_provider_url\u0027 will we?",
+      "parentUuid": "ba7be1f8_f509df84",
+      "revId": "0d9b3e1615a30116955d5b27e9e1cfa02db2de1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_d80c1def",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 6
@@ -83,6 +101,57 @@
       "writtenOn": "2015-03-03T00:28:51Z",
       "side": 1,
       "message": "this shouldn\u0027t be needed, the manager is already loaded",
+      "revId": "0d9b3e1615a30116955d5b27e9e1cfa02db2de1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_38960e4d",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2967,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-03T00:32:21Z",
+      "side": 1,
+      "message": "service*",
+      "revId": "0d9b3e1615a30116955d5b27e9e1cfa02db2de1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_d88ed22d",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2980,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-03T00:32:21Z",
+      "side": 1,
+      "message": "s/They/Disabled service providers/",
+      "revId": "0d9b3e1615a30116955d5b27e9e1cfa02db2de1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_387d2e1d",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2996,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-03T00:32:21Z",
+      "side": 1,
+      "message": "service catalog?",
       "revId": "0d9b3e1615a30116955d5b27e9e1cfa02db2de1d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
