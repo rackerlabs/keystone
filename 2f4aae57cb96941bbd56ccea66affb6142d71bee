@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_a688fc71",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-03T16:11:09Z",
+      "side": 1,
+      "message": "correct, this needs to be rebased.",
+      "parentUuid": "ba7be1f8_aa02843b",
+      "revId": "2f4aae57cb96941bbd56ccea66affb6142d71bee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_45ef391e",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 16
