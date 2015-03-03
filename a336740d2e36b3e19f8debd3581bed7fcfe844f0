@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_d05cbb7f",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-03T18:59:32Z",
+      "side": 1,
+      "message": "add a link to the documentation for setting this up?",
+      "revId": "a336740d2e36b3e19f8debd3581bed7fcfe844f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
