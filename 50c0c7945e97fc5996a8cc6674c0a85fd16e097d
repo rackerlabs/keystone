@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_e962b53c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 920,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T22:41:09Z",
+      "side": 1,
+      "message": "self.senitive_options -\u003e self.sensitive_options (this needs a test)",
+      "revId": "50c0c7945e97fc5996a8cc6674c0a85fd16e097d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_89ff7933",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 941,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T22:41:09Z",
+      "side": 1,
+      "message": "the value of option is never used... it\u0027s not used as an option name it\u0027s just used as an indicator... is this intentional?",
+      "revId": "50c0c7945e97fc5996a8cc6674c0a85fd16e097d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
