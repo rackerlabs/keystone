@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_13a92b90",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-03T01:06:49Z",
+      "side": 1,
+      "message": "Isn\u0027t replacing the current concept of extensions a blueprint?",
+      "revId": "dc21d94e7deaaa9d8823d3bdb368def012d30283",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
