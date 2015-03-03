@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_efad679c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-03-03T17:04:18Z",
+      "side": 1,
+      "message": "To me, this is a little strange now.  Would it make more sense to have a new opt called max_name_size that would include project names and user names.  Splitting out just user names seems odd.",
+      "revId": "451c01db164d7a5a5992bd3ccecbb8e1e2c06dfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_8249ce8d",
         "filename": "keystone/tests/unit/test_auth.py",
         "patchSetId": 5
