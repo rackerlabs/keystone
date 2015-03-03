@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_af536f15",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-03T16:57:40Z",
+      "side": 1,
+      "message": "This should be flag that something is wrong. The tokens should ideally come in with the same type. Also this would be really easy to break on accident.",
+      "revId": "68755e2537e05b72c8cd14ec01b2f896ba145a28",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
