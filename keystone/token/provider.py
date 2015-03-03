@@ -53,6 +53,11 @@ V3 = token_model.V3
 VERSIONS = token_model.VERSIONS
 
 
+def base64_encode(str_to_encode):
+    """Encode a URL-safe string."""
+    return base64.urlsafe_b64encode(str_to_encode)[:-2]
+
+
 def random_urlsafe_str():
     """Generate a random URL-safe string."""
     # chop the padding (==) off the end of the encoding to save space
