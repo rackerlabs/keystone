@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_d927adb4",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 791,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-03T06:36:02Z",
+      "side": 0,
+      "message": "to reviewers, this may be removed since it was checking specifically the case where the oauth_api was set to None. This won\u0027t happen now, and as such the entire class may be removed.",
+      "revId": "d51ce145e0bb99ea746b37a4628c6b63f84d8c94",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
