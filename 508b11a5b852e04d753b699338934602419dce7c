@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_5000cb01",
+        "filename": "keystone/exception.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:07:27Z",
+      "side": 1,
+      "message": "remove the :s... : is supposed to introduce a list and that\u0027s not what they\u0027re used for here.",
+      "revId": "508b11a5b852e04d753b699338934602419dce7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_6327cbb6",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 818,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T19:07:27Z",
+      "side": 1,
+      "message": "this should be\n\n :raises keystone.exception.Conflict: the option already exists.",
+      "revId": "508b11a5b852e04d753b699338934602419dce7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
