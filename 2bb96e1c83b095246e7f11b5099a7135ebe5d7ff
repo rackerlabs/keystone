@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_6e2360bd",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T02:03:18Z",
+      "side": 1,
+      "message": "what about project_tree_dn, etc?",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_89488e5d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T02:03:18Z",
+      "side": 1,
+      "message": "The message for this is just going to be \"Option None in Group None...\", which isn\u0027t very helpful.",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_895fae0e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 844,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T02:03:18Z",
+      "side": 1,
+      "message": "The message for this should say that there must be only one entry in the config for the option in the group.",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_297fa267",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 852,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T02:03:18Z",
+      "side": 1,
+      "message": "this needs to say what was wrong with it.",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a9b8f211",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 865,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T02:03:18Z",
+      "side": 1,
+      "message": "The exception should say \"Trying to update a group that is not part of the original config\"... can\u0027t expect users to read the source code to figure out what the problem was.",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a98ab261",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 878,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T02:03:18Z",
+      "side": 1,
+      "message": "this could say that the group isn\u0027t supported.",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_69db5a7c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 883,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T02:03:18Z",
+      "side": 1,
+      "message": "this should say that the option is not supported.",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a91472e9",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1001,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T02:03:18Z",
+      "side": 1,
+      "message": "this should be\n\n :raises keystone.exception.DomainConfigNotFound: \u003cwhen this is raised\u003e",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_89eeceeb",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1036,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T02:03:18Z",
+      "side": 1,
+      "message": "this should be\n\n :raises keystone.exception.DomainConfigNotFound: \u003cwhen this is raised\u003e\n\n, etc.",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
