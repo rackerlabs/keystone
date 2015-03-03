@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_66dd12e0",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-03T22:18:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_c31310ff",
+      "revId": "e0465458aca808ce3e0fbc2049f2e5892aa23433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_03d9a856",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-03T21:49:04Z",
       "side": 1,
       "message": "same",
+      "revId": "e0465458aca808ce3e0fbc2049f2e5892aa23433",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_86d846f0",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-03T22:18:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_03d9a856",
       "revId": "e0465458aca808ce3e0fbc2049f2e5892aa23433",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
