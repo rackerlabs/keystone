@@ -50,6 +50,24 @@
       "revId": "451c01db164d7a5a5992bd3ccecbb8e1e2c06dfd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3a741bfd",
+        "filename": "keystone/tests/unit/test_auth.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-03T17:29:33Z",
+      "side": 1,
+      "message": "++ that\u0027s a good idea",
+      "parentUuid": "ba7be1f8_8249ce8d",
+      "revId": "451c01db164d7a5a5992bd3ccecbb8e1e2c06dfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
