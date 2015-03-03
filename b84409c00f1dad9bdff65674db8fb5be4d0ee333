@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_c4198b89",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-03T03:05:08Z",
+      "side": 1,
+      "message": "Something feels off here. In this case you are extending the dirct_maps to include the values from direct_map_values. I think that is correct. In the other cases you are adding the list of matching/non-matching as an element to direct_maps instead of extending? It also doesn\u0027t look like the tests would catch an error here since there doesn\u0027t seem to be a case where they check for anything, but an empty list.",
+      "revId": "b84409c00f1dad9bdff65674db8fb5be4d0ee333",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
