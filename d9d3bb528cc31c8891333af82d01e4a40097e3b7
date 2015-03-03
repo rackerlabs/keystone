@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_c1d30fd3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-03T20:06:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_29f77fd4",
+      "revId": "d9d3bb528cc31c8891333af82d01e4a40097e3b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_09a47ba4",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_811837d4",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-03T20:06:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_09a47ba4",
+      "revId": "d9d3bb528cc31c8891333af82d01e4a40097e3b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_e90e478b",
         "filename": "keystone/common/config.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2015-03-03T16:37:12Z",
       "side": 1,
       "message": "Can you add some help?  \n\nHow about?\n\"Specifies what checks to perform on client certificates in an incoming TLS session.\"\n\nReference: http://www.openldap.org/doc/admin24/tls.html",
+      "revId": "d9d3bb528cc31c8891333af82d01e4a40097e3b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_e1265315",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 747,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-03T20:06:27Z",
+      "side": 1,
+      "message": "Done, nice catch.",
+      "parentUuid": "ba7be1f8_e90e478b",
       "revId": "d9d3bb528cc31c8891333af82d01e4a40097e3b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
