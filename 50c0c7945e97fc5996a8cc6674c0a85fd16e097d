@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba7be1f8_340ee0e5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T22:56:27Z",
+      "side": 1,
+      "message": "all this stuff that only applies in the update case should be moved to the caller. It\u0027s difficult to figure out which parts only apply to update and which apply to create... there seems to be very little that applies to create in this method.",
+      "revId": "50c0c7945e97fc5996a8cc6674c0a85fd16e097d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_f4bc48de",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 881,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T22:56:27Z",
+      "side": 1,
+      "message": "why wouldn\u0027t it be? we should have checked this sooner.",
+      "revId": "50c0c7945e97fc5996a8cc6674c0a85fd16e097d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_e962b53c",
         "filename": "keystone/resource/core.py",
         "patchSetId": 15
