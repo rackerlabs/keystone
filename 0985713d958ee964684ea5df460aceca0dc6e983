@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_c03870f0",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-03T18:04:56Z",
+      "side": 1,
+      "message": "shouldn\u0027t we use \"keystone\" instead of \"Keystone\"? (https://wiki.openstack.org/wiki/Documentation/Conventions#Service_and_project_names)",
+      "revId": "0985713d958ee964684ea5df460aceca0dc6e983",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
