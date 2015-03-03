@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_a3f0e3fd",
+        "filename": "keystone/exception.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T19:15:39Z",
+      "side": 1,
+      "message": "I will raise an explicit defect for this as a follow up.",
+      "parentUuid": "ba7be1f8_5000cb01",
+      "revId": "508b11a5b852e04d753b699338934602419dce7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_6327cbb6",
         "filename": "keystone/resource/core.py",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-03T19:07:27Z",
       "side": 1,
       "message": "this should be\n\n :raises keystone.exception.Conflict: the option already exists.",
+      "revId": "508b11a5b852e04d753b699338934602419dce7c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c3f5d7ed",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 818,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T19:15:39Z",
+      "side": 1,
+      "message": "I will raise an explicit defect for this as a follow up",
+      "parentUuid": "ba7be1f8_6327cbb6",
       "revId": "508b11a5b852e04d753b699338934602419dce7c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
