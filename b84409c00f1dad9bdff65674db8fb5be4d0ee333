@@ -16,6 +16,24 @@
       "revId": "b84409c00f1dad9bdff65674db8fb5be4d0ee333",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c684050d",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 667,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-03T19:48:16Z",
+      "side": 1,
+      "message": "I think this is correct. With the first shape of the mapping engine we were directly mapping single values. Usually it was user name mapped directly from assertion\u0027s parameter. Hence, extend() is used.\nIn the white/blacklisting we may say: \u0027map all groups except those listed in the blacklist and store them in the local rule\u0027s groups attribute\u0027 . To do so, we need to use .append(), so later {n}\u0027th element from the direct_maps can be assigned to local rule attribute.\n\nfor the mapping \n\n\tMAPPING_GROUPS_BLACKLIST_MISSING_DOMAIN \u003d {\t821\n    \"rules\": [\t\n        {\t\n            \"remote\": [\t\n                {\t\n\t\t\t                    \"type\": \"orgPersonType\",\t\n                    \"blacklist\": [\t\n                        \"Developer\", \"Manager\"\n                    ]\n                },\n            ],\n            \"local\": [\n                {\t833\n                    \"groups\": \"{0}\",\n                },\t\n            ]\t\n        }\t\n    ]\t\n}\t\n\n\nand with the \u0027append()\u0027 variant a direct_map would like:\n\ndirect_map \u003d [ [\u0027Contractor\u0027, \u0027Manager\u0027] ]\nand later the mapping engine will take 0th element from direct_map, which is a whole list. If we used .extend(), we would have\n\ndirect_maps \u003d [\u0027Contractor\u0027, \u0027Manager\u0027]\n\nand clearly groups would not be what we want it to be.",
+      "parentUuid": "ba7be1f8_c4198b89",
+      "revId": "b84409c00f1dad9bdff65674db8fb5be4d0ee333",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
