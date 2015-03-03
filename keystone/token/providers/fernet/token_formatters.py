@@ -34,9 +34,7 @@ class BaseTokenFormatter(object):
     """Base object for token formatters to inherit."""
 
     # NOTE(lbragstad): Each class the inherits BaseTokenFormatter should define
-    # the `token_format` and `token_version`. The combination of the two should
-    # be unique.
-    token_format = None
+    # a unique `token_version`.
     token_version = None
 
     def __init__(self):
@@ -127,13 +125,36 @@ class BaseTokenFormatter(object):
             audit_ids = audit_ids.pop()
         return (issued_at_int, expires_at_int, audit_ids)
 
+    def pack(self, payload):
+        """Packages a token payload for transport."""
+        message = msgpack.packb(payload)
+        return self.crypto.encrypt(message)
+
+    def unpack(self, token):
+        """Unpacks and validates a token payload."""
+        try:
+            message = self.crypto.decrypt(token)
+        except fernet.InvalidToken as e:
+            raise exception.Unauthorized(six.text_type(e))
+
+        # TODO(lbragstad): catch msgpack errors here
+        payload = msgpack.unpackb(message)
+
+        # the first element is always the version
+        version, payload = payload[0], payload[1:]
+        if version[0] != self.token_version:
+            raise exception.Unauthorized(
+                _('Unrecognized token version: %s') % version)
+
+        return payload
+
 
 class StandardTokenFormatter(BaseTokenFormatter):
 
-    token_format = 'F00'
+    token_version = 0
 
     def create_token(self, user_id, project_id, token_data):
-        """Create a standard formatted token.
+        """Create a formatted token.
 
         :param user_id: ID of the user in the token request
         :param project_id: ID of the project to scope to
@@ -148,47 +169,36 @@ class StandardTokenFormatter(BaseTokenFormatter):
         if project_id:
             b_scope_id = self._convert_uuid_hex_to_bytes(project_id)
             token = (
-                b_user_id, b_scope_id, issued_at_int, expires_at_int,
-                audit_ids)
+                self.token_version, b_user_id, b_scope_id, issued_at_int,
+                expires_at_int, audit_ids)
         else:
-            token = (b_user_id, issued_at_int, expires_at_int, audit_ids)
+            token = (
+                self.token_version, b_user_id, issued_at_int, expires_at_int,
+                audit_ids)
 
-        msgpacked_token = msgpack.packb(token)
+        return self.pack(token)
 
-        encrypted_token = self.crypto.encrypt(msgpacked_token)
-
-        # Tack the token format on to the encrypted_token
-        token_id = self.token_format + encrypted_token
-
-        return token_id
-
-    def validate_token(self, token_string):
-        """Validate a F00 formatted token.
+    def validate_token(self, token):
+        """Validate a formatted token.
 
         :param token_string: a string representing the token
         :return: a tuple contains the user_id, project_id and token_data
 
         """
-        try:
-            decrypted_token = self.crypto.decrypt(token_string)
-        except fernet.InvalidToken as e:
-            raise exception.Unauthorized(six.text_type(e))
-
-        # TODO(lbragstad): catch msgpack errors here
-        unpacked_token = msgpack.unpackb(decrypted_token)
+        payload = self.unpack(token)
 
         # Rebuild and retrieve token information from the token string
-        b_user_id = unpacked_token[0]
+        b_user_id = payload[0]
         b_project_id = None
-        if isinstance(unpacked_token[1], str):
-            b_project_id = unpacked_token[1]
-            issued_at_ts = unpacked_token[2]
-            expires_at_ts = unpacked_token[3]
-            audit_ids = unpacked_token[4]
+        if isinstance(payload[1], str):
+            b_project_id = payload[1]
+            issued_at_ts = payload[2]
+            expires_at_ts = payload[3]
+            audit_ids = payload[4]
         else:
-            issued_at_ts = unpacked_token[1]
-            expires_at_ts = unpacked_token[2]
-            audit_ids = unpacked_token[3]
+            issued_at_ts = payload[1]
+            expires_at_ts = payload[2]
+            audit_ids = payload[3]
 
         # Uncompress the IDs
         user_id = self._convert_uuid_bytes_to_hex(b_user_id)
@@ -214,7 +224,7 @@ class StandardTokenFormatter(BaseTokenFormatter):
 @dependency.requires('trust_api')
 class TrustTokenFormatter(BaseTokenFormatter):
 
-    token_format = 'F01'
+    token_version = 1
 
     def create_token(self, user_id, project_id, token_data):
         """Create a trust formatted token.
@@ -231,38 +241,27 @@ class TrustTokenFormatter(BaseTokenFormatter):
         b_user_id = self._convert_uuid_hex_to_bytes(user_id)
         b_project_id = self._convert_uuid_hex_to_bytes(project_id)
         b_trust_id = self._convert_uuid_hex_to_bytes(trust_id)
-        token = (b_user_id, b_project_id, b_trust_id, issued_at_int,
-                 expires_at_int, audit_ids)
-        msgpacked_token = msgpack.packb(token)
+        payload = (b_user_id, b_project_id, b_trust_id, issued_at_int,
+                   expires_at_int, audit_ids)
 
-        encrypted_token = self.crypto.encrypt(msgpacked_token)
+        return self.pack(payload)
 
-        # Tack the token format on to the encrypted_token
-        token_id = self.token_format + encrypted_token
-        return token_id
-
-    def validate_token(self, token_string):
+    def validate_token(self, token):
         """Validate a trust formatted token.
 
         :param token_string: a string representing the token
         :return: a tuple contains the user_id, project_id and token_data
 
         """
-        try:
-            decrypted_token = self.crypto.decrypt(token_string)
-        except fernet.InvalidToken as e:
-            raise exception.Unauthorized(six.text_type(e))
-
-        # TODO(lbragstad): catch msgpack errors here
-        unpacked_token = msgpack.unpackb(decrypted_token)
+        payload = self.unpack(token)
 
         # Rebuild and retrieve token information from the token string
-        b_user_id = unpacked_token[0]
-        b_project_id = unpacked_token[1]
-        b_trust_id = unpacked_token[2]
-        issued_at_ts = unpacked_token[3]
-        expires_at_ts = unpacked_token[4]
-        audit_ids = unpacked_token[5]
+        b_user_id = payload[0]
+        b_project_id = payload[1]
+        b_trust_id = payload[2]
+        issued_at_ts = payload[3]
+        expires_at_ts = payload[4]
+        audit_ids = payload[5]
 
         # Uncompress the IDs
         user_id = self._convert_uuid_bytes_to_hex(b_user_id)
