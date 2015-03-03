@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_6fb89711",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-03T17:00:14Z",
+      "side": 1,
+      "message": "s/it/its ?",
+      "revId": "101cfd6e0ec90ae651f1eec3e59b10fe740bec2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_afefef1c",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-03T17:00:14Z",
+      "side": 1,
+      "message": "\u0027config file\u0027 is not valid here, then please replace it.\nMaybe s/database config/config file",
+      "revId": "101cfd6e0ec90ae651f1eec3e59b10fe740bec2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
