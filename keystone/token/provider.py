@@ -53,10 +53,19 @@ V3 = token_model.V3
 VERSIONS = token_model.VERSIONS
 
 
-def random_urlsafe_str():
-    """Generate a random URL-safe string."""
+def random_urlsafe_str(str_to_decode=None):
+    """Generate a random URL-safe string.
+
+    :param str_to_decode: string to decode, if one isn't provided generate a
+                          random one.
+    :returns: a base64 encoded representation of the uuid in bytes.
+
+    """
     # chop the padding (==) off the end of the encoding to save space
-    return base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2]
+    if str_to_decode:
+        return base64.urlsafe_b64encode(str_to_decode)[:-2]
+    else:
+        return base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2]
 
 
 def random_urlsafe_str_to_bytes(s):
