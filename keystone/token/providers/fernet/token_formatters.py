@@ -22,6 +22,7 @@ import six
 
 from keystone.common import dependency
 from keystone import exception
+from keystone.token import provider
 from keystone.token.providers import common
 from keystone.token.providers.fernet import utils
 
@@ -123,9 +124,11 @@ class BaseTokenFormatter(object):
         expires_at = token_data['token']['expires_at']
         expires_at_int = self._convert_time_string_to_int(expires_at)
         audit_ids = token_data['token']['audit_ids']
-        if isinstance(audit_ids, list) and len(audit_ids) == 1:
-            audit_ids = audit_ids.pop()
-        return (issued_at_int, expires_at_int, audit_ids)
+        audit_ids_in_bytes = []
+        for audit_id in audit_ids:
+            a_id = provider.random_urlsafe_str_to_bytes(audit_id)
+            audit_ids_in_bytes.append(a_id)
+        return (issued_at_int, expires_at_int, audit_ids_in_bytes)
 
 
 class StandardTokenFormatter(BaseTokenFormatter):
