@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "ba7be1f8_e4d12858",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 800,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-03T07:51:03Z",
+      "side": 1,
+      "message": "there must be an easier way to do this,\n\nCONF has all the options already, i\u0027d be surprised if there isnt a way to list the options of a group into a list, and pop out \u0027password\u0027\n\nedit: not sure if you want to do it this way, since it access private fields, but heres a list for comparison\n\n(Pdb) p sorted(list(CONF.ldap._group._opts.keys()))\n[\u0027alias_dereferencing\u0027, \u0027allow_subtree_delete\u0027, \u0027auth_pool_connection_lifetime\u0027, \u0027auth_pool_size\u0027, \u0027chase_referrals\u0027, \u0027debug_level\u0027, \u0027dumb_member\u0027, \u0027group_additional_attribute_mapping\u0027, \u0027group_allow_create\u0027, \u0027group_allow_delete\u0027, \u0027group_allow_update\u0027, \u0027group_attribute_ignore\u0027, \u0027group_desc_attribute\u0027, \u0027group_filter\u0027, \u0027group_id_attribute\u0027, \u0027group_member_attribute\u0027, \u0027group_name_attribute\u0027, \u0027group_objectclass\u0027, \u0027group_tree_dn\u0027, \u0027page_size\u0027, \u0027password\u0027, \u0027pool_connection_lifetime\u0027, \u0027pool_connection_timeout\u0027, \u0027pool_retry_delay\u0027, \u0027pool_retry_max\u0027, \u0027pool_size\u0027, \u0027project_additional_attribute_mapping\u0027, \u0027project_allow_create\u0027, \u0027project_allow_delete\u0027, \u0027project_allow_update\u0027, \u0027project_attribute_ignore\u0027, \u0027project_desc_attribute\u0027, \u0027project_domain_id_attribute\u0027, \u0027project_enabled_attribute\u0027, \u0027project_enabled_emulation\u0027, \u0027project_enabled_emulation_dn\u0027, \u0027project_filter\u0027, \u0027project_id_attribute\u0027, \u0027project_member_attribute\u0027, \u0027project_name_attribute\u0027, \u0027project_objectclass\u0027, \u0027project_tree_dn\u0027, \u0027query_scope\u0027, \u0027role_additional_attribute_mapping\u0027, \u0027role_allow_create\u0027, \u0027role_allow_delete\u0027, \u0027role_allow_update\u0027, \u0027role_attribute_ignore\u0027, \u0027role_filter\u0027, \u0027role_id_attribute\u0027, \u0027role_member_attribute\u0027, \u0027role_name_attribute\u0027, \u0027role_objectclass\u0027, \u0027role_tree_dn\u0027, \u0027suffix\u0027, \u0027tls_cacertdir\u0027, \u0027tls_cacertfile\u0027, \u0027tls_req_cert\u0027, \u0027url\u0027, \u0027use_auth_pool\u0027, \u0027use_dumb_member\u0027, \u0027use_pool\u0027, \u0027use_tls\u0027, \u0027user\u0027, \u0027user_additional_attribute_mapping\u0027, \u0027user_allow_create\u0027, \u0027user_allow_delete\u0027, \u0027user_allow_update\u0027, \u0027user_attribute_ignore\u0027, \u0027user_default_project_id_attribute\u0027, \u0027user_enabled_attribute\u0027, \u0027user_enabled_default\u0027, \u0027user_enabled_emulation\u0027, \u0027user_enabled_emulation_dn\u0027, \u0027user_enabled_invert\u0027, \u0027user_enabled_mask\u0027, \u0027user_filter\u0027, \u0027user_id_attribute\u0027, \u0027user_mail_attribute\u0027, \u0027user_name_attribute\u0027, \u0027user_objectclass\u0027, \u0027user_pass_attribute\u0027, \u0027user_tree_dn\u0027]",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a4e2d09d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 809,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-03T07:51:03Z",
+      "side": 1,
+      "message": "consider sorting this list",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_6e2360bd",
         "filename": "keystone/resource/core.py",
         "patchSetId": 12
@@ -19,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_a44bb0af",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 820,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-03T07:51:03Z",
+      "side": 1,
+      "message": "also missing the role related options",
+      "parentUuid": "ba7be1f8_6e2360bd",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_89488e5d",
         "filename": "keystone/resource/core.py",
         "patchSetId": 12
@@ -30,6 +82,24 @@
       "writtenOn": "2015-03-03T02:03:18Z",
       "side": 1,
       "message": "The message for this is just going to be \"Option None in Group None...\", which isn\u0027t very helpful.",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_84494c33",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-03T07:51:03Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba7be1f8_89488e5d",
       "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +134,41 @@
       "writtenOn": "2015-03-03T02:03:18Z",
       "side": 1,
       "message": "this needs to say what was wrong with it.",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_84706c73",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 852,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-03T07:51:03Z",
+      "side": 1,
+      "message": "might want to consider changing InvalidDomainConfig to just take a message argument",
+      "parentUuid": "ba7be1f8_297fa267",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_64037842",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 857,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-03T07:51:03Z",
+      "side": 1,
+      "message": "make a note that the code should only enter here if we\u0027re performing an update",
       "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +226,40 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_dfea2d0e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 895,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-03T07:51:03Z",
+      "side": 1,
+      "message": "drop the \u0027a\u0027",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_1fc845a7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 929,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-03T07:51:03Z",
+      "side": 1,
+      "message": "s/included/include",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_a91472e9",
         "filename": "keystone/resource/core.py",
         "patchSetId": 12
@@ -149,6 +288,57 @@
       "writtenOn": "2015-03-03T02:03:18Z",
       "side": 1,
       "message": "this should be\n\n :raises keystone.exception.DomainConfigNotFound: \u003cwhen this is raised\u003e\n\n, etc.",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_84878cb4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1040,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-03T07:51:03Z",
+      "side": 1,
+      "message": "call this current_config.\n\nfull makes me think that it\u0027ll support *all* the options, when it\u0027s really just the whitelisted ones",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_5f147d43",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1064,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-03T07:51:03Z",
+      "side": 1,
+      "message": "so, i would think deleting an entire group is valid? which is why the initial check is `if group or option:` but in the _assert_() it checks that both group and option are specified.\n\nso if I wanted to delete the entire [ldap] group, i couldn\u0027t do it, since option would be None, and it\u0027ll fail the assertion.\n\n*edit*, nvm, i think this is okay",
+      "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_1f1e855f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1074,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-03T07:51:03Z",
+      "side": 1,
+      "message": "unnecessary parenthesis",
       "revId": "2bb96e1c83b095246e7f11b5099a7135ebe5d7ff",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
