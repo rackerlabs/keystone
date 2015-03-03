@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_8fadd29d",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-03-03T15:17:12Z",
+      "side": 1,
+      "message": "Please revert this parameter rename.",
+      "revId": "4b1333c073017687216db12ba8fdba4fe79cf86d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_afca964c",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-03-03T15:17:12Z",
+      "side": 1,
+      "message": "This value is better be extracted to a constant",
+      "revId": "4b1333c073017687216db12ba8fdba4fe79cf86d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
