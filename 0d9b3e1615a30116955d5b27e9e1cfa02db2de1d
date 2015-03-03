@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_cccd3f33",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-03T00:28:51Z",
+      "side": 1,
+      "message": "no, definitely not, we never include links in the token. we want the minimum amount of data.",
+      "parentUuid": "ba7be1f8_b853e915",
+      "revId": "0d9b3e1615a30116955d5b27e9e1cfa02db2de1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_d80c1def",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 6
@@ -48,6 +66,23 @@
       "writtenOn": "2015-03-02T19:30:21Z",
       "side": 1,
       "message": "/SP1/ALPHA_SP/\n\nmuch easier to read. Do the same for the others.",
+      "revId": "0d9b3e1615a30116955d5b27e9e1cfa02db2de1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_38736e81",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2919,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-03T00:28:51Z",
+      "side": 1,
+      "message": "this shouldn\u0027t be needed, the manager is already loaded",
       "revId": "0d9b3e1615a30116955d5b27e9e1cfa02db2de1d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
