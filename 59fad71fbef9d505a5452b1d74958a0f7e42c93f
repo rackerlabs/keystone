@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_a0329ca4",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-03T17:55:00Z",
+      "side": 1,
+      "message": "Docstring (like the _fix migration 37) still needed explaining this.",
+      "revId": "59fad71fbef9d505a5452b1d74958a0f7e42c93f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_601424e9",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 290,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-03T17:55:00Z",
+      "side": 1,
+      "message": "Comment like the fix for 37 also needed here.",
+      "revId": "59fad71fbef9d505a5452b1d74958a0f7e42c93f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
