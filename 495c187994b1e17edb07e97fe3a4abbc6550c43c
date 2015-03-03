@@ -16,6 +16,24 @@
       "revId": "495c187994b1e17edb07e97fe3a4abbc6550c43c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_26adece9",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T18:13:15Z",
+      "side": 1,
+      "message": "It\u0027s how the original (file based version) is done....basically just mean you can index this object directly by domain_id and get the domain_config structure for your driver...",
+      "parentUuid": "ba7be1f8_5ff9dd7e",
+      "revId": "495c187994b1e17edb07e97fe3a4abbc6550c43c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
