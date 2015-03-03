@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+1: Haneef Ali <haneef.ali@hp.com>
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 03 Mar 2015 23:34:14 +0000
+Reviewed-on: https://review.openstack.org/160955
+Project: openstack/keystone
+Branch: refs/heads/master
