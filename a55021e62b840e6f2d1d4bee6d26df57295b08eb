@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_5a662fbc",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_convert_tables_utf8.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-03T17:20:46Z",
+      "side": 1,
+      "message": "can you extract this to a private method? There is some examples (like in the 044 migration script in the keystone/common/sql) that does a similar thing.",
+      "revId": "a55021e62b840e6f2d1d4bee6d26df57295b08eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
