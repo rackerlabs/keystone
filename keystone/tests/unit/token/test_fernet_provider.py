@@ -22,6 +22,7 @@ from oslo_utils import timeutils
 from keystone.common import config
 from keystone import exception
 from keystone.tests import unit as tests
+from keystone.token import provider
 from keystone.token.providers import fernet
 from keystone.token.providers.fernet import token_formatters
 from keystone.token.providers.fernet import utils
@@ -118,12 +119,12 @@ class TestStandardTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
         # decrypted properly, not the actual validity of token data.
         issued_at = timeutils.isotime(timeutils.utcnow())
         expires_at = timeutils.isotime(timeutils.utcnow())
-        audit_ids = base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2]
+        audit_ids = provider.random_urlsafe_str()
         exp_token_data = {
             'token': {
                 'issued_at': issued_at,
                 'expires_at': expires_at,
-                'audit_ids': audit_ids,
+                'audit_ids': [audit_ids]
             }
         }
 
@@ -135,7 +136,7 @@ class TestStandardTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
                 'token': {
                     'issued_at': issued_at,
                     'expires_at': expires_at,
-                    'audit_ids': audit_ids
+                    'audit_ids': [audit_ids]
                 }
             }
             return fake_token_data
@@ -163,11 +164,12 @@ class TestStandardTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
         project_id = uuid.uuid4().hex
         # All we are validating here is that the token is encrypted and
         # decrypted properly, not the actual validity of token data.
+        audit_ids = provider.random_urlsafe_str()
         token_data = {
             'token': {
                 'issued_at': timeutils.isotime(timeutils.utcnow()),
                 'expires_at': timeutils.isotime(timeutils.utcnow()),
-                'audit_ids': base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2],
+                'audit_ids': [audit_ids]
             }
         }
 
@@ -180,11 +182,12 @@ class TestStandardTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
         project_id = uuid.uuid4().hex
         # All we are validating here is that the token is encrypted and
         # decrypted properly, not the actual validity of token data.
+        audit_ids = provider.random_urlsafe_str()
         token_data = {
             'token': {
                 'issued_at': timeutils.isotime(timeutils.utcnow()),
                 'expires_at': timeutils.isotime(timeutils.utcnow()),
-                'audit_ids': base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2],
+                'audit_ids': [audit_ids]
             }
         }
 
@@ -245,7 +248,7 @@ class TestTrustTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
                 'OS-TRUST:trust': {'id': uuid.uuid4().hex},
                 'issued_at': timeutils.isotime(timeutils.utcnow()),
                 'expires_at': timeutils.isotime(timeutils.utcnow()),
-                'audit_ids': base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2],
+                'audit_ids': [provider.random_urlsafe_str()]
             }
         }
 
@@ -261,7 +264,7 @@ class TestTrustTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
                 'OS-TRUST:trust': {'id': uuid.uuid4().hex},
                 'issued_at': timeutils.isotime(timeutils.utcnow()),
                 'expires_at': timeutils.isotime(timeutils.utcnow()),
-                'audit_ids': base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2],
+                'audit_ids': [provider.random_urlsafe_str()]
             }
         }
 
