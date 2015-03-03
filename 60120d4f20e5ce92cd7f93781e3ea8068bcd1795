@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_b532dc5b",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-03T17:44:30Z",
+      "side": 1,
+      "message": "I want a lot of documentation added here as to what is going on, why this is needed, the bug it is fixing. Look at the comment on line 166 and docstring in 142.\n\nI also want a clear identification of how we got wedged again in this situation so we can either go to the oslo.db team and ask \"why is this happening\" and/or fix this in our code.\n\nThis should *never* happen again.",
+      "revId": "60120d4f20e5ce92cd7f93781e3ea8068bcd1795",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
