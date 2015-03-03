@@ -1,0 +1,378 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_b314dfe9",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "This will also raise NotFound if the group isn\u0027t in the table or the option isn\u0027t in the table, so just including the domain_id in the exception isn\u0027t adequate.",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_13ae8b81",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "the docstring for this method should say that if group is falsy then option is ignored.",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_8e46d4be",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "The coverage report shows this isn\u0027t tested. Add a test.",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_0ef10401",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "this doesn\u0027t raise exception.DomainConfigNotFound as the docstring says. This needs a unit test.",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_33154f49",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "this actually deletes multiple options, so should change \"_option\" to \"_options\"",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_f331f75a",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "change \"of\" to \"if\"\n\nAlso, this could just be the docstring for the method.",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_532643cf",
+        "filename": "keystone/resource/config_backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "the docstring for this method should say that if group is falsy then option is ignored.",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_4e421c3f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 804,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "shouldn\u0027t sensitive default to True for safety?",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_ae2e388a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 808,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "change \"group option name\" to \"group name\"",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_8e5fb40e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 829,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "this should be\n\n :raises keystone.exception.DomainConfigNotFound: the option doesn\u0027t exist.",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_ce836c54",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "change \"a config\" to \"the config\"",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_4eb05c43",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 841,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "the docstring for this method should say that if group is falsy then option is ignored.",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_ae8ab861",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "this should be\n\n :raises keystone.exception.DomainConfigNotFound: the option doesn\u0027t exist.",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_ee64b0ba",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 869,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "change \"a config option\" to \"config options\"",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_2e44081a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 873,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "The docstring should say that the driver doesn\u0027t check if there was an option to delete or not.",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_6e49a030",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 876,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "the docstring for this method should say that if group is falsy then option is ignored.",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_2e5b28f7",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "it\u0027s not 2012.",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_2e296837",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "is there something special about these values? Add a comment why these values are used.",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_ceb7ecd6",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "and domain+group+option?",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_cede0c11",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "and domain+group+option?",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_4e969c4d",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "There should be a test for trying to create a config option that already exists.\n\nThere should be a test for trying to update a config option that doesn\u0027t exist.",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_6e24400d",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 1558,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-03T01:43:25Z",
+      "side": 1,
+      "message": "using a variable for the name of the tables would be safer.",
+      "revId": "66fde88103af598cdaf39b8d26a50e561165cd26",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
