@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_81e3d7d7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 801,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_a3b38398",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_43b80711",
         "filename": "keystone/resource/core.py",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-03T19:52:42Z",
       "side": 1,
       "message": "The reasoning for what options are in the list and which aren\u0027t needs to be explained in a comment in the code.\n\nI\u0027d prefer that this split was done in config.py (e.g., define different lists of options that can be pulled in here), but I think that refactoring can go in a separate commit.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_81cd9733",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 824,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "have added an explanation",
+      "parentUuid": "ba7be1f8_43b80711",
       "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_9c6b3cb8",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_83667f4f",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_637a6bf2",
         "filename": "keystone/resource/core.py",
         "patchSetId": 14
@@ -64,6 +118,24 @@
       "writtenOn": "2015-03-03T19:52:42Z",
       "side": 1,
       "message": "this should mention the domain_id.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_7c884871",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 842,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "I\u0027m actually not sure that is relevant here - since what is wrong is that there were no options defined in the request",
+      "parentUuid": "ba7be1f8_637a6bf2",
       "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_bc7e4068",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 851,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_6306ebcf",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_031e0f0c",
         "filename": "keystone/resource/core.py",
         "patchSetId": 14
@@ -98,6 +188,24 @@
       "writtenOn": "2015-03-03T19:52:42Z",
       "side": 1,
       "message": "mention the group in the message... this is another one I don\u0027t think I\u0027ve have any idea what I was supposed to do about it.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_7cbcc8bb",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 860,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_031e0f0c",
       "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_bcb80076",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 866,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_03936f5b",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_a396233c",
         "filename": "keystone/resource/core.py",
         "patchSetId": 14
@@ -132,6 +258,24 @@
       "writtenOn": "2015-03-03T19:52:42Z",
       "side": 1,
       "message": "the message explains why the code is here, so no need for a comment.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_5c646421",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 871,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_a396233c",
       "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_77ef811e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 877,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_e3a3bb9b",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_c36f97fa",
         "filename": "keystone/resource/core.py",
         "patchSetId": 14
@@ -166,6 +328,24 @@
       "writtenOn": "2015-03-03T19:52:42Z",
       "side": 1,
       "message": "add a comment why it\u0027s ok to just return here.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_57bb5de4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 888,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_c36f97fa",
       "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_72a78fbd",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 890,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_c6432511",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_66bb59e5",
         "filename": "keystone/resource/core.py",
         "patchSetId": 14
@@ -200,6 +398,24 @@
       "writtenOn": "2015-03-03T19:52:42Z",
       "side": 1,
       "message": "could use \"not self.is_sensitive(group, option)\" rather than duplicating the logic.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_9796b53c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 897,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_66bb59e5",
       "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_b7001967",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 898,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_260081aa",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_264b21b2",
         "filename": "keystone/resource/core.py",
         "patchSetId": 14
@@ -234,6 +468,24 @@
       "writtenOn": "2015-03-03T19:52:42Z",
       "side": 1,
       "message": "remove \"option\"",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_3771890c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 910,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_264b21b2",
       "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_97b31599",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 911,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "it is used in line 917...but i very badly then re-define it later on.  Had not noticed that - very bad!  Will fix.",
+      "parentUuid": "ba7be1f8_013fe7b4",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_26a7a151",
         "filename": "keystone/resource/core.py",
         "patchSetId": 14
@@ -268,6 +538,24 @@
       "writtenOn": "2015-03-03T19:52:42Z",
       "side": 1,
       "message": "it\u0027s really confusing when functions act so different based on the inputs... option isn\u0027t even used other than to check if it\u0027s truey.",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_92f083fe",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 920,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "I have improved the comment.",
+      "parentUuid": "ba7be1f8_26a7a151",
       "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_d70cad44",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 926,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "agreed....very very bad...unintentional...and now fixed",
+      "parentUuid": "ba7be1f8_26032111",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_06245d0b",
         "filename": "keystone/resource/core.py",
         "patchSetId": 14
@@ -302,6 +608,24 @@
       "writtenOn": "2015-03-03T19:52:42Z",
       "side": 1,
       "message": "remove the : after \":raises\"",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_b20bc722",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 992,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_06245d0b",
       "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -325,6 +649,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_1248135b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1020,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_26d8811d",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_e6d109fc",
         "filename": "keystone/resource/core.py",
         "patchSetId": 14
@@ -336,6 +678,24 @@
       "writtenOn": "2015-03-03T19:52:42Z",
       "side": 1,
       "message": "remove the : after \":raises\"",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_32451743",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1022,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_e6d109fc",
       "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -359,6 +719,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_52752b96",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1060,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_66051979",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_860a0d88",
         "filename": "keystone/resource/core.py",
         "patchSetId": 14
@@ -370,6 +748,24 @@
       "writtenOn": "2015-03-03T19:52:42Z",
       "side": 1,
       "message": "remove the : after \":raises\"",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_325c3719",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_860a0d88",
       "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -393,6 +789,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_d2af5be1",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1110,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_06ad3de9",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_265fa110",
         "filename": "keystone/resource/core.py",
         "patchSetId": 14
@@ -404,6 +818,24 @@
       "writtenOn": "2015-03-03T19:52:42Z",
       "side": 1,
       "message": "The message says \"update\" but the comment says \"delete\". They should be consistent (or remove the comment since it\u0027s already explained).",
+      "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_128d737c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 1118,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-03T21:06:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_265fa110",
       "revId": "70fe08cf81cdac6d2ad919968bf0b8ae09434ae9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
