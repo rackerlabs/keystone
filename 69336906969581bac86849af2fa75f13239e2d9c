@@ -16,6 +16,24 @@
       "revId": "69336906969581bac86849af2fa75f13239e2d9c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_0373844e",
+        "filename": "keystone/token/persistence/backends/redis.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-03-03T14:10:34Z",
+      "side": 1,
+      "message": "Right, it was intended to parse specific config options and appears of no use, removing",
+      "parentUuid": "ba7be1f8_24b347ea",
+      "revId": "69336906969581bac86849af2fa75f13239e2d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
