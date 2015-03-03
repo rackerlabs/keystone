@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_3f850907",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-03T07:56:26Z",
+      "side": 1,
+      "message": "place config before group and option, this way it\u0027s consistent with the manager",
+      "revId": "e7b1e47994c734d1fc20cb7f85c5fdec0d9bcdcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_bf701941",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-03T07:56:26Z",
+      "side": 1,
+      "message": "place config before group and option",
+      "revId": "e7b1e47994c734d1fc20cb7f85c5fdec0d9bcdcc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
