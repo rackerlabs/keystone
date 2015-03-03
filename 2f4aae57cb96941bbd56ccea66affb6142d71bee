@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_aa02843b",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-03-03T15:44:10Z",
+      "side": 1,
+      "message": "So tokens are now called Fernet and format is still identified by \u0027KLWT..\u0027?",
+      "revId": "2f4aae57cb96941bbd56ccea66affb6142d71bee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_45ef391e",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-03-03T15:44:10Z",
+      "side": 1,
+      "message": "This TODO is done, isn\u0027t it?",
+      "revId": "2f4aae57cb96941bbd56ccea66affb6142d71bee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
