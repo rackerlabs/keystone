@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_8a0b0023",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 7293
+      },
+      "writtenOn": "2015-03-03T15:46:28Z",
+      "side": 1,
+      "message": "I thought that \"threads\" doesn\u0027t really reflect the parameter\u0027s semantics, as it actually stores the number of threads. But, if that is considered an unrelated change, I\u0027ll revert it.",
+      "parentUuid": "ba7be1f8_8fadd29d",
+      "revId": "4b1333c073017687216db12ba8fdba4fe79cf86d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_afca964c",
         "filename": "keystone/common/environment/eventlet_server.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-03T15:17:12Z",
       "side": 1,
       "message": "This value is better be extracted to a constant",
+      "revId": "4b1333c073017687216db12ba8fdba4fe79cf86d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_ca37b8e1",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 7293
+      },
+      "writtenOn": "2015-03-03T15:46:28Z",
+      "side": 1,
+      "message": "OK, I\u0027ll make it a constant.",
+      "parentUuid": "ba7be1f8_afca964c",
       "revId": "4b1333c073017687216db12ba8fdba4fe79cf86d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
