@@ -264,13 +264,14 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         # The server adds 'enabled' and defaults to True.
         self.endpoint['enabled'] = True
 
-    def new_ref(self):
+    def new_ref(self, parent_id=None):
         """Populates a ref with attributes common to all API entities."""
         return {
             'id': uuid.uuid4().hex,
             'name': uuid.uuid4().hex,
             'description': uuid.uuid4().hex,
-            'enabled': True}
+            'enabled': True,
+            'parent_id': parent_id}
 
     def new_region_ref(self):
         ref = self.new_ref()
@@ -295,8 +296,8 @@ class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
         ref.update(kwargs)
         return ref
 
-    def new_domain_ref(self):
-        ref = self.new_ref()
+    def new_domain_ref(self, parent_id=None):
+        ref = self.new_ref(parent_id=parent_id)
         return ref
 
     def new_project_ref(self, domain_id, parent_id=None, is_domain=False):
