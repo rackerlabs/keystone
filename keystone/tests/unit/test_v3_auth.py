@@ -4058,10 +4058,13 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         super(TestFernetTokenProvider, self).setUp()
         self.setUpKeyRepository()
 
-    def _make_auth_request(self, auth_data, trust_token=False):
+    def _make_auth_request(self, auth_data, trust_token=False,
+                           unscoped_token=False):
         resp = self.post('/auth/tokens', body=auth_data, expected_status=201)
         token = resp.headers.get('X-Subject-Token')
         if trust_token:
+            self.assertThat(token, matchers.StartsWith('F02'))
+        elif unscoped_token:
             self.assertThat(token, matchers.StartsWith('F01'))
         else:
             self.assertThat(token, matchers.StartsWith('F00'))
@@ -4071,7 +4074,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         auth_data = self.build_authentication_request(
             user_id=self.user['id'],
             password=self.user['password'])
-        return self._make_auth_request(auth_data)
+        return self._make_auth_request(auth_data, unscoped_token=True)
 
     def _get_project_scoped_token(self):
         auth_data = self.build_authentication_request(
@@ -4123,7 +4126,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
 
     def test_authenticate_for_unscoped_token(self):
         unscoped_token = self._get_unscoped_token()
-        self.assertThat(unscoped_token, matchers.StartsWith('F00'))
+        self.assertThat(unscoped_token, matchers.StartsWith('F01'))
         self.assertLess(len(unscoped_token), 255)
 
     def test_validate_unscoped_token(self):
@@ -4132,7 +4135,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
             password=self.user['password'])
         resp = self.post('/auth/tokens', body=auth_data)
         unscoped_token = resp.headers.get('X-Subject-Token')
-        self.assertThat(unscoped_token, matchers.StartsWith('F00'))
+        self.assertThat(unscoped_token, matchers.StartsWith('F01'))
         headers = {'X-Subject-Token': unscoped_token}
         self.get('/auth/tokens', headers=headers, expected_status=200)
 
@@ -4142,7 +4145,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
             password=self.user['password'])
         resp = self.post('/auth/tokens', body=auth_data)
         unscoped_token = resp.headers.get('X-Subject-Token')
-        self.assertThat(unscoped_token, matchers.StartsWith('F00'))
+        self.assertThat(unscoped_token, matchers.StartsWith('F01'))
         tampered_token = (unscoped_token[:50] + uuid.uuid4().hex +
                           unscoped_token[50 + 32:])
         headers = {'X-Subject-Token': tampered_token}
@@ -4334,7 +4337,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
     def test_validate_a_trust_scoped_token(self):
         trustee_user, trust = self._create_trust()
         trust_scoped_token = self._get_trust_scoped_token(trustee_user, trust)
-        self.assertThat(trust_scoped_token, matchers.StartsWith('F01'))
+        self.assertThat(trust_scoped_token, matchers.StartsWith('F02'))
         headers = {'X-Subject-Token': trust_scoped_token}
         # Validate a trust scoped token
         self.get('/auth/tokens', headers=headers, expected_status=200)
@@ -4348,7 +4351,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         resp = self.post('/auth/tokens', body=auth_data, expected_status=201)
         # Get a trust scoped token
         trust_scoped_token = resp.headers.get('X-Subject-Token')
-        self.assertThat(trust_scoped_token, matchers.StartsWith('F01'))
+        self.assertThat(trust_scoped_token, matchers.StartsWith('F02'))
         tampered_token = (trust_scoped_token[:50] + uuid.uuid4().hex +
                           trust_scoped_token[50 + 32:])
         headers = {'X-Subject-Token': tampered_token}
@@ -4395,7 +4398,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
     def test_trust_scoped_token_is_invalid_after_disabling_trustor(self):
         trustee_user, trust = self._create_trust()
         trust_scoped_token = self._get_trust_scoped_token(trustee_user, trust)
-        self.assertThat(trust_scoped_token, matchers.StartsWith('F01'))
+        self.assertThat(trust_scoped_token, matchers.StartsWith('F02'))
         headers = {'X-Subject-Token': trust_scoped_token}
         # Validate a trust scoped token
         self.get('/auth/tokens', headers=headers, expected_status=200)

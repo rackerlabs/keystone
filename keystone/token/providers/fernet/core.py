@@ -22,7 +22,8 @@ CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 TOKEN_PREFIX = 'F00'
-TRUST_TOKEN_PREFIX = 'F01'
+UNSCOPED_TOKEN_PREFIX = 'F01'
+TRUST_TOKEN_PREFIX = 'F02'
 
 
 class Provider(common.BaseProvider):
@@ -31,7 +32,8 @@ class Provider(common.BaseProvider):
 
         self.token_format_map = {
             TOKEN_PREFIX: token_formatters.StandardTokenFormatter(),
-            TRUST_TOKEN_PREFIX: token_formatters.TrustTokenFormatter()}
+            TRUST_TOKEN_PREFIX: token_formatters.TrustTokenFormatter(),
+            UNSCOPED_TOKEN_PREFIX: token_formatters.UnscopedTokenFormatter()}
 
     def needs_persistence(self):
         """Should the token be written to a backend."""
@@ -73,13 +75,6 @@ class Provider(common.BaseProvider):
         :returns: tuple containing the id of the token and the token data
 
         """
-        token_format = None
-
-        if trust:
-            token_format = self.token_format_map[TRUST_TOKEN_PREFIX]
-        else:
-            token_format = self.token_format_map[TOKEN_PREFIX]
-
         token_ref = None
         if auth_context and self._is_mapped_token(auth_context):
             token_ref = self._handle_mapped_tokens(
@@ -98,7 +93,19 @@ class Provider(common.BaseProvider):
             include_catalog=include_catalog,
             audit_info=parent_audit_id)
 
-        token_id = token_format.create_token(user_id, project_id, token_data)
+        token_format = None
+
+        if trust:
+            token_format = self.token_format_map[TRUST_TOKEN_PREFIX]
+            token_id = token_format.create_token(user_id, project_id,
+                                                 token_data)
+        elif domain_id is None and project_id is None:
+            token_format = self.token_format_map[UNSCOPED_TOKEN_PREFIX]
+            token_id = token_format.create_token(user_id, token_data)
+        else:
+            token_format = self.token_format_map[TOKEN_PREFIX]
+            token_id = token_format.create_token(user_id, project_id,
+                                                 token_data)
 
         return token_id, token_data
 
