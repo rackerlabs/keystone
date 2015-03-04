@@ -120,7 +120,7 @@ class DomainV3(controller.V3Controller):
         ref = self.resource_api.create_domain(ref['id'], ref, initiator)
         return DomainV3.wrap_member(context, ref)
 
-    @controller.filterprotected('enabled', 'name')
+    @controller.filterprotected('enabled', 'name', 'parent_id')
     def list_domains(self, context, filters):
         hints = DomainV3.build_driver_hints(context, filters)
         refs = self.resource_api.list_domains(hints=hints)
