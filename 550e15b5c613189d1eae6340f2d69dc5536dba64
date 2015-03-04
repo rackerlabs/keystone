@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_3036ae04",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 836,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-03-04T07:42:28Z",
+      "side": 1,
+      "message": "The previous patches actually had this as ListOpt. However, the value of an issuer would contain comas, like \u0027email\u003dfoo.com,cn\u003djohn,o\u003dfoo\u0027, when this is put into a list, there will be an issue with the comas.\nI used the URL escape in order to allow a list of issuers.\nAnd had some discussions with Morgan and ayoung, and they prefer to just support a single trusted issuer for now.",
+      "parentUuid": "9a80dd14_ea7d07b3",
+      "revId": "550e15b5c613189d1eae6340f2d69dc5536dba64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_50f3220a",
         "filename": "keystone/common/config.py",
         "patchSetId": 12
@@ -81,6 +99,24 @@
       "writtenOn": "2015-03-04T07:24:12Z",
       "side": 1,
       "message": "Trusteed issuer should be list and this comparison needs to be revisited",
+      "revId": "550e15b5c613189d1eae6340f2d69dc5536dba64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_7b5c8726",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-03-04T07:42:28Z",
+      "side": 1,
+      "message": "See my comment in config.py",
+      "parentUuid": "9a80dd14_90d03af9",
       "revId": "550e15b5c613189d1eae6340f2d69dc5536dba64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
