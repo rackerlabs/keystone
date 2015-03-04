@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_1b18eb83",
+        "filename": "keystone/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-03-04T08:19:16Z",
+      "side": 1,
+      "message": "Do we need to validate if domain is enable?",
+      "revId": "5cfbe18deaacbb186c30faf7234720b8318d39be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_7b172752",
+        "filename": "keystone/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-03-04T08:19:16Z",
+      "side": 1,
+      "message": "directory?",
+      "revId": "5cfbe18deaacbb186c30faf7234720b8318d39be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_363ce693",
+        "filename": "keystone/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-03-04T08:19:16Z",
+      "side": 1,
+      "message": "It might be more consistent to have both domain_name and domain_config_dir as the parameters",
+      "revId": "5cfbe18deaacbb186c30faf7234720b8318d39be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
