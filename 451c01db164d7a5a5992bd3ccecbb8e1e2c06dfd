@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_5be8a37c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 10657
+      },
+      "writtenOn": "2015-03-04T08:01:24Z",
+      "side": 1,
+      "message": "trivial: I think you don\u0027t have to add a period \".\".",
+      "revId": "451c01db164d7a5a5992bd3ccecbb8e1e2c06dfd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_62121a64",
         "filename": "/COMMIT_MSG",
         "patchSetId": 5
