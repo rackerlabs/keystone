@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_e5ed238d",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-04T16:35:49Z",
+      "side": 1,
+      "message": "if the variable name is going to be plural, make it a list here?",
+      "revId": "a3dccdeb36a6ceac7304814a0342ed575d0a4554",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_058957ca",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-04T16:35:49Z",
+      "side": 1,
+      "message": "same",
+      "revId": "a3dccdeb36a6ceac7304814a0342ed575d0a4554",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_05d157fb",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-04T16:35:49Z",
+      "side": 1,
+      "message": "you\u0027re encoding a string here to base64, not decoding it -- so i don\u0027t understand the name. it\u0027s also no longer random, if you\u0027re providing data, so the method name is a misnomer. all this leads me to suggest you should be writing a new function to do what you want :)",
+      "revId": "a3dccdeb36a6ceac7304814a0342ed575d0a4554",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
