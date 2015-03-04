@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_874d9d40",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-04T01:06:17Z",
+      "side": 1,
+      "message": "A role assignment always contain i) a \u0027role_id\u0027, ii) \u0027user_id\u0027 or \u0027group_id\u0027 (since we are not sure which one will be in there, we do .get()) and iii) a \u0027domain_id\u0027 or \u0027project_id\u0027 (we know there is a \u0027project_id\u0027 since we don\u0027t have domain_id inside the if statement starting at L286).",
+      "parentUuid": "ba7be1f8_bb2f6a3d",
+      "revId": "b20b00b5f9f46345c0f5a6aae3662d5b7942959f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_7b15f2e3",
         "filename": "keystone/assignment/backends/ldap.py",
         "patchSetId": 31
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-02T17:52:11Z",
       "side": 1,
       "message": "same comment here",
+      "revId": "b20b00b5f9f46345c0f5a6aae3662d5b7942959f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a748e12d",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-04T01:06:17Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "ba7be1f8_7b15f2e3",
       "revId": "b20b00b5f9f46345c0f5a6aae3662d5b7942959f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_c70155b0",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-04T01:06:17Z",
+      "side": 1,
+      "message": "We do not do this in the original implementation.\nHere we are just adding filtering by provided values.",
+      "parentUuid": "ba7be1f8_dbb41ef4",
+      "revId": "b20b00b5f9f46345c0f5a6aae3662d5b7942959f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_bb2e8af8",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 31
@@ -64,6 +118,24 @@
       "writtenOn": "2015-03-02T17:52:11Z",
       "side": 1,
       "message": "is there another assignment type we can have here, or will it always be either user or group? Do we need an elif here or could it just be else?",
+      "revId": "b20b00b5f9f46345c0f5a6aae3662d5b7942959f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_e78c99d9",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-04T01:06:17Z",
+      "side": 1,
+      "message": "If no group, user, project or domain is provided, this method will return an empty list, which will be ignored as a filter at lines 421, 422.\n\nSo we cannot just make it as an else statement.",
+      "parentUuid": "ba7be1f8_bb2e8af8",
       "revId": "b20b00b5f9f46345c0f5a6aae3662d5b7942959f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_07bfed61",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-04T01:06:17Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "ba7be1f8_3b3a9a34",
+      "revId": "b20b00b5f9f46345c0f5a6aae3662d5b7942959f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_fbd482be",
         "filename": "keystone/assignment/backends/sql.py",
         "patchSetId": 31
@@ -98,6 +188,24 @@
       "writtenOn": "2015-03-02T17:52:11Z",
       "side": 1,
       "message": "same comment here",
+      "revId": "b20b00b5f9f46345c0f5a6aae3662d5b7942959f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_a77461cf",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 404,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-04T01:06:17Z",
+      "side": 1,
+      "message": "Same explanation as above. If no project_ids or domain_id is provided, targets will be None and then ignored as a filter at lines 417 and 418.",
+      "parentUuid": "ba7be1f8_fbd482be",
       "revId": "b20b00b5f9f46345c0f5a6aae3662d5b7942959f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_e77ad9b8",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-04T01:06:17Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "ba7be1f8_dbd17ece",
+      "revId": "b20b00b5f9f46345c0f5a6aae3662d5b7942959f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_7e188075",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 31
@@ -132,6 +258,24 @@
       "writtenOn": "2015-03-02T17:52:11Z",
       "side": 1,
       "message": "nit: not that it really matters much, but should this be private?",
+      "revId": "b20b00b5f9f46345c0f5a6aae3662d5b7942959f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c7c23533",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 583,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-04T01:06:17Z",
+      "side": 1,
+      "message": "In fact I think we don\u0027t need to add _ at the beginning of inner methods, as we have for this one and for the inner method of _list_effective_role_assignments.\n\nTo keep consistency, I\u0027ll remove _ from _expand_inherited_assignment, _expand_group_assignment and _create_group_assignment.",
+      "parentUuid": "ba7be1f8_7e188075",
       "revId": "b20b00b5f9f46345c0f5a6aae3662d5b7942959f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
