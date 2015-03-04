@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_50f3220a",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-03-04T07:24:12Z",
+      "side": 1,
+      "message": "List is better option.\n\nDN is set of \",\" separated entities.  How are you going to distinguish that  for st of DNs",
+      "revId": "550e15b5c613189d1eae6340f2d69dc5536dba64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d0f0f2cb",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-03-04T07:24:12Z",
+      "side": 1,
+      "message": "Parameters are reversed",
+      "revId": "550e15b5c613189d1eae6340f2d69dc5536dba64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_8a248bc7",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 12
@@ -36,6 +70,23 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_90d03af9",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-03-04T07:24:12Z",
+      "side": 1,
+      "message": "Trusteed issuer should be list and this comparison needs to be revisited",
+      "revId": "550e15b5c613189d1eae6340f2d69dc5536dba64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_8d71057a",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 12
@@ -47,6 +98,23 @@
       "writtenOn": "2015-03-04T06:38:22Z",
       "side": 1,
       "message": "this line feels more like validating the trusted issuer, and the rest of this feels like verifying the scope",
+      "revId": "550e15b5c613189d1eae6340f2d69dc5536dba64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b069be27",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 220
+      },
+      "writtenOn": "2015-03-04T07:24:12Z",
+      "side": 1,
+      "message": "Can\u0027t we deduce the scope from    tokenless_helper.get_scope(), why do we need to repeat this once again?",
       "revId": "550e15b5c613189d1eae6340f2d69dc5536dba64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
