@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_bc40ab57",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 926,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T14:34:23Z",
+      "side": 1,
+      "message": "it\u0027s not just a flag, since the value is used at line 937.",
+      "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_7c9ab315",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 947,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T14:34:23Z",
+      "side": 1,
+      "message": "This method would be easier to understand if the req_option \u003d\u003d True case was always handled separately... the way it is now it drops through and then goes through some complicated logic that doesn\u0027t apply just to return an empty dict.",
+      "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_df71d178",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1051,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T14:34:23Z",
+      "side": 1,
+      "message": "domain_id isn\u0027t used.",
+      "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_3f002daa",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1059,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T14:34:23Z",
+      "side": 1,
+      "message": "this says what the next line of code is doing, but it should say why it\u0027s doing it... why must there only be one entry in the config?",
+      "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_9f267967",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1074,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T14:34:23Z",
+      "side": 1,
+      "message": "should say why.",
+      "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
