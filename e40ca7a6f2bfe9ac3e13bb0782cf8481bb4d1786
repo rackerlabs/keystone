@@ -1,0 +1,276 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_af521811",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T22:36:02Z",
+      "side": 1,
+      "message": "a 201 Created response should have a Location header, see http://tools.ietf.org/html/rfc2616#section-10.2.2",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_cc359a47",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T22:36:02Z",
+      "side": 1,
+      "message": "update should return 200 OK.",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_ac094697",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T22:36:02Z",
+      "side": 1,
+      "message": "suggest use option\u003dNone instead.",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_ccfe7a6b",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T22:36:02Z",
+      "side": 1,
+      "message": "suggest use group\u003dNone, option\u003dNone instead.",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8f12b4b2",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T22:36:02Z",
+      "side": 1,
+      "message": "why does this return something?",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4fbefc00",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T22:36:02Z",
+      "side": 1,
+      "message": "this relationship isn\u0027t mentioned in the spec.",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_cf410c0d",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T22:36:02Z",
+      "side": 1,
+      "message": "this relationship isn\u0027t mentioned in the spec.",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_cfdd8c44",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T22:36:02Z",
+      "side": 1,
+      "message": "a variable should be created so it can be shared with the other use of config_group at line 69.",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8fdd5417",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T22:36:02Z",
+      "side": 1,
+      "message": "remove \"database\"... these tests shouldn\u0027t care which backend is used.",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4ff27c9b",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T22:36:02Z",
+      "side": 1,
+      "message": "This should have returned 200 since the resource already existed.",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_af369801",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T22:36:02Z",
+      "side": 1,
+      "message": "there should also be tests for HEAD",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_efa41059",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T22:36:02Z",
+      "side": 1,
+      "message": "there should be a test for a group that doesn\u0027t exist.",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_cfb66c8a",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T22:36:02Z",
+      "side": 1,
+      "message": "there should be a test for an option that doesn\u0027t exist.",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_cf44ac76",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T22:36:02Z",
+      "side": 1,
+      "message": "why 201 and not 200? what was created?",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_2f22a8b9",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T22:36:02Z",
+      "side": 1,
+      "message": "change \"group\" to \"{group}\"\n\nthere should be tests for PATCH where the group doesn\u0027t exist.",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8f18f485",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T22:36:02Z",
+      "side": 1,
+      "message": "change \"group\" to \"{group}\" and \"option\" to \"{option}\"\n\nalso, there should be a test for PATCH where the option doesn\u0027t exist.",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
