@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_a3a15eab",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 930,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T19:24:30Z",
+      "side": 1,
+      "message": "copy.copy() isn\u0027t needed since + makes a copy.",
+      "revId": "8d1bc9b94f71b7f133c51a0d6fac55f8ef72b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8369ba8d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 976,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T19:24:30Z",
+      "side": 1,
+      "message": "\".driver\" isn\u0027t needed here, so remove it. This applies throughout these changes.",
+      "revId": "8d1bc9b94f71b7f133c51a0d6fac55f8ef72b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_a3d31e37",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1003,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T19:24:30Z",
+      "side": 1,
+      "message": "add another : for rst",
+      "revId": "8d1bc9b94f71b7f133c51a0d6fac55f8ef72b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_03e30a08",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1005,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T19:24:30Z",
+      "side": 1,
+      "message": "indent these lines for rst",
+      "revId": "8d1bc9b94f71b7f133c51a0d6fac55f8ef72b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_87654747",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 1092,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T19:24:30Z",
+      "side": 1,
+      "message": "the message has %(option)s, but there\u0027s no \u0027option\u0027 in the dict.\n\nAlso, this isn\u0027t tested according to coverage report.",
+      "revId": "8d1bc9b94f71b7f133c51a0d6fac55f8ef72b9cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
