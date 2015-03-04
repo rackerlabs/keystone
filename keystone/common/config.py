@@ -16,7 +16,7 @@ from oslo_config import cfg
 import oslo_messaging
 
 
-_DEFAULT_AUTH_METHODS = ['external', 'password', 'token']
+_DEFAULT_AUTH_METHODS = ['external', 'password', 'token', 'oauth1']
 _CERTFILE = '/etc/keystone/ssl/certs/signing_cert.pem'
 _KEYFILE = '/etc/keystone/ssl/private/signing_key.pem'
 _SSO_CALLBACK = '/etc/keystone/sso_callback_template.html'
@@ -831,6 +831,15 @@ FILE_OPTIONS = {
         cfg.StrOpt('external',
                    default='keystone.auth.plugins.external.DefaultDomain',
                    help='The external (REMOTE_USER) auth plugin module.'),
+        cfg.StrOpt('saml2',
+                   default='keystone.auth.plugins.saml.Saml2',
+                   help='The SAML2 auth plugin module.'),
+        cfg.StrOpt('oidc',
+                   default='keystone.auth.plugins.mapped.Mapped',
+                   help='The OpenID Connect auth plugin module.'),
+        cfg.StrOpt('oauth1',
+                   default='keystone.auth.plugins.oauth1.OAuth',
+                   help='The oAuth1 auth plugin module.'),
     ],
     'paste_deploy': [
         cfg.StrOpt('config_file', default='keystone-paste.ini',
@@ -1055,7 +1064,13 @@ def setup_authentication(conf=None):
     for method_name in conf.auth.methods:
         if method_name not in _DEFAULT_AUTH_METHODS:
             option = cfg.StrOpt(method_name)
-            _register_auth_plugin_opt(conf, option)
+            # some auth methods are already registered but don't belong to the
+            # default auth methods, so skip duplication errors silently
+            try:
+                _register_auth_plugin_opt(conf, option)
+            except cfg.DuplicateOptError:
+                # no need to register it
+                pass
 
 
 def configure(conf=None):
