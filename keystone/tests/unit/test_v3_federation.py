@@ -39,6 +39,7 @@ from keystone.tests.unit import core
 from keystone.tests.unit import federation_fixtures
 from keystone.tests.unit import mapping_fixtures
 from keystone.tests.unit import test_v3
+from keystone.tests.unit.token import test_fernet_provider as fernet
 from keystone.token.providers import common as token_common
 
 
@@ -59,6 +60,66 @@ class FederationTests(test_v3.RestfulTestCase):
 
 
 class FederatedSetupMixin(object):
+
+    ACTION = 'authenticate'
+    IDP = 'ORG_IDP'
+    PROTOCOL = 'saml2'
+    AUTH_METHOD = 'saml2'
+    USER = 'user@ORGANIZATION'
+    ASSERTION_PREFIX = 'PREFIX_'
+    IDP_WITH_REMOTE = 'ORG_IDP_REMOTE'
+    REMOTE_ID = 'entityID_IDP'
+    REMOTE_ID_ATTR = uuid.uuid4().hex
+
+    UNSCOPED_V3_SAML2_REQ = {
+        "identity": {
+            "methods": [AUTH_METHOD],
+            AUTH_METHOD: {
+                "identity_provider": IDP,
+                "protocol": PROTOCOL
+            }
+        }
+    }
+
+    def idp_ref(self, id=None):
+        idp = {
+            'id': id or uuid.uuid4().hex,
+            'enabled': True,
+            'description': uuid.uuid4().hex
+        }
+        return idp
+
+    def mapping_ref(self, rules=None):
+        return {
+            'id': uuid.uuid4().hex,
+            'rules': rules or self.rules['rules']
+        }
+
+    def proto_ref(self, mapping_id=None):
+        proto = {
+            'id': uuid.uuid4().hex,
+            'mapping_id': mapping_id or uuid.uuid4().hex
+        }
+        return proto
+
+    def _scope_request(self, unscoped_token_id, scope, scope_id):
+        return {
+            'auth': {
+                'identity': {
+                    'methods': [
+                        self.AUTH_METHOD
+                    ],
+                    self.AUTH_METHOD: {
+                        'id': unscoped_token_id
+                    }
+                },
+                'scope': {
+                    scope: {
+                        'id': scope_id
+                    }
+                }
+            }
+        }
 
     def load_federation_sample_data(self):
         """Inject additional data."""
@@ -1604,26 +1665,6 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
             'send_saml_audit_notification',
             fake_saml_notify))
 
-    ACTION = 'authenticate'
-    IDP = 'ORG_IDP'
-    PROTOCOL = 'saml2'
-    AUTH_METHOD = 'saml2'
-    USER = 'user@ORGANIZATION'
-    ASSERTION_PREFIX = 'PREFIX_'
-    IDP_WITH_REMOTE = 'ORG_IDP_REMOTE'
-    REMOTE_ID = 'entityID_IDP'
-    REMOTE_ID_ATTR = uuid.uuid4().hex
-
-    UNSCOPED_V3_SAML2_REQ = {
-        "identity": {
-            "methods": [AUTH_METHOD],
-            AUTH_METHOD: {
-                "identity_provider": IDP,
-                "protocol": PROTOCOL
-            }
-        }
-    }
-
     def _assert_last_notify(self, action, identity_provider, protocol,
                             user_id=None):
         self.assertTrue(self._notifications)
@@ -1638,46 +1679,6 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
     def load_fixtures(self, fixtures):
         super(FederationTests, self).load_fixtures(fixtures)
         self.load_federation_sample_data()
-
-    def idp_ref(self, id=None):
-        idp = {
-            'id': id or uuid.uuid4().hex,
-            'enabled': True,
-            'description': uuid.uuid4().hex
-        }
-        return idp
-
-    def proto_ref(self, mapping_id=None):
-        proto = {
-            'id': uuid.uuid4().hex,
-            'mapping_id': mapping_id or uuid.uuid4().hex
-        }
-        return proto
-
-    def mapping_ref(self, rules=None):
-        return {
-            'id': uuid.uuid4().hex,
-            'rules': rules or self.rules['rules']
-        }
-
-    def _scope_request(self, unscoped_token_id, scope, scope_id):
-        return {
-            'auth': {
-                'identity': {
-                    'methods': [
-                        self.AUTH_METHOD
-                    ],
-                    self.AUTH_METHOD: {
-                        'id': unscoped_token_id
-                    }
-                },
-                'scope': {
-                    scope: {
-                        'id': scope_id
-                    }
-                }
-            }
-        }
 
     def _project(self, project):
         return (project['id'], project['name'])
@@ -2345,6 +2346,50 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
         assertion = getattr(mapping_fixtures, variant)
         context['environment'].update(assertion)
         context['query_string'] = query_string or []
+
+
+class TestFederatedFernetTokenProvider(FederatedSetupMixin,
+                                       fernet.KeyRepositoryTestMixin,
+                                       FederationTests,
+                                       test_v3.RestfulTestCase):
+
+    def auth_plugin_config_override(self):
+        methods = ['saml2']
+        method_classes = {'saml2': 'keystone.auth.plugins.saml2.Saml2'}
+        super(TestFederatedFernetTokenProvider, self).auth_plugin_config_override(
+            methods, **method_classes)
+
+    def setUp(self):
+        super(TestFederatedFernetTokenProvider, self).setUp()
+        self.setUpKeyRepository()
+        self.config_fixture.config(
+            group='token',
+            provider='keystone.token.providers.fernet.Provider')
+
+    def load_fixtures(self, fixtures):
+        super(FederationTests, self).load_fixtures(fixtures)
+        self.load_federation_sample_data()
+
+    def _inject_assertion(self, context, variant, query_string=None):
+        assertion = getattr(mapping_fixtures, variant)
+        context['environment'].update(assertion)
+        context['query_string'] = query_string or []
+
+    def _issue_unscoped_token(self,
+                              idp=None,
+                              assertion='EMPLOYEE_ASSERTION',
+                              environment=None):
+        api = federation_controllers.Auth()
+        context = {'environment': environment or {}}
+        self._inject_assertion(context, assertion)
+        if idp is None:
+            idp = self.IDP
+        r = api.federated_authentication(context, idp, self.PROTOCOL)
+        return r
+
+    def test_federated_unscoped_token(self):
+        resp = self._issue_unscoped_token()
+        from nose.tools import set_trace; set_trace()
 
 
 class FederatedTokenTestsMethodToken(FederatedTokenTests):
