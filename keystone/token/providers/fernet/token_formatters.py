@@ -147,9 +147,59 @@ class BaseTokenFormatter(object):
         return payload
 
 
-class StandardTokenFormatter(BaseTokenFormatter):
+class UnscopedTokenFormatter(BaseTokenFormatter):
 
     token_format = 'F00'
+
+    def create_token(self, user_id, token_data):
+        """Create a unscoped token.
+
+        :param user_id: identifier of the user in the token request
+        :param token_data: dictionary of token data
+        :returns: a string representing the token
+
+        """
+        (issued_at_int, expires_at_int, audit_ids) = self._convert_token_data(
+            token_data)
+
+        b_user_id = self._convert_uuid_hex_to_bytes(user_id)
+        payload = (b_user_id, issued_at_int, expires_at_int, audit_ids)
+
+        return self.pack(payload)
+
+    def validate_token(self, token_string):
+        """Validate an unscoped token.
+
+        :param token_string: a string representing the token
+        :return: a tuple contains the user_id and token_data
+
+        """
+        payload = self.unpack(token_string)
+
+        # Rebuild and retrieve token information from the token string
+        b_user_id = payload[0]
+        issued_at_ts = payload[1]
+        expires_at_ts = payload[2]
+        audit_ids = payload[3]
+
+        user_id = self._convert_uuid_bytes_to_hex(b_user_id)
+
+        issued_at_str = self._convert_int_to_time_string(issued_at_ts)
+        expires_at_str = self._convert_int_to_time_string(expires_at_ts)
+        token_data = self.v3_token_data_helper.get_token_data(
+            user_id,
+            ['password', 'token'],
+            {},
+            expires=expires_at_str,
+            issued_at=issued_at_str,
+            audit_info=audit_ids)
+
+        return (user_id, None, token_data)
+
+
+class StandardTokenFormatter(BaseTokenFormatter):
+
+    token_format = 'F01'
 
     def create_token(self, user_id, project_id, token_data):
         """Create a standard formatted token.
@@ -220,7 +270,7 @@ class StandardTokenFormatter(BaseTokenFormatter):
 @dependency.requires('trust_api')
 class TrustTokenFormatter(BaseTokenFormatter):
 
-    token_format = 'F01'
+    token_format = 'F02'
 
     def create_token(self, user_id, project_id, token_data):
         """Create a trust formatted token.
