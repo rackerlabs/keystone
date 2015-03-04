@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_db1e8cba",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-04T02:53:45Z",
+      "side": 1,
+      "message": "suggestion: if not provided generate a random one.",
+      "revId": "a85bb1c8378de3eece0f732dd9eefab658c74ef8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
