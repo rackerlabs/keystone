@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_ffca156d",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-04T14:36:27Z",
+      "side": 0,
+      "message": "Why is this changing? The existing code seems to think that you have to be using the default domain with this backend and there is nothing in the commit message to indicate why you are changing the behavior.",
+      "revId": "8846077817defc5c947a0cf2b9eb7c0a360da0c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
