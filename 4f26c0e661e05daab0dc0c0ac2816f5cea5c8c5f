@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_47b44ef2",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 837,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T06:11:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_40e70bac",
+      "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_1b3ae498",
         "filename": "keystone/resource/core.py",
         "patchSetId": 16
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-04T03:05:44Z",
       "side": 1,
       "message": "domain_id isn\u0027t used. Is this intentional?",
+      "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_67b952e9",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 843,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T06:11:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_1b3ae498",
       "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_e772a248",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 855,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T06:11:28Z",
+      "side": 1,
+      "message": "I agree that this could be done there, although was trying to make the manager level more resilient.  Happy to move it to here the controller in a follow-on patch.",
+      "parentUuid": "ba7be1f8_808bc3c1",
+      "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_a051a763",
         "filename": "keystone/resource/core.py",
         "patchSetId": 16
@@ -64,6 +118,24 @@
       "writtenOn": "2015-03-04T03:05:44Z",
       "side": 1,
       "message": "remove trailing space.",
+      "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_078fb624",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 857,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T06:11:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_a051a763",
       "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_a73b4a37",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 878,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T06:11:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_5b57fcc9",
+      "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_bbf638d5",
         "filename": "keystone/resource/core.py",
         "patchSetId": 16
@@ -98,6 +188,24 @@
       "writtenOn": "2015-03-04T03:05:44Z",
       "side": 1,
       "message": "any reason this is public?",
+      "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e74542b4",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 899,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T06:11:28Z",
+      "side": 1,
+      "message": "No, good catch",
+      "parentUuid": "ba7be1f8_bbf638d5",
       "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_07609634",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 916,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T06:11:28Z",
+      "side": 1,
+      "message": "nice suggestion",
+      "parentUuid": "ba7be1f8_1bd66428",
+      "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_5bb37c09",
         "filename": "keystone/resource/core.py",
         "patchSetId": 16
@@ -132,6 +258,24 @@
       "writtenOn": "2015-03-04T03:05:44Z",
       "side": 1,
       "message": "suggest\n\n the_list \u003d copy.copy(whitelisted) + (sensitive or [])",
+      "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8753a66b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 937,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T06:11:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_5bb37c09",
       "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_87dac6e7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 958,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T06:11:28Z",
+      "side": 1,
+      "message": "yep, you are correct! Fixed.",
+      "parentUuid": "ba7be1f8_7bada09a",
+      "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_9ba5f4a3",
         "filename": "keystone/resource/core.py",
         "patchSetId": 16
@@ -166,6 +328,24 @@
       "writtenOn": "2015-03-04T03:05:44Z",
       "side": 1,
       "message": "**option doesn\u0027t work? Why not have create_config_option take a list of options, or take a whole config? The way it is now, each config option is going to be in a different transaction, so if there\u0027s a failure halfway through then it\u0027ll be partially completed and you\u0027ll have an invalid configuration.",
+      "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_877646d7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 987,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T06:11:28Z",
+      "side": 1,
+      "message": "I agree there is a chance of that - and unless we join the requests for writing to both whitelisted and sensitive tables, we always have that risk.  I\u0027d suggest that we accept this small risk - but perhaps consider that for a later patch/update",
+      "parentUuid": "ba7be1f8_9ba5f4a3",
       "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_c7803e8e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 990,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T06:11:28Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "ba7be1f8_bba0f890",
+      "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_db4cccca",
         "filename": "keystone/resource/core.py",
         "patchSetId": 16
@@ -200,6 +398,24 @@
       "writtenOn": "2015-03-04T03:05:44Z",
       "side": 1,
       "message": "group was already checked on the previous line.",
+      "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_47444e74",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1061,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T06:11:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_db4cccca",
       "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_c7575e25",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1072,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T06:11:28Z",
+      "side": 1,
+      "message": "I was just preventing too much indenting...There could be an update without group....I think less likely., I agree...but you could supply a config with multiple groups/options that you want added to the existing config",
+      "parentUuid": "ba7be1f8_fb47d0a0",
+      "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_3bf4085a",
         "filename": "keystone/resource/core.py",
         "patchSetId": 16
@@ -234,6 +468,24 @@
       "writtenOn": "2015-03-04T03:05:44Z",
       "side": 1,
       "message": "no need to check group again... it\u0027s been checked 4 times already.",
+      "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_a7218ab6",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1080,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T06:11:28Z",
+      "side": 1,
+      "message": ":-)",
+      "parentUuid": "ba7be1f8_3bf4085a",
       "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_6a0e7736",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1091,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T06:11:28Z",
+      "side": 1,
+      "message": "oops, yes",
+      "parentUuid": "ba7be1f8_dbfa0c42",
+      "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_9b8b34c2",
         "filename": "keystone/resource/core.py",
         "patchSetId": 16
@@ -268,6 +538,24 @@
       "writtenOn": "2015-03-04T03:05:44Z",
       "side": 1,
       "message": "new_option -\u003e option",
+      "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8a12cb56",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1095,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T06:11:28Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "ba7be1f8_9b8b34c2",
       "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +579,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_aaab0fd5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1134,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T06:11:28Z",
+      "side": 1,
+      "message": "agree it looks odd as is....but was ensuring the invalid case of the option being defined by not group was checked by _assert_valid_group_and_option.  Have housed that call out of the if statement to achieve that, and changed the if clause.",
+      "parentUuid": "ba7be1f8_bb09d832",
+      "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_b6372de2",
         "filename": "keystone/resource/core.py",
         "patchSetId": 16
@@ -308,6 +614,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_4af3730a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1146,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T06:11:28Z",
+      "side": 1,
+      "message": "hmm, yes, I think you are correct",
+      "parentUuid": "ba7be1f8_b6372de2",
+      "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_36533d18",
         "filename": "keystone/resource/core.py",
         "patchSetId": 16
@@ -319,6 +643,24 @@
       "writtenOn": "2015-03-04T03:05:44Z",
       "side": 1,
       "message": "NotFound?",
+      "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_6af837e6",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 1151,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T06:11:28Z",
+      "side": 1,
+      "message": "ditto",
+      "parentUuid": "ba7be1f8_36533d18",
       "revId": "4f26c0e661e05daab0dc0c0ac2816f5cea5c8c5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
