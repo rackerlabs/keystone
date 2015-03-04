@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_8cbc826e",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-03-04T22:53:41Z",
+      "side": 1,
+      "message": "good catch, thx!",
+      "parentUuid": "9a80dd14_d0f0f2cb",
+      "revId": "550e15b5c613189d1eae6340f2d69dc5536dba64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_8a248bc7",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 12
@@ -82,6 +100,24 @@
       "writtenOn": "2015-03-04T06:38:22Z",
       "side": 1,
       "message": "glad to see you could take advantage of marek\u0027s code!",
+      "revId": "550e15b5c613189d1eae6340f2d69dc5536dba64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_6ca74e50",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-03-04T22:53:41Z",
+      "side": 1,
+      "message": "marek\u0027s code does a good job on this ;-)",
+      "parentUuid": "9a80dd14_8a248bc7",
       "revId": "550e15b5c613189d1eae6340f2d69dc5536dba64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -140,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_cf7cac75",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-03-04T22:53:41Z",
+      "side": 1,
+      "message": "yeah, agree. Thanks for the suggestions and they are definitely more readable.",
+      "parentUuid": "9a80dd14_8d71057a",
+      "revId": "550e15b5c613189d1eae6340f2d69dc5536dba64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_b069be27",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 12
@@ -151,6 +205,24 @@
       "writtenOn": "2015-03-04T07:24:12Z",
       "side": 1,
       "message": "Can\u0027t we deduce the scope from    tokenless_helper.get_scope(), why do we need to repeat this once again?",
+      "revId": "550e15b5c613189d1eae6340f2d69dc5536dba64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_ef87b00d",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-03-04T22:53:41Z",
+      "side": 1,
+      "message": "I rather to return out earlier if there is any validation failures, instead of making calls to underneath APIs and return error later.",
+      "parentUuid": "9a80dd14_b069be27",
       "revId": "550e15b5c613189d1eae6340f2d69dc5536dba64",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
