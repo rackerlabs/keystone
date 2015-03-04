@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_ea7d07b3",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 836,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-04T06:38:22Z",
+      "side": 1,
+      "message": "might want to consider making this a list of trusted_issuers, similar to how federation handles trusted_dashboards for SSO calling back.\n\nbasically just change the config option to ListOpt, and you can now specify multiple trusted issuers by repeating the key\u003dvalue.",
+      "revId": "550e15b5c613189d1eae6340f2d69dc5536dba64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8a248bc7",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-04T06:38:22Z",
+      "side": 1,
+      "message": "glad to see you could take advantage of marek\u0027s code!",
+      "revId": "550e15b5c613189d1eae6340f2d69dc5536dba64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8d71057a",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-04T06:38:22Z",
+      "side": 1,
+      "message": "this line feels more like validating the trusted issuer, and the rest of this feels like verifying the scope",
+      "revId": "550e15b5c613189d1eae6340f2d69dc5536dba64",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
