@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_36325da7",
+        "filename": "keystone/common/sql/migrate_repo/versions/066_fixup_service_name_value.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-04T03:16:00Z",
+      "side": 1,
+      "message": "Do you want the COPYRIGHT for this file?",
+      "revId": "c8189fc6c5fc9ebdbc1ccd0e49da2e1e2ed3c95d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
