@@ -16,6 +16,24 @@
       "revId": "c8189fc6c5fc9ebdbc1ccd0e49da2e1e2ed3c95d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_76e935b6",
+        "filename": "keystone/common/sql/migrate_repo/versions/066_fixup_service_name_value.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-04T03:26:06Z",
+      "side": 1,
+      "message": "thanks for asking, nah it\u0027s alright. :)",
+      "parentUuid": "ba7be1f8_36325da7",
+      "revId": "c8189fc6c5fc9ebdbc1ccd0e49da2e1e2ed3c95d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
