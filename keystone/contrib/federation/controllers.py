@@ -341,8 +341,8 @@ class Auth(auth_controllers.Auth):
         return wsgi.render_response(body=response.to_string(),
                                     status=('200', 'OK'),
                                     headers=[('Content-Type', 'text/xml'),
-                                             ('X-sp-url', sp_url),
-                                             ('X-auth-url', auth_url)])
+                                             ('X-sp-url', str(sp_url)),
+                                             ('X-auth-url', str(auth_url))])
 
 
 @dependency.requires('assignment_api', 'resource_api')
