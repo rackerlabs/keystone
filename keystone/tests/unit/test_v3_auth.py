@@ -31,6 +31,7 @@ from keystone import exception
 from keystone.policy.backends import rules
 from keystone.tests import unit as tests
 from keystone.tests.unit import test_v3
+from keystone.tests.unit import test_v3_federation
 from keystone.tests.unit.token import test_fernet_provider as fernet
 
 
@@ -4443,3 +4444,13 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_token,
                           trust_scoped_token)
+
+
+class TestFederatedFernetTokenProvider(TestFernetTokenProvider,
+                                       test_v3_federation.FederatedTokenTests):
+    def setUp(self):
+        super(TestFederatedFernetTokenProvider, self).setUp()
+        self.setUpKeyRepository()
+        self.config_fixture.config(
+            group='token',
+            provider='keystone.token.providers.fernet.Provider')

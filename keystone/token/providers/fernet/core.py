@@ -24,6 +24,7 @@ LOG = log.getLogger(__name__)
 UNSCOPED_TOKEN_PREFIX = 'F00'
 TOKEN_PREFIX = 'F01'
 TRUST_TOKEN_PREFIX = 'F02'
+FEDERATED_TOKEN_PREFIX = 'F03'
 
 
 class Provider(common.BaseProvider):
@@ -33,7 +34,8 @@ class Provider(common.BaseProvider):
         self.token_format_map = {
             UNSCOPED_TOKEN_PREFIX: token_formatters.UnscopedTokenFormatter(),
             TOKEN_PREFIX: token_formatters.StandardTokenFormatter(),
-            TRUST_TOKEN_PREFIX: token_formatters.TrustTokenFormatter()}
+            TRUST_TOKEN_PREFIX: token_formatters.TrustTokenFormatter(),
+            FEDERATED_TOKEN_PREFIX: token_formatters.FederatedTokenFormatter()}
 
     def needs_persistence(self):
         """Should the token be written to a backend."""
@@ -75,10 +77,12 @@ class Provider(common.BaseProvider):
         :returns: tuple containing the id of the token and the token data
 
         """
+        is_federated_token = False
         token_ref = None
         if auth_context and self._is_mapped_token(auth_context):
             token_ref = self._handle_mapped_tokens(
                 auth_context, project_id, domain_id)
+            is_federated_token = True
 
         token_data = self.v3_token_data_helper.get_token_data(
             user_id,
@@ -102,6 +106,10 @@ class Provider(common.BaseProvider):
         elif domain_id is None and project_id is None:
             token_format = self.token_format_map[UNSCOPED_TOKEN_PREFIX]
             token_id = token_format.create_token(user_id, token_data)
+        elif is_federated_token:
+            token_format = self.token_format_map[FEDERATED_TOKEN_PREFIX]
+            token_id = token_format.create_token(user_id, project_id,
+                                                 token_data)
         else:
             token_format = self.token_format_map[TOKEN_PREFIX]
             token_id = token_format.create_token(user_id, project_id,
