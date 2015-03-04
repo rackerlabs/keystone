@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_e719f9d1",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 861,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T01:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_340ee0e5",
+      "revId": "50c0c7945e97fc5996a8cc6674c0a85fd16e097d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_f4bc48de",
         "filename": "keystone/resource/core.py",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-03T22:56:27Z",
       "side": 1,
       "message": "why wouldn\u0027t it be? we should have checked this sooner.",
+      "revId": "50c0c7945e97fc5996a8cc6674c0a85fd16e097d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_c71eb5ba",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 881,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T01:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_f4bc48de",
       "revId": "50c0c7945e97fc5996a8cc6674c0a85fd16e097d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_ef8ab519",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 920,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T01:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_e962b53c",
+      "revId": "50c0c7945e97fc5996a8cc6674c0a85fd16e097d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_89ff7933",
         "filename": "keystone/resource/core.py",
         "patchSetId": 15
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "ba7be1f8_af327def",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 941,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T01:03:14Z",
+      "side": 1,
+      "message": "As per the comment below, I\u0027ve moved this logic out to the caller",
+      "parentUuid": "ba7be1f8_89ff7933",
+      "revId": "50c0c7945e97fc5996a8cc6674c0a85fd16e097d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_54e994b5",
         "filename": "keystone/resource/core.py",
         "patchSetId": 15
@@ -81,6 +153,24 @@
       "writtenOn": "2015-03-03T22:59:21Z",
       "side": 1,
       "message": "I think this function would be easier to understand if the caller passed in the full_config rather than having this function figure it out. It\u0027s only called from 2 places.",
+      "revId": "50c0c7945e97fc5996a8cc6674c0a85fd16e097d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ba7be1f8_6f3c05c9",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 953,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T01:03:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7be1f8_54e994b5",
       "revId": "50c0c7945e97fc5996a8cc6674c0a85fd16e097d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
