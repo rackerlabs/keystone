@@ -521,7 +521,10 @@ class Manager(manager.Manager):
         project_ref = domain_ref.copy()
         project_ref['domain_id'] = project_ref['id']
         project_ref['is_domain'] = True
-        project_ref['parent_id'] = None
+        if 'parent_id' in project_ref:
+            project_ref['parent_id'] = project_ref['parent_id']
+        else:
+            project_ref['parent_id'] = None
 
         return project_ref
 
@@ -541,8 +544,12 @@ class Manager(manager.Manager):
             return project_ref
 
         domain_ref = project_ref.copy()
-        for k in ['parent_id', 'domain_id', 'is_domain']:
-            domain_ref.pop(k, None)
+        if project_ref['parent_id'] is None:
+            for k in ['parent_id', 'domain_id', 'is_domain']:
+                domain_ref.pop(k, None)
+        else:
+            for k in ['domain_id', 'is_domain']:
+                domain_ref.pop(k, None)
 
         # If the domain description is empty, set it as an empty string
         if not domain_ref.get('description'):
@@ -571,6 +578,7 @@ class Manager(manager.Manager):
 
         # Create an is_domain project based on the created domain
         is_domain_project = self._get_project_from_domain(ret)
+
         self._create_project(is_domain_project['id'], is_domain_project,
                              initiator)
 
