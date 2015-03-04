@@ -300,7 +300,6 @@
 # The external (REMOTE_USER) auth plugin module. (string value)
 #external = keystone.auth.plugins.external.DefaultDomain
 
-
 [cache]
 
 #
