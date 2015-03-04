@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_bc0fd52d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T09:24:15Z",
+      "side": 1,
+      "message": "I don\u0027t think so.  In fact, I can imagine quite a common scenario would be to create a domain marked as disabled, then work to set everything up about it (e.g. the right configs)...and then throw the switch to enable it.",
+      "parentUuid": "9a80dd14_1b18eb83",
+      "revId": "5cfbe18deaacbb186c30faf7234720b8318d39be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_7b172752",
         "filename": "keystone/cli.py",
         "patchSetId": 11
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_1c2621bb",
+        "filename": "keystone/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T09:24:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_7b172752",
+      "revId": "5cfbe18deaacbb186c30faf7234720b8318d39be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_363ce693",
         "filename": "keystone/cli.py",
         "patchSetId": 11
@@ -47,6 +83,24 @@
       "writtenOn": "2015-03-04T08:19:16Z",
       "side": 1,
       "message": "It might be more consistent to have both domain_name and domain_config_dir as the parameters",
+      "revId": "5cfbe18deaacbb186c30faf7234720b8318d39be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_fc16adf0",
+        "filename": "keystone/cli.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T09:24:15Z",
+      "side": 1,
+      "message": "At first glance you might think that, but I think that it is better to keep the processing of command line params (i.e. CONF.command.domain_name) outside of read_domain_configs_from_files, while the processing of regular values in the config (i.e. CONF.identity.domain_config_dir) within it.",
+      "parentUuid": "9a80dd14_363ce693",
       "revId": "5cfbe18deaacbb186c30faf7234720b8318d39be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
