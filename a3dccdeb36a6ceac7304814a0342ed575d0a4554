@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_0765d7e0",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-04T18:43:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_e5ed238d",
+      "revId": "a3dccdeb36a6ceac7304814a0342ed575d0a4554",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_058957ca",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_a7e88b7d",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-04T18:43:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_058957ca",
+      "revId": "a3dccdeb36a6ceac7304814a0342ed575d0a4554",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_05d157fb",
         "filename": "keystone/token/provider.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2015-03-04T16:35:49Z",
       "side": 1,
       "message": "you\u0027re encoding a string here to base64, not decoding it -- so i don\u0027t understand the name. it\u0027s also no longer random, if you\u0027re providing data, so the method name is a misnomer. all this leads me to suggest you should be writing a new function to do what you want :)",
+      "revId": "a3dccdeb36a6ceac7304814a0342ed575d0a4554",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_ec0b4829",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-04T18:43:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_05d157fb",
       "revId": "a3dccdeb36a6ceac7304814a0342ed575d0a4554",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
