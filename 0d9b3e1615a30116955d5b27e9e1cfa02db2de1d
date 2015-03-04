@@ -73,6 +73,41 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_f68faeca",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-04T08:37:54Z",
+      "side": 1,
+      "message": "@Guang, all : no links, no \u0027enabled\u0027, no \u0027description\u0027 - keep in the token only realy necessary parameters. This is not for managing service providers.",
+      "parentUuid": "ba7be1f8_cccd3f33",
+      "revId": "0d9b3e1615a30116955d5b27e9e1cfa02db2de1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b6fe1637",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-04T08:37:54Z",
+      "side": 1,
+      "message": "Thanks, I will add a followup patch, so we  have readable and clean docstrings.",
+      "revId": "0d9b3e1615a30116955d5b27e9e1cfa02db2de1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_d80c1def",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 6
