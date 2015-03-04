@@ -16,6 +16,24 @@
       "revId": "8846077817defc5c947a0cf2b9eb7c0a360da0c8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_7ff38573",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-04T14:40:30Z",
+      "side": 0,
+      "message": "get_domain() from LDAP backend already does this _validate_default_domain() checking. Since we are adding get_domain() in create_project() in the Manager layer, I removed this line since would be double checking the same thing.",
+      "parentUuid": "9a80dd14_ffca156d",
+      "revId": "8846077817defc5c947a0cf2b9eb7c0a360da0c8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

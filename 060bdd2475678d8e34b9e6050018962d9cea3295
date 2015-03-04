@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_5f63211a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-04T14:40:30Z",
+      "side": 1,
+      "message": "According to the tests here, will be a DomainNotFound where the domain_id is None.\n\nAgree with transforming into a ValidationError.",
+      "parentUuid": "9a80dd14_5f8fa123",
+      "revId": "060bdd2475678d8e34b9e6050018962d9cea3295",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_bf117dae",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-04T14:36:27Z",
       "side": 1,
       "message": "I think we should make a similar test in the v3 tests that checks for a 400 error.",
+      "revId": "060bdd2475678d8e34b9e6050018962d9cea3295",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_5f4a4184",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 1979,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-04T14:40:30Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a80dd14_bf117dae",
       "revId": "060bdd2475678d8e34b9e6050018962d9cea3295",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
