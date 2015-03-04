@@ -16,7 +16,8 @@ from oslo_config import cfg
 import oslo_messaging
 
 
-_DEFAULT_AUTH_METHODS = ['external', 'password', 'token']
+_DEFAULT_AUTH_METHODS = ['external', 'password', 'token',
+                         'saml2', 'oidc', 'oauth1']
 _CERTFILE = '/etc/keystone/ssl/certs/signing_cert.pem'
 _KEYFILE = '/etc/keystone/ssl/private/signing_key.pem'
 _SSO_CALLBACK = '/etc/keystone/sso_callback_template.html'
@@ -831,6 +832,15 @@ FILE_OPTIONS = {
         cfg.StrOpt('external',
                    default='keystone.auth.plugins.external.DefaultDomain',
                    help='The external (REMOTE_USER) auth plugin module.'),
+        cfg.StrOpt('saml2',
+                   default='keystone.auth.plugins.mapped.Mapped',
+                   help='The SAML2 auth plugin module.'),
+        cfg.StrOpt('oidc',
+                   default='keystone.auth.plugins.mapped.Mapped',
+                   help='The OpenID Connect auth plugin module.'),
+        cfg.StrOpt('oauth1',
+                   default='keystone.auth.plugins.oauth1.OAuth',
+                   help='The oAuth1 auth plugin module.'),
     ],
     'paste_deploy': [
         cfg.StrOpt('config_file', default='keystone-paste.ini',
