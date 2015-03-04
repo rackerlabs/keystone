@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_dba54a05",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-04T23:55:48Z",
+      "side": 1,
+      "message": "why is the reference to the wiki removed? there\u0027s all sorts of info on the wiki.",
+      "revId": "a186e87f5c6586452abe13dffe332e3525581aaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
