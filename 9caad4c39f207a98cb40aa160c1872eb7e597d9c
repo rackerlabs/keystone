@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_e33b56e9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-03-04T19:10:55Z",
+      "side": 1,
+      "message": "NIT: \"Fix sample policy to allow a user....\"?",
+      "revId": "9caad4c39f207a98cb40aa160c1872eb7e597d9c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
