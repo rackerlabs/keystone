@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_4ee9b119",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 848,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T17:36:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_bfd6ddc3",
+      "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_5feec18c",
         "filename": "keystone/resource/core.py",
         "patchSetId": 17
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-04T14:40:10Z",
       "side": 1,
       "message": "coverage report shows this isn\u0027t tested.",
+      "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_cecda188",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 886,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T17:36:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_5feec18c",
       "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_2ec55d5b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 926,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T17:36:30Z",
+      "side": 1,
+      "message": "true enough",
+      "parentUuid": "9a80dd14_bc40ab57",
+      "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_df88f1c8",
         "filename": "keystone/resource/core.py",
         "patchSetId": 17
@@ -64,6 +118,24 @@
       "writtenOn": "2015-03-04T14:40:10Z",
       "side": 1,
       "message": "coverage report shows this isn\u0027t tested somehow, although the previous line is...",
+      "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_2e1d5dbe",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 943,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T17:36:30Z",
+      "side": 1,
+      "message": "hmm, odd, can\u0027t explain that",
+      "parentUuid": "9a80dd14_df88f1c8",
       "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_0efc193e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 947,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T17:36:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_7c9ab315",
+      "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_7fc1c5e3",
         "filename": "keystone/resource/core.py",
         "patchSetId": 17
@@ -98,6 +188,24 @@
       "writtenOn": "2015-03-04T14:40:10Z",
       "side": 1,
       "message": "coverage report shows this isn\u0027t tested.",
+      "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_82b61ddb",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1022,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T17:36:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_7fc1c5e3",
       "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_c2b015e0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1024,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T17:36:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_9fb67989",
+      "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_df71d178",
         "filename": "keystone/resource/core.py",
         "patchSetId": 17
@@ -132,6 +258,24 @@
       "writtenOn": "2015-03-04T14:34:23Z",
       "side": 1,
       "message": "domain_id isn\u0027t used.",
+      "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_62ef69b1",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1051,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T17:36:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_df71d178",
       "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_25f65bd8",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1059,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T17:36:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_3f002daa",
+      "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_9f6d9907",
         "filename": "keystone/resource/core.py",
         "patchSetId": 17
@@ -166,6 +328,24 @@
       "writtenOn": "2015-03-04T14:40:10Z",
       "side": 1,
       "message": "coverage report shows this isn\u0027t tested.",
+      "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_58d8921d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1070,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T17:36:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_9f6d9907",
       "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_e52b632e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1074,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T17:36:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_9f267967",
+      "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_1f81a98f",
         "filename": "keystone/resource/core.py",
         "patchSetId": 17
@@ -206,6 +404,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_b8834ecb",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1084,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T17:36:30Z",
+      "side": 1,
+      "message": "I have modified this block of code, but provided tests for the new code",
+      "parentUuid": "9a80dd14_1f81a98f",
+      "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_3f558d1d",
         "filename": "keystone/resource/core.py",
         "patchSetId": 17
@@ -217,6 +433,24 @@
       "writtenOn": "2015-03-04T14:40:10Z",
       "side": 1,
       "message": "coverage report shows this isn\u0027t tested.",
+      "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_369f6f61",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1138,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-04T17:36:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_3f558d1d",
       "revId": "21d1d73654a6c2f31bdf91a21a9210afbe1d99e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
