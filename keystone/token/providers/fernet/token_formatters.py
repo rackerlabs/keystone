@@ -21,6 +21,7 @@ from oslo_utils import timeutils
 import six
 
 from keystone.common import dependency
+from keystone.contrib import federation
 from keystone import exception
 from keystone.token.providers import common
 from keystone.token.providers.fernet import format_map as fm
@@ -74,8 +75,11 @@ class BaseTokenFormatter(object):
         # TODO(lbragstad): Wrap this in an exception. Not sure what the case
         # would be where we couldn't handle what we've been given but incase
         # the integrity of the token has been compromised.
-        uuid_obj = uuid.UUID(uuid_string)
-        return uuid_obj.bytes
+        try:
+            uuid_obj = uuid.UUID(uuid_string)
+            return uuid_obj.bytes
+        except ValueError:
+            return uuid_string
 
     def _convert_uuid_bytes_to_hex(self, uuid_byte_string):
         """Generate uuid.hex format based on byte string.
@@ -87,8 +91,11 @@ class BaseTokenFormatter(object):
         # TODO(lbragstad): Wrap this in an exception. Not sure what the case
         # would be where we couldn't handle what we've been given but incase
         # the integrity of the token has been compromised.
-        uuid_obj = uuid.UUID(bytes=uuid_byte_string)
-        return uuid_obj.hex
+        try:
+            uuid_obj = uuid.UUID(bytes=uuid_byte_string)
+            return uuid_obj.hex
+        except ValueError:
+            return uuid_byte_string
 
     def _convert_time_string_to_int(self, time_string):
         """Convert a time formatted string to a timestamp integer.
@@ -327,6 +334,74 @@ class TrustTokenFormatter(BaseTokenFormatter):
             expires=expires_at_str,
             issued_at=issued_at_str,
             trust=trust_ref,
+            audit_info=audit_ids)
+
+        return (user_id, project_id, token_data)
+
+
+class FederatedTokenFormatter(BaseTokenFormatter):
+
+    token_format = 'F03'
+
+    def create_token(self, user_id, project_id, token_data):
+        """Create a federated token.
+
+        :param user_id: identifier of the user in the token request
+        :param token_data: dictionary of token data
+        :returns: a string representing the token
+
+        """
+        (issued_at_int, expires_at_int, audit_ids) = self._convert_token_data(
+            token_data)
+
+        b_user_id = self._convert_uuid_hex_to_bytes(user_id)
+        b_project_id = self._convert_uuid_hex_to_bytes(project_id)
+        # FIXME(lbragstad): This could possibly lead to tokens that exceed the
+        # length of 255 characters since the number of groups passed in is
+        # technically unbound. This should be fixed with a proper migration to
+        # federation.
+        b_group_ids = []
+        groups_list = token_data['user'][federated.FEDERATION]['groups']
+        for group in groups_list:
+            b_group_id = self._convert_uuid_hex_to_bytes(group['id'])
+            b_group_ids.append(b_group_id)
+        payload = (b_user_id, b_project_id, issued_at_int, expires_at_int,
+                   audit_ids, b_group_ids)
+
+        return self.pack(payload)
+
+    def validate_token(self, token_string):
+        """Validate an unscoped token.
+
+        :param token_string: a string representing the token
+        :return: a tuple contains the user_id and token_data
+
+        """
+        payload = self.unpack(token_string)
+
+        # Rebuild and retrieve token information from the token string
+        b_user_id = payload[0]
+        b_project_id = payload[1]
+        issued_at_ts = payload[2]
+        expires_at_ts = payload[3]
+        audit_ids = payload[4]
+        b_group_ids = payload[5]
+
+        user_id = self._convert_uuid_bytes_to_hex(b_user_id)
+        project_id = self._convert_uuid_bytes_to_hex(b_project_id)
+        group_ids = []
+        for b_group_id in b_group_ids:
+            group_id = self._convert_uuid_bytes_to_hex(b_group_id)
+            group_ids.append({'id': group_id})
+        issued_at_str = self._convert_int_to_time_string(issued_at_ts)
+        expires_at_str = self._convert_int_to_time_string(expires_at_ts)
+        token_data = self.v3_token_data_helper.get_token_data(
+            user_id,
+            ['password', 'token'],
+            {},
+            project_id=project_id,
+            expires=expires_at_str,
+            issued_at=issued_at_str,
             audit_info=audit_ids)
 
         return (user_id, project_id, token_data)

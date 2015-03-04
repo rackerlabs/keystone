@@ -39,6 +39,7 @@ from keystone.tests.unit import core
 from keystone.tests.unit import federation_fixtures
 from keystone.tests.unit import mapping_fixtures
 from keystone.tests.unit import test_v3
+from keystone.tests.unit.token import test_fernet_provider as fernet
 from keystone.token.providers import common as token_common
 
 
@@ -2201,6 +2202,26 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
         assertion = getattr(mapping_fixtures, variant)
         context['environment'].update(assertion)
         context['query_string'] = query_string or []
+
+
+class TestFederatedFernetTokenProvider(FederatedTokenTests,
+                                       fernet.KeyRepositoryTestMixin,
+                                       FederatedSetupMixin):
+
+    def setUp(self):
+        super(TestFederatedFernetTokenProvider, self).setUp()
+        self.setUpKeyRepository()
+        self.config_fixture.config(
+            group='token',
+            provider='keystone.token.providers.fernet.Provider')
+
+    def load_fixtures(self, fixtures):
+        super(FederationTests, self).load_fixtures(fixtures)
+        self.load_federation_sample_data()
+
+    def test_federated_unscoped_token(self):
+        resp = self._issue_unscoped_token()
+        from nose.tools import set_trace; set_trace()
 
 
 class FederatedTokenTestsMethodToken(FederatedTokenTests):

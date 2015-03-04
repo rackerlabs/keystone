@@ -27,10 +27,13 @@ from testtools import matchers
 from testtools import testcase
 
 from keystone import auth
+from keystone.contrib.federation import controllers as federation_controllers
 from keystone import exception
 from keystone.policy.backends import rules
 from keystone.tests import unit as tests
+from keystone.tests.unit import mapping_fixtures
 from keystone.tests.unit import test_v3
+from keystone.tests.unit import test_v3_federation
 from keystone.tests.unit.token import test_fernet_provider as fernet
 
 
@@ -4443,3 +4446,41 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_token,
                           trust_scoped_token)
+
+
+class TestFederatedFernetTokenProvider(test_v3.RestfulTestCase,
+                                       fernet.KeyRepositoryTestMixin):
+
+    EXTENSION_NAME = 'federation'
+    EXTENSION_TO_ADD = 'federation_extension'
+
+    def setUp(self):
+        super(TestFederatedFernetTokenProvider, self).setUp()
+        self.setUpKeyRepository()
+        self.config_fixture.config(
+            group='token',
+            provider='keystone.token.providers.fernet.Provider')
+
+    def load_fixtures(self, fixtures):
+        super(TestFederatedFernetTokenProvider, self).load_fixtures(fixtures)
+
+    def _inject_assertion(self, context, variant, query_string=None):
+        assertion = getattr(mapping_fixtures, variant)
+        context['environment'].update(assertion)
+        context['query_string'] = query_string or []
+
+    def _issue_unscoped_token(self,
+                              idp=None,
+                              assertion='EMPLOYEE_ASSERTION',
+                              environment=None):
+        api = federation_controllers.Auth()
+        context = {'environment': environment or {}}
+        self._inject_assertion(context, assertion)
+        if idp is None:
+            idp = 'ORG_IDP'
+        r = api.federated_authentication(context, idp, 'saml2')
+        return r
+
+    def test_federated_unscoped_token(self):
+        resp = self._issue_unscoped_token()
+        from nose.tools import set_trace; set_trace()
