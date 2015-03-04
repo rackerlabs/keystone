@@ -53,6 +53,40 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_511dcdbc",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1477,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-04T17:52:56Z",
+      "side": 1,
+      "message": "cleanup test example",
+      "revId": "c279cce6e20a4cfa8ba8f23fe277fb0935ca773b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_5146adc0",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 1588,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-04T17:52:56Z",
+      "side": 1,
+      "message": "could you add a cleanup test? Like the one marked above.",
+      "revId": "c279cce6e20a4cfa8ba8f23fe277fb0935ca773b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_79a005f5",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 15
