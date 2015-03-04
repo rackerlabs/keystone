@@ -289,7 +289,7 @@
 #
 
 # Default auth methods. (list value)
-#methods = external,password,token
+#methods = external,password,token,saml2,oidc,oauth1
 
 # The password auth plugin module. (string value)
 #password = keystone.auth.plugins.password.Password
@@ -300,6 +300,14 @@
 # The external (REMOTE_USER) auth plugin module. (string value)
 #external = keystone.auth.plugins.external.DefaultDomain
 
+# The saml2 auth plugin module. (string value)
+#saml2 = keystone.auth.plugins.mapped.Mapped
+
+# The OpenID Connect auth plugin module. (string value)
+#oidc = keystone.auth.plugins.mapped.Mapped
+
+# The oAuth1 auth plugin module. (string value)
+#oauth1 = keystone.auth.plugins.oauth1.OAuth
 
 [cache]
 
