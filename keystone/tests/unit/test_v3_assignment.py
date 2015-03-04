@@ -20,6 +20,7 @@ from keystone.common import controller
 from keystone import exception
 from keystone.tests import unit as tests
 from keystone.tests.unit import test_v3
+from keystone.tests.unit import utils
 
 
 CONF = cfg.CONF
@@ -162,6 +163,42 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
     def test_create_domain_400(self):
         """Call ``POST /domains``."""
         self.post('/domains', body={'domain': {}}, expected_status=400)
+
+    def test_create_subdomain(self):
+        """Call ``POST /domains`` with parent_id."""
+
+        # Create a new domain
+        domain_ref = self.new_domain_ref()
+        r = self.post('/domains', body={'domain': domain_ref})
+        self.assertValidDomainResponse(r, domain_ref)
+
+        child_domain_ref = self.new_domain_ref(r.result['domain']['id'])
+        c = self.post('/domains', body={'domain': child_domain_ref})
+        self.assertValidDomainResponse(c, child_domain_ref)
+
+        self.assertEqual(r.result['domain']['id'],
+                         c.result['domain']['parent_id'])
+
+    @utils.wip('Waiting on bug #1424745')
+    def test_get_domain_by_parent_id(self):
+        """Call ``GET /domains?parent_id=True`` filtering by parent_id."""
+
+        # Create a new domain
+        domain_ref = self.new_domain_ref()
+        r = self.post('/domains', body={'domain': domain_ref})
+        self.assertValidDomainResponse(r, domain_ref)
+
+        child_domain_ref = self.new_domain_ref(
+            parent_id=r.result['domain']['id'])
+        c = self.post('/domains', body={'domain': child_domain_ref})
+        self.assertValidDomainResponse(c, child_domain_ref)
+
+        # Retrieve its correspondent domain
+        g = self.get('/domains?parent_id=%(parent_id)s' % {
+            'parent_id': r.result['domain']['id']})
+
+        self.assertValidDomainResponse(g)
+        self.assertEqual(c.result['id'], g.result[0]['id'])
 
     def test_create_domain_creates_is_domain_project(self):
         """Call ``POST /domains`` and check an is_domain project is created."""
