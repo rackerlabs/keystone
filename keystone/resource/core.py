@@ -184,7 +184,7 @@ class Manager(manager.Manager):
     def create_project(self, tenant_id, tenant, initiator=None):
         if tenant.get('is_domain'):
             domain = self._get_domain_from_project(tenant)
-            self._create_domain(tenant_id, domain, initiator)
+            self.check_domain_properties(tenant_id, domain, initiator)
 
         return self._create_project(tenant_id, tenant, initiator)
 
@@ -262,7 +262,12 @@ class Manager(manager.Manager):
                              'projects') % project_id)
 
     def _update_project(self, tenant_id, tenant, initiator=None):
-        original_tenant = self.driver.get_project(tenant_id)
+        try:
+            original_tenant = self.driver.get_project(tenant_id)
+        except exception.ProjectNotFound:
+            original_tenant = self.driver.get_project(tenant_id,
+                                                      is_domain=True)
+
         tenant = tenant.copy()
 
         parent_id = original_tenant.get('parent_id')
@@ -308,12 +313,19 @@ class Manager(manager.Manager):
         return ret
 
     def update_project(self, tenant_id, tenant, initiator=None):
-        ret = self._update_project(tenant_id, tenant, initiator)
+        project_ref = self.get_project(tenant_id)
 
-        # Reflect the is_domain project update on the correspondent domain
-        if ret.get('is_domain'):
-            domain = self._get_domain_from_project(tenant)
-            self._update_domain(tenant_id, domain, initiator)
+        # Make the domain checks
+        if project_ref.get('is_domain'):
+            domain = self._get_domain_from_project(project_ref)
+            self.assert_domain_not_federated(tenant_id, domain)
+            if 'enabled' in domain:
+                domain['enabled'] = clean.domain_enabled(domain['enabled'])
+
+        ret = self._update_project(tenant_id, tenant, initiator)
+        if ret['is_domain']:
+            self.get_domain.invalidate(self, tenant_id)
+            self.get_domain_by_name.invalidate(self, ret['name'])
 
         return ret
 
@@ -564,37 +576,32 @@ class Manager(manager.Manager):
         for k in ['parent_id', 'domain_id', 'is_domain']:
             domain_ref.pop(k, None)
 
-        # If the domain description is empty, set it as an empty string
-        if not domain_ref.get('description'):
-            domain_ref['description'] = ''
-
         return domain_ref
 
-    def _create_domain(self, domain_id, domain, initiator):
+    def check_domain_properties(self, domain_id, domain, initiator):
         if (not self.identity_api.multiple_domains_supported and
                 domain_id != CONF.identity.default_domain_id):
             raise exception.Forbidden(_('Multiple domains are not supported'))
         self.assert_domain_not_federated(domain_id, domain)
         domain.setdefault('enabled', True)
         domain['enabled'] = clean.domain_enabled(domain['enabled'])
-        ret = self.driver.create_domain(domain_id, domain)
-
-        notifications.Audit.created(self._DOMAIN, domain_id, initiator)
-
-        if MEMOIZE.should_cache(ret):
-            self.get_domain.set(ret, self, domain_id)
-            self.get_domain_by_name.set(ret, self, ret['name'])
-        return ret
 
     def create_domain(self, domain_id, domain, initiator=None):
-        ret = self._create_domain(domain_id, domain, initiator)
 
-        # Create an is_domain project based on the created domain
-        is_domain_project = self._get_project_from_domain(ret)
-        self._create_project(is_domain_project['id'], is_domain_project,
-                             initiator)
+        self.check_domain_properties(domain_id, domain, initiator)
 
-        return ret
+        # Create an is_domain project based on the requested domain
+        is_domain_project = self._get_project_from_domain(domain)
+        ret = self._create_project(is_domain_project['id'], is_domain_project,
+                                   initiator)
+        is_domain_project = self._get_domain_from_project(ret)
+        notifications.Audit.created(self._DOMAIN, domain_id, initiator)
+        if MEMOIZE.should_cache(is_domain_project):
+            self.get_domain.set(is_domain_project, self, domain_id)
+            self.get_domain_by_name.set(is_domain_project,
+                                        self,
+                                        is_domain_project['name'])
+        return is_domain_project
 
     @manager.response_truncated
     def list_domains(self, hints=None):
@@ -621,35 +628,30 @@ class Manager(manager.Manager):
         """
         pass
 
-    def _update_domain(self, domain_id, domain, initiator):
+    def update_domain(self, domain_id, domain, initiator=None):
         self.assert_domain_not_federated(domain_id, domain)
         original_domain = self.get_domain(domain_id)
         if 'enabled' in domain:
             domain['enabled'] = clean.domain_enabled(domain['enabled'])
-        ret = self.driver.update_domain(domain_id, domain)
 
+        # Update the is_domain project based on the requested domain
+        self._get_project_from_domain(original_domain)
+        project_ref = self._update_project(domain_id,
+                                           domain,
+                                           initiator)
+        domain_ref = self._get_domain_from_project(project_ref)
         self.get_domain.invalidate(self, domain_id)
         self.get_domain_by_name.invalidate(self, original_domain['name'])
 
-        return ret
+        return domain_ref
 
-    def update_domain(self, domain_id, domain, initiator=None):
-        ret = self._update_domain(domain_id, domain, initiator)
-
-        # Update the is_domain project based on the updated domain
-        is_domain_project = self._get_project_from_domain(ret)
-        self._update_project(domain_id, is_domain_project, initiator)
-
-        return ret
-
-    def _delete_domain(self, domain_id, initiator):
+    def _delete_domain(self, domain_id, initiator=None):
         # explicitly forbid deleting the default domain (this should be a
         # carefully orchestrated manual process involving configuration
         # changes, etc)
         if domain_id == CONF.identity.default_domain_id:
             raise exception.ForbiddenAction(action=_('delete the default '
                                                      'domain'))
-
         domain = self.get_domain(domain_id)
 
         # To help avoid inadvertent deletes, we insist that the domain
@@ -672,7 +674,6 @@ class Manager(manager.Manager):
         # other domains - so we should delete these here by making a call
         # to the backend to delete all assignments for this domain.
         # (see Bug #1277847)
-        self.driver.delete_domain(domain_id)
         notifications.Audit.deleted(self._DOMAIN, domain_id, initiator)
         self.get_domain.invalidate(self, domain_id)
         self.get_domain_by_name.invalidate(self, domain['name'])
@@ -772,35 +773,6 @@ class Driver(object):
 
         :returns: tenant_ref
         :raises: keystone.exception.ProjectNotFound
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    # domain crud
-    @abc.abstractmethod
-    def create_domain(self, domain_id, domain):
-        """Creates a new domain.
-
-        :raises: keystone.exception.Conflict
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def update_domain(self, domain_id, domain):
-        """Updates an existing domain.
-
-        :raises: keystone.exception.DomainNotFound,
-                 keystone.exception.Conflict
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
-
-    @abc.abstractmethod
-    def delete_domain(self, domain_id):
-        """Deletes an existing domain.
-
-        :raises: keystone.exception.DomainNotFound
 
         """
         raise exception.NotImplemented()  # pragma: no cover
