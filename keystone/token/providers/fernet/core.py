@@ -10,8 +10,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
+
 from oslo_config import cfg
 from oslo_log import log
+from oslo_utils import timeutils
 
 from keystone.common import dependency
 from keystone import exception
@@ -80,6 +83,11 @@ class Provider(common.BaseProvider):
             token_ref = self._handle_mapped_tokens(
                 auth_context, project_id, domain_id)
 
+        # although we accept expires_at as part of this method's signature, we
+        # don't encode the expiration in the token, and thus just pass the
+        # intended expiration back through to the client as part of token_data.
+        # this will still give the client an indication of how long the token
+        # will last.
         token_data = self.v3_token_data_helper.get_token_data(
             user_id,
             method_names,
@@ -101,7 +109,6 @@ class Provider(common.BaseProvider):
                 user_id,
                 project_id,
                 token_data['token']['issued_at'],
-                token_data['token']['expires_at'],
                 token_data['token']['audit_ids'],
                 token_data['token']['OS-TRUST:trust']['id'])
         elif domain_id is None and project_id is None:
@@ -109,7 +116,6 @@ class Provider(common.BaseProvider):
             token_id = token_format.create_token(
                 user_id,
                 token_data['token']['issued_at'],
-                token_data['token']['expires_at'],
                 token_data['token']['audit_ids'])
         else:
             token_format = self.token_format_map[fm.SCOPED_TOKEN_PREFIX]
@@ -117,7 +123,6 @@ class Provider(common.BaseProvider):
                 user_id,
                 project_id,
                 token_data['token']['issued_at'],
-                token_data['token']['expires_at'],
                 token_data['token']['audit_ids'])
 
         return token_id, token_data
@@ -159,16 +164,21 @@ class Provider(common.BaseProvider):
         trust_ref = None
 
         if token_format == fm.UNSCOPED_TOKEN_PREFIX:
-            (user_id, issued_at, expires_at, audit_ids) = (
+            (user_id, issued_at, audit_ids) = (
                 token_formatter.validate_token(token_str))
         elif token_format == fm.SCOPED_TOKEN_PREFIX:
-            (user_id, project_id, issued_at, expires_at, audit_ids) = (
+            (user_id, project_id, issued_at, audit_ids) = (
                 token_formatter.validate_token(token_str))
         elif token_format == fm.TRUST_TOKEN_PREFIX:
-            (user_id, project_id, issued_at, expires_at, audit_ids,
+            (user_id, project_id, issued_at, audit_ids,
                 trust_id) = token_formatter.validate_token(token_str)
 
             trust_ref = self.trust_api.get_trust(trust_id)
+
+        # because expiration is not encoded into the token, we need to compute
+        # it dynamically
+        lifespan = datetime.timedelta(seconds=CONF.token.expiration)
+        expires_at = timeutils.normalize_time(issued_at + lifespan)
 
         return self.v3_token_data_helper.get_token_data(
             user_id,
