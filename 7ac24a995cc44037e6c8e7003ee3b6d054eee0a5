@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_92fc8740",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-05T08:19:20Z",
+      "side": 1,
+      "message": "i mean the 2nd grouping should look like:\n\n  from oslo_log import log\n  from oslo_serialization import jsonutils\n  import six\n\nthe overall order of imports should be split into 3 groups, separated by blank lines\n\n  \u003cstandard lib\u003e\n\n  \u003cthird party lib\u003e\n\n  \u003clocal resources\u003e",
+      "parentUuid": "9a80dd14_b2526bdb",
+      "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_f49a1313",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 13
