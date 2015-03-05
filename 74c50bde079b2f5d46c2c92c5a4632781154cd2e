@@ -34,6 +34,24 @@
       "revId": "74c50bde079b2f5d46c2c92c5a4632781154cd2e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_702454af",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-03-05T15:41:59Z",
+      "side": 1,
+      "message": "We are deprecating Assignment now, but if we were not, I would say that the domain-specific-configs would allow one domain for both id and asssignment.  Not sure if we could check this, but it would need more code.\n\nLet\u0027s not put any more effort into the LDAP assignment code.",
+      "parentUuid": "da86d52c_231106b0",
+      "revId": "74c50bde079b2f5d46c2c92c5a4632781154cd2e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
