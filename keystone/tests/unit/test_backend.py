@@ -3884,6 +3884,7 @@ class IdentityTests(AssignmentTestHelperMixin):
         project_ref = self.resource_api.get_project(project['id'])
         self.assertDictEqual(project, project_ref)
 
+    @unit.skip_if_no_multiple_domains_support
     def test_domain_crud(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True, 'description': uuid.uuid4().hex}
