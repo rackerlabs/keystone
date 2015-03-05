@@ -1473,6 +1473,7 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
 # TODO(henry-nash): These need to be removed when the full LDAP implementation
 # is submitted - see Bugs 1092187, 1101287, 1101276, 1101289
 
+    @tests.skip_if_no_multiple_domains_support
     def test_domain_crud(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True, 'description': uuid.uuid4().hex}

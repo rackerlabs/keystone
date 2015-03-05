@@ -98,14 +98,15 @@ class Resource(resource.Driver):
     def get_project(self, tenant_id, is_domain=False):
         # is_domain is passed as True in get_domain calls
         if is_domain:
-            return self.get_domain(tenant_id)
+            return self._get_domain(tenant_id)
         # Otherwise, manager does not specify if the required project acts as
         # a domain
         try:
             return self._set_default_attributes(self.project.get(tenant_id))
         except exception.ProjectNotFound:
             try:
-                return self._set_default_attributes(self.get_domain(tenant_id))
+                return self._set_default_attributes(
+                    self._get_domain(tenant_id))
             except exception.DomainNotFound:
                 raise exception.ProjectNotFound(project_id=tenant_id)
 
@@ -178,7 +179,7 @@ class Resource(resource.Driver):
 
     def create_project(self, tenant_id, tenant):
         if tenant.get('is_domain'):
-            self.create_domain(tenant_id, tenant)
+            self._create_domain(tenant_id, tenant)
 
         self.project.check_allow_create()
         self._validate_parent_project(tenant)
@@ -195,6 +196,9 @@ class Resource(resource.Driver):
             self.project.create(data))
 
     def update_project(self, tenant_id, tenant):
+        if tenant_id == CONF.identity.default_domain_id:
+            self._update_domain(tenant_id, tenant)
+
         self.project.check_allow_update()
         tenant = self._validate_default_domain(tenant)
         self._validate_is_domain_project_is_false(tenant)
@@ -216,21 +220,21 @@ class Resource(resource.Driver):
             # role assignments, so we just have to delete the project itself.
             self.project.delete(tenant_id)
 
-    def create_domain(self, domain_id, domain):
+    def _create_domain(self, domain_id, domain):
         if domain_id == CONF.identity.default_domain_id:
             msg = _('Duplicate ID, %s.') % domain_id
             raise exception.Conflict(type='domain', details=msg)
         raise exception.Forbidden(_('Domains are read-only against LDAP'))
 
-    def get_domain(self, domain_id):
+    def _get_domain(self, domain_id):
         self._validate_default_domain_id(domain_id)
         return resource.calc_default_domain()
 
-    def update_domain(self, domain_id, domain):
+    def _update_domain(self, domain_id, domain):
         self._validate_default_domain_id(domain_id)
         raise exception.Forbidden(_('Domains are read-only against LDAP'))
 
-    def delete_domain(self, domain_id):
+    def _delete_domain(self, domain_id):
         self._validate_default_domain_id(domain_id)
         raise exception.Forbidden(_('Domains are read-only against LDAP'))
 
