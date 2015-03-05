@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_d1e1789b",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-05T19:47:20Z",
+      "side": 1,
+      "message": "the token issued_at and expires_at are going to be pulled out and we\u0027re going to use the Fernet implementation for that, right?",
+      "revId": "2610d67b42696dcf2c480aa23586b8fbd4c656ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
