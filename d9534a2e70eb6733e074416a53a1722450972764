@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_9b12f2b2",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T01:00:53Z",
+      "side": 1,
+      "message": "revert this change it\u0027s not related.",
+      "revId": "d9534a2e70eb6733e074416a53a1722450972764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_11d183fb",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 661,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T01:00:53Z",
+      "side": 1,
+      "message": "why is append used here rather than extend as below? Add a comment.",
+      "revId": "d9534a2e70eb6733e074416a53a1722450972764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_711abf6f",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T01:00:53Z",
+      "side": 1,
+      "message": "revert this change, it\u0027s unrelated.",
+      "revId": "d9534a2e70eb6733e074416a53a1722450972764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_3110474e",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T01:00:53Z",
+      "side": 1,
+      "message": "revert the whitespace change on the previous line.",
+      "revId": "d9534a2e70eb6733e074416a53a1722450972764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_11db43ee",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 603,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T01:00:53Z",
+      "side": 1,
+      "message": "there should also be a test that uses \"groups\": \"{1}\" like the spec (although note that the spec has `\"groups\": {1},`, which isn\u0027t valid)",
+      "revId": "d9534a2e70eb6733e074416a53a1722450972764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_31ff6736",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 821,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T01:00:53Z",
+      "side": 1,
+      "message": "there should be a comment that says that this mapping is invalid, and why.",
+      "revId": "d9534a2e70eb6733e074416a53a1722450972764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f1edcf8c",
+        "filename": "keystone/tests/unit/mapping_fixtures.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 841,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T01:00:53Z",
+      "side": 1,
+      "message": "there should be a comment that says that this mapping is invalid, and why.",
+      "revId": "d9534a2e70eb6733e074416a53a1722450972764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b187d760",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 932,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T01:00:53Z",
+      "side": 1,
+      "message": "use [] rather than .get so this is more stringent.",
+      "revId": "d9534a2e70eb6733e074416a53a1722450972764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_3193e7a4",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 962,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T01:00:53Z",
+      "side": 1,
+      "message": "use [] rather than .get so this is more stringent.",
+      "revId": "d9534a2e70eb6733e074416a53a1722450972764",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
