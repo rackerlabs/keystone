@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_ad72e046",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1061,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T22:51:43Z",
+      "side": 1,
+      "message": "might as well change \"explicitely\" to \"explicitly\"",
+      "revId": "6f6d3cecadb7434a7b632ed9654b90382a3011be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4dd24401",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1081,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T22:51:43Z",
+      "side": 1,
+      "message": "suggest change \"they\" to \"the options\"",
+      "revId": "6f6d3cecadb7434a7b632ed9654b90382a3011be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_6d3b8838",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1104,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T22:51:43Z",
+      "side": 1,
+      "message": "this message is copied in lots of places... seems like DomainConfigNotFound could be smarter about building the string from the options instead.",
+      "revId": "6f6d3cecadb7434a7b632ed9654b90382a3011be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4df9647f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1107,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T22:51:43Z",
+      "side": 1,
+      "message": "these really should be different exceptions (e.g., DomainConfigGroupNotFound, DomainConfigOptionNotFound)",
+      "revId": "6f6d3cecadb7434a7b632ed9654b90382a3011be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
