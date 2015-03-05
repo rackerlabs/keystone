@@ -20,9 +20,7 @@ from oslo_log import log
 from oslo_utils import timeutils
 import six
 
-from keystone.common import dependency
 from keystone import exception
-from keystone.token.providers import common
 from keystone.token.providers.fernet import format_map as fm
 from keystone.token.providers.fernet import utils
 
@@ -39,9 +37,6 @@ class BaseTokenFormatter(object):
     # be unique.
     token_format = None
     token_version = None
-
-    def __init__(self):
-        self.v3_token_data_helper = common.V3TokenDataHelper()
 
     @property
     def crypto(self):
@@ -171,15 +166,8 @@ class UnscopedTokenFormatter(BaseTokenFormatter):
 
         issued_at_str = self._convert_int_to_time_string(issued_at_ts)
         expires_at_str = self._convert_int_to_time_string(expires_at_ts)
-        token_data = self.v3_token_data_helper.get_token_data(
-            user_id,
-            ['password', 'token'],
-            {},
-            expires=expires_at_str,
-            issued_at=issued_at_str,
-            audit_info=audit_ids)
 
-        return (user_id, None, token_data)
+        return (user_id, issued_at_str, expires_at_str, audit_ids)
 
 
 class ScopedTokenFormatter(BaseTokenFormatter):
@@ -242,19 +230,10 @@ class ScopedTokenFormatter(BaseTokenFormatter):
         # Generate created at and expires at times
         issued_at_str = self._convert_int_to_time_string(issued_at_ts)
         expires_at_str = self._convert_int_to_time_string(expires_at_ts)
-        token_data = self.v3_token_data_helper.get_token_data(
-            user_id,
-            ['password', 'token'],
-            {},
-            project_id=project_id,
-            expires=expires_at_str,
-            issued_at=issued_at_str,
-            audit_info=audit_ids)
 
-        return (user_id, project_id, token_data)
+        return (user_id, project_id, issued_at_str, expires_at_str, audit_ids)
 
 
-@dependency.requires('trust_api')
 class TrustTokenFormatter(BaseTokenFormatter):
 
     token_format = fm.TRUST_TOKEN_PREFIX
@@ -303,19 +282,9 @@ class TrustTokenFormatter(BaseTokenFormatter):
         user_id = self._convert_uuid_bytes_to_hex(b_user_id)
         project_id = self._convert_uuid_bytes_to_hex(b_project_id)
         trust_id = self._convert_uuid_bytes_to_hex(b_trust_id)
-        # Validate that the trust exists
-        trust_ref = self.trust_api.get_trust(trust_id)
         # Generate created at and expires at times
         issued_at_str = self._convert_int_to_time_string(issued_at_ts)
         expires_at_str = self._convert_int_to_time_string(expires_at_ts)
-        token_data = self.v3_token_data_helper.get_token_data(
-            user_id,
-            ['password', 'token'],
-            {},
-            project_id=project_id,
-            expires=expires_at_str,
-            issued_at=issued_at_str,
-            trust=trust_ref,
-            audit_info=audit_ids)
 
-        return (user_id, project_id, token_data)
+        return (user_id, project_id, issued_at_str, expires_at_str, audit_ids,
+                trust_id)
