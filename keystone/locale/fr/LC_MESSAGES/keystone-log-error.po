@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2015-03-04 06:03+0000\n"
-"PO-Revision-Date: 2015-03-03 02:33+0000\n"
+"POT-Creation-Date: 2015-03-05 06:03+0000\n"
+"PO-Revision-Date: 2015-03-05 05:50+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: French (http://www.transifex.com/projects/p/keystone/language/"
 "fr/)\n"
@@ -144,6 +144,13 @@ msgstr "Exception non gérée"
 msgid ""
 "Circular reference or a repeated entry found projects hierarchy - "
 "%(project_id)s."
+msgstr ""
+
+#: keystone/resource/core.py:939
+#, python-format
+msgid ""
+"Unexpected results in response for domain config - %(count)s responses, "
+"first option is %(option)s, expected option %(expected)s"
 msgstr ""
 
 #: keystone/resource/backends/sql.py:102 keystone/resource/backends/sql.py:121
