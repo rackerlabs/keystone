@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_63fab9be",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4062,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T23:32:21Z",
+      "side": 1,
+      "message": "what if I set both trust_token and unscoped_token? this needs some docs now, or a better interface (e.g., pass a value like token_type\u003dTRUST or token_type\u003dUNSCOPED)\n\nthese objects could be matchers... e.g., \n\n TRUST \u003d matchers.StartsWith(\u0027F02\u0027)\n\nthen no if/else would be needed.",
+      "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e3906945",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T23:32:21Z",
+      "side": 1,
+      "message": "this line is unnecessary since it\u0027s always set.",
+      "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_c3a9a57c",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T23:32:21Z",
+      "side": 1,
+      "message": "if this is going to be different every time what\u0027s the point of the map?\n\nall the create_tokens should take all the arguments and then just ignore the ones they don\u0027t care about, then can just call\n\n if trust:\n   formatter \u003d fm.TRUST_TOKEN_PREFIX\n elif domain_id is None and project_id is None:\n   formatter \u003d fm.UNSCOPED_TOKEN_PREFIX\n else:\n   formatter \u003d fm.TOKEN_PREFIX\n\n token_format \u003d  self.token_format_map[formatter]\n token_id \u003d token_format.create(user_id, project_id, token_data)",
+      "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_c34525b4",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T23:32:21Z",
+      "side": 1,
+      "message": "domain_id?",
+      "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_438855e7",
+        "filename": "keystone/token/providers/fernet/format_map.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T23:32:21Z",
+      "side": 1,
+      "message": "these all start with \"prefix\", suggest call this part \"format_prefixes\" and then can remove the _PREFIX.",
+      "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_c3736513",
+        "filename": "keystone/token/providers/fernet/format_map.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T23:32:21Z",
+      "side": 1,
+      "message": "rename to SCOPED_TOKEN?",
+      "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_03f3bd73",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T23:32:21Z",
+      "side": 1,
+      "message": "if they all need a create_token then add this to BaseTokenFormatter.",
+      "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_c3f8c54b",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T23:32:21Z",
+      "side": 1,
+      "message": "this should be called prefix.",
+      "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_23a1a147",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T23:32:21Z",
+      "side": 1,
+      "message": "actually, should get rid of format_map.py and just use TrustTokenFormatter.token_format rather than format_map.TRUST_TOKEN_PREFIX.",
+      "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
