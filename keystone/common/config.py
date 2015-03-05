@@ -242,8 +242,20 @@ FILE_OPTIONS = {
                         'mode, e.g., kerberos or x509 to require binding to '
                         'that authentication.'),
         cfg.IntOpt('expiration', default=3600,
-                   help='Amount of time a token should remain valid '
-                        '(in seconds).'),
+                   help='Amount of time a token should remain valid (in '
+                        'seconds). Changing this value in a live environment '
+                        'will have a different impact depending on which '
+                        'token provider you\'re using: with UUID, PKI, and '
+                        'PKIz tokens, the change will not affect previously '
+                        'generated tokens (only ones generated after the '
+                        'change). With Fernet tokens, the new value will '
+                        'take effect immediately for all tokens (meaning that '
+                        'if you increase the value, expired tokens may become '
+                        'valid again, and if you decrease the value, you may '
+                        'expire tokens prior to their originally claimed '
+                        'expiration). In either case, tokens may be cached '
+                        'as "valid" on remote systems per the original '
+                        'expiration.'),
         cfg.StrOpt('provider',
                    default='keystone.token.providers.uuid.Provider',
                    help='Controls the token construction, validation, and '

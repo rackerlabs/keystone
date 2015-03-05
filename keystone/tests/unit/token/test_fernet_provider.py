@@ -116,20 +116,17 @@ class TestScopedTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
         # All we are validating here is that the token is encrypted and
         # decrypted properly, not the actual validity of token data.
         exp_issued_at = timeutils.isotime(timeutils.utcnow())
-        exp_expires_at = timeutils.isotime(timeutils.utcnow())
         exp_audit_ids = base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2]
 
         token = self.formatter.create_token(
-            exp_user_id, exp_project_id, exp_issued_at, exp_expires_at,
-            exp_audit_ids)
+            exp_user_id, exp_project_id, exp_issued_at, exp_audit_ids)
 
-        (user_id, project_id, issued_at, expires_at, audit_ids) = (
+        (user_id, project_id, issued_at, audit_ids) = (
             self.formatter.validate_token(token[len('F00'):]))
 
         self.assertEqual(exp_user_id, user_id)
         self.assertEqual(exp_project_id, project_id)
         self.assertEqual(exp_issued_at, issued_at)
-        self.assertEqual(exp_expires_at, expires_at)
         self.assertEqual(exp_audit_ids, audit_ids)
 
     def test_encrypted_token_is_under_255_characters(self):
@@ -140,7 +137,6 @@ class TestScopedTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
         encrypted_token = self.formatter.create_token(
             user_id,
             project_id,
-            timeutils.isotime(timeutils.utcnow()),
             timeutils.isotime(timeutils.utcnow()),
             base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2])
         self.assertLess(len(encrypted_token), 255)
@@ -153,7 +149,6 @@ class TestScopedTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
         et = self.formatter.create_token(
             user_id,
             project_id,
-            timeutils.isotime(timeutils.utcnow()),
             timeutils.isotime(timeutils.utcnow()),
             base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2])
         some_id = uuid.uuid4().hex
@@ -211,7 +206,6 @@ class TestTrustTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
             user_id,
             project_id,
             timeutils.isotime(timeutils.utcnow()),
-            timeutils.isotime(timeutils.utcnow()),
             base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2],
             uuid.uuid4().hex)
         self.assertLess(len(encrypted_token), 255)
@@ -223,7 +217,6 @@ class TestTrustTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
         # Grab an encrypted token
         et = self.formatter.create_token(
             user_id, project_id,
-            timeutils.isotime(timeutils.utcnow()),
             timeutils.isotime(timeutils.utcnow()),
             base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2],
             uuid.uuid4().hex)
