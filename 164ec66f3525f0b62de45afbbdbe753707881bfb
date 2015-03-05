@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_a3521fdb",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-05T09:17:21Z",
+      "side": 1,
+      "message": "so I realise that is was this before, but this just takes you to the general openstack doc home page....where you struggle to find anything Keystone related (you can find the Identity 2.0 Guide if you look closely). My point being that the text above implies the link will make me facility with Keystone from an end-user perspective....which I don\u0027t think it really does!  Having a link to OpenStack in general is good - maybe the text above should tag this link with \"familiar with OpenStack\"...and maybe if there is something Keystone specific, we could link to that as well?",
+      "revId": "164ec66f3525f0b62de45afbbdbe753707881bfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
