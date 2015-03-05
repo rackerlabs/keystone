@@ -11,7 +11,6 @@
 # under the License.
 
 import base64
-import hashlib
 import shutil
 import tempfile
 import uuid
@@ -71,137 +70,76 @@ class TestFernetTokenProvider(tests.TestCase, KeyRepositoryTestMixin):
             uuid.uuid4().hex)
 
 
-class TestBaseTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
-    def setUp(self):
-        super(TestBaseTokenFormatter, self).setUp()
-        self.setUpKeyRepository()
-        self.formatter = token_formatters.BaseTokenFormatter()
-
+class TestPayloads(tests.TestCase, KeyRepositoryTestMixin):
     def test_uuid_hex_to_byte_conversions(self):
+        payload_cls = token_formatters.BasePayload
+
         expected_hex_uuid = uuid.uuid4().hex
         uuid_obj = uuid.UUID(expected_hex_uuid)
         expected_uuid_in_bytes = uuid_obj.bytes
-        actual_uuid_in_bytes = self.formatter._convert_uuid_hex_to_bytes(
+        actual_uuid_in_bytes = payload_cls.convert_uuid_hex_to_bytes(
             expected_hex_uuid)
         self.assertEqual(expected_uuid_in_bytes, actual_uuid_in_bytes)
-        actual_hex_uuid = self.formatter._convert_uuid_bytes_to_hex(
+        actual_hex_uuid = payload_cls.convert_uuid_bytes_to_hex(
             expected_uuid_in_bytes)
         self.assertEqual(expected_hex_uuid, actual_hex_uuid)
 
-
-class TestScopedTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
-    def setUp(self):
-        super(TestScopedTokenFormatter, self).setUp()
-        self.setUpKeyRepository()
-        self.formatter = token_formatters.ScopedTokenFormatter()
-
-    def test_token_encryption(self):
+    def test_unscoped_payload(self):
         exp_user_id = uuid.uuid4().hex
-        exp_project_id = uuid.uuid4().hex
-        # All we are validating here is that the token is encrypted and
-        # decrypted properly, not the actual validity of token data.
         exp_audit_ids = base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2]
 
-        token = self.formatter.create_token(
+        payload = token_formatters.UnscopedPayload.assemble(
+            exp_user_id, exp_audit_ids)
+
+        (user_id, audit_ids) = (
+            token_formatters.UnscopedPayload.disassemble(payload))
+
+        self.assertEqual(exp_user_id, user_id)
+        self.assertEqual(exp_audit_ids, audit_ids)
+
+    def test_project_scoped_payload(self):
+        exp_user_id = uuid.uuid4().hex
+        exp_project_id = uuid.uuid4().hex
+        exp_audit_ids = base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2]
+
+        payload = token_formatters.ProjectScopedPayload.assemble(
             exp_user_id, exp_project_id, exp_audit_ids)
 
         (user_id, project_id, audit_ids) = (
-            self.formatter.validate_token(token[len('F00'):]))
+            token_formatters.ProjectScopedPayload.disassemble(payload))
 
         self.assertEqual(exp_user_id, user_id)
         self.assertEqual(exp_project_id, project_id)
         self.assertEqual(exp_audit_ids, audit_ids)
 
-    def test_encrypted_token_is_under_255_characters(self):
-        user_id = uuid.uuid4().hex
-        project_id = uuid.uuid4().hex
-        # All we are validating here is that the token is encrypted and
-        # decrypted properly, not the actual validity of token data.
-        encrypted_token = self.formatter.create_token(
-            user_id,
-            project_id,
-            base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2])
-        self.assertLess(len(encrypted_token), 255)
+    def test_domain_scoped_payload(self):
+        exp_user_id = uuid.uuid4().hex
+        exp_domain_id = uuid.uuid4().hex
+        exp_audit_ids = base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2]
 
-    def test_tampered_encrypted_token_throws_exception(self):
-        user_id = uuid.uuid4().hex
-        project_id = uuid.uuid4().hex
-        # All we are validating here is that the token is encrypted and
-        # decrypted properly, not the actual validity of token data.
-        et = self.formatter.create_token(
-            user_id,
-            project_id,
-            base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2])
-        some_id = uuid.uuid4().hex
-        tampered_token = et[:50] + some_id + et[50 + len(some_id):]
+        payload = token_formatters.DomainScopedPayload.assemble(
+            exp_user_id, exp_domain_id, exp_audit_ids)
 
-        self.assertRaises(exception.Unauthorized,
-                          self.formatter.validate_token,
-                          tampered_token[4:])
+        (user_id, domain_id, audit_ids) = (
+            token_formatters.DomainScopedPayload.disassemble(payload))
 
+        self.assertEqual(exp_user_id, user_id)
+        self.assertEqual(exp_domain_id, domain_id)
+        self.assertEqual(exp_audit_ids, audit_ids)
 
-class TestCustomTokenFormatter(TestScopedTokenFormatter):
-    def setUp(self):
-        # bypassing the parent setUp because we want to set up our own custom
-        # token formatter
-        super(TestScopedTokenFormatter, self).setUp()
+    def test_trust_scoped_payload(self):
+        exp_user_id = uuid.uuid4().hex
+        exp_project_id = uuid.uuid4().hex
+        exp_audit_ids = base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2]
+        exp_trust_id = uuid.uuid4().hex
 
-        class HandRolledCrypto(object):
-            """Hold my beer and watch this."""
-            def encrypt(self, plaintext):
-                """Adds security by obscurity."""
-                checksum = hashlib.md5(plaintext).hexdigest()
-                return '%s-%s' % (plaintext[::-1], checksum)
+        payload = token_formatters.TrustScopedPayload.assemble(
+            exp_user_id, exp_project_id, exp_audit_ids, exp_trust_id)
 
-            def decrypt(self, ciphertext):
-                """Removes obscurity to validate security."""
-                try:
-                    ciphertext, checksum = ciphertext.rsplit('-', 1)
-                except ValueError:
-                    raise exception.Unauthorized()
-                plaintext = ciphertext[::-1]
-                if checksum != hashlib.md5(plaintext).hexdigest():
-                    raise exception.Unauthorized()
-                return plaintext
+        (user_id, project_id, audit_ids, trust_id) = (
+            token_formatters.TrustScopedPayload.disassemble(payload))
 
-        class CustomTokenFormatter(token_formatters.ScopedTokenFormatter):
-            @property
-            def crypto(self):
-                """Customize the cryptography implementation."""
-                return HandRolledCrypto()
-
-        self.formatter = CustomTokenFormatter()
-
-
-class TestTrustTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
-    def setUp(self):
-        super(TestTrustTokenFormatter, self).setUp()
-        self.setUpKeyRepository()
-        self.formatter = token_formatters.TrustTokenFormatter()
-
-    def test_encrypted_trust_token_is_under_255_characters(self):
-        user_id = uuid.uuid4().hex
-        project_id = uuid.uuid4().hex
-
-        encrypted_token = self.formatter.create_token(
-            user_id,
-            project_id,
-            base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2],
-            uuid.uuid4().hex)
-        self.assertLess(len(encrypted_token), 255)
-
-    def test_tampered_encrypted_trust_token_throws_exception(self):
-        user_id = uuid.uuid4().hex
-        project_id = uuid.uuid4().hex
-
-        # Grab an encrypted token
-        et = self.formatter.create_token(
-            user_id, project_id,
-            base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2],
-            uuid.uuid4().hex)
-        some_id = uuid.uuid4().hex
-        tampered_token = et[:50] + some_id + et[50 + len(some_id):]
-
-        self.assertRaises(exception.Unauthorized,
-                          self.formatter.validate_token,
-                          tampered_token[6:])
+        self.assertEqual(exp_user_id, user_id)
+        self.assertEqual(exp_project_id, project_id)
+        self.assertEqual(exp_audit_ids, audit_ids)
+        self.assertEqual(exp_trust_id, trust_id)
