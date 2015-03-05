@@ -52,6 +52,24 @@
       "revId": "a186e87f5c6586452abe13dffe332e3525581aaa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_1b02823e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T00:10:07Z",
+      "side": 1,
+      "message": "The commit message should say why the change is being made, so these comments should be in the commit message.",
+      "parentUuid": "9a80dd14_9b2cb24c",
+      "revId": "a186e87f5c6586452abe13dffe332e3525581aaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
