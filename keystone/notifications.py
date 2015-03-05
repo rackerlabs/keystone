@@ -292,6 +292,77 @@ def register_event_callback(event, resource_type, callbacks):
             LOG.debug(msg, {'callback': callback_str, 'event': event_str})
 
 
+def listener(cls):
+    """Class decorator for declaring a class as a notification listener.
+
+    A notification listener is a class that declares an ``event_callbacks``
+    dictionary to provide a mapping of callback handlers.
+
+    Example::
+
+        self.event_callbacks = {
+            notifications.ACTIONS.created: {  # notification action
+                'domain': [  # resource type
+                    self._domain_created,  # callback
+                ],
+            }
+        }
+
+    A callback is a callable that accepts four arguments:
+
+    service
+        always the string 'identity'
+    resource_type
+        type of resource being affected
+    operation
+        one of the values from ACTIONS
+    payload
+        a dictionary containing more details about the event; this typically
+        contains a ``resource_info`` key where its value is the ID of the
+        resource that changed
+
+    """
+
+    def init_wrapper(init):
+        def __new_init__(self, *args, **kwargs):
+            init(self, *args, **kwargs)
+            _register_event_callbacks(self)
+        return __new_init__
+
+    def _register_event_callbacks(self):
+        # NOTE(morganfainberg): A provider who has an implicit
+        # dependency on other providers may utilize the event callback
+        # mechanism to react to any changes in those providers. This is
+        # performed at the .provider() mechanism so that we can ensure
+        # that the callback is only ever called once and guaranteed
+        # to be on the properly configured and instantiated backend.
+        if not hasattr(self, 'event_callbacks'):
+            return
+
+        if not isinstance(self.event_callbacks, dict):
+            msg = _('event_callbacks must be a dict')
+            raise ValueError(msg)
+
+        for event in self.event_callbacks:
+            if not isinstance(self.event_callbacks[event], dict):
+                msg = _('event_callbacks[%s] must be a dict') % event
+                raise ValueError(msg)
+            for resource_type in self.event_callbacks[event]:
+                # Make sure we register the provider for each event it
+                # cares to call back.
+                callbacks = self.event_callbacks[event][resource_type]
+                if not callbacks:
+                    continue
+                if not hasattr(callbacks, '__iter__'):
+                    # ensure the callback information is a list
+                    # allowing multiple callbacks to exist
+                    callbacks = [callbacks]
+                register_event_callback(event, resource_type, callbacks)
+
+    cls.__init__ = init_wrapper(cls.__init__)
+    return cls
+
+
 def notify_event_callbacks(service, resource_type, operation, payload):
     """Sends a notification to registered extensions."""
     if operation in _SUBSCRIBERS:
