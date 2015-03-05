@@ -162,7 +162,7 @@ class Resource(resource.Driver):
 
     def create_project(self, tenant_id, tenant):
         if tenant.get('is_domain'):
-            self.create_domain(tenant_id, tenant)
+            self._create_domain(tenant_id, tenant)
 
         self.project.check_allow_create()
         self._validate_parent_project(tenant)
@@ -179,8 +179,7 @@ class Resource(resource.Driver):
     def update_project(self, tenant_id, tenant):
         self.project.check_allow_update()
         if tenant_id == CONF.identity.default_domain_id:
-            self.update_domain(tenant_id, tenant)
-        tenant = self._validate_default_domain(tenant)
+            self._update_domain(tenant_id, tenant)
         self._validate_is_domain_field_is_false(tenant)
         if 'name' in tenant:
             tenant['name'] = clean.project_name(tenant['name'])
@@ -203,17 +202,17 @@ class Resource(resource.Driver):
             # role assignments, so we just have to delete the project itself.
             self.project.delete(tenant_id)
 
-    def create_domain(self, domain_id, domain):
+    def _create_domain(self, domain_id, domain):
         if domain_id == CONF.identity.default_domain_id:
             msg = _('Duplicate ID, %s.') % domain_id
             raise exception.Conflict(type='domain', details=msg)
         raise exception.Forbidden(_('Domains are read-only against LDAP'))
 
-    def update_domain(self, domain_id, domain):
+    def _update_domain(self, domain_id, domain):
         self._validate_default_domain_id(domain_id)
         raise exception.Forbidden(_('Domains are read-only against LDAP'))
 
-    def delete_domain(self, domain_id):
+    def _delete_domain(self, domain_id):
         self._validate_default_domain_id(domain_id)
         raise exception.Forbidden(_('Domains are read-only against LDAP'))
 

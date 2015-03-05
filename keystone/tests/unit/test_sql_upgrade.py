@@ -515,6 +515,16 @@ class SqlUpgradeTests(SqlMigrateBase):
                 return True
         return False
 
+    def does_reference_fk_exist(self, table, fk_column,
+                                referred_table, referred_columns):
+        inspector = reflection.Inspector.from_engine(self.engine)
+        for fk in inspector.get_foreign_keys(table):
+            if fk_column in fk['constrained_columns']:
+                if fk['referred_table'] == referred_table and\
+                        referred_columns in fk['referred_columns']:
+                    return True
+        return False
+
     def test_drop_region_url_upgrade(self):
         self.upgrade(63)
         self.assertTableColumns('region',
@@ -735,6 +745,10 @@ class SqlUpgradeTests(SqlMigrateBase):
 
         # Therefore, 7 projects (4 original projects, 3 from the domains)
         self.assertEqual(7, projects.count())
+
+    def test_update_domain_id_FK_project_table(self):
+        self.upgrade(77)
+        self.assertFalse(self.does_fk_exist('project', 'domain_id'))
 
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
