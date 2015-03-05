@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_88734ae6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T23:17:56Z",
+      "side": 1,
+      "message": "why?",
+      "revId": "8405516294858e65a8596fec635cc60c56001133",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_685ff641",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T23:17:56Z",
+      "side": 1,
+      "message": "revert this change.",
+      "revId": "8405516294858e65a8596fec635cc60c56001133",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_c8546223",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T23:17:56Z",
+      "side": 1,
+      "message": "leave the trailing ,",
+      "revId": "8405516294858e65a8596fec635cc60c56001133",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_283dfede",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T23:17:56Z",
+      "side": 1,
+      "message": "leave the trailing ,",
+      "revId": "8405516294858e65a8596fec635cc60c56001133",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_682616d0",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T23:17:56Z",
+      "side": 1,
+      "message": "leave the trailing ,\n\nalso, why change the pattern of assigning to audit_ids?",
+      "revId": "8405516294858e65a8596fec635cc60c56001133",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_a8300e02",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T23:17:56Z",
+      "side": 1,
+      "message": "leave the trailing ,",
+      "revId": "8405516294858e65a8596fec635cc60c56001133",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e32789b4",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T23:17:56Z",
+      "side": 1,
+      "message": "is this supposed to call base64_encode?",
+      "revId": "8405516294858e65a8596fec635cc60c56001133",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e375c998",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T23:17:56Z",
+      "side": 1,
+      "message": "126-129 is essentially:\n\n audit_ids_in_bytes \u003d map(provider.random_urlsafe_str_to_bytes, audit_ids)\n\nalso, would be easier to at line 125\n\n audit_ids \u003d map(provider.random_urlsafe_str_to_bytes, audit_ids)",
+      "revId": "8405516294858e65a8596fec635cc60c56001133",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_63de396f",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T23:17:56Z",
+      "side": 1,
+      "message": "use map()",
+      "revId": "8405516294858e65a8596fec635cc60c56001133",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_83d96d85",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T23:17:56Z",
+      "side": 1,
+      "message": "use map()",
+      "revId": "8405516294858e65a8596fec635cc60c56001133",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
