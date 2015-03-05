@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_2fe1b19a",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 346,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-05T09:49:24Z",
+      "side": 1,
+      "message": "You want to add a note here, something like:\n\n..NOTE::\n\nThe structure of backend testing is in transition, migrating from   having all classes in a single file (test_backend.py) to one where there is a directory structure to reduce the size of the test files.  See:\n\n- keystone/tests/unit/backend/role\n- keystone/tests/unit/backend/domain_config\n\nDepending on which class you wish to update, you may find it in the new directory structure. If you are writing tests for a new class, then use the new paradym.",
+      "revId": "66f9a07421049959c5f6d5b906f96b40f6267f4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
