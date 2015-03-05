@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_94e71740",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-05T07:22:19Z",
+      "side": 1,
+      "message": "this probably should have not been included in this patch, but since it\u0027s used in the follow up, i\u0027m ok with it.",
+      "revId": "01b92975617417e446db5f59e1f036444c3068b4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
