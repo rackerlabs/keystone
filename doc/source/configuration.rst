@@ -772,8 +772,33 @@ still be used for validating tokens. Excess secondary keys (beyond
 ``[fernet_tokens] max_active_keys``) are revoked. Revoked keys are permanently
 deleted.
 
-Rotating keys too frequently, or with ``[fernet_tokens] max_active_keys`` set
-too low, will cause tokens to become invalid prior to their expiration.
+Unlike other token formats, Fernet tokens do *not* contain expiration
+timestamps. Instead, they rely on your approach to token rotation to forcibly
+"expire" them. You should tune your key rotation configuration to discard keys
+that are older than your desired *maximum* token lifespan.
+
+For example, if you wish to rotate encryption keys every hour (by calling
+``keystone-manage fernet_rotate`` every hour via cron), and maintain a token
+lifespan of up to 24 hours, then you should configure ``keystone.conf`` with
+``[fernet_tokens] max_active_keys = 25``. The effect is that 1 staged key, 1
+primary key, and 23 secondary keys are held in the rotation (1 + 1 + 23 = 25).
+This means that tokens will "expire" somewhere between 23-24 hours (depending
+on how lucky you get with the timing of token creation and key rotation).
+
+A less aggressive security policy might be to rotate encryption keys with a
+daily cron job, and hold keys in the rotation for a week (``[fernet_tokens]
+max_active_keys = 15``). Or to rotate encryption keys with a weekly cron job,
+and hold keys in the rotation for a year (``[fernet_tokens] max_active_keys =
+53``).
+
+Unlike with persistent token formats (such as UUID), you are not faced with the
+challenge of persisting a year's worth of tokens all at once, so the trade-offs
+are primarily driven by security considerations (How long are you willing to
+let valid bearer tokens remain in the wild? How long do you think it would take
+an attacker to `crack a Fernet encryption key
+<https://github.com/fernet/spec/blob/master/Spec.md>`_?), rather than the cost
+of performance (how many UUID tokens can your SQL server store before query
+performance becomes a bottleneck?).
 
 Service Catalog
 ---------------

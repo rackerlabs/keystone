@@ -29,6 +29,8 @@ from keystone.token.providers.fernet import utils
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
+MAX_DATETIME = timeutils.isotime(datetime.datetime(datetime.MAXYEAR, 12, 31))
+
 
 class BaseTokenFormatter(object):
     """Base object for token formatters to inherit."""
@@ -119,12 +121,10 @@ class BaseTokenFormatter(object):
         """
         created_at = token_data['token']['issued_at']
         issued_at_int = self._convert_time_string_to_int(created_at)
-        expires_at = token_data['token']['expires_at']
-        expires_at_int = self._convert_time_string_to_int(expires_at)
         audit_ids = token_data['token']['audit_ids']
         if isinstance(audit_ids, list) and len(audit_ids) == 1:
             audit_ids = audit_ids.pop()
-        return (issued_at_int, expires_at_int, audit_ids)
+        return (issued_at_int, audit_ids)
 
     def pack(self, payload):
         """Pack a payload for transport."""
@@ -160,17 +160,14 @@ class StandardTokenFormatter(BaseTokenFormatter):
         :returns: a string representing the token
 
         """
-        (issued_at_int, expires_at_int, audit_ids) = self._convert_token_data(
-            token_data)
+        (issued_at_int, audit_ids) = self._convert_token_data(token_data)
 
         b_user_id = self._convert_uuid_hex_to_bytes(user_id)
         if project_id:
             b_scope_id = self._convert_uuid_hex_to_bytes(project_id)
-            payload = (
-                b_user_id, b_scope_id, issued_at_int, expires_at_int,
-                audit_ids)
+            payload = (b_user_id, b_scope_id, issued_at_int, audit_ids)
         else:
-            payload = (b_user_id, issued_at_int, expires_at_int, audit_ids)
+            payload = (b_user_id, issued_at_int, audit_ids)
 
         return self.pack(payload)
 
@@ -189,12 +186,10 @@ class StandardTokenFormatter(BaseTokenFormatter):
         if isinstance(payload[1], str):
             b_project_id = payload[1]
             issued_at_ts = payload[2]
-            expires_at_ts = payload[3]
-            audit_ids = payload[4]
+            audit_ids = payload[3]
         else:
             issued_at_ts = payload[1]
-            expires_at_ts = payload[2]
-            audit_ids = payload[3]
+            audit_ids = payload[2]
 
         # Uncompress the IDs
         user_id = self._convert_uuid_bytes_to_hex(b_user_id)
@@ -204,13 +199,12 @@ class StandardTokenFormatter(BaseTokenFormatter):
 
         # Generate created at and expires at times
         issued_at_str = self._convert_int_to_time_string(issued_at_ts)
-        expires_at_str = self._convert_int_to_time_string(expires_at_ts)
         token_data = self.v3_token_data_helper.get_token_data(
             user_id,
             ['password', 'token'],
             {},
             project_id=project_id,
-            expires=expires_at_str,
+            expires=MAX_DATETIME,
             issued_at=issued_at_str,
             audit_info=audit_ids)
 
@@ -231,14 +225,13 @@ class TrustTokenFormatter(BaseTokenFormatter):
         :returns: a string representing the token
 
         """
-        (issued_at_int, expires_at_int, audit_ids) = self._convert_token_data(
-            token_data)
+        (issued_at_int, audit_ids) = self._convert_token_data(token_data)
         trust_id = token_data['token']['OS-TRUST:trust']['id']
         b_user_id = self._convert_uuid_hex_to_bytes(user_id)
         b_project_id = self._convert_uuid_hex_to_bytes(project_id)
         b_trust_id = self._convert_uuid_hex_to_bytes(trust_id)
         payload = (b_user_id, b_project_id, b_trust_id, issued_at_int,
-                   expires_at_int, audit_ids)
+                   audit_ids)
 
         return self.pack(payload)
 
@@ -256,8 +249,7 @@ class TrustTokenFormatter(BaseTokenFormatter):
         b_project_id = payload[1]
         b_trust_id = payload[2]
         issued_at_ts = payload[3]
-        expires_at_ts = payload[4]
-        audit_ids = payload[5]
+        audit_ids = payload[4]
 
         # Uncompress the IDs
         user_id = self._convert_uuid_bytes_to_hex(b_user_id)
@@ -267,13 +259,12 @@ class TrustTokenFormatter(BaseTokenFormatter):
         trust_ref = self.trust_api.get_trust(trust_id)
         # Generate created at and expires at times
         issued_at_str = self._convert_int_to_time_string(issued_at_ts)
-        expires_at_str = self._convert_int_to_time_string(expires_at_ts)
         token_data = self.v3_token_data_helper.get_token_data(
             user_id,
             ['password', 'token'],
             {},
             project_id=project_id,
-            expires=expires_at_str,
+            expires=MAX_DATETIME,
             issued_at=issued_at_str,
             trust=trust_ref,
             audit_info=audit_ids)

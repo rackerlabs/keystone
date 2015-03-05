@@ -61,7 +61,7 @@ class Provider(common.BaseProvider):
 
         :param user_id: ID of the user
         :param method_names: method of authentication
-        :param expires_at: token expiration time
+        :param expires_at: token expiration time (ignored)
         :param project_id: ID of the project being scoped to
         :param domain_id: ID of the domain being scoped to
         :param auth_context: authentication context
