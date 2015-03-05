@@ -14,6 +14,7 @@ import base64
 import hashlib
 import shutil
 import tempfile
+import time
 import uuid
 
 from oslo_utils import timeutils
@@ -112,20 +113,17 @@ class TestScopedTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
         # All we are validating here is that the token is encrypted and
         # decrypted properly, not the actual validity of token data.
         exp_issued_at = timeutils.isotime(timeutils.utcnow())
-        exp_expires_at = timeutils.isotime(timeutils.utcnow())
         exp_audit_ids = base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2]
 
         token = self.formatter.create_token(
-            exp_user_id, exp_project_id, exp_issued_at, exp_expires_at,
-            exp_audit_ids)
+            exp_user_id, exp_project_id, exp_issued_at, exp_audit_ids)
 
-        (user_id, project_id, issued_at, expires_at, audit_ids) = (
+        (user_id, project_id, issued_at, audit_ids) = (
             self.formatter.validate_token(token[len('F00'):]))
 
         self.assertEqual(exp_user_id, user_id)
         self.assertEqual(exp_project_id, project_id)
         self.assertEqual(exp_issued_at, issued_at)
-        self.assertEqual(exp_expires_at, expires_at)
         self.assertEqual(exp_audit_ids, audit_ids)
 
     def test_encrypted_token_is_under_255_characters(self):
@@ -136,7 +134,6 @@ class TestScopedTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
         encrypted_token = self.formatter.create_token(
             user_id,
             project_id,
-            timeutils.isotime(timeutils.utcnow()),
             timeutils.isotime(timeutils.utcnow()),
             base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2])
         self.assertLess(len(encrypted_token), 255)
@@ -149,7 +146,6 @@ class TestScopedTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
         et = self.formatter.create_token(
             user_id,
             project_id,
-            timeutils.isotime(timeutils.utcnow()),
             timeutils.isotime(timeutils.utcnow()),
             base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2])
         some_id = uuid.uuid4().hex
@@ -168,19 +164,33 @@ class TestCustomTokenFormatter(TestScopedTokenFormatter):
 
         class HandRolledCrypto(object):
             """Hold my beer and watch this."""
+
+            def _checksum(self, ciphertext, timestamp):
+                """Produce a checksum using the widely-popular MD5 algo."""
+                checksummed = '%s-%d' % (ciphertext, timestamp)
+                checksum = hashlib.md5(checksummed).hexdigest()
+                return checksummed, checksum
+
             def encrypt(self, plaintext):
                 """Adds security by obscurity."""
-                checksum = hashlib.md5(plaintext).hexdigest()
-                return '%s-%s' % (plaintext[::-1], checksum)
+                ciphertext = plaintext[::-1]
+                checksummed, checksum = self._checksum(
+                    ciphertext, timestamp=time.time())
+                return '%s-%s' % (checksummed, checksum)
 
-            def decrypt(self, ciphertext):
+            def decrypt(self, ciphertext, ttl=None):
                 """Removes obscurity to validate security."""
                 try:
-                    ciphertext, checksum = ciphertext.rsplit('-', 1)
+                    ciphertext, timestamp, checksum = ciphertext.rsplit('-', 2)
                 except ValueError:
                     raise exception.Unauthorized()
                 plaintext = ciphertext[::-1]
-                if checksum != hashlib.md5(plaintext).hexdigest():
+                timestamp = int(timestamp)
+                actual_checksum = self._checksum(
+                    ciphertext, timestamp=timestamp)[1]
+                if checksum != actual_checksum:
+                    raise exception.Unauthorized()
+                if ttl and (time.time() - ttl > timestamp):
                     raise exception.Unauthorized()
                 return plaintext
 
@@ -207,7 +217,6 @@ class TestTrustTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
             user_id,
             project_id,
             timeutils.isotime(timeutils.utcnow()),
-            timeutils.isotime(timeutils.utcnow()),
             base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2],
             uuid.uuid4().hex)
         self.assertLess(len(encrypted_token), 255)
@@ -219,7 +228,6 @@ class TestTrustTokenFormatter(tests.TestCase, KeyRepositoryTestMixin):
         # Grab an encrypted token
         et = self.formatter.create_token(
             user_id, project_id,
-            timeutils.isotime(timeutils.utcnow()),
             timeutils.isotime(timeutils.utcnow()),
             base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2],
             uuid.uuid4().hex)
