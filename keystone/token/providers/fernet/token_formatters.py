@@ -153,11 +153,8 @@ class ScopedTokenFormatter(BaseTokenFormatter):
 
         """
         b_user_id = self._convert_uuid_hex_to_bytes(user_id)
-        if project_id:
-            b_scope_id = self._convert_uuid_hex_to_bytes(project_id)
-            payload = (b_user_id, b_scope_id, audit_ids)
-        else:
-            payload = (b_user_id, audit_ids)
+        b_scope_id = self._convert_uuid_hex_to_bytes(project_id)
+        payload = (b_user_id, b_scope_id, audit_ids)
 
         return self.pack(payload)
 
@@ -172,18 +169,12 @@ class ScopedTokenFormatter(BaseTokenFormatter):
 
         # Rebuild and retrieve token information from the token string
         b_user_id = payload[0]
-        b_project_id = None
-        if isinstance(payload[1], str):
-            b_project_id = payload[1]
-            audit_ids = payload[2]
-        else:
-            audit_ids = payload[1]
+        b_project_id = payload[1]
+        audit_ids = payload[2]
 
         # Uncompress the IDs
         user_id = self._convert_uuid_bytes_to_hex(b_user_id)
-        project_id = None
-        if b_project_id:
-            project_id = self._convert_uuid_bytes_to_hex(b_project_id)
+        project_id = self._convert_uuid_bytes_to_hex(b_project_id)
 
         return (user_id, project_id, audit_ids)
 
