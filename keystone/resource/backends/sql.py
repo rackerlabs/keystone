@@ -81,7 +81,7 @@ class Resource(keystone_resource.Driver):
 
     def list_projects_in_domain(self, domain_id):
         with sql.transaction() as session:
-            self._get_domain(session, domain_id)
+            self._get_project(session, domain_id, is_domain=True)
             query = session.query(Project)
             project_refs = query.filter(Project.domain_id == domain_id,
                                         Project.id != domain_id)
@@ -171,50 +171,6 @@ class Resource(keystone_resource.Driver):
             tenant_ref = self._get_project(session, tenant_id)
             session.delete(tenant_ref)
 
-    # domain crud
-
-    @sql.handle_conflicts(conflict_type='domain')
-    def create_domain(self, domain_id, domain):
-        with sql.transaction() as session:
-            ref = Domain.from_dict(domain)
-            session.add(ref)
-        return ref.to_dict()
-
-    def _get_domain(self, session, domain_id):
-        ref = session.query(Domain).get(domain_id)
-        if ref is None:
-            raise exception.DomainNotFound(domain_id=domain_id)
-        return ref
-
-    @sql.handle_conflicts(conflict_type='domain')
-    def update_domain(self, domain_id, domain):
-        with sql.transaction() as session:
-            ref = self._get_domain(session, domain_id)
-            old_dict = ref.to_dict()
-            for k in domain:
-                old_dict[k] = domain[k]
-            new_domain = Domain.from_dict(old_dict)
-            for attr in Domain.attributes:
-                if attr != 'id':
-                    setattr(ref, attr, getattr(new_domain, attr))
-            ref.extra = new_domain.extra
-            return ref.to_dict()
-
-    def delete_domain(self, domain_id):
-        with sql.transaction() as session:
-            ref = self._get_domain(session, domain_id)
-            session.delete(ref)
-
-
-class Domain(sql.ModelBase, sql.DictBase):
-    __tablename__ = 'domain'
-    attributes = ['id', 'name', 'enabled']
-    id = sql.Column(sql.String(64), primary_key=True)
-    name = sql.Column(sql.String(64), nullable=False)
-    enabled = sql.Column(sql.Boolean, default=True, nullable=False)
-    extra = sql.Column(sql.JsonBlob())
-    __table_args__ = (sql.UniqueConstraint('name'), {})
-
 
 class Project(sql.ModelBase, sql.DictBase):
     __tablename__ = 'project'
@@ -222,8 +178,7 @@ class Project(sql.ModelBase, sql.DictBase):
                   'parent_id', 'is_domain']
     id = sql.Column(sql.String(64), primary_key=True)
     name = sql.Column(sql.String(64), nullable=False)
-    domain_id = sql.Column(sql.String(64), sql.ForeignKey('domain.id'),
-                           nullable=False)
+    domain_id = sql.Column(sql.String(64), nullable=False)
     description = sql.Column(sql.Text())
     enabled = sql.Column(sql.Boolean)
     extra = sql.Column(sql.JsonBlob())
