@@ -287,7 +287,7 @@ def _filter(model, query, hints):
             # work out if they need to do something with it.
             return query
 
-        hints.filters.remove(filter_)
+        satisfied_filters.append(filter_)
         return query.filter(query_term)
 
     def exact_filter(model, filter_, cumulative_filter_dict, hints):
@@ -298,8 +298,6 @@ def _filter(model, query, hints):
         :param cumulative_filter_dict: a dict that describes the set of
                                       exact filters built up so far
         :param hints: contains the list of filters yet to be satisfied.
-                      Any filters satisfied here will be removed so that
-                      the caller will know if any filters remain.
 
         :returns: updated cumulative dict
 
@@ -311,11 +309,11 @@ def _filter(model, query, hints):
                 utils.attr_as_boolean(filter_['value']))
         else:
             cumulative_filter_dict[key] = filter_['value']
-        hints.filters.remove(filter_)
+        satisfied_filters.append(filter_)
         return cumulative_filter_dict
 
     filter_dict = {}
-
+    satisfied_filters = []
     for filter_ in hints.filters:
         if filter_['name'] not in model.attributes:
             continue
@@ -327,6 +325,10 @@ def _filter(model, query, hints):
     # Apply any exact filters we built up
     if filter_dict:
         query = query.filter_by(**filter_dict)
+
+    # Remove satisfied filters, then the caller will know remaining filters
+    for filter_ in satisfied_filters:
+        hints.filters.remove(filter_)
 
     return query
 
