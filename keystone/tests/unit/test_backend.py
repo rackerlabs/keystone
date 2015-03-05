@@ -3551,6 +3551,7 @@ class IdentityTests(object):
         project_ref = self.resource_api.get_project(project['id'])
         self.assertDictEqual(project_ref, project)
 
+    @tests.skip_if_no_multiple_domains_support
     def test_domain_crud(self):
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
                   'enabled': True, 'description': uuid.uuid4().hex}
@@ -3759,11 +3760,10 @@ class IdentityTests(object):
         # Make sure domain is 'disabled', bypass resource api manager
         domain_ref_disabled = domain_ref.copy()
         domain_ref_disabled['enabled'] = False
-        self.resource_api.driver.update_domain(domain_id,
-                                               domain_ref_disabled)
+        self.resource_api.driver.update_project(domain_id,
+                                                domain_ref_disabled)
         self.resource_api.driver.update_project(domain_id, {'enabled': False})
         # Delete domain, bypassing resource api manager
-        self.resource_api.driver.delete_domain(domain_id)
         self.resource_api.driver.delete_project(domain_id)
         # Verify get_domain still returns the domain
         self.assertDictContainsSubset(
@@ -3783,7 +3783,7 @@ class IdentityTests(object):
         self.resource_api.get_domain(domain_id)
         # Make sure domain is 'disabled', bypass resource api manager
         domain['enabled'] = False
-        self.resource_api.driver.update_domain(domain_id, domain)
+        self.resource_api.driver.update_project(domain_id, domain)
         self.resource_api.driver.update_project(domain_id, {'enabled': False})
         # Try to delete the domain, but it is still enabled
         self.assertRaises(exception.ForbiddenAction,
@@ -3938,7 +3938,8 @@ class IdentityTests(object):
     def test_get_default_domain_by_name(self):
         domain_name = 'default'
 
-        domain = {'id': uuid.uuid4().hex, 'name': domain_name, 'enabled': True}
+        domain = {'id': uuid.uuid4().hex, 'name': domain_name,
+                  'description': uuid.uuid4().hex, 'enabled': True}
         self.resource_api.create_domain(domain['id'], domain)
 
         domain_ref = self.resource_api.get_domain_by_name(domain_name)
@@ -4180,7 +4181,7 @@ class IdentityTests(object):
         group_id_list = []
         for _ in range(3):
             domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
-                      'description': uuid.uuid4().hex}
+                      'description': uuid.uuid4().hex, 'enabled': True}
             self.resource_api.create_domain(domain['id'], domain)
             domain_list.append(domain)
 
