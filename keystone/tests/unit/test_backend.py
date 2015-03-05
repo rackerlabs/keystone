@@ -2906,8 +2906,15 @@ class IdentityTests(object):
 
         # Disable the domain
         domain['enabled'] = False
+        print '#################'
+        print domain
         self.resource_api.update_domain(domain['id'], domain)
 
+        newd = self.resource_api.get_domain(domain['id'])
+        newp = self.resource_api.get_project(domain['id'])
+        print newd
+        print newp
+        print "((((((((((((((((()))))))))))))))))"
         # Delete the domain
         self.resource_api.delete_domain(domain['id'])
 
@@ -3372,7 +3379,6 @@ class IdentityTests(object):
         self.resource_api.driver.update_project(domain_id, {'enabled': False})
         # Delete domain, bypassing resource api manager
         self.resource_api.driver.delete_domain(domain_id)
-        self.resource_api.driver.delete_project(domain_id)
         # Verify get_domain still returns the domain
         self.assertDictContainsSubset(
             domain_ref, self.resource_api.get_domain(domain_id))
@@ -3539,7 +3545,8 @@ class IdentityTests(object):
     def test_get_default_domain_by_name(self):
         domain_name = 'default'
 
-        domain = {'id': uuid.uuid4().hex, 'name': domain_name, 'enabled': True}
+        domain = {'id': uuid.uuid4().hex, 'name': domain_name,
+                  'description': uuid.uuid4().hex, 'enabled': True}
         self.resource_api.create_domain(domain['id'], domain)
 
         domain_ref = self.resource_api.get_domain_by_name(domain_name)
@@ -5874,6 +5881,9 @@ class LimitTests(filtering.FilterTests):
         # Disable the is_domain project, in order to be able to delete it
         self.resource_api.update_project(self.domain_project['id'],
                                          {'enabled': False})
+
+        new = self.resource_api.get_project(self.domain_project['id'])
+        new_dom = self.resource_api.get_domain(self.domain_project['id'])
 
         for entity in self.ENTITIES:
             self._delete_test_data(entity, self.entity_lists[entity])

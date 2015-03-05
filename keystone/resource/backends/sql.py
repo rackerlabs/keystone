@@ -184,7 +184,11 @@ class Resource(keystone_resource.Driver):
         return ref.to_dict()
 
     def _get_domain(self, session, domain_id):
-        ref = session.query(Domain).get(domain_id)
+        query = session.query(Project)
+        query = query.filter_by(id=domain_id)
+        query = query.filter_by(is_domain=True)
+        ref = query.one()
+
         if ref is None:
             raise exception.DomainNotFound(domain_id=domain_id)
         return ref
