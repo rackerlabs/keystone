@@ -16,6 +16,24 @@
       "revId": "b0326e5db144a5fb0a19c89c92335db99459135e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_97c47941",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-05T07:56:15Z",
+      "side": 1,
+      "message": "++\n\noslotest.BaseTestCase provides more useful general usage.",
+      "parentUuid": "ba7be1f8_a38506d0",
+      "revId": "b0326e5db144a5fb0a19c89c92335db99459135e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
