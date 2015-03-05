@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_d1128b61",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-03-05T01:08:41Z",
+      "side": 0,
+      "message": "Because ref may be changed when exit \u0027with\u0027. An example: if we return inside \u0027with\u0027 the updated_at is None, otherwise we can get updated_at. And all other sql modes return outside \u0027with\u0027 except assignment modes.",
+      "parentUuid": "9a80dd14_ba2430c7",
+      "revId": "fb9954caede1e9b2896739ff95ed38b7ec49ad98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_da21e4b5",
         "filename": "keystone/assignment/role_backends/sql.py",
         "patchSetId": 15
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_31092732",
+        "filename": "keystone/assignment/role_backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-03-05T01:08:41Z",
+      "side": 0,
+      "message": "See comment in role.create_role.",
+      "parentUuid": "9a80dd14_da21e4b5",
+      "revId": "fb9954caede1e9b2896739ff95ed38b7ec49ad98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_d53617e7",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 15
@@ -47,6 +83,24 @@
       "writtenOn": "2015-03-04T13:31:40Z",
       "side": 0,
       "message": "Why is this changed?",
+      "revId": "fb9954caede1e9b2896739ff95ed38b7ec49ad98",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f5ff7aff",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-03-05T01:08:41Z",
+      "side": 0,
+      "message": "See comment in role.create_role.",
+      "parentUuid": "9a80dd14_d53617e7",
       "revId": "fb9954caede1e9b2896739ff95ed38b7ec49ad98",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
