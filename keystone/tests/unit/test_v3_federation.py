@@ -58,6 +58,539 @@ class FederationTests(test_v3.RestfulTestCase):
     EXTENSION_TO_ADD = 'federation_extension'
 
 
+class FederatedSetupMixin(object):
+
+    def load_federation_sample_data(self):
+        """Inject additional data."""
+
+        # Create and add domains
+        self.domainA = self.new_domain_ref()
+        self.resource_api.create_domain(self.domainA['id'],
+                                        self.domainA)
+
+        self.domainB = self.new_domain_ref()
+        self.resource_api.create_domain(self.domainB['id'],
+                                        self.domainB)
+
+        self.domainC = self.new_domain_ref()
+        self.resource_api.create_domain(self.domainC['id'],
+                                        self.domainC)
+
+        self.domainD = self.new_domain_ref()
+        self.resource_api.create_domain(self.domainD['id'],
+                                        self.domainD)
+
+        # Create and add projects
+        self.proj_employees = self.new_project_ref(
+            domain_id=self.domainA['id'])
+        self.resource_api.create_project(self.proj_employees['id'],
+                                         self.proj_employees)
+        self.proj_customers = self.new_project_ref(
+            domain_id=self.domainA['id'])
+        self.resource_api.create_project(self.proj_customers['id'],
+                                         self.proj_customers)
+
+        self.project_all = self.new_project_ref(
+            domain_id=self.domainA['id'])
+        self.resource_api.create_project(self.project_all['id'],
+                                         self.project_all)
+
+        self.project_inherited = self.new_project_ref(
+            domain_id=self.domainD['id'])
+        self.resource_api.create_project(self.project_inherited['id'],
+                                         self.project_inherited)
+
+        # Create and add groups
+        self.group_employees = self.new_group_ref(
+            domain_id=self.domainA['id'])
+        self.group_employees = (
+            self.identity_api.create_group(self.group_employees))
+
+        self.group_customers = self.new_group_ref(
+            domain_id=self.domainA['id'])
+        self.group_customers = (
+            self.identity_api.create_group(self.group_customers))
+
+        self.group_admins = self.new_group_ref(
+            domain_id=self.domainA['id'])
+        self.group_admins = self.identity_api.create_group(self.group_admins)
+
+        # Create and add roles
+        self.role_employee = self.new_role_ref()
+        self.role_api.create_role(self.role_employee['id'], self.role_employee)
+        self.role_customer = self.new_role_ref()
+        self.role_api.create_role(self.role_customer['id'], self.role_customer)
+
+        self.role_admin = self.new_role_ref()
+        self.role_api.create_role(self.role_admin['id'], self.role_admin)
+
+        # Employees can access
+        # * proj_employees
+        # * project_all
+        self.assignment_api.create_grant(self.role_employee['id'],
+                                         group_id=self.group_employees['id'],
+                                         project_id=self.proj_employees['id'])
+        self.assignment_api.create_grant(self.role_employee['id'],
+                                         group_id=self.group_employees['id'],
+                                         project_id=self.project_all['id'])
+        # Customers can access
+        # * proj_customers
+        self.assignment_api.create_grant(self.role_customer['id'],
+                                         group_id=self.group_customers['id'],
+                                         project_id=self.proj_customers['id'])
+
+        # Admins can access:
+        # * proj_customers
+        # * proj_employees
+        # * project_all
+        self.assignment_api.create_grant(self.role_admin['id'],
+                                         group_id=self.group_admins['id'],
+                                         project_id=self.proj_customers['id'])
+        self.assignment_api.create_grant(self.role_admin['id'],
+                                         group_id=self.group_admins['id'],
+                                         project_id=self.proj_employees['id'])
+        self.assignment_api.create_grant(self.role_admin['id'],
+                                         group_id=self.group_admins['id'],
+                                         project_id=self.project_all['id'])
+
+        self.assignment_api.create_grant(self.role_customer['id'],
+                                         group_id=self.group_customers['id'],
+                                         domain_id=self.domainA['id'])
+
+        # Customers can access:
+        # * domain A
+        self.assignment_api.create_grant(self.role_customer['id'],
+                                         group_id=self.group_customers['id'],
+                                         domain_id=self.domainA['id'])
+
+        # Customers can access projects via inheritance:
+        # * domain D
+        self.assignment_api.create_grant(self.role_customer['id'],
+                                         group_id=self.group_customers['id'],
+                                         domain_id=self.domainD['id'],
+                                         inherited_to_projects=True)
+
+        # Employees can access:
+        # * domain A
+        # * domain B
+
+        self.assignment_api.create_grant(self.role_employee['id'],
+                                         group_id=self.group_employees['id'],
+                                         domain_id=self.domainA['id'])
+        self.assignment_api.create_grant(self.role_employee['id'],
+                                         group_id=self.group_employees['id'],
+                                         domain_id=self.domainB['id'])
+
+        # Admins can access:
+        # * domain A
+        # * domain B
+        # * domain C
+        self.assignment_api.create_grant(self.role_admin['id'],
+                                         group_id=self.group_admins['id'],
+                                         domain_id=self.domainA['id'])
+        self.assignment_api.create_grant(self.role_admin['id'],
+                                         group_id=self.group_admins['id'],
+                                         domain_id=self.domainB['id'])
+
+        self.assignment_api.create_grant(self.role_admin['id'],
+                                         group_id=self.group_admins['id'],
+                                         domain_id=self.domainC['id'])
+        self.rules = {
+            'rules': [
+                {
+                    'local': [
+                        {
+                            'group': {
+                                'id': self.group_employees['id']
+                            }
+                        },
+                        {
+                            'user': {
+                                'name': '{0}'
+                            }
+                        }
+                    ],
+                    'remote': [
+                        {
+                            'type': 'UserName'
+                        },
+                        {
+                            'type': 'orgPersonType',
+                            'any_one_of': [
+                                'Employee'
+                            ]
+                        }
+                    ]
+                },
+                {
+                    'local': [
+                        {
+                            'group': {
+                                'id': self.group_employees['id']
+                            }
+                        },
+                        {
+                            'user': {
+                                'name': '{0}'
+                            }
+                        }
+                    ],
+                    'remote': [
+                        {
+                            'type': self.ASSERTION_PREFIX + 'UserName'
+                        },
+                        {
+                            'type': self.ASSERTION_PREFIX + 'orgPersonType',
+                            'any_one_of': [
+                                'SuperEmployee'
+                            ]
+                        }
+                    ]
+                },
+                {
+                    'local': [
+                        {
+                            'group': {
+                                'id': self.group_customers['id']
+                            }
+                        },
+                        {
+                            'user': {
+                                'name': '{0}'
+                            }
+                        }
+                    ],
+                    'remote': [
+                        {
+                            'type': 'UserName'
+                        },
+                        {
+                            'type': 'orgPersonType',
+                            'any_one_of': [
+                                'Customer'
+                            ]
+                        }
+                    ]
+                },
+                {
+                    'local': [
+                        {
+                            'group': {
+                                'id': self.group_admins['id']
+                            }
+                        },
+                        {
+                            'group': {
+                                'id': self.group_employees['id']
+                            }
+                        },
+                        {
+                            'group': {
+                                'id': self.group_customers['id']
+                            }
+                        },
+
+                        {
+                            'user': {
+                                'name': '{0}'
+                            }
+                        }
+                    ],
+                    'remote': [
+                        {
+                            'type': 'UserName'
+                        },
+                        {
+                            'type': 'orgPersonType',
+                            'any_one_of': [
+                                'Admin',
+                                'Chief'
+                            ]
+                        }
+                    ]
+                },
+                {
+                    'local': [
+                        {
+                            'group': {
+                                'id': uuid.uuid4().hex
+                            }
+                        },
+                        {
+                            'group': {
+                                'id': self.group_customers['id']
+                            }
+                        },
+                        {
+                            'user': {
+                                'name': '{0}'
+                            }
+                        }
+                    ],
+                    'remote': [
+                        {
+                            'type': 'UserName',
+                        },
+                        {
+                            'type': 'FirstName',
+                            'any_one_of': [
+                                'Jill'
+                            ]
+                        },
+                        {
+                            'type': 'LastName',
+                            'any_one_of': [
+                                'Smith'
+                            ]
+                        }
+                    ]
+                },
+                {
+                    'local': [
+                        {
+                            'group': {
+                                'id': 'this_group_no_longer_exists'
+                            }
+                        },
+                        {
+                            'user': {
+                                'name': '{0}'
+                            }
+                        }
+                    ],
+                    'remote': [
+                        {
+                            'type': 'UserName',
+                        },
+                        {
+                            'type': 'Email',
+                            'any_one_of': [
+                                'testacct@example.com'
+                            ]
+                        },
+                        {
+                            'type': 'orgPersonType',
+                            'any_one_of': [
+                                'Tester'
+                            ]
+                        }
+                    ]
+                },
+                # rules with local group names
+                {
+                    "local": [
+                        {
+                            'user': {
+                                'name': '{0}'
+                            }
+                        },
+                        {
+                            "group": {
+                                "name": self.group_customers['name'],
+                                "domain": {
+                                    "name": self.domainA['name']
+                                }
+                            }
+                        }
+                    ],
+                    "remote": [
+                        {
+                            'type': 'UserName',
+                        },
+                        {
+                            "type": "orgPersonType",
+                            "any_one_of": [
+                                "CEO",
+                                "CTO"
+                            ],
+                        }
+                    ]
+                },
+                {
+                    "local": [
+                        {
+                            'user': {
+                                'name': '{0}'
+                            }
+                        },
+                        {
+                            "group": {
+                                "name": self.group_admins['name'],
+                                "domain": {
+                                    "id": self.domainA['id']
+                                }
+                            }
+                        }
+                    ],
+                    "remote": [
+                        {
+                            "type": "UserName",
+                        },
+                        {
+                            "type": "orgPersonType",
+                            "any_one_of": [
+                                "Managers"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "local": [
+                        {
+                            "user": {
+                                "name": "{0}"
+                            }
+                        },
+                        {
+                            "group": {
+                                "name": "NON_EXISTING",
+                                "domain": {
+                                    "id": self.domainA['id']
+                                }
+                            }
+                        }
+                    ],
+                    "remote": [
+                        {
+                            "type": "UserName",
+                        },
+                        {
+                            "type": "UserName",
+                            "any_one_of": [
+                                "IamTester"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "local": [
+                        {
+                            "user": {
+                                "type": "local",
+                                "name": self.user['name'],
+                                "domain": {
+                                    "id": self.user['domain_id']
+                                }
+                            }
+                        },
+                        {
+                            "group": {
+                                "id": self.group_customers['id']
+                            }
+                        }
+                    ],
+                    "remote": [
+                        {
+                            "type": "UserType",
+                            "any_one_of": [
+                                "random"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "local": [
+                        {
+                            "user": {
+                                "type": "local",
+                                "name": self.user['name'],
+                                "domain": {
+                                    "id": uuid.uuid4().hex
+                                }
+                            }
+                        }
+                    ],
+                    "remote": [
+                        {
+                            "type": "Position",
+                            "any_one_of": [
+                                "DirectorGeneral"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+
+        # Add IDP
+        self.idp = self.idp_ref(id=self.IDP)
+        self.federation_api.create_idp(self.idp['id'],
+                                       self.idp)
+        # Add IDP with remote
+        self.idp_with_remote = self.idp_ref(id=self.IDP_WITH_REMOTE)
+        self.idp_with_remote['remote_id'] = self.REMOTE_ID
+        self.federation_api.create_idp(self.idp_with_remote['id'],
+                                       self.idp_with_remote)
+        # Add a mapping
+        self.mapping = self.mapping_ref()
+        self.federation_api.create_mapping(self.mapping['id'],
+                                           self.mapping)
+        # Add protocols
+        self.proto_saml = self.proto_ref(mapping_id=self.mapping['id'])
+        self.proto_saml['id'] = self.PROTOCOL
+        self.federation_api.create_protocol(self.idp['id'],
+                                            self.proto_saml['id'],
+                                            self.proto_saml)
+        # Add protocols IDP with remote
+        self.federation_api.create_protocol(self.idp_with_remote['id'],
+                                            self.proto_saml['id'],
+                                            self.proto_saml)
+        # Generate fake tokens
+        context = {'environment': {}}
+
+        self.tokens = {}
+        VARIANTS = ('EMPLOYEE_ASSERTION', 'CUSTOMER_ASSERTION',
+                    'ADMIN_ASSERTION')
+        api = auth_controllers.Auth()
+        for variant in VARIANTS:
+            self._inject_assertion(context, variant)
+            r = api.authenticate_for_token(context, self.UNSCOPED_V3_SAML2_REQ)
+            self.tokens[variant] = r.headers.get('X-Subject-Token')
+
+        self.TOKEN_SCOPE_PROJECT_FROM_NONEXISTENT_TOKEN = self._scope_request(
+            uuid.uuid4().hex, 'project', self.proj_customers['id'])
+
+        self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_EMPLOYEE = self._scope_request(
+            self.tokens['EMPLOYEE_ASSERTION'], 'project',
+            self.proj_employees['id'])
+
+        self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_ADMIN = self._scope_request(
+            self.tokens['ADMIN_ASSERTION'], 'project',
+            self.proj_employees['id'])
+
+        self.TOKEN_SCOPE_PROJECT_CUSTOMER_FROM_ADMIN = self._scope_request(
+            self.tokens['ADMIN_ASSERTION'], 'project',
+            self.proj_customers['id'])
+
+        self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_CUSTOMER = self._scope_request(
+            self.tokens['CUSTOMER_ASSERTION'], 'project',
+            self.proj_employees['id'])
+
+        self.TOKEN_SCOPE_PROJECT_INHERITED_FROM_CUSTOMER = self._scope_request(
+            self.tokens['CUSTOMER_ASSERTION'], 'project',
+            self.project_inherited['id'])
+
+        self.TOKEN_SCOPE_DOMAIN_A_FROM_CUSTOMER = self._scope_request(
+            self.tokens['CUSTOMER_ASSERTION'], 'domain', self.domainA['id'])
+
+        self.TOKEN_SCOPE_DOMAIN_B_FROM_CUSTOMER = self._scope_request(
+            self.tokens['CUSTOMER_ASSERTION'], 'domain',
+            self.domainB['id'])
+
+        self.TOKEN_SCOPE_DOMAIN_D_FROM_CUSTOMER = self._scope_request(
+            self.tokens['CUSTOMER_ASSERTION'], 'domain', self.domainD['id'])
+
+        self.TOKEN_SCOPE_DOMAIN_A_FROM_ADMIN = self._scope_request(
+            self.tokens['ADMIN_ASSERTION'], 'domain', self.domainA['id'])
+
+        self.TOKEN_SCOPE_DOMAIN_B_FROM_ADMIN = self._scope_request(
+            self.tokens['ADMIN_ASSERTION'], 'domain', self.domainB['id'])
+
+        self.TOKEN_SCOPE_DOMAIN_C_FROM_ADMIN = self._scope_request(
+            self.tokens['ADMIN_ASSERTION'], 'domain',
+            self.domainC['id'])
+
+
 class FederatedIdentityProviderTests(FederationTests):
     """A test class for Identity Providers."""
 
@@ -1044,7 +1577,7 @@ class MappingRuleEngineTests(FederationTests):
         self.assertEqual('abc123', mapped_properties['user']['id'])
 
 
-class FederatedTokenTests(FederationTests):
+class FederatedTokenTests(FederationTests, FederatedSetupMixin):
 
     def auth_plugin_config_override(self):
         methods = ['saml2']
@@ -1664,148 +2197,38 @@ class FederatedTokenTests(FederationTests):
                           self._issue_unscoped_token,
                           assertion='ANOTHER_LOCAL_USER_ASSERTION')
 
-    def load_federation_sample_data(self):
-        """Inject additional data."""
+    def test_workflow_with_groups_deletion(self):
+        """Test full workflow with groups deletion before token scoping.
 
-        # Create and add domains
-        self.domainA = self.new_domain_ref()
-        self.resource_api.create_domain(self.domainA['id'],
-                                        self.domainA)
+        The test scenario is as follows:
+         - Create group ``group``
+         - Create and assign roles to ``group`` and ``project_all``
+         - Patch mapping rules for existing IdP so it issues group id
+         - Issue unscoped token with ``group``'s id
+         - Delete group ``group``
+         - Scope token to ``project_all``
+         - Expect HTTP 500 response
 
-        self.domainB = self.new_domain_ref()
-        self.resource_api.create_domain(self.domainB['id'],
-                                        self.domainB)
-
-        self.domainC = self.new_domain_ref()
-        self.resource_api.create_domain(self.domainC['id'],
-                                        self.domainC)
-
-        self.domainD = self.new_domain_ref()
-        self.resource_api.create_domain(self.domainD['id'],
-                                        self.domainD)
-
-        # Create and add projects
-        self.proj_employees = self.new_project_ref(
+        """
+        # create group and role
+        group = self.new_group_ref(
             domain_id=self.domainA['id'])
-        self.resource_api.create_project(self.proj_employees['id'],
-                                         self.proj_employees)
-        self.proj_customers = self.new_project_ref(
-            domain_id=self.domainA['id'])
-        self.resource_api.create_project(self.proj_customers['id'],
-                                         self.proj_customers)
+        group = self.identity_api.create_group(group)
+        role = self.new_role_ref()
+        self.role_api.create_role(role['id'], role)
 
-        self.project_all = self.new_project_ref(
-            domain_id=self.domainA['id'])
-        self.resource_api.create_project(self.project_all['id'],
-                                         self.project_all)
-
-        self.project_inherited = self.new_project_ref(
-            domain_id=self.domainD['id'])
-        self.resource_api.create_project(self.project_inherited['id'],
-                                         self.project_inherited)
-
-        # Create and add groups
-        self.group_employees = self.new_group_ref(
-            domain_id=self.domainA['id'])
-        self.group_employees = (
-            self.identity_api.create_group(self.group_employees))
-
-        self.group_customers = self.new_group_ref(
-            domain_id=self.domainA['id'])
-        self.group_customers = (
-            self.identity_api.create_group(self.group_customers))
-
-        self.group_admins = self.new_group_ref(
-            domain_id=self.domainA['id'])
-        self.group_admins = self.identity_api.create_group(self.group_admins)
-
-        # Create and add roles
-        self.role_employee = self.new_role_ref()
-        self.role_api.create_role(self.role_employee['id'], self.role_employee)
-        self.role_customer = self.new_role_ref()
-        self.role_api.create_role(self.role_customer['id'], self.role_customer)
-
-        self.role_admin = self.new_role_ref()
-        self.role_api.create_role(self.role_admin['id'], self.role_admin)
-
-        # Employees can access
-        # * proj_employees
-        # * project_all
-        self.assignment_api.create_grant(self.role_employee['id'],
-                                         group_id=self.group_employees['id'],
-                                         project_id=self.proj_employees['id'])
-        self.assignment_api.create_grant(self.role_employee['id'],
-                                         group_id=self.group_employees['id'],
-                                         project_id=self.project_all['id'])
-        # Customers can access
-        # * proj_customers
-        self.assignment_api.create_grant(self.role_customer['id'],
-                                         group_id=self.group_customers['id'],
-                                         project_id=self.proj_customers['id'])
-
-        # Admins can access:
-        # * proj_customers
-        # * proj_employees
-        # * project_all
-        self.assignment_api.create_grant(self.role_admin['id'],
-                                         group_id=self.group_admins['id'],
-                                         project_id=self.proj_customers['id'])
-        self.assignment_api.create_grant(self.role_admin['id'],
-                                         group_id=self.group_admins['id'],
-                                         project_id=self.proj_employees['id'])
-        self.assignment_api.create_grant(self.role_admin['id'],
-                                         group_id=self.group_admins['id'],
+        # assign role to group and project_admins
+        self.assignment_api.create_grant(role['id'],
+                                         group_id=group['id'],
                                          project_id=self.project_all['id'])
 
-        self.assignment_api.create_grant(self.role_customer['id'],
-                                         group_id=self.group_customers['id'],
-                                         domain_id=self.domainA['id'])
-
-        # Customers can access:
-        # * domain A
-        self.assignment_api.create_grant(self.role_customer['id'],
-                                         group_id=self.group_customers['id'],
-                                         domain_id=self.domainA['id'])
-
-        # Customers can access projects via inheritance:
-        # * domain D
-        self.assignment_api.create_grant(self.role_customer['id'],
-                                         group_id=self.group_customers['id'],
-                                         domain_id=self.domainD['id'],
-                                         inherited_to_projects=True)
-
-        # Employees can access:
-        # * domain A
-        # * domain B
-
-        self.assignment_api.create_grant(self.role_employee['id'],
-                                         group_id=self.group_employees['id'],
-                                         domain_id=self.domainA['id'])
-        self.assignment_api.create_grant(self.role_employee['id'],
-                                         group_id=self.group_employees['id'],
-                                         domain_id=self.domainB['id'])
-
-        # Admins can access:
-        # * domain A
-        # * domain B
-        # * domain C
-        self.assignment_api.create_grant(self.role_admin['id'],
-                                         group_id=self.group_admins['id'],
-                                         domain_id=self.domainA['id'])
-        self.assignment_api.create_grant(self.role_admin['id'],
-                                         group_id=self.group_admins['id'],
-                                         domain_id=self.domainB['id'])
-
-        self.assignment_api.create_grant(self.role_admin['id'],
-                                         group_id=self.group_admins['id'],
-                                         domain_id=self.domainC['id'])
-        self.rules = {
+        rules = {
             'rules': [
                 {
                     'local': [
                         {
                             'group': {
-                                'id': self.group_employees['id']
+                                'id': group['id']
                             }
                         },
                         {
@@ -1817,298 +2240,11 @@ class FederatedTokenTests(FederationTests):
                     'remote': [
                         {
                             'type': 'UserName'
-                        },
-                        {
-                            'type': 'orgPersonType',
-                            'any_one_of': [
-                                'Employee'
-                            ]
-                        }
-                    ]
-                },
-                {
-                    'local': [
-                        {
-                            'group': {
-                                'id': self.group_employees['id']
-                            }
-                        },
-                        {
-                            'user': {
-                                'name': '{0}'
-                            }
-                        }
-                    ],
-                    'remote': [
-                        {
-                            'type': self.ASSERTION_PREFIX + 'UserName'
-                        },
-                        {
-                            'type': self.ASSERTION_PREFIX + 'orgPersonType',
-                            'any_one_of': [
-                                'SuperEmployee'
-                            ]
-                        }
-                    ]
-                },
-                {
-                    'local': [
-                        {
-                            'group': {
-                                'id': self.group_customers['id']
-                            }
-                        },
-                        {
-                            'user': {
-                                'name': '{0}'
-                            }
-                        }
-                    ],
-                    'remote': [
-                        {
-                            'type': 'UserName'
-                        },
-                        {
-                            'type': 'orgPersonType',
-                            'any_one_of': [
-                                'Customer'
-                            ]
-                        }
-                    ]
-                },
-                {
-                    'local': [
-                        {
-                            'group': {
-                                'id': self.group_admins['id']
-                            }
-                        },
-                        {
-                            'group': {
-                                'id': self.group_employees['id']
-                            }
-                        },
-                        {
-                            'group': {
-                                'id': self.group_customers['id']
-                            }
-                        },
-
-                        {
-                            'user': {
-                                'name': '{0}'
-                            }
-                        }
-                    ],
-                    'remote': [
-                        {
-                            'type': 'UserName'
-                        },
-                        {
-                            'type': 'orgPersonType',
-                            'any_one_of': [
-                                'Admin',
-                                'Chief'
-                            ]
-                        }
-                    ]
-                },
-                {
-                    'local': [
-                        {
-                            'group': {
-                                'id': uuid.uuid4().hex
-                            }
-                        },
-                        {
-                            'group': {
-                                'id': self.group_customers['id']
-                            }
-                        },
-                        {
-                            'user': {
-                                'name': '{0}'
-                            }
-                        }
-                    ],
-                    'remote': [
-                        {
-                            'type': 'UserName',
-                        },
-                        {
-                            'type': 'FirstName',
-                            'any_one_of': [
-                                'Jill'
-                            ]
                         },
                         {
                             'type': 'LastName',
                             'any_one_of': [
-                                'Smith'
-                            ]
-                        }
-                    ]
-                },
-                {
-                    'local': [
-                        {
-                            'group': {
-                                'id': 'this_group_no_longer_exists'
-                            }
-                        },
-                        {
-                            'user': {
-                                'name': '{0}'
-                            }
-                        }
-                    ],
-                    'remote': [
-                        {
-                            'type': 'UserName',
-                        },
-                        {
-                            'type': 'Email',
-                            'any_one_of': [
-                                'testacct@example.com'
-                            ]
-                        },
-                        {
-                            'type': 'orgPersonType',
-                            'any_one_of': [
-                                'Tester'
-                            ]
-                        }
-                    ]
-                },
-                # rules with local group names
-                {
-                    "local": [
-                        {
-                            'user': {
-                                'name': '{0}'
-                            }
-                        },
-                        {
-                            "group": {
-                                "name": self.group_customers['name'],
-                                "domain": {
-                                    "name": self.domainA['name']
-                                }
-                            }
-                        }
-                    ],
-                    "remote": [
-                        {
-                            'type': 'UserName',
-                        },
-                        {
-                            "type": "orgPersonType",
-                            "any_one_of": [
-                                "CEO",
-                                "CTO"
-                            ],
-                        }
-                    ]
-                },
-                {
-                    "local": [
-                        {
-                            'user': {
-                                'name': '{0}'
-                            }
-                        },
-                        {
-                            "group": {
-                                "name": self.group_admins['name'],
-                                "domain": {
-                                    "id": self.domainA['id']
-                                }
-                            }
-                        }
-                    ],
-                    "remote": [
-                        {
-                            "type": "UserName",
-                        },
-                        {
-                            "type": "orgPersonType",
-                            "any_one_of": [
-                                "Managers"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "local": [
-                        {
-                            "user": {
-                                "name": "{0}"
-                            }
-                        },
-                        {
-                            "group": {
-                                "name": "NON_EXISTING",
-                                "domain": {
-                                    "id": self.domainA['id']
-                                }
-                            }
-                        }
-                    ],
-                    "remote": [
-                        {
-                            "type": "UserName",
-                        },
-                        {
-                            "type": "UserName",
-                            "any_one_of": [
-                                "IamTester"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "local": [
-                        {
-                            "user": {
-                                "type": "local",
-                                "name": self.user['name'],
-                                "domain": {
-                                    "id": self.user['domain_id']
-                                }
-                            }
-                        },
-                        {
-                            "group": {
-                                "id": self.group_customers['id']
-                            }
-                        }
-                    ],
-                    "remote": [
-                        {
-                            "type": "UserType",
-                            "any_one_of": [
-                                "random"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "local": [
-                        {
-                            "user": {
-                                "type": "local",
-                                "name": self.user['name'],
-                                "domain": {
-                                    "id": uuid.uuid4().hex
-                                }
-                            }
-                        }
-                    ],
-                    "remote": [
-                        {
-                            "type": "Position",
-                            "any_one_of": [
-                                "DirectorGeneral"
+                                'Account'
                             ]
                         }
                     ]
@@ -2116,83 +2252,94 @@ class FederatedTokenTests(FederationTests):
             ]
         }
 
-        # Add IDP
-        self.idp = self.idp_ref(id=self.IDP)
-        self.federation_api.create_idp(self.idp['id'],
-                                       self.idp)
-        # Add IDP with remote
-        self.idp_with_remote = self.idp_ref(id=self.IDP_WITH_REMOTE)
-        self.idp_with_remote['remote_id'] = self.REMOTE_ID
-        self.federation_api.create_idp(self.idp_with_remote['id'],
-                                       self.idp_with_remote)
-        # Add a mapping
-        self.mapping = self.mapping_ref()
-        self.federation_api.create_mapping(self.mapping['id'],
-                                           self.mapping)
-        # Add protocols
-        self.proto_saml = self.proto_ref(mapping_id=self.mapping['id'])
-        self.proto_saml['id'] = self.PROTOCOL
-        self.federation_api.create_protocol(self.idp['id'],
-                                            self.proto_saml['id'],
-                                            self.proto_saml)
-        # Add protocols IDP with remote
-        self.federation_api.create_protocol(self.idp_with_remote['id'],
-                                            self.proto_saml['id'],
-                                            self.proto_saml)
-        # Generate fake tokens
-        context = {'environment': {}}
+        self.federation_api.update_mapping(self.mapping['id'], rules)
 
-        self.tokens = {}
-        VARIANTS = ('EMPLOYEE_ASSERTION', 'CUSTOMER_ASSERTION',
-                    'ADMIN_ASSERTION')
-        api = auth_controllers.Auth()
-        for variant in VARIANTS:
-            self._inject_assertion(context, variant)
-            r = api.authenticate_for_token(context, self.UNSCOPED_V3_SAML2_REQ)
-            self.tokens[variant] = r.headers.get('X-Subject-Token')
+        r = self._issue_unscoped_token(assertion='TESTER_ASSERTION')
+        token_id = r.headers.get('X-Subject-Token')
 
-        self.TOKEN_SCOPE_PROJECT_FROM_NONEXISTENT_TOKEN = self._scope_request(
-            uuid.uuid4().hex, 'project', self.proj_customers['id'])
+        # delete group
+        self.identity_api.delete_group(group['id'])
 
-        self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_EMPLOYEE = self._scope_request(
-            self.tokens['EMPLOYEE_ASSERTION'], 'project',
-            self.proj_employees['id'])
+        # scope token to project_all, expect HTTP 500
+        scoped_token = self._scope_request(
+            token_id, 'project',
+            self.project_all['id'])
 
-        self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_ADMIN = self._scope_request(
-            self.tokens['ADMIN_ASSERTION'], 'project',
-            self.proj_employees['id'])
+        self.v3_authenticate_token(scoped_token, expected_status=500)
 
-        self.TOKEN_SCOPE_PROJECT_CUSTOMER_FROM_ADMIN = self._scope_request(
-            self.tokens['ADMIN_ASSERTION'], 'project',
-            self.proj_customers['id'])
+    def test_assertion_prefix_parameter(self):
+        """Test parameters filtering based on the prefix.
 
-        self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_CUSTOMER = self._scope_request(
-            self.tokens['CUSTOMER_ASSERTION'], 'project',
-            self.proj_employees['id'])
+        With ``assertion_prefix`` set to fixed, non default value,
+        issue an unscoped token from assertion EMPLOYEE_ASSERTION_PREFIXED.
+        Expect server to return unscoped token.
 
-        self.TOKEN_SCOPE_PROJECT_INHERITED_FROM_CUSTOMER = self._scope_request(
-            self.tokens['CUSTOMER_ASSERTION'], 'project',
-            self.project_inherited['id'])
+        """
+        self.config_fixture.config(group='federation',
+                                   assertion_prefix=self.ASSERTION_PREFIX)
+        r = self._issue_unscoped_token(assertion='EMPLOYEE_ASSERTION_PREFIXED')
+        self.assertIsNotNone(r.headers.get('X-Subject-Token'))
 
-        self.TOKEN_SCOPE_DOMAIN_A_FROM_CUSTOMER = self._scope_request(
-            self.tokens['CUSTOMER_ASSERTION'], 'domain', self.domainA['id'])
+    def test_assertion_prefix_parameter_expect_fail(self):
+        """Test parameters filtering based on the prefix.
 
-        self.TOKEN_SCOPE_DOMAIN_B_FROM_CUSTOMER = self._scope_request(
-            self.tokens['CUSTOMER_ASSERTION'], 'domain',
-            self.domainB['id'])
+        With ``assertion_prefix`` default value set to empty string
+        issue an unscoped token from assertion EMPLOYEE_ASSERTION.
+        Next, configure ``assertion_prefix`` to value ``UserName``.
+        Try issuing unscoped token with EMPLOYEE_ASSERTION.
+        Expect server to raise exception.Unathorized exception.
 
-        self.TOKEN_SCOPE_DOMAIN_D_FROM_CUSTOMER = self._scope_request(
-            self.tokens['CUSTOMER_ASSERTION'], 'domain', self.domainD['id'])
+        """
+        r = self._issue_unscoped_token()
+        self.assertIsNotNone(r.headers.get('X-Subject-Token'))
+        self.config_fixture.config(group='federation',
+                                   assertion_prefix='UserName')
 
-        self.TOKEN_SCOPE_DOMAIN_A_FROM_ADMIN = self._scope_request(
-            self.tokens['ADMIN_ASSERTION'], 'domain', self.domainA['id'])
+        self.assertRaises(exception.Unauthorized,
+                          self._issue_unscoped_token)
 
-        self.TOKEN_SCOPE_DOMAIN_B_FROM_ADMIN = self._scope_request(
-            self.tokens['ADMIN_ASSERTION'], 'domain', self.domainB['id'])
+    def test_v2_auth_with_federation_token_fails(self):
+        """Test that using a federation token with v2 auth fails.
 
-        self.TOKEN_SCOPE_DOMAIN_C_FROM_ADMIN = self._scope_request(
-            self.tokens['ADMIN_ASSERTION'], 'domain',
-            self.domainC['id'])
+        If an admin sets up a federated Keystone environment, and a user
+        incorrectly configures a service (like Nova) to only use v2 auth, the
+        returned message should be informative.
+
+        """
+        r = self._issue_unscoped_token()
+        token_id = r.headers.get('X-Subject-Token')
+        self.assertRaises(exception.Unauthorized,
+                          self.token_provider_api.validate_v2_token,
+                          token_id=token_id)
+
+    def _check_domains_are_valid(self, token):
+        self.assertEqual('Federated', token['user']['domain']['id'])
+        self.assertEqual('Federated', token['user']['domain']['name'])
+
+    def test_unscoped_token_has_user_domain(self):
+        r = self._issue_unscoped_token()
+        self._check_domains_are_valid(r.json_body['token'])
+
+    def test_scoped_token_has_user_domain(self):
+        r = self.v3_authenticate_token(
+            self.TOKEN_SCOPE_PROJECT_EMPLOYEE_FROM_EMPLOYEE)
+        self._check_domains_are_valid(r.result['token'])
+
+    def test_issue_unscoped_token_for_local_user(self):
+        r = self._issue_unscoped_token(assertion='LOCAL_USER_ASSERTION')
+        token_resp = r.json_body['token']
+        self.assertListEqual(['saml2'], token_resp['methods'])
+        self.assertEqual(self.user['id'], token_resp['user']['id'])
+        self.assertEqual(self.user['name'], token_resp['user']['name'])
+        self.assertEqual(self.domain['id'], token_resp['user']['domain']['id'])
+        # Make sure the token is not scoped
+        self.assertNotIn('project', token_resp)
+        self.assertNotIn('domain', token_resp)
+
+    def test_issue_token_for_local_user_user_not_found(self):
+        self.assertRaises(exception.Unauthorized,
+                          self._issue_unscoped_token,
+                          assertion='ANOTHER_LOCAL_USER_ASSERTION')
 
     def _inject_assertion(self, context, variant, query_string=None):
         assertion = getattr(mapping_fixtures, variant)
