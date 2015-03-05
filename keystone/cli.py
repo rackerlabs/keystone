@@ -20,7 +20,7 @@ from oslo_config import cfg
 from oslo_log import log
 import pbr.version
 
-from keystone import assignment
+from keystone import resource
 from keystone.common import openssl
 from keystone.common import sql
 from keystone.common.sql import migration_helpers
@@ -289,8 +289,8 @@ class MappingPurge(BaseApp):
         def get_domain_id(name):
             try:
                 identity.Manager()
-                assignment_manager = assignment.Manager()
-                return assignment_manager.driver.get_domain_by_name(name)['id']
+                resource_manager = resource.Manager()
+                return resource_manager.driver.get_domain_by_name(name)['id']
             except KeyError:
                 raise ValueError(_("Unknown domain '%(name)s' specified by "
                                    "--domain-name") % {'name': name})
