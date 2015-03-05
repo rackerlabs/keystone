@@ -10,7 +10,9 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import base64
 import datetime
+import struct
 
 from oslo_config import cfg
 from oslo_log import log
@@ -26,6 +28,12 @@ from keystone.token.providers.fernet import token_formatters as tf
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
+
+
+# Fernet byte indexes as as computed by pypi/keyless_fernet and defined in
+# https://github.com/fernet/spec
+TIMESTAMP_START = 1
+TIMESTAMP_END = 9
 
 
 @dependency.requires('trust_api')
@@ -83,11 +91,13 @@ class Provider(common.BaseProvider):
             token_ref = self._handle_mapped_tokens(
                 auth_context, project_id, domain_id)
 
-        # although we accept expires_at as part of this method's signature, we
-        # don't encode the expiration in the token, and thus just pass the
-        # intended expiration back through to the client as part of token_data.
+        # Although we accept issued_at and expires_at as part of this method's
+        # signature, we don't encode either into the token's payload, and thus
+        # just pass the both back through to the client as part of token_data.
         # this will still give the client an indication of how long the token
-        # will last.
+        # will last. Instead, the token's creation time is encoded into the
+        # Fernet format itself, and the token's expiration is just computed
+        # from that based on CONF.
         token_data = self.v3_token_data_helper.get_token_data(
             user_id,
             method_names,
@@ -108,21 +118,18 @@ class Provider(common.BaseProvider):
             token_id = token_format.create_token(
                 user_id,
                 project_id,
-                token_data['token']['issued_at'],
                 token_data['token']['audit_ids'],
                 token_data['token']['OS-TRUST:trust']['id'])
         elif domain_id is None and project_id is None:
             token_format = self.token_format_map[fm.UNSCOPED_TOKEN_PREFIX]
             token_id = token_format.create_token(
                 user_id,
-                token_data['token']['issued_at'],
                 token_data['token']['audit_ids'])
         else:
             token_format = self.token_format_map[fm.SCOPED_TOKEN_PREFIX]
             token_id = token_format.create_token(
                 user_id,
                 project_id,
-                token_data['token']['issued_at'],
                 token_data['token']['audit_ids'])
 
         return token_id, token_data
@@ -136,6 +143,24 @@ class Provider(common.BaseProvider):
 
         """
         raise exception.NotImplemented()
+
+    @classmethod
+    def _creation_time(cls, fernet_token):
+        """Returns the creation time of a valid Fernet token."""
+        # fernet tokens are base64 encoded, so we need to unpack them first
+        token_bytes = base64.urlsafe_b64decode(fernet_token)
+
+        # slice into the byte array to get just the timestamp
+        timestamp_bytes = token_bytes[TIMESTAMP_START:TIMESTAMP_END]
+
+        # convert those bytes to an integer
+        # (it's a 64-bit "unsigned long long int" in C)
+        timestamp_int = struct.unpack(">Q", timestamp_bytes)[0]
+
+        # and with an integer, it's trivial to produce a datetime object
+        created_at = datetime.datetime.utcfromtimestamp(timestamp_int)
+
+        return created_at
 
     def validate_v3_token(self, token_ref):
         """Validate a V3 formatted token.
@@ -164,30 +189,31 @@ class Provider(common.BaseProvider):
         trust_ref = None
 
         if token_format == fm.UNSCOPED_TOKEN_PREFIX:
-            (user_id, issued_at, audit_ids) = (
-                token_formatter.validate_token(token_str))
+            (user_id, audit_ids) = token_formatter.validate_token(token_str)
         elif token_format == fm.SCOPED_TOKEN_PREFIX:
-            (user_id, project_id, issued_at, audit_ids) = (
+            (user_id, project_id, audit_ids) = (
                 token_formatter.validate_token(token_str))
         elif token_format == fm.TRUST_TOKEN_PREFIX:
-            (user_id, project_id, issued_at, audit_ids,
-                trust_id) = token_formatter.validate_token(token_str)
+            (user_id, project_id, audit_ids, trust_id) = (
+                token_formatter.validate_token(token_str))
 
             trust_ref = self.trust_api.get_trust(trust_id)
 
-        issued_at = timeutils.parse_isotime(issued_at)
+        # rather than appearing in the payload, the creation time is encoded
+        # into the token format itself
+        created_at = Provider._creation_time(token_str)
 
         # because expiration is not encoded into the token, we need to compute
         # it dynamically
         lifespan = datetime.timedelta(seconds=CONF.token.expiration)
-        expires_at = timeutils.normalize_time(issued_at + lifespan)
+        expires_at = timeutils.normalize_time(created_at + lifespan)
 
         return self.v3_token_data_helper.get_token_data(
             user_id,
             method_names=['password', 'token'],
             project_id=project_id,
             expires=timeutils.isotime(expires_at),
-            issued_at=timeutils.isotime(issued_at),
+            issued_at=timeutils.isotime(created_at),
             trust=trust_ref,
             audit_info=audit_ids)
 
