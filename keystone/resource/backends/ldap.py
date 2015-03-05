@@ -184,6 +184,9 @@ class Resource(resource.Driver):
             self.project.create(data))
 
     def update_project(self, tenant_id, tenant):
+        if tenant_id == CONF.identity.default_domain_id:
+            self.update_domain(tenant_id, tenant)
+
         self.project.check_allow_update()
         tenant = self._validate_default_domain(tenant)
         if 'name' in tenant:

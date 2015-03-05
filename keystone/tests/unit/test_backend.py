@@ -3372,7 +3372,6 @@ class IdentityTests(object):
         self.resource_api.driver.update_project(domain_id, {'enabled': False})
         # Delete domain, bypassing resource api manager
         self.resource_api.driver.delete_domain(domain_id)
-        self.resource_api.driver.delete_project(domain_id)
         # Verify get_domain still returns the domain
         self.assertDictContainsSubset(
             domain_ref, self.resource_api.get_domain(domain_id))
@@ -3539,7 +3538,8 @@ class IdentityTests(object):
     def test_get_default_domain_by_name(self):
         domain_name = 'default'
 
-        domain = {'id': uuid.uuid4().hex, 'name': domain_name, 'enabled': True}
+        domain = {'id': uuid.uuid4().hex, 'name': domain_name,
+                  'description': uuid.uuid4().hex, 'enabled': True}
         self.resource_api.create_domain(domain['id'], domain)
 
         domain_ref = self.resource_api.get_domain_by_name(domain_name)
