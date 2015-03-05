@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_af4348ad",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-05T23:56:26Z",
+      "side": 1,
+      "message": "shouldn\u0027t have to rename this import.",
+      "revId": "619fa9c6a2c7ee595fef488e080a48c3fa86e918",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
