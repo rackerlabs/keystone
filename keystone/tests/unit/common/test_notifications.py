@@ -24,7 +24,6 @@ from pycadf import cadftype
 from pycadf import eventfactory
 from pycadf import resource as cadfresource
 
-from keystone.common import dependency
 from keystone import notifications
 from keystone.tests import unit
 from keystone.tests.unit import test_v3
@@ -697,7 +696,7 @@ class TestEventCallbacks(test_v3.RestfulTestCase):
     def test_provider_event_callbacks_subscription(self):
         callback_called = []
 
-        @dependency.provider('foo_api')
+        @notifications.listener
         class Foo(object):
             def __init__(self):
                 self.event_callbacks = {
@@ -714,7 +713,7 @@ class TestEventCallbacks(test_v3.RestfulTestCase):
         self.assertEqual([True], callback_called)
 
     def test_invalid_event_callbacks(self):
-        @dependency.provider('foo_api')
+        @notifications.listener
         class Foo(object):
             def __init__(self):
                 self.event_callbacks = 'bogus'
@@ -722,7 +721,7 @@ class TestEventCallbacks(test_v3.RestfulTestCase):
         self.assertRaises(ValueError, Foo)
 
     def test_invalid_event_callbacks_event(self):
-        @dependency.provider('foo_api')
+        @notifications.listener
         class Foo(object):
             def __init__(self):
                 self.event_callbacks = {CREATED_OPERATION: 'bogus'}
