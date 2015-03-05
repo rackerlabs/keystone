@@ -130,20 +130,18 @@ class UnscopedTokenFormatter(BaseTokenFormatter):
 
     token_format = fm.UNSCOPED_TOKEN_PREFIX
 
-    def create_token(self, user_id, created_at, expires_at, audit_ids):
+    def create_token(self, user_id, created_at, audit_ids):
         """Create a unscoped token.
 
         :param user_id: identifier of the user in the token request
         :param issued_at_int: datetime of the token's creation
-        :param expires_at_int: datetime of the token's expiration
         :param audit_ids: list of the token's audit IDs
         :returns: a string representing the token
 
         """
         b_user_id = self._convert_uuid_hex_to_bytes(user_id)
         issued_at_int = self._convert_time_string_to_int(created_at)
-        expires_at_int = self._convert_time_string_to_int(expires_at)
-        payload = (b_user_id, issued_at_int, expires_at_int, audit_ids)
+        payload = (b_user_id, issued_at_int, audit_ids)
 
         return self.pack(payload)
 
@@ -159,43 +157,36 @@ class UnscopedTokenFormatter(BaseTokenFormatter):
         # Rebuild and retrieve token information from the token string
         b_user_id = payload[0]
         issued_at_ts = payload[1]
-        expires_at_ts = payload[2]
-        audit_ids = payload[3]
+        audit_ids = payload[2]
 
         user_id = self._convert_uuid_bytes_to_hex(b_user_id)
 
         issued_at_str = self._convert_int_to_time_string(issued_at_ts)
-        expires_at_str = self._convert_int_to_time_string(expires_at_ts)
 
-        return (user_id, issued_at_str, expires_at_str, audit_ids)
+        return (user_id, issued_at_str, audit_ids)
 
 
 class ScopedTokenFormatter(BaseTokenFormatter):
 
     token_format = fm.SCOPED_TOKEN_PREFIX
 
-    def create_token(self, user_id, project_id, created_at, expires_at,
-                     audit_ids):
+    def create_token(self, user_id, project_id, created_at, audit_ids):
         """Create a standard formatted token.
 
         :param user_id: ID of the user in the token request
         :param project_id: ID of the project to scope to
         :param created_at: datetime of the token's creation
-        :param expires_at: datetime of the token's expiration
         :param audit_ids: list of the token's audit IDs
         :returns: a string representing the token
 
         """
         issued_at_int = self._convert_time_string_to_int(created_at)
-        expires_at_int = self._convert_time_string_to_int(expires_at)
         b_user_id = self._convert_uuid_hex_to_bytes(user_id)
         if project_id:
             b_scope_id = self._convert_uuid_hex_to_bytes(project_id)
-            payload = (
-                b_user_id, b_scope_id, issued_at_int, expires_at_int,
-                audit_ids)
+            payload = (b_user_id, b_scope_id, issued_at_int, audit_ids)
         else:
-            payload = (b_user_id, issued_at_int, expires_at_int, audit_ids)
+            payload = (b_user_id, issued_at_int, audit_ids)
 
         return self.pack(payload)
 
@@ -214,12 +205,10 @@ class ScopedTokenFormatter(BaseTokenFormatter):
         if isinstance(payload[1], str):
             b_project_id = payload[1]
             issued_at_ts = payload[2]
-            expires_at_ts = payload[3]
-            audit_ids = payload[4]
+            audit_ids = payload[3]
         else:
             issued_at_ts = payload[1]
-            expires_at_ts = payload[2]
-            audit_ids = payload[3]
+            audit_ids = payload[2]
 
         # Uncompress the IDs
         user_id = self._convert_uuid_bytes_to_hex(b_user_id)
@@ -227,37 +216,34 @@ class ScopedTokenFormatter(BaseTokenFormatter):
         if b_project_id:
             project_id = self._convert_uuid_bytes_to_hex(b_project_id)
 
-        # Generate created at and expires at times
+        # Generate created at time
         issued_at_str = self._convert_int_to_time_string(issued_at_ts)
-        expires_at_str = self._convert_int_to_time_string(expires_at_ts)
 
-        return (user_id, project_id, issued_at_str, expires_at_str, audit_ids)
+        return (user_id, project_id, issued_at_str, audit_ids)
 
 
 class TrustTokenFormatter(BaseTokenFormatter):
 
     token_format = fm.TRUST_TOKEN_PREFIX
 
-    def create_token(self, user_id, project_id, created_at, expires_at,
-                     audit_ids, trust_id):
+    def create_token(self, user_id, project_id, created_at, audit_ids,
+                     trust_id):
         """Create a trust formatted token.
 
         :param user_id: ID of the user in the token request
         :param project_id: ID of the project to scope to
         :param created_at: datetime of the token's creation
-        :param expires_at: datetime of the token's expiration
         :param audit_ids: list of the token's audit IDs
         :param trust_id: ID of the trust in effect
         :returns: a string representing the token
 
         """
         issued_at_int = self._convert_time_string_to_int(created_at)
-        expires_at_int = self._convert_time_string_to_int(expires_at)
         b_user_id = self._convert_uuid_hex_to_bytes(user_id)
         b_project_id = self._convert_uuid_hex_to_bytes(project_id)
         b_trust_id = self._convert_uuid_hex_to_bytes(trust_id)
         payload = (b_user_id, b_project_id, b_trust_id, issued_at_int,
-                   expires_at_int, audit_ids)
+                   audit_ids)
 
         return self.pack(payload)
 
@@ -275,16 +261,13 @@ class TrustTokenFormatter(BaseTokenFormatter):
         b_project_id = payload[1]
         b_trust_id = payload[2]
         issued_at_ts = payload[3]
-        expires_at_ts = payload[4]
-        audit_ids = payload[5]
+        audit_ids = payload[4]
 
         # Uncompress the IDs
         user_id = self._convert_uuid_bytes_to_hex(b_user_id)
         project_id = self._convert_uuid_bytes_to_hex(b_project_id)
         trust_id = self._convert_uuid_bytes_to_hex(b_trust_id)
-        # Generate created at and expires at times
+        # Generate created at time
         issued_at_str = self._convert_int_to_time_string(issued_at_ts)
-        expires_at_str = self._convert_int_to_time_string(expires_at_ts)
 
-        return (user_id, project_id, issued_at_str, expires_at_str, audit_ids,
-                trust_id)
+        return (user_id, project_id, issued_at_str, audit_ids, trust_id)
