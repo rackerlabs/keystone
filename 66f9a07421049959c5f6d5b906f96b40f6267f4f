@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_748a7ac0",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-05T20:09:03Z",
+      "side": 1,
+      "message": "I think we should mention that sqlite database is in-memory too. They are very different.",
+      "revId": "66f9a07421049959c5f6d5b906f96b40f6267f4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d4540623",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-05T20:09:03Z",
+      "side": 1,
+      "message": "There is also a possibility to run tests under real databases, but it seems to be undocumented. Of course, it will be removed with functional tests but for now it can be documented here.",
+      "revId": "66f9a07421049959c5f6d5b906f96b40f6267f4f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_2fe1b19a",
         "filename": "doc/source/developing.rst",
         "patchSetId": 1
