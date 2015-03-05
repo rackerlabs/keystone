@@ -964,6 +964,15 @@ class SqlUpgradeTests(SqlMigrateBase):
         # projects were removed
         self.assertEqual(4, projects.count())
 
+    '''def test_drop_domain_table(self):
+        self.upgrade(69)
+
+        self.assertTableDoesNotExist('domain')
+
+        self.downgrade(68)
+
+        self.assertTableExists('domain')'''
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
