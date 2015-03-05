@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_ae94a3e2",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-05T19:30:30Z",
+      "side": 1,
+      "message": "Does the resulting string need to be decodable? The -2 here is wrong in the general case. Maybe you really want .rstrip(\u0027\u003d\u0027)?",
+      "revId": "d344f0c3fbef1e2dcd22105a3f70e49a5bed9056",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
