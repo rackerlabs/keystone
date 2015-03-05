@@ -682,7 +682,7 @@ class SqlUpgradeTests(SqlMigrateBase):
         other_project['id'] = uuid.uuid4().hex
         self.insert_dict(session, 'project', other_project)
 
-    def test_update_domain_id_FK_project_table(self):
+    def test_drop_domain_id_FK_project_table(self):
         self.upgrade(77)
         self.assertFalse(self.does_fk_exist('project', 'domain_id'))
 
