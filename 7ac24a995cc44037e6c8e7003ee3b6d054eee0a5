@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_32f91bea",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 836,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-03-05T08:12:29Z",
+      "side": 1,
+      "message": "Will definitely look into the type",
+      "parentUuid": "9a80dd14_9449d7d2",
+      "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_d418af86",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 13
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_b2526bdb",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-03-05T08:12:29Z",
+      "side": 1,
+      "message": "Not sure where is the third party imports?",
+      "parentUuid": "9a80dd14_d418af86",
+      "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_f49a1313",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 13
@@ -47,6 +83,24 @@
       "writtenOn": "2015-03-05T07:56:34Z",
       "side": 1,
       "message": "try to create docstrings in the following format:\n\n  \"\"\"one line summary.\n\n  additional notes that should span\n  multiple lines\n  \"\"\"\n\nit\u0027s summarized here: https://www.python.org/dev/peps/pep-0257/#multi-line-docstrings",
+      "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b2698b8d",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-03-05T08:12:29Z",
+      "side": 1,
+      "message": "Got that.",
+      "parentUuid": "9a80dd14_f49a1313",
       "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -217,6 +271,24 @@
       "writtenOn": "2015-03-05T07:56:34Z",
       "side": 1,
       "message": "i\u0027d prefer that the value for this variable actually use some function instead of hardcoding it.\n\n  self.idp_id \u003d base64(sha256(self.client_issuer))\n\nthis way, in case someone changes the client issuer, we are not broken.",
+      "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f2e223d4",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-03-05T08:12:29Z",
+      "side": 1,
+      "message": "Agree",
+      "parentUuid": "9a80dd14_373bcd3b",
       "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
