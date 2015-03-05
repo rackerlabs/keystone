@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_e3d172fc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 9729
+      },
+      "writtenOn": "2015-03-05T11:08:49Z",
+      "side": 1,
+      "message": "include abfab",
+      "revId": "b89488b25b46d65e5c1cacd417e508e90ca10351",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_ecb0a3df",
         "filename": "keystone/common/config.py",
         "patchSetId": 3
@@ -31,6 +48,23 @@
       "side": 1,
       "message": "I\u0027ll remove the methods that require some modifications of the Apache config.",
       "parentUuid": "9a80dd14_ecb0a3df",
+      "revId": "b89488b25b46d65e5c1cacd417e508e90ca10351",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_63a2e2af",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 840,
+      "author": {
+        "id": 9729
+      },
+      "writtenOn": "2015-03-05T11:08:49Z",
+      "side": 1,
+      "message": "cfg.StrOpt(\u0027abfab\u0027,\n\t\t\tdefault\u003d\u0027keystone.auth.plugins.mapped.Mapped\u0027,\n\t\t\thelp\u003d\u0027The ABFAB auth plugin module.\u0027),",
       "revId": "b89488b25b46d65e5c1cacd417e508e90ca10351",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
