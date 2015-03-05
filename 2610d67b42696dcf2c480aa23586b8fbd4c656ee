@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_5fd66fc6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-05T20:25:23Z",
+      "side": 1,
+      "message": "Add closes-bug for https://bugs.launchpad.net/keystone/+bug/1428829",
+      "revId": "2610d67b42696dcf2c480aa23586b8fbd4c656ee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_d1e1789b",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 1
