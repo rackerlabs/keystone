@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_9449d7d2",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 836,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-05T07:56:34Z",
+      "side": 1,
+      "message": "oops, i meant to look at \u0027cfg.MultiStrOpt\u0027\n\nthis way you can specify \n  trusted_issuer \u003d \u0027CN\u003dfoo,OU\u003dkeystone,O\u003dopenstack\u0027\n  trusted_issuer \u003d \u0027CN\u003dbar,OU\u003dkeystone,O\u003dopenstack\u0027\n\nit will all be in an array, which should default to []",
+      "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d418af86",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-05T07:56:34Z",
+      "side": 1,
+      "message": "move six to 3rd party imports",
+      "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f49a1313",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-05T07:56:34Z",
+      "side": 1,
+      "message": "try to create docstrings in the following format:\n\n  \"\"\"one line summary.\n\n  additional notes that should span\n  multiple lines\n  \"\"\"\n\nit\u0027s summarized here: https://www.python.org/dev/peps/pep-0257/#multi-line-docstrings",
+      "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b47edbac",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-05T07:56:34Z",
+      "side": 1,
+      "message": "call it \u0027HTTP request environment\u0027",
+      "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_745b8354",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-05T07:56:34Z",
+      "side": 1,
+      "message": "prefix this function with _ to indicate that it\u0027s private",
+      "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d75ef1e8",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-05T07:56:34Z",
+      "side": 1,
+      "message": "fix up the doc string formatting here,\n\n  \"\"\"one liner summary.\n\n  multi-line comments\n  go here\n  \"\"\"",
+      "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f7d85555",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-05T07:56:34Z",
+      "side": 1,
+      "message": "fix up the doc string formatting here,\n\n  \"\"\"one liner summary.\n\n  multi-line comments\n  go here\n  \"\"\"",
+      "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d7d35136",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-05T07:56:34Z",
+      "side": 1,
+      "message": "i think this is already covered by _build_scope_info in tokenless_auth.py ?",
+      "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_77e4650d",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-05T07:56:34Z",
+      "side": 1,
+      "message": "this should go into it\u0027s own grouping above oslo_config import, since uuid is a standard library",
+      "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d7a191aa",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-05T07:56:34Z",
+      "side": 1,
+      "message": "the \u0027methods\u0027 option doesn\u0027t exist for CONF.tokenless_auth, only trusted_issuer, protocol and issuer\n\nalso, if you meant to change CONF.auth.methods, it\u0027s not necessary since those 3 auth methods are the default",
+      "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_77ff0535",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-05T07:56:34Z",
+      "side": 1,
+      "message": "is this necessary?",
+      "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_9749d9d2",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-05T07:56:34Z",
+      "side": 1,
+      "message": "these, and most others can all be uuids",
+      "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_373bcd3b",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-05T07:56:34Z",
+      "side": 1,
+      "message": "i\u0027d prefer that the value for this variable actually use some function instead of hardcoding it.\n\n  self.idp_id \u003d base64(sha256(self.client_issuer))\n\nthis way, in case someone changes the client issuer, we are not broken.",
+      "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
