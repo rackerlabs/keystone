@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_c021a0fc",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-05T21:22:21Z",
+      "side": 1,
+      "message": "Minor change needed here, but we need to ensure that the table is only the version that would have this issue, we don;t want this to run down the line now that it\u0027s been fixed. \n\nSo this should only be able to occur at migration 2 for this table? otherwise it should be fixed and/or never had the issue. See line 173 for an example of this.",
+      "revId": "7ed911f871ae969bcca317a6576fecb53208848a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
