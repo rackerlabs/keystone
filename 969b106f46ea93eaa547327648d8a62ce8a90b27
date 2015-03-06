@@ -33,6 +33,24 @@
       "revId": "969b106f46ea93eaa547327648d8a62ce8a90b27",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_fdae2f97",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1067,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2015-03-06T10:33:33Z",
+      "side": 1,
+      "message": "Yes, it is a way of resolving the issue, this is why I declared them in DEFAULT_AUTH_METHODS in a previous version of the patch.\n\nThe cause of the error is that we\u0027re in a rather new situation where some auth methods are not declared as default but already have a default driver. When running setup_authentication, the behavior is to declare a minimal option (line 1066) and add it to the conf, but then we hit a duplicate option error in oslo.config (since the default option is different). Since we hit this in a very specific context, I chose to pass the exception silently. Any other non-default auth method will be registered the usual way.\n\nI think it\u0027s better to leave the auth methods that require some specific apache configuration out of the DEFAULT_AUTH_METHODS and go this way. WDYT ?",
+      "parentUuid": "9a80dd14_758c1d80",
+      "revId": "969b106f46ea93eaa547327648d8a62ce8a90b27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
