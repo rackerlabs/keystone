@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_252425ae",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-06T15:15:19Z",
+      "side": 1,
+      "message": "why not split this method into two?",
+      "revId": "84ed5907de45778ea31fec01243122f4d04ec20d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
