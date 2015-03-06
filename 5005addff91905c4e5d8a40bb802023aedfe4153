@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_a61cbac2",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-06T02:42:20Z",
+      "side": 1,
+      "message": "also, fwiw, you can add these to https://github.com/openstack/keystone/blob/3236e5e7c6175898ec6e0fec9e9ff9d5b0775ae5/keystone/tests/unit/mapping_fixtures.py if you so desire",
+      "revId": "5005addff91905c4e5d8a40bb802023aedfe4153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_46cf7e7f",
         "filename": "keystone/tests/unit/test_middleware.py",
         "patchSetId": 14
