@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_a05e6210",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-06T01:17:40Z",
+      "side": 1,
+      "message": "what was wrong with it?",
+      "revId": "d4c88c02ccd61fce9522b093edef0b074af87a21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_c027d6b4",
         "filename": "keystone/common/ldap/core.py",
         "patchSetId": 3
