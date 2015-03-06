@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_78aebbe7",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-06T17:33:09Z",
+      "side": 1,
+      "message": "I don\u0027t think this is true. The token now relies on a completely external process that probably should match up, but we can\u0027t really guarantee it. The only way I can think of to guarantee it is to encode in the key file an expiration and to respect that when looking through the keys.",
+      "revId": "2c69d8cc3af2f844044ad1fe96760b1d32505831",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_18c93fac",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-06T17:33:09Z",
+      "side": 1,
+      "message": "Needs an update",
+      "revId": "2c69d8cc3af2f844044ad1fe96760b1d32505831",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b8e2f32c",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 197,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-06T17:33:09Z",
+      "side": 1,
+      "message": "Needs an update",
+      "revId": "2c69d8cc3af2f844044ad1fe96760b1d32505831",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_38f7e3f6",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 254,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-06T17:33:09Z",
+      "side": 1,
+      "message": "Needs an update.",
+      "revId": "2c69d8cc3af2f844044ad1fe96760b1d32505831",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
