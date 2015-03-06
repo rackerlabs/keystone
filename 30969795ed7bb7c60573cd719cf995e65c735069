@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_9c9c5ec2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-03-06T06:56:55Z",
+      "side": 1,
+      "message": "Better written as:\n\nAdd [database] section to Configuration Files section of the keystone configuration document",
+      "revId": "30969795ed7bb7c60573cd719cf995e65c735069",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_767c7221",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
