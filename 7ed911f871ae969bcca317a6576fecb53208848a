@@ -16,6 +16,24 @@
       "revId": "7ed911f871ae969bcca317a6576fecb53208848a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_06af3495",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 245,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-06T11:30:55Z",
+      "side": 1,
+      "message": "Actually, it could be from migration 2 to 5 so I converted in int and considered version previous than 6. Is ok the conversion or it use possible in the future to use not numeri string?",
+      "parentUuid": "9a80dd14_c021a0fc",
+      "revId": "7ed911f871ae969bcca317a6576fecb53208848a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
