@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_dbfe2a6b",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-06T08:38:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_af521811",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_cc359a47",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 24
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-04T22:36:02Z",
       "side": 1,
       "message": "update should return 200 OK.",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_20cab74f",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-06T08:38:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_cc359a47",
       "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_dbd1cace",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-06T08:38:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_ac094697",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_ccfe7a6b",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 24
@@ -64,6 +118,24 @@
       "writtenOn": "2015-03-04T22:36:02Z",
       "side": 1,
       "message": "suggest use group\u003dNone, option\u003dNone instead.",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_1bdb62ee",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-06T08:38:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_ccfe7a6b",
       "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_00b693d9",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-06T08:38:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_8f12b4b2",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_4fbefc00",
         "filename": "keystone/resource/routers.py",
         "patchSetId": 24
@@ -98,6 +188,24 @@
       "writtenOn": "2015-03-04T22:36:02Z",
       "side": 1,
       "message": "this relationship isn\u0027t mentioned in the spec.",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_92f482f3",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-06T08:38:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_4fbefc00",
       "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_52ea0a10",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-06T08:38:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_cf410c0d",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_cfdd8c44",
         "filename": "keystone/resource/routers.py",
         "patchSetId": 24
@@ -132,6 +258,24 @@
       "writtenOn": "2015-03-04T22:36:02Z",
       "side": 1,
       "message": "a variable should be created so it can be shared with the other use of config_group at line 69.",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_325116d9",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-06T08:38:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_cfdd8c44",
       "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_60f2ef9b",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-06T08:38:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_8fdd5417",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_4ff27c9b",
         "filename": "keystone/tests/unit/test_v3_domain_config.py",
         "patchSetId": 24
@@ -166,6 +328,24 @@
       "writtenOn": "2015-03-04T22:36:02Z",
       "side": 1,
       "message": "This should have returned 200 since the resource already existed.",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_9259e200",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-06T08:38:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_4ff27c9b",
       "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_32a67654",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-06T08:38:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_af369801",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_efa41059",
         "filename": "keystone/tests/unit/test_v3_domain_config.py",
         "patchSetId": 24
@@ -200,6 +398,24 @@
       "writtenOn": "2015-03-04T22:36:02Z",
       "side": 1,
       "message": "there should be a test for a group that doesn\u0027t exist.",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_95ac6ca2",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-06T08:38:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_efa41059",
       "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +439,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_55a2f4ae",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-06T08:38:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_cfb66c8a",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_cf44ac76",
         "filename": "keystone/tests/unit/test_v3_domain_config.py",
         "patchSetId": 24
@@ -234,6 +468,24 @@
       "writtenOn": "2015-03-04T22:36:02Z",
       "side": 1,
       "message": "why 201 and not 200? what was created?",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_32683687",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-06T08:38:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_cf44ac76",
       "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +509,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_04ba020a",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-06T08:38:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_2f22a8b9",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_8f18f485",
         "filename": "keystone/tests/unit/test_v3_domain_config.py",
         "patchSetId": 24
@@ -268,6 +538,24 @@
       "writtenOn": "2015-03-04T22:36:02Z",
       "side": 1,
       "message": "change \"group\" to \"{group}\" and \"option\" to \"{option}\"\n\nalso, there should be a test for PATCH where the option doesn\u0027t exist.",
+      "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f5904850",
+        "filename": "keystone/tests/unit/test_v3_domain_config.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-06T08:38:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_8f18f485",
       "revId": "e40ca7a6f2bfe9ac3e13bb0782cf8481bb4d1786",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
