@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_3ea45456",
+        "filename": "config-generator/keystone.conf",
+        "patchSetId": 17
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-06T00:13:34Z",
+      "side": 1,
+      "message": "(nit) if trying to keep the pseudo-alphabetical order, place this after  oslo.middleware\n\noslo.db is messing up the alphabetical order",
+      "revId": "3ec241867335514597e998705d12ecb699b796ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_19224aa4",
+        "filename": "requirements-py3.txt",
+        "patchSetId": 17
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-06T00:13:34Z",
+      "side": 1,
+      "message": "(nit) align license info with 3 others around it",
+      "revId": "3ec241867335514597e998705d12ecb699b796ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_de7a58f0",
+        "filename": "requirements.txt",
+        "patchSetId": 17
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-06T00:13:34Z",
+      "side": 1,
+      "message": "(nit) align license info with 3 others around it",
+      "revId": "3ec241867335514597e998705d12ecb699b796ff",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
