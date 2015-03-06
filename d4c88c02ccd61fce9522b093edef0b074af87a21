@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_c027d6b4",
+        "filename": "keystone/common/ldap/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1756,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-06T01:17:17Z",
+      "side": 1,
+      "message": "this would be easier to understand if satisfied_filters was modified here rather than in the build_filter function.",
+      "revId": "d4c88c02ccd61fce9522b093edef0b074af87a21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_c04ef66e",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-06T01:17:17Z",
+      "side": 1,
+      "message": "update the docstring since this isn\u0027t happening any more.",
+      "revId": "d4c88c02ccd61fce9522b093edef0b074af87a21",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
