@@ -16,6 +16,24 @@
       "revId": "58476163406ff6c0cb9d5daa6f990fe177bf61e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4f8773d7",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2247,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-06T16:15:18Z",
+      "side": 1,
+      "message": "This must have snuck in during the rebase,",
+      "parentUuid": "9a80dd14_2faa3f85",
+      "revId": "58476163406ff6c0cb9d5daa6f990fe177bf61e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
