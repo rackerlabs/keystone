@@ -34,6 +34,24 @@
       "revId": "817b8946f76d0149fb44f4139530de4aeec2240a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_ef010706",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-06T16:05:31Z",
+      "side": 1,
+      "message": "that\u0027s the drawback of reviewing chaines of of patches :(",
+      "parentUuid": "9a80dd14_4cece18f",
+      "revId": "817b8946f76d0149fb44f4139530de4aeec2240a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
