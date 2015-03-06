@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_14567506",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-06T14:27:05Z",
+      "side": 1,
+      "message": "more a question to understand the design: why this call and the following one not controller.protected? this wouldn\u0027t cause anyone to be able to perform these actions?",
+      "revId": "15ab89e98e108732707cb81b39b4a266c660e4d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
