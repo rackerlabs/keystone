@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_c77dfa1d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-06T23:53:42Z",
+      "side": 1,
+      "message": "It is still longer than 50 chars though",
+      "parentUuid": "9a80dd14_9c9c5ec2",
+      "revId": "30969795ed7bb7c60573cd719cf995e65c735069",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_767c7221",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
