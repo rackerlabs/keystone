@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_95d19159",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 842,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-06T08:37:29Z",
+      "side": 1,
+      "message": "s/oAuth1/OAuth 1.0",
+      "revId": "969b106f46ea93eaa547327648d8a62ce8a90b27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_758c1d80",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 1067,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-06T08:37:29Z",
+      "side": 1,
+      "message": "what exactly is causing this error? would adding all the options to DEFAULT_AUTH_METHODS resolve the issue?",
+      "revId": "969b106f46ea93eaa547327648d8a62ce8a90b27",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
