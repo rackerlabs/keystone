@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_72797cc7",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-06T16:39:56Z",
+      "side": 1,
+      "message": "A future refactoring could be to reduce the duplication here. It looks like this same block is repeated a lot.",
+      "revId": "13f7cf70d59e5d865200f505db085a57eb3ba1eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
