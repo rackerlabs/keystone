@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_ac91ddf2",
+        "filename": "keystone/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2015-03-06T16:01:43Z",
+      "side": 1,
+      "message": "Why do you need to receive resource_manager and domain_config_manager parameters? Is not possible just to instantiate them inside the function? or use Singleton pattern to get those objects?",
+      "revId": "8d835a6ea77d82339baa8d0df8062c843454efb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_0c2029ab",
+        "filename": "keystone/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2015-03-06T16:01:43Z",
+      "side": 1,
+      "message": "What happens if the domain was already imported (in some previous keystone-manage execution)? \nShould we check if the domain is already in the database?",
+      "revId": "8d835a6ea77d82339baa8d0df8062c843454efb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
