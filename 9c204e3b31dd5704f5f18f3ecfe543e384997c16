@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_19e96ab8",
+        "filename": "doc/source/key_terms.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-06T00:23:59Z",
+      "side": 1,
+      "message": "use keystone instead of Keystone, see https://wiki.openstack.org/wiki/Documentation/Conventions#Service_and_project_names\n\nthis applies throughout the document.",
+      "revId": "9c204e3b31dd5704f5f18f3ecfe543e384997c16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
