@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_6869b6bd",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-06T20:39:32Z",
+      "side": 1,
+      "message": "a 201 Created response should have a Location header, see http://tools.ietf.org/html/rfc2616#section-10.2.2",
+      "revId": "15ab89e98e108732707cb81b39b4a266c660e4d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_14567506",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 27
@@ -31,6 +48,57 @@
       "side": 1,
       "message": "I have the same question",
       "parentUuid": "9a80dd14_14567506",
+      "revId": "15ab89e98e108732707cb81b39b4a266c660e4d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_48aa32d5",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-06T20:39:32Z",
+      "side": 1,
+      "message": "I don\u0027t think it\u0027s going to work to have the same relationship for different paths? It\u0027s actually better to have a different relationships for different paths (i.e., it was right before, just need to update the spec).",
+      "revId": "15ab89e98e108732707cb81b39b4a266c660e4d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_88ab4ad5",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-06T20:39:32Z",
+      "side": 1,
+      "message": "same comment here.",
+      "revId": "15ab89e98e108732707cb81b39b4a266c660e4d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_083cba92",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-06T20:39:32Z",
+      "side": 1,
+      "message": "I think this is just going to replace the one that was already there.",
       "revId": "15ab89e98e108732707cb81b39b4a266c660e4d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
