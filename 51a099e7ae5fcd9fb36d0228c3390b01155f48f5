@@ -16,6 +16,23 @@
       "revId": "51a099e7ae5fcd9fb36d0228c3390b01155f48f5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_282eb092",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-06T18:59:24Z",
+      "side": 1,
+      "message": "actually, this is the call that will break since \u0027default\u0027 won\u0027t be converted successfully to bytes.",
+      "revId": "51a099e7ae5fcd9fb36d0228c3390b01155f48f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
