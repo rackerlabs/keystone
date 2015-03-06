@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_7227bcca",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-06T17:08:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_c8546223",
+      "revId": "8405516294858e65a8596fec635cc60c56001133",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_283dfede",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 8
@@ -64,6 +82,24 @@
       "writtenOn": "2015-03-05T23:17:56Z",
       "side": 1,
       "message": "leave the trailing ,",
+      "revId": "8405516294858e65a8596fec635cc60c56001133",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_fd061d1c",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-06T17:08:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_283dfede",
       "revId": "8405516294858e65a8596fec635cc60c56001133",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +123,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_7d406d34",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-06T17:08:47Z",
+      "side": 1,
+      "message": "Only reason I didn\u0027t assign the ids to \u0027audit_ids\u0027 before using them here is because we don\u0027t need to compare them or validate them, so there isn\u0027t a need to assign them to anything since we\u0027re not asserting they didn\u0027t change.",
+      "parentUuid": "9a80dd14_682616d0",
+      "revId": "8405516294858e65a8596fec635cc60c56001133",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_a8300e02",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 8
@@ -98,6 +152,24 @@
       "writtenOn": "2015-03-05T23:17:56Z",
       "side": 1,
       "message": "leave the trailing ,",
+      "revId": "8405516294858e65a8596fec635cc60c56001133",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_3d7275ad",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-06T17:08:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_a8300e02",
       "revId": "8405516294858e65a8596fec635cc60c56001133",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +193,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_9d8e0178",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-06T17:08:47Z",
+      "side": 1,
+      "message": "Yep, it says in the doc string that it\u0027s suppose to generate a URL-safe string.",
+      "parentUuid": "9a80dd14_e32789b4",
+      "revId": "8405516294858e65a8596fec635cc60c56001133",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_e375c998",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 8
@@ -132,6 +222,24 @@
       "writtenOn": "2015-03-05T23:17:56Z",
       "side": 1,
       "message": "126-129 is essentially:\n\n audit_ids_in_bytes \u003d map(provider.random_urlsafe_str_to_bytes, audit_ids)\n\nalso, would be easier to at line 125\n\n audit_ids \u003d map(provider.random_urlsafe_str_to_bytes, audit_ids)",
+      "revId": "8405516294858e65a8596fec635cc60c56001133",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_1825bf5b",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-06T17:08:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_e375c998",
       "revId": "8405516294858e65a8596fec635cc60c56001133",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +263,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_f8c1cb54",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-06T17:08:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_63de396f",
+      "revId": "8405516294858e65a8596fec635cc60c56001133",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_83d96d85",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 8
@@ -166,6 +292,24 @@
       "writtenOn": "2015-03-05T23:17:56Z",
       "side": 1,
       "message": "use map()",
+      "revId": "8405516294858e65a8596fec635cc60c56001133",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d8bc07df",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-06T17:08:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_83d96d85",
       "revId": "8405516294858e65a8596fec635cc60c56001133",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
