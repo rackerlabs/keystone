@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_6647221e",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-06T02:40:33Z",
+      "side": 1,
+      "message": "this will error out now that _is_scoped was removed",
+      "revId": "5005addff91905c4e5d8a40bb802023aedfe4153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4673fe7f",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-06T02:40:33Z",
+      "side": 1,
+      "message": "whats the benefit of the sqlTests mixin?",
+      "revId": "5005addff91905c4e5d8a40bb802023aedfe4153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_46cf7e7f",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-06T02:40:33Z",
+      "side": 1,
+      "message": "use () instead of \\",
+      "revId": "5005addff91905c4e5d8a40bb802023aedfe4153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_06b2e6e5",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 412,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-06T02:40:33Z",
+      "side": 1,
+      "message": "these 4 lines are repeated a bunch, why not create a private function called\n\n  _assert_tokenless_auth_context(context):",
+      "revId": "5005addff91905c4e5d8a40bb802023aedfe4153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_269e0a57",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-06T02:40:33Z",
+      "side": 1,
+      "message": "this should be:\n\n  self.assertEqual(self.project[\u0027id\u0027], context[\u0027project_id\u0027])\n\nso it\u0027s:\n\n  assertEqual(expected, observed)",
+      "revId": "5005addff91905c4e5d8a40bb802023aedfe4153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_46f93e7f",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-06T02:40:33Z",
+      "side": 1,
+      "message": "in the tokenless_auth.py file, 6 new exceptions are being raises, but you\u0027re only testing for one, which makes me think that the coverage is lacking, can you look into adding more malicious tests?",
+      "revId": "5005addff91905c4e5d8a40bb802023aedfe4153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_86a096a0",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 485,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-06T02:40:33Z",
+      "side": 1,
+      "message": "use assertIn, more info below",
+      "revId": "5005addff91905c4e5d8a40bb802023aedfe4153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_6691e251",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-06T02:40:33Z",
+      "side": 1,
+      "message": "theres a bunch of instances of self.project[\u0027id\u0027], but you could just use self.project_id, not a big deal, but it\u0027ll be nice to be consistent.\n\nsame goes for domain_id",
+      "revId": "5005addff91905c4e5d8a40bb802023aedfe4153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e6d79221",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 515,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-06T02:40:33Z",
+      "side": 1,
+      "message": "you can use \n\n  self.assertIn(self.role_name, context[\u0027roles\u0027])",
+      "revId": "5005addff91905c4e5d8a40bb802023aedfe4153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
