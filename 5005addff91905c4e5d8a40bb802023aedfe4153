@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_f572b10f",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-03-06T23:41:31Z",
+      "side": 1,
+      "message": "good catch, thx",
+      "parentUuid": "9a80dd14_6647221e",
+      "revId": "5005addff91905c4e5d8a40bb802023aedfe4153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_4673fe7f",
         "filename": "keystone/tests/unit/test_middleware.py",
         "patchSetId": 14
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_687268ae",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-03-06T23:41:31Z",
+      "side": 1,
+      "message": "SqlTests sets up the backend sql drivers, like the reference to self.resource_api.create_domain and self.resource_api.create_project\nBut I actually don\u0027t have to extend from tests.TestCase, SqlTests has already extend from it.",
+      "parentUuid": "9a80dd14_4673fe7f",
+      "revId": "5005addff91905c4e5d8a40bb802023aedfe4153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_a61cbac2",
         "filename": "keystone/tests/unit/test_middleware.py",
         "patchSetId": 14
@@ -47,6 +83,24 @@
       "writtenOn": "2015-03-06T02:42:20Z",
       "side": 1,
       "message": "also, fwiw, you can add these to https://github.com/openstack/keystone/blob/3236e5e7c6175898ec6e0fec9e9ff9d5b0775ae5/keystone/tests/unit/mapping_fixtures.py if you so desire",
+      "revId": "5005addff91905c4e5d8a40bb802023aedfe4153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_a8dc6074",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-03-06T23:41:31Z",
+      "side": 1,
+      "message": "that\u0027s a good idea",
+      "parentUuid": "9a80dd14_a61cbac2",
       "revId": "5005addff91905c4e5d8a40bb802023aedfe4153",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -115,6 +169,24 @@
       "writtenOn": "2015-03-06T02:40:33Z",
       "side": 1,
       "message": "in the tokenless_auth.py file, 6 new exceptions are being raises, but you\u0027re only testing for one, which makes me think that the coverage is lacking, can you look into adding more malicious tests?",
+      "revId": "5005addff91905c4e5d8a40bb802023aedfe4153",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_87f14203",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-03-06T23:41:31Z",
+      "side": 1,
+      "message": "that\u0027s right, I missed some of the test cases.",
+      "parentUuid": "9a80dd14_46f93e7f",
       "revId": "5005addff91905c4e5d8a40bb802023aedfe4153",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
