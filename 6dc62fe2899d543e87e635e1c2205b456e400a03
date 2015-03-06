@@ -16,6 +16,24 @@
       "revId": "6dc62fe2899d543e87e635e1c2205b456e400a03",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e801f806",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-06T19:21:31Z",
+      "side": 1,
+      "message": "The code can\u0027t go in the migrations, this is because the migration wont work if innodb and utf8 aren\u0027t set (enforced from oslo.db level). There is abug against oslo.db (see below comment) on this. but we still need to fix our current deployers.\n\n\nThis is the same as migration 37 (above) ~line 167",
+      "parentUuid": "9a80dd14_e89ad86c",
+      "revId": "6dc62fe2899d543e87e635e1c2205b456e400a03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
