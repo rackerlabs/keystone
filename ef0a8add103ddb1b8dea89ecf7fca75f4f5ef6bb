@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_707d0bb1",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1412,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-06T09:16:34Z",
+      "side": 1,
+      "message": "domain_id is the response here, move it to the 2nd arg",
+      "revId": "ef0a8add103ddb1b8dea89ecf7fca75f4f5ef6bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f03f3bd4",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1436,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-06T09:16:34Z",
+      "side": 1,
+      "message": "domain_id is read from response, so seems like is the test result, move to the second arg",
+      "revId": "ef0a8add103ddb1b8dea89ecf7fca75f4f5ef6bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d0131764",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1467,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-06T09:16:34Z",
+      "side": 1,
+      "message": "projects is the response here",
+      "revId": "ef0a8add103ddb1b8dea89ecf7fca75f4f5ef6bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f0165b54",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1493,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-06T09:16:34Z",
+      "side": 1,
+      "message": "domains is from response",
+      "revId": "ef0a8add103ddb1b8dea89ecf7fca75f4f5ef6bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_3008f32c",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1519,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-06T09:16:34Z",
+      "side": 1,
+      "message": "project_id from response",
+      "revId": "ef0a8add103ddb1b8dea89ecf7fca75f4f5ef6bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_50e647b5",
+        "filename": "keystone/tests/unit/test_v3_oauth1.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-06T09:16:34Z",
+      "side": 1,
+      "message": "description seems to be the expected value here",
+      "revId": "ef0a8add103ddb1b8dea89ecf7fca75f4f5ef6bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
