@@ -15,6 +15,10 @@
 
 import os
 
+from cryptography.hazmat.backends.openssl import backend
+from cryptography.hazmat.primitives.asymmetric import rsa
+from cryptography.hazmat.primitives import serialization
+
 from oslo_config import cfg
 from oslo_log import log
 
@@ -62,16 +66,9 @@ class BaseCertificateConfigure(object):
                                'valid_days': int(conf_obj.valid_days),
                                'cert_subject': conf_obj.cert_subject}
 
-        try:
-            # OpenSSL 1.0 and newer support default_md = default, olders do not
-            openssl_ver = environment.subprocess.Popen(
-                ['openssl', 'version'],
-                stdout=environment.subprocess.PIPE).stdout.read()
-            if "OpenSSL 0." in openssl_ver:
-                self.ssl_dictionary['default_md'] = 'sha1'
-        except OSError:
-            LOG.warn('Failed to invoke ``openssl version``, '
-                     'assuming is v1.0 or newer')
+        # OpenSSL 1.0 and newer support default_md = default, olders do not
+        if "OpenSSL 0." in backend.openssl_version_text():
+            self.ssl_dictionary['default_md'] = 'sha1'
         self.ssl_dictionary.update(kwargs)
 
     def exec_command(self, command):
@@ -163,20 +160,7 @@ class BaseCertificateConfigure(object):
                               group=self.use_keystone_group, log=LOG)
 
     def build_ca_cert(self):
-        ca_key_file = self.ssl_dictionary['ca_private_key']
-        utils.make_dirs(os.path.dirname(ca_key_file),
-                        mode=PRIVATE_DIR_PERMS,
-                        user=self.use_keystone_user,
-                        group=self.use_keystone_group, log=LOG)
-        if not file_exists(ca_key_file):
-            self.exec_command(['openssl', 'genrsa',
-                               '-out', '%(ca_private_key)s',
-                               '%(key_size)d'])
-        utils.set_permissions(ca_key_file,
-                              mode=PRIVATE_FILE_PERMS,
-                              user=self.use_keystone_user,
-                              group=self.use_keystone_group, log=LOG)
-
+        self.build_private_key('ca_private_key')
         ca_cert = self.ssl_dictionary['ca_cert']
         utils.make_dirs(os.path.dirname(ca_cert),
                         mode=PUBLIC_DIR_PERMS,
@@ -195,16 +179,24 @@ class BaseCertificateConfigure(object):
                               user=self.use_keystone_user,
                               group=self.use_keystone_group, log=LOG)
 
-    def build_private_key(self):
-        signing_keyfile = self.ssl_dictionary['signing_key']
-        utils.make_dirs(os.path.dirname(signing_keyfile),
+    def build_private_key(self, key_name):
+        key_file = self.ssl_dictionary[key_name]
+        key_size = self.ssl_dictionary['key_size']
+        utils.make_dirs(os.path.dirname(key_file),
                         mode=PRIVATE_DIR_PERMS,
                         user=self.use_keystone_user,
                         group=self.use_keystone_group, log=LOG)
-        if not file_exists(signing_keyfile):
-            self.exec_command(['openssl', 'genrsa', '-out', '%(signing_key)s',
-                               '%(key_size)d'])
-        utils.set_permissions(signing_keyfile,
+        if not file_exists(key_file):
+            pkey = rsa.generate_private_key(public_exponent=65537,
+                                            key_size=key_size,
+                                            backend=backend)
+            pem = pkey.private_bytes(
+                encoding=serialization.Encoding.PEM,
+                format=serialization.PrivateFormat.TraditionalOpenSSL,
+                encryption_algorithm=serialization.NoEncryption())
+            with open(key_file, 'w') as f:
+                f.write(pem)
+        utils.set_permissions(key_file,
                               mode=PRIVATE_FILE_PERMS,
                               user=self.use_keystone_user,
                               group=self.use_keystone_group, log=LOG)
@@ -245,7 +237,7 @@ class BaseCertificateConfigure(object):
 
         self.build_ssl_config_file()
         self.build_ca_cert()
-        self.build_private_key()
+        self.build_private_key('signing_key')
         self.build_signing_cert()
 
 
