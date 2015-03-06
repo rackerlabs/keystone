@@ -18,6 +18,7 @@ from oslo_log import log
 import six
 
 from keystone import exception
+from keystone.token import provider
 from keystone.token.providers.fernet import utils
 
 
@@ -127,7 +128,8 @@ class UnscopedPayload(BasePayload):
 
         """
         b_user_id = cls.convert_uuid_hex_to_bytes(user_id)
-        return (b_user_id, audit_ids)
+        b_audit_ids = map(provider.random_urlsafe_str_to_bytes, audit_ids)
+        return (b_user_id, b_audit_ids)
 
     @classmethod
     def disassemble(cls, payload):
@@ -138,7 +140,7 @@ class UnscopedPayload(BasePayload):
 
         """
         user_id = cls.convert_uuid_bytes_to_hex(payload[0])
-        audit_ids = payload[1]
+        audit_ids = map(provider.base64_encode, payload[1])
 
         return (user_id, audit_ids)
 
@@ -158,7 +160,8 @@ class DomainScopedPayload(BasePayload):
         """
         b_user_id = cls.convert_uuid_hex_to_bytes(user_id)
         b_domain_id = cls.convert_uuid_hex_to_bytes(domain_id)
-        return (b_user_id, b_domain_id, audit_ids)
+        b_audit_ids = map(provider.random_urlsafe_str_to_bytes, audit_ids)
+        return (b_user_id, b_domain_id, b_audit_ids)
 
     @classmethod
     def disassemble(cls, payload):
@@ -170,7 +173,7 @@ class DomainScopedPayload(BasePayload):
         """
         user_id = cls.convert_uuid_bytes_to_hex(payload[0])
         domain_id = cls.convert_uuid_bytes_to_hex(payload[1])
-        audit_ids = payload[2]
+        audit_ids = map(provider.base64_encode, payload[2])
 
         return (user_id, domain_id, audit_ids)
 
@@ -190,7 +193,8 @@ class ProjectScopedPayload(BasePayload):
         """
         b_user_id = cls.convert_uuid_hex_to_bytes(user_id)
         b_scope_id = cls.convert_uuid_hex_to_bytes(project_id)
-        return (b_user_id, b_scope_id, audit_ids)
+        b_audit_ids = map(provider.random_urlsafe_str_to_bytes, audit_ids)
+        return (b_user_id, b_scope_id, b_audit_ids)
 
     @classmethod
     def disassemble(cls, payload):
@@ -202,7 +206,7 @@ class ProjectScopedPayload(BasePayload):
         """
         user_id = cls.convert_uuid_bytes_to_hex(payload[0])
         project_id = cls.convert_uuid_bytes_to_hex(payload[1])
-        audit_ids = payload[2]
+        audit_ids = map(provider.base64_encode, payload[2])
 
         return (user_id, project_id, audit_ids)
 
@@ -224,8 +228,9 @@ class TrustScopedPayload(BasePayload):
         b_user_id = cls.convert_uuid_hex_to_bytes(user_id)
         b_project_id = cls.convert_uuid_hex_to_bytes(project_id)
         b_trust_id = cls.convert_uuid_hex_to_bytes(trust_id)
+        b_audit_ids = map(provider.random_urlsafe_str_to_bytes, audit_ids)
 
-        return (b_user_id, b_project_id, b_trust_id, audit_ids)
+        return (b_user_id, b_project_id, b_trust_id, b_audit_ids)
 
     @classmethod
     def disassemble(cls, payload):
@@ -239,6 +244,6 @@ class TrustScopedPayload(BasePayload):
         user_id = cls.convert_uuid_bytes_to_hex(payload[0])
         project_id = cls.convert_uuid_bytes_to_hex(payload[1])
         trust_id = cls.convert_uuid_bytes_to_hex(payload[2])
-        audit_ids = payload[3]
+        audit_ids = map(provider.base64_encode, payload[3])
 
         return (user_id, project_id, audit_ids, trust_id)
