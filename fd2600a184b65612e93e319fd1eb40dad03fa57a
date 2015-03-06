@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_5cbac26e",
+        "filename": "keystone/tests/unit/test_versions.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 498,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-06T20:56:52Z",
+      "side": 1,
+      "message": "the v3 API spec doesn\u0027t say anything about this use of status in hints, so nobody\u0027s going to know what to do with it. http://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3.html#json-home",
+      "revId": "fd2600a184b65612e93e319fd1eb40dad03fa57a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
