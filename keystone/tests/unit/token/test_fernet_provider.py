@@ -10,7 +10,6 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-import base64
 import shutil
 import tempfile
 import time
@@ -19,6 +18,7 @@ import uuid
 from keystone.common import config
 from keystone import exception
 from keystone.tests import unit as tests
+from keystone.token import provider
 from keystone.token.providers import fernet
 from keystone.token.providers.fernet import token_formatters
 from keystone.token.providers.fernet import utils
@@ -87,7 +87,7 @@ class TestPayloads(tests.TestCase, KeyRepositoryTestMixin):
 
     def test_unscoped_payload(self):
         exp_user_id = uuid.uuid4().hex
-        exp_audit_ids = base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2]
+        exp_audit_ids = [provider.random_urlsafe_str()]
 
         payload = token_formatters.UnscopedPayload.assemble(
             exp_user_id, exp_audit_ids)
@@ -101,7 +101,7 @@ class TestPayloads(tests.TestCase, KeyRepositoryTestMixin):
     def test_project_scoped_payload(self):
         exp_user_id = uuid.uuid4().hex
         exp_project_id = uuid.uuid4().hex
-        exp_audit_ids = base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2]
+        exp_audit_ids = [provider.random_urlsafe_str()]
 
         payload = token_formatters.ProjectScopedPayload.assemble(
             exp_user_id, exp_project_id, exp_audit_ids)
@@ -116,7 +116,7 @@ class TestPayloads(tests.TestCase, KeyRepositoryTestMixin):
     def test_domain_scoped_payload(self):
         exp_user_id = uuid.uuid4().hex
         exp_domain_id = uuid.uuid4().hex
-        exp_audit_ids = base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2]
+        exp_audit_ids = [provider.random_urlsafe_str()]
 
         payload = token_formatters.DomainScopedPayload.assemble(
             exp_user_id, exp_domain_id, exp_audit_ids)
@@ -131,7 +131,7 @@ class TestPayloads(tests.TestCase, KeyRepositoryTestMixin):
     def test_domain_scoped_payload_with_default_domain(self):
         exp_user_id = uuid.uuid4().hex
         exp_domain_id = CONF.identity.default_domain_id
-        exp_audit_ids = base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2]
+        exp_audit_ids = [provider.random_urlsafe_str()]
 
         payload = token_formatters.DomainScopedPayload.assemble(
             exp_user_id, exp_domain_id, exp_audit_ids)
@@ -146,7 +146,7 @@ class TestPayloads(tests.TestCase, KeyRepositoryTestMixin):
     def test_trust_scoped_payload(self):
         exp_user_id = uuid.uuid4().hex
         exp_project_id = uuid.uuid4().hex
-        exp_audit_ids = base64.urlsafe_b64encode(uuid.uuid4().bytes)[:-2]
+        exp_audit_ids = [provider.random_urlsafe_str()]
         exp_trust_id = uuid.uuid4().hex
 
         payload = token_formatters.TrustScopedPayload.assemble(
