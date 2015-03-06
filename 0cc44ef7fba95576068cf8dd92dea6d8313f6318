@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_65a29d9a",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2015-03-06T15:38:22Z",
+      "side": 1,
+      "message": "Why are you talking about \"files\" in this docstring? This is only for database, isn\u0027t it?",
+      "revId": "0cc44ef7fba95576068cf8dd92dea6d8313f6318",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
