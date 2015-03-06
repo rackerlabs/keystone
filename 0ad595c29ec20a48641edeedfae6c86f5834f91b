@@ -16,6 +16,24 @@
       "revId": "0ad595c29ec20a48641edeedfae6c86f5834f91b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_12159b9b",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-06T18:31:00Z",
+      "side": 1,
+      "message": "There is already a test in the schema for that scenario, thought that was enough.\n\nSure, I can add it hear too to validate the flow.",
+      "parentUuid": "9a80dd14_c52d0900",
+      "revId": "0ad595c29ec20a48641edeedfae6c86f5834f91b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
