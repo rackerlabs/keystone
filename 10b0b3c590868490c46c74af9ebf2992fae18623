@@ -52,6 +52,57 @@
       "revId": "10b0b3c590868490c46c74af9ebf2992fae18623",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_19ecd7f2",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-06T22:47:32Z",
+      "side": 1,
+      "message": "validate_token should know enough to return None for these values.",
+      "revId": "10b0b3c590868490c46c74af9ebf2992fae18623",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_199a176e",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-06T22:47:32Z",
+      "side": 1,
+      "message": "why these values? Add a comment.\n\nAlso, suggest use method_names\u003d[\u0027password\u0027, \u0027token\u0027], so that readers know what these are for.",
+      "revId": "10b0b3c590868490c46c74af9ebf2992fae18623",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_598f2f2a",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-06T22:47:32Z",
+      "side": 1,
+      "message": "suggest use extras\u003d{}. Also, could use a comment why {} is used here.",
+      "revId": "10b0b3c590868490c46c74af9ebf2992fae18623",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
