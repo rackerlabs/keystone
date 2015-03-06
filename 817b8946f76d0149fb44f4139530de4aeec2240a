@@ -16,6 +16,24 @@
       "revId": "817b8946f76d0149fb44f4139530de4aeec2240a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4cece18f",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-06T15:58:49Z",
+      "side": 1,
+      "message": "hmm, i didn\u0027t put too much effort into the variable names of timestamps because i ultimately delete them in a later commit anyway.",
+      "parentUuid": "9a80dd14_b962023c",
+      "revId": "817b8946f76d0149fb44f4139530de4aeec2240a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
