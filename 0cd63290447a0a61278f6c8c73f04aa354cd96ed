@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_5cd71d4b",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-06T23:10:03Z",
+      "side": 1,
+      "message": "change \"the both\" to \"them both\"",
+      "revId": "0cd63290447a0a61278f6c8c73f04aa354cd96ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_5c3e3d8d",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-06T23:10:03Z",
+      "side": 1,
+      "message": "change \"that\" to \"the token creation time\"",
+      "revId": "0cd63290447a0a61278f6c8c73f04aa354cd96ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_dc494d32",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-06T23:10:03Z",
+      "side": 1,
+      "message": "(nit) use \u0027 for strings... also, could use a symbol for the \u0027\u003eQ\u0027 string to help explain it.",
+      "revId": "0cd63290447a0a61278f6c8c73f04aa354cd96ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
