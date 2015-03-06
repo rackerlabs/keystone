@@ -498,7 +498,7 @@ class MappingCRUDTests(FederationTests):
         self.assertIsNotNone(entities)
         self.assertResponseStatus(resp, 200)
         self.assertValidListLinks(resp.result.get('links'))
-        self.assertEqual(len(entities), 1)
+        self.assertEqual(1, len(entities))
 
     def test_mapping_delete(self):
         url = self.MAPPING_URL + '%(mapping_id)s'
@@ -727,8 +727,8 @@ class MappingRuleEngineTests(FederationTests):
         group_ids = values.get('group_ids')
         name = values.get('user', {}).get('name')
 
-        self.assertEqual(name, user_name)
-        self.assertEqual(group_ids, [])
+        self.assertEqual(user_name, name)
+        self.assertEqual([], group_ids,)
 
     def test_rule_engine_not_any_of_many_rules(self):
         """Should return group EMPLOYEE_GROUP_ID.
@@ -749,7 +749,7 @@ class MappingRuleEngineTests(FederationTests):
         group_ids = values.get('group_ids')
         name = values.get('user', {}).get('name')
 
-        self.assertEqual(name, user_name)
+        self.assertEqual(user_name, name)
         self.assertIn(mapping_fixtures.EMPLOYEE_GROUP_ID, group_ids)
 
     def test_rule_engine_not_any_of_regex_verify_pass(self):
