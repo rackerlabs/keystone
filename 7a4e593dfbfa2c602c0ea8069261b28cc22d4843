@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_d96b1f1c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-06T23:01:23Z",
+      "side": 1,
+      "message": "PKIZ",
+      "revId": "7a4e593dfbfa2c602c0ea8069261b28cc22d4843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f903830d",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-06T23:01:23Z",
+      "side": 1,
+      "message": "(unrelated) this parameter doesn\u0027t exist either.",
+      "revId": "7a4e593dfbfa2c602c0ea8069261b28cc22d4843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_9c2355a6",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-06T23:01:23Z",
+      "side": 1,
+      "message": "b_user_id, issued_at_ts, audit_ids \u003d payload ?",
+      "revId": "7a4e593dfbfa2c602c0ea8069261b28cc22d4843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
