@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_c597c9ea",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 4062,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-06T15:33:31Z",
+      "side": 1,
+      "message": "this is addressed in dependent changes (all these arguments are removed). https://review.openstack.org/#/c/162196/",
+      "parentUuid": "9a80dd14_63fab9be",
+      "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_e3906945",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-05T23:32:21Z",
       "side": 1,
       "message": "this line is unnecessary since it\u0027s always set.",
+      "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_6588ddc5",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-06T15:33:31Z",
+      "side": 1,
+      "message": "this is dropped in dependent refactors: https://review.openstack.org/#/c/162196/",
+      "parentUuid": "9a80dd14_e3906945",
       "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -89,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_c5bee964",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-06T15:33:31Z",
+      "side": 1,
+      "message": "this is simplified in dependent changes: https://review.openstack.org/#/c/162196/",
+      "parentUuid": "9a80dd14_f9971a38",
+      "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_c34525b4",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 4
@@ -124,6 +178,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_45b2f994",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-06T15:33:31Z",
+      "side": 1,
+      "message": "domain support is added in a dependent change: https://review.openstack.org/#/c/162196/",
+      "parentUuid": "9a80dd14_83c23132",
+      "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_438855e7",
         "filename": "keystone/token/providers/fernet/format_map.py",
         "patchSetId": 4
@@ -135,6 +207,24 @@
       "writtenOn": "2015-03-05T23:32:21Z",
       "side": 1,
       "message": "these all start with \"prefix\", suggest call this part \"format_prefixes\" and then can remove the _PREFIX.",
+      "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_655d3d47",
+        "filename": "keystone/token/providers/fernet/format_map.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-06T15:33:31Z",
+      "side": 1,
+      "message": "this entire module is deleted in a dependent change: https://review.openstack.org/#/c/162196/",
+      "parentUuid": "9a80dd14_438855e7",
       "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -158,6 +248,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_e51f6d6a",
+        "filename": "keystone/token/providers/fernet/format_map.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-06T15:33:31Z",
+      "side": 1,
+      "message": "these are essentially renamed to ProjectScopedPayload.version etc in a dependent change: https://review.openstack.org/#/c/162196/",
+      "parentUuid": "9a80dd14_c3736513",
+      "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_03f3bd73",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 4
@@ -169,6 +277,24 @@
       "writtenOn": "2015-03-05T23:32:21Z",
       "side": 1,
       "message": "if they all need a create_token then add this to BaseTokenFormatter.",
+      "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e9010706",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-06T15:33:31Z",
+      "side": 1,
+      "message": "they\u0027re all slightly different, but these are all renamed and shuffled around in a dependent change: https://review.openstack.org/#/c/162196/",
+      "parentUuid": "9a80dd14_03f3bd73",
       "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -192,6 +318,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_29087f27",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 203,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-06T15:33:31Z",
+      "side": 1,
+      "message": "prefixes no longer exist in a dependent change: https://review.openstack.org/#/c/162196/",
+      "parentUuid": "9a80dd14_c3f8c54b",
+      "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_23a1a147",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 4
@@ -203,6 +347,24 @@
       "writtenOn": "2015-03-05T23:32:21Z",
       "side": 1,
       "message": "actually, should get rid of format_map.py and just use TrustTokenFormatter.token_format rather than format_map.TRUST_TOKEN_PREFIX.",
+      "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e9282788",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-06T15:33:31Z",
+      "side": 1,
+      "message": "i do exactly that in a dependent change: https://review.openstack.org/#/c/162196/",
+      "parentUuid": "9a80dd14_23a1a147",
       "revId": "12c6b9a0b9e7477676c11f0ac3ac23060634d61f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
