@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_bc749e36",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4261,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-06T20:46:33Z",
+      "side": 1,
+      "message": "This will still be \u0027default\u0027 because of https://github.com/openstack/keystone/blob/d573ce7b3193dd3e3ad562b977ef9f73f854926f/keystone/tests/unit/test_v3.py#L35\n\nSo this should be OK? Or do we need to set the CONF.default_domain ID for the testing too?",
+      "revId": "f813e01e041854fbf55d6fab0808b69b7d2a2438",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
