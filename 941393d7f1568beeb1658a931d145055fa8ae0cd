@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_cbde0a3f",
+        "filename": "keystone/catalog/backends/_legacy_kvs.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-06T09:21:44Z",
+      "side": 1,
+      "message": "Isn\u0027t the crud operation going away?  so \u0027KeyValueStore\u0027 is not really a replacement for it.",
+      "revId": "941393d7f1568beeb1658a931d145055fa8ae0cd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
