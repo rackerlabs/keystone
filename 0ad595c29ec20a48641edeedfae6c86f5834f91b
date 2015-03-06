@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_c52d0900",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-06T15:33:26Z",
+      "side": 1,
+      "message": "I\u0027d like to see a test where similar call is failing as there is no project_id specified.",
+      "revId": "0ad595c29ec20a48641edeedfae6c86f5834f91b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
