@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_3d86f513",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-06T16:58:08Z",
+      "side": 1,
+      "message": "(nit) this may be long for a summary line",
+      "revId": "d1f8fcf1930f31ebdbec1e3873212723f1810edb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_1db5b17d",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-06T16:58:08Z",
+      "side": 1,
+      "message": "Needs to be updated.",
+      "revId": "d1f8fcf1930f31ebdbec1e3873212723f1810edb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_5db2c994",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-06T16:58:08Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "d1f8fcf1930f31ebdbec1e3873212723f1810edb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_9da8c121",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-06T16:58:08Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "d1f8fcf1930f31ebdbec1e3873212723f1810edb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
