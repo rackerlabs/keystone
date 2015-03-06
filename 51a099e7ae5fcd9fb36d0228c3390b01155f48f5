@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_553a9de7",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-06T18:57:55Z",
+      "side": 1,
+      "message": "This will break when the domain_id passed in is \u0027default\u0027",
+      "revId": "51a099e7ae5fcd9fb36d0228c3390b01155f48f5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
