@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_7cfa2676",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4132,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-06T20:48:48Z",
+      "side": 1,
+      "message": "Should we set this for default domain id too? \n\n    self.config_fixture.config(\n        group\u003d\u0027identity\u0027,\n        default_domain_id\u003d\u0027default\u0027)",
+      "revId": "f813e01e041854fbf55d6fab0808b69b7d2a2438",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_bc749e36",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 6
