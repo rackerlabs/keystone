@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_af1e2fb9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-06T16:14:47Z",
+      "side": 1,
+      "message": "thats usually whats specs.openstack.org is shortened to, just like docs.openstack.org is shortened to docs.o.org",
+      "parentUuid": "9a80dd14_6bf8be49",
+      "revId": "164ec66f3525f0b62de45afbbdbe753707881bfb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_a3521fdb",
         "filename": "doc/source/index.rst",
         "patchSetId": 2
