@@ -114,7 +114,7 @@ class ExternalDefault(DefaultDomain):
     @versionutils.deprecated(
         as_of=versionutils.deprecated.ICEHOUSE,
         in_favor_of='keystone.auth.external.DefaultDomain',
-        remove_in=+1)
+        remove_in=+3)
     def __init__(self):
         super(ExternalDefault, self).__init__()
 
@@ -125,7 +125,7 @@ class ExternalDomain(Domain):
     @versionutils.deprecated(
         as_of=versionutils.deprecated.ICEHOUSE,
         in_favor_of='keystone.auth.external.Domain',
-        remove_in=+1)
+        remove_in=+3)
     def __init__(self):
         super(ExternalDomain, self).__init__()
 
@@ -142,7 +142,7 @@ class LegacyDefaultDomain(Base):
     @versionutils.deprecated(
         as_of=versionutils.deprecated.ICEHOUSE,
         in_favor_of='keystone.auth.external.DefaultDomain',
-        remove_in=+1)
+        remove_in=+3)
     def __init__(self):
         super(LegacyDefaultDomain, self).__init__()
 
@@ -163,7 +163,7 @@ class LegacyDomain(Base):
     @versionutils.deprecated(
         as_of=versionutils.deprecated.ICEHOUSE,
         in_favor_of='keystone.auth.external.Domain',
-        remove_in=+1)
+        remove_in=+3)
     def __init__(self):
         super(LegacyDomain, self).__init__()
 
