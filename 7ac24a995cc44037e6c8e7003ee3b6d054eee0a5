@@ -244,6 +244,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_6069ca24",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-03-06T02:00:01Z",
+      "side": 1,
+      "message": "good catch!",
+      "parentUuid": "9a80dd14_d7a191aa",
+      "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_77ff0535",
         "filename": "keystone/tests/unit/test_middleware.py",
         "patchSetId": 13
@@ -261,6 +279,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_a0e1029c",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-03-06T02:00:01Z",
+      "side": 1,
+      "message": "not sure why I needed it the first place. but yeah, another good catch, I don\u0027t actually need it.",
+      "parentUuid": "9a80dd14_77ff0535",
+      "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_9749d9d2",
         "filename": "keystone/tests/unit/test_middleware.py",
         "patchSetId": 13
@@ -272,6 +308,24 @@
       "writtenOn": "2015-03-05T07:56:34Z",
       "side": 1,
       "message": "these, and most others can all be uuids",
+      "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_43f9307f",
+        "filename": "keystone/tests/unit/test_middleware.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-03-06T02:00:01Z",
+      "side": 1,
+      "message": "yes, I should be able to use uuids for the others.",
+      "parentUuid": "9a80dd14_9749d9d2",
       "revId": "7ac24a995cc44037e6c8e7003ee3b6d054eee0a5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
