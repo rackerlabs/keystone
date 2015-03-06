@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_9cb355e8",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-06T23:16:55Z",
+      "side": 1,
+      "message": "https://review.openstack.org/162337",
+      "parentUuid": "9a80dd14_f903830d",
+      "revId": "7a4e593dfbfa2c602c0ea8069261b28cc22d4843",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_9c2355a6",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 7
