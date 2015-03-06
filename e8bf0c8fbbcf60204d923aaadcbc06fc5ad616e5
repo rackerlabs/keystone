@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_bc084292",
+        "filename": "keystone/tests/unit/test_cache_backend_mongo.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-06T07:23:25Z",
+      "side": 1,
+      "message": "use assertTrue and assertFalse?",
+      "revId": "e8bf0c8fbbcf60204d923aaadcbc06fc5ad616e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_9c053e7c",
+        "filename": "keystone/tests/unit/test_cache_backend_mongo.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 714,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-06T07:23:25Z",
+      "side": 1,
+      "message": "change these to assertTrue?",
+      "revId": "e8bf0c8fbbcf60204d923aaadcbc06fc5ad616e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
