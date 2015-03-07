@@ -13,7 +13,6 @@
 """Main entry point into the Revoke service."""
 
 from keystone.common import cache
-from keystone.common import dependency
 from keystone.common import extension
 from keystone.common import manager
 import keystone.conf
@@ -53,7 +52,6 @@ MEMOIZE = cache.get_memoization_decorator(
     region=REVOKE_REGION)
 
 
-@dependency.provider('revoke_api')
 class Manager(manager.Manager):
     """Default pivot point for the Revoke backend.
 

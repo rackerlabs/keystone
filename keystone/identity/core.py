@@ -435,7 +435,6 @@ def exception_translated(exception_type):
 
 
 @notifications.listener
-@dependency.provider('identity_api')
 @dependency.requires('assignment_api', 'credential_api', 'id_mapping_api',
                      'resource_api', 'shadow_users_api', 'federation_api')
 class Manager(manager.Manager):
@@ -1418,7 +1417,6 @@ class Manager(manager.Manager):
         return user_dict
 
 
-@dependency.provider('id_mapping_api')
 class MappingManager(manager.Manager):
     """Default pivot point for the ID Mapping backend."""
 
@@ -1470,7 +1468,6 @@ class MappingManager(manager.Manager):
         ID_MAPPING_REGION.invalidate()
 
 
-@dependency.provider('shadow_users_api')
 class ShadowUsersManager(manager.Manager):
     """Default pivot point for the Shadow Users backend."""
 

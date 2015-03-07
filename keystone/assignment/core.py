@@ -46,7 +46,6 @@ MEMOIZE_COMPUTED_ASSIGNMENTS = cache.get_memoization_decorator(
 
 
 @notifications.listener
-@dependency.provider('assignment_api')
 @dependency.requires('credential_api', 'identity_api', 'resource_api',
                      'role_api')
 class Manager(manager.Manager):
@@ -1074,7 +1073,6 @@ class Manager(manager.Manager):
             )
 
 
-@dependency.provider('role_api')
 @dependency.requires('assignment_api')
 class RoleManager(manager.Manager):
     """Default pivot point for the Role backend."""

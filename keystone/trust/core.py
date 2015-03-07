@@ -28,7 +28,6 @@ CONF = keystone.conf.CONF
 
 
 @dependency.requires('identity_api')
-@dependency.provider('trust_api')
 class Manager(manager.Manager):
     """Default pivot point for the Trust backend.
 

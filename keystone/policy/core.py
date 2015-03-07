@@ -14,7 +14,6 @@
 
 """Main entry point into the Policy service."""
 
-from keystone.common import dependency
 from keystone.common import manager
 import keystone.conf
 from keystone import exception
@@ -24,7 +23,6 @@ from keystone import notifications
 CONF = keystone.conf.CONF
 
 
-@dependency.provider('policy_api')
 class Manager(manager.Manager):
     """Default pivot point for the Policy backend.
 

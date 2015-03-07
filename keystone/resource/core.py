@@ -34,7 +34,6 @@ LOG = log.getLogger(__name__)
 MEMOIZE = cache.get_memoization_decorator(group='resource')
 
 
-@dependency.provider('resource_api')
 @dependency.requires('assignment_api', 'credential_api', 'domain_config_api',
                      'identity_api', 'trust_api')
 class Manager(manager.Manager):
@@ -876,7 +875,6 @@ class Manager(manager.Manager):
 MEMOIZE_CONFIG = cache.get_memoization_decorator(group='domain_config')
 
 
-@dependency.provider('domain_config_api')
 class DomainConfigManager(manager.Manager):
     """Default pivot point for the Domain Config backend."""
 

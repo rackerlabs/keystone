@@ -26,7 +26,6 @@ from keystone import exception
 CONF = keystone.conf.CONF
 
 
-@dependency.provider('credential_api')
 @dependency.requires('credential_provider_api')
 class Manager(manager.Manager):
     """Default pivot point for the Credential backend.

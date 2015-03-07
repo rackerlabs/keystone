@@ -50,7 +50,6 @@ V3 = token_model.V3
 VERSIONS = token_model.VERSIONS
 
 
-@dependency.provider('token_provider_api')
 @dependency.requires('assignment_api', 'revoke_api')
 class Manager(manager.Manager):
     """Default pivot point for the token provider backend.
