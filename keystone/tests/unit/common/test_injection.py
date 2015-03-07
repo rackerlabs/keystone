@@ -14,11 +14,12 @@
 
 import uuid
 
+import testtools
+
 from keystone.common import dependency
-from keystone.tests import unit as tests
 
 
-class TestDependencyInjection(tests.BaseTestCase):
+class TestDependencyInjection(testtools.TestCase):
     def setUp(self):
         super(TestDependencyInjection, self).setUp()
         self.addCleanup(dependency.reset)
