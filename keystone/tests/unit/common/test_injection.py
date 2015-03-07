@@ -22,6 +22,7 @@ from keystone.common import dependency
 class TestDependencyInjection(testtools.TestCase):
     def setUp(self):
         super(TestDependencyInjection, self).setUp()
+        dependency.reset()
         self.addCleanup(dependency.reset)
 
     def test_dependency_injection(self):
