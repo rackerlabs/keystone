@@ -43,7 +43,6 @@ def calc_default_domain():
             'name': u'Default'}
 
 
-@dependency.provider('resource_api')
 @dependency.requires('assignment_api', 'credential_api', 'domain_config_api',
                      'identity_api', 'revoke_api')
 class Manager(manager.Manager):
@@ -795,7 +794,6 @@ class Driver(object):
 MEMOIZE_CONFIG = cache.get_memoization_decorator(section='domain_config')
 
 
-@dependency.provider('domain_config_api')
 class DomainConfigManager(manager.Manager):
     """Default pivot point for the Domain Config backend."""
 

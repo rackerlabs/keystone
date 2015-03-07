@@ -70,7 +70,6 @@ def deprecated_to_resource_api(f):
     return wrapper()
 
 
-@dependency.provider('assignment_api')
 @dependency.requires('credential_api', 'identity_api', 'resource_api',
                      'revoke_api', 'role_api')
 class Manager(manager.Manager):
@@ -924,7 +923,6 @@ class Driver(object):
         raise exception.NotImplemented()  # pragma: no cover
 
 
-@dependency.provider('role_api')
 @dependency.requires('assignment_api')
 class RoleManager(manager.Manager):
     """Default pivot point for the Role backend."""

@@ -199,7 +199,6 @@ class PersistenceManager(manager.Manager):
 
 
 @dependency.requires('token_provider_api')
-@dependency.provider('token_api')
 class Manager(object):
     """The token_api provider.
 

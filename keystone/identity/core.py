@@ -365,7 +365,6 @@ def exception_translated(exception_type):
 
 
 @notifications.listener
-@dependency.provider('identity_api')
 @dependency.requires('assignment_api', 'credential_api', 'id_mapping_api',
                      'resource_api', 'revoke_api')
 class Manager(manager.Manager):
@@ -1266,7 +1265,6 @@ class Driver(object):
     # end of identity
 
 
-@dependency.provider('id_mapping_api')
 class MappingManager(manager.Manager):
     """Default pivot point for the ID Mapping backend."""
 

@@ -28,7 +28,6 @@ CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
-@dependency.provider('endpoint_policy_api')
 @dependency.requires('catalog_api', 'policy_api')
 class Manager(manager.Manager):
     """Default pivot point for the Endpoint Policy backend.

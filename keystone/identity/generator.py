@@ -19,7 +19,6 @@ import abc
 from oslo_config import cfg
 import six
 
-from keystone.common import dependency
 from keystone.common import manager
 from keystone import exception
 
@@ -27,7 +26,6 @@ from keystone import exception
 CONF = cfg.CONF
 
 
-@dependency.provider('id_generator_api')
 class Manager(manager.Manager):
     """Default pivot point for the identifier generator backend."""
 

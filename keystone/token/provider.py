@@ -101,7 +101,6 @@ def audit_info(parent_audit_id):
 
 
 @notifications.listener
-@dependency.provider('token_provider_api')
 @dependency.requires('assignment_api', 'revoke_api')
 class Manager(manager.Manager):
     """Default pivot point for the token provider backend.

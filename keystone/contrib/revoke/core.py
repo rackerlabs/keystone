@@ -19,7 +19,6 @@ from oslo_utils import timeutils
 import six
 
 from keystone.common import cache
-from keystone.common import dependency
 from keystone.common import extension
 from keystone.common import manager
 from keystone.contrib.revoke import model
@@ -62,7 +61,6 @@ def revoked_before_cutoff_time():
     return oldest
 
 
-@dependency.provider('revoke_api')
 class Manager(manager.Manager):
     """Revoke API Manager.
 
