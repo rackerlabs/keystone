@@ -14,7 +14,6 @@
 
 from oslo_log import log
 
-from keystone.common import dependency
 from keystone.common import manager
 from keystone import exception
 from keystone.i18n import _LI
@@ -25,7 +24,6 @@ LOG = log.getLogger(__name__)
 
 
 @notifications.listener  # NOTE(dstanek): only needed if using event_callbacks
-@dependency.provider('example_api')
 class ExampleManager(manager.Manager):
     """Example Manager.
 

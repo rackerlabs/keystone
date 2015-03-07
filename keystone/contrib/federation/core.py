@@ -18,7 +18,6 @@ from oslo_config import cfg
 from oslo_log import log as logging
 import six
 
-from keystone.common import dependency
 from keystone.common import extension
 from keystone.common import manager
 from keystone import exception
@@ -47,7 +46,6 @@ PROTOCOL = 'OS-FEDERATION:protocol'
 FEDERATED_DOMAIN_KEYWORD = 'Federated'
 
 
-@dependency.provider('federation_api')
 class Manager(manager.Manager):
     """Default pivot point for the Federation backend.
 

@@ -19,7 +19,6 @@ import abc
 from oslo_config import cfg
 import six
 
-from keystone.common import dependency
 from keystone.common import manager
 from keystone import exception
 from keystone import notifications
@@ -28,7 +27,6 @@ from keystone import notifications
 CONF = cfg.CONF
 
 
-@dependency.provider('policy_api')
 class Manager(manager.Manager):
     """Default pivot point for the Policy backend.
 

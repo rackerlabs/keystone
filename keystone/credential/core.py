@@ -20,7 +20,6 @@ from oslo_config import cfg
 from oslo_log import log
 import six
 
-from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
 from keystone import exception
@@ -31,7 +30,6 @@ CONF = cfg.CONF
 LOG = log.getLogger(__name__)
 
 
-@dependency.provider('credential_api')
 class Manager(manager.Manager):
     """Default pivot point for the Credential backend.
 

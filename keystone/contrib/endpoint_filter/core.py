@@ -18,7 +18,6 @@ from oslo_config import cfg
 from oslo_log import log
 import six
 
-from keystone.common import dependency
 from keystone.common import extension
 from keystone.common import manager
 from keystone import exception
@@ -47,7 +46,6 @@ extension_data = {
 extension.register_admin_extension(extension_data['alias'], extension_data)
 
 
-@dependency.provider('endpoint_filter_api')
 class Manager(manager.Manager):
     """Default pivot point for the Endpoint Filter backend.
 
