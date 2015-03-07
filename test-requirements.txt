@@ -19,6 +19,10 @@ pymongo>=2.5
 python-ldap>=2.4
 ldappool>=1.0 # MPL
 
+# Optional token provider: Fernet
+cryptography>=0.4 # Apache-2.0
+msgpack-python>=0.4.0
+
 # Testing
 # computes code coverage percentages
 coverage>=3.6
