@@ -26,7 +26,6 @@ from oslo_config import cfg
 from oslo_log import log
 import six
 
-from keystone.common import dependency
 from keystone.common import extension
 from keystone.common import manager
 from keystone import exception
@@ -143,7 +142,6 @@ def extract_non_oauth_params(query_string):
     return {k: v for k, v in params if not k.startswith('oauth_')}
 
 
-@dependency.provider('oauth_api')
 class Manager(manager.Manager):
     """Default pivot point for the OAuth1 backend.
 

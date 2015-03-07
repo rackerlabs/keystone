@@ -22,7 +22,6 @@ from oslo_log import log
 import six
 
 from keystone.common import cache
-from keystone.common import dependency
 from keystone.common import driver_hints
 from keystone.common import manager
 from keystone.common import utils
@@ -85,7 +84,6 @@ def format_url(url, substitutions, silent_keyerror_failures=None):
     return result
 
 
-@dependency.provider('catalog_api')
 class Manager(manager.Manager):
     """Default pivot point for the Catalog backend.
 

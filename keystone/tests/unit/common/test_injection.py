@@ -29,12 +29,10 @@ class TestDependencyInjection(tests.BaseTestCase):
             def do_work(self):
                 assert False
 
-        @dependency.provider('first_api')
         class FirstImplementation(Interface):
             def do_work(self):
                 return True
 
-        @dependency.provider('second_api')
         class SecondImplementation(Interface):
             def do_work(self):
                 return True
@@ -45,9 +43,11 @@ class TestDependencyInjection(tests.BaseTestCase):
                 assert self.first_api.do_work()
                 assert self.second_api.do_work()
 
-        # initialize dependency providers
+        # wire implementation to interface
         first_api = FirstImplementation()
+        dependency.set_provider('first_api', first_api)
         second_api = SecondImplementation()
+        dependency.set_provider('second_api', second_api)
 
         # ... sometime later, initialize a dependency consumer
         consumer = Consumer()
@@ -60,7 +60,6 @@ class TestDependencyInjection(tests.BaseTestCase):
         consumer.do_work_with_dependencies()
 
     def test_dependency_provider_configuration(self):
-        @dependency.provider('api')
         class Configurable(object):
             def __init__(self, value=None):
                 self.value = value
@@ -73,8 +72,9 @@ class TestDependencyInjection(tests.BaseTestCase):
             def get_value(self):
                 return self.api.get_value()
 
-        # initialize dependency providers
+        # wire implementation to interface
         api = Configurable(value=True)
+        dependency.set_provider('api', api)
 
         # ... sometime later, initialize a dependency consumer
         consumer = Consumer()
@@ -85,7 +85,6 @@ class TestDependencyInjection(tests.BaseTestCase):
         self.assertTrue(consumer.get_value())
 
     def test_dependency_consumer_configuration(self):
-        @dependency.provider('api')
         class Provider(object):
             def get_value(self):
                 return True
@@ -99,8 +98,9 @@ class TestDependencyInjection(tests.BaseTestCase):
                 if self.value:
                     return self.api.get_value()
 
-        # initialize dependency providers
+        # wire implementation to interface
         api = Provider()
+        dependency.set_provider('api', api)
 
         # ... sometime later, initialize a dependency consumer
         consumer = Configurable(value=True)
@@ -115,12 +115,10 @@ class TestDependencyInjection(tests.BaseTestCase):
             def do_work(self):
                 assert False
 
-        @dependency.provider('first_api')
         class FirstImplementation(Interface):
             def do_work(self):
                 return True
 
-        @dependency.provider('second_api')
         class SecondImplementation(Interface):
             def do_work(self):
                 return True
@@ -136,9 +134,11 @@ class TestDependencyInjection(tests.BaseTestCase):
                 assert self.second_api.do_work()
                 super(ChildConsumer, self).do_work_with_dependencies()
 
-        # initialize dependency providers
+        # wire implementation to interface
         first_api = FirstImplementation()
+        dependency.set_provider('first_api', first_api)
         second_api = SecondImplementation()
+        dependency.set_provider('second_api', second_api)
 
         # ... sometime later, initialize a dependency consumer
         consumer = ChildConsumer()
@@ -173,21 +173,24 @@ class TestDependencyInjection(tests.BaseTestCase):
         self.assertRaises(dependency.UnresolvableDependencyException, for_test)
 
     def test_circular_dependency(self):
+        # TODO(dstanek): break this. the fact that this is allowed is wrong.
         p1_name = uuid.uuid4().hex
         p2_name = uuid.uuid4().hex
 
-        @dependency.provider(p1_name)
         @dependency.requires(p2_name)
         class P1(object):
             pass
 
-        @dependency.provider(p2_name)
         @dependency.requires(p1_name)
         class P2(object):
             pass
 
         p1 = P1()
         p2 = P2()
+
+        # wire implementation to interface
+        dependency.set_provider(p1_name, p1)
+        dependency.set_provider(p2_name, p2)
 
         dependency.resolve_future_dependencies()
 
@@ -199,11 +202,12 @@ class TestDependencyInjection(tests.BaseTestCase):
 
         p_id = uuid.uuid4().hex
 
-        @dependency.provider(p_id)
         class P(object):
             pass
 
+        # wire implementation to interface
         p_inst = P()
+        dependency.set_provider(p_id, p_inst)
 
         self.assertIs(dependency.get_provider(p_id), p_inst)
 
@@ -216,11 +220,13 @@ class TestDependencyInjection(tests.BaseTestCase):
 
         provider_name = uuid.uuid4().hex
 
-        @dependency.provider(provider_name)
         class P(object):
             pass
 
+        # wire implementation to interface
         provider_instance = P()
+        dependency.set_provider(provider_name, provider_instance)
+
         retrieved_provider_instance = dependency.get_provider(provider_name)
         self.assertIs(provider_instance, retrieved_provider_instance)
 

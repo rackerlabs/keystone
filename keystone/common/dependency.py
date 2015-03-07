@@ -38,7 +38,7 @@ _future_dependencies = {}
 _factories = {}
 
 
-def _set_provider(name, provider):
+def set_provider(name, provider):
     _original_provider, where_registered = _REGISTRY.get(name, (None, None))
     if where_registered:
         raise Exception('%s already has a registered provider, at\n%s' %
@@ -66,44 +66,6 @@ class UnresolvableDependencyException(Exception):
         msg = _('Unregistered dependency: %(name)s for %(targets)s') % {
             'name': name, 'targets': targets}
         super(UnresolvableDependencyException, self).__init__(msg)
-
-
-def provider(name):
-    """A class decorator used to register providers.
-
-    When ``@provider()`` is used to decorate a class, members of that class
-    will register themselves as providers for the named dependency. As an
-    example, In the code fragment::
-
-        @dependency.provider('foo_api')
-        class Foo:
-            def __init__(self):
-                ...
-
-            ...
-
-        foo = Foo()
-
-    The object ``foo`` will be registered as a provider for ``foo_api``. No
-    more than one such instance should be created; additional instances will
-    replace the previous ones, possibly resulting in different instances being
-    used by different consumers.
-
-    """
-    def wrapper(cls):
-        def wrapped(init):
-            def __wrapped_init__(self, *args, **kwargs):
-                """Initialize the wrapped object and add it to the registry."""
-                init(self, *args, **kwargs)
-                _set_provider(name, self)
-                resolve_future_dependencies(__provider_name=name)
-
-            return __wrapped_init__
-
-        cls.__init__ = wrapped(cls.__init__)
-        _factories[name] = cls
-        return cls
-    return wrapper
 
 
 def _process_dependencies(obj):
