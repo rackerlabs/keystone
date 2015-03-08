@@ -446,12 +446,14 @@ class Driver(object):
                     {
                         "interface": "public",
                         "id": "--endpoint-id--",
+                        "region_id": "RegionOne",
                         "region": "RegionOne",
                         "url": "http://external:8776/v1/--project-id--"
                     },
                     {
                         "interface": "internal",
                         "id": "--endpoint-id--",
+                        "region_id": "RegionOne",
                         "region": "RegionOne",
                         "url": "http://internal:8776/v1/--project-id--"
                     }],
@@ -466,7 +468,7 @@ class Driver(object):
         v2_catalog = self.get_catalog(user_id, tenant_id, metadata=metadata)
         v3_catalog = []
 
-        for region_name, region in six.iteritems(v2_catalog):
+        for region_id, region in six.iteritems(v2_catalog):
             for service_type, service in six.iteritems(region):
                 service_v3 = {
                     'type': service_type,
@@ -476,15 +478,19 @@ class Driver(object):
                 for attr, value in six.iteritems(service):
                     # Attributes that end in URL are interfaces. In the V2
                     # catalog, these are internalURL, publicURL, and adminURL.
-                    # For example, <region_name>.publicURL=<URL> in the V2
+                    # For example, <region_id>.publicURL=<URL> in the V2
                     # catalog becomes the V3 interface for the service:
-                    # { 'interface': 'public', 'url': '<URL>', 'region':
-                    #   'region: '<region_name>' }
+                    # { 'interface': 'public', 'url': '<URL>', 'region_id':
+                    # '<region_id>', 'region': '<region_id>' }
+                    # NOTE(davechen) we need both 'region' and 'region_id'
+                    # to be presented in the endpoint for backward
+                    # compatibility (see bug #1364463).
                     if attr.endswith('URL'):
                         v3_interface = attr[:-len('URL')]
                         service_v3['endpoints'].append({
                             'interface': v3_interface,
-                            'region': region_name,
+                            'region_id': region_id,
+                            'region': region_id,
                             'url': value,
                         })
                         continue
