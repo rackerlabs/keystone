@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_792ea144",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-08T13:46:51Z",
+      "side": 0,
+      "message": "You can\u0027t remove this line very easily. I had to add it back in with I495589e850cf110ff264ec800638c6673e6a98e0 because it\u0027s documented as coming back.",
+      "revId": "c3f77c9a57ce2b6f023205d54ef9df4d5290db42",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
