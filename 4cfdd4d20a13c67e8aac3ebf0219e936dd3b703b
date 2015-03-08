@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_882dc500",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-08T04:56:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_b9e13e9c",
+      "revId": "4cfdd4d20a13c67e8aac3ebf0219e936dd3b703b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_fe37f7fc",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 3
@@ -48,6 +66,24 @@
       "writtenOn": "2015-03-03T06:34:46Z",
       "side": 1,
       "message": "I found some other tests also miss to check \u0027extra\u0027 field, \u0027test_create_null_role_name\u0027 for example, but it may not related with this topic since it\u0027s belong to other \u0027Class\u0027 and py file. I am fine with it and maybe propose another patch based on this.",
+      "revId": "4cfdd4d20a13c67e8aac3ebf0219e936dd3b703b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_68edf1b6",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-08T04:56:23Z",
+      "side": 1,
+      "message": "Extra is not a required field so the tests are free to leave it out. Plus the way you use extra is not to have a key called \u0027extra\u0027 in your dictionary, but rather to have a key we don\u0027t understand that magically gets stuck into the extra dictionary.\n\nThese tests are checking the actual generated schema so I do want to make sure the extra column is there.",
+      "parentUuid": "ba7be1f8_fe37f7fc",
       "revId": "4cfdd4d20a13c67e8aac3ebf0219e936dd3b703b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
