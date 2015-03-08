@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_bf58f98a",
+        "filename": "keystone/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-08T20:35:05Z",
+      "side": 1,
+      "message": "just to save re-creating it each time we get called in the loop below..",
+      "parentUuid": "9a80dd14_ac91ddf2",
+      "revId": "8d835a6ea77d82339baa8d0df8062c843454efb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_0c2029ab",
         "filename": "keystone/cli.py",
         "patchSetId": 17
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-06T16:01:43Z",
       "side": 1,
       "message": "What happens if the domain was already imported (in some previous keystone-manage execution)? \nShould we check if the domain is already in the database?",
+      "revId": "8d835a6ea77d82339baa8d0df8062c843454efb6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_1f53c56b",
+        "filename": "keystone/cli.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-08T20:35:05Z",
+      "side": 1,
+      "message": "I think that\u0027s a valid point - and in fact I think we should NOT overwrite an existing config - this upload is meant to be for migration only",
+      "parentUuid": "9a80dd14_0c2029ab",
       "revId": "8d835a6ea77d82339baa8d0df8062c843454efb6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
