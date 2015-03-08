@@ -159,7 +159,7 @@ class TestV2CatalogAPISQL(tests.TestCase):
             'interface': uuid.uuid4().hex[:8],
             'service_id': service_id,
             'url': uuid.uuid4().hex,
-            'region': uuid.uuid4().hex,
+            'region_id': uuid.uuid4().hex,
         }
 
     def test_get_catalog_ignores_endpoints_with_invalid_urls(self):
