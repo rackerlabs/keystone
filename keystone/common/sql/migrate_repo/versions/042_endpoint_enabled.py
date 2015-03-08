@@ -123,7 +123,7 @@ def _downgrade_endpoint_table_with_copy(meta, migrate_engine):
             sql.Column('id', sql.String(64), primary_key=True),
             sql.Column('legacy_endpoint_id', sql.String(64)),
             sql.Column('interface', sql.String(8), nullable=False),
-            sql.Column('region', sql.String(255)),
+            sql.Column('region_id', sql.String(255)),
             sql.Column(
                 'service_id', sql.String(64),
                 sql.ForeignKey('service.id'),
@@ -140,15 +140,15 @@ def _downgrade_endpoint_table_with_copy(meta, migrate_engine):
                 'id': endpoint.id,
                 'legacy_endpoint_id': endpoint.legacy_endpoint_id,
                 'interface': endpoint.interface,
-                'region': endpoint.region,
+                'region_id': endpoint.region_id,
                 'service_id': endpoint.service_id,
                 'url': endpoint.url,
                 'extra': endpoint.extra,
             }
             session.execute('insert into endpoint (id, legacy_endpoint_id, '
-                            'interface, region, service_id, url, extra) '
+                            'interface, region_id, service_id, url, extra) '
                             'values ( :id, :legacy_endpoint_id, :interface, '
-                            ':region, :service_id, :url, :extra);',
+                            ':region_id, :service_id, :url, :extra);',
                             new_values)
     orig_endpoint_table.drop()
 

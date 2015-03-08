@@ -62,7 +62,7 @@ def upgrade(migrate_engine):
         sql.Column('id', sql.String(length=64), primary_key=True),
         sql.Column('legacy_endpoint_id', sql.String(length=64)),
         sql.Column('interface', sql.String(length=8), nullable=False),
-        sql.Column('region', sql.String(length=255)),
+        sql.Column('region_id', sql.String(length=255)),
         sql.Column('service_id', sql.String(length=64), nullable=False),
         sql.Column('url', sql.Text, nullable=False),
         sql.Column('extra', ks_sql.JsonBlob.impl),
