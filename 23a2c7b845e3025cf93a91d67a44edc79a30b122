@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_b4f10003",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-08T15:55:18Z",
+      "side": 1,
+      "message": "revert the whitespace change on the previous line.",
+      "revId": "23a2c7b845e3025cf93a91d67a44edc79a30b122",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
