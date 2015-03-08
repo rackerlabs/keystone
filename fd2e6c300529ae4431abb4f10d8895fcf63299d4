@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_54460450",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-08T15:35:16Z",
+      "side": 1,
+      "message": "Why 10? add a comment.",
+      "revId": "fd2e6c300529ae4431abb4f10d8895fcf63299d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_b41e605d",
         "filename": "keystone/common/environment/eventlet_server.py",
         "patchSetId": 3
@@ -13,6 +30,24 @@
       "writtenOn": "2015-03-08T15:18:22Z",
       "side": 1,
       "message": "is max_size (Maximum number of client connections opened at any time by this server.) the same as thread pool size?",
+      "revId": "fd2e6c300529ae4431abb4f10d8895fcf63299d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f442983c",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 183,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-08T15:35:16Z",
+      "side": 1,
+      "message": "I checked, and eventlet creates a GreenPool(max_size), so should be the same. Also, the default is 1024.",
+      "parentUuid": "9a80dd14_b41e605d",
       "revId": "fd2e6c300529ae4431abb4f10d8895fcf63299d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
