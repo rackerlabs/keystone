@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_3a741735",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-08T22:46:55Z",
+      "side": 1,
+      "message": "change \"confg\" to \"config\"",
+      "revId": "92c676df7dfa39edfccf934682d7ac70e5959d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
