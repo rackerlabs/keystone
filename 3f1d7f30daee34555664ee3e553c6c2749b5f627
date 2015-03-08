@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_996a75ec",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-08T14:52:20Z",
+      "side": 1,
+      "message": "use\n\n memoize.should_cache_fn \u003d should_cache\n memoize.expiration_time_fn \u003d expiration_time\n\notherwise we should consistently use setattr everywhere.\n\nI tried it and it works.\n\nAlso, I think these should be called memoize.should_cache and memoize.get_expiration_time",
+      "revId": "3f1d7f30daee34555664ee3e553c6c2749b5f627",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f95ff13e",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-08T14:52:20Z",
+      "side": 1,
+      "message": "suggest use section\u003d\u0027token\u0027",
+      "revId": "3f1d7f30daee34555664ee3e553c6c2749b5f627",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
