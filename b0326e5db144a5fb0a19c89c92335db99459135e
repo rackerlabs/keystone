@@ -70,6 +70,24 @@
       "revId": "b0326e5db144a5fb0a19c89c92335db99459135e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b933b960",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-08T14:15:32Z",
+      "side": 1,
+      "message": "If this class grows the need to the the additional fixtures then it can be changed. Unless a class is using all of the fixtures from BaseTestCase then it should not subclass it.",
+      "parentUuid": "9a80dd14_28f7798c",
+      "revId": "b0326e5db144a5fb0a19c89c92335db99459135e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
