@@ -67,6 +67,40 @@
       "revId": "70a1fff88cd773ae08132805bf25e3de8cd35a46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_13fe3d6b",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-09T20:59:18Z",
+      "side": 1,
+      "message": "if you rebase onto https://review.openstack.org/#/c/162338/ then it looks like you don\u0027t need to make any changes at all to this file. some of the work you\u0027re doing here should be done in fernet.core.Provider instead (in the v2 methods)",
+      "revId": "70a1fff88cd773ae08132805bf25e3de8cd35a46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b3a731a6",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-09T20:59:18Z",
+      "side": 1,
+      "message": "is this relevant to this change?",
+      "revId": "70a1fff88cd773ae08132805bf25e3de8cd35a46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
