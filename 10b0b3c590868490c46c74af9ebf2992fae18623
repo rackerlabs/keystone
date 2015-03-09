@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_ad5c3c4c",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-09T15:55:13Z",
+      "side": 1,
+      "message": "eventually this bit of code becomes the sole thing responsible for knowing what formats support which pieces of data. that seems far cleaner to me than, for example, having unscoped payloads half-aware of domain scopes and trusts and whatever else comes along - and just returning null for them all.",
+      "parentUuid": "9a80dd14_19ecd7f2",
+      "revId": "10b0b3c590868490c46c74af9ebf2992fae18623",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_199a176e",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 5
@@ -89,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_1c673c27",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 175,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-09T15:55:13Z",
+      "side": 1,
+      "message": "this isn\u0027t new code in this patch (it\u0027s just being moved from a different module), but i agree",
+      "parentUuid": "9a80dd14_199a176e",
+      "revId": "10b0b3c590868490c46c74af9ebf2992fae18623",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_598f2f2a",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 5
@@ -100,6 +136,24 @@
       "writtenOn": "2015-03-06T22:47:32Z",
       "side": 1,
       "message": "suggest use extras\u003d{}. Also, could use a comment why {} is used here.",
+      "revId": "10b0b3c590868490c46c74af9ebf2992fae18623",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_9c7a4cbb",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-09T15:55:13Z",
+      "side": 1,
+      "message": "this isn\u0027t new code in this patch either, but instead of documenting this antipattern, i\u0027d rather just make it an optional argument and stop shoveling garbage around: https://review.openstack.org/#/c/162661/",
+      "parentUuid": "9a80dd14_598f2f2a",
       "revId": "10b0b3c590868490c46c74af9ebf2992fae18623",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
