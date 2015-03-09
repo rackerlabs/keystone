@@ -188,6 +188,7 @@ class DomainConfigs(dict):
                 domain_config['cfg'].set_override(
                     option, specific_config[group][option], group)
 
+        domain_config['cfg_overrides'] = specific_config
         domain_config['driver'] = self._load_driver(domain_config)
         self._assert_no_more_than_one_sql_driver(domain_id, domain_config)
         self[domain_id] = domain_config
@@ -226,10 +227,12 @@ class DomainConfigs(dict):
                                                   resource_api)
 
     def get_domain_driver(self, domain_id):
+        self.check_config_and_reload_domain_driver_if_requried(domain_id)
         if domain_id in self:
             return self[domain_id]['driver']
 
     def get_domain_conf(self, domain_id):
+        self.check_config_and_reload_domain_driver_if_requried(domain_id)
         if domain_id in self:
             return self[domain_id]['cfg']
         else:
@@ -248,6 +251,35 @@ class DomainConfigs(dict):
             else:
                 # The standard driver
                 self.driver = self.driver()
+
+    def check_config_and_reload_domain_driver_if_requried(self, domain_id):
+        """Check for, and load, any new domain specific config for this domain.
+
+        This is only supported for the database stored domain specific
+        configurations.
+
+        """
+        if (not CONF.identity.domain_specific_drivers_enabled or
+                not CONF.identity.domain_configurations_from_database):
+            return
+
+        # When the domain specific drivers where set up, we stored away
+        # the domain specific config that was available at that time.
+        # So we now read the current version and compare. While this might
+        # seem somewhat inefficient, the sensitive config call is
+        # cached, so should be light weight.  More importantly, when the
+        # cache timeout is reached, we will get any config that has been
+        # updated from any other keystone process.
+        domain_config_options = (
+            self.domain_config_api.
+            get_config_with_sensitive_info(domain_id))
+        if domain_config_options:
+            if (domain_id not in self or
+                    domain_config_options != self[domain_id]['cfg_overrides']):
+                self._load_config_from_database(domain_id,
+                                                domain_config_options)
+        elif domain_id in self:
+            self.pop(domain_id)
 
 
 def domains_configured(f):
