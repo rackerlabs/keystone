@@ -16,6 +16,24 @@
       "revId": "23a2c7b845e3025cf93a91d67a44edc79a30b122",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_883f73b3",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-09T10:06:32Z",
+      "side": 1,
+      "message": "this wasn\u0027t intentional probably got added when merging",
+      "parentUuid": "9a80dd14_b4f10003",
+      "revId": "23a2c7b845e3025cf93a91d67a44edc79a30b122",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
