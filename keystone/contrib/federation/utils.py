@@ -294,15 +294,15 @@ def transform_to_group_ids(group_names, mapping_id,
                      assignment_api.get_domain_by_name(
                      domain.get('name')).get('id'))
         return domain_id
-
     for group in group_names:
         try:
             group_dict = identity_api.get_group_by_name(
                 group['name'], resolve_domain(group['domain']))
             yield group_dict['id']
         except exception.GroupNotFound:
-            raise exception.MappedGroupNotFound(
-                group_id=group['name'], mapping_id=mapping_id)
+            pass
+            #raise exception.MappedGroupNotFound(
+            #    group_id=group['name'], mapping_id=mapping_id)
 
 
 def get_assertion_params_from_env(context):
