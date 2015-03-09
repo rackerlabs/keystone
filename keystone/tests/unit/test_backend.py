@@ -3204,7 +3204,7 @@ class IdentityTests(AssignmentTestHelperMixin):
         subtree = self.resource_api.list_projects_in_subtree(project3['id'])
         self.assertEqual(0, len(subtree))
 
-    @tests.skip_if_no_multiple_domains_support
+    @unit.skip_if_no_multiple_domains_support
     def test_projects_subtree_do_not_bypass_domains(self):
         """Tests list_projects_in_subtree do not by pass subdomains
 
@@ -3335,7 +3335,7 @@ class IdentityTests(AssignmentTestHelperMixin):
         # It has the default domain as parent
         self.assertEqual(1, len(parents))
 
-    @tests.skip_if_no_multiple_domains_support
+    @unit.skip_if_no_multiple_domains_support
     def test_project_parents_do_not_bypass_domains(self):
         """Tests list_projects_parents not by pass subdomains
 
