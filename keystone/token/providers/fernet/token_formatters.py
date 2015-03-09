@@ -91,7 +91,7 @@ class TokenFormatter(object):
         return created_at
 
     def create_token(self, user_id, audit_ids, domain_id=None, project_id=None,
-                     trust_id=None):
+                     trust_id=None, group_ids=None):
         """Given a set of payload attributes, generate a Fernet token."""
         if trust_id:
             version = TrustScopedPayload.version
@@ -100,6 +100,12 @@ class TokenFormatter(object):
                 project_id,
                 audit_ids,
                 trust_id)
+        elif group_ids:
+            version = FederatedPayload.version
+            payload = FederatedPayload.assemble(
+                user_id,
+                audit_ids,
+                group_ids)
         elif project_id:
             version = ProjectScopedPayload.version
             payload = ProjectScopedPayload.assemble(
@@ -134,6 +140,7 @@ class TokenFormatter(object):
         domain_id = None
         project_id = None
         trust_id = None
+        group_ids = None
 
         if version == UnscopedPayload.version:
             (user_id, audit_ids) = UnscopedPayload.disassemble(payload)
@@ -146,6 +153,9 @@ class TokenFormatter(object):
         elif version == TrustScopedPayload.version:
             (user_id, project_id, audit_ids, trust_id) = (
                 TrustScopedPayload.disassemble(payload))
+        elif version == FederatedPayload.version:
+            (user_id, audit_ids, group_ids) = FederatedPayload.disassemble(
+                payload)
         else:
             # If the token_format is not recognized, raise Unauthorized.
             raise exception.Unauthorized(_(
@@ -164,7 +174,7 @@ class TokenFormatter(object):
         created_at = timeutils.isotime(created_at)
         expires_at = timeutils.isotime(expires_at)
 
-        return (user_id, audit_ids, domain_id, project_id, trust_id,
+        return (user_id, audit_ids, domain_id, project_id, trust_id, group_ids,
                 created_at, expires_at)
 
 
@@ -367,3 +377,54 @@ class TrustScopedPayload(BasePayload):
         audit_ids = map(provider.base64_encode, payload[3])
 
         return (user_id, project_id, audit_ids, trust_id)
+
+
+class FederatedPayload(BasePayload):
+    version = 4
+
+    @classmethod
+    def assemble(cls, user_id, audit_ids, group_ids):
+        """Assemble the payload of a federated token.
+
+        :param user_id: ID of the user in the token request
+        :param project_id: ID of the project to scope to
+        :param audit_ids: list of the token's audit IDs
+        :param group_ids: list of dictionaries containing group IDs for the
+                          user
+        :returns: the payload of a federated token
+
+        """
+        def pack_group_ids(group_dict):
+            return cls.convert_uuid_hex_to_bytes(group_dict['id'])
+
+        try:
+            b_user_id = cls.convert_uuid_hex_to_bytes(user_id)
+        except ValueError:
+            # this might not be a UUID, depending on the identity provider
+            b_user_id = user_id
+        b_group_ids = map(pack_group_ids, group_ids)
+        b_audit_ids = map(provider.random_urlsafe_str_to_bytes, audit_ids)
+
+        return (b_user_id, b_group_ids, b_audit_ids)
+
+    @classmethod
+    def disassemble(cls, payload):
+        """Validate a federated paylod.
+
+        :param token_string: a string representing the token
+        :return: a tuple containing the user_id, project_id, audit_ids, and
+                 group_ids
+
+        """
+        def unpack_group_ids(group_id_in_bytes):
+            group_id = cls.convert_uuid_bytes_to_hex(group_id_in_bytes)
+            return {'id': group_id}
+
+        try:
+            user_id = cls.convert_uuid_bytes_to_hex(payload[0])
+        except ValueError:
+            user_id = payload[0]
+        group_ids = map(unpack_group_ids, payload[1])
+        audit_ids = map(provider.base64_encode, payload[2])
+
+        return (user_id, audit_ids, group_ids)
