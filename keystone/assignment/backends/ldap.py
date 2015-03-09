@@ -59,7 +59,8 @@ class Assignment(assignment.Driver):
         return 'ldap'
 
     def list_role_ids_for_groups_on_project(
-            self, groups, project_id, project_domain_id, project_parents):
+            self, groups, project_id, project_domain_id, project_parents,
+            is_domain=False):
         group_dns = [self.group._id_to_dn(group_id) for group_id in groups]
         role_list = [self.role._dn_to_id(role_assignment.role_dn)
                      for role_assignment in self.role.get_role_assignments
