@@ -379,8 +379,6 @@ class TestCase(BaseTestCase):
         super(TestCase, self).setUp()
         self.addCleanup(self.cleanup_instance('config_fixture', 'logger'))
 
-        self.addCleanup(CONF.reset)
-
         self.useFixture(mockpatch.PatchObject(logging.Handler, 'handleError',
                                               side_effect=BadLog))
         self.config_fixture = self.useFixture(config_fixture.Config(CONF))
