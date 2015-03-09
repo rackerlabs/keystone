@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_df3744fd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-09T22:51:53Z",
+      "side": 1,
+      "message": "otherwise*",
+      "revId": "200167b174d07e1688b0c348c2085b1cb74f4e3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_1f3e3cda",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-09T22:51:53Z",
+      "side": 1,
+      "message": "use Closes-Bug",
+      "revId": "200167b174d07e1688b0c348c2085b1cb74f4e3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_bf3450fc",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 304,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-09T22:51:53Z",
+      "side": 1,
+      "message": "remove the commented out code and add a comment",
+      "revId": "200167b174d07e1688b0c348c2085b1cb74f4e3a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
