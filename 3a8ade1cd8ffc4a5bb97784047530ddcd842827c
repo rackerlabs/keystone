@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_fdc258e7",
+        "filename": "keystone/common/sql/migrate_repo/versions/044_icehouse.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-09T20:22:25Z",
+      "side": 1,
+      "message": "Please do not add copyright to the collapsed schema.",
+      "revId": "3a8ade1cd8ffc4a5bb97784047530ddcd842827c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
