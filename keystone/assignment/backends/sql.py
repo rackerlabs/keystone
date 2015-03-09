@@ -250,7 +250,8 @@ class Assignment(keystone_assignment.AssignmentDriverV8):
         return [role.role_id for role in query.all()]
 
     def list_role_ids_for_groups_on_project(
-            self, group_ids, project_id, project_domain_id, project_parents):
+            self, group_ids, project_id, project_domain_id, project_parents,
+            is_domain=False):
 
         if not group_ids:
             # If there's no groups then there will be no project roles.
@@ -263,7 +264,7 @@ class Assignment(keystone_assignment.AssignmentDriverV8):
             RoleAssignment.inherited == false(),
             RoleAssignment.target_id == project_id)
 
-        if CONF.os_inherit.enabled:
+        if CONF.os_inherit.enabled and not is_domain:
             # Inherited roles from domains
             sql_constraints = sqlalchemy.or_(
                 sql_constraints,
