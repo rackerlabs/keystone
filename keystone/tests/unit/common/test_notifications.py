@@ -178,10 +178,9 @@ class NotificationsTestCase(testtools.TestCase):
     def setUp(self):
         super(NotificationsTestCase, self).setUp()
 
-        # these should use self.config_fixture.config(), but they haven't
-        # been registered yet
-        CONF.rpc_backend = 'fake'
-        CONF.notification_driver = ['fake']
+        self.config_fixture = self.useFixture(config_fixture.Config(CONF))
+        self.config_fixture.config(rpc_backend='fake',
+                                   notification_driver=['fake'])
 
     def test_send_notification(self):
         """Test the private method _send_notification to ensure event_type,
