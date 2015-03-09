@@ -227,10 +227,6 @@ def skip_if_no_multiple_domains_support(f):
     return wrapper
 
 
-class UnexpectedExit(Exception):
-    pass
-
-
 class BadLog(Exception):
     """Raised on invalid call to logging (parameter mismatch)."""
     pass
@@ -380,8 +376,6 @@ class TestCase(BaseTestCase):
 
         self.addCleanup(CONF.reset)
 
-        self.useFixture(mockpatch.PatchObject(sys, 'exit',
-                                              side_effect=UnexpectedExit))
         self.useFixture(mockpatch.PatchObject(logging.Handler, 'handleError',
                                               side_effect=BadLog))
         self.config_fixture = self.useFixture(config_fixture.Config(CONF))

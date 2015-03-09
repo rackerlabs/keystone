@@ -12,7 +12,6 @@
 #   License for the specific language governing permissions and limitations
 #   under the License.
 
-import sys
 import warnings
 
 from oslo_log import log
@@ -26,10 +25,6 @@ LOG = log.getLogger(__name__)
 
 
 class TestTestCase(tests.TestCase):
-    def test_unexpected_exit(self):
-        # if a test calls sys.exit it raises rather than exiting.
-        self.assertThat(lambda: sys.exit(),
-                        matchers.raises(tests.UnexpectedExit))
 
     def test_bad_log(self):
         # If the arguments are invalid for the string in a log it raises an
