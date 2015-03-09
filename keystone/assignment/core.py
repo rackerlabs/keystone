@@ -98,11 +98,14 @@ class Manager(manager.Manager):
         """
         def _get_group_project_roles(user_id, project_ref):
             group_ids = self._get_group_ids_for_user_id(user_id)
-            return self.list_role_ids_for_groups_on_project(
+            parents = self._list_parent_ids_of_project(project_ref['id'])
+            a = self.list_role_ids_for_groups_on_project(
                 group_ids,
                 project_ref['id'],
                 project_ref['domain_id'],
-                self._list_parent_ids_of_project(project_ref['id']))
+                parents,
+                project_ref['is_domain'])
+            return a
 
         def _get_user_project_roles(user_id, project_ref):
             role_list = []
@@ -115,21 +118,30 @@ class Manager(manager.Manager):
                 pass
 
             if CONF.os_inherit.enabled:
-                # Now get any inherited roles for the owning domain
-                try:
-                    metadata_ref = self._get_metadata(
-                        user_id=user_id, domain_id=project_ref['domain_id'])
-                    role_list += self._roles_from_role_dicts(
-                        metadata_ref.get('roles', {}), True)
-                except (exception.MetadataNotFound, exception.NotImplemented):
-                    pass
-                # As well inherited roles from parent projects
-                for p in self.resource_api.list_project_parents(
-                        project_ref['id']):
-                    p_roles = self.list_grants(
-                        user_id=user_id, project_id=p['id'],
-                        inherited_to_projects=True)
-                    role_list += [x['id'] for x in p_roles]
+                # Projects that act as domains do not receive inherited roles
+                # from its parents
+                if not project_ref['is_domain']:
+                    try:
+                        # Now get any inherited roles for the owning domain
+                        metadata_ref = self._get_metadata(
+                            user_id=user_id,
+                            domain_id=project_ref['domain_id'])
+                        role_list += self._roles_from_role_dicts(
+                            metadata_ref.get('roles', {}), True)
+                    except (exception.MetadataNotFound,
+                            exception.NotImplemented):
+                        pass
+                    # As well as inherited roles from parent projects
+                    for p in self.resource_api.list_project_parents(
+                            project_ref['id']):
+                        # Inherited project roles are applied if an ascendent
+                        # with inherited role is in the same domain of the
+                        # project or from a project that acts as a domain if
+                        # it is the domain the project is on.
+                        p_roles = self.list_grants(
+                            user_id=user_id, project_id=p['id'],
+                            inherited_to_projects=True)
+                        role_list += [x['id'] for x in p_roles]
 
             return role_list
 
@@ -185,7 +197,6 @@ class Manager(manager.Manager):
 
     def get_roles_for_groups(self, group_ids, project_id=None, domain_id=None):
         """Get a list of roles for this group on domain and/or project."""
-
         if project_id is not None:
             project = self.resource_api.get_project(project_id)
             role_ids = self.list_role_ids_for_groups_on_project(
@@ -1095,7 +1106,10 @@ class AssignmentDriverV8(object):
 
     @abc.abstractmethod
     def list_role_ids_for_groups_on_project(
-            self, group_ids, project_id, project_domain_id, project_parents):
+            self, group_ids, project_id, project_domain_id, project_parents,
+            is_domain=False):
+        # TODO(htruta): Refactor this method to pass project_ref, instead of
+        # all parameters separated
         """List the group role ids for a specific project.
 
         Supports the ``OS-INHERIT`` role inheritance from the project's domain
@@ -1109,6 +1123,8 @@ class AssignmentDriverV8(object):
         :type project_domain_id: str
         :param project_parents: list of parent ids of this project
         :type project_parents: list
+        :param is_domain: represents whether the project acts as a domain
+        :type project_parents: bool
         :returns: list of role ids for the project
         :rtype: list
         """
