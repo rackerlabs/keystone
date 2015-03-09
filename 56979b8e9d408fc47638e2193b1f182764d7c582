@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_44b2ad4c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-09T22:06:02Z",
+      "side": 1,
+      "message": "what\u0027s wrong with it?",
+      "revId": "56979b8e9d408fc47638e2193b1f182764d7c582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_047c3571",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-09T22:06:02Z",
+      "side": 1,
+      "message": "no need to keep this around (remove self.)",
+      "revId": "56979b8e9d408fc47638e2193b1f182764d7c582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_848f4574",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-09T22:06:02Z",
+      "side": 1,
+      "message": "why is it ok to remove the cleanup? CONF is global state.",
+      "revId": "56979b8e9d408fc47638e2193b1f182764d7c582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
