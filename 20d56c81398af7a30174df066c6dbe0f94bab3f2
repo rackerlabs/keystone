@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_8029fa9c",
+        "filename": "keystone/tests/unit/common/test_utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-09T18:35:09Z",
+      "side": 1,
+      "message": "We want to catch this rather than exiting since that would break the tests.",
+      "revId": "20d56c81398af7a30174df066c6dbe0f94bab3f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
