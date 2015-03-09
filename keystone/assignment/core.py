@@ -157,12 +157,16 @@ class Manager(manager.Manager):
                         metadata_ref.get('roles', {}), True)
                 except (exception.MetadataNotFound, exception.NotImplemented):
                     pass
-                # As well inherited roles from parent projects
+                # As well as inherited roles from parent projects
                 for p in self.list_project_parents(project_ref['id']):
-                    p_roles = self.list_grants(
-                        user_id=user_id, project_id=p['id'],
-                        inherited_to_projects=True)
-                    role_list += [x['id'] for x in p_roles]
+                    # Roles are not inherited to projects with is_domain flag
+                    # enabled, so as we look at the parents, only include those
+                    # assignments from projects that share our domain_id
+                    if p['domain_id'] == project_ref['domain_id']:
+                        p_roles = self.list_grants(
+                            user_id=user_id, project_id=p['id'],
+                            inherited_to_projects=True)
+                        role_list += [x['id'] for x in p_roles]
 
             return role_list
 
