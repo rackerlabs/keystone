@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_33b98179",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-09T21:09:03Z",
+      "side": 1,
+      "message": "++ maybe \"config_files_list\"",
+      "parentUuid": "9a80dd14_facb5f50",
+      "revId": "be9503dc49c6fc4f75bca8a6e7707f5a42343c1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_5abf0baa",
         "filename": "keystone/identity/core.py",
         "patchSetId": 29
@@ -70,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_3370a1db",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-09T21:09:03Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a80dd14_faf99f80",
+      "revId": "be9503dc49c6fc4f75bca8a6e7707f5a42343c1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_3af09790",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 29
@@ -81,6 +117,24 @@
       "writtenOn": "2015-03-09T14:41:20Z",
       "side": 1,
       "message": "this doesn\u0027t depend on the backend at all... this is a config test not a backend test.",
+      "revId": "be9503dc49c6fc4f75bca8a6e7707f5a42343c1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_735cd94b",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 3729,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-09T21:09:03Z",
+      "side": 1,
+      "message": "++\n\nin the test_backend should be a test to verify if the multiple sql backends exception is being raised",
+      "parentUuid": "9a80dd14_3af09790",
       "revId": "be9503dc49c6fc4f75bca8a6e7707f5a42343c1f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
