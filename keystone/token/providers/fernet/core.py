@@ -14,6 +14,7 @@ from oslo_config import cfg
 from oslo_log import log
 
 from keystone.common import dependency
+from keystone.contrib import federation as fed
 from keystone import exception
 from keystone.token.providers import common
 from keystone.token.providers.fernet import token_formatters as tf
@@ -71,6 +72,9 @@ class Provider(common.BaseProvider):
 
         """
         token_ref = None
+        # NOTE(lbragstad): This determines if we are dealing with a federated
+        # token or not. The groups for the user will be in the returned token
+        # reference.
         if auth_context and self._is_mapped_token(auth_context):
             token_ref = self._handle_mapped_tokens(
                 auth_context, project_id, domain_id)
@@ -100,7 +104,9 @@ class Provider(common.BaseProvider):
             token_data['token']['audit_ids'],
             domain_id=domain_id,
             project_id=project_id,
-            trust_id=token_data['token'].get('OS-TRUST:trust', {}).get('id'))
+            trust_id=token_data['token'].get('OS-TRUST:trust', {}).get('id'),
+            group_ids=token_data['token'].get('user', {}).get(
+                fed.FEDERATION, {}).get('groups'))
 
         return token, token_data
 
@@ -122,17 +128,24 @@ class Provider(common.BaseProvider):
         :raises: keystone.exception.Unauthorized
 
         """
-        (user_id, audit_ids, domain_id, project_id, trust_id, created_at,
-            expires_at) = self.token_formatter.validate_token(token)
+        (user_id, audit_ids, domain_id, project_id, trust_id, group_ids,
+            created_at, expires_at) = self.token_formatter.validate_token(
+                token)
 
+        token_dict = {'user': {fed.FEDERATION: {'groups': {}}}}
+        methods = ['password', 'token']
+        if group_ids:
+            token_dict['user'][fed.FEDERATION]['groups'] = group_ids
+            methods = ['saml2']
         trust_ref = self.trust_api.get_trust(trust_id)
         return self.v3_token_data_helper.get_token_data(
             user_id,
-            method_names=['password', 'token'],
+            method_names=methods,
             project_id=project_id,
             expires=expires_at,
             issued_at=created_at,
             trust=trust_ref,
+            token=token_dict,
             audit_info=audit_ids)
 
     def _get_token_id(self, token_data):
