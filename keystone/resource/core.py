@@ -830,6 +830,8 @@ class DomainConfigManager(manager.Manager):
         'ldap': ['password']
     }
 
+    _DOMAIN_CONFIG = 'domain_config'
+
     def __init__(self):
         super(DomainConfigManager, self).__init__(CONF.domain_config.driver)
 
@@ -953,6 +955,7 @@ class DomainConfigManager(manager.Manager):
 
         return config
 
+    @notifications.created(_DOMAIN_CONFIG, public=False)
     def create_config(self, domain_id, config):
         """Create config for a domain
 
@@ -1026,6 +1029,7 @@ class DomainConfigManager(manager.Manager):
         raise exception.DomainConfigNotFound(
             domain_id=domain_id, group_or_option=msg)
 
+    @notifications.updated(_DOMAIN_CONFIG, public=False)
     def update_config(self, domain_id, config, group=None, option=None):
         """Update config, or partial config, for a domain
 
@@ -1140,6 +1144,7 @@ class DomainConfigManager(manager.Manager):
 
         return self.get_config(domain_id)
 
+    @notifications.deleted(_DOMAIN_CONFIG, public=False)
     def delete_config(self, domain_id, group=None, option=None):
         """Delete config, or partial config, for the domain.
 
