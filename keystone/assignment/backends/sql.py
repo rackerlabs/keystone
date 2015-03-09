@@ -401,7 +401,8 @@ class RoleAssignment(sql.ModelBase, sql.DictBase):
         nullable=False)
     actor_id = sql.Column(sql.String(64), nullable=False, index=True)
     target_id = sql.Column(sql.String(64), nullable=False)
-    role_id = sql.Column(sql.String(64), nullable=False)
+    role_id = sql.Column(sql.String(64), sql.ForeignKey('role.id'),
+                         nullable=False)
     inherited = sql.Column(sql.Boolean, default=False, nullable=False)
     __table_args__ = (sql.PrimaryKeyConstraint('type', 'actor_id', 'target_id',
                                                'role_id'), {})
