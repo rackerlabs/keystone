@@ -2313,6 +2313,343 @@ class AssignmentInheritanceTestCase(test_v3.RestfulTestCase,
         # Check the user cannot get a domain token anymore
         self.v3_authenticate_token(domain_auth_data, expected_status=401)
 
+    def _create_subdomain_hierarchy(self):
+        # Create a root project that acts as a domain
+        root_project = self.new_project_ref(is_domain=True)
+        resp = self.post('/projects',
+                         body={'project': root_project})
+        root_project['domain_id'] = None
+        self.assertValidProjectResponse(resp, root_project)
+        root_project_id = resp.result['project']['id']
+
+        # Create a sub project that acts as a domain
+        sub_domain = self.new_project_ref(domain_id=root_project_id,
+                                          parent_id=root_project_id,
+                                          is_domain=True)
+        resp = self.post('/projects',
+                         body={'project': sub_domain})
+        self.assertValidProjectResponse(resp, sub_domain)
+        sub_domain_id = resp.result['project']['id']
+
+        # Create a regular project, child of root
+        root_child = self.new_project_ref(domain_id=root_project_id,
+                                          parent_id=root_project_id,
+                                          is_domain=False)
+        resp = self.post('/projects',
+                         body={'project': root_child})
+        self.assertValidProjectResponse(resp, root_child)
+        root_child_id = resp.result['project']['id']
+
+        # Create a regular project, child of sub_domain
+        sub_domain_child = self.new_project_ref(domain_id=sub_domain_id,
+                                                parent_id=sub_domain_id,
+                                                is_domain=False)
+        resp = self.post('/projects',
+                         body={'project': sub_domain_child})
+        self.assertValidProjectResponse(resp, sub_domain_child)
+        sub_domain_child_id = resp.result['project']['id']
+
+        return (root_project_id, sub_domain_id, root_child_id,
+                sub_domain_child_id)
+
+    def test_restrict_project_inherited_roles_for_subdomain(self):
+        subdomain_hierarchy = self._create_subdomain_hierarchy()
+        root_project_id = subdomain_hierarchy[0]
+        sub_domain_id = subdomain_hierarchy[1]
+        root_child_id = subdomain_hierarchy[2]
+        sub_domain_child_id = subdomain_hierarchy[3]
+
+        user = self.new_user_ref(domain_id=root_project_id)
+        password = user['password']
+        user = self.identity_api.create_user(user)
+        user['password'] = password
+
+        # Define authentication data
+        root_domain_auth_data = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            domain_id=root_project_id)
+        root_project_auth_data = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            project_id=root_project_id)
+        sub_domain_auth_data = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            project_id=sub_domain_id)
+        root_child_auth_data = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            project_id=root_child_id)
+        sub_domain_child_auth_data = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            project_id=sub_domain_child_id)
+
+        # Check the user cannot get a token in either of the projects, because
+        # the user doesn't have assignments from this projects.
+        self.v3_authenticate_token(sub_domain_auth_data, expected_status=401)
+        self.v3_authenticate_token(root_child_auth_data, expected_status=401)
+        self.v3_authenticate_token(sub_domain_child_auth_data,
+                                   expected_status=401)
+
+        # Grant non-inherited role for user on root_project
+        non_inher_gd_link = self.build_role_assignment_link(
+            project_id=root_project_id,
+            user_id=user['id'],
+            role_id=self.role_id)
+        self.put(non_inher_gd_link)
+
+        # Check the user can get only a project token
+        self.v3_authenticate_token(root_project_auth_data)
+        self.v3_authenticate_token(root_domain_auth_data, expected_status=401)
+
+        # Create inherited role
+        inherited_role = {'id': uuid.uuid4().hex, 'name': 'inherited'}
+        self.role_api.create_role(inherited_role['id'], inherited_role)
+
+        # Grant inherited role for user on root_project
+        inher_gd_link = self.build_role_assignment_link(
+            project_id=root_project_id, user_id=user['id'],
+            role_id=inherited_role['id'], inherited_to_projects=True)
+        self.put(inher_gd_link)
+
+        # Check the user can get a token for root and its child project
+        self.v3_authenticate_token(root_project_auth_data, expected_status=201)
+        self.v3_authenticate_token(root_child_auth_data, expected_status=201)
+
+        # Check the user cannot get a token for sub_domain nor its child,
+        # because inherited role assignments do not bypass subdomains
+        self.v3_authenticate_token(sub_domain_auth_data, expected_status=401)
+        self.v3_authenticate_token(sub_domain_child_auth_data,
+                                   expected_status=401)
+
+    def test_restrict_project_group_inherited_roles_for_subdomain(self):
+        # Create a new group and put a new user in it to
+        # ensure that no grant is loaded from sample data
+        user = self.new_user_ref(domain_id=self.domain_id)
+        password = user['password']
+        user = self.identity_api.create_user(user)
+        user['password'] = password
+
+        group = self.new_group_ref(domain_id=self.domain['id'])
+        group = self.identity_api.create_group(group)
+        self.identity_api.add_user_to_group(user['id'], group['id'])
+
+        subdomain_hierarchy = self._create_subdomain_hierarchy()
+        root_project_id = subdomain_hierarchy[0]
+        sub_domain_id = subdomain_hierarchy[1]
+        root_child_id = subdomain_hierarchy[2]
+        sub_domain_child_id = subdomain_hierarchy[3]
+
+        # Define authentication data
+        root_domain_auth_data = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            domain_id=root_project_id)
+        root_project_auth_data = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            project_id=root_project_id)
+        sub_domain_auth_data = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            project_id=sub_domain_id)
+        root_child_auth_data = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            project_id=root_child_id)
+        sub_domain_child_auth_data = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            project_id=sub_domain_child_id)
+
+        # Check the user cannot get a token in either of the projects, because
+        # the user doesn't have assignments from this projects.
+        self.v3_authenticate_token(sub_domain_auth_data, expected_status=401)
+        self.v3_authenticate_token(root_child_auth_data, expected_status=401)
+        self.v3_authenticate_token(sub_domain_child_auth_data,
+                                   expected_status=401)
+
+        # Grant non-inherited role for user on root_project
+        non_inher_gd_link = self.build_role_assignment_link(
+            project_id=root_project_id,
+            group_id=group['id'],
+            role_id=self.role_id)
+        self.put(non_inher_gd_link)
+
+        # Check the user can get only a project token
+        self.v3_authenticate_token(root_project_auth_data)
+        self.v3_authenticate_token(root_domain_auth_data, expected_status=401)
+
+        # Create inherited role
+        inherited_role = {'id': uuid.uuid4().hex, 'name': 'inherited'}
+        self.role_api.create_role(inherited_role['id'], inherited_role)
+
+        # Grant inherited role for group on root_project
+        inher_gd_link = self.build_role_assignment_link(
+            project_id=root_project_id, group_id=group['id'],
+            role_id=inherited_role['id'], inherited_to_projects=True)
+        self.put(inher_gd_link)
+
+        # Check the user can get a token for root and its child project
+        self.v3_authenticate_token(root_project_auth_data, expected_status=201)
+        self.v3_authenticate_token(root_child_auth_data, expected_status=201)
+
+        # Check the user cannot get a token for sub_domain nor its child,
+        # because inherited role assignments do not bypass subdomains
+        self.v3_authenticate_token(sub_domain_auth_data, expected_status=401)
+        self.v3_authenticate_token(sub_domain_child_auth_data,
+                                   expected_status=401)
+
+    def test_restrict_domain_inherited_roles_for_subdomain(self):
+        subdomain_hierarchy = self._create_subdomain_hierarchy()
+        root_project_id = subdomain_hierarchy[0]
+        sub_domain_id = subdomain_hierarchy[1]
+        root_child_id = subdomain_hierarchy[2]
+        sub_domain_child_id = subdomain_hierarchy[3]
+
+        user = self.new_user_ref(domain_id=root_project_id)
+        password = user['password']
+        user = self.identity_api.create_user(user)
+        user['password'] = password
+
+        # Define authentication data
+        root_domain_auth_data = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            domain_id=root_project_id)
+        root_project_auth_data = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            project_id=root_project_id)
+        sub_domain_auth_data = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            project_id=sub_domain_id)
+        root_child_auth_data = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            project_id=root_child_id)
+        sub_domain_child_auth_data = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            project_id=sub_domain_child_id)
+
+        # Check the user cannot get a token in either of the projects, because
+        # the user doesn't have assignments from this projects.
+        self.v3_authenticate_token(sub_domain_auth_data, expected_status=401)
+        self.v3_authenticate_token(root_child_auth_data, expected_status=401)
+        self.v3_authenticate_token(sub_domain_child_auth_data,
+                                   expected_status=401)
+
+        # Grant non-inherited role for user on domain
+        non_inher_gd_link = self.build_role_assignment_link(
+            domain_id=root_project_id,
+            user_id=user['id'],
+            role_id=self.role_id)
+        self.put(non_inher_gd_link)
+
+        # Check the user can get only a domain token
+        self.v3_authenticate_token(root_domain_auth_data)
+        self.v3_authenticate_token(root_project_auth_data, expected_status=401)
+
+        # Create inherited role
+        inherited_role = {'id': uuid.uuid4().hex, 'name': 'inherited'}
+        self.role_api.create_role(inherited_role['id'], inherited_role)
+
+        # Grant inherited role for user on domain
+        inher_gd_link = self.build_role_assignment_link(
+            domain_id=root_project_id, user_id=user['id'],
+            role_id=inherited_role['id'], inherited_to_projects=True)
+        self.put(inher_gd_link)
+
+        # Check the user can get a token for its child project
+        self.v3_authenticate_token(root_child_auth_data, expected_status=201)
+
+        # Check the user cannot get a token for sub_domain nor its child,
+        # because inherited role assignments do not bypass subdomains
+        self.v3_authenticate_token(sub_domain_auth_data, expected_status=401)
+        self.v3_authenticate_token(sub_domain_child_auth_data,
+                                   expected_status=401)
+
+    def test_restrict_domain_group_inherited_roles_for_subdomain(self):
+        # Create a new group and put a new user in it to
+        # ensure that no grant is loaded from sample data
+        user = self.new_user_ref(domain_id=self.domain_id)
+        password = user['password']
+        user = self.identity_api.create_user(user)
+        user['password'] = password
+
+        group = self.new_group_ref(domain_id=self.domain['id'])
+        group = self.identity_api.create_group(group)
+        self.identity_api.add_user_to_group(user['id'], group['id'])
+
+        subdomain_hierarchy = self._create_subdomain_hierarchy()
+        root_project_id = subdomain_hierarchy[0]
+        sub_domain_id = subdomain_hierarchy[1]
+        root_child_id = subdomain_hierarchy[2]
+        sub_domain_child_id = subdomain_hierarchy[3]
+
+        # Define authentication data
+        root_domain_auth_data = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            domain_id=root_project_id)
+        root_project_auth_data = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            project_id=root_project_id)
+        sub_domain_auth_data = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            project_id=sub_domain_id)
+        root_child_auth_data = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            project_id=root_child_id)
+        sub_domain_child_auth_data = self.build_authentication_request(
+            user_id=user['id'],
+            password=user['password'],
+            project_id=sub_domain_child_id)
+
+        # Check the user cannot get a token in either of the projects, because
+        # the user doesn't have assignments from this projects.
+        self.v3_authenticate_token(sub_domain_auth_data, expected_status=401)
+        self.v3_authenticate_token(root_child_auth_data, expected_status=401)
+        self.v3_authenticate_token(sub_domain_child_auth_data,
+                                   expected_status=401)
+
+        # Grant non-inherited role for group on domain
+        non_inher_gd_link = self.build_role_assignment_link(
+            domain_id=root_project_id,
+            group_id=group['id'],
+            role_id=self.role_id)
+        self.put(non_inher_gd_link)
+
+        # Check the user can get only a domain token
+        self.v3_authenticate_token(root_domain_auth_data)
+        self.v3_authenticate_token(root_project_auth_data, expected_status=401)
+
+        # Create inherited role
+        inherited_role = {'id': uuid.uuid4().hex, 'name': 'inherited'}
+        self.role_api.create_role(inherited_role['id'], inherited_role)
+
+        # Grant inherited role for group on root_project
+        inher_gd_link = self.build_role_assignment_link(
+            project_id=root_project_id, group_id=group['id'],
+            role_id=inherited_role['id'], inherited_to_projects=True)
+        self.put(inher_gd_link)
+
+        # Check the user can get a token for its child project
+        self.v3_authenticate_token(root_child_auth_data, expected_status=201)
+
+        # Check the user cannot get a token for sub_domain nor its child,
+        # because inherited role assignments do not bypass subdomains
+        self.v3_authenticate_token(sub_domain_auth_data, expected_status=401)
+        self.v3_authenticate_token(sub_domain_child_auth_data,
+                                   expected_status=401)
+
     def test_get_token_from_inherited_group_domain_role_grants(self):
         # Create a new group and put a new user in it to
         # ensure that no grant is loaded from sample data
