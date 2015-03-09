@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_89e4beac",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 2254,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-09T21:55:06Z",
+      "side": 1,
+      "message": "Validation of this token is failing for some reason that *isn\u0027t* the formatter. I\u0027ve confirmed the token_data is built properly from the v3_token_data_helper, etc... \n\nI\u0027m still digging into this but wanted to push what I had since it\u0027s easier to maintain the rebases.",
+      "revId": "30ff3b49eea534cf28884a859deaf35d9f6de230",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
