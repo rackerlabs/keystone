@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_5365311c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-09T08:13:48Z",
+      "side": 1,
+      "message": "it\u0027s ok, was thinking about something like:\n\nAdd FK constraint to role_id in assignment",
+      "parentUuid": "9a80dd14_b3d4adbd",
+      "revId": "7a88ffb2db1a5c93659330afcafce458decae3a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_18c2f633",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
