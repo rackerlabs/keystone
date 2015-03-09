@@ -14,13 +14,16 @@ import shutil
 import tempfile
 import uuid
 
-from keystone.common import config
+from oslo_config import cfg
+
 from keystone import exception
 from keystone.tests import unit as tests
 from keystone.token import provider
 from keystone.token.providers import fernet
 from keystone.token.providers.fernet import token_formatters
 from keystone.token.providers.fernet import utils
+
+CONF = cfg.CONF
 
 
 CONF = config.CONF

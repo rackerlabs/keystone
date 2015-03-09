@@ -14,6 +14,7 @@ from oslo_config import cfg
 from oslo_log import log
 
 from keystone.common import dependency
+from keystone.contrib import federation
 from keystone import exception
 from keystone.token.providers import common
 from keystone.token.providers.fernet import token_formatters as tf
@@ -45,6 +46,26 @@ class Provider(common.BaseProvider):
         """
         raise exception.NotImplemented()
 
+    def _construct_federated_info(self, token_data):
+        """Extract everything needed for federated tokens."""
+        group_ids = token_data.get('user', {}).get(
+            federation.FEDERATION, {}).get('groups')
+        idp_id = token_data.get('user', {}).get(
+            federation.FEDERATION, {}).get('identity_provider').get('id')
+        protocol_id = token_data.get('user', {}).get(
+            federation.FEDERATION, {}).get('protocol').get('id')
+        federated_domain_id = token_data.get('user', {}).get(
+            'domain', {}).get('id')
+        federated_domain_name = token_data.get('user', {}).get(
+            'domain', {}).get('name')
+        if not group_ids:
+            group_ids = list()
+        federated_dict = dict(group_ids=group_ids, idp_id=idp_id,
+                              protocol_id=protocol_id,
+                              domain_id=federated_domain_id,
+                              domain_name=federated_domain_name)
+        return federated_dict
+
     def issue_v3_token(self, user_id, method_names, expires_at=None,
                        project_id=None, domain_id=None, auth_context=None,
                        trust=None, metadata_ref=None, include_catalog=True,
@@ -71,9 +92,14 @@ class Provider(common.BaseProvider):
 
         """
         token_ref = None
+        # NOTE(lbragstad): This determines if we are dealing with a federated
+        # token or not. The groups for the user will be in the returned token
+        # reference.
+        federated_dict = None
         if auth_context and self._is_mapped_token(auth_context):
             token_ref = self._handle_mapped_tokens(
                 auth_context, project_id, domain_id)
+            federated_dict = self._construct_federated_info(token_ref)
 
         # Although we accept issued_at and expires_at as part of this method's
         # signature, we don't encode either into the token's payload, and thus
@@ -100,8 +126,8 @@ class Provider(common.BaseProvider):
             token_data['token']['audit_ids'],
             domain_id=domain_id,
             project_id=project_id,
-            trust_id=token_data['token'].get('OS-TRUST:trust', {}).get('id'))
-
+            trust_id=token_data['token'].get('OS-TRUST:trust', {}).get('id'),
+            federated_info=federated_dict if federated_dict else None)
         return token, token_data
 
     def validate_v2_token(self, token_ref):
@@ -114,6 +140,23 @@ class Provider(common.BaseProvider):
         """
         raise exception.NotImplemented()
 
+    def _rebuild_federated_info(self, federated_dict, user_id):
+        """Format federated information into the token reference."""
+        g_ids = federated_dict['group_ids']
+        idp_id = federated_dict['idp_id']
+        protocol_id = federated_dict['protocol_id']
+        federated_domain_id = federated_dict['domain_id']
+        federated_domain_name = federated_dict['domain_name']
+        federated_info = dict(groups=g_ids,
+                              identity_provider=dict(id=idp_id),
+                              protocol=dict(id=protocol_id))
+        token_dict = {'user': {federation.FEDERATION: federated_info}}
+        token_dict['user']['domain'] = dict(id=federated_domain_id,
+                                            name=federated_domain_name)
+        token_dict['user']['id'] = user_id
+        token_dict['user']['name'] = user_id
+        return token_dict
+
     def validate_v3_token(self, token):
         """Validate a V3 formatted token.
 
@@ -122,17 +165,25 @@ class Provider(common.BaseProvider):
         :raises: keystone.exception.Unauthorized
 
         """
-        (user_id, audit_ids, domain_id, project_id, trust_id, created_at,
-            expires_at) = self.token_formatter.validate_token(token)
+        (user_id, audit_ids, domain_id, project_id, trust_id,
+            federated_info, created_at, expires_at) = (
+                self.token_formatter.validate_token(token))
 
+        token_dict = None
+        methods = None
+        if federated_info:
+            token_dict = self._rebuild_federated_info(federated_info, user_id)
+            methods = federated_info['protocol_id']
         trust_ref = self.trust_api.get_trust(trust_id)
+
         return self.v3_token_data_helper.get_token_data(
             user_id,
-            method_names=['password', 'token'],
+            method_names=methods if methods else ['password', 'token'],
             project_id=project_id,
             expires=expires_at,
             issued_at=created_at,
             trust=trust_ref,
+            token=token_dict,
             audit_info=audit_ids)
 
     def _get_token_id(self, token_data):
