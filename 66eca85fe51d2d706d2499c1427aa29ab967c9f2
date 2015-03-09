@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_722301a7",
+        "filename": "keystone/cli.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-09T15:09:49Z",
+      "side": 1,
+      "message": "Do we need to initialize the assignment.Manager() here even thought we\u0027re not using it?",
+      "revId": "66eca85fe51d2d706d2499c1427aa29ab967c9f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
