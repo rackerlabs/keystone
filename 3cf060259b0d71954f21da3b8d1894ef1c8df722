@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_a91422e9",
+        "filename": "keystone/tests/unit/tests/test_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-09T21:50:32Z",
+      "side": 1,
+      "message": "Opps...Was hurrying.",
+      "parentUuid": "9a80dd14_ce4ddc9b",
+      "revId": "3cf060259b0d71954f21da3b8d1894ef1c8df722",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_0e445472",
         "filename": "keystone/tests/unit/tests/test_core.py",
         "patchSetId": 1
@@ -47,6 +65,24 @@
       "writtenOn": "2015-03-09T21:34:07Z",
       "side": 1,
       "message": "I think all of these tests should be on BaseTestCase.",
+      "revId": "3cf060259b0d71954f21da3b8d1894ef1c8df722",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_29b3d2e9",
+        "filename": "keystone/tests/unit/tests/test_core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-09T21:50:32Z",
+      "side": 1,
+      "message": "i can move some more stuff between TestCase and BaseTestCase",
+      "parentUuid": "9a80dd14_ae526832",
       "revId": "3cf060259b0d71954f21da3b8d1894ef1c8df722",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
