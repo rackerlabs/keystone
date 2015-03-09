@@ -16,6 +16,24 @@
       "revId": "92c676df7dfa39edfccf934682d7ac70e5959d44",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_bccf1055",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-09T14:38:06Z",
+      "side": 1,
+      "message": "I\u0027ll come back in and fix this at a later date, if that\u0027s ok",
+      "parentUuid": "9a80dd14_3a741735",
+      "revId": "92c676df7dfa39edfccf934682d7ac70e5959d44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
