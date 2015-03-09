@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_9a96e33d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 29
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-09T14:41:20Z",
+      "side": 1,
+      "message": "change \"It is also\" to \"It also\"",
+      "revId": "be9503dc49c6fc4f75bca8a6e7707f5a42343c1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_facb5f50",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-09T14:41:20Z",
+      "side": 1,
+      "message": "is config_file supposed to be a single file rather than a list? Otherwise, why not call the parameter file_list?",
+      "revId": "be9503dc49c6fc4f75bca8a6e7707f5a42343c1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_5abf0baa",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-09T14:41:20Z",
+      "side": 1,
+      "message": "change \"and options\" to \"any options\"",
+      "revId": "be9503dc49c6fc4f75bca8a6e7707f5a42343c1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_faf99f80",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-09T14:41:20Z",
+      "side": 1,
+      "message": "There should be a test to show what happens when \u0027domain_configurations_from_database\u0027\u003dFalse and you try to use it.\n\nThere should be a test for if a config option is the wrong type or has an invalid value.",
+      "revId": "be9503dc49c6fc4f75bca8a6e7707f5a42343c1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_3af09790",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 3729,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-09T14:41:20Z",
+      "side": 1,
+      "message": "this doesn\u0027t depend on the backend at all... this is a config test not a backend test.",
+      "revId": "be9503dc49c6fc4f75bca8a6e7707f5a42343c1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_9a32635d",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 2546,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-09T14:41:20Z",
+      "side": 1,
+      "message": "add a docstring that says that subclasses should override this.",
+      "revId": "be9503dc49c6fc4f75bca8a6e7707f5a42343c1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_ba33a760",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 2818,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-09T14:41:20Z",
+      "side": 1,
+      "message": "this is asserting that the config is enabled... where the test says it should assert it\u0027s disabled.",
+      "revId": "be9503dc49c6fc4f75bca8a6e7707f5a42343c1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
