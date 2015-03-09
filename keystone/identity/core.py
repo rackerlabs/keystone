@@ -253,6 +253,45 @@ class DomainConfigs(dict):
                 # The standard driver
                 self.driver = self.driver()
 
+    def reread_config_and_reload_domain_driver(
+            self, domain_id, standard_driver, resource_api):
+        """Reread any use updated domain specific config settings.
+
+        This is only supported for the database stored domain specific
+        configurations.
+
+        """
+        if (not CONF.identity.domain_specific_drivers_enabled or
+                not CONF.identity.domain_configurations_from_database):
+            # We don't log error/warning here since this might actually happen
+            # if someone is setting up the domain configs in the database, but
+            # hasn't thrown the switch to enable them yet.
+            return
+
+        if not self.configured:
+            # Load all drivers, which will include the one requested
+            self.setup_domain_drivers(standard_driver, resource_api)
+        else:
+            # Drivers are already configured, so let's just reload the one
+            # requested with the appropriate config. In the case when we
+            # find there is no config for this domain (i.e. it has just been
+            # deleted), we remove this domain from the dict of domains that
+            # have their own driver and specific config. Subsequent Identity
+            # requests will then automatically be passed to the standard
+            # driver.
+            domain_config_options = (
+                self.domain_config_api.
+                get_config_with_sensitive_info(domain_id))
+            if domain_config_options:
+                self._load_config_from_database(domain_id,
+                                                domain_config_options)
+            else:
+                try:
+                    self.pop(domain_id)
+                except KeyError:
+                    # There was nothing set up for this domain anyway
+                    pass
+
 
 def domains_configured(f):
     """Wraps API calls to lazy load domain configs after init.
@@ -338,6 +377,7 @@ class Manager(manager.Manager):
     """
     _USER = 'user'
     _GROUP = 'group'
+    _DOMAIN_CONFIG = 'domain_config'
 
     def __init__(self):
         super(Manager, self).__init__(CONF.identity.driver)
@@ -346,6 +386,15 @@ class Manager(manager.Manager):
         self.event_callbacks = {
             notifications.ACTIONS.deleted: {
                 'domain': [self._domain_deleted],
+            },
+            notifications.ACTIONS.created: {
+                self._DOMAIN_CONFIG: [self._domain_config_modified],
+            },
+            notifications.ACTIONS.updated: {
+                self._DOMAIN_CONFIG: [self._domain_config_modified],
+            },
+            notifications.ACTIONS.deleted: {
+                self._DOMAIN_CONFIG: [self._domain_config_modified],
             },
         }
 
@@ -375,6 +424,12 @@ class Manager(manager.Manager):
                            'contents for %(domainid)s, continuing with '
                            'cleanup.'),
                           {'userid': user['id'], 'domainid': domain_id})
+
+    def _domain_config_modified(self, service, resource_type, operation,
+                                payload):
+        domain_id = payload['resource_info']
+        self.domain_configs.reread_config_and_reload_domain_driver(
+            domain_id, self.driver, self.resource_api)
 
     # Domain ID normalization methods
 
