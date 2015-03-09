@@ -301,8 +301,8 @@ def transform_to_group_ids(group_names, mapping_id,
                 group['name'], resolve_domain(group['domain']))
             yield group_dict['id']
         except exception.GroupNotFound:
-            raise exception.MappedGroupNotFound(
-                group_id=group['name'], mapping_id=mapping_id)
+            pass
+            # Skipping the group as it has no entry in the backend
 
 
 def get_assertion_params_from_env(context):
