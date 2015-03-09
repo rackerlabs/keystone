@@ -677,29 +677,38 @@ class RoleAssignmentV3(controller.V3Controller):
                 if 'domain' in r['scope']:
                     # It's an inherited domain role - so get the list of
                     # projects owned by this domain.
-                    project_ids = (
-                        [x['id'] for x in
+                    projects = (
+                        [x for x in
                             self.resource_api.list_projects_in_domain(
-                                r['scope']['domain']['id'])])
+                                r['scope']['domain']['id'])
+                            if not x['is_domain']])
                     base_entry = copy.deepcopy(r)
                     target_type = 'domains'
                     target_id = base_entry['scope']['domain']['id']
                     base_entry['scope'].pop('domain')
+                    target_domain_id = target_id
                 else:
                     # It's an inherited project role - so get the list of
                     # projects in this project subtree.
                     project_id = r['scope']['project']['id']
-                    project_ids = (
-                        [x['id'] for x in
+                    projects = (
+                        [x for x in
                             self.resource_api.list_projects_in_subtree(
-                                project_id)])
+                                project_id) if not x['is_domain']])
                     base_entry = copy.deepcopy(r)
                     target_type = 'projects'
                     target_id = base_entry['scope']['project']['id']
                     base_entry['scope'].pop('project')
+                    target_domain_id = (self.resource_api.
+                                        get_project(project_id)['domain_id'])
 
                 # For each project, create an equivalent role assignment
-                for p in project_ids:
+                for p in projects:
+                    # NOTE(raildo): inherited roles assignments are applied
+                    # to projects with the is_domain flag disable and the
+                    # domain_id is the same from the target.
+                    if p['domain_id'] != target_domain_id:
+                        continue
                     # If it's a group assignment, then create equivalent user
                     # roles based on membership of the group
                     if 'group' in base_entry:
@@ -710,13 +719,13 @@ class RoleAssignmentV3(controller.V3Controller):
                         for m in members:
                             new_entry = (
                                 _build_project_equivalent_of_group_target_role(
-                                    m['id'], group_id, p,
+                                    m['id'], group_id, p['id'],
                                     target_id, target_type, sub_entry))
                             new_refs.append(new_entry)
                     else:
                         new_entry = (
                             _build_project_equivalent_of_user_target_role(
-                                p, target_id, target_type, base_entry))
+                                p['id'], target_id, target_type, base_entry))
                         new_refs.append(new_entry)
             elif 'group' in r:
                 # It's a non-inherited group role assignment, so get the list
@@ -734,7 +743,6 @@ class RoleAssignmentV3(controller.V3Controller):
                     new_refs.append(user_entry)
             else:
                 new_refs.append(r)
-
         return new_refs
 
     def _filter_inherited(self, entry):
