@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_f8c8c256",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-09T07:21:32Z",
+      "side": 1,
+      "message": "I believe you should specify the column it is being affected, in the case, role_id",
+      "revId": "7a88ffb2db1a5c93659330afcafce458decae3a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_18c2f633",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-09T07:21:32Z",
+      "side": 1,
+      "message": "also, would be nice to have a description",
+      "revId": "7a88ffb2db1a5c93659330afcafce458decae3a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
