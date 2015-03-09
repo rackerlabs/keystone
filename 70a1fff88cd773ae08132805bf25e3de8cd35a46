@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_3ad4f6bb",
+        "filename": "keystone/tests/unit/rest.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-09T20:25:56Z",
+      "side": 1,
+      "message": "this looks like a solid refactor that should be split out into a prereq commit",
+      "revId": "70a1fff88cd773ae08132805bf25e3de8cd35a46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_9a9242f4",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-09T20:25:56Z",
+      "side": 1,
+      "message": "i delete a lot of these tests in https://review.openstack.org/#/c/162031/8/keystone/tests/unit/token/test_fernet_provider.py in favor of purely functional tests, which it looks like you\u0027ve already written",
+      "revId": "70a1fff88cd773ae08132805bf25e3de8cd35a46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_307fb767",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-09T20:25:56Z",
+      "side": 1,
+      "message": "most of this method is wrapped up into self.token_formatter.create_token() after rebasing onto https://review.openstack.org/#/c/162338/3/keystone/token/providers/fernet/core.py",
+      "revId": "70a1fff88cd773ae08132805bf25e3de8cd35a46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f0efdf1b",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-09T20:25:56Z",
+      "side": 1,
+      "message": "after rebasing onto https://review.openstack.org/#/c/162338/3/keystone/token/providers/fernet/core.py this should just come down to self.token_formatter.validate_token(token) and then check to make sure that neither a domain ID or trust ID are returned -- neither of which are supported in v2",
+      "revId": "70a1fff88cd773ae08132805bf25e3de8cd35a46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
