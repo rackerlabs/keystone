@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_e2e010cf",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-09T09:22:59Z",
+      "side": 1,
+      "message": "s/Keystone/keystone",
+      "revId": "fe37b5569e6bb6a4c048022b0ca2d7952393837c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_a2da9814",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-09T09:22:59Z",
+      "side": 1,
+      "message": "s/Keystone/keystone",
+      "revId": "fe37b5569e6bb6a4c048022b0ca2d7952393837c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_020b648e",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-09T09:22:59Z",
+      "side": 1,
+      "message": "same.",
+      "revId": "fe37b5569e6bb6a4c048022b0ca2d7952393837c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_624260af",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-09T09:22:59Z",
+      "side": 1,
+      "message": "ditto.",
+      "revId": "fe37b5569e6bb6a4c048022b0ca2d7952393837c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_220ce893",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 265,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-09T09:22:59Z",
+      "side": 1,
+      "message": "ditto.",
+      "revId": "fe37b5569e6bb6a4c048022b0ca2d7952393837c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_622980e5",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 293,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-09T09:22:59Z",
+      "side": 1,
+      "message": "ditto.",
+      "revId": "fe37b5569e6bb6a4c048022b0ca2d7952393837c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8224b40d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 301,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-09T09:22:59Z",
+      "side": 1,
+      "message": "same.",
+      "revId": "fe37b5569e6bb6a4c048022b0ca2d7952393837c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
