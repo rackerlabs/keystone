@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_8964acb9",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-10T12:28:25Z",
+      "side": 1,
+      "message": "all the methods could be @staticmethod or at least @classmethod.",
+      "revId": "ca7be0bfe4503a8f33c7be32a17f400a8fae01ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e9c60899",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-10T12:28:25Z",
+      "side": 1,
+      "message": "nit: change to \u00271\u0027",
+      "revId": "ca7be0bfe4503a8f33c7be32a17f400a8fae01ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_33b32a4e",
         "filename": "keystone/contrib/federation/routers.py",
         "patchSetId": 2
