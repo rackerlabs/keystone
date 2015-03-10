@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_73110b5d",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-10T16:44:14Z",
+      "side": 1,
+      "message": "So there\u0027s no error thrown if \u0027passswords\u0027 option doesn\u0027t exist? If that\u0027s the case it would be tough to detect misconfiguration from supportability standpoint.",
+      "revId": "5b2a2606c552dd77d0979aa40d006d60fa509eba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
