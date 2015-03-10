@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_73bcc2bb",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1225,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-10T09:42:39Z",
+      "side": 1,
+      "message": "No, please read comment in the code above.\n\nI also suggest you to re-think changes in other functions below, maybe assertIs is required  there too.",
+      "revId": "dd837cb11b4306f533c9febe6d56e1b38b3d2978",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
