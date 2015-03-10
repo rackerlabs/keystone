@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_9624b20f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-10T15:33:48Z",
+      "side": 1,
+      "message": "Doesn\u0027t the patch close the bug?",
+      "revId": "24dfa27e7f610857b018c31ba8fff78ab967615e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
