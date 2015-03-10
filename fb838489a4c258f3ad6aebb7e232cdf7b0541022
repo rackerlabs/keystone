@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_e94d283f",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 648,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-10T08:30:33Z",
+      "side": 1,
+      "message": "What about domain_id? It\u0027s trivial, yes, but should be here.",
+      "revId": "fb838489a4c258f3ad6aebb7e232cdf7b0541022",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
