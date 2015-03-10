@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_93ce7fb3",
+        "filename": "keystone/common/sql/migrate_repo/versions/067_update_project_name_constraint.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-10T16:37:10Z",
+      "side": 1,
+      "message": "fixed where? this is how its done throughout all migration scripts. If you are suggesting to add this logic in migration_helpers, I agree but believe that should be in a different change to fix all occurrences of such \"hack\".",
+      "parentUuid": "9a80dd14_10b52531",
+      "revId": "ae9f17163bf5d30004ead4bb9c3ef5814884d003",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_7025815b",
         "filename": "keystone/resource/core.py",
         "patchSetId": 23
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_935cbfef",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-10T16:37:10Z",
+      "side": 1,
+      "message": "no... this can only be None if parent_id is also None so it wouldn\u0027t enter the conditional branch.\n\nDo you see any other case here?",
+      "parentUuid": "9a80dd14_7025815b",
+      "revId": "ae9f17163bf5d30004ead4bb9c3ef5814884d003",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_507ddde6",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 23
@@ -47,6 +83,24 @@
       "writtenOn": "2015-03-10T16:25:16Z",
       "side": 1,
       "message": "I think you forgot to do \"project2[\u0027is_domain\u0027] \u003d project1[\u0027name\u0027]\" here",
+      "revId": "ae9f17163bf5d30004ead4bb9c3ef5814884d003",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d3c9d77a",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 1655,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-10T16:37:10Z",
+      "side": 1,
+      "message": "sorry, didn\u0027t get the comment",
+      "parentUuid": "9a80dd14_507ddde6",
       "revId": "ae9f17163bf5d30004ead4bb9c3ef5814884d003",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
