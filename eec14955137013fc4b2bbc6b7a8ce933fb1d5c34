@@ -16,6 +16,24 @@
       "revId": "eec14955137013fc4b2bbc6b7a8ce933fb1d5c34",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b9a35d4e",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 636,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-10T19:04:06Z",
+      "side": 1,
+      "message": "we test all the above because the deployer can choose to use cadf formatted notifications or the old style (just resource_info). this is handled with a config option. so yeah, kinda for backwards compat.\n\nit\u0027s passing now because self._assert_last_note is designed to verify the payload in the case of the old style, and self._assert_last_audit is designed to verify the payload of a cadf notification. both check the config option that is set before verifying.",
+      "parentUuid": "9a80dd14_1aed3cf0",
+      "revId": "eec14955137013fc4b2bbc6b7a8ce933fb1d5c34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
