@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_8e25695e",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-10T21:42:54Z",
+      "side": 1,
+      "message": "another rebase issue? The following line should be removed, I think.",
+      "revId": "4597432ff2cb6115ef9837a17e2f871e7fb6eb07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
