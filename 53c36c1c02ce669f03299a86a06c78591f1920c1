@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_c0ff4932",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-03-10T13:40:47Z",
+      "side": 1,
+      "message": "Does it implement a blueprint or fixes any bug?",
+      "revId": "53c36c1c02ce669f03299a86a06c78591f1920c1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
