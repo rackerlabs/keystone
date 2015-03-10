@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_66822bca",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-10T17:01:07Z",
+      "side": 1,
+      "message": "yeah, seems like a problem during the rebase, will undo the change",
+      "parentUuid": "9a80dd14_4651a70d",
+      "revId": "ae9f17163bf5d30004ead4bb9c3ef5814884d003",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_507ddde6",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 23
@@ -155,6 +173,24 @@
       "side": 1,
       "message": "on line 1647 you set project2[\u0027is_domain\u0027] to False, try inserting, it succeds. After that you check creating in a different domain. But project2[\u0027is_domain\u0027] is still False here. Is it normal?",
       "parentUuid": "9a80dd14_d3c9d77a",
+      "revId": "ae9f17163bf5d30004ead4bb9c3ef5814884d003",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_26bbd376",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 1655,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-10T17:01:07Z",
+      "side": 1,
+      "message": "ah... yes, in the first case we set is_domain to False to test if we can add a project with the same name and domain but with the is_domain property different.\n\nthe second insert is to check if we can create the same project in a different domain (it should succeed).",
+      "parentUuid": "9a80dd14_13544f20",
       "revId": "ae9f17163bf5d30004ead4bb9c3ef5814884d003",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
