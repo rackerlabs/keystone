@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_b0c9be7b",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-10T17:52:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_afcc066b",
+      "revId": "11b736e8b34d184e864bbf89b4fa9c40bc654f8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_8f37424c",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-10T12:38:21Z",
       "side": 1,
       "message": "We cannot hardcode \u0027saml2\u0027. \nA rule of thumb is that:\n\n- for unscoped tokens auth method is equal to protocol used\n- for scoped tokens we use auth method \u0027token\u0027",
+      "revId": "11b736e8b34d184e864bbf89b4fa9c40bc654f8a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_30930e51",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-10T17:52:01Z",
+      "side": 1,
+      "message": "++ agreed, this was experimental.",
+      "parentUuid": "9a80dd14_8f37424c",
       "revId": "11b736e8b34d184e864bbf89b4fa9c40bc654f8a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
