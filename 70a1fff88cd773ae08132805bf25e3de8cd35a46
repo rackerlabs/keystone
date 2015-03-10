@@ -101,6 +101,24 @@
       "revId": "70a1fff88cd773ae08132805bf25e3de8cd35a46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_670889da",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-10T04:40:50Z",
+      "side": 1,
+      "message": "No, this should go away with the rebase I believe. This is related to the issue with tokens coming in as different formats depending on if we get it from header(\u0027X-Subject-Token/X-Auth-Token\u0027) or if we get it off the URL ( GET /v2.0/auth/tokens/{token_id}. One sends them in as str objects and one sends them in as unicode. \n\ndstanek was curious about this and was poking around with it, not sure what the latest.",
+      "parentUuid": "9a80dd14_b3a731a6",
+      "revId": "70a1fff88cd773ae08132805bf25e3de8cd35a46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
