@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_09cfdc56",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-10T08:40:42Z",
+      "side": 1,
+      "message": "seems this patch will do some changes on the project name (https://review.openstack.org/#/c/162561/), at least, it\u0027s safe at this moment.",
+      "revId": "8402291f6d47b40ca5de792f8fae819df3416073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_c9286435",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-10T08:40:42Z",
+      "side": 1,
+      "message": "s/`Python client library`/`Python client library`_\n\nor else, it will broke the link below.",
+      "revId": "8402291f6d47b40ca5de792f8fae819df3416073",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
