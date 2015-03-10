@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_33b32a4e",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-10T09:32:54Z",
+      "side": 1,
+      "message": "I find strange to have a SAML profile to be at the \"same level\" as the protocol itself.\n\nI\u0027d rather have another call where we pass the SAML assertion and it is wrapped in a soap envelope.",
+      "revId": "ca7be0bfe4503a8f33c7be32a17f400a8fae01ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
