@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_8a074781",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-10T02:17:37Z",
+      "side": 1,
+      "message": "One notification per user in the group is sent here, saying that a role assignment for that user has been deleted.\n\nThis is not true, since the deleted role assignment was a group one.\n\nSuppose the following scenario:\n\ni) User U in Group G, Role R and Project P;\nii) There are two assignments:\n    - U, R, P\n    - G, R, P\n\nIf you delete the second one (G, R, P), a notification telling (U, R, P) was deleted will be sent, which would tell a lie to any listener, since the role assignment (U, R, P) still exists.\n\nAnother issue here is that you send two notifications per user: one from the annotation in this method and another at this statement.",
+      "revId": "0ede2babaa87c0bc0af2da44d41e154fff5b8332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
