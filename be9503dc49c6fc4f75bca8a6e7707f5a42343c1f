@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_a1a7d6bb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 29
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-10T00:17:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_9a96e33d",
+      "revId": "be9503dc49c6fc4f75bca8a6e7707f5a42343c1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_facb5f50",
         "filename": "keystone/identity/core.py",
         "patchSetId": 29
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_c4921d4b",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-10T00:17:28Z",
+      "side": 1,
+      "message": "So it is a single file....the existing parameter is poorly named. Since this is passed into this existing method, changing it would be outside the scope of this patch.  I\u0027d be happy to tidy this up in a follow on patch",
+      "parentUuid": "9a80dd14_33b98179",
+      "revId": "be9503dc49c6fc4f75bca8a6e7707f5a42343c1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_5abf0baa",
         "filename": "keystone/identity/core.py",
         "patchSetId": 29
@@ -65,6 +101,24 @@
       "writtenOn": "2015-03-09T14:41:20Z",
       "side": 1,
       "message": "change \"and options\" to \"any options\"",
+      "revId": "be9503dc49c6fc4f75bca8a6e7707f5a42343c1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_249cd95c",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-10T00:17:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_5abf0baa",
       "revId": "be9503dc49c6fc4f75bca8a6e7707f5a42343c1f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -99,6 +153,24 @@
       "writtenOn": "2015-03-09T21:09:03Z",
       "side": 1,
       "message": "++",
+      "parentUuid": "9a80dd14_faf99f80",
+      "revId": "be9503dc49c6fc4f75bca8a6e7707f5a42343c1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_81a492ba",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-10T00:17:28Z",
+      "side": 1,
+      "message": "So the first part has been added.  With respect to what happens if someone writs an invalid value to an option, this is currently not checked.  I think this is indeed a fair point - and if done anywhere should be done in the domain_config create/update manager calls (so below this level of this patch).  I\u0027ll raise a separate defect for that.",
       "parentUuid": "9a80dd14_faf99f80",
       "revId": "be9503dc49c6fc4f75bca8a6e7707f5a42343c1f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
@@ -141,6 +213,42 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_1ea1dd93",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 3729,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-10T00:17:28Z",
+      "side": 1,
+      "message": "Agreed.  This should be removed",
+      "parentUuid": "9a80dd14_3af09790",
+      "revId": "be9503dc49c6fc4f75bca8a6e7707f5a42343c1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_beaff17b",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 3729,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-10T00:17:28Z",
+      "side": 1,
+      "message": "we already have a test for that in test_backend_ldap",
+      "parentUuid": "9a80dd14_735cd94b",
+      "revId": "be9503dc49c6fc4f75bca8a6e7707f5a42343c1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_9a32635d",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 29
@@ -152,6 +260,24 @@
       "writtenOn": "2015-03-09T14:41:20Z",
       "side": 1,
       "message": "add a docstring that says that subclasses should override this.",
+      "revId": "be9503dc49c6fc4f75bca8a6e7707f5a42343c1f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_fecc096c",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 2546,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-10T00:17:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_9a32635d",
       "revId": "be9503dc49c6fc4f75bca8a6e7707f5a42343c1f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
