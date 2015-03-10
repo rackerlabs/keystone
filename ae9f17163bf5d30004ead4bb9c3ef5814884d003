@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_10b52531",
+        "filename": "keystone/common/sql/migrate_repo/versions/067_update_project_name_constraint.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-10T16:25:16Z",
+      "side": 1,
+      "message": "Does it fail with sqlite? If yes, it should be fixed in migration_helpers I think. Copypasting \"if migrate_engine.name !\u003d \u0027sqlite\u0027:\" doesn\u0027t look nice.",
+      "revId": "ae9f17163bf5d30004ead4bb9c3ef5814884d003",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_7025815b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-10T16:25:16Z",
+      "side": 1,
+      "message": "Line 121 assumes that parent_ref can be None, so this will cause TypeError.",
+      "revId": "ae9f17163bf5d30004ead4bb9c3ef5814884d003",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_507ddde6",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 1655,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-10T16:25:16Z",
+      "side": 1,
+      "message": "I think you forgot to do \"project2[\u0027is_domain\u0027] \u003d project1[\u0027name\u0027]\" here",
+      "revId": "ae9f17163bf5d30004ead4bb9c3ef5814884d003",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
