@@ -16,6 +16,24 @@
       "revId": "eb1eb73f5837854565de8720c81e95ba01b5ecc0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_055c1318",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2313,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-10T13:13:16Z",
+      "side": 1,
+      "message": "I did a testing and understand what\u0027s the difference behind this, so I just keep it as what it was, thanks Boris.",
+      "parentUuid": "9a80dd14_53d6de28",
+      "revId": "eb1eb73f5837854565de8720c81e95ba01b5ecc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
