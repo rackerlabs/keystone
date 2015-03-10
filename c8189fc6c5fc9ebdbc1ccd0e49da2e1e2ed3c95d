@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_dadf4867",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-03-10T05:17:56Z",
+      "side": 1,
+      "message": "\"..., this patch includes\"?",
+      "revId": "c8189fc6c5fc9ebdbc1ccd0e49da2e1e2ed3c95d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_36325da7",
         "filename": "keystone/common/sql/migrate_repo/versions/066_fixup_service_name_value.py",
         "patchSetId": 11
