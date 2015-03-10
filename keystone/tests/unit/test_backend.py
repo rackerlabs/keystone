@@ -1818,7 +1818,7 @@ class IdentityTests(object):
         self.resource_api.create_project(ref['id'], ref)
 
         project = self.resource_api.get_project(ref['id'])
-        self.assertIs(project['enabled'], True)
+        self.assertTrue(project['enabled'])
 
     def test_create_project_long_name_fails(self):
         tenant = {'id': 'fake1', 'name': 'a' * 65,
@@ -3393,7 +3393,7 @@ class IdentityTests(object):
         # SQL backend adds 'extra' field
         updated_project_ref.pop('extra', None)
 
-        self.assertIs(False, updated_project_ref['enabled'])
+        self.assertFalse(updated_project_ref['enabled'])
 
         project_ref = self.resource_api.get_project(project['id'])
         self.assertDictEqual(project_ref, updated_project_ref)
@@ -3414,7 +3414,7 @@ class IdentityTests(object):
         # SQL backend adds 'extra' field
         updated_user_ref.pop('extra', None)
 
-        self.assertIs(False, updated_user_ref['enabled'])
+        self.assertFalse(updated_user_ref['enabled'])
 
         user_ref = self.identity_api.get_user(user['id'])
         self.assertDictEqual(user_ref, updated_user_ref)

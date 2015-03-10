@@ -181,7 +181,7 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         id_list = self._get_id_list_from_ref_list(r.result.get('domains'))
         self.assertEqual(1, len(id_list))
         self.assertIn(self.domainA['id'], id_list)
-        self.assertIs(True, r.result.get('domains')[0]['enabled'])
+        self.assertTrue(r.result.get('domains')[0]['enabled'])
 
     def test_invalid_filter_is_ignored(self):
         """GET /domains?enableds&name=myname
@@ -204,7 +204,7 @@ class IdentityTestFilteredCase(filtering.FilterTests,
         # same as enabled=0
         self.assertEqual(1, len(id_list))
         self.assertIn(self.domainA['id'], id_list)
-        self.assertIs(True, r.result.get('domains')[0]['enabled'])
+        self.assertTrue(r.result.get('domains')[0]['enabled'])
 
     def test_list_users_filtered_by_funny_name(self):
         """GET /users?name=%myname%
@@ -402,12 +402,12 @@ class IdentityTestListLimitCase(IdentityTestFilteredCase):
         self.config_fixture.config(group=driver, list_limit=None)
         r = self.get('/%s' % plural, auth=self.auth)
         self.assertEqual(5, len(r.result.get(plural)))
-        self.assertIs(r.result.get('truncated'), True)
+        self.assertTrue(r.result.get('truncated'))
 
         self.config_fixture.config(group=driver, list_limit=4)
         r = self.get('/%s' % plural, auth=self.auth)
         self.assertEqual(4, len(r.result.get(plural)))
-        self.assertIs(r.result.get('truncated'), True)
+        self.assertTrue(r.result.get('truncated'))
 
     def test_users_list_limit(self):
         self._test_entity_list_limit('user', 'identity')

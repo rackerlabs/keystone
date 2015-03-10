@@ -255,7 +255,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             body={'service': ref})
         ref['enabled'] = True
         self.assertValidServiceResponse(r, ref)
-        self.assertIs(True, r.result['service']['enabled'])
+        self.assertTrue(r.result['service']['enabled'])
 
     def test_create_service_enabled_false(self):
         """Call ``POST /services``."""
@@ -265,7 +265,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             '/services',
             body={'service': ref})
         self.assertValidServiceResponse(r, ref)
-        self.assertIs(False, r.result['service']['enabled'])
+        self.assertFalse(r.result['service']['enabled'])
 
     def test_create_service_enabled_true(self):
         """Call ``POST /services``."""
@@ -275,7 +275,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
             '/services',
             body={'service': ref})
         self.assertValidServiceResponse(r, ref)
-        self.assertIs(True, r.result['service']['enabled'])
+        self.assertTrue(r.result['service']['enabled'])
 
     def test_create_service_enabled_str_true(self):
         """Call ``POST /services``."""
