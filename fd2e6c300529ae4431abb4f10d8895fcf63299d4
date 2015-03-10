@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_506174a7",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 7293
+      },
+      "writtenOn": "2015-03-10T09:17:27Z",
+      "side": 1,
+      "message": "Well, the size of 10 is not obligatory and can be reduced even to 1. The reason is that now this pool is used only to spawn a single green thread in which a wsgi server is running. \n\nIn case we have more than one worker, then the parent process would fork and each process would have its own copy of a pool. And this copy should not include any greenthread object as the spawn is done after the fork.\n\nSo, we can go with the size of 1 as I\u0027ve said. I\u0027ll make a change and add a comment.",
+      "parentUuid": "9a80dd14_54460450",
+      "revId": "fd2e6c300529ae4431abb4f10d8895fcf63299d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_b41e605d",
         "filename": "keystone/common/environment/eventlet_server.py",
         "patchSetId": 3
