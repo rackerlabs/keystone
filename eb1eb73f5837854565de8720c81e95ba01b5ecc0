@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_53d6de28",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 2313,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-10T09:39:07Z",
+      "side": 1,
+      "message": "I am not sure about this line. Before the change we tested that True is returned even after we pass -42. If -42 is returned, it will raise an exception (because -42 !\u003d True). With the change assertTrue will not raise the exception.\n\nDo we have any type checks for attributes outside this function?",
+      "revId": "eb1eb73f5837854565de8720c81e95ba01b5ecc0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
