@@ -16,6 +16,24 @@
       "revId": "6e499b538a24a9c2bb76eed51f96c1655824591d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_0d5423c9",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-10T20:20:52Z",
+      "side": 1,
+      "message": "agree that is not sufficient, which is why the test below and the one in test_backend_ldap exist to check in more detail",
+      "parentUuid": "9a80dd14_7c30f39e",
+      "revId": "6e499b538a24a9c2bb76eed51f96c1655824591d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
