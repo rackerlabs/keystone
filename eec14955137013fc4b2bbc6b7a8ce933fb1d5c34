@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_1aed3cf0",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 636,
+      "author": {
+        "id": 6537
+      },
+      "writtenOn": "2015-03-10T18:14:04Z",
+      "side": 1,
+      "message": "i\u0027ll bite... why do you test all the above (in NotificationsForEntities)? backward compatibility?\n\nmore importantly, how is this passing now? i would assume [initiator][id] is cadf specific?",
+      "revId": "eec14955137013fc4b2bbc6b7a8ce933fb1d5c34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
