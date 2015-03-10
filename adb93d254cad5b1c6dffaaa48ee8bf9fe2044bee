@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_87000637",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-03-10T14:12:31Z",
+      "side": 1,
+      "message": "delete 1 \u0027really\u0027\ns/injectionl/injection\\./",
+      "revId": "adb93d254cad5b1c6dffaaa48ee8bf9fe2044bee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_479e0e09",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-03-10T14:12:31Z",
+      "side": 1,
+      "message": "s/require/required/",
+      "revId": "adb93d254cad5b1c6dffaaa48ee8bf9fe2044bee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
