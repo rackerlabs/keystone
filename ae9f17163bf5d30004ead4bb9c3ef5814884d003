@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_a6ad03ed",
+        "filename": "keystone/common/sql/migrate_repo/versions/067_update_project_name_constraint.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-10T16:48:13Z",
+      "side": 1,
+      "message": "oh. Ok then.",
+      "parentUuid": "9a80dd14_93ce7fb3",
+      "revId": "ae9f17163bf5d30004ead4bb9c3ef5814884d003",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_7025815b",
         "filename": "keystone/resource/core.py",
         "patchSetId": 23
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_4651a70d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-10T16:48:13Z",
+      "side": 1,
+      "message": "you are right, there is no other case.\n\nAnyway, I don\u0027t see a reason for this change in this patch. Maybe is should be reverted?\n\nNot a show stopper anyway.",
+      "parentUuid": "9a80dd14_935cbfef",
+      "revId": "ae9f17163bf5d30004ead4bb9c3ef5814884d003",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_507ddde6",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 23
@@ -101,6 +137,24 @@
       "side": 1,
       "message": "sorry, didn\u0027t get the comment",
       "parentUuid": "9a80dd14_507ddde6",
+      "revId": "ae9f17163bf5d30004ead4bb9c3ef5814884d003",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_13544f20",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 1655,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-10T16:48:13Z",
+      "side": 1,
+      "message": "on line 1647 you set project2[\u0027is_domain\u0027] to False, try inserting, it succeds. After that you check creating in a different domain. But project2[\u0027is_domain\u0027] is still False here. Is it normal?",
+      "parentUuid": "9a80dd14_d3c9d77a",
       "revId": "ae9f17163bf5d30004ead4bb9c3ef5814884d003",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
