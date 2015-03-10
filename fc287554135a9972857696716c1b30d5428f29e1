@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_f33c3231",
+        "filename": "keystone/common/sql/migrate_repo/versions/066_fixup_service_name_value.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-10T09:43:28Z",
+      "side": 1,
+      "message": "since it is speaking of \"records\" I believe null is more precise",
+      "parentUuid": "9a80dd14_18c80854",
+      "revId": "fc287554135a9972857696716c1b30d5428f29e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_d8e910b8",
         "filename": "keystone/common/sql/migrate_repo/versions/066_fixup_service_name_value.py",
         "patchSetId": 12
