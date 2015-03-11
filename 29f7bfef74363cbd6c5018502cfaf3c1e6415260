@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_84360ee6",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-11T13:26:31Z",
+      "side": 1,
+      "message": "Why is this a DictBase if you don\u0027t need/use any of the methods? Should it be a ModelDictMixin or maybe neither?",
+      "revId": "29f7bfef74363cbd6c5018502cfaf3c1e6415260",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_445fb672",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-11T13:26:31Z",
+      "side": 1,
+      "message": "Isn\u0027t the primary key unique already?",
+      "revId": "29f7bfef74363cbd6c5018502cfaf3c1e6415260",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8f91c754",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-11T13:26:31Z",
+      "side": 1,
+      "message": "Suggest: Validate the IdP providing the assertion is registered for the mapping.",
+      "revId": "29f7bfef74363cbd6c5018502cfaf3c1e6415260",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
