@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_c18f13cb",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 676,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-11T14:29:58Z",
+      "side": 1,
+      "message": "Maybe this should be rephrased as \"Query for projects[2] immediate children ...\"",
+      "revId": "d7b4fa41c03e6d095b97794e107ca691a00d97e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_014f6b93",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 685,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-11T14:29:58Z",
+      "side": 1,
+      "message": "Argument order should be (expected, actual)",
+      "revId": "d7b4fa41c03e6d095b97794e107ca691a00d97e9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
