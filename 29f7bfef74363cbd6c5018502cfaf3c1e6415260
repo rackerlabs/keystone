@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_749f0351",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-11T14:39:47Z",
+      "side": 1,
+      "message": "Actually, all the class in the file are subclass of sql.DictBase but reimplement the method so I was thinking it was useful for some reasons I do not know and I put it to be uniform with the other. Do I have to remove?",
+      "parentUuid": "9a80dd14_84360ee6",
+      "revId": "29f7bfef74363cbd6c5018502cfaf3c1e6415260",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_445fb672",
         "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
         "patchSetId": 22
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_41408356",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-11T14:39:47Z",
+      "side": 1,
+      "message": "Primary Key is the couple (idp_id, remote_id) so the couple has to be unique and not the single element. For the websso is requested that the remote_id is unique.",
+      "parentUuid": "9a80dd14_445fb672",
+      "revId": "29f7bfef74363cbd6c5018502cfaf3c1e6415260",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_8f91c754",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 22
@@ -47,6 +83,24 @@
       "writtenOn": "2015-03-11T13:26:31Z",
       "side": 1,
       "message": "Suggest: Validate the IdP providing the assertion is registered for the mapping.",
+      "revId": "29f7bfef74363cbd6c5018502cfaf3c1e6415260",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d4118fb0",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-11T14:39:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_8f91c754",
       "revId": "29f7bfef74363cbd6c5018502cfaf3c1e6415260",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
