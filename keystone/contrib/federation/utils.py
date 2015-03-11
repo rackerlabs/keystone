@@ -107,6 +107,31 @@ MAPPING_SCHEMA = {
 }
 
 
+class DirectMaps(object):
+    """An abstraction around the remote matches.
+
+    Each match is treated internally as a list.
+    """
+
+    def __init__(self):
+        self._matches = []
+
+    def add(self, value):
+        """Adds a matched value to the list of matches.
+
+        :param list value: the match to save
+        """
+        self._matches.append(value)
+
+    def __getitem__(self, idx):
+        """Used by Python when executing ``''.format(*DirectMaps())``."""
+        value = self._matches[idx]
+        if isinstance(value, list) and len(value) == 1:
+            return value[0]
+        else:
+            return value
+
+
 def validate_mapping_structure(ref):
     v = jsonschema.Draft4Validator(MAPPING_SCHEMA)
 
@@ -473,8 +498,8 @@ class RuleProcessor(object):
 
         :param local: local mapping reference that needs to be updated
         :type local: dict
-        :param direct_maps: list of identity values, used to update local
-        :type direct_maps: list
+        :param direct_maps: identity values used to update local
+        :type direct_maps: keystone.contrib.federation.utils.DirectMaps
 
         Example local::
 
@@ -516,6 +541,8 @@ class RuleProcessor(object):
 
         :param requirements: list of remote requirements from rules
         :type requirements: list
+        :returns: identity values used to update local
+        :rtype: keystone.contrib.federation.utils.DirectMaps
 
         Example requirements::
 
@@ -548,7 +575,7 @@ class RuleProcessor(object):
 
         """
 
-        direct_maps = []
+        direct_maps = DirectMaps()
 
         for requirement in requirements:
             requirement_type = requirement['type']
@@ -581,7 +608,7 @@ class RuleProcessor(object):
             direct_map_values = assertion.get(requirement_type)
             if direct_map_values:
                 LOG.debug('updating a direct mapping: %s', direct_map_values)
-                direct_maps += direct_map_values
+                direct_maps.add(direct_map_values)
 
         return direct_maps
 
