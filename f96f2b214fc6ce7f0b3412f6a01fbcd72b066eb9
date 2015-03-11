@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_f71f8c59",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-11T05:13:14Z",
+      "side": 1,
+      "message": "This should be in utc: created_at \u003d datetime.datetime.utcfromtimestamp(timestamp_int)",
+      "revId": "f96f2b214fc6ce7f0b3412f6a01fbcd72b066eb9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
