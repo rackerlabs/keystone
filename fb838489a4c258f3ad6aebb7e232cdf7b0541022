@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_fb4af225",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-11T19:04:03Z",
+      "side": 1,
+      "message": "this is just in case context is weird or environment is missing from context... shouldn\u0027t happen but just want to make sure it has a value before setting it.",
+      "parentUuid": "9a80dd14_4aa41d57",
+      "revId": "fb838489a4c258f3ad6aebb7e232cdf7b0541022",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_e94d283f",
         "filename": "keystone/tests/unit/common/test_notifications.py",
         "patchSetId": 3
