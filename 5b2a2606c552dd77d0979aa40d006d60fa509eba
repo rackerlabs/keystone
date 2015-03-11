@@ -51,6 +51,24 @@
       "revId": "5b2a2606c552dd77d0979aa40d006d60fa509eba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_15122ab4",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-11T23:49:00Z",
+      "side": 1,
+      "message": "Guang, one could provide first the option URL and then after (in another option create API call) create the passssword option.\n\nIf we want to support it this way (as we are doing today), we cannot throw an exception, since we do not know if the missing option is about to be provided.\n\nI agree with your proposal (although it does not look to be in the spec), and  solution in this case could be to:\n\ni) avoid the creation of an option if its value needs a replace with another option that is not already known.\n\nii) avoid the deletion of an option (password, for example) that is needed by other option (\u0027url\u0027: \u0027my_url/%(password)s\u0027, for example).",
+      "parentUuid": "9a80dd14_6109f02b",
+      "revId": "5b2a2606c552dd77d0979aa40d006d60fa509eba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
