@@ -90,13 +90,15 @@ class TokenFormatter(object):
 
         return created_at
 
-    def create_token(self, user_id, expires_at, audit_ids, domain_id=None,
-                     project_id=None, trust_id=None, federated_info=None):
+    def create_token(self, user_id, expires_at, audit_ids, methods=None,
+                     domain_id=None, project_id=None, trust_id=None,
+                     federated_info=None):
         """Given a set of payload attributes, generate a Fernet token."""
         if trust_id:
             version = TrustScopedPayload.version
             payload = TrustScopedPayload.assemble(
                 user_id,
+                methods,
                 project_id,
                 expires_at,
                 audit_ids,
@@ -105,6 +107,7 @@ class TokenFormatter(object):
             version = FederatedPayload.version
             payload = FederatedPayload.assemble(
                 user_id,
+                methods,
                 expires_at,
                 audit_ids,
                 federated_info)
@@ -112,6 +115,7 @@ class TokenFormatter(object):
             version = ProjectScopedPayload.version
             payload = ProjectScopedPayload.assemble(
                 user_id,
+                methods,
                 project_id,
                 expires_at,
                 audit_ids)
@@ -119,6 +123,7 @@ class TokenFormatter(object):
             version = DomainScopedPayload.version
             payload = DomainScopedPayload.assemble(
                 user_id,
+                methods,
                 domain_id,
                 expires_at,
                 audit_ids)
@@ -126,6 +131,7 @@ class TokenFormatter(object):
             version = UnscopedPayload.version
             payload = UnscopedPayload.assemble(
                 user_id,
+                methods,
                 expires_at,
                 audit_ids)
 
@@ -148,19 +154,19 @@ class TokenFormatter(object):
         federated_info = None
 
         if version == UnscopedPayload.version:
-            (user_id, expires_at, audit_ids) = (
+            (user_id, methods, expires_at, audit_ids) = (
                 UnscopedPayload.disassemble(payload))
         elif version == DomainScopedPayload.version:
-            (user_id, domain_id, expires_at, audit_ids) = (
+            (user_id, methods, domain_id, expires_at, audit_ids) = (
                 DomainScopedPayload.disassemble(payload))
         elif version == ProjectScopedPayload.version:
-            (user_id, project_id, expires_at, audit_ids) = (
+            (user_id, methods, project_id, expires_at, audit_ids) = (
                 ProjectScopedPayload.disassemble(payload))
         elif version == TrustScopedPayload.version:
-            (user_id, project_id, expires_at, audit_ids, trust_id) = (
+            (user_id, methods, project_id, expires_at, audit_ids, trust_id) = (
                 TrustScopedPayload.disassemble(payload))
         elif version == FederatedPayload.version:
-            (user_id, audit_ids, federated_info) = (
+            (user_id, methods, expires_at, audit_ids, federated_info) = (
                 FederatedPayload.disassemble(payload))
         else:
             # If the token_format is not recognized, raise Unauthorized.
@@ -173,7 +179,7 @@ class TokenFormatter(object):
         created_at = TokenFormatter.creation_time(token)
         created_at = timeutils.isotime(created_at)
 
-        return (user_id, audit_ids, domain_id, project_id, trust_id,
+        return (user_id, methods, audit_ids, domain_id, project_id, trust_id,
                 federated_info, created_at, expires_at)
 
 
@@ -280,47 +286,97 @@ class BasePayload(object):
         except ValueError:
             return value
 
+    @classmethod
+    def convert_method_list_to_integer(cls, methods):
+        """Convert the method type to an integer.
+
+        :param methods: a list of method names
+        :returns: an integer representing the methods
+
+        """
+        method_map = {1: 'password', 2: 'token', 4: 'saml2', 8: 'oauth1'}
+        method_ints = list()
+        for method in methods:
+            for k, v in six.iteritems(method_map):
+                if v == method:
+                    method_ints.append(k)
+        return sum(method_ints)
+
+    @classmethod
+    def convert_integer_to_method_list(cls, method_int):
+        """Convert an integer to a list of methods.
+
+        :param method_int: an integer representing methods
+        :returns: a list of methods
+
+        """
+        possibilities = {1: ['password'],
+                         2: ['token'],
+                         3: ['password', 'token'],
+                         4: ['saml2'],
+                         5: ['password', 'saml2'],
+                         6: ['token', 'saml2'],
+                         7: ['password', 'token', 'saml2'],
+                         8: ['oauth1'],
+                         9: ['password', 'oauth1'],
+                         10: ['token', 'oauth1'],
+                         11: ['password', 'token', 'oauth1'],
+                         12: ['saml2', 'oauth1'],
+                         13: ['password', 'saml2', 'oauth1'],
+                         14: ['token', 'saml2', 'oauth1'],
+                         15: ['password', 'token', 'saml2', 'oauth1']}
+
+        try:
+            return possibilities[method_int]
+        except KeyError:
+            raise exception.AuthMethodNotSupported()
+
 
 class UnscopedPayload(BasePayload):
     version = 0
 
     @classmethod
-    def assemble(cls, user_id, expires_at, audit_ids):
+    def assemble(cls, user_id, methods, expires_at, audit_ids):
         """Assemble the payload of an unscoped token.
 
         :param user_id: identifier of the user in the token request
+        :param methods: list of authentication methods used
         :param expires_at: datetime of the token's expiration
         :param audit_ids: list of the token's audit IDs
         :returns: the payload of an unscoped token
 
         """
         b_user_id = cls.convert_uuid_hex_to_bytes(user_id)
+        methods = cls.convert_method_list_to_integer(methods)
         expires_at_int = cls._convert_time_string_to_int(expires_at)
         b_audit_ids = map(provider.random_urlsafe_str_to_bytes, audit_ids)
-        return (b_user_id, expires_at_int, b_audit_ids)
+        return (b_user_id, methods, expires_at_int, b_audit_ids)
 
     @classmethod
     def disassemble(cls, payload):
         """Disassemble an unscoped payload into the component data.
 
         :param payload: the payload of an unscoped token
-        :return: a tuple containing the user_id, expires_at, and audit_ids
+        :return: a tuple containing the user_id, auth methods, expires_at, and
+                 audit_ids
 
         """
         user_id = cls.convert_uuid_bytes_to_hex(payload[0])
-        expires_at_str = cls._convert_int_to_time_string(payload[1])
-        audit_ids = map(provider.base64_encode, payload[2])
-        return (user_id, expires_at_str, audit_ids)
+        methods = cls.convert_integer_to_method_list(payload[1])
+        expires_at_str = cls._convert_int_to_time_string(payload[2])
+        audit_ids = map(provider.base64_encode, payload[3])
+        return (user_id, methods, expires_at_str, audit_ids)
 
 
 class DomainScopedPayload(BasePayload):
     version = 1
 
     @classmethod
-    def assemble(cls, user_id, domain_id, expires_at, audit_ids):
+    def assemble(cls, user_id, methods, domain_id, expires_at, audit_ids):
         """Assemble the payload of a domain-scoped token.
 
         :param user_id: ID of the user in the token request
+        :param methods: list of authentication methods used
         :param domain_id: ID of the domain to scope to
         :param expires_at: datetime of the token's expiration
         :param audit_ids: list of the token's audit IDs
@@ -328,6 +384,7 @@ class DomainScopedPayload(BasePayload):
 
         """
         b_user_id = cls.convert_uuid_hex_to_bytes(user_id)
+        methods = cls.convert_method_list_to_integer(methods)
         try:
             b_domain_id = cls.convert_uuid_hex_to_bytes(domain_id)
         except ValueError:
@@ -338,40 +395,42 @@ class DomainScopedPayload(BasePayload):
                 raise
         expires_at_int = cls._convert_time_string_to_int(expires_at)
         b_audit_ids = map(provider.random_urlsafe_str_to_bytes, audit_ids)
-        return (b_user_id, b_domain_id, expires_at_int, b_audit_ids)
+        return (b_user_id, methods, b_domain_id, expires_at_int, b_audit_ids)
 
     @classmethod
     def disassemble(cls, payload):
         """Disassemble a payload into the component data.
 
         :param payload: the payload of a token
-        :return: a tuple containing the user_id, domain_id, expires_at_str, and
-                 audit_ids
+        :return: a tuple containing the user_id, auth methods, domain_id,
+                 expires_at_str, and audit_ids
 
         """
         user_id = cls.convert_uuid_bytes_to_hex(payload[0])
+        methods = cls.convert_integer_to_method_list(payload[1])
         try:
-            domain_id = cls.convert_uuid_bytes_to_hex(payload[1])
+            domain_id = cls.convert_uuid_bytes_to_hex(payload[2])
         except ValueError:
             # the default domain ID is configurable, and probably isn't a UUID
-            if payload[1] == CONF.identity.default_domain_id:
-                domain_id = payload[1]
+            if payload[2] == CONF.identity.default_domain_id:
+                domain_id = payload[2]
             else:
                 raise
-        expires_at_str = cls._convert_int_to_time_string(payload[2])
-        audit_ids = map(provider.base64_encode, payload[3])
+        expires_at_str = cls._convert_int_to_time_string(payload[3])
+        audit_ids = map(provider.base64_encode, payload[4])
 
-        return (user_id, domain_id, expires_at_str, audit_ids)
+        return (user_id, methods, domain_id, expires_at_str, audit_ids)
 
 
 class ProjectScopedPayload(BasePayload):
     version = 2
 
     @classmethod
-    def assemble(cls, user_id, project_id, expires_at, audit_ids):
+    def assemble(cls, user_id, methods, project_id, expires_at, audit_ids):
         """Assemble the payload of a project-scoped token.
 
         :param user_id: ID of the user in the token request
+        :param methods: list of authentication methods used
         :param project_id: ID of the project to scope to
         :param expires_at: datetime of the token's expiration
         :param audit_ids: list of the token's audit IDs
@@ -379,36 +438,40 @@ class ProjectScopedPayload(BasePayload):
 
         """
         b_user_id = cls.convert_uuid_hex_to_bytes(user_id)
+        methods = cls.convert_method_list_to_integer(methods)
         b_project_id = cls.convert_uuid_hex_to_bytes(project_id)
         expires_at_int = cls._convert_time_string_to_int(expires_at)
         b_audit_ids = map(provider.random_urlsafe_str_to_bytes, audit_ids)
-        return (b_user_id, b_project_id, expires_at_int, b_audit_ids)
+        return (b_user_id, methods, b_project_id, expires_at_int, b_audit_ids)
 
     @classmethod
     def disassemble(cls, payload):
         """Disassemble a payload into the component data.
 
         :param payload: the payload of a token
-        :return: a tuple containing the user_id, project_id, expires_at_str,
-                 and audit_ids
+        :return: a tuple containing the user_id, auth methods, project_id,
+                 expires_at_str, and audit_ids
 
         """
         user_id = cls.convert_uuid_bytes_to_hex(payload[0])
-        project_id = cls.convert_uuid_bytes_to_hex(payload[1])
-        expires_at_str = cls._convert_int_to_time_string(payload[2])
-        audit_ids = map(provider.base64_encode, payload[3])
+        methods = cls.convert_integer_to_method_list(payload[1])
+        project_id = cls.convert_uuid_bytes_to_hex(payload[2])
+        expires_at_str = cls._convert_int_to_time_string(payload[3])
+        audit_ids = map(provider.base64_encode, payload[4])
 
-        return (user_id, project_id, expires_at_str, audit_ids)
+        return (user_id, methods, project_id, expires_at_str, audit_ids)
 
 
 class TrustScopedPayload(BasePayload):
     version = 3
 
     @classmethod
-    def assemble(cls, user_id, project_id, expires_at, audit_ids, trust_id):
+    def assemble(cls, user_id, methods, project_id, expires_at, audit_ids,
+                 trust_id):
         """Assemble the payload of a trust-scoped token.
 
         :param user_id: ID of the user in the token request
+        :param methods: list of authentication methods used
         :param project_id: ID of the project to scope to
         :param expires_at: datetime of the token's expiration
         :param audit_ids: list of the token's audit IDs
@@ -417,12 +480,13 @@ class TrustScopedPayload(BasePayload):
 
         """
         b_user_id = cls.convert_uuid_hex_to_bytes(user_id)
+        methods = cls.convert_method_list_to_integer(methods)
         b_project_id = cls.convert_uuid_hex_to_bytes(project_id)
         b_trust_id = cls.convert_uuid_hex_to_bytes(trust_id)
         expires_at_int = cls._convert_time_string_to_int(expires_at)
         b_audit_ids = map(provider.random_urlsafe_str_to_bytes, audit_ids)
 
-        return (b_user_id, b_project_id, expires_at_int, b_audit_ids,
+        return (b_user_id, methods, b_project_id, expires_at_int, b_audit_ids,
                 b_trust_id)
 
     @classmethod
@@ -430,27 +494,30 @@ class TrustScopedPayload(BasePayload):
         """Validate a trust-based payload.
 
         :param token_string: a string representing the token
-        :returns: a tuple containing the user_id, project_id, expires_at_str,
-                  audit_ids, and trust_id
+        :returns: a tuple containing the user_id, auth methods, project_id,
+                  expires_at_str, audit_ids, and trust_id
 
         """
         user_id = cls.convert_uuid_bytes_to_hex(payload[0])
-        project_id = cls.convert_uuid_bytes_to_hex(payload[1])
-        expires_at_str = cls._convert_int_to_time_string(payload[2])
-        audit_ids = map(provider.base64_encode, payload[3])
-        trust_id = cls.convert_uuid_bytes_to_hex(payload[4])
+        methods = cls.convert_integer_to_method_list(payload[1])
+        project_id = cls.convert_uuid_bytes_to_hex(payload[2])
+        expires_at_str = cls._convert_int_to_time_string(payload[3])
+        audit_ids = map(provider.base64_encode, payload[4])
+        trust_id = cls.convert_uuid_bytes_to_hex(payload[5])
 
-        return (user_id, project_id, expires_at_str, audit_ids, trust_id)
+        return (user_id, methods, project_id, expires_at_str, audit_ids,
+                trust_id)
 
 
 class FederatedPayload(BasePayload):
     version = 4
 
     @classmethod
-    def assemble(cls, user_id, expires_at, audit_ids, federated_info):
+    def assemble(cls, user_id, methods, expires_at, audit_ids, federated_info):
         """Assemble the payload of a federated token.
 
         :param user_id: ID of the user in the token request
+        :param methods: list of authentication methods used
         :param expires_at: datetime of the token's expiration
         :param audit_ids: list of the token's audit IDs
         :param federated_info: dictionary containing group IDs, the identity
@@ -463,6 +530,7 @@ class FederatedPayload(BasePayload):
             return cls.convert_uuid_hex_to_bytes(group_dict['id'])
 
         b_user_id = cls.attempt_convert_uuid_hex_to_bytes(user_id)
+        methods = cls.convert_method_list_to_integer(methods)
         b_group_ids = map(pack_group_ids, federated_info['group_ids'])
         b_idp_id = cls.attempt_convert_uuid_hex_to_bytes(
             federated_info['idp_id'])
@@ -470,15 +538,15 @@ class FederatedPayload(BasePayload):
         expires_at_int = cls._convert_time_string_to_int(expires_at)
         b_audit_ids = map(provider.random_urlsafe_str_to_bytes, audit_ids)
 
-        return (b_user_id, b_group_ids, b_idp_id, protocol_id, expires_at_int,
-                b_audit_ids)
+        return (b_user_id, methods, b_group_ids, b_idp_id, protocol_id,
+                expires_at_int, b_audit_ids)
 
     @classmethod
     def disassemble(cls, payload):
         """Validate a federated paylod.
 
         :param token_string: a string representing the token
-        :return: a tuple containing the user_id, audit_ids, and
+        :return: a tuple containing the user_id, auth methods, audit_ids, and
                  a dictionary containing federated information such as the the
                  group IDs, the identity provider ID, the protocol ID, and the
                  federated domain ID
@@ -489,11 +557,12 @@ class FederatedPayload(BasePayload):
             return {'id': group_id}
 
         user_id = cls.attempt_convert_uuid_bytes_to_hex(payload[0])
-        group_ids = map(unpack_group_ids, payload[1])
-        idp_id = cls.attempt_convert_uuid_bytes_to_hex(payload[2])
-        protocol_id = payload[3]
-        expires_at_str = cls._convert_int_to_time_string(payload[4])
-        audit_ids = map(provider.base64_encode, payload[5])
+        methods = cls.convert_integer_to_method_list(payload[1])
+        group_ids = map(unpack_group_ids, payload[2])
+        idp_id = cls.attempt_convert_uuid_bytes_to_hex(payload[3])
+        protocol_id = payload[4]
+        expires_at_str = cls._convert_int_to_time_string(payload[5])
+        audit_ids = map(provider.base64_encode, payload[6])
         federated_info = dict(group_ids=group_ids, idp_id=idp_id,
                               protocol_id=protocol_id)
-        return (user_id, expires_at_str, audit_ids, federated_info)
+        return (user_id, methods, expires_at_str, audit_ids, federated_info)
