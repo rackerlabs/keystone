@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_e69e0407",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-03-11T03:30:52Z",
+      "side": 1,
+      "message": "Would be nice to have a comment regarding who is using ttl.  The fact that you initially missed having it in there implies it\u0027s a little subtle",
+      "revId": "67233eadfcf8692528975508c1969c0e49787165",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
