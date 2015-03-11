@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_4aa41d57",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-11T13:49:16Z",
+      "side": 1,
+      "message": "Is the fact that  project_id may or may not be object\u0027s attribute (instead of being something or None) is intended?",
+      "revId": "fb838489a4c258f3ad6aebb7e232cdf7b0541022",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_e94d283f",
         "filename": "keystone/tests/unit/common/test_notifications.py",
         "patchSetId": 3
