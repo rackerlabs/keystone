@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_86c46860",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-11T03:18:56Z",
+      "side": 1,
+      "message": "Partial-Bug",
+      "revId": "bcfed3de4347230ed1076aaefbfe78b1dc0e990c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_46919051",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-11T03:18:56Z",
+      "side": 1,
+      "message": "client library should be upcase for consistency.",
+      "revId": "bcfed3de4347230ed1076aaefbfe78b1dc0e990c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
