@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_3d1d5a67",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-11T21:19:39Z",
+      "side": 1,
+      "message": "we could probably use comments or maybe a class level docstring that shows example values, and why we would use value[0] or value",
+      "revId": "8a52f7ed1e89cc337301838a3568f452e95a5b95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
