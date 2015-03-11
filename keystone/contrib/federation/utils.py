@@ -107,6 +107,30 @@ MAPPING_SCHEMA = {
 }
 
 
+class DirectMaps(object):
+
+    def __init__(self):
+        self._maps = []
+
+    def add(self, value):
+        return self._maps.append(value)
+
+    def __getitem__(self, idx):
+        value = self._maps[idx]
+        if isinstance(value, list) and len(value) == 1:
+            return value[0]
+        else:
+            return value
+
+    def as_list(self):
+        for value in self:
+            if isinstance(value, list) and len(value) == 1:
+                print value[0]
+                yield value[0]
+            else:
+                yield value
+
+
 def validate_mapping_structure(ref):
     v = jsonschema.Draft4Validator(MAPPING_SCHEMA)
 
@@ -548,7 +572,7 @@ class RuleProcessor(object):
 
         """
 
-        direct_maps = []
+        direct_maps = DirectMaps()
 
         for requirement in requirements:
             requirement_type = requirement['type']
@@ -581,7 +605,7 @@ class RuleProcessor(object):
             direct_map_values = assertion.get(requirement_type)
             if direct_map_values:
                 LOG.debug('updating a direct mapping: %s', direct_map_values)
-                direct_maps += direct_map_values
+                direct_maps.add(direct_map_values)
 
         return direct_maps
 
