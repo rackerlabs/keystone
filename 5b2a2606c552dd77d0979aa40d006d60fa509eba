@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_6499fe6d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 23
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-11T22:16:03Z",
+      "side": 1,
+      "message": "why are we supporting this? Seems like a security vulnerability waiting to happen.",
+      "revId": "5b2a2606c552dd77d0979aa40d006d60fa509eba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_73110b5d",
         "filename": "keystone/tests/unit/backend/domain_config/core.py",
         "patchSetId": 23
