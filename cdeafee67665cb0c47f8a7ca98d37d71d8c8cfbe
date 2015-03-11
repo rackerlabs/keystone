@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_2120ef9a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-11T14:15:03Z",
+      "side": 1,
+      "message": "s/Otherwisie/Otherwise/",
+      "revId": "cdeafee67665cb0c47f8a7ca98d37d71d8c8cfbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_be023a09",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-11T14:15:03Z",
+      "side": 1,
+      "message": "s/Fixes/Closes/",
+      "revId": "cdeafee67665cb0c47f8a7ca98d37d71d8c8cfbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_4f927cf7",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 2
@@ -13,6 +47,24 @@
       "writtenOn": "2015-03-11T09:09:14Z",
       "side": 1,
       "message": "Wondering if this should be logged.",
+      "revId": "cdeafee67665cb0c47f8a7ca98d37d71d8c8cfbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_21570f04",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 305,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-11T14:15:03Z",
+      "side": 1,
+      "message": "At least as debug, it should.",
+      "parentUuid": "9a80dd14_4f927cf7",
       "revId": "cdeafee67665cb0c47f8a7ca98d37d71d8c8cfbe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
