@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_c6c020e3",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-11T03:32:13Z",
+      "side": 1,
+      "message": "(nit) *the* OpenStack\u0027s Identity Service",
+      "revId": "1fab5f0f4a1cbc398f0d084b96b54550f1665c93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_a6624c14",
+        "filename": "doc/source/index.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-11T03:32:13Z",
+      "side": 1,
+      "message": "(nit) as well as *a* `Python client library`_",
+      "revId": "1fab5f0f4a1cbc398f0d084b96b54550f1665c93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
