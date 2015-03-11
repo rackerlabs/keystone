@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_64cadea2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-11T22:11:52Z",
+      "side": 1,
+      "message": "why?",
+      "revId": "91241a12c7ba0a303fb023809365600516bc8f55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e4024eb3",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-11T22:11:52Z",
+      "side": 1,
+      "message": "would be nice to have unit tests for this class.",
+      "revId": "91241a12c7ba0a303fb023809365600516bc8f55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_c4e1cafd",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-11T22:11:52Z",
+      "side": 1,
+      "message": "suggest call the param values since it\u0027s a list.",
+      "revId": "91241a12c7ba0a303fb023809365600516bc8f55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_a4cdb688",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-11T22:11:52Z",
+      "side": 1,
+      "message": "move this down after the other param.",
+      "revId": "91241a12c7ba0a303fb023809365600516bc8f55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_64b49ef2",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 574,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-11T22:11:52Z",
+      "side": 1,
+      "message": "there\u0027s already a returns above.",
+      "revId": "91241a12c7ba0a303fb023809365600516bc8f55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
