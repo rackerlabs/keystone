@@ -57,13 +57,15 @@ Configure Apache to use a federation capable authentication method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 There are many ways to configure Federation in the Apache HTTPD server.
-Using Shibboleth and OpenID Connect are documented so far.
+Using Shibboleth, OpenID Connect and ABFAB are documented so far.
 
 * To use Shibboleth, follow the steps outlined at: `Setup Shibboleth`_.
 * To use OpenID Connect, follow the steps outlined at: `Setup OpenID Connect`_.
+* To use ABFAB, follow the steps outlined at: `Setup ABFAB`_.
 
 .. _`Setup Shibboleth`: extensions/shibboleth.html
 .. _`Setup OpenID Connect`: extensions/openidc.html
+.. _`Setup ABFAB`: extensions/abfab.html
 
 Enable the ``OS-FEDERATION`` extension
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
