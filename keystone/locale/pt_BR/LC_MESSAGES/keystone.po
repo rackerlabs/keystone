@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  Keystone\n"
 "Report-Msgid-Bugs-To: https://bugs.launchpad.net/keystone\n"
-"POT-Creation-Date: 2015-03-11 06:08+0000\n"
-"PO-Revision-Date: 2015-03-11 04:40+0000\n"
+"POT-Creation-Date: 2015-03-12 06:02+0000\n"
+"PO-Revision-Date: 2015-03-11 16:40+0000\n"
 "Last-Translator: openstackjenkins <jenkins@openstack.org>\n"
 "Language-Team: Portuguese (Brazil) "
 "(http://www.transifex.com/projects/p/keystone/language/pt_BR/)\n"
@@ -395,8 +395,8 @@ msgstr ""
 #: keystone/exception.py:438
 #, python-format
 msgid ""
-"The Keystone domain configuration file %(config_file)s defines an "
-"additional SQL driver - only one is permitted."
+"The Keystone domain-specific configuration has specified more than one "
+"SQL driver (only one is permitted): %(source)s."
 msgstr ""
 
 #: keystone/exception.py:445
@@ -636,7 +636,7 @@ msgstr ""
 msgid "padded base64url text must be multiple of 4 characters"
 msgstr ""
 
-#: keystone/common/controller.py:288 keystone/identity/core.py:392
+#: keystone/common/controller.py:288 keystone/identity/core.py:432
 #: keystone/resource/core.py:768 keystone/resource/backends/ldap.py:61
 #, python-format
 msgid "Expected dict or list: %s"
@@ -986,7 +986,7 @@ msgstr ""
 
 #: keystone/contrib/federation/utils.py:158
 msgid ""
-"Incoming identity provider identifier not included among the accepeted "
+"Incoming identity provider identifier not included among the accepted "
 "identifiers."
 msgstr ""
 
@@ -1104,19 +1104,24 @@ msgstr "Campo habilitado precisa ser um booleano"
 msgid "Enabled field should be a boolean"
 msgstr "Campo habilitado deve ser um booleano"
 
-#: keystone/identity/core.py:251 keystone/identity/backends/ldap.py:59
+#: keystone/identity/core.py:116
+#, python-format
+msgid "Database at /domains/%s/config"
+msgstr ""
+
+#: keystone/identity/core.py:291 keystone/identity/backends/ldap.py:59
 #: keystone/identity/backends/ldap.py:61 keystone/identity/backends/ldap.py:67
 #: keystone/identity/backends/ldap.py:69 keystone/identity/backends/sql.py:108
 #: keystone/identity/backends/sql.py:110
 msgid "Invalid user / password"
 msgstr ""
 
-#: keystone/identity/core.py:658
+#: keystone/identity/core.py:698
 #, python-format
 msgid "User is disabled: %s"
 msgstr "O usuário está desativado: %s"
 
-#: keystone/identity/core.py:701
+#: keystone/identity/core.py:741
 msgid "Cannot change user ID"
 msgstr ""
 
