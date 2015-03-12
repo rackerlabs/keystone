@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_f463ca17",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-03-12T09:01:47Z",
+      "side": 1,
+      "message": "Did I miss something: why not use LDAP filter?\n\nhttps://confluence.atlassian.com/display/DEV/How+to+Write+LDAP+Search+Filters",
+      "revId": "05655992679211869d348ebf0887766c6a13ad90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
