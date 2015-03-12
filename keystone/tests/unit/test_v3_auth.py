@@ -4154,6 +4154,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_token,
                           unscoped_token)
+        self._validate_token(unscoped_token, expected_status=404)
 
     def test_unscoped_token_is_invalid_after_enabling_disabled_user(self):
         unscoped_token = self._get_unscoped_token()
@@ -4171,6 +4172,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_token,
                           unscoped_token)
+        self._validate_token(unscoped_token, expected_status=404)
 
     def test_unscoped_token_is_invalid_after_disabling_user_domain(self):
         unscoped_token = self._get_unscoped_token()
@@ -4183,6 +4185,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_token,
                           unscoped_token)
+        self._validate_token(unscoped_token, expected_status=404)
 
     def test_unscoped_token_is_invalid_after_changing_user_password(self):
         unscoped_token = self._get_unscoped_token()
@@ -4195,6 +4198,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_token,
                           unscoped_token)
+        self._validate_token(unscoped_token, expected_status=404)
 
     def test_validate_project_scoped_token(self):
         project_scoped_token = self._get_project_scoped_token()
@@ -4222,6 +4226,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_token,
                           project_scoped_token)
+        self._validate_token(project_scoped_token, expected_status=404)
 
     def test_domain_scoped_token_is_invalid_after_disabling_user(self):
         # Grant user access to domain
@@ -4237,6 +4242,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_token,
                           domain_scoped_token)
+        self._validate_token(domain_scoped_token, expected_status=404)
 
     def test_domain_scoped_token_is_invalid_after_deleting_grant(self):
         # Grant user access to domain
@@ -4254,6 +4260,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_token,
                           domain_scoped_token)
+        self._validate_token(domain_scoped_token, expected_status=404)
 
     def test_project_scoped_token_invalid_after_changing_user_password(self):
         project_scoped_token = self._get_project_scoped_token()
@@ -4266,6 +4273,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_token,
                           project_scoped_token)
+        self._validate_token(project_scoped_token, expected_status=404)
 
     def test_project_scoped_token_invalid_after_disabling_project(self):
         project_scoped_token = self._get_project_scoped_token()
@@ -4278,6 +4286,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_token,
                           project_scoped_token)
+        self._validate_token(project_scoped_token, expected_status=404)
 
     def test_domain_scoped_token_invalid_after_disabling_domain(self):
         # Grant user access to domain
@@ -4294,6 +4303,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_token,
                           domain_scoped_token)
+        self._validate_token(domain_scoped_token, expected_status=404)
 
     def test_rescope_unscoped_token_with_trust(self):
         trustee_user, trust = self._create_trust()
@@ -4335,6 +4345,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_token,
                           trust_scoped_token)
+        self._validate_token(trust_scoped_token, expected_status=404)
 
     def test_trust_scoped_token_invalid_after_changing_trustee_password(self):
         trustee_user, trust = self._create_trust()
@@ -4348,6 +4359,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_token,
                           trust_scoped_token)
+        self._validate_token(trust_scoped_token, expected_status=404)
 
     def test_trust_scoped_token_is_invalid_after_disabling_trustor(self):
         trustee_user, trust = self._create_trust()
@@ -4362,6 +4374,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_token,
                           trust_scoped_token)
+        self._validate_token(trust_scoped_token, expected_status=404)
 
     def test_trust_scoped_token_invalid_after_changing_trustor_password(self):
         trustee_user, trust = self._create_trust()
@@ -4376,6 +4389,7 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_token,
                           trust_scoped_token)
+        self._validate_token(trust_scoped_token, expected_status=404)
 
     def test_trust_scoped_token_invalid_after_disabled_trustor_domain(self):
         trustee_user, trust = self._create_trust()
@@ -4393,3 +4407,4 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_token,
                           trust_scoped_token)
+        self._validate_token(trust_scoped_token, expected_status=404)
