@@ -70,11 +70,11 @@ Mod_moonshot also needs Shibboleth service configuration files located at
 On RHEL, CentOS or SE Linux distributions, shibd is installed with moonshot
 libraries, so the files just need to be configured.
 
-On Ubuntu 12.04 or 14.04, you can install mod_shib installed, and disable it.
+On Ubuntu 12.04 or 14.04, you can install mod_shib, and disable it.
 
 .. code-block:: bash
 
-  $ apt-get install mod_shib 
+  $ apt-get install libapache2-mod-shib2
   $ a2dismod shib2
 
 Or you can optionally set up the /etc/shibboleth files manually.
