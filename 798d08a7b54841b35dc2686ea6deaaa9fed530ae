@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_5adbc61a",
+        "filename": "keystone/contrib/federation/schema.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-12T17:17:11Z",
+      "side": 1,
+      "message": "when is this required? We don\u0027t need to accept id in the request.",
+      "revId": "798d08a7b54841b35dc2686ea6deaaa9fed530ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_ba3a0296",
         "filename": "keystone/tests/unit/test_validation.py",
         "patchSetId": 1
