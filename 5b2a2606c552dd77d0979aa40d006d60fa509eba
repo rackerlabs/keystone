@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_b63b24c7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 23
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-12T01:03:06Z",
+      "side": 1,
+      "message": "The phrasing on the commit could be improved. I don\u0027t know how you\u0027d consume sensitive information in (for example) a connection string w/o some sort of substitution.",
+      "parentUuid": "9a80dd14_6499fe6d",
+      "revId": "5b2a2606c552dd77d0979aa40d006d60fa509eba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_73110b5d",
         "filename": "keystone/tests/unit/backend/domain_config/core.py",
         "patchSetId": 23
@@ -84,6 +102,24 @@
       "side": 1,
       "message": "If people feel we really do need this level of checking then I\u0027m ok to add it...although my gut feel is we may be over complicating it.  I also worried about having to do the reverse pattern match today of checkin whether %(*) exists in each whitelisted option - I guess that\u0027s safe, but wonder if it might accidentally match something innocuous.",
       "parentUuid": "9a80dd14_15122ab4",
+      "revId": "5b2a2606c552dd77d0979aa40d006d60fa509eba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_3629f489",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-12T01:03:06Z",
+      "side": 1,
+      "message": "I don\u0027t think % needs to exist in a white listed option... it just wont work correctly if it isn\u0027t. It might be a \"sensitive option\" that the deployer actually doesn\u0027t need to substitute things in for.\n\nI agree we shouldn\u0027t over complicate this.\n\nHowever, adding in the extra level of checking is probably pretty straight forward.  Could we do it as a followup?",
+      "parentUuid": "9a80dd14_70153448",
       "revId": "5b2a2606c552dd77d0979aa40d006d60fa509eba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
