@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_8b2c124c",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-12T18:24:13Z",
+      "side": 1,
+      "message": "Is there any way this could be with the rest of the auth stuff? It seems weird that we\u0027d have to change the Fernet implementation whn adding auth methods.",
+      "revId": "5dd91404ea468a6c7888715592b603db90c2d159",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
