@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_8cfef5ac",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T15:23:23Z",
+      "side": 1,
+      "message": "isn\u0027t this part being handled by the TokenFormatter object? The Provider just passes the context to the TokenFormatter which determines which token payload to build.",
+      "revId": "244b221c30d7c8d876b8ad2230008c0bab08e19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4ce23d02",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T15:23:23Z",
+      "side": 1,
+      "message": "Is this related?",
+      "revId": "244b221c30d7c8d876b8ad2230008c0bab08e19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_0c9da559",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 4157,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T15:23:23Z",
+      "side": 1,
+      "message": "We can remove this line now, can\u0027t we?",
+      "revId": "244b221c30d7c8d876b8ad2230008c0bab08e19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_6cad4188",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 4175,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T15:23:23Z",
+      "side": 1,
+      "message": "Same here. Comment applies to all instances in this file.",
+      "revId": "244b221c30d7c8d876b8ad2230008c0bab08e19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
