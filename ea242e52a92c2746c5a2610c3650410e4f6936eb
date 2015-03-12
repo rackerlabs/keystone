@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_fc29da37",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-12T16:30:28Z",
+      "side": 1,
+      "message": "Keystone does not listen to notifications at this point on the wire, and I\u0027d like to avoid doing that. I am unsure how to handle this however, short of doing a periodic cache+reload of the config.\n\nSo lets think very clearly about how we communicate this across processes without notifying to the wire and hoping that a fanout catches all keystone workers.\n\nOptions that come to mind:\n\n1. Timed cache, when you load the config you look at when it was last updated and check in at a fixed interval (meaning that any/all requests would be updated at the same time, vs. some threads/workers do not update at the same time).\n\n2. Keep an identifier for the \"version\" of the config that is handled via a light-weight query. if the version does not match in-memory state, you reload config.\n\n3. Simple timed cache, knowing that we reload at x interval, so changes need to either be a restart of keystone or wait for interval X to fully apply.\n\n4. ???",
+      "revId": "ea242e52a92c2746c5a2610c3650410e4f6936eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
