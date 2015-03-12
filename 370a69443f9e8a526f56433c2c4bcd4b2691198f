@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_ea6210d8",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-12T01:44:14Z",
+      "side": 1,
+      "message": "Is the str needed here? If it is you maybe you could use six.text_type so it\u0027s Python 3 friendly.",
+      "revId": "370a69443f9e8a526f56433c2c4bcd4b2691198f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8a09942e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-12T01:44:14Z",
+      "side": 1,
+      "message": "I think this will cause a 404 instead of a 400 if the domain doesn\u0027t exist",
+      "revId": "370a69443f9e8a526f56433c2c4bcd4b2691198f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
