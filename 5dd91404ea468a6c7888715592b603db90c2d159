@@ -16,6 +16,24 @@
       "revId": "5dd91404ea468a6c7888715592b603db90c2d159",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_376628ee",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T18:29:33Z",
+      "side": 1,
+      "message": "good point, I can see if there is a place I can put it in for auth.",
+      "parentUuid": "9a80dd14_8b2c124c",
+      "revId": "5dd91404ea468a6c7888715592b603db90c2d159",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
