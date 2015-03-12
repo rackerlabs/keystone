@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_19d6dcf1",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-12T05:08:24Z",
+      "side": 1,
+      "message": "This looks like a hold-over from the attempt to utilize the creation_time + conf.token.expiration, the expieration should be encoded in the token now right?",
+      "revId": "14c704f5563dbf63bb59b45b96d9e76db90592e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
