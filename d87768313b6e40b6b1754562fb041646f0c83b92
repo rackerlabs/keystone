@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_3912c0b4",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-12T05:11:39Z",
+      "side": 0,
+      "message": "Should this have disappeared?",
+      "revId": "d87768313b6e40b6b1754562fb041646f0c83b92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_790c3895",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 218,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-12T05:11:39Z",
+      "side": 0,
+      "message": "same as above.",
+      "revId": "d87768313b6e40b6b1754562fb041646f0c83b92",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
