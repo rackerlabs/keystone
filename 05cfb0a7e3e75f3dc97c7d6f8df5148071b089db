@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_3020f3af",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T18:05:50Z",
+      "side": 1,
+      "message": "missing doc strings here",
+      "revId": "05cfb0a7e3e75f3dc97c7d6f8df5148071b089db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_fd8ceb81",
         "filename": "keystone/notifications.py",
         "patchSetId": 9
@@ -47,6 +64,92 @@
       "writtenOn": "2015-02-20T01:48:33Z",
       "side": 1,
       "message": "nit: add a dot \".\" in the end",
+      "revId": "05cfb0a7e3e75f3dc97c7d6f8df5148071b089db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f071fba8",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 240,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T18:05:50Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "ba7be1f8_fd8ceb81",
+      "revId": "05cfb0a7e3e75f3dc97c7d6f8df5148071b089db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_70534b39",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T18:05:50Z",
+      "side": 1,
+      "message": "need type docs here to be consistent?",
+      "revId": "05cfb0a7e3e75f3dc97c7d6f8df5148071b089db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d0b6b789",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 282,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T18:05:50Z",
+      "side": 1,
+      "message": ":type context: dict",
+      "revId": "05cfb0a7e3e75f3dc97c7d6f8df5148071b089db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_70a50b46",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 283,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T18:05:50Z",
+      "side": 1,
+      "message": ":type user_id: string",
+      "revId": "05cfb0a7e3e75f3dc97c7d6f8df5148071b089db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d044f775",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 458,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T18:05:50Z",
+      "side": 1,
+      "message": "need type docs here?",
       "revId": "05cfb0a7e3e75f3dc97c7d6f8df5148071b089db",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
