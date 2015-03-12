@@ -34,6 +34,24 @@
       "revId": "0fea1e559fa4fc1844de348489ef28cfb3e0ce00",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_3db0d98a",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2600,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-12T20:57:50Z",
+      "side": 1,
+      "message": "well, what else can theoretically be here except None and str? There is test_generate_saml_route, where we use don\u0027t do stuff like this. I think that test_generate_ecp_route should look more or less similar to saml test.\n\nI don\u0027t want the comment to be removed, I want to have only useful assertions (or understand why this one is useful).",
+      "parentUuid": "9a80dd14_7990a64e",
+      "revId": "0fea1e559fa4fc1844de348489ef28cfb3e0ce00",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
