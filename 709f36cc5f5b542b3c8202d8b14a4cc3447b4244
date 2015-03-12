@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_755dfd14",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 659,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-12T17:33:08Z",
+      "side": 1,
+      "message": "Do we want to mark stable APIs with \u0027hints\u0027: {\u0027status\u0027: \u0027stable\u0027} ?\n\nIf so, we should add \u0027stable\u0027 as the default here.",
+      "revId": "709f36cc5f5b542b3c8202d8b14a4cc3447b4244",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b53a1596",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-12T17:33:08Z",
+      "side": 1,
+      "message": "I think we should assert that the provided status is valid.\nMaybe:\n\n    if status in (\u0027experimental\u0027, \u0027deprecated\u0027):",
+      "revId": "709f36cc5f5b542b3c8202d8b14a4cc3447b4244",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
