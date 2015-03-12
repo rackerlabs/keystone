@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_ba3a0296",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1492,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-12T17:08:50Z",
+      "side": 1,
+      "message": "shouldn\u0027t this fail as it\u0027s a PUT request with the ID in the url",
+      "revId": "798d08a7b54841b35dc2686ea6deaaa9fed530ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
