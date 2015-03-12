@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_d9f2849a",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 564,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-12T05:18:31Z",
+      "side": 1,
+      "message": "OK, i used it for generate_ecp, but do you think it\u0027s necessary for the others, they are already private?",
+      "parentUuid": "9a80dd14_8964acb9",
+      "revId": "ca7be0bfe4503a8f33c7be32a17f400a8fae01ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_e9c60899",
         "filename": "keystone/contrib/federation/idp.py",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_39bc806c",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-12T05:18:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_e9c60899",
+      "revId": "ca7be0bfe4503a8f33c7be32a17f400a8fae01ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_33b32a4e",
         "filename": "keystone/contrib/federation/routers.py",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2015-03-10T09:32:54Z",
       "side": 1,
       "message": "I find strange to have a SAML profile to be at the \"same level\" as the protocol itself.\n\nI\u0027d rather have another call where we pass the SAML assertion and it is wrapped in a soap envelope.",
+      "revId": "ca7be0bfe4503a8f33c7be32a17f400a8fae01ca",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_394ac083",
+        "filename": "keystone/contrib/federation/routers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-12T05:18:31Z",
+      "side": 1,
+      "message": "i agree with your first point, do you have a suggestion? how about /saml2/ecp?\n\ni don\u0027t agree with your second point, sending a huge piece of xml in the request scares me, seems like it\u0027ll be error prone",
+      "parentUuid": "9a80dd14_33b32a4e",
       "revId": "ca7be0bfe4503a8f33c7be32a17f400a8fae01ca",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
