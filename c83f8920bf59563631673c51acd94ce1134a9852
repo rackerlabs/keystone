@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_14e2232f",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-12T05:44:21Z",
+      "side": 1,
+      "message": "typo: as as",
+      "revId": "c83f8920bf59563631673c51acd94ce1134a9852",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
