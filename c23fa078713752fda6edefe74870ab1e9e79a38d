@@ -88,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_0972f2ac",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T16:09:47Z",
+      "side": 1,
+      "message": "the above could even be simplified to: \n\n    audit_ids \u003d provider.audit_info(token_ref.get(\u0027parent_audit_id\u0027))\n\nIn the V3 path, this is handled with kwargs instead.",
+      "parentUuid": "9a80dd14_e9091e2d",
+      "revId": "c23fa078713752fda6edefe74870ab1e9e79a38d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_cf76363f",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 24
