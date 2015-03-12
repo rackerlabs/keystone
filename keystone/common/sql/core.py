@@ -303,15 +303,20 @@ def _filter(model, query, hints):
         :param cumulative_filter_dict: a dict that describes the set of
                                       exact filters built up so far
         :param hints: contains the list of filters yet to be satisfied.
+        :type hints: keystone.common.driver_hints.Hints
 
         :returns: updated cumulative dict
 
         """
         key = filter_['name']
-        if isinstance(getattr(model, key).property.columns[0].type,
-                      sql.types.Boolean):
+
+        col = getattr(model, key).property.columns[0]
+        if isinstance(col.type, sql.types.Boolean):
             cumulative_filter_dict[key] = (
                 utils.attr_as_boolean(filter_['value']))
+        elif col.type.length and (len(filter_['value']) > col.type.length):
+            # Requested value doesn't fit in the column so will never match.
+            return
         else:
             cumulative_filter_dict[key] = filter_['value']
         satisfied_filters.append(filter_)
@@ -325,6 +330,10 @@ def _filter(model, query, hints):
         if filter_['comparator'] == 'equals':
             filter_dict = exact_filter(
                 model, filter_, satisfied_filters, filter_dict, hints)
+
+            if filter_dict is None:
+                hints.no_matches = True
+                return
         else:
             query = inexact_filter(
                 model, query, filter_, satisfied_filters, hints)
@@ -377,6 +386,10 @@ def filter_limit_query(model, query, hints):
 
     # First try and satisfy any filters
     query = _filter(model, query, hints)
+
+    if hints.no_matches:
+        # Nothing's going to match, so don't bother with the query.
+        return []
 
     # NOTE(henry-nash): Any unsatisfied filters will have been left in
     # the hints list for the controller to handle. We can only try and
