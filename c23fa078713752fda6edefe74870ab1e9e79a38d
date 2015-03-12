@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_d49deb58",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-12T06:25:52Z",
+      "side": 1,
+      "message": "that\u0027s a very strange dependency path; consider moving what you need (i assume just the Mixin) into a more general place",
+      "revId": "c23fa078713752fda6edefe74870ab1e9e79a38d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_0fc3ee57",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-12T06:25:52Z",
+      "side": 1,
+      "message": "you can just delete these two tests",
+      "revId": "c23fa078713752fda6edefe74870ab1e9e79a38d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_cf8f162d",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-12T06:25:52Z",
+      "side": 1,
+      "message": "you can simplify the next 4 lines down to:\n\n  project_id \u003d token_ref.get(\u0027tenant\u0027, {}).get(\u0027id\u0027)",
+      "revId": "c23fa078713752fda6edefe74870ab1e9e79a38d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_6f82aa01",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-12T06:25:52Z",
+      "side": 1,
+      "message": "you\u0027re sticking something called _info into something called _id",
+      "revId": "c23fa078713752fda6edefe74870ab1e9e79a38d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_cf76363f",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-12T06:25:52Z",
+      "side": 1,
+      "message": "the second argument will have to be the token\u0027s intended expiration -- i assume that\u0027s in the token_ref you\u0027re given above?",
+      "revId": "c23fa078713752fda6edefe74870ab1e9e79a38d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8f9c3e5f",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-12T06:25:52Z",
+      "side": 1,
+      "message": "to make this easier to read, do this the other way around - fail early if you\u0027re out of scope for v3, so that the business logic ( self.v3_token_data_helper.get_token_data ) is done at the highest scope in the method.",
+      "revId": "c23fa078713752fda6edefe74870ab1e9e79a38d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
