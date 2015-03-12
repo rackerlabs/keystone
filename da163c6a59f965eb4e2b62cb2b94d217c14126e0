@@ -51,6 +51,24 @@
       "revId": "da163c6a59f965eb4e2b62cb2b94d217c14126e0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_2021804d",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T19:33:20Z",
+      "side": 1,
+      "message": "This is the result of the above fix but on python 2.7\n\nhttp://cdn.pasteraw.com/hcdqfyykxegsdshnk45146p059mkboc",
+      "parentUuid": "9a80dd14_6048d85c",
+      "revId": "da163c6a59f965eb4e2b62cb2b94d217c14126e0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
