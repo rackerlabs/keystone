@@ -10,6 +10,10 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from keystone.common import validation
+from keystone.common.validation import parameter_types
+
+
 basic_property_id = {
     'type': 'object',
     'properties': {
@@ -46,4 +50,28 @@ saml_create = {
     },
     'required': ['identity', 'scope'],
     'additionalProperties': False
+}
+
+_service_provider_properties = {
+    'id': parameter_types.id_string,
+    # NOTE(rodrigods): The database accepts URLs with 256 as max length,
+    # but parameter_types.url uses 225 as max length.
+    'auth_url': parameter_types.url,
+    'sp_url': parameter_types.url,
+    'description': validation.nullable(parameter_types.description),
+    'enabled': parameter_types.boolean
+}
+
+service_provider_create = {
+    'type': 'object',
+    'properties': _service_provider_properties,
+    # NOTE(rodrigods): 'id' is not required since it is passed in the URL
+    'required': ['auth_url', 'sp_url']
+}
+
+service_provider_update = {
+    'type': 'object',
+    'properties': _service_provider_properties,
+    # Make sure at least one property is being updated
+    'minProperties': 1
 }

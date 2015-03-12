@@ -2722,10 +2722,10 @@ class ServiceProviderTests(FederationTests):
 
     def sp_ref(self):
         ref = {
-            'auth_url': 8 * uuid.uuid4().hex,
+            'auth_url': 'https://' + uuid.uuid4().hex + '.com',
             'enabled': True,
             'description': uuid.uuid4().hex,
-            'sp_url': 8 * uuid.uuid4().hex
+            'sp_url': 'https://' + uuid.uuid4().hex + '.com',
         }
         return ref
 
