@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_2f0c043b",
+        "filename": "keystone/contrib/federation/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-12T23:27:36Z",
+      "side": 1,
+      "message": "This may result in broken implementations since they could already have a longer URL. Highly unlikely, but possible.",
+      "revId": "0e40349d397e43747d5dc2eca1483b40e1a5df5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_6f119c51",
+        "filename": "keystone/contrib/federation/schema.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-12T23:27:36Z",
+      "side": 1,
+      "message": "Same.",
+      "revId": "0e40349d397e43747d5dc2eca1483b40e1a5df5d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
