@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_6091ca99",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 1201,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-12T14:13:48Z",
+      "side": 1,
+      "message": "build a dict with all the sensitive options then don\u0027t need a double loop.",
+      "revId": "5bec521a94ba5c08d1137c00a0b042931699cd85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e0085adb",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 462,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-12T14:13:48Z",
+      "side": 1,
+      "message": "add a comment that this is the replacement value.",
+      "revId": "5bec521a94ba5c08d1137c00a0b042931699cd85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_80f15ecf",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 474,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-12T14:13:48Z",
+      "side": 1,
+      "message": "this should say what\u0027s expected to happen. What\u0027s benign about ignoring an invalid substitution value?",
+      "revId": "5bec521a94ba5c08d1137c00a0b042931699cd85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_00100e00",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-12T14:13:48Z",
+      "side": 1,
+      "message": "add a comment that this is the bad replacement value.\n\nAlso, this should be a separate test function.",
+      "revId": "5bec521a94ba5c08d1137c00a0b042931699cd85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_209d125a",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 483,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-12T14:13:48Z",
+      "side": 1,
+      "message": "Also have a test for if the substitution string uses the wrong data type (e.g., %(password)d),\n\nAdd a test for if the substitution string is incorrectly formatted, e.g., missing the data type or close-paren\n\n %(password)\n %(password",
+      "revId": "5bec521a94ba5c08d1137c00a0b042931699cd85",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
