@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_30501c0a",
+        "filename": "keystone/cli.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 322,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-12T00:00:47Z",
+      "side": 1,
+      "message": "yes...because the domain name gets put between them!",
+      "parentUuid": "9a80dd14_c190dc98",
+      "revId": "2a2b7b0fc16dc43defb54b3914be84b381e47a60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_21d0d852",
         "filename": "keystone/cli.py",
         "patchSetId": 18
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-11T21:48:03Z",
       "side": 1,
       "message": ":*",
+      "revId": "2a2b7b0fc16dc43defb54b3914be84b381e47a60",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_705a942b",
+        "filename": "keystone/cli.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-12T00:00:47Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_21d0d852",
       "revId": "2a2b7b0fc16dc43defb54b3914be84b381e47a60",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
