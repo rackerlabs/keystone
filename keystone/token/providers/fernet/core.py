@@ -10,8 +10,11 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+import datetime
+
 from oslo_config import cfg
 from oslo_log import log
+from oslo_utils import timeutils
 
 from keystone.common import dependency
 from keystone import exception
@@ -170,12 +173,17 @@ class Provider(common.BaseProvider):
 
             trust_ref = self.trust_api.get_trust(trust_id)
 
+        # because expiration is not encoded into the token, we need to compute
+        # it dynamically
+        lifespan = datetime.timedelta(seconds=CONF.token.expiration)
+        expires_at = timeutils.normalize_time(issued_at + lifespan)
+
         return self.v3_token_data_helper.get_token_data(
             user_id,
             method_names=['password', 'token'],
             project_id=project_id,
-            expires=expires_at,
-            issued_at=issued_at,
+            expires=timeutils.isotime(expires_at),
+            issued_at=timeutils.isotime(issued_at),
             trust=trust_ref,
             audit_info=audit_ids)
 

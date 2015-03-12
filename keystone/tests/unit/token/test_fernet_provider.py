@@ -15,6 +15,7 @@ import datetime
 import hashlib
 import shutil
 import tempfile
+import time
 import uuid
 
 from oslo_utils import timeutils
@@ -171,19 +172,33 @@ class TestCustomTokenFormatter(TestScopedTokenFormatter):
 
         class HandRolledCrypto(object):
             """Hold my beer and watch this."""
+
+            def _checksum(self, ciphertext, timestamp):
+                """Produce a checksum using the widely-popular MD5 algo."""
+                checksummed = '%s-%d' % (ciphertext, timestamp)
+                checksum = hashlib.md5(checksummed).hexdigest()
+                return checksummed, checksum
+
             def encrypt(self, plaintext):
                 """Adds security by obscurity."""
-                checksum = hashlib.md5(plaintext).hexdigest()
-                return '%s-%s' % (plaintext[::-1], checksum)
+                ciphertext = plaintext[::-1]
+                checksummed, checksum = self._checksum(
+                    ciphertext, timestamp=time.time())
+                return '%s-%s' % (checksummed, checksum)
 
-            def decrypt(self, ciphertext):
+            def decrypt(self, ciphertext, ttl=None):
                 """Removes obscurity to validate security."""
                 try:
-                    ciphertext, checksum = ciphertext.rsplit('-', 1)
+                    ciphertext, timestamp, checksum = ciphertext.rsplit('-', 2)
                 except ValueError:
                     raise exception.Unauthorized()
                 plaintext = ciphertext[::-1]
-                if checksum != hashlib.md5(plaintext).hexdigest():
+                timestamp = int(timestamp)
+                actual_checksum = self._checksum(
+                    ciphertext, timestamp=timestamp)[1]
+                if checksum != actual_checksum:
+                    raise exception.Unauthorized()
+                if ttl and (time.time() - ttl > timestamp):
                     raise exception.Unauthorized()
                 return plaintext
 

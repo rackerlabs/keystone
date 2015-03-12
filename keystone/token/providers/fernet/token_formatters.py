@@ -96,15 +96,26 @@ class BaseTokenFormatter(object):
         return (timeutils.normalize_time(time_object) -
                 datetime.datetime.utcfromtimestamp(0)).total_seconds()
 
-    def _convert_int_to_time_string(self, time_int):
+    def _convert_int_to_datetime(self, time_int):
         """Convert a timestamp integer to a string.
 
         :param time_int: integer representing time
         :returns: a time formatted string
 
         """
-        time_object = datetime.datetime.utcfromtimestamp(int(time_int))
-        return timeutils.isotime(time_object)
+        return datetime.datetime.utcfromtimestamp(int(time_int))
+
+    def _convert_expiration_to_ttl(self, expires_at):
+        """Convert an expiration (string) to a TTL in seconds (integer)."""
+        expires_at = timeutils.parse_isotime(expires_at)
+        expires_at = timeutils.normalize_time(expires_at)
+        ttl = expires_at - timeutils.utcnow()
+        ttl = int(ttl.total_seconds())
+        return ttl
+
+    def _ttl_to_expiration(self, issued_at, ttl):
+        """Convert an TTL in seconds (integer) to an expiration datetime."""
+        return issued_at + datetime.timedelta(seconds=ttl)
 
     def pack(self, payload):
         """Pack a payload for transport."""
@@ -143,8 +154,8 @@ class UnscopedTokenFormatter(BaseTokenFormatter):
         """
         b_user_id = self._convert_uuid_hex_to_bytes(user_id)
         issued_at_int = self._convert_time_string_to_int(created_at)
-        expires_at_int = self._convert_time_string_to_int(expires_at)
-        payload = (b_user_id, issued_at_int, expires_at_int, audit_ids)
+        ttl = self._convert_expiration_to_ttl(expires_at)
+        payload = (b_user_id, issued_at_int, ttl, audit_ids)
 
         return self.pack(payload)
 
@@ -152,8 +163,8 @@ class UnscopedTokenFormatter(BaseTokenFormatter):
         """Validate an unscoped token.
 
         :param token_string: a string representing the token
-        :returns: a tuple containing the user_id, issued_at_str,
-                  expires_at_str, audit_ids
+        :returns: a tuple containing the user_id, issued_at, expires_at,
+                  audit_ids
 
         """
         payload = self.unpack(token_string)
@@ -161,15 +172,15 @@ class UnscopedTokenFormatter(BaseTokenFormatter):
         # Rebuild and retrieve token information from the token string
         b_user_id = payload[0]
         issued_at_ts = payload[1]
-        expires_at_ts = payload[2]
+        ttl = payload[2]
         audit_ids = payload[3]
 
         user_id = self._convert_uuid_bytes_to_hex(b_user_id)
 
-        issued_at_str = self._convert_int_to_time_string(issued_at_ts)
-        expires_at_str = self._convert_int_to_time_string(expires_at_ts)
+        issued_at = self._convert_int_to_datetime(issued_at_ts)
+        expires_at = self._ttl_to_expiration(issued_at, ttl)
 
-        return (user_id, issued_at_str, expires_at_str, audit_ids)
+        return (user_id, issued_at, expires_at, audit_ids)
 
 
 class ScopedTokenFormatter(BaseTokenFormatter):
@@ -189,15 +200,13 @@ class ScopedTokenFormatter(BaseTokenFormatter):
 
         """
         issued_at_int = self._convert_time_string_to_int(created_at)
-        expires_at_int = self._convert_time_string_to_int(expires_at)
+        ttl = self._convert_expiration_to_ttl(expires_at)
         b_user_id = self._convert_uuid_hex_to_bytes(user_id)
         if project_id:
             b_scope_id = self._convert_uuid_hex_to_bytes(project_id)
-            payload = (
-                b_user_id, b_scope_id, issued_at_int, expires_at_int,
-                audit_ids)
+            payload = (b_user_id, b_scope_id, issued_at_int, ttl, audit_ids)
         else:
-            payload = (b_user_id, issued_at_int, expires_at_int, audit_ids)
+            payload = (b_user_id, issued_at_int, ttl, audit_ids)
 
         return self.pack(payload)
 
@@ -205,8 +214,8 @@ class ScopedTokenFormatter(BaseTokenFormatter):
         """Validate a F00 formatted token.
 
         :param token_string: a string representing the token
-        :returns: a tuple containing the user_id, project_id, issued_at_str,
-                 expires_at_str, and audit_ids
+        :returns: a tuple containing the user_id, project_id, issued_at,
+                 expires_at, and audit_ids
 
         """
         payload = self.unpack(token_string)
@@ -217,11 +226,11 @@ class ScopedTokenFormatter(BaseTokenFormatter):
         if isinstance(payload[1], str):
             b_project_id = payload[1]
             issued_at_ts = payload[2]
-            expires_at_ts = payload[3]
+            ttl = payload[3]
             audit_ids = payload[4]
         else:
             issued_at_ts = payload[1]
-            expires_at_ts = payload[2]
+            ttl = payload[2]
             audit_ids = payload[3]
 
         # Uncompress the IDs
@@ -231,10 +240,10 @@ class ScopedTokenFormatter(BaseTokenFormatter):
             project_id = self._convert_uuid_bytes_to_hex(b_project_id)
 
         # Generate created at and expires at times
-        issued_at_str = self._convert_int_to_time_string(issued_at_ts)
-        expires_at_str = self._convert_int_to_time_string(expires_at_ts)
+        issued_at = self._convert_int_to_datetime(issued_at_ts)
+        expires_at = self._ttl_to_expiration(issued_at, ttl)
 
-        return (user_id, project_id, issued_at_str, expires_at_str, audit_ids)
+        return (user_id, project_id, issued_at, expires_at, audit_ids)
 
 
 class TrustTokenFormatter(BaseTokenFormatter):
@@ -255,12 +264,12 @@ class TrustTokenFormatter(BaseTokenFormatter):
 
         """
         issued_at_int = self._convert_time_string_to_int(created_at)
-        expires_at_int = self._convert_time_string_to_int(expires_at)
+        ttl = self._convert_expiration_to_ttl(expires_at)
         b_user_id = self._convert_uuid_hex_to_bytes(user_id)
         b_project_id = self._convert_uuid_hex_to_bytes(project_id)
         b_trust_id = self._convert_uuid_hex_to_bytes(trust_id)
-        payload = (b_user_id, b_project_id, b_trust_id, issued_at_int,
-                   expires_at_int, audit_ids)
+        payload = (b_user_id, b_project_id, b_trust_id, issued_at_int, ttl,
+                   audit_ids)
 
         return self.pack(payload)
 
@@ -268,8 +277,8 @@ class TrustTokenFormatter(BaseTokenFormatter):
         """Validate a trust formatted token.
 
         :param token_string: a string representing the token
-        :returns: a tuple containing the user_id, project_id, issued_at_str,
-                  expires_at_str, audit_ids, and trust_id
+        :returns: a tuple containing the user_id, project_id, issued_at,
+                  expires_at, audit_ids, and trust_id
 
         """
         payload = self.unpack(token_string)
@@ -279,7 +288,7 @@ class TrustTokenFormatter(BaseTokenFormatter):
         b_project_id = payload[1]
         b_trust_id = payload[2]
         issued_at_ts = payload[3]
-        expires_at_ts = payload[4]
+        ttl = payload[4]
         audit_ids = payload[5]
 
         # Uncompress the IDs
@@ -287,8 +296,8 @@ class TrustTokenFormatter(BaseTokenFormatter):
         project_id = self._convert_uuid_bytes_to_hex(b_project_id)
         trust_id = self._convert_uuid_bytes_to_hex(b_trust_id)
         # Generate created at and expires at times
-        issued_at_str = self._convert_int_to_time_string(issued_at_ts)
-        expires_at_str = self._convert_int_to_time_string(expires_at_ts)
+        issued_at = self._convert_int_to_datetime(issued_at_ts)
+        expires_at = self._ttl_to_expiration(issued_at, ttl)
 
-        return (user_id, project_id, issued_at_str, expires_at_str, audit_ids,
+        return (user_id, project_id, issued_at, expires_at, audit_ids,
                 trust_id)
