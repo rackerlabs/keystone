@@ -33,6 +33,24 @@
       "revId": "709f36cc5f5b542b3c8202d8b14a4cc3447b4244",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_75ec1df4",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-12T17:35:51Z",
+      "side": 1,
+      "message": "Otherwise, let\u0027s raise an exception.",
+      "parentUuid": "9a80dd14_b53a1596",
+      "revId": "709f36cc5f5b542b3c8202d8b14a4cc3447b4244",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
