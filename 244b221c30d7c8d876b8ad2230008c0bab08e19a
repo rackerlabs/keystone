@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_f20f48df",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-12T15:46:53Z",
+      "side": 1,
+      "message": "sort of. this fixes a hacking violation in a future version of hacking",
+      "parentUuid": "9a80dd14_4ce23d02",
+      "revId": "244b221c30d7c8d876b8ad2230008c0bab08e19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_0c9da559",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 16
@@ -47,6 +65,24 @@
       "writtenOn": "2015-03-12T15:23:23Z",
       "side": 1,
       "message": "We can remove this line now, can\u0027t we?",
+      "revId": "244b221c30d7c8d876b8ad2230008c0bab08e19a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_12b4dccf",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 4157,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-12T15:46:53Z",
+      "side": 1,
+      "message": "i added these because i think they *should* be here, but they\u0027re not passing because i think we\u0027re using the same user to administer the test as we are as the test subject (if that makes any sense). maybe add some TODO notes in a separate patch?",
+      "parentUuid": "9a80dd14_0c9da559",
       "revId": "244b221c30d7c8d876b8ad2230008c0bab08e19a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
