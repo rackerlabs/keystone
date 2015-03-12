@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_cb3b6ae9",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 2234,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T18:28:34Z",
+      "side": 1,
+      "message": "nope, I can remove the last assertion.",
+      "parentUuid": "9a80dd14_50772702",
+      "revId": "13793d1d54db469c9fd7577eb8367d7a0f6112fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_504e47c2",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 16
@@ -47,6 +65,24 @@
       "writtenOn": "2015-03-12T18:07:16Z",
       "side": 1,
       "message": "Is there anything else to assert here or are you just checking that it\u0027s valid?",
+      "revId": "13793d1d54db469c9fd7577eb8367d7a0f6112fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_6b019e05",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 2244,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T18:28:34Z",
+      "side": 1,
+      "message": "just checking that the token is valid. I can add a comment.",
+      "parentUuid": "9a80dd14_504e47c2",
       "revId": "13793d1d54db469c9fd7577eb8367d7a0f6112fb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_7717c045",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T18:28:34Z",
+      "side": 1,
+      "message": "Yes, this should be\n\n    .get(\u0027identity_provider\u0027, {}).get(\u0027id\u0027)",
+      "parentUuid": "9a80dd14_f0b9fb79",
+      "revId": "13793d1d54db469c9fd7577eb8367d7a0f6112fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_10b04f8a",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 16
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_f722d0a1",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T18:28:34Z",
+      "side": 1,
+      "message": "I\u0027ll fix to be the same as above.",
+      "parentUuid": "9a80dd14_10b04f8a",
+      "revId": "13793d1d54db469c9fd7577eb8367d7a0f6112fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_702a6b91",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 16
@@ -98,6 +170,24 @@
       "writtenOn": "2015-03-12T18:07:16Z",
       "side": 1,
       "message": "isn\u0027t federated_dict alreayd either a dict or None?",
+      "revId": "13793d1d54db469c9fd7577eb8367d7a0f6112fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_772ee08d",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T18:28:34Z",
+      "side": 1,
+      "message": "++ yes, you\u0027re right.",
+      "parentUuid": "9a80dd14_702a6b91",
       "revId": "13793d1d54db469c9fd7577eb8367d7a0f6112fb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
