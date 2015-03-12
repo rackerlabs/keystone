@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_e03763fd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-12T21:42:41Z",
+      "side": 1,
+      "message": "no need to include the link.",
+      "revId": "e35272dc51e436d7445f1e1187b03abd451cfa46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_a0df2bd5",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-12T21:42:41Z",
+      "side": 1,
+      "message": "Is it Abfab or ABFAB?",
+      "revId": "e35272dc51e436d7445f1e1187b03abd451cfa46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_6000d334",
+        "filename": "doc/source/extensions/abfab.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-12T21:42:41Z",
+      "side": 1,
+      "message": "Do we want warning suppressed?",
+      "revId": "e35272dc51e436d7445f1e1187b03abd451cfa46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e0c203e8",
+        "filename": "doc/source/extensions/abfab.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-12T21:42:41Z",
+      "side": 1,
+      "message": "mod_moonshot and \"needs the\"",
+      "revId": "e35272dc51e436d7445f1e1187b03abd451cfa46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
