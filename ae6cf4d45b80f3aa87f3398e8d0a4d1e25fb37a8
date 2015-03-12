@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_146f79c6",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-12T10:41:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_42206ff7",
+      "revId": "ae6cf4d45b80f3aa87f3398e8d0a4d1e25fb37a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_02b0378a",
         "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
         "patchSetId": 23
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-11T21:33:52Z",
       "side": 1,
       "message": "Does this need to be officially documented anywhere?",
+      "revId": "ae6cf4d45b80f3aa87f3398e8d0a4d1e25fb37a8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d49b21c7",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-12T10:41:36Z",
+      "side": 1,
+      "message": "If someone tests kilo and then return back this should not be a problem because it return as it was before with only one entity per IdP. Anyway, there is a documentation or a place where downgrade problems should adverted? Generally, this is done only for the upgrade!",
+      "parentUuid": "9a80dd14_02b0378a",
       "revId": "ae6cf4d45b80f3aa87f3398e8d0a4d1e25fb37a8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
