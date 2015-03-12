@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_e9091e2d",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T16:07:34Z",
+      "side": 1,
+      "message": "So, something like the following? \n\n    parent_audit_id \u003d token_ref.get(\u0027parent_audit_id\u0027)\n    audit_ids \u003d provider.audit_info(parent_audit_id)\n    \nthe audit_info() method has logic to determine what to do if a list of audit_ids are passed in.",
+      "parentUuid": "9a80dd14_6f82aa01",
+      "revId": "c23fa078713752fda6edefe74870ab1e9e79a38d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_cf76363f",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 24
