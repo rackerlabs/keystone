@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_7146e8c1",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T21:06:35Z",
+      "side": 1,
+      "message": "to maintain consistency with the rest of the imports in this module, we could do: \n\n    from keystone.common import controller as common_controller\n    ...\n    token[\u0027tenant\u0027] \u003d common_controller.V2controller.filter_domain_id(tenant)",
+      "revId": "5d60f493ef26dae10d6cfacdf6b2395b48887533",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_310d503f",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T21:06:35Z",
+      "side": 1,
+      "message": "the v3_to_v3_user method calls fitler_domain_id() but is \u0027domain\u0027 still in the user_ref once we get it back from v3_to_v2_user()? If so, that sounds like a bug in that method.",
+      "revId": "5d60f493ef26dae10d6cfacdf6b2395b48887533",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_2c42573e",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T21:06:35Z",
+      "side": 1,
+      "message": "The following could be simplified: \n\n\n    user[\u0027roles\u0027] \u003d []\n    for role in v3_token_get(\u0027roles\u0027, []):\n        role.pop(\u0027id\u0027, None)\n        user[\u0027roles\u0027].append(role)\n\nNot sure that role_ids is used anywhere?",
+      "revId": "5d60f493ef26dae10d6cfacdf6b2395b48887533",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_71f9884d",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T21:06:35Z",
+      "side": 1,
+      "message": "we\u0027re filtering role[\u0027id\u0027] because it\u0027s not traditionally included in the v2 token responses, correct? If so, that might make a good comment.",
+      "revId": "5d60f493ef26dae10d6cfacdf6b2395b48887533",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4cdb0b7c",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T21:06:35Z",
+      "side": 1,
+      "message": "You should just be able to call cls.format_catalog(catalog_ref) since we are in the V2TokenDataHelper anyway.",
+      "revId": "5d60f493ef26dae10d6cfacdf6b2395b48887533",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_ac3807a1",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T21:06:35Z",
+      "side": 1,
+      "message": "I believe this only denotes if we are using the admin token in the request or not, right? \n\nhttps://github.com/openstack/keystone/blob/ce701f27710c1000d5d7babd3a7bd3fe7e1af083/keystone/middleware/core.py#L70",
+      "revId": "5d60f493ef26dae10d6cfacdf6b2395b48887533",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8c4fc333",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T21:06:35Z",
+      "side": 1,
+      "message": "ID*",
+      "revId": "5d60f493ef26dae10d6cfacdf6b2395b48887533",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4c706b72",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T21:06:35Z",
+      "side": 1,
+      "message": "set this to a list to be consistent: \n\n    method_names \u003d [\u0027password\u0027]\n\nMight need to determine how this is handled to. I\u0027m not sure how v2 does it, but can it support having something like [\u0027token\u0027, \u0027password\u0027]?",
+      "revId": "5d60f493ef26dae10d6cfacdf6b2395b48887533",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_ecdaff49",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T21:06:35Z",
+      "side": 1,
+      "message": "this encodes the entire token_ref dict, right?",
+      "revId": "5d60f493ef26dae10d6cfacdf6b2395b48887533",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_6c17efee",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-12T21:06:35Z",
+      "side": 1,
+      "message": "Fernet",
+      "revId": "5d60f493ef26dae10d6cfacdf6b2395b48887533",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
