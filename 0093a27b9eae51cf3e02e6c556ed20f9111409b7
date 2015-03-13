@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_c532485d",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-13T15:30:41Z",
+      "side": 1,
+      "message": "If the patch get merged you may assign a remote_id_attribute per protocol but the current one is still valid. However, to use the new one I think you have to patch the code first and then the documentation. So if this guideline has to reflect the current websso implementation I think this is OK and when/if the other patch is merged you have to change the code and the doc.",
+      "parentUuid": "9a80dd14_886ebc2d",
+      "revId": "0093a27b9eae51cf3e02e6c556ed20f9111409b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_8826bccc",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 3
