@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_dce4ed0e",
+        "filename": "keystone/common/json_home.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-13T11:13:18Z",
+      "side": 1,
+      "message": "Since we don\u0027t know yet if we are going to support \u0027stable\u0027 status for stable APIs, it would be better to not have this type for now, and then add if we go for it.",
+      "revId": "380a2dbb2d14d5979220741c1cfbb9f952498e0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_bc6819bb",
+        "filename": "keystone/common/json_home.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-13T11:13:18Z",
+      "side": 1,
+      "message": "Please remove trailing whitespaces.",
+      "revId": "380a2dbb2d14d5979220741c1cfbb9f952498e0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
