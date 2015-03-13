@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_49293336",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 29
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-13T01:15:43Z",
+      "side": 1,
+      "message": "Yes, I still need to add some negative test cases.",
+      "parentUuid": "9a80dd14_ca32760f",
+      "revId": "4a2dc1b9cb64c1dae4b328c6dd39031e7519d2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_2a3eb2da",
         "filename": "/COMMIT_MSG",
         "patchSetId": 29
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-13T00:44:47Z",
       "side": 1,
       "message": "Do these need to be done before this patch is complete?",
+      "revId": "4a2dc1b9cb64c1dae4b328c6dd39031e7519d2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_29db1f50",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 29
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-13T01:15:43Z",
+      "side": 1,
+      "message": "Yes, except maybe fixing the unicode token, which is an existing issue.",
+      "parentUuid": "9a80dd14_2a3eb2da",
       "revId": "4a2dc1b9cb64c1dae4b328c6dd39031e7519d2af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_69def76e",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-13T01:15:43Z",
+      "side": 1,
+      "message": "The if statement checks to see if the token has a tenant.",
+      "parentUuid": "9a80dd14_45e839e2",
+      "revId": "4a2dc1b9cb64c1dae4b328c6dd39031e7519d2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_4521194c",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 29
@@ -81,6 +135,24 @@
       "writtenOn": "2015-03-13T00:44:47Z",
       "side": 1,
       "message": "This seems important todo before we merge this patch.",
+      "revId": "4a2dc1b9cb64c1dae4b328c6dd39031e7519d2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_c9fd23b3",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-13T01:15:43Z",
+      "side": 1,
+      "message": "I tested this against master assigning an admin role to a user (matching policy file) and I could never make is_admin be 1. It\u0027s only set when the ADMIN token from keystone.conf is used. I really don\u0027t know the purpose of having the \u0027is_admin\u0027. It should probably be remove.",
+      "parentUuid": "9a80dd14_4521194c",
       "revId": "4a2dc1b9cb64c1dae4b328c6dd39031e7519d2af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
