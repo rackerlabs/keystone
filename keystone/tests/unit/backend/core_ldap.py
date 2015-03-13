@@ -120,11 +120,11 @@ class BaseBackendLdapIdentitySqlEverythingElse(tests.SQLDriverOverrides):
         self.clear_database()
         self.load_backends()
         cache.configure_cache_region(cache.REGION)
-        self.engine = sql.get_engine()
+        engine = sql.get_engine()
         self.addCleanup(sql.cleanup)
 
-        sql.ModelBase.metadata.create_all(bind=self.engine)
-        self.addCleanup(sql.ModelBase.metadata.drop_all, bind=self.engine)
+        sql.ModelBase.metadata.create_all(bind=engine)
+        self.addCleanup(sql.ModelBase.metadata.drop_all, bind=engine)
 
         self.load_fixtures(default_fixtures)
         # defaulted by the data load
