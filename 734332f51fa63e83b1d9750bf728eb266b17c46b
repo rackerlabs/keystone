@@ -16,6 +16,24 @@
       "revId": "734332f51fa63e83b1d9750bf728eb266b17c46b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_a11e3b0a",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-13T08:28:26Z",
+      "side": 1,
+      "message": "@Marek, thanks for reviewing. What I can see is those info is read from the template,I cannot see a better approach to pick it out.",
+      "parentUuid": "9a80dd14_6b38a23d",
+      "revId": "734332f51fa63e83b1d9750bf728eb266b17c46b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
