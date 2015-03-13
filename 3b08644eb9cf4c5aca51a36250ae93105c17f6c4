@@ -16,6 +16,24 @@
       "revId": "3b08644eb9cf4c5aca51a36250ae93105c17f6c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_48b65bfa",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T21:50:09Z",
+      "side": 1,
+      "message": "the comment before this is confusing since it says that client connections will be closed, but this test doesn\u0027t have any client connections. Everything is mocked.",
+      "parentUuid": "9a80dd14_08dc75e3",
+      "revId": "3b08644eb9cf4c5aca51a36250ae93105c17f6c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
