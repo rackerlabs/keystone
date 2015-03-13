@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_9fe32ba3",
+        "filename": "keystone/tests/unit/backend/core_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T20:30:27Z",
+      "side": 1,
+      "message": "took care of this in https://review.openstack.org/#/c/164340/",
+      "parentUuid": "9a80dd14_5f15333e",
+      "revId": "8585b1f04efead4852a084c750e48cbfe467a157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_9fb7ab39",
         "filename": "keystone/tests/unit/backend/role/test_ldap.py",
         "patchSetId": 5
