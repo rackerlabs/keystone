@@ -1,0 +1,310 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_2e93015c",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T16:25:47Z",
+      "side": 1,
+      "message": "this new class should be moved after IdentityProviderModel so that it\u0027s easier to review in gerrit and see what changes have been made to IdentityProviderModel vs what\u0027s new.",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_794ea170",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T16:25:47Z",
+      "side": 1,
+      "message": "this went from 256 to 255... what happened?",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_2ec22185",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T16:25:47Z",
+      "side": 1,
+      "message": "according to the coverage report this isn\u0027t tested.",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4ebbd50e",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T16:25:47Z",
+      "side": 1,
+      "message": "according to the coverage report this isn\u0027t tested.",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_0ef9dd7f",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T16:25:47Z",
+      "side": 1,
+      "message": "the table is utf8.",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4ec1152e",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T16:25:47Z",
+      "side": 1,
+      "message": "rather than writing sql we need to use sqlalchemy to build the sql so that it can work on all the databases that sqlalchemy supports.",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_ae31b15b",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T16:25:47Z",
+      "side": 1,
+      "message": "I\u0027d rather the downgrade failed rather than destroying data.",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_aee371d7",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T16:25:47Z",
+      "side": 1,
+      "message": "rather than writing sql we need to use sqlalchemy to build the sql so that it can work on all the databases that sqlalchemy supports.",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_aef4515b",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T16:25:47Z",
+      "side": 1,
+      "message": "suggest use CONF[protocol][\u0027remote_id_attribute\u0027] -- no need for getattr here.",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_2e6b011f",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T16:25:47Z",
+      "side": 1,
+      "message": "according to the coverage report this isn\u0027t tested.",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4e7e75b0",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T16:25:47Z",
+      "side": 1,
+      "message": "use a named replacement since that should make it easier for the translaters.",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4e55951c",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T16:25:47Z",
+      "side": 1,
+      "message": "Why is this a warning? Is the admin supposed to define this?",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f9aff1e0",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T16:25:47Z",
+      "side": 1,
+      "message": "change \"a remote_ids\" to \"remote_ids\"",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_398d097d",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 813,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T16:25:47Z",
+      "side": 1,
+      "message": "what does \"has not to be accepted\" mean?",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_79d14156",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 834,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T16:25:47Z",
+      "side": 1,
+      "message": "why do we allow this?",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b93e5989",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 847,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T16:25:47Z",
+      "side": 1,
+      "message": "There should also be a test to set the remote_ids to an empty list.",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_99c0b551",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 1876,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T16:25:47Z",
+      "side": 1,
+      "message": "REMOTE_ID_ATTR is a list? isn\u0027t it a string in the other tests?",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_19ccc588",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 2207,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T16:25:47Z",
+      "side": 1,
+      "message": "revert the whitespace change on the previous line.",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
