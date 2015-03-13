@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_6b5a622b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-13T07:13:14Z",
+      "side": 1,
+      "message": "Are we missing some bp reference here?",
+      "revId": "0093a27b9eae51cf3e02e6c556ed20f9111409b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_a8cc608a",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-13T07:13:14Z",
+      "side": 1,
+      "message": "OK",
+      "revId": "0093a27b9eae51cf3e02e6c556ed20f9111409b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_886ebc2d",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-13T07:13:14Z",
+      "side": 1,
+      "message": "Just a heads up: There is a now unblocked patch that brings multiple remote_ids per IdP and which changes the proper section of remote_id_attribute (see line ~150 https://review.openstack.org/#/c/152156/25/keystone/contrib/federation/utils.py ).\nI am confident it will get an FFE, so maybe we should hold off for a moment with merging this patch and simply update docs when the situation with the pending patch is clear.",
+      "revId": "0093a27b9eae51cf3e02e6c556ed20f9111409b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8826bccc",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-13T07:13:14Z",
+      "side": 1,
+      "message": "As of today (13 March 2015) the change that allows for multiple remote_ids is not merged. However I am glad to see that the docs are being prepared for that.\nHowever, it\u0027d be better to update section 3. and say that remote_id_attribute should be put in the sections whose names are equal to protocol\u0027s name (those added via OS-FEDERATION api) and the [federation] is the last resort.\n\nIf we have protocols like saml2 and oidc added via OS-FEDERATION api then I\u0027d expect configuration in keystone.conf:\n[saml2]\nremote_id_attribute \u003d Shib-Idntity-Provider\n\n[oidc]\nremote_id_attribute \u003d HTTP_OIDC_ISS\n\n\nLastly, if such sections are not added Keystone will try one last time and query config file looking for attribute in [federation] section.\n\nIt\u0027s unlikely to handle more than one federation protocol, but eventually Keystone is ready for that.",
+      "revId": "0093a27b9eae51cf3e02e6c556ed20f9111409b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_2b54eafd",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-13T07:13:14Z",
+      "side": 1,
+      "message": "We could also add some section that since now we are using one entry point `/v3/auth/OS-FEDERATION/websso/` and one need to use multiple IdP it\u0027s standard WebSSO usecase and we recommend using external 3-rd party software for Discovery Service, e.g. https://wiki.shibboleth.net/confluence/display/SHIB2/DiscoveryService",
+      "revId": "0093a27b9eae51cf3e02e6c556ed20f9111409b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
