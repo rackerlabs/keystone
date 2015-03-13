@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_a20ffd37",
+        "filename": "keystone/common/json_home.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-13T19:07:23Z",
+      "side": 1,
+      "message": "Well, actually we do use stable at the top level of our v3 API...so I\u0027d like to leave this definition here, then have a second patch that replaces the existing hard coded status in /v3 for this one.",
+      "parentUuid": "9a80dd14_dce4ed0e",
+      "revId": "380a2dbb2d14d5979220741c1cfbb9f952498e0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_bc6819bb",
         "filename": "keystone/common/json_home.py",
         "patchSetId": 22
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-13T11:13:18Z",
       "side": 1,
       "message": "Please remove trailing whitespaces.",
+      "revId": "380a2dbb2d14d5979220741c1cfbb9f952498e0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_bd22bca0",
+        "filename": "keystone/common/json_home.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-13T19:07:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_bc6819bb",
       "revId": "380a2dbb2d14d5979220741c1cfbb9f952498e0f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
