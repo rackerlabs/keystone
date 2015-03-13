@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_725b37f6",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-13T05:42:41Z",
+      "side": 1,
+      "message": "good suggestion, we should change keystone to be a bit smarter, but for now i just added /auth/websso",
+      "parentUuid": "9a80dd14_f8662b50",
+      "revId": "c5a75a815d56b34782ba62d556c611d95fc63b07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_78d95bf2",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_f26647ba",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-13T05:42:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_78d95bf2",
+      "revId": "c5a75a815d56b34782ba62d556c611d95fc63b07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_7875dbc9",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2015-03-13T03:44:07Z",
       "side": 1,
       "message": "Do we need to mention what settings are needed in Horizon?",
+      "revId": "c5a75a815d56b34782ba62d556c611d95fc63b07",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_437f4c66",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-13T05:42:41Z",
+      "side": 1,
+      "message": "i wouldn\u0027t be opposed to doing that here, just wondering if it\u0027s the right spot, does horizon have a section that it would logically be added to? if not, i don\u0027t mind adding it here\n\n*edit*, i was initially going to write a draft, but ended up writing it all.",
+      "parentUuid": "9a80dd14_7875dbc9",
       "revId": "c5a75a815d56b34782ba62d556c611d95fc63b07",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
