@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_45df263a",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-13T21:20:21Z",
+      "side": 1,
+      "message": "I also came across this issues when authenticating with a token in v2. I fixed it using encode. So this can be done like: token_str \u003d token_id.encode(\u0027ascii\u0027).",
+      "revId": "aeadbc33dbc809eab65fd0172c466a5f37b23562",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
