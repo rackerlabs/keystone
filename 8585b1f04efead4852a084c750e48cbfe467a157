@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_139c9969",
+        "filename": "keystone/tests/unit/backend/core_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T20:16:31Z",
+      "side": 1,
+      "message": "use from oslo.config import cfg instead.",
+      "revId": "8585b1f04efead4852a084c750e48cbfe467a157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d33f6123",
+        "filename": "keystone/tests/unit/backend/core_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T20:16:31Z",
+      "side": 1,
+      "message": "is this necessary since there\u0027s an addCleanup?",
+      "revId": "8585b1f04efead4852a084c750e48cbfe467a157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_73c235ea",
+        "filename": "keystone/tests/unit/backend/core_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T20:16:31Z",
+      "side": 1,
+      "message": "This is only used in test_ldap.py, so move it there, or use it here if that\u0027s the intention.",
+      "revId": "8585b1f04efead4852a084c750e48cbfe467a157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_5f15333e",
+        "filename": "keystone/tests/unit/backend/core_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T20:16:31Z",
+      "side": 1,
+      "message": "no need to save this variable, remove self.",
+      "revId": "8585b1f04efead4852a084c750e48cbfe467a157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_9fb7ab39",
+        "filename": "keystone/tests/unit/backend/role/test_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T20:16:31Z",
+      "side": 1,
+      "message": "suggest call this TestLdapRole, unless we\u0027re really going away from that naming convention?",
+      "revId": "8585b1f04efead4852a084c750e48cbfe467a157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
