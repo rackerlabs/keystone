@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_ca32760f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 29
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-13T00:44:47Z",
+      "side": 1,
+      "message": "Is this still a WIP?",
+      "revId": "4a2dc1b9cb64c1dae4b328c6dd39031e7519d2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_2a3eb2da",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 29
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-13T00:44:47Z",
+      "side": 1,
+      "message": "Do these need to be done before this patch is complete?",
+      "revId": "4a2dc1b9cb64c1dae4b328c6dd39031e7519d2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_657a9d25",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-13T00:44:47Z",
+      "side": 1,
+      "message": "I did a double take here because I thought I was missing something. The None is only needed to prevent a KeyError, but the key must exist because of the previous line. More idiomatic Python would be \"del role[\u0027id\u0027]\". Or even better you can combine both lines like: \"role_ids.append(role.pop(\u0027id\u0027))\"",
+      "revId": "4a2dc1b9cb64c1dae4b328c6dd39031e7519d2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_45e839e2",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-13T00:44:47Z",
+      "side": 1,
+      "message": "If token doesn\u0027t have a tenant then the \".get(\u0027id\u0027)\" will explode with an AttributeError",
+      "revId": "4a2dc1b9cb64c1dae4b328c6dd39031e7519d2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4521194c",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-13T00:44:47Z",
+      "side": 1,
+      "message": "This seems important todo before we merge this patch.",
+      "revId": "4a2dc1b9cb64c1dae4b328c6dd39031e7519d2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
