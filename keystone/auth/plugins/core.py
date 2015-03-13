@@ -30,7 +30,11 @@ def convert_method_list_to_integer(methods):
     :returns: an integer representing the methods
 
     """
-    method_map = {1: 'password', 2: 'token', 4: 'saml2', 8: 'oauth1'}
+    method_map = {1: 'password',
+                  2: 'token',
+                  4: 'saml2',
+                  8: 'oauth1',
+                  12: 'external'}
     method_ints = list()
     for method in methods:
         for k, v in six.iteritems(method_map):
@@ -46,22 +50,43 @@ def convert_integer_to_method_list(method_int):
     :returns: a list of methods
 
     """
-    possibilities = {1: ['password'],
-                     2: ['token'],
-                     3: ['password', 'token'],
-                     4: ['saml2'],
-                     5: ['password', 'saml2'],
-                     6: ['token', 'saml2'],
-                     7: ['password', 'token', 'saml2'],
-                     8: ['oauth1'],
-                     9: ['password', 'oauth1'],
-                     10: ['token', 'oauth1'],
-                     11: ['password', 'token', 'oauth1'],
-                     12: ['saml2', 'oauth1'],
-                     13: ['password', 'saml2', 'oauth1'],
-                     14: ['token', 'saml2', 'oauth1'],
-                     15: ['password', 'token', 'saml2', 'oauth1']}
-
+    password = 'password'
+    token = 'token'
+    saml2 = 'saml2'
+    oauth1 = 'oauth1'
+    external = 'external'
+    possibilities = {0: [],
+                     1: [password],
+                     2: [token],
+                     3: [password, token],
+                     4: [saml2],
+                     5: [password, saml2],
+                     6: [token, saml2],
+                     7: [password, token, saml2],
+                     8: [oauth1],
+                     9: [password, oauth1],
+                     10: [token, oauth1],
+                     11: [password, token, oauth1],
+                     12: [saml2, oauth1],
+                     13: [password, saml2, oauth1],
+                     14: [token, saml2, oauth1],
+                     15: [password, token, saml2, oauth1],
+                     16: [external],
+                     17: [external, password],
+                     18: [external, token],
+                     19: [external, password, token],
+                     20: [external, saml2],
+                     21: [external, password, saml2],
+                     22: [external, token, saml2],
+                     23: [external, password, token, saml2],
+                     24: [external, oauth1],
+                     25: [external, password, oauth1],
+                     26: [external, token, oauth1],
+                     27: [external, password, token, oauth1],
+                     28: [external, saml2, oauth1],
+                     29: [external, password, saml2, oauth1],
+                     30: [external, token, saml2, oauth1],
+                     31: [external, password, token, saml2, oauth1]}
     try:
         return possibilities[method_int]
     except KeyError:
