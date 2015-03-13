@@ -174,6 +174,24 @@
       "revId": "4a2dc1b9cb64c1dae4b328c6dd39031e7519d2af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_fd2c5d9b",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-13T02:52:29Z",
+      "side": 1,
+      "message": "Legacy cruft. Welcome to v2.0 tokens.",
+      "parentUuid": "9a80dd14_c9fd23b3",
+      "revId": "4a2dc1b9cb64c1dae4b328c6dd39031e7519d2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
