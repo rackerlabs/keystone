@@ -29,6 +29,10 @@ WARNING::
    all data will be lost.
 """
 
+import sqlalchemy
+import uuid
+
+from oslo_db import exception as db_exception
 from oslo_db.sqlalchemy import utils
 
 from keystone.contrib import endpoint_filter
@@ -221,6 +225,13 @@ class FederationExtension(test_sql_upgrade.SqlMigrateBase):
     def repo_package(self):
         return federation
 
+    def insert_dict(self, session, table_name, d):
+        """Naively inserts key-value pairs into a table, given a dictionary."""
+        table = sqlalchemy.Table(table_name, self.metadata, autoload=True)
+        insert = table.insert().values(**d)
+        session.execute(insert)
+        session.commit()
+
     def test_upgrade(self):
         self.assertTableDoesNotExist(self.identity_provider)
         self.assertTableDoesNotExist(self.federation_protocol)
@@ -271,6 +282,59 @@ class FederationExtension(test_sql_upgrade.SqlMigrateBase):
         self.assertTableDoesNotExist(self.identity_provider)
         self.assertTableDoesNotExist(self.federation_protocol)
         self.assertTableDoesNotExist(self.mapping)
+
+    def test_fixup_service_provider_attributes(self):
+        self.upgrade(6, repository=self.repo_path)
+        self.assertTableColumns('service_provider',
+                                ['id', 'description', 'enabled', 'auth_url',
+                                 'sp_url'])
+
+        session = self.Session()
+        sp1 = {'id': uuid.uuid4().hex,
+               'auth_url': None,
+               'sp_url': uuid.uuid4().hex,
+               'description': uuid.uuid4().hex,
+               'enabled': True}
+        sp2 = {'id': uuid.uuid4().hex,
+               'auth_url': uuid.uuid4().hex,
+               'sp_url': None,
+               'description': uuid.uuid4().hex,
+               'enabled': True}
+        sp3 = {'id': uuid.uuid4().hex,
+               'auth_url': None,
+               'sp_url': None,
+               'description': uuid.uuid4().hex,
+               'enabled': True}
+
+        # Insert with 'auth_url' or 'sp_url' set to null must fail
+        self.assertRaises(db_exception.DBError,
+                          self.insert_dict,
+                          session,
+                          'service_provider',
+                          sp1)
+        self.assertRaises(db_exception.DBError,
+                          self.insert_dict,
+                          session,
+                          'service_provider',
+                          sp2)
+        self.assertRaises(db_exception.DBError,
+                          self.insert_dict,
+                          session,
+                          'service_provider',
+                          sp3)
+
+        session.close()
+        self.downgrade(5, self.repo_path)
+        self.assertTableColumns('service_provider',
+                                ['id', 'description', 'enabled', 'auth_url',
+                                 'sp_url'])
+        session = self.Session()
+        self.metadata.clear()
+
+        # Before the migration, the table should accept null values
+        self.insert_dict(session, 'service_provider', sp1)
+        self.insert_dict(session, 'service_provider', sp2)
+        self.insert_dict(session, 'service_provider', sp3)
 
 
 _REVOKE_COLUMN_NAMES = ['id', 'domain_id', 'project_id', 'user_id', 'role_id',
