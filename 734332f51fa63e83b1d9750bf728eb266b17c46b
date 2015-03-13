@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_6b38a23d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 469,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-13T07:30:25Z",
+      "side": 1,
+      "message": "there isnt really any other way to distinguish whether endpoint is for project?",
+      "revId": "734332f51fa63e83b1d9750bf728eb266b17c46b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
