@@ -224,6 +224,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_878e8b2c",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T18:34:52Z",
+      "side": 1,
+      "message": "an admin \"can\" set this up, or is \"required\" to set it up? I don\u0027t think we need to warn about something that somebody can do if they feel like it. Can I ignore this or do I have to make a change?",
+      "parentUuid": "9a80dd14_848e892c",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_f9aff1e0",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 25
