@@ -210,6 +210,23 @@
       "revId": "4a2dc1b9cb64c1dae4b328c6dd39031e7519d2af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_08f46359",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-13T22:04:01Z",
+      "side": 1,
+      "message": "another option we could do here would be: \n\n    if not isinstance(token_str, six.binary_type):\n        token_str \u003d token_ref.encode(\u0027ascii\u0027)",
+      "revId": "4a2dc1b9cb64c1dae4b328c6dd39031e7519d2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
