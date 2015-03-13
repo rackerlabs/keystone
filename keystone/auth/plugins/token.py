@@ -37,6 +37,12 @@ class Token(auth.AuthMethodHandler):
 
     def _get_token_ref(self, auth_payload):
         token_id = auth_payload['id']
+        # NOTE(lbragstad): token_id can be a unicode string. The Fernet token
+        # provider will break validating a unicode token. If we are dealing a
+        # type that isn't of six.binary_types, attempt to make token_id a
+        # string before sending it to the token_provider_api.
+        if not isinstance(token_id, six.binary_type):
+            token_id = str(token_id)
         response = self.token_provider_api.validate_token(token_id)
         return token_model.KeystoneToken(token_id=token_id,
                                          token_data=response)
