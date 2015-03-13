@@ -102,6 +102,23 @@
       "revId": "0093a27b9eae51cf3e02e6c556ed20f9111409b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_78505232",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-13T19:46:49Z",
+      "side": 1,
+      "message": "this have to be set as well to tell horizon the keystone api version: https://github.com/openstack/horizon/blob/master/openstack_dashboard/local/local_settings.py.example#L50\n\nOPENSTACK_API_VERSIONS \u003d {\n    \"identity\": 3,\n}",
+      "revId": "0093a27b9eae51cf3e02e6c556ed20f9111409b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
