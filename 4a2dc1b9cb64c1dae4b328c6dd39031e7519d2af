@@ -124,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_6f0d173e",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-13T02:27:06Z",
+      "side": 1,
+      "message": "Ah, I didn\u0027t notice that. So instead of using \u0027token.get\u0027 you should probably token[\u0027tenant\u0027].get(\u0027id\u0027)",
+      "parentUuid": "9a80dd14_69def76e",
+      "revId": "4a2dc1b9cb64c1dae4b328c6dd39031e7519d2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_4521194c",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 29
