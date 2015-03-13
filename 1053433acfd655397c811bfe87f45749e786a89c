@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_c5bb49e3",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-13T00:41:34Z",
+      "side": 1,
+      "message": "This is likely going to be fragile and hard to maintain. we need a better solution, but this is fine for now, so plugins can register and get a consistent int/id - right now we can\u0027t support custom plugins well.",
+      "revId": "1053433acfd655397c811bfe87f45749e786a89c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
