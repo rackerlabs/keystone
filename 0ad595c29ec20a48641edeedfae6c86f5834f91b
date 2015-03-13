@@ -34,6 +34,24 @@
       "revId": "0ad595c29ec20a48641edeedfae6c86f5834f91b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_460d95e7",
+        "filename": "keystone/tests/unit/test_v3_credential.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-13T07:52:16Z",
+      "side": 1,
+      "message": "The point was to make sure that this validation will be properly fired away when we call it via API and over the \"Internet\" :-)",
+      "parentUuid": "9a80dd14_12159b9b",
+      "revId": "0ad595c29ec20a48641edeedfae6c86f5834f91b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
