@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_fc7a96ef",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 659,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-13T10:35:48Z",
+      "side": 1,
+      "message": "Let\u0027s discuss that separately - and if we do want to do that, then have a patch specifically for that",
+      "parentUuid": "9a80dd14_755dfd14",
+      "revId": "709f36cc5f5b542b3c8202d8b14a4cc3447b4244",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_b53a1596",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 21
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_5c8642dc",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-13T10:35:48Z",
+      "side": 1,
+      "message": "agreed",
+      "parentUuid": "9a80dd14_75ec1df4",
+      "revId": "709f36cc5f5b542b3c8202d8b14a4cc3447b4244",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_7155081d",
         "filename": "keystone/resource/routers.py",
         "patchSetId": 21
@@ -65,6 +101,24 @@
       "writtenOn": "2015-03-12T20:56:53Z",
       "side": 1,
       "message": "\u0027experimental\u0027 should be a constant defined in json_home, e.g., json_home.Status.EXPERIMENTAL.",
+      "revId": "709f36cc5f5b542b3c8202d8b14a4cc3447b4244",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_5688de70",
+        "filename": "keystone/resource/routers.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-13T10:35:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_7155081d",
       "revId": "709f36cc5f5b542b3c8202d8b14a4cc3447b4244",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
