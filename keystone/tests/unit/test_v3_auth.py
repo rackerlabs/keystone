@@ -4393,3 +4393,16 @@ class TestFernetTokenProvider(test_v3.RestfulTestCase,
         self.assertRaises(exception.TokenNotFound,
                           self.token_provider_api.validate_token,
                           trust_scoped_token)
+
+
+class TestFernetTokenProviderStuff(TestAuth,
+                                   fernet_utils.KeyRepositoryTestMixin):
+    def setUp(self):
+        super(TestFernetTokenProviderStuff, self).setUp()
+        self.setUpKeyRepository()
+
+    def config_overrides(self):
+        super(TestFernetTokenProviderStuff, self).config_overrides()
+        self.config_fixture.config(
+            group='token',
+            provider='keystone.token.providers.fernet.Provider')
