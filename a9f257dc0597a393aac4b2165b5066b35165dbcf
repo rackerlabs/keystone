@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_62d0a01f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T21:10:07Z",
+      "side": 1,
+      "message": "change \"must be\" to \"is\"",
+      "revId": "a9f257dc0597a393aac4b2165b5066b35165dbcf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_82cbd470",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T21:10:07Z",
+      "side": 1,
+      "message": "formatting is off, remove leading space.",
+      "revId": "a9f257dc0597a393aac4b2165b5066b35165dbcf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e233b011",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T21:10:07Z",
+      "side": 1,
+      "message": "suggest say SchemaValidationError rather than exception, since it matters.",
+      "revId": "a9f257dc0597a393aac4b2165b5066b35165dbcf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_85103e4f",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 719,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T21:10:07Z",
+      "side": 1,
+      "message": "this test could be combined with the previous one, since it should work with all types.",
+      "revId": "a9f257dc0597a393aac4b2165b5066b35165dbcf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
