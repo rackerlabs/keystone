@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba7be1f8_4447a64b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T22:08:53Z",
+      "side": 1,
+      "message": "There\u0027s no such thing as keystone v2. There\u0027s an identity v2 api.",
+      "revId": "cf3bf4884043ac986a1831cd24577cf04eb67efe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_0831c359",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T22:08:53Z",
+      "side": 1,
+      "message": "change the name to filter_project_parent_id.",
+      "revId": "cf3bf4884043ac986a1831cd24577cf04eb67efe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_88ce9358",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T22:08:53Z",
+      "side": 1,
+      "message": "remove \"compatible\"",
+      "revId": "cf3bf4884043ac986a1831cd24577cf04eb67efe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_48a1fb44",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 748,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T22:08:53Z",
+      "side": 1,
+      "message": "is this used for anything? Seems like we\u0027d be better off having v3_to_v2_project overridden if we need anything here.",
+      "revId": "cf3bf4884043ac986a1831cd24577cf04eb67efe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e84c6fa0",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2532,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T22:08:53Z",
+      "side": 1,
+      "message": "it\u0027s important that the same object is returned? why even return an object if the ref is going to be mutated?",
+      "revId": "cf3bf4884043ac986a1831cd24577cf04eb67efe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_68b23f95",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2552,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-13T22:08:53Z",
+      "side": 1,
+      "message": "? what does V2 have to do with the V3 controller?",
+      "revId": "cf3bf4884043ac986a1831cd24577cf04eb67efe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
