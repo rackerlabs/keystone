@@ -206,6 +206,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_848e892c",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-13T18:17:35Z",
+      "side": 1,
+      "message": "it\u0027s a warning because a keystone admin can set this up on a per-protocol level in the config file, so...\n\n  [oidc]\n  remote_id_attribute \u003d \"HTTP_OIDC_ISS\"\n\nor have a single global one that applies to all protocols\n\n  [federation]\n  remote_id_attribute \u003d \"my_env_var\"\n\nor none at all, for this reason look at my comment in the tests",
+      "parentUuid": "9a80dd14_4e55951c",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_f9aff1e0",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 25
@@ -251,6 +269,24 @@
       "writtenOn": "2015-03-13T16:25:47Z",
       "side": 1,
       "message": "why do we allow this?",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_04e53908",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 834,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-13T18:17:35Z",
+      "side": 1,
+      "message": "we allow this for backwards compatibility, it\u0027s not necessary to define remote_ids if your IdP keystone resource represents a single external identity provider.\n\nthe driving use case for remote_ids is the case where you want a single keystone IdP resource calls \u0027universities\u0027, and your remote_ids can be \u0027uni of north dakota\u0027, \u0027uni of minn.\u0027 and they can share the same mapping.",
+      "parentUuid": "9a80dd14_79d14156",
       "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
