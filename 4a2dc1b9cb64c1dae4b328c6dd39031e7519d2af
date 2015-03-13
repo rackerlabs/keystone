@@ -192,6 +192,24 @@
       "revId": "4a2dc1b9cb64c1dae4b328c6dd39031e7519d2af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_583bb7d0",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-13T03:20:20Z",
+      "side": 1,
+      "message": "I thought that this bit was only flipped by this comparison: \n\nhttps://github.com/openstack/keystone/blob/ce701f27710c1000d5d7babd3a7bd3fe7e1af083/keystone/middleware/core.py#L70",
+      "parentUuid": "9a80dd14_fd2c5d9b",
+      "revId": "4a2dc1b9cb64c1dae4b328c6dd39031e7519d2af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
