@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_af455444",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-13T04:42:21Z",
+      "side": 1,
+      "message": "the best my googling came up with is ABFAB: \nhttps://datatracker.ietf.org/doc/draft-ietf-abfab-aaa-saml/\n\ni\u0027ll change up the docs to be consistent",
+      "parentUuid": "9a80dd14_a0df2bd5",
+      "revId": "e35272dc51e436d7445f1e1187b03abd451cfa46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_6000d334",
         "filename": "doc/source/extensions/abfab.rst",
         "patchSetId": 4
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_2f7164a8",
+        "filename": "doc/source/extensions/abfab.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-13T04:42:21Z",
+      "side": 1,
+      "message": "i think it\u0027s fine, we do this for a bunch of other docs",
+      "parentUuid": "9a80dd14_6000d334",
+      "revId": "e35272dc51e436d7445f1e1187b03abd451cfa46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_e0c203e8",
         "filename": "doc/source/extensions/abfab.rst",
         "patchSetId": 4
@@ -64,6 +100,58 @@
       "writtenOn": "2015-03-12T21:42:41Z",
       "side": 1,
       "message": "mod_moonshot and \"needs the\"",
+      "revId": "e35272dc51e436d7445f1e1187b03abd451cfa46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_63a450a6",
+        "filename": "doc/source/extensions/abfab.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-13T04:42:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_e0c203e8",
+      "revId": "e35272dc51e436d7445f1e1187b03abd451cfa46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_5e4c7f42",
+        "filename": "doc/source/extensions/abfab.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-13T04:42:21Z",
+      "side": 1,
+      "message": "i find it weird that this is the only changes necessary",
+      "revId": "e35272dc51e436d7445f1e1187b03abd451cfa46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_833dc42d",
+        "filename": "doc/source/extensions/abfab.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-13T04:42:21Z",
+      "side": 1,
+      "message": "I don\u0027t think we want this section as it\u0027s for v2 admin requests only, and we don\u0027t support federation for v2 requests",
       "revId": "e35272dc51e436d7445f1e1187b03abd451cfa46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
