@@ -2115,11 +2115,11 @@ class LdapIdentitySqlAssignment(BaseLDAPIdentity, tests.SQLDriverOverrides,
         self.clear_database()
         self.load_backends()
         cache.configure_cache_region(cache.REGION)
-        self.engine = sql.get_engine()
+        engine = sql.get_engine()
         self.addCleanup(sql.cleanup)
 
-        sql.ModelBase.metadata.create_all(bind=self.engine)
-        self.addCleanup(sql.ModelBase.metadata.drop_all, bind=self.engine)
+        sql.ModelBase.metadata.create_all(bind=engine)
+        self.addCleanup(sql.ModelBase.metadata.drop_all, bind=engine)
 
         self.load_fixtures(default_fixtures)
         # defaulted by the data load
@@ -2395,11 +2395,11 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
 
         self.load_backends()
 
-        self.engine = sql.get_engine()
+        engine = sql.get_engine()
         self.addCleanup(sql.cleanup)
 
-        sql.ModelBase.metadata.create_all(bind=self.engine)
-        self.addCleanup(sql.ModelBase.metadata.drop_all, bind=self.engine)
+        sql.ModelBase.metadata.create_all(bind=engine)
+        self.addCleanup(sql.ModelBase.metadata.drop_all, bind=engine)
 
         self.domain_count = 5
         self.domain_specific_count = 3
@@ -2675,11 +2675,11 @@ class DomainSpecificLDAPandSQLIdentity(
 
         self.load_backends()
 
-        self.engine = sql.get_engine()
+        engine = sql.get_engine()
         self.addCleanup(sql.cleanup)
 
-        sql.ModelBase.metadata.create_all(bind=self.engine)
-        self.addCleanup(sql.ModelBase.metadata.drop_all, bind=self.engine)
+        sql.ModelBase.metadata.create_all(bind=engine)
+        self.addCleanup(sql.ModelBase.metadata.drop_all, bind=engine)
 
         self.domain_count = 2
         self.domain_specific_count = 2
@@ -2836,11 +2836,11 @@ class DomainSpecificSQLIdentity(DomainSpecificLDAPandSQLIdentity):
 
         self.load_backends()
 
-        self.engine = sql.get_engine()
+        engine = sql.get_engine()
         self.addCleanup(sql.cleanup)
 
-        sql.ModelBase.metadata.create_all(bind=self.engine)
-        self.addCleanup(sql.ModelBase.metadata.drop_all, bind=self.engine)
+        sql.ModelBase.metadata.create_all(bind=engine)
+        self.addCleanup(sql.ModelBase.metadata.drop_all, bind=engine)
 
         self.domain_count = 2
         self.domain_specific_count = 1
@@ -2945,11 +2945,11 @@ class LdapFilterTests(test_backend.FilterTests, tests.TestCase):
         self.load_backends()
         self.load_fixtures(default_fixtures)
 
-        self.engine = sql.get_engine()
+        engine = sql.get_engine()
         self.addCleanup(sql.cleanup)
-        sql.ModelBase.metadata.create_all(bind=self.engine)
+        sql.ModelBase.metadata.create_all(bind=engine)
 
-        self.addCleanup(sql.ModelBase.metadata.drop_all, bind=self.engine)
+        self.addCleanup(sql.ModelBase.metadata.drop_all, bind=engine)
         self.addCleanup(common_ldap_core._HANDLERS.clear)
 
     def config_overrides(self):
