@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Workflow+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Sat, 14 Mar 2015 23:10:05 +0000
+Reviewed-on: https://review.openstack.org/164389
+Project: openstack/keystone
+Branch: refs/heads/master
