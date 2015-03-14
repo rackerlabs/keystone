@@ -481,17 +481,17 @@ class Auth(controller.V3Controller):
                 external = get_auth_method('external')
                 external.authenticate(context, auth_info, auth_context)
             except exception.AuthMethodNotSupported:
-                # This will happen there is no 'external' plugin registered
+                # This will happen if there is no 'external' plugin registered
                 # and the container is performing authentication.
-                # The 'kerberos'  and 'saml' methods will be used this way.
-                # In those cases, it is correct to not register an
-                # 'external' plugin;  if there is both an 'external' and a
-                # 'kerberos' plugin, it would run the check on identity twice.
-                pass
+                # The 'kerberos' and 'saml' methods will be used this way.
+                # In those cases, it is correct to not register an 'external'
+                # plugin;  if there is both an 'external' and a 'kerberos'
+                # plugin, it would run the check on identity twice.
+                LOG.debug("No 'external' plugin is registered.")
             except exception.Unauthorized:
                 # If external fails then continue and attempt to determine
                 # user identity using remaining auth methods
-                pass
+                LOG.debug("Authorization failed for 'external' auth method.")
 
         # need to aggregate the results in case two or more methods
         # are specified
