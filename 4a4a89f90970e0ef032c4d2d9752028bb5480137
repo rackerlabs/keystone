@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_12856559",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-14T11:53:34Z",
+      "side": 1,
+      "message": "in the token_formatter.create_token method we default project id to being None if it isn\u0027t provided. With that we could probably collapse lines 50 - 52 into the following: \n\n    project_id \u003d token_ref.get(\u0027tenant\u0027, {}).get(\u0027id\u0027)",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_527b5d7a",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-14T11:53:34Z",
+      "side": 1,
+      "message": "nit: v2.0",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
