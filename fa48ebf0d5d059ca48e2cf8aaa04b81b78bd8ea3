@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_e119e5d1",
+        "filename": "etc/policy.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-14T06:18:46Z",
+      "side": 1,
+      "message": "use project_id here",
+      "revId": "fa48ebf0d5d059ca48e2cf8aaa04b81b78bd8ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_017c39eb",
+        "filename": "etc/policy.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-14T06:18:46Z",
+      "side": 1,
+      "message": "same",
+      "revId": "fa48ebf0d5d059ca48e2cf8aaa04b81b78bd8ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_217f7de1",
+        "filename": "etc/policy.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-14T06:18:46Z",
+      "side": 1,
+      "message": "same",
+      "revId": "fa48ebf0d5d059ca48e2cf8aaa04b81b78bd8ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_615c157e",
+        "filename": "etc/policy.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-14T06:18:46Z",
+      "side": 1,
+      "message": "should this be HEAD ?\n\nhttp://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3.html#check-if-user-is-member-of-group",
+      "revId": "fa48ebf0d5d059ca48e2cf8aaa04b81b78bd8ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_21cdbd31",
+        "filename": "etc/policy.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-14T06:18:46Z",
+      "side": 1,
+      "message": "these APIs are completely undocumented, we should document them",
+      "revId": "fa48ebf0d5d059ca48e2cf8aaa04b81b78bd8ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_818bc9c1",
+        "filename": "etc/policy.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-14T06:18:46Z",
+      "side": 1,
+      "message": "I think it\u0027s weird that a PUT/DELETE/GET works on the OS-INHERIT APIs, as none end with a resource. But not really your problem in this patch.",
+      "revId": "fa48ebf0d5d059ca48e2cf8aaa04b81b78bd8ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_c1a86122",
+        "filename": "etc/policy.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-14T06:18:46Z",
+      "side": 1,
+      "message": "head? http://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3-os-ep-filter-ext.html#check-association\n\nor is the spec wrong?",
+      "revId": "fa48ebf0d5d059ca48e2cf8aaa04b81b78bd8ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
