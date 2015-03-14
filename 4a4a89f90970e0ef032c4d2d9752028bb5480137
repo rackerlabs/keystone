@@ -2,6 +2,142 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_4daae085",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 1402,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-14T15:17:57Z",
+      "side": 1,
+      "message": "It doesn\u0027t look like this method is being called anywhere.",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_ed98f476",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 1474,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-14T15:17:57Z",
+      "side": 1,
+      "message": "nit: could just do this in the project reference: \n\n    project_ref1 \u003d {\u0027id\u0027: uuid.uuid4().hex,",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_ed6f145e",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 1480,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-14T15:17:57Z",
+      "side": 1,
+      "message": "then do: \n\n    self.resource_api.create_project(project1_ref[\u0027id\u0027], project1_ref)",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_0d92a84b",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 1482,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-14T15:17:57Z",
+      "side": 1,
+      "message": "and pass \n\n    project1_ref[\u0027id\u0027] \n\nhere too",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_eda634aa",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-14T15:17:57Z",
+      "side": 1,
+      "message": "We could add this same test but for validate_v2_token: \n\n    def test_invalid_v2_token_raises_401(self):\n        self.assertRaises(\n            exception.Unauthorized,\n            self.provider.validate_v2_token,\n            uuid.uuid4().hex)\n\nand then rename the above test to be v3 specific since it\u0027s calling `validate_v3_token`\n\nWe could also add tests that ensure federated tokens and trust tokens aren\u0027t validated using v2, since we  have code that details that behavior if fernet.core",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8dccd86b",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-14T15:17:57Z",
+      "side": 1,
+      "message": "Isn\u0027t this somewhat handled here?\n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/controller.py#L276-L281",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_edbd54b2",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-14T15:17:57Z",
+      "side": 1,
+      "message": "nit: could simplify this to be\n\n    if catalog_ref:",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4de660e9",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-14T15:17:57Z",
+      "side": 1,
+      "message": "This should only be set if the user sends the admin_token as the X-Auth-Token, correct?",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_12856559",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 34
@@ -30,6 +166,41 @@
       "writtenOn": "2015-03-14T11:53:34Z",
       "side": 1,
       "message": "nit: v2.0",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_adcefc57",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-14T15:17:57Z",
+      "side": 1,
+      "message": "Could elaborate on this message a little more and explain that if the user wishes to use these features, they should use Keystone V3",
+      "parentUuid": "9a80dd14_527b5d7a",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_cdd97023",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-14T15:17:57Z",
+      "side": 1,
+      "message": "++",
       "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
