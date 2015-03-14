@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_e1a3a540",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-03-14T06:16:46Z",
+      "side": 1,
+      "message": "Nit:  typo: declairation should be declaration",
+      "revId": "758ecd1b0af223e9591ab1e9dab3cf3f748370b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
