@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_fc442848",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-14T06:38:07Z",
+      "side": 1,
+      "message": "remove the word \u0027actually\u0027",
+      "revId": "bf6205df3397a77314a10c1bc18b82342272b957",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_1c773ca1",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-14T06:38:07Z",
+      "side": 1,
+      "message": "suggested wording: \"For example, if the script is named ``01_migration.py``, then the version of the SQL migration is ``1``.",
+      "revId": "bf6205df3397a77314a10c1bc18b82342272b957",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_3ca160f8",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-14T06:38:07Z",
+      "side": 1,
+      "message": "Maybe add a note saying that if no version is specified, then the most recent migration will be used.",
+      "revId": "bf6205df3397a77314a10c1bc18b82342272b957",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
