@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_6efa4776",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-14T00:06:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_0831c359",
+      "revId": "cf3bf4884043ac986a1831cd24577cf04eb67efe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_88ce9358",
         "filename": "keystone/common/controller.py",
         "patchSetId": 1
@@ -47,6 +65,24 @@
       "writtenOn": "2015-03-13T22:08:53Z",
       "side": 1,
       "message": "remove \"compatible\"",
+      "revId": "cf3bf4884043ac986a1831cd24577cf04eb67efe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_2efdaf6e",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-14T00:06:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_88ce9358",
       "revId": "cf3bf4884043ac986a1831cd24577cf04eb67efe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_aed99f23",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 748,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-14T00:06:22Z",
+      "side": 1,
+      "message": "I agree, not used at all. I\u0027ll remove it",
+      "parentUuid": "9a80dd14_48a1fb44",
+      "revId": "cf3bf4884043ac986a1831cd24577cf04eb67efe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_e84c6fa0",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 1
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_b9c64766",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2532,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-14T00:06:22Z",
+      "side": 1,
+      "message": "this is testing that object is mutated by the method and not being replaced.",
+      "parentUuid": "9a80dd14_e84c6fa0",
+      "revId": "cf3bf4884043ac986a1831cd24577cf04eb67efe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_68b23f95",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 1
@@ -98,6 +170,24 @@
       "writtenOn": "2015-03-13T22:08:53Z",
       "side": 1,
       "message": "? what does V2 have to do with the V3 controller?",
+      "revId": "cf3bf4884043ac986a1831cd24577cf04eb67efe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_39f25706",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 2552,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-14T00:06:22Z",
+      "side": 1,
+      "message": "over copy/paste from the test above, agreed this should be removed.",
+      "parentUuid": "9a80dd14_68b23f95",
       "revId": "cf3bf4884043ac986a1831cd24577cf04eb67efe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
