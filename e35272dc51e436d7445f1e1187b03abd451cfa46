@@ -141,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_8d4db840",
+        "filename": "doc/source/extensions/abfab.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 9729
+      },
+      "writtenOn": "2015-03-14T14:44:58Z",
+      "side": 1,
+      "message": "This tells apache to protect the URL with auth_gssapi module.\nauth_gssapi needs the moonshot libraries to run.\nThis module will connect to the Abfab server from radsec.conf.\nThis module will also use the /etc/shibboleth files to decompose the SAML assertion.\n\nPlease tell me what do you think is weird.",
+      "parentUuid": "9a80dd14_5e4c7f42",
+      "revId": "e35272dc51e436d7445f1e1187b03abd451cfa46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_833dc42d",
         "filename": "doc/source/extensions/abfab.rst",
         "patchSetId": 4
@@ -152,6 +170,24 @@
       "writtenOn": "2015-03-13T04:42:21Z",
       "side": 1,
       "message": "I don\u0027t think we want this section as it\u0027s for v2 admin requests only, and we don\u0027t support federation for v2 requests",
+      "revId": "e35272dc51e436d7445f1e1187b03abd451cfa46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_0d08e8d8",
+        "filename": "doc/source/extensions/abfab.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 9729
+      },
+      "writtenOn": "2015-03-14T14:44:58Z",
+      "side": 1,
+      "message": "I was not aware that port 35357 was supposed to receive only v2 requests. Is this new on Juno or Kilo versions?\nIn my icehouse installation, port 35357 can receive calls using the v3 API. I have tested calling:\nhttp://icehouse.sec.cs.kent.ac.uk:35357/v3/OS-FEDERATION/identity_providers/JaNet/protocols/abfab/auth\nIf this URL is not protected, the user can log in without any authentication.\nIf this URL is still valid in juno/kilo, I suggest that we point out to protect it with the entries:\n        Order allow,deny\n        Deny from all",
+      "parentUuid": "9a80dd14_833dc42d",
       "revId": "e35272dc51e436d7445f1e1187b03abd451cfa46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
