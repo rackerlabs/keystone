@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_abac2cee",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-03-14T01:49:28Z",
+      "side": 1,
+      "message": "cache.on_arguments seems a lot uglier than MEMOIZE.  Nice to see this cleanup",
+      "revId": "3f1d7f30daee34555664ee3e553c6c2749b5f627",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4b7bb07a",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-03-14T01:49:28Z",
+      "side": 1,
+      "message": "Very nice comment!",
+      "revId": "3f1d7f30daee34555664ee3e553c6c2749b5f627",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_eb89c46f",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-03-14T01:49:28Z",
+      "side": 1,
+      "message": "Another amazing comment!",
+      "revId": "3f1d7f30daee34555664ee3e553c6c2749b5f627",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8bc68898",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 287,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-03-14T01:49:28Z",
+      "side": 1,
+      "message": "This is some pretty flexible support for getting the proper expiration_time from the right section",
+      "revId": "3f1d7f30daee34555664ee3e553c6c2749b5f627",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_996a75ec",
         "filename": "keystone/common/cache/core.py",
         "patchSetId": 15
@@ -31,6 +99,23 @@
       "side": 1,
       "message": "oh sure will propose a followup. that makes sense to me.",
       "parentUuid": "9a80dd14_996a75ec",
+      "revId": "3f1d7f30daee34555664ee3e553c6c2749b5f627",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_eb6544af",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 606,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-03-14T01:49:28Z",
+      "side": 1,
+      "message": "I really like how the caching characteristics are encapsulated in the decorator returned by get_memoization_decorator.  It ensures consistency and the code is a lot easier to mainain if the caching characteristics need to change",
       "revId": "3f1d7f30daee34555664ee3e553c6c2749b5f627",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
