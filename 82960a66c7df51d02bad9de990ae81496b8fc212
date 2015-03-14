@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_3ce320da",
+        "filename": "keystone/common/driver_hints.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-14T07:53:41Z",
+      "side": 1,
+      "message": "(nit) just wonder if perhaps the name of this variable might imply that there have been no matches so far or something like that.  Perhaps call it something like \"cannot_match\"?",
+      "revId": "82960a66c7df51d02bad9de990ae81496b8fc212",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_bca0f090",
+        "filename": "keystone/common/sql/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-14T07:53:41Z",
+      "side": 1,
+      "message": "nice!",
+      "revId": "82960a66c7df51d02bad9de990ae81496b8fc212",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
