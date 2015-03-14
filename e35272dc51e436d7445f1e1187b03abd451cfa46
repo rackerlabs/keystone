@@ -159,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_9a988776",
+        "filename": "doc/source/extensions/abfab.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-14T22:32:46Z",
+      "side": 1,
+      "message": "i was just expecting more sever info, but i guess that\u0027s all radsec.conf, i admit i didn\u0027t fully read the wiki install/config docs that are linked above.",
+      "parentUuid": "9a80dd14_8d4db840",
+      "revId": "e35272dc51e436d7445f1e1187b03abd451cfa46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_833dc42d",
         "filename": "doc/source/extensions/abfab.rst",
         "patchSetId": 4
@@ -188,6 +206,24 @@
       "side": 1,
       "message": "I was not aware that port 35357 was supposed to receive only v2 requests. Is this new on Juno or Kilo versions?\nIn my icehouse installation, port 35357 can receive calls using the v3 API. I have tested calling:\nhttp://icehouse.sec.cs.kent.ac.uk:35357/v3/OS-FEDERATION/identity_providers/JaNet/protocols/abfab/auth\nIf this URL is not protected, the user can log in without any authentication.\nIf this URL is still valid in juno/kilo, I suggest that we point out to protect it with the entries:\n        Order allow,deny\n        Deny from all",
       "parentUuid": "9a80dd14_833dc42d",
+      "revId": "e35272dc51e436d7445f1e1187b03abd451cfa46",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_7aabd374",
+        "filename": "doc/source/extensions/abfab.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-14T22:32:46Z",
+      "side": 1,
+      "message": "back in the v2.0 only world (pre-grizzly), the ports specified admin (35357) vs non-admin (5000) actions. \n\nin the v3 world, everything should go through port 5000, and we just look at the roles in the token.\n\ni would have thought that if no locationMatch is set for that port, then the idp login shouldn\u0027t be brought up at all, it should just result in a 404 with resource not found... let me dig into this a bit",
+      "parentUuid": "9a80dd14_0d08e8d8",
       "revId": "e35272dc51e436d7445f1e1187b03abd451cfa46",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
