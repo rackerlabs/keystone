@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_add8bcef",
+        "filename": "etc/policy.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-14T16:03:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_e119e5d1",
+      "revId": "fa48ebf0d5d059ca48e2cf8aaa04b81b78bd8ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_017c39eb",
         "filename": "etc/policy.json",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-14T06:18:46Z",
       "side": 1,
       "message": "same",
+      "revId": "fa48ebf0d5d059ca48e2cf8aaa04b81b78bd8ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_cde330a2",
+        "filename": "etc/policy.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-14T16:03:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_017c39eb",
       "revId": "fa48ebf0d5d059ca48e2cf8aaa04b81b78bd8ea3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_edde34d9",
+        "filename": "etc/policy.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-14T16:03:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_217f7de1",
+      "revId": "fa48ebf0d5d059ca48e2cf8aaa04b81b78bd8ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_615c157e",
         "filename": "etc/policy.json",
         "patchSetId": 9
@@ -64,6 +118,24 @@
       "writtenOn": "2015-03-14T06:18:46Z",
       "side": 1,
       "message": "should this be HEAD ?\n\nhttp://specs.openstack.org/openstack/keystone-specs/api/v3/identity-api-v3.html#check-if-user-is-member-of-group",
+      "revId": "fa48ebf0d5d059ca48e2cf8aaa04b81b78bd8ea3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_6dea4475",
+        "filename": "etc/policy.json",
+        "patchSetId": 9
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-14T16:03:09Z",
+      "side": 1,
+      "message": "The HTTP spec says that HEAD is a GET that doesn\u0027t return the body, so there\u0027s no need to mention HEAD.\n\nApache actually turns HEAD requests into GET and strips off the body.",
+      "parentUuid": "9a80dd14_615c157e",
       "revId": "fa48ebf0d5d059ca48e2cf8aaa04b81b78bd8ea3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
