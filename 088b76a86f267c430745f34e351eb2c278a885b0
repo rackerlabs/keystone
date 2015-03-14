@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_013439fa",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 702,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-14T06:22:16Z",
+      "side": 1,
+      "message": "Test that a*",
+      "revId": "088b76a86f267c430745f34e351eb2c278a885b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_c12dc1a9",
+        "filename": "keystone/tests/unit/test_validation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-14T06:22:16Z",
+      "side": 1,
+      "message": "typo credentials*",
+      "revId": "088b76a86f267c430745f34e351eb2c278a885b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
