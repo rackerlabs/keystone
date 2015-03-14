@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_34b1e2e1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 23
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-14T09:44:52Z",
+      "side": 1,
+      "message": "I\u0027ll rephrase.",
+      "parentUuid": "9a80dd14_b63b24c7",
+      "revId": "5b2a2606c552dd77d0979aa40d006d60fa509eba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_73110b5d",
         "filename": "keystone/tests/unit/backend/domain_config/core.py",
         "patchSetId": 23
@@ -155,6 +173,24 @@
       "writtenOn": "2015-03-12T03:29:21Z",
       "side": 1,
       "message": "For me it makes sense to be added as a followup.",
+      "parentUuid": "9a80dd14_3629f489",
+      "revId": "5b2a2606c552dd77d0979aa40d006d60fa509eba",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_743fda25",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 475,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-14T09:44:52Z",
+      "side": 1,
+      "message": "Happy to add the checking as a follow up",
       "parentUuid": "9a80dd14_3629f489",
       "revId": "5b2a2606c552dd77d0979aa40d006d60fa509eba",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
