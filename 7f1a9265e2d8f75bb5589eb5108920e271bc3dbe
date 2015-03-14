@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_3c05e010",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2253,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-14T06:34:00Z",
+      "side": 1,
+      "message": "nit: a* group*",
+      "revId": "7f1a9265e2d8f75bb5589eb5108920e271bc3dbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_dc3204f1",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2285,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-14T06:34:00Z",
+      "side": 1,
+      "message": "nit, but nice to have: as a sanity check, you might want to verify the user too,",
+      "revId": "7f1a9265e2d8f75bb5589eb5108920e271bc3dbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_dc1be470",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2306,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-14T06:34:00Z",
+      "side": 1,
+      "message": "nit, but nice to have: could call update_mapping instead of create/delete",
+      "revId": "7f1a9265e2d8f75bb5589eb5108920e271bc3dbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_1c29fc89",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2310,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-14T06:34:00Z",
+      "side": 1,
+      "message": "should fix: swap these, should be:\n\n  self.assertEqual(expected, observed)",
+      "revId": "7f1a9265e2d8f75bb5589eb5108920e271bc3dbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_3c2c0099",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2311,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-14T06:34:00Z",
+      "side": 1,
+      "message": "should fix: swap these, should be:\n\n  self.assertEqual(expected, observed)",
+      "revId": "7f1a9265e2d8f75bb5589eb5108920e271bc3dbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

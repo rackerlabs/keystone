@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_3c532018",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-14T06:34:00Z",
+      "side": 0,
+      "message": "out of scope: might want to delete this exception from keystone.exceptions if it\u0027s not being used any longer (maybe a follow on patch)",
+      "revId": "55d940c70be405e6dcf48eaa4aed0c2d766aadeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
