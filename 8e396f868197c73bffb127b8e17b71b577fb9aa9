@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_c5f30471",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-03-15T03:04:18Z",
+      "side": 1,
+      "message": "Nice description!",
+      "revId": "8e396f868197c73bffb127b8e17b71b577fb9aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_45ff1434",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 134,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-03-15T03:04:18Z",
+      "side": 1,
+      "message": "typo: sepcified should be specified",
+      "revId": "8e396f868197c73bffb127b8e17b71b577fb9aa9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
