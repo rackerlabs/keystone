@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_055c3c7c",
+        "filename": "etc/policy.json",
+        "patchSetId": 10
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-03-15T02:59:00Z",
+      "side": 1,
+      "message": "Did you come up with this convention for doing comments yourself? I have never seen it before.  It\u0027s definitely helpful to have in here!",
+      "revId": "294319b39ecc489ec0cf5f449c770c19aea691d6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
