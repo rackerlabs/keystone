@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_c906b685",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-15T23:52:36Z",
+      "side": 1,
+      "message": "suggest provide STABLE as a default, then this is self-documenting.",
+      "revId": "3b1085b8620dbab82c8e03eb07ebbe10352b36af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_c9df960b",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 704,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-15T23:52:36Z",
+      "side": 1,
+      "message": "suggest make this Status.check_supported(status) and raise the exception there to make this method simpler.",
+      "revId": "3b1085b8620dbab82c8e03eb07ebbe10352b36af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_49d3a603",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 707,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-15T23:52:36Z",
+      "side": 1,
+      "message": "there\u0027s no way that resource_data could have hints here already, so no need to setdefault.",
+      "revId": "3b1085b8620dbab82c8e03eb07ebbe10352b36af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
