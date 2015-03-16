@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_b568ecf5",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-16T08:40:07Z",
+      "side": 0,
+      "message": "what if somebody has config with some non-default value configured here?  The code will suddently \"switch\" to revoke/cache_time value hence old  cache expiration time will be discarded?",
+      "revId": "b3f8d21863bcfc8b2afb753f8962fe0d6086fd15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
