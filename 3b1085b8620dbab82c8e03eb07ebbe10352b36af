@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_b6838801",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-16T13:37:57Z",
+      "side": 1,
+      "message": "I\u0027m going to do that a separate patch, since it will result in most APIs having a hints property added....",
+      "parentUuid": "9a80dd14_c906b685",
+      "revId": "3b1085b8620dbab82c8e03eb07ebbe10352b36af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_c9df960b",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 23
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_f69fc04d",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 704,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-16T13:37:57Z",
+      "side": 1,
+      "message": "will do in a clean up patch",
+      "parentUuid": "9a80dd14_c9df960b",
+      "revId": "3b1085b8620dbab82c8e03eb07ebbe10352b36af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_49d3a603",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 23
@@ -47,6 +83,24 @@
       "writtenOn": "2015-03-15T23:52:36Z",
       "side": 1,
       "message": "there\u0027s no way that resource_data could have hints here already, so no need to setdefault.",
+      "revId": "3b1085b8620dbab82c8e03eb07ebbe10352b36af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d6a47ca7",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 707,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-16T13:37:57Z",
+      "side": 1,
+      "message": "will do in a clean up patch",
+      "parentUuid": "9a80dd14_49d3a603",
       "revId": "3b1085b8620dbab82c8e03eb07ebbe10352b36af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
