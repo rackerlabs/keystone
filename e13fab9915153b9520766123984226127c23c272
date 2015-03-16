@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_18c72846",
+        "filename": "keystone/openstack/common/eventlet_backdoor.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-16T11:16:16Z",
+      "side": 1,
+      "message": "why - not _ ?",
+      "revId": "e13fab9915153b9520766123984226127c23c272",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
