@@ -16,6 +16,24 @@
       "revId": "d6c21618c2512b6a80909c2539b85fbbf6e60354",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e108dc2e",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T14:11:58Z",
+      "side": 1,
+      "message": "I don\u0027t think we should be requiring developers to use the utils.wip method of indicating that a test is going to fail. The way this test is written now it makes it explicit that this isn\u0027t working correctly and in what way, whereas that will be hidden if using utils.wip.",
+      "parentUuid": "9a80dd14_bda0ce42",
+      "revId": "d6c21618c2512b6a80909c2539b85fbbf6e60354",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
