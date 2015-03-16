@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_bda0ce42",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-16T10:47:37Z",
+      "side": 1,
+      "message": "sugested use of  @utils.wip(\u0027Exposing bug #1421825\u0027)",
+      "revId": "d6c21618c2512b6a80909c2539b85fbbf6e60354",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
