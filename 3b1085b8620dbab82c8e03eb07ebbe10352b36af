@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_42a366b1",
+        "filename": "keystone/common/json_home.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T14:51:50Z",
+      "side": 1,
+      "message": "this should be using \"is\" to compare rather than \u003d\u003d.\n\n return status is cls.DEPRECATED or status is cls.EXPERIMENTAL or status is cls.STABLE",
+      "revId": "3b1085b8620dbab82c8e03eb07ebbe10352b36af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_c906b685",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 23
@@ -31,6 +48,24 @@
       "side": 1,
       "message": "I\u0027m going to do that a separate patch, since it will result in most APIs having a hints property added....",
       "parentUuid": "9a80dd14_c906b685",
+      "revId": "3b1085b8620dbab82c8e03eb07ebbe10352b36af",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_62bf8ad0",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 660,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T14:51:50Z",
+      "side": 1,
+      "message": "The code here could check if the status is STABLE and not add the hint, since it\u0027s the default. No need to have the hints property for STABLE.",
+      "parentUuid": "9a80dd14_b6838801",
       "revId": "3b1085b8620dbab82c8e03eb07ebbe10352b36af",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
