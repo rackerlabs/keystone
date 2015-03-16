@@ -16,6 +16,58 @@
       "revId": "0ede2babaa87c0bc0af2da44d41e154fff5b8332",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_02188e1c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-16T15:19:33Z",
+      "side": 1,
+      "message": "Isn\u0027t the _send_notification() handled here?\n\nhttps://github.com/openstack/keystone/blob/master/keystone/notifications.py#L549",
+      "parentUuid": "9a80dd14_8a074781",
+      "revId": "0ede2babaa87c0bc0af2da44d41e154fff5b8332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_62306a56",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1265,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-16T15:19:33Z",
+      "side": 1,
+      "message": "nit: could change this to be: \n\n    projectB_token \u003d self.get_requested_token( ...",
+      "revId": "0ede2babaa87c0bc0af2da44d41e154fff5b8332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_a236e24e",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1271,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-16T15:19:33Z",
+      "side": 1,
+      "message": "Same here. I also assume the assignment from user1 to projectA already exists?",
+      "revId": "0ede2babaa87c0bc0af2da44d41e154fff5b8332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
