@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_e1d8ca20",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-16T18:57:11Z",
+      "side": 1,
+      "message": "nit: \n\n   def test_invalid_v3_token_raises_401(self):\n\nJust to be consistent with the new method.",
+      "revId": "6001756520fbf78bf507fa6ebc77c488d8a94be4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
