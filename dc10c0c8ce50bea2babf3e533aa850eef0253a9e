@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_79fc9c72",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-16T15:22:50Z",
+      "side": 1,
+      "message": "technically you can put whatever you want before `blueprint xyz`\ni\u0027ve seen others use partially in the case where the bp implementation is broken up into several patches",
+      "parentUuid": "9a80dd14_62bb0ac4",
+      "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_42060687",
         "filename": "keystone/cli.py",
         "patchSetId": 21
