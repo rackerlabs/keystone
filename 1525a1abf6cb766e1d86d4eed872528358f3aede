@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_937e9be2",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-16T12:42:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_2e93015c",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_794ea170",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 25
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-13T16:25:47Z",
       "side": 1,
       "message": "this went from 256 to 255... what happened?",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f3551750",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-16T12:42:25Z",
+      "side": 1,
+      "message": "255 is the upper limit for mysql keys. If you put 256 keystone will not start.",
+      "parentUuid": "9a80dd14_794ea170",
       "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_b3e63fae",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-16T12:42:25Z",
+      "side": 1,
+      "message": "This conversion is called anytime you manage an IdentityProviderModel and this is tested. Do I miss something?",
+      "parentUuid": "9a80dd14_2ec22185",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_4ebbd50e",
         "filename": "keystone/contrib/federation/backends/sql.py",
         "patchSetId": 25
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_f303573f",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-16T12:42:25Z",
+      "side": 1,
+      "message": "see above",
+      "parentUuid": "9a80dd14_4ebbd50e",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_0ef9dd7f",
         "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
         "patchSetId": 25
@@ -81,6 +153,24 @@
       "writtenOn": "2015-03-13T16:25:47Z",
       "side": 1,
       "message": "the table is utf8.",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_a9e5f0dc",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-16T12:42:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_0ef9dd7f",
       "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +245,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_93369b01",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-16T12:42:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_aef4515b",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_2e6b011f",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 25
@@ -172,6 +280,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_eeb0ce44",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-16T12:42:25Z",
+      "side": 1,
+      "message": "This case should go in this test:\ntest_issue_unscoped_token_with_remote_no_attribute\n\nLine 1841 of https://review.openstack.org/#/c/152156/25/keystone/tests/unit/test_v3_federation.py",
+      "parentUuid": "9a80dd14_2e6b011f",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_4e7e75b0",
         "filename": "keystone/contrib/federation/utils.py",
         "patchSetId": 25
@@ -183,6 +309,24 @@
       "writtenOn": "2015-03-13T16:25:47Z",
       "side": 1,
       "message": "use a named replacement since that should make it easier for the translaters.",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_ae97b638",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-16T12:42:25Z",
+      "side": 1,
+      "message": "I am not sure about this but I cahnge it",
+      "parentUuid": "9a80dd14_4e7e75b0",
       "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -242,6 +386,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_ce214a9f",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-16T12:42:25Z",
+      "side": 1,
+      "message": "I have changed the log level from warning to debug. In this case the admin can verify what is going on but there is not log in case it is the desired behavior.",
+      "parentUuid": "9a80dd14_878e8b2c",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_f9aff1e0",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 25
@@ -259,6 +421,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_0ece025a",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-16T12:42:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_f9aff1e0",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_398d097d",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 25
@@ -270,6 +450,24 @@
       "writtenOn": "2015-03-13T16:25:47Z",
       "side": 1,
       "message": "what does \"has not to be accepted\" mean?",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_6e14de9f",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 813,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-16T12:42:25Z",
+      "side": 1,
+      "message": "Cannot be created",
+      "parentUuid": "9a80dd14_398d097d",
       "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -328,6 +526,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_ae3976f3",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 847,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-16T12:42:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_b93e5989",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_99c0b551",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 25
@@ -345,6 +561,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_69d5b81a",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 1876,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-16T12:42:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_99c0b551",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_19ccc588",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 25
@@ -356,6 +590,24 @@
       "writtenOn": "2015-03-13T16:25:47Z",
       "side": 1,
       "message": "revert the whitespace change on the previous line.",
+      "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e9a448a7",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 2207,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-16T12:42:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_19ccc588",
       "revId": "1525a1abf6cb766e1d86d4eed872528358f3aede",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
