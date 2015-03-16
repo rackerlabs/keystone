@@ -2296,7 +2296,7 @@ class FederatedTokenTests(FederationTests, FederatedSetupMixin):
                     "remote": [
                         {
                             "type": "REMOTE_USER_GROUPS",
-                            "blacklist": ["noblacklist"]
+                            "blacklist": []
                         }
                     ]
                 }
