@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_074c20c7",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T14:41:37Z",
+      "side": 1,
+      "message": "debug messages should not be translated.",
+      "revId": "70b9e689706e43e2069ac9f573ff40e2a7adbf35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8781f0c4",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T14:41:37Z",
+      "side": 1,
+      "message": "\"%(protocol)\" needs an s... this shows there isn\u0027t test coverage.",
+      "revId": "70b9e689706e43e2069ac9f573ff40e2a7adbf35",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
