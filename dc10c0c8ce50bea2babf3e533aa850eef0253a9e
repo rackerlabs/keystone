@@ -122,6 +122,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_6fc84ea8",
+        "filename": "keystone/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-16T16:02:20Z",
+      "side": 1,
+      "message": "++ someone else recently did this as well. \n\nhttps://review.openstack.org/#/c/161543/5/keystone/cli.py",
+      "parentUuid": "9a80dd14_96583f32",
+      "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_f6489b5d",
         "filename": "keystone/cli.py",
         "patchSetId": 21
