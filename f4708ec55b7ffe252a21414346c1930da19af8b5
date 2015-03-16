@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_1b02ab72",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2253,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-16T18:38:50Z",
+      "side": 1,
+      "message": "nit: missing dot",
+      "revId": "f4708ec55b7ffe252a21414346c1930da19af8b5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
