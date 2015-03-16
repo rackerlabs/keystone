@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_dda4a2a7",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-16T10:42:02Z",
+      "side": 1,
+      "message": "I think this should rather be placed in the Manager object.",
+      "revId": "d6a84d759e72cb913820fa4ca1952e1876bc63f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_3da69eab",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-16T10:42:02Z",
+      "side": 1,
+      "message": "I think this should rather be placed in the Manager object.",
+      "revId": "d6a84d759e72cb913820fa4ca1952e1876bc63f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
