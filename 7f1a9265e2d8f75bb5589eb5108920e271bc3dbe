@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_10e7ea47",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2253,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-03-16T17:49:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_3c05e010",
+      "revId": "7f1a9265e2d8f75bb5589eb5108920e271bc3dbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_dc3204f1",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-14T06:34:00Z",
       "side": 1,
       "message": "nit, but nice to have: as a sanity check, you might want to verify the user too,",
+      "revId": "7f1a9265e2d8f75bb5589eb5108920e271bc3dbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_30d30e61",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2285,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-03-16T17:49:50Z",
+      "side": 1,
+      "message": "I don\u0027t think so. This is not what this test is designed to check. Putting unnecessary checks in means that if the assumptions behind those checks change, we have to update unrelated tests.",
+      "parentUuid": "9a80dd14_dc3204f1",
       "revId": "7f1a9265e2d8f75bb5589eb5108920e271bc3dbe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_503fa287",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2306,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-03-16T17:49:50Z",
+      "side": 1,
+      "message": "I did delete/create to make sure I wasn\u0027t fooling myself.  Will retry this way.",
+      "parentUuid": "9a80dd14_dc1be470",
+      "revId": "7f1a9265e2d8f75bb5589eb5108920e271bc3dbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_1c29fc89",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 7
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_90483a30",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2310,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-03-16T17:49:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_1c29fc89",
+      "revId": "7f1a9265e2d8f75bb5589eb5108920e271bc3dbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_3c2c0099",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 7
@@ -81,6 +153,24 @@
       "writtenOn": "2015-03-14T06:34:00Z",
       "side": 1,
       "message": "should fix: swap these, should be:\n\n  self.assertEqual(expected, observed)",
+      "revId": "7f1a9265e2d8f75bb5589eb5108920e271bc3dbe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b0453e17",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 2311,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-03-16T17:49:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_3c2c0099",
       "revId": "7f1a9265e2d8f75bb5589eb5108920e271bc3dbe",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
