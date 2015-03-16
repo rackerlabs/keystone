@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_79d64529",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-16T22:34:23Z",
+      "side": 1,
+      "message": "I\u0027d love to see a test that exercises this.",
+      "revId": "6001756520fbf78bf507fa6ebc77c488d8a94be4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_798ba51e",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 1446,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-16T22:34:23Z",
+      "side": 1,
+      "message": "Is isn\u0027t specific to your changes right? This is just testing for a 401 when there is no assignment?",
+      "revId": "6001756520fbf78bf507fa6ebc77c488d8a94be4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_e1d8ca20",
         "filename": "keystone/tests/unit/token/test_fernet_provider.py",
         "patchSetId": 35
@@ -13,6 +47,24 @@
       "writtenOn": "2015-03-16T18:57:11Z",
       "side": 1,
       "message": "nit: \n\n   def test_invalid_v3_token_raises_401(self):\n\nJust to be consistent with the new method.",
+      "revId": "6001756520fbf78bf507fa6ebc77c488d8a94be4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_792e45fc",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-16T22:34:23Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a80dd14_e1d8ca20",
       "revId": "6001756520fbf78bf507fa6ebc77c488d8a94be4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
