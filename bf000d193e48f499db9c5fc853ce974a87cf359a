@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_96459f70",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1197,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-16T18:53:53Z",
+      "side": 1,
+      "message": "substituted*",
+      "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f655fb1d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1198,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-16T18:53:53Z",
+      "side": 1,
+      "message": "whitelisted*",
+      "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
