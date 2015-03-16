@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_d8cbd0a1",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 484,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-16T11:05:18Z",
+      "side": 1,
+      "message": "Correcting the comment was not mentioned in the commit message, so either update commit msg or revert those changes.",
+      "revId": "45539d01bfb91e665c1aaab7e164de12ddee2104",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
