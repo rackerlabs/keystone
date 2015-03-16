@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_012f9e89",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1197,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T18:59:07Z",
+      "side": 1,
+      "message": "change \"substittuted\" to \"substituted\"",
+      "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_f655fb1d",
         "filename": "keystone/resource/core.py",
         "patchSetId": 29
@@ -30,6 +47,125 @@
       "writtenOn": "2015-03-16T18:53:53Z",
       "side": 1,
       "message": "whitelisted*",
+      "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_219902d1",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1207,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T18:59:07Z",
+      "side": 1,
+      "message": "simplify 1205-7:\n\n sensitive_dict \u003d dict((s[\u0027option\u0027], s[\u0027value\u0027]) for s in sensitive)",
+      "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8112ae07",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1211,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T18:59:07Z",
+      "side": 1,
+      "message": "add a comment why continue here... why wouldn\u0027t the value be a string type?",
+      "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_41a436b9",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1215,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T18:59:07Z",
+      "side": 1,
+      "message": "this is a lot of comment for one line of code which is just an assignment...",
+      "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_019a3e6e",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1221,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T18:59:07Z",
+      "side": 1,
+      "message": "add a comment why it\u0027s ok to ignore these errors.\n\nseems like should only go into logging a warning if get one of these exceptions?",
+      "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_01ecfef2",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1223,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T18:59:07Z",
+      "side": 1,
+      "message": "use \u0027%(\u0027 in each_whitelisted[\u0027value\u0027]\n\nAlso, this doesn\u0027t handle escaped %s properly, e.g., %%(something)",
+      "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_01d6bef1",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1225,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T18:59:07Z",
+      "side": 1,
+      "message": "this info should be in the warning message that the admin can read, putting it here as a comment in the code isn\u0027t too useful to admins. e.g., \"this message may be because not all the config options have yet been defined\".",
+      "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_61e5badb",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1228,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T18:59:07Z",
+      "side": 1,
+      "message": "change \"constructucted\" to \"constructed\"",
       "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
