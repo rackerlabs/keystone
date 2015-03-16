@@ -16,6 +16,24 @@
       "revId": "0a492bec7b768ddf94db3a8b5de744220a48fc65",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_ce6eaaff",
+        "filename": "keystone/tests/unit/test_sql_migrate_extensions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-16T12:17:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_9c4dec40",
+      "revId": "0a492bec7b768ddf94db3a8b5de744220a48fc65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
