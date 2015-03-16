@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_62bb0ac4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T15:06:14Z",
+      "side": 1,
+      "message": "where does \"Partially Implements\" come from? https://wiki.openstack.org/wiki/GitCommitMessages#Including_external_references",
+      "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_42060687",
+        "filename": "keystone/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T15:06:14Z",
+      "side": 1,
+      "message": "suggest use a regex instead.",
+      "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_424c469e",
+        "filename": "keystone/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T15:06:14Z",
+      "side": 1,
+      "message": "extra () not required.",
+      "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_624f8a92",
+        "filename": "keystone/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T15:06:14Z",
+      "side": 1,
+      "message": "extra () not required.",
+      "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_421a867d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T15:06:14Z",
+      "side": 1,
+      "message": "The output of this includes the entire traceback. The application should catch this and print out a nicely formatted message.",
+      "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_96583f32",
+        "filename": "keystone/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T15:06:14Z",
+      "side": 1,
+      "message": "Add a comment why this is here.",
+      "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f6489b5d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T15:06:14Z",
+      "side": 1,
+      "message": "Add a comment why this is here.",
+      "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d61c7715",
+        "filename": "keystone/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T15:06:14Z",
+      "side": 1,
+      "message": "suggest put these lines into a function (load_backends())",
+      "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
