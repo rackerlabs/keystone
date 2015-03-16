@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_eec1c0e4",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 1402,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-16T02:42:55Z",
+      "side": 1,
+      "message": "This is used by RestfulTestCase.",
+      "parentUuid": "9a80dd14_4daae085",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_ed98f476",
         "filename": "keystone/tests/unit/test_v2.py",
         "patchSetId": 34
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-14T15:17:57Z",
       "side": 1,
       "message": "nit: could just do this in the project reference: \n\n    project_ref1 \u003d {\u0027id\u0027: uuid.uuid4().hex,",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_ce4cfca0",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 1474,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-16T02:42:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_ed98f476",
       "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_ee4f0090",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 1480,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-16T02:42:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_ed6f145e",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_0d92a84b",
         "filename": "keystone/tests/unit/test_v2.py",
         "patchSetId": 34
@@ -64,6 +118,24 @@
       "writtenOn": "2015-03-14T15:17:57Z",
       "side": 1,
       "message": "and pass \n\n    project1_ref[\u0027id\u0027] \n\nhere too",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_0e43746c",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 1482,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-16T02:42:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_0d92a84b",
       "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_84abc573",
+        "filename": "keystone/tests/unit/token/test_fernet_provider.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-16T02:42:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_eda634aa",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_8dccd86b",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 34
@@ -98,6 +188,24 @@
       "writtenOn": "2015-03-14T15:17:57Z",
       "side": 1,
       "message": "Isn\u0027t this somewhat handled here?\n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/controller.py#L276-L281",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_2e3d98dd",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-16T02:42:55Z",
+      "side": 1,
+      "message": "No, v3_to_v2_user only filters the domain_id, and not a domain object. I\u0027ll modified the v3_to_v2_user method to filter the domain.",
+      "parentUuid": "9a80dd14_8dccd86b",
       "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_2e14b84b",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-16T02:42:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_edbd54b2",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_4de660e9",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 34
@@ -138,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_0e11b45c",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-16T02:42:55Z",
+      "side": 1,
+      "message": "Right, I don\u0027t believe the admin_token can ever produce a validate or authenticate response.",
+      "parentUuid": "9a80dd14_4de660e9",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_12856559",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 34
@@ -149,6 +293,24 @@
       "writtenOn": "2015-03-14T11:53:34Z",
       "side": 1,
       "message": "in the token_formatter.create_token method we default project id to being None if it isn\u0027t provided. With that we could probably collapse lines 50 - 52 into the following: \n\n    project_id \u003d token_ref.get(\u0027tenant\u0027, {}).get(\u0027id\u0027)",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_aeffc800",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-16T02:42:55Z",
+      "side": 1,
+      "message": "This can\u0027t change since tenant is defined in token_ref even if its None. Meaning that token_ref.get(\u0027tenant\u0027. {}) would return None instead of an empty dic.",
+      "parentUuid": "9a80dd14_12856559",
       "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -184,6 +346,24 @@
       "side": 1,
       "message": "Could elaborate on this message a little more and explain that if the user wishes to use these features, they should use Keystone V3",
       "parentUuid": "9a80dd14_527b5d7a",
+      "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_24b219e5",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-16T02:42:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_adcefc57",
       "revId": "4a4a89f90970e0ef032c4d2d9752028bb5480137",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
