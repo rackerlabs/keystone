@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_0937dce3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-16T12:22:22Z",
+      "side": 1,
+      "message": "suggest rephrase to \"Previously fetched tokens may not be equal to deleted tokens\"",
+      "revId": "f4964529bba0f10df03cb4bc956a6b5cbbf6efd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_49447446",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-16T12:22:22Z",
+      "side": 1,
+      "message": "Rephrase to \"The current code lists tokens twice both using sql and kvs backends\"",
+      "revId": "f4964529bba0f10df03cb4bc956a6b5cbbf6efd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e969a8be",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-16T12:22:22Z",
+      "side": 1,
+      "message": "s/void/avoid",
+      "revId": "f4964529bba0f10df03cb4bc956a6b5cbbf6efd1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_cacfb854",
         "filename": "keystone/token/persistence/core.py",
         "patchSetId": 3
