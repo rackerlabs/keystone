@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_1f8e097a",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 35
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-16T23:20:54Z",
+      "side": 1,
+      "message": "This needs to reference CONF.identity.default_domain_id",
+      "revId": "6001756520fbf78bf507fa6ebc77c488d8a94be4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_79d64529",
         "filename": "keystone/common/controller.py",
         "patchSetId": 35
