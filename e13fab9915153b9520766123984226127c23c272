@@ -16,6 +16,24 @@
       "revId": "e13fab9915153b9520766123984226127c23c272",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_21b2f448",
+        "filename": "keystone/openstack/common/eventlet_backdoor.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-16T13:52:06Z",
+      "side": 1,
+      "message": "This is what\u0027s in oslo-incubator : http://git.openstack.org/cgit/openstack/oslo-incubator/tree/openstack/common/eventlet_backdoor.py#n53",
+      "parentUuid": "9a80dd14_18c72846",
+      "revId": "e13fab9915153b9520766123984226127c23c272",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
