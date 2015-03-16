@@ -16,6 +16,24 @@
       "revId": "6c4faccf201e3c9a0417e464977bcc20206473d9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_c1e5aadc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-03-16T05:46:20Z",
+      "side": 1,
+      "message": "Originally it was a WIP as I planned to switch out all of them.  But then realized some of the cryptography APIs are not as convenient to use.  RSA key generation has some nice APIs, but generating certificates or CSR do not.  I should probably update the commit message.",
+      "parentUuid": "9a80dd14_444811b3",
+      "revId": "6c4faccf201e3c9a0417e464977bcc20206473d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
