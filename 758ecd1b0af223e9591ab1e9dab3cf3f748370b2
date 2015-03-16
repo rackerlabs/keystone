@@ -16,6 +16,23 @@
       "revId": "758ecd1b0af223e9591ab1e9dab3cf3f748370b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d0556efa",
+        "filename": "keystone/common/cache/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-16T08:42:07Z",
+      "side": 1,
+      "message": "Brant was proposing some patches where . was used instead of setattr and getattr. \nA followup patch over the whole chain can be added later on.",
+      "revId": "758ecd1b0af223e9591ab1e9dab3cf3f748370b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
