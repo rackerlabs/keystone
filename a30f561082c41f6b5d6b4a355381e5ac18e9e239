@@ -16,6 +16,23 @@
       "revId": "a30f561082c41f6b5d6b4a355381e5ac18e9e239",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_27075a83",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-16T17:03:20Z",
+      "side": 1,
+      "message": "Please, add a link to bp here. It will be much easier to track changes looking at whiteboard on bp page.",
+      "revId": "a30f561082c41f6b5d6b4a355381e5ac18e9e239",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
