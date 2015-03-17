@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_bb50960b",
+        "filename": "keystone/tests/unit/backend/core_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T14:40:58Z",
+      "side": 1,
+      "message": "probably not....it was in the code I moved our of test_backend_ldap....so was trying to not change it...but I think is OK to remove...",
+      "parentUuid": "9a80dd14_d33f6123",
+      "revId": "8585b1f04efead4852a084c750e48cbfe467a157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_73c235ea",
         "filename": "keystone/tests/unit/backend/core_ldap.py",
         "patchSetId": 5
@@ -47,6 +65,24 @@
       "writtenOn": "2015-03-13T20:16:31Z",
       "side": 1,
       "message": "This is only used in test_ldap.py, so move it there, or use it here if that\u0027s the intention.",
+      "revId": "8585b1f04efead4852a084c750e48cbfe467a157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_607f4fac",
+        "filename": "keystone/tests/unit/backend/core_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T14:40:58Z",
+      "side": 1,
+      "message": "It\u0027s here, since it will be used by other ldap tests as we migrate them over (e.g. identity/test_ldap, assignment/test_ldap etc.). If you would prefer I move to test_ldap for now and then move it back when the next ldap pieces get migrated over, then let me know.",
+      "parentUuid": "9a80dd14_73c235ea",
       "revId": "8585b1f04efead4852a084c750e48cbfe467a157",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_9c416cab",
+        "filename": "keystone/tests/unit/backend/core_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T14:40:58Z",
+      "side": 1,
+      "message": "Thanks",
+      "parentUuid": "9a80dd14_9fe32ba3",
+      "revId": "8585b1f04efead4852a084c750e48cbfe467a157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_9fb7ab39",
         "filename": "keystone/tests/unit/backend/role/test_ldap.py",
         "patchSetId": 5
@@ -99,6 +153,24 @@
       "writtenOn": "2015-03-13T20:16:31Z",
       "side": 1,
       "message": "suggest call this TestLdapRole, unless we\u0027re really going away from that naming convention?",
+      "revId": "8585b1f04efead4852a084c750e48cbfe467a157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_003f73d7",
+        "filename": "keystone/tests/unit/backend/role/test_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T14:40:58Z",
+      "side": 1,
+      "message": "so I called it LdapRole since the class these test are extract from was LdapIdentity (not TestLdapIdentity)...as far as I can see we don\u0027t tend to but \"Test\" in front of the backend test classes...",
+      "parentUuid": "9a80dd14_9fb7ab39",
       "revId": "8585b1f04efead4852a084c750e48cbfe467a157",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
