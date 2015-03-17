@@ -54,6 +54,23 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_9160f7a5",
+        "filename": "keystone/common/json_home.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-17T22:29:07Z",
+      "side": 1,
+      "message": "unnecessary parens",
+      "revId": "2ecb68b94c9d9d5016ff0c6e94ab496af1903987",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_b8b88576",
         "filename": "keystone/common/json_home.py",
         "patchSetId": 3
