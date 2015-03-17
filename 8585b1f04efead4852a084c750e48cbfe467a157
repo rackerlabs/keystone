@@ -89,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_bb2df1aa",
+        "filename": "keystone/tests/unit/backend/core_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T14:56:47Z",
+      "side": 1,
+      "message": "ok, I thought that might be the case. I\u0027m fine with it here.",
+      "parentUuid": "9a80dd14_607f4fac",
+      "revId": "8585b1f04efead4852a084c750e48cbfe467a157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_5f15333e",
         "filename": "keystone/tests/unit/backend/core_ldap.py",
         "patchSetId": 5
@@ -171,6 +189,24 @@
       "side": 1,
       "message": "so I called it LdapRole since the class these test are extract from was LdapIdentity (not TestLdapIdentity)...as far as I can see we don\u0027t tend to but \"Test\" in front of the backend test classes...",
       "parentUuid": "9a80dd14_9fb7ab39",
+      "revId": "8585b1f04efead4852a084c750e48cbfe467a157",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_5b16b556",
+        "filename": "keystone/tests/unit/backend/role/test_ldap.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T14:56:47Z",
+      "side": 1,
+      "message": "ok, if that\u0027s the convention now that\u0027s fine with me.",
+      "parentUuid": "9a80dd14_003f73d7",
       "revId": "8585b1f04efead4852a084c750e48cbfe467a157",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
