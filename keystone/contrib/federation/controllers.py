@@ -322,6 +322,8 @@ class Auth(auth_controllers.Auth):
 
         sp_url = service_provider.get('sp_url')
         auth_url = service_provider.get('auth_url')
+        utils.assert_service_provider_has_valid_attributes(
+            sp_id, sp_url, auth_url)
 
         token_id = auth['identity']['token']['id']
         token_data = self.token_provider_api.validate_token(token_id)

@@ -2630,6 +2630,33 @@ class SAMLGenerationTests(FederationTests):
         token_id = resp.headers.get('X-Subject-Token')
         return token_id
 
+    def test_create_saml_assertion_invalid_sp(self):
+        """SAML generation fails when using a sp with invalid attributes.
+
+        The server should return a 500 Unexpected Error.
+
+        """
+        # Force the creation of a service provider with the 'auth_url' and
+        # 'sp_url' attributes with invalid values
+        sp_id = uuid.uuid4().hex
+        sp_ref = {
+            'auth_url': '',
+            'enabled': True,
+            'description': uuid.uuid4().hex,
+            'sp_url': ''
+        }
+        self.federation_api.create_sp(sp_id, sp_ref)
+
+        self.config_fixture.config(group='saml', idp_entity_id=self.ISSUER)
+        token_id = self._fetch_valid_token()
+
+        # Use the id from the invalid service provider in the SAML request
+        body = self._create_generate_saml_request(token_id, sp_id)
+        with mock.patch.object(keystone_idp, '_sign_assertion',
+                               return_value=self.signed_assertion):
+            self.post(self.SAML_GENERATION_ROUTE, body=body,
+                      expected_status=500)
+
     def test_not_project_scoped_token(self):
         """Ensure SAML generation fails when passing domain-scoped tokens.
 
