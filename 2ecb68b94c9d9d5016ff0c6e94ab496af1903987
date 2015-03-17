@@ -37,6 +37,57 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_18a99124",
+        "filename": "keystone/common/json_home.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T19:36:40Z",
+      "side": 1,
+      "message": "this could also be a regular method on the status instance.",
+      "revId": "2ecb68b94c9d9d5016ff0c6e94ab496af1903987",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b8b88576",
+        "filename": "keystone/common/json_home.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T19:36:40Z",
+      "side": 1,
+      "message": "suggest do this first since this should be the typical case.",
+      "revId": "2ecb68b94c9d9d5016ff0c6e94ab496af1903987",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b86fa5fb",
+        "filename": "keystone/common/json_home.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T19:36:40Z",
+      "side": 1,
+      "message": "suggest fix this message... \"Unexpected status value %s\".",
+      "revId": "2ecb68b94c9d9d5016ff0c6e94ab496af1903987",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_f2c3fe36",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 3
@@ -48,6 +99,23 @@
       "writtenOn": "2015-03-17T18:54:22Z",
       "side": 1,
       "message": "I agree we should avoid the previous branch here, but it could be a private method of this very class instead of putting it in json_home.Status.",
+      "revId": "2ecb68b94c9d9d5016ff0c6e94ab496af1903987",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_784c4d9e",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 702,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T19:36:40Z",
+      "side": 1,
+      "message": "if update_resource_data were a method then could use status.update_resource_data(resource_data)",
       "revId": "2ecb68b94c9d9d5016ff0c6e94ab496af1903987",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
