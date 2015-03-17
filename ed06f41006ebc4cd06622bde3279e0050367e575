@@ -424,6 +424,24 @@
       "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_6ee035cd",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-17T02:54:09Z",
+      "side": 1,
+      "message": "I believe this is because token_id strings come in as different types between v2 and v3",
+      "parentUuid": "9a80dd14_b301b66c",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
