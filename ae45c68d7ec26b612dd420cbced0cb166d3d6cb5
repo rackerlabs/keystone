@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_3b63c6de",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-17T13:25:57Z",
+      "side": 1,
+      "message": "it should, as this is what we had before white/blacklisting.",
+      "parentUuid": "9a80dd14_1b11a253",
+      "revId": "ae45c68d7ec26b612dd420cbced0cb166d3d6cb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_6f8bc068",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 5
