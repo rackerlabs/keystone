@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_128fb276",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T23:52:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_113fc3b6",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_71463f51",
         "filename": "keystone/cli.py",
         "patchSetId": 22
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-17T14:23:38Z",
       "side": 1,
       "message": "The help text should say that either this or --all must be specified.",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_cca4960a",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T23:52:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_71463f51",
       "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_5225aaac",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T23:52:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_f1714fa9",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_16497932",
         "filename": "keystone/cli.py",
         "patchSetId": 22
@@ -81,6 +135,24 @@
       "writtenOn": "2015-03-17T14:23:38Z",
       "side": 1,
       "message": "suggest raise an exception so that the caller doesn\u0027t have to be trusted to check the return value.",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_ac84c25d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T23:52:40Z",
+      "side": 1,
+      "message": "....although I thought one of the concerns was to avoid a yucky stack trace in place on a error message?",
+      "parentUuid": "9a80dd14_16497932",
       "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_7228ee85",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T23:52:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_16709972",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_51b77b3a",
         "filename": "keystone/cli.py",
         "patchSetId": 22
@@ -115,6 +205,24 @@
       "writtenOn": "2015-03-17T14:23:38Z",
       "side": 1,
       "message": "change \"domain-name\" to \"--domain-name\" for consistency.",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_32e1162b",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T23:52:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_51b77b3a",
       "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_52876a12",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T23:52:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_d6db614d",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_11e5030a",
         "filename": "keystone/cli.py",
         "patchSetId": 22
@@ -149,6 +275,24 @@
       "writtenOn": "2015-03-17T14:23:38Z",
       "side": 1,
       "message": "When I do\n\n keystone-manage domain_config_upload --domain-name something\n\nwhere \"something\" isn\u0027t a domain, it prints a warning but for some reason the command is still successful:\n\n $ echo $?\n 0\n\nthis should have failed.",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_470241b5",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T23:52:40Z",
+      "side": 1,
+      "message": "So one question...what would we expect? An error code of 1 (which is a general Linux error)?",
+      "parentUuid": "9a80dd14_11e5030a",
       "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -172,6 +316,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_cc59f68f",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T23:52:40Z",
+      "side": 1,
+      "message": "removed (Its not actually needed)",
+      "parentUuid": "9a80dd14_f685c507",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_31ccc761",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 22
@@ -189,6 +351,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_87dc391a",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T23:52:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_31ccc761",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_b115179d",
         "filename": "keystone/tests/unit/test_cli.py",
         "patchSetId": 22
@@ -200,6 +380,24 @@
       "writtenOn": "2015-03-17T14:23:38Z",
       "side": 1,
       "message": "why would this happen? Add a comment.",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_c7e631e8",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T23:52:40Z",
+      "side": 1,
+      "message": "I think this is a hangover from the old testing structures....removing it.",
+      "parentUuid": "9a80dd14_b115179d",
       "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
