@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_49ec2f90",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-17T20:24:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_c8a03994",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_a8ea25aa",
         "filename": "keystone/common/controller.py",
         "patchSetId": 36
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-17T02:04:24Z",
       "side": 1,
       "message": "suggest remove else here, easier to see what\u0027s going on.",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_5ea13e94",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-17T20:24:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_a8ea25aa",
       "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_49ba6f6f",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-17T20:24:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_68b90dcb",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_c8f59985",
         "filename": "keystone/tests/unit/fernet/utils.py",
         "patchSetId": 36
@@ -64,6 +118,24 @@
       "writtenOn": "2015-03-17T02:04:24Z",
       "side": 1,
       "message": "rather than continue with this antipattern, use https://review.openstack.org/#/c/164817/",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_49f7cff5",
+        "filename": "keystone/tests/unit/fernet/utils.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-17T20:24:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_c8f59985",
       "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_6973a1b4",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1405,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-17T20:24:09Z",
+      "side": 1,
+      "message": "This is used in several test cases. Is there an issue with creating new projects?",
+      "parentUuid": "9a80dd14_68158d9a",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_4861a910",
         "filename": "keystone/tests/unit/test_v2.py",
         "patchSetId": 36
@@ -98,6 +188,24 @@
       "writtenOn": "2015-03-17T02:04:24Z",
       "side": 1,
       "message": "remove v2 from all these, that\u0027s already in the test case.\n\nAlso, don\u0027t we have a bunch of existing v2 token tests that can be re-used?",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_3e0d6a38",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1418,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-17T20:24:09Z",
+      "side": 1,
+      "message": "Done, I tried using existing test, but failed since Fernet tokens require uuid of ids and other test use \u0027bar\u0027 which would fail here: https://github.com/openstack/keystone/blob/aff22c95e975eb3e4bc753e7bd1e367239e0ab99/keystone/token/providers/fernet/token_formatters.py#L226.",
+      "parentUuid": "9a80dd14_4861a910",
       "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_2fdc5b46",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1420,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-17T20:24:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_687cadec",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_28f7155b",
         "filename": "keystone/tests/unit/test_v2.py",
         "patchSetId": 36
@@ -132,6 +258,24 @@
       "writtenOn": "2015-03-17T02:04:24Z",
       "side": 1,
       "message": "what\u0027s important about 255?",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_cf157fe6",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1444,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-17T20:24:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_28f7155b",
       "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_ef35e3a8",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1446,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-17T20:24:09Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "9a80dd14_c874b9d2",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_8810015b",
         "filename": "keystone/tests/unit/test_v2.py",
         "patchSetId": 36
@@ -166,6 +328,24 @@
       "writtenOn": "2015-03-17T02:04:24Z",
       "side": 1,
       "message": "this test should also validate that the token it gets back has access to the project.",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_9ee3b6a3",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1483,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-17T20:24:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_8810015b",
       "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_bebf9aa9",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1485,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-17T20:24:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_684d8d99",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_0856d12a",
         "filename": "keystone/tests/unit/test_v2.py",
         "patchSetId": 36
@@ -206,6 +404,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_0103eb0d",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1503,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-17T20:24:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_0856d12a",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_931e725e",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 36
@@ -217,6 +433,24 @@
       "writtenOn": "2015-03-17T02:04:24Z",
       "side": 1,
       "message": "is this fixing a bug?",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_61ad87ea",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 4068,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-17T20:24:09Z",
+      "side": 1,
+      "message": "Removed. Not needed.",
+      "parentUuid": "9a80dd14_931e725e",
       "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -274,6 +508,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_54ae7f30",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-17T20:24:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_d3ac6af1",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_b37ff665",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 36
@@ -285,6 +537,24 @@
       "writtenOn": "2015-03-17T02:04:24Z",
       "side": 1,
       "message": "coverage report shows that this isn\u0027t tested. Do we even support token binding in v2 tokens?\n\nAlso, use v3_token[\u0027bind\u0027] here, since we already know that \u0027bind\u0027 is in v3_token.",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_545cbf4c",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-17T20:24:09Z",
+      "side": 1,
+      "message": "Removed. I think you are correct, v2 does not support bind.",
+      "parentUuid": "9a80dd14_b37ff665",
       "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -308,6 +578,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_f729358a",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-17T20:24:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_f3beceff",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_136a8281",
         "filename": "keystone/token/providers/common.py",
         "patchSetId": 36
@@ -319,6 +607,24 @@
       "writtenOn": "2015-03-17T02:04:24Z",
       "side": 1,
       "message": "v3_user could apparently be None here, since .get(\u0027user\u0027) was used... which is just going to fail, so change .get() to []",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_773545da",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-17T20:24:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_136a8281",
       "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -359,6 +665,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_57ada1e9",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-17T20:24:09Z",
+      "side": 1,
+      "message": "token_ref can have \u0027tenant\u0027 set to None.",
+      "parentUuid": "9a80dd14_73d65e29",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_339a266f",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 36
@@ -370,6 +694,24 @@
       "writtenOn": "2015-03-17T02:04:24Z",
       "side": 1,
       "message": "why is this false?",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_9701d9b1",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-17T20:24:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_339a266f",
       "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -410,6 +752,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_97747937",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-17T20:24:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_13c28234",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_b301b66c",
         "filename": "keystone/token/providers/fernet/token_formatters.py",
         "patchSetId": 36
@@ -438,6 +798,24 @@
       "writtenOn": "2015-03-17T02:54:09Z",
       "side": 1,
       "message": "I believe this is because token_id strings come in as different types between v2 and v3",
+      "parentUuid": "9a80dd14_b301b66c",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_52f76fd4",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-17T20:24:09Z",
+      "side": 1,
+      "message": "Done",
       "parentUuid": "9a80dd14_b301b66c",
       "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
