@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_3724c40d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T10:24:27Z",
+      "side": 1,
+      "message": "yes, I copied for others.....happy to take it out if we think it is more confusing...",
+      "parentUuid": "9a80dd14_79fc9c72",
+      "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_42060687",
         "filename": "keystone/cli.py",
         "patchSetId": 21
@@ -48,6 +66,24 @@
       "writtenOn": "2015-03-16T15:06:14Z",
       "side": 1,
       "message": "suggest use a regex instead.",
+      "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_69b7453b",
+        "filename": "keystone/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 324,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T10:24:27Z",
+      "side": 1,
+      "message": "certainly could do, but I\u0027d like to use the same algorithm as used by the identity manager for clarity.  And yes, it might be a good enhancement to break out that algorithm and share the code between these two places - I\u0027d suggest we do that as a follow on patch.",
+      "parentUuid": "9a80dd14_42060687",
       "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_e658c48c",
+        "filename": "keystone/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T10:24:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_424c469e",
+      "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_624f8a92",
         "filename": "keystone/cli.py",
         "patchSetId": 21
@@ -88,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_065eb876",
+        "filename": "keystone/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T10:24:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_624f8a92",
+      "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_421a867d",
         "filename": "keystone/cli.py",
         "patchSetId": 21
@@ -99,6 +171,24 @@
       "writtenOn": "2015-03-16T15:06:14Z",
       "side": 1,
       "message": "The output of this includes the entire traceback. The application should catch this and print out a nicely formatted message.",
+      "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e9c895aa",
+        "filename": "keystone/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T10:24:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_421a867d",
       "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -140,6 +230,42 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_e6e604b0",
+        "filename": "keystone/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T10:24:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_96583f32",
+      "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_06ecf88e",
+        "filename": "keystone/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T10:24:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_6fc84ea8",
+      "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_f6489b5d",
         "filename": "keystone/cli.py",
         "patchSetId": 21
@@ -157,6 +283,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_26001c35",
+        "filename": "keystone/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 399,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T10:24:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_f6489b5d",
+      "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_d61c7715",
         "filename": "keystone/cli.py",
         "patchSetId": 21
@@ -168,6 +312,24 @@
       "writtenOn": "2015-03-16T15:06:14Z",
       "side": 1,
       "message": "suggest put these lines into a function (load_backends())",
+      "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_a6ec0c94",
+        "filename": "keystone/cli.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 401,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T10:24:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_d61c7715",
       "revId": "dc10c0c8ce50bea2babf3e533aa850eef0253a9e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
