@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_f8cafd44",
+        "filename": "keystone/common/json_home.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T19:28:49Z",
+      "side": 1,
+      "message": "so it\u0027s a reasonable point to make...although we already monkey with resource data in the translator_urls() method below...",
+      "parentUuid": "9a80dd14_12197222",
+      "revId": "2ecb68b94c9d9d5016ff0c6e94ab496af1903987",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_f2c3fe36",
         "filename": "keystone/common/wsgi.py",
         "patchSetId": 3
