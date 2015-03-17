@@ -16,6 +16,24 @@
       "revId": "84711d7c165150da72e0b89ff21f0d19d70bdcb0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_633ca7c0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-17T18:06:30Z",
+      "side": 1,
+      "message": "makes sense, thanks Morgan",
+      "parentUuid": "9a80dd14_ffaa1519",
+      "revId": "84711d7c165150da72e0b89ff21f0d19d70bdcb0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
