@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_bbb42883",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-17T05:37:17Z",
+      "side": 0,
+      "message": "I am wondering if we should keep this section and replace the content to a link to Apache docs or just tell them to look it up",
+      "revId": "e93550727a8f69988d93bef48853affc2a47e51e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

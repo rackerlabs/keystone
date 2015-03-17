@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_fbd860f2",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-17T05:37:17Z",
+      "side": 1,
+      "message": "this seems also related to SSL setup, and the sample is related to the sample config above. should this be cleanup as well?",
+      "revId": "b3e09b4c5d8f15069025aeb1a1442533eae55305",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
