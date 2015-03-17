@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_a07227ae",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_fixup_service_provider_attributes.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-17T13:00:51Z",
+      "side": 1,
+      "message": "if that\u0027s not too much fuss, maybe we should make \u0027\u0027 values null again ?",
+      "revId": "6b9ec6d2c1e64947d4672abef5d11bc2f2a47c30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
