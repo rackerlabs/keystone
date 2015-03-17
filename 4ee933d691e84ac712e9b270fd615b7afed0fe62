@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_030da635",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 1197,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T19:42:53Z",
+      "side": 1,
+      "message": "could remove this comment since the next line is pretty obvious.",
+      "revId": "4ee933d691e84ac712e9b270fd615b7afed0fe62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_234aaa55",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 1209,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T19:42:53Z",
+      "side": 1,
+      "message": "suggest use None to indicate no warning message.",
+      "revId": "4ee933d691e84ac712e9b270fd615b7afed0fe62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8376f6a1",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 1228,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T19:42:53Z",
+      "side": 1,
+      "message": "use , rather than %.",
+      "revId": "4ee933d691e84ac712e9b270fd615b7afed0fe62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
