@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_113fc3b6",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 338,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T14:23:38Z",
+      "side": 1,
+      "message": "The help text should say that either this or --domain-name must be specified.",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_71463f51",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T14:23:38Z",
+      "side": 1,
+      "message": "The help text should say that either this or --all must be specified.",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b64d0d9c",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T14:23:38Z",
+      "side": 1,
+      "message": "this function has enough sub-functions that a regular class should be made...\n\n dcu \u003d DomainConfigUpload()\n dcu.run()\n\nand then put all the functions in here into regular methods, and then resource_manager and domain_config_manager can be properties.",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f1714fa9",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T14:23:38Z",
+      "side": 1,
+      "message": "this should say what the options are, or also print the help text.",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_16497932",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T14:23:38Z",
+      "side": 1,
+      "message": "suggest raise an exception so that the caller doesn\u0027t have to be trusted to check the return value.",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_16709972",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T14:23:38Z",
+      "side": 1,
+      "message": "change \"--all\" to \"The --all\"\n\nchange \"mixed\" to \"used\"",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_51b77b3a",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 365,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T14:23:38Z",
+      "side": 1,
+      "message": "change \"domain-name\" to \"--domain-name\" for consistency.",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d6db614d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 376,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T14:23:38Z",
+      "side": 1,
+      "message": "This should say what\u0027s going to happen because of this (it\u0027s skipped), and also what the name of the file is.",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_11e5030a",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 378,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T14:23:38Z",
+      "side": 1,
+      "message": "When I do\n\n keystone-manage domain_config_upload --domain-name something\n\nwhere \"something\" isn\u0027t a domain, it prints a warning but for some reason the command is still successful:\n\n $ echo $?\n 0\n\nthis should have failed.",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f685c507",
+        "filename": "keystone/cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 391,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T14:23:38Z",
+      "side": 1,
+      "message": "this is calling an internal method of cfg.ConfigParser. -1",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_31ccc761",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T14:23:38Z",
+      "side": 1,
+      "message": "this should be using config fixture.",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b115179d",
+        "filename": "keystone/tests/unit/test_cli.py",
+        "patchSetId": 22
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T14:23:38Z",
+      "side": 1,
+      "message": "why would this happen? Add a comment.",
+      "revId": "644ee22137624ef0824fb81d7bf57475bc24ec3c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
