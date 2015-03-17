@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_06eb18b1",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 2299,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-17T09:37:45Z",
+      "side": 1,
+      "message": "both options (old and new) will make tests pass :-)",
+      "revId": "f661a5366492689f454869a0eb9c3d0079e57d62",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
