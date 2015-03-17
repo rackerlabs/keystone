@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_954f1ebe",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 702,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T14:29:40Z",
+      "side": 1,
+      "message": "no need to check if status since passing None here is invalid.\n\nAlso, use \"is not\" rather than !\u003d since the Status values are singletons.",
+      "revId": "9df26ac8625c7a6d49a56941e76ca0f6740804da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_55a3e64e",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 704,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T14:29:40Z",
+      "side": 1,
+      "message": "actually, all this logic could be in json_home.Status:\n\n json_home.Status.update_resource_data(resource_data)\n\nthen don\u0027t need another branch in this method.",
+      "revId": "9df26ac8625c7a6d49a56941e76ca0f6740804da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_55484687",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T14:29:40Z",
+      "side": 1,
+      "message": "seems like overkill, but it\u0027s python so no static type checking :(.",
+      "revId": "9df26ac8625c7a6d49a56941e76ca0f6740804da",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
