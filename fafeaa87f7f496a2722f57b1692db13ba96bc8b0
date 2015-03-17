@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_bd16d356",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 522,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-17T11:15:46Z",
+      "side": 1,
+      "message": "s/rmoved/removed",
+      "revId": "fafeaa87f7f496a2722f57b1692db13ba96bc8b0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
