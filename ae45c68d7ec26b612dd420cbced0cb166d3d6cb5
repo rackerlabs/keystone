@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_1b11a253",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-17T13:23:27Z",
+      "side": 1,
+      "message": "should this accept all values?\n\nif i don\u0027t specify whitelist or blacklist it accepts all values?\nthe only way to filter out values is to have a blacklist or whitelist defined, or an empty whitelist.... okay, i guess that makes sense.",
+      "revId": "ae45c68d7ec26b612dd420cbced0cb166d3d6cb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_6f8bc068",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 5
