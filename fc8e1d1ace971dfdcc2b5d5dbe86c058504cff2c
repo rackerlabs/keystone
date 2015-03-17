@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_adf6b7f7",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4094,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T00:33:53Z",
+      "side": 1,
+      "message": "we can see that... the question is why?",
+      "revId": "fc8e1d1ace971dfdcc2b5d5dbe86c058504cff2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4dce1bb9",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4367,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T00:33:53Z",
+      "side": 1,
+      "message": "this all worked before and now it\u0027s broken?",
+      "revId": "fc8e1d1ace971dfdcc2b5d5dbe86c058504cff2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
