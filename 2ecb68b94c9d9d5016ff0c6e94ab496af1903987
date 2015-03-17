@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_12197222",
+        "filename": "keystone/common/json_home.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 10917
+      },
+      "writtenOn": "2015-03-17T18:54:22Z",
+      "side": 1,
+      "message": "I don\u0027t think you should mix a resource operation in this Status class. The is_supported was good as it was before. You might use (is_supported and not is_stable) in wsgi.py.",
+      "revId": "2ecb68b94c9d9d5016ff0c6e94ab496af1903987",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f2c3fe36",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 702,
+      "author": {
+        "id": 10917
+      },
+      "writtenOn": "2015-03-17T18:54:22Z",
+      "side": 1,
+      "message": "I agree we should avoid the previous branch here, but it could be a private method of this very class instead of putting it in json_home.Status.",
+      "revId": "2ecb68b94c9d9d5016ff0c6e94ab496af1903987",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
