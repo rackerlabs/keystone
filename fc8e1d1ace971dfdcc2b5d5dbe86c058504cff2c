@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_cdf5ab85",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4094,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-17T00:53:08Z",
+      "side": 1,
+      "message": "I will add an explanation here.\n\nThe reason behind this is: if we do not specify a token to be used as \u0027X-Auth-Token\u0027 for the specified request, a token with self.user on self.project will be requested [1][2].\n\nSince some tests disable this user, change its password, etc this \u0027X-Auth-Token\u0027 cannot be retrieved and a 401 will be raised, even before trying to validate the \u0027X-Subject-Token\u0027 in question.\n\n[1] https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_v3.py#L460-L467\n\n[2] https://github.com/openstack/keystone/blob/master/keystone/tests/unit/test_v3.py#L408-L434",
+      "parentUuid": "9a80dd14_adf6b7f7",
+      "revId": "fc8e1d1ace971dfdcc2b5d5dbe86c058504cff2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_4dce1bb9",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-17T00:33:53Z",
       "side": 1,
       "message": "this all worked before and now it\u0027s broken?",
+      "revId": "fc8e1d1ace971dfdcc2b5d5dbe86c058504cff2c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_cd23eb04",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 4367,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-17T00:53:08Z",
+      "side": 1,
+      "message": "Yes, it is broken now because of the new assertion added at the end of this test.\n\nPlease see the bug #1432892 description for more info on why it is broken.\n\nI can add a doc here explaining the main cause of this skip.",
+      "parentUuid": "9a80dd14_4dce1bb9",
       "revId": "fc8e1d1ace971dfdcc2b5d5dbe86c058504cff2c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
