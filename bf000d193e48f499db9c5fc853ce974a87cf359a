@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_4267cab7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1197,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T09:17:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_012f9e89",
+      "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_f655fb1d",
         "filename": "keystone/resource/core.py",
         "patchSetId": 29
@@ -47,6 +65,24 @@
       "writtenOn": "2015-03-16T18:53:53Z",
       "side": 1,
       "message": "whitelisted*",
+      "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_6203eebe",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1198,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T09:17:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_f655fb1d",
       "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_a2240661",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1207,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T09:17:18Z",
+      "side": 1,
+      "message": "So good idea...although that runs fowl of pep8....need to use list comprehension...so I think this is the equivalent:\n\nsensitive_dict \u003d {s[\u0027option\u0027]: s[\u0027value\u0027] for s in sensitive}",
+      "parentUuid": "9a80dd14_219902d1",
+      "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_8112ae07",
         "filename": "keystone/resource/core.py",
         "patchSetId": 29
@@ -81,6 +135,24 @@
       "writtenOn": "2015-03-16T18:59:07Z",
       "side": 1,
       "message": "add a comment why continue here... why wouldn\u0027t the value be a string type?",
+      "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e2cb5e71",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1211,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T09:17:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_8112ae07",
       "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_22c65669",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1215,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T09:17:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_41a436b9",
+      "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_019a3e6e",
         "filename": "keystone/resource/core.py",
         "patchSetId": 29
@@ -115,6 +205,24 @@
       "writtenOn": "2015-03-16T18:59:07Z",
       "side": 1,
       "message": "add a comment why it\u0027s ok to ignore these errors.\n\nseems like should only go into logging a warning if get one of these exceptions?",
+      "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_828b821d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1221,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T09:17:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_019a3e6e",
       "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_66abf475",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1223,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T09:17:18Z",
+      "side": 1,
+      "message": "have changed the logic here, so I don\u0027t think this test is needed any more",
+      "parentUuid": "9a80dd14_01ecfef2",
+      "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_01d6bef1",
         "filename": "keystone/resource/core.py",
         "patchSetId": 29
@@ -155,6 +281,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_e2c7de44",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1225,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T09:17:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_01d6bef1",
+      "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_61e5badb",
         "filename": "keystone/resource/core.py",
         "patchSetId": 29
@@ -166,6 +310,24 @@
       "writtenOn": "2015-03-16T18:59:07Z",
       "side": 1,
       "message": "change \"constructucted\" to \"constructed\"",
+      "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_c2b3bae7",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 1228,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-17T09:17:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_61e5badb",
       "revId": "bf000d193e48f499db9c5fc853ce974a87cf359a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
