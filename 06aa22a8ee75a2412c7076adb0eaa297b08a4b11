@@ -34,6 +34,24 @@
       "revId": "06aa22a8ee75a2412c7076adb0eaa297b08a4b11",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_129d0e5a",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 795,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-17T12:10:58Z",
+      "side": 0,
+      "message": "Put back",
+      "parentUuid": "9a80dd14_7c61d3a7",
+      "revId": "06aa22a8ee75a2412c7076adb0eaa297b08a4b11",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
