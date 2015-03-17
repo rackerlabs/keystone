@@ -761,3 +761,18 @@ def assert_enabled_service_provider_object(service_provider):
         msg = _('Service Provider %(sp)s is disabled') % {'sp': sp_id}
         LOG.debug(msg)
         raise exception.Forbidden(msg)
+
+
+def assert_service_provider_has_valid_attributes(sp_id, sp_url, auth_url):
+    # NOTE(rodrigods): Currently it is not possible to create a service
+    # provider without providing valid URLs for the 'sp_url' and 'auth_url'
+    # fields via the Controller layer. However, it was possible when the
+    # service provider code was first merged.
+    if not sp_url or not auth_url:
+        msg = _('Cannot create a SAML assertion for the '
+                'service provider %(sp_id) since it doesnt '
+                'have valid values for both `sp_url` and '
+                '`auth_url` attributes. `sp_url` is %(sp_url)s '
+                'and `auth_url` is %(auth_url)s.' %
+                {'sp_id': sp_id, 'sp_url': sp_url, 'auth_url': auth_url})
+        raise exception.UnexpectedError(exception=msg)
