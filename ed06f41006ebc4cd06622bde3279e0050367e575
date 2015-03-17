@@ -1,0 +1,429 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_c8a03994",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "this needs to be done now that we have fernet tokens?",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_a8ea25aa",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "suggest remove else here, easier to see what\u0027s going on.",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_68b90dcb",
+        "filename": "keystone/common/controller.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "suggest use\n\n del ref[\u0027domain\u0027]\n\nwe already know that domain is in ref.",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_c8f59985",
+        "filename": "keystone/tests/unit/fernet/utils.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "rather than continue with this antipattern, use https://review.openstack.org/#/c/164817/",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_68158d9a",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1405,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "how many of copies of this do we need?",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4861a910",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1418,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "remove v2 from all these, that\u0027s already in the test case.\n\nAlso, don\u0027t we have a bunch of existing v2 token tests that can be re-used?",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_687cadec",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1420,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "what\u0027s important about 255? add a comment.",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_28f7155b",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1444,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "what\u0027s important about 255?",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_c874b9d2",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1446,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "why is this special for fernet tokens?",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8810015b",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1483,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "this test should also validate that the token it gets back has access to the project.",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_684d8d99",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1485,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "add a comment what this is testing.",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_0856d12a",
+        "filename": "keystone/tests/unit/test_v2.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 1503,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "this test should also validate that the token it gets back has access to the project.",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_931e725e",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 4068,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "is this fixing a bug?",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b35a9628",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 4410,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "why is this a failure? Add a comment.",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f33b2ec6",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 4416,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d3ac6af1",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "move building data in this leg since otherwise it\u0027s not used.",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b37ff665",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "coverage report shows that this isn\u0027t tested. Do we even support token binding in v2 tokens?\n\nAlso, use v3_token[\u0027bind\u0027] here, since we already know that \u0027bind\u0027 is in v3_token.",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f3beceff",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "why is .get(\u0027id\u0027) used here? this means that get_project could be called with None, which doesn\u0027t seem useful.",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_136a8281",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "v3_user could apparently be None here, since .get(\u0027user\u0027) was used... which is just going to fail, so change .get() to []",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f31a4e17",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "where does this come from?",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_73d65e29",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "should be able to use\n\n if \u0027tenant\u0027 in token_ref\n\nhere",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_339a266f",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "why is this false?",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f376ce3e",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "?? we already have method_names above.",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_13c28234",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "this is invalid rst, should be like\n\n :raises keystone.exception.Unauthorized: if the token is invalid",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b301b66c",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-17T02:04:24Z",
+      "side": 1,
+      "message": "is this fixing a different bug? seems unrelated.",
+      "revId": "ed06f41006ebc4cd06622bde3279e0050367e575",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
