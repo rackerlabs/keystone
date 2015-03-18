@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_40404635",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T16:11:43Z",
+      "side": 1,
+      "message": "why are we messing with method_names when it\u0027s just going to get stripped out?",
+      "revId": "832a7432ac13c621fea38f5d2930954d487ed272",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_006e4ec9",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T16:11:43Z",
+      "side": 1,
+      "message": "why are we messing with method_names when it\u0027s just going to get stripped out?",
+      "revId": "832a7432ac13c621fea38f5d2930954d487ed272",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_dd07bdc7",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 39
@@ -31,6 +65,23 @@
       "side": 1,
       "message": "the V2TokenDataHelper.format_token() equivalent of V3TokenDataHelper.get_token_data() doesn\u0027t build any of this online with Keystone, whereas the get_token_data() method from V3TokenDataHelper actually builds the response by calling into the other apis of Keystone. This leverages that call and makes it so that we can dynamically build the V2 reference on the way out, very similar to what we do for V3.",
       "parentUuid": "9a80dd14_dd07bdc7",
+      "revId": "832a7432ac13c621fea38f5d2930954d487ed272",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_00a56e03",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T16:11:43Z",
+      "side": 1,
+      "message": "remove : after raises, it belongs after keystone.exception.Unauthorized",
       "revId": "832a7432ac13c621fea38f5d2930954d487ed272",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
