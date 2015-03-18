@@ -33,6 +33,24 @@
       "revId": "fd752d8ecce3cd16bec31d41b17035d583851ca0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_fd43a169",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-18T16:08:50Z",
+      "side": 1,
+      "message": "When I wrote this I was thinking to have PrimaryKey(idp_id,remote_id). Then Marek required that remote_id has to be unique because needed for the websso and I add the flag unique in the column. However, I thought all the possible combinations and I think the result of having the remote_id as primary key is the same as the double column plus the unique and should be more efficient in the DB.",
+      "parentUuid": "9a80dd14_dd2edd41",
+      "revId": "fd752d8ecce3cd16bec31d41b17035d583851ca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
