@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_3f6284d9",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T19:18:09Z",
+      "side": 1,
+      "message": "seems like a bug in pypi/cryptography ?",
+      "revId": "68a54c2cf1a7210abae9292aede5737203eb733a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
