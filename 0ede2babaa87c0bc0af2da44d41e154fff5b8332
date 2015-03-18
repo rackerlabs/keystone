@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_efbb5e0c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 438,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-03-18T11:03:31Z",
+      "side": 1,
+      "message": "These notifications are different:\n_send_notification invokes internal mechanism while decorator creates a CADF notification.",
+      "parentUuid": "9a80dd14_8a074781",
+      "revId": "0ede2babaa87c0bc0af2da44d41e154fff5b8332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_62306a56",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 13
@@ -65,6 +83,24 @@
       "writtenOn": "2015-03-16T15:19:33Z",
       "side": 1,
       "message": "Same here. I also assume the assignment from user1 to projectA already exists?",
+      "revId": "0ede2babaa87c0bc0af2da44d41e154fff5b8332",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8559e3fe",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 1271,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-03-18T11:03:31Z",
+      "side": 1,
+      "message": "Correct. It is in the data common for all tests in this case.",
+      "parentUuid": "9a80dd14_a236e24e",
       "revId": "0ede2babaa87c0bc0af2da44d41e154fff5b8332",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
