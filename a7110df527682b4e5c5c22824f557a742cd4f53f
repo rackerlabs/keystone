@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_ed44ea1a",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-18T07:33:26Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be removed?",
+      "revId": "a7110df527682b4e5c5c22824f557a742cd4f53f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_cacf0c56",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-18T07:33:26Z",
+      "side": 1,
+      "message": "pipe?",
+      "revId": "a7110df527682b4e5c5c22824f557a742cd4f53f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_0ada0417",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-18T07:33:26Z",
+      "side": 1,
+      "message": "objects*",
+      "revId": "a7110df527682b4e5c5c22824f557a742cd4f53f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_caf62c90",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-18T07:33:26Z",
+      "side": 1,
+      "message": "undo this change",
+      "revId": "a7110df527682b4e5c5c22824f557a742cd4f53f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_aa8578d0",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-18T07:33:26Z",
+      "side": 1,
+      "message": "undo this change",
+      "revId": "a7110df527682b4e5c5c22824f557a742cd4f53f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_0de69e44",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 1025,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-18T07:33:26Z",
+      "side": 1,
+      "message": "why is this different now? is the else branch ever used now?",
+      "revId": "a7110df527682b4e5c5c22824f557a742cd4f53f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_cdf726d3",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 2014,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-18T07:33:26Z",
+      "side": 1,
+      "message": "a test where remote_id_attribute is undefined for saml2 and federation would be good.\n\nalso a test that adds a random protocol, would show code that loads and registers the config options properly",
+      "revId": "a7110df527682b4e5c5c22824f557a742cd4f53f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8d7b6e7a",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 2034,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-18T07:33:26Z",
+      "side": 1,
+      "message": "this test name doesn\u0027t seem to indicate much about the test",
+      "revId": "a7110df527682b4e5c5c22824f557a742cd4f53f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_6d9d5abb",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 28
+      },
+      "lineNbr": 2035,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-18T07:33:26Z",
+      "side": 1,
+      "message": "attribute*",
+      "revId": "a7110df527682b4e5c5c22824f557a742cd4f53f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
