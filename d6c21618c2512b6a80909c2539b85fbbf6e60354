@@ -51,6 +51,24 @@
       "revId": "d6c21618c2512b6a80909c2539b85fbbf6e60354",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_3c71b2de",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T19:12:11Z",
+      "side": 1,
+      "message": "What does the choice of token provider have to do with policy enforcement? If these 2 things are coupled like this then we should break the coupling.",
+      "parentUuid": "9a80dd14_bc8a0218",
+      "revId": "d6c21618c2512b6a80909c2539b85fbbf6e60354",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
