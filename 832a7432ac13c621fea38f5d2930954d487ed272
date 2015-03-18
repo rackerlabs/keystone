@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_dd07bdc7",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T16:04:52Z",
+      "side": 1,
+      "message": "why go through the rigamarole of getting a v3 token and converting it to v2, can\u0027t we just get a v2 token to begin with?",
+      "revId": "832a7432ac13c621fea38f5d2930954d487ed272",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
