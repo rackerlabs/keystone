@@ -73,7 +73,11 @@ FILE_OPTIONS = {
                    help='This is the role name used in combination with the '
                         'member_role_id option; see that option for more '
                         'detail.'),
-        cfg.IntOpt('crypt_strength', default=40000,
+        # NOTE(lbragstd/morganfainberg): This value of 10k results in
+        # approximate 30% savings the alternative would be to move to the
+        # passlib default that approximates ~300ms of CPU time to hash. This
+        # still exceeds the glib default of 5000.
+        cfg.IntOpt('crypt_strength', default=10000,
                    help='The value passed as the keyword "rounds" to '
                         'passlib\'s encrypt method.'),
         cfg.IntOpt('list_limit',
