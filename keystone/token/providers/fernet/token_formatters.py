@@ -21,6 +21,7 @@ from oslo_config import cfg
 from oslo_log import log
 from oslo_utils import timeutils
 import six
+from six.moves import urllib
 
 from keystone.auth import plugins as auth_plugins
 from keystone import exception
@@ -64,19 +65,22 @@ class TokenFormatter(object):
 
     def pack(self, payload):
         """Pack a payload for transport as a token."""
-        return self.crypto.encrypt(payload)
+        return urllib.parse.quote(self.crypto.encrypt(payload))
 
     def unpack(self, token):
         """Unpack a token, and validate the payload."""
         try:
-            return self.crypto.decrypt(token, ttl=CONF.token.expiration)
+            return self.crypto.decrypt(urllib.parse.unquote(token))
         except fernet.InvalidToken as e:
             raise exception.Unauthorized(six.text_type(e))
 
     @classmethod
     def creation_time(cls, fernet_token):
         """Returns the creation time of a valid Fernet token."""
-        # fernet tokens are base64 encoded, so we need to unpack them first
+        # the padding on fernet tokens is made URL-safe
+        fernet_token = urllib.parse.unquote(fernet_token)
+
+        # fernet tokens are base64 encoded and the padding made URL-safe
         token_bytes = base64.urlsafe_b64decode(fernet_token)
 
         # slice into the byte array to get just the timestamp
