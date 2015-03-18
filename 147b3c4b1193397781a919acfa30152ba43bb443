@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_2449c68e",
+        "filename": "keystone/cli.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T02:08:50Z",
+      "side": 1,
+      "message": "this method can raise exceptions and still have the program not print out a stack trace, just catch the exception and handle it.",
+      "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4414fa9e",
+        "filename": "keystone/cli.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T02:08:50Z",
+      "side": 1,
+      "message": "Cange $ to %.\n\nAlso, use , instead of %.",
+      "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_a4d936f6",
+        "filename": "keystone/cli.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T02:08:50Z",
+      "side": 1,
+      "message": "When I ran this with\n\n $ bin/keystone-manage domain_config_upload --domain-name something\n\nit doesn\u0027t fail, echo $? shows it exited with 0 status. It should exit with non-zero status.",
+      "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_640bbe7d",
+        "filename": "keystone/cli.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T02:08:50Z",
+      "side": 1,
+      "message": "use , instead of %.",
+      "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_249466e7",
+        "filename": "keystone/cli.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T02:08:50Z",
+      "side": 1,
+      "message": "this should use % rather than , since it\u0027s not a log call.\n\nAlso, this is printing out a stack trace which is not a nice UX. It should just be printing a message.",
+      "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_c4a9ca26",
+        "filename": "keystone/cli.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T02:08:50Z",
+      "side": 1,
+      "message": "don\u0027t need to pass in a parameter since read_domain_configs_from_files can read the CONF value.",
+      "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
