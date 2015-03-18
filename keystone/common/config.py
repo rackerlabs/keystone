@@ -15,6 +15,7 @@
 from oslo_config import cfg
 import oslo_messaging
 
+import passlib.hash
 
 _DEFAULT_AUTH_METHODS = ['external', 'password', 'token', 'oauth1']
 _CERTFILE = '/etc/keystone/ssl/certs/signing_cert.pem'
@@ -81,7 +82,8 @@ FILE_OPTIONS = {
                    help='This is the role name used in combination with the '
                         'member_role_id option; see that option for more '
                         'detail.'),
-        cfg.IntOpt('crypt_strength', default=40000,
+        cfg.IntOpt('crypt_strength',
+                   default=passlib.hash.sha512_crypt.default_rounds,
                    help='The value passed as the keyword "rounds" to '
                         'passlib\'s encrypt method.'),
         cfg.IntOpt('list_limit',
