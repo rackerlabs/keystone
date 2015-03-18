@@ -21,6 +21,7 @@ from oslo_config import cfg
 from oslo_log import log
 from oslo_utils import timeutils
 import six
+from six.moves import urllib
 
 from keystone.auth import plugins as auth_plugins
 from keystone import exception
@@ -64,12 +65,14 @@ class TokenFormatter(object):
 
     def pack(self, payload):
         """Pack a payload for transport as a token."""
-        return self.crypto.encrypt(payload)
+        fernet = self.crypto.encrypt(payload)
+        return urllib.parse.quote(fernet)
 
     def unpack(self, token):
         """Unpack a token, and validate the payload."""
+        fernet = urllib.parse.unquote(token)
         try:
-            return self.crypto.decrypt(token, ttl=CONF.token.expiration)
+            return self.crypto.decrypt(fernet, ttl=CONF.token.expiration)
         except fernet.InvalidToken as e:
             raise exception.Unauthorized(six.text_type(e))
 
