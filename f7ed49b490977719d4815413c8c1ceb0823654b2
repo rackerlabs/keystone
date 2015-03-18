@@ -107,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_8d2efca3",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 13152
+      },
+      "writtenOn": "2015-03-18T14:46:23Z",
+      "side": 1,
+      "message": "I have tested this using master and the default provider and methods is not included in the token_ref.",
+      "parentUuid": "9a80dd14_6a40e507",
+      "revId": "f7ed49b490977719d4815413c8c1ceb0823654b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_5b713e0b",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 38
