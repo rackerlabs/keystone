@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_3c58d256",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-18T19:14:12Z",
+      "side": 1,
+      "message": "If V3 is domain aware, how come we have a filter_domain_id method?",
+      "revId": "f8f98e95964ed4eece5e32149e6ab81addede3be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
