@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_547016dc",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2310,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-18T13:11:54Z",
+      "side": 1,
+      "message": "It\u0027s good to have native english speaking reviewers :-)",
+      "parentUuid": "9a80dd14_8e4c569f",
+      "revId": "ae45c68d7ec26b612dd420cbced0cb166d3d6cb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_6f8bc068",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 5
@@ -65,6 +83,24 @@
       "writtenOn": "2015-03-17T12:01:19Z",
       "side": 1,
       "message": "with what?",
+      "revId": "ae45c68d7ec26b612dd420cbced0cb166d3d6cb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b480728c",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2321,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-18T13:11:54Z",
+      "side": 1,
+      "message": "with groups assigned.",
+      "parentUuid": "9a80dd14_6f8bc068",
       "revId": "ae45c68d7ec26b612dd420cbced0cb166d3d6cb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_fffe4304",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2378,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-18T13:11:54Z",
+      "side": 1,
+      "message": "we are comparing ids only, before we checked cardinality of both sets.",
+      "parentUuid": "9a80dd14_4fbc3c07",
+      "revId": "ae45c68d7ec26b612dd420cbced0cb166d3d6cb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_0e06a621",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 5
@@ -99,6 +153,24 @@
       "writtenOn": "2015-03-17T22:25:47Z",
       "side": 1,
       "message": "you could create a common test here, it\u0027s basically the same code both times, and just the rules change, and that can simplified with:\n\n  del rules[\u0027rules\u0027][1][\u0027remote\u0027][1][\u0027blacklist\u0027]\n\nif this last suggestion is too wacky then ignore is, but i think a common test case would cut down on a lot of repetition here",
+      "revId": "ae45c68d7ec26b612dd420cbced0cb166d3d6cb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_0563ca1a",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2380,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-18T13:11:54Z",
+      "side": 1,
+      "message": "I am not sure if you want make one test function that tests couple of functionalities ?",
+      "parentUuid": "9a80dd14_0e06a621",
       "revId": "ae45c68d7ec26b612dd420cbced0cb166d3d6cb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -122,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_3f57fb03",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2395,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-18T13:11:54Z",
+      "side": 1,
+      "message": "answered above.",
+      "parentUuid": "9a80dd14_af85b85a",
+      "revId": "ae45c68d7ec26b612dd420cbced0cb166d3d6cb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_cfc82cab",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 5
@@ -139,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_7f409335",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2451,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-18T13:11:54Z",
+      "side": 1,
+      "message": "answered above.",
+      "parentUuid": "9a80dd14_cfc82cab",
+      "revId": "ae45c68d7ec26b612dd420cbced0cb166d3d6cb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_113407de",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 5
@@ -150,6 +258,24 @@
       "writtenOn": "2015-03-17T22:25:47Z",
       "side": 1,
       "message": "the expected result is that no groups are matched",
+      "revId": "ae45c68d7ec26b612dd420cbced0cb166d3d6cb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_bf4a0b53",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2461,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-18T13:11:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_113407de",
       "revId": "ae45c68d7ec26b612dd420cbced0cb166d3d6cb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -190,6 +316,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_c5f1b296",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2522,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-18T13:11:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_719aa3c6",
+      "revId": "ae45c68d7ec26b612dd420cbced0cb166d3d6cb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_f194d38d",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 5
@@ -201,6 +345,24 @@
       "writtenOn": "2015-03-17T22:25:47Z",
       "side": 1,
       "message": "Expected result is that no groups are ignored.",
+      "revId": "ae45c68d7ec26b612dd420cbced0cb166d3d6cb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_252e0efb",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2523,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-18T13:11:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_f194d38d",
       "revId": "ae45c68d7ec26b612dd420cbced0cb166d3d6cb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -224,6 +386,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_9f62a7d7",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2541,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-18T13:11:54Z",
+      "side": 1,
+      "message": "I simply believe there is better to operate on input with more one group. Especially since we are talking about passing \"complex\" attributes, like lists of groups etc.",
+      "parentUuid": "9a80dd14_917637a2",
+      "revId": "ae45c68d7ec26b612dd420cbced0cb166d3d6cb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_ef2330a5",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 5
@@ -235,6 +415,24 @@
       "writtenOn": "2015-03-17T12:01:19Z",
       "side": 1,
       "message": "same",
+      "revId": "ae45c68d7ec26b612dd420cbced0cb166d3d6cb5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_df5c1f1c",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 2585,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-18T13:11:54Z",
+      "side": 1,
+      "message": "same",
+      "parentUuid": "9a80dd14_ef2330a5",
       "revId": "ae45c68d7ec26b612dd420cbced0cb166d3d6cb5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
