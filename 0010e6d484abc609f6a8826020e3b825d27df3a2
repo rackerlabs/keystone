@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_c7c38c37",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T02:28:44Z",
+      "side": 1,
+      "message": "Seems like the important thing here is that a bunch of bugs in Fernet tokens are being fixed?",
+      "revId": "0010e6d484abc609f6a8826020e3b825d27df3a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_07d5a4e4",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T02:28:44Z",
+      "side": 1,
+      "message": "how are other methods going to be handled, i.e., ones that the deployer has registered themselves?",
+      "revId": "0010e6d484abc609f6a8826020e3b825d27df3a2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
