@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_e3f06468",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-18T17:20:44Z",
+      "side": 1,
+      "message": "We could make this a global variable but then we run into races as to when the config is read in.",
+      "parentUuid": "9a80dd14_e0b85ac9",
+      "revId": "b4251c74368f881ef5c3b19ffa42f3a956eaa463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_e08a1a19",
         "filename": "keystone/auth/plugins/core.py",
         "patchSetId": 6
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_869256f4",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-18T17:20:44Z",
+      "side": 1,
+      "message": "This throws an int not iterable error",
+      "parentUuid": "9a80dd14_c0a0b6a7",
+      "revId": "b4251c74368f881ef5c3b19ffa42f3a956eaa463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_40c92659",
         "filename": "keystone/auth/plugins/core.py",
         "patchSetId": 6
@@ -64,6 +100,24 @@
       "writtenOn": "2015-03-18T16:24:23Z",
       "side": 1,
       "message": "should only have to do this once rather than every time.",
+      "revId": "b4251c74368f881ef5c3b19ffa42f3a956eaa463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_06b6668a",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-18T17:20:44Z",
+      "side": 1,
+      "message": "see comment above",
+      "parentUuid": "9a80dd14_40c92659",
       "revId": "b4251c74368f881ef5c3b19ffa42f3a956eaa463",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_c6628e15",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-18T17:20:44Z",
+      "side": 1,
+      "message": "see comment above",
+      "parentUuid": "9a80dd14_2001926a",
+      "revId": "b4251c74368f881ef5c3b19ffa42f3a956eaa463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_e0621a3c",
         "filename": "keystone/auth/plugins/core.py",
         "patchSetId": 6
@@ -104,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_e62eb241",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-18T17:20:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_e0621a3c",
+      "revId": "b4251c74368f881ef5c3b19ffa42f3a956eaa463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_6071cadd",
         "filename": "keystone/tests/unit/test_v3_auth.py",
         "patchSetId": 6
@@ -115,6 +205,24 @@
       "writtenOn": "2015-03-18T16:24:23Z",
       "side": 1,
       "message": "this test should show what\u0027s actually happening... check if NotImplemented is raised.",
+      "revId": "b4251c74368f881ef5c3b19ffa42f3a956eaa463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_eca4d109",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4462,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-18T17:20:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_6071cadd",
       "revId": "b4251c74368f881ef5c3b19ffa42f3a956eaa463",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
