@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_fa371a4b",
+        "filename": "keystone/cli.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 415,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-18T19:50:26Z",
+      "side": 1,
+      "message": "pep8",
+      "revId": "6faf678d9c971fe6d13e6d797cf355a3ab8ea836",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_1a3eae29",
+        "filename": "keystone/cli.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-18T19:50:26Z",
+      "side": 1,
+      "message": "pep8",
+      "revId": "6faf678d9c971fe6d13e6d797cf355a3ab8ea836",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_5a4826cc",
+        "filename": "keystone/cli.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 500,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-18T19:50:26Z",
+      "side": 1,
+      "message": "pep8",
+      "revId": "6faf678d9c971fe6d13e6d797cf355a3ab8ea836",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_a0f6625b",
         "filename": "keystone/cli.py",
         "patchSetId": 24
