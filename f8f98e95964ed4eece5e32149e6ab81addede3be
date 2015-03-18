@@ -16,6 +16,24 @@
       "revId": "f8f98e95964ed4eece5e32149e6ab81addede3be",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_ff9b8c63",
+        "filename": "keystone/tests/unit/test_v3_resource.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-18T19:25:15Z",
+      "side": 1,
+      "message": "hmm this was moved over from the old test AssignmentV3toV2MethodsTestCase, so I didn\u0027t looked at what it does.\n\nThis validates the filter_domain_id does not perform filtering.  \n\nV3Controller.filter_domain_id() does seem used or sounds right, suggest to do it as  follow-up clean-up patch.",
+      "parentUuid": "9a80dd14_3c58d256",
+      "revId": "f8f98e95964ed4eece5e32149e6ab81addede3be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
