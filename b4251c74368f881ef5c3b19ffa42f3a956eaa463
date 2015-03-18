@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_9748beb4",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T17:47:42Z",
+      "side": 1,
+      "message": "build it on-demand. This is easy to do with a class and a property getter.",
+      "parentUuid": "9a80dd14_e3f06468",
+      "revId": "b4251c74368f881ef5c3b19ffa42f3a956eaa463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_e08a1a19",
         "filename": "keystone/auth/plugins/core.py",
         "patchSetId": 6
@@ -83,6 +101,24 @@
       "side": 1,
       "message": "This throws an int not iterable error",
       "parentUuid": "9a80dd14_c0a0b6a7",
+      "revId": "b4251c74368f881ef5c3b19ffa42f3a956eaa463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_77e42aac",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T17:47:42Z",
+      "side": 1,
+      "message": "I meant rather than storing a bunch of ints in an array and then summing at the end, sum them up as the code goes along.",
+      "parentUuid": "9a80dd14_869256f4",
       "revId": "b4251c74368f881ef5c3b19ffa42f3a956eaa463",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
