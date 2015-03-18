@@ -16,6 +16,24 @@
       "revId": "e074b0d60b0cdaddfe43423d5422fdc5cba3b285",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_cdcc868d",
+        "filename": "keystone/common/json_home.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-18T07:36:56Z",
+      "side": 1,
+      "message": "so we *could* use either, but we\u0027d like to show that we expect callers to really define the status they want via the class, i.e.: Status.STABLE, rather than just hard wiring \u0027stable\u0027.  Using the \"is\" test really does ensure it is the same \"object\u0027 being passed, not just equivalence (which is what would be tested using \"in\") -  although, currently with just a simply string it would work both ways.",
+      "parentUuid": "9a80dd14_f05be41f",
+      "revId": "e074b0d60b0cdaddfe43423d5422fdc5cba3b285",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
