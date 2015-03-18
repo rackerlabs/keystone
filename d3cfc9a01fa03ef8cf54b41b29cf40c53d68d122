@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_99f1da97",
+        "filename": "keystone/tests/unit/backend/core_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-18T15:48:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_1e4a5955",
+      "revId": "d3cfc9a01fa03ef8cf54b41b29cf40c53d68d122",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_9e7ba97a",
         "filename": "keystone/tests/unit/backend/role/test_ldap.py",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-17T20:05:37Z",
       "side": 1,
       "message": "use from oslo.config import cfg instead.",
+      "revId": "d3cfc9a01fa03ef8cf54b41b29cf40c53d68d122",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d92a72e6",
+        "filename": "keystone/tests/unit/backend/role/test_ldap.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-18T15:48:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_9e7ba97a",
       "revId": "d3cfc9a01fa03ef8cf54b41b29cf40c53d68d122",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
