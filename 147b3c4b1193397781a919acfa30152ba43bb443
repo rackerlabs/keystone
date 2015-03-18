@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_d5c25233",
+        "filename": "keystone/cli.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-18T04:08:05Z",
+      "side": 1,
+      "message": "\"domain_config\"",
+      "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_2449c68e",
         "filename": "keystone/cli.py",
         "patchSetId": 23
@@ -70,6 +87,23 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_95ae1a2e",
+        "filename": "keystone/cli.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-18T04:08:05Z",
+      "side": 1,
+      "message": "parse() could raise an exception, add exception handling here",
+      "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_249466e7",
         "filename": "keystone/cli.py",
         "patchSetId": 23
@@ -87,6 +121,23 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_b51ebe72",
+        "filename": "keystone/cli.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-18T04:08:05Z",
+      "side": 1,
+      "message": "could also be implemented using regex and Match.group() to extract domain name.\n\nsomething like:\nm \u003d re.match(DOMAIN_CONF_FHEAD + \"(.+)\" + DOMAIN_CONF_FTAIL)\nif m:\n    domain_name \u003d m.group(1)",
+      "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_c4a9ca26",
         "filename": "keystone/cli.py",
         "patchSetId": 23
@@ -98,6 +149,23 @@
       "writtenOn": "2015-03-18T02:08:50Z",
       "side": 1,
       "message": "don\u0027t need to pass in a parameter since read_domain_configs_from_files can read the CONF value.",
+      "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_10feb805",
+        "filename": "keystone/cli.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-18T04:08:05Z",
+      "side": 1,
+      "message": "choose",
       "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
