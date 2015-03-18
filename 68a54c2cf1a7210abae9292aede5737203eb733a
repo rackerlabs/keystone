@@ -16,6 +16,24 @@
       "revId": "68a54c2cf1a7210abae9292aede5737203eb733a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d55789c8",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-03-18T20:05:51Z",
+      "side": 1,
+      "message": "i think it\u0027s odd behavior for pypi/cryptography, but the issue arises when we json.loads() a token out of a request body -- the result is unicode",
+      "parentUuid": "9a80dd14_3f6284d9",
+      "revId": "68a54c2cf1a7210abae9292aede5737203eb733a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
