@@ -135,6 +135,24 @@
       "revId": "b4251c74368f881ef5c3b19ffa42f3a956eaa463",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e3d2245a",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-18T16:27:37Z",
+      "side": 1,
+      "message": "This was to fix a failing test cases. Because expires_at wasn\u0027t being generated with subsecond\u003dTrue, the assertions in test_v3_auth.py wasn\u0027t recognizing it as a valid ISO8601 time format.",
+      "parentUuid": "9a80dd14_601f0a71",
+      "revId": "b4251c74368f881ef5c3b19ffa42f3a956eaa463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
