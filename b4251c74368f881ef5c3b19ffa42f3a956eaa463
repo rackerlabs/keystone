@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_e0b85ac9",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T16:24:23Z",
+      "side": 1,
+      "message": "We should only have to do this once rather than every time.",
+      "revId": "b4251c74368f881ef5c3b19ffa42f3a956eaa463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e08a1a19",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T16:24:23Z",
+      "side": 1,
+      "message": "suggest keep the reverse map too, so can look up easily.",
+      "revId": "b4251c74368f881ef5c3b19ffa42f3a956eaa463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_c0a0b6a7",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T16:24:23Z",
+      "side": 1,
+      "message": "might as welll just ret +\u003d k.",
+      "revId": "b4251c74368f881ef5c3b19ffa42f3a956eaa463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_40c92659",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T16:24:23Z",
+      "side": 1,
+      "message": "should only have to do this once rather than every time.",
+      "revId": "b4251c74368f881ef5c3b19ffa42f3a956eaa463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_2001926a",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T16:24:23Z",
+      "side": 1,
+      "message": "shouldn\u0027t have to build this every time either.",
+      "revId": "b4251c74368f881ef5c3b19ffa42f3a956eaa463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_e0621a3c",
+        "filename": "keystone/auth/plugins/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T16:24:23Z",
+      "side": 1,
+      "message": "this could use a comment.",
+      "revId": "b4251c74368f881ef5c3b19ffa42f3a956eaa463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_6071cadd",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 4462,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T16:24:23Z",
+      "side": 1,
+      "message": "this test should show what\u0027s actually happening... check if NotImplemented is raised.",
+      "revId": "b4251c74368f881ef5c3b19ffa42f3a956eaa463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_601f0a71",
+        "filename": "keystone/token/providers/fernet/token_formatters.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T16:24:23Z",
+      "side": 1,
+      "message": "is this fixing a bug?",
+      "revId": "b4251c74368f881ef5c3b19ffa42f3a956eaa463",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
