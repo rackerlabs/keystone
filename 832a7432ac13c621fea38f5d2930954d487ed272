@@ -71,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_c00436c8",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-18T16:13:34Z",
+      "side": 1,
+      "message": "This should be a comment in the code.",
+      "parentUuid": "9a80dd14_202352a8",
+      "revId": "832a7432ac13c621fea38f5d2930954d487ed272",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_00a56e03",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 39
