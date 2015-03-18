@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_3df8d9c3",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-18T16:00:57Z",
+      "side": 1,
+      "message": "why was primary key removed?",
+      "revId": "fd752d8ecce3cd16bec31d41b17035d583851ca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_dd2edd41",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-18T16:00:57Z",
+      "side": 1,
+      "message": "why was the unique\u003dTrue removed?",
+      "revId": "fd752d8ecce3cd16bec31d41b17035d583851ca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
