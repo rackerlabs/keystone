@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_297b362a",
+        "filename": "keystone/tests/functional/shared/test_running.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-18T18:43:59Z",
+      "side": 1,
+      "message": "Why not just keep this; \n\n    import testtools \n\nand do \n\n    ....\n    testtools.matchers() \n\nlater on?",
+      "parentUuid": "ba7be1f8_dc92f84a",
+      "revId": "d780b00280c5a3eb8a3939a0c2d9c0e1d4e3c027",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba7be1f8_37807b8a",
         "filename": "keystone/tests/functional/shared/test_running.py",
         "patchSetId": 2
@@ -118,6 +136,24 @@
       "writtenOn": "2015-02-26T01:34:41Z",
       "side": 1,
       "message": "rather than do \"http_status_codes \u003d requests.status_codes.codes\" above, could do\n\n is_multiple_choices \u003d M.Equals(http_status_codes.multiple_choices)",
+      "revId": "d780b00280c5a3eb8a3939a0c2d9c0e1d4e3c027",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_49c4ea40",
+        "filename": "keystone/tests/functional/shared/test_running.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-18T18:43:59Z",
+      "side": 1,
+      "message": "Sure, and that could live somewhere shared so other tests could use it.",
+      "parentUuid": "ba7be1f8_5ccd2865",
       "revId": "d780b00280c5a3eb8a3939a0c2d9c0e1d4e3c027",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
