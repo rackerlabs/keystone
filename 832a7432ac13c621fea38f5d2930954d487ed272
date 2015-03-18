@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_60e1cafb",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-18T16:15:12Z",
+      "side": 1,
+      "message": "see comment below",
+      "parentUuid": "9a80dd14_40404635",
+      "revId": "832a7432ac13c621fea38f5d2930954d487ed272",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_006e4ec9",
         "filename": "keystone/token/providers/fernet/core.py",
         "patchSetId": 39
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-18T16:11:43Z",
       "side": 1,
       "message": "why are we messing with method_names when it\u0027s just going to get stripped out?",
+      "revId": "832a7432ac13c621fea38f5d2930954d487ed272",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_00264e68",
+        "filename": "keystone/token/providers/fernet/core.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-18T16:15:12Z",
+      "side": 1,
+      "message": "V2 unscoped token: http://cdn.pasteraw.com/c20zzfr5v41uoe46353k4vn06f9jv4s\nV2 unscoped token, rescoped: http://paste.openstack.org/show/193158/\nV3 validation of rescoped token: http://paste.openstack.org/show/193159/",
+      "parentUuid": "9a80dd14_006e4ec9",
       "revId": "832a7432ac13c621fea38f5d2930954d487ed272",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
