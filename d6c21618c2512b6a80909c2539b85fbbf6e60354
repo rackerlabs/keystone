@@ -34,6 +34,23 @@
       "revId": "d6c21618c2512b6a80909c2539b85fbbf6e60354",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_bc8a0218",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 410,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-18T19:03:54Z",
+      "side": 1,
+      "message": "All these test case dictate behavior that should be consistent regardless of the token provider. We should consider rolling them into a test module that we already have so that we can run the various providers we support against all the different test cases detailed here. \n\nOr we add test modules that inherit IdentityTestPolicySample but setup each provider accordingly.",
+      "revId": "d6c21618c2512b6a80909c2539b85fbbf6e60354",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
