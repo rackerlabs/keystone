@@ -69,6 +69,24 @@
       "revId": "fd752d8ecce3cd16bec31d41b17035d583851ca0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_a0df42d5",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 29
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-18T16:22:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_00e72ee5",
+      "revId": "fd752d8ecce3cd16bec31d41b17035d583851ca0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
