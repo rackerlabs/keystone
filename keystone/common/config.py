@@ -81,7 +81,11 @@ FILE_OPTIONS = {
                    help='This is the role name used in combination with the '
                         'member_role_id option; see that option for more '
                         'detail.'),
-        cfg.IntOpt('crypt_strength', default=40000,
+        # 5000 matches the default used in glibc.  passlib's
+        # default for sha512 at the time of writing is 100000 -- but
+        # they are trying to keep the hash time to a constant 300ms
+        # which is too long for token creation
+        cfg.IntOpt('crypt_strength', default=5000,
                    help='The value passed as the keyword "rounds" to '
                         'passlib\'s encrypt method.'),
         cfg.IntOpt('list_limit',
