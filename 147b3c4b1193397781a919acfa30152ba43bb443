@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_6bcd3d86",
+        "filename": "keystone/cli.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-18T16:20:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_d5c25233",
+      "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_2449c68e",
         "filename": "keystone/cli.py",
         "patchSetId": 23
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-18T02:08:50Z",
       "side": 1,
       "message": "this method can raise exceptions and still have the program not print out a stack trace, just catch the exception and handle it.",
+      "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_abc73563",
+        "filename": "keystone/cli.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-18T16:20:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_2449c68e",
       "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_bed936f6",
+        "filename": "keystone/cli.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-18T16:20:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_4414fa9e",
+      "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_a4d936f6",
         "filename": "keystone/cli.py",
         "patchSetId": 23
@@ -64,6 +118,24 @@
       "writtenOn": "2015-03-18T02:08:50Z",
       "side": 1,
       "message": "When I ran this with\n\n $ bin/keystone-manage domain_config_upload --domain-name something\n\nit doesn\u0027t fail, echo $? shows it exited with 0 status. It should exit with non-zero status.",
+      "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4be079fa",
+        "filename": "keystone/cli.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-18T16:20:43Z",
+      "side": 1,
+      "message": "Fixed",
+      "parentUuid": "9a80dd14_a4d936f6",
       "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_9ed392d4",
+        "filename": "keystone/cli.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 390,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-18T16:20:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_640bbe7d",
+      "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_95ae1a2e",
         "filename": "keystone/cli.py",
         "patchSetId": 23
@@ -98,6 +188,24 @@
       "writtenOn": "2015-03-18T04:08:05Z",
       "side": 1,
       "message": "parse() could raise an exception, add exception handling here",
+      "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_ebd20d33",
+        "filename": "keystone/cli.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 397,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-18T16:20:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_95ae1a2e",
       "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -138,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_cdcf2656",
+        "filename": "keystone/cli.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 422,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-18T16:20:43Z",
+      "side": 1,
+      "message": "yep, it could, but as per previous review comments, for safety, I am keeping the same code structure as where this is used in the identity manager",
+      "parentUuid": "9a80dd14_b51ebe72",
+      "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_c4a9ca26",
         "filename": "keystone/cli.py",
         "patchSetId": 23
@@ -155,6 +281,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_ad003267",
+        "filename": "keystone/cli.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-18T16:20:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_c4a9ca26",
+      "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_10feb805",
         "filename": "keystone/cli.py",
         "patchSetId": 23
@@ -166,6 +310,24 @@
       "writtenOn": "2015-03-18T04:08:05Z",
       "side": 1,
       "message": "choose",
+      "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_6d063a87",
+        "filename": "keystone/cli.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-18T16:20:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_10feb805",
       "revId": "147b3c4b1193397781a919acfa30152ba43bb443",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
