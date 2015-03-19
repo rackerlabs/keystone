@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_b22bf493",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-19T09:00:23Z",
+      "side": 1,
+      "message": "it can be just \"if CONF.token.provider in _FORMAT_TO_PROVIDER.items(): return \u003c...\u003e\".",
+      "revId": "b37f979855666b5c88f2747496b47b946dc0df83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_526f18fc",
+        "filename": "keystone/token/provider.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-19T09:00:23Z",
+      "side": 1,
+      "message": "indentation",
+      "revId": "b37f979855666b5c88f2747496b47b946dc0df83",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
