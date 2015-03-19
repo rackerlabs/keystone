@@ -40,14 +40,12 @@ def set_default_for_default_log_levels():
 
     """
 
-    extra_log_level_defaults = [
-        'dogpile=INFO',
-        'routes=INFO',
-        'keystone.common._memcache_pool=INFO',
-    ]
-
-    log.register_options(CONF)
-    CONF.default_log_levels.extend(extra_log_level_defaults)
+    cfg.set_defaults(log.log_opts,
+                     default_log_levels=['dogpile=INFO',
+                                         'routes=INF',
+                                         'keystone.common._memcache_pool=INF0',
+                                         'eventlet.wsgi.server=WARN',
+                                         ])
 
 
 def setup_logging():
