@@ -451,6 +451,12 @@ FILE_OPTIONS = {
                    default='keystone.resource.config_backends.sql.'
                            'DomainConfig',
                    help='Domain config backend driver.'),
+        cfg.BoolOpt('caching', default=True,
+                    help='Toggle for domain config caching. This has no '
+                         'effect unless global caching is enabled.'),
+        cfg.IntOpt('cache_time', default=300,
+                   help='TTL (in seconds) to domain config data. This has '
+                        'no effect unless global caching is enabled.'),
     ],
     'role': [
         # The role driver has no default for backward compatibility reasons.
