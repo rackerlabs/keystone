@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_05b0e089",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 10917
+      },
+      "writtenOn": "2015-03-19T17:38:47Z",
+      "side": 1,
+      "message": "Shouldn\u0027t this be an en-dash or an em-dash?\n\nhttp://docutils.sourceforge.net/FAQ.html#how-can-i-represent-esoteric-characters-e-g-character-entities-in-a-document",
+      "revId": "f9bcb714ee182c327d2be3a551c3ad2082c2e270",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
