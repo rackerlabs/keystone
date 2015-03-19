@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_ae09b196",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-19T18:27:56Z",
+      "side": 1,
+      "message": "i\u0027m okay with NOTE",
+      "parentUuid": "9a80dd14_4e683588",
+      "revId": "f9bcb714ee182c327d2be3a551c3ad2082c2e270",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_8eddcd16",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-19T18:27:56Z",
+      "side": 1,
+      "message": "s/configured/enabled",
+      "revId": "f9bcb714ee182c327d2be3a551c3ad2082c2e270",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_0ece3d83",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 1
@@ -47,6 +82,23 @@
       "writtenOn": "2015-03-19T18:20:09Z",
       "side": 1,
       "message": "same as above",
+      "revId": "f9bcb714ee182c327d2be3a551c3ad2082c2e270",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_ce08a582",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-19T18:27:56Z",
+      "side": 1,
+      "message": "upload all* configuration",
       "revId": "f9bcb714ee182c327d2be3a551c3ad2082c2e270",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
