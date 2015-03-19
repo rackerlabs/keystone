@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_ee956488",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-19T20:10:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_c9c1a34f",
+      "revId": "c2ef36c3313196cde46241efb5b7566934842159",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_c9b7e31f",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-19T07:00:43Z",
       "side": 1,
       "message": "I personally think we should advise users to always choose per-protocol configuration, and keep configuring this parameter in the [federation] .\nAlso, some explanation why two possible sections in the config would be very useful.",
+      "revId": "c2ef36c3313196cde46241efb5b7566934842159",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_0e9398a3",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-19T20:10:55Z",
+      "side": 1,
+      "message": "Done, i reworded things a bit",
+      "parentUuid": "9a80dd14_c9b7e31f",
       "revId": "c2ef36c3313196cde46241efb5b7566934842159",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
