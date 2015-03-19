@@ -197,7 +197,7 @@ class Application(BaseApplication):
         context = req.environ.get(CONTEXT_ENV, {})
         context['query_string'] = dict(six.iteritems(req.params))
         context['headers'] = dict(six.iteritems(req.headers))
-        context['path'] = req.environ['PATH_INFO']
+        context['path'] = req.environ['RAW_PATH_INFO']
         scheme = (None if not CONF.secure_proxy_ssl_header
                   else req.environ.get(CONF.secure_proxy_ssl_header))
         if scheme:
@@ -228,10 +228,11 @@ class Application(BaseApplication):
         # response code between GET and HEAD requests. The HTTP status should
         # be the same.
         req_method = req.environ['REQUEST_METHOD'].upper()
-        LOG.info('%(req_method)s %(path)s?%(params)s', {
+        LOG.info('%(req_method)s %(path)s%(params)s', {
             'req_method': req_method,
             'path': context['path'],
-            'params': urllib.urlencode(req.params)})
+            'params': '?' + urllib.urlencode(req.params) if req.params else ''}
+        )
 
         params = self._normalize_dict(params)
 
