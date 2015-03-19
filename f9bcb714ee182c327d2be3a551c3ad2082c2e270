@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_9a4fc391",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-19T20:08:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_8eddcd16",
+      "revId": "f9bcb714ee182c327d2be3a551c3ad2082c2e270",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_0ece3d83",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 1
@@ -65,6 +83,24 @@
       "writtenOn": "2015-03-19T18:20:09Z",
       "side": 1,
       "message": "s/Keystone/keystone (naming convention rules: https://wiki.openstack.org/wiki/Documentation/Conventions",
+      "revId": "f9bcb714ee182c327d2be3a551c3ad2082c2e270",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_7a312f0a",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-19T20:08:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_0ece3d83",
       "revId": "f9bcb714ee182c327d2be3a551c3ad2082c2e270",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_fa243fc7",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-19T20:08:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_aed8d153",
+      "revId": "f9bcb714ee182c327d2be3a551c3ad2082c2e270",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_ce08a582",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 1
@@ -105,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_fa0b5f28",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-19T20:08:24Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_ce08a582",
+      "revId": "f9bcb714ee182c327d2be3a551c3ad2082c2e270",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_05b0e089",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 1
@@ -116,6 +188,24 @@
       "writtenOn": "2015-03-19T17:38:47Z",
       "side": 1,
       "message": "Shouldn\u0027t this be an en-dash or an em-dash?\n\nhttp://docutils.sourceforge.net/FAQ.html#how-can-i-represent-esoteric-characters-e-g-character-entities-in-a-document",
+      "revId": "f9bcb714ee182c327d2be3a551c3ad2082c2e270",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_ce6fc0c2",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 249,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-19T20:08:24Z",
+      "side": 1,
+      "message": "changed to a semi-colon anyway...thanks.",
+      "parentUuid": "9a80dd14_05b0e089",
       "revId": "f9bcb714ee182c327d2be3a551c3ad2082c2e270",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
