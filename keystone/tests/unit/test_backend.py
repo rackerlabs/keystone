@@ -5731,6 +5731,30 @@ class LimitTests(filtering.FilterTests):
         entities = self._list_entities(entity)()
         self.assertTrue(len(entities) >= 20)
 
+    def test_list_users_multi_filtered_and_limited(self):
+        # Test combining limit with filtering on enabled and domain, to make
+        # sure that the limit is applied AFTER any filtering
+        self.config_fixture.config(list_limit=15)
+        hints = driver_hints.Hints()
+        hints.add_filter('enabled', True, comparator='equals')
+        hints.add_filter('domain_id', self.domain1['id'])
+        users = self.identity_api.list_users(hints=hints)
+        self.assertEqual(14, len(users))
+
+        # Now mark a bunch of these as not enabled
+        for user in [0, 5, 9, 13]:
+            self.domain1_entity_lists['user'][user]['enabled'] = False
+            self.identity_api.update_user(
+                self.domain1_entity_lists['user'][user]['id'],
+                self.domain1_entity_lists['user'][user])
+
+        self.config_fixture.config(list_limit=12)
+        hints = driver_hints.Hints()
+        hints.add_filter('enabled', True, comparator='equals')
+        hints.add_filter('domain_id', self.domain1['id'])
+        users = self.identity_api.list_users(hints=hints)
+        self.assertEqual(10, len(users))
+
     def test_list_users_filtered_and_limited(self):
         self._test_list_entity_filtered_and_limited('user')
 
