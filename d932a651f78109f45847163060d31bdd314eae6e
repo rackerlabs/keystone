@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_7005dd0e",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 682,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-19T16:08:01Z",
+      "side": 1,
+      "message": "Suggest following this https://www.python.org/dev/peps/pep-0257/#multi-line-docstrings",
+      "revId": "d932a651f78109f45847163060d31bdd314eae6e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
