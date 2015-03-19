@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_4e683588",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-19T18:20:09Z",
+      "side": 1,
+      "message": "Why not using something to catch the attention to specify it is experimental? There are lots of \"NOTES\" in the file.\n\n.. WARNING::",
+      "revId": "f9bcb714ee182c327d2be3a551c3ad2082c2e270",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_0ece3d83",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-19T18:20:09Z",
+      "side": 1,
+      "message": "s/Keystone/keystone (naming convention rules: https://wiki.openstack.org/wiki/Documentation/Conventions",
+      "revId": "f9bcb714ee182c327d2be3a551c3ad2082c2e270",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_aed8d153",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-19T18:20:09Z",
+      "side": 1,
+      "message": "same as above",
+      "revId": "f9bcb714ee182c327d2be3a551c3ad2082c2e270",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_05b0e089",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 1
