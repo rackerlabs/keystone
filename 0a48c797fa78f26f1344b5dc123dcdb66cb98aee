@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_d8eec78a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-03-19T09:30:58Z",
+      "side": 1,
+      "message": "Yes, that\u0027s kind of the point.  The python libraries used issue this warning when not finding subjectAuthName in the cert - and the script fails if keystone is operating over https.",
+      "parentUuid": "9a80dd14_09cd92b7",
+      "revId": "0a48c797fa78f26f1344b5dc123dcdb66cb98aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_89b8a212",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-18T18:40:07Z",
       "side": 1,
       "message": "Interesting indentation going on here.",
+      "revId": "0a48c797fa78f26f1344b5dc123dcdb66cb98aee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b87af3b7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-03-19T09:30:58Z",
+      "side": 1,
+      "message": "I don\u0027t think it\u0027s particularly interesting but I do like it because it adds grouping to the statements.  However, if you want it gone then I shall do that.",
+      "parentUuid": "9a80dd14_89b8a212",
       "revId": "0a48c797fa78f26f1344b5dc123dcdb66cb98aee",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
