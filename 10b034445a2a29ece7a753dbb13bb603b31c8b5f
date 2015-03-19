@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_d91df674",
+        "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-19T03:56:38Z",
+      "side": 1,
+      "message": "this should be broken up into 2 lines",
+      "revId": "10b034445a2a29ece7a753dbb13bb603b31c8b5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_1406751c",
+        "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-19T03:56:38Z",
+      "side": 1,
+      "message": "put this before the other imports in it\u0027s own group",
+      "revId": "10b034445a2a29ece7a753dbb13bb603b31c8b5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b4e04927",
+        "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
+        "patchSetId": 6
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-19T03:56:38Z",
+      "side": 1,
+      "message": "Devstack IdP?",
+      "revId": "10b034445a2a29ece7a753dbb13bb603b31c8b5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_14c75599",
+        "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
+        "patchSetId": 6
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-19T03:56:38Z",
+      "side": 1,
+      "message": "bad indenting here and below",
+      "revId": "10b034445a2a29ece7a753dbb13bb603b31c8b5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_69e44eac",
         "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
         "patchSetId": 6
@@ -13,6 +81,125 @@
       "writtenOn": "2015-03-18T18:50:30Z",
       "side": 1,
       "message": "all you have?",
+      "revId": "10b034445a2a29ece7a753dbb13bb603b31c8b5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f487215f",
+        "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
+        "patchSetId": 6
+      },
+      "lineNbr": 138,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-19T03:56:38Z",
+      "side": 1,
+      "message": "remove this comment and the one above?",
+      "revId": "10b034445a2a29ece7a753dbb13bb603b31c8b5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_74ac11ee",
+        "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
+        "patchSetId": 6
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-19T03:56:38Z",
+      "side": 1,
+      "message": "this is unused, suggest remove?",
+      "revId": "10b034445a2a29ece7a753dbb13bb603b31c8b5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_749331a3",
+        "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
+        "patchSetId": 6
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-19T03:56:38Z",
+      "side": 1,
+      "message": "can you put these up near the top with BASE?",
+      "revId": "10b034445a2a29ece7a753dbb13bb603b31c8b5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f4ee4121",
+        "filename": "dsvm/federation/devstack/files/idp_conf.py.template",
+        "patchSetId": 6
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-19T03:56:38Z",
+      "side": 1,
+      "message": "this is also unused, do you need this and any of the CAS related stuff?",
+      "revId": "10b034445a2a29ece7a753dbb13bb603b31c8b5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_7465f1df",
+        "filename": "dsvm/federation/devstack/lib/pysaml2_idp",
+        "patchSetId": 6
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-19T03:56:38Z",
+      "side": 1,
+      "message": "this also depends on 20-k-pyidp.sh",
+      "revId": "10b034445a2a29ece7a753dbb13bb603b31c8b5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_94ffc5aa",
+        "filename": "dsvm/federation/devstack/lib/pysaml2_idp",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-19T03:56:38Z",
+      "side": 1,
+      "message": "rather than installing pysaml2 with git clone / calling setup_install, maybe we should install it via pypi? so we don\u0027t use the master branch, but rather a released version. mimic\u0027ing what a real deployment would look like.\n\nthis is assuming setup_install doesn\u0027t try that first.",
+      "revId": "10b034445a2a29ece7a753dbb13bb603b31c8b5f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f431e1a2",
+        "filename": "dsvm/federation/devstack/lib/pysaml2_idp",
+        "patchSetId": 6
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-19T03:56:38Z",
+      "side": 1,
+      "message": "the parentheses here are unnecessary, just drop the semi-colon from the line above?",
       "revId": "10b034445a2a29ece7a753dbb13bb603b31c8b5f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
