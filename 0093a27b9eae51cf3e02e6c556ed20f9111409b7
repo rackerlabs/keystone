@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_4a72067d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-19T05:44:34Z",
+      "side": 1,
+      "message": "the BP is already marked complete, if you feel it\u0027s necessary to open a bug/bp for docs then let me know, but i don\u0027t want to have to open a bug for every change (unless it\u0027s actually a functional bug)",
+      "parentUuid": "9a80dd14_6b5a622b",
+      "revId": "0093a27b9eae51cf3e02e6c556ed20f9111409b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_a8cc608a",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 3
@@ -71,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_2ab6b2f9",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-19T05:44:34Z",
+      "side": 1,
+      "message": "i changed up this section to reflect the comments",
+      "parentUuid": "9a80dd14_c532485d",
+      "revId": "0093a27b9eae51cf3e02e6c556ed20f9111409b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_8826bccc",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 3
@@ -105,6 +141,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_0aa80e8b",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-19T05:44:34Z",
+      "side": 1,
+      "message": "i\u0027d have to talk to you about this one, i\u0027m a bit unclear, but if you want to add in some content please go ahead and do so (override this patch or attach a follow-on)",
+      "parentUuid": "9a80dd14_2b54eafd",
+      "revId": "0093a27b9eae51cf3e02e6c556ed20f9111409b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_78505232",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 3
@@ -116,6 +170,24 @@
       "writtenOn": "2015-03-13T19:46:49Z",
       "side": 1,
       "message": "this have to be set as well to tell horizon the keystone api version: https://github.com/openstack/horizon/blob/master/openstack_dashboard/local/local_settings.py.example#L50\n\nOPENSTACK_API_VERSIONS \u003d {\n    \"identity\": 3,\n}",
+      "revId": "0093a27b9eae51cf3e02e6c556ed20f9111409b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_2a287232",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-19T05:44:34Z",
+      "side": 1,
+      "message": "done! thanks i knew i forgot something",
+      "parentUuid": "9a80dd14_78505232",
       "revId": "0093a27b9eae51cf3e02e6c556ed20f9111409b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
