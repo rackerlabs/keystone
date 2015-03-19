@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_f39f054e",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 578,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-19T23:37:51Z",
+      "side": 1,
+      "message": "\u0027text\u0027 needs to have a configurable prefix as it is depended on how the Session is configured at the SP side.",
+      "revId": "761670353a674909954f235521b2411e1fc0026d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
