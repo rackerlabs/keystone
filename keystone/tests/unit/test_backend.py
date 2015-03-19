@@ -5609,6 +5609,17 @@ class FilterTests(filtering.FilterTests):
         # For LDAP/AD, although dependent on the schema being used, attributes
         # are typically configured to be case aware, but not case sensitive.
 
+        # Test combining limit with filtering on name, to make sure that the
+        # limit is applied AFTER any filtering
+        hints = driver_hints.Hints()
+        hints.add_filter('name', 'of', comparator='endswith')
+        hints.set_limit(3)
+        users = self.identity_api.list_users(hints=hints)
+        self.assertEqual(2, len(users))
+        # We can't assume we will get back the users in any particular order
+        self.assertIn(user_list[7]['id'], [users[0]['id'], users[1]['id']])
+        self.assertIn(user_list[10]['id'], [users[0]['id'], users[1]['id']])
+
         self._delete_test_data('user', user_list)
 
     def test_groups_for_user_filtered(self):
