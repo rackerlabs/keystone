@@ -17,13 +17,13 @@ import copy
 import functools
 import random
 
-import mock
 from oslo_config import cfg
 from oslo_serialization import jsonutils
 from testtools import matchers as tt_matchers
 
+from keystone.api.common import controller
+from keystone.api import root
 from keystone.common import json_home
-from keystone import controllers
 from keystone.tests import unit as tests
 
 
@@ -634,6 +634,7 @@ class _VersionsEqual(tt_matchers.MatchesListwise):
 class VersionTestCase(tests.TestCase):
     def setUp(self):
         super(VersionTestCase, self).setUp()
+        root.clear_versions()
         self.load_backends()
         self.public_app = self.loadapp('keystone', 'main')
         self.admin_app = self.loadapp('keystone', 'admin')
@@ -772,9 +773,11 @@ class VersionTestCase(tests.TestCase):
             self._paste_in_port(expected['version'], 'http://localhost/v3/')
             self.assertEqual(expected, data)
 
-    @mock.patch.object(controllers, '_VERSIONS', ['v3'])
     def test_v2_disabled(self):
-        client = tests.TestClient(self.public_app)
+        root.clear_versions()
+        config = tests.dirs.tests_conf('v3-only-paste.conf')
+        app = self.loadapp('config:%s' % config, 'main')
+        client = tests.TestClient(app)
         # request to /v2.0 should fail
         resp = client.get('/v2.0/')
         self.assertEqual(404, resp.status_int)
@@ -805,9 +808,11 @@ class VersionTestCase(tests.TestCase):
         data = jsonutils.loads(resp.body)
         self.assertEqual(v3_only_response, data)
 
-    @mock.patch.object(controllers, '_VERSIONS', ['v2.0'])
     def test_v3_disabled(self):
-        client = tests.TestClient(self.public_app)
+        root.clear_versions()
+        config = tests.dirs.tests_conf('v2-only-paste.conf')
+        app = self.loadapp('config:%s' % config, 'main')
+        client = tests.TestClient(app)
         # request to /v3 should fail
         resp = client.get('/v3/')
         self.assertEqual(404, resp.status_int)
@@ -838,13 +843,15 @@ class VersionTestCase(tests.TestCase):
         data = jsonutils.loads(resp.body)
         self.assertEqual(v2_only_response, data)
 
-    def _test_json_home(self, path, exp_json_home_data):
-        client = tests.TestClient(self.public_app)
+    def _test_json_home(self, path, exp_json_home_data, app=None):
+        if not app:
+            app = self.public_app
+        client = tests.TestClient(app)
         resp = client.get(path, headers={'Accept': 'application/json-home'})
 
         self.assertThat(resp.status, tt_matchers.Equals('200 OK'))
-        self.assertThat(resp.headers['Content-Type'],
-                        tt_matchers.Equals('application/json-home'))
+        self.assertThat(resp.content_type,
+                        tt_matchers.StartsWith('application/json-home'))
 
         self.assertThat(jsonutils.loads(resp.body),
                         tt_matchers.Equals(exp_json_home_data))
@@ -871,17 +878,17 @@ class VersionTestCase(tests.TestCase):
     def test_accept_type_handling(self):
         # Accept headers with multiple types and qvalues are handled.
 
-        def make_request(accept_types=None):
+        def make_request(accept_types=None, status='200 OK'):
             client = tests.TestClient(self.public_app)
             headers = None
             if accept_types:
                 headers = {'Accept': accept_types}
             resp = client.get('/v3', headers=headers)
-            self.assertThat(resp.status, tt_matchers.Equals('200 OK'))
-            return resp.headers['Content-Type']
+            self.assertThat(resp.status, tt_matchers.Equals(status))
+            return resp.content_type
 
-        JSON = controllers.MimeTypes.JSON
-        JSON_HOME = controllers.MimeTypes.JSON_HOME
+        JSON = controller.JSON
+        JSON_HOME = controller.JSON_HOME
 
         JSON_MATCHER = tt_matchers.Equals(JSON)
         JSON_HOME_MATCHER = tt_matchers.Equals(JSON_HOME)
@@ -908,18 +915,15 @@ class VersionTestCase(tests.TestCase):
         self.assertThat(make_request(accept_types), JSON_HOME_MATCHER)
 
         # If request some unknown mime-type, get JSON.
-        self.assertThat(make_request(self.getUniqueString()), JSON_MATCHER)
+        self.assertThat(make_request(self.getUniqueString(),
+                                     '406 Not Acceptable'), JSON_MATCHER)
 
-    @mock.patch.object(controllers, '_VERSIONS', [])
     def test_no_json_home_document_returned_when_v3_disabled(self):
-        json_home_document = controllers.request_v3_json_home('some_prefix')
-        expected_document = {'resources': {}}
-        self.assertEqual(expected_document, json_home_document)
-
-    def test_extension_property_method_returns_none(self):
-        extension_obj = controllers.Extensions()
-        extensions_property = extension_obj.extensions
-        self.assertIsNone(extensions_property)
+        root.clear_versions()
+        config = tests.dirs.tests_conf('v2-only-paste.conf')
+        app = self.loadapp('config:%s' % config, 'main')
+        exp_json_home_data = {'resources': {}}
+        self._test_json_home('/', exp_json_home_data, app=app)
 
 
 class VersionSingleAppTestCase(tests.TestCase):
@@ -1001,7 +1005,7 @@ class VersionInheritEnabledTestCase(tests.TestCase):
         resp = client.get('/v3/', headers={'Accept': 'application/json-home'})
 
         self.assertThat(resp.status, tt_matchers.Equals('200 OK'))
-        self.assertThat(resp.headers['Content-Type'],
+        self.assertThat(resp.content_type,
                         tt_matchers.Equals('application/json-home'))
 
         exp_json_home_data = {

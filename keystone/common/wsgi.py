@@ -188,7 +188,7 @@ class BaseApplication(object):
 @dependency.requires('assignment_api', 'policy_api', 'token_provider_api')
 class Application(BaseApplication):
     @webob.dec.wsgify()
-    def __call__(self, req):
+    def __call__(self, req, pecaned=False):
         arg_dict = req.environ['wsgiorg.routing_args'][1]
         action = arg_dict.pop('action')
         del arg_dict['controller']
@@ -236,27 +236,40 @@ class Application(BaseApplication):
 
         try:
             result = method(context, **params)
-        except exception.Unauthorized as e:
-            LOG.warning(
-                _LW("Authorization failed. %(exception)s from "
-                    "%(remote_addr)s"),
-                {'exception': e, 'remote_addr': req.environ['REMOTE_ADDR']})
-            return render_exception(e, context=context,
-                                    user_locale=best_match_language(req))
-        except exception.Error as e:
-            LOG.warning(six.text_type(e))
-            return render_exception(e, context=context,
-                                    user_locale=best_match_language(req))
-        except TypeError as e:
-            LOG.exception(six.text_type(e))
-            return render_exception(exception.ValidationError(e),
-                                    context=context,
-                                    user_locale=best_match_language(req))
         except Exception as e:
-            LOG.exception(six.text_type(e))
-            return render_exception(exception.UnexpectedError(exception=e),
-                                    context=context,
-                                    user_locale=best_match_language(req))
+            if pecaned:
+                # NOTE(jamielennox): This request was called from a Pecan
+                # controller, so it will go through pecan processing so don't
+                # do any of the home grown handling we do.
+                raise
+
+            if isinstance(e, exception.Unauthorized):
+                param = {'exception': e,
+                         'remote_addr': req.environ['REMOTE_ADDR']}
+                LOG.warning(_LW('Authorization failed. %(exception)s '
+                                'from %(remote_addr)s'), param)
+                return render_exception(e, context=context,
+                                        user_locale=best_match_language(req))
+            elif isinstance(e, exception.Error):
+                LOG.warning(six.text_type(e))
+                return render_exception(e, context=context,
+                                        user_locale=best_match_language(req))
+            elif isinstance(e, TypeError):
+                LOG.exception(six.text_type(e))
+                return render_exception(exception.ValidationError(e),
+                                        context=context,
+                                        user_locale=best_match_language(req))
+            else:
+                LOG.exception(six.text_type(e))
+                return render_exception(exception.UnexpectedError(exception=e),
+                                        context=context,
+                                        user_locale=best_match_language(req))
+
+        if pecaned:
+            # NOTE(jamielennox): This request was called from a Pecan
+            # controller, so it will go through pecan processing so don't
+            # do any of the home grown handling we do.
+            return result
 
         if result is None:
             return render_response(status=(204, 'No Content'))
@@ -702,6 +715,9 @@ class RoutersBase(object):
 
         self.v3_resources.append((rel, resource_data))
 
+    def get_json_home_data(self):
+        return dict(r for r in self.v3_resources)
+
 
 class V3ExtensionRouter(ExtensionRouter, RoutersBase):
     """Base class for V3 extension router."""
@@ -725,7 +741,7 @@ class V3ExtensionRouter(ExtensionRouter, RoutersBase):
             # The request failed, so don't update the response.
             return response
 
-        if response.headers['Content-Type'] != 'application/json-home':
+        if response.content_type != 'application/json-home':
             # Not a request for JSON Home document, so don't update the
             # response.
             return response
