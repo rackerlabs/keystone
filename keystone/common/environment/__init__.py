@@ -15,10 +15,12 @@
 import functools
 import os
 
+from oslo_config import cfg
 from oslo_log import log
 
 
 LOG = log.getLogger(__name__)
+CONF = cfg.CONF
 
 
 __all__ = ['Server', 'httplib', 'subprocess']
@@ -74,7 +76,7 @@ def use_eventlet(monkeypatch_thread=None):
         monkeypatch_thread = not os.getenv('STANDARD_THREADS')
 
     # Raise the default from 8192 to accommodate large tokens
-    eventlet.wsgi.MAX_HEADER_LINE = 16384
+    eventlet.wsgi.MAX_HEADER_LINE = CONF.max_header_line
 
     # NOTE(ldbragst): Explicitly declare what should be monkey patched and
     # what shouldn't. Doing this allows for more readable code when
