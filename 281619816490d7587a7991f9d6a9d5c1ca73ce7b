@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_54b512eb",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2015-03-20T05:54:01Z",
+      "side": 1,
+      "message": "They are URLs, not hostnames.",
+      "revId": "281619816490d7587a7991f9d6a9d5c1ca73ce7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_7496964d",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2015-03-20T05:54:01Z",
+      "side": 1,
+      "message": "Maybe say \"about the identity of the identity provider\"?",
+      "revId": "281619816490d7587a7991f9d6a9d5c1ca73ce7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f4bb66e2",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2015-03-20T05:54:01Z",
+      "side": 1,
+      "message": "(nit) s/generics/generic/",
+      "revId": "281619816490d7587a7991f9d6a9d5c1ca73ce7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_94cdca5f",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2015-03-20T05:54:01Z",
+      "side": 1,
+      "message": "To make this more clear, I would say \"it is necessary to set the keystone IdP entry\u0027s `remote_id` to the value that will be returned from the `remote_id_attribute` key.\n\nIf multiple remote IDs make it into Kilo, you will want to adjust the wording slightly.",
+      "revId": "281619816490d7587a7991f9d6a9d5c1ca73ce7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_74f9367f",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2015-03-20T05:54:01Z",
+      "side": 1,
+      "message": "The remote ID, not just ID.",
+      "revId": "281619816490d7587a7991f9d6a9d5c1ca73ce7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f42c4604",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2015-03-20T05:54:01Z",
+      "side": 1,
+      "message": "(nit) ...or claim in the case of OpenID Connect.",
+      "revId": "281619816490d7587a7991f9d6a9d5c1ca73ce7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b4464ebe",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2015-03-20T05:54:01Z",
+      "side": 1,
+      "message": "Add \"option\" - \"Ensure the `WEBSSO_ENABLED` option is set...\"",
+      "revId": "281619816490d7587a7991f9d6a9d5c1ca73ce7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_74277612",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2015-03-20T05:54:01Z",
+      "side": 1,
+      "message": "\"...with the `WEBSSO_CHOICES` option.\"",
+      "revId": "281619816490d7587a7991f9d6a9d5c1ca73ce7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_147e3ae4",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2015-03-20T05:54:01Z",
+      "side": 1,
+      "message": "\"...with the `WEBSSO_INITIAL_CHOICE` option.\"",
+      "revId": "281619816490d7587a7991f9d6a9d5c1ca73ce7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d46f4226",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 6
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 9098
+      },
+      "writtenOn": "2015-03-20T05:54:01Z",
+      "side": 1,
+      "message": "Also add \"option\" in this paragraph for consistency.",
+      "revId": "281619816490d7587a7991f9d6a9d5c1ca73ce7b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
