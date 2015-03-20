@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_2165bd44",
+        "filename": "keystone/common/environment/__init__.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 5334
+      },
+      "writtenOn": "2015-03-20T08:34:10Z",
+      "side": 1,
+      "message": "It will be good to import modules in alphabetical order,  oslo_config above oslo_log module.",
+      "revId": "ab6f0844aee43652fbab2bd10296435b62785e71",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
