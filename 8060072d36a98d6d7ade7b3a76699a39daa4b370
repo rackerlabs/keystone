@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "9a80dd14_a11c3678",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 67
+      },
+      "writtenOn": "2015-03-20T18:06:35Z",
+      "side": 1,
+      "message": "s/singer/signer/",
+      "range": {
+        "startLine": 15,
+        "startChar": 21,
+        "endLine": 15,
+        "endChar": 27
+      },
+      "revId": "8060072d36a98d6d7ade7b3a76699a39daa4b370",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_61507e2c",
         "filename": "keystone/contrib/ec2/controllers.py",
         "patchSetId": 8
