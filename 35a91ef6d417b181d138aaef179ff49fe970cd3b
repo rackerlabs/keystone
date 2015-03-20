@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_377edbe4",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/007_add_relay_state_to_sp.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-20T09:24:37Z",
+      "side": 1,
+      "message": "We make it nullable, but in fact if the value is not provided controoler will set it to some default hardocded value.  So I don\u0027t see any way for this attribute to be value, maybe we then should mark it nullable\u003dFalse ?",
+      "revId": "35a91ef6d417b181d138aaef179ff49fe970cd3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
