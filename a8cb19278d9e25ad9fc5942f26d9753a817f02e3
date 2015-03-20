@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_6b1dc7bd",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-20T13:45:51Z",
+      "side": 1,
+      "message": "s/where/were",
+      "revId": "a8cb19278d9e25ad9fc5942f26d9753a817f02e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
