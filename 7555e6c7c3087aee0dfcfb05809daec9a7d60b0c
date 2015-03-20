@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_131734a4",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-20T03:18:18Z",
+      "side": 1,
+      "message": "RELAY_STATE_DEFAULT_PREFIX \u003d \u0027ss:mem:\u0027\n\nthe colon should be part of the prefix",
+      "revId": "7555e6c7c3087aee0dfcfb05809daec9a7d60b0c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
