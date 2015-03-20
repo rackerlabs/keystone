@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_4eb1ec8d",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-20T15:33:09Z",
+      "side": 1,
+      "message": "What data structure are the filters here?",
+      "revId": "da86480c90547a61bdf2783cae98e34b7c7bf994",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_ce96bcef",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-20T15:33:09Z",
+      "side": 1,
+      "message": "nit: are we passing one filter here, or multiple? Suggest renaming to the following if so: \n\n    for filter in all_filteres:",
+      "revId": "da86480c90547a61bdf2783cae98e34b7c7bf994",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
