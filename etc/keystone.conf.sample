@@ -38,6 +38,10 @@
 # (integer value)
 #max_token_size = 8192
 
+# Maximum line size of message headers to be accepted.
+# (integer value)
+#max_header_line = 16384
+
 # Similar to the member_role_name option, this represents the default role ID
 # used to associate users with their default projects in the v2 API. This will
 # be used as the explicit role where one is not specified by the v2 API.
