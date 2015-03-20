@@ -62,6 +62,8 @@ FILE_OPTIONS = {
         cfg.IntOpt('max_token_size', default=8192,
                    help='Similar to max_param_size, but provides an '
                         'exception for token values.'),
+        cfg.IntOpt('max_header_line', default=16384,
+                   help="Maximum line size of message headers to be accepted. ")
         cfg.StrOpt('member_role_id',
                    default='9fe2ff9ee4384b1894a90878d3e92bab',
                    help='Similar to the member_role_name option, this '
