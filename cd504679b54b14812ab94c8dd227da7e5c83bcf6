@@ -16,6 +16,24 @@
       "revId": "cd504679b54b14812ab94c8dd227da7e5c83bcf6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_73221902",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1141,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-20T15:09:00Z",
+      "side": 1,
+      "message": "that\u0027s strictly true - although in general we tend to not try and directly update the cache on an update - we usually do just invalidate (see other examples for project/domain in this file). For that reason, I didn\u0027t repeat the comment here",
+      "parentUuid": "9a80dd14_3dd230d1",
+      "revId": "cd504679b54b14812ab94c8dd227da7e5c83bcf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
