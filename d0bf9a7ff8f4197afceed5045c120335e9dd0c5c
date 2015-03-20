@@ -33,6 +33,41 @@
       "revId": "d0bf9a7ff8f4197afceed5045c120335e9dd0c5c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_b3dd71df",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 360,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-20T15:11:51Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "3a961159_c3643524",
+      "revId": "d0bf9a7ff8f4197afceed5045c120335e9dd0c5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_33e9817f",
+        "filename": "keystone/tests/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 769,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-20T15:11:51Z",
+      "side": 1,
+      "message": "doesn\u0027t*",
+      "revId": "d0bf9a7ff8f4197afceed5045c120335e9dd0c5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
