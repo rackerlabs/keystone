@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_d36e7c63",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 367,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-20T03:11:30Z",
+      "side": 1,
+      "message": "should we default this to \u0027ss:mem:\u0027 as our doc recommended relaystate to \u0027ss:mem\u0027?",
+      "revId": "ab1ae047d1f01110da930addd89a22ac494b1afc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_13d81452",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 6
