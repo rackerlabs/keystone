@@ -75,6 +75,27 @@ class Error(Exception):
         return message
 
 
+class WebObException(Error):
+    """Convert a WebOb exception into something translatable.
+
+    This generally implies a message that came from pecan.
+    """
+
+    message_format = "%(exc)s"
+
+    def __init__(self, exc):
+        super(Error, self).__init__(str(exc))
+        self.exc = exc
+
+    @property
+    def code(self):
+        return self.exc.code
+
+    @property
+    def title(self):
+        return self.exc.title
+
+
 class ValidationError(Error):
     message_format = _("Expecting to find %(attribute)s in %(target)s -"
                        " the server could not comply with the request"
