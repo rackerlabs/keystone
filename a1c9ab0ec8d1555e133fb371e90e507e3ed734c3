@@ -34,6 +34,24 @@
       "revId": "a1c9ab0ec8d1555e133fb371e90e507e3ed734c3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_33e8a1b2",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-20T15:06:25Z",
+      "side": 1,
+      "message": "++ that\u0027s a good point.",
+      "parentUuid": "3a961159_99634eb0",
+      "revId": "a1c9ab0ec8d1555e133fb371e90e507e3ed734c3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
