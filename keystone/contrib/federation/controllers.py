@@ -269,11 +269,14 @@ class Auth(auth_controllers.Auth):
     def federated_sso_auth(self, context, protocol_id):
         try:
             remote_id_name = CONF.federation.remote_id_attribute
-            identity_provider = context['environment'][remote_id_name]
+            remote_id = context['environment'][remote_id_name]
         except KeyError:
             msg = _('Missing entity ID from environment')
             LOG.error(msg)
             raise exception.Unauthorized(msg)
+
+        ref = self.federation_api.get_idp_from_remote_id(remote_id)
+        identity_provider = ref['id']
 
         if 'origin' in context['query_string']:
             origin = context['query_string'].get('origin')
