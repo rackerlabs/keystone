@@ -16,6 +16,24 @@
       "revId": "35a91ef6d417b181d138aaef179ff49fe970cd3b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_2eacb89e",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/007_add_relay_state_to_sp.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-20T15:24:36Z",
+      "side": 1,
+      "message": "Edge case time... what if the user has their shib set to a prefix of \"\". Now i\u0027m wondering how to satisfy that...",
+      "parentUuid": "9a80dd14_377edbe4",
+      "revId": "35a91ef6d417b181d138aaef179ff49fe970cd3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
