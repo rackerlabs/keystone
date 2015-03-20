@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_844665be",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-20T16:11:15Z",
+      "side": 1,
+      "message": "so certainly for users and groups we let the DomainNotFound escape, rather than suppressing it...is there a reason to do it differently here (or maybe you think the users/groups version is wrong!)",
+      "revId": "0dbe4e9627ad2dd5910561eceecdc0ee386aeef4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
