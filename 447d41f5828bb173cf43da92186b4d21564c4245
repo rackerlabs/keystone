@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_17d5571b",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2015-03-20T09:17:42Z",
+      "side": 1,
+      "message": "Keystone with capital letter. Check the same issue in the full document",
+      "revId": "447d41f5828bb173cf43da92186b4d21564c4245",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_d7bbbf0c",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2015-03-20T09:17:42Z",
+      "side": 1,
+      "message": "\"provider\" 2 times?",
+      "revId": "447d41f5828bb173cf43da92186b4d21564c4245",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_37a6dbc1",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2015-03-20T09:17:42Z",
+      "side": 1,
+      "message": "Horizon capital letter",
+      "revId": "447d41f5828bb173cf43da92186b4d21564c4245",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
