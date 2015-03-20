@@ -34,6 +34,24 @@
       "revId": "35a91ef6d417b181d138aaef179ff49fe970cd3b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_df0904de",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/007_add_relay_state_to_sp.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-20T16:27:44Z",
+      "side": 1,
+      "message": "If I am reading the doc correctly, the relaystate attribute is optional.\n\nhttps://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPSessions\n\nBut \"ss:mem:\" is the recommended setting as it utilizes SP\u0027s in-memory cache to preserve the original request.",
+      "parentUuid": "9a80dd14_2eacb89e",
+      "revId": "35a91ef6d417b181d138aaef179ff49fe970cd3b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
