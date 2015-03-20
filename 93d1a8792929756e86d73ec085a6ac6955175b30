@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_eb0c57ee",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2850,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-20T13:26:38Z",
+      "side": 1,
+      "message": "nit: /auth/OS-FEDERATION/saml2/ecp",
+      "revId": "93d1a8792929756e86d73ec085a6ac6955175b30",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
