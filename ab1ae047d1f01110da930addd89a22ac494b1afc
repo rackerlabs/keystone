@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_53360c52",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 576,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-20T03:16:00Z",
+      "side": 1,
+      "message": "sorry I think this should be \n\nrelay_state_text \u003d relay_state_prefix + uuid.uuid4().hex\n\nthe colon should be part of the prefix itself.",
+      "revId": "ab1ae047d1f01110da930addd89a22ac494b1afc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_13d81452",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 6
