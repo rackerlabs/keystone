@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_1aaac070",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-20T21:37:16Z",
+      "side": 1,
+      "message": "you\u0027re gonna hate me, but can we bring back the unique id concept? i think it\u0027s essential, i\u0027m so sorry!",
+      "revId": "ca67d8736e87d2023782a346ea68a5d0dc4de89d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
