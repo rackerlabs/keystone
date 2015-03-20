@@ -16,6 +16,24 @@
       "revId": "0dbe4e9627ad2dd5910561eceecdc0ee386aeef4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_7b2cab02",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-20T17:01:44Z",
+      "side": 1,
+      "message": "this was dstanek\u0027s suggestion, I agree with him that this should be a Bad Request, and since we pass the previous exception, the message is also meaningful",
+      "parentUuid": "9a80dd14_844665be",
+      "revId": "0dbe4e9627ad2dd5910561eceecdc0ee386aeef4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
