@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_d4df4264",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-20T05:35:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_b9c5675d",
+      "revId": "5f87a377a504a0431180b1c944e0f5ad2bc53937",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_d9c05b4c",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 5
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9a80dd14_14d55a42",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-20T05:35:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_d9c05b4c",
+      "revId": "5f87a377a504a0431180b1c944e0f5ad2bc53937",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_b99c876b",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 5
@@ -47,6 +83,24 @@
       "writtenOn": "2015-03-20T04:45:55Z",
       "side": 1,
       "message": "local_settings.py",
+      "revId": "5f87a377a504a0431180b1c944e0f5ad2bc53937",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_34c89ea7",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-20T05:35:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_b99c876b",
       "revId": "5f87a377a504a0431180b1c944e0f5ad2bc53937",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
