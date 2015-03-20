@@ -16,6 +16,24 @@
       "revId": "ca67d8736e87d2023782a346ea68a5d0dc4de89d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_f87c1422",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-20T22:48:38Z",
+      "side": 1,
+      "message": "It\u0027s ok Steve, don\u0027t worry :-)\nAnyway, isn\u0027t primary_key\u003dTrue already assuring that the remote_id will be unique per se? \nMy understanding from this commento-convo was that it\u0027s a debate \"why add unique\u003dTrue since we already have primary_key\u003dTrue\". Otherwise I\u0027d stand still and defend remote_id uniqueness :-)",
+      "parentUuid": "9a80dd14_1aaac070",
+      "revId": "ca67d8736e87d2023782a346ea68a5d0dc4de89d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
