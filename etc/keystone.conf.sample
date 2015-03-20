@@ -763,7 +763,7 @@
 # always leave this set to true. (boolean value)
 #enable_key_mangler = true
 
-# Default lock timeout for distributed locking. (integer value)
+# Default lock timeout (in seconds) for distributed locking. (integer value)
 #default_lock_timeout = 5
 
 
