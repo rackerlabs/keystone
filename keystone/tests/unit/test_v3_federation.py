@@ -31,6 +31,7 @@ from keystone.auth import controllers as auth_controllers
 from keystone.auth.plugins import mapped
 from keystone.contrib import federation
 from keystone.contrib.federation import controllers as federation_controllers
+from keystone.contrib.federation import core as federation_core
 from keystone.contrib.federation import idp as keystone_idp
 from keystone.contrib.federation import utils as mapping_utils
 from keystone import exception
@@ -3255,7 +3256,8 @@ class ServiceProviderTests(FederationTests):
     MEMBER_NAME = 'service_provider'
     COLLECTION_NAME = 'service_providers'
     SERVICE_PROVIDER_ID = 'ACME'
-    SP_KEYS = ['auth_url', 'id', 'enabled', 'description', 'sp_url']
+    SP_KEYS = ['auth_url', 'id', 'enabled', 'description',
+               'relay_state_prefix', 'sp_url']
 
     def setUp(self):
         super(FederationTests, self).setUp()
@@ -3272,6 +3274,7 @@ class ServiceProviderTests(FederationTests):
             'enabled': True,
             'description': uuid.uuid4().hex,
             'sp_url': 'https://' + uuid.uuid4().hex + '.com',
+            'relay_state_prefix': federation_core.RELAY_STATE_DEFAULT_PREFIX
         }
         return ref
 
@@ -3297,6 +3300,29 @@ class ServiceProviderTests(FederationTests):
                         expected_status=201)
         self.assertValidEntity(resp.result['service_provider'],
                                keys_to_check=self.SP_KEYS)
+
+    def test_create_sp_relay_state_default(self):
+        """Create an SP without relay state, should default to `ss:mem`."""
+        url = self.base_url(suffix=uuid.uuid4().hex)
+        sp = self.sp_ref()
+        del sp['relay_state_prefix']
+        resp = self.put(url, body={'service_provider': sp},
+                        expected_status=201)
+        sp_result = resp.result['service_provider']
+        self.assertEqual(federation_core.RELAY_STATE_DEFAULT_PREFIX,
+                         sp_result['relay_state_prefix'])
+
+    def test_create_sp_relay_state_non_default(self):
+        """Create an SP with custom relay state."""
+        url = self.base_url(suffix=uuid.uuid4().hex)
+        sp = self.sp_ref()
+        non_default_prefix = uuid.uuid4().hex
+        sp['relay_state_prefix'] = non_default_prefix
+        resp = self.put(url, body={'service_provider': sp},
+                        expected_status=201)
+        sp_result = resp.result['service_provider']
+        self.assertEqual(non_default_prefix,
+                         sp_result['relay_state_prefix'])
 
     def test_create_service_provider_fail(self):
         """Try adding SP object with unallowed attribute."""
@@ -3386,6 +3412,18 @@ class ServiceProviderTests(FederationTests):
         url = self.base_url(suffix=uuid.uuid4().hex)
         self.patch(url, body={'service_provider': new_sp_ref},
                    expected_status=404)
+
+    def test_update_sp_relay_state(self):
+        """Update an SP with custome relay state."""
+        new_sp_ref = self.sp_ref()
+        non_default_prefix = uuid.uuid4().hex
+        new_sp_ref['relay_state_prefix'] = non_default_prefix
+        url = self.base_url(suffix=self.SERVICE_PROVIDER_ID)
+        resp = self.patch(url, body={'service_provider': new_sp_ref},
+                          expected_status=200)
+        sp_result = resp.result['service_provider']
+        self.assertEqual(non_default_prefix,
+                         sp_result['relay_state_prefix'])
 
     def test_delete_service_provider(self):
         url = self.base_url(suffix=self.SERVICE_PROVIDER_ID)

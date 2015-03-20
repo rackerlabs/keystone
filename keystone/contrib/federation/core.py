@@ -45,6 +45,7 @@ FEDERATION = 'OS-FEDERATION'
 IDENTITY_PROVIDER = 'OS-FEDERATION:identity_provider'
 PROTOCOL = 'OS-FEDERATION:protocol'
 FEDERATED_DOMAIN_KEYWORD = 'Federated'
+RELAY_STATE_DEFAULT_PREFIX = CONF.saml.relay_state_prefix
 
 
 @dependency.provider('federation_api')
