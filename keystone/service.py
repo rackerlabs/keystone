@@ -18,20 +18,12 @@ import sys
 from oslo_config import cfg
 from oslo_log import log
 from paste import deploy
-import routes
+import pecan
 
-from keystone import assignment
-from keystone import auth
-from keystone import catalog
-from keystone.common import wsgi
+from keystone.api.common import hooks
+from keystone.api.common import render
+from keystone.api import root
 from keystone import controllers
-from keystone import credential
-from keystone import identity
-from keystone import policy
-from keystone import resource
-from keystone import routers
-from keystone import token
-from keystone import trust
 
 
 CONF = cfg.CONF
@@ -62,57 +54,39 @@ def fail_gracefully(f):
     return wrapper
 
 
+def make_app(controller, **kwargs):
+    # NOTE(jamielennox): Reset global pecan config. Works around some strange
+    # edge cases with running two pecan apps in the same namespace in testing.
+    pecan.set_config({'app': {}}, overwrite=True)
+
+    kwargs['custom_renderers'] = {'keystone': render.KeystoneRenderer}
+    kwargs.setdefault('hooks', []).append(hooks.ProcessHook())
+    return pecan.make_app(controller, **kwargs)
+
+
 @fail_gracefully
 def public_app_factory(global_conf, **local_conf):
-    controllers.register_version('v2.0')
-    return wsgi.ComposingRouter(routes.Mapper(),
-                                [assignment.routers.Public(),
-                                 token.routers.Router(),
-                                 routers.VersionV2('public'),
-                                 routers.Extension(False)])
+    root.register_version('v2.0')
+    return make_app('keystone.api.v2.PublicRootController')
 
 
 @fail_gracefully
 def admin_app_factory(global_conf, **local_conf):
-    controllers.register_version('v2.0')
-    return wsgi.ComposingRouter(routes.Mapper(),
-                                [identity.routers.Admin(),
-                                 assignment.routers.Admin(),
-                                    token.routers.Router(),
-                                    resource.routers.Admin(),
-                                    routers.VersionV2('admin'),
-                                    routers.Extension()])
+    root.register_version('v2.0')
+    return make_app('keystone.api.v2.AdminRootController')
 
 
 @fail_gracefully
 def public_version_app_factory(global_conf, **local_conf):
-    return wsgi.ComposingRouter(routes.Mapper(),
-                                [routers.Versions('public')])
+    return make_app('keystone.api.root.PublicRootController')
 
 
 @fail_gracefully
 def admin_version_app_factory(global_conf, **local_conf):
-    return wsgi.ComposingRouter(routes.Mapper(),
-                                [routers.Versions('admin')])
+    return make_app('keystone.api.root.AdminRootController')
 
 
 @fail_gracefully
 def v3_app_factory(global_conf, **local_conf):
-    controllers.register_version('v3')
-    mapper = routes.Mapper()
-    sub_routers = []
-    _routers = []
-
-    router_modules = [assignment, auth, catalog, credential, identity, policy,
-                      resource]
-    if CONF.trust.enabled:
-        router_modules.append(trust)
-
-    for module in router_modules:
-        routers_instance = module.routers.Routers()
-        _routers.append(routers_instance)
-        routers_instance.append_v3_routers(mapper, sub_routers)
-
-    # Add in the v3 version api
-    sub_routers.append(routers.VersionV3('public', _routers))
-    return wsgi.ComposingRouter(mapper, sub_routers)
+    root.register_version('v3')
+    return make_app('keystone.api.v3.RootController')

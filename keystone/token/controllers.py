@@ -20,6 +20,7 @@ from oslo_config import cfg
 from oslo_log import log
 from oslo_serialization import jsonutils
 from oslo_utils import timeutils
+import pecan
 import six
 
 from keystone.common import controller
@@ -50,6 +51,7 @@ class Auth(controller.V2Controller):
         ca_file = open(CONF.signing.ca_certs, 'r')
         data = ca_file.read()
         ca_file.close()
+        pecan.override_template(None, content_type='text/html')
         return data
 
     @controller.v2_deprecated
@@ -57,6 +59,7 @@ class Auth(controller.V2Controller):
         cert_file = open(CONF.signing.certfile, 'r')
         data = cert_file.read()
         cert_file.close()
+        pecan.override_template(None, content_type='text/html')
         return data
 
     @controller.v2_deprecated
