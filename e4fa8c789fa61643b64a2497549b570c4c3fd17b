@@ -16,6 +16,41 @@
       "revId": "e4fa8c789fa61643b64a2497549b570c4c3fd17b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4e0d6c3d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-20T15:39:10Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "9a80dd14_8e1a046d",
+      "revId": "e4fa8c789fa61643b64a2497549b570c4c3fd17b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9a80dd14_4942c63e",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-20T15:39:10Z",
+      "side": 1,
+      "message": "we aren\u0027t setting up any invalid data here, so is this done in the setUp? Should we be setting up invalid data in the setUp for these tests?",
+      "revId": "e4fa8c789fa61643b64a2497549b570c4c3fd17b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
