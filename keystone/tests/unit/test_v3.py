@@ -1360,7 +1360,7 @@ class JsonHomeTestMixin(object):
     def test_get_json_home(self):
         resp = self.get('/', convert=False,
                         headers={'Accept': 'application/json-home'})
-        self.assertThat(resp.headers['Content-Type'],
+        self.assertThat(resp.content_type,
                         matchers.Equals('application/json-home'))
         resp_data = jsonutils.loads(resp.body)
 

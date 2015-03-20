@@ -46,7 +46,6 @@ from keystone.common import dependency
 from keystone.common import kvs
 from keystone.common.kvs import core as kvs_core
 from keystone import config
-from keystone import controllers
 from keystone import exception
 from keystone import notifications
 from keystone.policy.backends import rules
@@ -382,8 +381,6 @@ class TestCase(BaseTestCase):
 
         # Reset the auth-plugin registry
         self.addCleanup(self.clear_auth_plugin_registry)
-
-        self.addCleanup(setattr, controllers, '_VERSIONS', [])
 
     def config(self, config_files):
         CONF(args=[], project='keystone', default_config_files=config_files)
