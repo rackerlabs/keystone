@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a80dd14_8e1a046d",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-20T15:16:08Z",
+      "side": 1,
+      "message": "I find this comment confusing....what \"invalid project id\" are we talking about....it sounds like there should always been one...is that what we are expecting?",
+      "revId": "e4fa8c789fa61643b64a2497549b570c4c3fd17b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
