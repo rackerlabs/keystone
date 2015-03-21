@@ -37,6 +37,8 @@ class Manager(manager.Manager):
 
     """
 
+    driver_namespace = 'keystone.contrib.endpoint_policy'
+
     def __init__(self):
         super(Manager, self).__init__(CONF.endpoint_policy.driver)
 
