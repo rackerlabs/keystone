@@ -332,6 +332,9 @@ class Manager(manager.Manager):
     mapping by default is a more prudent way to introduce this functionality.
 
     """
+
+    namespace = 'keystone.identity'
+
     _USER = 'user'
     _GROUP = 'group'
 
@@ -1192,6 +1195,8 @@ class Driver(object):
 @dependency.provider('id_mapping_api')
 class MappingManager(manager.Manager):
     """Default pivot point for the ID Mapping backend."""
+
+    namespace = 'keystone.identity.id_mapping'
 
     def __init__(self):
         super(MappingManager, self).__init__(CONF.identity_mapping.driver)

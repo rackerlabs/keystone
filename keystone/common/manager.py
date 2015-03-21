@@ -15,6 +15,9 @@
 import functools
 
 from oslo_utils import importutils
+import stevedore
+
+from keystone.openstack.common import versionutils
 
 
 def response_truncated(f):
@@ -66,8 +69,24 @@ class Manager(object):
 
     """
 
+    namespace = None
+
     def __init__(self, driver_name):
-        self.driver = importutils.import_object(driver_name)
+        try:
+            driver_manager = stevedore.DriverManager(self.namespace,
+                                                     driver_name,
+                                                     invoke_on_load=True)
+            self.driver = driver_manager.driver
+        except RuntimeError:
+            # For backwards-compatibility, an unregistered class reference can
+            # still be used.
+            self.driver = self._load_using_import(driver_name)
+
+    @versionutils.deprecated(as_of=versionutils.deprecated.LIBERTY,
+                             in_favor_of='entrypoints',
+                             what='direct import of driver')
+    def _load_using_import(self, driver_name):
+        return importutils.import_object(driver_name)
 
     def __getattr__(self, name):
         """Forward calls to the underlying driver."""
