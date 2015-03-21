@@ -25,6 +25,24 @@
     },
     {
       "key": {
+        "uuid": "7a75e904_acca476c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-21T02:17:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_a11c3678",
+      "revId": "8060072d36a98d6d7ade7b3a76699a39daa4b370",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_61507e2c",
         "filename": "keystone/contrib/ec2/controllers.py",
         "patchSetId": 8
@@ -42,6 +60,24 @@
         "endLine": 70,
         "endChar": 36
       },
+      "revId": "8060072d36a98d6d7ade7b3a76699a39daa4b370",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a75e904_6cb92fe9",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-21T02:17:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_61507e2c",
       "revId": "8060072d36a98d6d7ade7b3a76699a39daa4b370",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
