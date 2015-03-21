@@ -15,6 +15,7 @@
 import functools
 
 from oslo_utils import importutils
+import stevedore
 
 
 def response_truncated(f):
@@ -66,8 +67,16 @@ class Manager(object):
 
     """
 
+    namespace = None
+
     def __init__(self, driver_name):
-        self.driver = importutils.import_object(driver_name)
+        if self.namespace:
+            driver_manager = stevedore.DriverManager(self.namespace,
+                                                     driver_name,
+                                                     invoke_on_load=True)
+            self.driver = driver_manager.driver
+        else:
+            self.driver = importutils.import_object(driver_name)
 
     def __getattr__(self, name):
         """Forward calls to the underlying driver."""
