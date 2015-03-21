@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a75e904_15319e0b",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-21T12:35:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a75e904_7503b273",
+      "revId": "1667e4b33daf5d0bc915c71c624329aa6a12c521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a75e904_95f74e8c",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-21T11:00:19Z",
       "side": 1,
       "message": "suggest replacing:\n\nThis happened when these are client-specific endpoints, there is\n\nwith\n\nThis can happen when these are client-specific endpoints, and there is",
+      "revId": "1667e4b33daf5d0bc915c71c624329aa6a12c521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a75e904_35369a04",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 335,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-21T12:35:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a75e904_95f74e8c",
       "revId": "1667e4b33daf5d0bc915c71c624329aa6a12c521",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7a75e904_75401257",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-21T12:35:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a75e904_f5eec2b3",
+      "revId": "1667e4b33daf5d0bc915c71c624329aa6a12c521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a75e904_55e796e4",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 11
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "7a75e904_f5540223",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 487,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-21T12:35:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a75e904_55e796e4",
+      "revId": "1667e4b33daf5d0bc915c71c624329aa6a12c521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7a75e904_15043e7d",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 11
@@ -81,6 +153,24 @@
       "writtenOn": "2015-03-21T11:00:19Z",
       "side": 1,
       "message": "again, this is slightly confusing...I think we\u0027ll copy these in whether tenant_id is None or not. And it isn\u0027t obvious what you mean by \"these\".  I think you mean \"non URL attributes\"?",
+      "revId": "1667e4b33daf5d0bc915c71c624329aa6a12c521",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a75e904_d5570625",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 516,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-21T12:35:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7a75e904_15043e7d",
       "revId": "1667e4b33daf5d0bc915c71c624329aa6a12c521",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
