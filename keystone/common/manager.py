@@ -15,6 +15,7 @@
 import functools
 
 from oslo_utils import importutils
+import stevedore
 
 
 def response_truncated(f):
@@ -51,6 +52,33 @@ def response_truncated(f):
             kwargs['hints'].set_limit(list_limit)
         return f(self, *args, **kwargs)
     return wrapper
+
+
+class StevedoreManager(object):
+    """Base class for intermediary request layer.
+
+    The Manager layer exists to support additional logic that applies to all
+    or some of the methods exposed by a service that are not specific to the
+    HTTP interface.
+
+    It also provides a stable entry point to dynamic backends.
+
+    An example of a probable use case is logging all the calls.
+
+    """
+
+    namespace = None
+
+    def __init__(self, driver_name):
+        driver_manager = stevedore.DriverManager(self.namespace, driver_name,
+                                                 invoke_on_load=True)
+        self.driver = driver_manager.driver
+
+    def __getattr__(self, name):
+        """Forward calls to the underlying driver."""
+        f = getattr(self.driver, name)
+        setattr(self, name, f)
+        return f
 
 
 class Manager(object):

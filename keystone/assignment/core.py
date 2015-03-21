@@ -73,13 +73,15 @@ def deprecated_to_resource_api(f):
 @dependency.provider('assignment_api')
 @dependency.requires('credential_api', 'identity_api', 'resource_api',
                      'revoke_api', 'role_api')
-class Manager(manager.Manager):
+class Manager(manager.StevedoreManager):
     """Default pivot point for the Assignment backend.
 
-    See :mod:`keystone.common.manager.Manager` for more details on how this
-    dynamically calls the backend.
+    See :mod:`keystone.common.manager.StevedoreManager` for more details on how
+    this dynamically calls the backend.
 
     """
+    namespace = 'keystone.assignment'
+
     _PROJECT = 'project'
     _ROLE_REMOVED_FROM_USER = 'role_removed_from_user'
     _INVALIDATION_USER_PROJECT_TOKENS = 'invalidate_user_project_tokens'
