@@ -169,7 +169,7 @@ class DomainConfigs(dict):
                         self._load_config_from_file(
                             resource_api, [os.path.join(r, fname)],
                             fname[len(DOMAIN_CONF_FHEAD):
-                                  -len(DOMAIN_CONF_FTAIL)])
+                                  - len(DOMAIN_CONF_FTAIL)])
                     else:
                         LOG.debug(('Ignoring file (%s) while scanning domain '
                                    'config directory'),
@@ -332,6 +332,9 @@ class Manager(manager.Manager):
     mapping by default is a more prudent way to introduce this functionality.
 
     """
+
+    namespace = 'keystone.identity'
+
     _USER = 'user'
     _GROUP = 'group'
 
