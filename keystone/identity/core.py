@@ -23,6 +23,7 @@ from oslo_config import cfg
 from oslo_log import log
 from oslo_utils import importutils
 import six
+import stevedore
 
 from keystone import clean
 from keystone.common import cache
@@ -34,6 +35,7 @@ from keystone import exception
 from keystone.i18n import _, _LW
 from keystone.identity.mapping_backends import mapping
 from keystone import notifications
+from keystone.openstack.common import versionutils
 
 
 CONF = cfg.CONF
@@ -90,6 +92,20 @@ class DomainConfigs(dict):
     _any_sql = False
 
     def _load_driver(self, domain_config):
+        try:
+            driver_manager = stevedore.DriverManager(
+                Manager.namespace, domain_config['cfg'].identity.driver,
+                invoke_on_load=True, invoke_args=(domain_config['cfg'],))
+            return driver_manager.driver
+        except RuntimeError:
+            # For backwards-compatibility, an unregistered class reference can
+            # still be used.
+            return self._load_using_import(domain_config)
+
+    @versionutils.deprecated(as_of=versionutils.deprecated.LIBERTY,
+                             in_favor_of='entrypoints',
+                             what='direct import of driver')
+    def _load_using_import(self, domain_config):
         return importutils.import_object(
             domain_config['cfg'].identity.driver, domain_config['cfg'])
 
@@ -332,6 +348,9 @@ class Manager(manager.Manager):
     mapping by default is a more prudent way to introduce this functionality.
 
     """
+
+    namespace = 'keystone.identity'
+
     _USER = 'user'
     _GROUP = 'group'
 
@@ -1192,6 +1211,8 @@ class Driver(object):
 @dependency.provider('id_mapping_api')
 class MappingManager(manager.Manager):
     """Default pivot point for the ID Mapping backend."""
+
+    namespace = 'keystone.identity.id_mapping'
 
     def __init__(self):
         super(MappingManager, self).__init__(CONF.identity_mapping.driver)
