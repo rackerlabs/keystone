@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7a75e904_6f404157",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-21T06:09:11Z",
+      "side": 1,
+      "message": "actually, the code names should be lower cased, this has been brought up a few times now, we\u0027re trying to make all the docs have `keystone` as lower cased.",
+      "parentUuid": "9a80dd14_17d5571b",
+      "revId": "447d41f5828bb173cf43da92186b4d21564c4245",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_d7bbbf0c",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 7
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7a75e904_af2159b6",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-21T06:09:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_d7bbbf0c",
+      "revId": "447d41f5828bb173cf43da92186b4d21564c4245",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_37a6dbc1",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 7
@@ -47,6 +83,24 @@
       "writtenOn": "2015-03-20T09:17:42Z",
       "side": 1,
       "message": "Horizon capital letter",
+      "revId": "447d41f5828bb173cf43da92186b4d21564c4245",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a75e904_8f249dc7",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-21T06:09:11Z",
+      "side": 1,
+      "message": "same reason as above",
+      "parentUuid": "9a80dd14_37a6dbc1",
       "revId": "447d41f5828bb173cf43da92186b4d21564c4245",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
