@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7a75e904_a095e689",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-21T13:23:52Z",
+      "side": 1,
+      "message": "I\u0027d suggest we add parameter descriptions to the doc string, which would include indicating that tenant_id will be None in the case this being called to create a catalog to go in a domain scoped token.  Then the rest of the code below starts to make sense as to why we need to careful of a None tenant_id",
+      "revId": "e7840d55b1c1564125f10c8889a390b68e66f19c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a75e904_e0e6fe43",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-21T13:23:52Z",
+      "side": 1,
+      "message": "actually maybe call them \"v2 URL interface attributes\"",
+      "revId": "e7840d55b1c1564125f10c8889a390b68e66f19c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a75e904_c03662e7",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 513,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-21T13:23:52Z",
+      "side": 1,
+      "message": "(nit) for clarity, maybe:\n\nOther non-URL attributes are copied to the service whether...",
+      "revId": "e7840d55b1c1564125f10c8889a390b68e66f19c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
