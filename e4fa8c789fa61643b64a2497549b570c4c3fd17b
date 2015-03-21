@@ -37,6 +37,42 @@
     },
     {
       "key": {
+        "uuid": "7a75e904_4c355345",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-21T03:03:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_4e0d6c3d",
+      "revId": "e4fa8c789fa61643b64a2497549b570c4c3fd17b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a75e904_2c301756",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-21T03:03:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_8e1a046d",
+      "revId": "e4fa8c789fa61643b64a2497549b570c4c3fd17b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_4942c63e",
         "filename": "keystone/tests/unit/test_backend_templated.py",
         "patchSetId": 9
@@ -48,6 +84,24 @@
       "writtenOn": "2015-03-20T15:39:10Z",
       "side": 1,
       "message": "we aren\u0027t setting up any invalid data here, so is this done in the setUp? Should we be setting up invalid data in the setUp for these tests?",
+      "revId": "e4fa8c789fa61643b64a2497549b570c4c3fd17b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a75e904_8c258b0c",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-21T03:03:59Z",
+      "side": 1,
+      "message": "Lance, \"project_id \u003d None\" is the invalid data I think, let\u0027s say the \u0027project_id\u0027 is None, for example we are trying to get the domain-scoped token as the description of the bug, there is no \u0027project_id\u0027 available, so there will some invalid URL found with the EP. So, \u0027catalog_api.get_v3_catalog\u0027 should skip them.",
+      "parentUuid": "9a80dd14_4942c63e",
       "revId": "e4fa8c789fa61643b64a2497549b570c4c3fd17b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
