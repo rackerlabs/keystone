@@ -36,6 +36,9 @@ class Manager(manager.Manager):
     dynamically calls the backend.
 
     """
+
+    namespace = 'keystone.policy'
+
     _POLICY = 'policy'
 
     def __init__(self):

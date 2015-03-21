@@ -332,6 +332,9 @@ class Manager(manager.Manager):
     mapping by default is a more prudent way to introduce this functionality.
 
     """
+
+    namespace = 'keystone.identity'
+
     _USER = 'user'
     _GROUP = 'group'
 
