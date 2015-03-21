@@ -53,6 +53,9 @@ class Manager(manager.Manager):
     dynamically calls the backend.
 
     """
+
+    namespace = 'keystone.resource'
+
     _DOMAIN = 'domain'
     _PROJECT = 'project'
 
