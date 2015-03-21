@@ -93,6 +93,9 @@ class Manager(manager.Manager):
     dynamically calls the backend.
 
     """
+
+    namespace = 'keystone.catalog'
+
     _ENDPOINT = 'endpoint'
     _SERVICE = 'service'
     _REGION = 'region'
