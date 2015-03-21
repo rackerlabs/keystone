@@ -30,6 +30,8 @@ CONF = cfg.CONF
 class Manager(manager.Manager):
     """Default pivot point for the identifier generator backend."""
 
+    namespace = 'keystone.identity.id_generator'
+
     def __init__(self):
         super(Manager, self).__init__(CONF.identity_mapping.generator)
 

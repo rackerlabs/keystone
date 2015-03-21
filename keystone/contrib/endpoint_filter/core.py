@@ -56,6 +56,8 @@ class Manager(manager.Manager):
 
     """
 
+    namespace = 'keystone.contrib.endpoint_filter'
+
     def __init__(self):
         super(Manager, self).__init__(CONF.endpoint_filter.driver)
 
