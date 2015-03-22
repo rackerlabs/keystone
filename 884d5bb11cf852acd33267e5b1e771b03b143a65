@@ -16,6 +16,24 @@
       "revId": "884d5bb11cf852acd33267e5b1e771b03b143a65",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_3dc11fe5",
+        "filename": "setup.cfg",
+        "patchSetId": 4
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-22T14:27:04Z",
+      "side": 1,
+      "message": "Done. There was a test for it.",
+      "parentUuid": "1a6ced46_4c6e33cb",
+      "revId": "884d5bb11cf852acd33267e5b1e771b03b143a65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
