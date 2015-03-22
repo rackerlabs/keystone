@@ -103,14 +103,14 @@ class CliDomainConfigAllTestCase(tests.SQLDriverOverrides, tests.TestCase):
                      'user': 'cn=Admin',
                      'password': 'password',
                      'suffix': 'cn=example,cn=com'},
-            'identity': {'driver': 'keystone.identity.backends.ldap.Identity'}
+            'identity': {'driver': 'ldap'}
         }
         domain1_config = {
             'ldap': {'url': 'fake://memory1',
                      'user': 'cn=Admin',
                      'password': 'password',
                      'suffix': 'cn=example,cn=com'},
-            'identity': {'driver': 'keystone.identity.backends.ldap.Identity'}
+            'identity': {'driver': 'ldap'}
         }
         domain2_config = {
             'ldap': {'url': 'fake://memory',
@@ -119,7 +119,7 @@ class CliDomainConfigAllTestCase(tests.SQLDriverOverrides, tests.TestCase):
                      'suffix': 'cn=myroot,cn=com',
                      'group_tree_dn': 'ou=UserGroups,dc=myroot,dc=org',
                      'user_tree_dn': 'ou=Users,dc=myroot,dc=org'},
-            'identity': {'driver': 'keystone.identity.backends.ldap.Identity'}
+            'identity': {'driver': 'ldap'}
         }
 
         # Clear backend dependencies, since cli loads these manually
@@ -151,7 +151,7 @@ class CliDomainConfigSingleDomainTestCase(CliDomainConfigAllTestCase):
                      'user': 'cn=Admin',
                      'password': 'password',
                      'suffix': 'cn=example,cn=com'},
-            'identity': {'driver': 'keystone.identity.backends.ldap.Identity'}
+            'identity': {'driver': 'ldap'}
         }
 
         # Clear backend dependencies, since cli loads these manually
@@ -172,7 +172,7 @@ class CliDomainConfigSingleDomainTestCase(CliDomainConfigAllTestCase):
         # Create a config for the default domain
         default_config = {
             'ldap': {'url': uuid.uuid4().hex},
-            'identity': {'driver': 'keystone.identity.backends.ldap.Identity'}
+            'identity': {'driver': 'ldap'}
         }
         self.domain_config_api.create_config(
             CONF.identity.default_domain_id, default_config)
