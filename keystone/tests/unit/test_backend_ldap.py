@@ -2418,9 +2418,7 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
         super(MultiLDAPandSQLIdentity, self).config_overrides()
         # Make sure identity and assignment are actually SQL drivers,
         # BaseLDAPIdentity sets these options to use LDAP.
-        self.config_fixture.config(
-            group='identity',
-            driver='keystone.identity.backends.sql.Identity')
+        self.config_fixture.config(group='identity', driver='sql')
         self.config_fixture.config(
             group='resource',
             driver='keystone.resource.backends.sql.Resource')
@@ -2972,10 +2970,8 @@ class DomainSpecificSQLIdentity(DomainSpecificLDAPandSQLIdentity):
             domain_scope=CONF.identity.default_domain_id)
         self.assertIsNotNone(self.get_config(self.domains['domain1']['id']))
 
-        # Now re-initialize, but with sql as the default identity driver
-        self.config_fixture.config(
-            group='identity',
-            driver='keystone.identity.backends.sql.Identity')
+        # Now re-initialize, but with sql as the identity driver
+        self.config_fixture.config(group='identity', driver='sql')
         self.config_fixture.config(
             group='assignment',
             driver='keystone.assignment.backends.sql.Assignment')

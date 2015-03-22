@@ -284,9 +284,6 @@ class TestCase(BaseTestCase):
             driver='keystone.catalog.backends.templated.Catalog',
             template_file=dirs.tests('default_catalog.templates'))
         self.config_fixture.config(
-            group='identity',
-            driver='keystone.identity.backends.sql.Identity')
-        self.config_fixture.config(
             group='kvs',
             backends=[
                 ('keystone.tests.unit.test_kvs.'
@@ -643,9 +640,7 @@ class SQLDriverOverrides(object):
         self.config_fixture.config(
             group='catalog',
             driver='keystone.catalog.backends.sql.Catalog')
-        self.config_fixture.config(
-            group='identity',
-            driver='keystone.identity.backends.sql.Identity')
+        self.config_fixture.config(group='identity', driver='sql')
         self.config_fixture.config(
             group='policy',
             driver='keystone.policy.backends.sql.Policy')

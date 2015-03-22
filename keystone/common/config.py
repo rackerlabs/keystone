@@ -149,8 +149,7 @@ FILE_OPTIONS = {
                         'identity configuration files if '
                         'domain_specific_drivers_enabled is set to true.'),
         cfg.StrOpt('driver',
-                   default=('keystone.identity.backends'
-                            '.sql.Identity'),
+                   default='sql',
                    help='Identity backend driver.'),
         cfg.BoolOpt('caching', default=True,
                     help='Toggle for identity caching. This has no '
