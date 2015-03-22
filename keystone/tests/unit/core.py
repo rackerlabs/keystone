@@ -281,7 +281,7 @@ class TestCase(BaseTestCase):
             proxies=['keystone.tests.unit.test_cache.CacheIsolatingProxy'])
         self.config_fixture.config(
             group='catalog',
-            driver='keystone.catalog.backends.templated.Catalog',
+            driver='templated',
             template_file=dirs.tests('default_catalog.templates'))
         self.config_fixture.config(
             group='kvs',
@@ -634,15 +634,9 @@ class SQLDriverOverrides(object):
     def config_overrides(self):
         super(SQLDriverOverrides, self).config_overrides()
         # SQL specific driver overrides
-        self.config_fixture.config(
-            group='catalog',
-            driver='keystone.catalog.backends.sql.Catalog')
-        self.config_fixture.config(
-            group='identity',
-            driver='keystone.identity.backends.sql.Identity')
-        self.config_fixture.config(
-            group='policy',
-            driver='keystone.policy.backends.sql.Policy')
+        self.config_fixture.config(group='catalog', driver='sql')
+        self.config_fixture.config(group='identity', driver='sql')
+        self.config_fixture.config(group='policy', driver='sql')
         self.config_fixture.config(
             group='revoke',
             driver='keystone.contrib.revoke.backends.sql.Revoke')

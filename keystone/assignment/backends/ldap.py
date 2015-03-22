@@ -36,7 +36,7 @@ class Assignment(assignment.Driver):
     @versionutils.deprecated(
         versionutils.deprecated.KILO,
         remove_in=+2,
-        what='keystone.assignment.backends.ldap.Assignment')
+        what='ldap')
     def __init__(self):
         super(Assignment, self).__init__()
         self.LDAP_URL = CONF.ldap.url

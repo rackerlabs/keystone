@@ -149,8 +149,7 @@ FILE_OPTIONS = {
                         'identity configuration files if '
                         'domain_specific_drivers_enabled is set to true.'),
         cfg.StrOpt('driver',
-                   default=('keystone.identity.backends'
-                            '.sql.Identity'),
+                   default='sql',
                    help='Identity backend driver.'),
         cfg.BoolOpt('caching', default=True,
                     help='Toggle for identity caching. This has no '
@@ -168,12 +167,10 @@ FILE_OPTIONS = {
     ],
     'identity_mapping': [
         cfg.StrOpt('driver',
-                   default=('keystone.identity.mapping_backends'
-                            '.sql.Mapping'),
+                   default='sql',
                    help='Keystone Identity Mapping backend driver.'),
         cfg.StrOpt('generator',
-                   default=('keystone.identity.id_generators'
-                            '.sha256.Generator'),
+                   default='sha256',
                    help='Public ID generator for user and group entities. '
                         'The Keystone identity mapper only supports '
                         'generators that produce no more than 64 characters.'),
@@ -470,8 +467,7 @@ FILE_OPTIONS = {
     ],
     'credential': [
         cfg.StrOpt('driver',
-                   default=('keystone.credential.backends'
-                            '.sql.Credential'),
+                   default='sql',
                    help='Credential backend driver.'),
     ],
     'oauth1': [
@@ -519,7 +515,7 @@ FILE_OPTIONS = {
     ],
     'policy': [
         cfg.StrOpt('driver',
-                   default='keystone.policy.backends.sql.Policy',
+                   default='sql',
                    help='Policy backend driver.'),
         cfg.IntOpt('list_limit',
                    help='Maximum number of entities that will be returned '
@@ -880,7 +876,7 @@ FILE_OPTIONS = {
                    help='Catalog template file name for use with the '
                         'template catalog backend.'),
         cfg.StrOpt('driver',
-                   default='keystone.catalog.backends.sql.Catalog',
+                   default='sql',
                    help='Catalog backend driver.'),
         cfg.BoolOpt('caching', default=True,
                     help='Toggle for catalog caching. This has no '
