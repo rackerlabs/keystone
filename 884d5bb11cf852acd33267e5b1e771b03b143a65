@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_4c6e33cb",
+        "filename": "setup.cfg",
+        "patchSetId": 4
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-03-22T02:46:53Z",
+      "side": 1,
+      "message": "Is this a typo?",
+      "revId": "884d5bb11cf852acd33267e5b1e771b03b143a65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
