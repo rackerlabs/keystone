@@ -742,21 +742,15 @@ class TestTokenProvider(tests.TestCase):
                               uuid.Provider)
 
         dependency.reset()
-        self.config_fixture.config(
-            group='token',
-            provider='keystone.token.providers.uuid.Provider')
+        self.config_fixture.config(group='token', provider='uuid')
         token.provider.Manager()
 
         dependency.reset()
-        self.config_fixture.config(
-            group='token',
-            provider='keystone.token.providers.pki.Provider')
+        self.config_fixture.config(group='token', provider='pki')
         token.provider.Manager()
 
         dependency.reset()
-        self.config_fixture.config(
-            group='token',
-            provider='keystone.token.providers.pkiz.Provider')
+        self.config_fixture.config(group='token', provider='pkiz')
         token.provider.Manager()
 
     def test_unsupported_token_provider(self):
