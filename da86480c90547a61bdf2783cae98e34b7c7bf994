@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_51a6bfc2",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-03-23T06:41:36Z",
+      "side": 1,
+      "message": "Do you mean \"endpoint_group[\u0027filters\u0027]\"?\n\nIt would be:\n{\u0027region_id\u0027: $region_id, \u0027interface\u0027:\u0027admin\u0027, \u0027service_id\u0027: $service_id}",
+      "parentUuid": "9a80dd14_4eb1ec8d",
+      "revId": "da86480c90547a61bdf2783cae98e34b7c7bf994",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_ce96bcef",
         "filename": "keystone/contrib/endpoint_filter/core.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-20T15:33:09Z",
       "side": 1,
       "message": "nit: are we passing one filter here, or multiple? Suggest renaming to the following if so: \n\n    for filter in all_filteres:",
+      "revId": "da86480c90547a61bdf2783cae98e34b7c7bf994",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_9187570f",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-03-23T06:41:36Z",
+      "side": 1,
+      "message": "As said above, I think we are passing multiple filters here.",
+      "parentUuid": "9a80dd14_ce96bcef",
       "revId": "da86480c90547a61bdf2783cae98e34b7c7bf994",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
