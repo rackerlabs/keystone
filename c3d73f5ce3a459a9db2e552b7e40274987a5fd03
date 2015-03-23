@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_12ad1b32",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-23T12:29:07Z",
+      "side": 1,
+      "message": "I don\u0027t think so...there would be a LOT of log messages...although open to suggestions from others...",
+      "parentUuid": "1a6ced46_781d5b73",
+      "revId": "c3d73f5ce3a459a9db2e552b7e40274987a5fd03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_91e2f701",
         "filename": "keystone/catalog/core.py",
         "patchSetId": 14
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-23T06:37:31Z",
       "side": 1,
       "message": "Not sure where is metadata coming from and where is it going.\nMaybe we can safely remove this parameter.",
+      "revId": "c3d73f5ce3a459a9db2e552b7e40274987a5fd03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_3293f7fb",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-23T12:29:07Z",
+      "side": 1,
+      "message": "As far as I can see, it is never used. I have raised this as bug #1435312 and will fix that first, then you can rebase this on my change and this parameter will go away :-)",
+      "parentUuid": "1a6ced46_91e2f701",
       "revId": "c3d73f5ce3a459a9db2e552b7e40274987a5fd03",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
