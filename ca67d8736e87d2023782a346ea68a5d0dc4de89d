@@ -34,6 +34,24 @@
       "revId": "ca67d8736e87d2023782a346ea68a5d0dc4de89d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_a1631bb0",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-23T12:05:40Z",
+      "side": 1,
+      "message": "It is not a problem to add but as specified by Marek the primary_key\u003dTrue implies the uniqueness of the field. Previously it was there because the primary_key\u003dTrue was in both the remote_id and the idp_id and this translate to sql as PRIMARY KEY (`idp_id`.`remote_id`), this does not imply the uniqueness of the remote_id but that of the combination.\n\nThus, add only the unique id concept in remote_id does not make sense if we do not put back the idea of a primary key as a couple or some other changes.\n\nI would leave as it is now but if you (and others) prefer the unique approach for me is OK",
+      "parentUuid": "9a80dd14_f87c1422",
+      "revId": "ca67d8736e87d2023782a346ea68a5d0dc4de89d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
