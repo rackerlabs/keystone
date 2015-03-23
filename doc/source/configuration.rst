@@ -451,6 +451,11 @@ using ``keystone-manage fernet_rotate``.
     must be protected from unnecessary disclosure to prevent unauthorized
     access.
 
+.. WARNING::
+    The Fernet token provider assumes functionality from the `cryptography 0.7
+    <https://pypi.python.org/pypi/cryptography/0.7>`_ library. Using the Fernet
+    token provider with a lower version of cryptography may result in failures.
+
 Caching Layer
 -------------
 
