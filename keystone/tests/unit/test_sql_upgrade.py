@@ -916,6 +916,13 @@ class SqlUpgradeTests(SqlMigrateBase):
                                                          'id'))
         self.assertTrue(self.does_fk_exist('project', 'domain_id'))
 
+    def test_drop_domain_table(self):
+        domain = 'domain'
+        self.upgrade(70)
+        self.assertTableDoesNotExist(domain)
+        self.downgrade(69)
+        self.assertTableExists(domain)
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
