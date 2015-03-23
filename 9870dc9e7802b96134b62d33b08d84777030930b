@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_10742e98",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-23T14:50:01Z",
+      "side": 1,
+      "message": "Perhaps a better title might be:\nSkip irrelevant catalog endpoints for domain scoped tokens",
+      "revId": "9870dc9e7802b96134b62d33b08d84777030930b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_30ddaa71",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-23T14:50:01Z",
+      "side": 1,
+      "message": "Perhaps a better description might be:\nIf a token is domain-scoped, there is no project id defined. Hence for any catalog entries, we should skip any endpoints that need a project id in order to be formatted correctly.",
+      "revId": "9870dc9e7802b96134b62d33b08d84777030930b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
