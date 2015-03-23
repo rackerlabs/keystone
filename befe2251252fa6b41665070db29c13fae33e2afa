@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_3b82d44f",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-23T23:32:41Z",
+      "side": 1,
+      "message": "change \"script\" to \"the script\"",
+      "revId": "befe2251252fa6b41665070db29c13fae33e2afa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_7bda8c79",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-23T23:32:41Z",
+      "side": 1,
+      "message": "change \"extension\" to \"extensions\"",
+      "revId": "befe2251252fa6b41665070db29c13fae33e2afa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
