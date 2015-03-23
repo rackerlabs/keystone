@@ -64,9 +64,6 @@ INITIAL_TABLE_STRUCTURE = {
     'credential': [
         'id', 'user_id', 'project_id', 'blob', 'type', 'extra',
     ],
-    'domain': [
-        'id', 'name', 'enabled', 'extra',
-    ],
     'endpoint': [
         'id', 'legacy_endpoint_id', 'interface', 'region', 'service_id', 'url',
         'enabled', 'extra',
@@ -670,6 +667,12 @@ class SqlUpgradeTests(SqlMigrateBase):
                                                          'project',
                                                          'id'))
         self.assertTrue(self.does_fk_exist('project', 'domain_id'))
+
+    def test_drop_domain_table(self):
+        domain = 'domain'
+        self.upgrade(71)
+        if self.engine.name != 'sqlite':
+            self.assertTableDoesNotExist(domain)
 
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
