@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_42b16ee0",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 926,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2015-03-23T20:00:11Z",
+      "side": 1,
+      "message": "assuming we\u0027re always going to use this with instance methods, I modified the test. Maybe this should be documented in the docstring in notifications.py ?",
+      "revId": "9eb75699771e9d602106fac3d7338a3e2e9b1d93",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
