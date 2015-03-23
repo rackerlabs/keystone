@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_1bb198e1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-23T23:44:33Z",
+      "side": 1,
+      "message": "Change \"Identiy\" to \"Identity\"",
+      "revId": "876337282207dfe9cdf22d8ab78d2a3aa2e5c92c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_5b26b017",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 2904,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-23T23:44:33Z",
+      "side": 1,
+      "message": "these are only used in a couple of the tests, so move it into a function rather than setting up these for every test.",
+      "revId": "876337282207dfe9cdf22d8ab78d2a3aa2e5c92c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
