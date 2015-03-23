@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_91e2f701",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-23T06:37:31Z",
+      "side": 1,
+      "message": "Not sure where is metadata coming from and where is it going.\nMaybe we can safely remove this parameter.",
+      "revId": "c3d73f5ce3a459a9db2e552b7e40274987a5fd03",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
