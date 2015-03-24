@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_63cbb0a5",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-24T13:23:43Z",
+      "side": 1,
+      "message": "Yep, quite right...that was my bad.",
+      "parentUuid": "1a6ced46_e01a3616",
+      "revId": "a6a7f6fd93ef40b613b5cc0983b7d4ff5bf7ee61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_8a9fe6b3",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 16
