@@ -16,6 +16,24 @@
       "revId": "cfcff82c98a11afad78f56f763d88b14c2073e31",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_0bb5a630",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-24T17:00:35Z",
+      "side": 1,
+      "message": "my only concern is if we set a different prefix (from what is configured in the SP), the SP could fail while parsing the assertion.",
+      "parentUuid": "1a6ced46_955b752d",
+      "revId": "cfcff82c98a11afad78f56f763d88b14c2073e31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
