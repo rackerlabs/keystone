@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a6ced46_d1828151",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-24T00:38:01Z",
+      "side": 1,
+      "message": "supporting",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_96c47f41",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 8
@@ -47,6 +64,23 @@
       "writtenOn": "2015-03-24T00:32:59Z",
       "side": 1,
       "message": "remove \"only\"",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_37306056",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-24T00:38:01Z",
+      "side": 1,
+      "message": "trailing \"/\" is needed after websso",
       "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -132,6 +166,23 @@
       "writtenOn": "2015-03-24T00:32:59Z",
       "side": 1,
       "message": "change \"if `mod_auth_openidc` is selected\" to \"for when `mod_auth_openidc` is used\"",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_d1e9a11b",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-24T00:38:01Z",
+      "side": 1,
+      "message": "Do we need to add the RedirectURI too?\n\nOIDCRedirectURI http://localhost:5000/v3/auth/OS-FEDERATION/websso/redirect",
       "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
