@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_11fdf43a",
+        "filename": "keystone/tests/unit/test_v3_protection.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 369,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-24T06:07:14Z",
+      "side": 1,
+      "message": "I see repetitive code. Refactoring?\n\n self.just_a_user \u003d _create_user()\n self.another_user \u003d _create_user()\n ...",
+      "revId": "d57e6e3d6547a731522794cc9eecc5cb2c9a6df4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
