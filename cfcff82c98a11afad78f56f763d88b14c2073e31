@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_955b752d",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-24T16:23:21Z",
+      "side": 1,
+      "message": "Reading the shibboleth documentation again, my understanding is that the relaystate can also be a hardcoded value. Like \u002725:cookie\u0027?\n\nhttps://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPSessions",
+      "revId": "cfcff82c98a11afad78f56f763d88b14c2073e31",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
