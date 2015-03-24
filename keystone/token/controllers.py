@@ -26,7 +26,7 @@ from keystone.common import controller
 from keystone.common import dependency
 from keystone.common import wsgi
 from keystone import exception
-from keystone.i18n import _
+from keystone.i18n import _, _LW
 from keystone.models import token_model
 from keystone.token import provider
 
@@ -388,7 +388,7 @@ class Auth(controller.V2Controller):
                 pass
 
             if not role_list:
-                msg = _('User %(u_id)s is unauthorized for tenant %(t_id)s')
+                msg = _LW('User %(u_id)s is unauthorized for tenant %(t_id)s')
                 msg = msg % {'u_id': user_id, 't_id': tenant_id}
                 LOG.warning(msg)
                 raise exception.Unauthorized(msg)
