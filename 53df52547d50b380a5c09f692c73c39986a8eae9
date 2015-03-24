@@ -19,6 +19,40 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_de80bc48",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13161
+      },
+      "writtenOn": "2015-03-24T11:56:05Z",
+      "side": 1,
+      "message": "*an unformatted",
+      "revId": "53df52547d50b380a5c09f692c73c39986a8eae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_bea6a00e",
+        "filename": "keystone/exception.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 464,
+      "author": {
+        "id": 13161
+      },
+      "writtenOn": "2015-03-24T11:56:05Z",
+      "side": 1,
+      "message": "We shouldn\u0027t mix space position by putting them at the end and at the beginning of new line. Need to stick to one pattern (most of the code here puts it at the end).",
+      "revId": "53df52547d50b380a5c09f692c73c39986a8eae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_55fc793e",
         "filename": "keystone/trust/core.py",
         "patchSetId": 4
