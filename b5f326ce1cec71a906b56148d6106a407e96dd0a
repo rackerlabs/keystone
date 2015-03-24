@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_b18d057e",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:37:44Z",
+      "side": 1,
+      "message": "pycadf.resource.Resource",
+      "revId": "b5f326ce1cec71a906b56148d6106a407e96dd0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_11f419f1",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:37:44Z",
+      "side": 1,
+      "message": "lowercase keystone",
+      "revId": "b5f326ce1cec71a906b56148d6106a407e96dd0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_71daad79",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 440,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:37:44Z",
+      "side": 1,
+      "message": "why don\u0027t we just pass in a token?",
+      "revId": "b5f326ce1cec71a906b56148d6106a407e96dd0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
