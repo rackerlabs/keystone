@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_d60517c3",
+        "filename": "keystone/token/persistence/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:07:21Z",
+      "side": 1,
+      "message": "this doesn\u0027t use the token_provider anymore?",
+      "revId": "2b7e6904d936fb8dfefc824dfdfcd2fec0705a41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
