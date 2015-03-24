@@ -16,6 +16,24 @@
       "revId": "d15a9a78ddd201ba08ef381c545cda2a3e8c125d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_cbc54e3e",
+        "filename": "bandit.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T17:09:07Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_f5f2e998",
+      "revId": "d15a9a78ddd201ba08ef381c545cda2a3e8c125d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
