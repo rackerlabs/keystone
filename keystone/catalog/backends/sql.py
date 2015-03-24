@@ -272,7 +272,12 @@ class Catalog(catalog.Driver):
         substitutions = dict(
             itertools.chain(six.iteritems(CONF),
                             six.iteritems(CONF.eventlet_server)))
-        substitutions.update({'tenant_id': tenant_id, 'user_id': user_id})
+        substitutions.update({'user_id': user_id})
+        allow_substitution_keyerror = []
+        if tenant_id:
+            substitutions.update({'tenant_id': tenant_id})
+        else:
+            allow_substitution_keyerror = ['tenant_id']
 
         session = sql.get_session()
         endpoints = (session.query(Endpoint).
@@ -285,7 +290,8 @@ class Catalog(catalog.Driver):
             if not endpoint.service['enabled']:
                 continue
             try:
-                url = core.format_url(endpoint['url'], substitutions)
+                url = core.format_url(endpoint['url'], substitutions,
+                                      allow_substitution_keyerror)
             except exception.MalformedEndpoint:
                 continue  # this failure is already logged in format_url()
 
@@ -307,8 +313,12 @@ class Catalog(catalog.Driver):
         d = dict(
             itertools.chain(six.iteritems(CONF),
                             six.iteritems(CONF.eventlet_server)))
-        d.update({'tenant_id': tenant_id,
-                  'user_id': user_id})
+        d.update({'user_id': user_id})
+        allow_substitution_keyerror = []
+        if tenant_id:
+            d.update({'tenant_id': tenant_id})
+        else:
+            allow_substitution_keyerror = ['tenant_id']
 
         session = sql.get_session()
         services = (session.query(Service).filter(Service.enabled == true()).
@@ -322,7 +332,8 @@ class Catalog(catalog.Driver):
                 del endpoint['enabled']
                 endpoint['region'] = endpoint['region_id']
                 try:
-                    endpoint['url'] = core.format_url(endpoint['url'], d)
+                    endpoint['url'] = core.format_url(
+                        endpoint['url'], d, allow_substitution_keyerror)
                 except exception.MalformedEndpoint:
                     continue  # this failure is already logged in format_url()
 
