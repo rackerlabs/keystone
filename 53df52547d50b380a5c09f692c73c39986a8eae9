@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a6ced46_2ee1af9a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-24T04:46:09Z",
+      "side": 1,
+      "message": "Exceptions do not support the comma notation that logging supports, in this case the correct use is:\n\n  exception.Forbidden(_(\u0027%(xx)d %(yy)d]\u0027) % {\u0027xx\u0027: 1, \u0027yy\u0027: 2})",
+      "revId": "53df52547d50b380a5c09f692c73c39986a8eae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_55fc793e",
         "filename": "keystone/trust/core.py",
         "patchSetId": 4
@@ -13,6 +30,41 @@
       "writtenOn": "2015-03-12T17:45:13Z",
       "side": 1,
       "message": "For this, I think it would be easier for the user to understand if we left the number of remaining_uses out of the error.\n\n    msg \u003d _(\"Unable to redelegate trust %(trust_id)s since it has remaining \"\n            \"uses. In order to redelegate a trust, it shouldn\u0027t have \u0027remaining_uses\u0027 set.\")",
+      "revId": "53df52547d50b380a5c09f692c73c39986a8eae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_2e4a8fac",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-24T04:46:09Z",
+      "side": 1,
+      "message": "This string cannot be changed until Liberty. This is a user-facing exception string that has been translated, please see https://wiki.openstack.org/wiki/StringFreeze for guidelines for post feature/string freeze.",
+      "parentUuid": "9a80dd14_55fc793e",
+      "revId": "53df52547d50b380a5c09f692c73c39986a8eae9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_8ee9c382",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-24T04:46:09Z",
+      "side": 1,
+      "message": "Please just change the incorrect use of \u0027,\u0027 to \u0027%\u0027 both here and below. The rest of the changes will need to be in Liberty.",
       "revId": "53df52547d50b380a5c09f692c73c39986a8eae9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_6ecba71e",
+        "filename": "keystone/trust/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-24T04:46:09Z",
+      "side": 0,
+      "message": "This string is also not the same when moved to keystone.exception. This string cannot be changed until Liberty.",
+      "revId": "c0d56ecdf4964549299fb26ed4e52ada3bd783be",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
