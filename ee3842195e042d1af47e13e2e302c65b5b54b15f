@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_a55bfa85",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-24T08:48:29Z",
+      "side": 1,
+      "message": "I really like this approach, it looks better, but one concern from me is this will skip the service entirely. Although the endpoints is not needed but other attributes still needed or not? such as \"type\", \"name\" or \"id\". we can say the URL is not opened to client specific service but we cannot say the service is not existed, right?\n\nI am not pretty sure about this, the context seems like favor to drop other attributes as well.\n\nOnce this is confirmed, I will merge two patches together.\n\nThanks!",
+      "revId": "ee3842195e042d1af47e13e2e302c65b5b54b15f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
