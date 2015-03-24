@@ -79,7 +79,7 @@ class Assignment(keystone_assignment.Driver):
         if session is None:
             session = sql.get_session()
 
-        q = session.query(RoleAssignment)
+        q = session.query(RoleAssignment.role_id, RoleAssignment.inherited)
 
         def _calc_assignment_type():
             # Figure out the assignment type we're checking for from the args.
