@@ -16,6 +16,24 @@
       "revId": "ee3842195e042d1af47e13e2e302c65b5b54b15f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_a0acc8a1",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 295,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-24T09:14:38Z",
+      "side": 1,
+      "message": "So I think you are correct, that IF all the endpoints for a given service required a tenant ID, then the whole service would then be absent from the resulting catalog. I\u0027m not sure a service without endpoints would be much use to anyone...so my gut feel is that this is OK. We may want to run this past MorganFainberg/Dolphm, who had commented on this before...",
+      "parentUuid": "1a6ced46_a55bfa85",
+      "revId": "ee3842195e042d1af47e13e2e302c65b5b54b15f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
