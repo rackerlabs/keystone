@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_7521999e",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-24T16:25:37Z",
+      "side": 1,
+      "message": "nit: Maybe a bit more descriptive might be:\n\n...in a domain scoped token. In this case, any endpoints that require a tenant_id as part of their URL will be skipped (as would a whole service if, as a consequence, it has no valid endpoints).",
+      "revId": "fe0ae1698ce4057b14fd0a52545409112bc4030f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_355f21e7",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-24T16:25:37Z",
+      "side": 1,
+      "message": "hmm...actually I\u0027m not sure the second part is true in this case...I think we will, as the code stands, return an \"empty\" service...not sure if we should fix this or not....",
+      "revId": "fe0ae1698ce4057b14fd0a52545409112bc4030f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
