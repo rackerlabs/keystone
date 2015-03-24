@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_2a6352dd",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-24T10:21:04Z",
+      "side": 1,
+      "message": "I would add a doc string that explains that tenant_id could be None, in which case we\u0027ll not include any endpoints in the catalog (or a whole service if there are no valid endpoints)",
+      "revId": "a6a7f6fd93ef40b613b5cc0983b7d4ff5bf7ee61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_8a9fe6b3",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-24T10:21:04Z",
+      "side": 1,
+      "message": "add a similar doc string..",
+      "revId": "a6a7f6fd93ef40b613b5cc0983b7d4ff5bf7ee61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_2aba7223",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-24T10:21:04Z",
+      "side": 1,
+      "message": "...and maybe here...",
+      "revId": "a6a7f6fd93ef40b613b5cc0983b7d4ff5bf7ee61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
