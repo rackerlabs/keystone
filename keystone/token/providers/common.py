@@ -404,7 +404,7 @@ class V3TokenDataHelper(object):
         elif isinstance(audit_info, list):
             token_data['audit_ids'] = audit_info
         else:
-            msg = (_('Invalid audit info data type: %(data)s (%(type)s)') %
+            msg = (_LE('Invalid audit info data type: %(data)s (%(type)s)') %
                    {'data': audit_info, 'type': type(audit_info)})
             LOG.error(msg)
             raise exception.UnexpectedError(msg)

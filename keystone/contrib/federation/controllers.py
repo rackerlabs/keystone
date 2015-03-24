@@ -30,7 +30,7 @@ from keystone.contrib.federation import idp as keystone_idp
 from keystone.contrib.federation import schema
 from keystone.contrib.federation import utils
 from keystone import exception
-from keystone.i18n import _
+from keystone.i18n import _, _LE
 from keystone.models import token_model
 
 
@@ -287,7 +287,7 @@ class Auth(auth_controllers.Auth):
             remote_id_name = utils.get_remote_id_parameter(protocol_id)
             remote_id = context['environment'][remote_id_name]
         except KeyError:
-            msg = _('Missing entity ID from environment')
+            msg = _LE('Missing entity ID from environment')
             LOG.error(msg)
             raise exception.Unauthorized(msg)
 
@@ -295,7 +295,7 @@ class Auth(auth_controllers.Auth):
             origin = context['query_string'].get('origin')
             host = urllib.parse.unquote_plus(origin)
         else:
-            msg = _('Request must have an origin query parameter')
+            msg = _LE('Request must have an origin query parameter')
             LOG.error(msg)
             raise exception.ValidationError(msg)
 
@@ -309,7 +309,7 @@ class Auth(auth_controllers.Auth):
             token_id = res.headers['X-Subject-Token']
             return self.render_html_response(host, token_id)
         else:
-            msg = _('%(host)s is not a trusted dashboard host')
+            msg = _LE('%(host)s is not a trusted dashboard host')
             msg = msg % {'host': host}
             LOG.error(msg)
             raise exception.Unauthorized(msg)

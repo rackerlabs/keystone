@@ -277,7 +277,7 @@ def register_event_callback(event, resource_type, callbacks):
 
     for callback in callbacks:
         if not callable(callback):
-            msg = _('Method not callable: %s') % callback
+            msg = _LE('Method not callable: %s') % callback
             LOG.error(msg)
             raise TypeError(msg)
         _SUBSCRIBERS.setdefault(event, {}).setdefault(resource_type, set())
