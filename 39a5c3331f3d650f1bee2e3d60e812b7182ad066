@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_b24a42c3",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-24T17:54:10Z",
+      "side": 1,
+      "message": "This test is based on role assignments on projects, since _create_projects_hierarchy does not returns a clean project hierarchy, it could be confusing to someone reading it to understand why I am just adding on the subproject if I want on both subproject and parent.\n\nIf we wanted to clarify this, I should make the comment a line 725 bigger to say there are something that already exists.\n\nI know using that method would save lines, but waste time from reviewers, which is expensive.\n\nPlease fell free to submit a bug and fix that method, that could return a \u0027clean\u0027 hierarchy.",
+      "parentUuid": "1a6ced46_35ef2189",
+      "revId": "39a5c3331f3d650f1bee2e3d60e812b7182ad066",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_d176ea3d",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 1
