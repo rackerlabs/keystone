@@ -34,6 +34,41 @@
       "revId": "0dbe4e9627ad2dd5910561eceecdc0ee386aeef4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_344f39bf",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-24T09:54:38Z",
+      "side": 1,
+      "message": "OK, fair enough",
+      "parentUuid": "9a80dd14_7b2cab02",
+      "revId": "0dbe4e9627ad2dd5910561eceecdc0ee386aeef4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_3482d994",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 2847,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-24T09:54:38Z",
+      "side": 1,
+      "message": "so this is really a different test...it\u0027s a valid domain, just not the same domain as the parent. (and yes, I know you are testing the straight invalid domain case higher up...but maybe both tests are still valid.",
+      "revId": "0dbe4e9627ad2dd5910561eceecdc0ee386aeef4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
