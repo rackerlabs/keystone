@@ -1,0 +1,361 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_96c47f41",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:32:59Z",
+      "side": 1,
+      "message": "it would be better to have this in the a toc so that it\u0027s easier to find.",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_b646dbbd",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:32:59Z",
+      "side": 1,
+      "message": "You can capitalize keystone in a title.",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_b6741bfe",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:32:59Z",
+      "side": 1,
+      "message": "remove \"only\"",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_36ee6b89",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:32:59Z",
+      "side": 1,
+      "message": "Apache is the organization, httpd is their HTTP server: http://httpd.apache.org/",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_76ff0335",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:32:59Z",
+      "side": 1,
+      "message": "move route after which route it is.",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_b6f97b4f",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:32:59Z",
+      "side": 1,
+      "message": "Apache -\u003e httpd",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_16a08f42",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:32:59Z",
+      "side": 1,
+      "message": "that is configured in keystone",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_b6909bed",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:32:59Z",
+      "side": 1,
+      "message": "change \"if `mod_auth_openidc` is selected\" to \"for when `mod_auth_openidc` is used\"",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_f12bfd7f",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:32:59Z",
+      "side": 1,
+      "message": "use `` for Shib-Identity-Provider",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_1121799f",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:32:59Z",
+      "side": 1,
+      "message": "use `` for HTTP_OIDC_ISS",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_560cc742",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:32:59Z",
+      "side": 1,
+      "message": "use `` for university-idp\n\nchange \"it\u0027s\" to \"its\"",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_310f5532",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:32:59Z",
+      "side": 1,
+      "message": "use `` for the list",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_9658ff57",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:32:59Z",
+      "side": 1,
+      "message": "use `` for HTTP_OIDC_ISS",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_565e8746",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:32:59Z",
+      "side": 1,
+      "message": "use ``",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_516851ba",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:32:59Z",
+      "side": 1,
+      "message": "change \"have ensure\" to \"ensure\"",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_312675b8",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:32:59Z",
+      "side": 1,
+      "message": "this is python",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_71370de4",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:32:59Z",
+      "side": 1,
+      "message": "python",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_913489df",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:32:59Z",
+      "side": 1,
+      "message": "python",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_d174419e",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:32:59Z",
+      "side": 1,
+      "message": "use `` around credentials.",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_11589931",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:32:59Z",
+      "side": 1,
+      "message": "python",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_713e2dba",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-24T00:32:59Z",
+      "side": 1,
+      "message": "python",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
