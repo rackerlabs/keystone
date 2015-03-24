@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_d631970c",
+        "filename": "keystone/common/environment/__init__.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-24T00:30:59Z",
+      "side": 1,
+      "message": "This will not work the way this is done in keystone. You will need to add the opt to keystone.common.config to register the option and reference the appropriate eventlet-specific location for options:\n\nCONF.\u003ceventlet group\u003e.max_header_line",
+      "revId": "8b2d14c0e04652e56ab0b5a27218a3647a7f9d66",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
