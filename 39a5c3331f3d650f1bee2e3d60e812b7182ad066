@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_d5632ddb",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-24T16:23:39Z",
+      "side": 1,
+      "message": "_create_projects_hierarchy() uses self.project, which already have role assingments coming from fixtures. Here we need a clean scenario",
+      "parentUuid": "1a6ced46_5183da03",
+      "revId": "39a5c3331f3d650f1bee2e3d60e812b7182ad066",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_d176ea3d",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 1
