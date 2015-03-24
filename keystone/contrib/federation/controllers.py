@@ -266,22 +266,6 @@ class Auth(auth_controllers.Auth):
 
         return self.authenticate_for_token(context, auth=auth)
 
-    def _is_trusted_dashboard(self, host):
-        """Verify that host is a trusted dashboard.
-
-        Check if the host scheme and netloc matches one of listed
-        trusted_dashboard.
-
-        """
-        host_url = urllib.parse.urlparse(host)
-
-        for dashboard in CONF.federation.trusted_dashboard:
-            dashboard_url = urllib.parse.urlparse(dashboard)
-            if (host_url.scheme == dashboard_url.scheme
-                    and host_url.netloc == dashboard_url.netloc):
-                return True
-        return False
-
     def federated_sso_auth(self, context, protocol_id):
         try:
             remote_id_name = utils.get_remote_id_parameter(protocol_id)
@@ -299,7 +283,7 @@ class Auth(auth_controllers.Auth):
             LOG.error(msg)
             raise exception.ValidationError(msg)
 
-        if self._is_trusted_dashboard(host):
+        if host in CONF.federation.trusted_dashboard:
             ref = self.federation_api.get_idp_from_remote_id(remote_id)
             # NOTE(stevemar): the returned object is a simple dict that
             # contains the idp_id and remote_id.
@@ -346,12 +330,9 @@ class Auth(auth_controllers.Auth):
             raise exception.ForbiddenAction(action=action)
 
         project = token_ref.project_name
-        # NOTE(rodrigods): the domain name is necessary in order to distinguish
-        # between projects with the same name in different domains.
-        domain = token_ref.project_domain_name
         generator = keystone_idp.SAMLGenerator()
         response = generator.samlize_token(issuer, sp_url, subject, roles,
-                                           project, domain)
+                                           project)
         return (response, service_provider)
 
     def _build_response_headers(self, service_provider):
