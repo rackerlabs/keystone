@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_35ef2189",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-03-24T16:48:37Z",
+      "side": 1,
+      "message": "There is role assignments just for the self.project, not for the subprojects that it\u0027s created. IMO, you can grant roles for the subprojects and make the test.",
+      "parentUuid": "1a6ced46_d5632ddb",
+      "revId": "39a5c3331f3d650f1bee2e3d60e812b7182ad066",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_d176ea3d",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 1
