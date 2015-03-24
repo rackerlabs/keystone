@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_4c3c21e3",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-24T15:03:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_2a6352dd",
+      "revId": "a6a7f6fd93ef40b613b5cc0983b7d4ff5bf7ee61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_e01a3616",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 16
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_f71596e5",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-24T15:03:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_e01a3616",
+      "revId": "a6a7f6fd93ef40b613b5cc0983b7d4ff5bf7ee61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_8a9fe6b3",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 16
@@ -65,6 +101,24 @@
       "writtenOn": "2015-03-24T10:21:04Z",
       "side": 1,
       "message": "add a similar doc string..",
+      "revId": "a6a7f6fd93ef40b613b5cc0983b7d4ff5bf7ee61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_57a66a11",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 312,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-24T15:03:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_8a9fe6b3",
       "revId": "a6a7f6fd93ef40b613b5cc0983b7d4ff5bf7ee61",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -88,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_17a232ae",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 336,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-24T15:03:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_e0f156ce",
+      "revId": "a6a7f6fd93ef40b613b5cc0983b7d4ff5bf7ee61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_2aba7223",
         "filename": "keystone/catalog/backends/templated.py",
         "patchSetId": 16
@@ -105,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_17deb211",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-24T15:03:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_2aba7223",
+      "revId": "a6a7f6fd93ef40b613b5cc0983b7d4ff5bf7ee61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_c0f45ad1",
         "filename": "keystone/catalog/backends/templated.py",
         "patchSetId": 16
@@ -116,6 +206,24 @@
       "writtenOn": "2015-03-24T13:06:52Z",
       "side": 1,
       "message": "allow_substitution_keyerror should be passed to the format_url method as a keyword argument since it\u0027s referenced that way in the format_url method signature.",
+      "revId": "a6a7f6fd93ef40b613b5cc0983b7d4ff5bf7ee61",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_b7595e5d",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-24T15:03:27Z",
+      "side": 1,
+      "message": "since the parameter exceed length limitation, just initialize the parameter instead.",
+      "parentUuid": "1a6ced46_c0f45ad1",
       "revId": "a6a7f6fd93ef40b613b5cc0983b7d4ff5bf7ee61",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
