@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a6ced46_2b3a2fe7",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-25T17:38:06Z",
+      "side": 1,
+      "message": "Why does this have remote_ids and remote_id?",
+      "revId": "ca67d8736e87d2023782a346ea68a5d0dc4de89d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_1aaac070",
         "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
         "patchSetId": 30
