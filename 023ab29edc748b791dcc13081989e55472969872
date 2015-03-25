@@ -33,6 +33,24 @@
       "revId": "023ab29edc748b791dcc13081989e55472969872",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_5f600101",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T19:10:09Z",
+      "side": 1,
+      "message": "i think it could be used for groups too, so call it ldap_id_string?\ni\u0027m actually OK with external",
+      "parentUuid": "1a6ced46_42b933e8",
+      "revId": "023ab29edc748b791dcc13081989e55472969872",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
