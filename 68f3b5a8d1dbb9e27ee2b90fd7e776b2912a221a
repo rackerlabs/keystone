@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_8dec25f5",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 382,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-25T13:38:43Z",
+      "side": 1,
+      "message": "suggest to extract the headers to a private method in a follow up patch (it is used here and in the create_saml_assertion() method)",
+      "revId": "68f3b5a8d1dbb9e27ee2b90fd7e776b2912a221a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
