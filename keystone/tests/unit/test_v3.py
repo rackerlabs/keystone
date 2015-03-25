@@ -115,6 +115,53 @@ class AuthTestMixin(object):
             auth_data['scope'] = self.build_auth_scope(**kwargs)
         return {'auth': auth_data}
 
+    def get_unscoped_token_response(self, user_id, password):
+        """Get an unscoped token response."""
+        # build an authentication request
+        auth_data = self.build_authentication_request(user_id=user_id,
+                                                      password=password)
+        return self.v3_authenticate_token(auth_data)
+
+    def get_domain_scoped_token_response(self, user_id, password, domain_id):
+        """Get a domain-scoped token response."""
+        # build an authentication request
+        auth_data = self.build_authentication_request(user_id=user_id,
+                                                      password=password,
+                                                      domain_id=domain_id)
+        return self.v3_authenticate_token(auth_data)
+
+    def get_project_scoped_token_response(self, user_id, password, project_id):
+        """Get a project-scoped token response."""
+        # build an authentication request
+        auth_data = self.build_authentication_request(user_id=user_id,
+                                                      password=password,
+                                                      project_id=project_id)
+        return self.v3_authenticate_token(auth_data)
+
+    def get_trust_scoped_token_response(self, trustee_user, trust):
+        """Get a trust-scoped token response."""
+        auth_data = self.build_authentication_request(
+            user_id=trustee_user['id'],
+            password=trustee_user['password'],
+            trust_id=trust['id'])
+        return self.v3_authenticate_token(auth_data)
+
+    def validate_token(self, token, expected_status=200):
+        return self.get(
+            '/auth/tokens',
+            headers={'X-Subject-Token': token},
+            expected_status=expected_status)
+
+    def revoke_token(self, token, expected_status=204):
+        return self.delete(
+            '/auth/tokens',
+            headers={'X-Subject-Token': token},
+            expected_status=expected_status)
+
+    def set_user_enabled(self, user, enabled=True):
+        user['enabled'] = enabled
+        self.identity_api.update_user(user['id'], user)
+
 
 class RestfulTestCase(tests.SQLDriverOverrides, rest.RestfulTestCase,
                       AuthTestMixin):
