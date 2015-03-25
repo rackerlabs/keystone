@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_970fb887",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2306,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-25T23:38:22Z",
+      "side": 1,
+      "message": "change \"passess\" to \"passes\"",
+      "revId": "19190d6518934699f184539e28b4af638ca430ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_b7f91482",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2322,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-25T23:38:22Z",
+      "side": 1,
+      "message": "remove extra space after \"groups\"",
+      "revId": "19190d6518934699f184539e28b4af638ca430ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_5719c0d5",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2382,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-25T23:38:22Z",
+      "side": 1,
+      "message": "change \"passess\" to \"passes\"",
+      "revId": "19190d6518934699f184539e28b4af638ca430ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
