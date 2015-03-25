@@ -582,6 +582,177 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
         self.assertIsNone(catalog_endpoint.get('adminURL'))
         self.assertIsNone(catalog_endpoint.get('internalURL'))
 
+    def test_catalog_get_v3_catalog(self):
+        service = {
+            'id': 'service_id_%s' % uuid.uuid4().hex,
+            'type': 'type_%s' % uuid.uuid4().hex,
+            'name': 'name_%s' % uuid.uuid4().hex,
+            'description': 'desc_%s' % uuid.uuid4().hex
+        }
+        self.catalog_api.create_service(service['id'], service.copy())
+
+        endpoint = {
+            'id': 'endpoint_id_%s' % uuid.uuid4().hex,
+            'region_id': None,
+            'interface': 'public',
+            'url': '',
+            'service_id': service['id'],
+        }
+        self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
+
+        catalog = self.catalog_api.get_v3_catalog('user', 'tenant')
+
+        self.assertEqual(1, len(catalog),
+                         "There should be only one service in the catalog")
+
+        catalog_service = catalog[0]
+
+        self.assertEqual(service['name'], catalog_service['name'])
+        self.assertEqual(service['type'], catalog_service['type'])
+        self.assertEqual(service['id'], catalog_service['id'])
+
+        catalog_service_endpoints = catalog_service['endpoints']
+
+        self.assertEqual(1, len(catalog_service_endpoints),
+                         "There should be only one endpoint in "
+                         "the catalog service")
+
+        catalog_service_endpoint = catalog_service_endpoints[0]
+        self.assertEqual(endpoint['id'], catalog_service_endpoint['id'])
+        self.assertEqual('', catalog_service_endpoint['url'],
+                         catalog_service_endpoint['url'])
+        self.assertEqual(catalog_service_endpoint.get('interface'),
+                         catalog_service_endpoint['interface'])
+
+    def test_catalog_get_filtered_v3_catalog_with_endpoint_filtering(self):
+        service = {
+            'id': 'service_id_%s' % uuid.uuid4().hex,
+            'type': 'type_%s' % uuid.uuid4().hex,
+            'name': 'name_%s' % uuid.uuid4().hex,
+            'description': 'desc_%s' % uuid.uuid4().hex
+        }
+        self.catalog_api.create_service(service['id'], service.copy())
+
+        endpoint = {
+            'id': 'endpoint_id_%s' % uuid.uuid4().hex,
+            'region_id': None,
+            'interface': 'public',
+            'url': '',
+            'service_id': service['id'],
+        }
+        self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
+
+        # First try to create a project without enabling fatal deprecations,
+        # which should work due to the cross manager deprecated calls.
+        project_ref = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'domain_id': DEFAULT_DOMAIN_ID}
+        self.resource_api.create_project(project_ref['id'], project_ref)
+
+        self.endpoint_filter_api.add_endpoint_to_project(
+            endpoint['id'],
+            project_ref['id'])
+
+        # this throws an exception if the association is not found
+        self.endpoint_filter_api.check_endpoint_in_project(
+            endpoint['id'],
+            project_ref['id']
+        )
+
+        catalog = self.catalog_api.get_v3_catalog('user', project_ref['id'])
+
+        self.assertEqual(1, len(catalog),
+                         "There should be one service in the catalog %s" %
+                         catalog)
+
+        catalog_service = catalog[0]
+        self.assertEqual(service['name'],
+                         catalog_service['name'],
+                         catalog_service)
+        self.assertEqual(service['type'], catalog_service['type'],
+                         catalog_service)
+        self.assertEqual(service['id'], catalog_service['id'],
+                         catalog_service)
+
+        catalog_service_endpoints = catalog_service['endpoints']
+
+        self.assertEqual(1, len(catalog_service_endpoints),
+                         "There should be one endpoint in "
+                         "the catalog service %s" % catalog_service_endpoints)
+
+        catalog_service_endpoint = catalog_service_endpoints[0]
+        self.assertEqual(endpoint['id'], catalog_service_endpoint['id'])
+        self.assertEqual('', catalog_service_endpoint['url'],
+                         catalog_service_endpoint['url'])
+        self.assertEqual(catalog_service_endpoint.get('interface'),
+                         catalog_service_endpoint['interface'])
+
+    def test_catalog_get_unfiltered_v3_catalog_with_endpoint_filtering(self):
+        # test the scenario both ways:
+        # when CONF.return_all_endpoints_if_no_filter = false
+        # and
+        # when CONF.return_all_endpoints_if_no_filter = true
+        service = {
+            'id': 'service_id_%s' % uuid.uuid4().hex,
+            'type': 'type_%s' % uuid.uuid4().hex,
+            'name': 'name_%s' % uuid.uuid4().hex,
+            'description': 'desc_%s' % uuid.uuid4().hex
+        }
+        self.catalog_api.create_service(service['id'], service.copy())
+
+        endpoint = {
+            'id': 'endpoint_id_%s' % uuid.uuid4().hex,
+            'region_id': None,
+            'interface': 'public',
+            'url': '',
+            'service_id': service['id'],
+        }
+        self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
+
+        # First try to create a project without enabling fatal deprecations,
+        # which should work due to the cross manager deprecated calls.
+        project_ref = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'domain_id': DEFAULT_DOMAIN_ID}
+        self.resource_api.create_project(project_ref['id'], project_ref)
+
+        CONF.endpoint_filter.return_all_endpoints_if_no_filter = False
+        catalog = self.catalog_api.get_v3_catalog('user', project_ref['id'])
+        self.assertEqual(
+            0, len(catalog),
+            "There should be no services in the catalog %s" %
+            catalog)
+
+        CONF.endpoint_filter.return_all_endpoints_if_no_filter = True
+        catalog = self.catalog_api.get_v3_catalog('user', project_ref['id'])
+        self.assertEqual(1, len(catalog),
+                         "There should be one service in the catalog %s" %
+                         catalog)
+
+        catalog_service = catalog[0]
+        self.assertEqual(service['name'],
+                         catalog_service['name'],
+                         catalog_service)
+        self.assertEqual(service['type'], catalog_service['type'],
+                         catalog_service)
+        self.assertEqual(service['id'], catalog_service['id'],
+                         catalog_service)
+
+        catalog_service_endpoints = catalog_service['endpoints']
+
+        self.assertEqual(1, len(catalog_service_endpoints),
+                         "There should be one endpoint in "
+                         "the catalog service %s" % catalog_service_endpoints)
+
+        catalog_service_endpoint = catalog_service_endpoints[0]
+        self.assertEqual(endpoint['id'], catalog_service_endpoint['id'])
+        self.assertEqual('', catalog_service_endpoint['url'],
+                         catalog_service_endpoint['url'])
+        self.assertEqual(catalog_service_endpoint.get('interface'),
+                         catalog_service_endpoint['interface'])
+
     def test_create_endpoint_region_404(self):
         service = {
             'id': uuid.uuid4().hex,
