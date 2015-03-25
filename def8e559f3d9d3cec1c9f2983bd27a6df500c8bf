@@ -16,6 +16,24 @@
       "revId": "def8e559f3d9d3cec1c9f2983bd27a6df500c8bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_2b7234ad",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T15:50:39Z",
+      "side": 1,
+      "message": "the point of the patch is to swap the order.\n\nfrom identity.role_assignment.created to identity.created.role_assignment",
+      "parentUuid": "1a6ced46_4d94ed42",
+      "revId": "def8e559f3d9d3cec1c9f2983bd27a6df500c8bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
