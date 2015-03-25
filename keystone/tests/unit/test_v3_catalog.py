@@ -18,6 +18,7 @@ import uuid
 from testtools import matchers
 
 from keystone import catalog
+from keystone.contrib import endpoint_filter
 from keystone.tests import unit as tests
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import test_v3
@@ -627,6 +628,7 @@ class TestCatalogAPISQL(tests.TestCase):
         super(TestCatalogAPISQL, self).setUp()
         self.useFixture(database.Database())
         self.catalog_api = catalog.Manager()
+        self.endpoint_filter_api = endpoint_filter.Manager()
 
         self.service_id = uuid.uuid4().hex
         service = {'id': self.service_id, 'name': uuid.uuid4().hex}
@@ -737,6 +739,7 @@ class TestCatalogAPISQLRegions(tests.TestCase):
         super(TestCatalogAPISQLRegions, self).setUp()
         self.useFixture(database.Database())
         self.catalog_api = catalog.Manager()
+        self.endpoint_filter_api = endpoint_filter.Manager()
 
     def config_overrides(self):
         super(TestCatalogAPISQLRegions, self).config_overrides()
