@@ -2,6 +2,227 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a6ced46_f9670d4b",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-25T18:35:30Z",
+      "side": 1,
+      "message": "Should this be Horizon and Keystone?",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_592741ca",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-25T18:35:30Z",
+      "side": 1,
+      "message": "Since this is a title I think Federation should be in caps.",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_992d39ab",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-25T18:35:30Z",
+      "side": 1,
+      "message": "Same title thing here too",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_941b4072",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-25T18:35:30Z",
+      "side": 1,
+      "message": "Horizon",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_b4183c76",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-25T18:35:30Z",
+      "side": 1,
+      "message": "Keystone",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_543c68c8",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-25T18:35:30Z",
+      "side": 1,
+      "message": "Horizon",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_943260f0",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-25T18:35:30Z",
+      "side": 1,
+      "message": "Keystone",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_74c32489",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-25T18:35:30Z",
+      "side": 1,
+      "message": "Keystone",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_b4b91c17",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-25T18:35:30Z",
+      "side": 1,
+      "message": "Keystone",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_34452c17",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-25T18:35:30Z",
+      "side": 1,
+      "message": "Keystone",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_3487ecd8",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-25T18:35:30Z",
+      "side": 1,
+      "message": "Is there something that enforces this?",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_34b8cce4",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-25T18:35:30Z",
+      "side": 1,
+      "message": "s/should//",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_34860c14",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-25T18:35:30Z",
+      "side": 1,
+      "message": "Keystone and should \"Identity Providers\" be in caps? It\u0027s not like that anywhere else in the doc.",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_6e97d548",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 9
@@ -30,6 +251,74 @@
       "writtenOn": "2015-03-25T17:45:11Z",
       "side": 1,
       "message": "(nit): Sounds odd starting sentence with \"Thus\". Suggest either previous line should end in a comma, or start this sentence with \"This removes the...\"",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_74d084f6",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-25T18:35:30Z",
+      "side": 1,
+      "message": "Horizon",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_14fd906e",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-25T18:35:30Z",
+      "side": 1,
+      "message": "Keystone",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_f419d4d7",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-25T18:35:30Z",
+      "side": 1,
+      "message": "Changes",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_140bd07d",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-25T18:35:30Z",
+      "side": 1,
+      "message": "Horizon",
       "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
