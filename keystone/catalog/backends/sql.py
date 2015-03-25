@@ -22,6 +22,7 @@ from sqlalchemy.sql import true
 
 from keystone import catalog
 from keystone.catalog import core
+from keystone.common import dependency
 from keystone.common import sql
 from keystone import exception
 
@@ -87,6 +88,7 @@ class Endpoint(sql.ModelBase, sql.DictBase):
     extra = sql.Column(sql.JsonBlob())
 
 
+@dependency.requires('endpoint_filter_api')
 class Catalog(catalog.Driver):
     # Regions
     def list_regions(self, hints):
@@ -268,7 +270,7 @@ class Catalog(catalog.Driver):
             ref.extra = new_endpoint.extra
         return ref.to_dict()
 
-    def get_catalog(self, user_id, tenant_id):
+    def get_catalog(self, user_id, tenant_id, metadata=None):
         substitutions = dict(
             itertools.chain(six.iteritems(CONF),
                             six.iteritems(CONF.eventlet_server)))
@@ -303,17 +305,12 @@ class Catalog(catalog.Driver):
 
         return catalog
 
-    def get_v3_catalog(self, user_id, tenant_id):
-        d = dict(
+    def get_v3_catalog(self, user_id, tenant_id,
+                       metadata=None, unfiltered=False):
+        substitutions = dict(
             itertools.chain(six.iteritems(CONF),
                             six.iteritems(CONF.eventlet_server)))
-        d.update({'tenant_id': tenant_id,
-                  'user_id': user_id})
-
-        session = sql.get_session()
-        services = (session.query(Service).filter(Service.enabled == true()).
-                    options(sql.joinedload(Service.endpoints)).
-                    all())
+        substitutions.update({'tenant_id': tenant_id, 'user_id': user_id})
 
         def make_v3_endpoints(endpoints):
             for endpoint in (ep.to_dict() for ep in endpoints if ep.enabled):
@@ -322,7 +319,8 @@ class Catalog(catalog.Driver):
                 del endpoint['enabled']
                 endpoint['region'] = endpoint['region_id']
                 try:
-                    endpoint['url'] = core.format_url(endpoint['url'], d)
+                    endpoint['url'] = core.format_url(endpoint['url'],
+                                                      substitutions)
                 except exception.MalformedEndpoint:
                     continue  # this failure is already logged in format_url()
 
@@ -334,4 +332,57 @@ class Catalog(catalog.Driver):
             service['name'] = svc.extra.get('name', '')
             return service
 
-        return [make_v3_service(svc) for svc in services]
+        def get_filtered_v3_service_dict(service_id):
+            service_obj = self.get_service(service_id)
+            del service_obj['enabled']
+            del service_obj['description']
+            return service_obj
+
+        services = {}
+        if not unfiltered:
+            # use the endpoint filter api
+            refs = self.endpoint_filter_api.list_endpoints_for_project(
+                tenant_id
+            )
+
+            if (not refs and
+                    CONF.endpoint_filter.return_all_endpoints_if_no_filter):
+                # recurse to this method but don't filter this time
+                return self.get_v3_catalog(
+                    user_id, tenant_id, metadata=metadata, unfiltered=True)
+
+            for entry in refs:
+                try:
+                    endpoint = self.get_endpoint(entry['endpoint_id'])
+                    if not endpoint['enabled']:
+                        # Skip disabled endpoints.
+                        continue
+                    service_id = endpoint['service_id']
+                    services.setdefault(
+                        service_id,
+                        get_filtered_v3_service_dict(service_id))
+                    service = services[service_id]
+                    del endpoint['service_id']
+                    del endpoint['enabled']
+                    del endpoint['legacy_endpoint_id']
+                    endpoint['url'] = core.format_url(
+                        endpoint['url'], substitutions)
+                    # populate filtered endpoints
+                    if 'endpoints' in services[service_id]:
+                        service['endpoints'].append(endpoint)
+                    else:
+                        service['endpoints'] = [endpoint]
+                except exception.EndpointNotFound:
+                    # remove bad reference from association
+                    self.endpoint_filter_api.remove_endpoint_from_project(
+                        entry['endpoint_id'], tenant_id)
+            v3_catalog = [services[key] for key in services]
+        else:
+            session = sql.get_session()
+            services = (
+                session.query(Service).filter(Service.enabled == true()).
+                options(sql.joinedload(Service.endpoints)).
+                all())
+            v3_catalog = [make_v3_service(svc) for svc in services]
+
+        return v3_catalog
