@@ -70,6 +70,7 @@ class EndpointFilterCatalog(sql.Catalog):
             formatted_service = {}
             formatted_service['id'] = service['id']
             formatted_service['type'] = service['type']
+            formatted_service['name'] = service['name']
             formatted_service['endpoints'] = service['endpoints']
             catalog.append(formatted_service)
 
