@@ -524,8 +524,10 @@ class CadfRoleAssignmentNotificationWrapper(object):
 
     def __init__(self, operation):
         self.action = '%s.%s' % (operation, self.ROLE_ASSIGNMENT)
-        self.event_type = '%s.%s.%s' % (SERVICE, operation,
-                                        self.ROLE_ASSIGNMENT)
+        self.deprecated_event_type = '%s.%s.%s' % (SERVICE, operation,
+                                                   self.ROLE_ASSIGNMENT)
+        self.event_type = '%s.%s.%s' % (SERVICE, self.ROLE_ASSIGNMENT,
+                                        operation)
 
     def __call__(self, f):
         def wrapper(wrapped_self, role_id, *args, **kwargs):
@@ -580,6 +582,10 @@ class CadfRoleAssignmentNotificationWrapper(object):
 
             audit_kwargs['inherited_to_projects'] = inherited
             audit_kwargs['role'] = role_id
+
+            LOG.warning('event_type has changed from %(old)s to %(new)s' %
+                        {'old': self.deprecated_event_type,
+                         'new': self.event_type})
 
             try:
                 result = f(wrapped_self, role_id, *args, **kwargs)
