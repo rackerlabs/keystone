@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_52c9e557",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-03-25T15:03:41Z",
+      "side": 1,
+      "message": "Might want to use random.SystemRandom().shuffle() as its more secure and faster.  OSSG recommends this even in cases where random is not used for a cipher.",
+      "revId": "9826190cf2a0157da1d1da0d44ce87b827ccb4e4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
