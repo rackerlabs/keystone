@@ -22,6 +22,7 @@ import collections
 import contextlib
 import itertools
 import logging
+import random
 import threading
 import time
 
@@ -178,7 +179,8 @@ class MemcacheClientPool(ConnectionPool):
         self._hosts_deaduntil = [0] * len(urls)
 
     def _create_connection(self):
-        return _MemcacheClient(self.urls, **self._arguments)
+        return _MemcacheClient(random.shuffle(self.urls),
+                               **self._arguments)
 
     def _destroy_connection(self, conn):
         conn.disconnect_all()
