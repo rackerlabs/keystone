@@ -22,6 +22,7 @@ from sqlalchemy.sql import true
 
 from keystone import catalog
 from keystone.catalog import core
+from keystone.common import dependency
 from keystone.common import sql
 from keystone import exception
 
@@ -87,6 +88,7 @@ class Endpoint(sql.ModelBase, sql.DictBase):
     extra = sql.Column(sql.JsonBlob())
 
 
+@dependency.requires('endpoint_filter_api')
 class Catalog(catalog.Driver):
     # Regions
     def list_regions(self, hints):
@@ -352,9 +354,11 @@ class Catalog(catalog.Driver):
             silent_keyerror_failures = ['tenant_id']
 
         session = sql.get_session()
-        services = (session.query(Service).filter(Service.enabled == true()).
-                    options(sql.joinedload(Service.endpoints)).
-                    all())
+        # Do a joined load so all the service endpoints will be populated
+        all_services = (
+            session.query(Service).join(Service.endpoints)
+            .filter(Service.enabled == true()).
+            all())
 
         def make_v3_endpoints(endpoints):
             for endpoint in (ep.to_dict() for ep in endpoints if ep.enabled):
@@ -383,4 +387,63 @@ class Catalog(catalog.Driver):
             service['name'] = svc.extra.get('name', '')
             return service
 
-        return [make_v3_service(svc) for svc in services]
+        def add_endpoint_to_filtered_catalog(filtered_catalog,
+                                             service,
+                                             endpoint):
+            if service['id'] not in filtered_catalog:
+                filtered_catalog[service['id']] = service.copy()
+                filtered_catalog[service['id']]['endpoints'] = [endpoint]
+            else:
+                filtered_catalog[service['id']]['endpoints'].append(endpoint)
+
+        def create_endpoint_lookup_dict(unfiltered_catalog):
+            endpoint_lookup_dict = {}
+            for service in unfiltered_catalog:
+                for endpoint in service['endpoints']:
+                    if not endpoint_lookup_dict.get(endpoint['id']):
+                        new_endpoint = endpoint.copy()
+                        # need to preserve the service so we don't have
+                        # to look it up later
+                        new_endpoint['service'] = {'id': service['id'],
+                                                   'name': service['name'],
+                                                   'type': service['type']}
+                        endpoint_lookup_dict[endpoint['id']] = new_endpoint
+            return endpoint_lookup_dict
+
+        unfiltered_catalog = [make_v3_service(svc) for svc in all_services]
+
+        if tenant_id:
+            associations = self.endpoint_filter_api.list_endpoints_for_project(
+                tenant_id)
+
+        # If this is a domain scoped token then return the unfiltered catalog.
+        # Otherwise if there are no endpoints associated with the project
+        # check whether all endpoints should be returned
+        if not tenant_id:
+            return unfiltered_catalog
+        elif not associations:
+            if CONF.endpoint_filter.return_all_endpoints_if_no_filter:
+                return unfiltered_catalog
+            else:
+                return []
+
+        # Create a catalog of endpoints mapped by id
+        endpoint_lookup_dict = create_endpoint_lookup_dict(unfiltered_catalog)
+
+        filtered_catalog = {}
+        for project_association in associations:
+            endpoint = endpoint_lookup_dict.get(
+                project_association['endpoint_id'])
+            if endpoint:
+                # need to remove 'service' from the formatted endpoint
+                service = endpoint.pop('service')
+                add_endpoint_to_filtered_catalog(
+                    filtered_catalog,
+                    service,
+                    endpoint
+                )
+
+        v3_catalog = [filtered_catalog[service_id]
+                      for service_id in filtered_catalog]
+
+        return v3_catalog
