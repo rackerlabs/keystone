@@ -303,8 +303,10 @@ class TestV2CatalogAPISQL(unit.TestCase):
         self.create_endpoint(service_id=self.service_id)
 
     def create_endpoint(self, service_id, **kwargs):
+        self.region = dict(id="RegionOne")
+        self.catalog_api.create_region(self.region)
         endpoint = unit.new_endpoint_ref(service_id=service_id,
-                                         region_id=None,
+                                         region_id=self.region['id'],
                                          **kwargs)
         self.catalog_api.create_endpoint(endpoint['id'], endpoint)
         return endpoint
@@ -358,7 +360,7 @@ class TestV2CatalogAPISQL(unit.TestCase):
         self.catalog_api.create_service(unnamed_svc['id'], unnamed_svc)
         self.create_endpoint(service_id=unnamed_svc['id'])
 
-        region = None
+        region = self.region['id']
         catalog = self.catalog_api.get_catalog(user_id, tenant_id)
 
         self.assertEqual(named_svc['name'],

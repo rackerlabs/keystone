@@ -5433,9 +5433,12 @@ class CatalogTests(object):
         }
         self.catalog_api.create_service(service['id'], service)
 
+        region = dict(id="RegionOne")
+        self.catalog_api.create_region(region)
+
         # create an endpoint attached to the service
         endpoint = unit.new_endpoint_ref(service_id=service['id'],
-                                         region_id=None)
+                                         region_id=region['id'])
         self.catalog_api.create_endpoint(endpoint['id'], endpoint)
 
         # deleting the service should also delete the endpoint

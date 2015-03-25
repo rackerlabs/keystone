@@ -792,11 +792,15 @@ class TestCatalogAPISQL(unit.TestCase):
         service = {'id': self.service_id, 'name': uuid.uuid4().hex}
         self.catalog_api.create_service(self.service_id, service)
 
+        self.region = dict(id="RegionOne")
+        self.catalog_api.create_region(self.region)
+
         self.create_endpoint(service_id=self.service_id)
 
     def create_endpoint(self, service_id, **kwargs):
         endpoint = unit.new_endpoint_ref(service_id=service_id,
-                                         region_id=None, **kwargs)
+                                         region_id=self.region['id'],
+                                         **kwargs)
 
         self.catalog_api.create_endpoint(endpoint['id'], endpoint)
         return endpoint
