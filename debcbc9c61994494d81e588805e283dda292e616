@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_92ec3df5",
+        "filename": "doc/source/apache-httpd.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-03-25T15:00:28Z",
+      "side": 1,
+      "message": "Even thought a deployer might not be using SELinux, it was nice that to see that command for setting context for SELinux.",
+      "revId": "debcbc9c61994494d81e588805e283dda292e616",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
