@@ -4853,10 +4853,13 @@ class CatalogTests(object):
         }
         self.catalog_api.create_service(service['id'], service)
 
+        region = dict(id="RegionOne")
+        self.catalog_api.create_region(region)
+
         # create an endpoint attached to the service
         endpoint = {
             'id': uuid.uuid4().hex,
-            'region': uuid.uuid4().hex,
+            'region': region['id'],
             'interface': uuid.uuid4().hex[:8],
             'url': uuid.uuid4().hex,
             'service_id': service['id'],
