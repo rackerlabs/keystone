@@ -21,6 +21,7 @@ from sqlalchemy.sql import true
 
 from keystone import catalog
 from keystone.catalog import core
+from keystone.common import dependency
 from keystone.common import sql
 from keystone import exception
 
@@ -86,6 +87,7 @@ class Endpoint(sql.ModelBase, sql.DictBase):
     extra = sql.Column(sql.JsonBlob())
 
 
+@dependency.requires('endpoint_filter_api')
 class Catalog(catalog.CatalogDriverV8):
     # Regions
     def list_regions(self, hints):
@@ -349,9 +351,12 @@ class Catalog(catalog.CatalogDriverV8):
             silent_keyerror_failures = ['tenant_id']
 
         session = sql.get_session()
-        services = (session.query(Service).filter(Service.enabled == true()).
-                    options(sql.joinedload(Service.endpoints)).
-                    all())
+        # Do a joined load so all the service endpoints will be populated
+        all_services = (
+            session.query(Service)
+            .filter(Service.enabled == true())
+            .options(sql.joinedload(Service.endpoints, innerjoin=True))
+            .all())
 
         def make_v3_endpoints(endpoints):
             for endpoint in (ep.to_dict() for ep in endpoints if ep.enabled):
@@ -380,4 +385,31 @@ class Catalog(catalog.CatalogDriverV8):
             service['name'] = svc.extra.get('name', '')
             return service
 
-        return [make_v3_service(svc) for svc in services]
+        unfiltered_catalog = [make_v3_service(svc) for svc in all_services]
+
+        # If this is a domain scoped token then return the unfiltered catalog.
+        # Otherwise if there are no endpoints associated with the project
+        # check whether all endpoints should be returned
+        if not tenant_id:
+            return unfiltered_catalog
+
+        associations = set([endpoint['endpoint_id'] for endpoint in
+                            self.endpoint_filter_api
+                                .list_endpoints_for_project(tenant_id)])
+        if not associations:
+            if CONF.endpoint_filter.return_all_endpoints_if_no_filter:
+                return unfiltered_catalog
+            else:
+                return []
+
+        filtered_catalog = []
+        for service in unfiltered_catalog:
+            endpoints, service['endpoints'] = service['endpoints'], []
+            for endpoint in endpoints:
+                if endpoint['id'] in associations:
+                    service['endpoints'].append(endpoint)
+
+            if service['endpoints']:
+                filtered_catalog.append(service)
+
+        return filtered_catalog
