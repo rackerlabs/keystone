@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_3aba736e",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 842,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T19:30:56Z",
+      "side": 1,
+      "message": "i think using part of the response to verify against another part of the response is a bad approach",
+      "revId": "fc7f57c450692b3513213366577a1c4e4a9cff15",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
