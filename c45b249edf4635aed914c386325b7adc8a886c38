@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_14e847e1",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 337,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-25T10:16:07Z",
+      "side": 1,
+      "message": "So as previously discussed, in this v3 sql method, the service will still be included even with no endpoints (unlike the v2 or generic v3 methods).  I think this is actually a bug - the catalog is not a generalised service discovery mechanism, it\u0027s an \"endpoints that are accessible for the scope of my token\" discovery mechanism. So I think you should:\n\n 1) Change this comment to remove the bit about the service\n 2) Raise a separate bug saying that in circumstances that there are no valid endpoints, the service should also not be enumerated (this will let others debate this point separately)\n 3) Add a separate TODO comment in the make_v3_service method below saying that a bug has been raised about this",
+      "revId": "c45b249edf4635aed914c386325b7adc8a886c38",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
