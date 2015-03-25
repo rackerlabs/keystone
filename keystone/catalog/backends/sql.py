@@ -22,6 +22,7 @@ from sqlalchemy.sql import true
 
 from keystone import catalog
 from keystone.catalog import core
+from keystone.common import dependency
 from keystone.common import sql
 from keystone import exception
 
@@ -87,6 +88,7 @@ class Endpoint(sql.ModelBase, sql.DictBase):
     extra = sql.Column(sql.JsonBlob())
 
 
+@dependency.requires('endpoint_filter_api')
 class Catalog(catalog.Driver):
     # Regions
     def list_regions(self, hints):
@@ -311,9 +313,14 @@ class Catalog(catalog.Driver):
                   'user_id': user_id})
 
         session = sql.get_session()
-        services = (session.query(Service).filter(Service.enabled == true()).
-                    options(sql.joinedload(Service.endpoints)).
-                    all())
+        # this joined load means that all the endpoints will be populated
+        # from the same query that retrieves the service - so it's efficient
+        # in comparison to multiple sub-interrogations of the db or of
+        # of the keystone REST api for the same information
+        all_services = (
+            session.query(Service).filter(Service.enabled == true()).
+            options(sql.joinedload(Service.endpoints)).
+            all())
 
         def make_v3_endpoints(endpoints):
             for endpoint in (ep.to_dict() for ep in endpoints if ep.enabled):
@@ -334,4 +341,52 @@ class Catalog(catalog.Driver):
             service['name'] = svc.extra.get('name', '')
             return service
 
-        return [make_v3_service(svc) for svc in services]
+        def add_endpoint_to_filtered_catalog(catalog_map, catalog_service,
+                                             service_endpoint):
+            if not catalog_service['id'] in catalog_map:
+                catalog_map[catalog_service['id']] = \
+                    catalog_service.copy()
+                catalog_map[catalog_service['id']]['endpoints'] = [
+                    service_endpoint]
+            else:
+                catalog_map[catalog_service['id']][
+                    'endpoints'].append(service_endpoint)
+
+        def map_association_to_catalog_service(project_association,
+                                               catalog_map,
+                                               service_catalog):
+            endpoint_id = project_association['endpoint_id']
+            for catalog_service in service_catalog:
+                if 'endpoints' in catalog_service:
+                    for service_endpoint in catalog_service['endpoints']:
+                        if service_endpoint['id'] == endpoint_id:
+                            add_endpoint_to_filtered_catalog(
+                                catalog_map,
+                                catalog_service,
+                                service_endpoint
+                            )
+        unfiltered_catalog = [make_v3_service(svc) for svc in all_services]
+        refs = self.endpoint_filter_api.list_endpoints_for_project(
+            tenant_id
+        )
+
+        # create a catalog of services mapped by id, omitting any that
+        # have no endpoints assigned and ensuring that the service is
+        # only included once if there are multiple endpoints for it
+        filtered_catalog_map = {}
+        for association in refs:
+            map_association_to_catalog_service(
+                association,
+                filtered_catalog_map,
+                unfiltered_catalog)
+
+        v3_catalog = [filtered_catalog_map[service_id]
+                      for service_id in filtered_catalog_map]
+
+        # if there are no endpoints assigned to the project check
+        # whether all endpoints should be returned
+        if CONF.endpoint_filter.return_all_endpoints_if_no_filter \
+                and not filtered_catalog_map:
+            v3_catalog = unfiltered_catalog
+
+        return v3_catalog
