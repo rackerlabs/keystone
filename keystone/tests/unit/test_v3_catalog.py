@@ -632,6 +632,9 @@ class TestCatalogAPISQL(tests.TestCase):
         service = {'id': self.service_id, 'name': uuid.uuid4().hex}
         self.catalog_api.create_service(self.service_id, service)
 
+        self.region = dict(id="RegionOne")
+        self.catalog_api.create_region(self.region)
+
         endpoint = self.new_endpoint_ref(service_id=self.service_id)
         self.catalog_api.create_endpoint(endpoint['id'], endpoint)
 
@@ -647,7 +650,7 @@ class TestCatalogAPISQL(tests.TestCase):
             'interface': uuid.uuid4().hex[:8],
             'service_id': service_id,
             'url': uuid.uuid4().hex,
-            'region': uuid.uuid4().hex,
+            'region': self.region['id'],
         }
 
     def test_get_catalog_ignores_endpoints_with_invalid_urls(self):

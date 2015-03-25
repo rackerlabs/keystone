@@ -213,7 +213,8 @@ class Manager(manager.Manager):
                                             target='service table')
 
     def create_endpoint(self, endpoint_id, endpoint_ref, initiator=None):
-        self._assert_region_exists(endpoint_ref.get('region_id'))
+        self._assert_region_exists(endpoint_ref.get('region_id')
+                                   or endpoint_ref.get('region'))
         self._assert_service_exists(endpoint_ref['service_id'])
         ref = self.driver.create_endpoint(endpoint_id, endpoint_ref)
 
@@ -221,7 +222,8 @@ class Manager(manager.Manager):
         return ref
 
     def update_endpoint(self, endpoint_id, endpoint_ref, initiator=None):
-        self._assert_region_exists(endpoint_ref.get('region_id'))
+        self._assert_region_exists(endpoint_ref.get('region_id')
+                                   or endpoint_ref.get('region'))
         self._assert_service_exists(endpoint_ref.get('service_id'))
         ref = self.driver.update_endpoint(endpoint_id, endpoint_ref)
         notifications.Audit.updated(self._ENDPOINT, endpoint_id, initiator)
