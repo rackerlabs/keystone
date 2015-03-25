@@ -18,7 +18,8 @@ import uuid
 from testtools import matchers
 
 from keystone import catalog
-from keystone.tests import unit
+from keystone.contrib import endpoint_filter
+from keystone.tests import unit as tests
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import test_v3
 
@@ -801,7 +802,7 @@ class CatalogTestCase(test_v3.RestfulTestCase):
                       expected_status=400)
 
 
-class TestCatalogAPISQL(unit.TestCase):
+class TestCatalogAPISQL(tests.TestCase):
     """Tests for the catalog Manager against the SQL backend.
 
     """
@@ -810,6 +811,7 @@ class TestCatalogAPISQL(unit.TestCase):
         super(TestCatalogAPISQL, self).setUp()
         self.useFixture(database.Database())
         self.catalog_api = catalog.Manager()
+        self.endpoint_filter_api = endpoint_filter.Manager()
 
         self.service_id = uuid.uuid4().hex
         service = {'id': self.service_id, 'name': uuid.uuid4().hex}
@@ -909,7 +911,7 @@ class TestCatalogAPISQL(unit.TestCase):
 
 # TODO(dstanek): this needs refactoring with the test above, but we are in a
 # crunch so that will happen in a future patch.
-class TestCatalogAPISQLRegions(unit.TestCase):
+class TestCatalogAPISQLRegions(tests.TestCase):
     """Tests for the catalog Manager against the SQL backend.
 
     """
@@ -918,6 +920,7 @@ class TestCatalogAPISQLRegions(unit.TestCase):
         super(TestCatalogAPISQLRegions, self).setUp()
         self.useFixture(database.Database())
         self.catalog_api = catalog.Manager()
+        self.endpoint_filter_api = endpoint_filter.Manager()
 
     def config_overrides(self):
         super(TestCatalogAPISQLRegions, self).config_overrides()
