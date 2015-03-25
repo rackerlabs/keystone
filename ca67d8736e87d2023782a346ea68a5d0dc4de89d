@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_c275f5fa",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-25T21:26:34Z",
+      "side": 1,
+      "message": "I quite agree. I tried to create a different model in the migration script where I put the remote_id but sqlalchemy raise exception because the table is already bounded with a model.\n\nMaybe there is a solution to create a temporary model or add and remote the remote_id dynamically but I did not find the way to it. Therefore, I thought this is better then have plain SQL in the migration.\nI am investigating alternative solutions and if someone has an hint to fix this in a better way it is great.",
+      "parentUuid": "1a6ced46_a42489c5",
+      "revId": "ca67d8736e87d2023782a346ea68a5d0dc4de89d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_1aaac070",
         "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
         "patchSetId": 30
