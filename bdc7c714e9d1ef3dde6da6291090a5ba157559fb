@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_ee6025a7",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-25T17:45:11Z",
+      "side": 1,
+      "message": "(nit): Sounds odd starting sentence with \"Thus\". Suggest either previous line should end in a comma, or start this sentence with \"This removes the...\"",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
