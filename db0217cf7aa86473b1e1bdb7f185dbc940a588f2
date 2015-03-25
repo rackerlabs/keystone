@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_ff67ed4a",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T19:04:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_1d75f997",
+      "revId": "db0217cf7aa86473b1e1bdb7f185dbc940a588f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_1d9c19c0",
         "filename": "keystone/tests/unit/test_v3_catalog.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-24T12:40:54Z",
       "side": 1,
       "message": "remove \u0027up\u0027?",
+      "revId": "db0217cf7aa86473b1e1bdb7f185dbc940a588f2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_5f6f212b",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T19:04:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_1d9c19c0",
       "revId": "db0217cf7aa86473b1e1bdb7f185dbc940a588f2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
