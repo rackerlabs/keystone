@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_304c7842",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 278,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-25T03:49:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_7521999e",
+      "revId": "fe0ae1698ce4057b14fd0a52545409112bc4030f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_355f21e7",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 18
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-24T16:25:37Z",
       "side": 1,
       "message": "hmm...actually I\u0027m not sure the second part is true in this case...I think we will, as the code stands, return an \"empty\" service...not sure if we should fix this or not....",
+      "revId": "fe0ae1698ce4057b14fd0a52545409112bc4030f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_50e3b404",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 339,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-25T03:49:14Z",
+      "side": 1,
+      "message": "Not sure either, but maybe this will also impact the previous logic if we do in that way, any service with \"MalformedEndpoint\" should also keep such an \"empty\" service? or there is a big difference if we are talking about client-specific endpoint?\n\nLet\u0027s open this to others.\n\nThanks.",
+      "parentUuid": "1a6ced46_355f21e7",
       "revId": "fe0ae1698ce4057b14fd0a52545409112bc4030f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
