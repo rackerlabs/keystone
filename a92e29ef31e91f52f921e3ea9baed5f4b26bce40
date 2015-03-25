@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_bb9689ee",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_d1828151",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_96c47f41",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-24T00:32:59Z",
       "side": 1,
       "message": "it would be better to have this in the a toc so that it\u0027s easier to find.",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_d69f9cb2",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "i didn\u0027t address this for now since i don\u0027t know where to put it in the toc, i would like to rearrange things in the federation section to make the protocol specific bits easier to find anyway",
+      "parentUuid": "1a6ced46_96c47f41",
       "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_5b8595ab",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_b646dbbd",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_b6741bfe",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 8
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_bbbda96a",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_b6741bfe",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_37306056",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 8
@@ -81,6 +153,24 @@
       "writtenOn": "2015-03-24T00:38:01Z",
       "side": 1,
       "message": "trailing \"/\" is needed after websso",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_dbc0a5e2",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_37306056",
       "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_7bab311d",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_76ff0335",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_b6f97b4f",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 8
@@ -132,6 +240,24 @@
       "writtenOn": "2015-03-24T00:32:59Z",
       "side": 1,
       "message": "Apache -\u003e httpd",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_1bbb1d73",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_b6f97b4f",
       "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +281,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_db67c523",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_16a08f42",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_b6909bed",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 8
@@ -166,6 +310,24 @@
       "writtenOn": "2015-03-24T00:32:59Z",
       "side": 1,
       "message": "change \"if `mod_auth_openidc` is selected\" to \"for when `mod_auth_openidc` is used\"",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_5b73d5e6",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_b6909bed",
       "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +351,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_bb4be985",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_d1e9a11b",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_f12bfd7f",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 8
@@ -200,6 +380,24 @@
       "writtenOn": "2015-03-24T00:32:59Z",
       "side": 1,
       "message": "use `` for Shib-Identity-Provider",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_7b309101",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_f12bfd7f",
       "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -223,6 +421,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_bb19298a",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_1121799f",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_560cc742",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 8
@@ -234,6 +450,24 @@
       "writtenOn": "2015-03-24T00:32:59Z",
       "side": 1,
       "message": "use `` for university-idp\n\nchange \"it\u0027s\" to \"its\"",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_3642b03e",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_560cc742",
       "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -257,6 +491,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_db1c257a",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done... i think",
+      "parentUuid": "1a6ced46_310f5532",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_9658ff57",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 8
@@ -268,6 +520,24 @@
       "writtenOn": "2015-03-24T00:32:59Z",
       "side": 1,
       "message": "use `` for HTTP_OIDC_ISS",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_9b02ad09",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_9658ff57",
       "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +561,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_b6006002",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_565e8746",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_516851ba",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 8
@@ -302,6 +590,24 @@
       "writtenOn": "2015-03-24T00:32:59Z",
       "side": 1,
       "message": "change \"have ensure\" to \"ensure\"",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_f60ad81f",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_516851ba",
       "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -325,6 +631,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_36147043",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_312675b8",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_71370de4",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 8
@@ -336,6 +660,24 @@
       "writtenOn": "2015-03-24T00:32:59Z",
       "side": 1,
       "message": "python",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_56364ce8",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_71370de4",
       "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -359,6 +701,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_763508d9",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_913489df",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_d174419e",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 8
@@ -370,6 +730,24 @@
       "writtenOn": "2015-03-24T00:32:59Z",
       "side": 1,
       "message": "use `` around credentials.",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_f6581834",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_d174419e",
       "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -393,6 +771,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_9630c4e9",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_11589931",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_713e2dba",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 8
@@ -404,6 +800,24 @@
       "writtenOn": "2015-03-24T00:32:59Z",
       "side": 1,
       "message": "python",
+      "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_b64ea06d",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-25T05:36:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_713e2dba",
       "revId": "a92e29ef31e91f52f921e3ea9baed5f4b26bce40",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
