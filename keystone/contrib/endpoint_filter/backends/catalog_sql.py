@@ -13,65 +13,27 @@
 # under the License.
 
 from oslo_config import cfg
-import six
 
 from keystone.catalog.backends import sql
-from keystone.catalog import core as catalog_core
-from keystone.common import dependency
-from keystone import exception
+from keystone.openstack.common import versionutils
 
 
 CONF = cfg.CONF
 
 
-@dependency.requires('endpoint_filter_api')
 class EndpointFilterCatalog(sql.Catalog):
-    def get_v3_catalog(self, user_id, project_id):
-        substitutions = dict(six.iteritems(CONF))
-        substitutions.update({'tenant_id': project_id, 'user_id': user_id})
 
-        services = {}
+    @versionutils.deprecated(
+        what=('keystone.contrib.endpoint_filter.'
+              'backends.catalog_sql.EndPointFilterCatalog'),
+        as_of=versionutils.deprecated.KILO,
+        remove_in=+1,
+        in_favor_of='keystone.catalog.backends.sql.Catalog')
+    def __init__(self):
+        super(EndpointFilterCatalog, self).__init__()
 
-        refs = self.endpoint_filter_api.list_endpoints_for_project(project_id)
-
-        if (not refs and
-                CONF.endpoint_filter.return_all_endpoints_if_no_filter):
-            return super(EndpointFilterCatalog, self).get_v3_catalog(
-                user_id, project_id)
-
-        for entry in refs:
-            try:
-                endpoint = self.get_endpoint(entry['endpoint_id'])
-                if not endpoint['enabled']:
-                    # Skip disabled endpoints.
-                    continue
-                service_id = endpoint['service_id']
-                services.setdefault(
-                    service_id,
-                    self.get_service(service_id))
-                service = services[service_id]
-                del endpoint['service_id']
-                del endpoint['enabled']
-                del endpoint['legacy_endpoint_id']
-                endpoint['url'] = catalog_core.format_url(
-                    endpoint['url'], substitutions)
-                # populate filtered endpoints
-                if 'endpoints' in services[service_id]:
-                    service['endpoints'].append(endpoint)
-                else:
-                    service['endpoints'] = [endpoint]
-            except exception.EndpointNotFound:
-                # remove bad reference from association
-                self.endpoint_filter_api.remove_endpoint_from_project(
-                    entry['endpoint_id'], project_id)
-
-        # format catalog
-        catalog = []
-        for service_id, service in six.iteritems(services):
-            formatted_service = {}
-            formatted_service['id'] = service['id']
-            formatted_service['type'] = service['type']
-            formatted_service['endpoints'] = service['endpoints']
-            catalog.append(formatted_service)
-
-        return catalog
+    def get_v3_catalog(self, user_id, project_id,
+                       metadata=None):
+        return super(EndpointFilterCatalog, self).get_v3_catalog(
+            user_id,
+            project_id)
