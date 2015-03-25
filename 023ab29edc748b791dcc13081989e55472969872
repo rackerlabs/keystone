@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_a2f2e7cf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-25T00:53:27Z",
+      "side": 1,
+      "message": "fix the commit message because this allows for more than just periods.",
+      "revId": "023ab29edc748b791dcc13081989e55472969872",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_42b933e8",
+        "filename": "keystone/common/validation/parameter_types.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-25T00:53:27Z",
+      "side": 1,
+      "message": "it would be good to document under what circumstances this should be used of id_string.\n\nwhy not just call it user_id_string?",
+      "revId": "023ab29edc748b791dcc13081989e55472969872",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
