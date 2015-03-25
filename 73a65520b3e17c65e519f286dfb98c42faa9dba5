@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_087103e0",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-25T14:06:55Z",
+      "side": 1,
+      "message": "all keystone unit tests should use a common base test class so that we can have common setup for all keystone tests.",
+      "revId": "73a65520b3e17c65e519f286dfb98c42faa9dba5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
