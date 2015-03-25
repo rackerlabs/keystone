@@ -15,6 +15,7 @@
 
 from oslo_config import cfg
 
+from keystone.openstack.common import versionutils
 from keystone.token.persistence.backends import kvs
 
 
@@ -25,6 +26,11 @@ class Token(kvs.Token):
     kvs_backend = 'openstack.kvs.Memcached'
     memcached_backend = 'memcached'
 
+    @versionutils.deprecated(
+        versionutils.deprecated.KILO,
+        in_favor_of='keystone.token.persistence.backends.memcache_pool.Token',
+        remove_in=+1,
+        what='keystone.token.persistence.backends.memcache.Token')
     def __init__(self, *args, **kwargs):
         kwargs['memcached_backend'] = self.memcached_backend
         kwargs['no_expiry_keys'] = [self.revocation_key]
