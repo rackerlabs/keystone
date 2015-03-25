@@ -528,6 +528,225 @@ class SqlToken(SqlTests, test_backend.TokenTests):
         self.assertEqual(mysql_strategy.keywords, {'batch_size': 1000})
 
 
+class SqlCatalogV3(SqlTests):
+
+    def create_service(self):
+        service = {
+            'id': uuid.uuid4().hex,
+            'type': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex
+        }
+        self.catalog_api.create_service(service['id'], service.copy())
+        return service
+
+    def create_service_endpoint(self, service_id):
+        endpoint = {
+            'id': uuid.uuid4().hex,
+            'region_id': None,
+            'interface': 'public',
+            'url': 'https://localhost:8080',
+            'service_id': service_id
+        }
+        self.catalog_api.create_endpoint(endpoint['id'], endpoint.copy())
+        return endpoint
+
+    def assertServiceEqual(self, service, catalog_service):
+        self.assertEqual(service['name'], catalog_service['name'])
+        self.assertEqual(service['type'], catalog_service['type'])
+        self.assertEqual(service['id'], catalog_service['id'])
+
+    def assertEndpointEqual(self, endpoint, catalog_endpoint):
+        new_endpoint = endpoint.copy()
+        if 'service_id' in new_endpoint:
+            del new_endpoint['service_id']
+        new_endpoint['region'] = None
+        self.assertDictEqual(new_endpoint, catalog_endpoint)
+
+    def test_catalog_get_v3_catalog(self):
+
+        service = self.create_service()
+        endpoint = self.create_service_endpoint(service['id'])
+
+        catalog = self.catalog_api.get_v3_catalog('user', 'tenant')
+
+        self.assertEqual(1, len(catalog),
+                         'There should be only one service in the catalog')
+        self.assertServiceEqual(service, catalog[0])
+
+        catalog_service_endpoints = catalog[0]['endpoints']
+
+        self.assertEqual(1, len(catalog_service_endpoints),
+                         'There should be only one endpoint in '
+                         'the catalog service')
+        self.assertEndpointEqual(endpoint, catalog_service_endpoints[0])
+
+    def test_get_v3_catalog_with_single_service_and_ep_filtering(self):
+
+        service = self.create_service()
+        endpoint1 = self.create_service_endpoint(service['id'])
+        endpoint2 = self.create_service_endpoint(service['id'])
+
+        project1 = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'domain_id': DEFAULT_DOMAIN_ID}
+        self.resource_api.create_project(project1['id'], project1)
+
+        self.endpoint_filter_api.add_endpoint_to_project(
+            endpoint1['id'],
+            project1['id'])
+
+        project2 = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'domain_id': DEFAULT_DOMAIN_ID}
+        self.resource_api.create_project(project2['id'], project2)
+
+        self.endpoint_filter_api.add_endpoint_to_project(
+            endpoint1['id'],
+            project2['id'])
+
+        self.endpoint_filter_api.add_endpoint_to_project(
+            endpoint2['id'],
+            project2['id'])
+
+        catalog = self.catalog_api.get_v3_catalog('user', project1['id'])
+        self.assertEqual(
+            1,
+            len(catalog),
+            'There should be one service in the catalog %s' % (catalog))
+        self.assertServiceEqual(service, catalog[0])
+
+        catalog_service_endpoints = catalog[0]['endpoints']
+        self.assertEqual(
+            1,
+            len(catalog_service_endpoints),
+            'There should be one endpoint in the '
+            'catalog service %s' % (catalog_service_endpoints))
+        self.assertEndpointEqual(endpoint1, catalog_service_endpoints[0])
+
+        catalog = self.catalog_api.get_v3_catalog('user', project2['id'])
+        self.assertEqual(
+            1,
+            len(catalog),
+            'There should be one service in the catalog %s' % (catalog))
+
+        # verify that both endpoints are listed in the service for catalogue 2
+        catalog_service_endpoints = catalog[0]['endpoints']
+        self.assertEqual(2, len(catalog_service_endpoints),
+                         catalog_service_endpoints)
+        catalog_service_endpoint_ids = [catalog_endpoint['id']
+                                        for catalog_endpoint
+                                        in catalog_service_endpoints]
+        self.assertTrue(endpoint1['id'] in catalog_service_endpoint_ids)
+        self.assertTrue(endpoint2['id'] in catalog_service_endpoint_ids)
+
+    def test_get_v3_catalog_with_multiple_services_and_ep_filtering(self):
+
+        service1 = self.create_service()
+        service2 = self.create_service()
+        endpoint1 = self.create_service_endpoint(service1['id'])
+        self.create_service_endpoint(service1['id'])
+        endpoint3 = self.create_service_endpoint(service2['id'])
+        self.create_service_endpoint(service2['id'])
+
+        project = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'domain_id': DEFAULT_DOMAIN_ID}
+        self.resource_api.create_project(project['id'], project)
+
+        self.endpoint_filter_api.add_endpoint_to_project(
+            endpoint1['id'],
+            project['id'])
+        self.endpoint_filter_api.add_endpoint_to_project(
+            endpoint3['id'],
+            project['id'])
+
+        catalog = self.catalog_api.get_v3_catalog('user', project['id'])
+
+        self.assertEqual(
+            2,
+            len(catalog),
+            'There should be two services in the catalog %s' % (catalog))
+        sorted_services = {}
+        for service in catalog:
+            sorted_services[service['id']] = service
+        catalog_service = sorted_services[service1['id']]
+        self.assertServiceEqual(service1, catalog_service)
+
+        catalog_service_endpoints = catalog_service['endpoints']
+        self.assertEqual(
+            1,
+            len(catalog_service_endpoints),
+            'There should be one endpoint in '
+            'the catalog service %s' % (catalog_service_endpoints))
+        self.assertEndpointEqual(endpoint1, catalog_service_endpoints[0])
+
+        catalog_service = sorted_services[service2['id']]
+        self.assertServiceEqual(service2, catalog_service)
+
+        catalog_service_endpoints = catalog_service['endpoints']
+        self.assertEqual(
+            1,
+            len(catalog_service_endpoints),
+            'There should be one endpoint in '
+            'the catalog service %s' % (catalog_service_endpoints))
+        self.assertEndpointEqual(endpoint3, catalog_service_endpoints[0])
+
+    def test_get_empty_v3_catalog_with_endpoint_filtering(self):
+        # set up the scenario
+        self.config_fixture.config(group='endpoint_filter',
+                                   return_all_endpoints_if_no_filter=False)
+        # create a service with an endpoint
+        service = self.create_service()
+        self.create_service_endpoint(service['id'])
+
+        project = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'domain_id': DEFAULT_DOMAIN_ID}
+        self.resource_api.create_project(project['id'], project)
+
+        catalog = self.catalog_api.get_v3_catalog('user', project['id'])
+        self.assertEqual(
+            0,
+            len(catalog),
+            'There should be no services in the catalog %s' % (catalog))
+
+    def test_v3_catalog_return_all_endpoints_with_ep_filtering(self):
+        # set up the scenario
+        self.config_fixture.config(group='endpoint_filter',
+                                   return_all_endpoints_if_no_filter=True)
+
+        service = self.create_service()
+        self.create_service()
+        endpoint1 = self.create_service_endpoint(service['id'])
+
+        project = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'domain_id': DEFAULT_DOMAIN_ID}
+        self.resource_api.create_project(project['id'], project)
+
+        catalog = self.catalog_api.get_v3_catalog('user', project['id'])
+        self.assertEqual(
+            2,
+            len(catalog),
+            'There should be 2 services in the catalog %s' % (catalog))
+        self.assertServiceEqual(service, catalog[0])
+
+        catalog_service_endpoints = catalog[0]['endpoints']
+
+        self.assertEqual(
+            1,
+            len(catalog_service_endpoints),
+            'There should be one endpoint in '
+            'the catalog service %s' % (catalog_service_endpoints))
+        self.assertEndpointEqual(endpoint1, catalog_service_endpoints[0])
+
+
 class SqlCatalog(SqlTests, test_backend.CatalogTests):
 
     _legacy_endpoint_id_in_endpoint = True
