@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_a42489c5",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-25T20:44:01Z",
+      "side": 1,
+      "message": "It seems bad that this will make the models out of sync with the migrations.",
+      "parentUuid": "1a6ced46_8ecdf187",
+      "revId": "ca67d8736e87d2023782a346ea68a5d0dc4de89d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_1aaac070",
         "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
         "patchSetId": 30
@@ -84,6 +102,23 @@
       "side": 1,
       "message": "It is not a problem to add but as specified by Marek the primary_key\u003dTrue implies the uniqueness of the field. Previously it was there because the primary_key\u003dTrue was in both the remote_id and the idp_id and this translate to sql as PRIMARY KEY (`idp_id`.`remote_id`), this does not imply the uniqueness of the remote_id but that of the combination.\n\nThus, add only the unique id concept in remote_id does not make sense if we do not put back the idea of a primary key as a couple or some other changes.\n\nI would leave as it is now but if you (and others) prefer the unique approach for me is OK",
       "parentUuid": "9a80dd14_f87c1422",
+      "revId": "ca67d8736e87d2023782a346ea68a5d0dc4de89d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_84606d02",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-25T20:44:01Z",
+      "side": 1,
+      "message": "Can you drop this if we still have it defined in the models? Seems weird and will get us out of sync.",
       "revId": "ca67d8736e87d2023782a346ea68a5d0dc4de89d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
