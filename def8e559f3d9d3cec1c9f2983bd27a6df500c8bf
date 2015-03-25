@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_4d94ed42",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 530,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-03-25T13:37:41Z",
+      "side": 1,
+      "message": "nit: I think it might be better if you keep the same parameters order .",
+      "revId": "def8e559f3d9d3cec1c9f2983bd27a6df500c8bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
