@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_8ecdf187",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 30
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-25T17:45:28Z",
+      "side": 1,
+      "message": "Actually, it was removed but I put back because I need this for the migration. Using sqlalchemy to move the remote_id from the table \"identity_provider\" to the new table I need this attribute in the model. I was trying to add a new \"temporary\" model for the table used during the migration but I found several limitation with sqlalchemy and at the end I opted with this solution where the attribute is there but it is not used except for the migration (it is not included in the attributes list).\nIf there is an alternative solution allowing to use sqlalchemy for the migration and remove this attribute I am happy to remove it again because I do not like this too much.",
+      "parentUuid": "1a6ced46_2b3a2fe7",
+      "revId": "ca67d8736e87d2023782a346ea68a5d0dc4de89d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_1aaac070",
         "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
         "patchSetId": 30
