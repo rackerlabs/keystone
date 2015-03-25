@@ -22,6 +22,7 @@ from sqlalchemy.sql import true
 
 from keystone import catalog
 from keystone.catalog import core
+from keystone.common import dependency
 from keystone.common import sql
 from keystone import exception
 
@@ -87,6 +88,7 @@ class Endpoint(sql.ModelBase, sql.DictBase):
     extra = sql.Column(sql.JsonBlob())
 
 
+@dependency.requires('endpoint_filter_api')
 class Catalog(catalog.Driver):
     # Regions
     def list_regions(self, hints):
@@ -352,9 +354,14 @@ class Catalog(catalog.Driver):
             silent_keyerror_failures = ['tenant_id']
 
         session = sql.get_session()
-        services = (session.query(Service).filter(Service.enabled == true()).
-                    options(sql.joinedload(Service.endpoints)).
-                    all())
+        # this joined load means that all the endpoints will be populated
+        # from the same query that retrieves the service - so it's efficient
+        # in comparison to multiple sub-interrogations of the db or of the
+        # keystone REST api for the same information
+        all_services = (
+            session.query(Service).join(Service.endpoints)
+            .filter(Service.enabled == true()).
+            all())
 
         def make_v3_endpoints(endpoints):
             for endpoint in (ep.to_dict() for ep in endpoints if ep.enabled):
@@ -375,12 +382,59 @@ class Catalog(catalog.Driver):
 
                 yield endpoint
 
-        # TODO(davechen): If there is service with no endpoints, we should skip
-        # the service instead of keeping it in the catalog, see bug #1436704.
         def make_v3_service(svc):
             eps = list(make_v3_endpoints(svc.endpoints))
             service = {'endpoints': eps, 'id': svc.id, 'type': svc.type}
             service['name'] = svc.extra.get('name', '')
             return service
 
-        return [make_v3_service(svc) for svc in services]
+        def add_endpoint_to_filtered_catalog(filtered_catalog,
+                                             service,
+                                             endpoint):
+            if not service['id'] in filtered_catalog:
+                filtered_catalog[service['id']] = service.copy()
+                filtered_catalog[service['id']]['endpoints'] = [endpoint]
+            else:
+                filtered_catalog[service['id']]['endpoints'].append(endpoint)
+
+        def map_association_to_catalog_service(project_association,
+                                               filtered_catalog,
+                                               unfiltered_catalog):
+            endpoint_id = project_association['endpoint_id']
+            for service in unfiltered_catalog:
+                endpoints = service.get('endpoints')
+                endpoint = next(
+                    (ept for ept in endpoints if ept['id'] == endpoint_id),
+                    None
+                )
+                if endpoint:
+                    add_endpoint_to_filtered_catalog(
+                        filtered_catalog,
+                        service,
+                        endpoint
+                    )
+
+        unfiltered_catalog = [make_v3_service(svc) for svc in all_services]
+        associations = self.endpoint_filter_api.list_endpoints_for_project(
+            tenant_id)
+
+        # create a catalog of services mapped by id, omitting any that
+        # have no endpoints assigned and ensuring that the service is
+        # only included once if there are multiple endpoints for it
+        filtered_catalog = {}
+        for project_association in associations:
+            map_association_to_catalog_service(
+                project_association,
+                filtered_catalog,
+                unfiltered_catalog)
+
+        # if there are no endpoints assigned to the project check
+        # whether all endpoints should be returned
+        if (CONF.endpoint_filter.return_all_endpoints_if_no_filter and
+                not filtered_catalog):
+            v3_catalog = unfiltered_catalog
+        else:
+            v3_catalog = [filtered_catalog[service_id]
+                          for service_id in filtered_catalog]
+
+        return v3_catalog
