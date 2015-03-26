@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_5f55391b",
+        "filename": "keystone/tests/unit/backend/domain_config/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 543,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-26T21:20:49Z",
+      "side": 1,
+      "message": "this could be broken up with comments to be a bit cleaner, but that\u0027s OK",
+      "revId": "be7e5308fb5499c53fe4b4f0d475df9bdf2a005e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
