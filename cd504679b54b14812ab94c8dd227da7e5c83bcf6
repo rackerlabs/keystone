@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa963961_1ce90d1b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-26T15:23:06Z",
+      "side": 1,
+      "message": "ensuring*",
+      "revId": "cd504679b54b14812ab94c8dd227da7e5c83bcf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_3c69718c",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-26T15:23:06Z",
+      "side": 1,
+      "message": "Should this reference the configuration option for enabling global caching as well? Or at least in the documentation. As an end-user reading this, it would be easier to follow with something like: \n\n     \u0027Toggle for domain config caching. This has no \u0027\n     \u0027effect unless \u003cglobal caching config property name\u003e is also enabled\u0027",
+      "revId": "cd504679b54b14812ab94c8dd227da7e5c83bcf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_bc13410d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-26T15:23:06Z",
+      "side": 1,
+      "message": "Same comment here. If this is going to be one by default, then can the domain config caching just feed off the global caching options?",
+      "revId": "cd504679b54b14812ab94c8dd227da7e5c83bcf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_3dd230d1",
         "filename": "keystone/resource/core.py",
         "patchSetId": 3
