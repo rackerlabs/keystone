@@ -744,6 +744,50 @@ class SqlUpgradeTests(SqlMigrateBase):
             extra = fetch_service_extra(service_id)
             self.assertDictEqual(exp_extra, extra, msg)
 
+    def test_project_is_domain_upgrade(self):
+        self.upgrade(67)
+        self.assertTableColumns('project',
+                                ['id', 'name', 'extra', 'description',
+                                 'enabled', 'domain_id', 'parent_id',
+                                 'is_domain'])
+
+    def test_project_is_domain_downgrade(self):
+        self.upgrade(67)
+        self.downgrade(66)
+        self.assertTableColumns('project',
+                                ['id', 'name', 'extra', 'description',
+                                 'enabled', 'domain_id', 'parent_id'])
+
+    def test_project_is_domain_cleanup(self):
+        # make sure that the is_domain field is dropped in the downgrade
+        self.upgrade(67)
+        session = self.Session()
+        domain = {'id': uuid.uuid4().hex,
+                  'name': uuid.uuid4().hex,
+                  'enabled': True}
+        project = {
+            'id': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+            'domain_id': domain['id'],
+            'is_domain': True,
+            'name': uuid.uuid4().hex,
+            'parent_id': None
+        }
+        self.insert_dict(session, 'domain', domain)
+        self.insert_dict(session, 'project', project)
+        proj_table = sqlalchemy.Table('project', self.metadata, autoload=True)
+        self.assertEqual(1, session.query(proj_table).count())
+        project = session.query(proj_table)[0]
+        self.assertEqual(True, getattr(project, 'is_domain'))
+        session.close()
+        self.downgrade(66)
+        session = self.Session()
+        self.metadata.clear()
+        proj_table = sqlalchemy.Table('project', self.metadata, autoload=True)
+        self.assertEqual(1, session.query(proj_table).count())
+        project = session.query(proj_table)[0]
+        self.assertRaises(AttributeError, getattr, project, 'is_domain')
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
