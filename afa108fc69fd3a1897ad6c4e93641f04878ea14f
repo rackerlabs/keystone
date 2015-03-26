@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_c5a16d95",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-26T10:25:49Z",
+      "side": 1,
+      "message": "suggest we remove references to downgrade...and make this patch dependant on https://review.openstack.org/#/c/167834/",
+      "revId": "afa108fc69fd3a1897ad6c4e93641f04878ea14f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
