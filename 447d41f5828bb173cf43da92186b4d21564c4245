@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_f8feab37",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8533
+      },
+      "writtenOn": "2015-03-26T07:55:17Z",
+      "side": 1,
+      "message": "Thanks for the info ;)",
+      "parentUuid": "7a75e904_6f404157",
+      "revId": "447d41f5828bb173cf43da92186b4d21564c4245",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_d7bbbf0c",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 7
