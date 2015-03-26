@@ -108,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "fa963961_c56d0cce",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 699,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-26T13:40:00Z",
+      "side": 1,
+      "message": "I added a patch at the end of this chain refactoring that method.\nPlease let me know if you do not agree this is the best approach to solve these issues.",
+      "parentUuid": "1a6ced46_4f04b717",
+      "revId": "31b0fd6e207dd728110fe9d8e048d9ee38d73fc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_cf3fccb2",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 2
