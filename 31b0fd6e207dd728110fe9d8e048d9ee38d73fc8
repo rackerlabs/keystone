@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_af1feb6a",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 693,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-26T12:10:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_af3b70cf",
+      "revId": "31b0fd6e207dd728110fe9d8e048d9ee38d73fc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_77a95c8f",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 2
@@ -72,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_4f04b717",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 699,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-26T12:10:48Z",
+      "side": 1,
+      "message": "This test is based on role assignments on projects and _create_projects_hierarchy does not returns a clean project hierarchy, since it puts self.project_id as the root of the hierarchy, and there is already a role assignment on this project, defined on the sample data.\n\nIt could be confusing to someone reading it to understand why I am just adding on a role assignment in the subproject and project if I want it on all \u0027created\u0027 projects.\nIf we wanted to clarify this, I should make the comment a line 712 bigger to say there are something that already exists.\n\nI know using that method would save lines, but waste time from reviewers and maintainers, which is expensive.\n\nAs I stated on a comment in the previous patch set, anyone can fell free to submit a bug and fix that method, that could return a \u0027clean\u0027 hierarchy. I am not doing this as part of this patch since it is not related to the proposed change.",
+      "parentUuid": "1a6ced46_7d105b59",
+      "revId": "31b0fd6e207dd728110fe9d8e048d9ee38d73fc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_cf3fccb2",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 2
@@ -106,6 +142,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_b206701b",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 734,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-26T12:10:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_57c1c052",
+      "revId": "31b0fd6e207dd728110fe9d8e048d9ee38d73fc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_6f6c18d1",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 2
@@ -117,6 +171,24 @@
       "writtenOn": "2015-03-26T09:29:06Z",
       "side": 1,
       "message": "s/returns/only returns/",
+      "revId": "31b0fd6e207dd728110fe9d8e048d9ee38d73fc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_d2076c16",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 736,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-26T12:10:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_6f6c18d1",
       "revId": "31b0fd6e207dd728110fe9d8e048d9ee38d73fc8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -140,6 +212,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_8ff06f68",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 740,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-26T12:10:48Z",
+      "side": 1,
+      "message": "Explained above.",
+      "parentUuid": "1a6ced46_d7ccd08b",
+      "revId": "31b0fd6e207dd728110fe9d8e048d9ee38d73fc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_378a841b",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 2
@@ -151,6 +241,24 @@
       "writtenOn": "2015-03-25T23:29:35Z",
       "side": 1,
       "message": "extra space after ,",
+      "revId": "31b0fd6e207dd728110fe9d8e048d9ee38d73fc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_f20c683d",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 875,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-26T12:10:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_378a841b",
       "revId": "31b0fd6e207dd728110fe9d8e048d9ee38d73fc8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -174,6 +282,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_1215843f",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 882,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-26T12:10:48Z",
+      "side": 1,
+      "message": "Explained above.",
+      "parentUuid": "1a6ced46_d793f058",
+      "revId": "31b0fd6e207dd728110fe9d8e048d9ee38d73fc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_9785f808",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 2
@@ -191,6 +317,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_32128057",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 917,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-26T12:10:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_9785f808",
+      "revId": "31b0fd6e207dd728110fe9d8e048d9ee38d73fc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_578f002a",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 2
@@ -202,6 +346,24 @@
       "writtenOn": "2015-03-25T23:29:35Z",
       "side": 1,
       "message": "why not using self._create_projects_hierarchy()?",
+      "revId": "31b0fd6e207dd728110fe9d8e048d9ee38d73fc8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_92289487",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 923,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-26T12:10:48Z",
+      "side": 1,
+      "message": "Explained above.",
+      "parentUuid": "1a6ced46_578f002a",
       "revId": "31b0fd6e207dd728110fe9d8e048d9ee38d73fc8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
