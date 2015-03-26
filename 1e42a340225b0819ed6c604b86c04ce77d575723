@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_6b8095c0",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-26T02:59:10Z",
+      "side": 1,
+      "message": "you might have to flip the order here, to satisfy the tests; or change the tests around (since it only saves the most recent notification).\n\nI think it\u0027s safe to flip the order of the notifications, it shouldn\u0027t matter which event goes off first.",
+      "revId": "1e42a340225b0819ed6c604b86c04ce77d575723",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
