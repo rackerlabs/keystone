@@ -59,6 +59,8 @@ class EndpointFilterExtension(wsgi.V3ExtensionRouter):
         DELETE /OS-EP-FILTER/endpoint_groups/$endpoint_group/projects/
             $project_id
 
+        GET /OS-EP-FILTER/endpoint_groups/projects/{project_id}
+
     """
     PATH_PREFIX = '/OS-EP-FILTER'
     PATH_PROJECT_ENDPOINT = '/projects/{project_id}/endpoints/{endpoint_id}'
@@ -146,4 +148,13 @@ class EndpointFilterExtension(wsgi.V3ExtensionRouter):
                 resource_name='endpoints_in_endpoint_group'),
             path_vars={
                 'endpoint_group_id': ENDPOINT_GROUP_PARAMETER_RELATION
+            })
+        self._add_resource(
+            mapper, endpoint_group_controller,
+            path=self.PATH_PREFIX + '/endpoint_groups/projects/{project_id}',
+            get_action='list_endpoint_groups_for_project',
+            rel=build_resource_relation(
+                resource_name='endpoint_groups_in_project'),
+            path_vars={
+                'project_id': json_home.Parameters.PROJECT_ID,
             })

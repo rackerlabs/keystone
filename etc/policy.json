@@ -248,6 +248,8 @@
     "identity:list_endpoints_associated_with_endpoint_group": "rule:admin_required",
     "#": "GET /v3/OS-EP-FILTER/endpoint_groups/{endpoint_group_id}/projects/{project_id}",
     "identity:get_endpoint_group_in_project": "rule:admin_required",
+    "#": "GET /v3/OS-EP-FILTER/endpoint_groups/projects/{project_id}",
+    "identity:list_endpoint_groups_for_project": "rule:admin_required",
     "#": "PUT /v3/OS-EP-FILTER/endpoint_groups/{endpoint_group_id}/projects/{project_id}",
     "identity:add_endpoint_group_to_project": "rule:admin_required",
     "#": "DELETE /v3/OS-EP-FILTER/endpoint_groups/{endpoint_group_id}/projects/{project_id}",
