@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa963961_499c7269",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-03-26T16:00:06Z",
+      "side": 1,
+      "message": "Fixed",
+      "parentUuid": "fa81d914_c6a9dae0",
+      "revId": "34498291b5cd4406c50f76b45697c798294ae054",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa81d914_66eaee10",
         "filename": "keystone/common/sql/migration_helpers.py",
         "patchSetId": 11
@@ -30,6 +48,24 @@
       "writtenOn": "2015-01-28T22:29:19Z",
       "side": 1,
       "message": "same here",
+      "revId": "34498291b5cd4406c50f76b45697c798294ae054",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_89927a56",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-03-26T16:00:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa81d914_66eaee10",
       "revId": "34498291b5cd4406c50f76b45697c798294ae054",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
