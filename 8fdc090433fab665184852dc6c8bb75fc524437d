@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_4c4b60b1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-03-26T16:22:26Z",
+      "side": 1,
+      "message": "Although deprecating this backend in Kilo is probably satisfactory, it doesn\u0027t really provide any solution for someone using Icehouse where this backend was the only memcache option. I mention this because I\u0027m using Icehouse.",
+      "revId": "8fdc090433fab665184852dc6c8bb75fc524437d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
