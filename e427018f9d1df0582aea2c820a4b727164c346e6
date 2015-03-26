@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_b993be59",
+        "filename": "keystone/common/sql/migrate_repo/versions/067_insert_assignment_inherited_pk.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-26T08:46:07Z",
+      "side": 1,
+      "message": "can remove this now...we no longer need to support downgrades!! Yeh!!!! I know...after me making you write it as well!",
+      "revId": "e427018f9d1df0582aea2c820a4b727164c346e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_f999b679",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-26T08:46:07Z",
+      "side": 1,
+      "message": "no need to test the downgrade anymore",
+      "revId": "e427018f9d1df0582aea2c820a4b727164c346e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
