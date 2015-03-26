@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa963961_f30e8fe4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-26T20:28:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa963961_1ce90d1b",
+      "revId": "cd504679b54b14812ab94c8dd227da7e5c83bcf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa963961_3c69718c",
         "filename": "keystone/common/config.py",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "fa963961_f83aeee6",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 456,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-26T20:28:21Z",
+      "side": 1,
+      "message": "so I just copied what they all say :-)  how about I raise a separate bug to come back in and fix them all?",
+      "parentUuid": "fa963961_3c69718c",
+      "revId": "cd504679b54b14812ab94c8dd227da7e5c83bcf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa963961_bc13410d",
         "filename": "keystone/common/config.py",
         "patchSetId": 3
@@ -47,6 +83,24 @@
       "writtenOn": "2015-03-26T15:23:06Z",
       "side": 1,
       "message": "Same comment here. If this is going to be one by default, then can the domain config caching just feed off the global caching options?",
+      "revId": "cd504679b54b14812ab94c8dd227da7e5c83bcf6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_9809a234",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 459,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-26T20:28:21Z",
+      "side": 1,
+      "message": "I think this comment is actually wrong!  This has no effect unless the domain config caching is enabled...will fix.",
+      "parentUuid": "fa963961_bc13410d",
       "revId": "cd504679b54b14812ab94c8dd227da7e5c83bcf6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
