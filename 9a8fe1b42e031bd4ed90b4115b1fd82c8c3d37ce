@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_02ff6a02",
+        "filename": "keystone/common/sql/migrate_repo/versions/067_insert_assignment_inherited_pk.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-26T13:10:54Z",
+      "side": 1,
+      "message": "so you won\u0027t even need this once the patch https://review.openstack.org/#/c/167834/ has landed...maybe add a TODO comment to remove it (let\u0027s do that rather than rebase on top of it so we can get this in quickly)",
+      "revId": "9a8fe1b42e031bd4ed90b4115b1fd82c8c3d37ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
