@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_726798b7",
+        "filename": "keystone/common/sql/migrate_repo/versions/067_insert_assignment_inherited_pk.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-26T12:18:59Z",
+      "side": 1,
+      "message": "Oh I cannot believe you did so...\n\nKidding, no problem, going to remove this. :)\n\nDone.",
+      "parentUuid": "1a6ced46_b993be59",
+      "revId": "e427018f9d1df0582aea2c820a4b727164c346e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_f999b679",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-26T08:46:07Z",
       "side": 1,
       "message": "no need to test the downgrade anymore",
+      "revId": "e427018f9d1df0582aea2c820a4b727164c346e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_72feb8af",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 686,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-03-26T12:18:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_f999b679",
       "revId": "e427018f9d1df0582aea2c820a4b727164c346e6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
