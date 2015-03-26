@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa963961_09ee6a22",
+        "filename": "keystone/common/sql/migrate_repo/versions/062_drop_assignment_role_fk.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-03-26T15:55:22Z",
+      "side": 1,
+      "message": "if we want to keep such index, after we delete FK, we should create this index obviously - for example, the similar thing was made for table `users` - in migration 044 UC was created on FK column before FK. \n\nAlso I suggest, that we do not want to keep these hidden indexes because (at least) MySQL only stuff - PostgeSQL do not create additional indexes.",
+      "parentUuid": "fa963961_eba581b5",
+      "revId": "513e70f262b18046b1a5df4b1baf948d61549248",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa963961_4b034db9",
         "filename": "keystone/common/sql/migrate_repo/versions/062_drop_assignment_role_fk.py",
         "patchSetId": 1
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-26T14:29:53Z",
       "side": 1,
       "message": "I haven\u0027t seen anyone intent the subsequent lines like that before....",
+      "revId": "513e70f262b18046b1a5df4b1baf948d61549248",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_a913fe5b",
+        "filename": "keystone/common/sql/migrate_repo/versions/062_drop_assignment_role_fk.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-03-26T15:55:22Z",
+      "side": 1,
+      "message": "ok, will fix - it\u0027s not a big deal for me",
+      "parentUuid": "fa963961_4b034db9",
       "revId": "513e70f262b18046b1a5df4b1baf948d61549248",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
