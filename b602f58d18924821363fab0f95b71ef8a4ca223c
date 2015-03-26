@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_14bf39ab",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-26T09:21:14Z",
+      "side": 1,
+      "message": "(nit): s/remove/removed",
+      "revId": "b602f58d18924821363fab0f95b71ef8a4ca223c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_5419b1d5",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 593,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-26T09:21:14Z",
+      "side": 1,
+      "message": "maybe say \"sending duplicate %s notification....\"?",
+      "revId": "b602f58d18924821363fab0f95b71ef8a4ca223c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
