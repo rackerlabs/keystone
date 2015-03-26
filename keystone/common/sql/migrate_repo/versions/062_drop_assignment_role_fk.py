@@ -33,3 +33,12 @@ def upgrade(migrate_engine):
     if migrate_engine.name == 'sqlite':
         return
     migration_helpers.remove_constraints(list_constraints(migrate_engine))
+
+    if migrate_engine.name == 'mysql':
+        # NOTE(viktors): MySQL silently creates indexes on FK constraints, we
+        # should remove this index manually.
+        meta = sqlalchemy.MetaData(bind=migrate_engine)
+        table = sqlalchemy.Table('assignment', meta, autoload=True)
+        for index in table.indexes:
+            if [c.name for c in index.columns] == ['role_id']:
+                index.drop(migrate_engine)

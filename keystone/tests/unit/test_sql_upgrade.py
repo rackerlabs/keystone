@@ -425,10 +425,21 @@ class SqlUpgradeTests(SqlMigrateBase):
     def test_drop_assignment_role_fk(self):
         self.upgrade(61)
         self.assertTrue(self.does_fk_exist('assignment', 'role_id'))
+        if self.engine.name == "mysql":
+            self.assertTrue(self._does_index_exist('assignment',
+                                                   'assignment_role_id_fkey'))
         self.upgrade(62)
         if self.engine.name != 'sqlite':
             # sqlite does not support FK deletions (or enforcement)
             self.assertFalse(self.does_fk_exist('assignment', 'role_id'))
+        if self.engine.name == "mysql":
+            self.assertFalse(self._does_index_exist('assignment',
+                                                    'assignment_role_id_fkey'))
+
+    def _does_index_exist(self, table_name, index_name):
+        meta = sqlalchemy.MetaData(bind=self.engine)
+        table = sqlalchemy.Table('assignment', meta, autoload=True)
+        return index_name in [idx.name for idx in table.indexes]
 
     def does_fk_exist(self, table, fk_column):
         inspector = reflection.Inspector.from_engine(self.engine)
