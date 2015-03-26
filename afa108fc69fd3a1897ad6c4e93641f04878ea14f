@@ -16,6 +16,24 @@
       "revId": "afa108fc69fd3a1897ad6c4e93641f04878ea14f",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_6b8611bb",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 7
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-26T14:40:21Z",
+      "side": 1,
+      "message": "Thanks Henry, have removed the downgrade bit and add a note for that.\n\nAs to rebase, it looks like that patch will be updated again to address some comments, I will rebase on that when it\u0027s done.",
+      "parentUuid": "1a6ced46_c5a16d95",
+      "revId": "afa108fc69fd3a1897ad6c4e93641f04878ea14f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
