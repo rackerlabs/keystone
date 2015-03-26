@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa963961_9f6501e3",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-26T21:01:22Z",
+      "side": 1,
+      "message": "I think we\u0027ve settled on lower case now, no?",
+      "parentUuid": "fa963961_d03ffe23",
+      "revId": "b33fab225a95d05e2ef8943830a08a0864ec8bf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa963961_701dd2bc",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-26T19:04:09Z",
       "side": 1,
       "message": "wrap keystone-manage in backticks?",
+      "revId": "b33fab225a95d05e2ef8943830a08a0864ec8bf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_5f5f790e",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-26T21:01:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa963961_701dd2bc",
       "revId": "b33fab225a95d05e2ef8943830a08a0864ec8bf2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa963961_1fd57142",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-26T21:01:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa963961_90773602",
+      "revId": "b33fab225a95d05e2ef8943830a08a0864ec8bf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa963961_7074b2fc",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2015-03-26T19:04:09Z",
       "side": 1,
       "message": "file-based*?",
+      "revId": "b33fab225a95d05e2ef8943830a08a0864ec8bf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_7fbebd00",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-26T21:01:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa963961_7074b2fc",
       "revId": "b33fab225a95d05e2ef8943830a08a0864ec8bf2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
