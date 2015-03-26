@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "fa963961_d35ee844",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-26T19:36:20Z",
+      "side": 1,
+      "message": "actually, the naming convention is to use \"keystone\"",
+      "parentUuid": "fa963961_304f4a94",
+      "revId": "f3326ed43af7656504eb45f87e113ce93bb6b719",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa963961_30362a04",
         "filename": "keystone/identity/core.py",
         "patchSetId": 6
