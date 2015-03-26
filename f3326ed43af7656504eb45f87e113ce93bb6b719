@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa963961_4437acb0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-26T20:37:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa963961_b0ad9a33",
+      "revId": "f3326ed43af7656504eb45f87e113ce93bb6b719",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa963961_304f4a94",
         "filename": "keystone/identity/core.py",
         "patchSetId": 6
@@ -65,6 +83,24 @@
       "writtenOn": "2015-03-26T19:10:50Z",
       "side": 1,
       "message": "can we use delete here if we don\u0027t need the value returned from pop()?",
+      "revId": "f3326ed43af7656504eb45f87e113ce93bb6b719",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_648d107b",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-26T20:37:26Z",
+      "side": 1,
+      "message": "yeah, probably better. Will fix that.",
+      "parentUuid": "fa963961_30362a04",
       "revId": "f3326ed43af7656504eb45f87e113ce93bb6b719",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
