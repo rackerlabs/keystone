@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1a6ced46_aa219e4e",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-26T10:21:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_6b1dc7bd",
+      "revId": "a8cb19278d9e25ad9fc5942f26d9753a817f02e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_7a92ee9f",
         "filename": "keystone/identity/core.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-20T14:21:15Z",
       "side": 1,
       "message": "What about a more self documenting code snippet?\n\n        configs_in_the_database \u003d (\n            self.domain_config_api.\n            get_config_with_sensitive_info(domain_id))\n\n        a_config_is_loaded \u003d domain_id in self\n        def the_current_config_is_different_from(new_config):\n            return new_config !\u003d self[domain_id][\u0027cfg_overrides\u0027]\n\n        if configs_in_the_database:\n            if (not a_config_is_loaded or\n                    the_current_config_is_different_from(configs_in_the_database)):\n                self._load_config_from_database(domain_id,\t\n                                                domain_config_options)\n        elif a_config_is_loaded:\n            self.pop(domain_id)",
+      "revId": "a8cb19278d9e25ad9fc5942f26d9753a817f02e3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_c5940d8d",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-26T10:21:48Z",
+      "side": 1,
+      "message": "I added some of those ideas - thanks",
+      "parentUuid": "9a80dd14_7a92ee9f",
       "revId": "a8cb19278d9e25ad9fc5942f26d9753a817f02e3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
