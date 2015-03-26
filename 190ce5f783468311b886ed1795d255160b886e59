@@ -34,6 +34,24 @@
       "revId": "190ce5f783468311b886ed1795d255160b886e59",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_103b26ed",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-26T19:10:24Z",
+      "side": 1,
+      "message": "Done\n\nThis will need to change when we have Alembic.",
+      "parentUuid": "1a6ced46_79b786f5",
+      "revId": "190ce5f783468311b886ed1795d255160b886e59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
