@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_d03ffe23",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-26T19:04:09Z",
+      "side": 1,
+      "message": "Keystone*\n\napplies throughout this file.",
+      "revId": "b33fab225a95d05e2ef8943830a08a0864ec8bf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_701dd2bc",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-26T19:04:09Z",
+      "side": 1,
+      "message": "wrap keystone-manage in backticks?",
+      "revId": "b33fab225a95d05e2ef8943830a08a0864ec8bf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_90773602",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-26T19:04:09Z",
+      "side": 1,
+      "message": "remove \u0027that\u0027 since we\u0027re updating the documentation anyway.",
+      "revId": "b33fab225a95d05e2ef8943830a08a0864ec8bf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_7074b2fc",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 244,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-26T19:04:09Z",
+      "side": 1,
+      "message": "file-based*?",
+      "revId": "b33fab225a95d05e2ef8943830a08a0864ec8bf2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
