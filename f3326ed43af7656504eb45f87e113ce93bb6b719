@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_b0ad9a33",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-26T19:10:50Z",
+      "side": 1,
+      "message": "actually*",
+      "revId": "f3326ed43af7656504eb45f87e113ce93bb6b719",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_304f4a94",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-26T19:10:50Z",
+      "side": 1,
+      "message": "Keystone* \n\napplies to the rest of the comment.",
+      "revId": "f3326ed43af7656504eb45f87e113ce93bb6b719",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_30362a04",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-26T19:10:50Z",
+      "side": 1,
+      "message": "can we use delete here if we don\u0027t need the value returned from pop()?",
+      "revId": "f3326ed43af7656504eb45f87e113ce93bb6b719",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
