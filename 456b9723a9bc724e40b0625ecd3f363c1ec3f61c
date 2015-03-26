@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_d16e982e",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/006_add_remote_id_table.py",
+        "patchSetId": 31
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-26T06:03:18Z",
+      "side": 1,
+      "message": "just call pass - this patch (https://review.openstack.org/#/c/167834/) will land, and we can stop caring about downgrades",
+      "revId": "456b9723a9bc724e40b0625ecd3f363c1ec3f61c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
