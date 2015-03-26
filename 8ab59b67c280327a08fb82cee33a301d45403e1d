@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa963961_6509a031",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-26T15:09:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa963961_a2b43ed1",
+      "revId": "8ab59b67c280327a08fb82cee33a301d45403e1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa963961_a2e1de00",
         "filename": "keystone/contrib/federation/migrate_repo/versions/007_add_remote_id_table.py",
         "patchSetId": 36
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-26T13:35:28Z",
       "side": 1,
       "message": "we no longer have to provide downgrades, so we can delete this.",
+      "revId": "8ab59b67c280327a08fb82cee33a301d45403e1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_11dd7614",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/007_add_remote_id_table.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-26T15:09:48Z",
+      "side": 1,
+      "message": "Actually, the patch disabling the downgrades is not yet merged:\n\nhttps://review.openstack.org/#/c/167834/\n\nHence, I am leaving as it is for the moment.",
+      "parentUuid": "fa963961_a2e1de00",
       "revId": "8ab59b67c280327a08fb82cee33a301d45403e1d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
