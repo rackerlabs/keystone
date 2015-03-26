@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_a2b43ed1",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-26T13:35:28Z",
+      "side": 1,
+      "message": "how does the idp_id get filled in....I assume because it is a FK? Maybe add a comment saying that, since it\u0027s not particularly obvious.",
+      "revId": "8ab59b67c280327a08fb82cee33a301d45403e1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_a2e1de00",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/007_add_remote_id_table.py",
+        "patchSetId": 36
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-26T13:35:28Z",
+      "side": 1,
+      "message": "we no longer have to provide downgrades, so we can delete this.",
+      "revId": "8ab59b67c280327a08fb82cee33a301d45403e1d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
