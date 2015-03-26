@@ -104,6 +104,23 @@
       "revId": "04402d497ce07b85f5682fcef20b1e0548a88284",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_0f4484b5",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-26T09:42:12Z",
+      "side": 1,
+      "message": "assertItemsEqual should be used here instead of sorting",
+      "revId": "04402d497ce07b85f5682fcef20b1e0548a88284",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
