@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_cf56e7cd",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/007_add_remote_id_table.py",
+        "patchSetId": 34
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-26T11:45:05Z",
+      "side": 1,
+      "message": "This is not possible because the table \"idp_remote_ids\" has a foreign key with the identity_provider table. If you do not remove the table and/or not raise exception you get error during the downgrade of 001 script.\n\nI will drop the table for now and put back the remote-id column. What should we do with the data in table? My initial approach was to populate back the column but some information could be missed because the column accept only one remote_id and we have many. The comment were to stop the downgrade but it seems there is no agreement on this.",
+      "revId": "46f2f5b8a61a5775a4c2945c9e79c45e4eeb303e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
