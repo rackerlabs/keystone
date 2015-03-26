@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_d9007aad",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-26T08:38:54Z",
+      "side": 1,
+      "message": "version is str here, current_ver is str. If version is \u002745\u0027 and current_version is 60, version \u003c current_ver will be False. You can start ranting about Python2 now.",
+      "revId": "190ce5f783468311b886ed1795d255160b886e59",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
