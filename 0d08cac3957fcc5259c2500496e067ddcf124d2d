@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_5f48995b",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-26T20:54:46Z",
+      "side": 1,
+      "message": "I\u0027d like to see here a more descriptive message. It can be addressed in a follow-up though.",
+      "revId": "0d08cac3957fcc5259c2500496e067ddcf124d2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
