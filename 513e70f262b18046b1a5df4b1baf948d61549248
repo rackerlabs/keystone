@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_eba581b5",
+        "filename": "keystone/common/sql/migrate_repo/versions/062_drop_assignment_role_fk.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-26T14:29:53Z",
+      "side": 1,
+      "message": "I wonder if there is a case for having the helpers do this?  Are there cases when we remove a fk and DO want to keep the index? There might, although I suspect we should remove it always...and then let the writer manually re-add the index as they need it.  Maybe this is a follow on patch to clean this up?",
+      "revId": "513e70f262b18046b1a5df4b1baf948d61549248",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_4b034db9",
+        "filename": "keystone/common/sql/migrate_repo/versions/062_drop_assignment_role_fk.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-26T14:29:53Z",
+      "side": 1,
+      "message": "I haven\u0027t seen anyone intent the subsequent lines like that before....",
+      "revId": "513e70f262b18046b1a5df4b1baf948d61549248",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
