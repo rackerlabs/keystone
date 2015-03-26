@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a6ced46_b9f73ed2",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-26T08:38:36Z",
+      "side": 1,
+      "message": "please see my comment on https://review.openstack.org/#/c/166078/5/keystone/contrib/federation/migrate_repo/versions/007_add_relay_state_to_sp.py",
+      "revId": "1af987da7a2ba2f938c445a0a1f45d9296da8884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_39334eac",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-26T08:38:36Z",
+      "side": 1,
+      "message": "Making this a configurable options is a good idea or not a good idea?",
+      "revId": "1af987da7a2ba2f938c445a0a1f45d9296da8884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_590d6ae7",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/007_add_relay_state_to_sp.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-26T08:38:36Z",
+      "side": 1,
+      "message": "I will let others to weigh and simply wanted to raise a discussion here:\n\nI agree we don\u0027t need to make users specify this value explicitely while adding new Service Provider objects (hence JSONschema allows for null value), but the controller does sets default value either way. So it looks like all in all we want to end up with attribute being non null always.\nSomebody pointed out the migration case - why not simply add a migration helper which will add default values for those that were not added ?I think this will not significantly eat db store, will it? \nThe end resull is that we don\u0027t accept relay_state_prefix attribute being null, so why allow for such \u0027inconsistency\u0027  at the DB layer?\nAs long as there are no veto\u0027s or other technical contraints I vote for making this attribute not nullable.",
+      "revId": "1af987da7a2ba2f938c445a0a1f45d9296da8884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_99b0c244",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3026,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-26T08:38:36Z",
+      "side": 1,
+      "message": "\u0027an\u0027 or \u0027a\u0027 SP?",
+      "revId": "1af987da7a2ba2f938c445a0a1f45d9296da8884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a6ced46_d9b6ba3d",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3037,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-03-26T08:38:36Z",
+      "side": 1,
+      "message": "\u0027an\u0027 or \u0027a\u0027 SP?",
+      "revId": "1af987da7a2ba2f938c445a0a1f45d9296da8884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
