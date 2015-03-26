@@ -199,8 +199,23 @@ class ProjectV3(controller.V3Controller):
     @controller.protected()
     @validation.validated(schema.project_create, 'project')
     def create_project(self, context, project):
+        def _normalize_is_domain_project_domain_id(self, project_ref):
+            if project_ref.get('domain_id'):
+                msg = _('Cannot set domain_id for projects with the '
+                        'is_domain feature enabled.')
+                raise exception.ValidationError(msg)
+
+            project_ref['domain_id'] = project_ref['id']
+            return project_ref
+
         ref = self._assign_unique_id(self._normalize_dict(project))
-        ref = self._normalize_domain_id(context, ref)
+        if 'is_domain' in ref and ref['is_domain']:
+            ref = _normalize_is_domain_project_domain_id(context, ref)
+        else:
+            ref = self._normalize_domain_id(context, ref)
+            # TODO(rodrigods): The parent_id must be present in this point, if
+            # not provided by the user, we set it to the same value as the
+            # domain_id
         initiator = notifications._get_request_audit_info(context)
         try:
             ref = self.resource_api.create_project(ref['id'], ref,
