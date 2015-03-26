@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "fa963961_8e9398a3",
+        "filename": "keystone/common/sql/migrate_repo/versions/067_insert_assignment_inherited_pk.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-26T18:26:57Z",
+      "side": 1,
+      "message": "nit: This is *really* nit picky but could we change \u0027 to \" here to be consistent with https://www.python.org/dev/peps/pep-0257/#multi-line-docstrings ?",
+      "revId": "9a8fe1b42e031bd4ed90b4115b1fd82c8c3d37ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_2e5ecce9",
+        "filename": "keystone/common/sql/migrate_repo/versions/067_insert_assignment_inherited_pk.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-26T18:26:57Z",
+      "side": 1,
+      "message": "nit: s/ One action point is to do not add new migrations with downgrade functions./This could be improved by not providing downgrade() functions in future migration scripts, instead of passing on an noop downgrade()./",
+      "revId": "9a8fe1b42e031bd4ed90b4115b1fd82c8c3d37ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_ee57c4c8",
+        "filename": "keystone/common/sql/migrate_repo/versions/067_insert_assignment_inherited_pk.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-26T18:26:57Z",
+      "side": 1,
+      "message": "Do we have official documentation that we can reference here?",
+      "revId": "9a8fe1b42e031bd4ed90b4115b1fd82c8c3d37ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa963961_02ff6a02",
         "filename": "keystone/common/sql/migrate_repo/versions/067_insert_assignment_inherited_pk.py",
         "patchSetId": 8
@@ -13,6 +64,57 @@
       "writtenOn": "2015-03-26T13:10:54Z",
       "side": 1,
       "message": "so you won\u0027t even need this once the patch https://review.openstack.org/#/c/167834/ has landed...maybe add a TODO comment to remove it (let\u0027s do that rather than rebase on top of it so we can get this in quickly)",
+      "revId": "9a8fe1b42e031bd4ed90b4115b1fd82c8c3d37ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_8e6f1892",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 5161,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-26T18:26:57Z",
+      "side": 1,
+      "message": "Same comment as previous, since other methods/classes use \" for docstrings in this module.",
+      "revId": "9a8fe1b42e031bd4ed90b4115b1fd82c8c3d37ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_6e03b4b9",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 5163,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-26T18:26:57Z",
+      "side": 1,
+      "message": "an inherited what?\n\ns/inherited/inherited role assignment/",
+      "revId": "9a8fe1b42e031bd4ed90b4115b1fd82c8c3d37ce",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_eeb34409",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 687,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-26T18:26:57Z",
+      "side": 1,
+      "message": "same comment here",
       "revId": "9a8fe1b42e031bd4ed90b4115b1fd82c8c3d37ce",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
