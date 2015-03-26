@@ -532,6 +532,13 @@ class SqlUpgradeTests(SqlMigrateBase):
             extra = fetch_service_extra(service_id)
             self.assertDictEqual(exp_extra, extra, msg)
 
+    def test_project_is_domain_upgrade(self):
+        self.upgrade(67)
+        self.assertTableColumns('project',
+                                ['id', 'name', 'extra', 'description',
+                                 'enabled', 'domain_id', 'parent_id',
+                                 'is_domain'])
+
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
         # Populate the appropriate fields in the user
