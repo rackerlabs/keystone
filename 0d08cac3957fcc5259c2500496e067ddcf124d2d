@@ -16,6 +16,23 @@
       "revId": "0d08cac3957fcc5259c2500496e067ddcf124d2d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_501763a3",
+        "filename": "keystone/tests/unit/test_sql_migrate_extensions.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 316,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:27:42Z",
+      "side": 1,
+      "message": "should be able to just call it COLUMN_NAMES now.",
+      "revId": "0d08cac3957fcc5259c2500496e067ddcf124d2d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
