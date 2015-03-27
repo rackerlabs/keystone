@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa963961_8130f857",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-27T07:49:57Z",
+      "side": 1,
+      "message": "i\u0027ll change this to nullable\u003dFalse",
+      "parentUuid": "1a6ced46_b9f73ed2",
+      "revId": "1af987da7a2ba2f938c445a0a1f45d9296da8884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_39334eac",
         "filename": "keystone/contrib/federation/core.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-26T08:38:36Z",
       "side": 1,
       "message": "Making this a configurable options is a good idea or not a good idea?",
+      "revId": "1af987da7a2ba2f938c445a0a1f45d9296da8884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_81659846",
+        "filename": "keystone/contrib/federation/core.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-27T07:49:57Z",
+      "side": 1,
+      "message": "i like that idea.",
+      "parentUuid": "1a6ced46_39334eac",
       "revId": "1af987da7a2ba2f938c445a0a1f45d9296da8884",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "fa963961_615a9485",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/007_add_relay_state_to_sp.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-27T07:49:57Z",
+      "side": 1,
+      "message": "you have a point.",
+      "parentUuid": "1a6ced46_590d6ae7",
+      "revId": "1af987da7a2ba2f938c445a0a1f45d9296da8884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_99b0c244",
         "filename": "keystone/tests/unit/test_v3_federation.py",
         "patchSetId": 5
@@ -64,6 +118,24 @@
       "writtenOn": "2015-03-26T08:38:36Z",
       "side": 1,
       "message": "\u0027an\u0027 or \u0027a\u0027 SP?",
+      "revId": "1af987da7a2ba2f938c445a0a1f45d9296da8884",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_c14ba0af",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 3026,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-27T07:49:57Z",
+      "side": 1,
+      "message": "an is correct, since it\u0027s an acronym and S sounds like \u0027ess\u0027.",
+      "parentUuid": "1a6ced46_99b0c244",
       "revId": "1af987da7a2ba2f938c445a0a1f45d9296da8884",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
