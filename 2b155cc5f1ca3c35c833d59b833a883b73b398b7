@@ -16,6 +16,23 @@
       "revId": "2b155cc5f1ca3c35c833d59b833a883b73b398b7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_75dc80e4",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/007_add_relay_state_to_sp.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-27T16:21:50Z",
+      "side": 1,
+      "message": "this needs to change to 008",
+      "revId": "2b155cc5f1ca3c35c833d59b833a883b73b398b7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
