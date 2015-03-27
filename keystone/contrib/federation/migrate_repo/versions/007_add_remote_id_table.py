@@ -11,9 +11,9 @@
 # under the License.
 
 import sqlalchemy as orm
+from sqlalchemy.orm import sessionmaker
 
 from keystone.common import sql
-from keystone.contrib.federation.backends.sql import IdPRemoteIdsModel
 
 
 def upgrade(migrate_engine):
@@ -37,6 +37,10 @@ def upgrade(migrate_engine):
     with sql.transaction() as session:
         for identity in session.query(idp_table.c.id,
                                       idp_table.c.remote_id):
-            session.add(IdPRemoteIdsModel(idp_id=identity.id,
-                                          remote_id=identity.remote_id))
+            remote_idp_entry = {'idp_id': identity.id,
+                                'remote_id': identity.remote_id}
+            new_session = sessionmaker(bind=migrate_engine)()
+            remote_id_table.insert(remote_idp_entry).execute()
+            new_session.commit()
+
     idp_table.drop_column('remote_id')
