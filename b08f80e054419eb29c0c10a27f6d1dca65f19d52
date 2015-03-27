@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "fa963961_f81d3567",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-27T10:04:41Z",
+      "side": 1,
+      "message": "Agree with Steve\u0027s suggestion.  And if it\u0027s true that that API does not work at all right now (i.e. there is no route), then I think it is OK to change the doc to be the correct API.",
+      "parentUuid": "fa963961_1e27a913",
+      "revId": "b08f80e054419eb29c0c10a27f6d1dca65f19d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa963961_fe6ac519",
         "filename": "keystone/contrib/endpoint_filter/routers.py",
         "patchSetId": 3
