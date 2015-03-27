@@ -16,6 +16,24 @@
       "revId": "c1ec463931f557bd7fe5c98b9c63153c0c9cbc7e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_786ec5ca",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/007_add_remote_id_table.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 10335
+      },
+      "writtenOn": "2015-03-27T10:09:06Z",
+      "side": 1,
+      "message": "I agree with henry-nash. Create new session is a waste. Additionally, I think the session is not used here so you do not need to create a session and commit the session because the insert is not in a transaction but only the query.\n\nI have tested without line 42 and 44 and it works properly.",
+      "parentUuid": "fa963961_4d46a124",
+      "revId": "c1ec463931f557bd7fe5c98b9c63153c0c9cbc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
