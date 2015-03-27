@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_2f4fc7be",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-27T15:46:21Z",
+      "side": 1,
+      "message": "lines 352 - 356 and 378 - 382 can be extracted to a private method",
+      "revId": "7220fa8de8ca534bad6d3b171c85c89e84523008",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
