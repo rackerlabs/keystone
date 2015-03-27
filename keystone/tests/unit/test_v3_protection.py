@@ -776,6 +776,13 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
         self.delete(member_url, auth=self.auth,
                     expected_status=status_no_data)
 
+    def _test_get_project_details(self, project_id, expected=None):
+        status_OK, status_created, status_no_data = self._stati(expected)
+        entity_url = '/projects/%s' % project_id
+
+        self.get(entity_url, auth=self.auth,
+                 expected_status=status_OK)
+
     def test_user_management(self):
         # First, authenticate with a user that does not have the domain
         # admin role - shouldn't be able to do much.
@@ -935,6 +942,24 @@ class IdentityTestv3CloudPolicySample(test_v3.RestfulTestCase):
         url = '/credentials'
         self.get(url, auth=self.auth,
                  expected_status=exception.ForbiddenAction.code)
+
+    def test_get_project_details(self):
+        self.auth = self.build_authentication_request(
+            user_id=self.just_a_user['id'],
+            password=self.just_a_user['password'],
+            project_id=self.project['id'])
+
+        self._test_get_project_details(self.project['id'],
+                                       expected=exception.ForbiddenAction.code)
+
+        # Now, authenticate with a user that does have the project
+        # admin role
+        self.auth = self.build_authentication_request(
+            user_id=self.project_admin_user['id'],
+            password=self.project_admin_user['password'],
+            project_id=self.project['id'])
+
+        self._test_get_project_details(self.project['id'])
 
     def test_get_and_delete_ec2_credentials(self):
         """Tests getting and deleting ec2 credentials through the ec2 API."""
