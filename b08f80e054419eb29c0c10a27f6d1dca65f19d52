@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_90484b5d",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-03-27T00:52:37Z",
+      "side": 1,
+      "message": "Not sure if this is resty. Shouldn\u0027t it be\n\n\u0027/projects/{project_id}/endpoint_groups\u0027",
+      "revId": "b08f80e054419eb29c0c10a27f6d1dca65f19d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
