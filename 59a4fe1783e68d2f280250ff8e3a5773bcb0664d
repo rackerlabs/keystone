@@ -34,6 +34,23 @@
       "revId": "59a4fe1783e68d2f280250ff8e3a5773bcb0664d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_9c818492",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/007_add_remote_id_table.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-03-27T06:25:52Z",
+      "side": 1,
+      "message": "the patch for removing downgrades has been merged, this section can be removed.",
+      "revId": "59a4fe1783e68d2f280250ff8e3a5773bcb0664d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
