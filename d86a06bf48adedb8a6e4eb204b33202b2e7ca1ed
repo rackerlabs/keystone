@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_0b73ecb2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:49:46Z",
+      "side": 1,
+      "message": "DocImpact",
+      "revId": "d86a06bf48adedb8a6e4eb204b33202b2e7ca1ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_0b5c0c24",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:49:46Z",
+      "side": 1,
+      "message": "I don\u0027t think readers are going to know if it\u0027s domain-specific drivers in general that\u0027s new and experimental or just storing domain-specific configs in SQL.",
+      "revId": "d86a06bf48adedb8a6e4eb204b33202b2e7ca1ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_b02fcfa0",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:49:46Z",
+      "side": 1,
+      "message": "suggest use lowercase true since that\u0027s what the help text says.",
+      "revId": "d86a06bf48adedb8a6e4eb204b33202b2e7ca1ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_2b09102d",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 199,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:49:46Z",
+      "side": 1,
+      "message": "change \"configurations\" to \"configuration\" ?",
+      "revId": "d86a06bf48adedb8a6e4eb204b33202b2e7ca1ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_9003ab0f",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 200,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:49:46Z",
+      "side": 1,
+      "message": "I don\u0027t think readers are going to understand what this means.",
+      "revId": "d86a06bf48adedb8a6e4eb204b33202b2e7ca1ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_eb13285b",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:49:46Z",
+      "side": 1,
+      "message": "change \"datbase\" to \"database\"",
+      "revId": "d86a06bf48adedb8a6e4eb204b33202b2e7ca1ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_4b2b3483",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:49:46Z",
+      "side": 1,
+      "message": "Now it\u0027s the SQL-based method and not the Identity API? Need to pick one term to refer to this otherwise nobody\u0027s going to know if it\u0027s talking about something new or the same thing.",
+      "revId": "d86a06bf48adedb8a6e4eb204b33202b2e7ca1ed",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
