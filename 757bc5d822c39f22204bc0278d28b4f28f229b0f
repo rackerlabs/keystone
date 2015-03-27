@@ -1,0 +1,276 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_905f2b0e",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 274,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:12:51Z",
+      "side": 1,
+      "message": "this doesn\u0027t format correctly due to the space in the type, the type needs to be on a separate line in this case:\n\n :type user_id: unicode string\n\nalso, change \"of user\" to \"of the user\"",
+      "revId": "757bc5d822c39f22204bc0278d28b4f28f229b0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_709b87ca",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 276,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:12:51Z",
+      "side": 1,
+      "message": "same here\n\nchange \"of project\" to \"of the project\"",
+      "revId": "757bc5d822c39f22204bc0278d28b4f28f229b0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_70826754",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:12:51Z",
+      "side": 1,
+      "message": "similar comment here.",
+      "revId": "757bc5d822c39f22204bc0278d28b4f28f229b0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_50876361",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 333,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:12:51Z",
+      "side": 1,
+      "message": "similar comment here.",
+      "revId": "757bc5d822c39f22204bc0278d28b4f28f229b0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_1081db4a",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 344,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:12:51Z",
+      "side": 1,
+      "message": "should refactor this code first to remove the duplication.",
+      "revId": "757bc5d822c39f22204bc0278d28b4f28f229b0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_70e9471a",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:12:51Z",
+      "side": 1,
+      "message": "put type on separate line so it\u0027s formatted correctly.\n\nchange \"of user\" to \"of the user\"",
+      "revId": "757bc5d822c39f22204bc0278d28b4f28f229b0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_50ee4323",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:12:51Z",
+      "side": 1,
+      "message": "same comment here.",
+      "revId": "757bc5d822c39f22204bc0278d28b4f28f229b0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_b0558fc7",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:12:51Z",
+      "side": 1,
+      "message": "why alias the list? pick the right name to begin with.",
+      "revId": "757bc5d822c39f22204bc0278d28b4f28f229b0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_500ac3d3",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:12:51Z",
+      "side": 1,
+      "message": "this comment should be updated since it\u0027s not always a failure.\n\nIs it intentional that once a URL is found that doesn\u0027t match that all later URLs will be skipped? This doesn\u0027t seem correct.",
+      "revId": "757bc5d822c39f22204bc0278d28b4f28f229b0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_f020b74b",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:12:51Z",
+      "side": 1,
+      "message": "Look into making this function specific to its use rather than trying to be uselessly generic. This function can do essentially all the work that the callers are doing now. \n\nFor example, could pass in CONF, user_id, and tenant instead of substitutions \u0026 silent_keyerror_failures.\n\nMake it a class so that it can keep track of stuff.",
+      "revId": "757bc5d822c39f22204bc0278d28b4f28f229b0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_10cf9bb1",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:12:51Z",
+      "side": 1,
+      "message": "suggest remove \"list of\" since it\u0027s already in the type for the parameter.",
+      "revId": "757bc5d822c39f22204bc0278d28b4f28f229b0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_30417f0c",
+        "filename": "keystone/catalog/core.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:12:51Z",
+      "side": 1,
+      "message": "why raise if there\u0027s no error?",
+      "revId": "757bc5d822c39f22204bc0278d28b4f28f229b0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_30ddff42",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 636,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:12:51Z",
+      "side": 1,
+      "message": "change \"expect to be\" to \"will be\"",
+      "revId": "757bc5d822c39f22204bc0278d28b4f28f229b0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_d0e4930e",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 643,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:12:51Z",
+      "side": 1,
+      "message": "use matcher.HasLength, or better verify that the endpoints are exactly what\u0027s expected.",
+      "revId": "757bc5d822c39f22204bc0278d28b4f28f229b0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_f0ce7782",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 648,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:12:51Z",
+      "side": 1,
+      "message": "modifying tenant_id here is scary. Use tenant_id\u003dNone in the call instead.",
+      "revId": "757bc5d822c39f22204bc0278d28b4f28f229b0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_70ba67e3",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 20
+      },
+      "lineNbr": 650,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-27T01:12:51Z",
+      "side": 1,
+      "message": "use matcher.HasLength, or better verify that the endpoint is exactly what\u0027s expected.",
+      "revId": "757bc5d822c39f22204bc0278d28b4f28f229b0f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
