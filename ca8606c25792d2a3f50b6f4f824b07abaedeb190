@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa963961_50308356",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-27T01:28:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa963961_96261c15",
+      "revId": "ca8606c25792d2a3f50b6f4f824b07abaedeb190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa963961_d68264c8",
         "filename": "doc/source/developing.rst",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-26T14:57:06Z",
       "side": 1,
       "message": "Suggest: s/For the extension/For extensions/",
+      "revId": "ca8606c25792d2a3f50b6f4f824b07abaedeb190",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_707947fc",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-03-27T01:28:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa963961_d68264c8",
       "revId": "ca8606c25792d2a3f50b6f4f824b07abaedeb190",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
