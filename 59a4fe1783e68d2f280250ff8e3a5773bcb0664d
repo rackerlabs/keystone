@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_8db6f43b",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/007_add_remote_id_table.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-27T00:04:41Z",
+      "side": 1,
+      "message": "This is likely to break if IdPRemoteIdsModel changes in the future. My -1 can be reversed if a followup patch is proposed to address this issue. The rest of this looks pretty good.",
+      "revId": "59a4fe1783e68d2f280250ff8e3a5773bcb0664d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
