@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fa963961_00c29033",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/007_add_relay_state_to_sp.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-27T16:43:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa963961_e02c4c4c",
+      "revId": "984c42d6ad83265be3b73c5b707e5c430f73e05c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa963961_80b900ec",
         "filename": "keystone/tests/unit/test_sql_migrate_extensions.py",
         "patchSetId": 8
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-27T16:37:54Z",
       "side": 1,
       "message": "change to 8",
+      "revId": "984c42d6ad83265be3b73c5b707e5c430f73e05c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_40c89855",
+        "filename": "keystone/tests/unit/test_sql_migrate_extensions.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-27T16:43:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa963961_80b900ec",
       "revId": "984c42d6ad83265be3b73c5b707e5c430f73e05c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
