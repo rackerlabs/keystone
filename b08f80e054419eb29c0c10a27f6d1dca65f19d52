@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "fa963961_53fab1be",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-27T18:12:15Z",
+      "side": 1,
+      "message": "Fixed, updated the path.",
+      "parentUuid": "fa963961_f81d3567",
+      "revId": "b08f80e054419eb29c0c10a27f6d1dca65f19d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa963961_fe6ac519",
         "filename": "keystone/contrib/endpoint_filter/routers.py",
         "patchSetId": 3
@@ -90,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "fa963961_5321914c",
+        "filename": "keystone/contrib/endpoint_filter/routers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-27T18:12:15Z",
+      "side": 1,
+      "message": "Yeah, only the router was missing.",
+      "parentUuid": "fa963961_fe6ac519",
+      "revId": "b08f80e054419eb29c0c10a27f6d1dca65f19d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa963961_5ed1b1cc",
         "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
         "patchSetId": 3
@@ -101,6 +137,24 @@
       "writtenOn": "2015-03-27T07:05:45Z",
       "side": 1,
       "message": "could add another test where there are no endpoints associated with the project. this should return an empty list.",
+      "revId": "b08f80e054419eb29c0c10a27f6d1dca65f19d52",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_b3d8dd54",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 921,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-03-27T18:12:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa963961_5ed1b1cc",
       "revId": "b08f80e054419eb29c0c10a27f6d1dca65f19d52",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
