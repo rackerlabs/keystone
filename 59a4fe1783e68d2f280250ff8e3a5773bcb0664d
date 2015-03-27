@@ -16,6 +16,24 @@
       "revId": "59a4fe1783e68d2f280250ff8e3a5773bcb0664d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_4d87cc61",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/007_add_remote_id_table.py",
+        "patchSetId": 39
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-27T00:06:01Z",
+      "side": 1,
+      "message": "It is actually 100% ok to duplicate the model here in the migration file if that is useful. You know the state of the table prior to migrating, and you know what the state should be when done. This has no bearing on the model in keystone.contrib.federation.backends.sql.",
+      "parentUuid": "fa963961_8db6f43b",
+      "revId": "59a4fe1783e68d2f280250ff8e3a5773bcb0664d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
