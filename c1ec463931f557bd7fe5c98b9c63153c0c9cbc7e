@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_4d46a124",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/007_add_remote_id_table.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-27T09:37:30Z",
+      "side": 1,
+      "message": "do you need to create a new session everytime? In general I agree with a belt-and-braces approach and not trying to be clever in these kind of things...so not really objecting....",
+      "revId": "c1ec463931f557bd7fe5c98b9c63153c0c9cbc7e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
