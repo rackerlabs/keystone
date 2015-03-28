@@ -14,6 +14,7 @@
 #    under the License.
 
 import json
+import os
 
 import mock
 from oslo_policy import policy as common_policy
@@ -229,3 +230,32 @@ class PolicyJsonTestCase(tests.TestCase):
         diffs = set(policy_keys).difference(set(expected_policy_keys))
 
         self.assertThat(diffs, matchers.Equals(set()))
+
+    def test_all_targets_documented(self):
+        policy_keys = self._load_entries(tests.dirs.etc('policy.json'))
+
+        # These keys are in the policy.json but aren't targets.
+        policy_rule_keys = [
+            u'admin_or_owner', u'admin_or_token_subject', u'admin_required',
+            u'default', u'owner', u'service_or_admin', u'service_role',
+            u'token_subject']
+
+        def read_doc_targets():
+            doc_path = os.path.join(
+                tests.ROOTDIR, 'doc', 'source', 'policy_mapping.rst')
+            with open(doc_path) as doc_file:
+                for line in doc_file:
+                    if line.startswith('Target'):
+                        break
+                iter(doc_file).next()  # Skip === line
+                for line in doc_file:
+                    line = line.rstrip()
+                    if not line or line.startswith(' '):
+                        continue
+                    if line.startswith('=='):
+                        break
+                    target, dummy, dummy = line.partition(' ')
+                    yield unicode(target)
+
+        doc_targets = list(read_doc_targets())
+        self.assertItemsEqual(policy_keys, doc_targets + policy_rule_keys)
