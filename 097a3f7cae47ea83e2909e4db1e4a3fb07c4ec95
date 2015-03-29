@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9b358b_f55b122d",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-29T12:22:37Z",
+      "side": 1,
+      "message": "s/is/if ?",
+      "revId": "097a3f7cae47ea83e2909e4db1e4a3fb07c4ec95",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
