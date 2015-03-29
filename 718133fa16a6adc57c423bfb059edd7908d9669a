@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9b358b_e35b582d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 23
+      },
+      "lineNbr": 308,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-29T17:59:29Z",
+      "side": 1,
+      "message": "so since this no longer errors on tenant key error....doesn\u0027t that mean we are putting in endpoint below with url \u003d None?",
+      "revId": "718133fa16a6adc57c423bfb059edd7908d9669a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
