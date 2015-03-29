@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "da9b358b_787ed7af",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-29T17:39:41Z",
+      "side": 1,
+      "message": "I think maybe a good doc string that describes the algorithm that we will use in this method might be appropriate....it\u0027s not that obvious how all the various sources of endpoints and associations should be combined together to get the right answer....don\u0027t be afraid to assume the reader needs a lot of help understanding this!",
+      "revId": "da86480c90547a61bdf2783cae98e34b7c7bf994",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_4eb1ec8d",
         "filename": "keystone/contrib/endpoint_filter/core.py",
         "patchSetId": 11
