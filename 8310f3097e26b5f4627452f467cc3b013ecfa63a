@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9b358b_29a6bfc1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-30T00:51:36Z",
+      "side": 1,
+      "message": "change \"returns\" to \"return\"",
+      "revId": "8310f3097e26b5f4627452f467cc3b013ecfa63a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_298d9f31",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-30T00:51:36Z",
+      "side": 1,
+      "message": "(unrelated) is this really supposed be be get()? This will potentially set sp_url to None and then the header will be set to \"None\".",
+      "revId": "8310f3097e26b5f4627452f467cc3b013ecfa63a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_899f0b5f",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-30T00:51:36Z",
+      "side": 1,
+      "message": "pass service_provider into this method instead.",
+      "revId": "8310f3097e26b5f4627452f467cc3b013ecfa63a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
