@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da9b358b_c265e5e1",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 201,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-30T08:54:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9b358b_6948475c",
+      "revId": "bcd41f0d589dc8ca6f73144ea99010e3c487a721",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa963961_00e3b0a4",
         "filename": "doc/source/configuration.rst",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-30T00:25:55Z",
       "side": 1,
       "message": "\"command\" should be outside the quotes.",
+      "revId": "bcd41f0d589dc8ca6f73144ea99010e3c487a721",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_a23421de",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-30T08:54:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa963961_00e3b0a4",
       "revId": "bcd41f0d589dc8ca6f73144ea99010e3c487a721",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
