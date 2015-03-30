@@ -16,6 +16,23 @@
       "revId": "bcd41f0d589dc8ca6f73144ea99010e3c487a721",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa963961_00e3b0a4",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 4
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-03-30T00:25:55Z",
+      "side": 1,
+      "message": "\"command\" should be outside the quotes.",
+      "revId": "bcd41f0d589dc8ca6f73144ea99010e3c487a721",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
