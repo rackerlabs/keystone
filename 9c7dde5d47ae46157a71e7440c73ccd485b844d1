@@ -16,6 +16,24 @@
       "revId": "9c7dde5d47ae46157a71e7440c73ccd485b844d1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_679bcbca",
+        "filename": "keystone/common/sql/migrate_repo/versions/068_drop_redundant_mysql_index.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-03-30T08:25:52Z",
+      "side": 1,
+      "message": "Fixed",
+      "parentUuid": "fa963961_bb79d995",
+      "revId": "9c7dde5d47ae46157a71e7440c73ccd485b844d1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
