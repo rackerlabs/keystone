@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9b358b_89e9381d",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 273,
+      "author": {
+        "id": 14966
+      },
+      "writtenOn": "2015-03-30T14:23:27Z",
+      "side": 1,
+      "message": "In this bug fixing, when is the metadata parameter used in get_catalog?",
+      "revId": "4c84c39d8e204c38415f33e7460fbc6ae68cf74f",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
