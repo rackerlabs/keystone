@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9b358b_1e242a0b",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-30T23:14:29Z",
+      "side": 1,
+      "message": "Are these changes related or just a way to speed things up?",
+      "revId": "a6de2205665ffd26c0f4a78a2e232ccc606fae1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_7e5a1685",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-30T23:14:29Z",
+      "side": 1,
+      "message": "I don\u0027t think this is the correct error here. I would think that this is more of a validation error.",
+      "revId": "a6de2205665ffd26c0f4a78a2e232ccc606fae1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_3e55ae4f",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-30T23:14:29Z",
+      "side": 1,
+      "message": "Same here",
+      "revId": "a6de2205665ffd26c0f4a78a2e232ccc606fae1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
