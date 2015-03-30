@@ -12,12 +12,13 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_config import cfg
 from oslo_serialization import jsonutils
+from sqlalchemy import orm
 
 from keystone.common import sql
 from keystone.contrib.federation import core
 from keystone import exception
-from sqlalchemy import orm
 
 
 class FederationProtocolModel(sql.ModelBase, sql.DictBase):
@@ -138,7 +139,11 @@ class ServiceProviderModel(sql.ModelBase, sql.DictBase):
     description = sql.Column(sql.Text(), nullable=True)
     auth_url = sql.Column(sql.String(256), nullable=False)
     sp_url = sql.Column(sql.String(256), nullable=False)
-    relay_state_prefix = sql.Column(sql.String(256), nullable=False)
+    relay_state_prefix = sql.Column(
+        sql.String(256), nullable=False,
+        server_default=(cfg.CONF.saml.relay_state_prefix
+                        if hasattr(cfg.CONF, 'saml') else 'ss:mem:')
+    )
 
     @classmethod
     def from_dict(cls, dictionary):
