@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9b358b_09209b9a",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-30T00:12:40Z",
+      "side": 1,
+      "message": "in a multi-threaded keystone this will start exploding all over the place if they config with multiple sql backends in separate threads.",
+      "revId": "daa7e734be6863742835cf747d7e77cd0c5fea88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_7e2fdfa1",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-30T00:12:40Z",
+      "side": 1,
+      "message": "change \"requried\" to \"required\"",
+      "revId": "daa7e734be6863742835cf747d7e77cd0c5fea88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_1e1d7373",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-30T00:12:40Z",
+      "side": 1,
+      "message": "\"should\"? it either works or it doesn\u0027t.",
+      "revId": "daa7e734be6863742835cf747d7e77cd0c5fea88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_de16eb54",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-30T00:12:40Z",
+      "side": 1,
+      "message": "chnage \"comes to access\" to \"accesses\"",
+      "revId": "daa7e734be6863742835cf747d7e77cd0c5fea88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_09577b03",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-30T00:12:40Z",
+      "side": 1,
+      "message": "one thread is writing domain config and another thread is reading it... how is this thread-safe?",
+      "revId": "daa7e734be6863742835cf747d7e77cd0c5fea88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_e90d7738",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-30T00:12:40Z",
+      "side": 1,
+      "message": "there should also be an explanation what\u0027s going on in the \"else:\" leg here.",
+      "revId": "daa7e734be6863742835cf747d7e77cd0c5fea88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
