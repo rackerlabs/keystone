@@ -12,6 +12,7 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from oslo_config import cfg
 from oslo_serialization import jsonutils
 
 from keystone.common import sql
@@ -136,7 +137,9 @@ class ServiceProviderModel(sql.ModelBase, sql.DictBase):
     description = sql.Column(sql.Text(), nullable=True)
     auth_url = sql.Column(sql.String(256), nullable=False)
     sp_url = sql.Column(sql.String(256), nullable=False)
-    relay_state_prefix = sql.Column(sql.String(256), nullable=False)
+    relay_state_prefix = sql.Column(
+        sql.String(256), nullable=False,
+        server_default=cfg.CONF.saml.relay_state_prefix)
 
     @classmethod
     def from_dict(cls, dictionary):
