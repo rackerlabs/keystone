@@ -34,6 +34,23 @@
       "revId": "05655992679211869d348ebf0887766c6a13ad90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_9904d415",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 454,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-30T23:24:40Z",
+      "side": 1,
+      "message": "What do these formatting changes have to do with the performance improvements?",
+      "revId": "05655992679211869d348ebf0887766c6a13ad90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
