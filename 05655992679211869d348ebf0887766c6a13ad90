@@ -16,6 +16,24 @@
       "revId": "05655992679211869d348ebf0887766c6a13ad90",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_e0ee8a8a",
+        "filename": "keystone/assignment/backends/ldap.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-30T19:22:38Z",
+      "side": 1,
+      "message": "I think that\u0027s  reasonable suggestion, although perhaps one to consider in a follow on patch....especially as we (I think) are deprecating the ldap support of assignments...",
+      "parentUuid": "9a80dd14_f463ca17",
+      "revId": "05655992679211869d348ebf0887766c6a13ad90",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
