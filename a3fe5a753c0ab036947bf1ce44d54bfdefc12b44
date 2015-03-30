@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da9b358b_69d8471e",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-30T01:06:39Z",
+      "side": 1,
+      "message": "++",
+      "parentUuid": "da9b358b_29d8ff52",
+      "revId": "a3fe5a753c0ab036947bf1ce44d54bfdefc12b44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_e9e1f7ff",
         "filename": "keystone/resource/core.py",
         "patchSetId": 11
@@ -36,6 +54,40 @@
     },
     {
       "key": {
+        "uuid": "da9b358b_69ef27b1",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 3757,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-30T01:06:39Z",
+      "side": 1,
+      "message": "create a second domain",
+      "revId": "a3fe5a753c0ab036947bf1ce44d54bfdefc12b44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_492b43ec",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 3773,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-30T01:06:39Z",
+      "side": 1,
+      "message": "add role assignments for the second domain",
+      "revId": "a3fe5a753c0ab036947bf1ce44d54bfdefc12b44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_69ee07ee",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 11
@@ -47,6 +99,24 @@
       "writtenOn": "2015-03-30T00:47:37Z",
       "side": 1,
       "message": "the test should also show that a role on a different domain isn\u0027t deleted.",
+      "revId": "a3fe5a753c0ab036947bf1ce44d54bfdefc12b44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_e939f742",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 3784,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-30T01:06:39Z",
+      "side": 1,
+      "message": "now, as Brant suggested, check if the other domain assignments are still valid",
+      "parentUuid": "da9b358b_69ee07ee",
       "revId": "a3fe5a753c0ab036947bf1ce44d54bfdefc12b44",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
