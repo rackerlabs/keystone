@@ -37,6 +37,41 @@
     },
     {
       "key": {
+        "uuid": "da9b358b_43141b43",
+        "filename": "keystone/common/strict_abc.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-30T22:03:44Z",
+      "side": 1,
+      "message": "I would prefer that people use abc.* so that they understand what is actually happening.",
+      "parentUuid": "da86d52c_855568fb",
+      "revId": "f43f378e1729e67169cef43bb9580345a7fa7005",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_433bfbd1",
+        "filename": "keystone/tests/unit/common/test_strict_abc.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-30T22:03:44Z",
+      "side": 1,
+      "message": "Imports are incorrect here...",
+      "revId": "f43f378e1729e67169cef43bb9580345a7fa7005",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da86d52c_32a0928f",
         "filename": "keystone/tests/unit/common/test_strict_abc.py",
         "patchSetId": 11
