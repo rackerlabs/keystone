@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9b358b_94b6e388",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-30T19:45:12Z",
+      "side": 1,
+      "message": "I put a note about this in the bug report, but how does this impact the reporting/monitoring people. It would be nice to have a link to the discussion in the bug.",
+      "revId": "c79fc1c4007d5dc5d6547e61337a836dfac05168",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
