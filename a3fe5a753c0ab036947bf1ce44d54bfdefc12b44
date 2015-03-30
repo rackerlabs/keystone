@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9b358b_29d8ff52",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-30T00:47:37Z",
+      "side": 1,
+      "message": "this should also filter by RoleAssignment.type in case a project ID matches a domain ID (e.g., if there\u0027s a \u0027default\u0027 project ID). There should be a test for this.\n\ntype must be AssignmentType.USER_DOMAIN or AssignmentType.GROUP_DOMAIN",
+      "revId": "a3fe5a753c0ab036947bf1ce44d54bfdefc12b44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_e9e1f7ff",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 444,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-30T00:47:37Z",
+      "side": 1,
+      "message": "rather than make a direct call, an internal notification should be used.",
+      "revId": "a3fe5a753c0ab036947bf1ce44d54bfdefc12b44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_69ee07ee",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 3784,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-30T00:47:37Z",
+      "side": 1,
+      "message": "the test should also show that a role on a different domain isn\u0027t deleted.",
+      "revId": "a3fe5a753c0ab036947bf1ce44d54bfdefc12b44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_29bfdfd1",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 924,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-30T00:47:37Z",
+      "side": 1,
+      "message": "add a comment why the LDAP backend works this way",
+      "revId": "a3fe5a753c0ab036947bf1ce44d54bfdefc12b44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
