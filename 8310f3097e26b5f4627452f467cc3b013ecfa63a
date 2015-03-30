@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da9b358b_c954f355",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-30T01:19:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9b358b_29a6bfc1",
+      "revId": "8310f3097e26b5f4627452f467cc3b013ecfa63a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_298d9f31",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "da9b358b_095adb83",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-30T01:19:06Z",
+      "side": 1,
+      "message": "++ the value can not be None (they aren\u0027t nullable)",
+      "parentUuid": "da9b358b_298d9f31",
+      "revId": "8310f3097e26b5f4627452f467cc3b013ecfa63a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_899f0b5f",
         "filename": "keystone/contrib/federation/controllers.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2015-03-30T00:51:36Z",
       "side": 1,
       "message": "pass service_provider into this method instead.",
+      "revId": "8310f3097e26b5f4627452f467cc3b013ecfa63a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_e95e9775",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 356,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-03-30T01:19:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9b358b_899f0b5f",
       "revId": "8310f3097e26b5f4627452f467cc3b013ecfa63a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
