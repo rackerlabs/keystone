@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da9b358b_63b4daf1",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-30T11:18:32Z",
+      "side": 1,
+      "message": "So the issue you are raising here is two creates (or updates) being processed in separate threads would expose the time window between the check in this method and setting self._any_sql ?",
+      "parentUuid": "da9b358b_09209b9a",
+      "revId": "daa7e734be6863742835cf747d7e77cd0c5fea88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_7e2fdfa1",
         "filename": "keystone/identity/core.py",
         "patchSetId": 7
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-30T00:12:40Z",
       "side": 1,
       "message": "change \"requried\" to \"required\"",
+      "revId": "daa7e734be6863742835cf747d7e77cd0c5fea88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_bd7e83ac",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-30T11:18:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9b358b_7e2fdfa1",
       "revId": "daa7e734be6863742835cf747d7e77cd0c5fea88",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "da9b358b_bd03230f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 269,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-30T11:18:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9b358b_1e1d7373",
+      "revId": "daa7e734be6863742835cf747d7e77cd0c5fea88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_de16eb54",
         "filename": "keystone/identity/core.py",
         "patchSetId": 7
@@ -64,6 +118,24 @@
       "writtenOn": "2015-03-30T00:12:40Z",
       "side": 1,
       "message": "chnage \"comes to access\" to \"accesses\"",
+      "revId": "daa7e734be6863742835cf747d7e77cd0c5fea88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_a0ff7800",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 275,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-30T11:18:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9b358b_de16eb54",
       "revId": "daa7e734be6863742835cf747d7e77cd0c5fea88",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "da9b358b_a33782af",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-30T11:18:32Z",
+      "side": 1,
+      "message": "So I *think* the point you are making is that get/create/update/delete domain configs are not atomic, hence a collision of, say, an get and create/update might return you a partial config?  That point is valid, although not actually an issue with this patch, more the core domain config update mechanisms. If that is the issue, I will raise a defect on those, rather than try and fix it here.",
+      "parentUuid": "da9b358b_09577b03",
+      "revId": "daa7e734be6863742835cf747d7e77cd0c5fea88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_e90d7738",
         "filename": "keystone/identity/core.py",
         "patchSetId": 7
@@ -98,6 +188,24 @@
       "writtenOn": "2015-03-30T00:12:40Z",
       "side": 1,
       "message": "there should also be an explanation what\u0027s going on in the \"else:\" leg here.",
+      "revId": "daa7e734be6863742835cf747d7e77cd0c5fea88",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_20b00843",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-30T11:18:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9b358b_e90d7738",
       "revId": "daa7e734be6863742835cf747d7e77cd0c5fea88",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
