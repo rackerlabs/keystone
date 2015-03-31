@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da9b358b_d029f738",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-03-31T14:03:26Z",
+      "side": 1,
+      "message": "Ok, we will rephrase this.",
+      "parentUuid": "da9b358b_365b8989",
+      "revId": "cf4a7a68a4ffa37879f0204ff2d017bcf2dffafc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_f6d2c1ff",
         "filename": "keystone/resource/core.py",
         "patchSetId": 12
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-31T09:10:47Z",
       "side": 1,
       "message": "blank line?",
+      "revId": "cf4a7a68a4ffa37879f0204ff2d017bcf2dffafc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_706d8b97",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-03-31T14:03:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9b358b_f6d2c1ff",
       "revId": "cf4a7a68a4ffa37879f0204ff2d017bcf2dffafc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
