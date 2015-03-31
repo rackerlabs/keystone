@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9b358b_ae3623e5",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2307,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-31T05:56:31Z",
+      "side": 1,
+      "message": "I don\u0027t like that we are monkeying with the (extensive) setup of domain/projects/assignments here. I have to believe that we\u0027ll need more than one test over time to do with project inheritances here.  I\u0027d prefer to change the setup so that we have either another domain that has only project inherited roles, a token create already etc.",
+      "revId": "f2634755efc2bcc0737979b88a71cd71127e6ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
