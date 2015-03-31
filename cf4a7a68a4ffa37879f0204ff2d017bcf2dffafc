@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9b358b_365b8989",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-31T09:10:47Z",
+      "side": 1,
+      "message": "Form this text, it is very unclear what the purpose of this patch is for, are we saying that we shouldn\u0027t be allowing this?  Also, we should not be mixing adding the parent_id filter to list_domain with the other things you are attempting here...",
+      "revId": "cf4a7a68a4ffa37879f0204ff2d017bcf2dffafc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_f6d2c1ff",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 581,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-31T09:10:47Z",
+      "side": 1,
+      "message": "blank line?",
+      "revId": "cf4a7a68a4ffa37879f0204ff2d017bcf2dffafc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
