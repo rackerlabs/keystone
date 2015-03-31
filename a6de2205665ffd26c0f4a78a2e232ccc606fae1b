@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "da9b358b_351c8dc0",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-03-31T16:08:45Z",
+      "side": 1,
+      "message": "I don\u0027t think so... I\u0027ll send in a different patch.",
+      "parentUuid": "da9b358b_b55bfdf5",
+      "revId": "a6de2205665ffd26c0f4a78a2e232ccc606fae1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_7e5a1685",
         "filename": "keystone/resource/core.py",
         "patchSetId": 6
