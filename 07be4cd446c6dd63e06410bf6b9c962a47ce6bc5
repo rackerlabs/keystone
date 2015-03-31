@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da9b358b_a697598f",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-31T14:36:23Z",
+      "side": 1,
+      "message": "The solution here is to have some kind of constraint that prevents multiples from being configured (enforced at the db level) or similar. \n\nThe whole reload drivers in a multi-threaded environment is a challenge in itself and has a lot of these types of edge cases.",
+      "parentUuid": "da9b358b_b9f9d782",
+      "revId": "07be4cd446c6dd63e06410bf6b9c962a47ce6bc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_b940b7a6",
         "filename": "keystone/identity/core.py",
         "patchSetId": 8
