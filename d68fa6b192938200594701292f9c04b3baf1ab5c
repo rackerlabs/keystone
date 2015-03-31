@@ -16,6 +16,24 @@
       "revId": "d68fa6b192938200594701292f9c04b3baf1ab5c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_21ce855a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 872,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-31T20:19:26Z",
+      "side": 0,
+      "message": "yes, I believe so...this is a hangover here when the assignment code was first split off from Identity...and there was some question as to where these methods lived....I think we have answered that now...",
+      "parentUuid": "da9b358b_0ae27b9f",
+      "revId": "d68fa6b192938200594701292f9c04b3baf1ab5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
