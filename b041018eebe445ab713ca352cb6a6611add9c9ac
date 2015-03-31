@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9b358b_510977dc",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-31T09:20:52Z",
+      "side": 1,
+      "message": "This is not going to work with the current LDAP driver support, which assumes there is only one type of boolean, the \"enabled\" attribute.  We\u0027ll need to fix that (or, if we really are deprecating the LDAP assignment backend, we need to make it clear in the doc somewhere that you can\u0027t use this filter with an LDAP backend)",
+      "revId": "b041018eebe445ab713ca352cb6a6611add9c9ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
