@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9b358b_a4586833",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-31T18:12:28Z",
+      "side": 1,
+      "message": "Is there any way to put this in a separate method? This adds a ton of code to an already long method.",
+      "revId": "8882dd5a5757020f9d06069a069ffb36aea89ec0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_a4a6280e",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-31T18:12:28Z",
+      "side": 1,
+      "message": "So this calls itself? This is sort of weird.",
+      "revId": "8882dd5a5757020f9d06069a069ffb36aea89ec0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_a984c1d3",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 721,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-31T18:12:28Z",
+      "side": 1,
+      "message": "This should be using the config fixture.",
+      "revId": "8882dd5a5757020f9d06069a069ffb36aea89ec0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_696fd92b",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 728,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-31T18:12:28Z",
+      "side": 1,
+      "message": "This too",
+      "revId": "8882dd5a5757020f9d06069a069ffb36aea89ec0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
