@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da9b358b_909fef4f",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-03-31T14:07:36Z",
+      "side": 1,
+      "message": "Its just a way do improve the code.",
+      "parentUuid": "da9b358b_1e242a0b",
+      "revId": "a6de2205665ffd26c0f4a78a2e232ccc606fae1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_7e5a1685",
         "filename": "keystone/resource/core.py",
         "patchSetId": 6
@@ -48,6 +66,24 @@
       "side": 1,
       "message": "++ Forbidden kind of implies that in the scenario you have attempted, it is Forbidden...but there is a different way you could  call this and get it to work....if project_id is None, then there is nothing you can do to get that to work",
       "parentUuid": "da9b358b_7e5a1685",
+      "revId": "a6de2205665ffd26c0f4a78a2e232ccc606fae1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_5072874a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-03-31T14:07:36Z",
+      "side": 1,
+      "message": "I will change for the ValidationError exception, ok? https://github.com/openstack/keystone/blob/master/keystone/exception.py#L78",
+      "parentUuid": "da9b358b_82b57332",
       "revId": "a6de2205665ffd26c0f4a78a2e232ccc606fae1b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
