@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "da9b358b_46c40d5e",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-03-31T14:39:44Z",
+      "side": 1,
+      "message": "An alternative solution would be that a per-domain driver cannot be sql, if someone wants to override the default domain to use ldap, use a per-domain driver for ldap for the default domain. \n\nI am not sure there is a real benefit to using sql for one domain separate from a non-domain aware ldap default driver.",
+      "parentUuid": "da9b358b_a697598f",
+      "revId": "07be4cd446c6dd63e06410bf6b9c962a47ce6bc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_b940b7a6",
         "filename": "keystone/identity/core.py",
         "patchSetId": 8
