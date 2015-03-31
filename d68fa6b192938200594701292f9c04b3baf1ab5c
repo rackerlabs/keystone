@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9b358b_0ae27b9f",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 872,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-03-31T19:26:55Z",
+      "side": 0,
+      "message": "Should this second TODO be removed as well?",
+      "revId": "d68fa6b192938200594701292f9c04b3baf1ab5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
