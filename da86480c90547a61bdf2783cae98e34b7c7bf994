@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "da9b358b_44e4fc0b",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-31T18:30:56Z",
+      "side": 1,
+      "message": "Unrelated changes should probably get rolled back.",
+      "revId": "da86480c90547a61bdf2783cae98e34b7c7bf994",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_24f338d8",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-31T18:30:56Z",
+      "side": 1,
+      "message": "...and this one too.",
+      "revId": "da86480c90547a61bdf2783cae98e34b7c7bf994",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_787ed7af",
         "filename": "keystone/contrib/endpoint_filter/core.py",
         "patchSetId": 11
@@ -13,6 +47,23 @@
       "writtenOn": "2015-03-29T17:39:41Z",
       "side": 1,
       "message": "I think maybe a good doc string that describes the algorithm that we will use in this method might be appropriate....it\u0027s not that obvious how all the various sources of endpoints and associations should be combined together to get the right answer....don\u0027t be afraid to assume the reader needs a lot of help understanding this!",
+      "revId": "da86480c90547a61bdf2783cae98e34b7c7bf994",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_44d87cef",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-31T18:30:56Z",
+      "side": 1,
+      "message": "This method seems like it would introduce a lot of extra queries when generating a catalog. Is this is case and if it is can it be reduced?",
       "revId": "da86480c90547a61bdf2783cae98e34b7c7bf994",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -119,6 +170,40 @@
       "side": 1,
       "message": "As said above, I think we are passing multiple filters here.",
       "parentUuid": "9a80dd14_ce96bcef",
+      "revId": "da86480c90547a61bdf2783cae98e34b7c7bf994",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_a4e868b5",
+        "filename": "keystone/contrib/endpoint_filter/core.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-31T18:30:56Z",
+      "side": 1,
+      "message": "This could just be \u0027return filtered_endpoints.values()\u0027 since we not taking advantage of having an iterator anyway. The again I don\u0027t see why this isn\u0027t just a set anyway. They we could \u0027return list(filtered_endpoints)\u0027",
+      "revId": "da86480c90547a61bdf2783cae98e34b7c7bf994",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_24221801",
+        "filename": "keystone/tests/unit/test_associate_project_endpoint_extension.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 1192,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-31T18:30:56Z",
+      "side": 1,
+      "message": "I think the order here should be switched. I think is should be (expected, observed)",
       "revId": "da86480c90547a61bdf2783cae98e34b7c7bf994",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
