@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9b358b_b9f9d782",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-31T00:34:01Z",
+      "side": 1,
+      "message": "in a multi-threaded keystone this will start exploding all over the place if they config with multiple sql backends in separate threads -- essentially you have one thread creates an sql backend and another thread creates an sql backend at the same time. They\u0027re both successful because to both of them there was only one sql driver. But everything fails afterwards because there\u0027s 2.",
+      "revId": "07be4cd446c6dd63e06410bf6b9c962a47ce6bc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_b940b7a6",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 288,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-31T00:34:01Z",
+      "side": 1,
+      "message": "yes, it\u0027s not thread-safe, so raise an issue.",
+      "revId": "07be4cd446c6dd63e06410bf6b9c962a47ce6bc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_191683a7",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 299,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-03-31T00:34:01Z",
+      "side": 1,
+      "message": "there should also be an explanation what\u0027s going on in the implicit \"else:\" leg here... there\u0027s no domain config and domain config isn\u0027t in use... how did this happen? Probably should log a debug so that I have some idea what\u0027s going on when this happens on a customer\u0027s system.",
+      "revId": "07be4cd446c6dd63e06410bf6b9c962a47ce6bc5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
