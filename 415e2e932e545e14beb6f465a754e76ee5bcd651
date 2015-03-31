@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9b358b_0cf752f6",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 16
+      },
+      "lineNbr": 212,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-31T09:44:20Z",
+      "side": 1,
+      "message": "so before, this was inside a try block catching exception.MigrationNotProvided...do we know what it will throw?",
+      "revId": "415e2e932e545e14beb6f465a754e76ee5bcd651",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
