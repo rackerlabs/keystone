@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9b358b_0e6f4fc6",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-31T06:03:28Z",
+      "side": 1,
+      "message": "we\u0027ve kind of lost the bit about \"these groups have any inherited roles on\"...",
+      "revId": "4967b0d13d1ab2f369fd37ad979b691955aa50e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_4e38b7a0",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-03-31T06:03:28Z",
+      "side": 1,
+      "message": "you don\u0027t actually need the .driver. bit of this (I know the call above does have it...I\u0027m fixing that in another patch)",
+      "revId": "4967b0d13d1ab2f369fd37ad979b691955aa50e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
