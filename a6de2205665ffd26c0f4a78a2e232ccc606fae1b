@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "da9b358b_b55bfdf5",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-31T15:59:18Z",
+      "side": 1,
+      "message": "Any reason that this can\u0027t be in a separate patch then?",
+      "parentUuid": "da9b358b_909fef4f",
+      "revId": "a6de2205665ffd26c0f4a78a2e232ccc606fae1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_7e5a1685",
         "filename": "keystone/resource/core.py",
         "patchSetId": 6
@@ -84,6 +102,24 @@
       "side": 1,
       "message": "I will change for the ValidationError exception, ok? https://github.com/openstack/keystone/blob/master/keystone/exception.py#L78",
       "parentUuid": "da9b358b_82b57332",
+      "revId": "a6de2205665ffd26c0f4a78a2e232ccc606fae1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_d558c1fc",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-03-31T15:59:18Z",
+      "side": 1,
+      "message": "I think that would be great.",
+      "parentUuid": "da9b358b_5072874a",
       "revId": "a6de2205665ffd26c0f4a78a2e232ccc606fae1b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
