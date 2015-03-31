@@ -16,6 +16,24 @@
       "revId": "b041018eebe445ab713ca352cb6a6611add9c9ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_756455e4",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-03-31T15:56:14Z",
+      "side": 1,
+      "message": "LDAP doesn\u0027t support is_domain\u003dTrue, and we already have treat this case in this previous patch: https://review.openstack.org/#/c/157427/37/keystone/resource/backends/ldap.py\n\nSo, we need to do some validation here?",
+      "parentUuid": "da9b358b_510977dc",
+      "revId": "b041018eebe445ab713ca352cb6a6611add9c9ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
