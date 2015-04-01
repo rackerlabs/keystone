@@ -16,6 +16,24 @@
       "revId": "eaa1113cf0fd487c886efe92364b576e4795fc39",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_154d5e72",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-01T15:52:26Z",
+      "side": 1,
+      "message": "So have put the del in a try block to achieve the same affect.  There is no test for this bit right now, I\u0027ll see if I can add one.",
+      "parentUuid": "baa041b7_e01c8279",
+      "revId": "eaa1113cf0fd487c886efe92364b576e4795fc39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
