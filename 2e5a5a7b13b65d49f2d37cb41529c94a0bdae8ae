@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_a310c4a9",
+        "filename": "keystone/token/providers/lotto.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-01T13:59:40Z",
+      "side": 1,
+      "message": "59 should be 60, since range does not include upper boundary :-)",
+      "revId": "2e5a5a7b13b65d49f2d37cb41529c94a0bdae8ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
