@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_0cb0addc",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-04-01T23:09:45Z",
+      "side": 1,
+      "message": "I think you meant extensions/websso.rst",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_592741ca",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 9
