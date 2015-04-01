@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da9b358b_a2ff25a9",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 341,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-01T08:07:49Z",
+      "side": 1,
+      "message": "Agreed.",
+      "parentUuid": "da9b358b_a4586833",
+      "revId": "8882dd5a5757020f9d06069a069ffb36aea89ec0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_a4a6280e",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-31T18:12:28Z",
       "side": 1,
       "message": "So this calls itself? This is sort of weird.",
+      "revId": "8882dd5a5757020f9d06069a069ffb36aea89ec0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_622fddf6",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 352,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-01T08:07:49Z",
+      "side": 1,
+      "message": "Yes, I am trying here to merge two very different methods of obtaining an endpoint list.  Given the conf property that mandates the return of an unfiltered list if the filtered list is empty I set this recursion.  It\u0027s not great, I agree and I have come up with another approach which obtains the full endpoint list with a joined load (as is done at line 383 et seq) then filters it.  It has the additional advantage that only two calls are made rather than a call per endpoint (via line 356).  If the filtered list is empty then the unfiltered list is returned or and empty list - depending on the conf property.  I wasn\u0027t sure whether to push that as a separate review or in this one but given your very valid comments perhaps I\u0027ll put it here.",
+      "parentUuid": "da9b358b_a4a6280e",
       "revId": "8882dd5a5757020f9d06069a069ffb36aea89ec0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
