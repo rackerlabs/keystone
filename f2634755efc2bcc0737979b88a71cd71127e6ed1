@@ -16,6 +16,24 @@
       "revId": "f2634755efc2bcc0737979b88a71cd71127e6ed1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_4913e70d",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 2307,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-01T00:38:02Z",
+      "side": 1,
+      "message": "Ok, I will provide a better setup inside this method\u0027s scope.\n\nWe could, in a follow-on patch, add a class for tokens obtained from inherited role assignments.\n\nI am not going to do this as part of this patch, since there are some other tests with role inheritance (on domains) here.\n\nWhat do you think?",
+      "parentUuid": "da9b358b_ae3623e5",
+      "revId": "f2634755efc2bcc0737979b88a71cd71127e6ed1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
