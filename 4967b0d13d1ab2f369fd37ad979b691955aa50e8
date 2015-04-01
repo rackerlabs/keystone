@@ -36,6 +36,42 @@
     },
     {
       "key": {
+        "uuid": "da9b358b_ac05e17a",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-01T01:48:06Z",
+      "side": 1,
+      "message": "It is an extension which is disabled by default. I changed the comment to make this clear.",
+      "parentUuid": "da9b358b_be62b9ab",
+      "revId": "4967b0d13d1ab2f369fd37ad979b691955aa50e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_8c08dd92",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 353,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-01T01:48:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9b358b_0e6f4fc6",
+      "revId": "4967b0d13d1ab2f369fd37ad979b691955aa50e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_4e38b7a0",
         "filename": "keystone/assignment/core.py",
         "patchSetId": 1
@@ -65,6 +101,24 @@
       "side": 1,
       "message": "++",
       "parentUuid": "da9b358b_4e38b7a0",
+      "revId": "4967b0d13d1ab2f369fd37ad979b691955aa50e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_4c02d570",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 364,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-01T01:48:06Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "da9b358b_3b223bba",
       "revId": "4967b0d13d1ab2f369fd37ad979b691955aa50e8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
