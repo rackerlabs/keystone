@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "da9b358b_1aeab1ac",
+        "filename": "keystone/api/common/controller.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 8005
+      },
+      "writtenOn": "2015-04-01T12:43:40Z",
+      "side": 1,
+      "message": "`generic\u003dFalse` is already the default (and that\u0027s not going to change, given that it would break every pecan app in existence):\n\nhttps://github.com/stackforge/pecan/blob/master/pecan/decorators.py#L27",
+      "revId": "716c5ac9cd11d9f5b3937a2fe2bacbd35ce3af47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_5af5d954",
+        "filename": "keystone/api/common/controller.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 8005
+      },
+      "writtenOn": "2015-04-01T12:43:40Z",
+      "side": 1,
+      "message": "File a ticket https://bugs.launchpad.net/pecan and I\u0027ll come up with something :)",
+      "revId": "716c5ac9cd11d9f5b3937a2fe2bacbd35ce3af47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_7af09d67",
+        "filename": "keystone/api/common/controller.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 8005
+      },
+      "writtenOn": "2015-04-01T12:43:40Z",
+      "side": 1,
+      "message": "pecan.abort(404) is a nice shortcut",
+      "revId": "716c5ac9cd11d9f5b3937a2fe2bacbd35ce3af47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "da9b358b_c58eaa78",
+        "filename": "keystone/api/root/controllers/root.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 8005
+      },
+      "writtenOn": "2015-04-01T12:43:40Z",
+      "side": 1,
+      "message": "You may want to consider renaming this to e.g., RootControllerBase so it\u0027s clear that it\u0027s intended as an abstract class, not the *actual* root of pecan routing.",
+      "revId": "716c5ac9cd11d9f5b3937a2fe2bacbd35ce3af47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
