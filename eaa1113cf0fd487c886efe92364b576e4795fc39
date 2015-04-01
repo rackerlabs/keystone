@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_e01c8279",
+        "filename": "keystone/identity/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 314,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-01T13:45:39Z",
+      "side": 1,
+      "message": "I am not sure \u0027del self[domain_id]\u0027 is correct for a multithread env.\nSuppose multiple threads call get_domain_driver for the same domain_id and they get in this elif. The first one will execute \u0027del self[domain_id]\u0027 succesfully, however the others will fail, since domain_id will be an inexistent key.\n\nMaybe we should change this to \u0027delattr(self, domain_id, None)\u0027, which should not fail if the key is not found.\n\n\n---\n\nAlso, we need a test case for this, in which i) the domain driver is loaded and we do get_domain_driver(domain_id) ii) its config is deleted and iii) trying get_domain_driver(domain_id) again returns None. Makes sense?",
+      "revId": "eaa1113cf0fd487c886efe92364b576e4795fc39",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
