@@ -16,6 +16,40 @@
       "revId": "2e5a5a7b13b65d49f2d37cb41529c94a0bdae8ae",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_a60d7239",
+        "filename": "keystone/token/providers/lotto.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-04-01T14:02:28Z",
+      "side": 1,
+      "message": "Change use of random to random.SystemRandom. Using random is insecure.",
+      "revId": "2e5a5a7b13b65d49f2d37cb41529c94a0bdae8ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_66108a4f",
+        "filename": "keystone/token/providers/lotto.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-04-01T14:02:28Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "2e5a5a7b13b65d49f2d37cb41529c94a0bdae8ae",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
