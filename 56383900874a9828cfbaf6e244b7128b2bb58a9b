@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_876256d7",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-01T23:48:38Z",
+      "side": 1,
+      "message": "change \"be existed\" to \"exist\"",
+      "revId": "56383900874a9828cfbaf6e244b7128b2bb58a9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_a7ac3aee",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-01T23:48:38Z",
+      "side": 1,
+      "message": "this should be using credentials.get(\u0027signature\u0027) if there might be no signature as the comment says.",
+      "revId": "56383900874a9828cfbaf6e244b7128b2bb58a9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_87e7f63f",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-01T23:48:38Z",
+      "side": 1,
+      "message": "suggest use a positive check here rather than a negative one like everywhere else in this function.",
+      "revId": "56383900874a9828cfbaf6e244b7128b2bb58a9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_e7cec2b3",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-01T23:48:38Z",
+      "side": 1,
+      "message": "the exception will also be raised if credentials[\u0027signature\u0027] is an empty string. Is this intentional?",
+      "revId": "56383900874a9828cfbaf6e244b7128b2bb58a9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_27638ab3",
+        "filename": "keystone/tests/unit/test_contrib_ec2.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-01T23:48:38Z",
+      "side": 1,
+      "message": "remove the bug reference it\u0027s already in the git history.",
+      "revId": "56383900874a9828cfbaf6e244b7128b2bb58a9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_0741a60b",
+        "filename": "keystone/tests/unit/test_contrib_ec2.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-01T23:48:38Z",
+      "side": 1,
+      "message": "use \u0027 for strings consistently.",
+      "revId": "56383900874a9828cfbaf6e244b7128b2bb58a9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
