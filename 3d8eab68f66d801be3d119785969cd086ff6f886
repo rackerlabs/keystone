@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "baa041b7_e9f22d6f",
+        "filename": "keystone/token/providers/lotto.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-01T14:45:32Z",
+      "side": 1,
+      "message": "update the license header to reflect the date",
+      "revId": "3d8eab68f66d801be3d119785969cd086ff6f886",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_69d85df0",
+        "filename": "keystone/token/providers/lotto.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-01T14:45:32Z",
+      "side": 1,
+      "message": "group the imports together",
+      "revId": "3d8eab68f66d801be3d119785969cd086ff6f886",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_a95b052e",
         "filename": "keystone/token/providers/lotto.py",
         "patchSetId": 2
