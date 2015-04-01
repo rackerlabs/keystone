@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_a95b052e",
+        "filename": "keystone/token/providers/lotto.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-04-01T14:31:13Z",
+      "side": 1,
+      "message": "Upper number needs to be configurable",
+      "revId": "3d8eab68f66d801be3d119785969cd086ff6f886",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_c9a4090a",
+        "filename": "keystone/token/providers/lotto.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-04-01T14:31:13Z",
+      "side": 1,
+      "message": "Same here.\nAnd please check that this one is less than that one",
+      "revId": "3d8eab68f66d801be3d119785969cd086ff6f886",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
