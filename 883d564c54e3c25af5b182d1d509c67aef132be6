@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baa041b7_29db3c7e",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-04-02T19:20:19Z",
+      "side": 1,
+      "message": "We will need to make sure that the default behavior is to use the file-based configs.",
+      "revId": "883d564c54e3c25af5b182d1d509c67aef132be6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_58b08c43",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 1
@@ -37,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_69f824e6",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-04-02T19:20:19Z",
+      "side": 1,
+      "message": "This also is going to need a lot of re-work in Liberty to solve some rather icky load config issues.",
+      "parentUuid": "baa041b7_38cca888",
+      "revId": "883d564c54e3c25af5b182d1d509c67aef132be6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_78f8f0e5",
         "filename": "etc/keystone.conf.sample",
         "patchSetId": 1
@@ -48,6 +83,24 @@
       "writtenOn": "2015-04-02T17:51:30Z",
       "side": 1,
       "message": "so similar to the rest of the file (e.g. rabbit_max_retries), perhaps this value should be namespaced scoped? For example, perhaps it should be domain_config_cache_time?  \nI realize you are just providing a sample and that the value would need to be changed elsewhere. But I wanted bring this up perhaps before we get stuck with this.  cache_time seems too generic a name to only apply to domain config caching. Am I missing something?",
+      "revId": "883d564c54e3c25af5b182d1d509c67aef132be6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_a9874c60",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 510,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-04-02T19:20:19Z",
+      "side": 1,
+      "message": "This is already in the [domain_config] group. We can also deprecate/move options in the future if needed.\n\nDeprecated options source from new_name, and then if that doesn\u0027t exist, old_name; this provides compatibility.",
+      "parentUuid": "baa041b7_78f8f0e5",
       "revId": "883d564c54e3c25af5b182d1d509c67aef132be6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
