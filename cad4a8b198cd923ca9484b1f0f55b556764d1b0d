@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_b8879860",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2218,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T17:49:44Z",
+      "side": 1,
+      "message": "(nit): better to just generate a uuid here, rather than use a explicit string",
+      "revId": "cad4a8b198cd923ca9484b1f0f55b556764d1b0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_987cd473",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 8
+      },
+      "lineNbr": 2251,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T17:49:44Z",
+      "side": 1,
+      "message": "(nit): better to just generate a uuid here, rather than use a explicit string",
+      "revId": "cad4a8b198cd923ca9484b1f0f55b556764d1b0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
