@@ -339,6 +339,23 @@
       "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_a8c88675",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-02T05:03:06Z",
+      "side": 1,
+      "message": "should we mention somewhere here that it requires DOA 1.2.0 or later  (since DOA might get into kilo)",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
