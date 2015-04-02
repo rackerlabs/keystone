@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_582be594",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T21:26:57Z",
+      "side": 1,
+      "message": "Maybe start a new paragraph here...or some other separator.",
+      "revId": "b589cf042ebc5763b461cb1e6bebe15845c3c066",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_f8b4f9f2",
         "filename": "/COMMIT_MSG",
         "patchSetId": 6
@@ -30,6 +47,23 @@
       "writtenOn": "2015-04-02T21:19:23Z",
       "side": 1,
       "message": "Can you prefix each item with - so this appears as a billeted list.  Thanks",
+      "revId": "b589cf042ebc5763b461cb1e6bebe15845c3c066",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_181c3d76",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T21:26:57Z",
+      "side": 1,
+      "message": "a new paragraph here... or some other separator.",
       "revId": "b589cf042ebc5763b461cb1e6bebe15845c3c066",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -64,6 +98,24 @@
       "writtenOn": "2015-04-02T21:19:23Z",
       "side": 1,
       "message": "I think this file is generally updated using execution of he Oslo config generator in a separate patch not manually.",
+      "revId": "b589cf042ebc5763b461cb1e6bebe15845c3c066",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_9b0f272e",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T21:26:57Z",
+      "side": 1,
+      "message": "don\u0027t include this file, one of the cores will upload a version for you",
+      "parentUuid": "baa041b7_d8d495be",
       "revId": "b589cf042ebc5763b461cb1e6bebe15845c3c066",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
