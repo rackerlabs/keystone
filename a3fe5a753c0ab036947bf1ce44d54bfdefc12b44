@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_68794c93",
+        "filename": "keystone/assignment/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 383,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T14:11:15Z",
+      "side": 1,
+      "message": "I think you are indeed correct...to be explicit, we should be doing that.  I also see that the delete_project_assignments() above suffers from the inverse of this issue...I\u0027ll raise a bug for that.",
+      "parentUuid": "da9b358b_29d8ff52",
+      "revId": "a3fe5a753c0ab036947bf1ce44d54bfdefc12b44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_e9e1f7ff",
         "filename": "keystone/resource/core.py",
         "patchSetId": 11
