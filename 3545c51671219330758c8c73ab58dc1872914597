@@ -2,6 +2,57 @@
   "comments": [
     {
       "key": {
+        "uuid": "baa041b7_1e3b059e",
+        "filename": "keystone/common/sql/migrate_repo/versions/068_add_is_domain_project.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-02T22:23:49Z",
+      "side": 1,
+      "message": "extra space after this one?",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_7e0451bf",
+        "filename": "keystone/common/sql/migrate_repo/versions/068_add_is_domain_project.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-02T22:23:49Z",
+      "side": 1,
+      "message": "seems not used, is there going to be a revision to this patch later?",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_de291d39",
+        "filename": "keystone/common/sql/migrate_repo/versions/068_add_is_domain_project.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-02T22:23:49Z",
+      "side": 1,
+      "message": "same here, not used",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_ee2685b9",
         "filename": "keystone/resource/backends/ldap.py",
         "patchSetId": 38
@@ -88,6 +139,23 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_5e72ad4a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-02T22:23:49Z",
+      "side": 1,
+      "message": "what if the user pass an empty value for is_domain, should we just ignore that and treat it as no update?",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_f431b20c",
         "filename": "keystone/resource/core.py",
         "patchSetId": 38
@@ -99,6 +167,24 @@
       "writtenOn": "2015-04-02T15:34:02Z",
       "side": 1,
       "message": "do you mean disable the domain feature or disable the project? I Think the latter...",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_9e915555",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-02T22:23:49Z",
+      "side": 1,
+      "message": "yeah,  you can\u0027t disable the domain feature, that should be immutable. disable the domain project, I think",
+      "parentUuid": "baa041b7_f431b20c",
       "revId": "3545c51671219330758c8c73ab58dc1872914597",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -122,6 +208,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_9ed95586",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-02T22:23:49Z",
+      "side": 1,
+      "message": "yeah, that sounds right.",
+      "parentUuid": "baa041b7_a81d14bf",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_68a6ecc2",
         "filename": "keystone/resource/schema.py",
         "patchSetId": 38
@@ -133,6 +237,24 @@
       "writtenOn": "2015-04-02T15:34:02Z",
       "side": 1,
       "message": "This sounds odd....you mean they both must null?",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_fef3c108",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-02T22:23:49Z",
+      "side": 1,
+      "message": "I think project_id and domain_id must have the same value if it is a domain project",
+      "parentUuid": "baa041b7_68a6ecc2",
       "revId": "3545c51671219330758c8c73ab58dc1872914597",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
