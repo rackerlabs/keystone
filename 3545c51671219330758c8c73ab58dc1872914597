@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_ee2685b9",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T15:34:02Z",
+      "side": 1,
+      "message": "although technically accurate, this isn\u0027t a very helpful description or what the user has done wrong...",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_080d203e",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T15:34:02Z",
+      "side": 1,
+      "message": "do you need to check is_domain here....? or at least pop it?",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_e8867cb8",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T15:34:02Z",
+      "side": 1,
+      "message": "true..not quite sure of the relevance here...",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_28a46455",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T15:34:02Z",
+      "side": 1,
+      "message": "is this being changed?",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_f431b20c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T15:34:02Z",
+      "side": 1,
+      "message": "do you mean disable the domain feature or disable the project? I Think the latter...",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_a81d14bf",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T15:34:02Z",
+      "side": 1,
+      "message": "well not always, update project is fine to pass back in the current domain_id, for instance.  Also, nothing is every really passed in as \"null\". I think you mean that for creates, the controller level will assign the domain_id for is_domain projects, so these must not be specified by the caller.",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_68a6ecc2",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T15:34:02Z",
+      "side": 1,
+      "message": "This sounds odd....you mean they both must null?",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
