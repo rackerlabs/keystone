@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_4be8b8e2",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-02T18:32:46Z",
+      "side": 1,
+      "message": "why is the NotFound error gets converted to ValidationError? We don\u0027t do it for other operations, why do it here now?\n\nI looked at the previous comment about domain_id being empty, but that won\u0027t happen.  If the user didn\u0027t specify a domain_id, it will be defaulted to the domain_id in the token, it that is not found it will raise an exception\n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/controller.py#L755-L756",
+      "revId": "8527b04f33cb2a5300890b20a2271088ec5befde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
