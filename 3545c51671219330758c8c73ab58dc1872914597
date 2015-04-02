@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_3594b189",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T17:29:45Z",
+      "side": 1,
+      "message": "maybe this is meant to be in the follow on patch where add is_domain to the uniquecontraint?",
+      "parentUuid": "baa041b7_e8867cb8",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_28a46455",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 38
