@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_632cdf4a",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-02T06:20:02Z",
+      "side": 1,
+      "message": "refer to comment in other file",
+      "parentUuid": "1a6ced46_f9670d4b",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_0cb0addc",
         "filename": "doc/source/configure_federation.rst",
         "patchSetId": 9
@@ -30,6 +48,41 @@
       "writtenOn": "2015-04-01T23:09:45Z",
       "side": 1,
       "message": "I think you meant extensions/websso.rst",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_e3f90fca",
+        "filename": "doc/source/configure_federation.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-02T06:20:02Z",
+      "side": 1,
+      "message": "nope, i meant this :)",
+      "parentUuid": "baa041b7_0cb0addc",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_23ca57a2",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-02T06:20:02Z",
+      "side": 1,
+      "message": "@dstanek, overall comment for caps: i\u0027ll change the ones in the title. But i thought going forward we wanted to avoid using the \u0027code names\u0027 in capital letters.",
       "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_230ff7e2",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-02T06:20:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_592741ca",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_992d39ab",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 9
@@ -64,6 +135,24 @@
       "writtenOn": "2015-03-25T18:35:30Z",
       "side": 1,
       "message": "Same title thing here too",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_0314f3f2",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-02T06:20:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_992d39ab",
       "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +278,23 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_c31deb10",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-02T06:20:02Z",
+      "side": 1,
+      "message": "this whole section should be reworked now that marco\u0027s and nathan\u0027s patches have landed.",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_3487ecd8",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 9
@@ -223,6 +329,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_7e1a3470",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-02T06:20:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_34b8cce4",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_34860c14",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 9
@@ -240,6 +364,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_5eff7001",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-02T06:20:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_34860c14",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_6e97d548",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 9
@@ -251,6 +393,24 @@
       "writtenOn": "2015-03-25T17:45:49Z",
       "side": 1,
       "message": "(nit): s/was/is/  assuming this motivation is still valid...",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_8303630f",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-02T06:20:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_6e97d548",
       "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -291,6 +451,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_c3096b33",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-02T06:20:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_ee6025a7",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_14fd906e",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 9
@@ -325,6 +503,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_a306671e",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-02T06:20:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a6ced46_f419d4d7",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1a6ced46_140bd07d",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 9
@@ -353,6 +549,24 @@
       "writtenOn": "2015-04-02T05:03:06Z",
       "side": 1,
       "message": "should we mention somewhere here that it requires DOA 1.2.0 or later  (since DOA might get into kilo)",
+      "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_0381934a",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 9
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-02T06:20:02Z",
+      "side": 1,
+      "message": "yes we should. I\u0027ll make a note of that in the beginning.",
+      "parentUuid": "baa041b7_a8c88675",
       "revId": "bdc7c714e9d1ef3dde6da6291090a5ba157559fb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
