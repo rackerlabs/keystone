@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_f73e5bb7",
+        "filename": "keystone/common/sql/migrate_repo/versions/068_update_project_name_constraint.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-02T13:11:31Z",
+      "side": 1,
+      "message": "Sure, i\u0027ll update the reseller patches removing all the downgrades",
+      "parentUuid": "baa041b7_512bda30",
+      "revId": "40bc456fa7dc05b877c2a2320202c6a99d843c2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_5114faf3",
         "filename": "keystone/resource/core.py",
         "patchSetId": 32
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-02T10:48:16Z",
       "side": 1,
       "message": "Perhaps s/names are/names need to be/",
+      "revId": "40bc456fa7dc05b877c2a2320202c6a99d843c2a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_b748d35c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 32
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-02T13:11:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa041b7_5114faf3",
       "revId": "40bc456fa7dc05b877c2a2320202c6a99d843c2a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
