@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_95b01ddf",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-04-02T17:43:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa041b7_656e20cb",
+      "revId": "0d4551b5dfa4229414ef02c8af750a0131f62f8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_85792496",
         "filename": "keystone/resource/core.py",
         "patchSetId": 7
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_d5b6a5db",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-04-02T17:43:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa041b7_85792496",
+      "revId": "0d4551b5dfa4229414ef02c8af750a0131f62f8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_edffae32",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 7
@@ -47,6 +83,24 @@
       "writtenOn": "2015-04-02T14:04:12Z",
       "side": 1,
       "message": "unrelated change?",
+      "revId": "0d4551b5dfa4229414ef02c8af750a0131f62f8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_d5dd8515",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 772,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-04-02T17:43:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa041b7_edffae32",
       "revId": "0d4551b5dfa4229414ef02c8af750a0131f62f8d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
