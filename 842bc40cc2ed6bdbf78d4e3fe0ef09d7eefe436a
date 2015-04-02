@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_5f09ab2b",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T07:42:16Z",
+      "side": 1,
+      "message": "I don\u0027t think we skip the service yet here...that\u0027s what your TODO is about...",
+      "revId": "842bc40cc2ed6bdbf78d4e3fe0ef09d7eefe436a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
