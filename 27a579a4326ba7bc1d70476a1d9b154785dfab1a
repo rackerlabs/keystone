@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_58cf6c7f",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T17:56:20Z",
+      "side": 1,
+      "message": "is there a reason we do the substitution after adding in the base?  The implication is that there is.  If there is not, why don;t we do the substitution first, like we did before?",
+      "revId": "27a579a4326ba7bc1d70476a1d9b154785dfab1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
