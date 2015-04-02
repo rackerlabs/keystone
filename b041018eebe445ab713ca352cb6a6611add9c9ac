@@ -34,6 +34,24 @@
       "revId": "b041018eebe445ab713ca352cb6a6611add9c9ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_03a85a1e",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T17:22:54Z",
+      "side": 1,
+      "message": "So you may need to fix something in the ldap resource driver that looks in the hints and if the is_domain is specified it handles it specially?",
+      "parentUuid": "da9b358b_756455e4",
+      "revId": "b041018eebe445ab713ca352cb6a6611add9c9ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
