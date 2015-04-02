@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "baa041b7_abc184e6",
+        "filename": "keystone/common/sql/migrate_repo/versions/069_update_project_name_constraint.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-02T18:46:32Z",
+      "side": 1,
+      "message": "the method name is confusing and hard to understand what it supposed to do.\n\nnot sure if we really need this function, we call this twice but with same arguments.  You could just have a constraint variable in the upgrade method. Maybe just remove it?",
+      "revId": "5368cfd3dba4c80898a9e7e48bdbf7947c398fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_6b725ce7",
+        "filename": "keystone/common/sql/migrate_repo/versions/069_update_project_name_constraint.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-02T18:46:32Z",
+      "side": 1,
+      "message": "same question, the domain_id seems unnecessary",
+      "revId": "5368cfd3dba4c80898a9e7e48bdbf7947c398fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_4b0d583d",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-02T18:46:32Z",
+      "side": 1,
+      "message": "I\u0027m just curious why are we using Boolean column here?  Would using the string that stores a type be more flexible?  In case we want to introduce more type  projects (other than the domain-ness feature)",
+      "revId": "5368cfd3dba4c80898a9e7e48bdbf7947c398fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_0be630b4",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-02T18:46:32Z",
+      "side": 1,
+      "message": "The less unique columns we have to check the better for performance.\n\nis \"domain_id\" necessary?  seems like having name and is_domain is all enough to check that a domain name is unique in the table.",
+      "revId": "5368cfd3dba4c80898a9e7e48bdbf7947c398fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_95581dfc",
         "filename": "keystone/resource/core.py",
         "patchSetId": 33
