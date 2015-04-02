@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_d62c80ad",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T10:38:20Z",
+      "side": 1,
+      "message": "see my comment on the spec....I\u0027m questioning whether we should be able to do this via the domain API",
+      "revId": "50f6008f4c87a2b9c56e948fe536a18ffbc8c6e6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
