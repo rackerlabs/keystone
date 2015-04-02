@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_656e20cb",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T08:54:19Z",
+      "side": 1,
+      "message": "don\u0027t we know the project_id is None at this point?",
+      "revId": "0d4551b5dfa4229414ef02c8af750a0131f62f8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_85792496",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 309,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T08:54:19Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "0d4551b5dfa4229414ef02c8af750a0131f62f8d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
