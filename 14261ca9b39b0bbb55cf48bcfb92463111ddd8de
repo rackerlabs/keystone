@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "baa041b7_4d20da9b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T13:47:48Z",
+      "side": 1,
+      "message": "nit: \"Fix the typo\" probably isn\u0027t appropriate....a type is more of a spelling mistake...maybe: \"Fix errors in ec2 signature logic checking\"....and then describe the errors you are fixing below",
+      "revId": "14261ca9b39b0bbb55cf48bcfb92463111ddd8de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_0d42d23e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 10
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T13:47:48Z",
+      "side": 1,
+      "message": "nit: I\u0027d drop the work typo....maybe just: \"Check for colon in credentials[\u0027host\u0027] instead...\"",
+      "revId": "14261ca9b39b0bbb55cf48bcfb92463111ddd8de",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_d617e0eb",
         "filename": "keystone/contrib/ec2/controllers.py",
         "patchSetId": 10
