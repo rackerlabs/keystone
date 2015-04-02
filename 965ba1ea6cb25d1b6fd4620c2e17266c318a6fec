@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_dc6a5e1a",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 21
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-04-02T12:52:41Z",
+      "side": 1,
+      "message": "While this is OPK for a first approximation, there is nothing in the implementation that is X509 specific, and this would work equally well for Kerberso, SAML, or OpenID Connect.",
+      "revId": "965ba1ea6cb25d1b6fd4620c2e17266c318a6fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_fc02c23d",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 859,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-04-02T12:52:41Z",
+      "side": 1,
+      "message": "Make this a list, as we can allow X509, Kerberos, etc.",
+      "revId": "965ba1ea6cb25d1b6fd4620c2e17266c318a6fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_bcc43a40",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-04-02T12:52:41Z",
+      "side": 1,
+      "message": "This should be wider applicability than just X509.  \"Map user from assertion attribute\"",
+      "revId": "965ba1ea6cb25d1b6fd4620c2e17266c318a6fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_9cef36b0",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-04-02T12:52:41Z",
+      "side": 1,
+      "message": "We should also grab any mapped groups.  Basically, treat this like a Federated token if possible.",
+      "revId": "965ba1ea6cb25d1b6fd4620c2e17266c318a6fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_fc7762d2",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-04-02T12:52:41Z",
+      "side": 1,
+      "message": "This is fairly ugly.  I don\u0027t think we need to explicitly exclude the token path.  Just because the user is validated does not mean they will be able to get a token.",
+      "revId": "965ba1ea6cb25d1b6fd4620c2e17266c318a6fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
