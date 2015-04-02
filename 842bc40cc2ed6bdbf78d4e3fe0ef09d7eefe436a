@@ -16,6 +16,24 @@
       "revId": "842bc40cc2ed6bdbf78d4e3fe0ef09d7eefe436a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_a2ff7e00",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 25
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-02T13:33:35Z",
+      "side": 1,
+      "message": "yep, we should update it again ;(",
+      "parentUuid": "baa041b7_5f09ab2b",
+      "revId": "842bc40cc2ed6bdbf78d4e3fe0ef09d7eefe436a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
