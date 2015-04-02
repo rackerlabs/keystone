@@ -16,6 +16,24 @@
       "revId": "81bfaa5894b3a5669d193a8efd76923984a2af69",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_7e46b4c0",
+        "filename": "keystone/contrib/federation/migrate_repo/versions/007_add_remote_id_table.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-04-02T06:41:56Z",
+      "side": 1,
+      "message": "it\u0027s sqlalchemy.sql - please see line 13 - sqlalchemy was imported as `orm`",
+      "parentUuid": "baa041b7_f9542655",
+      "revId": "81bfaa5894b3a5669d193a8efd76923984a2af69",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
