@@ -34,6 +34,24 @@
       "revId": "8527b04f33cb2a5300890b20a2271088ec5befde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_deeb5d77",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-02T22:37:06Z",
+      "side": 1,
+      "message": "okay. Returning 404 for a POST request doesn\u0027t look right anyway, that standard makes sense.\n\nwhen creating a child project, there is also a validation if the parent_id exists.  This needs to be changed to be more generic exception.NotFound or explicitly add the exceptions.ProjectNotFound.",
+      "parentUuid": "baa041b7_3bbb7be7",
+      "revId": "8527b04f33cb2a5300890b20a2271088ec5befde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
