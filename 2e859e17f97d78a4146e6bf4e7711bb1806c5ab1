@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_db15af49",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 271,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-04-02T22:05:45Z",
+      "side": 1,
+      "message": "Great comment!",
+      "revId": "2e859e17f97d78a4146e6bf4e7711bb1806c5ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_3e000901",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 400,
+      "author": {
+        "id": 6460
+      },
+      "writtenOn": "2015-04-02T22:05:45Z",
+      "side": 1,
+      "message": "Once again, very helpful comment!",
+      "revId": "2e859e17f97d78a4146e6bf4e7711bb1806c5ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
