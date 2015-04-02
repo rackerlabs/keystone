@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_95581dfc",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T17:34:34Z",
+      "side": 1,
+      "message": "I don\u0027t think the change mentioned in comments on the previous patch has been made....",
+      "revId": "5368cfd3dba4c80898a9e7e48bdbf7947c398fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
