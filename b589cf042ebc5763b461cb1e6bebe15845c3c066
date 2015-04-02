@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_f8dd1943",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-04-02T21:19:23Z",
+      "side": 1,
+      "message": "Confiurable -\u003e configurable",
+      "revId": "b589cf042ebc5763b461cb1e6bebe15845c3c066",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_f8b4f9f2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-04-02T21:19:23Z",
+      "side": 1,
+      "message": "Can you prefix each item with - so this appears as a billeted list.  Thanks",
+      "revId": "b589cf042ebc5763b461cb1e6bebe15845c3c066",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_f882b9ff",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-04-02T21:19:23Z",
+      "side": 1,
+      "message": "Nit: too used twice in the same sentence sounds a little awkward.",
+      "revId": "b589cf042ebc5763b461cb1e6bebe15845c3c066",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_d8d495be",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-04-02T21:19:23Z",
+      "side": 1,
+      "message": "I think this file is generally updated using execution of he Oslo config generator in a separate patch not manually.",
+      "revId": "b589cf042ebc5763b461cb1e6bebe15845c3c066",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_98c60d48",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-04-02T21:19:23Z",
+      "side": 1,
+      "message": "It would be nice if this maybe defaulted to the host name of where the script was run.  Using local host in the subAltName is probably worse than having none.",
+      "revId": "b589cf042ebc5763b461cb1e6bebe15845c3c066",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_182f9df7",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-04-02T21:19:23Z",
+      "side": 1,
+      "message": "Use of \\ should be avoided here.",
+      "revId": "b589cf042ebc5763b461cb1e6bebe15845c3c066",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_782109fb",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-04-02T21:19:23Z",
+      "side": 1,
+      "message": "What about subAltNames with IP. ? For systems that have no host name, it\u0027s better to use a static IP using IP.xxx.xxx.xxx.xxx rather than DNS.",
+      "revId": "b589cf042ebc5763b461cb1e6bebe15845c3c066",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_f883d9ca",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-04-02T21:19:23Z",
+      "side": 1,
+      "message": "Might want to keep that same indenting",
+      "revId": "b589cf042ebc5763b461cb1e6bebe15845c3c066",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
