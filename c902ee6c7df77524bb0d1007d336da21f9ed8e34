@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_f1e78e3e",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T10:44:50Z",
+      "side": 1,
+      "message": "I get what you are doing, but this comment doesn\u0027t really explain the test...maybe:\n\nRoles are not inherited to subdomains, so as we look at the parents, only include those assignments from projects that share our domain_id",
+      "revId": "c902ee6c7df77524bb0d1007d336da21f9ed8e34",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
