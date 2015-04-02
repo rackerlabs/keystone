@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_cd6cea9e",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T13:54:03Z",
+      "side": 1,
+      "message": "this sentence doesn\u0027t actually make sense anymore, given they way we have changed the logic...",
+      "revId": "93265d99502bec2df47d08237738c46f8f6647d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_2d2b5632",
+        "filename": "keystone/tests/unit/test_v3_catalog.py",
+        "patchSetId": 26
+      },
+      "lineNbr": 691,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T13:54:03Z",
+      "side": 1,
+      "message": "again, this doesn\u0027t quite make sense since the code no longer inserts \"None\" into the url",
+      "revId": "93265d99502bec2df47d08237738c46f8f6647d9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
