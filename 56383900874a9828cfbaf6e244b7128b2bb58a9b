@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "baa041b7_526887f5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-02T03:38:50Z",
+      "side": 1,
+      "message": "s/from/the\n\nWill update the commit message sooner.",
+      "revId": "56383900874a9828cfbaf6e244b7128b2bb58a9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_876256d7",
         "filename": "keystone/contrib/ec2/controllers.py",
         "patchSetId": 9
@@ -64,6 +81,24 @@
       "writtenOn": "2015-04-01T23:48:38Z",
       "side": 1,
       "message": "the exception will also be raised if credentials[\u0027signature\u0027] is an empty string. Is this intentional?",
+      "revId": "56383900874a9828cfbaf6e244b7128b2bb58a9b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_72bcab6c",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-02T03:38:50Z",
+      "side": 1,
+      "message": "Brant, IMO, this should be intentional, it not make sense that the signature is empty string, but the comment here may need to be updated.",
+      "parentUuid": "baa041b7_e7cec2b3",
       "revId": "56383900874a9828cfbaf6e244b7128b2bb58a9b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
