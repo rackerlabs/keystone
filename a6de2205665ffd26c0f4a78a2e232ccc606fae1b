@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_98573402",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-04-02T17:47:53Z",
+      "side": 1,
+      "message": "actually, just noticed this changes are related... Since we check if the project exist in the Manager layer, we do not need to retrieve the project ref again here.",
+      "parentUuid": "da9b358b_351c8dc0",
+      "revId": "a6de2205665ffd26c0f4a78a2e232ccc606fae1b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "da9b358b_7e5a1685",
         "filename": "keystone/resource/core.py",
         "patchSetId": 6
