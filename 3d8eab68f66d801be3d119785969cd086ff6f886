@@ -67,6 +67,23 @@
       "revId": "3d8eab68f66d801be3d119785969cd086ff6f886",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_f11d4e67",
+        "filename": "keystone/token/providers/lotto.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-02T10:40:23Z",
+      "side": 1,
+      "message": "suggest we need a backdoor to allow unnamed security services access to track who is playing...",
+      "revId": "3d8eab68f66d801be3d119785969cd086ff6f886",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
