@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_1bef7a88",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 266,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-03T17:10:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa041b7_8c048fc0",
+      "revId": "738d3a8f2e84fb336ca5f5b0aa7448b0cc8a2f44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_2c3b439e",
         "filename": "doc/source/developing.rst",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_bbebee77",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 310,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-03T17:10:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa041b7_2c3b439e",
+      "revId": "738d3a8f2e84fb336ca5f5b0aa7448b0cc8a2f44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_0c599ffe",
         "filename": "doc/source/developing.rst",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2015-04-03T00:04:46Z",
       "side": 1,
       "message": "noticed this is too long, could update it here or as follow-up",
+      "revId": "738d3a8f2e84fb336ca5f5b0aa7448b0cc8a2f44",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_9b038a42",
+        "filename": "doc/source/developing.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 326,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-03T17:10:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa041b7_0c599ffe",
       "revId": "738d3a8f2e84fb336ca5f5b0aa7448b0cc8a2f44",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
