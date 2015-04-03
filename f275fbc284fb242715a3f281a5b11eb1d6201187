@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_2dbe9dd4",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-04-03T03:11:23Z",
+      "side": 1,
+      "message": "this needs to use the appropriate decorator:\n\n  @versionutils.deprecated(what\u003d\u0027keystone.contrib.endpoint_filter, backends.catalog_sql.EndPointFilterCatalog\u0027, \n                           as_of\u003dversionutils.deprecated.KILO,\n                           in_favor_of\u003d\u0027keystone.catalog.backends.sql.Catalog\u0027)\n\ninstead of a LW in the method itself. This Whole class is deprecated. Release notes will cover the details.",
+      "revId": "f275fbc284fb242715a3f281a5b11eb1d6201187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
