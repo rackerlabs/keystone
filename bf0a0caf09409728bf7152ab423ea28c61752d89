@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_d3b0e4df",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-04-03T12:43:29Z",
+      "side": 1,
+      "message": "how? Using API or in keystone.conf? This wouldn\u0027t make sense for me if I didn\u0027t follow federation/websso development",
+      "revId": "bf0a0caf09409728bf7152ab423ea28c61752d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_73691825",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-04-03T12:43:29Z",
+      "side": 1,
+      "message": "\"use determine\"",
+      "revId": "bf0a0caf09409728bf7152ab423ea28c61752d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
