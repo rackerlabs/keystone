@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_98c9627b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 15
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-04-03T07:59:41Z",
+      "side": 1,
+      "message": "hm, I didn\u0027t found such convention... So I\u0027ll simplify this patch a bit :)",
+      "parentUuid": "baa041b7_a7abecd5",
+      "revId": "dac8980a816a0b7bda7af6f22528d9df178a861a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_27511c0f",
         "filename": "keystone/common/sql/migrate_repo/versions/068_rename_assignment_actor_index.py",
         "patchSetId": 15
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-03T00:49:10Z",
       "side": 1,
       "message": "we don\u0027t really need to support sqlite since it\u0027s only for testing. Write the code so that it\u0027s correct for mysql, etc.",
+      "revId": "dac8980a816a0b7bda7af6f22528d9df178a861a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_b8cae66c",
+        "filename": "keystone/common/sql/migrate_repo/versions/068_rename_assignment_actor_index.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-04-03T07:59:41Z",
+      "side": 1,
+      "message": "unfortunately, this still required because we run unit tests with SQLite and fill DB schema from migrations. We will be able to ignore SQLIte in migrations when patch  https://review.openstack.org/#/c/93558/ lands",
+      "parentUuid": "baa041b7_27511c0f",
       "revId": "dac8980a816a0b7bda7af6f22528d9df178a861a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
