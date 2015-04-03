@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_07e858b3",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-03T01:19:42Z",
+      "side": 1,
+      "message": "use of .get() indicates that the field or value might not be there. No need for this note.",
+      "revId": "7ace25e25fafef7809789dc3b799c1943a45301d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_a7cd2c5f",
+        "filename": "keystone/contrib/ec2/controllers.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-03T01:19:42Z",
+      "side": 1,
+      "message": "remove \"the\". This comment can be removed since this is obvious from the code so it adds nothing.",
+      "revId": "7ace25e25fafef7809789dc3b799c1943a45301d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
