@@ -106,6 +106,24 @@
       "revId": "8527b04f33cb2a5300890b20a2271088ec5befde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_d3990470",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-03T12:34:55Z",
+      "side": 1,
+      "message": "I was working off the old RFC. 400 works for me.",
+      "parentUuid": "baa041b7_04804b45",
+      "revId": "8527b04f33cb2a5300890b20a2271088ec5befde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
