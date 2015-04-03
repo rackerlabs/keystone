@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_a3a06044",
+        "filename": "doc/source/configure_tokenless_x509.rst",
+        "patchSetId": 21
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-04-03T22:46:20Z",
+      "side": 1,
+      "message": "This implementation will be the experimental version and making the implementation to be generic enough to support all the possible mechanisms will make the scope of the implementation to be so big. \nRenaming it to be ``X509 Tokenless Authorization`` sounds fair to you?",
+      "parentUuid": "baa041b7_dc6a5e1a",
+      "revId": "965ba1ea6cb25d1b6fd4620c2e17266c318a6fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_fc02c23d",
         "filename": "keystone/common/config.py",
         "patchSetId": 21
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-02T12:52:41Z",
       "side": 1,
       "message": "Make this a list, as we can allow X509, Kerberos, etc.",
+      "revId": "965ba1ea6cb25d1b6fd4620c2e17266c318a6fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_438634ba",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 859,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-04-03T22:46:20Z",
+      "side": 1,
+      "message": "sure",
+      "parentUuid": "baa041b7_fc02c23d",
       "revId": "965ba1ea6cb25d1b6fd4620c2e17266c318a6fec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -70,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_2ebb1729",
+        "filename": "keystone/common/tokenless_auth.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-04-03T22:46:20Z",
+      "side": 1,
+      "message": "This is actually different from the federated user, the scope for the federated user will be based on what the group is assigned that the user maps to, that\u0027s why the federated needs the group.\nIn this implementation, it only cares if this user exits and validates the scope it passes in through the header. And the group info is irrelevant here.",
+      "parentUuid": "baa041b7_9cef36b0",
+      "revId": "965ba1ea6cb25d1b6fd4620c2e17266c318a6fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_fc7762d2",
         "filename": "keystone/middleware/core.py",
         "patchSetId": 21
@@ -81,6 +135,24 @@
       "writtenOn": "2015-04-02T12:52:41Z",
       "side": 1,
       "message": "This is fairly ugly.  I don\u0027t think we need to explicitly exclude the token path.  Just because the user is validated does not mean they will be able to get a token.",
+      "revId": "965ba1ea6cb25d1b6fd4620c2e17266c318a6fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_4ef65bd8",
+        "filename": "keystone/middleware/core.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-04-03T22:46:20Z",
+      "side": 1,
+      "message": "yep, agree on that. Will get that taken care of.",
+      "parentUuid": "baa041b7_fc7762d2",
       "revId": "965ba1ea6cb25d1b6fd4620c2e17266c318a6fec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
