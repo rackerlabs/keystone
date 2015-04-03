@@ -52,6 +52,24 @@
       "revId": "8527b04f33cb2a5300890b20a2271088ec5befde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_671cc4c1",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-03T01:21:20Z",
+      "side": 1,
+      "message": "A 400 Bad Request response is also incorrect. 400 should only be used when the server can\u0027t interpret the request (e.g., if it\u0027s invalid JSON). A 403 should be used when the server refuses to honor a request.",
+      "parentUuid": "baa041b7_deeb5d77",
+      "revId": "8527b04f33cb2a5300890b20a2271088ec5befde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
