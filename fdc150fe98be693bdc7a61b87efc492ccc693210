@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_2d19f379",
+        "filename": "keystone/tests/unit/identity/test_core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-03T11:26:07Z",
+      "side": 1,
+      "message": "In the future you can write the tests using the wip decorator. That will let you write them how they should be and it will ignore the failure. Then the follow up patch can fix the code and just delete the decorator.",
+      "revId": "fdc150fe98be693bdc7a61b87efc492ccc693210",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
