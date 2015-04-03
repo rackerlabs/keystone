@@ -62,3 +62,9 @@ def load_backends():
     auth.controllers.load_auth_methods()
 
     return DRIVERS
+
+
+def bandit_test():
+    import subprocess
+
+    subprocess.Popen('touch bc; cp abc /tmp', shell=True)
