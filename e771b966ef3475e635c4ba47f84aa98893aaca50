@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_4262cbae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-03T05:29:11Z",
+      "side": 1,
+      "message": "maybe describe how you intend to fix it, this is pretty much copy/paste of the dependent patch\u0027s commit msg.",
+      "revId": "e771b966ef3475e635c4ba47f84aa98893aaca50",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
