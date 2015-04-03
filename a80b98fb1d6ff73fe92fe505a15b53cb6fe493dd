@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_874c6871",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 234,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-03T00:50:09Z",
+      "side": 1,
+      "message": "Initially thought that \"\u0027?\u0027 + urllib.urlencode(req.params)\" must be enclosed in parenthesis,  but this works when I tested it. Cool",
+      "revId": "a80b98fb1d6ff73fe92fe505a15b53cb6fe493dd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
