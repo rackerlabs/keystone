@@ -88,6 +88,24 @@
       "revId": "8527b04f33cb2a5300890b20a2271088ec5befde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_04804b45",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-03T10:16:45Z",
+      "side": 1,
+      "message": "There is a good discussion here about which one (400/403) is correct: http://stackoverflow.com/questions/3290182/rest-http-status-codes-for-failed-validation-or-invalid-duplicate\n\nin the new spec, 400 is now described as \"the server cannot or will not process the request due to something that is perceived to be a client error\"\n\nI checked Nova and Cinder, they are both using 400 for invalid request. We should follow that for consistency.",
+      "parentUuid": "baa041b7_22b7c787",
+      "revId": "8527b04f33cb2a5300890b20a2271088ec5befde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
