@@ -160,6 +160,24 @@
       "revId": "8527b04f33cb2a5300890b20a2271088ec5befde",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_0addd80d",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 24
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-04-04T18:55:39Z",
+      "side": 1,
+      "message": "+1 will submit the follow up patch",
+      "parentUuid": "baa041b7_8a832804",
+      "revId": "8527b04f33cb2a5300890b20a2271088ec5befde",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
