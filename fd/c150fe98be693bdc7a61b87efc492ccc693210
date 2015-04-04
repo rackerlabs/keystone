@@ -1,0 +1,11 @@
+Verified+2: Jenkins
+Code-Review+2: Morgan Fainberg <morgan.fainberg@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+1: henry-nash <henryn@linux.vnet.ibm.com>
+Code-Review+1: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: David Stanek <dstanek@dstanek.com>
+Submitted-by: Jenkins
+Submitted-at: Sat, 04 Apr 2015 03:29:30 +0000
+Reviewed-on: https://review.openstack.org/138113
+Project: openstack/keystone
+Branch: refs/heads/master
