@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_06da7078",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-05T06:24:50Z",
+      "side": 1,
+      "message": "now I think your suggestion is too broad. anytime \"kerberos\" is in the path it\u0027ll go there, what if i want to delete the protocol kerberos ... \"DELETE ... /kerberos\".\n\nhow about we just say to enumerate them:\n\n  \u003cLocation ~ \"/v3/auth/OS-FEDERATION/websso/kerberos\"\u003e\n      kerb params\n\n  ...\n  \u003cLocation ~ \"/v3/auth/OS-FEDERATION/websso/oidc\"\u003e\n      oidc params",
+      "parentUuid": "baa041b7_001ff75f",
+      "revId": "bf0a0caf09409728bf7152ab423ea28c61752d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_d3b0e4df",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 10
@@ -72,6 +90,42 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_264d743e",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-05T06:24:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa041b7_2010bb4d",
+      "revId": "bf0a0caf09409728bf7152ab423ea28c61752d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_e6566cd1",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-05T06:24:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa041b7_d3b0e4df",
+      "revId": "bf0a0caf09409728bf7152ab423ea28c61752d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_73691825",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 10
@@ -89,6 +143,24 @@
     },
     {
       "key": {
+        "uuid": "baa041b7_c65128da",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-05T06:24:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa041b7_73691825",
+      "revId": "bf0a0caf09409728bf7152ab423ea28c61752d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_a02a8b7c",
         "filename": "doc/source/extensions/websso.rst",
         "patchSetId": 10
@@ -100,6 +172,24 @@
       "writtenOn": "2015-04-05T01:09:38Z",
       "side": 1,
       "message": "If we are going to put two SSO values in here, we need to make sure the document is written to allow the two mechanisms to live side by side.  Most of the doc is OK, but the Locations in HTTPD need to be protocol specific.  See Above.",
+      "revId": "bf0a0caf09409728bf7152ab423ea28c61752d89",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "baa041b7_a65f44e4",
+        "filename": "doc/source/extensions/websso.rst",
+        "patchSetId": 10
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-05T06:24:50Z",
+      "side": 1,
+      "message": "hopefully i did enough up-top to satisfy this concern.",
+      "parentUuid": "baa041b7_a02a8b7c",
       "revId": "bf0a0caf09409728bf7152ab423ea28c61752d89",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
