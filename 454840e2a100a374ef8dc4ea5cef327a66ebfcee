@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "baa041b7_66425c12",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 87
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-05T15:55:53Z",
+      "side": 1,
+      "message": "nit: s/works accordingly to an existing in Keystone/assumes the existing Keystone/",
+      "revId": "454840e2a100a374ef8dc4ea5cef327a66ebfcee",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
