@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_59068321",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-06T14:55:49Z",
+      "side": 1,
+      "message": "This should not be indented.",
+      "revId": "2b69f902588af68451b1bc38edb354903a9bf417",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_343186ed",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-06T14:55:49Z",
+      "side": 1,
+      "message": "Based on the implementation in Python\u0027s _threading_local, you\u0027ll also need to override the __del__.",
+      "revId": "2b69f902588af68451b1bc38edb354903a9bf417",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
