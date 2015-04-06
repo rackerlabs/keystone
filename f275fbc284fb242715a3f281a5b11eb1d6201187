@@ -2,6 +2,74 @@
   "comments": [
     {
       "key": {
+        "uuid": "9aa53dc9_baf20e99",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-06T23:59:56Z",
+      "side": 1,
+      "message": "use ()\u0027s instead of \\",
+      "revId": "f275fbc284fb242715a3f281a5b11eb1d6201187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_babe8efd",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 368,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-06T23:59:56Z",
+      "side": 1,
+      "message": "nit: toss in a new line here to separate the functions",
+      "revId": "f275fbc284fb242715a3f281a5b11eb1d6201187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_bac44e40",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 379,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-06T23:59:56Z",
+      "side": 1,
+      "message": "it would be nice if these parameters could match the named parameters of the function",
+      "revId": "f275fbc284fb242715a3f281a5b11eb1d6201187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_fa72d67b",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 388,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-06T23:59:56Z",
+      "side": 1,
+      "message": "use ()\u0027s instead of \\",
+      "revId": "f275fbc284fb242715a3f281a5b11eb1d6201187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_2dbe9dd4",
         "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
         "patchSetId": 5
@@ -13,6 +81,261 @@
       "writtenOn": "2015-04-03T03:11:23Z",
       "side": 1,
       "message": "this needs to use the appropriate decorator:\n\n  @versionutils.deprecated(what\u003d\u0027keystone.contrib.endpoint_filter, backends.catalog_sql.EndPointFilterCatalog\u0027, \n                           as_of\u003dversionutils.deprecated.KILO,\n                           in_favor_of\u003d\u0027keystone.catalog.backends.sql.Catalog\u0027)\n\ninstead of a LW in the method itself. This Whole class is deprecated. Release notes will cover the details.",
+      "revId": "f275fbc284fb242715a3f281a5b11eb1d6201187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_fa6d3633",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 533,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-06T23:59:56Z",
+      "side": 1,
+      "message": "rename this to just \u0027create_service\u0027? there\u0027s nothing being tested here",
+      "revId": "f275fbc284fb242715a3f281a5b11eb1d6201187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_fa265615",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 535,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-06T23:59:56Z",
+      "side": 1,
+      "message": "nit: there is no need for these prefixes",
+      "revId": "f275fbc284fb242715a3f281a5b11eb1d6201187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_9a74eafd",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-06T23:59:56Z",
+      "side": 1,
+      "message": "same thing about the prefix",
+      "revId": "f275fbc284fb242715a3f281a5b11eb1d6201187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_5a654243",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 556,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-06T23:59:56Z",
+      "side": 1,
+      "message": "there\u0027s also no point in naming these _1, as there is no _2",
+      "revId": "f275fbc284fb242715a3f281a5b11eb1d6201187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_3a5a7e84",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 616,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-06T23:59:56Z",
+      "side": 1,
+      "message": "use single quotes when you can",
+      "revId": "f275fbc284fb242715a3f281a5b11eb1d6201187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_5acc2235",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 631,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-06T23:59:56Z",
+      "side": 1,
+      "message": "single quotes here too",
+      "revId": "f275fbc284fb242715a3f281a5b11eb1d6201187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_1aa45a55",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 698,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-06T23:59:56Z",
+      "side": 1,
+      "message": "use single quotes",
+      "revId": "f275fbc284fb242715a3f281a5b11eb1d6201187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_5ac1c2e3",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 723,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-06T23:59:56Z",
+      "side": 1,
+      "message": "just use \u0027service\u0027",
+      "revId": "f275fbc284fb242715a3f281a5b11eb1d6201187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_ba932efa",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 736,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-06T23:59:56Z",
+      "side": 1,
+      "message": "put this in the line above?",
+      "revId": "f275fbc284fb242715a3f281a5b11eb1d6201187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_fadbf6eb",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 742,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-06T23:59:56Z",
+      "side": 1,
+      "message": "remove this if it\u0027s not necessary",
+      "revId": "f275fbc284fb242715a3f281a5b11eb1d6201187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_1abb3a74",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 765,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-06T23:59:56Z",
+      "side": 1,
+      "message": "this third arg should be a message",
+      "revId": "f275fbc284fb242715a3f281a5b11eb1d6201187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_1a49fa8b",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 769,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-06T23:59:56Z",
+      "side": 1,
+      "message": "you can probably create a private helper function that checks if 2 catalogs have the same type, id and endpoints",
+      "revId": "f275fbc284fb242715a3f281a5b11eb1d6201187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_1aed7a8b",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 774,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-06T23:59:56Z",
+      "side": 1,
+      "message": "use single quotes",
+      "revId": "f275fbc284fb242715a3f281a5b11eb1d6201187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_bafc4e3f",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 779,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-06T23:59:56Z",
+      "side": 1,
+      "message": "assertEqual(0, len(catalog_service_endpoint[\u0027url\u0027]))",
+      "revId": "f275fbc284fb242715a3f281a5b11eb1d6201187",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_5af30274",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 780,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-06T23:59:56Z",
+      "side": 1,
+      "message": "this isn\u0027t a message",
       "revId": "f275fbc284fb242715a3f281a5b11eb1d6201187",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
