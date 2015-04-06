@@ -50,6 +50,24 @@
       "revId": "9817080f16ad9a4f079b59e3f57f70d0b94000b1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_fa3f7623",
+        "filename": "keystone/common/sql/migrate_repo/versions/068_insert_assignment_inherited_pk.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-04-06T23:51:06Z",
+      "side": 1,
+      "message": "We could special-case sqlite. I might actually like that better:\n\nmysql/pgsql drop constraint, sqlite: do the shuffle.",
+      "parentUuid": "9aa53dc9_86813a92",
+      "revId": "9817080f16ad9a4f079b59e3f57f70d0b94000b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
