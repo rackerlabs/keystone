@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_34f3bc75",
+        "filename": "keystone/common/sql/migrate_repo/versions/069_update_project_name_constraint.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-06T19:42:14Z",
+      "side": 1,
+      "message": "I implemented in this way because I was following the pattern in previous scripts but I agree with you, I\u0027ll send a new patch with your suggestion.",
+      "parentUuid": "baa041b7_abc184e6",
+      "revId": "5368cfd3dba4c80898a9e7e48bdbf7947c398fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_6b725ce7",
         "filename": "keystone/common/sql/migrate_repo/versions/069_update_project_name_constraint.py",
         "patchSetId": 33
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-02T18:46:32Z",
       "side": 1,
       "message": "same question, the domain_id seems unnecessary",
+      "revId": "5368cfd3dba4c80898a9e7e48bdbf7947c398fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_744b84b1",
+        "filename": "keystone/common/sql/migrate_repo/versions/069_update_project_name_constraint.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-06T19:42:14Z",
+      "side": 1,
+      "message": "This is not unnecessary, since we can create a project and a domain with the same name, we can\u0027t create two domains with the same name.",
+      "parentUuid": "baa041b7_6b725ce7",
       "revId": "5368cfd3dba4c80898a9e7e48bdbf7947c398fd3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_3794de35",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-06T19:42:14Z",
+      "side": 1,
+      "message": "I don\u0027t think that we have a strong reason, we decide to use this as a boolean during the spec, but in IMO we have to use a boolean here since we are enabled/disable a functionality, in every moment this will be a project, but can provide or not a domain capability",
+      "parentUuid": "baa041b7_4b0d583d",
+      "revId": "5368cfd3dba4c80898a9e7e48bdbf7947c398fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_0be630b4",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 33
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_77aa6672",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-06T19:42:14Z",
+      "side": 1,
+      "message": "It\u0027s necessary, since we can have a project and a domain with the same name, so I need to use this to prohib have two domains with the same name.",
+      "parentUuid": "baa041b7_0be630b4",
+      "revId": "5368cfd3dba4c80898a9e7e48bdbf7947c398fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_95581dfc",
         "filename": "keystone/resource/core.py",
         "patchSetId": 33
@@ -81,6 +153,24 @@
       "writtenOn": "2015-04-02T17:34:34Z",
       "side": 1,
       "message": "I don\u0027t think the change mentioned in comments on the previous patch has been made....",
+      "revId": "5368cfd3dba4c80898a9e7e48bdbf7947c398fd3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_d7d132fd",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 33
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-06T19:42:14Z",
+      "side": 1,
+      "message": "Sorry, I\u0027ll update in the next patch.",
+      "parentUuid": "baa041b7_95581dfc",
       "revId": "5368cfd3dba4c80898a9e7e48bdbf7947c398fd3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
