@@ -16,6 +16,24 @@
       "revId": "51d2c18cdb273efc9c881acdf51cc71cd3962fec",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_a587aad6",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-04-06T13:16:51Z",
+      "side": 1,
+      "message": "David, with memcache 1.54 this idea stops working as memcache.Client calls super() in __init__() so inheritance has to be preserved in order not to overwrite entire memcache.Client.",
+      "parentUuid": "9aa53dc9_a55b2a2e",
+      "revId": "51d2c18cdb273efc9c881acdf51cc71cd3962fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
