@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_a55b2a2e",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-06T12:59:50Z",
+      "side": 1,
+      "message": "I haven\u0027t tried this out, but I\u0027m not sure how it would work. The idea of the original hack was that the original parents (threading.local) would be removed from the inheritance hierarchy.",
+      "revId": "51d2c18cdb273efc9c881acdf51cc71cd3962fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
