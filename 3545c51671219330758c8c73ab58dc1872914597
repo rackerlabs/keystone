@@ -53,6 +53,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_378f4325",
+        "filename": "keystone/common/sql/migrate_repo/versions/068_add_is_domain_project.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-06T17:25:22Z",
+      "side": 1,
+      "message": "We removed the downgrade and forget remove this constants, I\u0027ll fix this.",
+      "parentUuid": "baa041b7_de291d39",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_ee2685b9",
         "filename": "keystone/resource/backends/ldap.py",
         "patchSetId": 38
@@ -70,6 +88,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_37bce36b",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-06T17:25:22Z",
+      "side": 1,
+      "message": "Ok, I\u0027ll rephrase this sentence.",
+      "parentUuid": "baa041b7_ee2685b9",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_080d203e",
         "filename": "keystone/resource/backends/ldap.py",
         "patchSetId": 38
@@ -81,6 +117,24 @@
       "writtenOn": "2015-04-02T15:34:02Z",
       "side": 1,
       "message": "do you need to check is_domain here....? or at least pop it?",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_7706eb21",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-06T17:25:22Z",
+      "side": 1,
+      "message": "You\u0027re right, we need pop this information as we did in create_project.",
+      "parentUuid": "baa041b7_080d203e",
       "revId": "3545c51671219330758c8c73ab58dc1872914597",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -122,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_97516f65",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-06T17:25:22Z",
+      "side": 1,
+      "message": "This is unrelated change, I\u0027ll send this for the next patch.",
+      "parentUuid": "baa041b7_3594b189",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_28a46455",
         "filename": "keystone/resource/backends/sql.py",
         "patchSetId": 38
@@ -139,6 +211,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_577407fc",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-06T17:25:22Z",
+      "side": 1,
+      "message": "This is a unrelated change, we change this in the next patch.\n\nIt\u0027s a lot of patches, sometimes it\u0027s difficult to separate the modifications between then. Sorry about that.",
+      "parentUuid": "baa041b7_28a46455",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_5e72ad4a",
         "filename": "keystone/resource/core.py",
         "patchSetId": 38
@@ -150,6 +240,24 @@
       "writtenOn": "2015-04-02T22:23:49Z",
       "side": 1,
       "message": "what if the user pass an empty value for is_domain, should we just ignore that and treat it as no update?",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_b9afcf93",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-06T17:25:22Z",
+      "side": 1,
+      "message": "You mean the user pass something like: is_domain:\"\" or don\u0027t send this information in the update project?\n\nFor the first case, this is a invalid error, since this is a boolean. in the second case we ignore that.",
+      "parentUuid": "baa041b7_5e72ad4a",
       "revId": "3545c51671219330758c8c73ab58dc1872914597",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -191,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_3903bf11",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 264,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-06T17:25:22Z",
+      "side": 1,
+      "message": "disable the project with the domain feature, not disable the domain feature.\n\nI\u0027ll rephrase this to make more clear.",
+      "parentUuid": "baa041b7_9e915555",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_a81d14bf",
         "filename": "keystone/resource/schema.py",
         "patchSetId": 38
@@ -226,6 +352,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_596c439c",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-06T17:25:22Z",
+      "side": 1,
+      "message": "Henry,  if we are not allowing update domain_id in update project, even though we have to allow set the domain_id here and prohib in the controller level,  in all the operations?",
+      "parentUuid": "baa041b7_9ed95586",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_68a6ecc2",
         "filename": "keystone/resource/schema.py",
         "patchSetId": 38
@@ -255,6 +399,24 @@
       "side": 1,
       "message": "I think project_id and domain_id must have the same value if it is a domain project",
       "parentUuid": "baa041b7_68a6ecc2",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_4e811b8f",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-06T17:25:22Z",
+      "side": 1,
+      "message": "Lin is correct, project_id and domain_id will be equal.",
+      "parentUuid": "baa041b7_fef3c108",
       "revId": "3545c51671219330758c8c73ab58dc1872914597",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
