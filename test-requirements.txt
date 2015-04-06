@@ -9,7 +9,8 @@ bashate>=0.2 # Apache-2.0
 pysqlite
 
 # Optional backend: Memcache
-python-memcached>=1.48
+# Version 1.54 and above cannot be used due to bug 1440493
+python-memcached>=1.48,<1.54
 
 # Optional dogpile backend: MongoDB
 pymongo>=2.6.3
