@@ -264,6 +264,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_5704027d",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 38
+      },
+      "lineNbr": 230,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-06T19:42:37Z",
+      "side": 1,
+      "message": "I mean the user passing a \"is_domain:None\", should we just ignore it? \n\nLooking at the code above, it is the same handling for \u0027parent_id\u0027. This is fine then.",
+      "parentUuid": "9aa53dc9_b9afcf93",
+      "revId": "3545c51671219330758c8c73ab58dc1872914597",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_f431b20c",
         "filename": "keystone/resource/core.py",
         "patchSetId": 38
