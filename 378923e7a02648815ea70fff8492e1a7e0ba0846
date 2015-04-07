@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_b3dd8244",
+        "filename": "keystone/common/sql/migrate_repo/versions/068_insert_assignment_inherited_pk.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-07T13:50:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa53dc9_be9c396a",
+      "revId": "378923e7a02648815ea70fff8492e1a7e0ba0846",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_fea08192",
         "filename": "keystone/common/sql/migrate_repo/versions/068_insert_assignment_inherited_pk.py",
         "patchSetId": 11
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_b3e7c2e3",
+        "filename": "keystone/common/sql/migrate_repo/versions/068_insert_assignment_inherited_pk.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-07T13:50:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa53dc9_fea08192",
+      "revId": "378923e7a02648815ea70fff8492e1a7e0ba0846",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_de77fd00",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 11
@@ -47,6 +83,24 @@
       "writtenOn": "2015-04-07T07:20:26Z",
       "side": 1,
       "message": "good job on writing a re-usable test!",
+      "revId": "378923e7a02648815ea70fff8492e1a7e0ba0846",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_53cf5656",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 5160,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-07T13:50:21Z",
+      "side": 1,
+      "message": ":-)",
+      "parentUuid": "9aa53dc9_de77fd00",
       "revId": "378923e7a02648815ea70fff8492e1a7e0ba0846",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
