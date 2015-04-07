@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_3de718e6",
+        "filename": "keystone/common/sql/migrate_repo/versions/068_insert_assignment_inherited_pk.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-07T00:37:02Z",
+      "side": 1,
+      "message": "Great, thanks!",
+      "parentUuid": "9aa53dc9_1d87b410",
+      "revId": "9817080f16ad9a4f079b59e3f57f70d0b94000b1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_86813a92",
         "filename": "keystone/common/sql/migrate_repo/versions/068_insert_assignment_inherited_pk.py",
         "patchSetId": 10
