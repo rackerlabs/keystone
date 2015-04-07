@@ -52,6 +52,24 @@
       "revId": "b041018eebe445ab713ca352cb6a6611add9c9ac",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_8cc5ab3d",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-07T20:35:35Z",
+      "side": 1,
+      "message": "In the previous patch https://review.openstack.org/#/c/157427/42/keystone/resource/backends/ldap.py\n\nlist_projects() - line 98 call:\n _set_default_attributes() - line 88 and then call:\nset_default_is_domain_project() - line 63\n\nWe are treating this case there, so for LDAP this flag will be False in all cases.",
+      "parentUuid": "baa041b7_03a85a1e",
+      "revId": "b041018eebe445ab713ca352cb6a6611add9c9ac",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
