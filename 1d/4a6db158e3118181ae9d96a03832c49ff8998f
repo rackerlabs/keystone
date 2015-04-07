@@ -1,0 +1,10 @@
+Verified+2: Jenkins
+Code-Review+1: Lin Hua Cheng <os.lcheng@gmail.com>
+Workflow+1: Morgan Fainberg <morgan.fainberg@gmail.com>
+Code-Review+2: Steve Martinelli <stevemar@ca.ibm.com>
+Code-Review+2: Brant Knudson <bknudson@us.ibm.com>
+Submitted-by: Jenkins
+Submitted-at: Tue, 07 Apr 2015 14:05:13 +0000
+Reviewed-on: https://review.openstack.org/171001
+Project: openstack/keystone
+Branch: refs/heads/master
