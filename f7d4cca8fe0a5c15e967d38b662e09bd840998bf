@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9aa53dc9_203588f6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-04-07T19:01:41Z",
+      "side": 1,
+      "message": "steve: update date is here",
+      "revId": "f7d4cca8fe0a5c15e967d38b662e09bd840998bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_40ef6c87",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -30,6 +47,24 @@
       "writtenOn": "2015-04-07T18:57:34Z",
       "side": 1,
       "message": "mention the new command and updated date",
+      "revId": "f7d4cca8fe0a5c15e967d38b662e09bd840998bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_4019ac87",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-04-07T19:01:41Z",
+      "side": 1,
+      "message": "i don\u0027t really think you need an explanation",
+      "parentUuid": "9aa53dc9_80e694b2",
       "revId": "f7d4cca8fe0a5c15e967d38b662e09bd840998bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
