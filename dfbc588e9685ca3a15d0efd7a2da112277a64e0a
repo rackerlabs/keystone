@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_61e8567d",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-07T07:46:28Z",
+      "side": 1,
+      "message": "Instead of \u0027keystone.contrib.endpoint_filter, \u0027 should this be \u0027keystone.contrib.endpoint_filter.\u0027 ?  - trailing comma replaced with period",
+      "revId": "dfbc588e9685ca3a15d0efd7a2da112277a64e0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
