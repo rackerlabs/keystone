@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "9aa53dc9_40ef6c87",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-07T18:57:34Z",
+      "side": 1,
+      "message": "update man page for kilo release*",
+      "revId": "f7d4cca8fe0a5c15e967d38b662e09bd840998bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_80e694b2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-07T18:57:34Z",
+      "side": 1,
+      "message": "mention the new command and updated date",
+      "revId": "f7d4cca8fe0a5c15e967d38b662e09bd840998bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_e05d607a",
         "filename": "doc/source/man/keystone-manage.rst",
         "patchSetId": 1
@@ -13,6 +47,24 @@
       "writtenOn": "2015-04-07T18:56:29Z",
       "side": 1,
       "message": "why did this get moved?",
+      "revId": "f7d4cca8fe0a5c15e967d38b662e09bd840998bf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_c0dc9ce6",
+        "filename": "doc/source/man/keystone-manage.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-07T18:57:34Z",
+      "side": 1,
+      "message": "undo the move?",
+      "parentUuid": "9aa53dc9_e05d607a",
       "revId": "f7d4cca8fe0a5c15e967d38b662e09bd840998bf",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
