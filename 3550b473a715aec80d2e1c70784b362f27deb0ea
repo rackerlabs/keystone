@@ -16,6 +16,23 @@
       "revId": "3550b473a715aec80d2e1c70784b362f27deb0ea",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_d3900b98",
+        "filename": "keystone/common/sql/migrate_repo/versions/066_fixup_service_name_value.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-04-07T11:53:37Z",
+      "side": 0,
+      "message": "bug?",
+      "revId": "3550b473a715aec80d2e1c70784b362f27deb0ea",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
