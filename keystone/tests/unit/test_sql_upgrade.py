@@ -29,15 +29,19 @@ WARNING::
     all data will be lost.
 """
 
-import copy
 import json
+import os
 import uuid
 
 from migrate.versioning import api as versioning_api
+from migrate.versioning import repository as migrate_repository
 from oslo_config import cfg
 from oslo_db import exception as db_exception
 from oslo_db.sqlalchemy import migration
 from oslo_db.sqlalchemy import session as db_session
+from oslo_db.sqlalchemy import test_base
+from oslo_db.sqlalchemy import test_migrations
+from oslo_db.sqlalchemy import utils as db_utils
 import six
 from sqlalchemy.engine import reflection
 import sqlalchemy.exc
@@ -50,7 +54,6 @@ from keystone.contrib import federation
 from keystone.contrib import revoke
 from keystone import exception
 from keystone.tests import unit as tests
-from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
 
 
@@ -260,26 +263,73 @@ class SqlMigrateBase(tests.SQLDriverOverrides, tests.TestCase):
         return getattr(self, '_initial_db_version', 0)
 
 
-class SqlUpgradeTests(SqlMigrateBase):
+class SqlUpgradeTests(object):
 
-    _initial_db_version = migrate_repo.DB_INIT_VERSION
+    @property
+    def INIT_VERSION(self):
+        return migrate_repo.DB_INIT_VERSION
+
+    @property
+    def REPOSITORY(self):
+        return migrate_repository.Repository(
+            os.path.abspath(os.path.dirname(migrate_repo.__file__)))
+
+    @property
+    def migration_api(self):
+        return versioning_api
+
+    @property
+    def migrate_engine(self):
+        return self.engine
+
+    def setUp(self):
+        super(SqlUpgradeTests, self).setUp()
+
+        database.initialize_sql_session(connection=self.engine.url)
+        self.addCleanup(CONF.reset)
+
+        self.Session = db_session.get_maker(self.engine, autocommit=False)
+
+    def assertTableDoesNotExist(self, table_name):
+        """Asserts that a given table exists cannot be selected by name."""
+        try:
+            db_utils.get_table(self.migrate_engine, table_name)
+        except sqlalchemy.exc.NoSuchTableError:
+            pass
+        else:
+            raise AssertionError('Table "%s" already exists' % table_name)
+
+    def assertTableColumns(self, table_name, expected_cols):
+        """Asserts that the table contains the expected set of columns."""
+        table = db_utils.get_table(self.engine, table_name)
+        actual_cols = [col.name for col in table.columns]
+        # Check if the columns are equal, but allow for a different order,
+        # which might occur after an upgrade followed by a downgrade
+        self.assertItemsEqual(expected_cols, actual_cols,
+                              '%s table' % table_name)
+
+    def assertTableExists(self, table_name):
+        try:
+            db_utils.get_table(self.migrate_engine, table_name)
+        except sqlalchemy.exc.NoSuchTableError:
+            raise AssertionError('Table "%s" does not exist' % table_name)
+
+    def test_walk_versions(self):
+        self.walk_versions(snake_walk=False, downgrade=False)
 
     def test_blank_db_to_start(self):
         self.assertTableDoesNotExist('user')
 
     def test_start_version_db_init_version(self):
-        version = migration.db_version(sql.get_engine(), self.repo_path,
+        version = migration.db_version(self.engine, self.REPOSITORY.path,
                                        migrate_repo.DB_INIT_VERSION)
         self.assertEqual(
             migrate_repo.DB_INIT_VERSION,
             version,
             'DB is not at version %s' % migrate_repo.DB_INIT_VERSION)
 
-    def test_upgrade_add_initial_tables(self):
-        self.upgrade(migrate_repo.DB_INIT_VERSION + 1)
-        self.check_initial_table_structure()
-
-    def check_initial_table_structure(self):
+    def _check_044(self, engine, data):
+        # check_initial_table_structure
         for table in INITIAL_TABLE_STRUCTURE:
             self.assertTableColumns(table, INITIAL_TABLE_STRUCTURE[table])
 
@@ -302,42 +352,25 @@ class SqlUpgradeTests(SqlMigrateBase):
     def insert_dict(self, session, table_name, d, table=None):
         """Naively inserts key-value pairs into a table, given a dictionary."""
         if table is None:
-            this_table = sqlalchemy.Table(table_name, self.metadata,
-                                          autoload=True)
+            this_table = db_utils.get_table(self.migrate_engine, table_name)
         else:
             this_table = table
         insert = this_table.insert().values(**d)
         session.execute(insert)
         session.commit()
 
-    def test_id_mapping(self):
-        self.upgrade(50)
+    def _pre_upgrade_051(self, engine):
         self.assertTableDoesNotExist('id_mapping')
-        self.upgrade(51)
+
+    def _check_051(self, engine, data):
         self.assertTableExists('id_mapping')
 
-    def test_region_url_upgrade(self):
-        self.upgrade(52)
+    def _check_052(self, engine, data):
         self.assertTableColumns('region',
                                 ['id', 'description', 'parent_region_id',
                                  'extra', 'url'])
 
-    def test_endpoint_region_upgrade_columns(self):
-        self.upgrade(53)
-        self.assertTableColumns('endpoint',
-                                ['id', 'legacy_endpoint_id', 'interface',
-                                 'service_id', 'url', 'extra', 'enabled',
-                                 'region_id'])
-        region_table = sqlalchemy.Table('region', self.metadata, autoload=True)
-        self.assertEqual(255, region_table.c.id.type.length)
-        self.assertEqual(255, region_table.c.parent_region_id.type.length)
-        endpoint_table = sqlalchemy.Table('endpoint',
-                                          self.metadata,
-                                          autoload=True)
-        self.assertEqual(255, endpoint_table.c.region_id.type.length)
-
-    def test_endpoint_region_migration(self):
-        self.upgrade(52)
+    def _pre_upgrade_053(self, engine):
         session = self.Session()
         _small_region_name = '0' * 30
         _long_region_name = '0' * 255
@@ -378,11 +411,26 @@ class SqlUpgradeTests(SqlMigrateBase):
 
         # upgrade to 53
         session.close()
-        self.upgrade(53)
-        session = self.Session()
-        self.metadata.clear()
 
-        region_table = sqlalchemy.Table('region', self.metadata, autoload=True)
+    def _check_053(self, engine, data):
+        self.assertTableColumns('endpoint',
+                                ['id', 'legacy_endpoint_id', 'interface',
+                                 'service_id', 'url', 'extra', 'enabled',
+                                 'region_id'])
+
+        region_table = db_utils.get_table(self.migrate_engine, 'region')
+        self.assertEqual(255, region_table.c.id.type.length)
+        self.assertEqual(255, region_table.c.parent_region_id.type.length)
+        endpoint_table = db_utils.get_table(self.engine, 'endpoint')
+        self.assertEqual(255, endpoint_table.c.region_id.type.length)
+
+        _small_region_name = '0' * 30
+        _long_region_name = '0' * 255
+        _clashing_region_name = '0' * 70
+
+        session = self.Session()
+
+        region_table = db_utils.get_table(self.migrate_engine, 'region')
         self.assertEqual(1, session.query(region_table).
                          filter_by(id=_long_region_name).count())
         self.assertEqual(1, session.query(region_table).
@@ -390,9 +438,7 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertEqual(1, session.query(region_table).
                          filter_by(id=_small_region_name).count())
 
-        endpoint_table = sqlalchemy.Table('endpoint',
-                                          self.metadata,
-                                          autoload=True)
+        endpoint_table = db_utils.get_table(self.migrate_engine, 'endpoint')
         self.assertEqual(5, session.query(endpoint_table).count())
         self.assertEqual(2, session.query(endpoint_table).
                          filter_by(region_id=_long_region_name).count())
@@ -400,72 +446,69 @@ class SqlUpgradeTests(SqlMigrateBase):
                          filter_by(region_id=_clashing_region_name).count())
         self.assertEqual(1, session.query(endpoint_table).
                          filter_by(region_id=_small_region_name).count())
+        session.close()
 
-    def test_add_actor_id_index(self):
-        self.upgrade(53)
-        self.upgrade(54)
-        table = sqlalchemy.Table('assignment', self.metadata, autoload=True)
+    def _check_054(self, engine, data):
+        table = db_utils.get_table(self.migrate_engine, 'assignment')
         index_data = [(idx.name, idx.columns.keys()) for idx in table.indexes]
         self.assertIn(('ix_actor_id', ['actor_id']), index_data)
 
-    def test_token_user_id_and_trust_id_index_upgrade(self):
-        self.upgrade(54)
-        self.upgrade(55)
-        table = sqlalchemy.Table('token', self.metadata, autoload=True)
+    def _check_055(self, engine, data):
+        table = db_utils.get_table(self.migrate_engine, 'token')
         index_data = [(idx.name, idx.columns.keys()) for idx in table.indexes]
         self.assertIn(('ix_token_user_id', ['user_id']), index_data)
         self.assertIn(('ix_token_trust_id', ['trust_id']), index_data)
 
-    def test_project_parent_id_upgrade(self):
-        self.upgrade(61)
+    def _check_061(self, engine, data):
         self.assertTableColumns('project',
                                 ['id', 'name', 'extra', 'description',
                                  'enabled', 'domain_id', 'parent_id'])
 
-    def test_drop_assignment_role_fk(self):
-        self.upgrade(61)
+    def _pre_upgrade_062(self, engine):
         self.assertTrue(self.does_fk_exist('assignment', 'role_id'))
-        self.upgrade(62)
+
+    def _check_062(self, engine, data):
         if self.engine.name != 'sqlite':
             # sqlite does not support FK deletions (or enforcement)
             self.assertFalse(self.does_fk_exist('assignment', 'role_id'))
 
     def does_fk_exist(self, table, fk_column):
-        inspector = reflection.Inspector.from_engine(self.engine)
+        inspector = reflection.Inspector.from_engine(self.migrate_engine)
         for fk in inspector.get_foreign_keys(table):
             if fk_column in fk['constrained_columns']:
                 return True
         return False
 
-    def test_drop_region_url_upgrade(self):
-        self.upgrade(63)
+    def _check_063(self, engine, data):
         self.assertTableColumns('region',
                                 ['id', 'description', 'parent_region_id',
                                  'extra'])
 
-    def test_domain_fk(self):
-        self.upgrade(63)
+    def _pre_upgrade_064(self, engine):
         self.assertTrue(self.does_fk_exist('group', 'domain_id'))
         self.assertTrue(self.does_fk_exist('user', 'domain_id'))
-        self.upgrade(64)
+
+    def _check_064(self, engine, data):
         if self.engine.name != 'sqlite':
             # sqlite does not support FK deletions (or enforcement)
             self.assertFalse(self.does_fk_exist('group', 'domain_id'))
             self.assertFalse(self.does_fk_exist('user', 'domain_id'))
 
-    def test_add_domain_config(self):
+    def _pre_upgrade_065(self, engine):
         whitelisted_table = 'whitelisted_config'
         sensitive_table = 'sensitive_config'
-        self.upgrade(64)
         self.assertTableDoesNotExist(whitelisted_table)
         self.assertTableDoesNotExist(sensitive_table)
-        self.upgrade(65)
+
+    def _check_065(self, engine, data):
+        whitelisted_table = 'whitelisted_config'
+        sensitive_table = 'sensitive_config'
         self.assertTableColumns(whitelisted_table,
                                 ['domain_id', 'group', 'option', 'value'])
         self.assertTableColumns(sensitive_table,
                                 ['domain_id', 'group', 'option', 'value'])
 
-    def test_fixup_service_name_value_upgrade(self):
+    def _pre_upgrade_066(self, engine):
         """Update service name data from `extra` to empty string."""
         def add_service(**extra_data):
             service_id = uuid.uuid4().hex
@@ -480,7 +523,6 @@ class SqlUpgradeTests(SqlMigrateBase):
 
             return service_id
 
-        self.upgrade(65)
         session = self.Session()
 
         # Services with extra values having a random attribute and
@@ -517,13 +559,14 @@ class SqlUpgradeTests(SqlMigrateBase):
                          {'id': uuid.uuid4().hex, 'type': uuid.uuid4().hex})
 
         session.close()
-        self.upgrade(66)
+        return services
+
+    def _check_066(self, engine, data):
+        services = data
         session = self.Session()
 
         # Verify that the services have the expected values.
-        self.metadata.clear()
-        service_table = sqlalchemy.Table('service', self.metadata,
-                                         autoload=True)
+        service_table = db_utils.get_table(self.migrate_engine, 'service')
 
         def fetch_service_extra(service_id):
             cols = [service_table.c.extra]
@@ -535,121 +578,46 @@ class SqlUpgradeTests(SqlMigrateBase):
         for service_id, exp_extra, msg in services:
             extra = fetch_service_extra(service_id)
             self.assertDictEqual(exp_extra, extra, msg)
+        session.close()
 
     def _does_index_exist(self, table_name, index_name):
-        meta = sqlalchemy.MetaData(bind=self.engine)
-        table = sqlalchemy.Table('assignment', meta, autoload=True)
+        table = db_utils.get_table(self.migrate_engine, table_name)
         return index_name in [idx.name for idx in table.indexes]
 
-    def test_drop_assignment_role_id_index_mysql(self):
-        self.upgrade(66)
+    def _pre_upgrade_067(self, engine):
         if self.engine.name == "mysql":
             self.assertTrue(self._does_index_exist('assignment',
                                                    'assignment_role_id_fkey'))
-        self.upgrade(67)
+
+    def _check_067(self, engine, data):
         if self.engine.name == "mysql":
             self.assertFalse(self._does_index_exist('assignment',
                                                     'assignment_role_id_fkey'))
 
-    def populate_user_table(self, with_pass_enab=False,
-                            with_pass_enab_domain=False):
-        # Populate the appropriate fields in the user
-        # table, depending on the parameters:
-        #
-        # Default: id, name, extra
-        # pass_enab: Add password, enabled as well
-        # pass_enab_domain: Add password, enabled and domain as well
-        #
-        this_table = sqlalchemy.Table("user",
-                                      self.metadata,
-                                      autoload=True)
-        for user in default_fixtures.USERS:
-            extra = copy.deepcopy(user)
-            extra.pop('id')
-            extra.pop('name')
 
-            if with_pass_enab:
-                password = extra.pop('password', None)
-                enabled = extra.pop('enabled', True)
-                ins = this_table.insert().values(
-                    {'id': user['id'],
-                     'name': user['name'],
-                     'password': password,
-                     'enabled': bool(enabled),
-                     'extra': json.dumps(extra)})
-            else:
-                if with_pass_enab_domain:
-                    password = extra.pop('password', None)
-                    enabled = extra.pop('enabled', True)
-                    extra.pop('domain_id')
-                    ins = this_table.insert().values(
-                        {'id': user['id'],
-                         'name': user['name'],
-                         'domain_id': user['domain_id'],
-                         'password': password,
-                         'enabled': bool(enabled),
-                         'extra': json.dumps(extra)})
-                else:
-                    ins = this_table.insert().values(
-                        {'id': user['id'],
-                         'name': user['name'],
-                         'extra': json.dumps(extra)})
-            self.engine.execute(ins)
+class TestSqlUpgradeSQLite(SqlUpgradeTests,
+                           test_migrations.WalkVersionsMixin,
+                           test_base.DbTestCase):
+    """Run migration tests on SQLite."""
 
-    def populate_tenant_table(self, with_desc_enab=False,
-                              with_desc_enab_domain=False):
-        # Populate the appropriate fields in the tenant or
-        # project table, depending on the parameters
-        #
-        # Default: id, name, extra
-        # desc_enab: Add description, enabled as well
-        # desc_enab_domain: Add description, enabled and domain as well,
-        #                   plus use project instead of tenant
-        #
-        if with_desc_enab_domain:
-            # By this time tenants are now projects
-            this_table = sqlalchemy.Table("project",
-                                          self.metadata,
-                                          autoload=True)
-        else:
-            this_table = sqlalchemy.Table("tenant",
-                                          self.metadata,
-                                          autoload=True)
 
-        for tenant in default_fixtures.TENANTS:
-            extra = copy.deepcopy(tenant)
-            extra.pop('id')
-            extra.pop('name')
+class TestSqlUpgradePostgreSQL(SqlUpgradeTests,
+                               test_migrations.WalkVersionsMixin,
+                               test_base.PostgreSQLOpportunisticTestCase):
+    """Run migration tests on PostgreSQL."""
 
-            if with_desc_enab:
-                desc = extra.pop('description', None)
-                enabled = extra.pop('enabled', True)
-                ins = this_table.insert().values(
-                    {'id': tenant['id'],
-                     'name': tenant['name'],
-                     'description': desc,
-                     'enabled': bool(enabled),
-                     'extra': json.dumps(extra)})
-            else:
-                if with_desc_enab_domain:
-                    desc = extra.pop('description', None)
-                    enabled = extra.pop('enabled', True)
-                    extra.pop('domain_id')
-                    ins = this_table.insert().values(
-                        {'id': tenant['id'],
-                         'name': tenant['name'],
-                         'domain_id': tenant['domain_id'],
-                         'description': desc,
-                         'enabled': bool(enabled),
-                         'extra': json.dumps(extra)})
-                else:
-                    ins = this_table.insert().values(
-                        {'id': tenant['id'],
-                         'name': tenant['name'],
-                         'extra': json.dumps(extra)})
-            self.engine.execute(ins)
 
-    def _mysql_check_all_tables_innodb(self):
+class TestSqlUpgradeMySQL(SqlUpgradeTests,
+                          test_migrations.WalkVersionsMixin,
+                          test_base.MySQLOpportunisticTestCase):
+    """Run migration tests on MySQL."""
+
+    def test_all_tables_innodb(self):
+
+        self.skipTest('Non-InnoDB tables exists')
+
+        migration_helpers.sync_database_to_version()
+
         database = self.engine.url.database
 
         connection = self.engine.connect()
@@ -658,6 +626,7 @@ class SqlUpgradeTests(SqlMigrateBase):
                                    "from information_schema.TABLES "
                                    "where TABLE_SCHEMA='%(database)s'" %
                                    dict(database=database))
+
         self.assertTrue(total.scalar() > 0, "No tables found. Wrong schema?")
 
         noninnodb = connection.execute("SELECT table_name "

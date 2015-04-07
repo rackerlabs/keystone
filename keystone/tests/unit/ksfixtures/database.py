@@ -61,13 +61,14 @@ def _setup_database(extensions=None):
 
 # NOTE(I159): Every execution all the options will be cleared. The method must
 # be called at the every fixture initialization.
-def initialize_sql_session():
+def initialize_sql_session(connection=None):
     # Make sure the DB is located in the correct location, in this case set
     # the default value, as this should be able to be overridden in some
     # test cases.
-    db_options.set_defaults(
-        CONF,
-        connection=tests.IN_MEM_DB_CONN_STRING)
+    if connection is None:
+        connection = tests.IN_MEM_DB_CONN_STRING
+
+    db_options.set_defaults(CONF, connection=connection)
 
 
 @run_once
