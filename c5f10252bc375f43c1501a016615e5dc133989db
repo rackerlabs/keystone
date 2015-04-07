@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9aa53dc9_ad6e43c7",
+        "filename": "keystone/common/sql/migrate_repo/versions/066_fixup_service_name_value.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-07T13:06:23Z",
+      "side": 1,
+      "message": "this seems like something we may want to fix for kilo",
+      "revId": "c5f10252bc375f43c1501a016615e5dc133989db",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_53f3db0a",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 2
