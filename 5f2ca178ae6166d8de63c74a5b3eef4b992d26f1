@@ -34,6 +34,24 @@
       "revId": "5f2ca178ae6166d8de63c74a5b3eef4b992d26f1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_0b3ce5e0",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-07T19:28:01Z",
+      "side": 1,
+      "message": "The outcome of the other discussion is that we have to keep doing a ValidationError, so this is the expected behavior.",
+      "parentUuid": "baa041b7_6a022471",
+      "revId": "5f2ca178ae6166d8de63c74a5b3eef4b992d26f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
