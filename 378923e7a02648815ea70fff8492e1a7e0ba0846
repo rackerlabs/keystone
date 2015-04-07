@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_be9c396a",
+        "filename": "keystone/common/sql/migrate_repo/versions/068_insert_assignment_inherited_pk.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-07T07:20:26Z",
+      "side": 1,
+      "message": "move to the first group of import",
+      "revId": "378923e7a02648815ea70fff8492e1a7e0ba0846",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_fea08192",
+        "filename": "keystone/common/sql/migrate_repo/versions/068_insert_assignment_inherited_pk.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-07T07:20:26Z",
+      "side": 1,
+      "message": "nit: it would be easier to read if it is using positive check, suggest to switch the code of the if/else",
+      "revId": "378923e7a02648815ea70fff8492e1a7e0ba0846",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_de77fd00",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 5160,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-07T07:20:26Z",
+      "side": 1,
+      "message": "good job on writing a re-usable test!",
+      "revId": "378923e7a02648815ea70fff8492e1a7e0ba0846",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_be55591e",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-07T07:20:26Z",
+      "side": 1,
+      "message": "good job on testing this scenario",
+      "revId": "378923e7a02648815ea70fff8492e1a7e0ba0846",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
