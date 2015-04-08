@@ -196,6 +196,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_7fb78686",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 88
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-04-08T14:51:35Z",
+      "side": 1,
+      "message": "self.engine provided by `test_base.*SQLOpportunisticTestCase` class",
+      "parentUuid": "9aa53dc9_5f24c2ad",
+      "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_366a521b",
         "filename": "keystone/tests/unit/test_sync_migrations.py",
         "patchSetId": 88
@@ -243,6 +261,24 @@
       "side": 1,
       "message": "No, wait, my question was not about it. Here we use self.sql_module but don\u0027t initialize it anywhere in this class. Where does it happen?",
       "parentUuid": "9aa53dc9_dcffc0a8",
+      "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_7f8426d3",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 88
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-04-08T14:51:35Z",
+      "side": 1,
+      "message": "this was made by testscenarios magic",
+      "parentUuid": "9aa53dc9_bf83ce55",
       "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
