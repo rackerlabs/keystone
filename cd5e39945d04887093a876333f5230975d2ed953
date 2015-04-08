@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_c60c9d3d",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 42
+      },
+      "lineNbr": 258,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-04-08T09:58:51Z",
+      "side": 1,
+      "message": "server_default was added in migration script but missed here. See traceback from models and migrations comparison - http://paste.openstack.org/show/200281/",
+      "revId": "cd5e39945d04887093a876333f5230975d2ed953",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
