@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_96211ea2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-08T12:06:52Z",
+      "side": 1,
+      "message": "should have been cherry-picked from juno",
+      "revId": "0e0efdbd6637d41b8d651e737e4b46faf1d11aa2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
