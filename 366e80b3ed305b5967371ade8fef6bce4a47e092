@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_2a831a06",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-08T00:03:08Z",
+      "side": 1,
+      "message": "the server_default in the migration is CONF.saml.relay_state_prefix .",
+      "revId": "366e80b3ed305b5967371ade8fef6bce4a47e092",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
