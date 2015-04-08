@@ -542,8 +542,11 @@ FILE_OPTIONS = {
                          'exists.'),
     ],
     'endpoint_policy': [
+        cfg.BoolOpt('enabled',
+                    default=True,
+                    help='Enable endpoint_policy functionality.'),
         cfg.StrOpt('driver',
-                   default='keystone.contrib.endpoint_policy.backends'
+                   default='keystone.endpoint_policy.backends'
                            '.sql.EndpointPolicy',
                    help='Endpoint policy backend driver'),
     ],
