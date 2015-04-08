@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_a9b737f4",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-08T01:33:22Z",
+      "side": 1,
+      "message": "is this an option we want to provide?",
+      "revId": "588b50eb5160fafca5a5668ee2e5304861c073bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
