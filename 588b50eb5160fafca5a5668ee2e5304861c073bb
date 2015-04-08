@@ -16,6 +16,24 @@
       "revId": "588b50eb5160fafca5a5668ee2e5304861c073bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_58be06d5",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 545,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-04-08T23:27:17Z",
+      "side": 1,
+      "message": "I don\u0027t think so, but am torn. \n\nI think the option to disable all these extensions is going to be a problem. Particularly because we offer no way for a user to query if an extension is provided or not. My feeling is therefore that everyone runs with everything turned on. \n\nI had the enabled because i was thinking that from the middleware shim i could say enabled \u003d true, so if the middleware is in place then it should turn on the enabled flag for compatibility. But if we default\u003dTrue then there really is no difference.",
+      "parentUuid": "9aa53dc9_a9b737f4",
+      "revId": "588b50eb5160fafca5a5668ee2e5304861c073bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
