@@ -19,6 +19,7 @@ from oslo_log import log
 from sqlalchemy import exc
 from testtools import matchers
 
+from keystone.common import manager
 from keystone.tests import unit as tests
 
 
@@ -31,6 +32,11 @@ class BaseTestTestCase(tests.BaseTestCase):
         # if a test calls sys.exit it raises rather than exiting.
         self.assertThat(lambda: sys.exit(),
                         matchers.raises(tests.UnexpectedExit))
+
+    def test_stevedore_failed(self):
+        self.assertThat(
+            lambda: manager.load_driver('namespace1', 'not_a_driver'),
+            matchers.raises(tests.ImportUse))
 
 
 class TestTestCase(tests.TestCase):
