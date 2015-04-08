@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_df1e8562",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-08T18:58:28Z",
+      "side": 0,
+      "message": "thanks for the cleanup",
+      "revId": "7a9833fe2dc8298c996856ade8058817cce75ccd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_3448f886",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-08T18:58:28Z",
+      "side": 0,
+      "message": "nice cleanup!",
+      "revId": "7a9833fe2dc8298c996856ade8058817cce75ccd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
