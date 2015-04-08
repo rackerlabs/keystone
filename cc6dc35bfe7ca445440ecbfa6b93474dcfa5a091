@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_d978e5f4",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-08T18:25:26Z",
+      "side": 1,
+      "message": "...is this really a validation error?  I know we seem to flogging this particular unfortunate equestrian mammal to death....but we don\u0027t know if domain_id was None (in which case I\u0027d agree with you), or whether it was just, for instance, a valid domain_id five minutes ago, but has since been deleted....\n\nI think that in the project parent patch where we return ValidationError we ONLY do this if the parameter was not specified (i.e. None)...not if simply an invalid ID was defined.\n\nI just think we need to be consistent.",
+      "revId": "cc6dc35bfe7ca445440ecbfa6b93474dcfa5a091",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
