@@ -360,8 +360,11 @@ class MongoApi(object):
 
             self._assign_data_mainpulator()
             if self.read_preference:
-                self.read_preference = pymongo.read_preferences.mongos_enum(
-                    self.read_preference)
+                f = getattr(pymongo.read_preferences,
+                            'read_pref_mode_from_name', None)
+                if not f:
+                    f = pymongo.read_preferences.mongos_enum
+                self.read_preference = f(self.read_preference)
                 coll.read_preference = self.read_preference
             if self.w > -1:
                 coll.write_concern['w'] = self.w
