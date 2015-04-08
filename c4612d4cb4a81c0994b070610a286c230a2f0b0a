@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_4783cb04",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-08T21:46:46Z",
+      "side": 1,
+      "message": "sorry...I still don\u0027t understand this....if we apply this logic we should return ValidationError for a large number of things.....have we really decided to do this?  I get that if it is Null, then this makes sense, but not sure otherwise.",
+      "revId": "c4612d4cb4a81c0994b070610a286c230a2f0b0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
