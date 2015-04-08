@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_78830a57",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-04-08T23:20:56Z",
+      "side": 1,
+      "message": "Refactor MemcachedBackend to not be a Manager\n  OR\nMemcachedBackend is not a Manager",
+      "revId": "9d80a081e1531b61e4af70db1926e843aecb8bd4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
