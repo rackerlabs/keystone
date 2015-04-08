@@ -22,6 +22,7 @@ from oslo_log import log
 import pbr.version
 
 from keystone import assignment
+from keystone import backends
 from keystone.common import driver_hints
 from keystone.common import openssl
 from keystone.common import sql
@@ -337,21 +338,9 @@ class DomainConfigUploadFiles(object):
         self.load_backends()
 
     def load_backends(self):
-        """Load the backends needed for uploading domain configs.
-
-        We only need the resource and domain_config managers, but there are
-        some dependencies which mean we have to load the assignment and
-        identity managers as well.
-
-        The order of loading the backends is important, since the resource
-        manager depends on the assignment manager, which in turn depends on
-        the identity manager.
-
-        """
-        identity.Manager()
-        assignment.Manager()
-        self.resource_manager = resource.Manager()
-        self.domain_config_manager = resource.DomainConfigManager()
+        drivers = backends.load_backends()
+        self.resource_manager = drivers['resource_api']
+        self.domain_config_manager = drivers['domain_config_api']
 
     def valid_options(self):
         """Validate the options, returning True if they are indeed valid.
