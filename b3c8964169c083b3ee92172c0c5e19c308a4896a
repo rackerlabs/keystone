@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_fc2164fc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 88
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-04-08T14:47:01Z",
+      "side": 1,
+      "message": "this should be in commit message",
+      "parentUuid": "9aa53dc9_9c513811",
+      "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_1683ce99",
         "filename": "keystone/tests/unit/test_sync_migrations.py",
         "patchSetId": 88
@@ -107,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_9ccb781e",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 88
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-04-08T14:47:01Z",
+      "side": 1,
+      "message": "please, add a comment",
+      "parentUuid": "9aa53dc9_dc8c6081",
+      "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_795b2b2f",
         "filename": "keystone/tests/unit/test_sync_migrations.py",
         "patchSetId": 88
@@ -136,6 +172,24 @@
       "side": 1,
       "message": "this method was implemented as abstract method in test_migrations.ModelsMigrationsSync. See [1]\n\n[1] http://docs.openstack.org/developer/oslo.db/api/sqlalchemy/test_migrations.html#oslo_db.sqlalchemy.test_migrations.ModelsMigrationsSync.get_engine",
       "parentUuid": "9aa53dc9_795b2b2f",
+      "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_5f24c2ad",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 88
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-04-08T14:47:01Z",
+      "side": 1,
+      "message": "where do we assign self.engine to something? The method should be there",
+      "parentUuid": "9aa53dc9_7c59d4fd",
       "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -177,6 +231,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_bf83ce55",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 88
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-04-08T14:47:01Z",
+      "side": 1,
+      "message": "No, wait, my question was not about it. Here we use self.sql_module but don\u0027t initialize it anywhere in this class. Where does it happen?",
+      "parentUuid": "9aa53dc9_dcffc0a8",
+      "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_363c922e",
         "filename": "keystone/tests/unit/test_sync_migrations.py",
         "patchSetId": 88
@@ -206,6 +278,24 @@
       "side": 1,
       "message": "I see no big sense in it, because this is mixin and this method was documented in test_migrations.ModelsMigrationsSync. See [1]. But I can add documentation, if you insist.\n\n[1] http://docs.openstack.org/developer/oslo.db/api/sqlalchemy/test_migrations.html#oslo_db.sqlalchemy.test_migrations.ModelsMigrationsSync.include_object",
       "parentUuid": "9aa53dc9_363c922e",
+      "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_1fc75a46",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 88
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-04-08T14:47:01Z",
+      "side": 1,
+      "message": "hm, ok. Anyway, a comment about what the code does should be there. I don\u0027t understand what the code does on the first sight.",
+      "parentUuid": "9aa53dc9_7cb554ec",
       "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
