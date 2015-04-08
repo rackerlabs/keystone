@@ -16,6 +16,41 @@
       "revId": "cc6dc35bfe7ca445440ecbfa6b93474dcfa5a091",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_5fcb95a5",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-08T19:08:32Z",
+      "side": 1,
+      "message": "I added a comment on the project patch to also raise a ValidationError for consistency: https://review.openstack.org/#/c/158720/\n\nI think raising ValidationError for both cases it the right approach.  From a client perspective,  I am doing a POST to create a project and returning a 404 response seems off.  Logically, we\u0027re really doing a validation and not a GET (which 404 is more applicable in that case).\n\nShould this try-except move to Manager? I think the logic of translating to ValidationError should be taken care in the Manager class.",
+      "parentUuid": "9aa53dc9_d978e5f4",
+      "revId": "cc6dc35bfe7ca445440ecbfa6b93474dcfa5a091",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_dff205d2",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 27
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-08T19:08:32Z",
+      "side": 1,
+      "message": "I am thinking if we should create an _assert_domain() method that raises validation error. That seems like a cleaner way to implement it and consistent with the project check",
+      "revId": "cc6dc35bfe7ca445440ecbfa6b93474dcfa5a091",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
