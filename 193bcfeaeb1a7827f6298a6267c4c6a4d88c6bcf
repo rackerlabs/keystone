@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_75d207d4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-08T15:22:26Z",
+      "side": 1,
+      "message": "That\u0027s what I am saying here: \"This patch exposes this bug.\" :-)",
+      "parentUuid": "9aa53dc9_7c279464",
+      "revId": "193bcfeaeb1a7827f6298a6267c4c6a4d88c6bcf",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_bc5f5ce4",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 1
