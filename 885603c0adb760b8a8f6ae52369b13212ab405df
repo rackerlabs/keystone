@@ -19,6 +19,41 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_dcfeaa6a",
+        "filename": "keystone/common/sql/migrate_repo/versions/068_insert_assignment_inherited_pk.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-08T11:53:51Z",
+      "side": 1,
+      "message": "I thought constants should always be defined here (good practice).\n\nAlso, to be consistent, I am moving ASSIGNMENT_TABLE_NAME into the scope of the upgrade() method.",
+      "parentUuid": "9aa53dc9_9909782f",
+      "revId": "885603c0adb760b8a8f6ae52369b13212ab405df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_57303501",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 5160,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-08T11:53:51Z",
+      "side": 1,
+      "message": "I am also moving these tests to a previous patch, as requested by Henry Nash.\n\nI agree it will make it clearer what is wrong before and is being fixed in this patch.",
+      "revId": "885603c0adb760b8a8f6ae52369b13212ab405df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_1978c8f1",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 12
@@ -30,6 +65,24 @@
       "writtenOn": "2015-04-07T15:41:32Z",
       "side": 1,
       "message": "create_grant inherited_to_projects is a bool, not a string.",
+      "revId": "885603c0adb760b8a8f6ae52369b13212ab405df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_f750690c",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 5178,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-08T11:53:51Z",
+      "side": 1,
+      "message": "Yes, and we provide it as bool at the calls below.\n\ndirect_assignment and inherited_assignment are assignment entities, as returned by the assignment manager. I will rename them to include _entity on their names to make it clearer",
+      "parentUuid": "9aa53dc9_1978c8f1",
       "revId": "885603c0adb760b8a8f6ae52369b13212ab405df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +106,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_3747f14c",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 5198,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-08T11:53:51Z",
+      "side": 1,
+      "message": "I created a separate entity to represent the common entities of the assignment, and I use it here, instead of direct_assignment. Same for 5188.",
+      "parentUuid": "9aa53dc9_5955304e",
+      "revId": "885603c0adb760b8a8f6ae52369b13212ab405df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_f98d247c",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 12
@@ -64,6 +135,24 @@
       "writtenOn": "2015-04-07T15:41:32Z",
       "side": 1,
       "message": "suggest use assertEqual([], grants) since it\u0027s more obvious.",
+      "revId": "885603c0adb760b8a8f6ae52369b13212ab405df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_b771c1aa",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 5202,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-08T11:53:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa53dc9_f98d247c",
       "revId": "885603c0adb760b8a8f6ae52369b13212ab405df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +176,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_779219a1",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 5205,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-08T11:53:51Z",
+      "side": 1,
+      "message": "Separated these tests, as suggested below.",
+      "parentUuid": "9aa53dc9_d92b80ea",
+      "revId": "885603c0adb760b8a8f6ae52369b13212ab405df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_19dc4811",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 12
@@ -98,6 +205,24 @@
       "writtenOn": "2015-04-07T15:41:32Z",
       "side": 1,
       "message": "create a separate test.",
+      "revId": "885603c0adb760b8a8f6ae52369b13212ab405df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_57915598",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 5212,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-08T11:53:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa53dc9_19dc4811",
       "revId": "885603c0adb760b8a8f6ae52369b13212ab405df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +246,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_378c917e",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 5224,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-08T11:53:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa53dc9_59dc10e4",
+      "revId": "885603c0adb760b8a8f6ae52369b13212ab405df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_9285b3ae",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 12
@@ -132,6 +275,24 @@
       "writtenOn": "2015-04-08T08:41:36Z",
       "side": 1,
       "message": "we should extract this test into a separate patch and write it in such a way that it shows the failure when we silently allow non-inherited and inherited assignments to the same node.....then show it is fixed in this patch.",
+      "revId": "885603c0adb760b8a8f6ae52369b13212ab405df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_574a75c6",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 2265,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-08T11:53:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa53dc9_9285b3ae",
       "revId": "885603c0adb760b8a8f6ae52369b13212ab405df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +316,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_f792a94a",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 2277,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-08T11:53:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa53dc9_592650cf",
+      "revId": "885603c0adb760b8a8f6ae52369b13212ab405df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_7917d451",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 12
@@ -166,6 +345,24 @@
       "writtenOn": "2015-04-07T15:41:32Z",
       "side": 1,
       "message": "suggest put head checks after the first self.delete, too.",
+      "revId": "885603c0adb760b8a8f6ae52369b13212ab405df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_d799e56f",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 2288,
+      "author": {
+        "id": 9142
+      },
+      "writtenOn": "2015-04-08T11:53:51Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa53dc9_7917d451",
       "revId": "885603c0adb760b8a8f6ae52369b13212ab405df",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
