@@ -45,6 +45,7 @@ from keystone.common import config as common_cfg
 from keystone.common import dependency
 from keystone.common import kvs
 from keystone.common.kvs import core as kvs_core
+from keystone.common import manager as manager_
 from keystone import config
 from keystone import controllers
 from keystone import exception
@@ -201,6 +202,14 @@ class BadLog(Exception):
     pass
 
 
+class ImportUse(Exception):
+    """Raised when stevedore fails to load the driver.
+
+    The code must be fixed to use the short name and stevedore instead.
+    """
+    pass
+
+
 class TestClient(object):
     def __init__(self, app=None, token=None):
         self.app = app
@@ -251,6 +260,9 @@ class BaseTestCase(oslotest.BaseTestCase):
                                 module='^keystone\\.')
         warnings.simplefilter('error', exc.SAWarning)
         self.addCleanup(warnings.resetwarnings)
+
+        self.useFixture(mockpatch.PatchObject(manager_, 'stevedore_failed',
+                                              side_effect=ImportUse))
 
     def cleanup_instance(self, *names):
         """Create a function suitable for use with self.addCleanup.
