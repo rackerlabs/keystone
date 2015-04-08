@@ -1,0 +1,123 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_16c62e48",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 88
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-04-08T12:32:15Z",
+      "side": 1,
+      "message": "why shouldn\u0027t we?",
+      "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_1683ce99",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 88
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-04-08T12:32:15Z",
+      "side": 1,
+      "message": "remove this line",
+      "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_593ce7c7",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 88
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-04-08T12:32:15Z",
+      "side": 1,
+      "message": "Is this variable needed? Does it override something from test_migrations.ModelsMigrationsSync? If yes, why is it done as a variable and not as a method?",
+      "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_795b2b2f",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 88
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-04-08T12:32:15Z",
+      "side": 1,
+      "message": "what\u0027s the purpose of this override and why can\u0027t we move this function to test_migrations.ModelsMigrationsSync? We don\u0027t set self.engine in this mixin.",
+      "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_366a521b",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 88
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-04-08T12:32:15Z",
+      "side": 1,
+      "message": "where does self.sql_module come from? It should be explained in the comments or somewhere else.",
+      "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_363c922e",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 88
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-04-08T12:32:15Z",
+      "side": 1,
+      "message": "needs docstring with explanation of every parameter",
+      "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_769d7a58",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 88
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-04-08T12:32:15Z",
+      "side": 1,
+      "message": "this check should be moved above \u0027models_module \u003d ...\u0027",
+      "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
