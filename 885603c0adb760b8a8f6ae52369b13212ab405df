@@ -121,6 +121,23 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_9285b3ae",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 2265,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-08T08:41:36Z",
+      "side": 1,
+      "message": "we should extract this test into a separate patch and write it in such a way that it shows the failure when we silently allow non-inherited and inherited assignments to the same node.....then show it is fixed in this patch.",
+      "revId": "885603c0adb760b8a8f6ae52369b13212ab405df",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_592650cf",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 12
