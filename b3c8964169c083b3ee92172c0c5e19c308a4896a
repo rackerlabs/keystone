@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_9c513811",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 88
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-04-08T14:31:41Z",
+      "side": 1,
+      "message": "In a few words, as a developer I want to be sure, that DB state is the same as SQLA models description. Also, will reduce SQLite usage, allow us to generate DB from SQLA metadata (not from migrations), tune DB migrations, etc.",
+      "parentUuid": "9aa53dc9_16c62e48",
+      "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_1683ce99",
         "filename": "keystone/tests/unit/test_sync_migrations.py",
         "patchSetId": 88
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-08T12:32:15Z",
       "side": 1,
       "message": "remove this line",
+      "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_dcb58031",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 88
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-04-08T14:31:41Z",
+      "side": 1,
+      "message": "will do",
+      "parentUuid": "9aa53dc9_1683ce99",
       "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_dc8c6081",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 88
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-04-08T14:31:41Z",
+      "side": 1,
+      "message": "This required for testscenarios, see https://pypi.python.org/pypi/testscenarios/",
+      "parentUuid": "9aa53dc9_593ce7c7",
+      "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_795b2b2f",
         "filename": "keystone/tests/unit/test_sync_migrations.py",
         "patchSetId": 88
@@ -64,6 +118,24 @@
       "writtenOn": "2015-04-08T12:32:15Z",
       "side": 1,
       "message": "what\u0027s the purpose of this override and why can\u0027t we move this function to test_migrations.ModelsMigrationsSync? We don\u0027t set self.engine in this mixin.",
+      "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_7c59d4fd",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 88
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-04-08T14:31:41Z",
+      "side": 1,
+      "message": "this method was implemented as abstract method in test_migrations.ModelsMigrationsSync. See [1]\n\n[1] http://docs.openstack.org/developer/oslo.db/api/sqlalchemy/test_migrations.html#oslo_db.sqlalchemy.test_migrations.ModelsMigrationsSync.get_engine",
+      "parentUuid": "9aa53dc9_795b2b2f",
       "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_dcffc0a8",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 88
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-04-08T14:31:41Z",
+      "side": 1,
+      "message": "well, I\u0027m not very familiar with keystone code base. Can you suggest, how should I determine, is this sql module related to extension or not?",
+      "parentUuid": "9aa53dc9_366a521b",
+      "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_363c922e",
         "filename": "keystone/tests/unit/test_sync_migrations.py",
         "patchSetId": 88
@@ -104,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_7cb554ec",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 88
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-04-08T14:31:41Z",
+      "side": 1,
+      "message": "I see no big sense in it, because this is mixin and this method was documented in test_migrations.ModelsMigrationsSync. See [1]. But I can add documentation, if you insist.\n\n[1] http://docs.openstack.org/developer/oslo.db/api/sqlalchemy/test_migrations.html#oslo_db.sqlalchemy.test_migrations.ModelsMigrationsSync.include_object",
+      "parentUuid": "9aa53dc9_363c922e",
+      "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_769d7a58",
         "filename": "keystone/tests/unit/test_sync_migrations.py",
         "patchSetId": 88
@@ -115,6 +223,24 @@
       "writtenOn": "2015-04-08T12:32:15Z",
       "side": 1,
       "message": "this check should be moved above \u0027models_module \u003d ...\u0027",
+      "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_7cac34a0",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 88
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-04-08T14:31:41Z",
+      "side": 1,
+      "message": "thanks, will do",
+      "parentUuid": "9aa53dc9_769d7a58",
       "revId": "b3c8964169c083b3ee92172c0c5e19c308a4896a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
