@@ -16,6 +16,24 @@
       "revId": "0e0efdbd6637d41b8d651e737e4b46faf1d11aa2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_99b5cfef",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 9656
+      },
+      "writtenOn": "2015-04-08T12:36:00Z",
+      "side": 1,
+      "message": "Not sure it\u0027s required in any docs.",
+      "parentUuid": "9aa53dc9_96211ea2",
+      "revId": "0e0efdbd6637d41b8d651e737e4b46faf1d11aa2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
