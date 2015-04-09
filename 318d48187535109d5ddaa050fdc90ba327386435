@@ -16,6 +16,24 @@
       "revId": "318d48187535109d5ddaa050fdc90ba327386435",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_f91b80c8",
+        "filename": "keystone/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-04-09T16:16:07Z",
+      "side": 0,
+      "message": "Henry, good call! Look like mapping_purge have similar issue.\n\nkeystone-manage mapping_purge --domain-name acme\n4293 DEBUG keystone.notifications [-] Callback: `keystone.identity.core.Manager._domain_deleted` subscribed to event `identity.domain.deleted`. register_event_callback /opt/stack/keystone/keystone/notifications.py:292\n4293 CRITICAL keystone [-] AttributeError: \u0027CacheRegion\u0027 object has no attribute \u0027expiration_time\u0027\n4293 TRACE keystone Traceback (most recent call last):\n4293 TRACE keystone   File \"/usr/local/bin/keystone-manage\", line 6, in \u003cmodule\u003e\n4293 TRACE keystone     exec(compile(open(__file__).read(), __file__, \u0027exec\u0027))\n4293 TRACE keystone   File \"/opt/stack/keystone/bin/keystone-manage\", line 44, in \u003cmodule\u003e\n4293 TRACE keystone     cli.main(argv\u003dsys.argv, config_files\u003dconfig_files)\n4293 TRACE keystone   File \"/opt/stack/keystone/keystone/cli.py\", line 590, in main\n4293 TRACE keystone     CONF.command.cmd_class.main()\n4293 TRACE keystone   File \"/opt/stack/keystone/keystone/cli.py\", line 319, in main\n4293 TRACE keystone     mapping[\u0027domain_id\u0027] \u003d get_domain_id(CONF.command.domain_name)\n4293 TRACE keystone   File \"/opt/stack/keystone/keystone/cli.py\", line 305, in get_domain_id\n4293 TRACE keystone     return resource_manager.get_domain_by_name(name)[\u0027id\u0027]\n4293 TRACE keystone   File \"/usr/local/lib/python2.7/dist-packages/dogpile/cache/region.py\", line 1040, in decorate\n4293 TRACE keystone     should_cache_fn)\n4293 TRACE keystone   File \"/usr/local/lib/python2.7/dist-packages/dogpile/cache/region.py\", line 629, in get_or_create\n4293 TRACE keystone     expiration_time \u003d self.expiration_time\n4293 TRACE keystone AttributeError: \u0027CacheRegion\u0027 object has no attribute \u0027expiration_time\u0027\n4293 TRACE keystone \n\n\nI\u0027ll consolidate.",
+      "parentUuid": "9aa53dc9_a3f72258",
+      "revId": "318d48187535109d5ddaa050fdc90ba327386435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
