@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_6ff682fa",
+        "filename": "keystone/common/sql/migrate_repo/versions/068_add_trust_redelegation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-04-09T16:54:28Z",
+      "side": 1,
+      "message": "oh, right, thank you",
+      "parentUuid": "9aa53dc9_14c70b65",
+      "revId": "f4515b746ab269a3b64e76600435d0db4594d17e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_745bf7f6",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 2
