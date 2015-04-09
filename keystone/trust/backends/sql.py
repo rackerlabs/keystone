@@ -31,7 +31,8 @@ class TrustModel(sql.ModelBase, sql.DictBase):
     __tablename__ = 'trust'
     attributes = ['id', 'trustor_user_id', 'trustee_user_id',
                   'project_id', 'impersonation', 'expires_at',
-                  'remaining_uses', 'deleted_at']
+                  'remaining_uses', 'deleted_at',
+                  'redelegated_trust_id', 'redelegation_count']
     id = sql.Column(sql.String(64), primary_key=True)
     # user id of owner
     trustor_user_id = sql.Column(sql.String(64), nullable=False,)
@@ -42,6 +43,8 @@ class TrustModel(sql.ModelBase, sql.DictBase):
     deleted_at = sql.Column(sql.DateTime)
     expires_at = sql.Column(sql.DateTime)
     remaining_uses = sql.Column(sql.Integer, nullable=True)
+    redelegated_trust_id = sql.Column(sql.String(64), nullable=True)
+    redelegation_count = sql.Column(sql.Integer, nullable=True)
     extra = sql.Column(sql.JsonBlob())
     __table_args__ = (sql.UniqueConstraint(
                       'trustor_user_id', 'trustee_user_id', 'project_id',
