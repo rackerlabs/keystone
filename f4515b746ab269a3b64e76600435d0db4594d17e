@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_54fc73b7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-04-09T16:31:12Z",
+      "side": 1,
+      "message": "this should be tied to a bug",
+      "revId": "f4515b746ab269a3b64e76600435d0db4594d17e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_b93858f0",
+        "filename": "keystone/common/sql/migrate_repo/versions/068_add_trust_redelegation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-04-09T16:31:12Z",
+      "side": 1,
+      "message": "I wonder what\u0027s the memory footprint of this. How many tokens do we have in large deployments? Won\u0027t they run out of memory if there are 2M tokens (Rally creates this many tokens in one of the tests)",
+      "revId": "f4515b746ab269a3b64e76600435d0db4594d17e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_745bf7f6",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 571,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-04-09T16:31:12Z",
+      "side": 1,
+      "message": "Is it possible that anything except redelegated_trust_id and redelegation_count will be in extra? If yes, it should be added here.",
+      "revId": "f4515b746ab269a3b64e76600435d0db4594d17e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_b4897f77",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 615,
+      "author": {
+        "id": 13478
+      },
+      "writtenOn": "2015-04-09T16:31:12Z",
+      "side": 1,
+      "message": "Please change order here and below to (expected, actual).",
+      "revId": "f4515b746ab269a3b64e76600435d0db4594d17e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
