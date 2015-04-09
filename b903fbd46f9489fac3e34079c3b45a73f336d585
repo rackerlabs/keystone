@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_32423e69",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-09T02:42:30Z",
+      "side": 1,
+      "message": "nits: s/\u0027memcached_driver\u0027/\u0027memcached_backend\u0027",
+      "revId": "b903fbd46f9489fac3e34079c3b45a73f336d585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_f2605603",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-09T02:42:30Z",
+      "side": 1,
+      "message": "It would be nice to mention \"pooled_memcached\" since \"pooled_memcached\" is also valid although it\u0027s based on memcached",
+      "revId": "b903fbd46f9489fac3e34079c3b45a73f336d585",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
