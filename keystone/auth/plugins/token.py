@@ -33,8 +33,6 @@ CONF = cfg.CONF
 @dependency.requires('federation_api', 'identity_api', 'token_provider_api')
 class Token(auth.AuthMethodHandler):
 
-    method = 'token'
-
     def _get_token_ref(self, auth_payload):
         token_id = auth_payload['id']
         response = self.token_provider_api.validate_token(token_id)
