@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_a3f72258",
+        "filename": "keystone/cli.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-09T06:15:57Z",
+      "side": 0,
+      "message": "So we do this is in a few places...not sure DomainConfig is any more special than the others....probably should do it everywhere if we are going to take this approach.",
+      "revId": "318d48187535109d5ddaa050fdc90ba327386435",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
