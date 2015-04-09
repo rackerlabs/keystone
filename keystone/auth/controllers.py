@@ -51,7 +51,7 @@ def load_auth_methods():
     # have setup all the appropriate configuration options we may need.
     config.setup_authentication()
     for plugin in CONF.auth.methods:
-        plugin_class = CONF.auth.get(plugin)
+        plugin_class = CONF.auth[plugin]
         driver = importutils.import_object(plugin_class)
         if plugin in AUTH_METHODS:
             raise ValueError(_('Auth plugin %(plugin)s is requesting '
