@@ -35,11 +35,12 @@ from keystone.i18n import _
 
 CONF = cfg.CONF
 DEFAULT_EXTENSIONS = ['endpoint_filter',
-                      'endpoint_policy',
                       'federation',
                       'oauth1',
                       'revoke',
                       ]
+
+MIGRATED_EXTENSIONS = ['endpoint_policy']
 
 
 def get_default_domain():
@@ -190,6 +191,12 @@ def _assert_not_schema_downgrade(extension=None, version=None):
 
 
 def _sync_extension_repo(extension, version):
+    if extension in MIGRATED_EXTENSIONS:
+        raise RuntimeError(_("The %s extension has been moved into the "
+                             "keystone core and such it's migrations are "
+                             "maintained by the main keystone database "
+                             "control."))
+
     init_version = 0
     engine = sql.get_engine()
 
@@ -249,9 +256,12 @@ def sync_database_to_version(extension=None, version=None):
         _sync_extension_repo(extension, version)
 
 
-def get_db_version(extension=None):
+def get_db_version(extension=None, engine=None):
+    if not engine:
+        engine = sql.get_engine()
+
     if not extension:
-        return migration.db_version(sql.get_engine(), find_migrate_repo(),
+        return migration.db_version(engine, find_migrate_repo(),
                                     migrate_repo.DB_INIT_VERSION)
 
     try:
@@ -261,8 +271,7 @@ def get_db_version(extension=None):
         raise ImportError(_("%s extension does not exist.")
                           % package_name)
 
-    return migration.db_version(
-        sql.get_engine(), find_migrate_repo(package), 0)
+    return migration.db_version(engine, find_migrate_repo(package), 0)
 
 
 def print_db_version(extension=None):
