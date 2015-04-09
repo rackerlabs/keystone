@@ -34,6 +34,24 @@
       "revId": "c4612d4cb4a81c0994b070610a286c230a2f0b0a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_d2c9d25a",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-09T02:14:12Z",
+      "side": 1,
+      "message": "Raildo: sorry for going back and forth, let\u0027s chat about this in IRC and get consensus before you make a change again. :)",
+      "parentUuid": "9aa53dc9_af74a935",
+      "revId": "c4612d4cb4a81c0994b070610a286c230a2f0b0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
