@@ -543,6 +543,13 @@ class SqlUpgradeTests(SqlMigrateBase):
         self.assertTableColumns(sensitive_table,
                                 ['domain_id', 'group', 'option', 'value'])
 
+    def test_endpoint_policy_upgrade(self):
+        self.assertTableDoesNotExist('policy_association')
+        self.upgrade(81)
+        self.assertTableColumns('policy_association',
+                                ['id', 'policy_id', 'endpoint_id',
+                                 'service_id', 'region_id'])
+
     def test_fixup_service_name_value_upgrade(self):
         """Update service name data from `extra` to empty string."""
         def add_service(**extra_data):
