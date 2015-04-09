@@ -36,7 +36,6 @@ from oslo_db import exception as db_exception
 from oslo_db.sqlalchemy import utils
 
 from keystone.contrib import endpoint_filter
-from keystone.contrib import endpoint_policy
 from keystone.contrib import example
 from keystone.contrib import federation
 from keystone.contrib import oauth1
@@ -157,18 +156,6 @@ class EndpointFilterExtension(test_sql_upgrade.SqlMigrateBase):
                                 ['endpoint_id', 'project_id'])
         self.upgrade(2)
         self._assert_v2_tables()
-
-
-class EndpointPolicyExtension(test_sql_upgrade.SqlMigrateBase):
-    def repo_package(self):
-        return endpoint_policy
-
-    def test_upgrade(self):
-        self.assertTableDoesNotExist('policy_association')
-        self.upgrade(1, repository=self.repo_path)
-        self.assertTableColumns('policy_association',
-                                ['id', 'policy_id', 'endpoint_id',
-                                 'service_id', 'region_id'])
 
 
 class FederationExtension(test_sql_upgrade.SqlMigrateBase):
