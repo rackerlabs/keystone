@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_af800ac1",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 625,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-04-09T17:07:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa53dc9_efb97216",
+      "revId": "e5464c1b946a062097de5962ac6d0de88712484a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_cf390ea6",
         "filename": "keystone/tests/unit/test_sql_upgrade.py",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-09T16:55:50Z",
       "side": 1,
       "message": "and here",
+      "revId": "e5464c1b946a062097de5962ac6d0de88712484a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_8f81c6c5",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 627,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-04-09T17:07:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa53dc9_cf390ea6",
       "revId": "e5464c1b946a062097de5962ac6d0de88712484a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
