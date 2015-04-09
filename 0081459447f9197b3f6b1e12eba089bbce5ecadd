@@ -16,6 +16,24 @@
       "revId": "0081459447f9197b3f6b1e12eba089bbce5ecadd",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_2f0ad979",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-09T01:27:03Z",
+      "side": 1,
+      "message": "Hum... We just don\u0027t want broke the backward compatibility, but we can discuss this with the Keystone folks.",
+      "parentUuid": "9aa53dc9_e7e3ff03",
+      "revId": "0081459447f9197b3f6b1e12eba089bbce5ecadd",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
