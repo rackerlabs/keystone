@@ -16,6 +16,24 @@
       "revId": "c4612d4cb4a81c0994b070610a286c230a2f0b0a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_af74a935",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-09T01:11:11Z",
+      "side": 1,
+      "message": "sorry, I was thought that we have to change the behavior for every case. I\u0027ll fix this.",
+      "parentUuid": "9aa53dc9_4783cb04",
+      "revId": "c4612d4cb4a81c0994b070610a286c230a2f0b0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
