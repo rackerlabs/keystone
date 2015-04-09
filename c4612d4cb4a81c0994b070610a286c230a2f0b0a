@@ -70,6 +70,24 @@
       "revId": "c4612d4cb4a81c0994b070610a286c230a2f0b0a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_4544bab5",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-09T20:07:12Z",
+      "side": 1,
+      "message": "After talk in IRC channel, we decided that the correct behavior here is send a HTTP 400 not a 404, so even broke the backward compatibility, we have to return ValidationError here.",
+      "parentUuid": "9aa53dc9_72be8666",
+      "revId": "c4612d4cb4a81c0994b070610a286c230a2f0b0a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
