@@ -30,6 +30,7 @@ WARNING::
 """
 
 import copy
+import datetime
 import json
 import uuid
 
@@ -38,6 +39,7 @@ from oslo_config import cfg
 from oslo_db import exception as db_exception
 from oslo_db.sqlalchemy import migration
 from oslo_db.sqlalchemy import session as db_session
+from oslo_serialization import jsonutils
 import six
 from sqlalchemy.engine import reflection
 import sqlalchemy.exc
@@ -550,6 +552,80 @@ class SqlUpgradeTests(SqlMigrateBase):
         if self.engine.name == "mysql":
             self.assertFalse(self._does_index_exist('assignment',
                                                     'assignment_role_id_fkey'))
+
+    def test_add_trust_redelegation(self):
+        # Fixture
+        trust = {
+            'id': uuid.uuid4().hex,
+            'trustor_user_id': uuid.uuid4().hex,
+            'trustee_user_id': uuid.uuid4().hex,
+            'project_id': uuid.uuid4().hex,
+            'impersonation': True,
+            'expires_at': datetime.datetime.now(),
+            'remaining_uses': 10,
+            'deleted_at': datetime.datetime.now(),
+            'redelegated_trust_id': uuid.uuid4().hex,
+            'redelegation_count': 3,
+            'other': uuid.uuid4().hex
+        }
+        old_trust = trust.copy()
+        old_extra = {
+            'redelegated_trust_id': old_trust.pop('redelegated_trust_id'),
+            'redelegation_count': old_trust.pop('redelegation_count'),
+            'other': old_trust.pop('other')
+        }
+        old_trust['extra'] = jsonutils.dumps(old_extra)
+
+        # We test upgrade from 72
+        self.upgrade(72)
+
+        # Load fixture
+        session = self.Session()
+        self.insert_dict(session, 'trust', old_trust)
+
+        # Test initial schema
+        self.assertTableColumns('trust', ['id',
+                                          'trustor_user_id',
+                                          'trustee_user_id',
+                                          'project_id',
+                                          'impersonation',
+                                          'expires_at',
+                                          'remaining_uses',
+                                          'deleted_at',
+                                          'extra'])
+
+        # Test initial data layout
+        stored_trust = list(self.select_table('trust').execute())[0]
+        self.assertDictEqual({
+            'redelegated_trust_id': trust['redelegated_trust_id'],
+            'redelegation_count': trust['redelegation_count'],
+            'other': trust['other']},
+            jsonutils.loads(stored_trust.extra))
+
+        # Do the upgrade
+        self.upgrade(73)
+
+        # Test target schema
+        self.assertTableColumns('trust', ['id',
+                                          'trustor_user_id',
+                                          'trustee_user_id',
+                                          'project_id',
+                                          'impersonation',
+                                          'expires_at',
+                                          'remaining_uses',
+                                          'deleted_at',
+                                          'redelegated_trust_id',
+                                          'redelegation_count',
+                                          'extra'])
+
+        # Test target data layout
+        upgraded_trust = list(self.select_table('trust').execute())[0]
+        self.assertDictEqual({'other': trust['other']},
+                             jsonutils.loads(upgraded_trust.extra))
+        self.assertEqual(trust['redelegated_trust_id'],
+                         upgraded_trust.redelegated_trust_id)
+        self.assertEqual(trust['redelegation_count'],
+                         upgraded_trust.redelegation_count)
 
     def populate_user_table(self, with_pass_enab=False,
                             with_pass_enab_domain=False):
