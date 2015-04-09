@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9aa53dc9_149eeb62",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-04-09T16:39:38Z",
+      "side": 1,
+      "message": "or a blueprint - not sure yet",
+      "parentUuid": "9aa53dc9_54fc73b7",
+      "revId": "f4515b746ab269a3b64e76600435d0db4594d17e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9aa53dc9_b93858f0",
         "filename": "keystone/common/sql/migrate_repo/versions/068_add_trust_redelegation.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-09T16:31:12Z",
       "side": 1,
       "message": "I wonder what\u0027s the memory footprint of this. How many tokens do we have in large deployments? Won\u0027t they run out of memory if there are 2M tokens (Rally creates this many tokens in one of the tests)",
+      "revId": "f4515b746ab269a3b64e76600435d0db4594d17e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_14c70b65",
+        "filename": "keystone/common/sql/migrate_repo/versions/068_add_trust_redelegation.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-04-09T16:39:38Z",
+      "side": 1,
+      "message": "Trusts are not concidered to be as numerous as tokens so it is hardly an issue.",
+      "parentUuid": "9aa53dc9_b93858f0",
       "revId": "f4515b746ab269a3b64e76600435d0db4594d17e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
