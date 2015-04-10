@@ -16,6 +16,24 @@
       "revId": "27a579a4326ba7bc1d70476a1d9b154785dfab1a",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_3e6adc81",
+        "filename": "keystone/contrib/endpoint_filter/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 298,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-04-10T01:57:22Z",
+      "side": 1,
+      "message": "The reason we overridden _add_self_referential_link is that  ProjectEndpointGroupMembership doesn\u0027t have \u0027id\u0027 attribute: https://github.com/openstack/keystone/blob/master/keystone/common/controller.py#L443 and the reason of this bug is that we forgot to add base_url into url.",
+      "parentUuid": "baa041b7_58cf6c7f",
+      "revId": "27a579a4326ba7bc1d70476a1d9b154785dfab1a",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
