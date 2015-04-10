@@ -34,6 +34,24 @@
       "revId": "028ffa39ed322da9c586a4fdb96883e9447afba0",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_e5afe57b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-10T20:25:19Z",
+      "side": 1,
+      "message": "Ahh,sorry, I get it now...",
+      "parentUuid": "7aaa499b_e58125fd",
+      "revId": "028ffa39ed322da9c586a4fdb96883e9447afba0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
