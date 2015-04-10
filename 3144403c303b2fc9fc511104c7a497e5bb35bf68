@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_a42446af",
+        "filename": "keystone/tests/unit/test_token_provider.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 754,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-04-10T16:43:34Z",
+      "side": 1,
+      "message": "This will have to be changed to include Fernet but I\u0027d imagine the patch you have up for add that will merge before this.",
+      "revId": "3144403c303b2fc9fc511104c7a497e5bb35bf68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
