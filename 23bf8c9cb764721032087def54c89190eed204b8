@@ -16,6 +16,24 @@
       "revId": "23bf8c9cb764721032087def54c89190eed204b8",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_45c57959",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 5046
+      },
+      "writtenOn": "2015-04-10T20:22:03Z",
+      "side": 1,
+      "message": "Ah, interesting. I was wondering why that was. I can repush that with a new patch set if others have comments. Thanks Eric!",
+      "parentUuid": "7aaa499b_4d76c53f",
+      "revId": "23bf8c9cb764721032087def54c89190eed204b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
