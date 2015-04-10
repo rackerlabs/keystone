@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_57d57e19",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 6676
+      },
+      "writtenOn": "2015-04-10T08:40:26Z",
+      "side": 1,
+      "message": "I think you can simply add pooled_memcached to the valid tuple",
+      "revId": "88db6d8ddb88f34e2d2457291d7bb6c058898af9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
