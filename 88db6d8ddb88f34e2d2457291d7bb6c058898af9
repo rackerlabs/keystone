@@ -16,6 +16,24 @@
       "revId": "88db6d8ddb88f34e2d2457291d7bb6c058898af9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_b24a9824",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-10T09:09:55Z",
+      "side": 1,
+      "message": "ZhiQiang, \u0027pooled_memcached\u0027 is not the driver provided by dogpile.cache directly, it should be different with other three drivers in my opinion, let\u0027s open this to others.",
+      "parentUuid": "9aa53dc9_57d57e19",
+      "revId": "88db6d8ddb88f34e2d2457291d7bb6c058898af9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
