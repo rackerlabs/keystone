@@ -169,7 +169,7 @@ class SAMLGenerator(object):
                 <ns0:AttributeValue
                   xsi:type="xs:string">member</ns0:AttributeValue>
             </ns0:Attribute>
-            <ns0:Attribute Name="openstack_projects">
+            <ns0:Attribute Name="openstack_project">
                 <ns0:AttributeValue
                   xsi:type="xs:string">development</ns0:AttributeValue>
             </ns0:Attribute>
