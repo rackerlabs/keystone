@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_4d76c53f",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-04-10T18:42:28Z",
+      "side": 1,
+      "message": "You can also use a tuple with is immutable, but no biggie.",
+      "revId": "23bf8c9cb764721032087def54c89190eed204b8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
