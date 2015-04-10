@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa53dc9_3ec65c68",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 7
+      },
+      "lineNbr": 506,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-04-10T02:25:15Z",
+      "side": 1,
+      "message": "Unrelated change?",
+      "revId": "da03c431a508ff72dda53022f7698c97e1a45c58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa53dc9_9e8568d0",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-04-10T02:25:15Z",
+      "side": 1,
+      "message": "We did not use this.",
+      "revId": "da03c431a508ff72dda53022f7698c97e1a45c58",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
