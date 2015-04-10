@@ -69,5 +69,9 @@ UHeBXxQq/GmfBv3l+V5ObQ+EHKnyDodLHCk=</ns1:X509Certificate>
           <ns0:AttributeValue
               xsi:type="xs:string">default</ns0:AttributeValue>
       </ns0:Attribute>
+      <ns0:Attribute Name="openstack_user_domain">
+          <ns0:AttributeValue
+              xsi:type="xs:string">default</ns0:AttributeValue>
+      </ns0:Attribute>
   </ns0:AttributeStatement>
 </ns0:Assertion>
