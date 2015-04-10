@@ -157,8 +157,6 @@ class SAMLGenerator(object):
         """Create an object that represents a SAML AttributeStatement.
 
         <ns0:AttributeStatement
-          xmlns:ns0="urn:oasis:names:tc:SAML:2.0:assertion"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <ns0:Attribute Name="openstack_user">
                 <ns0:AttributeValue
                   xsi:type="xs:string">test_user</ns0:AttributeValue>
@@ -169,7 +167,7 @@ class SAMLGenerator(object):
                 <ns0:AttributeValue
                   xsi:type="xs:string">member</ns0:AttributeValue>
             </ns0:Attribute>
-            <ns0:Attribute Name="openstack_projects">
+            <ns0:Attribute Name="openstack_project">
                 <ns0:AttributeValue
                   xsi:type="xs:string">development</ns0:AttributeValue>
             </ns0:Attribute>
