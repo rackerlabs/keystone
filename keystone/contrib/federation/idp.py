@@ -44,7 +44,7 @@ class SAMLGenerator(object):
         self.assertion_id = uuid.uuid4().hex
 
     def samlize_token(self, issuer, recipient, user, roles, project,
-                      project_domain, expires_in=None):
+                      project_domain, user_domain, expires_in=None):
         """Convert Keystone attributes to a SAML assertion.
 
         :param issuer: URL of the issuing party
@@ -59,6 +59,8 @@ class SAMLGenerator(object):
         :type project: string
         :param project_domain: Project Domain name
         :type project_domain: string
+        :param user_domain: User Domain name
+        :type user_domain: string
         :param expires_in: Sets how long the assertion is valid for, in seconds
         :type expires_in: int
 
@@ -70,7 +72,7 @@ class SAMLGenerator(object):
         saml_issuer = self._create_issuer(issuer)
         subject = self._create_subject(user, expiration_time, recipient)
         attribute_statement = self._create_attribute_statement(
-            user, roles, project, project_domain)
+            user, roles, project, project_domain, user_domain)
         authn_statement = self._create_authn_statement(issuer, expiration_time)
         signature = self._create_signature()
 
@@ -156,7 +158,7 @@ class SAMLGenerator(object):
         return subject
 
     def _create_attribute_statement(self, user, roles, project,
-                                    project_domain):
+                                    project_domain, user_domain):
         """Create an object that represents a SAML AttributeStatement.
 
         <ns0:AttributeStatement
@@ -178,46 +180,41 @@ class SAMLGenerator(object):
                 <ns0:AttributeValue
                   xsi:type="xs:string">default</ns0:AttributeValue>
             </ns0:Attribute>
+            <ns0:Attribute Name="openstack_user_domain">
+                <ns0:AttributeValue
+                  xsi:type="xs:string">default</ns0:AttributeValue>
+            </ns0:Attribute>
         </ns0:AttributeStatement>
 
         :return: XML <AttributeStatement> object
 
         """
-        openstack_user = 'openstack_user'
-        user_attribute = saml.Attribute()
-        user_attribute.name = openstack_user
-        user_value = saml.AttributeValue()
-        user_value.set_text(user)
-        user_attribute.attribute_value = user_value
 
-        openstack_roles = 'openstack_roles'
-        roles_attribute = saml.Attribute()
-        roles_attribute.name = openstack_roles
+        def _build_attribute(attribute_name, attribute_values):
+            attribute = saml.Attribute()
+            attribute.name = attribute_name
 
-        for role in roles:
-            role_value = saml.AttributeValue()
-            role_value.set_text(role)
-            roles_attribute.attribute_value.append(role_value)
+            for value in attribute_values:
+                attribute_value = saml.AttributeValue()
+                attribute_value.set_text(value)
+                attribute.attribute_value = attribute_value
 
-        openstack_project = 'openstack_project'
-        project_attribute = saml.Attribute()
-        project_attribute.name = openstack_project
-        project_value = saml.AttributeValue()
-        project_value.set_text(project)
-        project_attribute.attribute_value = project_value
+            return attribute
 
-        openstack_project_domain = 'openstack_project_domain'
-        project_domain_attribute = saml.Attribute()
-        project_domain_attribute.name = openstack_project_domain
-        project_domain_value = saml.AttributeValue()
-        project_domain_value.set_text(project_domain)
-        project_domain_attribute.attribute_value = project_domain_value
+        user_attribute = _build_attribute('openstack_user', [user])
+        roles_attribute = _build_attribute('openstack_roles', roles)
+        project_attribute = _build_attribute('openstack_project', [project])
+        project_domain_attribute = _build_attribute(
+            'openstack_project_domain', [project_domain])
+        user_domain_attribute = _build_attribute(
+            'openstack_user_domain', [user_domain])
 
         attribute_statement = saml.AttributeStatement()
         attribute_statement.attribute.append(user_attribute)
         attribute_statement.attribute.append(roles_attribute)
         attribute_statement.attribute.append(project_attribute)
         attribute_statement.attribute.append(project_domain_attribute)
+        attribute_statement.attribute.append(user_domain_attribute)
         return attribute_statement
 
     def _create_authn_statement(self, issuer, expiration_time):
