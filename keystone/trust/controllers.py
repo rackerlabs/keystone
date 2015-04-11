@@ -53,6 +53,10 @@ class TrustV3(controller.V3Controller):
     collection_name = "trusts"
     member_name = "trust"
 
+    def __init__(self):
+        super(TrustV3, self).__init__()
+        self.get_member_from_driver = self.trust_api.get_trust
+
     @classmethod
     def base_url(cls, context, path=None):
         """Construct a path and pass it to V3Controller.base_url method."""
@@ -71,13 +75,15 @@ class TrustV3(controller.V3Controller):
             return token_ref.user_id
         return None
 
-    def get_trust(self, context, trust_id):
-        user_id = self._get_user_id(context)
+    def _get_trust(self, context, trust_id):
         trust = self.trust_api.get_trust(trust_id)
-        _trustor_trustee_only(trust, user_id)
         self._fill_in_roles(context, trust,
                             self.role_api.list_roles())
         return TrustV3.wrap_member(context, trust)
+
+    @controller.protected()
+    def get_trust(self, context, trust_id):
+        return self._get_trust(context, trust_id)
 
     def _fill_in_roles(self, context, trust, all_roles):
         if trust.get('expires_at') is not None:
@@ -258,9 +264,7 @@ class TrustV3(controller.V3Controller):
 
     @controller.protected()
     def list_roles_for_trust(self, context, trust_id):
-        trust = self.get_trust(context, trust_id)['trust']
-        user_id = self._get_user_id(context)
-        _trustor_trustee_only(trust, user_id)
+        trust = self._get_trust(context, trust_id)['trust']
         return {'roles': trust['roles'],
                 'links': trust['roles_links']}
 

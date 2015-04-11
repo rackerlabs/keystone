@@ -872,13 +872,23 @@ class AuthWithTrust(AuthTest):
                    'host_url': HOST_URL}
         new_trust = self.trust_controller.create_trust(
             context, trust=self.sample_data)['trust']
-        trust = self.trust_controller.get_trust(context,
-                                                new_trust['id'])['trust']
+        trust = self.trust_controller.get_trust(
+            context,
+            trust_id=new_trust['id'])['trust']
         self.assertEqual(self.trustor['id'], trust['trustor_user_id'])
         self.assertEqual(self.trustee['id'], trust['trustee_user_id'])
         role_ids = [self.role_browser['id'], self.role_member['id']]
         for role in new_trust['roles']:
             self.assertIn(role['id'], role_ids)
+
+        # check if trustee has access to get trust
+        unscoped_token = self.get_unscoped_token(self.trustee['name'],
+                                                 'two2')
+        context = {'token_id': unscoped_token['access']['token']['id'],
+                   'host_url': HOST_URL}
+        trust = self.trust_controller.get_trust(
+            context,
+            trust_id=new_trust['id'])['trust']
 
     def test_create_trust_no_impersonation(self):
         new_trust = self.create_trust(self.sample_data, self.trustor['name'],
@@ -1091,8 +1101,9 @@ class AuthWithTrust(AuthTest):
         unscoped_token = self.get_unscoped_token(self.trustor['name'])
         context = self._create_auth_context(
             unscoped_token['access']['token']['id'])
-        trust = self.trust_controller.get_trust(context,
-                                                new_trust['id'])['trust']
+        trust = self.trust_controller.get_trust(
+            context,
+            trust_id=new_trust['id'])['trust']
         self.assertEqual(3, trust['remaining_uses'])
 
     def test_v2_trust_token_contains_trustor_user_id_and_impersonation(self):
