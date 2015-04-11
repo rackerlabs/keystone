@@ -224,7 +224,8 @@ class PolicyJsonTestCase(tests.TestCase):
             tests.dirs.etc('policy.v3cloudsample.json'))
 
         policy_extra_keys = ['admin_or_token_subject',
-                             'token_subject', ]
+                             'token_subject',
+                             'admin_or_trustor', ]
         expected_policy_keys = list(cloud_policy_keys) + policy_extra_keys
         diffs = set(policy_keys).difference(set(expected_policy_keys))
 

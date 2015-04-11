@@ -872,8 +872,9 @@ class AuthWithTrust(AuthTest):
                    'host_url': HOST_URL}
         new_trust = self.trust_controller.create_trust(
             context, trust=self.sample_data)['trust']
-        trust = self.trust_controller.get_trust(context,
-                                                new_trust['id'])['trust']
+        trust = self.trust_controller.get_trust(
+            context,
+            trust_id=new_trust['id'])['trust']
         self.assertEqual(self.trustor['id'], trust['trustor_user_id'])
         self.assertEqual(self.trustee['id'], trust['trustee_user_id'])
         role_ids = [self.role_browser['id'], self.role_member['id']]
@@ -1091,8 +1092,9 @@ class AuthWithTrust(AuthTest):
         unscoped_token = self.get_unscoped_token(self.trustor['name'])
         context = self._create_auth_context(
             unscoped_token['access']['token']['id'])
-        trust = self.trust_controller.get_trust(context,
-                                                new_trust['id'])['trust']
+        trust = self.trust_controller.get_trust(
+            context,
+            trust_id=new_trust['id'])['trust']
         self.assertEqual(3, trust['remaining_uses'])
 
     def test_v2_trust_token_contains_trustor_user_id_and_impersonation(self):
