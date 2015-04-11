@@ -33,6 +33,24 @@
       "revId": "cfded085fdcccfc7fed916d9b4b5aa6880681c41",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_0a2bf883",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-11T09:04:29Z",
+      "side": 1,
+      "message": "maybe even before the previous patch as well...",
+      "parentUuid": "7aaa499b_4f035210",
+      "revId": "cfded085fdcccfc7fed916d9b4b5aa6880681c41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
