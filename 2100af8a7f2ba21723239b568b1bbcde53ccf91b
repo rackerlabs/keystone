@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_cf71a2e2",
+        "filename": "etc/policy.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-11T08:36:25Z",
+      "side": 1,
+      "message": "I think we need to have an \"or rule:trustee\" here to match the current conditions",
+      "revId": "2100af8a7f2ba21723239b568b1bbcde53ccf91b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_6f816e8f",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-11T08:36:25Z",
+      "side": 1,
+      "message": "or rule:trustee",
+      "revId": "2100af8a7f2ba21723239b568b1bbcde53ccf91b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_0f4f8a93",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-11T08:36:25Z",
+      "side": 1,
+      "message": "so the only problem is that this test now duplicates the settings in the policy file....and if an operator changes the policy file, that won\u0027t have any effect...I\u0027d say we have to either move it all to the policy file (which I think we now can, since we added the support for checking the target of an API call), or keep it as is.",
+      "revId": "2100af8a7f2ba21723239b568b1bbcde53ccf91b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_cf48828a",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-11T08:36:25Z",
+      "side": 1,
+      "message": "If we are going to go down this route, then I don\u0027t see wh we couldn\u0027t handle this the same way...",
+      "revId": "2100af8a7f2ba21723239b568b1bbcde53ccf91b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
