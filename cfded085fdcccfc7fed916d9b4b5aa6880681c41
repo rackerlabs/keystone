@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_6f060e22",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-11T08:59:36Z",
+      "side": 1,
+      "message": "(nit): s/do not/does not/",
+      "revId": "cfded085fdcccfc7fed916d9b4b5aa6880681c41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_4f035210",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-11T08:59:36Z",
+      "side": 1,
+      "message": "I think it would be better to do the refactor first, then base this change on that....",
+      "revId": "cfded085fdcccfc7fed916d9b4b5aa6880681c41",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
