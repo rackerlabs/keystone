@@ -880,6 +880,14 @@ class AuthWithTrust(AuthTest):
         for role in new_trust['roles']:
             self.assertIn(role['id'], role_ids)
 
+        # check if trustee have access to get trust
+        unscoped_token = self.get_unscoped_token(self.trustee['name'],
+                                                 'two2')
+        context = {'token_id': unscoped_token['access']['token']['id'],
+                   'host_url': HOST_URL}
+        trust = self.trust_controller.get_trust(context,
+                                                new_trust['id'])['trust']
+
     def test_create_trust_no_impersonation(self):
         new_trust = self.create_trust(self.sample_data, self.trustor['name'],
                                       expires_at=None, impersonation=False)
