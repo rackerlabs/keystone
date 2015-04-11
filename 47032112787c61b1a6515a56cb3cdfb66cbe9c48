@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_4c8fdd23",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-11T14:32:10Z",
+      "side": 1,
+      "message": "Maybe we can describe it more precisely as \"...provided for loading drivers in the manager...\" to distinguish it from controller layer.\n\nhttps://github.com/openstack/keystone/blob/master/keystone/auth/controllers.py#L69",
+      "revId": "47032112787c61b1a6515a56cb3cdfb66cbe9c48",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
