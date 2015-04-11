@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_ca24f0b0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-11T09:06:10Z",
+      "side": 1,
+      "message": "(nit): s/do not/does not/",
+      "revId": "5fa94f97a3b30416870bbf7b8330af667420c249",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_aa3ac4cb",
+        "filename": "keystone/contrib/federation/idp.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-11T09:06:10Z",
+      "side": 1,
+      "message": "see my comment in the follow on patch....",
+      "revId": "5fa94f97a3b30416870bbf7b8330af667420c249",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
