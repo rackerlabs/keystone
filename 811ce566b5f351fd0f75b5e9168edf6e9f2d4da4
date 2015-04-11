@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_d28946cc",
+        "filename": "keystone/token/persistence/backends/redis.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-04-11T21:16:28Z",
+      "side": 1,
+      "message": "Since now a password can possibly be passed cache.backend_argument, the backend_argument needs to be marked secret\u003dTrue to avoid passwords being leaked to the logs.\n\nhttps://github.com/openstack/keystone/blob/master/keystone/common/config.py#L329",
+      "revId": "811ce566b5f351fd0f75b5e9168edf6e9f2d4da4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
