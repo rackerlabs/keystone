@@ -16,6 +16,24 @@
       "revId": "ae4c7bc34f9a8d0dcae0e5222eee3b5625ec4399",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_40dd5c13",
+        "filename": "keystone/tests/unit/saml2/signed_saml2_assertion.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-12T06:27:37Z",
+      "side": 1,
+      "message": "++ oops. missed that revert...",
+      "parentUuid": "7aaa499b_d54b702a",
+      "revId": "ae4c7bc34f9a8d0dcae0e5222eee3b5625ec4399",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
