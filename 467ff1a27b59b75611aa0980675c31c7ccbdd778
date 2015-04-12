@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7aaa499b_16ed5b8b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-12T22:41:50Z",
+      "side": 1,
+      "message": "https://review.openstack.org/#/c/166622/ takes care of that bug.",
+      "parentUuid": "9aa53dc9_ecd3a9d3",
+      "revId": "467ff1a27b59b75611aa0980675c31c7ccbdd778",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aaa499b_e1992021",
         "filename": "keystone/common/manager.py",
         "patchSetId": 12
@@ -107,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "7aaa499b_96904bee",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-12T22:41:50Z",
+      "side": 1,
+      "message": "We don\u0027t need to define namespace with None here.",
+      "parentUuid": "7aaa499b_6674f0fc",
+      "revId": "467ff1a27b59b75611aa0980675c31c7ccbdd778",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aaa499b_46bc546c",
         "filename": "setup.cfg",
         "patchSetId": 12
@@ -118,6 +154,24 @@
       "writtenOn": "2015-04-12T14:59:55Z",
       "side": 1,
       "message": "There is no such a classpath: `keystone.contrib.endpoint_filter.backends.catalog_sql.EndpointFilter`, looks like to me `catalog_sql` is not an ordinary backend.",
+      "revId": "467ff1a27b59b75611aa0980675c31c7ccbdd778",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_36b6178b",
+        "filename": "setup.cfg",
+        "patchSetId": 12
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-12T22:41:50Z",
+      "side": 1,
+      "message": "Done. Removed it since it\u0027s supposed to be and already is up in keystone.catalog",
+      "parentUuid": "7aaa499b_46bc546c",
       "revId": "467ff1a27b59b75611aa0980675c31c7ccbdd778",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
