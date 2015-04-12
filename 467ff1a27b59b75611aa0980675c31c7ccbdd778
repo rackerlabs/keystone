@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7aaa499b_73ddd113",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 2472
+      },
+      "writtenOn": "2015-04-12T20:07:23Z",
+      "side": 1,
+      "message": "Is this handling the case where the plugin isn\u0027t available in stevedore? A full import failure will be reported by _load_using_import() if the driver actually fails to import.",
+      "parentUuid": "7aaa499b_e613600c",
+      "revId": "467ff1a27b59b75611aa0980675c31c7ccbdd778",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aaa499b_6674f0fc",
         "filename": "keystone/common/manager.py",
         "patchSetId": 12
