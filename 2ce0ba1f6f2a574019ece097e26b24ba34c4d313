@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_7f49f98a",
+        "filename": "keystone/common/sql/migrate_repo/versions/073_add_is_domain_project.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-13T17:33:18Z",
+      "side": 1,
+      "message": "out of interest, what is it we are achieving with server_default here?",
+      "revId": "2ce0ba1f6f2a574019ece097e26b24ba34c4d313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_ff4bc9ae",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-13T17:33:18Z",
+      "side": 1,
+      "message": "where do we do we set this?",
+      "revId": "2ce0ba1f6f2a574019ece097e26b24ba34c4d313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_aa205d9c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 263,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-13T17:33:18Z",
+      "side": 1,
+      "message": "the grammar might be misread here that you mean the \"domain feature is enabled\", maybe turn it around and say:\n\n\"cannot delete an enabled project with the domain feature, please disable this project first\"",
+      "revId": "2ce0ba1f6f2a574019ece097e26b24ba34c4d313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
