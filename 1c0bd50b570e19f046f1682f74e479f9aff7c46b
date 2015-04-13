@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_c1e9471c",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 7
+      },
+      "lineNbr": 3034,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-04-13T21:27:30Z",
+      "side": 1,
+      "message": "it\u0027s not clear why self.DOMAIN is included twice",
+      "revId": "1c0bd50b570e19f046f1682f74e479f9aff7c46b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
