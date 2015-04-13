@@ -34,6 +34,24 @@
       "revId": "811ce566b5f351fd0f75b5e9168edf6e9f2d4da4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_a5352e47",
+        "filename": "keystone/token/persistence/backends/redis.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-04-13T18:01:35Z",
+      "side": 1,
+      "message": "Eric, I\u0027ve just made a patch with a proper Redis cache backend and secure password :)",
+      "parentUuid": "7aaa499b_aa35fd46",
+      "revId": "811ce566b5f351fd0f75b5e9168edf6e9f2d4da4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
