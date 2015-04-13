@@ -315,6 +315,37 @@ class Application(BaseApplication):
             # Accept either is_admin or the admin role
             self.policy_api.enforce(creds, 'admin_required', {})
 
+    def assert_admin_or_owner(self, context):
+        if not context['is_admin']:
+            try:
+                user_token_ref = token_model.KeystoneToken(
+                    token_id=context['token_id'],
+                    token_data=self.token_provider_api.validate_token(
+                        context['token_id']))
+            except exception.TokenNotFound as e:
+                raise exception.Unauthorized(e)
+
+            validate_token_bind(context, user_token_ref)
+            creds = copy.deepcopy(user_token_ref.metadata)
+                                                                                  
+            try:                                                                  
+                creds['user_id'] = user_token_ref.user_id                         
+            except exception.UnexpectedError:                                     
+                LOG.debug('Invalid user')                                         
+                raise exception.Unauthorized()                                    
+                                                                                  
+            if user_token_ref.project_scoped:                                     
+                creds['tenant_id'] = user_token_ref.project_id                    
+            else:                                                                 
+                LOG.debug('Invalid tenant')                                       
+                raise exception.Unauthorized()                                    
+                                                                                  
+            creds['roles'] = user_token_ref.role_names                            
+            # Accept either is_admin or the admin role                            
+            self.policy_api.enforce(creds,                                        
+                                    'admin_or_owner',                             
+                                    {'user_id': user_token_ref.user_id})
+
     def _attribute_is_empty(self, ref, attribute):
         """Returns true if the attribute in the given ref (which is a
         dict) is empty or None.

@@ -446,9 +446,13 @@ class Auth(controller.V2Controller):
 
     @controller.v2_deprecated
     def delete_token(self, context, token_id):
-        """Delete a token, effectively invalidating it for authz."""
+        """Delete a token, effectively invalidating it for authz.
+
+        Optionally, ensure that both admin and owner can delete token.
+
+        """
         # TODO(termie): this stuff should probably be moved to middleware
-        self.assert_admin(context)
+        self.assert_admin_or_owner(context)
         self.token_provider_api.revoke_token(token_id)
 
     @controller.v2_deprecated
