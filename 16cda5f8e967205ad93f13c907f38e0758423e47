@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "7aaa499b_c8e2a79f",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-13T09:42:25Z",
+      "side": 1,
+      "message": "Why we didn\u0027t use short name for \u0027trust\u0027 driver? there might be some comment to show the specific reason if this is intentional.",
+      "revId": "16cda5f8e967205ad93f13c907f38e0758423e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_28034b44",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 10
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-13T09:42:25Z",
+      "side": 1,
+      "message": "why not use \u0027sql\u0027 here?",
+      "revId": "16cda5f8e967205ad93f13c907f38e0758423e47",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aaa499b_0c3aea36",
         "filename": "setup.cfg",
         "patchSetId": 10
