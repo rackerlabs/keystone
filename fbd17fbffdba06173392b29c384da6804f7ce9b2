@@ -70,6 +70,57 @@
     },
     {
       "key": {
+        "uuid": "7aaa499b_9f260567",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 318,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-13T17:13:34Z",
+      "side": 1,
+      "message": "there is a lot of duplicate code here....in fact all but the last line.  I would suggest you should refactor the existing assert_admin to take a boolean parameter (e.g. \"allow_owner\"), defaulting to False, and then assert_admin_or_owner(self, context) would just do:\n\nassert_admin(contact, allow_owner\u003dTrue)",
+      "revId": "fbd17fbffdba06173392b29c384da6804f7ce9b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_5f4cfd41",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 331,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-13T17:13:34Z",
+      "side": 1,
+      "message": "whitespace issues",
+      "revId": "fbd17fbffdba06173392b29c384da6804f7ce9b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_7f469924",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-13T17:13:34Z",
+      "side": 1,
+      "message": "isn\u0027t this always going to match?...don\u0027t you need to check whether the token_id passed into token_id is owned by the the same user?",
+      "revId": "fbd17fbffdba06173392b29c384da6804f7ce9b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aaa499b_e488dc24",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 1
