@@ -36,9 +36,13 @@ def run_apidoc(app):
 
     package_dir = path.abspath(path.join(app.srcdir, '..', '..', 'keystone'))
     source_dir = path.join(app.srcdir, 'api')
+    ignores = [
+        path.join(package_dir, 'contrib', 'endpoint_policy'),
+    ]
     apidoc.main(['apidoc', package_dir, '-f',
                  '-H', 'Keystone Modules',
-                 '-o', source_dir])
+                 '-o', source_dir
+                 ] + ignores)
 
 
 def setup(app):
