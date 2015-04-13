@@ -322,7 +322,7 @@ FILE_OPTIONS = {
                    help='Dogpile.cache backend module. It is recommended '
                         'that Memcache with pooling '
                         '(keystone.cache.memcache_pool) or Redis '
-                        '(dogpile.cache.redis) be used in production '
+                        '(keystone.cache.redis) be used in production '
                         'deployments.  Small workloads (single process) '
                         'like devstack can use the dogpile.cache.memory '
                         'backend.'),
@@ -374,6 +374,10 @@ FILE_OPTIONS = {
                    default=10,
                    help='Number of seconds that an operation will wait to get '
                         'a memcache client connection.'),
+        cfg.StrOpt('redis_url', default='redis://localhost::6379/0',
+                   help='Redis connection string. May contain auth credentials'
+                   ' so marked as secret.',
+                   secret=True)
     ],
     'ssl': [
         cfg.StrOpt('ca_key',

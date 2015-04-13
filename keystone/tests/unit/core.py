@@ -323,6 +323,7 @@ class TestCase(BaseTestCase):
                 'keystone.notifications=INFO',
                 'keystone.common._memcache_pool=INFO',
                 'keystone.common.ldap=INFO',
+                'keystone.common.redis=INFO',
             ])
         self.auth_plugin_config_override()
 
