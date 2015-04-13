@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_a2740ffd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-13T13:55:03Z",
+      "side": 1,
+      "message": "In my opinion, we update the sample config here only in favor of stevedore instead of it\u0027s out of date.",
+      "revId": "4caa0d81cb1c62cb53b9c40ef9bb5e6d2df4f411",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_425aeb84",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-13T13:55:03Z",
+      "side": 1,
+      "message": "Also, you may want to add \"bp stevedore\" here as well.",
+      "revId": "4caa0d81cb1c62cb53b9c40ef9bb5e6d2df4f411",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
