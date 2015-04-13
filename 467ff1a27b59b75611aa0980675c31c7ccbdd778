@@ -143,6 +143,24 @@
     },
     {
       "key": {
+        "uuid": "7aaa499b_45b0c0f4",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-13T08:46:59Z",
+      "side": 1,
+      "message": "Can we just remove this line? it seems meaningless.",
+      "parentUuid": "7aaa499b_96904bee",
+      "revId": "467ff1a27b59b75611aa0980675c31c7ccbdd778",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aaa499b_46bc546c",
         "filename": "setup.cfg",
         "patchSetId": 12
