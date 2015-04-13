@@ -16,6 +16,74 @@
       "revId": "fbd17fbffdba06173392b29c384da6804f7ce9b2",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_64e84ce3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-13T16:53:20Z",
+      "side": 1,
+      "message": "As a guide, better to describe the problem slightly more generally, rather than leading off with a method that might not known to the reader",
+      "revId": "fbd17fbffdba06173392b29c384da6804f7ce9b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_a4b414f2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-13T16:53:20Z",
+      "side": 1,
+      "message": "good...telling us why this is a problem",
+      "revId": "fbd17fbffdba06173392b29c384da6804f7ce9b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_64fa8cbf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-13T16:53:20Z",
+      "side": 1,
+      "message": "is this part of this patch?",
+      "revId": "fbd17fbffdba06173392b29c384da6804f7ce9b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_e488dc24",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 451,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-13T16:53:20Z",
+      "side": 1,
+      "message": "I\u0027m not sure it is optional....I think you are simply \"Ensure that bother admin and owner can delete token.\"",
+      "revId": "fbd17fbffdba06173392b29c384da6804f7ce9b2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
