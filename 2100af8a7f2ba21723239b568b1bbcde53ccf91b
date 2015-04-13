@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7aaa499b_7ce7bce4",
+        "filename": "etc/policy.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-13T22:27:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aaa499b_75525cdf",
+      "revId": "2100af8a7f2ba21723239b568b1bbcde53ccf91b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aaa499b_6f816e8f",
         "filename": "etc/policy.v3cloudsample.json",
         "patchSetId": 1
@@ -48,6 +66,24 @@
       "writtenOn": "2015-04-11T08:36:25Z",
       "side": 1,
       "message": "or rule:trustee",
+      "revId": "2100af8a7f2ba21723239b568b1bbcde53ccf91b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_5cec00c7",
+        "filename": "etc/policy.v3cloudsample.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-13T22:27:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aaa499b_6f816e8f",
       "revId": "2100af8a7f2ba21723239b568b1bbcde53ccf91b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -89,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "7aaa499b_1ccf9857",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-13T22:27:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aaa499b_1558b8f9",
+      "revId": "2100af8a7f2ba21723239b568b1bbcde53ccf91b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aaa499b_cf48828a",
         "filename": "keystone/trust/controllers.py",
         "patchSetId": 1
@@ -100,6 +154,24 @@
       "writtenOn": "2015-04-11T08:36:25Z",
       "side": 1,
       "message": "If we are going to go down this route, then I don\u0027t see wh we couldn\u0027t handle this the same way...",
+      "revId": "2100af8a7f2ba21723239b568b1bbcde53ccf91b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_7cfe9c6c",
+        "filename": "keystone/trust/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-13T22:27:54Z",
+      "side": 1,
+      "message": "Remove checking if trust is empty (it is already done in _get_trust() and access checks.",
+      "parentUuid": "7aaa499b_cf48828a",
       "revId": "2100af8a7f2ba21723239b568b1bbcde53ccf91b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
