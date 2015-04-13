@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "7aaa499b_a560a436",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-13T08:47:17Z",
+      "side": 1,
+      "message": "++, acutally, I don\u0027t think this line of code is needed here.",
+      "parentUuid": "7aaa499b_ac2096f8",
+      "revId": "ab6cf4375e4e6a729654faeb54838344a2f7769d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aaa499b_ccce425a",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 13
@@ -47,6 +65,24 @@
       "writtenOn": "2015-04-13T03:27:15Z",
       "side": 1,
       "message": "as part of the move extensions to core do you think we should drop the contrib from the namespace?",
+      "revId": "ab6cf4375e4e6a729654faeb54838344a2f7769d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_056bd81f",
+        "filename": "keystone/contrib/revoke/core.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-13T08:47:17Z",
+      "side": 1,
+      "message": "this is better in a separated review, keep this temporarily to move forward this patchset.",
+      "parentUuid": "7aaa499b_ccce425a",
       "revId": "ab6cf4375e4e6a729654faeb54838344a2f7769d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
