@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7aaa499b_cd0500c3",
+        "filename": "keystone/common/sql/migrate_repo/versions/073_add_is_domain_project.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-13T19:10:36Z",
+      "side": 1,
+      "message": "Hum... Now I remember why, without this we got a error: sqlalchemy.exc.OperationalError: (OperationalError) Cannot add a NOT NULL column with default value NULL u\u0027\\nALTER TABLE project ADD is_domain BOOLEAN NOT NULL\u0027 ()\n\nAnd I don\u0027t know why we have this error, since we have set the default value.",
+      "parentUuid": "7aaa499b_6a8a55c1",
+      "revId": "2ce0ba1f6f2a574019ece097e26b24ba34c4d313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aaa499b_ff4bc9ae",
         "filename": "keystone/resource/controllers.py",
         "patchSetId": 46
