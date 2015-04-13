@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "7aaa499b_eca33e9d",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 393,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-04-13T03:06:19Z",
+      "side": 1,
+      "message": "Something wrong here. _(msg) should be used for the exception and _LW for the log message. Also params should be passed to warning function, not interpolated. \n\nIt\u0027s not particularly efficient but you might need to translate it twice, once for each mechanism.",
+      "revId": "55bb0e1cee1f56fb09031d452a55b9f0dee9bbaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aaa499b_acf1b6cf",
         "filename": "keystone/token/controllers.py",
         "patchSetId": 1
