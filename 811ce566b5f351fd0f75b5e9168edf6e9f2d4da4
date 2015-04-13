@@ -16,6 +16,24 @@
       "revId": "811ce566b5f351fd0f75b5e9168edf6e9f2d4da4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_aa35fd46",
+        "filename": "keystone/token/persistence/backends/redis.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-04-13T17:40:05Z",
+      "side": 1,
+      "message": "Never mind, looks like this was already an issue.  I\u0027ll put together another patch to fix that.",
+      "parentUuid": "7aaa499b_d28946cc",
+      "revId": "811ce566b5f351fd0f75b5e9168edf6e9f2d4da4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
