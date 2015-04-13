@@ -442,6 +442,14 @@ The drivers Keystone provides are:
   specified in the ``[memcache]\servers`` configuration option in the Keystone
   config.
 
+* ``keystone.token.persistence.backends.redis.Token`` - The Redis based
+  token persistence backend. This backend relies on ``dogpile.cache`` and
+  stores the token data in a Redis server. The server connection string is
+  specified in the ``[cache]\redis_url`` parameter in the Keystone config:
+
+  * redis_url=redis://[:password]@localhost:6379/0
+  * redis_url=unix://[:password]@/path/to/socket.sock?db=0
+
 
 .. WARNING::
     It is recommended you use the
@@ -547,6 +555,9 @@ disabled.
     * ``dogpile.cache.bmemcached`` - Memcached using `python-binary-memcached`_
       library.
     * ``dogpile.cache.redis`` - `Redis`_ backend
+    * ``keystone.cache.redis`` - `Redis`_ caching backend based on
+      ``dogpile.cache.redis`` providing secure way to specify the password in
+      the configuration.
     * ``dogpile.cache.dbm`` - local DBM file backend
     * ``dogpile.cache.memory`` - in-memory cache
     * ``keystone.cache.mongo`` - MongoDB as caching backend
