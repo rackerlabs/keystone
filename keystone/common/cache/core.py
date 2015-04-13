@@ -45,6 +45,11 @@ dogpile.cache.register_backend(
     'keystone.common.cache.backends.memcache_pool',
     'PooledMemcachedBackend')
 
+dogpile.cache.register_backend(
+    'keystone.cache.redis',
+    'keystone.common.cache.backends.redis',
+    'RedisBackend')
+
 
 class DebugProxy(proxy.ProxyBackend):
     """Extra Logging ProxyBackend."""
