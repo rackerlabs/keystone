@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_b9143344",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-13T23:51:06Z",
+      "side": 1,
+      "message": "so I don\u0027t see how this can ever be true....since in the manager we won\u0027t call this for the project representing the default domain",
+      "revId": "5aa1813cf7b736be92d54646723bf9383516d5c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_399ca3bf",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-13T23:51:06Z",
+      "side": 1,
+      "message": "so is the idea that if the project is a domain, the delete_domain will delete all sub projects AND the project acting as the domain itself?",
+      "revId": "5aa1813cf7b736be92d54646723bf9383516d5c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
