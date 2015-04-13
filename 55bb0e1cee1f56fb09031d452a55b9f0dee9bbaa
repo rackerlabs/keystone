@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_acf1b6cf",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-04-13T02:53:46Z",
+      "side": 1,
+      "message": "It seams that this is wrong? https://github.com/openstack/oslo.i18n/blob/master/doc/source/guidelines.rst#choosing-a-marker-function",
+      "revId": "55bb0e1cee1f56fb09031d452a55b9f0dee9bbaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
