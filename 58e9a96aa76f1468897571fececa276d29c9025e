@@ -34,6 +34,24 @@
       "revId": "58e9a96aa76f1468897571fececa276d29c9025e",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_200d7b90",
+        "filename": "doc/source/extensions/openidc.rst",
+        "patchSetId": 2
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-14T07:35:41Z",
+      "side": 1,
+      "message": "Yeah, I think it\u0027s that there is now a blank line at the end of the file, where there was no before.",
+      "parentUuid": "7aaa499b_df5d9f7a",
+      "revId": "58e9a96aa76f1468897571fececa276d29c9025e",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
