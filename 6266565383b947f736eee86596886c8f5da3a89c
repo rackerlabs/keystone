@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7aaa499b_bc42e13c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-14T00:48:46Z",
+      "side": 1,
+      "message": "I\u0027ll fix this.",
+      "parentUuid": "7aaa499b_d670ecde",
+      "revId": "6266565383b947f736eee86596886c8f5da3a89c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aaa499b_b9c5538f",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 40
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7aaa499b_3c75b197",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-14T00:48:46Z",
+      "side": 1,
+      "message": "I believe so... hahaha I\u0027ll do this test. Sorry about that.",
+      "parentUuid": "7aaa499b_b9c5538f",
+      "revId": "6266565383b947f736eee86596886c8f5da3a89c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aaa499b_f9cabba0",
         "filename": "keystone/tests/unit/test_v3_assignment.py",
         "patchSetId": 40
@@ -47,6 +83,24 @@
       "writtenOn": "2015-04-14T00:00:40Z",
       "side": 1,
       "message": "??",
+      "revId": "6266565383b947f736eee86596886c8f5da3a89c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_fc6e29c8",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-14T00:48:46Z",
+      "side": 1,
+      "message": "and here too.",
+      "parentUuid": "7aaa499b_f9cabba0",
       "revId": "6266565383b947f736eee86596886c8f5da3a89c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
