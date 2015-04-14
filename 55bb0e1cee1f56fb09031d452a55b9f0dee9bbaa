@@ -33,6 +33,24 @@
       "revId": "55bb0e1cee1f56fb09031d452a55b9f0dee9bbaa",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_ad23bba6",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 394,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-14T11:50:25Z",
+      "side": 1,
+      "message": "So looks like:\n\na) this should remain as _()\nb) the issue of not passing the params into LOG.warning() is different bug, and I will raise that separately",
+      "parentUuid": "7aaa499b_acf1b6cf",
+      "revId": "55bb0e1cee1f56fb09031d452a55b9f0dee9bbaa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
