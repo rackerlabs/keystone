@@ -70,6 +70,24 @@
       "revId": "88db6d8ddb88f34e2d2457291d7bb6c058898af9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_bf4c1343",
+        "filename": "keystone/common/kvs/backends/memcached.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-14T02:10:37Z",
+      "side": 1,
+      "message": "Hmm, the change here looks ambiguously, indeed. I am going to re-version this change and submit for review again.\n\nFor your question, per my understanding, dogpile.cache has three basic memcached driver: `memcached`, `bmemcached` and `pylibmc`. As to `pooled_memcached\u0027, it\u0027s provided by Keystone but it\u0027s based on dogpile.cache\u0027s `memcached` driver. Not sure whether it\u0027s more clear. :)\n\nI am also considering to describe it in some docs to echo Lance\u0027s comment.\n\nThanks!",
+      "parentUuid": "7aaa499b_c18f0722",
+      "revId": "88db6d8ddb88f34e2d2457291d7bb6c058898af9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
