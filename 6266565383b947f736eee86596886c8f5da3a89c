@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_d670ecde",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 663,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-14T00:00:40Z",
+      "side": 1,
+      "message": "is this meant to be here?",
+      "revId": "6266565383b947f736eee86596886c8f5da3a89c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_b9c5538f",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 243,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-14T00:00:40Z",
+      "side": 1,
+      "message": "is there meant to be something in this test :-) ?",
+      "revId": "6266565383b947f736eee86596886c8f5da3a89c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_f9cabba0",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 40
+      },
+      "lineNbr": 434,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-14T00:00:40Z",
+      "side": 1,
+      "message": "??",
+      "revId": "6266565383b947f736eee86596886c8f5da3a89c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
