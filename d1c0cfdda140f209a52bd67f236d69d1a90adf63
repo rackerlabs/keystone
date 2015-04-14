@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_ba83da55",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 702,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-14T21:51:07Z",
+      "side": 1,
+      "message": "nit: usual style is to us () to handle long lines",
+      "revId": "d1c0cfdda140f209a52bd67f236d69d1a90adf63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_7a42f211",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 709,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-14T21:51:07Z",
+      "side": 1,
+      "message": "the user of target_domain_id is not intuitive....I think you need to explain more about how this is handling the issue the comment mentions",
+      "revId": "d1c0cfdda140f209a52bd67f236d69d1a90adf63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_1a488e2c",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-14T21:51:07Z",
+      "side": 1,
+      "message": "nit: As well as?",
+      "revId": "d1c0cfdda140f209a52bd67f236d69d1a90adf63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_daffc6a8",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 2373,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-14T21:51:07Z",
+      "side": 1,
+      "message": "nit: s/neither/either/\n\nThe code is clear what it does...what we need in the comment is WHY the user cannot get a token",
+      "revId": "d1c0cfdda140f209a52bd67f236d69d1a90adf63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_faf282d1",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 2403,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-14T21:51:07Z",
+      "side": 1,
+      "message": "again, say why",
+      "revId": "d1c0cfdda140f209a52bd67f236d69d1a90adf63",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
