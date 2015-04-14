@@ -16,6 +16,24 @@
       "revId": "d9193b12111cb783004eaa36752623230510b2e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_4348782d",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-14T17:44:35Z",
+      "side": 1,
+      "message": "A test specifically for the __del__? I\u0027m not sure it would provide that much value. I asked for the patch to be implemented like this since we want to bypass the threading implementations. See the conversation: http://eavesdrop.openstack.org/irclogs/%23openstack-keystone/%23openstack-keystone.2015-04-06.log",
+      "parentUuid": "7aaa499b_1ee46d39",
+      "revId": "d9193b12111cb783004eaa36752623230510b2e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
