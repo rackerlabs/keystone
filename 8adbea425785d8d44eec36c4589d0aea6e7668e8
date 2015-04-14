@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_985b9ff6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-14T12:34:27Z",
+      "side": 1,
+      "message": "Suggest: Adds an option to securely use Redis cache backend",
+      "revId": "8adbea425785d8d44eec36c4589d0aea6e7668e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_b882dbfe",
+        "filename": "doc/source/configuration.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 558,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-14T12:34:27Z",
+      "side": 1,
+      "message": "It\u0027s not the same. It\u0027s based off of it, but definitely not the same.",
+      "revId": "8adbea425785d8d44eec36c4589d0aea6e7668e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_7821f34c",
+        "filename": "keystone/common/cache/backends/redis.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-14T12:34:27Z",
+      "side": 1,
+      "message": "Missing a newline",
+      "revId": "8adbea425785d8d44eec36c4589d0aea6e7668e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_98b71ff5",
+        "filename": "keystone/common/cache/backends/redis.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-14T12:34:27Z",
+      "side": 1,
+      "message": "s/ usage/./",
+      "revId": "8adbea425785d8d44eec36c4589d0aea6e7668e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_d8b927cd",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-14T12:34:27Z",
+      "side": 1,
+      "message": "Why say \u0027marked as secret\u0027 here?",
+      "revId": "8adbea425785d8d44eec36c4589d0aea6e7668e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_78d21302",
+        "filename": "keystone/tests/unit/common/test_redis.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-14T12:34:27Z",
+      "side": 1,
+      "message": "Why is this method defined if it\u0027s not used?",
+      "revId": "8adbea425785d8d44eec36c4589d0aea6e7668e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_d807e77f",
+        "filename": "requirements-py3.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-14T12:34:27Z",
+      "side": 1,
+      "message": "I think this belongs in the test requirements. We don\u0027t want to force everyone to need this installed.",
+      "revId": "8adbea425785d8d44eec36c4589d0aea6e7668e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_78f9f37f",
+        "filename": "requirements.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-14T12:34:27Z",
+      "side": 1,
+      "message": "Same here.",
+      "revId": "8adbea425785d8d44eec36c4589d0aea6e7668e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_980f1f88",
+        "filename": "test-requirements-py3.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-14T12:34:27Z",
+      "side": 1,
+      "message": "revert this",
+      "revId": "8adbea425785d8d44eec36c4589d0aea6e7668e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_7827b312",
+        "filename": "test-requirements.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-14T12:34:27Z",
+      "side": 1,
+      "message": "and this",
+      "revId": "8adbea425785d8d44eec36c4589d0aea6e7668e8",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
