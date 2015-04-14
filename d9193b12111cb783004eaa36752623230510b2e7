@@ -34,6 +34,42 @@
       "revId": "d9193b12111cb783004eaa36752623230510b2e7",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_49cbf972",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-04-14T18:29:11Z",
+      "side": 1,
+      "message": "I\u0027ve added a test for that threading.local methods is wiped out.",
+      "parentUuid": "7aaa499b_4348782d",
+      "revId": "d9193b12111cb783004eaa36752623230510b2e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_09ee11ec",
+        "filename": "keystone/common/cache/_memcache_pool.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-04-14T18:29:11Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aaa499b_1ee46d39",
+      "revId": "d9193b12111cb783004eaa36752623230510b2e7",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
