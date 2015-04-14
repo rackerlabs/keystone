@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7aaa499b_64ced7b5",
+        "filename": "keystone/resource/backends/ldap.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-14T20:36:51Z",
+      "side": 1,
+      "message": "You\u0027re right, I\u0027ll remove this here and in update_project.",
+      "parentUuid": "7aaa499b_b9143344",
+      "revId": "5aa1813cf7b736be92d54646723bf9383516d5c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aaa499b_399ca3bf",
         "filename": "keystone/resource/core.py",
         "patchSetId": 17
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-13T23:51:06Z",
       "side": 1,
       "message": "so is the idea that if the project is a domain, the delete_domain will delete all sub projects AND the project acting as the domain itself?",
+      "revId": "5aa1813cf7b736be92d54646723bf9383516d5c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_a4ba9fbe",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-14T20:36:51Z",
+      "side": 1,
+      "message": "yes, that is the idea, if the project is a domain, I need to handle with this project as a domain, so we call the delete_domain, and inside then we have to remove all subprojects.",
+      "parentUuid": "7aaa499b_399ca3bf",
       "revId": "5aa1813cf7b736be92d54646723bf9383516d5c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
