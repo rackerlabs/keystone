@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_3e6353de",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-14T13:05:01Z",
+      "side": 1,
+      "message": "realized this line is not needed anymore, since get_trust() is  always going to raise an Exception when no Trust is found",
+      "revId": "6b81d7efdb344d9e3b4838624685691e4b51fbfe",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
