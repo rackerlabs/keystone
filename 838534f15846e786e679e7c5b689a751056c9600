@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7aaa499b_4c1680a8",
+        "filename": "keystone/tests/unit/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-14T09:36:38Z",
+      "side": 1,
+      "message": "These code failed this testcase: \"test_unsupported_token_provider\", so it will not raise ImportError anymore.\n\nI am thinking whether it\u0027s necessary to use mockpatch here since your code has already back-compatiblable.",
+      "revId": "838534f15846e786e679e7c5b689a751056c9600",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
