@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7aaa499b_e6542722",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-15T00:40:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_8232f9a4",
+      "revId": "72a35c1314f9349ea5a38fd3d5c96b350bbabca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_e2a3b59b",
         "filename": "keystone/tests/unit/test_revoke.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-13T18:55:28Z",
       "side": 1,
       "message": "this is unnecessary, remove it.",
+      "revId": "72a35c1314f9349ea5a38fd3d5c96b350bbabca1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7aaa499b_e668a789",
+        "filename": "keystone/tests/unit/test_revoke.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-15T00:40:37Z",
+      "side": 1,
+      "message": "Since this is a part of a multiple inheritance tree and it\u0027s better to add this than not. This will be needed (if it isn\u0027t already) if the imports change order or if another class is added to the import tree.",
+      "parentUuid": "9a80dd14_e2a3b59b",
       "revId": "72a35c1314f9349ea5a38fd3d5c96b350bbabca1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
