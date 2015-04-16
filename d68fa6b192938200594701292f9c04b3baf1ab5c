@@ -34,6 +34,24 @@
       "revId": "d68fa6b192938200594701292f9c04b3baf1ab5c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aa745d1_1fd0de52",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 872,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-16T01:27:00Z",
+      "side": 0,
+      "message": "I read that TODO as the implementations may raise something else and that it should be looked at. Maybe we need ayoung to take a look.",
+      "parentUuid": "da9b358b_21ce855a",
+      "revId": "d68fa6b192938200594701292f9c04b3baf1ab5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
