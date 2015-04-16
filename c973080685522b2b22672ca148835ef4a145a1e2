@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aa745d1_0b79bc93",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1012,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-16T06:24:54Z",
+      "side": 1,
+      "message": "how about:\n\n  test_delete_idp_also_deletes_assigned_protocols",
+      "revId": "c973080685522b2b22672ca148835ef4a145a1e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aa745d1_8b3eecb6",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1013,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-16T06:24:54Z",
+      "side": 1,
+      "message": "this isn\u0027t really accurate.\n\n  \"Test that deleting an IdP will delete its assigned protocol.\"",
+      "revId": "c973080685522b2b22672ca148835ef4a145a1e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aa745d1_cb72b4ad",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1019,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-16T06:24:54Z",
+      "side": 1,
+      "message": "use [\u0027id\u0027] if something is supposed to be there",
+      "revId": "c973080685522b2b22672ca148835ef4a145a1e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aa745d1_2b9b58cb",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1020,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-16T06:24:54Z",
+      "side": 1,
+      "message": "don\u0027t really need this check, there are plenty of other tests that already check this",
+      "revId": "c973080685522b2b22672ca148835ef4a145a1e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aa745d1_4bd8e41d",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1023,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-16T06:24:54Z",
+      "side": 1,
+      "message": "try to define the url, idp_url and protocol_url in the same spot, there\u0027s a bit of jumping around here",
+      "revId": "c973080685522b2b22672ca148835ef4a145a1e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aa745d1_eb81f0fc",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1024,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-16T06:24:54Z",
+      "side": 1,
+      "message": "is there a reason this isn\u0027t included in line 1029?",
+      "revId": "c973080685522b2b22672ca148835ef4a145a1e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aa745d1_eb98d06c",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1027,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-16T06:24:54Z",
+      "side": 1,
+      "message": "rather use uuid.uuid4().hex instead of \"saml2\"\n\nor use self.PROTOCOL instead",
+      "revId": "c973080685522b2b22672ca148835ef4a145a1e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aa745d1_8bc70c45",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1030,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-16T06:24:54Z",
+      "side": 1,
+      "message": "removing* IdP will remove ...",
+      "revId": "c973080685522b2b22672ca148835ef4a145a1e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aa745d1_aba3e89d",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 1033,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-16T06:24:54Z",
+      "side": 1,
+      "message": "same comment here, use uuid or self.PROTOCOL",
+      "revId": "c973080685522b2b22672ca148835ef4a145a1e2",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
