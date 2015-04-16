@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aa745d1_920e0033",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-16T19:28:09Z",
+      "side": 0,
+      "message": "Why not 12.04+ like we do with Fedora below?",
+      "revId": "86d80245f26f9c6214c688b1bccd963b91f75e65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
