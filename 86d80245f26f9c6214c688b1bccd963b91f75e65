@@ -16,6 +16,24 @@
       "revId": "86d80245f26f9c6214c688b1bccd963b91f75e65",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_3f9f2361",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-04-16T20:31:31Z",
+      "side": 0,
+      "message": "At this point I thought most are using the most current LTS of 14.04.  Last time I used 12, it kept reminding me to upgrade to 14.",
+      "parentUuid": "5aa745d1_920e0033",
+      "revId": "86d80245f26f9c6214c688b1bccd963b91f75e65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
