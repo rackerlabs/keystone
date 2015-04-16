@@ -15,15 +15,13 @@
 import os
 import uuid
 
+import mock
+
+from keystone.catalog import core
 from keystone.tests import unit as tests
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import test_backend
-
-
-DEFAULT_CATALOG_TEMPLATES = os.path.abspath(os.path.join(
-    os.path.dirname(__file__),
-    'default_catalog.templates'))
 
 
 class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
@@ -55,8 +53,10 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
 
     def config_overrides(self):
         super(TestTemplatedCatalog, self).config_overrides()
-        self.config_fixture.config(group='catalog',
-                                   template_file=DEFAULT_CATALOG_TEMPLATES)
+        self.config_fixture.config(
+            group='catalog',
+            driver='keystone.catalog.backends.templated.Catalog',
+            template_file=tests.dirs.tests('default_catalog.templates'))
 
     def test_get_catalog(self):
         catalog_ref = self.catalog_api.get_catalog('foo', 'bar')
@@ -150,3 +150,78 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
 
     def test_service_filtering(self):
         self.skipTest("Templated backend doesn't support filtering")
+
+# overridden from test_backend.TestCatalog
+
+    def test_region_crud(self):
+        self.skipTest("Templated backend doesn't support write operations")
+
+    def test_list_regions_filtered_by_parent_region_id(self):
+        self.skipTest("Templated backend doesn't support write operations")
+
+    @tests.skip_if_cache_disabled('catalog')
+    def test_cache_layer_region_crud(self):
+        self.skipTest("Templated backend doesn't support write operations")
+
+    @tests.skip_if_cache_disabled('catalog')
+    def test_invalidate_cache_when_updating_region(self):
+        self.skipTest("Templated backend doesn't support write operations")
+
+    def test_create_region_with_duplicate_id(self):
+        self.skipTest("Templated backend doesn't support write operations")
+
+    def test_delete_region_404(self):
+        self.skipTest("Templated backend doesn't support write operations")
+
+    def test_create_region_invalid_parent_region_404(self):
+        self.skipTest("Templated backend doesn't support write operations")
+
+    def test_avoid_creating_circular_references_in_regions_update(self):
+        self.skipTest("Templated backend doesn't support write operations")
+
+    @mock.patch.object(core.Driver,
+                       "_ensure_no_circle_in_hierarchical_regions")
+    def test_circular_regions_can_be_deleted(self, mock_ensure_on_circle):
+        self.skipTest("Templated backend doesn't support write operations")
+
+    def test_service_crud(self):
+        self.skipTest("Templated backend doesn't support write operations")
+
+    @tests.skip_if_cache_disabled('catalog')
+    def test_cache_layer_service_crud(self):
+        self.skipTest("Templated backend doesn't support write operations")
+
+    @tests.skip_if_cache_disabled('catalog')
+    def test_invalidate_cache_when_updating_service(self):
+        self.skipTest("Templated backend doesn't support write operations")
+
+    def test_delete_service_with_endpoint(self):
+        self.skipTest("Templated backend doesn't support write operations")
+
+    def test_cache_layer_delete_service_with_endpoint(self):
+        self.skipTest("Templated backend doesn't support write operations")
+
+    def test_delete_service_404(self):
+        self.skipTest("Templated backend doesn't support write operations")
+
+    def test_update_endpoint_nonexistent_service(self):
+        self.skipTest("Templated backend doesn't support write operations")
+
+    def test_create_endpoint_nonexistent_region(self):
+        self.skipTest("Templated backend doesn't support write operations")
+
+    def test_update_endpoint_nonexistent_region(self):
+        self.skipTest("Templated backend doesn't support write operations")
+
+    def test_delete_endpoint_404(self):
+        self.skipTest("Templated backend doesn't support write operations")
+
+    def test_create_endpoint(self):
+        self.skipTest("Templated backend doesn't support write operations")
+
+    def test_update_endpoint(self):
+        self.skipTest("Templated backend doesn't support write operations")
+
+    @tests.skip_if_cache_disabled('catalog')
+    def test_invalidate_cache_when_updating_endpoint(self):
+        self.skipTest("Templated backend doesn't support write operations")
