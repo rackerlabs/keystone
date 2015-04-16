@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aa745d1_74b6e03e",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 9101
+      },
+      "writtenOn": "2015-04-16T08:25:38Z",
+      "side": 1,
+      "message": "I think this should be in manager layer.",
+      "revId": "b6113ef118b06f9a235ad3eaba3e53fbac7757eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
