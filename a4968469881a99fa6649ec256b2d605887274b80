@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5aa745d1_ca73bb4c",
+        "filename": "keystone/tests/unit/common/test_connection_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-04-16T14:37:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5aa745d1_84792c96",
+      "revId": "a4968469881a99fa6649ec256b2d605887274b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aa745d1_0494fc88",
         "filename": "keystone/tests/unit/common/test_connection_pool.py",
         "patchSetId": 5
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-16T14:01:33Z",
       "side": 1,
       "message": "I would add an assert here just to prove that thread_local is actually the class you expect.",
+      "revId": "a4968469881a99fa6649ec256b2d605887274b80",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aa745d1_6a99476e",
+        "filename": "keystone/tests/unit/common/test_connection_pool.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-04-16T14:37:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5aa745d1_0494fc88",
       "revId": "a4968469881a99fa6649ec256b2d605887274b80",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
