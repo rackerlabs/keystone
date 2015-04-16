@@ -16,6 +16,24 @@
       "revId": "366e80b3ed305b5967371ade8fef6bce4a47e092",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aa745d1_8dbb960e",
+        "filename": "keystone/contrib/federation/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-04-16T19:04:05Z",
+      "side": 1,
+      "message": "Done, but I\u0027m not sure, how should I use CONF here",
+      "parentUuid": "9aa53dc9_2a831a06",
+      "revId": "366e80b3ed305b5967371ade8fef6bce4a47e092",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
