@@ -52,6 +52,24 @@
       "revId": "d68fa6b192938200594701292f9c04b3baf1ab5c",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aa745d1_7f236206",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 872,
+      "author": {
+        "id": 2218
+      },
+      "writtenOn": "2015-04-16T01:48:07Z",
+      "side": 0,
+      "message": "We do not raise any explicit exceptions from that method.  If we did, we should annotate it there, but  since we do not, the comment can go",
+      "parentUuid": "5aa745d1_1fd0de52",
+      "revId": "d68fa6b192938200594701292f9c04b3baf1ab5c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
