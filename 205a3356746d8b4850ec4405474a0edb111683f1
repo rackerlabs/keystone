@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aa745d1_81d59e44",
+        "filename": "keystone/tests/unit/test_sync_migrations.py",
+        "patchSetId": 89
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-04-16T13:45:06Z",
+      "side": 1,
+      "message": "Addressed by https://review.openstack.org/174388",
+      "revId": "205a3356746d8b4850ec4405474a0edb111683f1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
