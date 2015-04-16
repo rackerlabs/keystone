@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aa745d1_90929d56",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-16T05:44:00Z",
+      "side": 1,
+      "message": "What\u0027s the \"driver.method\" if you removed method attribute from each plugin?\n\nI tried it, there will be attribute error with this statement.\n\nPls replace driver.method here with plugin.",
+      "revId": "824551cfe51728e3d5c35819c9ed740dbbb4f903",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}

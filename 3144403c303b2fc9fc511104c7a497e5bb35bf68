@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5aa745d1_90f5fd84",
+        "filename": "keystone/tests/unit/test_auth_plugin.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-16T05:44:00Z",
+      "side": 0,
+      "message": "It\u0027s not nice to remove this testcase, I think you can re-define the testcase instead of removing it, the check logic to avoid importing duplicated plugin is still keeped in the controller, right?\n\nSimply rewrite the testcase as this is okay in my opinion, FYI.\n\n    def test_duplicate_auth_method_registration(self):\n        self.config_fixture.config(\n            group\u003d\u0027auth\u0027,\n            methods\u003d[\n                \u0027password\u0027,\n                \u0027password\u0027],\n            password\u003d\u0027keystone.tests.unit.test_auth_plugin.SimpleChallengeResponse\u0027\n            )\n        self.clear_auth_plugin_registry()\n        self.assertRaises(ValueError, auth.controllers.load_auth_methods)",
+      "revId": "3144403c303b2fc9fc511104c7a497e5bb35bf68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
