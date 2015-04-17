@@ -198,7 +198,7 @@ class AuthInfo(object):
                                                     target='project')
                 domain_ref = self._lookup_domain(project_info['domain'])
                 project_ref = self.resource_api.get_project_by_name(
-                    project_name, domain_ref['id'])
+                    project_name, domain_ref['id'], False)
             else:
                 project_ref = self.resource_api.get_project(project_id)
                 # NOTE(morganfainberg): The _lookup_domain method will raise
