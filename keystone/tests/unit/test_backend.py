@@ -2195,7 +2195,6 @@ class IdentityTests(object):
         self.assertEqual(DEFAULT_DOMAIN_ID, ref['domain_id'])
 
     @tests.skip_if_no_multiple_domains_support
-    @test_utils.wip('waiting for projects acting as domains implementation')
     def test_is_domain_sub_project_has_parent_domain_id(self):
         project_id = uuid.uuid4().hex
         project = {'id': project_id,
@@ -2246,7 +2245,6 @@ class IdentityTests(object):
         self.resource_api.delete_project(project['id'])
 
     @tests.skip_if_no_multiple_domains_support
-    @test_utils.wip('waiting for projects acting as domains implementation')
     def test_not_create_domain_under_project_hierarchy(self):
         projects_hierarchy = self._create_projects_hierarchy()
         parent = projects_hierarchy[1]
