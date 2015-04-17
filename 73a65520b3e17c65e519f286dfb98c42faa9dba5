@@ -16,6 +16,23 @@
       "revId": "73a65520b3e17c65e519f286dfb98c42faa9dba5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_7f746efc",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-17T14:03:25Z",
+      "side": 1,
+      "message": "I agree.  Instead of going straight to the top like this, perhaps the hierarchy can be altered so that the shared set up - the fixture use etc is pushed up into a super that SqlTests can share as a parent?",
+      "revId": "73a65520b3e17c65e519f286dfb98c42faa9dba5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
