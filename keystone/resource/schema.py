@@ -16,11 +16,16 @@ from keystone.common.validation import parameter_types
 
 _project_properties = {
     'description': validation.nullable(parameter_types.description),
-    # NOTE(lbragstad): domain_id isn't nullable according to some backends.
-    # The identity-api should be updated to be consistent with the
-    # implementation.
-    'domain_id': parameter_types.id_string,
+    # TODO(htruta): domain_id must be nullable with the new implementation
+    # of Reseller, since the root is_domain project will have no domain_id.
+    # NOTE(lbragstad, htruta): domain_id isn't nullable according to
+    # some backends. The identity-api should be updated to be consistent with
+    # the implementation. domain_id must be passed as null or equals to the
+    # parent_id in the controller layer if it is an is_domain project.
+    # Keystone will set parent_id as the domain_id in this case.
+    'domain_id': validation.nullable(parameter_types.id_string),
     'enabled': parameter_types.boolean,
+    'is_domain': parameter_types.boolean,
     'parent_id': validation.nullable(parameter_types.id_string),
     'name': {
         'type': 'string',
