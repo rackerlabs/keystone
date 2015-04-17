@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ab451fb_264a7784",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1027,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-17T02:11:11Z",
+      "side": 1,
+      "message": "Following what Steve mentioned I started to wonder about this section. What is it supposed to do? If I delete it the test still passes.",
+      "revId": "1a0d23f94a27f4eef91ddd3ece277b658eeed3bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
