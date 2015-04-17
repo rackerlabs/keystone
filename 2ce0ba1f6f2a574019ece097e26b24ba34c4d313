@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "3ab451fb_24ca5da2",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 46
+      },
+      "lineNbr": 217,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-17T13:27:27Z",
+      "side": 1,
+      "message": "In fact, we can only do this after the patch: Honor domain operations in project table, when Keystone knows find a domain in the project table, before this, we will get a ProjectNotFound error.\n\nMaybe I can put this in the TODO message, to make this more clear.",
+      "parentUuid": "7aaa499b_d75eb1e8",
+      "revId": "2ce0ba1f6f2a574019ece097e26b24ba34c4d313",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aaa499b_aa205d9c",
         "filename": "keystone/resource/core.py",
         "patchSetId": 46
