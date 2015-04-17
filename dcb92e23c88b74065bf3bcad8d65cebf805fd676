@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3ab451fb_d5035a0e",
+        "filename": "keystone/common/sql/migrate_repo/versions/073_add_is_domain_project.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-17T17:44:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ab451fb_55f86ae5",
+      "revId": "dcb92e23c88b74065bf3bcad8d65cebf805fd676",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ab451fb_7599266e",
         "filename": "keystone/resource/core.py",
         "patchSetId": 47
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-17T17:26:01Z",
       "side": 1,
       "message": "Is this really a forbidden action? Those are usually the result authorization issues and not validation issues.",
+      "revId": "dcb92e23c88b74065bf3bcad8d65cebf805fd676",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_c71df167",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-17T17:44:26Z",
+      "side": 1,
+      "message": "So, I\u0027ll change all the errors for a ValidationError.",
+      "parentUuid": "3ab451fb_7599266e",
       "revId": "dcb92e23c88b74065bf3bcad8d65cebf805fd676",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -121,6 +157,24 @@
     },
     {
       "key": {
+        "uuid": "3ab451fb_874da974",
+        "filename": "keystone/resource/schema.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-17T17:44:26Z",
+      "side": 1,
+      "message": "Yes, because a domain still behavior as a container of projects, so I can\u0027t have a project without a domain.",
+      "parentUuid": "3ab451fb_95095298",
+      "revId": "dcb92e23c88b74065bf3bcad8d65cebf805fd676",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ab451fb_55886ae7",
         "filename": "keystone/tests/unit/test_backend.py",
         "patchSetId": 47
@@ -132,6 +186,24 @@
       "writtenOn": "2015-04-17T17:26:01Z",
       "side": 1,
       "message": "Do we have to use is_domain everywhere? Is it possible for requests where the user doesn\u0027t provide this and if so is that still tested?",
+      "revId": "dcb92e23c88b74065bf3bcad8d65cebf805fd676",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_07c5198d",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 5617,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-17T17:44:26Z",
+      "side": 1,
+      "message": "If the user don\u0027t provide, the default value will be False, but we think that include this information in the test it\u0027s good because we are explicit saying that this is only a project.",
+      "parentUuid": "3ab451fb_55886ae7",
       "revId": "dcb92e23c88b74065bf3bcad8d65cebf805fd676",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -155,6 +227,24 @@
     },
     {
       "key": {
+        "uuid": "3ab451fb_67317da2",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 1641,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-17T17:44:26Z",
+      "side": 1,
+      "message": "We updated the test_project_crud with the is_domain\u003d\u003dFalse case, and  _assert_create_is_domain_project_not_allowed test the is_domain\u003d\u003dTrue case. Besides that, I need create a test for is_domain\u003d\u003dFalse case?",
+      "parentUuid": "3ab451fb_55bbca72",
+      "revId": "dcb92e23c88b74065bf3bcad8d65cebf805fd676",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ab451fb_3555de4f",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 47
@@ -172,6 +262,24 @@
     },
     {
       "key": {
+        "uuid": "3ab451fb_67d85d54",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 1656,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-17T17:44:26Z",
+      "side": 1,
+      "message": "No, there isn\u0027t. \u003dP We have done one this way because the test coverage the both behaviors in the same method but I\u0027ll create different tests for each case.",
+      "parentUuid": "3ab451fb_3555de4f",
+      "revId": "dcb92e23c88b74065bf3bcad8d65cebf805fd676",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ab451fb_95f39273",
         "filename": "keystone/tests/unit/test_v3.py",
         "patchSetId": 47
@@ -183,6 +291,24 @@
       "writtenOn": "2015-04-17T17:26:01Z",
       "side": 1,
       "message": "I may default this to None and not include it if it\u0027s None. And then when you specifically want it set you can just use True or False. This is under the assumption that users don\u0027t have to specify this value.",
+      "revId": "dcb92e23c88b74065bf3bcad8d65cebf805fd676",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_678dfd30",
+        "filename": "keystone/tests/unit/test_v3.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-17T17:44:26Z",
+      "side": 1,
+      "message": "Right, I liked your suggestion, I\u0027ll update this patch with this behavior.",
+      "parentUuid": "3ab451fb_95f39273",
       "revId": "dcb92e23c88b74065bf3bcad8d65cebf805fd676",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
