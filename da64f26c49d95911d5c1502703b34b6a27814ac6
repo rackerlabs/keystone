@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ab451fb_ee3a16cd",
+        "filename": "keystone/server/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-17T12:45:49Z",
+      "side": 1,
+      "message": "WSGI?  Is this class not intended to be agnostic?",
+      "revId": "da64f26c49d95911d5c1502703b34b6a27814ac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_0e5c2224",
+        "filename": "keystone/server/eventlet.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-17T12:45:49Z",
+      "side": 1,
+      "message": "WSGI?",
+      "revId": "da64f26c49d95911d5c1502703b34b6a27814ac6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
