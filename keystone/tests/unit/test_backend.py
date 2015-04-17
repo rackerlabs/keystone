@@ -2089,7 +2089,7 @@ class IdentityTests(object):
         # Create a project
         project = {'id': uuid.uuid4().hex, 'domain_id': DEFAULT_DOMAIN_ID,
                    'name': uuid.uuid4().hex, 'description': uuid.uuid4().hex,
-                   'enabled': True, 'parent_id': None}
+                   'enabled': True, 'parent_id': None, 'is_domain': False}
         self.resource_api.create_project(project['id'], project)
 
         # Build driver hints with the project's name and inexistent description
@@ -2220,7 +2220,6 @@ class IdentityTests(object):
         self.assertEqual(DEFAULT_DOMAIN_ID, ref['domain_id'])
 
     @tests.skip_if_no_multiple_domains_support
-    @test_utils.wip('waiting for the is_domain field implementation')
     def test_delete_domain_with_project_api(self):
         project_id = uuid.uuid4().hex
         project = {'id': project_id,
@@ -2245,7 +2244,6 @@ class IdentityTests(object):
         self.resource_api.delete_project(project['id'])
 
     @tests.skip_if_no_multiple_domains_support
-    @test_utils.wip('waiting for the is_domain field implementation')
     def test_not_create_domain_under_project_hierarchy(self):
         projects_hierarchy = self._create_projects_hierarchy()
         parent = projects_hierarchy[1]
@@ -2279,7 +2277,6 @@ class IdentityTests(object):
         self.assertEqual(parent['id'], ref['parent_id'])
         self.assertEqual(DEFAULT_DOMAIN_ID, ref['domain_id'])
 
-    @test_utils.wip('waiting for the is_domain field implementation')
     def test_create_project_without_is_domain_flag(self):
         project = {'id': uuid.uuid4().hex,
                    'description': '',
@@ -2292,7 +2289,6 @@ class IdentityTests(object):
         # The is_domain flag should be False by default
         self.assertFalse(ref['is_domain'])
 
-    @test_utils.wip('waiting for the is_domain field implementation')
     def test_create_project_with_parent_id_and_without_domain_id(self):
         project = {'id': uuid.uuid4().hex,
                    'description': '',
@@ -2339,7 +2335,8 @@ class IdentityTests(object):
                     'domain_id': DEFAULT_DOMAIN_ID,
                     'enabled': True,
                     'name': uuid.uuid4().hex,
-                    'parent_id': project2['id']}
+                    'parent_id': project2['id'],
+                    'is_domain': False}
         self.resource_api.create_project(project4['id'], project4)
 
         subtree = self.resource_api.list_projects_in_subtree(project1['id'])
@@ -2408,7 +2405,8 @@ class IdentityTests(object):
                     'domain_id': DEFAULT_DOMAIN_ID,
                     'enabled': True,
                     'name': uuid.uuid4().hex,
-                    'parent_id': project2['id']}
+                    'parent_id': project2['id'],
+                    'is_domain': False}
         self.resource_api.create_project(project4['id'], project4)
 
         parents1 = self.resource_api.list_project_parents(project3['id'])
@@ -3011,7 +3009,8 @@ class IdentityTests(object):
                    'description': '',
                    'domain_id': DEFAULT_DOMAIN_ID,
                    'enabled': True,
-                   'parent_id': 'fake'}
+                   'parent_id': 'fake',
+                   'is_domain': False}
         self.assertRaises(exception.ProjectNotFound,
                           self.resource_api.create_project,
                           project['id'],
@@ -3024,7 +3023,8 @@ class IdentityTests(object):
                         'description': '',
                         'domain_id': DEFAULT_DOMAIN_ID,
                         'enabled': True,
-                        'parent_id': None}
+                        'parent_id': None,
+                        'is_domain': False}
         self.resource_api.create_project(root_project['id'], root_project)
 
         domain = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex,
@@ -3035,7 +3035,8 @@ class IdentityTests(object):
                         'description': '',
                         'domain_id': domain['id'],
                         'enabled': True,
-                        'parent_id': root_project['id']}
+                        'parent_id': root_project['id'],
+                        'is_domain': False}
 
         self.assertRaises(exception.ValidationError,
                           self.resource_api.create_project,
@@ -3086,13 +3087,15 @@ class IdentityTests(object):
                     'name': uuid.uuid4().hex,
                     'domain_id': DEFAULT_DOMAIN_ID,
                     'enabled': False,
-                    'parent_id': None}
+                    'parent_id': None,
+                    'is_domain': False}
         self.resource_api.create_project(project1['id'], project1)
 
         project2 = {'id': uuid.uuid4().hex,
                     'name': uuid.uuid4().hex,
                     'domain_id': DEFAULT_DOMAIN_ID,
-                    'parent_id': project1['id']}
+                    'parent_id': project1['id'],
+                    'is_domain': False}
 
         # It's not possible to create a project under a disabled one in the
         # hierarchy
@@ -3158,7 +3161,8 @@ class IdentityTests(object):
             'id': project_id,
             'name': uuid.uuid4().hex,
             'domain_id': DEFAULT_DOMAIN_ID,
-            'parent_id': leaf_project['id']}
+            'parent_id': leaf_project['id'],
+            'is_domain': False}
         self.assertRaises(exception.ForbiddenAction,
                           self.resource_api.create_project,
                           project_id,
@@ -3170,7 +3174,8 @@ class IdentityTests(object):
                    'name': uuid.uuid4().hex,
                    'domain_id': DEFAULT_DOMAIN_ID,
                    'enabled': True,
-                   'parent_id': None}
+                   'parent_id': None,
+                   'is_domain': False}
         self.resource_api.create_project(project['id'], project)
 
         # Add a description attribute.
@@ -3186,7 +3191,8 @@ class IdentityTests(object):
                    'name': uuid.uuid4().hex,
                    'domain_id': DEFAULT_DOMAIN_ID,
                    'enabled': True,
-                   'parent_id': None}
+                   'parent_id': None,
+                   'is_domain': False}
         self.resource_api.create_project(project['id'], project)
 
         # Add a description attribute.
@@ -5676,14 +5682,16 @@ class InheritanceTests(object):
                         'domain_id': DEFAULT_DOMAIN_ID,
                         'enabled': True,
                         'name': uuid.uuid4().hex,
-                        'parent_id': None}
+                        'parent_id': None,
+                        'is_domain': False}
         self.resource_api.create_project(root_project['id'], root_project)
         leaf_project = {'id': uuid.uuid4().hex,
                         'description': '',
                         'domain_id': DEFAULT_DOMAIN_ID,
                         'enabled': True,
                         'name': uuid.uuid4().hex,
-                        'parent_id': root_project['id']}
+                        'parent_id': root_project['id'],
+                        'is_domain': False}
         self.resource_api.create_project(leaf_project['id'], leaf_project)
 
         user = {'name': uuid.uuid4().hex, 'password': uuid.uuid4().hex,
@@ -5797,14 +5805,16 @@ class InheritanceTests(object):
                         'domain_id': DEFAULT_DOMAIN_ID,
                         'enabled': True,
                         'name': uuid.uuid4().hex,
-                        'parent_id': None}
+                        'parent_id': None,
+                        'is_domain': False}
         self.resource_api.create_project(root_project['id'], root_project)
         leaf_project = {'id': uuid.uuid4().hex,
                         'description': '',
                         'domain_id': DEFAULT_DOMAIN_ID,
                         'enabled': True,
                         'name': uuid.uuid4().hex,
-                        'parent_id': root_project['id']}
+                        'parent_id': root_project['id'],
+                        'is_domain': False}
         self.resource_api.create_project(leaf_project['id'], leaf_project)
 
         user = {'name': uuid.uuid4().hex, 'password': uuid.uuid4().hex,

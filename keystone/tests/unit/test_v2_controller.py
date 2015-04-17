@@ -21,7 +21,6 @@ from keystone.resource import controllers as resource_controllers
 from keystone.tests import unit as tests
 from keystone.tests.unit import default_fixtures
 from keystone.tests.unit.ksfixtures import database
-from keystone.tests.unit import utils
 
 
 _ADMIN_CONTEXT = {'is_admin': True, 'query_string': {}}
@@ -95,6 +94,7 @@ class TenantTestCase(tests.TestCase):
             tenant_copy = tenant.copy()
             tenant_copy.pop('domain_id')
             tenant_copy.pop('parent_id')
+            tenant_copy.pop('is_domain')
             self.assertIn(tenant_copy, refs['tenants'])
 
     def _create_is_domain_project(self):
@@ -103,7 +103,6 @@ class TenantTestCase(tests.TestCase):
         project_ref = self.resource_api.create_project(project['id'], project)
         return self.tenant_controller.v3_to_v2_project(project_ref)
 
-    @utils.wip('waiting for the is_domain field implementation')
     def test_update_is_domain_project_not_found(self):
         """Test that update is_domain project is not allowed in v2."""
         project = self._create_is_domain_project()
@@ -117,7 +116,6 @@ class TenantTestCase(tests.TestCase):
             project
         )
 
-    @utils.wip('waiting for the is_domain field implementation')
     def test_delete_is_domain_project_not_found(self):
         """Test that delete is_domain project is not allowed in v2."""
         project = self._create_is_domain_project()
@@ -129,7 +127,6 @@ class TenantTestCase(tests.TestCase):
             project['id']
         )
 
-    @utils.wip('waiting for the is_domain field implementation')
     def test_list_is_domain_project_not_found(self):
         """Test v2 get_all_projects having projects that act as a domain.
 
