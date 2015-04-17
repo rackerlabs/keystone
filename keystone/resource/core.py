@@ -82,30 +82,72 @@ class Manager(manager.Manager):
                 action=_('max hierarchy depth reached for '
                          '%s branch.') % project_id)
 
-    def create_project(self, tenant_id, tenant, initiator=None):
-        tenant = tenant.copy()
-        tenant.setdefault('enabled', True)
-        tenant['enabled'] = clean.project_enabled(tenant['enabled'])
-        tenant.setdefault('description', '')
-        tenant.setdefault('parent_id', None)
+    def _assert_is_domain_project_constraints(self, project_ref, parent_ref):
+        if (not self.identity_api.multiple_domains_supported and
+                project_ref['id'] != CONF.identity.default_domain_id):
+            raise exception.Forbidden(_('Multiple domains are not '
+                                        'supported'))
 
-        self.get_domain(tenant.get('domain_id'))
-        if tenant.get('parent_id') is not None:
-            parent_ref = self.get_project(tenant.get('parent_id'))
-            parents_list = self.list_project_parents(parent_ref['id'])
+        if parent_ref and not parent_ref.get('is_domain'):
+            raise exception.ValidationError(
+                message=_('cannot create a project with the domain '
+                          'feature enabled under %s, which is a project with '
+                          'this property disabled') % project_ref['id'])
+
+    def _assert_project_constraints(self, project_ref, parent_ref):
+        # NOTE(rodrigods): Called when is_domain is false, hence the project
+        # must contain a valid domain_id and parent_id. This project must
+        # also be in the same domain of its parent.
+        self.get_domain(project_ref['domain_id'])
+
+        if (parent_ref and
+                parent_ref.get('domain_id') != project_ref['domain_id']):
+            raise exception.ValidationError(
+                message=_('cannot create a project within domain '
+                          '%(domain_id)s, which is a different domain than '
+                          'its parent (%(parent_domain_id)s).')
+                % {'domain_id': project_ref['domain_id'],
+                   'parent_domain_id': parent_ref.get('domain_id')})
+
+    def _enforce_project_hierarchy_constraints(self, project_ref):
+        parent_id = project_ref.get('parent_id')
+        parent_ref = self.get_project(parent_id) if parent_id else None
+
+        if project_ref.get('is_domain'):
+            self._assert_is_domain_project_constraints(project_ref, parent_ref)
+        else:
+            self._assert_project_constraints(project_ref, parent_ref)
+
+        # The whole hierarchy must be enabled
+        if parent_id:
+            parents_list = self.list_project_parents(parent_id)
             parents_list.append(parent_ref)
             for ref in parents_list:
-                if ref.get('domain_id') != tenant.get('domain_id'):
-                    raise exception.ValidationError(
-                        message=_('cannot create a project within a different '
-                                  'domain than its parents.'))
                 if not ref.get('enabled', True):
                     raise exception.ValidationError(
                         message=_('cannot create a project in a '
                                   'branch containing a disabled '
                                   'project: %s') % ref['id'])
-            self._assert_max_hierarchy_depth(tenant.get('parent_id'),
+
+            self._assert_max_hierarchy_depth(project_ref.get('parent_id'),
                                              parents_list)
+
+    def create_project(self, tenant_id, tenant, initiator=None):
+        """When is_domain is set True, the domain_id can not be passed, since
+        it will be set as the project's own id. If a parent is passed, the new
+        is_domain project will be a subproject of it.
+        However, if is_domain is passed as False, both domain_id and parent_id
+        are obligatory. The domain_id must belong to an is_domain project and
+        the parent_id project must belong to this domain.
+        """
+        tenant = tenant.copy()
+        tenant.setdefault('enabled', True)
+        tenant['enabled'] = clean.project_enabled(tenant['enabled'])
+        tenant.setdefault('description', '')
+        tenant.setdefault('parent_id', None)
+        tenant.setdefault('is_domain', False)
+
+        self._enforce_project_hierarchy_constraints(tenant)
 
         ret = self.driver.create_project(tenant_id, tenant)
         notifications.Audit.created(self._PROJECT, tenant_id, initiator)
@@ -197,6 +239,11 @@ class Manager(manager.Manager):
             raise exception.ForbiddenAction(
                 action=_('Update of `parent_id` is not allowed.'))
 
+        if ('is_domain' in tenant and
+                tenant.get('is_domain') != original_tenant.get('is_domain')):
+            raise exception.ValidationError(
+                message=_('Update of `is_domain` is not allowed.'))
+
         if 'enabled' in tenant:
             tenant['enabled'] = clean.project_enabled(tenant['enabled'])
 
@@ -209,7 +256,10 @@ class Manager(manager.Manager):
         if not original_tenant_enabled and tenant_enabled:
             self._assert_all_parents_are_enabled(tenant_id)
         if original_tenant_enabled and not tenant_enabled:
-            self._assert_whole_subtree_is_disabled(tenant_id)
+            # NOTE(htruta): disabling an is_domain project will disable all of
+            # its children, keeping the domain funcionality behaviour.
+            if not original_tenant.get('is_domain'):
+                self._assert_whole_subtree_is_disabled(tenant_id)
             self._disable_project(tenant_id)
 
         ret = self.driver.update_project(tenant_id, tenant)
@@ -220,12 +270,19 @@ class Manager(manager.Manager):
         return ret
 
     def delete_project(self, tenant_id, initiator=None):
+        project = self.driver.get_project(tenant_id)
+        if project.get('is_domain'):
+            if project.get('enabled'):
+                raise exception.ValidationError(
+                    message=_('cannot delete an enabled project with the '
+                              'domain feature, please disable the project '
+                              '%s first.') % project.get('id'))
+
         if not self.driver.is_leaf_project(tenant_id):
             raise exception.ForbiddenAction(
                 action=_('cannot delete the project %s since it is not '
                          'a leaf in the hierarchy.') % tenant_id)
 
-        project = self.driver.get_project(tenant_id)
         project_user_ids = (
             self.assignment_api.list_user_ids_for_project(tenant_id))
         for user_id in project_user_ids:

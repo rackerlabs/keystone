@@ -612,11 +612,13 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
         ref = self.new_project_ref(domain_id=uuid.uuid4().hex)
         self.post('/projects', body={'project': ref}, expected_status=400)
 
-    def _create_projects_hierarchy(self, hierarchy_size=1):
+    def _create_projects_hierarchy(self, hierarchy_size=1, is_domain=False):
         """Creates a single-branched project hierarchy with the specified size.
 
         :param hierarchy_size: the desired hierarchy size, default is 1 -
                                a project with one child.
+        :param is_domain: if the hierarchy will have the is_domain flag active
+                          or not.
 
         :returns projects: a list of the projects in the created hierarchy.
 
@@ -628,7 +630,8 @@ class AssignmentTestCase(test_v3.RestfulTestCase):
 
         for i in range(hierarchy_size):
             new_ref = self.new_project_ref(
-                domain_id=self.domain_id,
+                domain_id=self.domain_id if not is_domain else None,
+                is_domain=is_domain,
                 parent_id=projects[i]['project']['id'])
             resp = self.post('/projects',
                              body={'project': new_ref})
