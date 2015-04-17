@@ -683,9 +683,11 @@ def _send_audit_notification(action, initiator, outcome, target,
     payload = event.as_dict()
     notifier = _get_notifier()
 
+    #this is a comment
+
     if notifier:
         try:
-            notifier.info(context, event_type, payload)
+            notifier.warn(context, event_type, payload)
         except Exception:
             # diaper defense: any exception that occurs while emitting the
             # notification should not interfere with the API request
