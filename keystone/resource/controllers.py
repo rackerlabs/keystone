@@ -200,7 +200,15 @@ class ProjectV3(controller.V3Controller):
     @validation.validated(schema.project_create, 'project')
     def create_project(self, context, project):
         ref = self._assign_unique_id(self._normalize_dict(project))
-        ref = self._normalize_domain_id(context, ref)
+        # TODO(htruta): When operations are replicated to project table, handle
+        # the cases where parent_id and domain_id must point to the same
+        # entity.
+
+        # If we don't set parent_id neither domain_id, the domain_id will
+        # be normalized to the domain_id in the token.
+        if not project.get('parent_id') and not project.get('domain_id'):
+            ref = self._normalize_domain_id(context, ref)
+
         initiator = notifications._get_request_audit_info(context)
         try:
             ref = self.resource_api.create_project(ref['id'], ref,
