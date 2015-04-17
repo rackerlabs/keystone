@@ -93,4 +93,5 @@ class TenantTestCase(tests.TestCase):
             tenant_copy = tenant.copy()
             tenant_copy.pop('domain_id')
             tenant_copy.pop('parent_id')
+            tenant_copy.pop('is_domain')
             self.assertIn(tenant_copy, refs['tenants'])
