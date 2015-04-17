@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "3ab451fb_95d5d244",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-04-17T17:03:54Z",
+      "side": 1,
+      "message": "2 for loops. Is there a more elegant way to code this up?",
+      "parentUuid": "3ab451fb_3a738d82",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ab451fb_cf550d1e",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 9
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "3ab451fb_156662ed",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-04-17T17:03:54Z",
+      "side": 1,
+      "message": "Config is for returning all endpoints if there are no filtered endpoints. We have to check whether there are filtered endpoints first regardless.",
+      "parentUuid": "3ab451fb_cf550d1e",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ab451fb_cf7e2dae",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 9
@@ -47,6 +83,24 @@
       "writtenOn": "2015-04-17T16:36:39Z",
       "side": 1,
       "message": "If this is no longer a function of the extension should we make the config option a part of the catalog section?",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_da03890e",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 1916
+      },
+      "writtenOn": "2015-04-17T17:03:54Z",
+      "side": 1,
+      "message": "That\u0027s debatable. Externally, endpoint filtering is still a separate function. We are just consolidating the functionally internally. Since config options are externally facing, we may want to leave them along for now.",
+      "parentUuid": "3ab451fb_cf7e2dae",
       "revId": "2548c0852c95e216b298f193bad117471581c437",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
