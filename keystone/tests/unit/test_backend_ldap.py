@@ -1531,7 +1531,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                    'domain_id': CONF.identity.default_domain_id,
                    'description': uuid.uuid4().hex,
                    'enabled': True,
-                   'parent_id': None}
+                   'parent_id': None,
+                   'is_domain': False}
         self.resource_api.create_project(project['id'], project)
         project_ref = self.resource_api.get_project(project['id'])
 
@@ -1609,7 +1610,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                     'description': '',
                     'domain_id': domain['id'],
                     'enabled': True,
-                    'parent_id': None}
+                    'parent_id': None,
+                    'is_domain': False}
         self.resource_api.create_project(project1['id'], project1)
 
         # Creating project2 under project1. LDAP will not allow
@@ -1619,7 +1621,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                     'description': '',
                     'domain_id': domain['id'],
                     'enabled': True,
-                    'parent_id': project1['id']}
+                    'parent_id': project1['id'],
+                    'is_domain': False}
 
         self.assertRaises(exception.InvalidParentProject,
                           self.resource_api.create_project,
@@ -1632,6 +1635,32 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
 
         # Returning projects to be used across the tests
         return [project1, project2]
+
+    def _assert_create_is_domain_project_not_allowed(self):
+        domain = self._get_domain_fixture()
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'description': '',
+                   'domain_id': domain['id'],
+                   'enabled': True,
+                   'parent_id': None,
+                   'is_domain': True}
+
+        self.assertRaises(exception.Forbidden,
+                          self.resource_api.create_project,
+                          project['id'], project)
+
+    def test_delete_is_domain_project(self):
+        self._assert_create_is_domain_project_not_allowed()
+
+    def test_create_is_domain_project_under_project_hierarchy(self):
+        self._assert_create_hierarchy_not_allowed()
+
+    def test_create_not_is_domain_project_under_is_domain_hierarchy(self):
+        self._assert_create_hierarchy_not_allowed()
+
+    def test_create_is_domain_project(self):
+        self._assert_create_is_domain_project_not_allowed()
 
     def test_check_leaf_projects(self):
         projects = self._assert_create_hierarchy_not_allowed()
@@ -1965,7 +1994,8 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
             'name': uuid.uuid4().hex,
             'domain_id': CONF.identity.default_domain_id,
             'description': uuid.uuid4().hex,
-            'parent_id': None}
+            'parent_id': None,
+            'is_domain': False}
 
         self.resource_api.create_project(project['id'], project)
         project_ref = self.resource_api.get_project(project['id'])
@@ -2602,7 +2632,8 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
                    'domain_id': domain['id'],
                    'description': uuid.uuid4().hex,
                    'parent_id': None,
-                   'enabled': True}
+                   'enabled': True,
+                   'is_domain': False}
         self.resource_api.create_domain(domain['id'], domain)
         self.resource_api.create_project(project['id'], project)
         project_ref = self.resource_api.get_project(project['id'])
