@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ab451fb_cf550d1e",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-17T16:36:39Z",
+      "side": 1,
+      "message": "Why do this work and the \u0027for\u0027 loop immediately below if it may not be used at all? Seems like we can check the config value first.",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_cf7e2dae",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-17T16:36:39Z",
+      "side": 1,
+      "message": "If this is no longer a function of the extension should we make the config option a part of the catalog section?",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_fa1d2567",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-17T16:36:39Z",
+      "side": 1,
+      "message": "Can you comment on why these 3 lines are needed? The method assertEndpointEqual is actually manipulating the objects before comparisson...",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_7a57d502",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-17T16:36:39Z",
+      "side": 1,
+      "message": "What exactly is sorted?",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
