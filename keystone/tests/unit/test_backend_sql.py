@@ -250,7 +250,8 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         self.assertRaises(exception.ProjectNotFound,
                           self.resource_api.get_project_by_name,
                           tenant['name'],
-                          DEFAULT_DOMAIN_ID)
+                          DEFAULT_DOMAIN_ID,
+                          False)
 
     def test_delete_project_with_user_association(self):
         user = {'name': 'fakeuser',
