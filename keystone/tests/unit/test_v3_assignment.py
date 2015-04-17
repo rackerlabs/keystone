@@ -526,6 +526,18 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         ref = self.new_project_ref(domain_id=uuid.uuid4().hex)
         self.post('/projects', body={'project': ref}, expected_status=400)
 
+    def test_create_project_without_domain_id_and_parent_id(self):
+        """Call ``POST /projects``."""
+        # Without domain_id and parent_id, the domain_id should be
+        # normalized to the domain default since we are using a project
+        # scoped token.
+        ref = self.new_project_ref()
+        r = self.post(
+            '/projects',
+            body={'project': ref})
+        ref['domain_id'] = CONF.identity.default_domain_id
+        self.assertValidProjectResponse(r, ref)
+
     def _create_projects_hierarchy(self, hierarchy_size=1):
         """Creates a single-branched project hierarchy with the specified size.
 
