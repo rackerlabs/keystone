@@ -34,6 +34,40 @@
       "revId": "d8a9ab545b04a941c2ac3bf027483d15f33877c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_6a94a436",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 825,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-04-17T18:02:22Z",
+      "side": 1,
+      "message": "why this refactoring? the same is valid for project and domain",
+      "revId": "d8a9ab545b04a941c2ac3bf027483d15f33877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_4afe886c",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 872,
+      "author": {
+        "id": 11022
+      },
+      "writtenOn": "2015-04-17T18:02:22Z",
+      "side": 1,
+      "message": "this change is because the elif above, right? so I guess both aren\u0027t necessary",
+      "revId": "d8a9ab545b04a941c2ac3bf027483d15f33877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
