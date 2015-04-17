@@ -2195,7 +2195,6 @@ class IdentityTests(object):
         self.assertEqual(DEFAULT_DOMAIN_ID, ref['domain_id'])
 
     @tests.skip_if_no_multiple_domains_support
-    @test_utils.wip('waiting for projects acting as domains implementation')
     def test_is_domain_sub_project_has_parent_domain_id(self):
         project = {'id': uuid.uuid4().hex,
                    'description': '',
@@ -2245,7 +2244,6 @@ class IdentityTests(object):
         self.resource_api.delete_project(project['id'])
 
     @tests.skip_if_no_multiple_domains_support
-    @test_utils.wip('waiting for projects acting as domains implementation')
     def test_not_create_domain_under_regular_project_hierarchy(self):
         # Creating a regular project hierarchy. Projects acting as domains
         # can't have a parent that is a regular project.
@@ -2294,6 +2292,7 @@ class IdentityTests(object):
         # The is_domain flag should be False by default
         self.assertFalse(ref['is_domain'])
 
+    @tests.skip_if_no_multiple_domains_support
     def test_create_is_domain_project(self):
         project = {'id': uuid.uuid4().hex,
                    'description': '',
