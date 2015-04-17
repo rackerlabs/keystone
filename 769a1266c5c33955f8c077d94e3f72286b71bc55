@@ -72,6 +72,23 @@
     },
     {
       "key": {
+        "uuid": "3ab451fb_362ba132",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 41
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-17T20:16:35Z",
+      "side": 1,
+      "message": "Is this your twin? :) You\u0027re already the author",
+      "revId": "769a1266c5c33955f8c077d94e3f72286b71bc55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ab451fb_150ae226",
         "filename": "keystone/common/sql/migrate_repo/versions/074_update_project_name_constraint.py",
         "patchSetId": 41
@@ -118,6 +135,57 @@
       "writtenOn": "2015-04-17T17:35:48Z",
       "side": 1,
       "message": "These is a possibility of a race condition here. What would happen is we did create two projects with the same name?",
+      "revId": "769a1266c5c33955f8c077d94e3f72286b71bc55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_f1ce6359",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-17T20:16:35Z",
+      "side": 1,
+      "message": "Seems like this whole check is only required for ref[\u0027is_domain\u0027], you\u0027re fetching unnecessarily here.\n\nIf the project is not a Domain you can skip the whole check",
+      "revId": "769a1266c5c33955f8c077d94e3f72286b71bc55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_71949336",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-17T20:16:35Z",
+      "side": 1,
+      "message": "This check is terribly slow since you are fetching all project and comparing to all of them.\n\nTry to leverage the backend filtering for this check.\n\n\n1. Use list_domains, and only compare the name from there\nOR \n2. Get projects by name and see if there any of this projects exists in the same domain.",
+      "revId": "769a1266c5c33955f8c077d94e3f72286b71bc55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_b1521bdc",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-17T20:16:35Z",
+      "side": 1,
+      "message": "Using \"is_domain project\"  in this message is not user friendly.  Would like something less technical name for this.\n\nWould something like \"Domain name already exists.\" suffice?",
       "revId": "769a1266c5c33955f8c077d94e3f72286b71bc55",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
