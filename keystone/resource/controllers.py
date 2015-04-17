@@ -74,7 +74,7 @@ class Tenant(controller.V2Controller):
     def _get_project_by_name(self, tenant_name):
         # Projects acting as a domain should not be visible via v2
         ref = self.resource_api.get_project_by_name(
-            tenant_name, CONF.identity.default_domain_id)
+            tenant_name, CONF.identity.default_domain_id, False)
         self._assert_not_is_domain_project(ref['id'], ref)
         return {'tenant': self.v3_to_v2_project(ref)}
 
