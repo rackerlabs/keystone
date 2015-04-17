@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "3ab451fb_3a738d82",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-17T16:40:42Z",
+      "side": 1,
+      "message": "Also is there any way to tighten this or change the algorithm? This is three nested \u0027for\u0027 loops and the second one (unfiltered_catalog) can actually keep growing.",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ab451fb_cf550d1e",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 9
