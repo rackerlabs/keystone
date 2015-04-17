@@ -248,7 +248,33 @@ class SqlIdentity(SqlTests, test_backend.IdentityTests):
         self.assertRaises(exception.ProjectNotFound,
                           self.resource_api.get_project_by_name,
                           tenant['name'],
-                          DEFAULT_DOMAIN_ID)
+                          DEFAULT_DOMAIN_ID,
+                          False)
+
+    def test_get_project_by_name_not_passing_domain_id(self):
+        domain1 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.resource_api.create_domain(domain1['id'], domain1)
+        domain2 = {'id': uuid.uuid4().hex, 'name': uuid.uuid4().hex}
+        self.resource_api.create_domain(domain2['id'], domain2)
+        project_name = uuid.uuid4().hex
+        project1 = {
+            'id': uuid.uuid4().hex,
+            'name': project_name,
+            'domain_id': domain1['id'],
+            'is_domain': False}
+        self.resource_api.create_project(project1['id'], project1)
+        project2 = {
+            'id': uuid.uuid4().hex,
+            'name': project_name,
+            'domain_id': domain2['id'],
+            'is_domain': False}
+        self.resource_api.create_project(project2['id'], project2)
+
+        self.assertRaises(sqlalchemy.orm.exc.MultipleResultsFound,
+                          self.resource_api.get_project_by_name,
+                          project_name,
+                          None,
+                          False)
 
     def test_delete_project_with_user_association(self):
         user = {'name': 'fakeuser',
