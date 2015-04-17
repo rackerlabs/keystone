@@ -20,7 +20,6 @@ from keystone.common import controller
 from keystone import exception
 from keystone.tests import unit as tests
 from keystone.tests.unit import test_v3
-from keystone.tests.unit import utils
 
 
 CONF = cfg.CONF
@@ -540,7 +539,6 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
                   body={'project': ref},
                   expected_status=501)
 
-    @utils.wip('waiting for projects acting as domains implementation')
     def test_create_project_without_parent_id_and_whithout_domain_id(self):
         """Call ``POST /projects``."""
 
@@ -571,7 +569,6 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         ref['domain_id'] = self.domain['id']
         self.assertValidProjectResponse(r, ref)
 
-    @utils.wip('waiting for projects acting as domains implementation')
     def test_create_project_with_parent_id_and_no_domain_id(self):
         """Call ``POST /projects``."""
         # With only the parent_id, the domain_id should be
