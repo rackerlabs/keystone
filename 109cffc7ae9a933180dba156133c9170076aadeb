@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ab451fb_f148a32f",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 690,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-17T20:07:22Z",
+      "side": 1,
+      "message": "this is silly",
+      "revId": "109cffc7ae9a933180dba156133c9170076aadeb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
