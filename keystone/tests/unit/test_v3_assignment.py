@@ -527,6 +527,14 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         ref = self.new_project_ref(domain_id=uuid.uuid4().hex)
         self.post('/projects', body={'project': ref}, expected_status=400)
 
+    def test_create_project_is_domain_not_allowed(self):
+        """Call ``POST /projects``."""
+        ref = self.new_project_ref(domain_id=self.domain_id)
+        ref['is_domain'] = True
+        self.post('/projects',
+                  body={'project': ref},
+                  expected_status=501)
+
     def _create_projects_hierarchy(self, hierarchy_size=1):
         """Creates a single-branched project hierarchy with the specified size.
 
