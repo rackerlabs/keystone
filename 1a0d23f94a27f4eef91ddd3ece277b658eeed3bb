@@ -34,6 +34,24 @@
       "revId": "1a0d23f94a27f4eef91ddd3ece277b658eeed3bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_1c37cab1",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1027,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-17T03:17:55Z",
+      "side": 1,
+      "message": "this is a weird one to verify...\n\n  idp_table will have idp_1\n  protocol_table will have protocol_1\n\nbut deleting idp_1 will remove it, and protocol_1.\n\nmaybe we should call self.federation.list_protocols(idp_1) before and after and make sure the size goes from 1 to 0?\n\njust thinking out loud here",
+      "parentUuid": "3ab451fb_997c0c22",
+      "revId": "1a0d23f94a27f4eef91ddd3ece277b658eeed3bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
