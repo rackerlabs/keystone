@@ -39,11 +39,13 @@ class Resource(keystone_resource.ResourceDriverV8):
         with sql.transaction() as session:
             return self._get_project(session, tenant_id).to_dict()
 
-    def get_project_by_name(self, tenant_name, domain_id):
+    def get_project_by_name(self, tenant_name, domain_id, is_domain):
         with sql.transaction() as session:
             query = session.query(Project)
             query = query.filter_by(name=tenant_name)
-            query = query.filter_by(domain_id=domain_id)
+            if domain_id is not None:
+                query = query.filter_by(domain_id=domain_id)
+            query = query.filter_by(is_domain=is_domain)
             try:
                 project_ref = query.one()
             except sql.NotFound:
