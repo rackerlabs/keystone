@@ -740,6 +740,7 @@ class V3Controller(wsgi.Application):
 
     def _normalize_domain_id(self, context, ref):
         """Fill in domain_id if not specified in a v3 call."""
+        # TODO(htruta): handle domain_id passed as None, as in bug #1490764
         if 'domain_id' not in ref:
             ref['domain_id'] = self._get_domain_id_from_token(context)
         return ref
