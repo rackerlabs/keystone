@@ -35,9 +35,6 @@ IGNORED_SCENARIOS = [
     # https://review.openstack.org/#/c/174388/ lands.
     'keystone.contrib.endpoint_filter.backends.sql',
     # FIXME(viktors): Enable this scenario, when patch
-    # https://review.openstack.org/#/c/174871/ lands.
-    'keystone.contrib.oauth1.backends.sql',
-    # FIXME(viktors): Enable this scenario, when patch
     # https://review.openstack.org/#/c/168947 lands.
     'keystone.contrib.federation.backends.sql',
     # FIXME(viktors): Fix errors and enable this scenario
