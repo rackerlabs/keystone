@@ -65,7 +65,8 @@ class CliBootStrapTestCase(unit.SQLDriverOverrides, unit.TestCase):
         bootstrap.do_bootstrap()
         project = bootstrap.resource_manager.get_project_by_name(
             bootstrap.project_name,
-            'default')
+            'default',
+            False)
         user = bootstrap.identity_manager.get_user_by_name(
             bootstrap.username,
             'default')
