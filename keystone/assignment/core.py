@@ -968,7 +968,8 @@ class Manager(manager.Manager):
 
     @deprecated_to_resource_api
     def get_project_by_name(self, tenant_name, domain_id):
-        return self.resource_api.get_project_by_name(tenant_name, domain_id)
+        return self.resource_api.get_project_by_name(
+            tenant_name, domain_id, False)
 
     @deprecated_to_resource_api
     def get_project(self, project_id):
