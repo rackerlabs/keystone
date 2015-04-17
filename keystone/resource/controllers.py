@@ -200,7 +200,9 @@ class ProjectV3(controller.V3Controller):
     @validation.validated(schema.project_create, 'project')
     def create_project(self, context, project):
         ref = self._assign_unique_id(self._normalize_dict(project))
-        ref = self._normalize_domain_id(context, ref)
+        # TODO(htruta): When operations are replicated to project table, handle
+        # case where no parent was set for is_domain=false projects
+
         initiator = notifications._get_request_audit_info(context)
         try:
             ref = self.resource_api.create_project(ref['id'], ref,
