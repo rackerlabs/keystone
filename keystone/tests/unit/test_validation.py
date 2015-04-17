@@ -26,6 +26,7 @@ from keystone.identity import schema as identity_schema
 from keystone.policy import schema as policy_schema
 from keystone.resource import schema as resource_schema
 from keystone.tests import unit
+from keystone.tests.unit import utils
 from keystone.trust import schema as trust_schema
 
 """Example model to validate create requests against. Assume that this is
@@ -424,6 +425,24 @@ class ProjectValidationTestCase(unit.BaseTestCase):
         self.assertRaises(exception.SchemaValidationError,
                           self.update_project_validator.validate,
                           request_to_validate)
+
+    @utils.wip('waiting for projects acting as domains implementation')
+    def test_validate_project_create_request_with_valid_domain_id(self):
+        """Test that we validate `domain_id` in create project requests."""
+        # domain_id is nullable
+        for domain_id in [None, uuid.uuid4().hex]:
+            request_to_validate = {'name': self.project_name,
+                                   'domain_id': domain_id}
+            self.create_project_validator.validate(request_to_validate)
+
+    def test_validate_project_request_with_invalid_domain_id_fails(self):
+        """Exception is raised when `domain_id` as a non-id value."""
+        for domain_id in [False, 'fake_project']:
+            request_to_validate = {'name': self.project_name,
+                                   'domain_id': domain_id}
+            self.assertRaises(exception.SchemaValidationError,
+                              self.create_project_validator.validate,
+                              request_to_validate)
 
 
 class DomainValidationTestCase(unit.BaseTestCase):
