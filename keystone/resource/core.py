@@ -82,37 +82,104 @@ class Manager(manager.Manager):
                 action=_('max hierarchy depth reached for '
                          '%s branch.') % project_id)
 
-    def create_project(self, tenant_id, tenant, initiator=None):
-        tenant = tenant.copy()
-        tenant.setdefault('enabled', True)
-        tenant['enabled'] = clean.project_enabled(tenant['enabled'])
-        tenant.setdefault('description', '')
-        tenant.setdefault('parent_id', None)
+    def _assert_is_domain_project_constraints(self, project_ref, parent_ref):
+        if (not self.identity_api.multiple_domains_supported and
+                project_ref['id'] != CONF.identity.default_domain_id):
+            raise exception.ValidationError(
+                message=_('Multiple domains are not supported'))
 
-        self.get_domain(tenant.get('domain_id'))
-        if tenant.get('parent_id') is not None:
-            parent_ref = self.get_project(tenant.get('parent_id'))
-            parents_list = self.list_project_parents(parent_ref['id'])
+        self.assert_domain_not_federated(project_ref['id'], project_ref)
+        if parent_ref and not parent_ref.get('is_domain'):
+            raise exception.ValidationError(
+                message=_('cannot create a project acting as a domain under '
+                          '%s, which is a regular project.')
+                % project_ref['id'])
+
+        # TODO(rodrigods): If domain_id was set and is different from
+        # parent_id, raise an error
+
+    def _assert_project_constraints(self, project_ref, parent_ref):
+        # NOTE(htruta): Called when is_domain is false, hence the project
+        # must contain a valid parent_id or domain_id. If the parent is an
+        # is_domain=false project, this project must be in the same domain of
+        # its parent. If the parent is an is_domain=true project, this
+        # project's domain_id must match the parent_id
+
+        if project_ref.get('domain_id'):
+            self.get_domain(project_ref['domain_id'])
+
+        if parent_ref:
+            is_domain_parent = parent_ref.get('is_domain')
+            parent_domain_id = parent_ref.get('domain_id')
+            domain_id = project_ref.get('domain_id')
+
+            if not is_domain_parent:
+                if domain_id and domain_id != parent_domain_id:
+                    raise exception.ValidationError(
+                        message=_('Cannot create project, since it specifies '
+                                  'its owner as domain %(domain_id)s, but '
+                                  'specifies a parent in a different domain '
+                                  '(%(parent_domain_id)s).')
+                        % {'domain_id': project_ref['domain_id'],
+                           'parent_domain_id': parent_ref.get('domain_id')})
+            # TODO(rodrigods): If the parent project acts as a domain, the
+            # domain_id should point to the parent's id
+
+    def _enforce_project_hierarchy_constraints(self, project_ref):
+        parent_id = project_ref.get('parent_id')
+        parent_ref = self.get_project(parent_id) if parent_id else None
+
+        if project_ref.get('is_domain'):
+            self._assert_is_domain_project_constraints(project_ref, parent_ref)
+        else:
+            self._assert_project_constraints(project_ref, parent_ref)
+
+        # The whole hierarchy must be enabled
+        if parent_id:
+            parents_list = self.list_project_parents(parent_id)
             parents_list.append(parent_ref)
             for ref in parents_list:
-                if ref.get('domain_id') != tenant.get('domain_id'):
-                    raise exception.ValidationError(
-                        message=_('cannot create a project within a different '
-                                  'domain than its parents.'))
                 if not ref.get('enabled', True):
                     raise exception.ValidationError(
                         message=_('cannot create a project in a '
                                   'branch containing a disabled '
                                   'project: %s') % ref['id'])
-            self._assert_max_hierarchy_depth(tenant.get('parent_id'),
+
+            self._assert_max_hierarchy_depth(project_ref.get('parent_id'),
                                              parents_list)
+
+    def _find_domain_id(self, project_ref):
+        # TODO(htruta): At this point, the nearest domain_id will be the
+        # parent's domain_id. Once we migrate domains to the project table
+        # we need to check if the parent is a project acting as a domain.
+        parent_ref = self.get_project(project_ref['parent_id'])
+        return parent_ref['domain_id']
+
+    def create_project(self, tenant_id, tenant, initiator=None):
+        tenant = tenant.copy()
+        tenant.setdefault('enabled', True)
+        tenant['enabled'] = clean.project_enabled(tenant['enabled'])
+        tenant.setdefault('description', '')
+        # The domain_id is an optional property, that, if not specified, will
+        # be set from the parent_id. The domain_id of a project is the
+        # project_id of the closest is_domain=True project upward its tree.
+        # Root projects (i.e. is_domain=True projects with no parent)
+        # have no domain_id.
+        tenant.setdefault('parent_id', None)
+        tenant.setdefault('domain_id', None)
+        tenant.setdefault('is_domain', False)
+
+        self._enforce_project_hierarchy_constraints(tenant)
+
+        if not tenant.get('domain_id') and tenant.get('parent_id'):
+            tenant['domain_id'] = self._find_domain_id(tenant)
 
         ret = self.driver.create_project(tenant_id, tenant)
         notifications.Audit.created(self._PROJECT, tenant_id, initiator)
         if MEMOIZE.should_cache(ret):
             self.get_project.set(ret, self, tenant_id)
             self.get_project_by_name.set(ret, self, ret['name'],
-                                         ret['domain_id'])
+                                         ret['domain_id'], ret['is_domain'])
         return ret
 
     def assert_domain_enabled(self, domain_id, domain=None):
@@ -198,6 +265,11 @@ class Manager(manager.Manager):
             raise exception.ForbiddenAction(
                 action=_('Update of `parent_id` is not allowed.'))
 
+        if ('is_domain' in tenant and
+                tenant.get('is_domain') != original_tenant.get('is_domain')):
+            raise exception.ValidationError(
+                message=_('Update of `is_domain` is not allowed.'))
+
         if 'enabled' in tenant:
             tenant['enabled'] = clean.project_enabled(tenant['enabled'])
 
@@ -210,23 +282,37 @@ class Manager(manager.Manager):
         if not original_tenant_enabled and tenant_enabled:
             self._assert_all_parents_are_enabled(tenant_id)
         if original_tenant_enabled and not tenant_enabled:
-            self._assert_whole_subtree_is_disabled(tenant_id)
+            # NOTE(htruta): In order to disable a regular project, all its
+            # children must already be disabled. However, to keep
+            # compatibility with the existing domain behaviour, we allow a
+            # project acting as a domain to be disabled irrespective of the
+            # state of its children. The act of disabling such a project will
+            # cause its children to be disabled.
+            if not original_tenant.get('is_domain'):
+                self._assert_whole_subtree_is_disabled(tenant_id)
             self._disable_project(tenant_id)
 
         ret = self.driver.update_project(tenant_id, tenant)
         notifications.Audit.updated(self._PROJECT, tenant_id, initiator)
         self.get_project.invalidate(self, tenant_id)
         self.get_project_by_name.invalidate(self, original_tenant['name'],
-                                            original_tenant['domain_id'])
+                                            original_tenant['domain_id'],
+                                            original_tenant['is_domain'])
         return ret
 
     def delete_project(self, tenant_id, initiator=None):
+        project = self.driver.get_project(tenant_id)
+        if project.get('is_domain') and project.get('enabled'):
+            raise exception.ValidationError(
+                message=_('cannot delete an enabled project acting as a '
+                          'domain. Please disable the project %s first.')
+                % project.get('id'))
+
         if not self.driver.is_leaf_project(tenant_id):
             raise exception.ForbiddenAction(
                 action=_('cannot delete the project %s since it is not '
                          'a leaf in the hierarchy.') % tenant_id)
 
-        project = self.driver.get_project(tenant_id)
         project_user_ids = (
             self.assignment_api.list_user_ids_for_project(tenant_id))
         for user_id in project_user_ids:
@@ -236,7 +322,8 @@ class Manager(manager.Manager):
         self.assignment_api.delete_project_assignments(tenant_id)
         self.get_project.invalidate(self, tenant_id)
         self.get_project_by_name.invalidate(self, project['name'],
-                                            project['domain_id'])
+                                            project['domain_id'],
+                                            project['is_domain'])
         self.credential_api.delete_credentials_for_project(tenant_id)
         notifications.Audit.deleted(self._PROJECT, tenant_id, initiator)
         return ret
@@ -525,8 +612,9 @@ class Manager(manager.Manager):
         return self.driver.get_project(project_id)
 
     @MEMOIZE
-    def get_project_by_name(self, tenant_name, domain_id):
-        return self.driver.get_project_by_name(tenant_name, domain_id)
+    def get_project_by_name(self, tenant_name, domain_id, is_domain):
+        return self.driver.get_project_by_name(
+            tenant_name, domain_id, is_domain)
 
     @notifications.internal(
         notifications.INVALIDATE_USER_PROJECT_TOKEN_PERSISTENCE)
@@ -544,7 +632,7 @@ class Driver(object):
         return CONF.resource.list_limit or CONF.list_limit
 
     @abc.abstractmethod
-    def get_project_by_name(self, tenant_name, domain_id):
+    def get_project_by_name(self, tenant_name, domain_id, is_domain):
         """Get a tenant by name.
 
         :returns: tenant_ref
