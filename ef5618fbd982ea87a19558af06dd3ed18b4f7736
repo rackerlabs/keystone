@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ab451fb_7d2c6c4a",
+        "filename": "keystone/catalog/backends/templated.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-17T18:18:27Z",
+      "side": 1,
+      "message": "looks like i forgot an implementation (thanks mgagne!)",
+      "revId": "ef5618fbd982ea87a19558af06dd3ed18b4f7736",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
