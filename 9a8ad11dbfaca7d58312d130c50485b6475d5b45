@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ab451fb_49033d74",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 927,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-17T15:48:06Z",
+      "side": 1,
+      "message": "@Matthieu Huin, as the question you have brought up early, we need pay attention to any place where the event is registered.\n\nSo, I suggest you to add some comments in some place to indicate how to follow if this patch is merged.\n\nHave checked in current source, so far, it\u0027s okay.",
+      "revId": "9a8ad11dbfaca7d58312d130c50485b6475d5b45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
