@@ -36,6 +36,7 @@ from keystone.tests.unit import fakeldap
 from keystone.tests.unit import identity_mapping as mapping_sql
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import test_backend
+from keystone.tests.unit import utils as test_utils
 
 
 CONF = cfg.CONF
@@ -1633,6 +1634,43 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
 
         # Returning projects to be used across the tests
         return [project1, project2]
+
+    def _assert_create_is_domain_project_not_allowed(self):
+        """Tests that we can't create more than one project acting as domain.
+
+        This method will be used at any test that require the creation of a
+        project that act as a domain. LDAP does not support multiple domains
+        and the only domain it has (default) is immutable.
+        """
+        domain = self._get_domain_fixture()
+        project = {'id': uuid.uuid4().hex,
+                   'name': uuid.uuid4().hex,
+                   'description': '',
+                   'domain_id': domain['id'],
+                   'enabled': True,
+                   'parent_id': None,
+                   'is_domain': True}
+
+        self.assertRaises(exception.ValidationError,
+                          self.resource_api.create_project,
+                          project['id'], project)
+
+    @test_utils.wip('waiting for the is_domain field implementation')
+    def test_delete_is_domain_project(self):
+        self._assert_create_is_domain_project_not_allowed()
+
+    def test_create_is_domain_project_under_project_hierarchy(self):
+        self._assert_create_hierarchy_not_allowed()
+
+    def test_create_not_is_domain_project_under_is_domain_hierarchy(self):
+        self._assert_create_hierarchy_not_allowed()
+
+    @test_utils.wip('waiting for the is_domain field implementation')
+    def test_create_is_domain_project(self):
+        self._assert_create_is_domain_project_not_allowed()
+
+    def test_create_project_with_parent_id_and_without_domain_id(self):
+        self._assert_create_hierarchy_not_allowed()
 
     def test_check_leaf_projects(self):
         projects = self._assert_create_hierarchy_not_allowed()
