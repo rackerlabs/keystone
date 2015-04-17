@@ -2414,7 +2414,6 @@ class IdentityTests(AssignmentTestHelperMixin):
         self.assertEqual(DEFAULT_DOMAIN_ID, ref['domain_id'])
 
     @tests.skip_if_no_multiple_domains_support
-    @test_utils.wip('waiting for projects acting as domains implementation')
     def test_is_domain_sub_project_has_parent_domain_id(self):
         project = {'id': uuid.uuid4().hex,
                    'description': '',
@@ -2464,7 +2463,42 @@ class IdentityTests(AssignmentTestHelperMixin):
         self.resource_api.delete_project(project['id'])
 
     @tests.skip_if_no_multiple_domains_support
-    @test_utils.wip('waiting for projects acting as domains implementation')
+    def test_not_delete_domain_with_enabled_subdomains(self):
+        # It is not possible to delete a project acting as a domain that has
+        # a subproject acting as domain that is enabled.
+        projects_hierarchy = self._create_projects_hierarchy(
+            hierarchy_size=3, is_domain=True)
+
+        root_project = projects_hierarchy[0]
+        sub_project = projects_hierarchy[1]
+        last_project = projects_hierarchy[2]
+
+        # Disable the root project
+        root_project['enabled'] = False
+        self.resource_api.update_project(root_project['id'], root_project)
+
+        # Try to delete root project that is disabled but has enabled children
+        self.assertRaises(exception.ValidationError,
+                          self.resource_api.delete_project,
+                          root_project['id'])
+
+        # Disable the sub project
+        sub_project['enabled'] = False
+        self.resource_api.update_project(sub_project['id'], sub_project)
+
+        # Still can't delete root project, since last_project is enabled
+        self.assertRaises(exception.ValidationError,
+                          self.resource_api.delete_project,
+                          root_project['id'])
+
+        # Finally, disable the last project
+        last_project['enabled'] = False
+        self.resource_api.update_project(last_project['id'], last_project)
+
+        # And then, it is possible to delete the root
+        self.resource_api.delete_project(last_project['id'])
+
+    @tests.skip_if_no_multiple_domains_support
     def test_create_domain_under_regular_project_hierarchy_fails(self):
         # Creating a regular project hierarchy. Projects acting as domains
         # can't have a parent that is a regular project.
@@ -2513,6 +2547,7 @@ class IdentityTests(AssignmentTestHelperMixin):
         # The is_domain flag should be False by default
         self.assertFalse(ref['is_domain'])
 
+    @tests.skip_if_no_multiple_domains_support
     def test_create_is_domain_project(self):
         project = {'id': uuid.uuid4().hex,
                    'description': '',
