@@ -40,11 +40,19 @@ class Resource(keystone_resource.ResourceDriverV9):
         with sql.transaction() as session:
             return self._get_project(session, tenant_id).to_dict()
 
-    def get_project_by_name(self, tenant_name, domain_id):
+    def get_project_by_name(self, tenant_name, domain_id, is_domain):
         with sql.transaction() as session:
             query = session.query(Project)
             query = query.filter_by(name=tenant_name)
-            query = query.filter_by(domain_id=domain_id)
+            # NOTE(htruta): Projects that act as domains will have no
+            # domain_id when their implementation is completed and will have
+            # its name unique across the whole cloud. However, they are
+            # currently stored the same way as regular projects. It is worth
+            # to note that the creation of such projects is not allowed
+            # at controller level yet.
+            if not is_domain:
+                query = query.filter_by(domain_id=domain_id)
+            query = query.filter_by(is_domain=is_domain)
             try:
                 project_ref = query.one()
             except sql.NotFound:
