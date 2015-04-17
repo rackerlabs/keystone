@@ -76,7 +76,7 @@ class Tenant(controller.V2Controller):
         self.assert_admin(context)
         # Projects acting as a domain should not be visible via v2
         ref = self.resource_api.get_project_by_name(
-            tenant_name, CONF.identity.default_domain_id)
+            tenant_name, CONF.identity.default_domain_id, False)
         return {'tenant': self.v3_to_v2_project(ref)}
 
     # CRUD Extension
