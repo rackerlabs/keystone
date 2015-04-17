@@ -419,12 +419,6 @@ class ProjectValidationTestCase(unit.BaseTestCase):
                           self.update_project_validator.validate,
                           request_to_validate)
 
-    def test_validate_project_update_request_with_null_domain_id_fails(self):
-        request_to_validate = {'domain_id': None}
-        self.assertRaises(exception.SchemaValidationError,
-                          self.update_project_validator.validate,
-                          request_to_validate)
-
 
 class DomainValidationTestCase(unit.BaseTestCase):
     """Test for V3 Domain API validation."""
