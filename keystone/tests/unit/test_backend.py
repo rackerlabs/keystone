@@ -167,14 +167,16 @@ class IdentityTests(object):
     def test_get_project_by_name(self):
         tenant_ref = self.resource_api.get_project_by_name(
             self.tenant_bar['name'],
-            DEFAULT_DOMAIN_ID)
+            DEFAULT_DOMAIN_ID,
+            False)
         self.assertDictEqual(tenant_ref, self.tenant_bar)
 
     def test_get_project_by_name_404(self):
         self.assertRaises(exception.ProjectNotFound,
                           self.resource_api.get_project_by_name,
                           uuid.uuid4().hex,
-                          DEFAULT_DOMAIN_ID)
+                          DEFAULT_DOMAIN_ID,
+                          False)
 
     def test_list_user_ids_for_project(self):
         user_ids = self.assignment_api.list_user_ids_for_project(
@@ -3448,13 +3450,16 @@ class IdentityTests(object):
         self.resource_api.create_domain(domain['id'], domain)
         # Create a project
         self.resource_api.create_project(project_id, project)
-        self.resource_api.get_project_by_name(project_name, domain['id'])
+        self.resource_api.get_project_by_name(project_name,
+                                              domain['id'],
+                                              False)
         project['name'] = uuid.uuid4().hex
         self.resource_api.update_project(project_id, project)
         self.assertRaises(exception.ProjectNotFound,
                           self.resource_api.get_project_by_name,
                           project_name,
-                          domain['id'])
+                          domain['id'],
+                          False)
 
     @tests.skip_if_cache_disabled('resource')
     @tests.skip_if_no_multiple_domains_support
