@@ -33,6 +33,40 @@
       "revId": "836012209a28f47970232b1764c034f03f3cef3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_b648d15c",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-17T19:43:08Z",
+      "side": 1,
+      "message": "test_backend.CatalogTests",
+      "revId": "836012209a28f47970232b1764c034f03f3cef3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_16730582",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-17T19:43:08Z",
+      "side": 1,
+      "message": "Actually all of the method that have been skipped above is overridden from the test_backend.CatalogTests.  \n\nShould we just move them down here too for clarity?",
+      "revId": "836012209a28f47970232b1764c034f03f3cef3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
