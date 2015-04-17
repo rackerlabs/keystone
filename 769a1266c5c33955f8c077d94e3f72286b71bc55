@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3ab451fb_55406a56",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 41
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-17T17:35:48Z",
+      "side": 1,
+      "message": "It\u0027s easy enough to see what you did my looking at the commit. Can you add why you need to do this to the commit message?",
+      "revId": "769a1266c5c33955f8c077d94e3f72286b71bc55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_b518ce85",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 41
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-17T17:35:48Z",
+      "side": 1,
+      "message": "Is all of the dep patch listing useful to anyone?",
+      "revId": "769a1266c5c33955f8c077d94e3f72286b71bc55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_150ae226",
+        "filename": "keystone/common/sql/migrate_repo/versions/074_update_project_name_constraint.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-17T17:35:48Z",
+      "side": 1,
+      "message": "(nit) should be an extra newline here",
+      "revId": "769a1266c5c33955f8c077d94e3f72286b71bc55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_672bbd83",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-17T17:35:48Z",
+      "side": 1,
+      "message": "These is a possibility of a race condition here. What would happen is we did create two projects with the same name?",
+      "revId": "769a1266c5c33955f8c077d94e3f72286b71bc55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_47f3210b",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-17T17:35:48Z",
+      "side": 1,
+      "message": "I don\u0027t think this is the right error code. To me it\u0027s a ValidationError and no different than the validation error you would get when the DB enforces uniqueness. A forbidden is usually used when controlling access to a single resource that may have change while a user was performing an operation on it.",
+      "revId": "769a1266c5c33955f8c077d94e3f72286b71bc55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_c7b97130",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 1669,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-17T17:35:48Z",
+      "side": 1,
+      "message": "How is this test any different than the one above?",
+      "revId": "769a1266c5c33955f8c077d94e3f72286b71bc55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
