@@ -253,6 +253,12 @@ class V2Controller(wsgi.Application):
         return ref
 
     @staticmethod
+    def filter_is_domain(ref):
+        """Remove is_domain field since v2 calls are not domain-aware."""
+        ref.pop('is_domain', None)
+        return ref
+
+    @staticmethod
     def normalize_username_in_response(ref):
         """Adds username to outgoing user refs to match the v2 spec.
 
@@ -340,6 +346,7 @@ class V2Controller(wsgi.Application):
             """Run through the various filter methods."""
             V2Controller.filter_domain_id(ref)
             V2Controller.filter_project_parent_id(ref)
+            V2Controller.filter_is_domain(ref)
             return ref
 
         if isinstance(ref, dict):
@@ -733,7 +740,7 @@ class V3Controller(wsgi.Application):
 
     def _normalize_domain_id(self, context, ref):
         """Fill in domain_id if not specified in a v3 call."""
-        if 'domain_id' not in ref:
+        if not ref.get('domain_id'):
             ref['domain_id'] = self._get_domain_id_from_token(context)
         return ref
 

@@ -36,7 +36,6 @@ from keystone.tests.unit import fakeldap
 from keystone.tests.unit import identity_mapping as mapping_sql
 from keystone.tests.unit.ksfixtures import database
 from keystone.tests.unit import test_backend
-from keystone.tests.unit import utils as test_utils
 
 
 CONF = cfg.CONF
@@ -1533,7 +1532,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                    'domain_id': CONF.identity.default_domain_id,
                    'description': uuid.uuid4().hex,
                    'enabled': True,
-                   'parent_id': None}
+                   'parent_id': None,
+                   'is_domain': False}
         self.resource_api.create_project(project['id'], project)
         project_ref = self.resource_api.get_project(project['id'])
 
@@ -1611,7 +1611,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                     'description': '',
                     'domain_id': domain['id'],
                     'enabled': True,
-                    'parent_id': None}
+                    'parent_id': None,
+                    'is_domain': False}
         self.resource_api.create_project(project1['id'], project1)
 
         # Creating project2 under project1. LDAP will not allow
@@ -1621,7 +1622,8 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                     'description': '',
                     'domain_id': domain['id'],
                     'enabled': True,
-                    'parent_id': project1['id']}
+                    'parent_id': project1['id'],
+                    'is_domain': False}
 
         self.assertRaises(exception.InvalidParentProject,
                           self.resource_api.create_project,
@@ -1655,7 +1657,6 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
                           self.resource_api.create_project,
                           project['id'], project)
 
-    @test_utils.wip('waiting for the is_domain field implementation')
     def test_delete_is_domain_project(self):
         self._assert_create_is_domain_project_not_allowed()
 
@@ -1665,7 +1666,6 @@ class LDAPIdentity(BaseLDAPIdentity, tests.TestCase):
     def test_create_not_is_domain_project_under_is_domain_hierarchy(self):
         self._assert_create_hierarchy_not_allowed()
 
-    @test_utils.wip('waiting for the is_domain field implementation')
     def test_create_is_domain_project(self):
         self._assert_create_is_domain_project_not_allowed()
 
@@ -2004,7 +2004,8 @@ class LDAPIdentityEnabledEmulation(LDAPIdentity):
             'name': uuid.uuid4().hex,
             'domain_id': CONF.identity.default_domain_id,
             'description': uuid.uuid4().hex,
-            'parent_id': None}
+            'parent_id': None,
+            'is_domain': False}
 
         self.resource_api.create_project(project['id'], project)
         project_ref = self.resource_api.get_project(project['id'])
@@ -2641,7 +2642,8 @@ class MultiLDAPandSQLIdentity(BaseLDAPIdentity, tests.SQLDriverOverrides,
                    'domain_id': domain['id'],
                    'description': uuid.uuid4().hex,
                    'parent_id': None,
-                   'enabled': True}
+                   'enabled': True,
+                   'is_domain': False}
         self.resource_api.create_domain(domain['id'], domain)
         self.resource_api.create_project(project['id'], project)
         project_ref = self.resource_api.get_project(project['id'])

@@ -47,24 +47,36 @@ class Tenant(controller.V2Controller):
         self.assert_admin(context)
         tenant_refs = self.resource_api.list_projects_in_domain(
             CONF.identity.default_domain_id)
-        for tenant_ref in tenant_refs:
-            tenant_ref = self.v3_to_v2_project(tenant_ref)
+        tenant_refs = [self.v3_to_v2_project(tenant_ref)
+                       for tenant_ref in tenant_refs
+                       if not tenant_ref.get('is_domain')]
         params = {
             'limit': context['query_string'].get('limit'),
             'marker': context['query_string'].get('marker'),
         }
         return self.format_project_list(tenant_refs, **params)
 
+    def _assert_not_is_domain_project(self, project_id, project_ref=None):
+        # Projects acting as a domain should not be visible via v2
+        if not project_ref:
+            project_ref = self.resource_api.get_project(project_id)
+        if project_ref.get('is_domain'):
+            raise exception.ProjectNotFound(project_id)
+
+        return project_ref
+
     @controller.v2_deprecated
     def get_project(self, context, tenant_id):
         # TODO(termie): this stuff should probably be moved to middleware
         self.assert_admin(context)
         ref = self.resource_api.get_project(tenant_id)
+        self._assert_not_is_domain_project(tenant_id, ref)
         return {'tenant': self.v3_to_v2_project(ref)}
 
     @controller.v2_deprecated
     def get_project_by_name(self, context, tenant_name):
         self.assert_admin(context)
+        # Projects acting as a domain should not be visible via v2
         ref = self.resource_api.get_project_by_name(
             tenant_name, CONF.identity.default_domain_id)
         return {'tenant': self.v3_to_v2_project(ref)}
@@ -88,11 +100,12 @@ class Tenant(controller.V2Controller):
     @controller.v2_deprecated
     def update_project(self, context, tenant_id, tenant):
         self.assert_admin(context)
-        # Remove domain_id if specified - a v2 api caller should not
-        # be specifying that
+        self._assert_not_is_domain_project(tenant_id)
+        # Remove domain_id and is_domain if specified - a v2 api caller
+        # should not be specifying that
         clean_tenant = tenant.copy()
         clean_tenant.pop('domain_id', None)
-
+        clean_tenant.pop('is_domain', None)
         tenant_ref = self.resource_api.update_project(
             tenant_id, clean_tenant)
         return {'tenant': self.v3_to_v2_project(tenant_ref)}
@@ -100,6 +113,7 @@ class Tenant(controller.V2Controller):
     @controller.v2_deprecated
     def delete_project(self, context, tenant_id):
         self.assert_admin(context)
+        self._assert_not_is_domain_project(tenant_id)
         self.resource_api.delete_project(tenant_id)
 
 
@@ -200,7 +214,13 @@ class ProjectV3(controller.V3Controller):
     @validation.validated(schema.project_create, 'project')
     def create_project(self, context, project):
         ref = self._assign_unique_id(self._normalize_dict(project))
-        ref = self._normalize_domain_id(context, ref)
+
+        # If we don't set parent_id or domain_id, the domain_id will
+        # be normalized to the domain_id in the token if domain scoped
+        # or to the domain default.
+        if not ref.get('parent_id') and not ref.get('domain_id'):
+            ref = self._normalize_domain_id(context, ref)
+
         initiator = notifications._get_request_audit_info(context)
         try:
             ref = self.resource_api.create_project(ref['id'], ref,
