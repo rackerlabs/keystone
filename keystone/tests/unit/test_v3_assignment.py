@@ -20,7 +20,6 @@ from keystone.common import controller
 from keystone import exception
 from keystone.tests import unit as tests
 from keystone.tests.unit import test_v3
-from keystone.tests.unit import utils
 
 
 CONF = cfg.CONF
@@ -506,7 +505,36 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
                   body={'project': ref},
                   expected_status=501)
 
-    @utils.wip('waiting for projects acting as domains implementation')
+    def test_create_project_without_parent_id_and_domain_id_none(self):
+        """Call ``POST /projects``."""
+
+        # Grant a domain role for the user
+        collection_url = (
+            '/domains/%(domain_id)s/users/%(user_id)s/roles' % {
+                'domain_id': self.domain_id,
+                'user_id': self.user['id']})
+        member_url = '%(collection_url)s/%(role_id)s' % {
+            'collection_url': collection_url,
+            'role_id': self.role_id}
+        self.put(member_url)
+
+        # Create an authentication request for a domain scoped token
+        auth = self.build_authentication_request(
+            user_id=self.user['id'],
+            password=self.user['password'],
+            domain_id=self.domain_id)
+
+        # Without parent_id and domain_id passed as None, the domain_id should
+        # be normalized to the domain on the token, when using a domain
+        # scoped token.
+        ref = self.new_project_ref()
+        r = self.post(
+            '/projects',
+            auth=auth,
+            body={'project': ref})
+        ref['domain_id'] = self.domain['id']
+        self.assertValidProjectResponse(r, ref)
+
     def test_create_project_without_parent_id_and_without_domain_id(self):
         """Call ``POST /projects``."""
 
@@ -530,6 +558,8 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         # normalized to the domain on the token, when using a domain
         # scoped token.
         ref = self.new_project_ref()
+        ref.pop('domain_id')
+        ref.pop('parent_id')
         r = self.post(
             '/projects',
             auth=auth,
@@ -537,7 +567,6 @@ class AssignmentTestCase(test_v3.RestfulTestCase,
         ref['domain_id'] = self.domain['id']
         self.assertValidProjectResponse(r, ref)
 
-    @utils.wip('waiting for projects acting as domains implementation')
     def test_create_project_with_parent_id_and_no_domain_id(self):
         """Call ``POST /projects``."""
         # With only the parent_id, the domain_id should be
