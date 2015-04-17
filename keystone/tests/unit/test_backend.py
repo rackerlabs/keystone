@@ -536,14 +536,55 @@ class IdentityTests(AssignmentTestHelperMixin):
     def test_get_project_by_name(self):
         tenant_ref = self.resource_api.get_project_by_name(
             self.tenant_bar['name'],
-            DEFAULT_DOMAIN_ID)
+            DEFAULT_DOMAIN_ID,
+            False)
         self.assertDictEqual(self.tenant_bar, tenant_ref)
+
+    @unit.skip_if_no_multiple_domains_support
+    def test_get_project_by_name_with_is_domain_flag_enabled(self):
+        project1 = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': '',
+            'enabled': True,
+            'parent_id': None,
+            'domain_id': DEFAULT_DOMAIN_ID,
+            'is_domain': True}
+        self.resource_api.create_project(project1['id'], project1)
+        project2 = {
+            'id': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': '',
+            'enabled': True,
+            'parent_id': None,
+            'domain_id': DEFAULT_DOMAIN_ID,
+            'is_domain': True}
+        self.resource_api.create_project(project2['id'], project2)
+
+        project1_ref = self.resource_api.get_project_by_name(
+            project1['name'],
+            project1['domain_id'],
+            True)
+        project2_ref = self.resource_api.get_project_by_name(
+            project2['name'],
+            project2['domain_id'],
+            True)
+
+        self.assertDictEqual(project1, project1_ref)
+        self.assertDictEqual(project2, project2_ref)
 
     def test_get_project_by_name_returns_not_found(self):
         self.assertRaises(exception.ProjectNotFound,
                           self.resource_api.get_project_by_name,
                           uuid.uuid4().hex,
-                          DEFAULT_DOMAIN_ID)
+                          DEFAULT_DOMAIN_ID,
+                          False)
+
+        self.assertRaises(exception.ProjectNotFound,
+                          self.resource_api.get_project_by_name,
+                          uuid.uuid4().hex,
+                          DEFAULT_DOMAIN_ID,
+                          True)
 
     def test_list_user_ids_for_project(self):
         user_ids = self.assignment_api.list_user_ids_for_project(
@@ -3920,13 +3961,16 @@ class IdentityTests(AssignmentTestHelperMixin):
         self.resource_api.create_domain(domain['id'], domain)
         # Create a project
         self.resource_api.create_project(project_id, project)
-        self.resource_api.get_project_by_name(project_name, domain['id'])
+        self.resource_api.get_project_by_name(project_name,
+                                              domain['id'],
+                                              False)
         project['name'] = uuid.uuid4().hex
         self.resource_api.update_project(project_id, project)
         self.assertRaises(exception.ProjectNotFound,
                           self.resource_api.get_project_by_name,
                           project_name,
-                          domain['id'])
+                          domain['id'],
+                          False)
 
     @unit.skip_if_cache_disabled('resource')
     @unit.skip_if_no_multiple_domains_support
