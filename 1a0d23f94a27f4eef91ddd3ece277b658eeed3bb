@@ -16,6 +16,24 @@
       "revId": "1a0d23f94a27f4eef91ddd3ece277b658eeed3bb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ab451fb_997c0c22",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 1027,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-17T02:49:37Z",
+      "side": 1,
+      "message": "David, if you delete this section which will mean there is no federation protocol assigned the identity provider, after deleting this IdP, L1037 will pass for sure, and since there is no protocol assigned, so L1038 will passed too.\n\nThe previous issue which pointed out by Steve will lead to check a non-existent protocol, since there is no such protocol both L1037 or L1038 will pass. This is caused when I tried to replace the \u0027saml2\u0027 with the constant.\n\nWhat we want to prove here is there is some protocols assigned to IdP, but *the protocals* should be removed when the associated IdP is removed.\n\n\nThanks!",
+      "parentUuid": "3ab451fb_264a7784",
+      "revId": "1a0d23f94a27f4eef91ddd3ece277b658eeed3bb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
