@@ -561,11 +561,62 @@ class IdentityTests(AssignmentTestHelperMixin):
             DEFAULT_DOMAIN_ID)
         self.assertDictEqual(self.tenant_bar, tenant_ref)
 
+    @unit.skip_if_no_multiple_domains_support
+    def test_get_project_by_name_without_passing_domain_id(self):
+        """Tests get_project_by_name with no domain_id provided."""
+        project = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID,
+                                       is_domain=False)
+        self.resource_api.create_project(project['id'], project)
+
+        self.assertRaises(exception.ValidationError,
+                          self.resource_api.get_project_by_name,
+                          project['name'],
+                          None,
+                          False)
+
+        # Test that querying without passing the domain_id is only
+        # supported for projects that act as domains.
+        project2 = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID,
+                                        is_domain=True)
+        self.resource_api.create_project(project2['id'], project2)
+
+        project_ref = self.resource_api.get_project_by_name(
+            project2['name'], None, True)
+
+        self.assertEqual(project2, project_ref)
+
+    @unit.skip_if_no_multiple_domains_support
+    def test_get_project_by_name_with_is_domain_flag_enabled(self):
+        project1 = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID,
+                                        is_domain=True)
+        self.resource_api.create_project(project1['id'], project1)
+        project2 = unit.new_project_ref(domain_id=DEFAULT_DOMAIN_ID,
+                                        is_domain=True)
+        self.resource_api.create_project(project2['id'], project2)
+
+        project1_ref = self.resource_api.get_project_by_name(
+            project1['name'],
+            project1['domain_id'],
+            True)
+        project2_ref = self.resource_api.get_project_by_name(
+            project2['name'],
+            project2['domain_id'],
+            True)
+
+        self.assertDictEqual(project1, project1_ref)
+        self.assertDictEqual(project2, project2_ref)
+
     def test_get_project_by_name_returns_not_found(self):
         self.assertRaises(exception.ProjectNotFound,
                           self.resource_api.get_project_by_name,
                           uuid.uuid4().hex,
                           DEFAULT_DOMAIN_ID)
+
+        self.assertRaises(exception.ProjectNotFound,
+                          self.resource_api.get_project_by_name,
+                          uuid.uuid4().hex,
+                          DEFAULT_DOMAIN_ID,
+                          True)
 
     def test_list_user_ids_for_project(self):
         user_ids = self.assignment_api.list_user_ids_for_project(
@@ -3639,7 +3690,8 @@ class IdentityTests(AssignmentTestHelperMixin):
         self.resource_api.create_domain(domain['id'], domain)
         # Create a project
         self.resource_api.create_project(project_id, project)
-        self.resource_api.get_project_by_name(project_name, domain['id'])
+        self.resource_api.get_project_by_name(project_name,
+                                              domain['id'])
         project['name'] = uuid.uuid4().hex
         self.resource_api.update_project(project_id, project)
         self.assertRaises(exception.ProjectNotFound,

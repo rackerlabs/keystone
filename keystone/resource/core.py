@@ -207,8 +207,17 @@ class Manager(manager.Manager):
         notifications.Audit.created(self._PROJECT, tenant_id, initiator)
         if MEMOIZE.should_cache(ret):
             self.get_project.set(ret, self, tenant_id)
-            self.get_project_by_name.set(ret, self, ret['name'],
-                                         ret['domain_id'])
+            if not ret['is_domain']:
+                # The is_domain attribute is not recognised by earlier drivers
+                # than V9 - and they will discard any value passed. Such
+                # drivers will only return results from get_project_by_name()
+                # if the request paramater is_domain is False. Hence we only
+                # pre-load the cache for _get_project_by_name for projects
+                # created with is_domain=False, to avoid pre-loading the
+                # cache with a project that an earlier driver than V9 driver
+                # cannot return.
+                self._get_project_by_name.set(ret, self, ret['name'],
+                                              ret['domain_id'], False)
         return ret
 
     def assert_domain_enabled(self, domain_id, domain=None):
@@ -329,8 +338,9 @@ class Manager(manager.Manager):
         ret = self.driver.update_project(tenant_id, tenant)
         notifications.Audit.updated(self._PROJECT, tenant_id, initiator)
         self.get_project.invalidate(self, tenant_id)
-        self.get_project_by_name.invalidate(self, original_tenant['name'],
-                                            original_tenant['domain_id'])
+        self._get_project_by_name.invalidate(self, original_tenant['name'],
+                                             original_tenant['domain_id'],
+                                             False)
         return ret
 
     def delete_project(self, tenant_id, initiator=None):
@@ -355,8 +365,9 @@ class Manager(manager.Manager):
         ret = self.driver.delete_project(tenant_id)
         self.assignment_api.delete_project_assignments(tenant_id)
         self.get_project.invalidate(self, tenant_id)
-        self.get_project_by_name.invalidate(self, project['name'],
-                                            project['domain_id'])
+        self._get_project_by_name.invalidate(self, project['name'],
+                                             project['domain_id'],
+                                             False)
         self.credential_api.delete_credentials_for_project(tenant_id)
         notifications.Audit.deleted(self._PROJECT, tenant_id, initiator)
         return ret
@@ -648,8 +659,15 @@ class Manager(manager.Manager):
         return self.driver.get_project(project_id)
 
     @MEMOIZE
-    def get_project_by_name(self, tenant_name, domain_id):
-        return self.driver.get_project_by_name(tenant_name, domain_id)
+    def _get_project_by_name(self, tenant_name, domain_id, is_domain):
+        if not domain_id and not is_domain:
+            raise exception.ValidationError(
+                message=_('domain_id must be provided for regular projects.'))
+        return self.driver.get_project_by_name(
+            tenant_name, domain_id, is_domain)
+
+    def get_project_by_name(self, tenant_name, domain_id, is_domain=False):
+        return self._get_project_by_name(tenant_name, domain_id, is_domain)
 
     @notifications.internal(
         notifications.INVALIDATE_USER_PROJECT_TOKEN_PERSISTENCE)
@@ -673,17 +691,6 @@ class ResourceDriverBase(object):
 
     def _get_list_limit(self):
         return CONF.resource.list_limit or CONF.list_limit
-
-    @abc.abstractmethod
-    def get_project_by_name(self, tenant_name, domain_id):
-        """Get a tenant by name.
-
-        :returns: tenant_ref
-        :raises keystone.exception.ProjectNotFound: if a project with the
-                             tenant_name does not exist within the domain
-
-        """
-        raise exception.NotImplemented()  # pragma: no cover
 
     # domain crud
     @abc.abstractmethod
@@ -942,7 +949,16 @@ class ResourceDriverV8(ResourceDriverBase):
 
     """
 
-    pass
+    @abc.abstractmethod
+    def get_project_by_name(self, tenant_name, domain_id):
+        """Get a tenant by name.
+
+        :returns: tenant_ref
+        :raises keystone.exception.ProjectNotFound: if a project with the
+                             tenant_name does not exist within the domain
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
 
 
 class ResourceDriverV9(ResourceDriverBase):
@@ -952,6 +968,17 @@ class ResourceDriverV9(ResourceDriverBase):
     this class.
 
     """
+
+    @abc.abstractmethod
+    def get_project_by_name(self, tenant_name, domain_id, is_domain):
+        """Get a tenant by name.
+
+        :returns: tenant_ref
+        :raises keystone.exception.ProjectNotFound: if a project with the
+                             tenant_name does not exist within the domain
+
+        """
+        raise exception.NotImplemented()  # pragma: no cover
 
     pass
 
@@ -986,7 +1013,9 @@ class V9ResourceWrapperForV8Driver(ResourceDriverV9):
     def __init__(self, wrapped_driver):
         self.driver = wrapped_driver
 
-    def get_project_by_name(self, tenant_name, domain_id):
+    def get_project_by_name(self, tenant_name, domain_id, is_domain):
+        if is_domain:
+            raise exception.ProjectNotFound(project_id=tenant_name)
         return self.driver.get_project_by_name(tenant_name, domain_id)
 
     def create_domain(self, domain_id, domain):
