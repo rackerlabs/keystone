@@ -36,6 +36,7 @@ from keystone.models import token_model
 
 CONF = cfg.CONF
 LOG = log.getLogger(__name__)
+_TRUSTED_DASHBOARDS = None
 
 
 class _ControllerBase(controller.V3Controller):
@@ -266,6 +267,26 @@ class Auth(auth_controllers.Auth):
 
         return self.authenticate_for_token(context, auth=auth)
 
+    def _is_trusted_dashboard(self, host):
+        """Verify that host is a trusted dashboard.
+
+        Check if the host scheme and netloc matches one of listed
+        trusted_dashboard.
+
+        """
+        global _TRUSTED_DASHBOARDS
+        if not _TRUSTED_DASHBOARDS:
+            _TRUSTED_DASHBOARDS = [urllib.parse.urlparse(dashboard)
+                                  for dashboard in
+                                  CONF.federation.trusted_dashboard]
+
+        host_url = urllib.parse.urlparse(host)
+        for dashboard_url in _TRUSTED_DASHBOARDS:
+            if (host_url.scheme == dashboard_url.scheme
+                    and host_url.netloc == dashboard_url.netloc):
+                return True
+        return False
+
     def federated_sso_auth(self, context, protocol_id):
         try:
             remote_id_name = utils.get_remote_id_parameter(protocol_id)
@@ -283,7 +304,7 @@ class Auth(auth_controllers.Auth):
             LOG.error(msg)
             raise exception.ValidationError(msg)
 
-        if host in CONF.federation.trusted_dashboard:
+        if self._is_trusted_dashboard(host):
             ref = self.federation_api.get_idp_from_remote_id(remote_id)
             # NOTE(stevemar): the returned object is a simple dict that
             # contains the idp_id and remote_id.
