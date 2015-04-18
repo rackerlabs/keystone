@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "fabf19d9_ae10afa9",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-18T13:19:03Z",
+      "side": 1,
+      "message": "why it\u0027s unscoped token when tenant is given?",
+      "revId": "9fb4d0e9d2540f3d5bf7b3f2ce952d45181140f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3a961159_0aa045a4",
         "filename": "keystone/tests/test_auth.py",
         "patchSetId": 4
@@ -49,6 +66,41 @@
       "side": 1,
       "message": "Also, should note that an unscoped token request can be used to validate my username and password, so if I can get an unscoped token I can already tell if the project doens\u0027t exist.\n\nThe server should respond with 403 \"project ID not found or user doesn\u0027t have a role assignment on the project\"",
       "parentUuid": "3a961159_0aa045a4",
+      "revId": "9fb4d0e9d2540f3d5bf7b3f2ce952d45181140f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fabf19d9_ce0be37c",
+        "filename": "keystone/tests/test_auth.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 317,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-18T13:19:03Z",
+      "side": 1,
+      "message": "++\nI think we should rename the these testcases, It\u0027s should be scoped token instead of unscoped if tenant_id is given. I believe `copy and paste cause` this issue.",
+      "parentUuid": "3a961159_cf516f0f",
+      "revId": "9fb4d0e9d2540f3d5bf7b3f2ce952d45181140f3",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fabf19d9_ce82c3c8",
+        "filename": "keystone/token/controllers.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 381,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-18T13:19:03Z",
+      "side": 1,
+      "message": "How about \"Project ID: %(t_id)s is not found\"?",
       "revId": "9fb4d0e9d2540f3d5bf7b3f2ce952d45181140f3",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
