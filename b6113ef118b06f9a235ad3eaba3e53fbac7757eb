@@ -34,6 +34,24 @@
       "revId": "b6113ef118b06f9a235ad3eaba3e53fbac7757eb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aa745d1_6d260abc",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-18T09:47:03Z",
+      "side": 1,
+      "message": "My argument for it being here is that we are only transposing the error because we feel ValidationError is a better HTTP response.  Manager layers shouldn\u0027t care about the vagaries of HTTP protocols.....that is the job of the controller.",
+      "parentUuid": "5aa745d1_74b6e03e",
+      "revId": "b6113ef118b06f9a235ad3eaba3e53fbac7757eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
