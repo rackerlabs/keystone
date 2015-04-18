@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "fabf19d9_e0511610",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-18T07:29:27Z",
+      "side": 1,
+      "message": "feel free to take over bug #1436704 if you want to consolidate that bug within this patch, add Closes-Bug: #1436704 here.\n\nBTW, s/Closes-bug: 1410543/Closes-Bug: #1410543",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fabf19d9_3d93bbfc",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-18T07:29:27Z",
+      "side": 1,
+      "message": "feel free to remove this \"TODO\" if this patch would address that issue, just a soft suggestion.",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ab451fb_3a738d82",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 9
@@ -72,6 +106,23 @@
     },
     {
       "key": {
+        "uuid": "fabf19d9_5d5b0f55",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-18T07:29:27Z",
+      "side": 1,
+      "message": "be caution here, suppose `tenant_id` is None (see bug #1261468), we would not get associations and then `filtered_catalog` will be empty, what we will get at last?",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ab451fb_cf7e2dae",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 9
@@ -101,6 +152,40 @@
       "side": 1,
       "message": "That\u0027s debatable. Externally, endpoint filtering is still a separate function. We are just consolidating the functionally internally. Since config options are externally facing, we may want to leave them along for now.",
       "parentUuid": "3ab451fb_cf7e2dae",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fabf19d9_bdfd8b70",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-18T07:29:27Z",
+      "side": 1,
+      "message": "Can we remove this requires? Since this requirement has posted into catalog SQL driver.",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fabf19d9_9debe7b0",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-18T07:29:27Z",
+      "side": 1,
+      "message": "Is there any need to pass \"unfiltered\" parameter here?  If true, we should handle it in the catalog SQL driver.",
       "revId": "2548c0852c95e216b298f193bad117471581c437",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
