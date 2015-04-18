@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_dc93a14e",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 640,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-18T18:20:32Z",
+      "side": 1,
+      "message": "do project variable names really need to be this complicated?",
+      "revId": "b5f5dd1e4f14174f751e5b4472174a2764e9b680",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
