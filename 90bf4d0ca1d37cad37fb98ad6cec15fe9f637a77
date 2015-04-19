@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_22ff0f03",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-19T15:31:37Z",
+      "side": 1,
+      "message": "the format for params in rst is\n\n :param abs_path:\n\nsee http://sphinx-doc.org/domains.html#info-field-lists",
+      "revId": "90bf4d0ca1d37cad37fb98ad6cec15fe9f637a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_82101b50",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-19T15:31:37Z",
+      "side": 1,
+      "message": "use\n\n :return:\n\nfor rst.",
+      "revId": "90bf4d0ca1d37cad37fb98ad6cec15fe9f637a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_2274af9a",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 701,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-19T15:31:37Z",
+      "side": 1,
+      "message": "it\u0027s strange to mock our own functions.",
+      "revId": "90bf4d0ca1d37cad37fb98ad6cec15fe9f637a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_e21fd759",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 703,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-19T15:31:37Z",
+      "side": 1,
+      "message": "there should be a comment that says what this is testing, because it\u0027s not obvious.",
+      "revId": "90bf4d0ca1d37cad37fb98ad6cec15fe9f637a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_0252cb13",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-19T15:31:37Z",
+      "side": 1,
+      "message": "This needs a comment what this is doing.",
+      "revId": "90bf4d0ca1d37cad37fb98ad6cec15fe9f637a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_4231e3eb",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 708,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-19T15:31:37Z",
+      "side": 1,
+      "message": "The test should assert that get_init_version returns what\u0027s expected.",
+      "revId": "90bf4d0ca1d37cad37fb98ad6cec15fe9f637a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_a241df3b",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 715,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-19T15:31:37Z",
+      "side": 1,
+      "message": "this needs a comment what it\u0027s testing, because it\u0027s not obvious.",
+      "revId": "90bf4d0ca1d37cad37fb98ad6cec15fe9f637a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_c25bb32d",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 725,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-19T15:31:37Z",
+      "side": 1,
+      "message": "rename to test_get_init_version_with_path to differentiate it from the other tests.\n\nAlso, this needs a comment what it\u0027s testing because it\u0027s not obvious.",
+      "revId": "90bf4d0ca1d37cad37fb98ad6cec15fe9f637a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_624bc75a",
+        "filename": "keystone/tests/unit/test_sql_upgrade.py",
+        "patchSetId": 19
+      },
+      "lineNbr": 731,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-19T15:31:37Z",
+      "side": 1,
+      "message": "if there\u0027s a relationship between migrate_versions.versions.versions[0] then make that clear by referencing a common variable.\n\n initial_version \u003d 10\n ...\n migrate_versions.versions.versions \u003d [initial_version+1, initial_version+2, ...]\n ...\n self.assertEqual(intial_version, version)",
+      "revId": "90bf4d0ca1d37cad37fb98ad6cec15fe9f637a77",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
