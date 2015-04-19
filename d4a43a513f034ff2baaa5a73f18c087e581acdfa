@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_ad867511",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-19T05:38:18Z",
+      "side": 1,
+      "message": "looks like some pep8 failure here",
+      "revId": "d4a43a513f034ff2baaa5a73f18c087e581acdfa",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
