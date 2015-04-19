@@ -16,6 +16,24 @@
       "revId": "fcc3263440c5b6d1f494ef7f42544c924a4a53b6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_6d65fddf",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-19T04:45:29Z",
+      "side": 1,
+      "message": "Added the \"S\".\n\nI prefer to keep this variable private to this module, that\u0027s why I have \"_\" in the variable name.",
+      "parentUuid": "dac4157f_e2c0fce2",
+      "revId": "fcc3263440c5b6d1f494ef7f42544c924a4a53b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
