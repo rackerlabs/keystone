@@ -90,7 +90,8 @@ Ubuntu 12.04:
 
 .. code-block:: bash
 
-    $ sudo apt-get install python-dev libxml2-dev libxslt1-dev libsasl2-dev libsqlite3-dev libssl-dev libldap2-dev libffi-dev
+    $ sudo apt-get install python-dev python3-dev libxml2-dev libxslt1-dev \
+        libsasl2-dev libsqlite3-dev libssl-dev libldap2-dev libffi-dev
 
 
 Fedora 19+:
