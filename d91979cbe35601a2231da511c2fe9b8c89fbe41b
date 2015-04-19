@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "dac4157f_98e76c12",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-19T23:27:44Z",
+      "side": 1,
+      "message": "eric is referring to this line\n\nmaybe we should change this to say it\u0027ll work with py2 and 3?",
+      "revId": "d91979cbe35601a2231da511c2fe9b8c89fbe41b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dac4157f_e26d97cd",
         "filename": "doc/source/setup.rst",
         "patchSetId": 1
