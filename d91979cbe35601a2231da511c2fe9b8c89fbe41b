@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_e26d97cd",
+        "filename": "doc/source/setup.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-04-19T15:31:57Z",
+      "side": 1,
+      "message": "At the top of the file, the doc says it assumes the user is using Python 2.7, should Python 3 just be added up there",
+      "revId": "d91979cbe35601a2231da511c2fe9b8c89fbe41b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
