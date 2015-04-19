@@ -34,6 +34,24 @@
       "revId": "e4deb2b9f6c3db20c0db49677dc5bdced16c64f4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_cdb5297f",
+        "filename": "keystone/tests/unit/test_v3_federation.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 3778,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-19T06:29:34Z",
+      "side": 1,
+      "message": "I should probably make the clear, going to submit one more patch.",
+      "parentUuid": "dac4157f_6d861dbb",
+      "revId": "e4deb2b9f6c3db20c0db49677dc5bdced16c64f4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
