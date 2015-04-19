@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_e2c0fce2",
+        "filename": "keystone/contrib/federation/controllers.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-19T03:04:31Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be TRUSTED_DASHBOARDS ?",
+      "revId": "fcc3263440c5b6d1f494ef7f42544c924a4a53b6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
