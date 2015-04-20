@@ -340,6 +340,15 @@ class CatalogTestCase(test_v3.RestfulTestCase):
         ref['enabled'] = 'puppies'
         self.post('/services', body={'service': ref}, expected_status=400)
 
+    def test_create_service_same_type_twice(self):
+        """Call ``POST /services``."""
+        ref1 = self.new_service_ref()
+        self.post('/services', body={'service': ref1})
+
+        ref2 = self.new_service_ref()
+        ref2['type'] = ref1['type']
+        self.post('/services', body={'service': ref2}, expected_status=500)
+
     def test_list_services(self):
         """Call ``GET /services``."""
         r = self.get('/services')
