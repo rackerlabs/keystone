@@ -125,6 +125,24 @@
     },
     {
       "key": {
+        "uuid": "dac4157f_52b6318b",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-20T18:26:46Z",
+      "side": 1,
+      "message": "It\u0027s actually 3 loops because this is called inside of a loop.",
+      "parentUuid": "3ab451fb_95d5d244",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ab451fb_cf550d1e",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 9
