@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_23bb6d74",
+        "filename": "keystone/tests/functional/shared/test_running.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-04-20T19:53:47Z",
+      "side": 1,
+      "message": "module-level constants are normally uppercase",
+      "revId": "177dc830df0fc955e0ea91cff62dc64f1958e848",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
