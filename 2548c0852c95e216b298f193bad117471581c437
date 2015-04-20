@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dac4157f_3e1151ad",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-20T15:32:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fabf19d9_e0511610",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fabf19d9_3d93bbfc",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 9
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-18T07:29:27Z",
       "side": 1,
       "message": "feel free to remove this \"TODO\" if this patch would address that issue, just a soft suggestion.",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_de2015fa",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 386,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-20T15:32:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fabf19d9_3d93bbfc",
       "revId": "2548c0852c95e216b298f193bad117471581c437",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -71,6 +107,24 @@
     },
     {
       "key": {
+        "uuid": "dac4157f_5e83e5cc",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 402,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-20T15:32:12Z",
+      "side": 1,
+      "message": "I\u0027ve tried but it\u0027s debatable whether it\u0027s more elegant.  In PS#10 the for is still there but it\u0027s embedded in a generator designed to yield just the endpoint that we want rather than looping explicitly through all of them.",
+      "parentUuid": "3ab451fb_95d5d244",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ab451fb_cf550d1e",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 9
@@ -106,6 +160,24 @@
     },
     {
       "key": {
+        "uuid": "dac4157f_dee5b5a8",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-20T15:32:12Z",
+      "side": 1,
+      "message": "Yes, what Guang said.",
+      "parentUuid": "3ab451fb_156662ed",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fabf19d9_5d5b0f55",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 9
@@ -117,6 +189,24 @@
       "writtenOn": "2015-04-18T07:29:27Z",
       "side": 1,
       "message": "be caution here, suppose `tenant_id` is None (see bug #1261468), we would not get associations and then `filtered_catalog` will be empty, what we will get at last?",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_9eee1d8a",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-20T15:32:12Z",
+      "side": 1,
+      "message": "I\u0027ve checked this against how a domain scope behaves before this change and it appears to be consistent.",
+      "parentUuid": "fabf19d9_5d5b0f55",
       "revId": "2548c0852c95e216b298f193bad117471581c437",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -175,6 +265,24 @@
     },
     {
       "key": {
+        "uuid": "dac4157f_fead1932",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-20T15:32:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fabf19d9_bdfd8b70",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fabf19d9_9debe7b0",
         "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
         "patchSetId": 9
@@ -186,6 +294,24 @@
       "writtenOn": "2015-04-18T07:29:27Z",
       "side": 1,
       "message": "Is there any need to pass \"unfiltered\" parameter here?  If true, we should handle it in the catalog SQL driver.",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_9e63bd1a",
+        "filename": "keystone/contrib/endpoint_filter/backends/catalog_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-20T15:32:12Z",
+      "side": 1,
+      "message": "No. There is not.  Thank you.",
+      "parentUuid": "fabf19d9_9debe7b0",
       "revId": "2548c0852c95e216b298f193bad117471581c437",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -209,6 +335,24 @@
     },
     {
       "key": {
+        "uuid": "dac4157f_5ee765e4",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-20T15:32:12Z",
+      "side": 1,
+      "message": "In PS#10 I\u0027ve added comments to make this clear.  The catalog endpoint will not have all the properties that we send to the create call when setting up the test (which is the one we\u0027re comparing it to).  That\u0027s quite correct - so we have to copy and adjust the latter to enable the former to be validated.",
+      "parentUuid": "3ab451fb_fa1d2567",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ab451fb_7a57d502",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 9
@@ -220,6 +364,24 @@
       "writtenOn": "2015-04-17T16:36:39Z",
       "side": 1,
       "message": "What exactly is sorted?",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_1e0d6d3e",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 673,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-20T15:32:12Z",
+      "side": 1,
+      "message": "I\u0027ve adjusted this.  I concede that it may not have been the best name.  The reason for this dict was just to make it easier to validate the services by mapping them by their id.  \u0027mapped_services\u0027 may have been better but either way I\u0027ve now changed this to retrieve the service by id direct from the list using a generator.",
+      "parentUuid": "3ab451fb_7a57d502",
       "revId": "2548c0852c95e216b298f193bad117471581c437",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
