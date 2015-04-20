@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_ad31acee",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 405,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-20T18:31:25Z",
+      "side": 1,
+      "message": "Another possible algorithm is that loop through the endpoints once to make a dictionary {endpoint_id: endpoint} and do a O(1) lookup into that dictionary instead of looping through.",
+      "revId": "eb0bf8e968d8c12a1e61b052d1308a452fc56ec4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_721db572",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 11
+      },
+      "lineNbr": 407,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-20T18:31:25Z",
+      "side": 1,
+      "message": "The algorithm is a little better now, but I think spelling out the explicit \u0027for\u0027 loop makes it easier to read. How about just adding a break in the loop to not have to exhaust it?",
+      "revId": "eb0bf8e968d8c12a1e61b052d1308a452fc56ec4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
