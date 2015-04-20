@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dac4157f_dff938ca",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2015-04-20T14:15:08Z",
+      "side": 1,
+      "message": "this tests whether callback is bound (then __self__ is set to the instance) or unbound (set to None), and this is tested in keystone/tests/unit/common/test_notifications.py#988",
+      "parentUuid": "dac4157f_64bce16c",
+      "revId": "e6ccedd9fc40b52e78d0d2038fe6459ffa08ae0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dac4157f_64186185",
         "filename": "keystone/notifications.py",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "dac4157f_3f8dd431",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2015-04-20T14:15:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dac4157f_64186185",
+      "revId": "e6ccedd9fc40b52e78d0d2038fe6459ffa08ae0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dac4157f_0472c5e5",
         "filename": "keystone/notifications.py",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2015-04-20T13:05:19Z",
       "side": 1,
       "message": "(nit) I like the \u0027else\u0027 here for symmetry.",
+      "revId": "e6ccedd9fc40b52e78d0d2038fe6459ffa08ae0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_dfa3789d",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2015-04-20T14:15:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dac4157f_0472c5e5",
       "revId": "e6ccedd9fc40b52e78d0d2038fe6459ffa08ae0d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
