@@ -59,7 +59,7 @@ class Service(sql.ModelBase, sql.DictBase):
     __tablename__ = 'service'
     attributes = ['id', 'type', 'enabled']
     id = sql.Column(sql.String(64), primary_key=True)
-    type = sql.Column(sql.String(255))
+    type = sql.Column(sql.String(255), unique=True)
     enabled = sql.Column(sql.Boolean, nullable=False, default=True,
                          server_default=sqlalchemy.sql.expression.true())
     extra = sql.Column(sql.JsonBlob())
