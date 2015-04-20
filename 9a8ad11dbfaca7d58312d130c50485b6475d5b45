@@ -16,6 +16,24 @@
       "revId": "9a8ad11dbfaca7d58312d130c50485b6475d5b45",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_01207c9a",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 927,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2015-04-20T10:12:47Z",
+      "side": 1,
+      "message": "Done, and I\u0027ve actually taken care of the \"unbound method\" case by treating it like a normal function, in the spirit of python 3.",
+      "parentUuid": "3ab451fb_49033d74",
+      "revId": "9a8ad11dbfaca7d58312d130c50485b6475d5b45",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
