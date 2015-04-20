@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "dac4157f_bfc1e482",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-20T13:14:00Z",
+      "side": 1,
+      "message": "That\u0027s what I had, but it was too long. I meant to take out the \u0027the\u0027 and leave the \u0027to\u0027, but looks like I failed.",
+      "parentUuid": "3ab451fb_f4130e0c",
+      "revId": "836012209a28f47970232b1764c034f03f3cef3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ab451fb_343176a3",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-17T08:37:42Z",
       "side": 1,
       "message": "nit: s/use/using/",
+      "revId": "836012209a28f47970232b1764c034f03f3cef3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_5f3768b0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-20T13:14:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ab451fb_343176a3",
       "revId": "836012209a28f47970232b1764c034f03f3cef3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "dac4157f_ff451c17",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-20T13:14:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ab451fb_b648d15c",
+      "revId": "836012209a28f47970232b1764c034f03f3cef3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ab451fb_16730582",
         "filename": "keystone/tests/unit/test_backend_templated.py",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2015-04-17T19:43:08Z",
       "side": 1,
       "message": "Actually all of the method that have been skipped above is overridden from the test_backend.CatalogTests.  \n\nShould we just move them down here too for clarity?",
+      "revId": "836012209a28f47970232b1764c034f03f3cef3d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_7f522cdf",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-20T13:14:00Z",
+      "side": 1,
+      "message": "This comment was meant of all of the methods below. I clarified in newest patch.",
+      "parentUuid": "3ab451fb_16730582",
       "revId": "836012209a28f47970232b1764c034f03f3cef3d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
