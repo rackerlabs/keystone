@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_64bce16c",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-20T13:05:19Z",
+      "side": 1,
+      "message": "Why is this \u0027if\u0027 statement here? Seems odd and the tests run without it.",
+      "revId": "e6ccedd9fc40b52e78d0d2038fe6459ffa08ae0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_64186185",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-20T13:05:19Z",
+      "side": 1,
+      "message": "replace im_class with class_name. what you are getting back is not the class object.",
+      "revId": "e6ccedd9fc40b52e78d0d2038fe6459ffa08ae0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_0472c5e5",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-20T13:05:19Z",
+      "side": 1,
+      "message": "(nit) I like the \u0027else\u0027 here for symmetry.",
+      "revId": "e6ccedd9fc40b52e78d0d2038fe6459ffa08ae0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
