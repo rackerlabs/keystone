@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "dac4157f_86bb6672",
+        "filename": "keystone/common/config.py",
+        "patchSetId": 21
+      },
+      "lineNbr": 859,
+      "author": {
+        "id": 11387
+      },
+      "writtenOn": "2015-04-20T20:55:05Z",
+      "side": 1,
+      "message": "umm.. I think I changed my mind as I think this makes more sense to keep it as a single item. My intention to these options are more specific for the x509 auth. Having the default as \u0027x509\u0027 should be good for most of the cases as it\u0027s basically a name to help alone with the IdP Id to look up for an user.",
+      "parentUuid": "baa041b7_438634ba",
+      "revId": "965ba1ea6cb25d1b6fd4620c2e17266c318a6fec",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "baa041b7_bcc43a40",
         "filename": "keystone/common/tokenless_auth.py",
         "patchSetId": 21
