@@ -16,6 +16,24 @@
       "revId": "c535b165fee770469363d1867ab9f7a5bfde1e16",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_29a5a203",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-20T12:26:59Z",
+      "side": 1,
+      "message": "The reason I think that this should be deprecated is that local config currently works for our application and thirdparty middleware.",
+      "parentUuid": "dac4157f_504ac484",
+      "revId": "c535b165fee770469363d1867ab9f7a5bfde1e16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
