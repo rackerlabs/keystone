@@ -16,6 +16,24 @@
       "revId": "5d6512c712c0a21d5c46e34571e402b5e7c863e5",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_78c7f845",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 7191
+      },
+      "writtenOn": "2015-04-20T00:20:19Z",
+      "side": 1,
+      "message": "It\u0027s targetting https://github.com/openstack/keystone-specs/blob/master/specs/kilo/replace_extensions.rst which uses the underscore",
+      "parentUuid": "fabf19d9_ee4ea795",
+      "revId": "5d6512c712c0a21d5c46e34571e402b5e7c863e5",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
