@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_d2580159",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 8119
+      },
+      "writtenOn": "2015-04-20T18:27:34Z",
+      "side": 1,
+      "message": "I believe this should be cherry picked from the juno/stable patch 695153a523faa9310e2e20d0333c33a47334208a instead of master.",
+      "revId": "a5fab6c7a5752c5702532087248b5d010b0758a0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
