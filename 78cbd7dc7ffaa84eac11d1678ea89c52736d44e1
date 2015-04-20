@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_edcb2471",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-20T18:44:05Z",
+      "side": 1,
+      "message": "The following method are also overridden from:\n* test_backend.CatalogTests:\n* test_list_regions_filtered_by_parent_region_id()\n* test_service_filtering()\n* test_get_v3_catalog_endpoint_disabled()\n* test_get_catalog_endpoint_disabled\n\nShould those method  be moved down there too?",
+      "revId": "78cbd7dc7ffaa84eac11d1678ea89c52736d44e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
