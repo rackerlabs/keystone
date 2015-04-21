@@ -16,6 +16,24 @@
       "revId": "fb80b10f49d40cba23d395289419039ee0dd02d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_19879ed8",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 7186
+      },
+      "writtenOn": "2015-04-21T13:20:57Z",
+      "side": 1,
+      "message": "3 different cases are tested in test_a_list_of_callbacks:\n\n* classic function callback\n* bound method C().callback\n* unbound method C.callback\n\nAre there other cases you want covered, or differently ?",
+      "parentUuid": "dac4157f_d91c8615",
+      "revId": "fb80b10f49d40cba23d395289419039ee0dd02d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
