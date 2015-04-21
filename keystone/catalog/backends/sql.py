@@ -91,9 +91,12 @@ class Catalog(catalog.Driver):
     # Regions
     def list_regions(self, hints):
         session = sql.get_session()
-        regions = session.query(Region)
-        regions = sql.filter_limit_query(Region, regions, hints)
-        return [s.to_dict() for s in list(regions)]
+        try:
+            regions = session.query(Region)
+            regions = sql.filter_limit_query(Region, regions, hints)
+            return [s.to_dict() for s in list(regions)]
+        finally:
+            session.close()
 
     def _get_region(self, session, region_id):
         ref = session.query(Region).get(region_id)
@@ -143,7 +146,10 @@ class Catalog(catalog.Driver):
 
     def get_region(self, region_id):
         session = sql.get_session()
-        return self._get_region(session, region_id).to_dict()
+        try:
+            return self._get_region(session, region_id).to_dict()
+        finally:
+            session.close()
 
     def delete_region(self, region_id):
         session = sql.get_session()
@@ -181,9 +187,12 @@ class Catalog(catalog.Driver):
     @sql.truncated
     def list_services(self, hints):
         session = sql.get_session()
-        services = session.query(Service)
-        services = sql.filter_limit_query(Service, services, hints)
-        return [s.to_dict() for s in list(services)]
+        try:
+            services = session.query(Service)
+            services = sql.filter_limit_query(Service, services, hints)
+            return [s.to_dict() for s in list(services)]
+        finally:
+            session.close()
 
     def _get_service(self, session, service_id):
         ref = session.query(Service).get(service_id)
@@ -193,7 +202,10 @@ class Catalog(catalog.Driver):
 
     def get_service(self, service_id):
         session = sql.get_session()
-        return self._get_service(session, service_id).to_dict()
+        try:
+            return self._get_service(session, service_id).to_dict()
+        finally:
+            session.close()
 
     def delete_service(self, service_id):
         session = sql.get_session()
@@ -245,14 +257,20 @@ class Catalog(catalog.Driver):
 
     def get_endpoint(self, endpoint_id):
         session = sql.get_session()
-        return self._get_endpoint(session, endpoint_id).to_dict()
+        try:
+            return self._get_endpoint(session, endpoint_id).to_dict()
+        finally:
+            session.close()
 
     @sql.truncated
     def list_endpoints(self, hints):
         session = sql.get_session()
-        endpoints = session.query(Endpoint)
-        endpoints = sql.filter_limit_query(Endpoint, endpoints, hints)
-        return [e.to_dict() for e in list(endpoints)]
+        try:
+            endpoints = session.query(Endpoint)
+            endpoints = sql.filter_limit_query(Endpoint, endpoints, hints)
+            return [e.to_dict() for e in list(endpoints)]
+        finally:
+            session.close()
 
     def update_endpoint(self, endpoint_id, endpoint_ref):
         session = sql.get_session()
@@ -294,9 +312,12 @@ class Catalog(catalog.Driver):
             silent_keyerror_failures = ['tenant_id']
 
         session = sql.get_session()
-        endpoints = (session.query(Endpoint).
-                     options(sql.joinedload(Endpoint.service)).
-                     filter(Endpoint.enabled == true()).all())
+        try:
+            endpoints = (session.query(Endpoint).
+                        options(sql.joinedload(Endpoint.service)).
+                        filter(Endpoint.enabled == true()).all())
+        finally:
+            session.close()
 
         catalog = {}
 
@@ -352,9 +373,12 @@ class Catalog(catalog.Driver):
             silent_keyerror_failures = ['tenant_id']
 
         session = sql.get_session()
-        services = (session.query(Service).filter(Service.enabled == true()).
-                    options(sql.joinedload(Service.endpoints)).
-                    all())
+        try:
+            services = (session.query(Service).filter(Service.enabled == true()).
+                        options(sql.joinedload(Service.endpoints)).
+                        all())
+        finally:
+            session.close()
 
         def make_v3_endpoints(endpoints):
             for endpoint in (ep.to_dict() for ep in endpoints if ep.enabled):
