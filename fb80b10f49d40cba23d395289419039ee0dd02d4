@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_d91c8615",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-21T13:13:54Z",
+      "side": 1,
+      "message": "Maybe we can provide some testcase to test directly against this change, saying, bound instance method will return class name but unbound method will return without the class name?",
+      "revId": "fb80b10f49d40cba23d395289419039ee0dd02d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
