@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_4a965ff1",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-21T09:07:50Z",
+      "side": 1,
+      "message": "This is not accurate.  The mapping is of endpoints (including details of the service) by endpoint id.",
+      "revId": "83d64421e09ea9151aabb46166e921ab310d68e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_eab9b37a",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 433,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-21T09:07:50Z",
+      "side": 1,
+      "message": "This is not accurate.  The key \u0027service\u0027 and associated value are what is removed from the dict here.",
+      "revId": "83d64421e09ea9151aabb46166e921ab310d68e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
