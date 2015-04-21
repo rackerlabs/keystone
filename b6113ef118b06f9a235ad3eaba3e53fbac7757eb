@@ -52,6 +52,24 @@
       "revId": "b6113ef118b06f9a235ad3eaba3e53fbac7757eb",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5aa745d1_a1053ac3",
+        "filename": "keystone/resource/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-21T14:39:45Z",
+      "side": 1,
+      "message": "We have a problem to create a test in the controller level, because this class use \"@controller.protected()\", so inside this method, there is a a get_project request https://github.com/openstack/keystone/blob/master/keystone/resource/controllers.py#L197 and this request will return a 404, even we returning a 400 in the controller level.\n\nSo, I suggest handle with this problem in the manager level, to don\u0027t accept None in the get_project and we can discuss other solution to deal with the problem in the controller level (as a general problem) in other bug. What do you think?",
+      "parentUuid": "5aa745d1_74b6e03e",
+      "revId": "b6113ef118b06f9a235ad3eaba3e53fbac7757eb",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
