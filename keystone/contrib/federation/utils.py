@@ -612,7 +612,11 @@ class RuleProcessor(object):
             if isinstance(v, dict):
                 new_value = self._update_local_mapping(v, direct_maps)
             else:
-                new_value = v.format(*direct_maps)
+                try:
+                    new_value = v.format(*direct_maps)
+                except IndexError:
+                    raise exception.DirectMappingError()
+
             new[k] = new_value
         return new
 
