@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "dac4157f_6fca4770",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-21T14:13:46Z",
+      "side": 1,
+      "message": "patch set 17 now only have core.py as modified file instead of controllers.py, did I missed something? :)",
+      "parentUuid": "dac4157f_e0554f50",
+      "revId": "d6a84d759e72cb913820fa4ca1952e1876bc63f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_3da69eab",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 12
