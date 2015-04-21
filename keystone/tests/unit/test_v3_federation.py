@@ -1664,6 +1664,17 @@ class MappingRuleEngineTests(FederationTests):
         self.assertIsNone(mapped_properties['user'].get('name'))
         self.assertListEqual(list(), mapped_properties['group_ids'])
 
+    def test_direct_mapping_with_keyword_remote_only(self):
+        """Test that rules with keywords cannot be used for direct maping"""
+
+        mapping = mapping_fixtures.MAPPING_DIRECT_MAPPING_THROUGH_KEYWORD
+        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        assertion = mapping_fixtures.CUSTOMER_ASSERTION
+
+        self.assertRaises(exception.DirectMappingError,
+                          rp.process,
+                          assertion)
+
     def test_rule_engine_returns_group_names(self):
         """Check whether RuleProcessor returns group names with their domains.
 
