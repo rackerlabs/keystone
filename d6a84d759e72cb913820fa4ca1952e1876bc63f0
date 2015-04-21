@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "dac4157f_e0554f50",
+        "filename": "keystone/assignment/controllers.py",
+        "patchSetId": 12
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-04-21T12:15:05Z",
+      "side": 1,
+      "message": "So, not sure if that was meant to be moved? It looks from your comment, however It\u0027s still here in the newest patch.",
+      "parentUuid": "9a80dd14_0aba5b71",
+      "revId": "d6a84d759e72cb913820fa4ca1952e1876bc63f0",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_3da69eab",
         "filename": "keystone/assignment/controllers.py",
         "patchSetId": 12
