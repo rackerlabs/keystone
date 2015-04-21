@@ -214,6 +214,24 @@
     },
     {
       "key": {
+        "uuid": "dac4157f_472c1a02",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-21T08:33:25Z",
+      "side": 1,
+      "message": "The logic is (as I understand it - I didn\u0027t invent this):\n\nif filtered_catalog is not empty then:\n  return filtered_catalog\nelse:\n if CONF.endpoint_filter_.return_all_endpoints_if_no_filter \u003d true then:\n    return unfiltered_catalog\n  else\n    return nothing\n\nso we need to prepare the filtered catalog - or at least determine that it will be empty no matter what.  We can\u0027t go round it.  Guang\u0027s idea in PS#12 to check the endpoint associations and the conf property first before preparing the filtered list might work.",
+      "parentUuid": "dac4157f_0dde586d",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fabf19d9_5d5b0f55",
         "filename": "keystone/catalog/backends/sql.py",
         "patchSetId": 9
@@ -296,6 +314,24 @@
       "side": 1,
       "message": "The commit message is a little hard to follow, but I think it says that this patch defaults the behavior to be on. IMO that\u0027s no longer an extension.",
       "parentUuid": "3ab451fb_da03890e",
+      "revId": "2548c0852c95e216b298f193bad117471581c437",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_4713fab8",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 432,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-21T08:33:25Z",
+      "side": 1,
+      "message": "I have no judgement on this.  I need a steer on what to do.",
+      "parentUuid": "dac4157f_4d7c5072",
       "revId": "2548c0852c95e216b298f193bad117471581c437",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
