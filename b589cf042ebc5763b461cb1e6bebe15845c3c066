@@ -367,6 +367,24 @@
       "revId": "b589cf042ebc5763b461cb1e6bebe15845c3c066",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_96e82212",
+        "filename": "keystone/common/openssl.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-21T10:37:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "baa041b7_f883d9ca",
+      "revId": "b589cf042ebc5763b461cb1e6bebe15845c3c066",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
