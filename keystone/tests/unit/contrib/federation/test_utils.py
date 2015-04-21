@@ -19,6 +19,9 @@ from keystone.tests import unit
 from keystone.tests.unit import mapping_fixtures
 
 
+FAKE_MAPPING_ID = uuid.uuid4().hex
+
+
 class MappingRuleEngineTests(unit.BaseTestCase):
     """A class for testing the mapping rule engine."""
 
@@ -52,7 +55,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         """
         mapping = mapping_fixtures.MAPPING_LARGE
         assertion = mapping_fixtures.ADMIN_ASSERTION
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         values = rp.process(assertion)
 
         fn = assertion.get('FirstName')
@@ -75,7 +78,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         """
         mapping = mapping_fixtures.MAPPING_LARGE
         assertion = mapping_fixtures.BAD_TESTER_ASSERTION
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         mapped_properties = rp.process(assertion)
 
         self.assertValidMappedUserObject(mapped_properties)
@@ -93,7 +96,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         """
         mapping = mapping_fixtures.MAPPING_TESTER_REGEX
         assertion = mapping_fixtures.TESTER_ASSERTION
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         values = rp.process(assertion)
 
         self.assertValidMappedUserObject(values)
@@ -115,7 +118,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         """
         mapping = mapping_fixtures.MAPPING_SMALL
         assertion = mapping_fixtures.CONTRACTOR_ASSERTION
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         values = rp.process(assertion)
 
         self.assertValidMappedUserObject(values)
@@ -136,7 +139,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         """
         mapping = mapping_fixtures.MAPPING_LARGE
         assertion = mapping_fixtures.CUSTOMER_ASSERTION
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         values = rp.process(assertion)
 
         self.assertValidMappedUserObject(values)
@@ -157,7 +160,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         """
         mapping = mapping_fixtures.MAPPING_SMALL
         assertion = mapping_fixtures.EMPLOYEE_ASSERTION
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         values = rp.process(assertion)
 
         self.assertValidMappedUserObject(values)
@@ -179,7 +182,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         """
         mapping = mapping_fixtures.MAPPING_DEVELOPER_REGEX
         assertion = mapping_fixtures.DEVELOPER_ASSERTION
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         values = rp.process(assertion)
 
         self.assertValidMappedUserObject(values)
@@ -201,7 +204,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         """
         mapping = mapping_fixtures.MAPPING_DEVELOPER_REGEX
         assertion = mapping_fixtures.BAD_DEVELOPER_ASSERTION
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         mapped_properties = rp.process(assertion)
 
         self.assertValidMappedUserObject(mapped_properties)
@@ -216,7 +219,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
 
         """
         mapping = mapping_fixtures.MAPPING_LARGE
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         values = rp.process(assertion)
 
         user_name = assertion.get('UserName')
@@ -260,12 +263,23 @@ class MappingRuleEngineTests(unit.BaseTestCase):
 
         """
         mapping = mapping_fixtures.MAPPING_SMALL
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         assertion = mapping_fixtures.CONTRACTOR_MALFORMED_ASSERTION
         mapped_properties = rp.process(assertion)
         self.assertValidMappedUserObject(mapped_properties)
         self.assertIsNone(mapped_properties['user'].get('name'))
         self.assertListEqual(list(), mapped_properties['group_ids'])
+
+    def test_using_remote_direct_mapping_that_doesnt_exist_fails(self):
+        """Test that rules with keywords cannot be used for direct mapping."""
+
+        mapping = mapping_fixtures.MAPPING_DIRECT_MAPPING_THROUGH_KEYWORD
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
+        assertion = mapping_fixtures.CUSTOMER_ASSERTION
+
+        self.assertRaises(exception.DirectMappingError,
+                          rp.process,
+                          assertion)
 
     def test_rule_engine_returns_group_names(self):
         """Check whether RuleProcessor returns group names with their domains.
@@ -276,7 +290,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
 
         """
         mapping = mapping_fixtures.MAPPING_GROUP_NAMES
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         assertion = mapping_fixtures.EMPLOYEE_ASSERTION
         mapped_properties = rp.process(assertion)
         self.assertIsNotNone(mapped_properties)
@@ -310,7 +324,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         """
         mapping = mapping_fixtures.MAPPING_GROUPS_WHITELIST
         assertion = mapping_fixtures.EMPLOYEE_ASSERTION_MULTIPLE_GROUPS
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         mapped_properties = rp.process(assertion)
         self.assertIsNotNone(mapped_properties)
 
@@ -346,7 +360,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         """
         mapping = mapping_fixtures.MAPPING_GROUPS_BLACKLIST
         assertion = mapping_fixtures.EMPLOYEE_ASSERTION_MULTIPLE_GROUPS
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         mapped_properties = rp.process(assertion)
         self.assertIsNotNone(mapped_properties)
 
@@ -374,7 +388,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         """
         mapping = mapping_fixtures.MAPPING_GROUPS_BLACKLIST_MULTIPLES
         assertion = mapping_fixtures.EMPLOYEE_ASSERTION_MULTIPLE_GROUPS
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         mapped_properties = rp.process(assertion)
         self.assertIsNotNone(mapped_properties)
 
@@ -400,7 +414,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         """
         mapping = mapping_fixtures.MAPPING_GROUPS_WHITELIST_MISSING_DOMAIN
         assertion = mapping_fixtures.EMPLOYEE_ASSERTION_MULTIPLE_GROUPS
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         self.assertRaises(exception.ValidationError, rp.process, assertion)
 
     def test_rule_engine_blacklist_direct_group_mapping_missing_domain(self):
@@ -411,7 +425,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         """
         mapping = mapping_fixtures.MAPPING_GROUPS_BLACKLIST_MISSING_DOMAIN
         assertion = mapping_fixtures.EMPLOYEE_ASSERTION_MULTIPLE_GROUPS
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         self.assertRaises(exception.ValidationError, rp.process, assertion)
 
     def test_rule_engine_no_groups_allowed(self):
@@ -424,7 +438,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         """
         mapping = mapping_fixtures.MAPPING_GROUPS_WHITELIST
         assertion = mapping_fixtures.EMPLOYEE_ASSERTION
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         mapped_properties = rp.process(assertion)
         self.assertIsNotNone(mapped_properties)
         self.assertListEqual(mapped_properties['group_names'], [])
@@ -439,7 +453,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
 
         """
         mapping = mapping_fixtures.MAPPING_EPHEMERAL_USER
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         assertion = mapping_fixtures.EMPLOYEE_ASSERTION
         mapped_properties = rp.process(assertion)
         self.assertIsNotNone(mapped_properties)
@@ -458,7 +472,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
 
         """
         mapping = mapping_fixtures.MAPPING_EPHEMERAL_USER
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         assertion = mapping_fixtures.CONTRACTOR_ASSERTION
         mapped_properties = rp.process(assertion)
         self.assertIsNotNone(mapped_properties)
@@ -476,7 +490,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
 
         """
         mapping = mapping_fixtures.MAPPING_EPHEMERAL_USER_LOCAL_DOMAIN
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         assertion = mapping_fixtures.CONTRACTOR_ASSERTION
         mapped_properties = rp.process(assertion)
         self.assertIsNotNone(mapped_properties)
@@ -485,7 +499,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
     def test_local_user_local_domain(self):
         """Test that local users can have non-service domains assigned."""
         mapping = mapping_fixtures.MAPPING_LOCAL_USER_LOCAL_DOMAIN
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         assertion = mapping_fixtures.CONTRACTOR_ASSERTION
         mapped_properties = rp.process(assertion)
         self.assertIsNotNone(mapped_properties)
@@ -507,7 +521,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
 
         """
         mapping = mapping_fixtures.MAPPING_USER_IDS
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         assertion = mapping_fixtures.CONTRACTOR_ASSERTION
         mapped_properties = rp.process(assertion)
         self.assertIsNotNone(mapped_properties)
@@ -530,7 +544,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
 
         """
         mapping = mapping_fixtures.MAPPING_USER_IDS
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         assertion = mapping_fixtures.EMPLOYEE_ASSERTION
         mapped_properties = rp.process(assertion)
         self.assertIsNotNone(mapped_properties)
@@ -554,7 +568,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
 
         """
         mapping = mapping_fixtures.MAPPING_USER_IDS
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         assertion = mapping_fixtures.ADMIN_ASSERTION
         mapped_properties = rp.process(assertion)
         context = {'environment': {}}
@@ -589,7 +603,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
                      (mapping_fixtures.EMPLOYEE_ASSERTION, 'tbo')]
         for assertion, exp_user_name in testcases:
             mapping = mapping_fixtures.MAPPING_USER_IDS
-            rp = mapping_utils.RuleProcessor(mapping['rules'])
+            rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
             mapped_properties = rp.process(assertion)
             context = {'environment': {}}
             self.assertIsNotNone(mapped_properties)
@@ -601,7 +615,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
 
     def test_whitelist_pass_through(self):
         mapping = mapping_fixtures.MAPPING_GROUPS_WHITELIST_PASS_THROUGH
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         assertion = mapping_fixtures.DEVELOPER_ASSERTION
         mapped_properties = rp.process(assertion)
         self.assertValidMappedUserObject(mapped_properties)
@@ -613,7 +627,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
     def test_type_not_in_assertion(self):
         """Test that if the remote "type" is not in the assertion it fails."""
         mapping = mapping_fixtures.MAPPING_GROUPS_WHITELIST_PASS_THROUGH
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         assertion = {uuid.uuid4().hex: uuid.uuid4().hex}
         mapped_properties = rp.process(assertion)
         self.assertValidMappedUserObject(mapped_properties)
@@ -629,7 +643,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         """
         mapping = mapping_fixtures.MAPPING_GROUPS_IDS_WHITELIST
         assertion = mapping_fixtures.GROUP_IDS_ASSERTION
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         mapped_properties = rp.process(assertion)
         self.assertIsNotNone(mapped_properties)
         self.assertEqual('opilotte', mapped_properties['user']['name'])
@@ -645,7 +659,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         """
         mapping = mapping_fixtures.MAPPING_GROUPS_IDS_BLACKLIST
         assertion = mapping_fixtures.GROUP_IDS_ASSERTION
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         mapped_properties = rp.process(assertion)
         self.assertIsNotNone(mapped_properties)
         self.assertEqual('opilotte', mapped_properties['user']['name'])
@@ -662,7 +676,7 @@ class MappingRuleEngineTests(unit.BaseTestCase):
         """
         mapping = mapping_fixtures.MAPPING_GROUPS_IDS_WHITELIST
         assertion = mapping_fixtures.GROUP_IDS_ASSERTION_ONLY_ONE_GROUP
-        rp = mapping_utils.RuleProcessor(mapping['rules'])
+        rp = mapping_utils.RuleProcessor(FAKE_MAPPING_ID, mapping['rules'])
         mapped_properties = rp.process(assertion)
         self.assertIsNotNone(mapped_properties)
         self.assertEqual('opilotte', mapped_properties['user']['name'])
