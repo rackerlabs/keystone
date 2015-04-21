@@ -403,6 +403,11 @@ class MetadataFileError(UnexpectedError):
     message_format = _("Error while reading metadata file, %(reason)s")
 
 
+class DirectMappingError(UnexpectedError):
+    message_format = _("Cannot use remote rules with keywords "
+                       "for direct mappings, check your mapping rules.")
+
+
 class AssignmentTypeCalculationError(UnexpectedError):
     message_format = _(
         'Unexpected combination of grant attributes - '
