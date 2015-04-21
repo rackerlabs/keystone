@@ -379,16 +379,19 @@ class RuleProcessor(object):
         BLACKLIST = 'blacklist'
         WHITELIST = 'whitelist'
 
-    def __init__(self, rules):
+    def __init__(self, mapping_id, rules):
         """Initialize RuleProcessor.
 
         Example rules can be found at:
         :class:`keystone.tests.mapping_fixtures`
 
+        :param mapping_id: id for the mapping
+        :type mapping_id: string
         :param rules: rules from a mapping
         :type rules: dict
 
         """
+        self.mapping_id = mapping_id
         self.rules = rules
 
     def process(self, assertion_data):
@@ -622,7 +625,12 @@ class RuleProcessor(object):
             if isinstance(v, dict):
                 new_value = self._update_local_mapping(v, direct_maps)
             else:
-                new_value = v.format(*direct_maps)
+                try:
+                    new_value = v.format(*direct_maps)
+                except IndexError:
+                    raise exception.DirectMappingError(
+                        mapping_id=self.mapping_id)
+
             new[k] = new_value
         return new
 
