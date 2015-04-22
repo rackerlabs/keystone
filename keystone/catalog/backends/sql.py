@@ -386,6 +386,8 @@ class Catalog(catalog.Driver):
         # the service instead of keeping it in the catalog, see bug #1436704.
         def make_v3_service(svc):
             eps = list(make_v3_endpoints(svc.endpoints))
+            if len(eps) == 0:
+                return
             service = {'endpoints': eps, 'id': svc.id, 'type': svc.type}
             service['name'] = svc.extra.get('name', '')
             return service

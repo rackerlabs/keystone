@@ -147,6 +147,9 @@ class Catalog(kvs.Catalog):
                             service_data[k] = formatted_value
                 except exception.MalformedEndpoint:
                     continue  # this failure is already logged in format_url()
-                catalog[region][service] = service_data
+                if (service_data.get('adminURL')
+                        or service_data.get('publicURL')
+                        or service_data.get('internalURL')):
+                    catalog[region][service] = service_data
 
         return catalog

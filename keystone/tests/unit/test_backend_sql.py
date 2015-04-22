@@ -14,6 +14,7 @@
 # under the License.
 
 import functools
+import os
 import uuid
 
 import mock
@@ -786,6 +787,84 @@ class SqlCatalogV3(SqlTests):
             'There should be one endpoint in '
             'the catalog service %s' % (catalog_service_endpoints))
         self.assert_endpoint_equal(endpoint1, catalog_service_endpoints[0])
+
+
+class EndpointFilterCatalogTest(tests.TestCase):
+
+    DEFAULT_CATALOG_TEMPLATES = os.path.abspath(os.path.join(
+        os.path.dirname(__file__),
+        'default_catalog.templates'))
+
+    DEFAULT_FIXTURE = {
+        'RegionOne': {
+            'compute': {
+                'adminURL': 'http://localhost:8774/v1.1/bar',
+                'publicURL': 'http://localhost:8774/v1.1/bar',
+                'internalURL': 'http://localhost:8774/v1.1/bar',
+                'name': "'Compute Service'",
+                'id': '2'
+            },
+            'identity': {
+                'adminURL': 'http://localhost:35357/v2.0',
+                'publicURL': 'http://localhost:5000/v2.0',
+                'internalURL': 'http://localhost:35357/v2.0',
+                'name': "'Identity Service'",
+                'id': '1'
+            }
+        }
+    }
+
+    def assert_v3_catalogs_equal(self, expected, observed):
+        self.assertEqual(len(expected), len(observed))
+        for e, o in zip(sorted(expected), sorted(observed)):
+            expected_endpoints = e.pop('endpoints')
+            observed_endpoints = o.pop('endpoints')
+            self.assertDictEqual(e, o)
+            self.assertItemsEqual(expected_endpoints, observed_endpoints)
+
+    def setUp(self):
+        super(EndpointFilterCatalogTest, self).setUp()
+        self.useFixture(database.Database())
+        self.load_backends()
+        self.load_fixtures(default_fixtures)
+
+    def config_overrides(self):
+        super(EndpointFilterCatalogTest, self).config_overrides()
+        self.config_fixture.config(
+            group='catalog',
+            template_file=self.DEFAULT_CATALOG_TEMPLATES)
+
+    def test_get_v3_catalog_ignores_endpoints_with_invalid_urls(self):
+        user_id = uuid.uuid4().hex
+        # If the URL has no 'tenant_id' to substitute, we will skip the
+        # endpoint which contains this kind of URL.
+        catalog_ref = self.catalog_api.get_catalog(user_id, tenant_id=None)
+        exp_catalog = self.DEFAULT_FIXTURE.copy()
+        # the compute service should not be listed as it requires tenant
+        # substitution - so remove it from the expected catalog
+        del exp_catalog['RegionOne']['compute']
+        self.assertDictEqual(exp_catalog, catalog_ref)
+
+    def test_get_catalog_ignores_endpoints_with_invalid_urls(self):
+        user_id = uuid.uuid4().hex
+        # If the URL has no 'tenant_id' to substitute, we will skip the
+        # endpoint which contains this kind of URL.
+        catalog_ref = self.catalog_api.get_v3_catalog(user_id, tenant_id=None)
+        exp_catalog = [
+            {'endpoints': [
+                {'interface': 'admin',
+                 'region': 'RegionOne',
+                 'url': 'http://localhost:35357/v2.0'},
+                {'interface': 'public',
+                 'region': 'RegionOne',
+                 'url': 'http://localhost:5000/v2.0'},
+                {'interface': 'internal',
+                 'region': 'RegionOne',
+                 'url': 'http://localhost:35357/v2.0'}],
+             'type': 'identity',
+             'name': "'Identity Service'",
+             'id': '1'}]
+        self.assert_v3_catalogs_equal(exp_catalog, catalog_ref)
 
 
 class SqlCatalog(SqlTests, test_backend.CatalogTests):
