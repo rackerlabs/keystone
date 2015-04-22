@@ -219,6 +219,9 @@ class TestTemplatedCatalog(tests.TestCase, test_backend.CatalogTests):
     def test_update_endpoint(self):
         self.skipTest("Templated backend doesn't support write operations")
 
+    def test_list_endpoints(self):
+        self.skipTest("Templated backend doesn't support write operations")
+
     @tests.skip_if_cache_disabled('catalog')
     def test_invalidate_cache_when_updating_endpoint(self):
         self.skipTest("Templated backend doesn't support write operations")
