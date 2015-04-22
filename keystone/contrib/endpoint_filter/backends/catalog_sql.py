@@ -17,8 +17,11 @@ from oslo_config import cfg
 from keystone.catalog.backends import sql
 from keystone.openstack.common import versionutils
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> Service with no endpoints should not be in catalog
 CONF = cfg.CONF
 
 
