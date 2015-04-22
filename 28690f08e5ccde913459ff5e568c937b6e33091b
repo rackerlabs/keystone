@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dac4157f_9f000903",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 13
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-22T08:29:55Z",
+      "side": 1,
+      "message": "Currently, what I can see is this patch may potentially address this bug partially, that bug intends to include both SQL and Tempalate driver.\n\nI should detail this in the bug. :(",
+      "revId": "28690f08e5ccde913459ff5e568c937b6e33091b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_346a44b4",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 419,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-22T08:29:55Z",
+      "side": 1,
+      "message": "I am still not postive here.\n\nSuppose it\u0027s domain scoped and could pass this condition, so it will return `unfiltered_catalog` here.\n\nBut `unfiltered_catalog` may contain the service which has no endpoints assigned, pls refer to compute service. By default, all of the urls of compute service may needs tenant_id as a replacement.\n\nThe service with no endpoints could be happened after \"core.format_url\", endpoints is not empty initially but will be empty after replacements. I think there might be some misunderstanding here.\n\nYou can found this if you get a domain scoped token with this patch.\n\nBesides, I am also looks forward some testcase to prove the fix for the bug #1436704. If this PS expected to address that bug.",
+      "revId": "28690f08e5ccde913459ff5e568c937b6e33091b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
