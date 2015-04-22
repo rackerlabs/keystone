@@ -34,6 +34,24 @@
       "revId": "fb80b10f49d40cba23d395289419039ee0dd02d4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dac4157f_1f2759cb",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-22T15:05:07Z",
+      "side": 1,
+      "message": "yeah, I just run your testcase, the testcase covered the changes here perfectly.",
+      "parentUuid": "dac4157f_19879ed8",
+      "revId": "fb80b10f49d40cba23d395289419039ee0dd02d4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
