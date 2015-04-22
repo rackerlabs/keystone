@@ -18,7 +18,6 @@ from keystone.catalog.backends import sql
 from keystone.openstack.common import versionutils
 
 
-
 CONF = cfg.CONF
 
 
