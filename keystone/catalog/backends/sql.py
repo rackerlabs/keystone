@@ -382,10 +382,10 @@ class Catalog(catalog.Driver):
 
                 yield endpoint
 
-        # TODO(davechen): If there is service with no endpoints, we should skip
-        # the service instead of keeping it in the catalog, see bug #1436704.
         def make_v3_service(svc):
             eps = list(make_v3_endpoints(svc.endpoints))
+            if len(eps) == 0:
+                return
             service = {'endpoints': eps, 'id': svc.id, 'type': svc.type}
             service['name'] = svc.extra.get('name', '')
             return service
@@ -412,16 +412,27 @@ class Catalog(catalog.Driver):
                                                    'type': service['type']}
                         endpoint_lookup_dict[endpoint['id']] = new_endpoint
             return endpoint_lookup_dict
+        unfiltered_catalog = []
+        for svc in all_services:
+            catalog_service = make_v3_service(svc)
+            if catalog_service:
+                unfiltered_catalog.append(catalog_service)
 
-        unfiltered_catalog = [make_v3_service(svc) for svc in all_services]
-        associations = self.endpoint_filter_api.list_endpoints_for_project(
-            tenant_id)
+        # if this is a project scoped token - get the project associations
+        if tenant_id:
+            associations = self.endpoint_filter_api.list_endpoints_for_project(
+                tenant_id)
 
-        if (CONF.endpoint_filter.return_all_endpoints_if_no_filter and
-                not associations):
-            # if there are no endpoints assigned to the project check
-            # whether all endpoints should be returned
+        # if this is a domain scoped token then return the lot, otherwise
+        # if there are no endpoints assigned to the project check
+        # whether all endpoints should be returned
+        if not tenant_id:
             return unfiltered_catalog
+        elif not associations:
+            if CONF.endpoint_filter.return_all_endpoints_if_no_filter:
+                return unfiltered_catalog
+            else:
+                return []
 
         # create a catalog of endpoints mapped by id
         endpoint_lookup_dict = create_endpoint_lookup_dict(unfiltered_catalog)

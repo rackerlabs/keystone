@@ -619,7 +619,9 @@ class SqlCatalogV3(SqlTests):
         self.assertDictEqual(new_endpoint, catalog_endpoint)
 
     def test_catalog_get_v3_catalog(self):
-
+        # get the catalog - no services are associated with the project so
+        # the CONF.endpoint_filter.return_all_endpoints_if_no_filter property
+        # (default True) will ensure all endpoints are returned
         service = self.create_service()
         endpoint = self.create_service_endpoint(service['id'])
 
@@ -638,6 +640,45 @@ class SqlCatalogV3(SqlTests):
 
     def test_catalog_get_v3_catalog_domain_scoped_token(self):
 
+        service_1 = self.create_service()
+        endpoint = self.create_service_endpoint(service_1['id'])
+        endpoint1 = self.create_service_endpoint(service_1['id'])
+
+        service_2 = self.create_service()
+        self.create_service_endpoint(service_2['id'])
+
+        catalog = self.catalog_api.get_v3_catalog('user', None)
+
+        self.assertEqual(2, len(catalog),
+                         'There should be two services in the catalog')
+
+        catalog_service_1 = [svc for svc in catalog
+                             if svc['id'] == service_1['id']][0]
+        self.assert_service_equal(service_1, catalog_service_1)
+
+        catalog_service_endpoints = catalog_service_1['endpoints']
+
+        self.assertEqual(2, len(catalog_service_endpoints),
+                         'There should be two endpoints in '
+                         'the first catalog service')
+        self.assert_endpoint_equal(endpoint,
+                                   [ept for ept in catalog_service_endpoints
+                                    if ept['id'] == endpoint['id']][0])
+        self.assert_endpoint_equal(endpoint1,
+                                   [ept for ept in catalog_service_endpoints
+                                    if ept['id'] == endpoint1['id']][0])
+
+        catalog_service_2 = [svc for svc in catalog
+                             if svc['id'] == service_2['id']][0]
+        self.assert_service_equal(service_2, catalog_service_2)
+        self.assertEqual(1, len(catalog_service_2['endpoints']),
+                         'There should be only one endpoint in '
+                         'the second catalog service')
+
+    def test_get_v3_catalog_domain_token_no_unfiltered_catalog(self):
+        # domain token should get all services whatever
+        self.config_fixture.config(group='endpoint_filter',
+                                   return_all_endpoints_if_no_filter=False)
         service_1 = self.create_service()
         endpoint = self.create_service_endpoint(service_1['id'])
         endpoint1 = self.create_service_endpoint(service_1['id'])
@@ -984,6 +1025,194 @@ class SqlCatalog(SqlTests, test_backend.CatalogTests):
         self.assertRaises(exception.RegionDeletionError,
                           self.catalog_api.delete_region,
                           region['id'])
+
+    def test_get_v3_catalog_ignores_endpoints_with_invalid_urls(self):
+        """Check that catalog for domain scoped token omits services that
+         require project scope for url formatting
+         """
+
+        tenant_sub_service = {
+            'id': uuid.uuid4().hex,
+            'type': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+        }
+        self.catalog_api.create_service(tenant_sub_service['id'],
+                                        tenant_sub_service.copy())
+
+        public_endpoint = {
+            'id': uuid.uuid4().hex,
+            'region_id': None,
+            'service_id': tenant_sub_service['id'],
+            'interface': 'public',
+            'url': 'http://localhost:8774/v1.1/$(tenant_id)s',
+        }
+        self.catalog_api.create_endpoint(public_endpoint['id'],
+                                         public_endpoint.copy())
+
+        admin_endpoint = {
+            'id': uuid.uuid4().hex,
+            'region_id': None,
+            'service_id': tenant_sub_service['id'],
+            'interface': 'admin',
+            'url': 'http://localhost:8774/v1.1/$(tenant_id)s',
+        }
+        self.catalog_api.create_endpoint(admin_endpoint['id'],
+                                         admin_endpoint.copy())
+
+        internal_endpoint = {
+            'id': uuid.uuid4().hex,
+            'region_id': None,
+            'service_id': tenant_sub_service['id'],
+            'interface': 'admin',
+            'url': 'http://localhost:8774/v1.1/$(tenant_id)s',
+        }
+        self.catalog_api.create_endpoint(internal_endpoint['id'],
+                                         internal_endpoint.copy())
+
+        port_sub_service = {
+            'id': uuid.uuid4().hex,
+            'type': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+        }
+        self.catalog_api.create_service(port_sub_service['id'],
+                                        port_sub_service.copy())
+
+        public_endpoint = {
+            'id': uuid.uuid4().hex,
+            'region_id': None,
+            'service_id': port_sub_service['id'],
+            'interface': 'public',
+            'url': 'http://localhost:$(public_port)s/v2.0',
+        }
+        self.catalog_api.create_endpoint(public_endpoint['id'],
+                                         public_endpoint.copy())
+
+        admin_endpoint = {
+            'id': uuid.uuid4().hex,
+            'region_id': None,
+            'service_id': port_sub_service['id'],
+            'interface': 'admin',
+            'url': 'http://localhost:$(admin_port)s/v2.0',
+        }
+        self.catalog_api.create_endpoint(admin_endpoint['id'],
+                                         admin_endpoint.copy())
+
+        user_id = uuid.uuid4().hex
+        # If the URL has no 'tenant_id' to substitute, we will skip the
+        # endpoint which contains this kind of URL, if the service contains
+        # no endpoints then it will be skipped in turn.  So a service that
+        # contains only endpoints requiring tenant_id to be formatted will be
+        # omitted from the catalog in the absence of a tenant_id - in this case
+        # the 'tenant_sub_service'.
+        catalog = self.catalog_api.get_v3_catalog(user_id, tenant_id=None)
+        self.assertEqual(1, len(catalog))
+        self.assertEqual(port_sub_service['name'], catalog[0]['name'])
+        self.assertEqual(port_sub_service['type'], catalog[0]['type'])
+        self.assertEqual(port_sub_service['id'], catalog[0]['id'])
+        endpoint_id_list = [endpoint['id']
+                            for endpoint in catalog[0]['endpoints']]
+        self.assertTrue(public_endpoint['id'] in endpoint_id_list)
+        self.assertTrue(admin_endpoint['id'] in endpoint_id_list)
+
+    def test_get_catalog_ignores_endpoints_with_invalid_urls(self):
+        """Check that catalog for domain scoped token omits services that
+         require project scope for url formatting
+         """
+        region = {
+            'id': uuid.uuid4().hex,
+            'description': 'test_region',
+            'extra': {},
+        }
+        self.catalog_api.create_region(region)
+
+        tenant_sub_service = {
+            'id': uuid.uuid4().hex,
+            'type': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+        }
+        self.catalog_api.create_service(tenant_sub_service['id'],
+                                        tenant_sub_service.copy())
+
+        public_endpoint = {
+            'id': uuid.uuid4().hex,
+            'region_id': region['id'],
+            'service_id': tenant_sub_service['id'],
+            'interface': 'public',
+            'url': 'http://localhost:8774/v1.1/$(tenant_id)s',
+        }
+        self.catalog_api.create_endpoint(public_endpoint['id'],
+                                         public_endpoint.copy())
+
+        admin_endpoint = {
+            'id': uuid.uuid4().hex,
+            'region_id': region['id'],
+            'service_id': tenant_sub_service['id'],
+            'interface': 'admin',
+            'url': 'http://localhost:8774/v1.1/$(tenant_id)s',
+        }
+        self.catalog_api.create_endpoint(admin_endpoint['id'],
+                                         admin_endpoint.copy())
+
+        internal_endpoint = {
+            'id': uuid.uuid4().hex,
+            'region_id': region['id'],
+            'service_id': tenant_sub_service['id'],
+            'interface': 'admin',
+            'url': 'http://localhost:8774/v1.1/$(tenant_id)s',
+        }
+        self.catalog_api.create_endpoint(internal_endpoint['id'],
+                                         internal_endpoint.copy())
+
+        port_sub_service = {
+            'id': uuid.uuid4().hex,
+            'type': uuid.uuid4().hex,
+            'name': uuid.uuid4().hex,
+            'description': uuid.uuid4().hex,
+        }
+        self.catalog_api.create_service(port_sub_service['id'],
+                                        port_sub_service.copy())
+
+        public_endpoint = {
+            'id': uuid.uuid4().hex,
+            'region_id': region['id'],
+            'service_id': port_sub_service['id'],
+            'interface': 'public',
+            'url': 'http://localhost:$(public_port)s/v2.0',
+        }
+        self.catalog_api.create_endpoint(public_endpoint['id'],
+                                         public_endpoint.copy())
+
+        admin_endpoint = {
+            'id': uuid.uuid4().hex,
+            'region_id': region['id'],
+            'service_id': port_sub_service['id'],
+            'interface': 'admin',
+            'url': 'http://localhost:$(admin_port)s/v2.0',
+        }
+        self.catalog_api.create_endpoint(admin_endpoint['id'],
+                                         admin_endpoint.copy())
+
+        user_id = uuid.uuid4().hex
+        # If the URL has no 'tenant_id' to substitute, we will skip the
+        # endpoint which contains this kind of URL, if the service contains
+        # no endpoints then it will be skipped in turn.  So a service that
+        # contains only endpoints requiring tenant_id to be formatted will be
+        # omitted from the catalog in the absence of a tenant_id - in this case
+        # the 'tenant_sub_service'.
+        catalog = self.catalog_api.get_catalog(user_id, tenant_id=None)
+
+        catalog_service = catalog[region['id']][port_sub_service['type']]
+
+        self.assertEqual(1, len(catalog))
+        self.assertEqual(port_sub_service['name'], catalog_service['name'])
+        self.assertEqual(public_endpoint['id'], catalog_service['id'])
+        self.assertEqual(public_endpoint['url'].replace('$(', '%(') %
+                         {'public_port': '5000'}, catalog_service['publicURL'])
+        self.assertEqual(admin_endpoint['url'].replace('$(', '%(') %
+                         {'admin_port': '35357'}, catalog_service['adminURL'])
 
 
 class SqlPolicy(SqlTests, test_backend.PolicyTests):

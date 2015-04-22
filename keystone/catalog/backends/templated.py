@@ -131,9 +131,7 @@ class Catalog(kvs.Catalog):
             silent_keyerror_failures = ['tenant_id']
 
         catalog = {}
-        # TODO(davechen): If there is service with no endpoints, we should
-        # skip the service instead of keeping it in the catalog.
-        # see bug #1436704.
+
         for region, region_ref in six.iteritems(self.templates):
             catalog[region] = {}
             for service, service_ref in six.iteritems(region_ref):
@@ -147,6 +145,9 @@ class Catalog(kvs.Catalog):
                             service_data[k] = formatted_value
                 except exception.MalformedEndpoint:
                     continue  # this failure is already logged in format_url()
-                catalog[region][service] = service_data
+                if (service_data.get('adminURL')
+                        or service_data.get('publicURL')
+                        or service_data.get('internalURL')):
+                    catalog[region][service] = service_data
 
         return catalog
