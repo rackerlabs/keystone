@@ -467,6 +467,7 @@ class KVSTest(tests.TestCase):
                           'Non-Callable')
 
     def test_kvs_memcache_set_arguments_and_memcache_expires_ttl(self):
+
         # Test the "set_arguments" (arguments passed on all set calls) logic
         # and the no-expiry-key modifications of set_arguments for the explicit
         # memcache TTL.
@@ -488,6 +489,8 @@ class KVSTest(tests.TestCase):
                       memcached_expire_time=memcache_expire_time,
                       some_other_arg=uuid.uuid4().hex,
                       no_expiry_keys=[self.key_bar])
+        kvs_driver = kvs._region.backend.driver
+
         # Ensure the set_arguments are correct
         self.assertDictEqual(
             kvs._region.backend._get_set_arguments_driver_attr(),
@@ -499,8 +502,8 @@ class KVSTest(tests.TestCase):
         self.assertDictEqual(
             kvs._region.backend.driver.client.set_arguments_passed,
             expected_set_args)
-        self.assertEqual(expected_foo_keys,
-                         kvs._region.backend.driver.client.keys_values.keys())
+        observed_foo_keys = list(kvs_driver.client.keys_values.keys())
+        self.assertEqual(expected_foo_keys, observed_foo_keys)
         self.assertEqual(
             self.value_foo,
             kvs._region.backend.driver.client.keys_values[self.key_foo][0])
@@ -511,8 +514,8 @@ class KVSTest(tests.TestCase):
         self.assertDictEqual(
             kvs._region.backend.driver.client.set_arguments_passed,
             expected_no_expiry_args)
-        self.assertEqual(expected_bar_keys,
-                         kvs._region.backend.driver.client.keys_values.keys())
+        observed_bar_keys = list(kvs_driver.client.keys_values.keys())
+        self.assertEqual(expected_bar_keys, observed_bar_keys)
         self.assertEqual(
             self.value_bar,
             kvs._region.backend.driver.client.keys_values[self.key_bar][0])
@@ -523,8 +526,8 @@ class KVSTest(tests.TestCase):
         self.assertDictEqual(
             kvs._region.backend.driver.client.set_arguments_passed,
             expected_set_args)
-        self.assertEqual(expected_foo_keys,
-                         kvs._region.backend.driver.client.keys_values.keys())
+        observed_foo_keys = list(kvs_driver.client.keys_values.keys())
+        self.assertEqual(expected_foo_keys, observed_foo_keys)
         self.assertEqual(
             self.value_foo,
             kvs._region.backend.driver.client.keys_values[self.key_foo][0])
@@ -535,8 +538,8 @@ class KVSTest(tests.TestCase):
         self.assertDictEqual(
             kvs._region.backend.driver.client.set_arguments_passed,
             expected_no_expiry_args)
-        self.assertEqual(expected_bar_keys,
-                         kvs._region.backend.driver.client.keys_values.keys())
+        observed_bar_keys = list(kvs_driver.client.keys_values.keys())
+        self.assertEqual(expected_bar_keys, observed_bar_keys)
         self.assertEqual(
             self.value_bar,
             kvs._region.backend.driver.client.keys_values[self.key_bar][0])
