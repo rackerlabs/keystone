@@ -121,6 +121,23 @@
       "revId": "d8a9ab545b04a941c2ac3bf027483d15f33877c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_f7b9a12f",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1283,
+      "author": {
+        "id": 2903
+      },
+      "writtenOn": "2015-04-23T21:38:26Z",
+      "side": 1,
+      "message": "Please add a test to validate that the token is actually in the TRL [if the token provider needs persistence]. This change set still looks to not address the concern about tokens properly ending up in the TRL.",
+      "revId": "d8a9ab545b04a941c2ac3bf027483d15f33877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
