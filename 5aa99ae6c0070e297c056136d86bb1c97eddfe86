@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_85ffe100",
+        "filename": "keystone/token/providers/common.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 6482
+      },
+      "writtenOn": "2015-04-23T15:48:15Z",
+      "side": 1,
+      "message": "how about:\n\n  \u0027Passing token data with \"extras\" is deprecated as of Kilo in favor of well-defined APIs.\u0027",
+      "revId": "5aa99ae6c0070e297c056136d86bb1c97eddfe86",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
