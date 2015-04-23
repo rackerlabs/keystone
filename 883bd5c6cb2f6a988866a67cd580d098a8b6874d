@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_fbd1a4fc",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-04-23T14:21:34Z",
+      "side": 1,
+      "message": "should wrap this with a try/except to raise a friendly (critical) error message in the event a plugin appears in [auth] methods but isn\u0027t actually defined",
+      "revId": "883bd5c6cb2f6a988866a67cd580d098a8b6874d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
