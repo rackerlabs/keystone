@@ -34,6 +34,24 @@
       "revId": "c535b165fee770469363d1867ab9f7a5bfde1e16",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_3fba79e2",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 424,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-23T06:45:06Z",
+      "side": 1,
+      "message": "David, after checking the usage of `versionutils.deprecated` I found that function can only be used to deprecate method and class. Besides, raise a excpeption here will broke the middleware pipeline. So I think a warning message here maybe also okay.\n\nMaybe you can help to do some adjudgement here.\n\nThanks.",
+      "parentUuid": "dac4157f_29a5a203",
+      "revId": "c535b165fee770469363d1867ab9f7a5bfde1e16",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
