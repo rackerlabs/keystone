@@ -1143,4 +1143,4 @@ def list_opts():
 
     :returns: a list of (group_name, opts) tuples
     """
-    return FILE_OPTIONS.items()
+    return list(FILE_OPTIONS.items())
