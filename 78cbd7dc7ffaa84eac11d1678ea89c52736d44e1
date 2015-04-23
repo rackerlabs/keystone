@@ -16,6 +16,23 @@
       "revId": "78cbd7dc7ffaa84eac11d1678ea89c52736d44e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_4624300c",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-23T16:33:37Z",
+      "side": 1,
+      "message": "...so the recent trend has been to rather than just skipTest, to actually expect the error a caller would get if they DID try and do the operation (e.g. some write call)....i.e. in this case \n\nself.assertRaises(NotImplemented.....)\n\nis there a reason we don\u0027t do that for all this....",
+      "revId": "78cbd7dc7ffaa84eac11d1678ea89c52736d44e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
