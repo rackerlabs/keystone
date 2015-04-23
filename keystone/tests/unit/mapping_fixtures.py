@@ -12,6 +12,9 @@
 
 """Fixtures for Federation Mapping."""
 
+from six.moves import zip
+
+
 EMPLOYEE_GROUP_ID = "0cd5e9"
 CONTRACTOR_GROUP_ID = "85a868"
 TESTER_GROUP_ID = "123"
