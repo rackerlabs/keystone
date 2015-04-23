@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bab921fb_723cb82f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-23T00:16:45Z",
+      "side": 1,
+      "message": "Added a slightly more detailed comment",
+      "parentUuid": "9a80dd14_44b2ad4c",
+      "revId": "56979b8e9d408fc47638e2193b1f182764d7c582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_047c3571",
         "filename": "keystone/tests/unit/common/test_notifications.py",
         "patchSetId": 2
@@ -30,6 +48,24 @@
       "writtenOn": "2015-03-09T22:06:02Z",
       "side": 1,
       "message": "no need to keep this around (remove self.)",
+      "revId": "56979b8e9d408fc47638e2193b1f182764d7c582",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_f264484a",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 181,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-23T00:16:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a80dd14_047c3571",
       "revId": "56979b8e9d408fc47638e2193b1f182764d7c582",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
