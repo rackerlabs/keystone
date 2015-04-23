@@ -116,7 +116,7 @@ class FederatedSetupMixin(object):
                     'methods', 'roles'):
             self.assertIn(obj, token)
         # Check for either project or domain
-        if not xor_project_domain(token.keys()):
+        if not xor_project_domain(list(token.keys())):
             raise AssertionError("You must specify either"
                                  "project or domain.")
 
