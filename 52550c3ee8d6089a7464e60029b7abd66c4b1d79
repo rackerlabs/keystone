@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_68ac5da0",
+        "filename": "keystone/tests/unit/ksfixtures/database.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-04-24T16:38:30Z",
+      "side": 1,
+      "message": "self.recreate() ?",
+      "revId": "52550c3ee8d6089a7464e60029b7abd66c4b1d79",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
