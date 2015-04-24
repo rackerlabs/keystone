@@ -245,6 +245,24 @@
     },
     {
       "key": {
+        "uuid": "bab921fb_d172f848",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 47
+      },
+      "lineNbr": 5617,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-24T15:02:22Z",
+      "side": 1,
+      "message": "The other reason, is that we need to match the return, as we have done putting the description, enabled, parent_id...",
+      "parentUuid": "3ab451fb_07c5198d",
+      "revId": "dcb92e23c88b74065bf3bcad8d65cebf805fd676",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ab451fb_55bbca72",
         "filename": "keystone/tests/unit/test_backend_ldap.py",
         "patchSetId": 47
