@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "bab921fb_686fbdc5",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 5
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-04-24T16:33:38Z",
+      "side": 1,
+      "message": "schema*",
+      "revId": "04402d497ce07b85f5682fcef20b1e0548a88284",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_9f4a4b53",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 5
