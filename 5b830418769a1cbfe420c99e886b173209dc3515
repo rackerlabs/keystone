@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_c896d0ef",
+        "filename": "keystone/cli.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-04-24T14:31:48Z",
+      "side": 1,
+      "message": "looks unrelated",
+      "revId": "5b830418769a1cbfe420c99e886b173209dc3515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_68a34450",
+        "filename": "keystone/cli.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-04-24T14:31:48Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "5b830418769a1cbfe420c99e886b173209dc3515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_e88f54ca",
+        "filename": "keystone/cli.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 555,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-04-24T14:31:48Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "5b830418769a1cbfe420c99e886b173209dc3515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_480e403c",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-04-24T14:31:48Z",
+      "side": 1,
+      "message": "looks unrelated",
+      "revId": "5b830418769a1cbfe420c99e886b173209dc3515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_a84efc93",
+        "filename": "keystone/common/sql/migration_helpers.py",
+        "patchSetId": 9
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 7491
+      },
+      "writtenOn": "2015-04-24T14:31:48Z",
+      "side": 1,
+      "message": "this was fixed already",
+      "revId": "5b830418769a1cbfe420c99e886b173209dc3515",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
