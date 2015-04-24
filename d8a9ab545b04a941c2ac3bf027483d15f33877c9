@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bab921fb_94beaed2",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 435,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-04-24T16:05:33Z",
+      "side": 1,
+      "message": "They are needed in the signature in order to get as arguments to the otifications.role_assignment decorator",
+      "parentUuid": "bab921fb_61871310",
+      "revId": "d8a9ab545b04a941c2ac3bf027483d15f33877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ab451fb_e9c44941",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 17
@@ -135,6 +153,24 @@
       "writtenOn": "2015-04-23T21:38:26Z",
       "side": 1,
       "message": "Please add a test to validate that the token is actually in the TRL [if the token provider needs persistence]. This change set still looks to not address the concern about tokens properly ending up in the TRL.",
+      "revId": "d8a9ab545b04a941c2ac3bf027483d15f33877c9",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_023ca02d",
+        "filename": "keystone/tests/unit/test_v3_auth.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 1283,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-04-24T16:05:33Z",
+      "side": 1,
+      "message": "Shall do.",
+      "parentUuid": "bab921fb_f7b9a12f",
       "revId": "d8a9ab545b04a941c2ac3bf027483d15f33877c9",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false

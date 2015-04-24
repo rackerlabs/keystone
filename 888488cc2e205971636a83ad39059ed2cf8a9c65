@@ -16,6 +16,24 @@
       "revId": "888488cc2e205971636a83ad39059ed2cf8a9c65",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_c2eea8b3",
+        "filename": "keystone/assignment/core.py",
+        "patchSetId": 17
+      },
+      "lineNbr": 468,
+      "author": {
+        "id": 13055
+      },
+      "writtenOn": "2015-04-24T16:05:33Z",
+      "side": 0,
+      "message": "I shall take this into consideration: I\u0027ve found the code about TRL logic.",
+      "parentUuid": "bab921fb_57816d49",
+      "revId": "888488cc2e205971636a83ad39059ed2cf8a9c65",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
