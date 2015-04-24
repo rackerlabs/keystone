@@ -19,6 +19,7 @@
 """Utility methods for working with WSGI servers."""
 
 import copy
+import wsgiref.util
 
 from oslo import i18n
 import routes.middleware
@@ -214,7 +215,10 @@ class Application(BaseApplication):
         # NOTE(morganfainberg): use the request method to normalize the
         # response code between GET and HEAD requests. The HTTP status should
         # be the same.
-        req_method = req.environ['REQUEST_METHOD'].upper()
+        LOG.info('%(req_method)s %(uri)s', {
+            'req_method': req.environ['REQUEST_METHOD'].upper(),
+            'uri': wsgiref.util.request_uri(req.environ),
+        })
 
         # NOTE(vish): make sure we have no unicode keys for py2.6.
         params = self._normalize_dict(params)
@@ -254,7 +258,7 @@ class Application(BaseApplication):
 
         response_code = self._get_response_code(req)
         return render_response(body=result, status=response_code,
-                               method=req_method)
+                               method=req.environ['REQUEST_METHOD'])
 
     def _get_response_code(self, req):
         req_method = req.environ['REQUEST_METHOD']
@@ -584,7 +588,7 @@ class ExtensionRouter(Router):
             mapper = routes.Mapper()
         self.application = application
         self.add_routes(mapper)
-        mapper.connect('{path_info:.*}', controller=self.application)
+        mapper.connect('/{path_info:.*}', controller=self.application)
         super(ExtensionRouter, self).__init__(mapper)
 
     def add_routes(self, mapper):
@@ -747,7 +751,7 @@ def render_response(body=None, status=None, headers=None, method=None):
                           status='%s %s' % status,
                           headerlist=headers)
 
-    if method == 'HEAD':
+    if method and method.upper() == 'HEAD':
         # NOTE(morganfainberg): HEAD requests should return the same status
         # as a GET request and same headers (including content-type and
         # content-length). The webob.Response object automatically changes
