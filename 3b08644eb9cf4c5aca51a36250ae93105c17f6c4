@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "bab921fb_3f369252",
+        "filename": "keystone/common/environment/eventlet_server.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-04-24T20:36:09Z",
+      "side": 1,
+      "message": "the \"or None\" is not necessary because this has a default",
+      "revId": "3b08644eb9cf4c5aca51a36250ae93105c17f6c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9a80dd14_08dc75e3",
         "filename": "keystone/tests/unit/test_wsgi.py",
         "patchSetId": 18
@@ -31,6 +48,41 @@
       "side": 1,
       "message": "the comment before this is confusing since it says that client connections will be closed, but this test doesn\u0027t have any client connections. Everything is mocked.",
       "parentUuid": "9a80dd14_08dc75e3",
+      "revId": "3b08644eb9cf4c5aca51a36250ae93105c17f6c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_3f8452d2",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 437,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-04-24T20:36:09Z",
+      "side": 1,
+      "message": "++ and this test is hardly testing anything at all... \"the configuration value is passed through: yay!\"",
+      "parentUuid": "9a80dd14_48b65bfa",
+      "revId": "3b08644eb9cf4c5aca51a36250ae93105c17f6c4",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_7fc88a22",
+        "filename": "keystone/tests/unit/test_wsgi.py",
+        "patchSetId": 18
+      },
+      "lineNbr": 471,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-04-24T20:36:09Z",
+      "side": 1,
+      "message": "same as above",
       "revId": "3b08644eb9cf4c5aca51a36250ae93105c17f6c4",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
