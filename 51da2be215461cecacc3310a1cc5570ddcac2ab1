@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_fdf4ad87",
+        "filename": "keystone/backends.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-04-24T16:25:42Z",
+      "side": 1,
+      "message": "the lack of whitespace after this line triggers my OCD",
+      "revId": "51da2be215461cecacc3310a1cc5570ddcac2ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_1d56415c",
+        "filename": "keystone/tests/unit/common/test_injection.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 4
+      },
+      "writtenOn": "2015-04-24T16:25:42Z",
+      "side": 1,
+      "message": "+1 and this sounds out of scope for this patchset so i assume you didn\u0027t mean to address it here",
+      "revId": "51da2be215461cecacc3310a1cc5570ddcac2ab1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
