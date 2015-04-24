@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "bab921fb_8871e746",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 4
+      },
+      "lineNbr": 251,
+      "author": {
+        "id": 7725
+      },
+      "writtenOn": "2015-04-24T22:25:03Z",
+      "side": 1,
+      "message": "I think there is a hole in the testing coverage because the tests pass without this statement.",
+      "parentUuid": "dac4157f_dff938ca",
+      "revId": "e6ccedd9fc40b52e78d0d2038fe6459ffa08ae0d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dac4157f_64186185",
         "filename": "keystone/notifications.py",
         "patchSetId": 4
