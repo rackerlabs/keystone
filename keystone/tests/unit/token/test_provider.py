@@ -12,6 +12,8 @@
 
 from six.moves import urllib
 
+import six
+
 from keystone.tests import unit
 from keystone.token import provider
 
@@ -23,7 +25,7 @@ class TestRandomStrings(unit.BaseTestCase):
 
     def test_strings_can_be_converted_to_bytes(self):
         s = provider.random_urlsafe_str()
-        self.assertTrue(isinstance(s, basestring))
+        self.assertTrue(isinstance(s, six.string_types))
 
         b = provider.random_urlsafe_str_to_bytes(s)
         self.assertTrue(isinstance(b, bytes))
