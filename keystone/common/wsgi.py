@@ -20,7 +20,6 @@
 
 import copy
 import itertools
-import urllib
 
 from oslo_config import cfg
 import oslo_i18n
@@ -30,6 +29,7 @@ from oslo_utils import importutils
 from oslo_utils import strutils
 import routes.middleware
 import six
+from six.moves import urllib
 import webob.dec
 import webob.exc
 
@@ -231,7 +231,7 @@ class Application(BaseApplication):
         LOG.info('%(req_method)s %(path)s?%(params)s', {
             'req_method': req_method,
             'path': context['path'],
-            'params': urllib.urlencode(req.params)})
+            'params': urllib.parse.urlencode(req.params)})
 
         params = self._normalize_dict(params)
 
