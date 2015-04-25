@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_7439b6f1",
+        "filename": "keystone/notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 252,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-25T06:33:51Z",
+      "side": 1,
+      "message": "David, I believe Matthieu\u0027s check against `callback.__self__` is necessary.\n\ncallback.__self__ is None when passing in an unbound method, that mean the callback_str in this case is \"keystone.tests.unit.common.test_notifications.*NoneType*.callback\" instead of \"keystone.tests.unit.common.test_notifications.callback\" or \"keystone.tests.unit.common.test_notifications.C.callback\".\n\nThe testcases here would pass just beacuse `assert_any_call` only assert the mock has been called, thus, in the case of the unbound method and the testcase provided it will assert\n `keystone.tests.unit.common.test_notifications.callback` is in these list: \n[call(\u0027Callback: `%(callback)s` subscribed to event `%(event)s`.\u0027, {\u0027callback\u0027: \n \u0027keystone.tests.unit.common.test_notifications.callback\u0027, \u0027event\u0027: \u0027identity.thing.created\u0027}),\n call(\u0027Callback: `%(callback)s` subscribed to event `%(event)s`.\u0027, {\u0027callback\u0027: \u0027keystone.tests.\n  unit.common.test_notifications.C.callback\u0027, \u0027event\u0027: \u0027identity.thing.created\u0027}),\n call(\u0027Callback: `%(callback)s` subscribed to event `%(event)s`.\u0027, {\u0027callback\u0027: \u0027keystone.tests.\n  unit.common.test_notifications.*NoneType*.callback\u0027, \u0027event\u0027: \u0027identity.thing.created\u0027})]\n\nSo, the testcase will pass, acutally, I believe the unbound method is not tested at all.\n\nPls debug the testcase then you will know what I am talking here.",
+      "revId": "12e4fd838a4917f6a817ce30b5655fca217dcda6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
