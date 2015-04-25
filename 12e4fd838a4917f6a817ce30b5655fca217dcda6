@@ -16,6 +16,23 @@
       "revId": "12e4fd838a4917f6a817ce30b5655fca217dcda6",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_cf710f46",
+        "filename": "keystone/tests/unit/common/test_notifications.py",
+        "patchSetId": 6
+      },
+      "lineNbr": 1004,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-25T06:44:52Z",
+      "side": 1,
+      "message": "Acutally, we cannot expect this could cover the changes, the testcase will pass regardless you define the \u0027callback\u0027 str as callback_1 or callback_2.",
+      "revId": "12e4fd838a4917f6a817ce30b5655fca217dcda6",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
