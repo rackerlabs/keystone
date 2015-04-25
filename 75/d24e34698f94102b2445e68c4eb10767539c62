@@ -1,0 +1,9 @@
+Verified+2: Jenkins
+Code-Review+2: Dolph Mathews <dolph.mathews@gmail.com>
+Code-Review+2: Lin Hua Cheng <os.lcheng@gmail.com>
+Workflow+1: Lin Hua Cheng <os.lcheng@gmail.com>
+Submitted-by: Jenkins
+Submitted-at: Sat, 25 Apr 2015 01:57:48 +0000
+Reviewed-on: https://review.openstack.org/176304
+Project: openstack/keystone
+Branch: refs/heads/master
