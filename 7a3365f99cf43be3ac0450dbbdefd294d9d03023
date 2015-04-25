@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_8862fc3c",
+        "filename": "keystone/tests/unit/token/test_provider.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-25T01:46:22Z",
+      "side": 1,
+      "message": "remove extra space, these two import should be in the same import group",
+      "revId": "7a3365f99cf43be3ac0450dbbdefd294d9d03023",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
