@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_48b4e480",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-25T01:51:43Z",
+      "side": 1,
+      "message": "Add the \"bp python3\" in the commit msg",
+      "revId": "1d28b29baeafc1840eb2f3b08e77432b6b100fef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_48106459",
+        "filename": "keystone/common/wsgi.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 236,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-25T01:51:43Z",
+      "side": 1,
+      "message": "pep8 not happy:\n\n2015-04-25 00:16:32.131 | ./keystone/common/wsgi.py:237:9: E124 closing bracket does not match visual indentation\n2015-04-25 00:16:32.131 |         )\n2015-04-25 00:16:32.131 |         ^",
+      "revId": "1d28b29baeafc1840eb2f3b08e77432b6b100fef",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
