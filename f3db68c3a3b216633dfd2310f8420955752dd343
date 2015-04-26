@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_50a33eb2",
+        "filename": "setup.cfg",
+        "patchSetId": 15
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-26T07:32:13Z",
+      "side": 1,
+      "message": "Brant, pls remove this line since it has been already defined in keystone.catalog.\n\nI guess your patch stack is out of date.",
+      "revId": "f3db68c3a3b216633dfd2310f8420955752dd343",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
