@@ -16,6 +16,24 @@
       "revId": "883bd5c6cb2f6a988866a67cd580d098a8b6874d",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_9d768ed5",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-26T15:35:57Z",
+      "side": 1,
+      "message": "I\u0027m not sure what\u0027s meant here -- do you want the server to log an error and continue on, or log an error and fail to start?",
+      "parentUuid": "bab921fb_fbd1a4fc",
+      "revId": "883bd5c6cb2f6a988866a67cd580d098a8b6874d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
