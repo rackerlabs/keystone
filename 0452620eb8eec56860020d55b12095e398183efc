@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_508a1e1c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-26T07:38:56Z",
+      "side": 1,
+      "message": "Need bp stevedore here, and would be great if we could modify the commit message since it intends to addess stevedore instead of to address some config which was out of date as this patch (https://review.openstack.org/#/c/177544)",
+      "revId": "0452620eb8eec56860020d55b12095e398183efc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
