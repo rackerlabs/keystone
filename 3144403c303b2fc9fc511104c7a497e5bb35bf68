@@ -16,6 +16,24 @@
       "revId": "3144403c303b2fc9fc511104c7a497e5bb35bf68",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_bdd39203",
+        "filename": "keystone/tests/unit/test_auth_plugin.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 141,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-26T15:25:53Z",
+      "side": 0,
+      "message": "I don\u0027t think we need code to check that the methods are duplicated, proposed a separate change to de-duplicate.",
+      "parentUuid": "5aa745d1_90f5fd84",
+      "revId": "3144403c303b2fc9fc511104c7a497e5bb35bf68",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }

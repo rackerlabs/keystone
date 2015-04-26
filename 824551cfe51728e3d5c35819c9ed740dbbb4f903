@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bab921fb_7dc29a35",
+        "filename": "keystone/auth/controllers.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-26T15:25:53Z",
+      "side": 1,
+      "message": "Done... obviously missing a test for this.",
+      "parentUuid": "5aa745d1_90929d56",
+      "revId": "824551cfe51728e3d5c35819c9ed740dbbb4f903",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aa745d1_839007ee",
         "filename": "keystone/auth/plugins/oauth1.py",
         "patchSetId": 1
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "bab921fb_bd6f122a",
+        "filename": "keystone/auth/plugins/oauth1.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-26T15:25:53Z",
+      "side": 1,
+      "message": "Proposed a change to remove this since it\u0027s using dependency.requires, so this is dead code.",
+      "parentUuid": "5aa745d1_839007ee",
+      "revId": "824551cfe51728e3d5c35819c9ed740dbbb4f903",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5aa745d1_4368bff5",
         "filename": "keystone/auth/plugins/token.py",
         "patchSetId": 1
@@ -47,6 +83,24 @@
       "writtenOn": "2015-04-16T13:07:17Z",
       "side": 1,
       "message": "self.method isn\u0027t defined anymore",
+      "revId": "824551cfe51728e3d5c35819c9ed740dbbb4f903",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_fde46ae0",
+        "filename": "keystone/auth/plugins/token.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-26T15:25:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5aa745d1_4368bff5",
       "revId": "824551cfe51728e3d5c35819c9ed740dbbb4f903",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
