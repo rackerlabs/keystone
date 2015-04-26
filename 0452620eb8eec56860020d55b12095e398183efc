@@ -16,6 +16,24 @@
       "revId": "0452620eb8eec56860020d55b12095e398183efc",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bab921fb_3d39c2a4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-26T14:15:12Z",
+      "side": 1,
+      "message": "We don\u0027t do config updates just for features, we just regenerate the whole config file every time.",
+      "parentUuid": "bab921fb_508a1e1c",
+      "revId": "0452620eb8eec56860020d55b12095e398183efc",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
