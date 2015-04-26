@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bab921fb_f31db962",
+        "filename": "etc/keystone.conf.sample",
+        "patchSetId": 1
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-26T19:27:33Z",
+      "side": 1,
+      "message": "nit: extra space between routing and log",
+      "revId": "a2436c47a4cb2e490a8ba894d080c027016815a1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
