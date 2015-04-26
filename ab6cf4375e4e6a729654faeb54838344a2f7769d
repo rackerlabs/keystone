@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "bab921fb_1da27efd",
+        "filename": "keystone/common/manager.py",
+        "patchSetId": 13
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-26T13:59:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7aaa499b_ac2096f8",
+      "revId": "ab6cf4375e4e6a729654faeb54838344a2f7769d",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7aaa499b_ccce425a",
         "filename": "keystone/contrib/revoke/core.py",
         "patchSetId": 13
