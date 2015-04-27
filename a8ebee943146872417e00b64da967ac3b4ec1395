@@ -67,6 +67,23 @@
       "revId": "a8ebee943146872417e00b64da967ac3b4ec1395",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_b608082a",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 8866
+      },
+      "writtenOn": "2015-04-27T13:33:01Z",
+      "side": 1,
+      "message": "nit: change this dot after \"mappings\" for a comma and put a dot in the end of the phrase?",
+      "revId": "a8ebee943146872417e00b64da967ac3b4ec1395",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
