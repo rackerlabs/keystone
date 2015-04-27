@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ad32947_f30b1c7c",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-27T22:48:57Z",
+      "side": 1,
+      "message": "nice cleanup",
+      "revId": "fd2a81afcc178baab478a138b870fa0ed7e94475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_936aa819",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2260,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-27T22:48:57Z",
+      "side": 1,
+      "message": "should probably just use uuid.uuid4().hex here, we don\u0027t need to pass \u0027fake\u0027",
+      "revId": "fd2a81afcc178baab478a138b870fa0ed7e94475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_537410fc",
+        "filename": "keystone/tests/unit/test_backend.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 2293,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-27T22:48:57Z",
+      "side": 1,
+      "message": "same here",
+      "revId": "fd2a81afcc178baab478a138b870fa0ed7e94475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_d35ee075",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 705,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-27T22:48:57Z",
+      "side": 1,
+      "message": "append \u0027?parents_as_ids\u0027",
+      "revId": "fd2a81afcc178baab478a138b870fa0ed7e94475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_734eecc2",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 710,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-27T22:48:57Z",
+      "side": 1,
+      "message": "append \u0027?subtree_as_list\u0027",
+      "revId": "fd2a81afcc178baab478a138b870fa0ed7e94475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_534bf0b0",
+        "filename": "keystone/tests/unit/test_v3_assignment.py",
+        "patchSetId": 15
+      },
+      "lineNbr": 712,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-27T22:48:57Z",
+      "side": 1,
+      "message": "how about test for non-existing project_id?",
+      "revId": "fd2a81afcc178baab478a138b870fa0ed7e94475",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
