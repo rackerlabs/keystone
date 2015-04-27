@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ad32947_00940735",
+        "filename": "keystone/resource/backends/sql.py",
+        "patchSetId": 14
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1941
+      },
+      "writtenOn": "2015-04-27T16:33:28Z",
+      "side": 1,
+      "message": "this is going to break the validation of circular dependency again.\n\nproject_id \u003d \u0027123\u0027\nset(project_id) will translate to set([\u00271\u0027,\u00272\u0027,\u00273\u0027])",
+      "revId": "984ca8c0feaf980240fce526edced6ee8784698c",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
