@@ -70,6 +70,24 @@
     },
     {
       "key": {
+        "uuid": "7ad32947_503414dd",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-04-27T15:24:55Z",
+      "side": 1,
+      "message": "we can show what \u0027v\u0027 was and what direct_maps was. And I think that\u0027s all, but I am not sure if that\u0027s secure enough.",
+      "parentUuid": "9abe1de1_19123eb5",
+      "revId": "a8ebee943146872417e00b64da967ac3b4ec1395",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ad32947_b608082a",
         "filename": "keystone/exception.py",
         "patchSetId": 2
