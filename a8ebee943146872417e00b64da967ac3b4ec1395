@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7ad32947_cb563506",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-04-27T15:50:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abe1de1_590316b9",
+      "revId": "a8ebee943146872417e00b64da967ac3b4ec1395",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abe1de1_390062aa",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "7ad32947_8b683dbc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-04-27T15:50:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9abe1de1_390062aa",
+      "revId": "a8ebee943146872417e00b64da967ac3b4ec1395",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9abe1de1_19dd9e14",
         "filename": "/COMMIT_MSG",
         "patchSetId": 2
@@ -47,6 +83,24 @@
       "writtenOn": "2015-04-27T12:50:35Z",
       "side": 1,
       "message": "Overall this commit message is a bit confusing....the first half sort of implies are going to provide this functionality...then at the end we so about informing the user.  I would suggest we make the whole commit comment more explicit, e.g. \"Ensure that attempts to use remote keywords mapped in direct mappings error cleanly....etc.\"",
+      "revId": "a8ebee943146872417e00b64da967ac3b4ec1395",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_6bf601d9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-04-27T15:50:36Z",
+      "side": 1,
+      "message": "reworded",
+      "parentUuid": "9abe1de1_19dd9e14",
       "revId": "a8ebee943146872417e00b64da967ac3b4ec1395",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -99,6 +153,24 @@
       "writtenOn": "2015-04-27T13:33:01Z",
       "side": 1,
       "message": "nit: change this dot after \"mappings\" for a comma and put a dot in the end of the phrase?",
+      "revId": "a8ebee943146872417e00b64da967ac3b4ec1395",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_b016c853",
+        "filename": "keystone/exception.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 408,
+      "author": {
+        "id": 8978
+      },
+      "writtenOn": "2015-04-27T15:50:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ad32947_b608082a",
       "revId": "a8ebee943146872417e00b64da967ac3b4ec1395",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
