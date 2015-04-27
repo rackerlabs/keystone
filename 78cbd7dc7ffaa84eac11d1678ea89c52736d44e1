@@ -33,6 +33,24 @@
       "revId": "78cbd7dc7ffaa84eac11d1678ea89c52736d44e1",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_b377e4d3",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 6486
+      },
+      "writtenOn": "2015-04-27T22:54:27Z",
+      "side": 1,
+      "message": "I agree. If we know it\u0027s going to raise NotImplemented then test that happens.",
+      "parentUuid": "bab921fb_4624300c",
+      "revId": "78cbd7dc7ffaa84eac11d1678ea89c52736d44e1",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
     }
   ]
 }
