@@ -177,6 +177,24 @@
     },
     {
       "key": {
+        "uuid": "7ad32947_b1afe7e2",
+        "filename": "keystone/resource/core.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 15359
+      },
+      "writtenOn": "2015-04-27T17:41:04Z",
+      "side": 1,
+      "message": "Actually, this method is not necessary at all, because the constraint is already doing it.",
+      "parentUuid": "3ab451fb_672bbd83",
+      "revId": "769a1266c5c33955f8c077d94e3f72286b71bc55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ab451fb_f1ce6359",
         "filename": "keystone/resource/core.py",
         "patchSetId": 41
@@ -310,6 +328,24 @@
       "side": 1,
       "message": "So this test still needs to be completed?",
       "parentUuid": "3ab451fb_fb5be452",
+      "revId": "769a1266c5c33955f8c077d94e3f72286b71bc55",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_71494fd0",
+        "filename": "keystone/tests/unit/test_backend_ldap.py",
+        "patchSetId": 41
+      },
+      "lineNbr": 1669,
+      "author": {
+        "id": 15359
+      },
+      "writtenOn": "2015-04-27T17:41:04Z",
+      "side": 1,
+      "message": "Maybe we could skip once domains are read-only in LDAP.",
+      "parentUuid": "3ab451fb_72425240",
       "revId": "769a1266c5c33955f8c077d94e3f72286b71bc55",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
