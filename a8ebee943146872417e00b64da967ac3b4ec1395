@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abe1de1_590316b9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-27T12:50:35Z",
+      "side": 1,
+      "message": "nit: probably don\u0027t need to repeat \"with keyword\"",
+      "revId": "a8ebee943146872417e00b64da967ac3b4ec1395",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_390062aa",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-27T12:50:35Z",
+      "side": 1,
+      "message": "nit: s/for that/this/",
+      "revId": "a8ebee943146872417e00b64da967ac3b4ec1395",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_19dd9e14",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-27T12:50:35Z",
+      "side": 1,
+      "message": "Overall this commit message is a bit confusing....the first half sort of implies are going to provide this functionality...then at the end we so about informing the user.  I would suggest we make the whole commit comment more explicit, e.g. \"Ensure that attempts to use remote keywords mapped in direct mappings error cleanly....etc.\"",
+      "revId": "a8ebee943146872417e00b64da967ac3b4ec1395",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_19123eb5",
+        "filename": "keystone/contrib/federation/utils.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 618,
+      "author": {
+        "id": 5707
+      },
+      "writtenOn": "2015-04-27T12:50:35Z",
+      "side": 1,
+      "message": "I can imagine mapping rules being quite long...is there a way to indicate to the user which mapping (or keyword) is at fault?",
+      "revId": "a8ebee943146872417e00b64da967ac3b4ec1395",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
