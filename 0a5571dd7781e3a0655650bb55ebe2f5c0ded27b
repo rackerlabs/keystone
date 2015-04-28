@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7ad32947_eb77a0d2",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-28T03:13:28Z",
+      "side": 1,
+      "message": "if not tenant_id then associations will be not defined? although short-circuit will ignore that but I think it\u0027s not necessary to check associations here.",
+      "revId": "0a5571dd7781e3a0655650bb55ebe2f5c0ded27b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_ee256ec2",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1022,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-28T03:13:28Z",
+      "side": 1,
+      "message": "skip the catalog entirely instead of the endpoint.",
+      "revId": "0a5571dd7781e3a0655650bb55ebe2f5c0ded27b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_4e36a204",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1023,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-28T03:13:28Z",
+      "side": 1,
+      "message": "here, it\u0027s suppose to replace %user_id with user_id but the endpoint has no such placeholder, besides, I think there is only `tenant_id` and `user_id` is allowed in the template, core reviewers may help to confirm that.\n\nsuggest to update the definition of the service with valid substitution.",
+      "revId": "0a5571dd7781e3a0655650bb55ebe2f5c0ded27b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_0e40aa55",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1124,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-28T03:13:28Z",
+      "side": 1,
+      "message": "skip the catalog entirely instead of the endpoint.",
+      "revId": "0a5571dd7781e3a0655650bb55ebe2f5c0ded27b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_2e3b66ed",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1126,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-28T03:13:28Z",
+      "side": 1,
+      "message": "same here.",
+      "revId": "0a5571dd7781e3a0655650bb55ebe2f5c0ded27b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_4eeea223",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 13063
+      },
+      "writtenOn": "2015-04-28T03:13:28Z",
+      "side": 1,
+      "message": "nice catch :-)",
+      "revId": "0a5571dd7781e3a0655650bb55ebe2f5c0ded27b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    }
+  ]
+}
