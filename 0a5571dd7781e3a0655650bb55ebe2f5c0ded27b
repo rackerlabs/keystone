@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7ad32947_301dff73",
+        "filename": "keystone/catalog/backends/sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 427,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-28T08:40:17Z",
+      "side": 1,
+      "message": "In the case of the project having no associated endpoints then \u0027associations\u0027 here can be None even when tenant_id is set.  If that is the case and CONF.endpoint_filter.return_all_endpoints_if_no_filter is True then we need to return the unfiltered catalog.",
+      "parentUuid": "7ad32947_eb77a0d2",
+      "revId": "0a5571dd7781e3a0655650bb55ebe2f5c0ded27b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ad32947_ee256ec2",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2015-04-28T03:13:28Z",
       "side": 1,
       "message": "skip the catalog entirely instead of the endpoint.",
+      "revId": "0a5571dd7781e3a0655650bb55ebe2f5c0ded27b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_9a9bd1c9",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1022,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-28T08:40:17Z",
+      "side": 1,
+      "message": "I don\u0027t understand this comment.  My belief is that if an endpoint cannot have a properly formatted url then that endpoint should not appear in the catalog.  It should not have an effect on other endpoints, services or the catalog in total.",
+      "parentUuid": "7ad32947_ee256ec2",
       "revId": "0a5571dd7781e3a0655650bb55ebe2f5c0ded27b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7ad32947_7aeeb523",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1023,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-28T08:40:17Z",
+      "side": 1,
+      "message": "This test is aimed at ensuring that endpoints without valid formatted urls are not featured in the catalog.  I could add an endpoint with a substitution for user_id but this call is just to get the catalog for a given user but no tenant scoped.  If it\u0027s not a valid use case then maybe I can adjust the test.",
+      "parentUuid": "7ad32947_4e36a204",
+      "revId": "0a5571dd7781e3a0655650bb55ebe2f5c0ded27b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ad32947_0e40aa55",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 3
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "7ad32947_bae44d3b",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1124,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-28T08:40:17Z",
+      "side": 1,
+      "message": "As above.",
+      "parentUuid": "7ad32947_0e40aa55",
+      "revId": "0a5571dd7781e3a0655650bb55ebe2f5c0ded27b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ad32947_2e3b66ed",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 3
@@ -81,6 +153,24 @@
       "writtenOn": "2015-04-28T03:13:28Z",
       "side": 1,
       "message": "same here.",
+      "revId": "0a5571dd7781e3a0655650bb55ebe2f5c0ded27b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7ad32947_5acad9a2",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1126,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-28T08:40:17Z",
+      "side": 1,
+      "message": "As above.",
+      "parentUuid": "7ad32947_2e3b66ed",
       "revId": "0a5571dd7781e3a0655650bb55ebe2f5c0ded27b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
