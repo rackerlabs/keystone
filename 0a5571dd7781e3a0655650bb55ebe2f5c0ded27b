@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "5ad0253b_9b809348",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1016,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-28T16:26:50Z",
+      "side": 1,
+      "message": "Done.  Sort of.  The substitution used the config \u0027admin_port\u0027 property.  There is no corresponding \u0027internal_port\u0027 property so I\u0027ve dropped this endpoint.  It\u0027s not important for the test and less is more.",
+      "parentUuid": "7ad32947_15b1c78f",
+      "revId": "0a5571dd7781e3a0655650bb55ebe2f5c0ded27b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ad32947_ee256ec2",
         "filename": "keystone/tests/unit/test_backend_sql.py",
         "patchSetId": 3
@@ -119,6 +137,24 @@
       "side": 1,
       "message": "Hmmm, sorry, my words is not clear, I meant the key issue you want to fix in this patch is the service should be skipped if there no endpoints bundled with that service. The comment leads me to think the patch here want to address the issue which we have been addressed.\n\nskip the *service* not skip the catalog, sorry for my incorrect comments.",
       "parentUuid": "7ad32947_9a9bd1c9",
+      "revId": "0a5571dd7781e3a0655650bb55ebe2f5c0ded27b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ad0253b_5bc1db7f",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1022,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-28T16:26:50Z",
+      "side": 1,
+      "message": "Done.  I\u0027ve tried to clarify.  There is a underlying cause and a consequence to get across here so my new comment is a little bit chatty.",
+      "parentUuid": "7ad32947_d51d8f67",
       "revId": "0a5571dd7781e3a0655650bb55ebe2f5c0ded27b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -189,6 +225,24 @@
       "writtenOn": "2015-04-28T13:52:01Z",
       "side": 1,
       "message": "nits, s/admin/inernal",
+      "revId": "0a5571dd7781e3a0655650bb55ebe2f5c0ded27b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ad0253b_5bf67bd8",
+        "filename": "keystone/tests/unit/test_backend_sql.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 1118,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-28T16:26:50Z",
+      "side": 1,
+      "message": "As above.  Sort of done.",
+      "parentUuid": "7ad32947_9074c59c",
       "revId": "0a5571dd7781e3a0655650bb55ebe2f5c0ded27b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
@@ -282,6 +336,24 @@
     },
     {
       "key": {
+        "uuid": "5ad0253b_3b1a9f18",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-28T16:26:50Z",
+      "side": 1,
+      "message": "Thank you.",
+      "parentUuid": "7ad32947_4eeea223",
+      "revId": "0a5571dd7781e3a0655650bb55ebe2f5c0ded27b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7ad32947_90d3a538",
         "filename": "keystone/tests/unit/test_backend_templated.py",
         "patchSetId": 3
@@ -293,6 +365,24 @@
       "writtenOn": "2015-04-28T13:52:01Z",
       "side": 1,
       "message": "It would be nice if we can aslo change the comment here, since what this patch intends to fix is the ignore the service instead of just ignore some endpoints.",
+      "revId": "0a5571dd7781e3a0655650bb55ebe2f5c0ded27b",
+      "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5ad0253b_dbbe0bd4",
+        "filename": "keystone/tests/unit/test_backend_templated.py",
+        "patchSetId": 3
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 9276
+      },
+      "writtenOn": "2015-04-28T16:26:50Z",
+      "side": 1,
+      "message": "As previous.  I\u0027ve made the message cover the situation more fully.  It\u0027s a bit chatty but should be fairly clear as to what is cause, what is consequence.",
+      "parentUuid": "7ad32947_90d3a538",
       "revId": "0a5571dd7781e3a0655650bb55ebe2f5c0ded27b",
       "serverId": "4a232e18-c5a9-48ee-94c0-e04e7cca6543",
       "unresolved": false
